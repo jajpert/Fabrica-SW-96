@@ -2801,29 +2801,6 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                           </widget>
                          </item>
-                         <item>
-                          <widget class="QPushButton" name="btn_teste_prof">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>BTN_TESTE_PROF</string>
-                           </property>
-                          </widget>
-                         </item>
                         </layout>
                        </widget>
                       </item>
