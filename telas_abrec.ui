@@ -19,6 +19,18 @@
 QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
@@ -1546,7 +1558,7 @@ QPushButton:focus{outline: 0}</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,10,1">
+                         <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,8,1">
                           <property name="spacing">
                            <number>0</number>
                           </property>
@@ -1591,7 +1603,7 @@ QPushButton:focus{outline: 0}</string>
                               <number>0</number>
                              </property>
                              <property name="leftMargin">
-                              <number>0</number>
+                              <number>20</number>
                              </property>
                              <property name="topMargin">
                               <number>0</number>
@@ -1678,6 +1690,9 @@ QPushButton:focus{outline: 0}</string>
                                   <layout class="QVBoxLayout" name="verticalLayout_28">
                                    <item>
                                     <widget class="QFrame" name="frame_48">
+                                     <property name="styleSheet">
+                                      <string notr="true"/>
+                                     </property>
                                      <property name="frameShape">
                                       <enum>QFrame::StyledPanel</enum>
                                      </property>
@@ -1686,7 +1701,7 @@ QPushButton:focus{outline: 0}</string>
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_7">
                                       <property name="spacing">
-                                       <number>15</number>
+                                       <number>5</number>
                                       </property>
                                       <property name="leftMargin">
                                        <number>0</number>
@@ -2068,6 +2083,9 @@ QPushButton:focus{outline: 0}</string>
                                    </item>
                                    <item>
                                     <widget class="QFrame" name="frame_47">
+                                     <property name="styleSheet">
+                                      <string notr="true"/>
+                                     </property>
                                      <property name="frameShape">
                                       <enum>QFrame::StyledPanel</enum>
                                      </property>
@@ -2076,7 +2094,7 @@ QPushButton:focus{outline: 0}</string>
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_34">
                                       <property name="spacing">
-                                       <number>15</number>
+                                       <number>5</number>
                                       </property>
                                       <property name="leftMargin">
                                        <number>0</number>
@@ -2518,15 +2536,18 @@ QPushButton:focus{outline: 0}</string>
                                    </item>
                                    <item>
                                     <widget class="QFrame" name="frame_60">
+                                     <property name="styleSheet">
+                                      <string notr="true"/>
+                                     </property>
                                      <property name="frameShape">
                                       <enum>QFrame::StyledPanel</enum>
                                      </property>
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_41">
+                                     <layout class="QHBoxLayout" name="horizontalLayout_41" stretch="0,0,0,0">
                                       <property name="spacing">
-                                       <number>15</number>
+                                       <number>5</number>
                                       </property>
                                       <property name="leftMargin">
                                        <number>0</number>
@@ -2544,13 +2565,13 @@ QPushButton:focus{outline: 0}</string>
                                        <widget class="QFrame" name="frame_72">
                                         <property name="minimumSize">
                                          <size>
-                                          <width>420</width>
+                                          <width>370</width>
                                           <height>0</height>
                                          </size>
                                         </property>
                                         <property name="maximumSize">
                                          <size>
-                                          <width>420</width>
+                                          <width>370</width>
                                           <height>16777215</height>
                                          </size>
                                         </property>
@@ -2580,13 +2601,13 @@ QPushButton:focus{outline: 0}</string>
                                           <widget class="QLabel" name="label_15">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>420</width>
+                                             <width>370</width>
                                              <height>0</height>
                                             </size>
                                            </property>
                                            <property name="maximumSize">
                                             <size>
-                                             <width>420</width>
+                                             <width>370</width>
                                              <height>16777215</height>
                                             </size>
                                            </property>
@@ -2605,13 +2626,13 @@ QPushButton:focus{outline: 0}</string>
                                           <widget class="QLineEdit" name="lineEdit_12">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>400</width>
+                                             <width>350</width>
                                              <height>30</height>
                                             </size>
                                            </property>
                                            <property name="maximumSize">
                                             <size>
-                                             <width>400</width>
+                                             <width>350</width>
                                              <height>30</height>
                                             </size>
                                            </property>
