@@ -1,26 +1,31 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecfullIv.ui'
+## Form generated from reading UI file 'telas_abrecEQfplh.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from qtcore import *
-from icons import *
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QRadioButton, QSizePolicy, QSpacerItem, QStackedWidget,
+    QTextEdit, QToolButton, QVBoxLayout, QWidget)
+#import icon_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-
-        ############ valida email ##############
-        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
-        ########################################
-
-        #MainWindow.resize(2130, 917)
+        MainWindow.resize(2130, 917)
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(12)
@@ -31,7 +36,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_2.setContentsMargins(0, -1, 0, 0)
         self.inicio = QStackedWidget(self.centralwidget)
         self.inicio.setObjectName(u"inicio")
         self.login = QWidget()
@@ -2585,28 +2590,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_52.setSpacing(0)
         self.horizontalLayout_52.setObjectName(u"horizontalLayout_52")
         self.horizontalLayout_52.setContentsMargins(0, 0, 0, 0)
-        self.btn_cuidador_observacoes_sigilosas_as = QPushButton(self.frame_117)
-        self.btn_cuidador_observacoes_sigilosas_as.setObjectName(u"btn_cuidador_observacoes_sigilosas_as")
-        self.btn_cuidador_observacoes_sigilosas_as.setMinimumSize(QSize(0, 30))
-        self.btn_cuidador_observacoes_sigilosas_as.setFont(font3)
-        self.btn_cuidador_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_cuidador_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FCE0DF; padding-right: 0.5em; padding-left: 0.5em; border: none}\n"
-"QPushButton:focus{outline:0; background-color: #F9C5C4}\n"
-"")
-
-        self.horizontalLayout_52.addWidget(self.btn_cuidador_observacoes_sigilosas_as)
-
-        self.btn_usuario_observacoes_sigilosas_as = QPushButton(self.frame_117)
-        self.btn_usuario_observacoes_sigilosas_as.setObjectName(u"btn_usuario_observacoes_sigilosas_as")
-        self.btn_usuario_observacoes_sigilosas_as.setMinimumSize(QSize(0, 30))
-        self.btn_usuario_observacoes_sigilosas_as.setFont(font3)
-        self.btn_usuario_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_usuario_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FCE0DF; padding-right: 0.5em; padding-left: 0.5em; border: none}\n"
-"QPushButton:focus{outline:0; background-color: #F9C5C4}\n"
-"")
-
-        self.horizontalLayout_52.addWidget(self.btn_usuario_observacoes_sigilosas_as)
-
 
         self.verticalLayout_80.addWidget(self.frame_117)
 
@@ -2624,8 +2607,8 @@ class Ui_MainWindow(object):
 
         self.frame_120 = QFrame(self.frame_118)
         self.frame_120.setObjectName(u"frame_120")
-        self.frame_120.setMinimumSize(QSize(0, 0))
-        self.frame_120.setMaximumSize(QSize(16777215, 500))
+        self.frame_120.setMinimumSize(QSize(1084, 500))
+        self.frame_120.setMaximumSize(QSize(1084, 500))
         self.frame_120.setStyleSheet(u"QLabel{margin-left: 0.25em}")
         self.frame_120.setFrameShape(QFrame.StyledPanel)
         self.frame_120.setFrameShadow(QFrame.Raised)
@@ -2633,162 +2616,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_81.setSpacing(0)
         self.verticalLayout_81.setObjectName(u"verticalLayout_81")
         self.verticalLayout_81.setContentsMargins(0, 0, 0, 0)
-        self.frame_121 = QFrame(self.frame_120)
-        self.frame_121.setObjectName(u"frame_121")
-        self.frame_121.setMinimumSize(QSize(0, 0))
-        self.frame_121.setMaximumSize(QSize(16777215, 60))
-        self.frame_121.setFrameShape(QFrame.StyledPanel)
-        self.frame_121.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_57 = QHBoxLayout(self.frame_121)
-        self.horizontalLayout_57.setSpacing(5)
-        self.horizontalLayout_57.setObjectName(u"horizontalLayout_57")
-        self.horizontalLayout_57.setContentsMargins(0, 0, 0, 0)
-        self.frame_126 = QFrame(self.frame_121)
-        self.frame_126.setObjectName(u"frame_126")
-        self.frame_126.setMinimumSize(QSize(460, 0))
-        self.frame_126.setMaximumSize(QSize(460, 16777215))
-        self.frame_126.setFrameShape(QFrame.StyledPanel)
-        self.frame_126.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_86 = QVBoxLayout(self.frame_126)
-        self.verticalLayout_86.setSpacing(0)
-        self.verticalLayout_86.setObjectName(u"verticalLayout_86")
-        self.verticalLayout_86.setContentsMargins(0, 0, 0, 0)
-        self.label_nome_usuario_obs_sigilosas_as = QLabel(self.frame_126)
-        self.label_nome_usuario_obs_sigilosas_as.setObjectName(u"label_nome_usuario_obs_sigilosas_as")
-        self.label_nome_usuario_obs_sigilosas_as.setMinimumSize(QSize(460, 0))
-        self.label_nome_usuario_obs_sigilosas_as.setMaximumSize(QSize(460, 40))
-        self.label_nome_usuario_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_86.addWidget(self.label_nome_usuario_obs_sigilosas_as)
-
-        self.input_nome_usuario_obs_sigilosas_as = QLineEdit(self.frame_126)
-        self.input_nome_usuario_obs_sigilosas_as.setObjectName(u"input_nome_usuario_obs_sigilosas_as")
-        self.input_nome_usuario_obs_sigilosas_as.setMinimumSize(QSize(450, 30))
-        self.input_nome_usuario_obs_sigilosas_as.setMaximumSize(QSize(450, 30))
-        self.input_nome_usuario_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_86.addWidget(self.input_nome_usuario_obs_sigilosas_as)
-
-
-        self.horizontalLayout_57.addWidget(self.frame_126)
-
-        self.frame_127 = QFrame(self.frame_121)
-        self.frame_127.setObjectName(u"frame_127")
-        self.frame_127.setMinimumSize(QSize(460, 0))
-        self.frame_127.setMaximumSize(QSize(460, 16777215))
-        self.frame_127.setFrameShape(QFrame.StyledPanel)
-        self.frame_127.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_85 = QVBoxLayout(self.frame_127)
-        self.verticalLayout_85.setSpacing(0)
-        self.verticalLayout_85.setObjectName(u"verticalLayout_85")
-        self.verticalLayout_85.setContentsMargins(0, 0, 0, 0)
-        self.label_nome_cuidador_obs_sigilosas_as = QLabel(self.frame_127)
-        self.label_nome_cuidador_obs_sigilosas_as.setObjectName(u"label_nome_cuidador_obs_sigilosas_as")
-        self.label_nome_cuidador_obs_sigilosas_as.setMinimumSize(QSize(460, 0))
-        self.label_nome_cuidador_obs_sigilosas_as.setMaximumSize(QSize(460, 16777215))
-        self.label_nome_cuidador_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_85.addWidget(self.label_nome_cuidador_obs_sigilosas_as)
-
-        self.input_nome_cuidador_obs_sigilosas_as = QLineEdit(self.frame_127)
-        self.input_nome_cuidador_obs_sigilosas_as.setObjectName(u"input_nome_cuidador_obs_sigilosas_as")
-        self.input_nome_cuidador_obs_sigilosas_as.setMinimumSize(QSize(450, 30))
-        self.input_nome_cuidador_obs_sigilosas_as.setMaximumSize(QSize(450, 30))
-        self.input_nome_cuidador_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_85.addWidget(self.input_nome_cuidador_obs_sigilosas_as)
-
-
-        self.horizontalLayout_57.addWidget(self.frame_127)
-
-        self.frame_136 = QFrame(self.frame_121)
-        self.frame_136.setObjectName(u"frame_136")
-        self.frame_136.setMinimumSize(QSize(150, 0))
-        self.frame_136.setMaximumSize(QSize(150, 16777215))
-        self.frame_136.setFrameShape(QFrame.StyledPanel)
-        self.frame_136.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_57.addWidget(self.frame_136)
-
-
-        self.verticalLayout_81.addWidget(self.frame_121)
-
-        self.frame_122 = QFrame(self.frame_120)
-        self.frame_122.setObjectName(u"frame_122")
-        self.frame_122.setMinimumSize(QSize(0, 0))
-        self.frame_122.setMaximumSize(QSize(16777215, 60))
-        self.frame_122.setLayoutDirection(Qt.LeftToRight)
-        self.frame_122.setFrameShape(QFrame.StyledPanel)
-        self.frame_122.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_56 = QHBoxLayout(self.frame_122)
-        self.horizontalLayout_56.setSpacing(0)
-        self.horizontalLayout_56.setObjectName(u"horizontalLayout_56")
-        self.horizontalLayout_56.setContentsMargins(0, 0, 0, 0)
-        self.frame_124 = QFrame(self.frame_122)
-        self.frame_124.setObjectName(u"frame_124")
-        self.frame_124.setMaximumSize(QSize(170, 16777215))
-        self.frame_124.setFrameShape(QFrame.StyledPanel)
-        self.frame_124.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_83 = QVBoxLayout(self.frame_124)
-        self.verticalLayout_83.setSpacing(0)
-        self.verticalLayout_83.setObjectName(u"verticalLayout_83")
-        self.verticalLayout_83.setContentsMargins(0, 0, 0, 0)
-        self.label_codigo_obs_sigilosas_as = QLabel(self.frame_124)
-        self.label_codigo_obs_sigilosas_as.setObjectName(u"label_codigo_obs_sigilosas_as")
-        self.label_codigo_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_83.addWidget(self.label_codigo_obs_sigilosas_as)
-
-        self.label_codigo_obs_sigilosas_as_2 = QLineEdit(self.frame_124)
-        self.label_codigo_obs_sigilosas_as_2.setObjectName(u"label_codigo_obs_sigilosas_as_2")
-        self.label_codigo_obs_sigilosas_as_2.setMaximumSize(QSize(150, 16777215))
-        self.label_codigo_obs_sigilosas_as_2.setFont(font)
-
-        self.verticalLayout_83.addWidget(self.label_codigo_obs_sigilosas_as_2)
-
-
-        self.horizontalLayout_56.addWidget(self.frame_124)
-
-        self.frame_125 = QFrame(self.frame_122)
-        self.frame_125.setObjectName(u"frame_125")
-        self.frame_125.setMaximumSize(QSize(260, 16777215))
-        self.frame_125.setFrameShape(QFrame.StyledPanel)
-        self.frame_125.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_84 = QVBoxLayout(self.frame_125)
-        self.verticalLayout_84.setSpacing(0)
-        self.verticalLayout_84.setObjectName(u"verticalLayout_84")
-        self.verticalLayout_84.setContentsMargins(0, 0, 0, 0)
-        self.label_situacao_trabalho_obs_sigilosas_as = QLabel(self.frame_125)
-        self.label_situacao_trabalho_obs_sigilosas_as.setObjectName(u"label_situacao_trabalho_obs_sigilosas_as")
-        self.label_situacao_trabalho_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_84.addWidget(self.label_situacao_trabalho_obs_sigilosas_as)
-
-        self.input_situacao_trabalho_obs_sigilosas_as = QLineEdit(self.frame_125)
-        self.input_situacao_trabalho_obs_sigilosas_as.setObjectName(u"input_situacao_trabalho_obs_sigilosas_as")
-        self.input_situacao_trabalho_obs_sigilosas_as.setMaximumSize(QSize(240, 16777215))
-        self.input_situacao_trabalho_obs_sigilosas_as.setFont(font)
-
-        self.verticalLayout_84.addWidget(self.input_situacao_trabalho_obs_sigilosas_as)
-
-
-        self.horizontalLayout_56.addWidget(self.frame_125)
-
-        self.frame_138 = QFrame(self.frame_122)
-        self.frame_138.setObjectName(u"frame_138")
-        self.frame_138.setMinimumSize(QSize(650, 0))
-        self.frame_138.setMaximumSize(QSize(650, 16777215))
-        self.frame_138.setFrameShape(QFrame.StyledPanel)
-        self.frame_138.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_56.addWidget(self.frame_138)
-
-
-        self.verticalLayout_81.addWidget(self.frame_122)
-
         self.frame_123 = QFrame(self.frame_120)
         self.frame_123.setObjectName(u"frame_123")
-        self.frame_123.setMaximumSize(QSize(16777215, 280))
+        self.frame_123.setMinimumSize(QSize(1084, 500))
+        self.frame_123.setMaximumSize(QSize(1084, 500))
         self.frame_123.setFrameShape(QFrame.StyledPanel)
         self.frame_123.setFrameShadow(QFrame.Raised)
         self.verticalLayout_82 = QVBoxLayout(self.frame_123)
@@ -2804,7 +2635,7 @@ class Ui_MainWindow(object):
 
         self.input_observacoes_obs_sigilosas_as = QTextEdit(self.frame_123)
         self.input_observacoes_obs_sigilosas_as.setObjectName(u"input_observacoes_obs_sigilosas_as")
-        self.input_observacoes_obs_sigilosas_as.setMaximumSize(QSize(1185, 235))
+        self.input_observacoes_obs_sigilosas_as.setMaximumSize(QSize(1185, 400))
         self.input_observacoes_obs_sigilosas_as.setFont(font)
         self.input_observacoes_obs_sigilosas_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -2836,63 +2667,63 @@ class Ui_MainWindow(object):
         self.horizontalLayout_54.setSpacing(40)
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
         self.horizontalLayout_54.setContentsMargins(40, 0, 0, 0)
-        self.pushButton_alterar_observacoes_sigilosas_as = QPushButton(self.frame_119)
-        self.pushButton_alterar_observacoes_sigilosas_as.setObjectName(u"pushButton_alterar_observacoes_sigilosas_as")
-        self.pushButton_alterar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.pushButton_alterar_observacoes_sigilosas_as.setFont(font8)
-        self.pushButton_alterar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton_alterar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+        self.btn_alterar_observacoes_sigilosas_as = QPushButton(self.frame_119)
+        self.btn_alterar_observacoes_sigilosas_as.setObjectName(u"btn_alterar_observacoes_sigilosas_as")
+        self.btn_alterar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
+        self.btn_alterar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_alterar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.pushButton_alterar_observacoes_sigilosas_as.setIcon(icon10)
-        self.pushButton_alterar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
+        self.btn_alterar_observacoes_sigilosas_as.setIcon(icon10)
+        self.btn_alterar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
-        self.horizontalLayout_54.addWidget(self.pushButton_alterar_observacoes_sigilosas_as)
+        self.horizontalLayout_54.addWidget(self.btn_alterar_observacoes_sigilosas_as)
 
-        self.pushButton_cancelar_observacoes_sigilosas_as = QPushButton(self.frame_119)
-        self.pushButton_cancelar_observacoes_sigilosas_as.setObjectName(u"pushButton_cancelar_observacoes_sigilosas_as")
-        self.pushButton_cancelar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.pushButton_cancelar_observacoes_sigilosas_as.setFont(font8)
-        self.pushButton_cancelar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton_cancelar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+        self.btn_cancelar_observacoes_sigilosas_as = QPushButton(self.frame_119)
+        self.btn_cancelar_observacoes_sigilosas_as.setObjectName(u"btn_cancelar_observacoes_sigilosas_as")
+        self.btn_cancelar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
+        self.btn_cancelar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_cancelar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cancelar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon14 = QIcon()
         icon14.addFile(u"icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_cancelar_observacoes_sigilosas_as.setIcon(icon14)
-        self.pushButton_cancelar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
+        self.btn_cancelar_observacoes_sigilosas_as.setIcon(icon14)
+        self.btn_cancelar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
-        self.horizontalLayout_54.addWidget(self.pushButton_cancelar_observacoes_sigilosas_as)
+        self.horizontalLayout_54.addWidget(self.btn_cancelar_observacoes_sigilosas_as)
 
-        self.pushButton_salvar_observacoes_sigilosas_as = QPushButton(self.frame_119)
-        self.pushButton_salvar_observacoes_sigilosas_as.setObjectName(u"pushButton_salvar_observacoes_sigilosas_as")
-        self.pushButton_salvar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.pushButton_salvar_observacoes_sigilosas_as.setFont(font8)
-        self.pushButton_salvar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton_salvar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
+        self.btn_salvar_observacoes_sigilosas_as = QPushButton(self.frame_119)
+        self.btn_salvar_observacoes_sigilosas_as.setObjectName(u"btn_salvar_observacoes_sigilosas_as")
+        self.btn_salvar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
+        self.btn_salvar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_salvar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_salvar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon15 = QIcon()
         icon15.addFile(u"icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_salvar_observacoes_sigilosas_as.setIcon(icon15)
-        self.pushButton_salvar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
+        self.btn_salvar_observacoes_sigilosas_as.setIcon(icon15)
+        self.btn_salvar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
-        self.horizontalLayout_54.addWidget(self.pushButton_salvar_observacoes_sigilosas_as)
+        self.horizontalLayout_54.addWidget(self.btn_salvar_observacoes_sigilosas_as)
 
-        self.pushButton_excluir_observacoes_sigilosas_as = QPushButton(self.frame_119)
-        self.pushButton_excluir_observacoes_sigilosas_as.setObjectName(u"pushButton_excluir_observacoes_sigilosas_as")
-        self.pushButton_excluir_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.pushButton_excluir_observacoes_sigilosas_as.setFont(font8)
-        self.pushButton_excluir_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.pushButton_excluir_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+        self.btn_excluir_observacoes_sigilosas_as = QPushButton(self.frame_119)
+        self.btn_excluir_observacoes_sigilosas_as.setObjectName(u"btn_excluir_observacoes_sigilosas_as")
+        self.btn_excluir_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
+        self.btn_excluir_observacoes_sigilosas_as.setFont(font8)
+        self.btn_excluir_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_excluir_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon16 = QIcon()
         icon16.addFile(u"icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_excluir_observacoes_sigilosas_as.setIcon(icon16)
-        self.pushButton_excluir_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
+        self.btn_excluir_observacoes_sigilosas_as.setIcon(icon16)
+        self.btn_excluir_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
-        self.horizontalLayout_54.addWidget(self.pushButton_excluir_observacoes_sigilosas_as)
+        self.horizontalLayout_54.addWidget(self.btn_excluir_observacoes_sigilosas_as)
 
         self.horizontalSpacer_41 = QSpacerItem(1433, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -4007,10 +3838,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.inicio.setCurrentIndex(0)
+        self.inicio.setCurrentIndex(1)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(2)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_4.setCurrentIndex(0)
         self.stack_fisioterapeuta.setCurrentIndex(0)
@@ -4018,7 +3849,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_6.setCurrentIndex(0)
         self.stack_psicologa.setCurrentIndex(0)
         self.stack_secretaria.setCurrentIndex(0)
-        self.stackedWidget_3.setCurrentIndex(0)
+        self.stackedWidget_3.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4115,17 +3946,19 @@ class Ui_MainWindow(object):
         self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
         self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"OBSERVA\u00c7\u00d5ES SIGILOSAS", None))
-        self.btn_cuidador_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"CUIDADOR", None))
-        self.btn_usuario_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"USU\u00c1RIO", None))
-        self.label_nome_usuario_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
-        self.label_nome_cuidador_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Nome do cuidador", None))
-        self.label_codigo_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None))
-        self.label_situacao_trabalho_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o de trabalho", None))
         self.label_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es/informa\u00e7\u00f5es gerais", None))
-        self.pushButton_alterar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
-        self.pushButton_cancelar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
-        self.pushButton_salvar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
-        self.pushButton_excluir_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
+        self.input_observacoes_obs_sigilosas_as.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Abel'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.btn_alterar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
+        self.btn_cancelar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.btn_salvar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
+        self.btn_excluir_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.label_foto_farm.setText("")
         self.label_ola_nome_farm.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR", None))
