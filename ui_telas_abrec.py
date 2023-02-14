@@ -523,6 +523,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.btn_cadastrar_cuidador_usuario_as = QPushButton(self.frame_32)
         self.btn_cadastrar_cuidador_usuario_as.setObjectName(u"btn_cadastrar_cuidador_usuario_as")
+        self.btn_cadastrar_cuidador_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_cuidador_usuario_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_cuidador_usuario_as.setMaximumSize(QSize(700, 154))
         font5 = QFont()
@@ -542,6 +543,7 @@ class Ui_MainWindow(object):
 
         self.btn_cadastrar_colaborador_as = QPushButton(self.frame_32)
         self.btn_cadastrar_colaborador_as.setObjectName(u"btn_cadastrar_colaborador_as")
+        self.btn_cadastrar_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_colaborador_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_colaborador_as.setMaximumSize(QSize(700, 154))
         self.btn_cadastrar_colaborador_as.setFont(font5)
@@ -2518,6 +2520,7 @@ class Ui_MainWindow(object):
 
         self.btn_observacoes_sigilo_as = QPushButton(self.frame_99)
         self.btn_observacoes_sigilo_as.setObjectName(u"btn_observacoes_sigilo_as")
+        self.btn_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
         self.btn_observacoes_sigilo_as.setFont(font8)
         self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
@@ -2532,6 +2535,7 @@ class Ui_MainWindow(object):
 
         self.btn_finalizar_as = QPushButton(self.frame_99)
         self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
+        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
         self.btn_finalizar_as.setFont(font8)
         self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
