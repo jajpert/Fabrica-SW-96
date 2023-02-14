@@ -237,6 +237,21 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_25.addWidget(self.frame_37)
 
+        self.pushButton = QPushButton(self.frame_36)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMaximumSize(QSize(16777215, 16777215))
+        font4 = QFont()
+        font4.setFamilies([u"Arial"])
+        font4.setPointSize(12)
+        font4.setUnderline(True)
+        self.pushButton.setFont(font4)
+        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushButton.setStyleSheet(u" QPushButton{background-color: #F8EDEB; text-decoration: underline; border: none; margin-top:0.5em} \n"
+" QPushButton: hover{color:#D62828}\n"
+"QPushButton:focus{outline: 0} ")
+
+        self.verticalLayout_25.addWidget(self.pushButton)
+
         self.verticalSpacer_10 = QSpacerItem(20, 49, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_25.addItem(self.verticalSpacer_10)
@@ -4038,6 +4053,7 @@ class Ui_MainWindow(object):
         self.input_senha_login.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
         self.label_foto_as.setText("")
         self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))

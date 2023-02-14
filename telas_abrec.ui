@@ -567,6 +567,34 @@ QPushButton:focus{outline: 0}</string>
                </widget>
               </item>
               <item>
+               <widget class="QPushButton" name="pushButton">
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Arial</family>
+                  <pointsize>12</pointsize>
+                  <underline>true</underline>
+                 </font>
+                </property>
+                <property name="cursor">
+                 <cursorShape>PointingHandCursor</cursorShape>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true"> QPushButton{background-color: #F8EDEB; text-decoration: underline; border: none; margin-top:0.5em} 
+ QPushButton: hover{color:#D62828}
+QPushButton:focus{outline: 0} </string>
+                </property>
+                <property name="text">
+                 <string>Esqueci Senha</string>
+                </property>
+               </widget>
+              </item>
+              <item>
                <spacer name="verticalSpacer_10">
                 <property name="orientation">
                  <enum>Qt::Vertical</enum>
