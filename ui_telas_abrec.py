@@ -242,6 +242,21 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_25.addWidget(self.frame_37)
 
+        self.pushButton = QPushButton(self.frame_36)
+        self.pushButton.setObjectName(u"pushButton")
+        self.pushButton.setMaximumSize(QSize(16777215, 16777215))
+        font4 = QFont()
+        font4.setFamilies([u"Arial"])
+        font4.setPointSize(12)
+        font4.setUnderline(True)
+        self.pushButton.setFont(font4)
+        self.pushButton.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushButton.setStyleSheet(u" QPushButton{background-color: #F8EDEB; text-decoration: underline; border: none; margin-top:0.5em} \n"
+" QPushButton: hover{color:#D62828}\n"
+"QPushButton:focus{outline: 0} ")
+
+        self.verticalLayout_25.addWidget(self.pushButton)
+
         self.verticalSpacer_10 = QSpacerItem(20, 49, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_25.addItem(self.verticalSpacer_10)
@@ -528,6 +543,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_23.setContentsMargins(0, 0, 0, 0)
         self.btn_cadastrar_cuidador_usuario_as = QPushButton(self.frame_32)
         self.btn_cadastrar_cuidador_usuario_as.setObjectName(u"btn_cadastrar_cuidador_usuario_as")
+        self.btn_cadastrar_cuidador_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_cuidador_usuario_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_cuidador_usuario_as.setMaximumSize(QSize(700, 154))
         font5 = QFont()
@@ -547,6 +563,7 @@ class Ui_MainWindow(object):
 
         self.btn_cadastrar_colaborador_as = QPushButton(self.frame_32)
         self.btn_cadastrar_colaborador_as.setObjectName(u"btn_cadastrar_colaborador_as")
+        self.btn_cadastrar_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_colaborador_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_colaborador_as.setMaximumSize(QSize(700, 154))
         self.btn_cadastrar_colaborador_as.setFont(font5)
@@ -2523,6 +2540,7 @@ class Ui_MainWindow(object):
 
         self.btn_observacoes_sigilo_as = QPushButton(self.frame_99)
         self.btn_observacoes_sigilo_as.setObjectName(u"btn_observacoes_sigilo_as")
+        self.btn_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
         self.btn_observacoes_sigilo_as.setFont(font8)
         self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
@@ -2537,6 +2555,7 @@ class Ui_MainWindow(object):
 
         self.btn_finalizar_as = QPushButton(self.frame_99)
         self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
+        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
         self.btn_finalizar_as.setFont(font8)
         self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -3865,6 +3884,7 @@ class Ui_MainWindow(object):
         self.input_senha_login.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
+        self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
         self.label_foto_as.setText("")
         self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
