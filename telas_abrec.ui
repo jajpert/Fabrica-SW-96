@@ -39,7 +39,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -915,6 +915,12 @@ QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padd
                              <height>45</height>
                             </size>
                            </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>140</width>
+                             <height>45</height>
+                            </size>
+                           </property>
                            <property name="font">
                             <font>
                              <family>Six Caps</family>
@@ -947,6 +953,12 @@ QPushButton:focus{outline: 0}</string>
                          <item>
                           <widget class="QPushButton" name="btn_consulta_as">
                            <property name="minimumSize">
+                            <size>
+                             <width>140</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
                             <size>
                              <width>140</width>
                              <height>45</height>
@@ -1091,7 +1103,7 @@ QPushButton:focus{outline: 0}</string>
                             <cursorShape>PointingHandCursor</cursorShape>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px; margin-bottom: 10px}
+                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px;}
 QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                            </property>
@@ -1337,7 +1349,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="page_principal"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -7616,7 +7628,7 @@ QPushButton:focus{outline:0}</string>
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_83" stretch="">
+                      <layout class="QVBoxLayout" name="verticalLayout_83">
                        <property name="spacing">
                         <number>0</number>
                        </property>
