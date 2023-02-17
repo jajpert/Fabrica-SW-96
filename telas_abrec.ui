@@ -39,7 +39,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -604,7 +604,7 @@ QPushButton:focus{outline: 0}</string>
                   </spacer>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="pushButton">
+                  <widget class="QPushButton" name="btn_esqueci_senha_login">
                    <property name="maximumSize">
                     <size>
                      <width>16777215</width>
@@ -1349,9 +1349,9 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>6</number>
+                      <number>0</number>
                      </property>
-                     <widget class="QWidget" name="page_principal"/>
+                     <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
                       <property name="maximumSize">
                        <size>
@@ -1444,6 +1444,9 @@ QPushButton:focus{outline:0}</string>
                               <pointsize>60</pointsize>
                              </font>
                             </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
                             <property name="layoutDirection">
                              <enum>Qt::RightToLeft</enum>
                             </property>
@@ -1486,6 +1489,9 @@ QPushButton:focus{outline: 0}</string>
                               <family>Six Caps</family>
                               <pointsize>60</pointsize>
                              </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
                             </property>
                             <property name="layoutDirection">
                              <enum>Qt::RightToLeft</enum>
@@ -1620,7 +1626,7 @@ QPushButton:focus{outline: 0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_cadastro_usuario">
+                     <widget class="QWidget" name="page_cadastro_usuario_as">
                       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,8,1">
                        <property name="spacing">
                         <number>0</number>
@@ -1778,7 +1784,7 @@ QPushButton:focus{outline: 0}</string>
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="input_foto_usuario_as">
+                                 <widget class="QPushButton" name="btn_foto_usuario_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>125</width>
@@ -3002,7 +3008,7 @@ QPushButton:focus{outline: 0}</string>
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_bairro_usuario_as">
+                                          <widget class="QLabel" name="label_telefone_usuario_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>155</width>
@@ -3477,7 +3483,7 @@ QPushButton:focus{outline: 0}</string>
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_bairro_usuario_as_2">
+                                    <widget class="QLabel" name="label_bairro_usuario_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>230</width>
@@ -3852,7 +3858,7 @@ QPushButton:focus{outline: 0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QComboBox" name="input_escolaridade_usuario_as_2">
+                                    <widget class="QComboBox" name="input_escolaridade_usuario_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>280</width>
@@ -5304,7 +5310,7 @@ QPushButton:focus{outline: 0}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="pushButton_proximo_as">
+                           <widget class="QPushButton" name="btn_proximo_as">
                             <property name="minimumSize">
                              <size>
                               <width>140</width>
@@ -5342,7 +5348,7 @@ QPushButton:focus{outline:0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_cadastro_cuidador">
+                     <widget class="QWidget" name="page_cadastro_cuidador_as">
                       <layout class="QVBoxLayout" name="verticalLayout_66" stretch="1,8,1">
                        <property name="spacing">
                         <number>0</number>
@@ -6892,7 +6898,7 @@ QPushButton:focus{outline:0}</string>
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_10">
+                                    <widget class="QLabel" name="label_estado_cuidador_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>80</width>
@@ -6917,7 +6923,7 @@ QPushButton:focus{outline:0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QComboBox" name="comboBox">
+                                    <widget class="QComboBox" name="input_estado_cuidador_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>70</width>
@@ -7003,7 +7009,7 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QTextEdit" name="textEdit_observacoes_cuidador_as">
+                                 <widget class="QTextEdit" name="input_observacoes_cuidador_as">
                                   <property name="maximumSize">
                                    <size>
                                     <width>1185</width>
@@ -7103,7 +7109,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                              </font>
                             </property>
                             <property name="cursor">
-                             <cursorShape>ArrowCursor</cursorShape>
+                             <cursorShape>PointingHandCursor</cursorShape>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
@@ -7139,6 +7145,9 @@ QPushButton:focus{outline:0}</string>
                               <pointsize>18</pointsize>
                              </font>
                             </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
 QPushButton:hover{background-color: #23B2EE}
@@ -7154,7 +7163,7 @@ QPushButton:focus{outline:0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_observacoes_sigilosas">
+                     <widget class="QWidget" name="page_observacoes_sigilosas_as">
                       <property name="font">
                        <font>
                         <family>Abel</family>
@@ -7462,7 +7471,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QPushButton" name="pushButton_alterar_observacoes_sigilosas_as">
+                           <widget class="QPushButton" name="btn_alterar_observacoes_sigilosas_as">
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
@@ -7499,7 +7508,7 @@ QPushButton:focus{outline:0}</string>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="pushButton_cancelar_observacoes_sigilosas_as">
+                           <widget class="QPushButton" name="btn_cancelar_observacoes_sigilosas_as">
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
@@ -7536,7 +7545,7 @@ QPushButton:focus{outline:0}</string>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="pushButton_salvar_observacoes_sigilosas_as">
+                           <widget class="QPushButton" name="btn_salvar_observacoes_sigilosas_as">
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
@@ -7573,7 +7582,7 @@ QPushButton:focus{outline:0}</string>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="pushButton_excluir_observacoes_sigilosas_as">
+                           <widget class="QPushButton" name="btn_excluir_observacoes_sigilosas_as">
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
@@ -7627,7 +7636,7 @@ QPushButton:focus{outline:0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_cadastro_colaborador">
+                     <widget class="QWidget" name="page_cadastro_colaborador_as">
                       <property name="styleSheet">
                        <string notr="true"/>
                       </property>
@@ -7649,7 +7658,7 @@ QPushButton:focus{outline:0}</string>
                        </property>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_cadastrar_cursos_e_oficinas">
+                     <widget class="QWidget" name="page_cadastrar_cursos_e_oficinas_as">
                       <layout class="QVBoxLayout" name="verticalLayout_84" stretch="1,8,1">
                        <property name="spacing">
                         <number>0</number>
@@ -10416,7 +10425,7 @@ QPushButton:focus{outline:0}</string>
                      <property name="currentIndex">
                       <number>0</number>
                      </property>
-                     <widget class="QWidget" name="page_9"/>
+                     <widget class="QWidget" name="page_principal_farm"/>
                      <widget class="QWidget" name="page_10"/>
                     </widget>
                    </item>
@@ -10894,7 +10903,10 @@ QPushButton:focus{outline:0}</string>
                    </property>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_5">
-                     <widget class="QWidget" name="page_7"/>
+                     <property name="currentIndex">
+                      <number>0</number>
+                     </property>
+                     <widget class="QWidget" name="page_principal_fisio"/>
                      <widget class="QWidget" name="page_8"/>
                     </widget>
                    </item>
@@ -11421,7 +11433,7 @@ QPushButton:focus{outline:0}</string>
                      <property name="currentIndex">
                       <number>0</number>
                      </property>
-                     <widget class="QWidget" name="page_principal_2"/>
+                     <widget class="QWidget" name="page_principal_nutri"/>
                      <widget class="QWidget" name="page_plano_alimentar">
                       <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,2,1">
                        <property name="spacing">
@@ -11806,6 +11818,9 @@ QPushButton:focus{outline: 0}</string>
                              <pointsize>24</pointsize>
                             </font>
                            </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
 QPushButton:hover{background-color: hsl(6, 94%, 92%)}
@@ -11839,6 +11854,9 @@ QPushButton:focus{outline: 0}</string>
                              <family>Six Caps</family>
                              <pointsize>24</pointsize>
                             </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
                            </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
@@ -11973,6 +11991,9 @@ QPushButton:focus{outline: 0}</string>
                              <pointsize>20</pointsize>
                             </font>
                            </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
                            <property name="styleSheet">
                             <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
 QPushButton:hover{background-color: #23B2EE}
@@ -11996,6 +12017,9 @@ QPushButton:focus{outline:0}</string>
                              <family>Abel</family>
                              <pointsize>20</pointsize>
                             </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
                            </property>
                            <property name="layoutDirection">
                             <enum>Qt::RightToLeft</enum>
@@ -12071,7 +12095,10 @@ QPushButton:focus{outline:0}</string>
                    </property>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_7">
-                     <widget class="QWidget" name="page_13"/>
+                     <property name="currentIndex">
+                      <number>0</number>
+                     </property>
+                     <widget class="QWidget" name="page_principal_psi"/>
                      <widget class="QWidget" name="page_14"/>
                     </widget>
                    </item>
@@ -12620,9 +12647,9 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_3">
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>0</number>
                      </property>
-                     <widget class="QWidget" name="page_3"/>
+                     <widget class="QWidget" name="page_principal_sec"/>
                      <widget class="QWidget" name="page_4"/>
                     </widget>
                    </item>
