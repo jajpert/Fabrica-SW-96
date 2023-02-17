@@ -1,23 +1,14 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'pop up cadastro incompletopPxzGJ.ui'
+## Form generated from reading UI file 'pop up cadastro incompleto modeGTPjX.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QDialog, QFrame, QHBoxLayout,
-    QLabel, QPushButton, QSizePolicy, QSpacerItem,
-    QVBoxLayout, QWidget)
+from qtcore import *
 import sys
 
 class Ui_Dialog(object):
@@ -112,7 +103,17 @@ class Ui_Dialog(object):
         self.btn_voltar_popup_as.setMinimumSize(QSize(100, 30))
         self.btn_voltar_popup_as.setFont(font)
         self.btn_voltar_popup_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_popup_as.setStyleSheet(u"background-color: #F7B0B5; border-radius: 15px")
+        self.btn_voltar_popup_as.setStyleSheet(u"QPushButton{\n"
+"border-radius:15px;\n"
+"background-color: rgb(247, 176, 181);\n"
+"border: 2px ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(236, 132, 140);}\n"
+"\n"
+"QPushButton:pressed{\n"
+"background-color: rgb(247, 176, 181);\n"
+"}")
 
         self.horizontalLayout_4.addWidget(self.btn_voltar_popup_as)
 

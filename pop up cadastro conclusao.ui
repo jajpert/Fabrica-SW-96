@@ -172,9 +172,17 @@ border:1px solid rgb(229, 136, 147);</string>
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(247, 176, 181);
+               <string notr="true">QPushButton{
 border-radius:15px;
-</string>
+background-color: rgb(247, 176, 181);
+border: 2px ;
+}
+QPushButton:hover{
+background-color: rgb(236, 132, 140);}
+
+QPushButton:pressed{
+background-color: rgb(247, 176, 181);
+}</string>
               </property>
               <property name="text">
                <string>VOLTAR</string>
@@ -205,9 +213,21 @@ border-radius:15px;
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: rgb(0, 168, 232);
-border-radius: 15px;
-color: rgb(255, 255, 255);</string>
+               <string notr="true">QPushButton{
+border-radius:15px;
+background-color: rgb(0, 168, 232);
+color: rgb(255, 255, 255);
+border: 2px ;
+}
+QPushButton:hover{
+background-color: rgb(0, 124, 191);}
+
+QPushButton:pressed{
+background-color: rgb(0, 168, 232);
+}
+
+
+</string>
               </property>
               <property name="text">
                <string>CONCLUIR</string>
