@@ -23,13 +23,15 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
 
+        ###############POPUPS##################
+
     def visibilidade(self):
         if self.ui.input_senha_login.echoMode() == QLineEdit.Password:
                 self.ui.input_senha_login.setEchoMode(QLineEdit.Normal)
-                self.ui.toolButton.setIcon(QIcon("icons/olho_fechado.png"))
+                self.ui.toolButton.setIcon(QIcon("./icons/olho_fechado.png"))
         else:
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
-            self.ui.toolButton.setIcon(QIcon("icons/olho.png"))        
+            self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))        
 
 
 

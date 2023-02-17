@@ -104,7 +104,7 @@
             <string/>
            </property>
            <property name="pixmap">
-            <pixmap>icons/ciber-seguranca.png</pixmap>
+            <pixmap>../icons/ciber-seguranca.png</pixmap>
            </property>
            <property name="scaledContents">
             <bool>true</bool>
