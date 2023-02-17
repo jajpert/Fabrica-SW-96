@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'pop up dados salvos modpqEGeR.ui'
+## Form generated from reading UI file 'pop up dados salvosINtRSv.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -60,7 +60,7 @@ class Ui_Dialog(object):
         self.label_imagem_salvo.setObjectName(u"label_imagem_salvo")
         self.label_imagem_salvo.setMinimumSize(QSize(150, 150))
         self.label_imagem_salvo.setMaximumSize(QSize(150, 150))
-        self.label_imagem_salvo.setPixmap(QPixmap(u"icons/salve-.png"))
+        self.label_imagem_salvo.setPixmap(QPixmap(u"../icons/salve-.png"))
         self.label_imagem_salvo.setScaledContents(True)
 
         self.horizontalLayout_2.addWidget(self.label_imagem_salvo)
@@ -98,9 +98,3 @@ class Ui_Dialog(object):
         self.label_pop_up_dados_salvos.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">DADOS SALVOS COM SUCESSO!</p><p </body></html>", None))
     # retranslateUi
 
-app = QApplication(sys.argv)
-dialog = QDialog()
-ui = Ui_Dialog()
-ui.setupUi(dialog)
-dialog.show()
-sys.exit(app.exec_())
