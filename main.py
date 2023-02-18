@@ -18,6 +18,7 @@ class Overlay(QWidget):
         painter.end()
 
 
+################Class POPUP Cuidador################
 class DialogAreaSigilo(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -37,26 +38,7 @@ class DialogAreaSigilo(QDialog):
         event.accept()
 
 
-class DialogConcluirCadastro(QDialog):
-    def __init__(self, parent) -> None:
-        super().__init__(parent)
-        self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Cadastro_Conclusao()
-        self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(8000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
-
-
-class DialogCadastroIncompleto(QDialog):
+class DialogCadastroIncompletoCuidador(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
@@ -75,11 +57,13 @@ class DialogCadastroIncompleto(QDialog):
         event.accept()
 
 
-class DialogCadastroNaoSalvo(QDialog):
+##############Class POPUP Cursos e oficinas##############
+
+class DialogCadastroIncompletoCursos(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Cadastro_Nao_Salvo()
+        self.ui = Ui_Cadastro_Incompleto()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(8000)
@@ -94,6 +78,8 @@ class DialogCadastroNaoSalvo(QDialog):
         event.accept()
 
 
+
+#############################################################################
 class TelaPrincipal(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -118,16 +104,18 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
-        
+
+
+        ############SIGNALS POPUP Cuidador############
+        #self.ui.btn_sair_as.clicked.connect(self.sair)
         self.ui.btn_observacoes_sigilo_as.clicked.connect(self.permissaoSigilosa)
-        self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroCuidador)
-        self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompleto)
-        
-        ##########SIGNALS BOTÃO SAIR###########
-        self.ui.btn_sair_as.clicked.connect(self.sair)
+        self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoCuidador)
 
 
-        ###############POPUPS##################
+        ############SIGNALS POPUP Cursos e oficinas############
+        self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
+
+
 
     def visibilidade(self):
         if self.ui.input_senha_login.echoMode() == QLineEdit.Password:
@@ -136,6 +124,9 @@ class TelaPrincipal(QMainWindow):
         else:
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
             self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))
+
+
+    ################ def POPUP Cuidador################
 
     def permissaoSigilosa(self):
         msg = DialogAreaSigilo(self)
@@ -146,8 +137,8 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as)
 
-    def concluirCadastroCuidador(self):
-        msg = DialogConcluirCadastro(self)
+    def concluirCadastroIncompletoCuidador(self):
+        msg = DialogCadastroIncompletoCuidador(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
@@ -155,23 +146,21 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as)
 
-    def cadastroIncompleto(self):
-        msg = DialogCadastroIncompleto(self)
+
+    ################ def POPUP Cursos e oficinas################
+
+    def cadastroIncompletoCursos(self):
+        msg = DialogCadastroIncompletoCursos(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
 
         #conectar com o botão entrar depois
-        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as)
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
-    def sair(self):
-        msg = DialogCadastroNaoSalvo(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.hide()
 
-        #conectar com o botão entrar depois
-        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as)
+
+        
 
 
 if __name__ == "__main__":
