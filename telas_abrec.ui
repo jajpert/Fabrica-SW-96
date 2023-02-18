@@ -5550,7 +5550,7 @@ QPushButton:focus{outline:0}</string>
                                <number>0</number>
                               </property>
                               <item>
-                               <widget class="QLabel" name="label_37">
+                               <widget class="QLabel" name="label_cadastro_colaborador_as">
                                 <property name="font">
                                  <font>
                                   <family>Abel</family>
@@ -5689,7 +5689,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cpf_cuidador_as_5">
+                                        <widget class="QLabel" name="label_salario_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>100</width>
@@ -5714,7 +5714,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_cpf_cuidador_as_5">
+                                        <widget class="QLineEdit" name="input_salario_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>0</width>
@@ -5778,7 +5778,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_logradouro_cuidador_as_4">
+                                        <widget class="QLabel" name="label_descricao_cargo_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>280</width>
@@ -5803,7 +5803,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_logradouro_cuidador_as_4">
+                                        <widget class="QLineEdit" name="input_descricao_cargo_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>280</width>
@@ -6028,7 +6028,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_orgao_expedidor_cuidador_as_3">
+                                        <widget class="QLabel" name="label_estado_civil_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>155</width>
@@ -6053,7 +6053,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QComboBox" name="comboBox_3">
+                                        <widget class="QComboBox" name="input_estado_civil_colaborador_comboBox_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>154</width>
@@ -6072,6 +6072,36 @@ QPushButton:focus{outline:0}</string>
                                            <pointsize>12</pointsize>
                                           </font>
                                          </property>
+                                         <item>
+                                          <property name="text">
+                                           <string>---</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Solteiro</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Casado</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Divorciado</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Viúvo</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Separado</string>
+                                          </property>
+                                         </item>
                                         </widget>
                                        </item>
                                       </layout>
@@ -6121,7 +6151,7 @@ QPushButton:focus{outline:0}</string>
                                          <property name="frameShadow">
                                           <enum>QFrame::Raised</enum>
                                          </property>
-                                         <widget class="QLabel" name="label_sexo_cuidador_as_3">
+                                         <widget class="QLabel" name="label_pessoa_cdeficiencia_colaborador_as">
                                           <property name="geometry">
                                            <rect>
                                             <x>0</x>
@@ -6150,7 +6180,7 @@ QPushButton:focus{outline:0}</string>
                                          <property name="frameShadow">
                                           <enum>QFrame::Raised</enum>
                                          </property>
-                                         <widget class="QRadioButton" name="radioButton">
+                                         <widget class="QRadioButton" name="input_pessoa_cdeficiencia_sim_colaborador_as">
                                           <property name="geometry">
                                            <rect>
                                             <x>20</x>
@@ -6163,7 +6193,7 @@ QPushButton:focus{outline:0}</string>
                                            <string>Sim</string>
                                           </property>
                                          </widget>
-                                         <widget class="QRadioButton" name="radioButton_2">
+                                         <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_colaborador_as">
                                           <property name="geometry">
                                            <rect>
                                             <x>80</x>
@@ -6218,7 +6248,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_parentesco_cuidador_as_3">
+                                        <widget class="QLabel" name="label_tipo_deficiencia_colaborador_as">
                                          <property name="font">
                                           <font>
                                            <family>Abel</family>
@@ -6231,7 +6261,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_parentesco_cuidador_as_3">
+                                        <widget class="QLineEdit" name="input_tipo_deficiencia_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>250</width>
@@ -6292,7 +6322,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_telefone_cuidador_as_3">
+                                        <widget class="QLabel" name="label_escolaridade_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>155</width>
@@ -6317,7 +6347,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QComboBox" name="comboBox_4">
+                                        <widget class="QComboBox" name="input_escolaridade_colaborador_comboBox_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>154</width>
@@ -6336,6 +6366,41 @@ QPushButton:focus{outline:0}</string>
                                            <pointsize>12</pointsize>
                                           </font>
                                          </property>
+                                         <item>
+                                          <property name="text">
+                                           <string>---</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Fundamental</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Fundamental incompleto</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Médio</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Médio incompleto</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Superior completo</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Superior incompleto</string>
+                                          </property>
+                                         </item>
                                         </widget>
                                        </item>
                                       </layout>
@@ -6378,7 +6443,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_email_cuidador_as_3">
+                                        <widget class="QLabel" name="label_cargo_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>240</width>
@@ -6403,7 +6468,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QComboBox" name="comboBox_5">
+                                        <widget class="QComboBox" name="input_cargo_colaborador_comboBox_as">
                                          <property name="sizePolicy">
                                           <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                            <horstretch>0</horstretch>
@@ -6428,6 +6493,46 @@ QPushButton:focus{outline:0}</string>
                                            <pointsize>12</pointsize>
                                           </font>
                                          </property>
+                                         <item>
+                                          <property name="text">
+                                           <string>---</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Recepcionista</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Assistente Social</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Farmacêutico (a)</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Psicólogo (a)</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Fisioterapeuta</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Nutricionista</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string/>
+                                          </property>
+                                         </item>
                                         </widget>
                                        </item>
                                       </layout>
@@ -6464,7 +6569,7 @@ QPushButton:focus{outline:0}</string>
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cep_cuidador_as_3">
+                                        <widget class="QLabel" name="label_periodo_colaborador_as">
                                          <property name="maximumSize">
                                           <size>
                                            <width>170</width>
@@ -6483,7 +6588,7 @@ QPushButton:focus{outline:0}</string>
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QComboBox" name="comboBox_6">
+                                        <widget class="QComboBox" name="input_periodo_colaborador_comboBox_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>70</width>
@@ -6502,6 +6607,31 @@ QPushButton:focus{outline:0}</string>
                                            <pointsize>12</pointsize>
                                           </font>
                                          </property>
+                                         <item>
+                                          <property name="text">
+                                           <string>---</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Matutino</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Vespertino</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Noturno</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Integral</string>
+                                          </property>
+                                         </item>
                                         </widget>
                                        </item>
                                       </layout>
@@ -6535,7 +6665,7 @@ QPushButton:focus{outline:0}</string>
                                    </property>
                                    <layout class="QVBoxLayout" name="verticalLayout_172">
                                     <item>
-                                     <widget class="QLabel" name="label_observacoes_gerais_cuidador_as_2">
+                                     <widget class="QLabel" name="label_observacoes_gerais_colaborador_as">
                                       <property name="maximumSize">
                                        <size>
                                         <width>300</width>
@@ -6554,7 +6684,7 @@ QPushButton:focus{outline:0}</string>
                                      </widget>
                                     </item>
                                     <item>
-                                     <widget class="QTextEdit" name="textEdit_observacoes_cuidador_as_2">
+                                     <widget class="QTextEdit" name="input_observacoes_gerais_colaborador_as">
                                       <property name="maximumSize">
                                        <size>
                                         <width>1185</width>
@@ -6653,7 +6783,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_orgao_expedidor_cuidador_as_2">
+                                        <widget class="QLabel" name="label_orgao_expedidor_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>155</width>
@@ -6678,7 +6808,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_orgao_expedidor_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_orgao_expedidor_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>154</width>
@@ -6733,7 +6863,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cep_cuidador_as_2">
+                                        <widget class="QLabel" name="label_data_emissao_rg_colaborador_as">
                                          <property name="maximumSize">
                                           <size>
                                            <width>170</width>
@@ -6752,7 +6882,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_cep_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_data_emissao_rg_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>150</width>
@@ -6813,7 +6943,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_sexo_cuidador_as_2">
+                                        <widget class="QLabel" name="label_pis_colaborador_as">
                                          <property name="font">
                                           <font>
                                            <family>Abel</family>
@@ -6826,7 +6956,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_sexo_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_pis_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>218</width>
@@ -6887,7 +7017,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_parentesco_cuidador_as_2">
+                                        <widget class="QLabel" name="label_sexo_colaborador_as">
                                          <property name="font">
                                           <font>
                                            <family>Abel</family>
@@ -6900,7 +7030,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QComboBox" name="comboBox_7">
+                                        <widget class="QComboBox" name="input_sexo_colaborador_comboBox_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>70</width>
@@ -6919,6 +7049,21 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            <pointsize>12</pointsize>
                                           </font>
                                          </property>
+                                         <item>
+                                          <property name="text">
+                                           <string>---</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Masculino</string>
+                                          </property>
+                                         </item>
+                                         <item>
+                                          <property name="text">
+                                           <string>Feminino</string>
+                                          </property>
+                                         </item>
                                         </widget>
                                        </item>
                                       </layout>
@@ -6961,7 +7106,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_telefone_cuidador_as_2">
+                                        <widget class="QLabel" name="label_telefone_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>155</width>
@@ -6986,7 +7131,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_telefone_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_telefone_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>154</width>
@@ -7047,7 +7192,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_email_cuidador_as_2">
+                                        <widget class="QLabel" name="label_email_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>240</width>
@@ -7072,7 +7217,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_email_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_email_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>239</width>
@@ -7201,7 +7346,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_matricula_cuidador_as_2">
+                                        <widget class="QLabel" name="label_matricula_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>160</width>
@@ -7226,7 +7371,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_matricula_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_matricula_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>159</width>
@@ -7287,7 +7432,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_nome_cuidador_as_2">
+                                        <widget class="QLabel" name="label_nome_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>460</width>
@@ -7312,7 +7457,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_nome_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_nome_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>430</width>
@@ -7376,7 +7521,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_data_emissao_cuidador_as_2">
+                                        <widget class="QLabel" name="label_data_nascimento_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>155</width>
@@ -7401,7 +7546,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_data_emissao_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_data_nascimento_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>154</width>
@@ -7465,7 +7610,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cpf_cuidador_as_2">
+                                        <widget class="QLabel" name="label_cpf_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>180</width>
@@ -7490,7 +7635,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_cpf_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_cpf_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>179</width>
@@ -7554,7 +7699,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_rg_cuidador_as_2">
+                                        <widget class="QLabel" name="label_rg_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>160</width>
@@ -7579,7 +7724,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_rg_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_rg_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>159</width>
@@ -7685,7 +7830,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cpf_cuidador_as_3">
+                                        <widget class="QLabel" name="label_cep_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>100</width>
@@ -7710,7 +7855,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_cpf_cuidador_as_3">
+                                        <widget class="QLineEdit" name="input_cep_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>0</width>
@@ -7774,7 +7919,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_logradouro_cuidador_as_2">
+                                        <widget class="QLabel" name="label_logradouro_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>280</width>
@@ -7799,7 +7944,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_logradouro_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_logradouro_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>280</width>
@@ -7860,7 +8005,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_numero_cuidador_as_2">
+                                        <widget class="QLabel" name="label_numero_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>160</width>
@@ -7885,7 +8030,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_numero_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_numero_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>150</width>
@@ -7946,7 +8091,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_bairro_cuidador_as_2">
+                                        <widget class="QLabel" name="label_bairro_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>230</width>
@@ -7971,7 +8116,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_bairro_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_bairro_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>220</width>
@@ -8032,7 +8177,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cidade_cuidador_as_2">
+                                        <widget class="QLabel" name="label_cidade_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>180</width>
@@ -8057,7 +8202,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QLineEdit" name="input_cidade_cuidador_as_2">
+                                        <widget class="QLineEdit" name="input_cidade_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>179</width>
@@ -8101,7 +8246,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                       <property name="frameShadow">
                                        <enum>QFrame::Raised</enum>
                                       </property>
-                                      <layout class="QVBoxLayout" name="verticalLayout_151">
+                                      <layout class="QVBoxLayout" name="verticalLayout_148">
                                        <property name="spacing">
                                         <number>5</number>
                                        </property>
@@ -8118,7 +8263,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_11">
+                                        <widget class="QLabel" name="label_estado_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>80</width>
@@ -8143,7 +8288,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         </widget>
                                        </item>
                                        <item>
-                                        <widget class="QComboBox" name="comboBox_2">
+                                        <widget class="QLineEdit" name="input_estado_colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>75</width>
@@ -8152,8 +8297,8 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                          </property>
                                          <property name="maximumSize">
                                           <size>
-                                           <width>70</width>
-                                           <height>30</height>
+                                           <width>75</width>
+                                           <height>16777215</height>
                                           </size>
                                          </property>
                                          <property name="font">
@@ -8161,6 +8306,9 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            <family>Abel</family>
                                            <pointsize>12</pointsize>
                                           </font>
+                                         </property>
+                                         <property name="text">
+                                          <string/>
                                          </property>
                                         </widget>
                                        </item>
@@ -8207,7 +8355,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      <number>0</number>
                                     </property>
                                     <item>
-                                     <widget class="QPushButton" name="input_foto_usuario_as_3">
+                                     <widget class="QPushButton" name="input_foto_colaborador_as">
                                       <property name="minimumSize">
                                        <size>
                                         <width>125</width>
@@ -8266,7 +8414,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_cpf_cuidador_as_6">
+                                        <widget class="QLabel" name="label_adicionar_foto__colaborador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>125</width>
@@ -8376,7 +8524,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <number>0</number>
                                        </property>
                                        <item>
-                                        <widget class="QLabel" name="label_situacao_usuario_as_3">
+                                        <widget class="QLabel" name="label_situacao_colaborador_as">
                                          <property name="maximumSize">
                                           <size>
                                            <width>130</width>
@@ -8419,7 +8567,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            <number>0</number>
                                           </property>
                                           <item>
-                                           <widget class="QRadioButton" name="input_situacao_ativo_usuario_as_3">
+                                           <widget class="QRadioButton" name="input_situacao_ativo_colaborador_as">
                                             <property name="maximumSize">
                                              <size>
                                               <width>80</width>
@@ -8441,7 +8589,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            </widget>
                                           </item>
                                           <item>
-                                           <widget class="QRadioButton" name="input_situacao_inativo_usuario_as_3">
+                                           <widget class="QRadioButton" name="input_situacao_inativo_colaborador_as">
                                             <property name="maximumSize">
                                              <size>
                                               <width>80</width>
@@ -8560,7 +8708,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QLabel" name="label_logradouro_cuidador_as_5">
+                                  <widget class="QLabel" name="label_usuario_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>280</width>
@@ -8585,7 +8733,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </widget>
                                  </item>
                                  <item>
-                                  <widget class="QLineEdit" name="input_logradouro_cuidador_as_5">
+                                  <widget class="QLineEdit" name="input_usuario_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>280</width>
@@ -8646,7 +8794,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QLabel" name="label_bairro_cuidador_as_4">
+                                  <widget class="QLabel" name="label_senha_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>230</width>
@@ -8671,7 +8819,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </widget>
                                  </item>
                                  <item>
-                                  <widget class="QLineEdit" name="input_bairro_cuidador_as_4">
+                                  <widget class="QLineEdit" name="input_senha_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>220</width>
@@ -8732,7 +8880,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   <number>0</number>
                                  </property>
                                  <item>
-                                  <widget class="QLabel" name="label_bairro_cuidador_as_5">
+                                  <widget class="QLabel" name="label_confirmar_senha_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>230</width>
@@ -8757,7 +8905,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </widget>
                                  </item>
                                  <item>
-                                  <widget class="QLineEdit" name="input_bairro_cuidador_as_5">
+                                  <widget class="QLineEdit" name="input_confirmar_senha_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>220</width>
@@ -8838,7 +8986,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </spacer>
                                  </item>
                                  <item>
-                                  <widget class="QPushButton" name="btn_finalizar_as_2">
+                                  <widget class="QPushButton" name="btn_concluir_cadastro_colaborador_as">
                                    <property name="minimumSize">
                                     <size>
                                      <width>140</width>
