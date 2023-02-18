@@ -39,7 +39,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -707,7 +707,7 @@ QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padd
         <item>
          <widget class="QStackedWidget" name="tipos_acesso">
           <property name="currentIndex">
-           <number>5</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="assistente_social">
            <layout class="QVBoxLayout" name="verticalLayout">
@@ -1349,7 +1349,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">

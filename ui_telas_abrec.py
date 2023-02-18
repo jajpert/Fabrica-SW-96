@@ -12,9 +12,9 @@ from qtcore import *
 from icons import *
 
 class Ui_MainWindow(object):
-    def setupUi(self, MainWindow):
+     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
-            MainWindow.setObjectName(u"MainWindow")
+                MainWindow.setObjectName(u"MainWindow")
         
         ############ valida email ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
@@ -4723,7 +4723,8 @@ class Ui_MainWindow(object):
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
 
-    def retranslateUi(self, MainWindow):
+
+     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.label_5.setText(QCoreApplication.translate("MainWindow", u"ABREC", None))
         self.input_usuario_login.setText("")
