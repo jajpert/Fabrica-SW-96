@@ -20542,11 +20542,7 @@ QPushButton:focus{outline:0}</string>
                      <property name="currentIndex">
                       <number>0</number>
                      </property>
-<<<<<<< HEAD:telas_abrec.ui
-                     <widget class="QWidget" name="page_13"/>
-=======
                      <widget class="QWidget" name="page_principal_psi"/>
->>>>>>> 9b22aa398790da0372ac39ff7ef3a8663f9fa59b:arquivos .ui/telas_abrec.ui
                      <widget class="QWidget" name="page_14"/>
                     </widget>
                    </item>
