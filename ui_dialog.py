@@ -5,6 +5,10 @@ class Ui_Area_Sob_Sigilo(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+        
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
         Dialog.resize(500, 510)
         Dialog.setMinimumSize(QSize(500, 510))
         Dialog.setMaximumSize(QSize(500, 510))
@@ -34,7 +38,7 @@ class Ui_Area_Sob_Sigilo(object):
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(220, 220))
         self.label.setMaximumSize(QSize(220, 220))
-        self.label.setPixmap(QPixmap(u"../icons/ciber-seguranca.png"))
+        self.label.setPixmap(QPixmap(u"./icons/ciber-seguranca.png"))
         self.label.setScaledContents(True)
         self.label.setAlignment(Qt.AlignCenter)
 
@@ -154,6 +158,10 @@ class Ui_Cadastro_Conclusao(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
         Dialog.resize(440, 240)
         Dialog.setMinimumSize(QSize(440, 240))
         Dialog.setMaximumSize(QSize(440, 240))
@@ -287,6 +295,10 @@ class Ui_Cadastro_Incompleto(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
         Dialog.resize(440, 450)
         Dialog.setMinimumSize(QSize(440, 450))
         Dialog.setMaximumSize(QSize(440, 450))
@@ -319,7 +331,7 @@ class Ui_Cadastro_Incompleto(object):
         self.label.setObjectName(u"label")
         self.label.setMinimumSize(QSize(200, 200))
         self.label.setMaximumSize(QSize(200, 200))
-        self.label.setPixmap(QPixmap(u"icons/perigo.png"))
+        self.label.setPixmap(QPixmap(u"./icons/perigo.png"))
         self.label.setScaledContents(True)
 
         self.horizontalLayout_3.addWidget(self.label)
