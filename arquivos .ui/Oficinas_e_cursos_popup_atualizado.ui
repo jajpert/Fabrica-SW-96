@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>914</width>
-    <height>798</height>
+    <height>846</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -26,17 +26,18 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>891</width>
-      <height>741</height>
+      <x>0</x>
+      <y>0</y>
+      <width>911</width>
+      <height>761</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QFrame" name="frame">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(249, 217, 221);</string>
+        <string notr="true"> border-radius: 20px; border: 1px solid #E58893;
+background-color: rgb(254, 226, 230);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -48,10 +49,13 @@
         <property name="geometry">
          <rect>
           <x>170</x>
-          <y>0</y>
+          <y>10</y>
           <width>181</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -82,11 +86,14 @@
        <widget class="QFrame" name="frame_3">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>70</y>
-          <width>291</width>
+          <x>10</x>
+          <y>80</y>
+          <width>251</width>
           <height>81</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -139,11 +146,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_4">
         <property name="geometry">
          <rect>
-          <x>290</x>
-          <y>70</y>
-          <width>141</width>
+          <x>260</x>
+          <y>80</y>
+          <width>181</width>
           <height>81</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -156,7 +166,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
           <rect>
            <x>0</x>
            <y>40</y>
-           <width>131</width>
+           <width>161</width>
            <height>32</height>
           </rect>
          </property>
@@ -196,11 +206,14 @@ QComboBox:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_5">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>150</y>
+          <x>10</x>
+          <y>160</y>
           <width>431</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -253,11 +266,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_6">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>220</y>
+          <x>10</x>
+          <y>230</y>
           <width>431</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -310,11 +326,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_7">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>290</y>
+          <x>10</x>
+          <y>300</y>
           <width>241</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -367,11 +386,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_8">
         <property name="geometry">
          <rect>
-          <x>240</x>
-          <y>290</y>
+          <x>250</x>
+          <y>300</y>
           <width>191</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -424,11 +446,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_9">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>360</y>
+          <x>10</x>
+          <y>370</y>
           <width>431</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -481,11 +506,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_10">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>430</y>
+          <x>10</x>
+          <y>440</y>
           <width>361</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -538,11 +566,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_11">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>500</y>
+          <x>10</x>
+          <y>510</y>
           <width>361</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -595,11 +626,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_12">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>570</y>
+          <x>10</x>
+          <y>580</y>
           <width>361</width>
           <height>71</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -659,7 +693,8 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">background-color: rgb(236, 132, 140);</string>
+         <string notr="true">background-color: rgb(236, 132, 140);
+border:0px;</string>
         </property>
         <property name="orientation">
          <enum>Qt::Vertical</enum>
@@ -668,11 +703,14 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
        <widget class="QFrame" name="frame_13">
         <property name="geometry">
          <rect>
-          <x>0</x>
-          <y>640</y>
+          <x>10</x>
+          <y>650</y>
           <width>361</width>
           <height>80</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -692,7 +730,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
          <property name="font">
           <font>
            <family>Abel</family>
-           <pointsize>20</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -708,11 +746,14 @@ QPushButton:focus{outline:0}</string>
        <widget class="QFrame" name="frame_14">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>640</y>
+          <x>370</x>
+          <y>650</y>
           <width>181</width>
           <height>80</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -732,7 +773,7 @@ QPushButton:focus{outline:0}</string>
          <property name="font">
           <font>
            <family>Abel</family>
-           <pointsize>20</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -748,11 +789,14 @@ QPushButton:focus{outline:0}</string>
        <widget class="QFrame" name="frame_15">
         <property name="geometry">
          <rect>
-          <x>540</x>
-          <y>640</y>
+          <x>550</x>
+          <y>650</y>
           <width>271</width>
           <height>80</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -772,7 +816,7 @@ QPushButton:focus{outline:0}</string>
          <property name="font">
           <font>
            <family>Abel</family>
-           <pointsize>20</pointsize>
+           <pointsize>18</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -789,10 +833,13 @@ QPushButton:focus{outline:0}</string>
         <property name="geometry">
          <rect>
           <x>460</x>
-          <y>0</y>
+          <y>10</y>
           <width>411</width>
           <height>80</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -823,11 +870,14 @@ QPushButton:focus{outline:0}</string>
        <widget class="QFrame" name="frame_17">
         <property name="geometry">
          <rect>
-          <x>520</x>
-          <y>80</y>
-          <width>311</width>
-          <height>201</height>
+          <x>460</x>
+          <y>90</y>
+          <width>411</width>
+          <height>511</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:0px;</string>
         </property>
         <property name="frameShape">
          <enum>QFrame::StyledPanel</enum>
@@ -839,9 +889,9 @@ QPushButton:focus{outline:0}</string>
          <property name="geometry">
           <rect>
            <x>20</x>
-           <y>0</y>
-           <width>256</width>
-           <height>201</height>
+           <y>10</y>
+           <width>371</width>
+           <height>491</height>
           </rect>
          </property>
          <property name="styleSheet">
