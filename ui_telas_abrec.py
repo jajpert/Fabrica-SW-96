@@ -2520,15 +2520,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_68.addWidget(self.label_observacoes_gerais_cuidador_as)
 
-        self.input_observacoes_cuidador_as = QTextEdit(self.frame_104)
-        self.input_observacoes_cuidador_as.setObjectName(u"input_observacoes_cuidador_as")
-        self.input_observacoes_cuidador_as.setMaximumSize(QSize(1185, 235))
-        self.input_observacoes_cuidador_as.setFont(font)
-        self.input_observacoes_cuidador_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_informacoes_gerais_as = QTextEdit(self.frame_104)
+        self.input_informacoes_gerais_as.setObjectName(u"input_informacoes_gerais_as")
+        self.input_informacoes_gerais_as.setMaximumSize(QSize(1185, 235))
+        self.input_informacoes_gerais_as.setFont(font)
+        self.input_informacoes_gerais_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_68.addWidget(self.input_observacoes_cuidador_as)
+        self.verticalLayout_68.addWidget(self.input_informacoes_gerais_as)
 
 
         self.verticalLayout_67.addWidget(self.frame_104)
@@ -6001,7 +6001,7 @@ class Ui_MainWindow(object):
         self.label_bairro_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
         self.label_cidade_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
-        self.label_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es/informa\u00e7\u00f5es gerais", None))
+        self.label_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es gerais Usu\u00e1rio e Cuidador", None))
         self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
         self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"OBSERVA\u00c7\u00d5ES SIGILOSAS", None))
