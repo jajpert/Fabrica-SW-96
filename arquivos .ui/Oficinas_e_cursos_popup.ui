@@ -36,7 +36,7 @@
      <item>
       <widget class="QFrame" name="frame">
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(254, 226, 230);</string>
+        <string notr="true">background-color: rgb(249, 217, 221);</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
@@ -692,7 +692,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
          <property name="font">
           <font>
            <family>Abel</family>
-           <pointsize>18</pointsize>
+           <pointsize>20</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -732,7 +732,7 @@ QPushButton:focus{outline:0}</string>
          <property name="font">
           <font>
            <family>Abel</family>
-           <pointsize>18</pointsize>
+           <pointsize>20</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -772,7 +772,7 @@ QPushButton:focus{outline:0}</string>
          <property name="font">
           <font>
            <family>Abel</family>
-           <pointsize>18</pointsize>
+           <pointsize>20</pointsize>
           </font>
          </property>
          <property name="styleSheet">
