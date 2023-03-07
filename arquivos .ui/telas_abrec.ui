@@ -6998,12 +6998,12 @@ QPushButton:focus{outline:0}</string>
                                    </font>
                                   </property>
                                   <property name="text">
-                                   <string>Observações/informações gerais</string>
+                                   <string>Informações gerais Usuário e Cuidador</string>
                                   </property>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QTextEdit" name="input_observacoes_cuidador_as">
+                                 <widget class="QTextEdit" name="input_informacoes_gerais_as">
                                   <property name="maximumSize">
                                    <size>
                                     <width>1185</width>
