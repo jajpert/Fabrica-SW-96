@@ -107,14 +107,16 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
 
         ############SIGNALS POPUP Cuidador############
-        #self.ui.btn_sair_as.clicked.connect(self.sair)
+        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(self.permissaoSigilosa)
         self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoCuidador)
 
 
         ############SIGNALS POPUP Cursos e oficinas############
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
-
+        ################BUTTONS SAIR E VOLTAR################
+        self.ui.btn_voltar_as.clicked.connect(lambda:self.ui..setCurrentWidget(self.ui.inicio))
+        self.ui.btn_sair_as.clicked.connect(self.sair)
 
 
     def visibilidade(self):
@@ -159,8 +161,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
 
+   # def voltar(self):
 
-        
+        #self.show
+
+    def sair(self):
+        self.close()
 
 
 if __name__ == "__main__":
