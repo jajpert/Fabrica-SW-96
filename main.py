@@ -77,6 +77,26 @@ class DialogCadastroIncompletoCursos(QDialog):
         self.timer_msg.stop()
         event.accept()
 
+##############Class POPUP Colaborador##############
+
+class DialogCadastroIncompletoColaborador(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Cadastro_Incompleto()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(8000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()
+
+    def closeMsg(self):
+        self.close()
+
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
+
 
 
 #############################################################################
@@ -114,6 +134,10 @@ class TelaPrincipal(QMainWindow):
 
         ############SIGNALS POPUP Cursos e oficinas############
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
+
+
+        ############SIGNALS POPUP Colaborador############
+        self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroIncompletoColaborador)
 
 
 
@@ -158,6 +182,16 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
+
+    ################ def POPUP Cadastro Colaborador################
+    def cadastroIncompletoColaborador(self):
+        msg = DialogCadastroIncompletoColaborador(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+
+        #conectar com o botão entrar depois
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as)
 
 
         
