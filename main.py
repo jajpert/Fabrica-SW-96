@@ -115,7 +115,7 @@ class TelaPrincipal(QMainWindow):
         ############SIGNALS POPUP Cursos e oficinas############
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
         ################BUTTONS SAIR E VOLTAR################
-        self.ui.btn_voltar_as.clicked.connect(lambda:self.ui..setCurrentWidget(self.ui.inicio))
+        self.ui.btn_voltar_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.stackedWidget_2))
         self.ui.btn_sair_as.clicked.connect(self.sair)
 
 
@@ -161,9 +161,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
 
-   # def voltar(self):
-
-        #self.show
 
     def sair(self):
         self.close()
