@@ -54,7 +54,7 @@ class DialogAreaSigilo(QDialog):
 class DialogCadastroIncompletoCuidador(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
-        self.setAttribute(Qt.WA_DeleteOnClose)
+        #self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Cadastro_Incompleto()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
@@ -75,7 +75,7 @@ class DialogCadastroIncompletoCuidador(QDialog):
 class DialogCadastroIncompletoCursos(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
-        self.setAttribute(Qt.WA_DeleteOnClose)
+        #self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Cadastro_Incompleto()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
@@ -208,11 +208,12 @@ class TelaPrincipal(QMainWindow):
 
     
 
-        
-
+   
+cursor.close() 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     w = TelaPrincipal()
     w.show()
     app.exec()
+    
