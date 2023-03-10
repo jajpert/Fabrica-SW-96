@@ -2,19 +2,10 @@ import sys
 from qtcore import *
 from ui_telas_abrec import *
 from ui_dialog import *
-import mysql.connector
+#import mysql.connector
 from mysql.connector import errorcode
 from mysql.connector import MySQLConnection
-
-
-conexao = mysql.connector.connect(
-    host='fabrica96',
-    user='fabrica',
-    password='fabrica@2022',
-    database='fabrica96',
-)
-
-cursor = conexao.cursor()
+from conexaoBanco import *
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -205,11 +196,6 @@ class TelaPrincipal(QMainWindow):
 
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as)
-
-    
-
-   
-cursor.close() 
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
