@@ -7,26 +7,23 @@
     <x>0</x>
     <y>0</y>
     <width>440</width>
-    <height>450</height>
+    <height>240</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>440</width>
-    <height>450</height>
+    <height>240</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>440</width>
-    <height>450</height>
+    <height>240</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
-  </property>
-  <property name="styleSheet">
-   <string notr="true"/>
   </property>
   <layout class="QHBoxLayout" name="horizontalLayout">
    <property name="spacing">
@@ -46,17 +43,8 @@
    </property>
    <item>
     <widget class="QFrame" name="frame">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="maximumSize">
-      <size>
-       <width>16777215</width>
-       <height>16777215</height>
-      </size>
+     <property name="autoFillBackground">
+      <bool>false</bool>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #FEE2E6; border-radius: 20px; border: 1px solid #E58893</string>
@@ -84,7 +72,7 @@
        <number>0</number>
       </property>
       <item>
-       <widget class="QFrame" name="frame_2">
+       <widget class="QFrame" name="frame_3">
         <property name="styleSheet">
          <string notr="true">border: none</string>
         </property>
@@ -94,7 +82,7 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -114,24 +102,24 @@
           <widget class="QLabel" name="label">
            <property name="minimumSize">
             <size>
-             <width>200</width>
-             <height>200</height>
+             <width>230</width>
+             <height>70</height>
             </size>
            </property>
-           <property name="maximumSize">
-            <size>
-             <width>200</width>
-             <height>200</height>
-            </size>
+           <property name="font">
+            <font>
+             <family>Abel</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">padding-top: 2em</string>
            </property>
            <property name="text">
-            <string/>
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;O cadastro não foi salvo. &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Deseja sair mesmo assim?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
-           <property name="pixmap">
-            <pixmap>icons/perigo.png</pixmap>
-           </property>
-           <property name="scaledContents">
-            <bool>true</bool>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -139,7 +127,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_3">
+       <widget class="QFrame" name="frame_2">
         <property name="styleSheet">
          <string notr="true">border: none</string>
         </property>
@@ -149,7 +137,7 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2">
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -166,6 +154,19 @@
           <number>0</number>
          </property>
          <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>106</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
           <widget class="QFrame" name="frame_4">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
@@ -173,9 +174,9 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QVBoxLayout" name="verticalLayout_3">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <property name="spacing">
-             <number>0</number>
+             <number>20</number>
             </property>
             <property name="leftMargin">
              <number>0</number>
@@ -190,70 +191,14 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_2">
+             <widget class="QPushButton" name="btn_sair_popup_cadastro_nao_salvo_as">
               <property name="minimumSize">
                <size>
-                <width>0</width>
-                <height>0</height>
+                <width>100</width>
+                <height>30</height>
                </size>
               </property>
-              <property name="font">
-               <font>
-                <family>Abel</family>
-                <pointsize>14</pointsize>
-               </font>
-              </property>
-              <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;O cadastro está incompleto!&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Por favor complete o cadastro &lt;/p&gt;&lt;p align=&quot;center&quot;&gt;para prosseguir&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QFrame" name="frame_5">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>167</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btn_voltar_popup_as">
-              <property name="minimumSize">
+              <property name="maximumSize">
                <size>
                 <width>100</width>
                 <height>30</height>
@@ -262,35 +207,87 @@
               <property name="font">
                <font>
                 <family>Abel</family>
-                <pointsize>14</pointsize>
+                <pointsize>12</pointsize>
                </font>
               </property>
               <property name="cursor">
                <cursorShape>PointingHandCursor</cursorShape>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color: #F7B0B5; border-radius: 15px</string>
+               <string notr="true">QPushButton{
+border-radius:15px;
+background-color: rgb(247, 176, 181);
+border: 2px ;
+}
+QPushButton:hover{
+background-color: rgb(236, 132, 140);}
+
+QPushButton:pressed{
+background-color: rgb(247, 176, 181);
+}</string>
               </property>
               <property name="text">
-               <string>VOLTAR</string>
+               <string>SAIR</string>
               </property>
              </widget>
             </item>
             <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
+             <widget class="QPushButton" name="btn_continuar_popup_cadastro_nao_salvo_as">
+              <property name="minimumSize">
                <size>
-                <width>167</width>
-                <height>20</height>
+                <width>100</width>
+                <height>30</height>
                </size>
               </property>
-             </spacer>
+              <property name="maximumSize">
+               <size>
+                <width>100</width>
+                <height>30</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Abel</family>
+                <pointsize>12</pointsize>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{
+border-radius:15px;
+background-color: rgb(0, 168, 232);
+color: rgb(255, 255, 255);
+border: 2px ;
+}
+QPushButton:hover{
+background-color: rgb(0, 124, 191);}
+
+QPushButton:pressed{
+background-color: rgb(0, 168, 232);
+}</string>
+              </property>
+              <property name="text">
+               <string>CONTINUAR</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>106</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
         </layout>
        </widget>
