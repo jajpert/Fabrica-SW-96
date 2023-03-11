@@ -76,7 +76,28 @@ class DialogCadastroIncompletoCursos(QDialog):
     def closeEvent(self, event):
         self.timer_msg.stop()
         event.accept()
+#############################################################################
 
+
+###################Class POPUP Alterar Senha e Foto##########################
+
+class DialogAlterarFoto(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        #self.ui = Ui_Popup_alterar_senha_e_foto()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(10000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()   
+
+    def closeMsg(self):
+        self.close()
+
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
 
 
 #############################################################################
