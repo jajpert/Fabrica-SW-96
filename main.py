@@ -1,4 +1,5 @@
 import sys
+from os import getcwd
 from qtcore import *
 from ui_telas_abrec import *
 from ui_dialog import *
@@ -16,6 +17,26 @@ class Overlay(QWidget):
         painter.setRenderHint(QPainter.Antialiasing)
         painter.fillRect(event.rect(), QBrush(QColor(0, 0, 0, 127)))
         painter.end()
+
+
+################Class POPUP Usuário################
+class DialogTirarFoto(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_TirarFoto()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(10000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()   
+
+    def closeMsg(self):
+        self.close()
+
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
 
 
 ################Class POPUP Cuidador################
@@ -99,12 +120,20 @@ class TelaPrincipal(QMainWindow):
         ###############SIGNALS#################
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
+
+        self.ui.btn_voltar_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
+
+
+        ############SIGNALS POPUP Usuario############
+        self.ui.btn_foto_usuario_as.clicked.connect(self.tirarFoto)
+
 
         ############SIGNALS POPUP Cuidador############
         #self.ui.btn_sair_as.clicked.connect(self.sair)
@@ -158,6 +187,14 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
+
+    ################ def POPUP Usuário################
+
+    def tirarFoto(self):
+        msg = DialogTirarFoto(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
 
 
         
