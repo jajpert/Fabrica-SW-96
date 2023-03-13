@@ -19,6 +19,26 @@ class Overlay(QWidget):
         painter.end()
 
 
+################Class POPUP Login################
+class DialogRecuperarSenha(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_RestaurarSenha()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(10000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()   
+
+    def closeMsg(self):
+        self.close()
+
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
+
+
 ################Class POPUP Usuário################
 class DialogTirarFoto(QDialog):
     def __init__(self, parent) -> None:
@@ -150,22 +170,26 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
 
+        ######SIGNALS POPUP recuperar senha login######
+        self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
+        
+
 
         ######SIGNALS POPUP trocar foto e senha AS######
         self.ui.btn_alterar_foto_senha_as.clicked.connect(self.trocarFotoSenha)
         
         
-        ############SIGNALS POPUP Usuario############
+        ############SIGNALS POPUP Usuario AS############
         self.ui.btn_foto_usuario_as.clicked.connect(self.tirarFoto)
 
 
-        ############SIGNALS POPUP Cuidador############
+        ############SIGNALS POPUP Cuidador AS############
         #self.ui.btn_sair_as.clicked.connect(self.sair)
         self.ui.btn_observacoes_sigilo_as.clicked.connect(self.permissaoSigilosa)
         self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoCuidador)
 
 
-        ############SIGNALS POPUP Cursos e oficinas############
+        ############SIGNALS POPUP Cursos e oficinas AS############
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
 
 
@@ -177,6 +201,14 @@ class TelaPrincipal(QMainWindow):
         else:
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
             self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))
+
+
+    def recuperarSenha(self):
+        msg = DialogRecuperarSenha(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+
 
 
     def trocarFotoSenha(self):
