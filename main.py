@@ -100,6 +100,26 @@ class DialogCadastroIncompletoCursos(QDialog):
 
 
 
+##############Class Alterar Foto e Senha##############
+class DialogAlterarSenhaFoto(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_AlterarSenhaFoto()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(8000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()
+
+    def closeMsg(self):
+        self.close()
+
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
+
+
 #############################################################################
 class TelaPrincipal(QMainWindow):
     def __init__(self):
@@ -131,6 +151,10 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
 
 
+        ######SIGNALS POPUP trocar foto e senha AS######
+        self.ui.btn_alterar_foto_senha_as.clicked.connect(self.trocarFotoSenha)
+        
+        
         ############SIGNALS POPUP Usuario############
         self.ui.btn_foto_usuario_as.clicked.connect(self.tirarFoto)
 
@@ -153,6 +177,13 @@ class TelaPrincipal(QMainWindow):
         else:
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
             self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))
+
+
+    def trocarFotoSenha(self):
+        msg = DialogAlterarSenhaFoto(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
 
 
     ################ def POPUP Cuidador################
