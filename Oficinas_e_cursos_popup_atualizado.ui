@@ -63,7 +63,7 @@ background-color: rgb(254, 226, 230);</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="label_cadastro_Oficinas">
+        <widget class="QLabel" name="label_cadastro_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -101,7 +101,7 @@ background-color: rgb(254, 226, 230);</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_CPF_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_CPF_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -117,7 +117,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_CPF_Oficinas">
+        <widget class="QLabel" name="label_CPF_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -161,7 +161,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QComboBox" name="comboBox_Tipo_Oficinas">
+        <widget class="QComboBox" name="comboBox_Tipo_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -177,7 +177,7 @@ QComboBox:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Tipo_Oficinas">
+        <widget class="QLabel" name="label_Tipo_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -221,7 +221,7 @@ QComboBox:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Nome_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Nome_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -237,7 +237,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Nome_Oficinas">
+        <widget class="QLabel" name="label_Nome_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -281,7 +281,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Email_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Email_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -297,7 +297,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Email_Oficinas">
+        <widget class="QLabel" name="label_Email_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -341,7 +341,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Telefone_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Telefone_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -357,7 +357,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Telefone_Oficinas">
+        <widget class="QLabel" name="label_Telefone_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -401,7 +401,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_CPF">
+        <widget class="QLineEdit" name="lineEdit_CPF_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -417,7 +417,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_CEP_Oficinas">
+        <widget class="QLabel" name="label_CEP_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -461,7 +461,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Rua_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Rua_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -477,7 +477,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Rua_Oficinas">
+        <widget class="QLabel" name="label_Rua_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -521,7 +521,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Bairro_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Bairro_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -537,7 +537,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Bairro_Oficinas">
+        <widget class="QLabel" name="label_Bairro_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -581,7 +581,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Cidade_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Cidade_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -597,7 +597,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Cidade_Oficinas">
+        <widget class="QLabel" name="label_Cidade_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -641,7 +641,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLineEdit" name="lineEdit_Estado_Oficinas">
+        <widget class="QLineEdit" name="lineEdit_Estado_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>0</x>
@@ -657,7 +657,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_Estado_Oficinas">
+        <widget class="QLabel" name="label_Estado_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -718,7 +718,7 @@ border:0px;</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="pushButton_Adicionar_Oficinas">
+        <widget class="QPushButton" name="pushButton_Adicionar_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>90</x>
@@ -761,7 +761,7 @@ QPushButton:focus{outline:0}</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="pushButton_Fechar_Oficinas">
+        <widget class="QPushButton" name="pushButton_Fechar_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>30</x>
@@ -804,7 +804,7 @@ QPushButton:focus{outline:0}</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="pushButton_Remover_Oficinas">
+        <widget class="QPushButton" name="pushButton_Remover_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>120</x>
@@ -847,7 +847,7 @@ QPushButton:focus{outline:0}</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QLabel" name="label_Lista_de_Cadastrados_Oficinas">
+        <widget class="QLabel" name="label_Lista_de_Cadastrados_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -885,7 +885,7 @@ QPushButton:focus{outline:0}</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QListView" name="listView_lista_de_cadastrados_Oficinas">
+        <widget class="QListView" name="listView_lista_de_cadastrados_Oficinas_as">
          <property name="geometry">
           <rect>
            <x>20</x>
