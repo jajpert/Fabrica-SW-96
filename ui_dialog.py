@@ -435,6 +435,10 @@ class Ui_Cadastro_Nao_Salvo(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
         Dialog.resize(440, 240)
         Dialog.setMinimumSize(QSize(440, 240))
         Dialog.setMaximumSize(QSize(440, 240))
@@ -575,6 +579,10 @@ class Ui_DadosSalvos(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
         Dialog.resize(350, 350)
         Dialog.setMinimumSize(QSize(350, 350))
         Dialog.setMaximumSize(QSize(350, 350))
@@ -656,5 +664,546 @@ class Ui_DadosSalvos(object):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
         self.label_imagem_salvo.setText("")
         self.label_pop_up_dados_salvos.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">DADOS SALVOS COM SUCESSO!</p><p </body></html>", None))
+    # retranslateUi
+
+
+############################################################################################
+
+
+class Ui_TirarFoto(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
+        Dialog.resize(600, 350)
+        Dialog.setMinimumSize(QSize(600, 350))
+        Dialog.setMaximumSize(QSize(600, 350))
+        self.horizontalLayout = QHBoxLayout(Dialog)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Dialog)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: #FEE2E6; border-radius: 15px; border: 1px solid #E58893;")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"border: none;")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame_2)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame_5 = QFrame(self.frame_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMinimumSize(QSize(0, 200))
+        self.frame_5.setMaximumSize(QSize(16777215, 200))
+        self.frame_5.setCursor(QCursor(Qt.PointingHandCursor))
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_tirar_foto_popup_foto_as = QLabel(self.frame_5)
+        self.label_tirar_foto_popup_foto_as.setObjectName(u"label_tirar_foto_popup_foto_as")
+        self.label_tirar_foto_popup_foto_as.setMinimumSize(QSize(140, 140))
+        self.label_tirar_foto_popup_foto_as.setMaximumSize(QSize(140, 140))
+        self.label_tirar_foto_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.label_tirar_foto_popup_foto_as.setPixmap(QPixmap(u"./icons/camera.png"))
+        self.label_tirar_foto_popup_foto_as.setScaledContents(True)
+        self.label_tirar_foto_popup_foto_as.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_4.addWidget(self.label_tirar_foto_popup_foto_as)
+
+
+        self.verticalLayout.addWidget(self.frame_5)
+
+        self.btn_tirar_foto_popup_foto_as = QPushButton(self.frame_2)
+        self.btn_tirar_foto_popup_foto_as.setObjectName(u"btn_tirar_foto_popup_foto_as")
+        self.btn_tirar_foto_popup_foto_as.setMinimumSize(QSize(140, 140))
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(32)
+        self.btn_tirar_foto_popup_foto_as.setFont(font)
+        self.btn_tirar_foto_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout.addWidget(self.btn_tirar_foto_popup_foto_as)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_2)
+
+        self.line = QFrame(self.frame)
+        self.line.setObjectName(u"line")
+        self.line.setMinimumSize(QSize(2, 0))
+        self.line.setMaximumSize(QSize(2, 16777215))
+        self.line.setFrameShape(QFrame.VLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_2.addWidget(self.line)
+
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"border: none;")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_4 = QFrame(self.frame_3)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMinimumSize(QSize(0, 200))
+        self.frame_4.setMaximumSize(QSize(16777215, 200))
+        self.frame_4.setCursor(QCursor(Qt.PointingHandCursor))
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_importar_popup_foto_as = QLabel(self.frame_4)
+        self.label_importar_popup_foto_as.setObjectName(u"label_importar_popup_foto_as")
+        self.label_importar_popup_foto_as.setMinimumSize(QSize(140, 140))
+        self.label_importar_popup_foto_as.setMaximumSize(QSize(140, 140))
+        self.label_importar_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.label_importar_popup_foto_as.setPixmap(QPixmap(u"./icons/seta-para-baixo.png"))
+        self.label_importar_popup_foto_as.setScaledContents(True)
+        self.label_importar_popup_foto_as.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_importar_popup_foto_as)
+
+
+        self.verticalLayout_2.addWidget(self.frame_4)
+
+        self.btn_importar_popup_foto_as = QPushButton(self.frame_3)
+        self.btn_importar_popup_foto_as.setObjectName(u"btn_importar_popup_foto_as")
+        self.btn_importar_popup_foto_as.setMinimumSize(QSize(140, 140))
+        self.btn_importar_popup_foto_as.setFont(font)
+        self.btn_importar_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_2.addWidget(self.btn_importar_popup_foto_as)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_3)
+
+
+        self.horizontalLayout.addWidget(self.frame)
+
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.label_tirar_foto_popup_foto_as.setText("")
+        self.btn_tirar_foto_popup_foto_as.setText(QCoreApplication.translate("Dialog", u"Tirar foto", None))
+        self.label_importar_popup_foto_as.setText("")
+        self.btn_importar_popup_foto_as.setText(QCoreApplication.translate("Dialog", u"Importar", None))
+    # retranslateUi
+
+
+############################################################################################
+
+
+class Ui_AlterarSenhaFoto(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
+        Dialog.resize(600, 350)
+        Dialog.setMinimumSize(QSize(600, 350))
+        Dialog.setMaximumSize(QSize(600, 350))
+        self.horizontalLayout = QHBoxLayout(Dialog)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Dialog)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: #FEE2E6; border-radius: 15px; border: 1px solid #E58893;")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"border: none;")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame_2)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame_5 = QFrame(self.frame_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMinimumSize(QSize(0, 200))
+        self.frame_5.setMaximumSize(QSize(16777215, 200))
+        self.frame_5.setCursor(QCursor(Qt.PointingHandCursor))
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_trocar_foto_popup_foto_as = QLabel(self.frame_5)
+        self.label_trocar_foto_popup_foto_as.setObjectName(u"label_trocar_foto_popup_foto_as")
+        self.label_trocar_foto_popup_foto_as.setMinimumSize(QSize(140, 140))
+        self.label_trocar_foto_popup_foto_as.setMaximumSize(QSize(140, 140))
+        self.label_trocar_foto_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.label_trocar_foto_popup_foto_as.setPixmap(QPixmap(u"./icons/camera.png"))
+        self.label_trocar_foto_popup_foto_as.setScaledContents(True)
+        self.label_trocar_foto_popup_foto_as.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_4.addWidget(self.label_trocar_foto_popup_foto_as)
+
+
+        self.verticalLayout.addWidget(self.frame_5)
+
+        self.btn_trocar_foto_popup_foto_as = QPushButton(self.frame_2)
+        self.btn_trocar_foto_popup_foto_as.setObjectName(u"btn_trocar_foto_popup_foto_as")
+        self.btn_trocar_foto_popup_foto_as.setMinimumSize(QSize(140, 140))
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(32)
+        self.btn_trocar_foto_popup_foto_as.setFont(font)
+        self.btn_trocar_foto_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout.addWidget(self.btn_trocar_foto_popup_foto_as)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_2)
+
+        self.line = QFrame(self.frame)
+        self.line.setObjectName(u"line")
+        self.line.setMinimumSize(QSize(2, 0))
+        self.line.setMaximumSize(QSize(2, 16777215))
+        self.line.setFrameShape(QFrame.VLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_2.addWidget(self.line)
+
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"border: none;")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_4 = QFrame(self.frame_3)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMinimumSize(QSize(0, 200))
+        self.frame_4.setMaximumSize(QSize(16777215, 200))
+        self.frame_4.setCursor(QCursor(Qt.PointingHandCursor))
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_alterar_senha_popup_foto_as = QLabel(self.frame_4)
+        self.label_alterar_senha_popup_foto_as.setObjectName(u"label_alterar_senha_popup_foto_as")
+        self.label_alterar_senha_popup_foto_as.setMinimumSize(QSize(140, 140))
+        self.label_alterar_senha_popup_foto_as.setMaximumSize(QSize(140, 140))
+        self.label_alterar_senha_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.label_alterar_senha_popup_foto_as.setPixmap(QPixmap(u"./icons/troca.png"))
+        self.label_alterar_senha_popup_foto_as.setScaledContents(True)
+        self.label_alterar_senha_popup_foto_as.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_3.addWidget(self.label_alterar_senha_popup_foto_as)
+
+
+        self.verticalLayout_2.addWidget(self.frame_4)
+
+        self.btn_alterar_senha_popup_alterar_as = QPushButton(self.frame_3)
+        self.btn_alterar_senha_popup_alterar_as.setObjectName(u"btn_alterar_senha_popup_alterar_as")
+        self.btn_alterar_senha_popup_alterar_as.setMinimumSize(QSize(140, 140))
+        self.btn_alterar_senha_popup_alterar_as.setFont(font)
+        self.btn_alterar_senha_popup_alterar_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_2.addWidget(self.btn_alterar_senha_popup_alterar_as)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_3)
+
+
+        self.horizontalLayout.addWidget(self.frame)
+
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.label_trocar_foto_popup_foto_as.setText("")
+        self.btn_trocar_foto_popup_foto_as.setText(QCoreApplication.translate("Dialog", u"Trocar foto", None))
+        self.label_alterar_senha_popup_foto_as.setText("")
+        self.btn_alterar_senha_popup_alterar_as.setText(QCoreApplication.translate("Dialog", u"Alterar senha", None))
+    # retranslateUi
+
+
+############################################################################################
+
+
+
+class Ui_RestaurarSenha(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
+        Dialog.resize(440, 670)
+        Dialog.setStyleSheet(u";")
+        self.verticalLayout = QVBoxLayout(Dialog)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Dialog)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"border-radius: 15px;border: 1px solid #E58893")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.frame_9 = QFrame(self.frame)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setStyleSheet(u"background-color: #F8C0C7; border-top-left-radius: 15px; border-bottom-left-radius: 0px; border-top-right-radius: 15px; border-bottom-right-radius: 0px; border: none;")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_recuperacao_popup_senha = QLabel(self.frame_9)
+        self.label_recuperacao_popup_senha.setObjectName(u"label_recuperacao_popup_senha")
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(20)
+        self.label_recuperacao_popup_senha.setFont(font)
+        self.label_recuperacao_popup_senha.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_3.addWidget(self.label_recuperacao_popup_senha)
+
+
+        self.verticalLayout_5.addWidget(self.frame_9)
+
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"QFrame{background-color: #FEE2E6;border-top-left-radius: 0px; border-bottom-left-radius: 15px; border-top-right-radius: 0px; border-bottom-right-radius: 15px; border: none}\n"
+"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
+"")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(40, 10, 40, 0)
+        self.frame_3 = QFrame(self.frame_2)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_popup_senha = QLabel(self.frame_3)
+        self.label_cpf_popup_senha.setObjectName(u"label_cpf_popup_senha")
+        font1 = QFont()
+        font1.setFamilies([u"Abel"])
+        font1.setPointSize(16)
+        self.label_cpf_popup_senha.setFont(font1)
+
+        self.verticalLayout_4.addWidget(self.label_cpf_popup_senha)
+
+        self.input_cpf_popup_senha = QLineEdit(self.frame_3)
+        self.input_cpf_popup_senha.setObjectName(u"input_cpf_popup_senha")
+        self.input_cpf_popup_senha.setMinimumSize(QSize(0, 35))
+        self.input_cpf_popup_senha.setMaximumSize(QSize(16777215, 35))
+        self.input_cpf_popup_senha.setFont(font1)
+        self.input_cpf_popup_senha.setStyleSheet(u"")
+
+        self.verticalLayout_4.addWidget(self.input_cpf_popup_senha)
+
+
+        self.verticalLayout_2.addWidget(self.frame_3)
+
+        self.frame_4 = QFrame(self.frame_2)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.label_pergunta1_popup_senha = QLabel(self.frame_4)
+        self.label_pergunta1_popup_senha.setObjectName(u"label_pergunta1_popup_senha")
+        self.label_pergunta1_popup_senha.setFont(font1)
+
+        self.verticalLayout_6.addWidget(self.label_pergunta1_popup_senha)
+
+        self.input_pergunta1_popup_senha = QLineEdit(self.frame_4)
+        self.input_pergunta1_popup_senha.setObjectName(u"input_pergunta1_popup_senha")
+        self.input_pergunta1_popup_senha.setMinimumSize(QSize(0, 35))
+        self.input_pergunta1_popup_senha.setMaximumSize(QSize(16777215, 35))
+        self.input_pergunta1_popup_senha.setFont(font1)
+
+        self.verticalLayout_6.addWidget(self.input_pergunta1_popup_senha)
+
+
+        self.verticalLayout_2.addWidget(self.frame_4)
+
+        self.frame_5 = QFrame(self.frame_2)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.label_pergunta2_popup_senha = QLabel(self.frame_5)
+        self.label_pergunta2_popup_senha.setObjectName(u"label_pergunta2_popup_senha")
+        self.label_pergunta2_popup_senha.setFont(font1)
+
+        self.verticalLayout_7.addWidget(self.label_pergunta2_popup_senha)
+
+        self.input_pergunta2_popup_senha = QLineEdit(self.frame_5)
+        self.input_pergunta2_popup_senha.setObjectName(u"input_pergunta2_popup_senha")
+        self.input_pergunta2_popup_senha.setMinimumSize(QSize(0, 35))
+        self.input_pergunta2_popup_senha.setMaximumSize(QSize(16777215, 35))
+        self.input_pergunta2_popup_senha.setFont(font1)
+
+        self.verticalLayout_7.addWidget(self.input_pergunta2_popup_senha)
+
+
+        self.verticalLayout_2.addWidget(self.frame_5)
+
+        self.frame_6 = QFrame(self.frame_2)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.label_nova_senha_popup_senha = QLabel(self.frame_6)
+        self.label_nova_senha_popup_senha.setObjectName(u"label_nova_senha_popup_senha")
+        self.label_nova_senha_popup_senha.setFont(font1)
+
+        self.verticalLayout_8.addWidget(self.label_nova_senha_popup_senha)
+
+        self.input_nova_senha_popup_senha = QLineEdit(self.frame_6)
+        self.input_nova_senha_popup_senha.setObjectName(u"input_nova_senha_popup_senha")
+        self.input_nova_senha_popup_senha.setMinimumSize(QSize(0, 35))
+        self.input_nova_senha_popup_senha.setMaximumSize(QSize(16777215, 35))
+        self.input_nova_senha_popup_senha.setFont(font1)
+
+        self.verticalLayout_8.addWidget(self.input_nova_senha_popup_senha)
+
+
+        self.verticalLayout_2.addWidget(self.frame_6)
+
+        self.frame_7 = QFrame(self.frame_2)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.label_confirmar_senha_popup_senha = QLabel(self.frame_7)
+        self.label_confirmar_senha_popup_senha.setObjectName(u"label_confirmar_senha_popup_senha")
+        self.label_confirmar_senha_popup_senha.setFont(font1)
+
+        self.verticalLayout_9.addWidget(self.label_confirmar_senha_popup_senha)
+
+        self.input_confirmar_senha_popup_senha = QLineEdit(self.frame_7)
+        self.input_confirmar_senha_popup_senha.setObjectName(u"input_confirmar_senha_popup_senha")
+        self.input_confirmar_senha_popup_senha.setMinimumSize(QSize(0, 35))
+        self.input_confirmar_senha_popup_senha.setMaximumSize(QSize(16777215, 35))
+        self.input_confirmar_senha_popup_senha.setFont(font1)
+
+        self.verticalLayout_9.addWidget(self.input_confirmar_senha_popup_senha)
+
+
+        self.verticalLayout_2.addWidget(self.frame_7)
+
+        self.frame_8 = QFrame(self.frame_2)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame_8)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer_2)
+
+        self.btn_verificar_popup_senha = QPushButton(self.frame_8)
+        self.btn_verificar_popup_senha.setObjectName(u"btn_verificar_popup_senha")
+        self.btn_verificar_popup_senha.setMinimumSize(QSize(120, 40))
+        self.btn_verificar_popup_senha.setMaximumSize(QSize(120, 40))
+        self.btn_verificar_popup_senha.setFont(font)
+        self.btn_verificar_popup_senha.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_verificar_popup_senha.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px; border: none}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout.addWidget(self.btn_verificar_popup_senha)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout.addItem(self.horizontalSpacer)
+
+
+        self.verticalLayout_2.addWidget(self.frame_8)
+
+
+        self.verticalLayout_5.addWidget(self.frame_2)
+
+        self.verticalLayout_5.setStretch(0, 1)
+        self.verticalLayout_5.setStretch(1, 8)
+
+        self.verticalLayout.addWidget(self.frame)
+
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.label_recuperacao_popup_senha.setText(QCoreApplication.translate("Dialog", u"RECUPERA\u00c7\u00c3O DE SENHA", None))
+        self.label_cpf_popup_senha.setText(QCoreApplication.translate("Dialog", u"CPF", None))
+        self.label_pergunta1_popup_senha.setText(QCoreApplication.translate("Dialog", u"Pergunta de seguran\u00e7a 1", None))
+        self.label_pergunta2_popup_senha.setText(QCoreApplication.translate("Dialog", u"Pergunta de seguran\u00e7a 2", None))
+        self.label_nova_senha_popup_senha.setText(QCoreApplication.translate("Dialog", u"Nova senha", None))
+        self.label_confirmar_senha_popup_senha.setText(QCoreApplication.translate("Dialog", u"Confirmar senha", None))
+        self.btn_verificar_popup_senha.setText(QCoreApplication.translate("Dialog", u"Verificar", None))
     # retranslateUi
 
