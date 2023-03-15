@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecvAyvze.ui'
+## Form generated from reading UI file 'telas_abrecxEkozK.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-
+            
         ############ valida email ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
         ########################################
@@ -29,6 +29,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"")
         self.verticalLayout_177 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_177.setSpacing(0)
         self.verticalLayout_177.setObjectName(u"verticalLayout_177")
         self.verticalLayout_177.setContentsMargins(0, 0, 0, 0)
         self.inicio = QStackedWidget(self.centralwidget)
@@ -66,15 +67,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_27.addItem(self.horizontalSpacer_33)
 
-        self.label_5 = QLabel(self.frame_35)
-        self.label_5.setObjectName(u"label_5")
+        self.label_Logo_ABREC = QLabel(self.frame_35)
+        self.label_Logo_ABREC.setObjectName(u"label_Logo_ABREC")
         font1 = QFont()
         font1.setFamilies([u"Abel"])
         font1.setPointSize(36)
-        self.label_5.setFont(font1)
-        self.label_5.setStyleSheet(u"color: #fff; background-color: #FA5858")
+        self.label_Logo_ABREC.setFont(font1)
+        self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
+        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
+        self.label_Logo_ABREC.setScaledContents(True)
 
-        self.horizontalLayout_27.addWidget(self.label_5)
+        self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
 
         self.horizontalSpacer_34 = QSpacerItem(163, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -286,6 +289,27 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_32.addItem(self.horizontalSpacer_2)
 
+        self.frame_164 = QFrame(self.login)
+        self.frame_164.setObjectName(u"frame_164")
+        self.frame_164.setFrameShape(QFrame.StyledPanel)
+        self.frame_164.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_116 = QVBoxLayout(self.frame_164)
+        self.verticalLayout_116.setObjectName(u"verticalLayout_116")
+        self.verticalSpacer_11 = QSpacerItem(20, 786, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_116.addItem(self.verticalSpacer_11)
+
+        self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
+        self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
+        self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
+        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
+        self.label_Abrec_Logo_Paint.setScaledContents(True)
+
+        self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
+
+
+        self.horizontalLayout_32.addWidget(self.frame_164)
+
         self.inicio.addWidget(self.login)
         self.area_principal = QWidget()
         self.area_principal.setObjectName(u"area_principal")
@@ -300,6 +324,7 @@ class Ui_MainWindow(object):
 "QComboBox:drop-down{width: 24px; border-top-right-radius:9px; border-bottom-right-radius:9px; border-top-left-radius:1px; border-bottom-left-radius:1px;}\n"
 "QComboBox:down-arrow{image: url(icons/expand.svg); }")
         self.gridLayout = QGridLayout(self.area_principal)
+        self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName(u"gridLayout")
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.tipos_acesso = QStackedWidget(self.area_principal)
@@ -837,7 +862,7 @@ class Ui_MainWindow(object):
         self.frame_64.setFrameShape(QFrame.StyledPanel)
         self.frame_64.setFrameShadow(QFrame.Raised)
         self.verticalLayout_32 = QVBoxLayout(self.frame_64)
-        self.verticalLayout_32.setSpacing(0)
+        self.verticalLayout_32.setSpacing(6)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
         self.verticalLayout_32.setContentsMargins(15, 0, 0, 0)
         self.label_situacao_usuario_as = QLabel(self.frame_64)
@@ -1481,7 +1506,9 @@ class Ui_MainWindow(object):
         self.frame_130.setFrameShape(QFrame.StyledPanel)
         self.frame_130.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_58 = QHBoxLayout(self.frame_130)
+        self.horizontalLayout_58.setSpacing(0)
         self.horizontalLayout_58.setObjectName(u"horizontalLayout_58")
+        self.horizontalLayout_58.setContentsMargins(0, 0, 0, 0)
         self.input_pessoa_cdeficiencia_sim_usuario_as = QRadioButton(self.frame_130)
         self.input_pessoa_cdeficiencia_sim_usuario_as.setObjectName(u"input_pessoa_cdeficiencia_sim_usuario_as")
         self.input_pessoa_cdeficiencia_sim_usuario_as.setFont(font8)
@@ -3239,7 +3266,9 @@ class Ui_MainWindow(object):
         self.frame_214.setFrameShape(QFrame.StyledPanel)
         self.frame_214.setFrameShadow(QFrame.Raised)
         self.verticalLayout_172 = QVBoxLayout(self.frame_214)
+        self.verticalLayout_172.setSpacing(0)
         self.verticalLayout_172.setObjectName(u"verticalLayout_172")
+        self.verticalLayout_172.setContentsMargins(0, 0, 0, 0)
         self.label_observacoes_gerais_colaborador_as = QLabel(self.frame_214)
         self.label_observacoes_gerais_colaborador_as.setObjectName(u"label_observacoes_gerais_colaborador_as")
         self.label_observacoes_gerais_colaborador_as.setMaximumSize(QSize(300, 50))
@@ -4783,7 +4812,9 @@ class Ui_MainWindow(object):
         self.frame_140.setFrameShape(QFrame.StyledPanel)
         self.frame_140.setFrameShadow(QFrame.Raised)
         self.verticalLayout_115 = QVBoxLayout(self.frame_140)
+        self.verticalLayout_115.setSpacing(0)
         self.verticalLayout_115.setObjectName(u"verticalLayout_115")
+        self.verticalLayout_115.setContentsMargins(0, 0, 0, 0)
         self.label_descricao_cursos_as = QLabel(self.frame_140)
         self.label_descricao_cursos_as.setObjectName(u"label_descricao_cursos_as")
         self.label_descricao_cursos_as.setFont(font)
@@ -5990,7 +6021,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"ABREC", None))
+        self.label_Logo_ABREC.setText("")
         self.input_usuario_login.setText("")
         self.input_usuario_login.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_2.setText("")
@@ -5999,6 +6030,7 @@ class Ui_MainWindow(object):
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
         self.btn_esqueci_senha_login.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
+        self.label_Abrec_Logo_Paint.setText("")
         self.btn_alterar_foto_senha_as.setText("")
         self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
