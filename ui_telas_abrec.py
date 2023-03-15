@@ -286,6 +286,27 @@ class Ui_MainWindow(object):
         self.horizontalSpacer_2 = QSpacerItem(452, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_32.addItem(self.horizontalSpacer_2)
+        
+        self.frame_164 = QFrame(self.login)
+        self.frame_164.setObjectName(u"frame_164")
+        self.frame_164.setFrameShape(QFrame.StyledPanel)
+        self.frame_164.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_116 = QVBoxLayout(self.frame_164)
+        self.verticalLayout_116.setObjectName(u"verticalLayout_116")
+        self.verticalSpacer_11 = QSpacerItem(20, 786, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_116.addItem(self.verticalSpacer_11)
+
+        self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
+        self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
+        self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
+        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
+        self.label_Abrec_Logo_Paint.setScaledContents(True)
+
+        self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
+
+
+        self.horizontalLayout_32.addWidget(self.frame_164)
 
         self.inicio.addWidget(self.login)
         self.area_principal = QWidget()
@@ -6015,6 +6036,7 @@ class Ui_MainWindow(object):
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
         self.btn_esqueci_senha_login.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
+        self.label_Abrec_Logo_Paint.setText("")
         self.btn_alterar_foto_senha_as.setText("")
         self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
