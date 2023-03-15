@@ -1,5 +1,6 @@
 import sys
 from os import getcwd
+from ctypes import windll
 from qtcore import *
 from ui_telas_abrec import *
 from ui_dialog import *
@@ -265,7 +266,14 @@ class TelaPrincipal(QMainWindow):
 
 
 if __name__ == "__main__":
+    
+    myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
+    windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid) 
+
     app = QApplication(sys.argv)
+
+    app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
+
     w = TelaPrincipal()
     w.show()
     app.exec()
