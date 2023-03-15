@@ -1358,7 +1358,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>7</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -14250,7 +14250,7 @@ background-color: rgb(246, 176, 181);}</string>
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>3</number>
                                </property>
                                <widget class="QWidget" name="page_alterar_cuidador">
                                 <layout class="QVBoxLayout" name="verticalLayout_253">
@@ -22500,6 +22500,20 @@ QPushButton:focus{outline:0}</string>
                                  </item>
                                 </layout>
                                </widget>
+                               <widget class="QWidget" name="page">
+                                <layout class="QVBoxLayout" name="verticalLayout_118">
+                                 <item>
+                                  <widget class="QFrame" name="frame_165">
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
+                                   </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                </layout>
+                               </widget>
                               </widget>
                              </item>
                             </layout>
@@ -25278,8 +25292,6 @@ QPushButton:focus{outline:0}</string>
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="../icons/icon.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
