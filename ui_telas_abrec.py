@@ -67,15 +67,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_27.addItem(self.horizontalSpacer_33)
 
-        self.label_5 = QLabel(self.frame_35)
-        self.label_5.setObjectName(u"label_5")
+        self.label_Logo_ABREC = QLabel(self.frame_35)
+        self.label_Logo_ABREC.setObjectName(u"label_Logo_ABREC")
         font1 = QFont()
         font1.setFamilies([u"Abel"])
         font1.setPointSize(36)
-        self.label_5.setFont(font1)
-        self.label_5.setStyleSheet(u"color: #fff; background-color: #FA5858")
+        self.label_Logo_ABREC.setFont(font1)
+        self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
+        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
+        self.label_Logo_ABREC.setScaledContents(True)
 
-        self.horizontalLayout_27.addWidget(self.label_5)
+        self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
 
         self.horizontalSpacer_34 = QSpacerItem(163, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -6027,7 +6029,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"ABREC", None))
+        self.label_Logo_ABREC.setText("")
         self.input_usuario_login.setText("")
         self.input_usuario_login.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_2.setText("")
