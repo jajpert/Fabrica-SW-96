@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -140,7 +140,7 @@
                </spacer>
               </item>
               <item>
-               <widget class="QLabel" name="label_5">
+               <widget class="QLabel" name="label_Logo_ABREC">
                 <property name="font">
                  <font>
                   <family>Abel</family>
@@ -151,7 +151,13 @@
                  <string notr="true">color: #fff; background-color: #FA5858</string>
                 </property>
                 <property name="text">
-                 <string>ABREC</string>
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../icons/Logo ABREC.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -681,6 +687,50 @@ QPushButton:focus{outline: 0} </string>
            </size>
           </property>
          </spacer>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_164">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_116">
+           <item>
+            <spacer name="verticalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>786</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_Abrec_Logo_Paint">
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>75</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../icons/Abrec logo paint-02 (2).png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -1358,7 +1408,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>7</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -5630,7 +5680,7 @@ QPushButton:focus{outline: 0}</string>
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout">
                           <property name="spacing">
-                           <number>0</number>
+                           <number>20</number>
                           </property>
                           <property name="leftMargin">
                            <number>0</number>
@@ -5658,7 +5708,44 @@ QPushButton:focus{outline: 0}</string>
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="btn_proximo_as">
+                           <widget class="QPushButton" name="btn_observacoes_sigilo_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>18</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                            </property>
+                            <property name="text">
+                             <string>Observações em sigilo</string>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>28</width>
+                              <height>28</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_finalizar_as">
                             <property name="minimumSize">
                              <size>
                               <width>140</width>
@@ -5683,11 +5770,7 @@ QPushButton:hover{background-color: #23B2EE}
 QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="text">
-                             <string>PRÓXIMO</string>
-                            </property>
-                            <property name="icon">
-                             <iconset>
-                              <normaloff>../../../../.designer/icons/seta-direita.png</normaloff>../../../../.designer/icons/seta-direita.png</iconset>
+                             <string>FINALIZAR</string>
                             </property>
                            </widget>
                           </item>
@@ -7437,47 +7520,10 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            </spacer>
                           </item>
                           <item>
-                           <widget class="QPushButton" name="btn_observacoes_sigilo_as">
+                           <widget class="QPushButton" name="btn_salvar_as">
                             <property name="minimumSize">
                              <size>
-                              <width>0</width>
-                              <height>40</height>
-                             </size>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <family>Abel</family>
-                              <pointsize>18</pointsize>
-                             </font>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>PointingHandCursor</cursorShape>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
-QPushButton:hover{background-color: #F89198}
-QPushButton:focus{outline:0}</string>
-                            </property>
-                            <property name="text">
-                             <string>Observações em sigilo</string>
-                            </property>
-                            <property name="icon">
-                             <iconset>
-                              <normaloff>../../../../.designer/icons/cadeado.png</normaloff>../../../../.designer/icons/cadeado.png</iconset>
-                            </property>
-                            <property name="iconSize">
-                             <size>
-                              <width>28</width>
-                              <height>28</height>
-                             </size>
-                            </property>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QPushButton" name="btn_finalizar_as">
-                            <property name="minimumSize">
-                             <size>
-                              <width>140</width>
+                              <width>120</width>
                               <height>40</height>
                              </size>
                             </property>
@@ -7496,7 +7542,34 @@ QPushButton:hover{background-color: #23B2EE}
 QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="text">
-                             <string>FINALIZAR</string>
+                             <string>SALVAR</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_proximo_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>120</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>18</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                            </property>
+                            <property name="text">
+                             <string>PRÓXIMO</string>
                             </property>
                            </widget>
                           </item>

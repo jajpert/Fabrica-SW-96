@@ -575,7 +575,7 @@ class Ui_Cadastro_Nao_Salvo(object):
 ############################################################################################
 
 
-class Ui_DadosSalvos(object):
+class Ui_Dados_Salvos(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
@@ -670,7 +670,7 @@ class Ui_DadosSalvos(object):
 ############################################################################################
 
 
-class Ui_TirarFoto(object):
+class Ui_Tirar_Foto(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
@@ -817,7 +817,7 @@ class Ui_TirarFoto(object):
 ############################################################################################
 
 
-class Ui_AlterarSenhaFoto(object):
+class Ui_Alterar_Senha_Foto(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
@@ -965,7 +965,7 @@ class Ui_AlterarSenhaFoto(object):
 
 
 
-class Ui_RestaurarSenha(object):
+class Ui_Restaurar_Senha(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
