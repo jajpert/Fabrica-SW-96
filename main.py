@@ -1,7 +1,7 @@
 import sys
 from os import getcwd
 from qtcore import *
-from ui_telas_abrec2 import *
+from ui_telas_abrec import *
 from ui_dialog import *
 
 class Overlay(QWidget):

@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecxEkozK.ui'
+## Form generated from reading UI file 'telas_abrecLCexTV.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -15,7 +15,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-            
+
         ############ valida email ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
         ########################################
@@ -67,17 +67,15 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_27.addItem(self.horizontalSpacer_33)
 
-        self.label_Logo_ABREC = QLabel(self.frame_35)
-        self.label_Logo_ABREC.setObjectName(u"label_Logo_ABREC")
+        self.label_5 = QLabel(self.frame_35)
+        self.label_5.setObjectName(u"label_5")
         font1 = QFont()
         font1.setFamilies([u"Abel"])
         font1.setPointSize(36)
-        self.label_Logo_ABREC.setFont(font1)
-        self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
-        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
-        self.label_Logo_ABREC.setScaledContents(True)
+        self.label_5.setFont(font1)
+        self.label_5.setStyleSheet(u"color: #fff; background-color: #FA5858")
 
-        self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
+        self.horizontalLayout_27.addWidget(self.label_5)
 
         self.horizontalSpacer_34 = QSpacerItem(163, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -288,27 +286,6 @@ class Ui_MainWindow(object):
         self.horizontalSpacer_2 = QSpacerItem(452, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_32.addItem(self.horizontalSpacer_2)
-
-        self.frame_164 = QFrame(self.login)
-        self.frame_164.setObjectName(u"frame_164")
-        self.frame_164.setFrameShape(QFrame.StyledPanel)
-        self.frame_164.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_116 = QVBoxLayout(self.frame_164)
-        self.verticalLayout_116.setObjectName(u"verticalLayout_116")
-        self.verticalSpacer_11 = QSpacerItem(20, 786, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_116.addItem(self.verticalSpacer_11)
-
-        self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
-        self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
-        self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
-        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
-        self.label_Abrec_Logo_Paint.setScaledContents(True)
-
-        self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
-
-
-        self.horizontalLayout_32.addWidget(self.frame_164)
 
         self.inicio.addWidget(self.login)
         self.area_principal = QWidget()
@@ -2023,30 +2000,42 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame_4)
-        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setSpacing(20)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.horizontalSpacer_5 = QSpacerItem(1687, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_5)
 
-        self.btn_proximo_as = QPushButton(self.frame_4)
-        self.btn_proximo_as.setObjectName(u"btn_proximo_as")
-        self.btn_proximo_as.setMinimumSize(QSize(140, 40))
+        self.btn_observacoes_sigilo_as = QPushButton(self.frame_4)
+        self.btn_observacoes_sigilo_as.setObjectName(u"btn_observacoes_sigilo_as")
+        self.btn_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
         font10 = QFont()
         font10.setFamilies([u"Abel"])
         font10.setPointSize(18)
-        self.btn_proximo_as.setFont(font10)
-        self.btn_proximo_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_proximo_as.setLayoutDirection(Qt.RightToLeft)
-        self.btn_proximo_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
+        self.btn_observacoes_sigilo_as.setFont(font10)
+        self.btn_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon13 = QIcon()
-        icon13.addFile(u"./icons/seta-direita.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_proximo_as.setIcon(icon13)
+        icon13.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_observacoes_sigilo_as.setIcon(icon13)
+        self.btn_observacoes_sigilo_as.setIconSize(QSize(28, 28))
 
-        self.horizontalLayout.addWidget(self.btn_proximo_as)
+        self.horizontalLayout.addWidget(self.btn_observacoes_sigilo_as)
+
+        self.btn_finalizar_as = QPushButton(self.frame_4)
+        self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
+        self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
+        self.btn_finalizar_as.setFont(font10)
+        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_finalizar_as.setLayoutDirection(Qt.RightToLeft)
+        self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout.addWidget(self.btn_finalizar_as)
 
 
         self.verticalLayout_3.addWidget(self.frame_4)
@@ -2657,31 +2646,27 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_48.addItem(self.horizontalSpacer_8)
 
-        self.btn_observacoes_sigilo_as = QPushButton(self.frame_99)
-        self.btn_observacoes_sigilo_as.setObjectName(u"btn_observacoes_sigilo_as")
-        self.btn_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
-        self.btn_observacoes_sigilo_as.setFont(font10)
-        self.btn_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
-"QPushButton:hover{background-color: #F89198}\n"
-"QPushButton:focus{outline:0}")
-        icon14 = QIcon()
-        icon14.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_observacoes_sigilo_as.setIcon(icon14)
-        self.btn_observacoes_sigilo_as.setIconSize(QSize(28, 28))
-
-        self.horizontalLayout_48.addWidget(self.btn_observacoes_sigilo_as)
-
-        self.btn_finalizar_as = QPushButton(self.frame_99)
-        self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
-        self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
-        self.btn_finalizar_as.setFont(font10)
-        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_salvar_as = QPushButton(self.frame_99)
+        self.btn_salvar_as.setObjectName(u"btn_salvar_as")
+        self.btn_salvar_as.setMinimumSize(QSize(120, 40))
+        self.btn_salvar_as.setFont(font10)
+        self.btn_salvar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_salvar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.horizontalLayout_48.addWidget(self.btn_finalizar_as)
+        self.horizontalLayout_48.addWidget(self.btn_salvar_as)
+
+        self.btn_proximo_as = QPushButton(self.frame_99)
+        self.btn_proximo_as.setObjectName(u"btn_proximo_as")
+        self.btn_proximo_as.setMinimumSize(QSize(120, 40))
+        self.btn_proximo_as.setFont(font10)
+        self.btn_proximo_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_proximo_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_48.addWidget(self.btn_proximo_as)
 
 
         self.verticalLayout_66.addWidget(self.frame_99)
@@ -2826,9 +2811,9 @@ class Ui_MainWindow(object):
         self.btn_cancelar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon15 = QIcon()
-        icon15.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cancelar_observacoes_sigilosas_as.setIcon(icon15)
+        icon14 = QIcon()
+        icon14.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cancelar_observacoes_sigilosas_as.setIcon(icon14)
         self.btn_cancelar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_54.addWidget(self.btn_cancelar_observacoes_sigilosas_as)
@@ -2841,9 +2826,9 @@ class Ui_MainWindow(object):
         self.btn_salvar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon16 = QIcon()
-        icon16.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_salvar_observacoes_sigilosas_as.setIcon(icon16)
+        icon15 = QIcon()
+        icon15.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_salvar_observacoes_sigilosas_as.setIcon(icon15)
         self.btn_salvar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_54.addWidget(self.btn_salvar_observacoes_sigilosas_as)
@@ -2856,9 +2841,9 @@ class Ui_MainWindow(object):
         self.btn_excluir_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon17 = QIcon()
-        icon17.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_excluir_observacoes_sigilosas_as.setIcon(icon17)
+        icon16 = QIcon()
+        icon16.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excluir_observacoes_sigilosas_as.setIcon(icon16)
         self.btn_excluir_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_54.addWidget(self.btn_excluir_observacoes_sigilosas_as)
@@ -4871,9 +4856,9 @@ class Ui_MainWindow(object):
         self.btn_lista_pessoas_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon18 = QIcon()
-        icon18.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_lista_pessoas_cursos_as.setIcon(icon18)
+        icon17 = QIcon()
+        icon17.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_lista_pessoas_cursos_as.setIcon(icon17)
         self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_57.addWidget(self.btn_lista_pessoas_cursos_as)
@@ -4987,9 +4972,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon19 = QIcon()
-        icon19.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_farm.setIcon(icon19)
+        icon18 = QIcon()
+        icon18.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_farm.setIcon(icon18)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_cadastrar_farm)
@@ -5002,9 +4987,9 @@ class Ui_MainWindow(object):
         self.btn_retirar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon20 = QIcon()
-        icon20.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_retirar_farm.setIcon(icon20)
+        icon19 = QIcon()
+        icon19.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_retirar_farm.setIcon(icon19)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_retirar_farm)
@@ -5017,9 +5002,9 @@ class Ui_MainWindow(object):
         self.btn_estoque_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon21 = QIcon()
-        icon21.addFile(u"./icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_estoque_farm.setIcon(icon21)
+        icon20 = QIcon()
+        icon20.addFile(u"./icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_estoque_farm.setIcon(icon20)
         self.btn_estoque_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_estoque_farm)
@@ -5390,9 +5375,9 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon22 = QIcon()
-        icon22.addFile(u"./icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_plano_alimentar_nutri.setIcon(icon22)
+        icon21 = QIcon()
+        icon21.addFile(u"./icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_plano_alimentar_nutri.setIcon(icon21)
         self.btn_plano_alimentar_nutri.setIconSize(QSize(30, 30))
 
         self.verticalLayout_37.addWidget(self.btn_plano_alimentar_nutri)
@@ -5866,9 +5851,9 @@ class Ui_MainWindow(object):
         self.btn_eventos_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon23 = QIcon()
-        icon23.addFile(u"./icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_eventos_sec.setIcon(icon23)
+        icon22 = QIcon()
+        icon22.addFile(u"./icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_eventos_sec.setIcon(icon22)
         self.btn_eventos_sec.setIconSize(QSize(30, 30))
 
         self.verticalLayout_12.addWidget(self.btn_eventos_sec)
@@ -6021,7 +6006,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_Logo_ABREC.setText("")
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"ABREC", None))
         self.input_usuario_login.setText("")
         self.input_usuario_login.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_2.setText("")
@@ -6030,7 +6015,6 @@ class Ui_MainWindow(object):
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
         self.btn_esqueci_senha_login.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
-        self.label_Abrec_Logo_Paint.setText("")
         self.btn_alterar_foto_senha_as.setText("")
         self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
@@ -6163,7 +6147,8 @@ class Ui_MainWindow(object):
         self.input_periodo_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
         self.input_periodo_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
 
-        self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
+        self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
+        self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO CUIDADOR", None))
         self.label_matricula_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Matricula", None))
         self.label_nome_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Nome cuidador", None))
@@ -6186,8 +6171,8 @@ class Ui_MainWindow(object):
         self.label_cidade_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es gerais Usu\u00e1rio e Cuidador", None))
-        self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
-        self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
+        self.btn_salvar_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
+        self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"OBSERVA\u00c7\u00d5ES SIGILOSAS", None))
         self.label_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es/informa\u00e7\u00f5es gerais", None))
         self.btn_alterar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
