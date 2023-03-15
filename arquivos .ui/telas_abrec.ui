@@ -5761,9 +5761,6 @@ QPushButton:focus{outline:0}</string>
                             <property name="cursor">
                              <cursorShape>PointingHandCursor</cursorShape>
                             </property>
-                            <property name="layoutDirection">
-                             <enum>Qt::RightToLeft</enum>
-                            </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
 QPushButton:hover{background-color: #23B2EE}
@@ -7536,6 +7533,9 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                             <property name="cursor">
                              <cursorShape>PointingHandCursor</cursorShape>
                             </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
+                            </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
 QPushButton:hover{background-color: #23B2EE}
@@ -7550,7 +7550,7 @@ QPushButton:focus{outline:0}</string>
                            <widget class="QPushButton" name="btn_proximo_as">
                             <property name="minimumSize">
                              <size>
-                              <width>120</width>
+                              <width>140</width>
                               <height>40</height>
                              </size>
                             </property>
@@ -7562,6 +7562,9 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="cursor">
                              <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
