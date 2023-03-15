@@ -24,7 +24,13 @@
     <string notr="true"/>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_177">
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
      <number>0</number>
     </property>
     <property name="rightMargin">
@@ -679,24 +685,35 @@ QPushButton:focus{outline: 0} </string>
        </layout>
       </widget>
       <widget class="QWidget" name="area_principal">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
 QLineEdit:focus{outline:0; border: 2px solid #A85751}
-QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751}
-</string>
+QComboBox{color: #A85751; border-radius: 10px; border-width: 1px; border-style: solid; border-color:#A85751; padding-left: 10px;}
+QComboBox:drop-down:hover{background-color:#fff}
+QComboBox:drop-down{width: 24px; border-top-right-radius:9px; border-bottom-right-radius:9px; border-top-left-radius:1px; border-bottom-left-radius:1px;}
+QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
        </property>
        <layout class="QGridLayout" name="gridLayout">
         <property name="leftMargin">
-         <number>8</number>
+         <number>0</number>
         </property>
         <property name="topMargin">
-         <number>8</number>
+         <number>0</number>
         </property>
         <property name="rightMargin">
-         <number>8</number>
+         <number>0</number>
         </property>
         <property name="bottomMargin">
-         <number>8</number>
+         <number>0</number>
+        </property>
+        <property name="spacing">
+         <number>0</number>
         </property>
         <item row="0" column="0">
          <widget class="QStackedWidget" name="tipos_acesso">
@@ -776,27 +793,25 @@ QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padd
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_foto_as">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
-                     <property name="layoutDirection">
-                      <enum>Qt::RightToLeft</enum>
+                    <widget class="QPushButton" name="btn_alterar_foto_senha_as">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QLabel{margin-top: 42px}</string>
+                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="pixmap">
-                      <pixmap>../../../../.designer/icons/Ellipse 1.png</pixmap>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                     <property name="iconSize">
+                      <size>
+                       <width>140</width>
+                       <height>180</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -1343,7 +1358,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>7</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1620,7 +1635,7 @@ QPushButton:focus{outline: 0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_cadastro_usuario">
+                     <widget class="QWidget" name="page_cadastro_usuario_as">
                       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,8,1">
                        <property name="spacing">
                         <number>0</number>
@@ -2173,7 +2188,7 @@ QPushButton:focus{outline: 0}</string>
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_32">
                                          <property name="spacing">
-                                          <number>0</number>
+                                          <number>6</number>
                                          </property>
                                          <property name="leftMargin">
                                           <number>15</number>
@@ -3515,12 +3530,6 @@ QPushButton:focus{outline: 0}</string>
                                        <height>30</height>
                                       </size>
                                      </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
                                     </widget>
                                    </item>
                                   </layout>
@@ -3674,7 +3683,7 @@ QPushButton:focus{outline: 0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QComboBox" name="input_estado_usuario_as">
+                                    <widget class="QLineEdit" name="input_estado_usuario_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>70</width>
@@ -3686,15 +3695,6 @@ QPushButton:focus{outline: 0}</string>
                                        <width>70</width>
                                        <height>30</height>
                                       </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="cursor">
-                                      <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
                                     </widget>
                                    </item>
@@ -3785,6 +3785,45 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="cursor">
                                       <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
+                                     <property name="styleSheet">
+                                      <string notr="true"/>
+                                     </property>
+                                     <property name="iconSize">
+                                      <size>
+                                       <width>18</width>
+                                       <height>18</height>
+                                      </size>
+                                     </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Casado(a)</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Solteiro(a)</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>União Estável</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Viúvo(a)</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Divorciado(a)</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -3874,6 +3913,56 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="cursor">
                                       <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ensino fundamental incompleto</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ensino fundamental completo</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ensino médio incompleto</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ensino médio completo</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Superior incompleto</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Superior completo</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Pós graduação</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Mestrado</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Doutorado</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4003,6 +4092,21 @@ QPushButton:focus{outline: 0}</string>
                                       <enum>QFrame::Raised</enum>
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_58">
+                                      <property name="spacing">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="leftMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="topMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="rightMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
                                       <item>
                                        <widget class="QRadioButton" name="input_pessoa_cdeficiencia_sim_usuario_as">
                                         <property name="font">
@@ -4097,7 +4201,7 @@ QPushButton:focus{outline: 0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QLineEdit" name="input_tipo_deficiencia_usuario_as">
+                                    <widget class="QComboBox" name="input_tipo_deficiencia_usuario_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>250</width>
@@ -4116,6 +4220,36 @@ QPushButton:focus{outline: 0}</string>
                                        <pointsize>12</pointsize>
                                       </font>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Visual</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Motora</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Amputada</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Mental</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Outra</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4208,6 +4342,31 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="styleSheet">
                                       <string notr="true"/>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Menos 1 salário</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>1 salário</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Mais de 1 a 3 salários</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Mais que 3 salários</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4297,6 +4456,46 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="cursor">
                                       <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Particular</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Carona</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ônibus coletivo</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ambulância municipal</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Moto</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Ambulância particular</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Outro</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4374,6 +4573,26 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="cursor">
                                       <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Passe para os dias de tratamento</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Passe do idoso</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Passe livre</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4477,7 +4696,7 @@ QPushButton:focus{outline: 0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QLineEdit" name="input_situacao_trabalho_usuario_as">
+                                    <widget class="QComboBox" name="input_situacao_trabalho_usuario_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>250</width>
@@ -4496,6 +4715,41 @@ QPushButton:focus{outline: 0}</string>
                                        <pointsize>12</pointsize>
                                       </font>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Empregado/a Autônomo/a</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Aposentado/a</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Pensionista</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Desempregado/a</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Auxílio doença</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Outros</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4588,6 +4842,31 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="styleSheet">
                                       <string notr="true"/>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>BPC/Idoso</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>BPC/PCD</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Mais Social (Gov. Estadual)</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Auxílio Brasil (Gov. Federal)</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -4797,6 +5076,26 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="styleSheet">
                                       <string notr="true"/>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Pré-Diálise</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Hemodiálise</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Diálise Peritoneal</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -5008,6 +5307,41 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="cursor">
                                       <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Hipertensão</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Diabete 1</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Diabete 2</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Lúpus</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Nefrites</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Outros</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -5183,6 +5517,26 @@ QPushButton:focus{outline: 0}</string>
                                      <property name="cursor">
                                       <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Matutino</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Vespertino</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Noturno</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -6917,7 +7271,7 @@ QPushButton:focus{outline:0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QComboBox" name="input_estado_cuidador_as">
+                                    <widget class="QLineEdit" name="input_estado_cuidador_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>70</width>
@@ -6929,12 +7283,6 @@ QPushButton:focus{outline:0}</string>
                                        <width>70</width>
                                        <height>30</height>
                                       </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
                                      </property>
                                     </widget>
                                    </item>
@@ -8777,6 +9125,21 @@ QPushButton:focus{outline:0}</string>
                                 <enum>QFrame::Raised</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_172">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
                                 <item>
                                  <widget class="QLabel" name="label_observacoes_gerais_colaborador_as">
                                   <property name="maximumSize">
@@ -11549,6 +11912,21 @@ QPushButton:focus{outline:0}</string>
                                        <pointsize>12</pointsize>
                                       </font>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Interno</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Externo</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -12540,6 +12918,26 @@ QPushButton:focus{outline:0}</string>
                                        <pointsize>12</pointsize>
                                       </font>
                                      </property>
+                                     <item>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Matutino</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Vespertino</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Noturno</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -13153,7 +13551,7 @@ QPushButton:focus{outline:0}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QComboBox" name="input_estado_cursos_as">
+                                    <widget class="QLineEdit" name="input_estado_cursos_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>70</width>
@@ -13193,6 +13591,21 @@ QPushButton:focus{outline:0}</string>
                                 <enum>QFrame::Raised</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_115">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
                                 <item>
                                  <widget class="QLabel" name="label_descricao_cursos_as">
                                   <property name="font">
@@ -22182,24 +22595,25 @@ QPushButton:focus{outline:0}</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_foto_farm">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
+                    <widget class="QPushButton" name="btn_alterar_foto_senha_farm">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QLabel{margin-top: 42px}</string>
+                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="pixmap">
-                      <pixmap>../../../../.designer/icons/Ellipse 1.png</pixmap>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                     <property name="iconSize">
+                      <size>
+                       <width>140</width>
+                       <height>180</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -22709,24 +23123,25 @@ QPushButton:focus{outline:0}</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_foto_fisio">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
+                    <widget class="QPushButton" name="btn_alterar_foto_senha_fisio">
+                     <property name="cursor">
+                      <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QLabel{margin-top: 42px}</string>
+                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="pixmap">
-                      <pixmap>../../../../.designer/icons/Ellipse 1.png</pixmap>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                     <property name="iconSize">
+                      <size>
+                       <width>140</width>
+                       <height>180</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -23190,24 +23605,22 @@ QPushButton:focus{outline:0}</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_foto_nutri">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
+                    <widget class="QPushButton" name="btn_alterar_foto_senha_nutri">
                      <property name="styleSheet">
-                      <string notr="true">QLabel{margin-top: 42px}</string>
+                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="pixmap">
-                      <pixmap>../../../../.designer/icons/Ellipse 1.png</pixmap>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                     <property name="iconSize">
+                      <size>
+                       <width>140</width>
+                       <height>180</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -23629,7 +24042,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_6">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="page_principal_nutri"/>
                      <widget class="QWidget" name="page_plano_alimentar">
@@ -23889,24 +24302,22 @@ QPushButton:focus{outline: 0}</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_foto_psi">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
+                    <widget class="QPushButton" name="btn_alterar_foto_senha_psi">
                      <property name="styleSheet">
-                      <string notr="true">QLabel{margin-top: 42px}</string>
+                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="pixmap">
-                      <pixmap>../../../../.designer/icons/Ellipse 1.png</pixmap>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                     <property name="iconSize">
+                      <size>
+                       <width>140</width>
+                       <height>180</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
@@ -24403,24 +24814,22 @@ QPushButton:focus{outline:0}</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_foto_secret">
-                     <property name="minimumSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
+                    <widget class="QPushButton" name="btn_alterar_foto_senha_secret">
                      <property name="styleSheet">
-                      <string notr="true">QLabel{margin-top: 42px}</string>
+                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
                      </property>
                      <property name="text">
                       <string/>
                      </property>
-                     <property name="pixmap">
-                      <pixmap>../../../../.designer/icons/Ellipse 1.png</pixmap>
+                     <property name="icon">
+                      <iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
+                     <property name="iconSize">
+                      <size>
+                       <width>140</width>
+                       <height>180</height>
+                      </size>
                      </property>
                     </widget>
                    </item>
