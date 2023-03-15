@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -140,7 +140,7 @@
                </spacer>
               </item>
               <item>
-               <widget class="QLabel" name="label_5">
+               <widget class="QLabel" name="label_Logo_ABREC">
                 <property name="font">
                  <font>
                   <family>Abel</family>
@@ -151,7 +151,13 @@
                  <string notr="true">color: #fff; background-color: #FA5858</string>
                 </property>
                 <property name="text">
-                 <string>ABREC</string>
+                 <string/>
+                </property>
+                <property name="pixmap">
+                 <pixmap>../icons/Logo ABREC.png</pixmap>
+                </property>
+                <property name="scaledContents">
+                 <bool>true</bool>
                 </property>
                </widget>
               </item>
@@ -681,6 +687,50 @@ QPushButton:focus{outline: 0} </string>
            </size>
           </property>
          </spacer>
+        </item>
+        <item>
+         <widget class="QFrame" name="frame_164">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_116">
+           <item>
+            <spacer name="verticalSpacer_11">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>786</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_Abrec_Logo_Paint">
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>75</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="pixmap">
+              <pixmap>../icons/Abrec logo paint-02 (2).png</pixmap>
+             </property>
+             <property name="scaledContents">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
         </item>
        </layout>
       </widget>
@@ -16581,8 +16631,6 @@ QPushButton:focus{outline:0}</string>
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="../icons/icon.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
