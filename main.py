@@ -1,5 +1,6 @@
 import sys
 from os import getcwd
+from ctypes import windll
 from qtcore import *
 from ui_telas_abrec import *
 from ui_dialog import *
@@ -24,7 +25,7 @@ class DialogRecuperarSenha(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_RestaurarSenha()
+        self.ui = Ui_Restaurar_Senha()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
@@ -44,7 +45,7 @@ class DialogTirarFoto(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_TirarFoto()
+        self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
@@ -79,7 +80,7 @@ class DialogAreaSigilo(QDialog):
         event.accept()
 
 
-class DialogCadastroIncompletoCuidador(QDialog):
+class DialogCadastroIncompletoUsuario(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
@@ -125,7 +126,7 @@ class DialogAlterarSenhaFoto(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_AlterarSenhaFoto()
+        self.ui = Ui_Alterar_Senha_Foto()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(8000)
@@ -161,14 +162,24 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
-        self.ui.btn_voltar_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
         self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
-        self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
-        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))
+        self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta_as))
+
+        self.ui.btn_buscar_consulta_as.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_consulta_depois))
+
+        self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))
+        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
+
+
+
+        #############SIGNALS BOTOES voltar#############
+        #self.ui.btn_voltar_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+
+
 
         ######SIGNALS POPUP recuperar senha login######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
@@ -185,8 +196,9 @@ class TelaPrincipal(QMainWindow):
 
         ############SIGNALS POPUP Cuidador AS############
         #self.ui.btn_sair_as.clicked.connect(self.sair)
+        #mudar tbm
         self.ui.btn_observacoes_sigilo_as.clicked.connect(self.permissaoSigilosa)
-        self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoCuidador)
+        self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoUsuario)
 
 
         ############SIGNALS POPUP Cursos e oficinas AS############
@@ -229,8 +241,8 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as)
 
-    def concluirCadastroIncompletoCuidador(self):
-        msg = DialogCadastroIncompletoCuidador(self)
+    def concluirCadastroIncompletoUsuario(self):
+        msg = DialogCadastroIncompletoUsuario(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
@@ -264,7 +276,14 @@ class TelaPrincipal(QMainWindow):
 
 
 if __name__ == "__main__":
+    
+    myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
+    windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid) 
+
     app = QApplication(sys.argv)
+
+    app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
+
     w = TelaPrincipal()
     w.show()
     app.exec()
