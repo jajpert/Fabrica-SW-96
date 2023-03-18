@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecfekvkA.ui'
+## Form generated from reading UI file 'telas_abrecYVFHVD.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -1323,6 +1323,7 @@ class Ui_MainWindow(object):
         self.input_bairro_usuario_as.setObjectName(u"input_bairro_usuario_as")
         self.input_bairro_usuario_as.setMinimumSize(QSize(220, 30))
         self.input_bairro_usuario_as.setMaximumSize(QSize(220, 30))
+        self.input_bairro_usuario_as.setFont(font)
 
         self.verticalLayout_53.addWidget(self.input_bairro_usuario_as)
 
@@ -2611,6 +2612,7 @@ class Ui_MainWindow(object):
         self.input_estado_cuidador_as.setObjectName(u"input_estado_cuidador_as")
         self.input_estado_cuidador_as.setMinimumSize(QSize(70, 30))
         self.input_estado_cuidador_as.setMaximumSize(QSize(70, 30))
+        self.input_estado_cuidador_as.setFont(font)
 
         self.verticalLayout_79.addWidget(self.input_estado_cuidador_as)
 
@@ -2840,6 +2842,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_observacoes_sigilosas_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_observacoes_sigilosas_as.setMaximumSize(QSize(100, 40))
         self.btn_voltar_observacoes_sigilosas_as.setFont(font10)
+        self.btn_voltar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
@@ -5325,8 +5328,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_130.setContentsMargins(0, 0, 0, 0)
         self.frame_183 = QFrame(self.page_consulta_depois)
         self.frame_183.setObjectName(u"frame_183")
-        self.frame_183.setStyleSheet(u"QFrame{color: #000;} \n"
-"QLabel{margin-left: 0.25em}")
+        self.frame_183.setStyleSheet(u"QLineEdit{color: #000;}\n"
+"QLabel{margin-left: 0.25em;color: #000;}")
         self.frame_183.setFrameShape(QFrame.StyledPanel)
         self.frame_183.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_72 = QHBoxLayout(self.frame_183)
@@ -5573,6 +5576,297 @@ class Ui_MainWindow(object):
         self.verticalLayout_117.setStretch(1, 2)
         self.verticalLayout_117.setStretch(2, 8)
         self.stackedWidget_2.addWidget(self.page_consulta_as)
+        self.page_relatorios_as = QWidget()
+        self.page_relatorios_as.setObjectName(u"page_relatorios_as")
+        self.verticalLayout_151 = QVBoxLayout(self.page_relatorios_as)
+        self.verticalLayout_151.setSpacing(0)
+        self.verticalLayout_151.setObjectName(u"verticalLayout_151")
+        self.verticalLayout_151.setContentsMargins(0, 0, 0, 0)
+        self.frame_222 = QFrame(self.page_relatorios_as)
+        self.frame_222.setObjectName(u"frame_222")
+        self.frame_222.setStyleSheet(u"color: #EC848C; background-color: #F3B9BF")
+        self.frame_222.setFrameShape(QFrame.StyledPanel)
+        self.frame_222.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_82 = QHBoxLayout(self.frame_222)
+        self.horizontalLayout_82.setSpacing(0)
+        self.horizontalLayout_82.setObjectName(u"horizontalLayout_82")
+        self.horizontalLayout_82.setContentsMargins(0, 0, 0, 0)
+        self.label_4 = QLabel(self.frame_222)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setFont(font1)
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_82.addWidget(self.label_4)
+
+
+        self.verticalLayout_151.addWidget(self.frame_222)
+
+        self.frame_223 = QFrame(self.page_relatorios_as)
+        self.frame_223.setObjectName(u"frame_223")
+        self.frame_223.setFrameShape(QFrame.StyledPanel)
+        self.frame_223.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_152 = QVBoxLayout(self.frame_223)
+        self.verticalLayout_152.setSpacing(0)
+        self.verticalLayout_152.setObjectName(u"verticalLayout_152")
+        self.verticalLayout_152.setContentsMargins(0, 0, 0, 0)
+        self.frame_227 = QFrame(self.frame_223)
+        self.frame_227.setObjectName(u"frame_227")
+        self.frame_227.setFrameShape(QFrame.StyledPanel)
+        self.frame_227.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_84 = QHBoxLayout(self.frame_227)
+        self.horizontalLayout_84.setSpacing(5)
+        self.horizontalLayout_84.setObjectName(u"horizontalLayout_84")
+        self.horizontalLayout_84.setContentsMargins(0, 0, 0, 0)
+        self.frame_243 = QFrame(self.frame_227)
+        self.frame_243.setObjectName(u"frame_243")
+        self.frame_243.setFrameShape(QFrame.StyledPanel)
+        self.frame_243.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_84.addWidget(self.frame_243)
+
+        self.frame_228 = QFrame(self.frame_227)
+        self.frame_228.setObjectName(u"frame_228")
+        self.frame_228.setMaximumSize(QSize(200, 16777215))
+        self.frame_228.setFrameShape(QFrame.StyledPanel)
+        self.frame_228.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_85 = QHBoxLayout(self.frame_228)
+        self.horizontalLayout_85.setObjectName(u"horizontalLayout_85")
+        self.label_5 = QLabel(self.frame_228)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font)
+
+        self.horizontalLayout_85.addWidget(self.label_5)
+
+        self.lineEdit = QLineEdit(self.frame_228)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setMaximumSize(QSize(150, 30))
+        self.lineEdit.setFont(font)
+
+        self.horizontalLayout_85.addWidget(self.lineEdit)
+
+
+        self.horizontalLayout_84.addWidget(self.frame_228)
+
+        self.frame_242 = QFrame(self.frame_227)
+        self.frame_242.setObjectName(u"frame_242")
+        self.frame_242.setMaximumSize(QSize(180, 16777215))
+        self.frame_242.setFrameShape(QFrame.StyledPanel)
+        self.frame_242.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_86 = QHBoxLayout(self.frame_242)
+        self.horizontalLayout_86.setObjectName(u"horizontalLayout_86")
+        self.label_6 = QLabel(self.frame_242)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMaximumSize(QSize(20, 16777215))
+        self.label_6.setFont(font)
+
+        self.horizontalLayout_86.addWidget(self.label_6)
+
+        self.lineEdit_2 = QLineEdit(self.frame_242)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setMaximumSize(QSize(150, 30))
+        self.lineEdit_2.setFont(font)
+
+        self.horizontalLayout_86.addWidget(self.lineEdit_2)
+
+
+        self.horizontalLayout_84.addWidget(self.frame_242)
+
+        self.frame_248 = QFrame(self.frame_227)
+        self.frame_248.setObjectName(u"frame_248")
+        self.frame_248.setMaximumSize(QSize(400, 16777215))
+        self.frame_248.setFrameShape(QFrame.StyledPanel)
+        self.frame_248.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_154 = QVBoxLayout(self.frame_248)
+        self.verticalLayout_154.setObjectName(u"verticalLayout_154")
+        self.label_8 = QLabel(self.frame_248)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setMaximumSize(QSize(310, 16777215))
+        self.label_8.setFont(font)
+
+        self.verticalLayout_154.addWidget(self.label_8)
+
+        self.lineEdit_3 = QLineEdit(self.frame_248)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setMinimumSize(QSize(0, 30))
+        self.lineEdit_3.setMaximumSize(QSize(390, 30))
+        self.lineEdit_3.setFont(font)
+
+        self.verticalLayout_154.addWidget(self.lineEdit_3)
+
+
+        self.horizontalLayout_84.addWidget(self.frame_248)
+
+        self.frame_244 = QFrame(self.frame_227)
+        self.frame_244.setObjectName(u"frame_244")
+        self.frame_244.setFrameShape(QFrame.StyledPanel)
+        self.frame_244.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_84.addWidget(self.frame_244)
+
+
+        self.verticalLayout_152.addWidget(self.frame_227)
+
+        self.frame_225 = QFrame(self.frame_223)
+        self.frame_225.setObjectName(u"frame_225")
+        self.frame_225.setFrameShape(QFrame.StyledPanel)
+        self.frame_225.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_87 = QHBoxLayout(self.frame_225)
+        self.horizontalLayout_87.setSpacing(5)
+        self.horizontalLayout_87.setObjectName(u"horizontalLayout_87")
+        self.horizontalLayout_87.setContentsMargins(0, 0, 0, 0)
+        self.frame_245 = QFrame(self.frame_225)
+        self.frame_245.setObjectName(u"frame_245")
+        self.frame_245.setFrameShape(QFrame.StyledPanel)
+        self.frame_245.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_87.addWidget(self.frame_245)
+
+        self.frame_246 = QFrame(self.frame_225)
+        self.frame_246.setObjectName(u"frame_246")
+        self.frame_246.setMaximumSize(QSize(460, 16777215))
+        self.frame_246.setFrameShape(QFrame.StyledPanel)
+        self.frame_246.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_155 = QVBoxLayout(self.frame_246)
+        self.verticalLayout_155.setObjectName(u"verticalLayout_155")
+        self.label_9 = QLabel(self.frame_246)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMaximumSize(QSize(410, 16777215))
+        self.label_9.setFont(font)
+
+        self.verticalLayout_155.addWidget(self.label_9)
+
+        self.lineEdit_4 = QLineEdit(self.frame_246)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setMaximumSize(QSize(450, 30))
+        self.lineEdit_4.setFont(font)
+
+        self.verticalLayout_155.addWidget(self.lineEdit_4)
+
+
+        self.horizontalLayout_87.addWidget(self.frame_246)
+
+        self.frame_229 = QFrame(self.frame_225)
+        self.frame_229.setObjectName(u"frame_229")
+        self.frame_229.setMaximumSize(QSize(310, 16777215))
+        self.frame_229.setFrameShape(QFrame.StyledPanel)
+        self.frame_229.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_153 = QVBoxLayout(self.frame_229)
+        self.verticalLayout_153.setObjectName(u"verticalLayout_153")
+        self.label_7 = QLabel(self.frame_229)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMaximumSize(QSize(310, 16777215))
+        self.label_7.setFont(font)
+
+        self.verticalLayout_153.addWidget(self.label_7)
+
+        self.comboBox = QComboBox(self.frame_229)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setMaximumSize(QSize(300, 30))
+        self.comboBox.setFont(font)
+
+        self.verticalLayout_153.addWidget(self.comboBox)
+
+
+        self.horizontalLayout_87.addWidget(self.frame_229)
+
+        self.frame_263 = QFrame(self.frame_225)
+        self.frame_263.setObjectName(u"frame_263")
+        self.frame_263.setFrameShape(QFrame.StyledPanel)
+        self.frame_263.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_87.addWidget(self.frame_263)
+
+
+        self.verticalLayout_152.addWidget(self.frame_225)
+
+        self.frame_226 = QFrame(self.frame_223)
+        self.frame_226.setObjectName(u"frame_226")
+        self.frame_226.setFrameShape(QFrame.StyledPanel)
+        self.frame_226.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_152.addWidget(self.frame_226)
+
+        self.verticalLayout_152.setStretch(0, 1)
+        self.verticalLayout_152.setStretch(1, 1)
+        self.verticalLayout_152.setStretch(2, 7)
+
+        self.verticalLayout_151.addWidget(self.frame_223)
+
+        self.frame_224 = QFrame(self.page_relatorios_as)
+        self.frame_224.setObjectName(u"frame_224")
+        self.frame_224.setFrameShape(QFrame.StyledPanel)
+        self.frame_224.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_83 = QHBoxLayout(self.frame_224)
+        self.horizontalLayout_83.setSpacing(20)
+        self.horizontalLayout_83.setObjectName(u"horizontalLayout_83")
+        self.horizontalLayout_83.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_relatorios_as = QPushButton(self.frame_224)
+        self.btn_voltar_relatorios_as.setObjectName(u"btn_voltar_relatorios_as")
+        self.btn_voltar_relatorios_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_as.setFont(font10)
+        self.btn_voltar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_relatorios_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_83.addWidget(self.btn_voltar_relatorios_as)
+
+        self.horizontalSpacer_55 = QSpacerItem(564, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_83.addItem(self.horizontalSpacer_55)
+
+        self.btn_limpar_relatorios_as = QPushButton(self.frame_224)
+        self.btn_limpar_relatorios_as.setObjectName(u"btn_limpar_relatorios_as")
+        self.btn_limpar_relatorios_as.setMinimumSize(QSize(125, 40))
+        self.btn_limpar_relatorios_as.setMaximumSize(QSize(125, 40))
+        self.btn_limpar_relatorios_as.setFont(font10)
+        self.btn_limpar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_limpar_relatorios_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_limpar_relatorios_as.setIcon(icon14)
+        self.btn_limpar_relatorios_as.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout_83.addWidget(self.btn_limpar_relatorios_as)
+
+        self.btn_gerar_relatorios_as = QPushButton(self.frame_224)
+        self.btn_gerar_relatorios_as.setObjectName(u"btn_gerar_relatorios_as")
+        self.btn_gerar_relatorios_as.setMinimumSize(QSize(100, 40))
+        self.btn_gerar_relatorios_as.setMaximumSize(QSize(100, 40))
+        self.btn_gerar_relatorios_as.setFont(font10)
+        self.btn_gerar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_gerar_relatorios_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_83.addWidget(self.btn_gerar_relatorios_as)
+
+        self.horizontalSpacer_56 = QSpacerItem(563, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_83.addItem(self.horizontalSpacer_56)
+
+
+        self.verticalLayout_151.addWidget(self.frame_224)
+
+        self.verticalLayout_151.setStretch(0, 1)
+        self.verticalLayout_151.setStretch(1, 8)
+        self.verticalLayout_151.setStretch(2, 1)
+        self.stackedWidget_2.addWidget(self.page_relatorios_as)
 
         self.horizontalLayout_11.addWidget(self.stackedWidget_2)
 
@@ -7008,6 +7302,30 @@ class Ui_MainWindow(object):
         self.btn_alterar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"  ALTERAR", None))
         self.btn_concluir_consulta_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.btn_voltar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIOS", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"a", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"T\u00edtulo do relat\u00f3rio", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios prontos", None))
+        self.comboBox.setItemText(0, "")
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Cuidador", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Colaborador", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Acessos", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"Eventos/Oficinas", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Cuidador", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Consultas", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Eventos", None))
+        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Oficinas", None))
+        self.comboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Cuidador x Eventos", None))
+        self.comboBox.setItemText(11, QCoreApplication.translate("MainWindow", u"Cuidador x Oficinas", None))
+        self.comboBox.setItemText(12, QCoreApplication.translate("MainWindow", u"Colaborador x Consultas", None))
+        self.comboBox.setItemText(13, QCoreApplication.translate("MainWindow", u"Colaborador x Usu\u00e1rio", None))
+
+        self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_limpar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"LIMPAR", None))
+        self.btn_gerar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"GERAR", None))
         self.btn_alterar_foto_senha_farm.setText("")
         self.label_ola_nome_farm.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR", None))
