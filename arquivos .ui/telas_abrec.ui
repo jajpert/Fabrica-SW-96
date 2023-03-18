@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>7</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -5672,7 +5672,7 @@ QPushButton:focus{outline: 0}</string>
                            <number>20</number>
                           </property>
                           <property name="leftMargin">
-                           <number>0</number>
+                           <number>20</number>
                           </property>
                           <property name="topMargin">
                            <number>0</number>
@@ -5683,6 +5683,39 @@ QPushButton:focus{outline: 0}</string>
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
+                          <item>
+                           <widget class="QPushButton" name="btn_voltar_usuario_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>18</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                            </property>
+                            <property name="text">
+                             <string>VOLTAR</string>
+                            </property>
+                           </widget>
+                          </item>
                           <item>
                            <spacer name="horizontalSpacer_5">
                             <property name="orientation">
@@ -7481,7 +7514,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            <number>20</number>
                           </property>
                           <property name="leftMargin">
-                           <number>0</number>
+                           <number>20</number>
                           </property>
                           <property name="topMargin">
                            <number>0</number>
@@ -7492,6 +7525,39 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
+                          <item>
+                           <widget class="QPushButton" name="btn_voltar_cuidador_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>18</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                            </property>
+                            <property name="text">
+                             <string>VOLTAR</string>
+                            </property>
+                           </widget>
+                          </item>
                           <item>
                            <spacer name="horizontalSpacer_8">
                             <property name="orientation">
@@ -7866,7 +7932,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            <number>40</number>
                           </property>
                           <property name="leftMargin">
-                           <number>40</number>
+                           <number>20</number>
                           </property>
                           <property name="topMargin">
                            <number>0</number>
@@ -7877,6 +7943,36 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
+                          <item>
+                           <widget class="QPushButton" name="btn_voltar_observacoes_sigilosas_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>18</pointsize>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                            </property>
+                            <property name="text">
+                             <string>VOLTAR</string>
+                            </property>
+                           </widget>
+                          </item>
                           <item>
                            <widget class="QPushButton" name="btn_alterar_observacoes_sigilosas_as">
                             <property name="minimumSize">
@@ -13747,7 +13843,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                          </property>
                          <layout class="QHBoxLayout" name="horizontalLayout_57">
                           <property name="spacing">
-                           <number>0</number>
+                           <number>20</number>
                           </property>
                           <property name="leftMargin">
                            <number>20</number>
@@ -13761,6 +13857,39 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                           <property name="bottomMargin">
                            <number>0</number>
                           </property>
+                          <item>
+                           <widget class="QPushButton" name="btn_voltar_cursos_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>100</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>18</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                            </property>
+                            <property name="text">
+                             <string>VOLTAR</string>
+                            </property>
+                           </widget>
+                          </item>
                           <item>
                            <widget class="QPushButton" name="btn_lista_pessoas_cursos_as">
                             <property name="minimumSize">
@@ -14720,7 +14849,7 @@ QLabel{margin-left: 0.25em}</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_129">
+                         <layout class="QVBoxLayout" name="verticalLayout_129" stretch="14,2">
                           <property name="spacing">
                            <number>0</number>
                           </property>
@@ -15093,7 +15222,7 @@ QLabel{margin-left: 0.25em}</string>
                                 </property>
                                 <layout class="QHBoxLayout" name="horizontalLayout_73" stretch="8,1">
                                  <property name="spacing">
-                                  <number>5</number>
+                                  <number>0</number>
                                  </property>
                                  <property name="leftMargin">
                                   <number>0</number>
@@ -15197,13 +15326,13 @@ QLabel{margin-left: 0.25em}</string>
                                      <widget class="QPushButton" name="btn_imprimir_consulta_as">
                                       <property name="minimumSize">
                                        <size>
-                                        <width>0</width>
+                                        <width>140</width>
                                         <height>40</height>
                                        </size>
                                       </property>
                                       <property name="maximumSize">
                                        <size>
-                                        <width>16777215</width>
+                                        <width>140</width>
                                         <height>40</height>
                                        </size>
                                       </property>
@@ -15212,6 +15341,9 @@ QLabel{margin-left: 0.25em}</string>
                                         <family>Abel</family>
                                         <pointsize>18</pointsize>
                                        </font>
+                                      </property>
+                                      <property name="cursor">
+                                       <cursorShape>PointingHandCursor</cursorShape>
                                       </property>
                                       <property name="styleSheet">
                                        <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
@@ -15237,13 +15369,13 @@ QPushButton:focus{outline:0}</string>
                                      <widget class="QPushButton" name="btn_alterar_consulta_as">
                                       <property name="minimumSize">
                                        <size>
-                                        <width>0</width>
+                                        <width>140</width>
                                         <height>40</height>
                                        </size>
                                       </property>
                                       <property name="maximumSize">
                                        <size>
-                                        <width>16777215</width>
+                                        <width>140</width>
                                         <height>40</height>
                                        </size>
                                       </property>
@@ -15252,6 +15384,9 @@ QPushButton:focus{outline:0}</string>
                                         <family>Abel</family>
                                         <pointsize>18</pointsize>
                                        </font>
+                                      </property>
+                                      <property name="cursor">
+                                       <cursorShape>PointingHandCursor</cursorShape>
                                       </property>
                                       <property name="styleSheet">
                                        <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
@@ -15277,13 +15412,13 @@ QPushButton:focus{outline:0}</string>
                                      <widget class="QPushButton" name="btn_concluir_consulta_as">
                                       <property name="minimumSize">
                                        <size>
-                                        <width>0</width>
+                                        <width>140</width>
                                         <height>40</height>
                                        </size>
                                       </property>
                                       <property name="maximumSize">
                                        <size>
-                                        <width>16777215</width>
+                                        <width>140</width>
                                         <height>40</height>
                                        </size>
                                       </property>
@@ -15292,6 +15427,9 @@ QPushButton:focus{outline:0}</string>
                                         <family>Abel</family>
                                         <pointsize>18</pointsize>
                                        </font>
+                                      </property>
+                                      <property name="cursor">
+                                       <cursorShape>PointingHandCursor</cursorShape>
                                       </property>
                                       <property name="styleSheet">
                                        <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
@@ -15311,6 +15449,79 @@ QPushButton:focus{outline:0}</string>
                               </item>
                              </layout>
                             </widget>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame_221">
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_75">
+                             <property name="spacing">
+                              <number>20</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>20</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QPushButton" name="btn_voltar_consulta_as">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <family>Abel</family>
+                                 <pointsize>18</pointsize>
+                                </font>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                               </property>
+                               <property name="text">
+                                <string>VOLTAR</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <spacer name="horizontalSpacer_54">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>1413</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                            </layout>
                            </widget>
                           </item>
                          </layout>
