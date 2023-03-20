@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecYVFHVD.ui'
+## Form generated from reading UI file 'telas_abrecpPKsPK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -5867,6 +5867,329 @@ class Ui_MainWindow(object):
         self.verticalLayout_151.setStretch(1, 8)
         self.verticalLayout_151.setStretch(2, 1)
         self.stackedWidget_2.addWidget(self.page_relatorios_as)
+        self.page_agenda_as = QWidget()
+        self.page_agenda_as.setObjectName(u"page_agenda_as")
+        self.verticalLayout_156 = QVBoxLayout(self.page_agenda_as)
+        self.verticalLayout_156.setSpacing(0)
+        self.verticalLayout_156.setObjectName(u"verticalLayout_156")
+        self.verticalLayout_156.setContentsMargins(0, 0, 0, 0)
+        self.frame_247 = QFrame(self.page_agenda_as)
+        self.frame_247.setObjectName(u"frame_247")
+        self.frame_247.setStyleSheet(u"background-color: #F3B9BF")
+        self.frame_247.setFrameShape(QFrame.StyledPanel)
+        self.frame_247.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_91 = QHBoxLayout(self.frame_247)
+        self.horizontalLayout_91.setSpacing(0)
+        self.horizontalLayout_91.setObjectName(u"horizontalLayout_91")
+        self.horizontalLayout_91.setContentsMargins(0, 0, 0, 0)
+        self.label_10 = QLabel(self.frame_247)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFont(font1)
+        self.label_10.setStyleSheet(u"color: #EC848C")
+        self.label_10.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_91.addWidget(self.label_10)
+
+
+        self.verticalLayout_156.addWidget(self.frame_247)
+
+        self.frame_264 = QFrame(self.page_agenda_as)
+        self.frame_264.setObjectName(u"frame_264")
+        self.frame_264.setFrameShape(QFrame.StyledPanel)
+        self.frame_264.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_93 = QHBoxLayout(self.frame_264)
+        self.horizontalLayout_93.setSpacing(0)
+        self.horizontalLayout_93.setObjectName(u"horizontalLayout_93")
+        self.horizontalLayout_93.setContentsMargins(0, 0, 0, 0)
+        self.frame_266 = QFrame(self.frame_264)
+        self.frame_266.setObjectName(u"frame_266")
+        self.frame_266.setFrameShape(QFrame.StyledPanel)
+        self.frame_266.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_158 = QVBoxLayout(self.frame_266)
+        self.verticalLayout_158.setObjectName(u"verticalLayout_158")
+        self.calendario_agenda_as = QCalendarWidget(self.frame_266)
+        self.calendario_agenda_as.setObjectName(u"calendario_agenda_as")
+
+        self.verticalLayout_158.addWidget(self.calendario_agenda_as)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_266)
+
+        self.frame_267 = QFrame(self.frame_264)
+        self.frame_267.setObjectName(u"frame_267")
+        self.frame_267.setStyleSheet(u"QPushButton{color: #000; background-color: #FEE4E1; border: none;}\\nQPushButton:hover{background-color: hsl(6, 94%, 92%)}\\nQPushButton:focus{outline: 0}")
+        self.frame_267.setFrameShape(QFrame.StyledPanel)
+        self.frame_267.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_157 = QVBoxLayout(self.frame_267)
+        self.verticalLayout_157.setSpacing(0)
+        self.verticalLayout_157.setObjectName(u"verticalLayout_157")
+        self.verticalLayout_157.setContentsMargins(0, 0, 0, 0)
+        self.label_11 = QLabel(self.frame_267)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setMaximumSize(QSize(16777215, 50))
+        self.label_11.setFont(font12)
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_157.addWidget(self.label_11)
+
+        self.btn_7_agenda_as = QPushButton(self.frame_267)
+        self.btn_7_agenda_as.setObjectName(u"btn_7_agenda_as")
+        self.btn_7_agenda_as.setFont(font)
+        self.btn_7_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_7_agenda_as)
+
+        self.btn_730_agenda_as = QPushButton(self.frame_267)
+        self.btn_730_agenda_as.setObjectName(u"btn_730_agenda_as")
+        self.btn_730_agenda_as.setFont(font)
+        self.btn_730_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_730_agenda_as)
+
+        self.btn_8_agenda_as = QPushButton(self.frame_267)
+        self.btn_8_agenda_as.setObjectName(u"btn_8_agenda_as")
+        self.btn_8_agenda_as.setFont(font)
+        self.btn_8_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_8_agenda_as)
+
+        self.btn_830_agenda_as = QPushButton(self.frame_267)
+        self.btn_830_agenda_as.setObjectName(u"btn_830_agenda_as")
+        self.btn_830_agenda_as.setFont(font)
+        self.btn_830_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_830_agenda_as)
+
+        self.btn_9_agenda_as = QPushButton(self.frame_267)
+        self.btn_9_agenda_as.setObjectName(u"btn_9_agenda_as")
+        self.btn_9_agenda_as.setFont(font)
+        self.btn_9_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_9_agenda_as)
+
+        self.btn_930_agenda_as = QPushButton(self.frame_267)
+        self.btn_930_agenda_as.setObjectName(u"btn_930_agenda_as")
+        self.btn_930_agenda_as.setFont(font)
+        self.btn_930_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_930_agenda_as)
+
+        self.btn_10_agenda_as = QPushButton(self.frame_267)
+        self.btn_10_agenda_as.setObjectName(u"btn_10_agenda_as")
+        self.btn_10_agenda_as.setFont(font)
+        self.btn_10_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_10_agenda_as)
+
+        self.btn_1030_agenda_as = QPushButton(self.frame_267)
+        self.btn_1030_agenda_as.setObjectName(u"btn_1030_agenda_as")
+        self.btn_1030_agenda_as.setFont(font)
+        self.btn_1030_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1030_agenda_as)
+
+        self.btn_11_agenda_as = QPushButton(self.frame_267)
+        self.btn_11_agenda_as.setObjectName(u"btn_11_agenda_as")
+        self.btn_11_agenda_as.setFont(font)
+        self.btn_11_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_11_agenda_as)
+
+        self.btn_1130_agenda_as = QPushButton(self.frame_267)
+        self.btn_1130_agenda_as.setObjectName(u"btn_1130_agenda_as")
+        self.btn_1130_agenda_as.setFont(font)
+        self.btn_1130_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1130_agenda_as)
+
+        self.btn_12_agenda_as = QPushButton(self.frame_267)
+        self.btn_12_agenda_as.setObjectName(u"btn_12_agenda_as")
+        self.btn_12_agenda_as.setFont(font)
+        self.btn_12_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_12_agenda_as)
+
+        self.btn_1230_agenda_as = QPushButton(self.frame_267)
+        self.btn_1230_agenda_as.setObjectName(u"btn_1230_agenda_as")
+        self.btn_1230_agenda_as.setFont(font)
+        self.btn_1230_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1230_agenda_as)
+
+        self.btn_13_agenda_as = QPushButton(self.frame_267)
+        self.btn_13_agenda_as.setObjectName(u"btn_13_agenda_as")
+        self.btn_13_agenda_as.setFont(font)
+        self.btn_13_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_13_agenda_as)
+
+        self.btn_1330_agenda_as = QPushButton(self.frame_267)
+        self.btn_1330_agenda_as.setObjectName(u"btn_1330_agenda_as")
+        self.btn_1330_agenda_as.setFont(font)
+        self.btn_1330_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1330_agenda_as)
+
+        self.btn_14_agenda_as = QPushButton(self.frame_267)
+        self.btn_14_agenda_as.setObjectName(u"btn_14_agenda_as")
+        self.btn_14_agenda_as.setFont(font)
+        self.btn_14_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_14_agenda_as)
+
+        self.btn_1430_agenda_as = QPushButton(self.frame_267)
+        self.btn_1430_agenda_as.setObjectName(u"btn_1430_agenda_as")
+        self.btn_1430_agenda_as.setFont(font)
+        self.btn_1430_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1430_agenda_as)
+
+        self.btn_15_agenda_as = QPushButton(self.frame_267)
+        self.btn_15_agenda_as.setObjectName(u"btn_15_agenda_as")
+        self.btn_15_agenda_as.setFont(font)
+        self.btn_15_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_15_agenda_as)
+
+        self.btn_1530_agenda_as = QPushButton(self.frame_267)
+        self.btn_1530_agenda_as.setObjectName(u"btn_1530_agenda_as")
+        self.btn_1530_agenda_as.setFont(font)
+        self.btn_1530_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1530_agenda_as)
+
+        self.btn_16_agenda_as = QPushButton(self.frame_267)
+        self.btn_16_agenda_as.setObjectName(u"btn_16_agenda_as")
+        self.btn_16_agenda_as.setFont(font)
+        self.btn_16_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_16_agenda_as)
+
+        self.btn_1630_agenda_as = QPushButton(self.frame_267)
+        self.btn_1630_agenda_as.setObjectName(u"btn_1630_agenda_as")
+        self.btn_1630_agenda_as.setFont(font)
+        self.btn_1630_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1630_agenda_as)
+
+        self.btn_17_agenda_as = QPushButton(self.frame_267)
+        self.btn_17_agenda_as.setObjectName(u"btn_17_agenda_as")
+        self.btn_17_agenda_as.setFont(font)
+        self.btn_17_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_17_agenda_as)
+
+        self.btn_1730_agenda_as = QPushButton(self.frame_267)
+        self.btn_1730_agenda_as.setObjectName(u"btn_1730_agenda_as")
+        self.btn_1730_agenda_as.setFont(font)
+        self.btn_1730_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1730_agenda_as)
+
+        self.btn_18_agenda_as = QPushButton(self.frame_267)
+        self.btn_18_agenda_as.setObjectName(u"btn_18_agenda_as")
+        self.btn_18_agenda_as.setFont(font)
+        self.btn_18_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_18_agenda_as)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_267)
+
+        self.frame_268 = QFrame(self.frame_264)
+        self.frame_268.setObjectName(u"frame_268")
+        self.frame_268.setFrameShape(QFrame.StyledPanel)
+        self.frame_268.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_159 = QVBoxLayout(self.frame_268)
+        self.verticalLayout_159.setObjectName(u"verticalLayout_159")
+        self.input_anotacoes_agenda_as = QTextEdit(self.frame_268)
+        self.input_anotacoes_agenda_as.setObjectName(u"input_anotacoes_agenda_as")
+        self.input_anotacoes_agenda_as.setFont(font12)
+        self.input_anotacoes_agenda_as.setStyleSheet(u"background-color: #fff; color: #000; padding-left: 0.5em")
+
+        self.verticalLayout_159.addWidget(self.input_anotacoes_agenda_as)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_268)
+
+        self.horizontalLayout_93.setStretch(0, 6)
+        self.horizontalLayout_93.setStretch(1, 1)
+        self.horizontalLayout_93.setStretch(2, 4)
+
+        self.verticalLayout_156.addWidget(self.frame_264)
+
+        self.frame_265 = QFrame(self.page_agenda_as)
+        self.frame_265.setObjectName(u"frame_265")
+        self.frame_265.setFrameShape(QFrame.StyledPanel)
+        self.frame_265.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_92 = QHBoxLayout(self.frame_265)
+        self.horizontalLayout_92.setSpacing(20)
+        self.horizontalLayout_92.setObjectName(u"horizontalLayout_92")
+        self.horizontalLayout_92.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_agenda_as = QPushButton(self.frame_265)
+        self.btn_voltar_agenda_as.setObjectName(u"btn_voltar_agenda_as")
+        self.btn_voltar_agenda_as.setMinimumSize(QSize(120, 40))
+        self.btn_voltar_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_voltar_agenda_as.setFont(font10)
+        self.btn_voltar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_agenda_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_92.addWidget(self.btn_voltar_agenda_as)
+
+        self.horizontalSpacer_58 = QSpacerItem(955, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_92.addItem(self.horizontalSpacer_58)
+
+        self.btn_alterar_agenda_as = QPushButton(self.frame_265)
+        self.btn_alterar_agenda_as.setObjectName(u"btn_alterar_agenda_as")
+        self.btn_alterar_agenda_as.setMinimumSize(QSize(120, 40))
+        self.btn_alterar_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_alterar_agenda_as.setFont(font11)
+        self.btn_alterar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_agenda_as.setAutoFillBackground(False)
+        self.btn_alterar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_alterar_agenda_as.setIcon(icon11)
+        self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_92.addWidget(self.btn_alterar_agenda_as)
+
+        self.btn_cancelar_agenda_as = QPushButton(self.frame_265)
+        self.btn_cancelar_agenda_as.setObjectName(u"btn_cancelar_agenda_as")
+        self.btn_cancelar_agenda_as.setMinimumSize(QSize(120, 40))
+        self.btn_cancelar_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_cancelar_agenda_as.setFont(font11)
+        self.btn_cancelar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cancelar_agenda_as.setAutoFillBackground(False)
+        self.btn_cancelar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_cancelar_agenda_as.setIcon(icon14)
+        self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_92.addWidget(self.btn_cancelar_agenda_as)
+
+        self.btn_concluir_agenda_as = QPushButton(self.frame_265)
+        self.btn_concluir_agenda_as.setObjectName(u"btn_concluir_agenda_as")
+        self.btn_concluir_agenda_as.setMinimumSize(QSize(140, 40))
+        self.btn_concluir_agenda_as.setMaximumSize(QSize(140, 40))
+        self.btn_concluir_agenda_as.setFont(font10)
+        self.btn_concluir_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_concluir_agenda_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_92.addWidget(self.btn_concluir_agenda_as)
+
+
+        self.verticalLayout_156.addWidget(self.frame_265)
+
+        self.verticalLayout_156.setStretch(0, 1)
+        self.verticalLayout_156.setStretch(1, 8)
+        self.stackedWidget_2.addWidget(self.page_agenda_as)
 
         self.horizontalLayout_11.addWidget(self.stackedWidget_2)
 
@@ -7326,6 +7649,35 @@ class Ui_MainWindow(object):
         self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_limpar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"LIMPAR", None))
         self.btn_gerar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"GERAR", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"AGENDA", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rios", None))
+        self.btn_7_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:00", None))
+        self.btn_730_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:30", None))
+        self.btn_8_agenda_as.setText(QCoreApplication.translate("MainWindow", u"08:00", None))
+        self.btn_830_agenda_as.setText(QCoreApplication.translate("MainWindow", u"08:30", None))
+        self.btn_9_agenda_as.setText(QCoreApplication.translate("MainWindow", u"09:00", None))
+        self.btn_930_agenda_as.setText(QCoreApplication.translate("MainWindow", u"09:30", None))
+        self.btn_10_agenda_as.setText(QCoreApplication.translate("MainWindow", u"10:00", None))
+        self.btn_1030_agenda_as.setText(QCoreApplication.translate("MainWindow", u"10:30", None))
+        self.btn_11_agenda_as.setText(QCoreApplication.translate("MainWindow", u"11:00", None))
+        self.btn_1130_agenda_as.setText(QCoreApplication.translate("MainWindow", u"11:30", None))
+        self.btn_12_agenda_as.setText(QCoreApplication.translate("MainWindow", u"12:00", None))
+        self.btn_1230_agenda_as.setText(QCoreApplication.translate("MainWindow", u"12:30", None))
+        self.btn_13_agenda_as.setText(QCoreApplication.translate("MainWindow", u"13:00", None))
+        self.btn_1330_agenda_as.setText(QCoreApplication.translate("MainWindow", u"13:30", None))
+        self.btn_14_agenda_as.setText(QCoreApplication.translate("MainWindow", u"14:00", None))
+        self.btn_1430_agenda_as.setText(QCoreApplication.translate("MainWindow", u"14:30", None))
+        self.btn_15_agenda_as.setText(QCoreApplication.translate("MainWindow", u"15:00", None))
+        self.btn_1530_agenda_as.setText(QCoreApplication.translate("MainWindow", u"15:30", None))
+        self.btn_16_agenda_as.setText(QCoreApplication.translate("MainWindow", u"16:00", None))
+        self.btn_1630_agenda_as.setText(QCoreApplication.translate("MainWindow", u"16:30", None))
+        self.btn_17_agenda_as.setText(QCoreApplication.translate("MainWindow", u"17:00", None))
+        self.btn_1730_agenda_as.setText(QCoreApplication.translate("MainWindow", u"17:30", None))
+        self.btn_18_agenda_as.setText(QCoreApplication.translate("MainWindow", u"18:00", None))
+        self.btn_voltar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_alterar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
+        self.btn_cancelar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.btn_concluir_agenda_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.btn_alterar_foto_senha_farm.setText("")
         self.label_ola_nome_farm.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR", None))
