@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecioVHjO.ui'
+## Form generated from reading UI file 'telas_abrecpPKsPK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -29,8 +29,9 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"")
         self.verticalLayout_177 = QVBoxLayout(self.centralwidget)
+        self.verticalLayout_177.setSpacing(0)
         self.verticalLayout_177.setObjectName(u"verticalLayout_177")
-        self.verticalLayout_177.setContentsMargins(0, -1, 0, 0)
+        self.verticalLayout_177.setContentsMargins(0, 0, 0, 0)
         self.inicio = QStackedWidget(self.centralwidget)
         self.inicio.setObjectName(u"inicio")
         self.login = QWidget()
@@ -66,15 +67,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_27.addItem(self.horizontalSpacer_33)
 
-        self.label_5 = QLabel(self.frame_35)
-        self.label_5.setObjectName(u"label_5")
+        self.label_Logo_ABREC = QLabel(self.frame_35)
+        self.label_Logo_ABREC.setObjectName(u"label_Logo_ABREC")
         font1 = QFont()
         font1.setFamilies([u"Abel"])
         font1.setPointSize(36)
-        self.label_5.setFont(font1)
-        self.label_5.setStyleSheet(u"color: #fff; background-color: #FA5858")
+        self.label_Logo_ABREC.setFont(font1)
+        self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
+        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
+        self.label_Logo_ABREC.setScaledContents(True)
 
-        self.horizontalLayout_27.addWidget(self.label_5)
+        self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
 
         self.horizontalSpacer_34 = QSpacerItem(163, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -286,16 +289,44 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_32.addItem(self.horizontalSpacer_2)
 
+        self.frame_164 = QFrame(self.login)
+        self.frame_164.setObjectName(u"frame_164")
+        self.frame_164.setFrameShape(QFrame.StyledPanel)
+        self.frame_164.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_116 = QVBoxLayout(self.frame_164)
+        self.verticalLayout_116.setObjectName(u"verticalLayout_116")
+        self.verticalSpacer_11 = QSpacerItem(20, 786, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_116.addItem(self.verticalSpacer_11)
+
+        self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
+        self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
+        self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
+        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
+        self.label_Abrec_Logo_Paint.setScaledContents(True)
+
+        self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
+
+
+        self.horizontalLayout_32.addWidget(self.frame_164)
+
         self.inicio.addWidget(self.login)
         self.area_principal = QWidget()
         self.area_principal.setObjectName(u"area_principal")
+        font5 = QFont()
+        font5.setFamilies([u"Segoe UI"])
+        font5.setPointSize(8)
+        self.area_principal.setFont(font5)
         self.area_principal.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
-"QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751}\n"
-"")
+"QComboBox{color: #A85751; border-radius: 10px; border-width: 1px; border-style: solid; border-color:#A85751; padding-left: 10px;}\n"
+"QComboBox:drop-down:hover{background-color:#fff}\n"
+"QComboBox:drop-down{width: 24px; border-top-right-radius:9px; border-bottom-right-radius:9px; border-top-left-radius:1px; border-bottom-left-radius:1px;}\n"
+"QComboBox:down-arrow{image: url(icons/expand.svg); }")
         self.gridLayout = QGridLayout(self.area_principal)
+        self.gridLayout.setSpacing(0)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.gridLayout.setContentsMargins(8, 8, 8, 8)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.tipos_acesso = QStackedWidget(self.area_principal)
         self.tipos_acesso.setObjectName(u"tipos_acesso")
         self.assistente_social = QWidget()
@@ -322,15 +353,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setSpacing(16)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_as = QLabel(self.frame_9)
-        self.label_foto_as.setObjectName(u"label_foto_as")
-        self.label_foto_as.setMinimumSize(QSize(140, 180))
-        self.label_foto_as.setLayoutDirection(Qt.RightToLeft)
-        self.label_foto_as.setStyleSheet(u"QLabel{margin-top: 42px}")
-        self.label_foto_as.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
-        self.label_foto_as.setAlignment(Qt.AlignCenter)
+        self.btn_alterar_foto_senha_as = QPushButton(self.frame_9)
+        self.btn_alterar_foto_senha_as.setObjectName(u"btn_alterar_foto_senha_as")
+        self.btn_alterar_foto_senha_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_senha_as.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
+        icon1 = QIcon()
+        icon1.addFile(u"./icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_alterar_foto_senha_as.setIcon(icon1)
+        self.btn_alterar_foto_senha_as.setIconSize(QSize(140, 180))
 
-        self.verticalLayout_6.addWidget(self.label_foto_as)
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_senha_as)
 
         self.label_ola_nome_as = QLabel(self.frame_9)
         self.label_ola_nome_as.setObjectName(u"label_ola_nome_as")
@@ -368,17 +400,17 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_as.setObjectName(u"btn_cadastrar_as")
         self.btn_cadastrar_as.setMinimumSize(QSize(140, 45))
         self.btn_cadastrar_as.setMaximumSize(QSize(140, 45))
-        font5 = QFont()
-        font5.setFamilies([u"Six Caps"])
-        font5.setPointSize(24)
-        self.btn_cadastrar_as.setFont(font5)
+        font6 = QFont()
+        font6.setFamilies([u"Six Caps"])
+        font6.setPointSize(24)
+        self.btn_cadastrar_as.setFont(font6)
         self.btn_cadastrar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon1 = QIcon()
-        icon1.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_as.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_as.setIcon(icon2)
         self.btn_cadastrar_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_cadastrar_as)
@@ -387,14 +419,14 @@ class Ui_MainWindow(object):
         self.btn_consulta_as.setObjectName(u"btn_consulta_as")
         self.btn_consulta_as.setMinimumSize(QSize(140, 45))
         self.btn_consulta_as.setMaximumSize(QSize(140, 45))
-        self.btn_consulta_as.setFont(font5)
+        self.btn_consulta_as.setFont(font6)
         self.btn_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon2 = QIcon()
-        icon2.addFile(u"./icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_consulta_as.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u"./icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_consulta_as.setIcon(icon3)
         self.btn_consulta_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_consulta_as)
@@ -403,14 +435,14 @@ class Ui_MainWindow(object):
         self.btn_agenda_as.setObjectName(u"btn_agenda_as")
         self.btn_agenda_as.setMinimumSize(QSize(140, 45))
         self.btn_agenda_as.setMaximumSize(QSize(140, 45))
-        self.btn_agenda_as.setFont(font5)
+        self.btn_agenda_as.setFont(font6)
         self.btn_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_agenda_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon3 = QIcon()
-        icon3.addFile(u"./icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_agenda_as.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u"./icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_agenda_as.setIcon(icon4)
         self.btn_agenda_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_agenda_as)
@@ -419,14 +451,14 @@ class Ui_MainWindow(object):
         self.btn_relatorios_as.setObjectName(u"btn_relatorios_as")
         self.btn_relatorios_as.setMinimumSize(QSize(140, 45))
         self.btn_relatorios_as.setMaximumSize(QSize(140, 45))
-        self.btn_relatorios_as.setFont(font5)
+        self.btn_relatorios_as.setFont(font6)
         self.btn_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon4 = QIcon()
-        icon4.addFile(u"./icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_relatorios_as.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u"./icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_relatorios_as.setIcon(icon5)
         self.btn_relatorios_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_relatorios_as)
@@ -435,14 +467,14 @@ class Ui_MainWindow(object):
         self.btn_comunidade_as.setObjectName(u"btn_comunidade_as")
         self.btn_comunidade_as.setMinimumSize(QSize(140, 45))
         self.btn_comunidade_as.setMaximumSize(QSize(140, 45))
-        self.btn_comunidade_as.setFont(font5)
+        self.btn_comunidade_as.setFont(font6)
         self.btn_comunidade_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_comunidade_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px;}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon5 = QIcon()
-        icon5.addFile(u"./icons/cliente.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_comunidade_as.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u"./icons/cliente.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_comunidade_as.setIcon(icon6)
         self.btn_comunidade_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_comunidade_as)
@@ -468,7 +500,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_10 = QHBoxLayout(self.frame_49)
         self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
-        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 20)
         self.horizontalSpacer_10 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_10.addItem(self.horizontalSpacer_10)
@@ -481,19 +513,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_34 = QVBoxLayout(self.frame_11)
         self.verticalLayout_34.setSpacing(15)
         self.verticalLayout_34.setObjectName(u"verticalLayout_34")
-        self.verticalLayout_34.setContentsMargins(0, 0, 0, 15)
-        self.btn_voltar_as = QPushButton(self.frame_11)
-        self.btn_voltar_as.setObjectName(u"btn_voltar_as")
-        self.btn_voltar_as.setMinimumSize(QSize(120, 40))
-        self.btn_voltar_as.setMaximumSize(QSize(120, 40))
-        self.btn_voltar_as.setFont(font2)
-        self.btn_voltar_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_34.addWidget(self.btn_voltar_as)
-
+        self.verticalLayout_34.setContentsMargins(0, 0, 0, 30)
         self.btn_sair_as = QPushButton(self.frame_11)
         self.btn_sair_as.setObjectName(u"btn_sair_as")
         self.btn_sair_as.setMinimumSize(QSize(120, 40))
@@ -504,12 +524,21 @@ class Ui_MainWindow(object):
         self.btn_sair_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        icon6 = QIcon()
-        icon6.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_sair_as.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_sair_as.setIcon(icon7)
         self.btn_sair_as.setIconSize(QSize(24, 24))
 
         self.verticalLayout_34.addWidget(self.btn_sair_as)
+
+        self.frame_191 = QFrame(self.frame_11)
+        self.frame_191.setObjectName(u"frame_191")
+        self.frame_191.setMinimumSize(QSize(0, 30))
+        self.frame_191.setMaximumSize(QSize(16777215, 30))
+        self.frame_191.setFrameShape(QFrame.StyledPanel)
+        self.frame_191.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_34.addWidget(self.frame_191)
 
 
         self.horizontalLayout_10.addWidget(self.frame_11)
@@ -532,7 +561,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_2 = QStackedWidget(self.frame_10)
         self.stackedWidget_2.setObjectName(u"stackedWidget_2")
         self.page_principal_as = QWidget()
@@ -564,18 +593,18 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_cuidador_usuario_as.setObjectName(u"btn_cadastrar_cuidador_usuario_as")
         self.btn_cadastrar_cuidador_usuario_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_cuidador_usuario_as.setMaximumSize(QSize(700, 154))
-        font6 = QFont()
-        font6.setFamilies([u"Six Caps"])
-        font6.setPointSize(60)
-        self.btn_cadastrar_cuidador_usuario_as.setFont(font6)
+        font7 = QFont()
+        font7.setFamilies([u"Six Caps"])
+        font7.setPointSize(60)
+        self.btn_cadastrar_cuidador_usuario_as.setFont(font7)
         self.btn_cadastrar_cuidador_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_cuidador_usuario_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_cuidador_usuario_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon7 = QIcon()
-        icon7.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_cuidador_usuario_as.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_cuidador_usuario_as.setIcon(icon8)
         self.btn_cadastrar_cuidador_usuario_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_cuidador_usuario_as)
@@ -584,15 +613,15 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_colaborador_as.setObjectName(u"btn_cadastrar_colaborador_as")
         self.btn_cadastrar_colaborador_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_colaborador_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_colaborador_as.setFont(font6)
+        self.btn_cadastrar_colaborador_as.setFont(font7)
         self.btn_cadastrar_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_colaborador_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_colaborador_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon8 = QIcon()
-        icon8.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_colaborador_as.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_colaborador_as.setIcon(icon9)
         self.btn_cadastrar_colaborador_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_colaborador_as)
@@ -601,15 +630,15 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_cursos_oficinas_as.setObjectName(u"btn_cadastrar_cursos_oficinas_as")
         self.btn_cadastrar_cursos_oficinas_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_cursos_oficinas_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_cursos_oficinas_as.setFont(font6)
+        self.btn_cadastrar_cursos_oficinas_as.setFont(font7)
         self.btn_cadastrar_cursos_oficinas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_cursos_oficinas_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_cursos_oficinas_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon9 = QIcon()
-        icon9.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_cursos_oficinas_as.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_cursos_oficinas_as.setIcon(icon10)
         self.btn_cadastrar_cursos_oficinas_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_cursos_oficinas_as)
@@ -618,15 +647,15 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_alterar_dados_as.setObjectName(u"btn_cadastrar_alterar_dados_as")
         self.btn_cadastrar_alterar_dados_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_alterar_dados_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_alterar_dados_as.setFont(font6)
+        self.btn_cadastrar_alterar_dados_as.setFont(font7)
         self.btn_cadastrar_alterar_dados_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_alterar_dados_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_alterar_dados_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon10 = QIcon()
-        icon10.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_alterar_dados_as.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_alterar_dados_as.setIcon(icon11)
         self.btn_cadastrar_alterar_dados_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_alterar_dados_as)
@@ -704,9 +733,9 @@ class Ui_MainWindow(object):
         self.btn_foto_usuario_as.setMaximumSize(QSize(125, 153))
         self.btn_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_foto_usuario_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        icon11 = QIcon()
-        icon11.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_foto_usuario_as.setIcon(icon11)
+        icon12 = QIcon()
+        icon12.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_foto_usuario_as.setIcon(icon12)
         self.btn_foto_usuario_as.setIconSize(QSize(120, 120))
 
         self.horizontalLayout_6.addWidget(self.btn_foto_usuario_as)
@@ -830,7 +859,7 @@ class Ui_MainWindow(object):
         self.frame_64.setFrameShape(QFrame.StyledPanel)
         self.frame_64.setFrameShadow(QFrame.Raised)
         self.verticalLayout_32 = QVBoxLayout(self.frame_64)
-        self.verticalLayout_32.setSpacing(0)
+        self.verticalLayout_32.setSpacing(6)
         self.verticalLayout_32.setObjectName(u"verticalLayout_32")
         self.verticalLayout_32.setContentsMargins(15, 0, 0, 0)
         self.label_situacao_usuario_as = QLabel(self.frame_64)
@@ -851,10 +880,10 @@ class Ui_MainWindow(object):
         self.input_situacao_ativo_usuario_as = QRadioButton(self.frame_65)
         self.input_situacao_ativo_usuario_as.setObjectName(u"input_situacao_ativo_usuario_as")
         self.input_situacao_ativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        font7 = QFont()
-        font7.setFamilies([u"Abel"])
-        font7.setPointSize(11)
-        self.input_situacao_ativo_usuario_as.setFont(font7)
+        font8 = QFont()
+        font8.setFamilies([u"Abel"])
+        font8.setPointSize(11)
+        self.input_situacao_ativo_usuario_as.setFont(font8)
         self.input_situacao_ativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_33.addWidget(self.input_situacao_ativo_usuario_as)
@@ -862,7 +891,7 @@ class Ui_MainWindow(object):
         self.input_situacao_inativo_usuario_as = QRadioButton(self.frame_65)
         self.input_situacao_inativo_usuario_as.setObjectName(u"input_situacao_inativo_usuario_as")
         self.input_situacao_inativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_inativo_usuario_as.setFont(font7)
+        self.input_situacao_inativo_usuario_as.setFont(font8)
         self.input_situacao_inativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_33.addWidget(self.input_situacao_inativo_usuario_as)
@@ -1067,9 +1096,9 @@ class Ui_MainWindow(object):
         self.frame_60 = QFrame(self.frame_46)
         self.frame_60.setObjectName(u"frame_60")
         self.frame_60.setMaximumSize(QSize(16777215, 60))
-        font8 = QFont()
-        font8.setPointSize(7)
-        self.frame_60.setFont(font8)
+        font9 = QFont()
+        font9.setPointSize(7)
+        self.frame_60.setFont(font9)
         self.frame_60.setStyleSheet(u"")
         self.frame_60.setFrameShape(QFrame.StyledPanel)
         self.frame_60.setFrameShadow(QFrame.Raised)
@@ -1348,12 +1377,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_50.addWidget(self.label_estado_usuario_as)
 
-        self.input_estado_usuario_as = QComboBox(self.frame_79)
+        self.input_estado_usuario_as = QLineEdit(self.frame_79)
         self.input_estado_usuario_as.setObjectName(u"input_estado_usuario_as")
         self.input_estado_usuario_as.setMinimumSize(QSize(70, 30))
         self.input_estado_usuario_as.setMaximumSize(QSize(70, 30))
-        self.input_estado_usuario_as.setFont(font)
-        self.input_estado_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_50.addWidget(self.input_estado_usuario_as)
 
@@ -1379,11 +1406,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_51.addWidget(self.label_estado_civil_usuario_as)
 
         self.input_estado_civil_usuario_as = QComboBox(self.frame_76)
+        self.input_estado_civil_usuario_as.addItem("")
+        self.input_estado_civil_usuario_as.addItem("")
+        self.input_estado_civil_usuario_as.addItem("")
+        self.input_estado_civil_usuario_as.addItem("")
+        self.input_estado_civil_usuario_as.addItem("")
+        self.input_estado_civil_usuario_as.addItem("")
         self.input_estado_civil_usuario_as.setObjectName(u"input_estado_civil_usuario_as")
         self.input_estado_civil_usuario_as.setMinimumSize(QSize(200, 30))
         self.input_estado_civil_usuario_as.setMaximumSize(QSize(200, 30))
         self.input_estado_civil_usuario_as.setFont(font)
         self.input_estado_civil_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_estado_civil_usuario_as.setStyleSheet(u"")
+        self.input_estado_civil_usuario_as.setIconSize(QSize(18, 18))
 
         self.verticalLayout_51.addWidget(self.input_estado_civil_usuario_as)
 
@@ -1409,6 +1444,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_64.addWidget(self.label_escolaridade_usuario_as)
 
         self.input_escolaridade_usuario_as = QComboBox(self.frame_129)
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
         self.input_escolaridade_usuario_as.setObjectName(u"input_escolaridade_usuario_as")
         self.input_escolaridade_usuario_as.setMinimumSize(QSize(280, 30))
         self.input_escolaridade_usuario_as.setMaximumSize(QSize(280, 30))
@@ -1459,16 +1504,18 @@ class Ui_MainWindow(object):
         self.frame_130.setFrameShape(QFrame.StyledPanel)
         self.frame_130.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_58 = QHBoxLayout(self.frame_130)
+        self.horizontalLayout_58.setSpacing(0)
         self.horizontalLayout_58.setObjectName(u"horizontalLayout_58")
+        self.horizontalLayout_58.setContentsMargins(0, 0, 0, 0)
         self.input_pessoa_cdeficiencia_sim_usuario_as = QRadioButton(self.frame_130)
         self.input_pessoa_cdeficiencia_sim_usuario_as.setObjectName(u"input_pessoa_cdeficiencia_sim_usuario_as")
-        self.input_pessoa_cdeficiencia_sim_usuario_as.setFont(font7)
+        self.input_pessoa_cdeficiencia_sim_usuario_as.setFont(font8)
 
         self.horizontalLayout_58.addWidget(self.input_pessoa_cdeficiencia_sim_usuario_as)
 
         self.label_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_130)
         self.label_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"label_pessoa_cdeficiencia_nao_usuario_as")
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setFont(font7)
+        self.label_pessoa_cdeficiencia_nao_usuario_as.setFont(font8)
 
         self.horizontalLayout_58.addWidget(self.label_pessoa_cdeficiencia_nao_usuario_as)
 
@@ -1496,7 +1543,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_54.addWidget(self.label_tipo_deficiencia_usuario_as)
 
-        self.input_tipo_deficiencia_usuario_as = QLineEdit(self.frame_81)
+        self.input_tipo_deficiencia_usuario_as = QComboBox(self.frame_81)
+        self.input_tipo_deficiencia_usuario_as.addItem("")
+        self.input_tipo_deficiencia_usuario_as.addItem("")
+        self.input_tipo_deficiencia_usuario_as.addItem("")
+        self.input_tipo_deficiencia_usuario_as.addItem("")
+        self.input_tipo_deficiencia_usuario_as.addItem("")
+        self.input_tipo_deficiencia_usuario_as.addItem("")
         self.input_tipo_deficiencia_usuario_as.setObjectName(u"input_tipo_deficiencia_usuario_as")
         self.input_tipo_deficiencia_usuario_as.setMinimumSize(QSize(250, 30))
         self.input_tipo_deficiencia_usuario_as.setMaximumSize(QSize(250, 30))
@@ -1526,6 +1579,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_55.addWidget(self.label_renda_familiar_usuario_as)
 
         self.input_renda_familiar_usuario_as = QComboBox(self.frame_82)
+        self.input_renda_familiar_usuario_as.addItem("")
+        self.input_renda_familiar_usuario_as.addItem("")
+        self.input_renda_familiar_usuario_as.addItem("")
+        self.input_renda_familiar_usuario_as.addItem("")
+        self.input_renda_familiar_usuario_as.addItem("")
         self.input_renda_familiar_usuario_as.setObjectName(u"input_renda_familiar_usuario_as")
         self.input_renda_familiar_usuario_as.setMinimumSize(QSize(250, 30))
         self.input_renda_familiar_usuario_as.setMaximumSize(QSize(250, 30))
@@ -1557,6 +1615,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_56.addWidget(self.label_meio_transporte_usuario_as)
 
         self.input_meio_transporte_usuario_as = QComboBox(self.frame_83)
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
+        self.input_meio_transporte_usuario_as.addItem("")
         self.input_meio_transporte_usuario_as.setObjectName(u"input_meio_transporte_usuario_as")
         self.input_meio_transporte_usuario_as.setMinimumSize(QSize(190, 30))
         self.input_meio_transporte_usuario_as.setMaximumSize(QSize(190, 30))
@@ -1585,6 +1651,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_57.addWidget(self.label_vale_transporte_usuario_as)
 
         self.input_vale_transporte_usuario_as = QComboBox(self.frame_84)
+        self.input_vale_transporte_usuario_as.addItem("")
+        self.input_vale_transporte_usuario_as.addItem("")
+        self.input_vale_transporte_usuario_as.addItem("")
+        self.input_vale_transporte_usuario_as.addItem("")
         self.input_vale_transporte_usuario_as.setObjectName(u"input_vale_transporte_usuario_as")
         self.input_vale_transporte_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_vale_transporte_usuario_as.setMaximumSize(QSize(16777215, 30))
@@ -1627,7 +1697,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_58.addWidget(self.label_situacao_trabalho_usuario_as)
 
-        self.input_situacao_trabalho_usuario_as = QLineEdit(self.frame_85)
+        self.input_situacao_trabalho_usuario_as = QComboBox(self.frame_85)
+        self.input_situacao_trabalho_usuario_as.addItem("")
+        self.input_situacao_trabalho_usuario_as.addItem("")
+        self.input_situacao_trabalho_usuario_as.addItem("")
+        self.input_situacao_trabalho_usuario_as.addItem("")
+        self.input_situacao_trabalho_usuario_as.addItem("")
+        self.input_situacao_trabalho_usuario_as.addItem("")
+        self.input_situacao_trabalho_usuario_as.addItem("")
         self.input_situacao_trabalho_usuario_as.setObjectName(u"input_situacao_trabalho_usuario_as")
         self.input_situacao_trabalho_usuario_as.setMinimumSize(QSize(250, 30))
         self.input_situacao_trabalho_usuario_as.setMaximumSize(QSize(250, 30))
@@ -1657,6 +1734,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_63.addWidget(self.label_beneficios_usuario_as)
 
         self.input_beneficios_usuario_as = QComboBox(self.frame_91)
+        self.input_beneficios_usuario_as.addItem("")
+        self.input_beneficios_usuario_as.addItem("")
+        self.input_beneficios_usuario_as.addItem("")
+        self.input_beneficios_usuario_as.addItem("")
+        self.input_beneficios_usuario_as.addItem("")
         self.input_beneficios_usuario_as.setObjectName(u"input_beneficios_usuario_as")
         self.input_beneficios_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_beneficios_usuario_as.setMaximumSize(QSize(250, 30))
@@ -1696,14 +1778,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_59.setContentsMargins(0, 0, 0, 0)
         self.input_tarifa_social_sim_usuario_as = QRadioButton(self.frame_87)
         self.input_tarifa_social_sim_usuario_as.setObjectName(u"input_tarifa_social_sim_usuario_as")
-        self.input_tarifa_social_sim_usuario_as.setFont(font7)
+        self.input_tarifa_social_sim_usuario_as.setFont(font8)
         self.input_tarifa_social_sim_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_59.addWidget(self.input_tarifa_social_sim_usuario_as)
 
         self.input_tarifa_social_nao_usuario_as = QRadioButton(self.frame_87)
         self.input_tarifa_social_nao_usuario_as.setObjectName(u"input_tarifa_social_nao_usuario_as")
-        self.input_tarifa_social_nao_usuario_as.setFont(font7)
+        self.input_tarifa_social_nao_usuario_as.setFont(font8)
         self.input_tarifa_social_nao_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_59.addWidget(self.input_tarifa_social_nao_usuario_as)
@@ -1733,6 +1815,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_59.addWidget(self.label_tipo_tratamento_usuario_as)
 
         self.input_tipo_tratamento_usuario_as = QComboBox(self.frame_86)
+        self.input_tipo_tratamento_usuario_as.addItem("")
+        self.input_tipo_tratamento_usuario_as.addItem("")
+        self.input_tipo_tratamento_usuario_as.addItem("")
+        self.input_tipo_tratamento_usuario_as.addItem("")
         self.input_tipo_tratamento_usuario_as.setObjectName(u"input_tipo_tratamento_usuario_as")
         self.input_tipo_tratamento_usuario_as.setMinimumSize(QSize(250, 30))
         self.input_tipo_tratamento_usuario_as.setMaximumSize(QSize(250, 30))
@@ -1806,6 +1892,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_61.addWidget(self.label_patologia_base_usuario_as)
 
         self.input_patologia_base_usuario_as = QComboBox(self.frame_92)
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
         self.input_patologia_base_usuario_as.setObjectName(u"input_patologia_base_usuario_as")
         self.input_patologia_base_usuario_as.setMinimumSize(QSize(250, 30))
         self.input_patologia_base_usuario_as.setMaximumSize(QSize(250, 30))
@@ -1865,6 +1958,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_89.addWidget(self.label_periodo_usuario_as)
 
         self.input_periodo_usuario_as = QComboBox(self.frame_131)
+        self.input_periodo_usuario_as.addItem("")
+        self.input_periodo_usuario_as.addItem("")
+        self.input_periodo_usuario_as.addItem("")
+        self.input_periodo_usuario_as.addItem("")
         self.input_periodo_usuario_as.setObjectName(u"input_periodo_usuario_as")
         self.input_periodo_usuario_as.setMinimumSize(QSize(240, 30))
         self.input_periodo_usuario_as.setMaximumSize(QSize(240, 30))
@@ -1924,30 +2021,53 @@ class Ui_MainWindow(object):
         self.frame_4.setFrameShape(QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame_4)
-        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setSpacing(20)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_usuario_as = QPushButton(self.frame_4)
+        self.btn_voltar_usuario_as.setObjectName(u"btn_voltar_usuario_as")
+        self.btn_voltar_usuario_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_usuario_as.setMaximumSize(QSize(100, 40))
+        font10 = QFont()
+        font10.setFamilies([u"Abel"])
+        font10.setPointSize(18)
+        self.btn_voltar_usuario_as.setFont(font10)
+        self.btn_voltar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout.addWidget(self.btn_voltar_usuario_as)
+
         self.horizontalSpacer_5 = QSpacerItem(1687, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout.addItem(self.horizontalSpacer_5)
 
-        self.btn_proximo_as = QPushButton(self.frame_4)
-        self.btn_proximo_as.setObjectName(u"btn_proximo_as")
-        self.btn_proximo_as.setMinimumSize(QSize(140, 40))
-        font9 = QFont()
-        font9.setFamilies([u"Abel"])
-        font9.setPointSize(18)
-        self.btn_proximo_as.setFont(font9)
-        self.btn_proximo_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_proximo_as.setLayoutDirection(Qt.RightToLeft)
-        self.btn_proximo_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_observacoes_sigilo_as = QPushButton(self.frame_4)
+        self.btn_observacoes_sigilo_as.setObjectName(u"btn_observacoes_sigilo_as")
+        self.btn_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
+        self.btn_observacoes_sigilo_as.setFont(font10)
+        self.btn_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        icon13 = QIcon()
+        icon13.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_observacoes_sigilo_as.setIcon(icon13)
+        self.btn_observacoes_sigilo_as.setIconSize(QSize(28, 28))
+
+        self.horizontalLayout.addWidget(self.btn_observacoes_sigilo_as)
+
+        self.btn_finalizar_as = QPushButton(self.frame_4)
+        self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
+        self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
+        self.btn_finalizar_as.setFont(font10)
+        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
-        icon12 = QIcon()
-        icon12.addFile(u"./icons/seta-direita.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_proximo_as.setIcon(icon12)
 
-        self.horizontalLayout.addWidget(self.btn_proximo_as)
+        self.horizontalLayout.addWidget(self.btn_finalizar_as)
 
 
         self.verticalLayout_3.addWidget(self.frame_4)
@@ -2488,7 +2608,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_79.addWidget(self.label_estado_cuidador_as)
 
-        self.input_estado_cuidador_as = QComboBox(self.frame_115)
+        self.input_estado_cuidador_as = QLineEdit(self.frame_115)
         self.input_estado_cuidador_as.setObjectName(u"input_estado_cuidador_as")
         self.input_estado_cuidador_as.setMinimumSize(QSize(70, 30))
         self.input_estado_cuidador_as.setMaximumSize(QSize(70, 30))
@@ -2554,36 +2674,46 @@ class Ui_MainWindow(object):
         self.horizontalLayout_48 = QHBoxLayout(self.frame_99)
         self.horizontalLayout_48.setSpacing(20)
         self.horizontalLayout_48.setObjectName(u"horizontalLayout_48")
-        self.horizontalLayout_48.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_48.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_cuidador_as = QPushButton(self.frame_99)
+        self.btn_voltar_cuidador_as.setObjectName(u"btn_voltar_cuidador_as")
+        self.btn_voltar_cuidador_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_cuidador_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_cuidador_as.setFont(font10)
+        self.btn_voltar_cuidador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_cuidador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_48.addWidget(self.btn_voltar_cuidador_as)
+
         self.horizontalSpacer_8 = QSpacerItem(1770, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_48.addItem(self.horizontalSpacer_8)
 
-        self.btn_observacoes_sigilo_as = QPushButton(self.frame_99)
-        self.btn_observacoes_sigilo_as.setObjectName(u"btn_observacoes_sigilo_as")
-        self.btn_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
-        self.btn_observacoes_sigilo_as.setFont(font9)
-        self.btn_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
-"QPushButton:hover{background-color: #F89198}\n"
-"QPushButton:focus{outline:0}")
-        icon13 = QIcon()
-        icon13.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_observacoes_sigilo_as.setIcon(icon13)
-        self.btn_observacoes_sigilo_as.setIconSize(QSize(28, 28))
-
-        self.horizontalLayout_48.addWidget(self.btn_observacoes_sigilo_as)
-
-        self.btn_finalizar_as = QPushButton(self.frame_99)
-        self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
-        self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
-        self.btn_finalizar_as.setFont(font9)
-        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_salvar_as = QPushButton(self.frame_99)
+        self.btn_salvar_as.setObjectName(u"btn_salvar_as")
+        self.btn_salvar_as.setMinimumSize(QSize(120, 40))
+        self.btn_salvar_as.setFont(font10)
+        self.btn_salvar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_salvar_as.setLayoutDirection(Qt.RightToLeft)
+        self.btn_salvar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.horizontalLayout_48.addWidget(self.btn_finalizar_as)
+        self.horizontalLayout_48.addWidget(self.btn_salvar_as)
+
+        self.btn_proximo_as = QPushButton(self.frame_99)
+        self.btn_proximo_as.setObjectName(u"btn_proximo_as")
+        self.btn_proximo_as.setMinimumSize(QSize(140, 40))
+        self.btn_proximo_as.setFont(font10)
+        self.btn_proximo_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_proximo_as.setLayoutDirection(Qt.RightToLeft)
+        self.btn_proximo_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_48.addWidget(self.btn_proximo_as)
 
 
         self.verticalLayout_66.addWidget(self.frame_99)
@@ -2706,16 +2836,28 @@ class Ui_MainWindow(object):
         self.horizontalLayout_54 = QHBoxLayout(self.frame_119)
         self.horizontalLayout_54.setSpacing(40)
         self.horizontalLayout_54.setObjectName(u"horizontalLayout_54")
-        self.horizontalLayout_54.setContentsMargins(40, 0, 0, 0)
+        self.horizontalLayout_54.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_observacoes_sigilosas_as = QPushButton(self.frame_119)
+        self.btn_voltar_observacoes_sigilosas_as.setObjectName(u"btn_voltar_observacoes_sigilosas_as")
+        self.btn_voltar_observacoes_sigilosas_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_observacoes_sigilosas_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_observacoes_sigilosas_as.setFont(font10)
+        self.btn_voltar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_54.addWidget(self.btn_voltar_observacoes_sigilosas_as)
+
         self.btn_alterar_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_alterar_observacoes_sigilosas_as.setObjectName(u"btn_alterar_observacoes_sigilosas_as")
         self.btn_alterar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_alterar_observacoes_sigilosas_as.setFont(font9)
+        self.btn_alterar_observacoes_sigilosas_as.setFont(font10)
         self.btn_alterar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_observacoes_sigilosas_as.setIcon(icon10)
+        self.btn_alterar_observacoes_sigilosas_as.setIcon(icon11)
         self.btn_alterar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_54.addWidget(self.btn_alterar_observacoes_sigilosas_as)
@@ -2723,7 +2865,7 @@ class Ui_MainWindow(object):
         self.btn_cancelar_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_cancelar_observacoes_sigilosas_as.setObjectName(u"btn_cancelar_observacoes_sigilosas_as")
         self.btn_cancelar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_cancelar_observacoes_sigilosas_as.setFont(font9)
+        self.btn_cancelar_observacoes_sigilosas_as.setFont(font10)
         self.btn_cancelar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cancelar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -2738,7 +2880,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_salvar_observacoes_sigilosas_as.setObjectName(u"btn_salvar_observacoes_sigilosas_as")
         self.btn_salvar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_salvar_observacoes_sigilosas_as.setFont(font9)
+        self.btn_salvar_observacoes_sigilosas_as.setFont(font10)
         self.btn_salvar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -2753,7 +2895,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_excluir_observacoes_sigilosas_as.setObjectName(u"btn_excluir_observacoes_sigilosas_as")
         self.btn_excluir_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_excluir_observacoes_sigilosas_as.setFont(font9)
+        self.btn_excluir_observacoes_sigilosas_as.setFont(font10)
         self.btn_excluir_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_excluir_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -3168,7 +3310,9 @@ class Ui_MainWindow(object):
         self.frame_214.setFrameShape(QFrame.StyledPanel)
         self.frame_214.setFrameShadow(QFrame.Raised)
         self.verticalLayout_172 = QVBoxLayout(self.frame_214)
+        self.verticalLayout_172.setSpacing(0)
         self.verticalLayout_172.setObjectName(u"verticalLayout_172")
+        self.verticalLayout_172.setContentsMargins(0, 0, 0, 0)
         self.label_observacoes_gerais_colaborador_as = QLabel(self.frame_214)
         self.label_observacoes_gerais_colaborador_as.setObjectName(u"label_observacoes_gerais_colaborador_as")
         self.label_observacoes_gerais_colaborador_as.setMaximumSize(QSize(300, 50))
@@ -3745,7 +3889,7 @@ class Ui_MainWindow(object):
         self.input_foto_colaborador_as.setMaximumSize(QSize(125, 153))
         self.input_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.input_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.input_foto_colaborador_as.setIcon(icon11)
+        self.input_foto_colaborador_as.setIcon(icon12)
         self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
 
         self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
@@ -3814,7 +3958,7 @@ class Ui_MainWindow(object):
         self.input_situacao_ativo_colaborador_as = QRadioButton(self.frame_262)
         self.input_situacao_ativo_colaborador_as.setObjectName(u"input_situacao_ativo_colaborador_as")
         self.input_situacao_ativo_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_ativo_colaborador_as.setFont(font7)
+        self.input_situacao_ativo_colaborador_as.setFont(font8)
         self.input_situacao_ativo_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_90.addWidget(self.input_situacao_ativo_colaborador_as)
@@ -3822,7 +3966,7 @@ class Ui_MainWindow(object):
         self.input_situacao_inativo_colaborador_as = QRadioButton(self.frame_262)
         self.input_situacao_inativo_colaborador_as.setObjectName(u"input_situacao_inativo_colaborador_as")
         self.input_situacao_inativo_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_inativo_colaborador_as.setFont(font7)
+        self.input_situacao_inativo_colaborador_as.setFont(font8)
         self.input_situacao_inativo_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_90.addWidget(self.input_situacao_inativo_colaborador_as)
@@ -3962,7 +4106,7 @@ class Ui_MainWindow(object):
         self.btn_concluir_cadastro_colaborador_as.setObjectName(u"btn_concluir_cadastro_colaborador_as")
         self.btn_concluir_cadastro_colaborador_as.setMinimumSize(QSize(140, 40))
         self.btn_concluir_cadastro_colaborador_as.setMaximumSize(QSize(140, 40))
-        self.btn_concluir_cadastro_colaborador_as.setFont(font9)
+        self.btn_concluir_cadastro_colaborador_as.setFont(font10)
         self.btn_concluir_cadastro_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
@@ -4109,6 +4253,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_96.addWidget(self.label_tipo_cursos_as)
 
         self.input_tipo_cursos_as = QComboBox(self.frame_143)
+        self.input_tipo_cursos_as.addItem("")
+        self.input_tipo_cursos_as.addItem("")
+        self.input_tipo_cursos_as.addItem("")
         self.input_tipo_cursos_as.setObjectName(u"input_tipo_cursos_as")
         self.input_tipo_cursos_as.setMinimumSize(QSize(175, 30))
         self.input_tipo_cursos_as.setMaximumSize(QSize(175, 30))
@@ -4146,14 +4293,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
         self.input_ativo_cursos_as = QRadioButton(self.frame_145)
         self.input_ativo_cursos_as.setObjectName(u"input_ativo_cursos_as")
-        self.input_ativo_cursos_as.setFont(font7)
+        self.input_ativo_cursos_as.setFont(font8)
         self.input_ativo_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_63.addWidget(self.input_ativo_cursos_as)
 
         self.input_inativo_cursos_as = QRadioButton(self.frame_145)
         self.input_inativo_cursos_as.setObjectName(u"input_inativo_cursos_as")
-        self.input_inativo_cursos_as.setFont(font7)
+        self.input_inativo_cursos_as.setFont(font8)
         self.input_inativo_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_63.addWidget(self.input_inativo_cursos_as)
@@ -4294,7 +4441,7 @@ class Ui_MainWindow(object):
         self.btn_segunda_cursos_as.setObjectName(u"btn_segunda_cursos_as")
         self.btn_segunda_cursos_as.setMinimumSize(QSize(120, 30))
         self.btn_segunda_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_segunda_cursos_as.setFont(font7)
+        self.btn_segunda_cursos_as.setFont(font8)
         self.btn_segunda_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_segunda_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
 
@@ -4304,7 +4451,7 @@ class Ui_MainWindow(object):
         self.btn_quinta_cursos_as.setObjectName(u"btn_quinta_cursos_as")
         self.btn_quinta_cursos_as.setMinimumSize(QSize(120, 30))
         self.btn_quinta_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_quinta_cursos_as.setFont(font7)
+        self.btn_quinta_cursos_as.setFont(font8)
         self.btn_quinta_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_quinta_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
 
@@ -4326,7 +4473,7 @@ class Ui_MainWindow(object):
         self.btn_terca_cursos_as.setObjectName(u"btn_terca_cursos_as")
         self.btn_terca_cursos_as.setMinimumSize(QSize(120, 30))
         self.btn_terca_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_terca_cursos_as.setFont(font7)
+        self.btn_terca_cursos_as.setFont(font8)
         self.btn_terca_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_terca_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
 
@@ -4336,7 +4483,7 @@ class Ui_MainWindow(object):
         self.btn_sexta_cursos_as.setObjectName(u"btn_sexta_cursos_as")
         self.btn_sexta_cursos_as.setMinimumSize(QSize(120, 30))
         self.btn_sexta_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_sexta_cursos_as.setFont(font7)
+        self.btn_sexta_cursos_as.setFont(font8)
         self.btn_sexta_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_sexta_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
 
@@ -4358,7 +4505,7 @@ class Ui_MainWindow(object):
         self.btn_quarta_cursos_as.setObjectName(u"btn_quarta_cursos_as")
         self.btn_quarta_cursos_as.setMinimumSize(QSize(120, 30))
         self.btn_quarta_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_quarta_cursos_as.setFont(font7)
+        self.btn_quarta_cursos_as.setFont(font8)
         self.btn_quarta_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_quarta_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
 
@@ -4368,7 +4515,7 @@ class Ui_MainWindow(object):
         self.btn_sabado_cursos_as.setObjectName(u"btn_sabado_cursos_as")
         self.btn_sabado_cursos_as.setMinimumSize(QSize(120, 30))
         self.btn_sabado_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_sabado_cursos_as.setFont(font7)
+        self.btn_sabado_cursos_as.setFont(font8)
         self.btn_sabado_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_sabado_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
 
@@ -4468,6 +4615,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_107.addWidget(self.label_periodo_cursos_as)
 
         self.input_periodo_cursos_as = QComboBox(self.frame_155)
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.addItem("")
         self.input_periodo_cursos_as.setObjectName(u"input_periodo_cursos_as")
         self.input_periodo_cursos_as.setMinimumSize(QSize(240, 30))
         self.input_periodo_cursos_as.setMaximumSize(QSize(240, 30))
@@ -4680,7 +4831,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_114.addWidget(self.label_estado_cursos_as)
 
-        self.input_estado_cursos_as = QComboBox(self.frame_162)
+        self.input_estado_cursos_as = QLineEdit(self.frame_162)
         self.input_estado_cursos_as.setObjectName(u"input_estado_cursos_as")
         self.input_estado_cursos_as.setMinimumSize(QSize(70, 30))
         self.input_estado_cursos_as.setMaximumSize(QSize(70, 30))
@@ -4705,7 +4856,9 @@ class Ui_MainWindow(object):
         self.frame_140.setFrameShape(QFrame.StyledPanel)
         self.frame_140.setFrameShadow(QFrame.Raised)
         self.verticalLayout_115 = QVBoxLayout(self.frame_140)
+        self.verticalLayout_115.setSpacing(0)
         self.verticalLayout_115.setObjectName(u"verticalLayout_115")
+        self.verticalLayout_115.setContentsMargins(0, 0, 0, 0)
         self.label_descricao_cursos_as = QLabel(self.frame_140)
         self.label_descricao_cursos_as.setObjectName(u"label_descricao_cursos_as")
         self.label_descricao_cursos_as.setFont(font)
@@ -4750,14 +4903,26 @@ class Ui_MainWindow(object):
         self.frame_124.setFrameShape(QFrame.StyledPanel)
         self.frame_124.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_57 = QHBoxLayout(self.frame_124)
-        self.horizontalLayout_57.setSpacing(0)
+        self.horizontalLayout_57.setSpacing(20)
         self.horizontalLayout_57.setObjectName(u"horizontalLayout_57")
         self.horizontalLayout_57.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_cursos_as = QPushButton(self.frame_124)
+        self.btn_voltar_cursos_as.setObjectName(u"btn_voltar_cursos_as")
+        self.btn_voltar_cursos_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_cursos_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_cursos_as.setFont(font10)
+        self.btn_voltar_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_57.addWidget(self.btn_voltar_cursos_as)
+
         self.btn_lista_pessoas_cursos_as = QPushButton(self.frame_124)
         self.btn_lista_pessoas_cursos_as.setObjectName(u"btn_lista_pessoas_cursos_as")
         self.btn_lista_pessoas_cursos_as.setMinimumSize(QSize(0, 40))
         self.btn_lista_pessoas_cursos_as.setMaximumSize(QSize(16777215, 40))
-        self.btn_lista_pessoas_cursos_as.setFont(font9)
+        self.btn_lista_pessoas_cursos_as.setFont(font10)
         self.btn_lista_pessoas_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_lista_pessoas_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -4777,7 +4942,7 @@ class Ui_MainWindow(object):
         self.btn_concluir_cursos_as.setObjectName(u"btn_concluir_cursos_as")
         self.btn_concluir_cursos_as.setMinimumSize(QSize(140, 40))
         self.btn_concluir_cursos_as.setMaximumSize(QSize(140, 40))
-        self.btn_concluir_cursos_as.setFont(font9)
+        self.btn_concluir_cursos_as.setFont(font10)
         self.btn_concluir_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_concluir_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -4792,6 +4957,1239 @@ class Ui_MainWindow(object):
         self.verticalLayout_84.setStretch(1, 8)
         self.verticalLayout_84.setStretch(2, 1)
         self.stackedWidget_2.addWidget(self.page_cadastrar_cursos_e_oficinas_as)
+        self.page_consulta_as = QWidget()
+        self.page_consulta_as.setObjectName(u"page_consulta_as")
+        self.page_consulta_as.setStyleSheet(u"color: #EC848C;")
+        self.verticalLayout_117 = QVBoxLayout(self.page_consulta_as)
+        self.verticalLayout_117.setSpacing(0)
+        self.verticalLayout_117.setObjectName(u"verticalLayout_117")
+        self.verticalLayout_117.setContentsMargins(0, 0, 0, 0)
+        self.frame_165 = QFrame(self.page_consulta_as)
+        self.frame_165.setObjectName(u"frame_165")
+        self.frame_165.setStyleSheet(u"background-color: #F3B9BF;")
+        self.frame_165.setFrameShape(QFrame.StyledPanel)
+        self.frame_165.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_118 = QVBoxLayout(self.frame_165)
+        self.verticalLayout_118.setSpacing(0)
+        self.verticalLayout_118.setObjectName(u"verticalLayout_118")
+        self.verticalLayout_118.setContentsMargins(0, 0, 0, 0)
+        self.label_consulta_consulta_as = QLabel(self.frame_165)
+        self.label_consulta_consulta_as.setObjectName(u"label_consulta_consulta_as")
+        self.label_consulta_consulta_as.setFont(font1)
+        self.label_consulta_consulta_as.setStyleSheet(u"")
+        self.label_consulta_consulta_as.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_118.addWidget(self.label_consulta_consulta_as)
+
+
+        self.verticalLayout_117.addWidget(self.frame_165)
+
+        self.frame_166 = QFrame(self.page_consulta_as)
+        self.frame_166.setObjectName(u"frame_166")
+        self.frame_166.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
+"QLabel{margin-left: 0.25em}")
+        self.frame_166.setFrameShape(QFrame.StyledPanel)
+        self.frame_166.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_68 = QHBoxLayout(self.frame_166)
+        self.horizontalLayout_68.setSpacing(0)
+        self.horizontalLayout_68.setObjectName(u"horizontalLayout_68")
+        self.horizontalLayout_68.setContentsMargins(30, 20, 5, 5)
+        self.frame_168 = QFrame(self.frame_166)
+        self.frame_168.setObjectName(u"frame_168")
+        self.frame_168.setStyleSheet(u"background-color: #EC848C; border-radius: 10px; color: #000")
+        self.frame_168.setFrameShape(QFrame.StyledPanel)
+        self.frame_168.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_119 = QVBoxLayout(self.frame_168)
+        self.verticalLayout_119.setSpacing(0)
+        self.verticalLayout_119.setObjectName(u"verticalLayout_119")
+        self.verticalLayout_119.setContentsMargins(0, 0, 0, 0)
+        self.frame_170 = QFrame(self.frame_168)
+        self.frame_170.setObjectName(u"frame_170")
+        self.frame_170.setFrameShape(QFrame.StyledPanel)
+        self.frame_170.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_120 = QVBoxLayout(self.frame_170)
+        self.verticalLayout_120.setObjectName(u"verticalLayout_120")
+        self.label_buscar_consulta_as = QLabel(self.frame_170)
+        self.label_buscar_consulta_as.setObjectName(u"label_buscar_consulta_as")
+        font11 = QFont()
+        font11.setFamilies([u"Abel"])
+        font11.setPointSize(16)
+        self.label_buscar_consulta_as.setFont(font11)
+        self.label_buscar_consulta_as.setStyleSheet(u"")
+        self.label_buscar_consulta_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_120.addWidget(self.label_buscar_consulta_as)
+
+
+        self.verticalLayout_119.addWidget(self.frame_170)
+
+        self.frame_172 = QFrame(self.frame_168)
+        self.frame_172.setObjectName(u"frame_172")
+        self.frame_172.setFrameShape(QFrame.StyledPanel)
+        self.frame_172.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_69 = QHBoxLayout(self.frame_172)
+        self.horizontalLayout_69.setSpacing(0)
+        self.horizontalLayout_69.setObjectName(u"horizontalLayout_69")
+        self.horizontalLayout_69.setContentsMargins(20, 0, 0, 0)
+        self.input_nome_radio_consulta_as = QRadioButton(self.frame_172)
+        self.input_nome_radio_consulta_as.setObjectName(u"input_nome_radio_consulta_as")
+        font12 = QFont()
+        font12.setFamilies([u"Abel"])
+        font12.setPointSize(14)
+        self.input_nome_radio_consulta_as.setFont(font12)
+
+        self.horizontalLayout_69.addWidget(self.input_nome_radio_consulta_as)
+
+        self.input_cpf_radio_consulta_as = QRadioButton(self.frame_172)
+        self.input_cpf_radio_consulta_as.setObjectName(u"input_cpf_radio_consulta_as")
+        self.input_cpf_radio_consulta_as.setFont(font12)
+
+        self.horizontalLayout_69.addWidget(self.input_cpf_radio_consulta_as)
+
+        self.input_matricula_radio_consulta_as = QRadioButton(self.frame_172)
+        self.input_matricula_radio_consulta_as.setObjectName(u"input_matricula_radio_consulta_as")
+        self.input_matricula_radio_consulta_as.setFont(font12)
+
+        self.horizontalLayout_69.addWidget(self.input_matricula_radio_consulta_as)
+
+
+        self.verticalLayout_119.addWidget(self.frame_172)
+
+        self.frame_171 = QFrame(self.frame_168)
+        self.frame_171.setObjectName(u"frame_171")
+        self.frame_171.setFrameShape(QFrame.StyledPanel)
+        self.frame_171.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_121 = QVBoxLayout(self.frame_171)
+        self.verticalLayout_121.setSpacing(0)
+        self.verticalLayout_121.setObjectName(u"verticalLayout_121")
+        self.verticalLayout_121.setContentsMargins(10, 0, 10, 10)
+        self.input_buscar_consulta_as = QLineEdit(self.frame_171)
+        self.input_buscar_consulta_as.setObjectName(u"input_buscar_consulta_as")
+        self.input_buscar_consulta_as.setMinimumSize(QSize(0, 30))
+        self.input_buscar_consulta_as.setMaximumSize(QSize(16777215, 30))
+        self.input_buscar_consulta_as.setFont(font)
+        self.input_buscar_consulta_as.setStyleSheet(u"background-color: #fff")
+
+        self.verticalLayout_121.addWidget(self.input_buscar_consulta_as)
+
+
+        self.verticalLayout_119.addWidget(self.frame_171)
+
+
+        self.horizontalLayout_68.addWidget(self.frame_168)
+
+        self.frame_169 = QFrame(self.frame_166)
+        self.frame_169.setObjectName(u"frame_169")
+        self.frame_169.setStyleSheet(u"color: #000")
+        self.frame_169.setFrameShape(QFrame.StyledPanel)
+        self.frame_169.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_122 = QVBoxLayout(self.frame_169)
+        self.verticalLayout_122.setSpacing(0)
+        self.verticalLayout_122.setObjectName(u"verticalLayout_122")
+        self.verticalLayout_122.setContentsMargins(0, 0, 0, 0)
+        self.frame_173 = QFrame(self.frame_169)
+        self.frame_173.setObjectName(u"frame_173")
+        self.frame_173.setFrameShape(QFrame.StyledPanel)
+        self.frame_173.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_70 = QHBoxLayout(self.frame_173)
+        self.horizontalLayout_70.setSpacing(5)
+        self.horizontalLayout_70.setObjectName(u"horizontalLayout_70")
+        self.horizontalLayout_70.setContentsMargins(30, 0, 0, 0)
+        self.frame_175 = QFrame(self.frame_173)
+        self.frame_175.setObjectName(u"frame_175")
+        self.frame_175.setMaximumSize(QSize(160, 16777215))
+        self.frame_175.setFont(font)
+        self.frame_175.setFrameShape(QFrame.StyledPanel)
+        self.frame_175.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_125 = QVBoxLayout(self.frame_175)
+        self.verticalLayout_125.setSpacing(0)
+        self.verticalLayout_125.setObjectName(u"verticalLayout_125")
+        self.verticalLayout_125.setContentsMargins(0, 0, 0, 0)
+        self.label_matricula_consulta_as = QLabel(self.frame_175)
+        self.label_matricula_consulta_as.setObjectName(u"label_matricula_consulta_as")
+        self.label_matricula_consulta_as.setMaximumSize(QSize(160, 16777215))
+        self.label_matricula_consulta_as.setFont(font)
+
+        self.verticalLayout_125.addWidget(self.label_matricula_consulta_as)
+
+        self.input_matricula_consulta_as = QLineEdit(self.frame_175)
+        self.input_matricula_consulta_as.setObjectName(u"input_matricula_consulta_as")
+        self.input_matricula_consulta_as.setMinimumSize(QSize(150, 30))
+        self.input_matricula_consulta_as.setMaximumSize(QSize(150, 30))
+        self.input_matricula_consulta_as.setFont(font)
+
+        self.verticalLayout_125.addWidget(self.input_matricula_consulta_as)
+
+
+        self.horizontalLayout_70.addWidget(self.frame_175)
+
+        self.frame_176 = QFrame(self.frame_173)
+        self.frame_176.setObjectName(u"frame_176")
+        self.frame_176.setMaximumSize(QSize(460, 16777215))
+        self.frame_176.setFrameShape(QFrame.StyledPanel)
+        self.frame_176.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_123 = QVBoxLayout(self.frame_176)
+        self.verticalLayout_123.setSpacing(0)
+        self.verticalLayout_123.setObjectName(u"verticalLayout_123")
+        self.verticalLayout_123.setContentsMargins(0, 0, 0, 0)
+        self.label_nome_consulta_as = QLabel(self.frame_176)
+        self.label_nome_consulta_as.setObjectName(u"label_nome_consulta_as")
+        self.label_nome_consulta_as.setMaximumSize(QSize(460, 16777215))
+        self.label_nome_consulta_as.setFont(font)
+
+        self.verticalLayout_123.addWidget(self.label_nome_consulta_as)
+
+        self.input_nome_consulta_as = QLineEdit(self.frame_176)
+        self.input_nome_consulta_as.setObjectName(u"input_nome_consulta_as")
+        self.input_nome_consulta_as.setMinimumSize(QSize(450, 30))
+        self.input_nome_consulta_as.setMaximumSize(QSize(450, 30))
+        self.input_nome_consulta_as.setFont(font)
+
+        self.verticalLayout_123.addWidget(self.input_nome_consulta_as)
+
+
+        self.horizontalLayout_70.addWidget(self.frame_176)
+
+        self.frame_177 = QFrame(self.frame_173)
+        self.frame_177.setObjectName(u"frame_177")
+        self.frame_177.setMaximumSize(QSize(180, 16777215))
+        self.frame_177.setFrameShape(QFrame.StyledPanel)
+        self.frame_177.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_124 = QVBoxLayout(self.frame_177)
+        self.verticalLayout_124.setSpacing(0)
+        self.verticalLayout_124.setObjectName(u"verticalLayout_124")
+        self.verticalLayout_124.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_consulta_as = QLabel(self.frame_177)
+        self.label_cpf_consulta_as.setObjectName(u"label_cpf_consulta_as")
+        self.label_cpf_consulta_as.setMaximumSize(QSize(180, 16777215))
+        self.label_cpf_consulta_as.setFont(font)
+
+        self.verticalLayout_124.addWidget(self.label_cpf_consulta_as)
+
+        self.input_cpf_consulta_as = QLineEdit(self.frame_177)
+        self.input_cpf_consulta_as.setObjectName(u"input_cpf_consulta_as")
+        self.input_cpf_consulta_as.setMinimumSize(QSize(170, 30))
+        self.input_cpf_consulta_as.setMaximumSize(QSize(170, 30))
+        self.input_cpf_consulta_as.setFont(font)
+
+        self.verticalLayout_124.addWidget(self.input_cpf_consulta_as)
+
+
+        self.horizontalLayout_70.addWidget(self.frame_177)
+
+        self.frame_182 = QFrame(self.frame_173)
+        self.frame_182.setObjectName(u"frame_182")
+        self.frame_182.setMaximumSize(QSize(300, 16777215))
+        self.frame_182.setFrameShape(QFrame.StyledPanel)
+        self.frame_182.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_70.addWidget(self.frame_182)
+
+
+        self.verticalLayout_122.addWidget(self.frame_173)
+
+        self.frame_174 = QFrame(self.frame_169)
+        self.frame_174.setObjectName(u"frame_174")
+        self.frame_174.setFrameShape(QFrame.StyledPanel)
+        self.frame_174.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_71 = QHBoxLayout(self.frame_174)
+        self.horizontalLayout_71.setSpacing(5)
+        self.horizontalLayout_71.setObjectName(u"horizontalLayout_71")
+        self.horizontalLayout_71.setContentsMargins(30, 0, 30, 0)
+        self.frame_178 = QFrame(self.frame_174)
+        self.frame_178.setObjectName(u"frame_178")
+        self.frame_178.setMaximumSize(QSize(160, 16777215))
+        self.frame_178.setFrameShape(QFrame.StyledPanel)
+        self.frame_178.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_126 = QVBoxLayout(self.frame_178)
+        self.verticalLayout_126.setSpacing(0)
+        self.verticalLayout_126.setObjectName(u"verticalLayout_126")
+        self.verticalLayout_126.setContentsMargins(0, 0, 0, 0)
+        self.label_nascimento_consulta_as = QLabel(self.frame_178)
+        self.label_nascimento_consulta_as.setObjectName(u"label_nascimento_consulta_as")
+        self.label_nascimento_consulta_as.setMaximumSize(QSize(160, 16777215))
+        self.label_nascimento_consulta_as.setFont(font)
+
+        self.verticalLayout_126.addWidget(self.label_nascimento_consulta_as)
+
+        self.input_nascimento_consulta_as = QLineEdit(self.frame_178)
+        self.input_nascimento_consulta_as.setObjectName(u"input_nascimento_consulta_as")
+        self.input_nascimento_consulta_as.setMaximumSize(QSize(150, 30))
+        self.input_nascimento_consulta_as.setFont(font)
+
+        self.verticalLayout_126.addWidget(self.input_nascimento_consulta_as)
+
+
+        self.horizontalLayout_71.addWidget(self.frame_178)
+
+        self.frame_179 = QFrame(self.frame_174)
+        self.frame_179.setObjectName(u"frame_179")
+        self.frame_179.setMaximumSize(QSize(240, 16777215))
+        self.frame_179.setFrameShape(QFrame.StyledPanel)
+        self.frame_179.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_127 = QVBoxLayout(self.frame_179)
+        self.verticalLayout_127.setSpacing(0)
+        self.verticalLayout_127.setObjectName(u"verticalLayout_127")
+        self.verticalLayout_127.setContentsMargins(0, 0, 0, 0)
+        self.label_cidade_consulta_as = QLabel(self.frame_179)
+        self.label_cidade_consulta_as.setObjectName(u"label_cidade_consulta_as")
+        self.label_cidade_consulta_as.setFont(font)
+
+        self.verticalLayout_127.addWidget(self.label_cidade_consulta_as)
+
+        self.input_cidade_consulta_as = QLineEdit(self.frame_179)
+        self.input_cidade_consulta_as.setObjectName(u"input_cidade_consulta_as")
+        self.input_cidade_consulta_as.setMinimumSize(QSize(230, 30))
+        self.input_cidade_consulta_as.setMaximumSize(QSize(230, 30))
+        self.input_cidade_consulta_as.setFont(font)
+
+        self.verticalLayout_127.addWidget(self.input_cidade_consulta_as)
+
+
+        self.horizontalLayout_71.addWidget(self.frame_179)
+
+        self.frame_180 = QFrame(self.frame_174)
+        self.frame_180.setObjectName(u"frame_180")
+        self.frame_180.setMaximumSize(QSize(80, 16777215))
+        self.frame_180.setFrameShape(QFrame.StyledPanel)
+        self.frame_180.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_128 = QVBoxLayout(self.frame_180)
+        self.verticalLayout_128.setSpacing(0)
+        self.verticalLayout_128.setObjectName(u"verticalLayout_128")
+        self.verticalLayout_128.setContentsMargins(0, 0, 0, 0)
+        self.label_estado_consulta_as = QLabel(self.frame_180)
+        self.label_estado_consulta_as.setObjectName(u"label_estado_consulta_as")
+        self.label_estado_consulta_as.setMaximumSize(QSize(80, 16777215))
+        self.label_estado_consulta_as.setFont(font)
+
+        self.verticalLayout_128.addWidget(self.label_estado_consulta_as)
+
+        self.input_estado_consulta_as = QLineEdit(self.frame_180)
+        self.input_estado_consulta_as.setObjectName(u"input_estado_consulta_as")
+        self.input_estado_consulta_as.setMaximumSize(QSize(70, 30))
+        self.input_estado_consulta_as.setFont(font)
+
+        self.verticalLayout_128.addWidget(self.input_estado_consulta_as)
+
+
+        self.horizontalLayout_71.addWidget(self.frame_180)
+
+        self.frame_181 = QFrame(self.frame_174)
+        self.frame_181.setObjectName(u"frame_181")
+        self.frame_181.setMaximumSize(QSize(460, 16777215))
+        self.frame_181.setFrameShape(QFrame.StyledPanel)
+        self.frame_181.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_71.addWidget(self.frame_181)
+
+        self.btn_buscar_consulta_as = QPushButton(self.frame_174)
+        self.btn_buscar_consulta_as.setObjectName(u"btn_buscar_consulta_as")
+        self.btn_buscar_consulta_as.setMaximumSize(QSize(50, 16777215))
+        self.btn_buscar_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_buscar_consulta_as.setStyleSheet(u"background-color: #F9D9DD; border: none")
+        icon18 = QIcon()
+        icon18.addFile(u"./icons/marca-de-verificacao.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_buscar_consulta_as.setIcon(icon18)
+        self.btn_buscar_consulta_as.setIconSize(QSize(40, 40))
+
+        self.horizontalLayout_71.addWidget(self.btn_buscar_consulta_as)
+
+
+        self.verticalLayout_122.addWidget(self.frame_174)
+
+
+        self.horizontalLayout_68.addWidget(self.frame_169)
+
+        self.horizontalLayout_68.setStretch(0, 1)
+        self.horizontalLayout_68.setStretch(1, 3)
+
+        self.verticalLayout_117.addWidget(self.frame_166)
+
+        self.frame_167 = QFrame(self.page_consulta_as)
+        self.frame_167.setObjectName(u"frame_167")
+        self.frame_167.setFrameShape(QFrame.StyledPanel)
+        self.frame_167.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_129 = QVBoxLayout(self.frame_167)
+        self.verticalLayout_129.setSpacing(0)
+        self.verticalLayout_129.setObjectName(u"verticalLayout_129")
+        self.verticalLayout_129.setContentsMargins(0, 0, 0, 0)
+        self.stackedWidget = QStackedWidget(self.frame_167)
+        self.stackedWidget.setObjectName(u"stackedWidget")
+        self.page_consulta_antes = QWidget()
+        self.page_consulta_antes.setObjectName(u"page_consulta_antes")
+        self.stackedWidget.addWidget(self.page_consulta_antes)
+        self.page_consulta_depois = QWidget()
+        self.page_consulta_depois.setObjectName(u"page_consulta_depois")
+        self.page_consulta_depois.setStyleSheet(u"QLabel{margin-left: 0.25em}")
+        self.verticalLayout_130 = QVBoxLayout(self.page_consulta_depois)
+        self.verticalLayout_130.setSpacing(0)
+        self.verticalLayout_130.setObjectName(u"verticalLayout_130")
+        self.verticalLayout_130.setContentsMargins(0, 0, 0, 0)
+        self.frame_183 = QFrame(self.page_consulta_depois)
+        self.frame_183.setObjectName(u"frame_183")
+        self.frame_183.setStyleSheet(u"QLineEdit{color: #000;}\n"
+"QLabel{margin-left: 0.25em;color: #000;}")
+        self.frame_183.setFrameShape(QFrame.StyledPanel)
+        self.frame_183.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_72 = QHBoxLayout(self.frame_183)
+        self.horizontalLayout_72.setSpacing(5)
+        self.horizontalLayout_72.setObjectName(u"horizontalLayout_72")
+        self.horizontalLayout_72.setContentsMargins(30, 0, 0, 0)
+        self.frame_185 = QFrame(self.frame_183)
+        self.frame_185.setObjectName(u"frame_185")
+        self.frame_185.setMaximumSize(QSize(160, 16777215))
+        self.frame_185.setFrameShape(QFrame.StyledPanel)
+        self.frame_185.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_131 = QVBoxLayout(self.frame_185)
+        self.verticalLayout_131.setSpacing(0)
+        self.verticalLayout_131.setObjectName(u"verticalLayout_131")
+        self.verticalLayout_131.setContentsMargins(0, 0, 0, 0)
+        self.label_matricula_consulta_as_2 = QLabel(self.frame_185)
+        self.label_matricula_consulta_as_2.setObjectName(u"label_matricula_consulta_as_2")
+        self.label_matricula_consulta_as_2.setMaximumSize(QSize(160, 16777215))
+        self.label_matricula_consulta_as_2.setFont(font)
+
+        self.verticalLayout_131.addWidget(self.label_matricula_consulta_as_2)
+
+        self.input_matricula_consulta_as_2 = QLineEdit(self.frame_185)
+        self.input_matricula_consulta_as_2.setObjectName(u"input_matricula_consulta_as_2")
+        self.input_matricula_consulta_as_2.setMaximumSize(QSize(150, 30))
+        self.input_matricula_consulta_as_2.setFont(font)
+
+        self.verticalLayout_131.addWidget(self.input_matricula_consulta_as_2)
+
+
+        self.horizontalLayout_72.addWidget(self.frame_185)
+
+        self.frame_186 = QFrame(self.frame_183)
+        self.frame_186.setObjectName(u"frame_186")
+        self.frame_186.setMaximumSize(QSize(460, 16777215))
+        self.frame_186.setFrameShape(QFrame.StyledPanel)
+        self.frame_186.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_132 = QVBoxLayout(self.frame_186)
+        self.verticalLayout_132.setSpacing(0)
+        self.verticalLayout_132.setObjectName(u"verticalLayout_132")
+        self.verticalLayout_132.setContentsMargins(0, 0, 0, 0)
+        self.label_nome_usuario_consulta_as = QLabel(self.frame_186)
+        self.label_nome_usuario_consulta_as.setObjectName(u"label_nome_usuario_consulta_as")
+        self.label_nome_usuario_consulta_as.setMaximumSize(QSize(460, 16777215))
+        self.label_nome_usuario_consulta_as.setFont(font)
+
+        self.verticalLayout_132.addWidget(self.label_nome_usuario_consulta_as)
+
+        self.input_nome_usuario_consulta_as = QLineEdit(self.frame_186)
+        self.input_nome_usuario_consulta_as.setObjectName(u"input_nome_usuario_consulta_as")
+        self.input_nome_usuario_consulta_as.setMinimumSize(QSize(450, 0))
+        self.input_nome_usuario_consulta_as.setMaximumSize(QSize(450, 30))
+        self.input_nome_usuario_consulta_as.setFont(font)
+
+        self.verticalLayout_132.addWidget(self.input_nome_usuario_consulta_as)
+
+
+        self.horizontalLayout_72.addWidget(self.frame_186)
+
+        self.frame_187 = QFrame(self.frame_183)
+        self.frame_187.setObjectName(u"frame_187")
+        self.frame_187.setMaximumSize(QSize(180, 16777215))
+        self.frame_187.setFrameShape(QFrame.StyledPanel)
+        self.frame_187.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_133 = QVBoxLayout(self.frame_187)
+        self.verticalLayout_133.setSpacing(0)
+        self.verticalLayout_133.setObjectName(u"verticalLayout_133")
+        self.verticalLayout_133.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_consulta_as_2 = QLabel(self.frame_187)
+        self.label_cpf_consulta_as_2.setObjectName(u"label_cpf_consulta_as_2")
+        self.label_cpf_consulta_as_2.setMaximumSize(QSize(180, 16777215))
+        self.label_cpf_consulta_as_2.setFont(font)
+
+        self.verticalLayout_133.addWidget(self.label_cpf_consulta_as_2)
+
+        self.input_cpf_consulta_as_2 = QLineEdit(self.frame_187)
+        self.input_cpf_consulta_as_2.setObjectName(u"input_cpf_consulta_as_2")
+        self.input_cpf_consulta_as_2.setMaximumSize(QSize(170, 30))
+        self.input_cpf_consulta_as_2.setFont(font)
+
+        self.verticalLayout_133.addWidget(self.input_cpf_consulta_as_2)
+
+
+        self.horizontalLayout_72.addWidget(self.frame_187)
+
+        self.frame_188 = QFrame(self.frame_183)
+        self.frame_188.setObjectName(u"frame_188")
+        self.frame_188.setMaximumSize(QSize(160, 16777215))
+        self.frame_188.setFrameShape(QFrame.StyledPanel)
+        self.frame_188.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_134 = QVBoxLayout(self.frame_188)
+        self.verticalLayout_134.setSpacing(0)
+        self.verticalLayout_134.setObjectName(u"verticalLayout_134")
+        self.verticalLayout_134.setContentsMargins(0, 0, 0, 0)
+        self.label_ultima_consulta_consulta_as = QLabel(self.frame_188)
+        self.label_ultima_consulta_consulta_as.setObjectName(u"label_ultima_consulta_consulta_as")
+        self.label_ultima_consulta_consulta_as.setMaximumSize(QSize(160, 16777215))
+        self.label_ultima_consulta_consulta_as.setFont(font)
+
+        self.verticalLayout_134.addWidget(self.label_ultima_consulta_consulta_as)
+
+        self.input_ultima_consulta_consulta_as = QLineEdit(self.frame_188)
+        self.input_ultima_consulta_consulta_as.setObjectName(u"input_ultima_consulta_consulta_as")
+        self.input_ultima_consulta_consulta_as.setMaximumSize(QSize(150, 30))
+        self.input_ultima_consulta_consulta_as.setFont(font)
+
+        self.verticalLayout_134.addWidget(self.input_ultima_consulta_consulta_as)
+
+
+        self.horizontalLayout_72.addWidget(self.frame_188)
+
+
+        self.verticalLayout_130.addWidget(self.frame_183)
+
+        self.frame_184 = QFrame(self.page_consulta_depois)
+        self.frame_184.setObjectName(u"frame_184")
+        self.frame_184.setFrameShape(QFrame.StyledPanel)
+        self.frame_184.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_73 = QHBoxLayout(self.frame_184)
+        self.horizontalLayout_73.setSpacing(0)
+        self.horizontalLayout_73.setObjectName(u"horizontalLayout_73")
+        self.horizontalLayout_73.setContentsMargins(0, 0, 0, 0)
+        self.frame_189 = QFrame(self.frame_184)
+        self.frame_189.setObjectName(u"frame_189")
+        self.frame_189.setStyleSheet(u"QLabel{margin-left: 0.25em}")
+        self.frame_189.setFrameShape(QFrame.StyledPanel)
+        self.frame_189.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_74 = QHBoxLayout(self.frame_189)
+        self.horizontalLayout_74.setSpacing(0)
+        self.horizontalLayout_74.setObjectName(u"horizontalLayout_74")
+        self.horizontalLayout_74.setContentsMargins(20, 20, 0, 0)
+        self.input_anotacoes_consulta_as = QTextEdit(self.frame_189)
+        self.input_anotacoes_consulta_as.setObjectName(u"input_anotacoes_consulta_as")
+        self.input_anotacoes_consulta_as.setMaximumSize(QSize(800, 16777215))
+        self.input_anotacoes_consulta_as.setFont(font)
+        self.input_anotacoes_consulta_as.setStyleSheet(u"background-color: #fff; color: #000")
+
+        self.horizontalLayout_74.addWidget(self.input_anotacoes_consulta_as)
+
+
+        self.horizontalLayout_73.addWidget(self.frame_189)
+
+        self.frame_190 = QFrame(self.frame_184)
+        self.frame_190.setObjectName(u"frame_190")
+        self.frame_190.setFrameShape(QFrame.StyledPanel)
+        self.frame_190.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_150 = QVBoxLayout(self.frame_190)
+        self.verticalLayout_150.setSpacing(15)
+        self.verticalLayout_150.setObjectName(u"verticalLayout_150")
+        self.verticalLayout_150.setContentsMargins(0, 0, 20, 20)
+        self.verticalSpacer_12 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_150.addItem(self.verticalSpacer_12)
+
+        self.btn_imprimir_consulta_as = QPushButton(self.frame_190)
+        self.btn_imprimir_consulta_as.setObjectName(u"btn_imprimir_consulta_as")
+        self.btn_imprimir_consulta_as.setMinimumSize(QSize(140, 40))
+        self.btn_imprimir_consulta_as.setMaximumSize(QSize(140, 40))
+        self.btn_imprimir_consulta_as.setFont(font10)
+        self.btn_imprimir_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_imprimir_consulta_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        icon19 = QIcon()
+        icon19.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_imprimir_consulta_as.setIcon(icon19)
+        self.btn_imprimir_consulta_as.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_150.addWidget(self.btn_imprimir_consulta_as)
+
+        self.btn_alterar_consulta_as = QPushButton(self.frame_190)
+        self.btn_alterar_consulta_as.setObjectName(u"btn_alterar_consulta_as")
+        self.btn_alterar_consulta_as.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_consulta_as.setMaximumSize(QSize(140, 40))
+        self.btn_alterar_consulta_as.setFont(font10)
+        self.btn_alterar_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_consulta_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_alterar_consulta_as.setIcon(icon11)
+        self.btn_alterar_consulta_as.setIconSize(QSize(25, 25))
+
+        self.verticalLayout_150.addWidget(self.btn_alterar_consulta_as)
+
+        self.btn_concluir_consulta_as = QPushButton(self.frame_190)
+        self.btn_concluir_consulta_as.setObjectName(u"btn_concluir_consulta_as")
+        self.btn_concluir_consulta_as.setMinimumSize(QSize(140, 40))
+        self.btn_concluir_consulta_as.setMaximumSize(QSize(140, 40))
+        self.btn_concluir_consulta_as.setFont(font10)
+        self.btn_concluir_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_concluir_consulta_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_150.addWidget(self.btn_concluir_consulta_as)
+
+
+        self.horizontalLayout_73.addWidget(self.frame_190)
+
+        self.horizontalLayout_73.setStretch(0, 8)
+        self.horizontalLayout_73.setStretch(1, 1)
+
+        self.verticalLayout_130.addWidget(self.frame_184)
+
+        self.verticalLayout_130.setStretch(0, 1)
+        self.verticalLayout_130.setStretch(1, 8)
+        self.stackedWidget.addWidget(self.page_consulta_depois)
+
+        self.verticalLayout_129.addWidget(self.stackedWidget)
+
+        self.frame_221 = QFrame(self.frame_167)
+        self.frame_221.setObjectName(u"frame_221")
+        self.frame_221.setFrameShape(QFrame.StyledPanel)
+        self.frame_221.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_75 = QHBoxLayout(self.frame_221)
+        self.horizontalLayout_75.setSpacing(20)
+        self.horizontalLayout_75.setObjectName(u"horizontalLayout_75")
+        self.horizontalLayout_75.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_consulta_as = QPushButton(self.frame_221)
+        self.btn_voltar_consulta_as.setObjectName(u"btn_voltar_consulta_as")
+        self.btn_voltar_consulta_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_consulta_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_consulta_as.setFont(font10)
+        self.btn_voltar_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_consulta_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_75.addWidget(self.btn_voltar_consulta_as)
+
+        self.horizontalSpacer_54 = QSpacerItem(1413, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_75.addItem(self.horizontalSpacer_54)
+
+
+        self.verticalLayout_129.addWidget(self.frame_221)
+
+        self.verticalLayout_129.setStretch(0, 14)
+        self.verticalLayout_129.setStretch(1, 2)
+
+        self.verticalLayout_117.addWidget(self.frame_167)
+
+        self.verticalLayout_117.setStretch(0, 1)
+        self.verticalLayout_117.setStretch(1, 2)
+        self.verticalLayout_117.setStretch(2, 8)
+        self.stackedWidget_2.addWidget(self.page_consulta_as)
+        self.page_relatorios_as = QWidget()
+        self.page_relatorios_as.setObjectName(u"page_relatorios_as")
+        self.verticalLayout_151 = QVBoxLayout(self.page_relatorios_as)
+        self.verticalLayout_151.setSpacing(0)
+        self.verticalLayout_151.setObjectName(u"verticalLayout_151")
+        self.verticalLayout_151.setContentsMargins(0, 0, 0, 0)
+        self.frame_222 = QFrame(self.page_relatorios_as)
+        self.frame_222.setObjectName(u"frame_222")
+        self.frame_222.setStyleSheet(u"color: #EC848C; background-color: #F3B9BF")
+        self.frame_222.setFrameShape(QFrame.StyledPanel)
+        self.frame_222.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_82 = QHBoxLayout(self.frame_222)
+        self.horizontalLayout_82.setSpacing(0)
+        self.horizontalLayout_82.setObjectName(u"horizontalLayout_82")
+        self.horizontalLayout_82.setContentsMargins(0, 0, 0, 0)
+        self.label_4 = QLabel(self.frame_222)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setFont(font1)
+        self.label_4.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_82.addWidget(self.label_4)
+
+
+        self.verticalLayout_151.addWidget(self.frame_222)
+
+        self.frame_223 = QFrame(self.page_relatorios_as)
+        self.frame_223.setObjectName(u"frame_223")
+        self.frame_223.setFrameShape(QFrame.StyledPanel)
+        self.frame_223.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_152 = QVBoxLayout(self.frame_223)
+        self.verticalLayout_152.setSpacing(0)
+        self.verticalLayout_152.setObjectName(u"verticalLayout_152")
+        self.verticalLayout_152.setContentsMargins(0, 0, 0, 0)
+        self.frame_227 = QFrame(self.frame_223)
+        self.frame_227.setObjectName(u"frame_227")
+        self.frame_227.setFrameShape(QFrame.StyledPanel)
+        self.frame_227.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_84 = QHBoxLayout(self.frame_227)
+        self.horizontalLayout_84.setSpacing(5)
+        self.horizontalLayout_84.setObjectName(u"horizontalLayout_84")
+        self.horizontalLayout_84.setContentsMargins(0, 0, 0, 0)
+        self.frame_243 = QFrame(self.frame_227)
+        self.frame_243.setObjectName(u"frame_243")
+        self.frame_243.setFrameShape(QFrame.StyledPanel)
+        self.frame_243.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_84.addWidget(self.frame_243)
+
+        self.frame_228 = QFrame(self.frame_227)
+        self.frame_228.setObjectName(u"frame_228")
+        self.frame_228.setMaximumSize(QSize(200, 16777215))
+        self.frame_228.setFrameShape(QFrame.StyledPanel)
+        self.frame_228.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_85 = QHBoxLayout(self.frame_228)
+        self.horizontalLayout_85.setObjectName(u"horizontalLayout_85")
+        self.label_5 = QLabel(self.frame_228)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setFont(font)
+
+        self.horizontalLayout_85.addWidget(self.label_5)
+
+        self.lineEdit = QLineEdit(self.frame_228)
+        self.lineEdit.setObjectName(u"lineEdit")
+        self.lineEdit.setMaximumSize(QSize(150, 30))
+        self.lineEdit.setFont(font)
+
+        self.horizontalLayout_85.addWidget(self.lineEdit)
+
+
+        self.horizontalLayout_84.addWidget(self.frame_228)
+
+        self.frame_242 = QFrame(self.frame_227)
+        self.frame_242.setObjectName(u"frame_242")
+        self.frame_242.setMaximumSize(QSize(180, 16777215))
+        self.frame_242.setFrameShape(QFrame.StyledPanel)
+        self.frame_242.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_86 = QHBoxLayout(self.frame_242)
+        self.horizontalLayout_86.setObjectName(u"horizontalLayout_86")
+        self.label_6 = QLabel(self.frame_242)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMaximumSize(QSize(20, 16777215))
+        self.label_6.setFont(font)
+
+        self.horizontalLayout_86.addWidget(self.label_6)
+
+        self.lineEdit_2 = QLineEdit(self.frame_242)
+        self.lineEdit_2.setObjectName(u"lineEdit_2")
+        self.lineEdit_2.setMaximumSize(QSize(150, 30))
+        self.lineEdit_2.setFont(font)
+
+        self.horizontalLayout_86.addWidget(self.lineEdit_2)
+
+
+        self.horizontalLayout_84.addWidget(self.frame_242)
+
+        self.frame_248 = QFrame(self.frame_227)
+        self.frame_248.setObjectName(u"frame_248")
+        self.frame_248.setMaximumSize(QSize(400, 16777215))
+        self.frame_248.setFrameShape(QFrame.StyledPanel)
+        self.frame_248.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_154 = QVBoxLayout(self.frame_248)
+        self.verticalLayout_154.setObjectName(u"verticalLayout_154")
+        self.label_8 = QLabel(self.frame_248)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setMaximumSize(QSize(310, 16777215))
+        self.label_8.setFont(font)
+
+        self.verticalLayout_154.addWidget(self.label_8)
+
+        self.lineEdit_3 = QLineEdit(self.frame_248)
+        self.lineEdit_3.setObjectName(u"lineEdit_3")
+        self.lineEdit_3.setMinimumSize(QSize(0, 30))
+        self.lineEdit_3.setMaximumSize(QSize(390, 30))
+        self.lineEdit_3.setFont(font)
+
+        self.verticalLayout_154.addWidget(self.lineEdit_3)
+
+
+        self.horizontalLayout_84.addWidget(self.frame_248)
+
+        self.frame_244 = QFrame(self.frame_227)
+        self.frame_244.setObjectName(u"frame_244")
+        self.frame_244.setFrameShape(QFrame.StyledPanel)
+        self.frame_244.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_84.addWidget(self.frame_244)
+
+
+        self.verticalLayout_152.addWidget(self.frame_227)
+
+        self.frame_225 = QFrame(self.frame_223)
+        self.frame_225.setObjectName(u"frame_225")
+        self.frame_225.setFrameShape(QFrame.StyledPanel)
+        self.frame_225.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_87 = QHBoxLayout(self.frame_225)
+        self.horizontalLayout_87.setSpacing(5)
+        self.horizontalLayout_87.setObjectName(u"horizontalLayout_87")
+        self.horizontalLayout_87.setContentsMargins(0, 0, 0, 0)
+        self.frame_245 = QFrame(self.frame_225)
+        self.frame_245.setObjectName(u"frame_245")
+        self.frame_245.setFrameShape(QFrame.StyledPanel)
+        self.frame_245.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_87.addWidget(self.frame_245)
+
+        self.frame_246 = QFrame(self.frame_225)
+        self.frame_246.setObjectName(u"frame_246")
+        self.frame_246.setMaximumSize(QSize(460, 16777215))
+        self.frame_246.setFrameShape(QFrame.StyledPanel)
+        self.frame_246.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_155 = QVBoxLayout(self.frame_246)
+        self.verticalLayout_155.setObjectName(u"verticalLayout_155")
+        self.label_9 = QLabel(self.frame_246)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMaximumSize(QSize(410, 16777215))
+        self.label_9.setFont(font)
+
+        self.verticalLayout_155.addWidget(self.label_9)
+
+        self.lineEdit_4 = QLineEdit(self.frame_246)
+        self.lineEdit_4.setObjectName(u"lineEdit_4")
+        self.lineEdit_4.setMaximumSize(QSize(450, 30))
+        self.lineEdit_4.setFont(font)
+
+        self.verticalLayout_155.addWidget(self.lineEdit_4)
+
+
+        self.horizontalLayout_87.addWidget(self.frame_246)
+
+        self.frame_229 = QFrame(self.frame_225)
+        self.frame_229.setObjectName(u"frame_229")
+        self.frame_229.setMaximumSize(QSize(310, 16777215))
+        self.frame_229.setFrameShape(QFrame.StyledPanel)
+        self.frame_229.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_153 = QVBoxLayout(self.frame_229)
+        self.verticalLayout_153.setObjectName(u"verticalLayout_153")
+        self.label_7 = QLabel(self.frame_229)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMaximumSize(QSize(310, 16777215))
+        self.label_7.setFont(font)
+
+        self.verticalLayout_153.addWidget(self.label_7)
+
+        self.comboBox = QComboBox(self.frame_229)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setMaximumSize(QSize(300, 30))
+        self.comboBox.setFont(font)
+
+        self.verticalLayout_153.addWidget(self.comboBox)
+
+
+        self.horizontalLayout_87.addWidget(self.frame_229)
+
+        self.frame_263 = QFrame(self.frame_225)
+        self.frame_263.setObjectName(u"frame_263")
+        self.frame_263.setFrameShape(QFrame.StyledPanel)
+        self.frame_263.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_87.addWidget(self.frame_263)
+
+
+        self.verticalLayout_152.addWidget(self.frame_225)
+
+        self.frame_226 = QFrame(self.frame_223)
+        self.frame_226.setObjectName(u"frame_226")
+        self.frame_226.setFrameShape(QFrame.StyledPanel)
+        self.frame_226.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_152.addWidget(self.frame_226)
+
+        self.verticalLayout_152.setStretch(0, 1)
+        self.verticalLayout_152.setStretch(1, 1)
+        self.verticalLayout_152.setStretch(2, 7)
+
+        self.verticalLayout_151.addWidget(self.frame_223)
+
+        self.frame_224 = QFrame(self.page_relatorios_as)
+        self.frame_224.setObjectName(u"frame_224")
+        self.frame_224.setFrameShape(QFrame.StyledPanel)
+        self.frame_224.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_83 = QHBoxLayout(self.frame_224)
+        self.horizontalLayout_83.setSpacing(20)
+        self.horizontalLayout_83.setObjectName(u"horizontalLayout_83")
+        self.horizontalLayout_83.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_relatorios_as = QPushButton(self.frame_224)
+        self.btn_voltar_relatorios_as.setObjectName(u"btn_voltar_relatorios_as")
+        self.btn_voltar_relatorios_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_as.setFont(font10)
+        self.btn_voltar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_relatorios_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_83.addWidget(self.btn_voltar_relatorios_as)
+
+        self.horizontalSpacer_55 = QSpacerItem(564, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_83.addItem(self.horizontalSpacer_55)
+
+        self.btn_limpar_relatorios_as = QPushButton(self.frame_224)
+        self.btn_limpar_relatorios_as.setObjectName(u"btn_limpar_relatorios_as")
+        self.btn_limpar_relatorios_as.setMinimumSize(QSize(125, 40))
+        self.btn_limpar_relatorios_as.setMaximumSize(QSize(125, 40))
+        self.btn_limpar_relatorios_as.setFont(font10)
+        self.btn_limpar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_limpar_relatorios_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_limpar_relatorios_as.setIcon(icon14)
+        self.btn_limpar_relatorios_as.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout_83.addWidget(self.btn_limpar_relatorios_as)
+
+        self.btn_gerar_relatorios_as = QPushButton(self.frame_224)
+        self.btn_gerar_relatorios_as.setObjectName(u"btn_gerar_relatorios_as")
+        self.btn_gerar_relatorios_as.setMinimumSize(QSize(100, 40))
+        self.btn_gerar_relatorios_as.setMaximumSize(QSize(100, 40))
+        self.btn_gerar_relatorios_as.setFont(font10)
+        self.btn_gerar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_gerar_relatorios_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_83.addWidget(self.btn_gerar_relatorios_as)
+
+        self.horizontalSpacer_56 = QSpacerItem(563, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_83.addItem(self.horizontalSpacer_56)
+
+
+        self.verticalLayout_151.addWidget(self.frame_224)
+
+        self.verticalLayout_151.setStretch(0, 1)
+        self.verticalLayout_151.setStretch(1, 8)
+        self.verticalLayout_151.setStretch(2, 1)
+        self.stackedWidget_2.addWidget(self.page_relatorios_as)
+        self.page_agenda_as = QWidget()
+        self.page_agenda_as.setObjectName(u"page_agenda_as")
+        self.verticalLayout_156 = QVBoxLayout(self.page_agenda_as)
+        self.verticalLayout_156.setSpacing(0)
+        self.verticalLayout_156.setObjectName(u"verticalLayout_156")
+        self.verticalLayout_156.setContentsMargins(0, 0, 0, 0)
+        self.frame_247 = QFrame(self.page_agenda_as)
+        self.frame_247.setObjectName(u"frame_247")
+        self.frame_247.setStyleSheet(u"background-color: #F3B9BF")
+        self.frame_247.setFrameShape(QFrame.StyledPanel)
+        self.frame_247.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_91 = QHBoxLayout(self.frame_247)
+        self.horizontalLayout_91.setSpacing(0)
+        self.horizontalLayout_91.setObjectName(u"horizontalLayout_91")
+        self.horizontalLayout_91.setContentsMargins(0, 0, 0, 0)
+        self.label_10 = QLabel(self.frame_247)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setFont(font1)
+        self.label_10.setStyleSheet(u"color: #EC848C")
+        self.label_10.setAlignment(Qt.AlignCenter)
+
+        self.horizontalLayout_91.addWidget(self.label_10)
+
+
+        self.verticalLayout_156.addWidget(self.frame_247)
+
+        self.frame_264 = QFrame(self.page_agenda_as)
+        self.frame_264.setObjectName(u"frame_264")
+        self.frame_264.setFrameShape(QFrame.StyledPanel)
+        self.frame_264.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_93 = QHBoxLayout(self.frame_264)
+        self.horizontalLayout_93.setSpacing(0)
+        self.horizontalLayout_93.setObjectName(u"horizontalLayout_93")
+        self.horizontalLayout_93.setContentsMargins(0, 0, 0, 0)
+        self.frame_266 = QFrame(self.frame_264)
+        self.frame_266.setObjectName(u"frame_266")
+        self.frame_266.setFrameShape(QFrame.StyledPanel)
+        self.frame_266.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_158 = QVBoxLayout(self.frame_266)
+        self.verticalLayout_158.setObjectName(u"verticalLayout_158")
+        self.calendario_agenda_as = QCalendarWidget(self.frame_266)
+        self.calendario_agenda_as.setObjectName(u"calendario_agenda_as")
+
+        self.verticalLayout_158.addWidget(self.calendario_agenda_as)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_266)
+
+        self.frame_267 = QFrame(self.frame_264)
+        self.frame_267.setObjectName(u"frame_267")
+        self.frame_267.setStyleSheet(u"QPushButton{color: #000; background-color: #FEE4E1; border: none;}\\nQPushButton:hover{background-color: hsl(6, 94%, 92%)}\\nQPushButton:focus{outline: 0}")
+        self.frame_267.setFrameShape(QFrame.StyledPanel)
+        self.frame_267.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_157 = QVBoxLayout(self.frame_267)
+        self.verticalLayout_157.setSpacing(0)
+        self.verticalLayout_157.setObjectName(u"verticalLayout_157")
+        self.verticalLayout_157.setContentsMargins(0, 0, 0, 0)
+        self.label_11 = QLabel(self.frame_267)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setMaximumSize(QSize(16777215, 50))
+        self.label_11.setFont(font12)
+        self.label_11.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_157.addWidget(self.label_11)
+
+        self.btn_7_agenda_as = QPushButton(self.frame_267)
+        self.btn_7_agenda_as.setObjectName(u"btn_7_agenda_as")
+        self.btn_7_agenda_as.setFont(font)
+        self.btn_7_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_7_agenda_as)
+
+        self.btn_730_agenda_as = QPushButton(self.frame_267)
+        self.btn_730_agenda_as.setObjectName(u"btn_730_agenda_as")
+        self.btn_730_agenda_as.setFont(font)
+        self.btn_730_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_730_agenda_as)
+
+        self.btn_8_agenda_as = QPushButton(self.frame_267)
+        self.btn_8_agenda_as.setObjectName(u"btn_8_agenda_as")
+        self.btn_8_agenda_as.setFont(font)
+        self.btn_8_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_8_agenda_as)
+
+        self.btn_830_agenda_as = QPushButton(self.frame_267)
+        self.btn_830_agenda_as.setObjectName(u"btn_830_agenda_as")
+        self.btn_830_agenda_as.setFont(font)
+        self.btn_830_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_830_agenda_as)
+
+        self.btn_9_agenda_as = QPushButton(self.frame_267)
+        self.btn_9_agenda_as.setObjectName(u"btn_9_agenda_as")
+        self.btn_9_agenda_as.setFont(font)
+        self.btn_9_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_9_agenda_as)
+
+        self.btn_930_agenda_as = QPushButton(self.frame_267)
+        self.btn_930_agenda_as.setObjectName(u"btn_930_agenda_as")
+        self.btn_930_agenda_as.setFont(font)
+        self.btn_930_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_930_agenda_as)
+
+        self.btn_10_agenda_as = QPushButton(self.frame_267)
+        self.btn_10_agenda_as.setObjectName(u"btn_10_agenda_as")
+        self.btn_10_agenda_as.setFont(font)
+        self.btn_10_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_10_agenda_as)
+
+        self.btn_1030_agenda_as = QPushButton(self.frame_267)
+        self.btn_1030_agenda_as.setObjectName(u"btn_1030_agenda_as")
+        self.btn_1030_agenda_as.setFont(font)
+        self.btn_1030_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1030_agenda_as)
+
+        self.btn_11_agenda_as = QPushButton(self.frame_267)
+        self.btn_11_agenda_as.setObjectName(u"btn_11_agenda_as")
+        self.btn_11_agenda_as.setFont(font)
+        self.btn_11_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_11_agenda_as)
+
+        self.btn_1130_agenda_as = QPushButton(self.frame_267)
+        self.btn_1130_agenda_as.setObjectName(u"btn_1130_agenda_as")
+        self.btn_1130_agenda_as.setFont(font)
+        self.btn_1130_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1130_agenda_as)
+
+        self.btn_12_agenda_as = QPushButton(self.frame_267)
+        self.btn_12_agenda_as.setObjectName(u"btn_12_agenda_as")
+        self.btn_12_agenda_as.setFont(font)
+        self.btn_12_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_12_agenda_as)
+
+        self.btn_1230_agenda_as = QPushButton(self.frame_267)
+        self.btn_1230_agenda_as.setObjectName(u"btn_1230_agenda_as")
+        self.btn_1230_agenda_as.setFont(font)
+        self.btn_1230_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1230_agenda_as)
+
+        self.btn_13_agenda_as = QPushButton(self.frame_267)
+        self.btn_13_agenda_as.setObjectName(u"btn_13_agenda_as")
+        self.btn_13_agenda_as.setFont(font)
+        self.btn_13_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_13_agenda_as)
+
+        self.btn_1330_agenda_as = QPushButton(self.frame_267)
+        self.btn_1330_agenda_as.setObjectName(u"btn_1330_agenda_as")
+        self.btn_1330_agenda_as.setFont(font)
+        self.btn_1330_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1330_agenda_as)
+
+        self.btn_14_agenda_as = QPushButton(self.frame_267)
+        self.btn_14_agenda_as.setObjectName(u"btn_14_agenda_as")
+        self.btn_14_agenda_as.setFont(font)
+        self.btn_14_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_14_agenda_as)
+
+        self.btn_1430_agenda_as = QPushButton(self.frame_267)
+        self.btn_1430_agenda_as.setObjectName(u"btn_1430_agenda_as")
+        self.btn_1430_agenda_as.setFont(font)
+        self.btn_1430_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1430_agenda_as)
+
+        self.btn_15_agenda_as = QPushButton(self.frame_267)
+        self.btn_15_agenda_as.setObjectName(u"btn_15_agenda_as")
+        self.btn_15_agenda_as.setFont(font)
+        self.btn_15_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_15_agenda_as)
+
+        self.btn_1530_agenda_as = QPushButton(self.frame_267)
+        self.btn_1530_agenda_as.setObjectName(u"btn_1530_agenda_as")
+        self.btn_1530_agenda_as.setFont(font)
+        self.btn_1530_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1530_agenda_as)
+
+        self.btn_16_agenda_as = QPushButton(self.frame_267)
+        self.btn_16_agenda_as.setObjectName(u"btn_16_agenda_as")
+        self.btn_16_agenda_as.setFont(font)
+        self.btn_16_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_16_agenda_as)
+
+        self.btn_1630_agenda_as = QPushButton(self.frame_267)
+        self.btn_1630_agenda_as.setObjectName(u"btn_1630_agenda_as")
+        self.btn_1630_agenda_as.setFont(font)
+        self.btn_1630_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1630_agenda_as)
+
+        self.btn_17_agenda_as = QPushButton(self.frame_267)
+        self.btn_17_agenda_as.setObjectName(u"btn_17_agenda_as")
+        self.btn_17_agenda_as.setFont(font)
+        self.btn_17_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_17_agenda_as)
+
+        self.btn_1730_agenda_as = QPushButton(self.frame_267)
+        self.btn_1730_agenda_as.setObjectName(u"btn_1730_agenda_as")
+        self.btn_1730_agenda_as.setFont(font)
+        self.btn_1730_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_1730_agenda_as)
+
+        self.btn_18_agenda_as = QPushButton(self.frame_267)
+        self.btn_18_agenda_as.setObjectName(u"btn_18_agenda_as")
+        self.btn_18_agenda_as.setFont(font)
+        self.btn_18_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.verticalLayout_157.addWidget(self.btn_18_agenda_as)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_267)
+
+        self.frame_268 = QFrame(self.frame_264)
+        self.frame_268.setObjectName(u"frame_268")
+        self.frame_268.setFrameShape(QFrame.StyledPanel)
+        self.frame_268.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_159 = QVBoxLayout(self.frame_268)
+        self.verticalLayout_159.setObjectName(u"verticalLayout_159")
+        self.input_anotacoes_agenda_as = QTextEdit(self.frame_268)
+        self.input_anotacoes_agenda_as.setObjectName(u"input_anotacoes_agenda_as")
+        self.input_anotacoes_agenda_as.setFont(font12)
+        self.input_anotacoes_agenda_as.setStyleSheet(u"background-color: #fff; color: #000; padding-left: 0.5em")
+
+        self.verticalLayout_159.addWidget(self.input_anotacoes_agenda_as)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_268)
+
+        self.horizontalLayout_93.setStretch(0, 6)
+        self.horizontalLayout_93.setStretch(1, 1)
+        self.horizontalLayout_93.setStretch(2, 4)
+
+        self.verticalLayout_156.addWidget(self.frame_264)
+
+        self.frame_265 = QFrame(self.page_agenda_as)
+        self.frame_265.setObjectName(u"frame_265")
+        self.frame_265.setFrameShape(QFrame.StyledPanel)
+        self.frame_265.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_92 = QHBoxLayout(self.frame_265)
+        self.horizontalLayout_92.setSpacing(20)
+        self.horizontalLayout_92.setObjectName(u"horizontalLayout_92")
+        self.horizontalLayout_92.setContentsMargins(20, 0, 0, 0)
+        self.btn_voltar_agenda_as = QPushButton(self.frame_265)
+        self.btn_voltar_agenda_as.setObjectName(u"btn_voltar_agenda_as")
+        self.btn_voltar_agenda_as.setMinimumSize(QSize(120, 40))
+        self.btn_voltar_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_voltar_agenda_as.setFont(font10)
+        self.btn_voltar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_agenda_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_92.addWidget(self.btn_voltar_agenda_as)
+
+        self.horizontalSpacer_58 = QSpacerItem(955, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_92.addItem(self.horizontalSpacer_58)
+
+        self.btn_alterar_agenda_as = QPushButton(self.frame_265)
+        self.btn_alterar_agenda_as.setObjectName(u"btn_alterar_agenda_as")
+        self.btn_alterar_agenda_as.setMinimumSize(QSize(120, 40))
+        self.btn_alterar_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_alterar_agenda_as.setFont(font11)
+        self.btn_alterar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_agenda_as.setAutoFillBackground(False)
+        self.btn_alterar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_alterar_agenda_as.setIcon(icon11)
+        self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_92.addWidget(self.btn_alterar_agenda_as)
+
+        self.btn_cancelar_agenda_as = QPushButton(self.frame_265)
+        self.btn_cancelar_agenda_as.setObjectName(u"btn_cancelar_agenda_as")
+        self.btn_cancelar_agenda_as.setMinimumSize(QSize(120, 40))
+        self.btn_cancelar_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_cancelar_agenda_as.setFont(font11)
+        self.btn_cancelar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cancelar_agenda_as.setAutoFillBackground(False)
+        self.btn_cancelar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_cancelar_agenda_as.setIcon(icon14)
+        self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
+
+        self.horizontalLayout_92.addWidget(self.btn_cancelar_agenda_as)
+
+        self.btn_concluir_agenda_as = QPushButton(self.frame_265)
+        self.btn_concluir_agenda_as.setObjectName(u"btn_concluir_agenda_as")
+        self.btn_concluir_agenda_as.setMinimumSize(QSize(140, 40))
+        self.btn_concluir_agenda_as.setMaximumSize(QSize(140, 40))
+        self.btn_concluir_agenda_as.setFont(font10)
+        self.btn_concluir_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_concluir_agenda_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_92.addWidget(self.btn_concluir_agenda_as)
+
+
+        self.verticalLayout_156.addWidget(self.frame_265)
+
+        self.verticalLayout_156.setStretch(0, 1)
+        self.verticalLayout_156.setStretch(1, 8)
+        self.stackedWidget_2.addWidget(self.page_agenda_as)
 
         self.horizontalLayout_11.addWidget(self.stackedWidget_2)
 
@@ -4831,14 +6229,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_14.setSpacing(16)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
         self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_farm = QLabel(self.frame_20)
-        self.label_foto_farm.setObjectName(u"label_foto_farm")
-        self.label_foto_farm.setMinimumSize(QSize(140, 180))
-        self.label_foto_farm.setStyleSheet(u"QLabel{margin-top: 42px}")
-        self.label_foto_farm.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
-        self.label_foto_farm.setAlignment(Qt.AlignCenter)
+        self.btn_alterar_foto_senha_farm = QPushButton(self.frame_20)
+        self.btn_alterar_foto_senha_farm.setObjectName(u"btn_alterar_foto_senha_farm")
+        self.btn_alterar_foto_senha_farm.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_senha_farm.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
+        self.btn_alterar_foto_senha_farm.setIcon(icon1)
+        self.btn_alterar_foto_senha_farm.setIconSize(QSize(140, 180))
 
-        self.verticalLayout_14.addWidget(self.label_foto_farm)
+        self.verticalLayout_14.addWidget(self.btn_alterar_foto_senha_farm)
 
         self.label_ola_nome_farm = QLabel(self.frame_20)
         self.label_ola_nome_farm.setObjectName(u"label_ola_nome_farm")
@@ -4873,14 +6271,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_farm = QPushButton(self.frame_52)
         self.btn_cadastrar_farm.setObjectName(u"btn_cadastrar_farm")
         self.btn_cadastrar_farm.setMinimumSize(QSize(140, 45))
-        self.btn_cadastrar_farm.setFont(font5)
+        self.btn_cadastrar_farm.setFont(font6)
         self.btn_cadastrar_farm.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon18 = QIcon()
-        icon18.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_farm.setIcon(icon18)
+        icon20 = QIcon()
+        icon20.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_farm.setIcon(icon20)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_cadastrar_farm)
@@ -4888,14 +6286,14 @@ class Ui_MainWindow(object):
         self.btn_retirar_farm = QPushButton(self.frame_52)
         self.btn_retirar_farm.setObjectName(u"btn_retirar_farm")
         self.btn_retirar_farm.setMinimumSize(QSize(140, 45))
-        self.btn_retirar_farm.setFont(font5)
+        self.btn_retirar_farm.setFont(font6)
         self.btn_retirar_farm.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_retirar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon19 = QIcon()
-        icon19.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_retirar_farm.setIcon(icon19)
+        icon21 = QIcon()
+        icon21.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_retirar_farm.setIcon(icon21)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_retirar_farm)
@@ -4903,14 +6301,14 @@ class Ui_MainWindow(object):
         self.btn_estoque_farm = QPushButton(self.frame_52)
         self.btn_estoque_farm.setObjectName(u"btn_estoque_farm")
         self.btn_estoque_farm.setMinimumSize(QSize(140, 45))
-        self.btn_estoque_farm.setFont(font5)
+        self.btn_estoque_farm.setFont(font6)
         self.btn_estoque_farm.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_estoque_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon20 = QIcon()
-        icon20.addFile(u"./icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_estoque_farm.setIcon(icon20)
+        icon22 = QIcon()
+        icon22.addFile(u"./icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_estoque_farm.setIcon(icon22)
         self.btn_estoque_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_estoque_farm)
@@ -4925,7 +6323,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_14.addWidget(self.frame_51)
 
-        self.verticalSpacer_5 = QSpacerItem(20, 240, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_5 = QSpacerItem(20, 200, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
         self.verticalLayout_14.addItem(self.verticalSpacer_5)
 
@@ -4938,7 +6336,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_15 = QHBoxLayout(self.frame_21)
         self.horizontalLayout_15.setSpacing(0)
         self.horizontalLayout_15.setObjectName(u"horizontalLayout_15")
-        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_15.setContentsMargins(0, 0, 0, 20)
         self.horizontalSpacer_15 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_15.addItem(self.horizontalSpacer_15)
@@ -4951,18 +6349,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_15 = QVBoxLayout(self.frame_23)
         self.verticalLayout_15.setSpacing(15)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 15)
-        self.btn_voltar_farm = QPushButton(self.frame_23)
-        self.btn_voltar_farm.setObjectName(u"btn_voltar_farm")
-        self.btn_voltar_farm.setMinimumSize(QSize(120, 40))
-        self.btn_voltar_farm.setFont(font2)
-        self.btn_voltar_farm.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_farm.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_15.addWidget(self.btn_voltar_farm)
-
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 30)
         self.btn_sair_farm = QPushButton(self.frame_23)
         self.btn_sair_farm.setObjectName(u"btn_sair_farm")
         self.btn_sair_farm.setMinimumSize(QSize(120, 40))
@@ -4972,10 +6359,19 @@ class Ui_MainWindow(object):
         self.btn_sair_farm.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_farm.setIcon(icon6)
+        self.btn_sair_farm.setIcon(icon7)
         self.btn_sair_farm.setIconSize(QSize(24, 24))
 
         self.verticalLayout_15.addWidget(self.btn_sair_farm)
+
+        self.frame_216 = QFrame(self.frame_23)
+        self.frame_216.setObjectName(u"frame_216")
+        self.frame_216.setMinimumSize(QSize(0, 30))
+        self.frame_216.setMaximumSize(QSize(16777215, 30))
+        self.frame_216.setFrameShape(QFrame.StyledPanel)
+        self.frame_216.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_15.addWidget(self.frame_216)
 
 
         self.horizontalLayout_15.addWidget(self.frame_23)
@@ -4998,7 +6394,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_4 = QStackedWidget(self.frame_22)
         self.stackedWidget_4.setObjectName(u"stackedWidget_4")
         self.page_principal_farm = QWidget()
@@ -5043,14 +6439,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setSpacing(16)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_fisio = QLabel(self.frame_19)
-        self.label_foto_fisio.setObjectName(u"label_foto_fisio")
-        self.label_foto_fisio.setMinimumSize(QSize(140, 180))
-        self.label_foto_fisio.setStyleSheet(u"QLabel{margin-top: 42px}")
-        self.label_foto_fisio.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
-        self.label_foto_fisio.setAlignment(Qt.AlignCenter)
+        self.btn_alterar_foto_senha_fisio = QPushButton(self.frame_19)
+        self.btn_alterar_foto_senha_fisio.setObjectName(u"btn_alterar_foto_senha_fisio")
+        self.btn_alterar_foto_senha_fisio.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_senha_fisio.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
+        self.btn_alterar_foto_senha_fisio.setIcon(icon1)
+        self.btn_alterar_foto_senha_fisio.setIconSize(QSize(140, 180))
 
-        self.verticalLayout_11.addWidget(self.label_foto_fisio)
+        self.verticalLayout_11.addWidget(self.btn_alterar_foto_senha_fisio)
 
         self.label_ola_nome_fisio = QLabel(self.frame_19)
         self.label_ola_nome_fisio.setObjectName(u"label_ola_nome_fisio")
@@ -5085,12 +6481,12 @@ class Ui_MainWindow(object):
         self.btn_consulta_fisio = QPushButton(self.frame_53)
         self.btn_consulta_fisio.setObjectName(u"btn_consulta_fisio")
         self.btn_consulta_fisio.setMinimumSize(QSize(140, 45))
-        self.btn_consulta_fisio.setFont(font5)
+        self.btn_consulta_fisio.setFont(font6)
         self.btn_consulta_fisio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_fisio.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_consulta_fisio.setIcon(icon2)
+        self.btn_consulta_fisio.setIcon(icon3)
         self.btn_consulta_fisio.setIconSize(QSize(30, 30))
 
         self.verticalLayout_20.addWidget(self.btn_consulta_fisio)
@@ -5098,12 +6494,12 @@ class Ui_MainWindow(object):
         self.btn_relatorios_fisio = QPushButton(self.frame_53)
         self.btn_relatorios_fisio.setObjectName(u"btn_relatorios_fisio")
         self.btn_relatorios_fisio.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_fisio.setFont(font5)
+        self.btn_relatorios_fisio.setFont(font6)
         self.btn_relatorios_fisio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_fisio.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_relatorios_fisio.setIcon(icon4)
+        self.btn_relatorios_fisio.setIcon(icon5)
         self.btn_relatorios_fisio.setIconSize(QSize(30, 30))
 
         self.verticalLayout_20.addWidget(self.btn_relatorios_fisio)
@@ -5130,7 +6526,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_21 = QHBoxLayout(self.frame_28)
         self.horizontalLayout_21.setSpacing(0)
         self.horizontalLayout_21.setObjectName(u"horizontalLayout_21")
-        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_21.setContentsMargins(0, 0, 0, 20)
         self.horizontalSpacer_25 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_21.addItem(self.horizontalSpacer_25)
@@ -5143,29 +6539,29 @@ class Ui_MainWindow(object):
         self.verticalLayout_36 = QVBoxLayout(self.frame_54)
         self.verticalLayout_36.setSpacing(15)
         self.verticalLayout_36.setObjectName(u"verticalLayout_36")
-        self.verticalLayout_36.setContentsMargins(0, 0, 0, 15)
-        self.btn_voltar_fisio = QPushButton(self.frame_54)
-        self.btn_voltar_fisio.setObjectName(u"btn_voltar_fisio")
-        self.btn_voltar_fisio.setMinimumSize(QSize(120, 40))
-        self.btn_voltar_fisio.setFont(font2)
-        self.btn_voltar_fisio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_36.addWidget(self.btn_voltar_fisio)
-
+        self.verticalLayout_36.setContentsMargins(0, 0, 0, 30)
         self.btn_sair_fisio = QPushButton(self.frame_54)
         self.btn_sair_fisio.setObjectName(u"btn_sair_fisio")
         self.btn_sair_fisio.setMinimumSize(QSize(120, 40))
         self.btn_sair_fisio.setFont(font2)
+        self.btn_sair_fisio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_sair_fisio.setLayoutDirection(Qt.RightToLeft)
         self.btn_sair_fisio.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_fisio.setIcon(icon6)
+        self.btn_sair_fisio.setIcon(icon7)
         self.btn_sair_fisio.setIconSize(QSize(24, 24))
 
         self.verticalLayout_36.addWidget(self.btn_sair_fisio)
+
+        self.frame_217 = QFrame(self.frame_54)
+        self.frame_217.setObjectName(u"frame_217")
+        self.frame_217.setMinimumSize(QSize(0, 30))
+        self.frame_217.setMaximumSize(QSize(16777215, 30))
+        self.frame_217.setFrameShape(QFrame.StyledPanel)
+        self.frame_217.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_36.addWidget(self.frame_217)
 
 
         self.horizontalLayout_21.addWidget(self.frame_54)
@@ -5188,7 +6584,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22 = QHBoxLayout(self.frame_29)
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_22.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_5 = QStackedWidget(self.frame_29)
         self.stackedWidget_5.setObjectName(u"stackedWidget_5")
         self.page_principal_fisio = QWidget()
@@ -5233,14 +6629,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_17.setSpacing(16)
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.verticalLayout_17.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_nutri = QLabel(self.frame_24)
-        self.label_foto_nutri.setObjectName(u"label_foto_nutri")
-        self.label_foto_nutri.setMinimumSize(QSize(140, 180))
-        self.label_foto_nutri.setStyleSheet(u"QLabel{margin-top: 42px}")
-        self.label_foto_nutri.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
-        self.label_foto_nutri.setAlignment(Qt.AlignCenter)
+        self.btn_alterar_foto_senha_nutri = QPushButton(self.frame_24)
+        self.btn_alterar_foto_senha_nutri.setObjectName(u"btn_alterar_foto_senha_nutri")
+        self.btn_alterar_foto_senha_nutri.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
+        self.btn_alterar_foto_senha_nutri.setIcon(icon1)
+        self.btn_alterar_foto_senha_nutri.setIconSize(QSize(140, 180))
 
-        self.verticalLayout_17.addWidget(self.label_foto_nutri)
+        self.verticalLayout_17.addWidget(self.btn_alterar_foto_senha_nutri)
 
         self.label_ola_nutri = QLabel(self.frame_24)
         self.label_ola_nutri.setObjectName(u"label_ola_nutri")
@@ -5274,17 +6669,17 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_nutri = QPushButton(self.frame_56)
         self.btn_plano_alimentar_nutri.setObjectName(u"btn_plano_alimentar_nutri")
         self.btn_plano_alimentar_nutri.setMinimumSize(QSize(140, 45))
-        font10 = QFont()
-        font10.setFamilies([u"Six Caps"])
-        font10.setPointSize(20)
-        self.btn_plano_alimentar_nutri.setFont(font10)
+        font13 = QFont()
+        font13.setFamilies([u"Six Caps"])
+        font13.setPointSize(20)
+        self.btn_plano_alimentar_nutri.setFont(font13)
         self.btn_plano_alimentar_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_plano_alimentar_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon21 = QIcon()
-        icon21.addFile(u"./icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_plano_alimentar_nutri.setIcon(icon21)
+        icon23 = QIcon()
+        icon23.addFile(u"./icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_plano_alimentar_nutri.setIcon(icon23)
         self.btn_plano_alimentar_nutri.setIconSize(QSize(30, 30))
 
         self.verticalLayout_37.addWidget(self.btn_plano_alimentar_nutri)
@@ -5292,12 +6687,12 @@ class Ui_MainWindow(object):
         self.btn_consulta_nutri = QPushButton(self.frame_56)
         self.btn_consulta_nutri.setObjectName(u"btn_consulta_nutri")
         self.btn_consulta_nutri.setMinimumSize(QSize(140, 45))
-        self.btn_consulta_nutri.setFont(font5)
+        self.btn_consulta_nutri.setFont(font6)
         self.btn_consulta_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_consulta_nutri.setIcon(icon2)
+        self.btn_consulta_nutri.setIcon(icon3)
         self.btn_consulta_nutri.setIconSize(QSize(30, 30))
 
         self.verticalLayout_37.addWidget(self.btn_consulta_nutri)
@@ -5305,12 +6700,12 @@ class Ui_MainWindow(object):
         self.btn_relatorios_nutri = QPushButton(self.frame_56)
         self.btn_relatorios_nutri.setObjectName(u"btn_relatorios_nutri")
         self.btn_relatorios_nutri.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_nutri.setFont(font5)
+        self.btn_relatorios_nutri.setFont(font6)
         self.btn_relatorios_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_relatorios_nutri.setIcon(icon4)
+        self.btn_relatorios_nutri.setIcon(icon5)
         self.btn_relatorios_nutri.setIconSize(QSize(30, 30))
 
         self.verticalLayout_37.addWidget(self.btn_relatorios_nutri)
@@ -5337,7 +6732,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_18 = QHBoxLayout(self.frame_25)
         self.horizontalLayout_18.setSpacing(0)
         self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_18.setContentsMargins(0, 0, 0, 20)
         self.horizontalSpacer_21 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_18.addItem(self.horizontalSpacer_21)
@@ -5350,18 +6745,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_18 = QVBoxLayout(self.frame_55)
         self.verticalLayout_18.setSpacing(15)
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.verticalLayout_18.setContentsMargins(0, 0, 0, 15)
-        self.btn_voltar_nutri = QPushButton(self.frame_55)
-        self.btn_voltar_nutri.setObjectName(u"btn_voltar_nutri")
-        self.btn_voltar_nutri.setMinimumSize(QSize(120, 40))
-        self.btn_voltar_nutri.setFont(font2)
-        self.btn_voltar_nutri.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_nutri.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_18.addWidget(self.btn_voltar_nutri)
-
+        self.verticalLayout_18.setContentsMargins(0, 0, 0, 30)
         self.btn_sair_nutri = QPushButton(self.frame_55)
         self.btn_sair_nutri.setObjectName(u"btn_sair_nutri")
         self.btn_sair_nutri.setMinimumSize(QSize(120, 40))
@@ -5372,10 +6756,19 @@ class Ui_MainWindow(object):
         self.btn_sair_nutri.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_nutri.setIcon(icon6)
+        self.btn_sair_nutri.setIcon(icon7)
         self.btn_sair_nutri.setIconSize(QSize(24, 24))
 
         self.verticalLayout_18.addWidget(self.btn_sair_nutri)
+
+        self.frame_218 = QFrame(self.frame_55)
+        self.frame_218.setObjectName(u"frame_218")
+        self.frame_218.setMinimumSize(QSize(0, 30))
+        self.frame_218.setMaximumSize(QSize(16777215, 30))
+        self.frame_218.setFrameShape(QFrame.StyledPanel)
+        self.frame_218.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_18.addWidget(self.frame_218)
 
 
         self.horizontalLayout_18.addWidget(self.frame_55)
@@ -5398,7 +6791,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19 = QHBoxLayout(self.frame_26)
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.horizontalLayout_19.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_6 = QStackedWidget(self.frame_26)
         self.stackedWidget_6.setObjectName(u"stackedWidget_6")
         self.page_principal_nutri = QWidget()
@@ -5428,13 +6821,13 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_cadastrar_nutri.setObjectName(u"btn_plano_alimentar_cadastrar_nutri")
         self.btn_plano_alimentar_cadastrar_nutri.setMinimumSize(QSize(700, 154))
         self.btn_plano_alimentar_cadastrar_nutri.setMaximumSize(QSize(700, 154))
-        self.btn_plano_alimentar_cadastrar_nutri.setFont(font6)
+        self.btn_plano_alimentar_cadastrar_nutri.setFont(font7)
         self.btn_plano_alimentar_cadastrar_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_plano_alimentar_cadastrar_nutri.setLayoutDirection(Qt.RightToLeft)
         self.btn_plano_alimentar_cadastrar_nutri.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon1)
+        self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon2)
         self.btn_plano_alimentar_cadastrar_nutri.setIconSize(QSize(80, 80))
 
         self.verticalLayout_27.addWidget(self.btn_plano_alimentar_cadastrar_nutri)
@@ -5443,13 +6836,13 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_buscar_nutri.setObjectName(u"btn_plano_alimentar_buscar_nutri")
         self.btn_plano_alimentar_buscar_nutri.setMinimumSize(QSize(700, 154))
         self.btn_plano_alimentar_buscar_nutri.setMaximumSize(QSize(700, 154))
-        self.btn_plano_alimentar_buscar_nutri.setFont(font6)
+        self.btn_plano_alimentar_buscar_nutri.setFont(font7)
         self.btn_plano_alimentar_buscar_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_plano_alimentar_buscar_nutri.setLayoutDirection(Qt.RightToLeft)
         self.btn_plano_alimentar_buscar_nutri.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_plano_alimentar_buscar_nutri.setIcon(icon4)
+        self.btn_plano_alimentar_buscar_nutri.setIcon(icon5)
         self.btn_plano_alimentar_buscar_nutri.setIconSize(QSize(80, 80))
 
         self.verticalLayout_27.addWidget(self.btn_plano_alimentar_buscar_nutri)
@@ -5501,14 +6894,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_24.setSpacing(16)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
         self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_psi = QLabel(self.frame_33)
-        self.label_foto_psi.setObjectName(u"label_foto_psi")
-        self.label_foto_psi.setMinimumSize(QSize(140, 180))
-        self.label_foto_psi.setStyleSheet(u"QLabel{margin-top: 42px}")
-        self.label_foto_psi.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
-        self.label_foto_psi.setAlignment(Qt.AlignCenter)
+        self.btn_alterar_foto_senha_psi = QPushButton(self.frame_33)
+        self.btn_alterar_foto_senha_psi.setObjectName(u"btn_alterar_foto_senha_psi")
+        self.btn_alterar_foto_senha_psi.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
+        self.btn_alterar_foto_senha_psi.setIcon(icon1)
+        self.btn_alterar_foto_senha_psi.setIconSize(QSize(140, 180))
 
-        self.verticalLayout_24.addWidget(self.label_foto_psi)
+        self.verticalLayout_24.addWidget(self.btn_alterar_foto_senha_psi)
 
         self.label_ola_nome_psi = QLabel(self.frame_33)
         self.label_ola_nome_psi.setObjectName(u"label_ola_nome_psi")
@@ -5533,7 +6925,7 @@ class Ui_MainWindow(object):
 
         self.frame_59 = QFrame(self.frame_58)
         self.frame_59.setObjectName(u"frame_59")
-        self.frame_59.setFont(font10)
+        self.frame_59.setFont(font13)
         self.frame_59.setStyleSheet(u"")
         self.frame_59.setFrameShape(QFrame.StyledPanel)
         self.frame_59.setFrameShadow(QFrame.Raised)
@@ -5544,12 +6936,12 @@ class Ui_MainWindow(object):
         self.btn_consulta_psi = QPushButton(self.frame_59)
         self.btn_consulta_psi.setObjectName(u"btn_consulta_psi")
         self.btn_consulta_psi.setMinimumSize(QSize(140, 45))
-        self.btn_consulta_psi.setFont(font5)
+        self.btn_consulta_psi.setFont(font6)
         self.btn_consulta_psi.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_psi.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_consulta_psi.setIcon(icon2)
+        self.btn_consulta_psi.setIcon(icon3)
         self.btn_consulta_psi.setIconSize(QSize(30, 30))
 
         self.verticalLayout_39.addWidget(self.btn_consulta_psi)
@@ -5557,12 +6949,12 @@ class Ui_MainWindow(object):
         self.btn_relatorios_psi = QPushButton(self.frame_59)
         self.btn_relatorios_psi.setObjectName(u"btn_relatorios_psi")
         self.btn_relatorios_psi.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_psi.setFont(font5)
+        self.btn_relatorios_psi.setFont(font6)
         self.btn_relatorios_psi.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_psi.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_relatorios_psi.setIcon(icon4)
+        self.btn_relatorios_psi.setIcon(icon5)
         self.btn_relatorios_psi.setIconSize(QSize(30, 30))
 
         self.verticalLayout_39.addWidget(self.btn_relatorios_psi)
@@ -5589,7 +6981,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_25 = QHBoxLayout(self.frame_34)
         self.horizontalLayout_25.setSpacing(0)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_25.setContentsMargins(0, 0, 0, 20)
         self.horizontalSpacer_27 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_25.addItem(self.horizontalSpacer_27)
@@ -5602,18 +6994,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_38 = QVBoxLayout(self.frame_57)
         self.verticalLayout_38.setSpacing(15)
         self.verticalLayout_38.setObjectName(u"verticalLayout_38")
-        self.verticalLayout_38.setContentsMargins(0, 0, 0, 15)
-        self.btn_voltar_psi = QPushButton(self.frame_57)
-        self.btn_voltar_psi.setObjectName(u"btn_voltar_psi")
-        self.btn_voltar_psi.setMinimumSize(QSize(120, 40))
-        self.btn_voltar_psi.setFont(font2)
-        self.btn_voltar_psi.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_psi.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_38.addWidget(self.btn_voltar_psi)
-
+        self.verticalLayout_38.setContentsMargins(0, 0, 0, 30)
         self.btn_sair_psi = QPushButton(self.frame_57)
         self.btn_sair_psi.setObjectName(u"btn_sair_psi")
         self.btn_sair_psi.setMinimumSize(QSize(120, 40))
@@ -5623,10 +7004,19 @@ class Ui_MainWindow(object):
         self.btn_sair_psi.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_psi.setIcon(icon6)
+        self.btn_sair_psi.setIcon(icon7)
         self.btn_sair_psi.setIconSize(QSize(24, 24))
 
         self.verticalLayout_38.addWidget(self.btn_sair_psi)
+
+        self.frame_219 = QFrame(self.frame_57)
+        self.frame_219.setObjectName(u"frame_219")
+        self.frame_219.setMinimumSize(QSize(0, 30))
+        self.frame_219.setMaximumSize(QSize(16777215, 30))
+        self.frame_219.setFrameShape(QFrame.StyledPanel)
+        self.frame_219.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_38.addWidget(self.frame_219)
 
 
         self.horizontalLayout_25.addWidget(self.frame_57)
@@ -5649,7 +7039,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24 = QHBoxLayout(self.frame_31)
         self.horizontalLayout_24.setSpacing(0)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.horizontalLayout_24.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_7 = QStackedWidget(self.frame_31)
         self.stackedWidget_7.setObjectName(u"stackedWidget_7")
         self.page_principal_psi = QWidget()
@@ -5699,14 +7089,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.setSpacing(16)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
         self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_secret = QLabel(self.frame_15)
-        self.label_foto_secret.setObjectName(u"label_foto_secret")
-        self.label_foto_secret.setMinimumSize(QSize(140, 180))
-        self.label_foto_secret.setStyleSheet(u"QLabel{margin-top: 42px}")
-        self.label_foto_secret.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
-        self.label_foto_secret.setAlignment(Qt.AlignCenter)
+        self.btn_alterar_foto_senha_secret = QPushButton(self.frame_15)
+        self.btn_alterar_foto_senha_secret.setObjectName(u"btn_alterar_foto_senha_secret")
+        self.btn_alterar_foto_senha_secret.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
+        self.btn_alterar_foto_senha_secret.setIcon(icon1)
+        self.btn_alterar_foto_senha_secret.setIconSize(QSize(140, 180))
 
-        self.verticalLayout_10.addWidget(self.label_foto_secret)
+        self.verticalLayout_10.addWidget(self.btn_alterar_foto_senha_secret)
 
         self.label_ola_nome_secret = QLabel(self.frame_15)
         self.label_ola_nome_secret.setObjectName(u"label_ola_nome_secret")
@@ -5741,13 +7130,13 @@ class Ui_MainWindow(object):
         self.btn_agenda_sec = QPushButton(self.frame_50)
         self.btn_agenda_sec.setObjectName(u"btn_agenda_sec")
         self.btn_agenda_sec.setMinimumSize(QSize(140, 45))
-        self.btn_agenda_sec.setFont(font5)
+        self.btn_agenda_sec.setFont(font6)
         self.btn_agenda_sec.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_agenda_sec.setLayoutDirection(Qt.LeftToRight)
         self.btn_agenda_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_agenda_sec.setIcon(icon3)
+        self.btn_agenda_sec.setIcon(icon4)
         self.btn_agenda_sec.setIconSize(QSize(30, 30))
 
         self.verticalLayout_12.addWidget(self.btn_agenda_sec)
@@ -5755,14 +7144,14 @@ class Ui_MainWindow(object):
         self.btn_eventos_sec = QPushButton(self.frame_50)
         self.btn_eventos_sec.setObjectName(u"btn_eventos_sec")
         self.btn_eventos_sec.setMinimumSize(QSize(140, 45))
-        self.btn_eventos_sec.setFont(font5)
+        self.btn_eventos_sec.setFont(font6)
         self.btn_eventos_sec.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_eventos_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon22 = QIcon()
-        icon22.addFile(u"./icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_eventos_sec.setIcon(icon22)
+        icon24 = QIcon()
+        icon24.addFile(u"./icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_eventos_sec.setIcon(icon24)
         self.btn_eventos_sec.setIconSize(QSize(30, 30))
 
         self.verticalLayout_12.addWidget(self.btn_eventos_sec)
@@ -5770,12 +7159,12 @@ class Ui_MainWindow(object):
         self.btn_relatorios_sec = QPushButton(self.frame_50)
         self.btn_relatorios_sec.setObjectName(u"btn_relatorios_sec")
         self.btn_relatorios_sec.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_sec.setFont(font5)
+        self.btn_relatorios_sec.setFont(font6)
         self.btn_relatorios_sec.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_relatorios_sec.setIcon(icon4)
+        self.btn_relatorios_sec.setIcon(icon5)
         self.btn_relatorios_sec.setIconSize(QSize(30, 30))
 
         self.verticalLayout_12.addWidget(self.btn_relatorios_sec)
@@ -5802,7 +7191,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_12 = QHBoxLayout(self.frame_17)
         self.horizontalLayout_12.setSpacing(0)
         self.horizontalLayout_12.setObjectName(u"horizontalLayout_12")
-        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 20)
         self.horizontalSpacer_11 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_12.addItem(self.horizontalSpacer_11)
@@ -5815,18 +7204,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_8 = QVBoxLayout(self.frame_12)
         self.verticalLayout_8.setSpacing(15)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.verticalLayout_8.setContentsMargins(0, 0, 0, 15)
-        self.btn_voltar_sec = QPushButton(self.frame_12)
-        self.btn_voltar_sec.setObjectName(u"btn_voltar_sec")
-        self.btn_voltar_sec.setMinimumSize(QSize(120, 40))
-        self.btn_voltar_sec.setFont(font2)
-        self.btn_voltar_sec.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_sec.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_8.addWidget(self.btn_voltar_sec)
-
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 30)
         self.btn_sair_sec = QPushButton(self.frame_12)
         self.btn_sair_sec.setObjectName(u"btn_sair_sec")
         self.btn_sair_sec.setMinimumSize(QSize(120, 40))
@@ -5836,10 +7214,19 @@ class Ui_MainWindow(object):
         self.btn_sair_sec.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_sec.setIcon(icon6)
+        self.btn_sair_sec.setIcon(icon7)
         self.btn_sair_sec.setIconSize(QSize(24, 24))
 
         self.verticalLayout_8.addWidget(self.btn_sair_sec)
+
+        self.frame_220 = QFrame(self.frame_12)
+        self.frame_220.setObjectName(u"frame_220")
+        self.frame_220.setMinimumSize(QSize(0, 30))
+        self.frame_220.setMaximumSize(QSize(16777215, 30))
+        self.frame_220.setFrameShape(QFrame.StyledPanel)
+        self.frame_220.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_8.addWidget(self.frame_220)
 
 
         self.horizontalLayout_12.addWidget(self.frame_12)
@@ -5862,7 +7249,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14 = QHBoxLayout(self.frame_16)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalLayout_14.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_3 = QStackedWidget(self.frame_16)
         self.stackedWidget_3.setObjectName(u"stackedWidget_3")
         self.page_principal_sec = QWidget()
@@ -5898,6 +7285,7 @@ class Ui_MainWindow(object):
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(0)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_4.setCurrentIndex(0)
         self.stack_fisioterapeuta.setCurrentIndex(0)
@@ -5915,7 +7303,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.label_5.setText(QCoreApplication.translate("MainWindow", u"ABREC", None))
+        self.label_Logo_ABREC.setText("")
         self.input_usuario_login.setText("")
         self.input_usuario_login.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_2.setText("")
@@ -5924,14 +7312,14 @@ class Ui_MainWindow(object):
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
         self.btn_esqueci_senha_login.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
-        self.label_foto_as.setText("")
+        self.label_Abrec_Logo_Paint.setText("")
+        self.btn_alterar_foto_senha_as.setText("")
         self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_consulta_as.setText(QCoreApplication.translate("MainWindow", u"   CONSULTA", None))
         self.btn_agenda_as.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
         self.btn_relatorios_as.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
         self.btn_comunidade_as.setText(QCoreApplication.translate("MainWindow", u" COMUNIDADE", None))
-        self.btn_voltar_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_sair_as.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.btn_cadastrar_cuidador_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CUIDADOR E USU\u00c1RIO                     ", None))
         self.btn_cadastrar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"COLABORADOR                               ", None))
@@ -5961,25 +7349,104 @@ class Ui_MainWindow(object):
         self.label_cidade_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_estado_civil_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
+        self.input_estado_civil_usuario_as.setItemText(0, "")
+        self.input_estado_civil_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Casado(a)", None))
+        self.input_estado_civil_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Solteiro(a)", None))
+        self.input_estado_civil_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Uni\u00e3o Est\u00e1vel", None))
+        self.input_estado_civil_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Vi\u00favo(a)", None))
+        self.input_estado_civil_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Divorciado(a)", None))
+
         self.label_escolaridade_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Escolaridade", None))
+        self.input_escolaridade_usuario_as.setItemText(0, "")
+        self.input_escolaridade_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Ensino fundamental incompleto", None))
+        self.input_escolaridade_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Ensino fundamental completo", None))
+        self.input_escolaridade_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Ensino m\u00e9dio incompleto", None))
+        self.input_escolaridade_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Ensino m\u00e9dio completo", None))
+        self.input_escolaridade_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Superior incompleto", None))
+        self.input_escolaridade_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Superior completo", None))
+        self.input_escolaridade_usuario_as.setItemText(7, QCoreApplication.translate("MainWindow", u"P\u00f3s gradua\u00e7\u00e3o", None))
+        self.input_escolaridade_usuario_as.setItemText(8, QCoreApplication.translate("MainWindow", u"Mestrado", None))
+        self.input_escolaridade_usuario_as.setItemText(9, QCoreApplication.translate("MainWindow", u"Doutorado", None))
+
         self.label_pessoa_cdeficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Pessoa c/ defici\u00eancia", None))
         self.input_pessoa_cdeficiencia_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.label_pessoa_cdeficiencia_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
+        self.input_tipo_deficiencia_usuario_as.setItemText(0, "")
+        self.input_tipo_deficiencia_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Visual", None))
+        self.input_tipo_deficiencia_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Motora", None))
+        self.input_tipo_deficiencia_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Amputada", None))
+        self.input_tipo_deficiencia_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Mental", None))
+        self.input_tipo_deficiencia_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Outra", None))
+
         self.label_renda_familiar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"M\u00e9dia de renda familiar", None))
+        self.input_renda_familiar_usuario_as.setItemText(0, "")
+        self.input_renda_familiar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Menos 1 sal\u00e1rio", None))
+        self.input_renda_familiar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"1 sal\u00e1rio", None))
+        self.input_renda_familiar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mais de 1 a 3 sal\u00e1rios", None))
+        self.input_renda_familiar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Mais que 3 sal\u00e1rios", None))
+
         self.label_meio_transporte_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Meio de transporte", None))
+        self.input_meio_transporte_usuario_as.setItemText(0, "")
+        self.input_meio_transporte_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Particular", None))
+        self.input_meio_transporte_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Carona", None))
+        self.input_meio_transporte_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"\u00d4nibus coletivo", None))
+        self.input_meio_transporte_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Ambul\u00e2ncia municipal", None))
+        self.input_meio_transporte_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Moto", None))
+        self.input_meio_transporte_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Ambul\u00e2ncia particular", None))
+        self.input_meio_transporte_usuario_as.setItemText(7, QCoreApplication.translate("MainWindow", u"Outro", None))
+
         self.label_vale_transporte_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Vale transporte", None))
+        self.input_vale_transporte_usuario_as.setItemText(0, "")
+        self.input_vale_transporte_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Passe para os dias de tratamento", None))
+        self.input_vale_transporte_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Passe do idoso", None))
+        self.input_vale_transporte_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Passe livre", None))
+
         self.label_situacao_trabalho_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o de trabalho", None))
+        self.input_situacao_trabalho_usuario_as.setItemText(0, "")
+        self.input_situacao_trabalho_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Empregado/a Aut\u00f4nomo/a", None))
+        self.input_situacao_trabalho_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Aposentado/a", None))
+        self.input_situacao_trabalho_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Pensionista", None))
+        self.input_situacao_trabalho_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Desempregado/a", None))
+        self.input_situacao_trabalho_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Aux\u00edlio doen\u00e7a", None))
+        self.input_situacao_trabalho_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Outros", None))
+
         self.label_beneficios_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcios", None))
+        self.input_beneficios_usuario_as.setItemText(0, "")
+        self.input_beneficios_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"BPC/Idoso", None))
+        self.input_beneficios_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"BPC/PCD", None))
+        self.input_beneficios_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mais Social (Gov. Estadual)", None))
+        self.input_beneficios_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Aux\u00edlio Brasil (Gov. Federal)", None))
+
         self.label_tarifa_social_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tarifa social", None))
         self.input_tarifa_social_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.input_tarifa_social_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_tratamento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de tratamento", None))
+        self.input_tipo_tratamento_usuario_as.setItemText(0, "")
+        self.input_tipo_tratamento_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Pr\u00e9-Di\u00e1lise", None))
+        self.input_tipo_tratamento_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Hemodi\u00e1lise", None))
+        self.input_tipo_tratamento_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Di\u00e1lise Peritoneal", None))
+
         self.label_local_tratamento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Local de tratamento", None))
         self.label_patologia_base_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Patologia base", None))
+        self.input_patologia_base_usuario_as.setItemText(0, "")
+        self.input_patologia_base_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Hipertens\u00e3o", None))
+        self.input_patologia_base_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Diabete 1", None))
+        self.input_patologia_base_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Diabete 2", None))
+        self.input_patologia_base_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"L\u00fapus", None))
+        self.input_patologia_base_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Nefrites", None))
+        self.input_patologia_base_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Outros", None))
+
         self.label_data_inicio_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de in\u00edcio", None))
         self.label_periodo_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
+        self.input_periodo_usuario_as.setItemText(0, "")
+        self.input_periodo_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
+        self.input_periodo_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
+        self.input_periodo_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
+
+        self.btn_voltar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
+        self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO CUIDADOR", None))
         self.label_matricula_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Matricula", None))
         self.label_nome_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Nome cuidador", None))
@@ -6002,10 +7469,12 @@ class Ui_MainWindow(object):
         self.label_cidade_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es gerais Usu\u00e1rio e Cuidador", None))
-        self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
-        self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
+        self.btn_voltar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_salvar_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
+        self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"OBSERVA\u00c7\u00d5ES SIGILOSAS", None))
         self.label_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es/informa\u00e7\u00f5es gerais", None))
+        self.btn_voltar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_cancelar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.btn_salvar_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
@@ -6093,6 +7562,10 @@ class Ui_MainWindow(object):
         self.label_data_inclusao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Data de inclus\u00e3o", None))
         self.label_nome_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Nome", None))
         self.label_tipo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Tipo", None))
+        self.input_tipo_cursos_as.setItemText(0, "")
+        self.input_tipo_cursos_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Interno", None))
+        self.input_tipo_cursos_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Externo", None))
+
         self.label_situacao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_ativo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_inativo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
@@ -6109,6 +7582,11 @@ class Ui_MainWindow(object):
         self.label_horario_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rio", None))
         self.label_as_cursos_as.setText(QCoreApplication.translate("MainWindow", u"\u00e0s:", None))
         self.label_periodo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
+        self.input_periodo_cursos_as.setItemText(0, "")
+        self.input_periodo_cursos_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
+        self.input_periodo_cursos_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
+        self.input_periodo_cursos_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
+
         self.label_vagas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Vagas", None))
         self.label_cep_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
         self.label_logradouro_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None))
@@ -6120,42 +7598,115 @@ class Ui_MainWindow(object):
         self.input_cidade_cursos_as.setText("")
         self.label_estado_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_descricao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o da atividade", None))
+        self.btn_voltar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_lista_pessoas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Lista pessoas cadastradas", None))
         self.btn_concluir_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
-        self.label_foto_farm.setText("")
+        self.label_consulta_consulta_as.setText(QCoreApplication.translate("MainWindow", u"CONSULTA", None))
+        self.label_buscar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"BUSCAR", None))
+        self.input_nome_radio_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Nome", None))
+        self.input_cpf_radio_consulta_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
+        self.input_matricula_radio_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
+        self.label_matricula_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
+        self.label_nome_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Nome", None))
+        self.label_cpf_consulta_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
+        self.label_nascimento_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
+        self.label_cidade_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
+        self.label_estado_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
+        self.btn_buscar_consulta_as.setText("")
+        self.label_matricula_consulta_as_2.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
+        self.input_matricula_consulta_as_2.setText("")
+        self.label_nome_usuario_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
+        self.input_nome_usuario_consulta_as.setText("")
+        self.label_cpf_consulta_as_2.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
+        self.input_cpf_consulta_as_2.setText("")
+        self.label_ultima_consulta_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Data da \u00faltima consulta", None))
+        self.input_ultima_consulta_consulta_as.setText("")
+        self.btn_imprimir_consulta_as.setText(QCoreApplication.translate("MainWindow", u"  IMPRIMIR", None))
+        self.btn_alterar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"  ALTERAR", None))
+        self.btn_concluir_consulta_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
+        self.btn_voltar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIOS", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
+        self.label_6.setText(QCoreApplication.translate("MainWindow", u"a", None))
+        self.label_8.setText(QCoreApplication.translate("MainWindow", u"T\u00edtulo do relat\u00f3rio", None))
+        self.label_9.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None))
+        self.label_7.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios prontos", None))
+        self.comboBox.setItemText(0, "")
+        self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Cuidador", None))
+        self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Colaborador", None))
+        self.comboBox.setItemText(4, QCoreApplication.translate("MainWindow", u"Acessos", None))
+        self.comboBox.setItemText(5, QCoreApplication.translate("MainWindow", u"Eventos/Oficinas", None))
+        self.comboBox.setItemText(6, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Cuidador", None))
+        self.comboBox.setItemText(7, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Consultas", None))
+        self.comboBox.setItemText(8, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Eventos", None))
+        self.comboBox.setItemText(9, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio x Oficinas", None))
+        self.comboBox.setItemText(10, QCoreApplication.translate("MainWindow", u"Cuidador x Eventos", None))
+        self.comboBox.setItemText(11, QCoreApplication.translate("MainWindow", u"Cuidador x Oficinas", None))
+        self.comboBox.setItemText(12, QCoreApplication.translate("MainWindow", u"Colaborador x Consultas", None))
+        self.comboBox.setItemText(13, QCoreApplication.translate("MainWindow", u"Colaborador x Usu\u00e1rio", None))
+
+        self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_limpar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"LIMPAR", None))
+        self.btn_gerar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"GERAR", None))
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"AGENDA", None))
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rios", None))
+        self.btn_7_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:00", None))
+        self.btn_730_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:30", None))
+        self.btn_8_agenda_as.setText(QCoreApplication.translate("MainWindow", u"08:00", None))
+        self.btn_830_agenda_as.setText(QCoreApplication.translate("MainWindow", u"08:30", None))
+        self.btn_9_agenda_as.setText(QCoreApplication.translate("MainWindow", u"09:00", None))
+        self.btn_930_agenda_as.setText(QCoreApplication.translate("MainWindow", u"09:30", None))
+        self.btn_10_agenda_as.setText(QCoreApplication.translate("MainWindow", u"10:00", None))
+        self.btn_1030_agenda_as.setText(QCoreApplication.translate("MainWindow", u"10:30", None))
+        self.btn_11_agenda_as.setText(QCoreApplication.translate("MainWindow", u"11:00", None))
+        self.btn_1130_agenda_as.setText(QCoreApplication.translate("MainWindow", u"11:30", None))
+        self.btn_12_agenda_as.setText(QCoreApplication.translate("MainWindow", u"12:00", None))
+        self.btn_1230_agenda_as.setText(QCoreApplication.translate("MainWindow", u"12:30", None))
+        self.btn_13_agenda_as.setText(QCoreApplication.translate("MainWindow", u"13:00", None))
+        self.btn_1330_agenda_as.setText(QCoreApplication.translate("MainWindow", u"13:30", None))
+        self.btn_14_agenda_as.setText(QCoreApplication.translate("MainWindow", u"14:00", None))
+        self.btn_1430_agenda_as.setText(QCoreApplication.translate("MainWindow", u"14:30", None))
+        self.btn_15_agenda_as.setText(QCoreApplication.translate("MainWindow", u"15:00", None))
+        self.btn_1530_agenda_as.setText(QCoreApplication.translate("MainWindow", u"15:30", None))
+        self.btn_16_agenda_as.setText(QCoreApplication.translate("MainWindow", u"16:00", None))
+        self.btn_1630_agenda_as.setText(QCoreApplication.translate("MainWindow", u"16:30", None))
+        self.btn_17_agenda_as.setText(QCoreApplication.translate("MainWindow", u"17:00", None))
+        self.btn_1730_agenda_as.setText(QCoreApplication.translate("MainWindow", u"17:30", None))
+        self.btn_18_agenda_as.setText(QCoreApplication.translate("MainWindow", u"18:00", None))
+        self.btn_voltar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_alterar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
+        self.btn_cancelar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.btn_concluir_agenda_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
+        self.btn_alterar_foto_senha_farm.setText("")
         self.label_ola_nome_farm.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR", None))
         self.btn_retirar_farm.setText(QCoreApplication.translate("MainWindow", u"   RETIRAR", None))
         self.btn_estoque_farm.setText(QCoreApplication.translate("MainWindow", u"   ESTOQUE", None))
-        self.btn_voltar_farm.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_sair_farm.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
-        self.label_foto_fisio.setText("")
+        self.btn_alterar_foto_senha_fisio.setText("")
         self.label_ola_nome_fisio.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_consulta_fisio.setText(QCoreApplication.translate("MainWindow", u"    CONSULTA", None))
         self.btn_relatorios_fisio.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIOS", None))
-        self.btn_voltar_fisio.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_sair_fisio.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
-        self.label_foto_nutri.setText("")
+        self.btn_alterar_foto_senha_nutri.setText("")
         self.label_ola_nutri.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_plano_alimentar_nutri.setText(QCoreApplication.translate("MainWindow", u" PLANO ALIMENTAR", None))
         self.btn_consulta_nutri.setText(QCoreApplication.translate("MainWindow", u"    CONSULTA", None))
         self.btn_relatorios_nutri.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIOS", None))
-        self.btn_voltar_nutri.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_sair_nutri.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.btn_plano_alimentar_cadastrar_nutri.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR                 ", None))
         self.btn_plano_alimentar_buscar_nutri.setText(QCoreApplication.translate("MainWindow", u"BUSCAR                    ", None))
-        self.label_foto_psi.setText("")
+        self.btn_alterar_foto_senha_psi.setText("")
         self.label_ola_nome_psi.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_consulta_psi.setText(QCoreApplication.translate("MainWindow", u"   CONSULTA", None))
         self.btn_relatorios_psi.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIOS", None))
-        self.btn_voltar_psi.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_sair_psi.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
-        self.label_foto_secret.setText("")
+        self.btn_alterar_foto_senha_secret.setText("")
         self.label_ola_nome_secret.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_agenda_sec.setText(QCoreApplication.translate("MainWindow", u"    AGENDA", None))
         self.btn_eventos_sec.setText(QCoreApplication.translate("MainWindow", u"   EVENTOS", None))
         self.btn_relatorios_sec.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
-        self.btn_voltar_sec.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_sair_sec.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
     # retranslateUi
 
