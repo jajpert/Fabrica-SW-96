@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1796</width>
-    <height>917</height>
+    <width>1718</width>
+    <height>892</height>
    </rect>
   </property>
   <property name="font">
@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>0</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -8293,7 +8293,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_255">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>150</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8329,7 +8329,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLabel" name="label_salario_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>100</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -8382,7 +8382,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_249">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>281</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8418,7 +8418,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLabel" name="label_descricao_cargo_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>280</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -8443,7 +8443,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLineEdit" name="input_descricao_cargo_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>280</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -8468,13 +8468,13 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_251">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>16777215</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -8490,7 +8490,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_252">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>230</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8529,7 +8529,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_253">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>180</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8551,7 +8551,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_254">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>80</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8632,7 +8632,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_231">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>155</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8668,7 +8668,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLabel" name="label_estado_civil_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>155</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -8693,7 +8693,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QComboBox" name="input_estado_civil_colaborador_comboBox_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>154</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -8788,25 +8788,36 @@ QPushButton:focus{outline:0}</string>
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <widget class="QLabel" name="label_pessoa_cdeficiencia_colaborador_as">
-                                      <property name="geometry">
-                                       <rect>
-                                        <x>0</x>
-                                        <y>0</y>
-                                        <width>141</width>
-                                        <height>21</height>
-                                       </rect>
+                                     <layout class="QVBoxLayout" name="verticalLayout_160">
+                                      <property name="spacing">
+                                       <number>5</number>
                                       </property>
-                                      <property name="font">
-                                       <font>
-                                        <family>Abel</family>
-                                        <pointsize>12</pointsize>
-                                       </font>
+                                      <property name="leftMargin">
+                                       <number>0</number>
                                       </property>
-                                      <property name="text">
-                                       <string>Pessoa c/ deficiência</string>
+                                      <property name="topMargin">
+                                       <number>0</number>
                                       </property>
-                                     </widget>
+                                      <property name="rightMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <item>
+                                       <widget class="QLabel" name="label_pessoa_cdeficiencia_colaborador_as">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Pessoa c/ deficiência</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
                                     </widget>
                                    </item>
                                    <item>
@@ -8817,32 +8828,37 @@ QPushButton:focus{outline:0}</string>
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <widget class="QRadioButton" name="input_pessoa_cdeficiencia_sim_colaborador_as">
-                                      <property name="geometry">
-                                       <rect>
-                                        <x>20</x>
-                                        <y>0</y>
-                                        <width>41</width>
-                                        <height>20</height>
-                                       </rect>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_94">
+                                      <property name="spacing">
+                                       <number>5</number>
                                       </property>
-                                      <property name="text">
-                                       <string>Sim</string>
+                                      <property name="leftMargin">
+                                       <number>0</number>
                                       </property>
-                                     </widget>
-                                     <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_colaborador_as">
-                                      <property name="geometry">
-                                       <rect>
-                                        <x>80</x>
-                                        <y>0</y>
-                                        <width>41</width>
-                                        <height>20</height>
-                                       </rect>
+                                      <property name="topMargin">
+                                       <number>0</number>
                                       </property>
-                                      <property name="text">
-                                       <string>Não</string>
+                                      <property name="rightMargin">
+                                       <number>0</number>
                                       </property>
-                                     </widget>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <item alignment="Qt::AlignHCenter">
+                                       <widget class="QRadioButton" name="input_pessoa_cdeficiencia_sim_colaborador_as">
+                                        <property name="text">
+                                         <string>Sim</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item alignment="Qt::AlignHCenter">
+                                       <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_colaborador_as">
+                                        <property name="text">
+                                         <string>Não</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
                                     </widget>
                                    </item>
                                   </layout>
@@ -8852,7 +8868,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_233">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>251</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8901,7 +8917,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLineEdit" name="input_tipo_deficiencia_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>250</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -8926,7 +8942,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_234">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>155</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -8962,7 +8978,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLabel" name="label_escolaridade_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>155</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -8987,7 +9003,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QComboBox" name="input_escolaridade_colaborador_comboBox_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>154</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9047,7 +9063,7 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_235">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>211</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -9083,7 +9099,7 @@ QPushButton:focus{outline:0}</string>
                                     <widget class="QLabel" name="label_cargo_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>240</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -9114,7 +9130,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="minimumSize">
                                       <size>
-                                       <width>210</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9402,7 +9418,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_202">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>155</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -9438,7 +9454,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_orgao_expedidor_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>155</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -9463,7 +9479,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_orgao_expedidor_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>154</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -9537,7 +9553,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_data_emissao_rg_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9562,7 +9578,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_203">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>220</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -9611,7 +9627,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_pis_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>218</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9636,7 +9652,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_204">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>146</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -9685,7 +9701,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QComboBox" name="input_sexo_colaborador_comboBox_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>70</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9725,7 +9741,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_205">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>155</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -9761,7 +9777,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_telefone_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>155</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -9786,7 +9802,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_telefone_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>154</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9811,7 +9827,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_206">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>240</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -9847,7 +9863,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_email_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>240</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -9872,7 +9888,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_email_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>239</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9965,7 +9981,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_196">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10001,7 +10017,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_matricula_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10026,7 +10042,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_matricula_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>159</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10051,7 +10067,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_197">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>431</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10087,7 +10103,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_nome_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>460</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10112,7 +10128,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_nome_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>430</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10140,7 +10156,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_200">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>155</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10176,7 +10192,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_data_nascimento_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>155</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10201,7 +10217,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_data_nascimento_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>154</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10229,7 +10245,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_198">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>180</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10265,7 +10281,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_cpf_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>180</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10290,7 +10306,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_cpf_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>179</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10318,7 +10334,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_199">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10354,7 +10370,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_rg_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10379,7 +10395,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_rg_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>159</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10449,7 +10465,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_240">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>150</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10485,7 +10501,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_cep_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>100</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10538,7 +10554,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_209">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>281</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10574,7 +10590,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_logradouro_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>280</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10599,7 +10615,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_logradouro_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>280</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10624,7 +10640,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_210">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10660,7 +10676,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_numero_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10685,7 +10701,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_numero_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10710,7 +10726,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_211">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>230</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10746,7 +10762,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_bairro_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>230</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10771,7 +10787,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_bairro_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>220</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10796,7 +10812,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_212">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>180</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10832,7 +10848,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_cidade_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>180</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10857,7 +10873,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_cidade_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>179</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10882,7 +10898,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_213">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>80</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10918,7 +10934,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLabel" name="label_estado_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>80</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -10943,7 +10959,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <widget class="QLineEdit" name="input_estado_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>75</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -11065,34 +11081,6 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                    <property name="bottomMargin">
                                     <number>0</number>
                                    </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_adicionar_foto__colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>125</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>125</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="styleSheet">
-                                      <string notr="true">background-color: rgb(243, 185, 191);</string>
-                                     </property>
-                                     <property name="text">
-                                      <string>ADICIONAR FOTO</string>
-                                     </property>
-                                    </widget>
-                                   </item>
                                   </layout>
                                  </widget>
                                 </item>
@@ -11308,26 +11296,20 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            <number>0</number>
                           </property>
                           <item>
-                           <spacer name="horizontalSpacer_57">
-                            <property name="orientation">
-                             <enum>Qt::Horizontal</enum>
+                           <widget class="QFrame" name="frame_269">
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
                             </property>
-                            <property name="sizeType">
-                             <enum>QSizePolicy::Preferred</enum>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
                             </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>280</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
+                           </widget>
                           </item>
                           <item>
                            <widget class="QFrame" name="frame_239">
                             <property name="minimumSize">
                              <size>
-                              <width>281</width>
+                              <width>282</width>
                               <height>0</height>
                              </size>
                             </property>
@@ -11363,7 +11345,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                               <widget class="QLabel" name="label_usuario_colaborador_as">
                                <property name="minimumSize">
                                 <size>
-                                 <width>280</width>
+                                 <width>0</width>
                                  <height>0</height>
                                 </size>
                                </property>
@@ -11388,7 +11370,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                               <widget class="QLineEdit" name="input_usuario_colaborador_as">
                                <property name="minimumSize">
                                 <size>
-                                 <width>280</width>
+                                 <width>0</width>
                                  <height>30</height>
                                 </size>
                                </property>
@@ -11413,7 +11395,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            <widget class="QFrame" name="frame_250">
                             <property name="minimumSize">
                              <size>
-                              <width>230</width>
+                              <width>231</width>
                               <height>0</height>
                              </size>
                             </property>
@@ -11449,7 +11431,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                               <widget class="QLabel" name="label_senha_colaborador_as">
                                <property name="minimumSize">
                                 <size>
-                                 <width>230</width>
+                                 <width>0</width>
                                  <height>0</height>
                                 </size>
                                </property>
@@ -11474,7 +11456,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                               <widget class="QLineEdit" name="input_senha_colaborador_as">
                                <property name="minimumSize">
                                 <size>
-                                 <width>220</width>
+                                 <width>0</width>
                                  <height>30</height>
                                 </size>
                                </property>
@@ -11499,7 +11481,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                            <widget class="QFrame" name="frame_256">
                             <property name="minimumSize">
                              <size>
-                              <width>230</width>
+                              <width>231</width>
                               <height>0</height>
                              </size>
                             </property>
@@ -11535,7 +11517,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                               <widget class="QLabel" name="label_confirmar_senha_colaborador_as">
                                <property name="minimumSize">
                                 <size>
-                                 <width>230</width>
+                                 <width>0</width>
                                  <height>0</height>
                                 </size>
                                </property>
@@ -11560,7 +11542,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                               <widget class="QLineEdit" name="input_confirmar_senha_colaborador_as">
                                <property name="minimumSize">
                                 <size>
-                                 <width>220</width>
+                                 <width>0</width>
                                  <height>30</height>
                                 </size>
                                </property>
@@ -11591,13 +11573,13 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                             </property>
                             <property name="sizeHint" stdset="0">
                              <size>
-                              <width>40</width>
+                              <width>100</width>
                               <height>20</height>
                              </size>
                             </property>
                            </spacer>
                           </item>
-                          <item alignment="Qt::AlignRight">
+                          <item alignment="Qt::AlignHCenter">
                            <widget class="QFrame" name="frame_257">
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
