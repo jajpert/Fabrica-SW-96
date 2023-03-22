@@ -1194,6 +1194,9 @@ class Ui_Restaurar_Senha(object):
         self.retranslateUi(Dialog)
 
         QMetaObject.connectSlotsByName(Dialog)
+
+
+  
     # setupUi
 
     def retranslateUi(self, Dialog):
@@ -1206,4 +1209,502 @@ class Ui_Restaurar_Senha(object):
         self.label_confirmar_senha_popup_senha.setText(QCoreApplication.translate("Dialog", u"Confirmar senha", None))
         self.btn_verificar_popup_senha.setText(QCoreApplication.translate("Dialog", u"Verificar", None))
     # retranslateUi
+
+
+################################################################################
+
+
+class Ui_Popup_Lista_Pessoas(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+        Dialog.resize(923, 795)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
+        Dialog.setSizePolicy(sizePolicy)
+        Dialog.setMinimumSize(QSize(923, 0))
+        self.verticalLayout_3 = QVBoxLayout(Dialog)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Dialog)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: #FEE2E6;border-radius: 15px;border: 1px solid #E58893")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"QFrame{background-color: #FEE2E6;border-top-left-radius: 15px; border-bottom-left-radius: 15px; border-top-right-radius: 15px; border-bottom-right-radius: 15px; border: none}\n"
+"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
+"QComboBox{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;scrollbar-width: thin;\n"
+"  scrollbar-color: #F9EDEC;}\n"
+"QComboBox:focus{outline:0; border: 2px solid #A85751}\n"
+"")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.gridLayout_2 = QGridLayout(self.frame_2)
+        self.gridLayout_2.setSpacing(0)
+        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_17 = QFrame(self.frame_2)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_17)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(9, -1, -1, -1)
+        self.frame_18 = QFrame(self.frame_17)
+        self.frame_18.setObjectName(u"frame_18")
+        self.frame_18.setStyleSheet(u"border:0px;")
+        self.frame_18.setFrameShape(QFrame.StyledPanel)
+        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame_18)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.label_Lista_de_Cadastrados_Oficinas_as = QLabel(self.frame_18)
+        self.label_Lista_de_Cadastrados_Oficinas_as.setObjectName(u"label_Lista_de_Cadastrados_Oficinas_as")
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(36)
+        self.label_Lista_de_Cadastrados_Oficinas_as.setFont(font)
+
+        self.verticalLayout.addWidget(self.label_Lista_de_Cadastrados_Oficinas_as)
+
+        self.listView_lista_de_cadastrados_Oficinas_as = QListView(self.frame_18)
+        self.listView_lista_de_cadastrados_Oficinas_as.setObjectName(u"listView_lista_de_cadastrados_Oficinas_as")
+        self.listView_lista_de_cadastrados_Oficinas_as.setStyleSheet(u"QListView{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;scrollbar-width: thin;\n"
+"  scrollbar-color: #F9EDEC;}\n"
+"QListView:focus{outline:0; border: 2px solid #A85751}\n"
+"")
+
+        self.verticalLayout.addWidget(self.listView_lista_de_cadastrados_Oficinas_as)
+
+
+        self.horizontalLayout_6.addWidget(self.frame_18)
+
+
+        self.gridLayout_2.addWidget(self.frame_17, 0, 2, 1, 1)
+
+        self.frame_13 = QFrame(self.frame_2)
+        self.frame_13.setObjectName(u"frame_13")
+        self.frame_13.setStyleSheet(u"")
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.gridLayout = QGridLayout(self.frame_13)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.frame_14 = QFrame(self.frame_13)
+        self.frame_14.setObjectName(u"frame_14")
+        self.frame_14.setFrameShape(QFrame.StyledPanel)
+        self.frame_14.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_5 = QHBoxLayout(self.frame_14)
+        self.horizontalLayout_5.setSpacing(0)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
+
+        self.label_cadastro_popup_oficinas_as = QLabel(self.frame_14)
+        self.label_cadastro_popup_oficinas_as.setObjectName(u"label_cadastro_popup_oficinas_as")
+        self.label_cadastro_popup_oficinas_as.setFont(font)
+
+        self.horizontalLayout_5.addWidget(self.label_cadastro_popup_oficinas_as)
+
+        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_5.addItem(self.horizontalSpacer_4)
+
+
+        self.gridLayout.addWidget(self.frame_14, 0, 0, 1, 2)
+
+        self.frame_9 = QFrame(self.frame_13)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setFrameShape(QFrame.StyledPanel)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.label_rua_popup_oficinas_as = QLabel(self.frame_9)
+        self.label_rua_popup_oficinas_as.setObjectName(u"label_rua_popup_oficinas_as")
+        font1 = QFont()
+        font1.setFamilies([u"Abel"])
+        font1.setPointSize(16)
+        self.label_rua_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_10.addWidget(self.label_rua_popup_oficinas_as)
+
+        self.input_rua_popup_oficinas_as = QLineEdit(self.frame_9)
+        self.input_rua_popup_oficinas_as.setObjectName(u"input_rua_popup_oficinas_as")
+        self.input_rua_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_rua_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_rua_popup_oficinas_as.setFont(font1)
+        self.input_rua_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_10.addWidget(self.input_rua_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_9, 7, 0, 1, 2)
+
+        self.frame_11 = QFrame(self.frame_13)
+        self.frame_11.setObjectName(u"frame_11")
+        self.frame_11.setFrameShape(QFrame.StyledPanel)
+        self.frame_11.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_11)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.label_cidade_popup_oficinas_as_2 = QLabel(self.frame_11)
+        self.label_cidade_popup_oficinas_as_2.setObjectName(u"label_cidade_popup_oficinas_as_2")
+        self.label_cidade_popup_oficinas_as_2.setFont(font1)
+
+        self.verticalLayout_14.addWidget(self.label_cidade_popup_oficinas_as_2)
+
+        self.input_cidade_popup_oficinas_as = QLineEdit(self.frame_11)
+        self.input_cidade_popup_oficinas_as.setObjectName(u"input_cidade_popup_oficinas_as")
+        self.input_cidade_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_cidade_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_cidade_popup_oficinas_as.setFont(font1)
+        self.input_cidade_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_14.addWidget(self.input_cidade_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_11, 9, 0, 1, 2)
+
+        self.frame_5 = QFrame(self.frame_13)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_5.setSpacing(0)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.label_nome_popup_oficinas_as = QLabel(self.frame_5)
+        self.label_nome_popup_oficinas_as.setObjectName(u"label_nome_popup_oficinas_as")
+        self.label_nome_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_5.addWidget(self.label_nome_popup_oficinas_as)
+
+        self.input_nome_popup_oficinas_as = QLineEdit(self.frame_5)
+        self.input_nome_popup_oficinas_as.setObjectName(u"input_nome_popup_oficinas_as")
+        self.input_nome_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_nome_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_nome_popup_oficinas_as.setFont(font1)
+        self.input_nome_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_5.addWidget(self.input_nome_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_5, 3, 0, 1, 2)
+
+        self.frame_6 = QFrame(self.frame_13)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.label_Email_popup_oficinas_as = QLabel(self.frame_6)
+        self.label_Email_popup_oficinas_as.setObjectName(u"label_Email_popup_oficinas_as")
+        self.label_Email_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_7.addWidget(self.label_Email_popup_oficinas_as)
+
+        self.input_Email_popup_oficinas_as = QLineEdit(self.frame_6)
+        self.input_Email_popup_oficinas_as.setObjectName(u"input_Email_popup_oficinas_as")
+        self.input_Email_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_Email_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_Email_popup_oficinas_as.setFont(font1)
+        self.input_Email_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_7.addWidget(self.input_Email_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_6, 4, 0, 1, 2)
+
+        self.frame_7 = QFrame(self.frame_13)
+        self.frame_7.setObjectName(u"frame_7")
+        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_7)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.label_Telefone_popup_oficinas_as = QLabel(self.frame_7)
+        self.label_Telefone_popup_oficinas_as.setObjectName(u"label_Telefone_popup_oficinas_as")
+        self.label_Telefone_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_8.addWidget(self.label_Telefone_popup_oficinas_as)
+
+        self.input_Telefone_popup_oficinas_as = QLineEdit(self.frame_7)
+        self.input_Telefone_popup_oficinas_as.setObjectName(u"input_Telefone_popup_oficinas_as")
+        self.input_Telefone_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_Telefone_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_Telefone_popup_oficinas_as.setFont(font1)
+        self.input_Telefone_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_8.addWidget(self.input_Telefone_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_7, 5, 0, 1, 1)
+
+        self.frame_10 = QFrame(self.frame_13)
+        self.frame_10.setObjectName(u"frame_10")
+        self.frame_10.setFrameShape(QFrame.StyledPanel)
+        self.frame_10.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_10)
+        self.verticalLayout_13.setSpacing(0)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.label_bairro_popup_oficinas_as = QLabel(self.frame_10)
+        self.label_bairro_popup_oficinas_as.setObjectName(u"label_bairro_popup_oficinas_as")
+        self.label_bairro_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_13.addWidget(self.label_bairro_popup_oficinas_as)
+
+        self.input_bairro_popup_oficinas_as = QLineEdit(self.frame_10)
+        self.input_bairro_popup_oficinas_as.setObjectName(u"input_bairro_popup_oficinas_as")
+        self.input_bairro_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_bairro_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_bairro_popup_oficinas_as.setFont(font1)
+        self.input_bairro_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_13.addWidget(self.input_bairro_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_10, 8, 0, 1, 2)
+
+        self.frame_3 = QFrame(self.frame_13)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_4 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_4.setSpacing(0)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_popup_oficinas_as = QLabel(self.frame_3)
+        self.label_cpf_popup_oficinas_as.setObjectName(u"label_cpf_popup_oficinas_as")
+        self.label_cpf_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_4.addWidget(self.label_cpf_popup_oficinas_as)
+
+        self.input_cpf_popup_oficinas_as = QLineEdit(self.frame_3)
+        self.input_cpf_popup_oficinas_as.setObjectName(u"input_cpf_popup_oficinas_as")
+        self.input_cpf_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_cpf_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_cpf_popup_oficinas_as.setFont(font1)
+        self.input_cpf_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_4.addWidget(self.input_cpf_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_3, 1, 0, 1, 1)
+
+        self.frame_8 = QFrame(self.frame_13)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.frame_8)
+        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.label_cep_popup_oficinas_as = QLabel(self.frame_8)
+        self.label_cep_popup_oficinas_as.setObjectName(u"label_cep_popup_oficinas_as")
+        self.label_cep_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_9.addWidget(self.label_cep_popup_oficinas_as)
+
+        self.input_cep_popup_oficinas_as = QLineEdit(self.frame_8)
+        self.input_cep_popup_oficinas_as.setObjectName(u"input_cep_popup_oficinas_as")
+        self.input_cep_popup_oficinas_as.setMinimumSize(QSize(0, 35))
+        self.input_cep_popup_oficinas_as.setMaximumSize(QSize(16777215, 35))
+        self.input_cep_popup_oficinas_as.setFont(font1)
+        self.input_cep_popup_oficinas_as.setStyleSheet(u"")
+
+        self.verticalLayout_9.addWidget(self.input_cep_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_8, 5, 1, 1, 1)
+
+        self.frame_12 = QFrame(self.frame_13)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setFrameShape(QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.frame_12)
+        self.verticalLayout_15.setSpacing(0)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.label_estado_popup_oficinas_as_3 = QLabel(self.frame_12)
+        self.label_estado_popup_oficinas_as_3.setObjectName(u"label_estado_popup_oficinas_as_3")
+        self.label_estado_popup_oficinas_as_3.setFont(font1)
+
+        self.verticalLayout_15.addWidget(self.label_estado_popup_oficinas_as_3)
+
+        self.input_estado_popup_oficinas_as_3 = QLineEdit(self.frame_12)
+        self.input_estado_popup_oficinas_as_3.setObjectName(u"input_estado_popup_oficinas_as_3")
+        self.input_estado_popup_oficinas_as_3.setMinimumSize(QSize(0, 35))
+        self.input_estado_popup_oficinas_as_3.setMaximumSize(QSize(16777215, 35))
+        self.input_estado_popup_oficinas_as_3.setFont(font1)
+        self.input_estado_popup_oficinas_as_3.setStyleSheet(u"")
+
+        self.verticalLayout_15.addWidget(self.input_estado_popup_oficinas_as_3)
+
+
+        self.gridLayout.addWidget(self.frame_12, 10, 0, 1, 2)
+
+        self.frame_4 = QFrame(self.frame_13)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setMinimumSize(QSize(192, 86))
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.label_tipo_popup_oficinas_as = QLabel(self.frame_4)
+        self.label_tipo_popup_oficinas_as.setObjectName(u"label_tipo_popup_oficinas_as")
+        self.label_tipo_popup_oficinas_as.setFont(font1)
+
+        self.verticalLayout_6.addWidget(self.label_tipo_popup_oficinas_as)
+
+        self.comboBox_tipo_popup_oficinas_as = QComboBox(self.frame_4)
+        self.comboBox_tipo_popup_oficinas_as.setObjectName(u"comboBox_tipo_popup_oficinas_as")
+        self.comboBox_tipo_popup_oficinas_as.setMinimumSize(QSize(192, 35))
+        font2 = QFont()
+        font2.setFamilies([u"Abel"])
+        self.comboBox_tipo_popup_oficinas_as.setFont(font2)
+        self.comboBox_tipo_popup_oficinas_as.setStyleSheet(u"")
+        self.comboBox_tipo_popup_oficinas_as.setEditable(False)
+
+        self.verticalLayout_6.addWidget(self.comboBox_tipo_popup_oficinas_as)
+
+
+        self.gridLayout.addWidget(self.frame_4, 1, 1, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.frame_13, 0, 0, 1, 1)
+
+        self.frame_16 = QFrame(self.frame_2)
+        self.frame_16.setObjectName(u"frame_16")
+        self.frame_16.setFrameShape(QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_16)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.line_linha_Oficinas_as = QFrame(self.frame_16)
+        self.line_linha_Oficinas_as.setObjectName(u"line_linha_Oficinas_as")
+        self.line_linha_Oficinas_as.setStyleSheet(u"background-color: rgb(236, 132, 140);\n"
+"border:0px;")
+        self.line_linha_Oficinas_as.setFrameShape(QFrame.VLine)
+        self.line_linha_Oficinas_as.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_linha_Oficinas_as)
+
+
+        self.gridLayout_2.addWidget(self.frame_16, 0, 1, 1, 1)
+
+        self.frame_15 = QFrame(self.frame_2)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_15)
+        self.horizontalLayout_3.setSpacing(6)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(9, 9, 9, 9)
+        self.btn_fechar_popup_oficinas_as = QPushButton(self.frame_15)
+        self.btn_fechar_popup_oficinas_as.setObjectName(u"btn_fechar_popup_oficinas_as")
+        self.btn_fechar_popup_oficinas_as.setMinimumSize(QSize(120, 40))
+        self.btn_fechar_popup_oficinas_as.setMaximumSize(QSize(120, 40))
+        font3 = QFont()
+        font3.setFamilies([u"Abel"])
+        font3.setPointSize(20)
+        self.btn_fechar_popup_oficinas_as.setFont(font3)
+        self.btn_fechar_popup_oficinas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_fechar_popup_oficinas_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px; border: none}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_3.addWidget(self.btn_fechar_popup_oficinas_as)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
+
+        self.btn_remover_popup_oficinas_as = QPushButton(self.frame_15)
+        self.btn_remover_popup_oficinas_as.setObjectName(u"btn_remover_popup_oficinas_as")
+        self.btn_remover_popup_oficinas_as.setMinimumSize(QSize(120, 40))
+        self.btn_remover_popup_oficinas_as.setMaximumSize(QSize(120, 40))
+        self.btn_remover_popup_oficinas_as.setFont(font3)
+        self.btn_remover_popup_oficinas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_remover_popup_oficinas_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #F7B0B5; border-radius: 20px; border: none}\n"
+"QPushButton:hover{background-color: #EC848C}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_3.addWidget(self.btn_remover_popup_oficinas_as)
+
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
+
+        self.btn_adicionar_popup_oficinas_as = QPushButton(self.frame_15)
+        self.btn_adicionar_popup_oficinas_as.setObjectName(u"btn_adicionar_popup_oficinas_as")
+        self.btn_adicionar_popup_oficinas_as.setMinimumSize(QSize(120, 40))
+        self.btn_adicionar_popup_oficinas_as.setMaximumSize(QSize(120, 40))
+        self.btn_adicionar_popup_oficinas_as.setFont(font3)
+        self.btn_adicionar_popup_oficinas_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_adicionar_popup_oficinas_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px; border: none}\n"
+"QPushButton:hover{background-color: #EC848C}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_3.addWidget(self.btn_adicionar_popup_oficinas_as)
+
+
+        self.gridLayout_2.addWidget(self.frame_15, 1, 0, 1, 3)
+
+
+        self.verticalLayout_2.addWidget(self.frame_2)
+
+
+        self.verticalLayout_3.addWidget(self.frame)
+
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.label_Lista_de_Cadastrados_Oficinas_as.setText(QCoreApplication.translate("Dialog", u"Lista de Cadastrados", None))
+        self.label_cadastro_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Cadastro", None))
+        self.label_rua_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Rua", None))
+        self.label_cidade_popup_oficinas_as_2.setText(QCoreApplication.translate("Dialog", u"Cidade", None))
+        self.label_nome_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Nome", None))
+        self.label_Email_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Email", None))
+        self.label_Telefone_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Telefone", None))
+        self.label_bairro_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Bairro", None))
+        self.label_cpf_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"CPF", None))
+        self.label_cep_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"CEP", None))
+        self.label_estado_popup_oficinas_as_3.setText(QCoreApplication.translate("Dialog", u"Estado", None))
+        self.label_tipo_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Tipo", None))
+        self.btn_fechar_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Fechar", None))
+        self.btn_remover_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Remover", None))
+        self.btn_adicionar_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Adicionar", None))
+    # retranslateUi
+
+
+    
+    
+  
 

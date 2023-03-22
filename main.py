@@ -121,6 +121,13 @@ class DialogCadastroIncompletoCursos(QDialog):
         event.accept()
 
 
+class DialogCadastoListaPesssoas(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Popup_Lista_Pessoas()
+        self.ui.setupUi(self)
+
 
 ##############Class Alterar Foto e Senha##############
 class DialogAlterarSenhaFoto(QDialog):
@@ -217,6 +224,7 @@ class TelaPrincipal(QMainWindow):
 
         ############SIGNALS POPUP Cursos e oficinas AS############
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
+        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.cadastroListaPessoas)
 
 
         ############SIGNALS BANCO ##########################
@@ -335,6 +343,14 @@ class TelaPrincipal(QMainWindow):
 
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
+
+
+    def cadastroListaPessoas(self):
+        msg= DialogCadastoListaPesssoas(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)  
 
 
     ################ def POPUP Usuário################
