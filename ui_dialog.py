@@ -1259,7 +1259,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.frame_17.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.frame_17)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalLayout_6.setContentsMargins(9, -1, -1, -1)
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.frame_18 = QFrame(self.frame_17)
         self.frame_18.setObjectName(u"frame_18")
         self.frame_18.setStyleSheet(u"border:0px;")
@@ -1291,7 +1291,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_6.addWidget(self.frame_18)
 
 
-        self.gridLayout_2.addWidget(self.frame_17, 0, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_17, 0, 0, 0, 0)
 
         self.frame_13 = QFrame(self.frame_2)
         self.frame_13.setObjectName(u"frame_13")
@@ -1323,7 +1323,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_5.addItem(self.horizontalSpacer_4)
 
 
-        self.gridLayout.addWidget(self.frame_14, 0, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_14, 0, 0, 0, 0)
 
         self.frame_9 = QFrame(self.frame_13)
         self.frame_9.setObjectName(u"frame_9")
@@ -1352,7 +1352,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_10.addWidget(self.input_rua_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_9, 7, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_9, 0, 0, 0, 0)
 
         self.frame_11 = QFrame(self.frame_13)
         self.frame_11.setObjectName(u"frame_11")
@@ -1378,7 +1378,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_14.addWidget(self.input_cidade_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_11, 9, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_11, 0, 0, 0, 0)
 
         self.frame_5 = QFrame(self.frame_13)
         self.frame_5.setObjectName(u"frame_5")
@@ -1404,7 +1404,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_5.addWidget(self.input_nome_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_5, 3, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_5, 0, 0, 0, 0)
 
         self.frame_6 = QFrame(self.frame_13)
         self.frame_6.setObjectName(u"frame_6")
@@ -1430,7 +1430,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_7.addWidget(self.input_Email_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_6, 4, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_6, 0, 0, 0, 0)
 
         self.frame_7 = QFrame(self.frame_13)
         self.frame_7.setObjectName(u"frame_7")
@@ -1456,7 +1456,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_8.addWidget(self.input_Telefone_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_7, 5, 0, 1, 1)
+        self.gridLayout.addWidget(self.frame_7, 0, 0, 0, 0)
 
         self.frame_10 = QFrame(self.frame_13)
         self.frame_10.setObjectName(u"frame_10")
@@ -1482,7 +1482,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_13.addWidget(self.input_bairro_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_10, 8, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_10, 8, 0, 0, 0)
 
         self.frame_3 = QFrame(self.frame_13)
         self.frame_3.setObjectName(u"frame_3")
@@ -1508,7 +1508,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_4.addWidget(self.input_cpf_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_3, 1, 0, 1, 1)
+        self.gridLayout.addWidget(self.frame_3, 0, 0, 0, 0)
 
         self.frame_8 = QFrame(self.frame_13)
         self.frame_8.setObjectName(u"frame_8")
@@ -1534,7 +1534,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_9.addWidget(self.input_cep_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_8, 5, 1, 1, 1)
+        self.gridLayout.addWidget(self.frame_8, 0, 0, 0, 0)
 
         self.frame_12 = QFrame(self.frame_13)
         self.frame_12.setObjectName(u"frame_12")
@@ -1560,7 +1560,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_15.addWidget(self.input_estado_popup_oficinas_as_3)
 
 
-        self.gridLayout.addWidget(self.frame_12, 10, 0, 1, 2)
+        self.gridLayout.addWidget(self.frame_12, 0, 0, 0, 0)
 
         self.frame_4 = QFrame(self.frame_13)
         self.frame_4.setObjectName(u"frame_4")
@@ -1589,10 +1589,10 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_6.addWidget(self.comboBox_tipo_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_4, 1, 1, 1, 1)
+        self.gridLayout.addWidget(self.frame_4, 0, 0, 0, 0)
 
 
-        self.gridLayout_2.addWidget(self.frame_13, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_13, 0, 0, 0, 0)
 
         self.frame_16 = QFrame(self.frame_2)
         self.frame_16.setObjectName(u"frame_16")
@@ -1612,7 +1612,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_4.addWidget(self.line_linha_Oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_16, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.frame_16, 0, 0, 0, 0)
 
         self.frame_15 = QFrame(self.frame_2)
         self.frame_15.setObjectName(u"frame_15")
@@ -1621,7 +1621,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_3 = QHBoxLayout(self.frame_15)
         self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(9, 9, 9, 9)
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.btn_fechar_popup_oficinas_as = QPushButton(self.frame_15)
         self.btn_fechar_popup_oficinas_as.setObjectName(u"btn_fechar_popup_oficinas_as")
         self.btn_fechar_popup_oficinas_as.setMinimumSize(QSize(120, 40))
@@ -1670,7 +1670,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_3.addWidget(self.btn_adicionar_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_15, 1, 0, 1, 3)
+        self.gridLayout_2.addWidget(self.frame_15, 0, 0, 0, 0)
 
 
         self.verticalLayout_2.addWidget(self.frame_2)
