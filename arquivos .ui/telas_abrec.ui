@@ -8822,6 +8822,12 @@ QPushButton:focus{outline:0}</string>
                                    </item>
                                    <item>
                                     <widget class="QFrame" name="frame_237">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>140</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
                                      <property name="frameShape">
                                       <enum>QFrame::StyledPanel</enum>
                                      </property>
@@ -8844,14 +8850,14 @@ QPushButton:focus{outline:0}</string>
                                       <property name="bottomMargin">
                                        <number>0</number>
                                       </property>
-                                      <item alignment="Qt::AlignHCenter">
+                                      <item>
                                        <widget class="QRadioButton" name="input_pessoa_cdeficiencia_sim_colaborador_as">
                                         <property name="text">
                                          <string>Sim</string>
                                         </property>
                                        </widget>
                                       </item>
-                                      <item alignment="Qt::AlignHCenter">
+                                      <item>
                                        <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_colaborador_as">
                                         <property name="text">
                                          <string>Não</string>
