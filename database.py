@@ -131,6 +131,42 @@ class DataBase():
             self.conn.close()
             print("Conexão encerrada com sucesso!!")
 
+#################################### TABLE COLABORADOR #################################################
+
+    def cadastro_colaborador(self,pessoa,):
+        self.connect()
+        try:
+            
+            #args = (endereco[0],endereco[1],endereco[2],endereco[3])
+            #self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
+        
+            #id_endereco = self.cursor.lastrowid
+
+
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9])
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,orgao_exp,data_emissao,pis,sexo,telefone,email,id_matricula,id_cargo) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            id_colaborador = self.cursor.lastrowid
+            
+
+           #args3 = (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6], id_matricula)
+            #self.cursor.execute('INSERT INTO usuario(data_inclusao, nis, cns, situacao_trabalho, tipo_transporte, tipo_tratamento, beneficio, id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)', args3)'''
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def close_connection(self):
+        if self.conn.is_connected():
+            self.cursor.close()
+            self.conn.close()
+            print("Conexão encerrada com sucesso!!")
+
 if __name__ == "__main__":
     db = DataBase()
     db.connect()

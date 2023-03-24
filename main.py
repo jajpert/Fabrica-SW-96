@@ -277,6 +277,46 @@ class TelaPrincipal(QMainWindow):
         print(result)
 
 
+    ################################### COLABORADOR #######################################
+
+    def cadastroColaborador(self):
+        nome = self.ui.input_nome_colaborador_as.text()
+        data_nascimento = '2004-06-25'
+        cpf = self.ui.input_cpf_colaborador_as.text()
+        rg = self.ui.input_rg_colaborador_as.text()
+        orgao_exp = self.ui.input_orgao_expedidor_colaborador_as.text()
+        data_emissao = self.ui.input_data_emissao_rg_colaborador_as.text()
+        
+        sexo = self.ui.input_sexo_colaborador_comboBox_as.currentText()
+        telefone = self.ui.input_telefone_colaborador_as.text()
+        email = self.ui.input_email_colaborador_as.text()
+        if self.ui.input_pessoa_cdeficiencia_sim_colaborador_as.isChecked():
+            pessoa_deficiencia = 'S'
+
+        elif self.ui.input_pessoa_cdeficiencia_nao_colaborador_as.isChecked():
+            pessoa_deficiencia = 'N'
+
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,pis,orgao_exp,sexo,telefone,email,pessoa_deficiencia)
+
+    ############################################################
+
+        pis = self.ui.input_pis_colaborador_as.text()
+        estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
+        escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()
+        cargo = self.ui.input_cargo_colaborador_comboBox_as.currentetText()
+        periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
+        salario = self.ui.input_salario_colaborador_as.text()
+
+        tupla_colaborador = (pis,estado_civil,escolaridade,cargo,periodo,salario)     
+
+        
+
+
+        print (tupla_pessoa)
+        print(tupla_colaborador)
+        result = self.db.cadastro_colaborador(tupla_pessoa,tupla_colaborador)
+        print(result)
+
 
 ####################### FUNÇÕES POP UP #######################
 

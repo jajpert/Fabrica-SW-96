@@ -9358,6 +9358,17 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
+                                 <widget class="QFrame" name="frame_271">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_182"/>
+                                 </widget>
+                                </item>
+                                <item>
                                  <widget class="QTextEdit" name="input_observacoes_gerais_colaborador_as">
                                   <property name="maximumSize">
                                    <size>
@@ -11309,6 +11320,107 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_184">
+                             <property name="spacing">
+                              <number>5</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QFrame" name="frame_270">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_167">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_272">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_183">
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QPushButton" name="btn_voltar_cadastro_colaborador_as">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>100</width>
+                                    <height>40</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>100</width>
+                                    <height>40</height>
+                                   </size>
+                                  </property>
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>18</pointsize>
+                                   </font>
+                                  </property>
+                                  <property name="cursor">
+                                   <cursorShape>PointingHandCursor</cursorShape>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>VOLTAR</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
                            </widget>
                           </item>
                           <item>
@@ -11645,10 +11757,15 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <pointsize>18</pointsize>
                                 </font>
                                </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
                                <property name="styleSheet">
                                 <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
 QPushButton:hover{background-color: #23B2EE}
-QPushButton:focus{outline:0}</string>
+QPushButton:focus{outline:0}
+
+</string>
                                </property>
                                <property name="text">
                                 <string>CONCLUIR</string>
