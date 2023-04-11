@@ -5,7 +5,7 @@ class DataBase():
         self.banco = banco
 
     def connect(self):
-        self.conn = mysql.connector.connect(host='localhost',database=self.banco,user='root',password='')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database=self.banco,user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -25,8 +25,8 @@ class DataBase():
             #verifica os dados do select
             #for linha in result:
             #   print(linha)
-            print(result)
-           # return result
+            
+            return result
             #retorn a lista do banco para quem chamou a função
         except Exception as err:
             print(err)
@@ -44,7 +44,7 @@ class DataBase():
             
             #verifica os dados do select
             for linha in result:
-                print(linha)
+               print(linha)
             
             return result
             #retorna a lista do banco para quem chamou a função
@@ -55,23 +55,34 @@ class DataBase():
             self.close_connection()
 
 
-    def cadastro_usuario(self,endereco, pessoa, usuario):
+    def cadastro_usuario(self,endereco,pessoa,cuidador):
         self.connect()
         try:
-            
-            args = (endereco[0],endereco[1],endereco[2],endereco[3])
-            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
-        
+            self.cursor.execute("""
+                INSERT INTO endereco (cep,rua,numero,bairro,complemento,id_cidade) VALUES (%s,%s,%s,%s,%s,%s)
+            """,(endereco[0],endereco[1],endereco[2],endereco[3],"",endereco[4]))
+
             id_endereco = self.cursor.lastrowid
 
+            print(id_endereco)
+            print(pessoa)
 
-            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],id_endereco,pessoa[11])
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade,pessoa_deficiencia,id_endereco,id_colaborador_resp) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
-            id_matricula = self.cursor.lastrowid
-            
+            self.cursor.execute("""
+                INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
+            """,(cuidador[0],cuidador[1],cuidador[2]))
 
-            args3 = (usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6], id_matricula)
-            self.cursor.execute('INSERT INTO usuario(data_inclusao, nis, cns, situacao_trabalho, tipo_transporte, tipo_tratamento, beneficio, id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)', args3)
+            id_cuidador = self.cursor.lastrowid
+            print(id_cuidador)
+
+            self.cursor.execute("""
+                insert into pessoa (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,status,telefone,email,escolaridade,estado_civil,pessoa_Cdeficiencia,id_endereco,id_colaborador_resp)
+                values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+             """,(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco,id_cuidador))
+
+            self.cursor.execute("""
+                INSERT INTO usuario (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,id_beneficio,id_matricula_,id_beneficio,id_cuidador,id_clinica,id_curso) 
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """,(cuidador[0],cuidador[1],cuidador[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],id_cuidador,pessoa[10],pessoa[11]))
 
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -83,7 +94,74 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def atualiza_usuario(self,tupla_de_dados):
+    def cadastro_cuidador(self,endereco,pessoa,cuidador):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
+        
+            id_endereco = self.cursor.lastrowid
+            print('ID do endereco',id_endereco)
+
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],id_endereco,)
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            id_matricula = self.cursor.lastrowid
+            print('id matricula',id_matricula)
+
+            self.cursor.execute("""
+                INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
+            """,(cuidador[0],cuidador[1],id_matricula))
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
+    def cadastro_colaborador(self,endereco,pessoa,colaborador):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
+        
+            id_endereco = self.cursor.lastrowid
+            print('ID do endereco',id_endereco)
+
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],id_endereco)
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            id_matricula = self.cursor.lastrowid
+            print('id matricula',id_matricula)
+
+            self.cursor.execute("""
+                INSERT INTO colaborador (salario,data_admissao,pis,id_matricula,id_cargo) VALUES (%s,%s,%s,%s,%s)
+            """,(colaborador[0],colaborador[1],colaborador[2],id_matricula,1))
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+
+
+    def cadastro_curso(self,endereco,curso):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
+    
+            args2 = (curso[0],curso[1],curso[2],curso[3],curso[4])
+            self.cursor.execute('INSERT INTO curso_evento (nome_curso_evento,data_inicio,data_fim,carga_horaria,id_palestrante) VALUES (%s,%s,%s,%s,%s)',args2)
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
+    def update(self,tupla_de_dados):
         #print(tupla_de_dados)
         self.connect()
         try:
@@ -134,5 +212,13 @@ class DataBase():
 if __name__ == "__main__":
     db = DataBase()
     db.connect()
+    #db.create_table()
+    #db.insert("43434343","BLABLABLA","909090","bla@gmail.com","rua tal","CG","MS")
+    #db.delete(23)
+    #db.update(20,"PEDROO SAMPAIO SILVA")
+    #dados = db.select()
+    #db.filter("444")
     db.close_connection()
-    
+
+
+
