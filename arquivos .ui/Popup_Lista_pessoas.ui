@@ -244,6 +244,13 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
                     <pointsize>16</pointsize>
                    </font>
                   </property>
+                  <property name="background">
+                   <color>
+                    <red>255</red>
+                    <green>198</green>
+                    <blue>201</blue>
+                   </color>
+                  </property>
                  </column>
                  <column>
                   <property name="text">
@@ -255,6 +262,13 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
                     <pointsize>16</pointsize>
                    </font>
                   </property>
+                  <property name="background">
+                   <color>
+                    <red>255</red>
+                    <green>198</green>
+                    <blue>201</blue>
+                   </color>
+                  </property>
                  </column>
                  <column>
                   <property name="text">
@@ -265,6 +279,13 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
                     <family>Abel</family>
                     <pointsize>16</pointsize>
                    </font>
+                  </property>
+                  <property name="background">
+                   <color>
+                    <red>255</red>
+                    <green>198</green>
+                    <blue>201</blue>
+                   </color>
                   </property>
                  </column>
                  <column>
