@@ -317,6 +317,196 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
            </layout>
           </widget>
          </item>
+         <item row="0" column="1">
+          <widget class="QFrame" name="frame_16">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="Line" name="line_linha_Oficinas_as">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(236, 132, 140);
+border:0px;</string>
+              </property>
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="3">
+          <widget class="QFrame" name="frame_15">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="leftMargin">
+             <number>9</number>
+            </property>
+            <property name="topMargin">
+             <number>9</number>
+            </property>
+            <property name="rightMargin">
+             <number>9</number>
+            </property>
+            <property name="bottomMargin">
+             <number>9</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="btn_fechar_popup_oficinas_as">
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Abel</family>
+                <pointsize>20</pointsize>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px; border: none}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+              </property>
+              <property name="text">
+               <string>Fechar</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_remover_popup_oficinas_as">
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Abel</family>
+                <pointsize>20</pointsize>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{color: #fff; background-color: #F7B0B5; border-radius: 20px; border: none}
+QPushButton:hover{background-color: #EC848C}
+QPushButton:focus{outline:0}</string>
+              </property>
+              <property name="text">
+               <string>Remover</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btn_adicionar_popup_oficinas_as">
+              <property name="minimumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>120</width>
+                <height>40</height>
+               </size>
+              </property>
+              <property name="font">
+               <font>
+                <family>Abel</family>
+                <pointsize>20</pointsize>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px; border: none}
+QPushButton:hover{background-color: #EC848C}
+QPushButton:focus{outline:0}</string>
+              </property>
+              <property name="text">
+               <string>Adicionar</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
          <item row="0" column="0">
           <widget class="QFrame" name="frame_13">
            <property name="styleSheet">
@@ -339,16 +529,16 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_5">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="bottomMargin">
                 <number>0</number>
@@ -470,19 +660,19 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="bottomMargin">
-                <number>0</number>
+                <number>6</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_cidade_popup_oficinas_as_2">
@@ -730,19 +920,19 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_13">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="bottomMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_bairro_popup_oficinas_as">
@@ -759,71 +949,6 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
                </item>
                <item>
                 <widget class="QLineEdit" name="input_bairro_popup_oficinas_as">
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>35</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>35</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Abel</family>
-                   <pointsize>16</pointsize>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QFrame" name="frame_3">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QVBoxLayout" name="verticalLayout_4">
-               <property name="spacing">
-                <number>0</number>
-               </property>
-               <property name="leftMargin">
-                <number>0</number>
-               </property>
-               <property name="topMargin">
-                <number>0</number>
-               </property>
-               <property name="rightMargin">
-                <number>0</number>
-               </property>
-               <property name="bottomMargin">
-                <number>0</number>
-               </property>
-               <item>
-                <widget class="QLabel" name="label_cpf_popup_oficinas_as">
-                 <property name="font">
-                  <font>
-                   <family>Abel</family>
-                   <pointsize>16</pointsize>
-                  </font>
-                 </property>
-                 <property name="text">
-                  <string>CPF</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="input_cpf_popup_oficinas_as">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
@@ -925,19 +1050,19 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_15">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="bottomMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_estado_popup_oficinas_as_3">
@@ -980,7 +1105,72 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
               </layout>
              </widget>
             </item>
-            <item row="1" column="1">
+            <item row="1" column="0" rowspan="2">
+             <widget class="QFrame" name="frame_3">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_4">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_cpf_popup_oficinas_as">
+                 <property name="font">
+                  <font>
+                   <family>Abel</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="text">
+                  <string>CPF</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLineEdit" name="input_cpf_popup_oficinas_as">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>35</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Abel</family>
+                   <pointsize>16</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="1" column="1" rowspan="2">
              <widget class="QFrame" name="frame_4">
               <property name="minimumSize">
                <size>
@@ -996,7 +1186,7 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_6">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
                 <number>0</number>
@@ -1045,196 +1235,6 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
                 </widget>
                </item>
               </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QFrame" name="frame_16">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="Line" name="line_linha_Oficinas_as">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgb(236, 132, 140);
-border:0px;</string>
-              </property>
-              <property name="orientation">
-               <enum>Qt::Vertical</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="1" column="0" colspan="3">
-          <widget class="QFrame" name="frame_15">
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <property name="spacing">
-             <number>6</number>
-            </property>
-            <property name="leftMargin">
-             <number>9</number>
-            </property>
-            <property name="topMargin">
-             <number>9</number>
-            </property>
-            <property name="rightMargin">
-             <number>9</number>
-            </property>
-            <property name="bottomMargin">
-             <number>9</number>
-            </property>
-            <item>
-             <widget class="QPushButton" name="btn_fechar_popup_oficinas_as">
-              <property name="minimumSize">
-               <size>
-                <width>120</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>120</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Abel</family>
-                <pointsize>20</pointsize>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px; border: none}
-QPushButton:hover{background-color: #23B2EE}
-QPushButton:focus{outline:0}</string>
-              </property>
-              <property name="text">
-               <string>Fechar</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_2">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btn_remover_popup_oficinas_as">
-              <property name="minimumSize">
-               <size>
-                <width>120</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>120</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Abel</family>
-                <pointsize>20</pointsize>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{color: #fff; background-color: #F7B0B5; border-radius: 20px; border: none}
-QPushButton:hover{background-color: #EC848C}
-QPushButton:focus{outline:0}</string>
-              </property>
-              <property name="text">
-               <string>Remover</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btn_adicionar_popup_oficinas_as">
-              <property name="minimumSize">
-               <size>
-                <width>120</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>120</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Abel</family>
-                <pointsize>20</pointsize>
-               </font>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px; border: none}
-QPushButton:hover{background-color: #EC848C}
-QPushButton:focus{outline:0}</string>
-              </property>
-              <property name="text">
-               <string>Adicionar</string>
-              </property>
              </widget>
             </item>
            </layout>
