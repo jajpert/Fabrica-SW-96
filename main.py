@@ -229,6 +229,9 @@ class TelaPrincipal(QMainWindow):
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroUsuario)
+        self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
+        self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
+        self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
 
 
@@ -247,41 +250,143 @@ class TelaPrincipal(QMainWindow):
 
         nome = self.ui.input_nome_usuario_as.text()
         data_nascimento = '2004-06-25'
+        data_nascimento = '2002-12-05'
         cpf = self.ui.input_cpf_usuario_as.text()
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = self.ui.input_data_emissao_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.text()
-        #status = 'f'
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
         escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
+
         id_colaborador_resp = 1
         
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
             pessoa_deficiencia = 'S'
+
         elif self.ui.label_pessoa_cdeficiencia_nao_usuario_as.isChecked():
             pessoa_deficiencia = 'N'
-
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade,pessoa_deficiencia,id_colaborador_resp)
-
-        #######################################################
-
-        data_inclusao = "2023-03-18 18:16:51"
-        nis = self.ui.input_nis_usuario_as.text()
-        cns = self.ui.input_cns_usuario_as.text()
-        situacao_trabalho = self.ui.input_situacao_trabalho_usuario_as.currentText()
-        tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
-        tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
-        beneficio = self.ui.input_beneficios_usuario_as.currentText()
-
-        tupla_usuario = (data_inclusao, nis, cns, situacao_trabalho, tipo_transporte, tipo_tratamento, beneficio)
         
+        if self.ui.input_situacao_ativo_usuario_as.isChecked():
+            status = 'A'
+        elif self.ui.input_situacao_inativo_usuario_as.isChecked():
+            status = 'I'
+
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
+
+        
+        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_pessoa)
+        print(result)
+
+        
+    def cadastroCuidador(self):
+
+        ########################endereco################################
+        cep = self.ui.input_cep_cuidador_as.text()
+        rua = self.ui.input_logradouro_cuidador_as.text()
+        numero = self.ui.input_numero_cuidador_as.text()
+        bairro = self.ui.input_bairro_cuidador_as.text()
+        id_cidade = 2
+        
+        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+
+        ######################pessoa#################################
+
+        nome = self.ui.input_nome_cuidador_as.text()
+        data_nascimento = '00/00/0000'
+        cpf = self.ui.input_cpf_cuidador_as.text()
+        rg = self.ui.input_rg_cuidador_as.text()
+        data_emissao = self.ui.input_data_emissao_cuidador_as.text()
+        orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
+        sexo = self.ui.input_sexo_cuidador_as.text()
+        data_cadastro = '00/00/0000'
+        telefone = self.ui.input_telefone_cuidador_as.text()
+        email = self.ui.input_email_cuidador_as.text()  
+        escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
+
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
+
+        #############################cuidador#############################################3
+
+        parentesco = self.ui.input_parentesco_cuidador_as.text()
+        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
+        tupla_cuidador = (parentesco,observacao)
 
         print(tupla_endereco)
         print(tupla_pessoa)
-        print(tupla_usuario)
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
+        print(tupla_cuidador)
+
+        ##############################insert#######################################
+
+        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
+        print(result)
+
+    def cadastroColaborador(self):
+        cep = self.ui.input_cep_colaborador_as.text()
+        rua = self.ui.input_logradouro_colaborador_as.text()
+        numero = self.ui.input_numero_colaborador_as.text()
+        bairro = self.ui.input_bairro_colaborador_as.text()
+        id_cidade = 2
+        
+        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+
+        nome = self.ui.input_nome_colaborador_as.text()
+        data_nascimento = '00/00/0000'
+        cpf = self.ui.input_cpf_colaborador_as.text()
+        rg = self.ui.input_rg_colaborador_as.text()
+        data_emissao = self.ui.input_data_emissao_rg_colaborador_as.text()
+        orgao_exp = self.ui.input_orgao_expedidor_colaborador_as.text()
+        sexo = self.ui.input_sexo_colaborador_comboBox_as.currentText()
+        data_cadastro = '00/00/0000'
+        telefone = self.ui.input_telefone_colaborador_as.text()
+        email = self.ui.input_email_colaborador_as.text()      
+        escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()
+        estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
+        if self.ui.input_pessoa_cdeficiencia_sim_colaborador_as.isChecked():
+            pessoa_deficiencia = 'S'
+        elif self.ui.input_pessoa_cdeficiencia_nao_colaborador_as.isChecked():
+            pessoa_deficiencia = 'N'
+
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
+
+        ##########################################################################3
+
+        salario = self.ui.input_salario_colaborador_as.text()
+        data_admissao = '00/00/0000'
+        pis = self.ui.input_pis_colaborador_as.text()
+        
+        tupla_colaborador = (salario,data_admissao,pis)
+
+        print(tupla_endereco)
+        print(tupla_pessoa)
+        print(tupla_colaborador)
+
+        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
+        print(result)
+
+
+    def cadastroCurso(self):
+        cep = self.ui.input_cep_cursos_as.text()
+        rua = self.ui.input_logradouro_cursos_as.text()
+        numero = self.ui.input_numero_cursos_as.text()
+        bairro = self.ui.input_bairro_cursos_as.text()
+        id_cidade=2
+
+        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+
+        nome_curso=self.ui.input_nome_cursos_as.text()
+        data_inicio=self.ui.input_data_inicio_cursos_as.text()
+        data_termino=self.ui.input_data_termino_cursos_as.text()
+        carga_horaria= 120 
+        id_palestrante = 1
+        tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante)
+
+        print(tupla_curso)
+        print(tupla_endereco)
+        result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
+
         print(result)
 
 
