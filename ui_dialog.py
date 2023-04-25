@@ -1218,13 +1218,13 @@ class Ui_Popup_Lista_Pessoas(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-        Dialog.resize(923, 795)
+        Dialog.resize(920, 810)
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(Dialog.sizePolicy().hasHeightForWidth())
         Dialog.setSizePolicy(sizePolicy)
-        Dialog.setMinimumSize(QSize(923, 0))
+        Dialog.setMinimumSize(QSize(920, 810))
         self.verticalLayout_3 = QVBoxLayout(Dialog)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
@@ -1259,7 +1259,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.frame_17.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_6 = QHBoxLayout(self.frame_17)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6.setContentsMargins(3, 0, 0, 0)
         self.frame_18 = QFrame(self.frame_17)
         self.frame_18.setObjectName(u"frame_18")
         self.frame_18.setStyleSheet(u"border:0px;")
@@ -1291,7 +1291,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_6.addWidget(self.frame_18)
 
 
-        self.gridLayout_2.addWidget(self.frame_17, 0, 0, 0, 0)
+        self.gridLayout_2.addWidget(self.frame_17, 40, 10, 40, 40)
 
         self.frame_13 = QFrame(self.frame_2)
         self.frame_13.setObjectName(u"frame_13")
@@ -1307,7 +1307,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_5 = QHBoxLayout(self.frame_14)
         self.horizontalLayout_5.setSpacing(0)
         self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setContentsMargins(9, 8, 8, 9)
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_5.addItem(self.horizontalSpacer_3)
@@ -1323,7 +1323,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_5.addItem(self.horizontalSpacer_4)
 
 
-        self.gridLayout.addWidget(self.frame_14, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_14, 9, 8, 8, 9)
 
         self.frame_9 = QFrame(self.frame_13)
         self.frame_9.setObjectName(u"frame_9")
@@ -1332,7 +1332,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_10 = QVBoxLayout(self.frame_9)
         self.verticalLayout_10.setSpacing(0)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_10.setContentsMargins(9, 8, 8, 9)
         self.label_rua_popup_oficinas_as = QLabel(self.frame_9)
         self.label_rua_popup_oficinas_as.setObjectName(u"label_rua_popup_oficinas_as")
         font1 = QFont()
@@ -1352,7 +1352,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_10.addWidget(self.input_rua_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_9, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_9, 9, 8, 8, 9)
 
         self.frame_11 = QFrame(self.frame_13)
         self.frame_11.setObjectName(u"frame_11")
@@ -1361,7 +1361,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_14 = QVBoxLayout(self.frame_11)
         self.verticalLayout_14.setSpacing(0)
         self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_14.setContentsMargins(9, 8, 8, 9)
         self.label_cidade_popup_oficinas_as_2 = QLabel(self.frame_11)
         self.label_cidade_popup_oficinas_as_2.setObjectName(u"label_cidade_popup_oficinas_as_2")
         self.label_cidade_popup_oficinas_as_2.setFont(font1)
@@ -1378,7 +1378,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_14.addWidget(self.input_cidade_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_11, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_11, 9, 8, 8, 9)
 
         self.frame_5 = QFrame(self.frame_13)
         self.frame_5.setObjectName(u"frame_5")
@@ -1387,7 +1387,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_5 = QVBoxLayout(self.frame_5)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName(u"verticalLayout_5")
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_5.setContentsMargins(9, 8, 8, 9)
         self.label_nome_popup_oficinas_as = QLabel(self.frame_5)
         self.label_nome_popup_oficinas_as.setObjectName(u"label_nome_popup_oficinas_as")
         self.label_nome_popup_oficinas_as.setFont(font1)
@@ -1404,7 +1404,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_5.addWidget(self.input_nome_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_5, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_5, 9, 8, 8, 9)
 
         self.frame_6 = QFrame(self.frame_13)
         self.frame_6.setObjectName(u"frame_6")
@@ -1413,7 +1413,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_7 = QVBoxLayout(self.frame_6)
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setContentsMargins(9, 8, 8, 9)
         self.label_Email_popup_oficinas_as = QLabel(self.frame_6)
         self.label_Email_popup_oficinas_as.setObjectName(u"label_Email_popup_oficinas_as")
         self.label_Email_popup_oficinas_as.setFont(font1)
@@ -1430,7 +1430,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_7.addWidget(self.input_Email_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_6, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_6, 9, 8, 8, 9)
 
         self.frame_7 = QFrame(self.frame_13)
         self.frame_7.setObjectName(u"frame_7")
@@ -1439,7 +1439,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_8 = QVBoxLayout(self.frame_7)
         self.verticalLayout_8.setSpacing(0)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_8.setContentsMargins(9, 8, 8, 9)
         self.label_Telefone_popup_oficinas_as = QLabel(self.frame_7)
         self.label_Telefone_popup_oficinas_as.setObjectName(u"label_Telefone_popup_oficinas_as")
         self.label_Telefone_popup_oficinas_as.setFont(font1)
@@ -1456,7 +1456,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_8.addWidget(self.input_Telefone_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_7, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_7, 9, 8, 8, 9)
 
         self.frame_10 = QFrame(self.frame_13)
         self.frame_10.setObjectName(u"frame_10")
@@ -1465,7 +1465,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_13 = QVBoxLayout(self.frame_10)
         self.verticalLayout_13.setSpacing(0)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_13.setContentsMargins(9, 8, 8, 9)
         self.label_bairro_popup_oficinas_as = QLabel(self.frame_10)
         self.label_bairro_popup_oficinas_as.setObjectName(u"label_bairro_popup_oficinas_as")
         self.label_bairro_popup_oficinas_as.setFont(font1)
@@ -1482,7 +1482,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_13.addWidget(self.input_bairro_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_10, 8, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_10, 9, 8, 8, 9)
 
         self.frame_3 = QFrame(self.frame_13)
         self.frame_3.setObjectName(u"frame_3")
@@ -1491,7 +1491,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_4 = QVBoxLayout(self.frame_3)
         self.verticalLayout_4.setSpacing(0)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_4.setContentsMargins(9, 8, 8, 9)
         self.label_cpf_popup_oficinas_as = QLabel(self.frame_3)
         self.label_cpf_popup_oficinas_as.setObjectName(u"label_cpf_popup_oficinas_as")
         self.label_cpf_popup_oficinas_as.setFont(font1)
@@ -1508,7 +1508,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_4.addWidget(self.input_cpf_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_3, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_3, 9, 8, 8, 9)
 
         self.frame_8 = QFrame(self.frame_13)
         self.frame_8.setObjectName(u"frame_8")
@@ -1517,7 +1517,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_9 = QVBoxLayout(self.frame_8)
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_9.setContentsMargins(9, 8, 8, 9)
         self.label_cep_popup_oficinas_as = QLabel(self.frame_8)
         self.label_cep_popup_oficinas_as.setObjectName(u"label_cep_popup_oficinas_as")
         self.label_cep_popup_oficinas_as.setFont(font1)
@@ -1534,7 +1534,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_9.addWidget(self.input_cep_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_8, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_8, 9, 8, 8, 9)
 
         self.frame_12 = QFrame(self.frame_13)
         self.frame_12.setObjectName(u"frame_12")
@@ -1543,7 +1543,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_15 = QVBoxLayout(self.frame_12)
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_15.setContentsMargins(9, 8, 8, 9)
         self.label_estado_popup_oficinas_as_3 = QLabel(self.frame_12)
         self.label_estado_popup_oficinas_as_3.setObjectName(u"label_estado_popup_oficinas_as_3")
         self.label_estado_popup_oficinas_as_3.setFont(font1)
@@ -1560,7 +1560,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_15.addWidget(self.input_estado_popup_oficinas_as_3)
 
 
-        self.gridLayout.addWidget(self.frame_12, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_12, 9, 8, 8, 9)
 
         self.frame_4 = QFrame(self.frame_13)
         self.frame_4.setObjectName(u"frame_4")
@@ -1570,7 +1570,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_6 = QVBoxLayout(self.frame_4)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setContentsMargins(9, 8, 8, 9)
         self.label_tipo_popup_oficinas_as = QLabel(self.frame_4)
         self.label_tipo_popup_oficinas_as.setObjectName(u"label_tipo_popup_oficinas_as")
         self.label_tipo_popup_oficinas_as.setFont(font1)
@@ -1589,10 +1589,10 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_6.addWidget(self.comboBox_tipo_popup_oficinas_as)
 
 
-        self.gridLayout.addWidget(self.frame_4, 0, 0, 0, 0)
+        self.gridLayout.addWidget(self.frame_4, 9, 8, 8, 9)
 
 
-        self.gridLayout_2.addWidget(self.frame_13, 0, 0, 0, 0)
+        self.gridLayout_2.addWidget(self.frame_13, 9, 8, 8, 9)
 
         self.frame_16 = QFrame(self.frame_2)
         self.frame_16.setObjectName(u"frame_16")
@@ -1601,7 +1601,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_4 = QHBoxLayout(self.frame_16)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setContentsMargins(9, 8, 8, 9)
         self.line_linha_Oficinas_as = QFrame(self.frame_16)
         self.line_linha_Oficinas_as.setObjectName(u"line_linha_Oficinas_as")
         self.line_linha_Oficinas_as.setStyleSheet(u"background-color: rgb(236, 132, 140);\n"
@@ -1612,7 +1612,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_4.addWidget(self.line_linha_Oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_16, 0, 0, 0, 0)
+        self.gridLayout_2.addWidget(self.frame_16, 9, 8, 8, 9)
 
         self.frame_15 = QFrame(self.frame_2)
         self.frame_15.setObjectName(u"frame_15")
@@ -1621,7 +1621,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_3 = QHBoxLayout(self.frame_15)
         self.horizontalLayout_3.setSpacing(6)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_3.setContentsMargins(9, 8, 8, 9)
         self.btn_fechar_popup_oficinas_as = QPushButton(self.frame_15)
         self.btn_fechar_popup_oficinas_as.setObjectName(u"btn_fechar_popup_oficinas_as")
         self.btn_fechar_popup_oficinas_as.setMinimumSize(QSize(120, 40))
@@ -1670,7 +1670,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_3.addWidget(self.btn_adicionar_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_15, 0, 0, 0, 0)
+        self.gridLayout_2.addWidget(self.frame_15, 9, 6, 6, 9)
 
 
         self.verticalLayout_2.addWidget(self.frame_2)

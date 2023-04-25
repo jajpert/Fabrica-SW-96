@@ -110,8 +110,20 @@ QComboBox:focus{outline:0; border: 2px solid #A85751}
             <enum>QFrame::Raised</enum>
            </property>
            <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <property name="leftMargin">
              <number>9</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
             </property>
             <item>
              <widget class="QFrame" name="frame_18">
@@ -141,16 +153,81 @@ QComboBox:focus{outline:0; border: 2px solid #A85751}
                 <number>0</number>
                </property>
                <item>
-                <widget class="QLabel" name="label_Lista_de_Cadastrados_Oficinas_as">
-                 <property name="font">
-                  <font>
-                   <family>Abel</family>
-                   <pointsize>36</pointsize>
-                  </font>
+                <widget class="QFrame" name="frame_19">
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
                  </property>
-                 <property name="text">
-                  <string>Lista de Cadastrados</string>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
                  </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_11">
+                  <item>
+                   <widget class="QFrame" name="frame_20">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_8">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <spacer name="horizontalSpacer_5">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_Lista_de_Convidados_popup_oficinas_as">
+                       <property name="font">
+                        <font>
+                         <family>Abel</family>
+                         <pointsize>36</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Lista de Convidados</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_6">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
                 </widget>
                </item>
                <item>
@@ -297,11 +374,10 @@ QTableWidgetfocus{outline:0; border: 2px solid #A85751}
                   <property name="text">
                    <string/>
                   </property>
-                  <property name="font">
-                   <font>
-                    <family>Abel</family>
-                    <pointsize>12</pointsize>
-                   </font>
+                 </column>
+                 <column>
+                  <property name="text">
+                   <string/>
                   </property>
                  </column>
                  <item row="0" column="0">
@@ -520,19 +596,19 @@ QPushButton:focus{outline:0}</string>
            </property>
            <layout class="QGridLayout" name="gridLayout">
             <property name="leftMargin">
-             <number>0</number>
+             <number>9</number>
             </property>
             <property name="topMargin">
-             <number>0</number>
+             <number>9</number>
             </property>
             <property name="rightMargin">
-             <number>0</number>
+             <number>9</number>
             </property>
             <property name="bottomMargin">
-             <number>0</number>
+             <number>9</number>
             </property>
             <property name="spacing">
-             <number>0</number>
+             <number>6</number>
             </property>
             <item row="0" column="0" colspan="2">
              <widget class="QFrame" name="frame_14">
@@ -616,7 +692,7 @@ QPushButton:focus{outline:0}</string>
                 <number>0</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
                 <number>0</number>
@@ -675,19 +751,19 @@ QPushButton:focus{outline:0}</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_14">
                <property name="spacing">
-                <number>6</number>
+                <number>0</number>
                </property>
                <property name="leftMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="topMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="rightMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="bottomMargin">
-                <number>6</number>
+                <number>0</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_cidade_popup_oficinas_as_2">
@@ -868,21 +944,21 @@ QPushButton:focus{outline:0}</string>
               <property name="frameShadow">
                <enum>QFrame::Raised</enum>
               </property>
-              <layout class="QVBoxLayout" name="verticalLayout_8">
+              <layout class="QVBoxLayout" name="verticalLayout_8" stretch="0,0">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="bottomMargin">
-                <number>0</number>
+                <number>6</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_Telefone_popup_oficinas_as">
@@ -920,6 +996,9 @@ QPushButton:focus{outline:0}</string>
                  <property name="styleSheet">
                   <string notr="true"/>
                  </property>
+                 <property name="text">
+                  <string>33423423423423</string>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -935,19 +1014,19 @@ QPushButton:focus{outline:0}</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_13">
                <property name="spacing">
-                <number>6</number>
+                <number>0</number>
                </property>
                <property name="leftMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="topMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="rightMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="bottomMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_bairro_popup_oficinas_as">
@@ -1000,19 +1079,19 @@ QPushButton:focus{outline:0}</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_9">
                <property name="spacing">
-                <number>0</number>
+                <number>6</number>
                </property>
                <property name="leftMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="topMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="rightMargin">
-                <number>0</number>
+                <number>9</number>
                </property>
                <property name="bottomMargin">
-                <number>0</number>
+                <number>6</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_cep_popup_oficinas_as">
@@ -1065,19 +1144,19 @@ QPushButton:focus{outline:0}</string>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_15">
                <property name="spacing">
-                <number>6</number>
+                <number>0</number>
                </property>
                <property name="leftMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="topMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="rightMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <property name="bottomMargin">
-                <number>9</number>
+                <number>0</number>
                </property>
                <item>
                 <widget class="QLabel" name="label_estado_popup_oficinas_as_3">
