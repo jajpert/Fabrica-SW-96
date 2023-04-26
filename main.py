@@ -229,8 +229,8 @@ class TelaPrincipal(QMainWindow):
 
 
 ########################### FUNÇÕES BANCO ###########################
-
-     def cadastroUsuario(self):
+    
+    def cadastroUsuario(self):
 
         parentesco = self.ui.input_parentesco_cuidador_as.text()
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
