@@ -55,15 +55,14 @@ class DataBase():
             self.close_connection()
 
 
-    def cadastro_usuario(self,endereco,pessoa,cuidador):
+    def cadastro_usuario(self,endereco,pessoa,usuario,cuidador):
         self.connect()
         try:
-            self.cursor.execute("""
-                INSERT INTO endereco (cep,rua,numero,bairro,complemento,id_cidade) VALUES (%s,%s,%s,%s,%s,%s)
-            """,(endereco[0],endereco[1],endereco[2],endereco[3],"",endereco[4]))
-
+            args = (endereco[0],endereco[1],endereco[2],endereco[3])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
             id_endereco = self.cursor.lastrowid
 
+            print(endereco)
             print(id_endereco)
             print(pessoa)
 
@@ -73,18 +72,24 @@ class DataBase():
 
             id_cuidador = self.cursor.lastrowid
             print(id_cuidador)
+            print(len(usuario))
+            print(len(pessoa))
+
+            print()
+            self.cursor.execute("""
+                insert into pessoa (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status_,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_endereco,id_colaborador_resp)
+                values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+             """,(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco,pessoa[14]))
+            id_matricula = self.cursor.lastrowid
+            print(id_matricula)
 
             self.cursor.execute("""
-                insert into pessoa (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,status,telefone,email,escolaridade,estado_civil,pessoa_Cdeficiencia,id_endereco,id_colaborador_resp)
-                values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
-             """,(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco,id_cuidador))
-
-            self.cursor.execute("""
-                INSERT INTO usuario (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,id_beneficio,id_matricula_,id_beneficio,id_cuidador,id_clinica,id_curso) 
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(cuidador[0],cuidador[1],cuidador[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],id_cuidador,pessoa[10],pessoa[11]))
+                INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula,id_beneficio,id_cuidador,id_clinica,id_curso) 
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+            """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula,1,id_cuidador,1,1))
 
             self.conn.commit()
+
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
@@ -119,7 +124,7 @@ class DataBase():
             #print(err)
             return "ERRO",str(err)
         
-    def cadastro_colaborador(self,endereco,pessoa,colaborador):
+    def cadastro_colaborador(self,endereco,pessoa,colaborador,login):
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3])
@@ -128,14 +133,20 @@ class DataBase():
             id_endereco = self.cursor.lastrowid
             print('ID do endereco',id_endereco)
 
-            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],id_endereco)
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco)
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status_,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             id_matricula = self.cursor.lastrowid
             print('id matricula',id_matricula)
 
             self.cursor.execute("""
-                INSERT INTO colaborador (salario,data_admissao,pis,id_matricula,id_cargo) VALUES (%s,%s,%s,%s,%s)
-            """,(colaborador[0],colaborador[1],colaborador[2],id_matricula,1))
+                INSERT INTO colaborador (salario,data_admissao,pis,periodo,descricao_cargo,id_matricula,id_cargo) VALUES (%s,%s,%s,%s,%s,%s,%s)
+            """,(colaborador[0],colaborador[1],colaborador[2],pessoa[3],pessoa[4],id_matricula,1))
+            id_colaborador = self.cursor.lastrowid
+            print(id_colaborador)
+
+            args3 = (login[0],login[1],login[2],login[3],login[4],id_colaborador)
+            self.cursor.execute('INSERT INTO login(usuario, senha, perfil, data_login, status, id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args3)
+
 
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -151,8 +162,8 @@ class DataBase():
             args = (endereco[0],endereco[1],endereco[2],endereco[3])
             self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
     
-            args2 = (curso[0],curso[1],curso[2],curso[3],curso[4])
-            self.cursor.execute('INSERT INTO curso_evento (nome_curso_evento,data_inicio,data_fim,carga_horaria,id_palestrante) VALUES (%s,%s,%s,%s,%s)',args2)
+            args2 = (curso[0],curso[1],curso[2],curso[3],curso[4],curso[5],curso[6],curso[7],curso[8],curso[9],curso[10],curso[11])
+            self.cursor.execute('INSERT INTO curso_evento (nome_curso_evento,data_inicio,data_fim,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',args2)
 
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -219,6 +230,4 @@ if __name__ == "__main__":
     #dados = db.select()
     #db.filter("444")
     db.close_connection()
-
-
 
