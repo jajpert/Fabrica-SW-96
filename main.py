@@ -230,46 +230,81 @@ class TelaPrincipal(QMainWindow):
 
 ########################### FUNÇÕES BANCO ###########################
 
-    def cadastroUsuario(self):
+     def cadastroUsuario(self):
+
+        parentesco = self.ui.input_parentesco_cuidador_as.text()
+        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
+        id_matricula = 1
+        tupla_cuidador = (parentesco,observacao,id_matricula)
+
+        ################################################3#####
         cep = self.ui.input_cep_usuario_as.text()
         rua = self.ui.input_logradouro_usuario_as.text()
         numero = self.ui.input_numero_usuario_as.text()
         bairro = self.ui.input_bairro_usuario_as.text()
+        id_cidade=2
 
-        tupla_endereco = (cep,rua,numero,bairro)
+        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         #######################################################
 
         nome = self.ui.input_nome_usuario_as.text()
         data_nascimento = '2004-06-25'
-        data_nascimento = '2002-12-05'
         cpf = self.ui.input_cpf_usuario_as.text()
         rg = self.ui.input_rg_usuario_as.text()
-        data_emissao = self.ui.input_data_emissao_usuario_as.text()
+        data_emissao = '2004-06-25' #self.ui.input_data_emissao_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.text()
+        data_cadastro = '2004-06-25'
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
         escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         id_colaborador_resp = 1
-        
-        if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
-            pessoa_deficiencia = 'S'
 
-        elif self.ui.label_pessoa_cdeficiencia_nao_usuario_as.isChecked():
-            pessoa_deficiencia = 'N'
+        #######################################################
+        
+        nis = self.ui.input_nis_usuario_as.text()
+        cns = self.ui.input_cns_usuario_as.text()
+        observacao_ = 'none'
+        situacao_trabalho = self.ui.input_situacao_trabalho_usuario_as.currentText()
+        tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
+        tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
+        beneficio = self.ui.input_beneficios_usuario_as.currentText()
+        local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
+        patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
+        data_inicio = '2004-06-25' # self.ui.input_data_inicio_usuario_as.text()
+        periodo = self.ui.input_periodo_usuario_as.currentText()
+        media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
+        vale_trasnporte = self.ui.input_vale_transporte_usuario_as.currentText()
+
+
+        tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
+
+        if self.ui.input_tarifa_social_sim_usuario_as.isChecked():
+            tarifa_social = 'S'
+        else:
+            tarifa_social = 'N'
+
+        if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
+            pessoa_deficiencia = 'SIM'
+
+        else:
+            pessoa_deficiencia = 'NÃO'
         
         if self.ui.input_situacao_ativo_usuario_as.isChecked():
-            status = 'A'
-        elif self.ui.input_situacao_inativo_usuario_as.isChecked():
-            status = 'I'
-
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
-
+            status = 'Ativo'
+        else:
+            status = 'Inativo'
         
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_pessoa)
+
+
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
+
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
+         
+        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
         print(result)
 
         
@@ -338,24 +373,42 @@ class TelaPrincipal(QMainWindow):
         estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
         if self.ui.input_pessoa_cdeficiencia_sim_colaborador_as.isChecked():
             pessoa_deficiencia = 'S'
-        elif self.ui.input_pessoa_cdeficiencia_nao_colaborador_as.isChecked():
+        else:
             pessoa_deficiencia = 'N'
+        if self.ui.input_situacao_ativo_usuario_as.isChecked():
+            status = 'Ativo'
+        else:
+            status = 'Inativo'
+        tipo_deficiencia = self.ui.input_tipo_deficiencia_colaborador_as.text()
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
 
         ##########################################################################3
 
         salario = self.ui.input_salario_colaborador_as.text()
         data_admissao = '00/00/0000'
         pis = self.ui.input_pis_colaborador_as.text()
+        perido = self.ui.input_periodo_colaborador_comboBox_as.currentText()
+        descricao_cargo = self.ui.input_descricao_cargo_colaborador_as.text()
         
-        tupla_colaborador = (salario,data_admissao,pis)
+        tupla_colaborador = (salario,data_admissao,pis,perido,descricao_cargo)
+
+        ##########################################################################
+
+        login = self.ui.input_usuario_colaborador_as.text()
+        senha = self.ui.input_senha_colaborador_as.text()
+        #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
+        perfil = 'non'
+        data_login = '2004-06-25'
+        status = 'n'
+
+        tupla_login = (login, senha, perfil, data_login, status)
 
         print(tupla_endereco)
         print(tupla_pessoa)
         print(tupla_colaborador)
 
-        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
+        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador,tupla_login)
         print(result)
 
 
@@ -373,14 +426,25 @@ class TelaPrincipal(QMainWindow):
         data_termino=self.ui.input_data_termino_cursos_as.text()
         carga_horaria= 120 
         id_palestrante = 1
-        tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante)
+        periodo=self.ui.input_periodo_cursos_as.currentText()
+        data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
+        tipo_curso=self.ui.input_tipo_cursos_as.currentText()
+        if self.ui.input_ativo_cursos_as.isChecked():
+            situacao="Ativo"
+        else:
+            situacao="Inativo"
+        responsavel=self.ui.input_responsavel_cursos_as.text()
+        horario_inicial=self.ui.input_horario_cursos_as.text()
+        horario_final=self.ui.input_as_cursos_as.text()
+        vagas=self.ui.input_vagas_cursos_as.text()
+        
+        tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
 
         print(tupla_curso)
         print(tupla_endereco)
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
 
         print(result)
-
 
 
 ####################### FUNÇÕES POP UP #######################
