@@ -1267,8 +1267,8 @@ class Ui_Popup_Lista_Pessoas(object):
         self.frame_3.setObjectName(u"frame_3")
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
-        self.gridLayout_2 = QGridLayout(self.frame_3)
-        self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.formLayout = QFormLayout(self.frame_3)
+        self.formLayout.setObjectName(u"formLayout")
         self.frame_14 = QFrame(self.frame_3)
         self.frame_14.setObjectName(u"frame_14")
         self.frame_14.setFrameShape(QFrame.StyledPanel)
@@ -1295,7 +1295,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.horizontalLayout_5.addItem(self.horizontalSpacer_4)
 
 
-        self.gridLayout_2.addWidget(self.frame_14, 0, 0, 1, 2)
+        self.formLayout.setWidget(0, QFormLayout.SpanningRole, self.frame_14)
 
         self.frame_4 = QFrame(self.frame_3)
         self.frame_4.setObjectName(u"frame_4")
@@ -1322,7 +1322,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_3.addWidget(self.input_cpf_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_4, 1, 0, 1, 1)
+        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.frame_4)
 
         self.frame_5 = QFrame(self.frame_3)
         self.frame_5.setObjectName(u"frame_5")
@@ -1336,19 +1336,17 @@ class Ui_Popup_Lista_Pessoas(object):
 
         self.verticalLayout_4.addWidget(self.label_tipo_popup_oficinas_as)
 
-        self.comboBox_tipo_popup_oficinas_as = QComboBox(self.frame_5)
-        self.comboBox_tipo_popup_oficinas_as.setObjectName(u"comboBox_tipo_popup_oficinas_as")
-        self.comboBox_tipo_popup_oficinas_as.setMinimumSize(QSize(192, 35))
-        font2 = QFont()
-        font2.setFamilies([u"Abel"])
-        self.comboBox_tipo_popup_oficinas_as.setFont(font2)
-        self.comboBox_tipo_popup_oficinas_as.setStyleSheet(u"")
-        self.comboBox_tipo_popup_oficinas_as.setEditable(False)
+        self.comboBox = QComboBox(self.frame_5)
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.setObjectName(u"comboBox")
+        self.comboBox.setMinimumSize(QSize(81, 41))
 
-        self.verticalLayout_4.addWidget(self.comboBox_tipo_popup_oficinas_as)
+        self.verticalLayout_4.addWidget(self.comboBox)
 
 
-        self.gridLayout_2.addWidget(self.frame_5, 1, 1, 1, 1)
+        self.formLayout.setWidget(1, QFormLayout.FieldRole, self.frame_5)
 
         self.frame_6 = QFrame(self.frame_3)
         self.frame_6.setObjectName(u"frame_6")
@@ -1372,7 +1370,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_5.addWidget(self.input_nome_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_6, 2, 0, 1, 2)
+        self.formLayout.setWidget(2, QFormLayout.SpanningRole, self.frame_6)
 
         self.frame_7 = QFrame(self.frame_3)
         self.frame_7.setObjectName(u"frame_7")
@@ -1396,7 +1394,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_6.addWidget(self.input_Email_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_7, 3, 0, 1, 2)
+        self.formLayout.setWidget(3, QFormLayout.SpanningRole, self.frame_7)
 
         self.frame_8 = QFrame(self.frame_3)
         self.frame_8.setObjectName(u"frame_8")
@@ -1420,7 +1418,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_7.addWidget(self.input_Telefone_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_8, 4, 0, 1, 1)
+        self.formLayout.setWidget(4, QFormLayout.LabelRole, self.frame_8)
 
         self.frame_9 = QFrame(self.frame_3)
         self.frame_9.setObjectName(u"frame_9")
@@ -1444,7 +1442,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_8.addWidget(self.input_cep_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_9, 4, 1, 1, 1)
+        self.formLayout.setWidget(4, QFormLayout.FieldRole, self.frame_9)
 
         self.frame_10 = QFrame(self.frame_3)
         self.frame_10.setObjectName(u"frame_10")
@@ -1468,7 +1466,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_9.addWidget(self.input_rua_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_10, 5, 0, 1, 2)
+        self.formLayout.setWidget(5, QFormLayout.SpanningRole, self.frame_10)
 
         self.frame_11 = QFrame(self.frame_3)
         self.frame_11.setObjectName(u"frame_11")
@@ -1492,7 +1490,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_10.addWidget(self.input_bairro_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_11, 6, 0, 1, 2)
+        self.formLayout.setWidget(6, QFormLayout.SpanningRole, self.frame_11)
 
         self.frame_12 = QFrame(self.frame_3)
         self.frame_12.setObjectName(u"frame_12")
@@ -1516,7 +1514,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_11.addWidget(self.input_cidade_popup_oficinas_as)
 
 
-        self.gridLayout_2.addWidget(self.frame_12, 7, 0, 1, 2)
+        self.formLayout.setWidget(7, QFormLayout.SpanningRole, self.frame_12)
 
         self.frame_13 = QFrame(self.frame_3)
         self.frame_13.setObjectName(u"frame_13")
@@ -1540,7 +1538,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.verticalLayout_12.addWidget(self.input_estado_popup_oficinas_as_3)
 
 
-        self.gridLayout_2.addWidget(self.frame_13, 8, 0, 1, 2)
+        self.formLayout.setWidget(8, QFormLayout.SpanningRole, self.frame_13)
 
 
         self.gridLayout.addWidget(self.frame_3, 0, 0, 1, 1)
@@ -1557,10 +1555,10 @@ class Ui_Popup_Lista_Pessoas(object):
         self.btn_fechar_popup_oficinas_as_2.setObjectName(u"btn_fechar_popup_oficinas_as_2")
         self.btn_fechar_popup_oficinas_as_2.setMinimumSize(QSize(120, 40))
         self.btn_fechar_popup_oficinas_as_2.setMaximumSize(QSize(120, 40))
-        font3 = QFont()
-        font3.setFamilies([u"Abel"])
-        font3.setPointSize(20)
-        self.btn_fechar_popup_oficinas_as_2.setFont(font3)
+        font2 = QFont()
+        font2.setFamilies([u"Abel"])
+        font2.setPointSize(20)
+        self.btn_fechar_popup_oficinas_as_2.setFont(font2)
         self.btn_fechar_popup_oficinas_as_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_fechar_popup_oficinas_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px; border: none}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -1576,7 +1574,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.btn_remover_popup_oficinas_as_2.setObjectName(u"btn_remover_popup_oficinas_as_2")
         self.btn_remover_popup_oficinas_as_2.setMinimumSize(QSize(120, 40))
         self.btn_remover_popup_oficinas_as_2.setMaximumSize(QSize(120, 40))
-        self.btn_remover_popup_oficinas_as_2.setFont(font3)
+        self.btn_remover_popup_oficinas_as_2.setFont(font2)
         self.btn_remover_popup_oficinas_as_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_remover_popup_oficinas_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #F7B0B5; border-radius: 20px; border: none}\n"
 "QPushButton:hover{background-color: #EC848C}\n"
@@ -1592,7 +1590,7 @@ class Ui_Popup_Lista_Pessoas(object):
         self.btn_adicionar_popup_oficinas_as_2.setObjectName(u"btn_adicionar_popup_oficinas_as_2")
         self.btn_adicionar_popup_oficinas_as_2.setMinimumSize(QSize(120, 40))
         self.btn_adicionar_popup_oficinas_as_2.setMaximumSize(QSize(120, 40))
-        self.btn_adicionar_popup_oficinas_as_2.setFont(font3)
+        self.btn_adicionar_popup_oficinas_as_2.setFont(font2)
         self.btn_adicionar_popup_oficinas_as_2.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_adicionar_popup_oficinas_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px; border: none}\n"
 "QPushButton:hover{background-color: #EC848C}\n"
@@ -1755,6 +1753,10 @@ class Ui_Popup_Lista_Pessoas(object):
         self.label_cadastro_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Cadastro", None))
         self.label_cpf_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"CPF", None))
         self.label_tipo_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Tipo", None))
+        self.comboBox.setItemText(0, QCoreApplication.translate("Dialog", u"Usu\u00e1rio", None))
+        self.comboBox.setItemText(1, QCoreApplication.translate("Dialog", u"Cuidador", None))
+        self.comboBox.setItemText(2, QCoreApplication.translate("Dialog", u"Palestrante", None))
+
         self.label_nome_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Nome", None))
         self.label_Email_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Email", None))
         self.label_Telefone_popup_oficinas_as.setText(QCoreApplication.translate("Dialog", u"Telefone", None))
