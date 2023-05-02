@@ -2976,7 +2976,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_80.setContentsMargins(0, 0, 0, 0)
         self.frame_255 = QFrame(self.frame_241)
         self.frame_255.setObjectName(u"frame_255")
-        self.frame_255.setMinimumSize(QSize(150, 0))
+        self.frame_255.setMinimumSize(QSize(0, 0))
         self.frame_255.setMaximumSize(QSize(155, 16777215))
         self.frame_255.setFrameShape(QFrame.StyledPanel)
         self.frame_255.setFrameShadow(QFrame.Raised)
@@ -2986,7 +2986,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_171.setContentsMargins(0, 0, 0, 0)
         self.label_salario_colaborador_as = QLabel(self.frame_255)
         self.label_salario_colaborador_as.setObjectName(u"label_salario_colaborador_as")
-        self.label_salario_colaborador_as.setMinimumSize(QSize(100, 0))
+        self.label_salario_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_salario_colaborador_as.setMaximumSize(QSize(100, 16777215))
         self.label_salario_colaborador_as.setFont(font)
 
@@ -2994,7 +2994,7 @@ class Ui_MainWindow(object):
 
         self.input_salario_colaborador_as = QLineEdit(self.frame_255)
         self.input_salario_colaborador_as.setObjectName(u"input_salario_colaborador_as")
-        self.input_salario_colaborador_as.setMinimumSize(QSize(0, 30))
+        self.input_salario_colaborador_as.setMinimumSize(QSize(80, 30))
         self.input_salario_colaborador_as.setMaximumSize(QSize(150, 16777215))
         self.input_salario_colaborador_as.setFont(font)
 
@@ -3005,7 +3005,7 @@ class Ui_MainWindow(object):
 
         self.frame_249 = QFrame(self.frame_241)
         self.frame_249.setObjectName(u"frame_249")
-        self.frame_249.setMinimumSize(QSize(281, 0))
+        self.frame_249.setMinimumSize(QSize(0, 0))
         self.frame_249.setMaximumSize(QSize(281, 16777215))
         self.frame_249.setFrameShape(QFrame.StyledPanel)
         self.frame_249.setFrameShadow(QFrame.Raised)
@@ -3015,7 +3015,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_166.setContentsMargins(0, 0, 0, 0)
         self.label_descricao_cargo_colaborador_as = QLabel(self.frame_249)
         self.label_descricao_cargo_colaborador_as.setObjectName(u"label_descricao_cargo_colaborador_as")
-        self.label_descricao_cargo_colaborador_as.setMinimumSize(QSize(280, 0))
+        self.label_descricao_cargo_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_descricao_cargo_colaborador_as.setMaximumSize(QSize(280, 16777215))
         self.label_descricao_cargo_colaborador_as.setFont(font)
 
@@ -3023,7 +3023,7 @@ class Ui_MainWindow(object):
 
         self.input_descricao_cargo_colaborador_as = QLineEdit(self.frame_249)
         self.input_descricao_cargo_colaborador_as.setObjectName(u"input_descricao_cargo_colaborador_as")
-        self.input_descricao_cargo_colaborador_as.setMinimumSize(QSize(280, 30))
+        self.input_descricao_cargo_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_descricao_cargo_colaborador_as.setMaximumSize(QSize(280, 30))
         self.input_descricao_cargo_colaborador_as.setFont(font)
 
@@ -3092,7 +3092,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_88.setContentsMargins(0, 0, 0, 0)
         self.frame_231 = QFrame(self.frame_230)
         self.frame_231.setObjectName(u"frame_231")
-        self.frame_231.setMinimumSize(QSize(155, 0))
+        self.frame_231.setMinimumSize(QSize(0, 0))
         self.frame_231.setMaximumSize(QSize(155, 16777215))
         self.frame_231.setFrameShape(QFrame.StyledPanel)
         self.frame_231.setFrameShadow(QFrame.Raised)
@@ -3102,7 +3102,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_135.setContentsMargins(0, 0, 0, 0)
         self.label_estado_civil_colaborador_as = QLabel(self.frame_231)
         self.label_estado_civil_colaborador_as.setObjectName(u"label_estado_civil_colaborador_as")
-        self.label_estado_civil_colaborador_as.setMinimumSize(QSize(155, 0))
+        self.label_estado_civil_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_estado_civil_colaborador_as.setMaximumSize(QSize(155, 16777215))
         self.label_estado_civil_colaborador_as.setFont(font)
 
@@ -3116,7 +3116,7 @@ class Ui_MainWindow(object):
         self.input_estado_civil_colaborador_comboBox_as.addItem("")
         self.input_estado_civil_colaborador_comboBox_as.addItem("")
         self.input_estado_civil_colaborador_comboBox_as.setObjectName(u"input_estado_civil_colaborador_comboBox_as")
-        self.input_estado_civil_colaborador_comboBox_as.setMinimumSize(QSize(154, 30))
+        self.input_estado_civil_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_estado_civil_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
         self.input_estado_civil_colaborador_comboBox_as.setFont(font)
 
@@ -3164,7 +3164,7 @@ class Ui_MainWindow(object):
 
         self.frame_233 = QFrame(self.frame_230)
         self.frame_233.setObjectName(u"frame_233")
-        self.frame_233.setMinimumSize(QSize(251, 0))
+        self.frame_233.setMinimumSize(QSize(0, 0))
         self.frame_233.setMaximumSize(QSize(251, 16777215))
         self.frame_233.setFrameShape(QFrame.StyledPanel)
         self.frame_233.setFrameShadow(QFrame.Raised)
@@ -3180,7 +3180,7 @@ class Ui_MainWindow(object):
 
         self.input_tipo_deficiencia_colaborador_as = QLineEdit(self.frame_233)
         self.input_tipo_deficiencia_colaborador_as.setObjectName(u"input_tipo_deficiencia_colaborador_as")
-        self.input_tipo_deficiencia_colaborador_as.setMinimumSize(QSize(250, 0))
+        self.input_tipo_deficiencia_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_tipo_deficiencia_colaborador_as.setMaximumSize(QSize(250, 30))
         self.input_tipo_deficiencia_colaborador_as.setFont(font)
 
@@ -3191,7 +3191,7 @@ class Ui_MainWindow(object):
 
         self.frame_234 = QFrame(self.frame_230)
         self.frame_234.setObjectName(u"frame_234")
-        self.frame_234.setMinimumSize(QSize(155, 0))
+        self.frame_234.setMinimumSize(QSize(0, 0))
         self.frame_234.setMaximumSize(QSize(155, 16777215))
         self.frame_234.setFrameShape(QFrame.StyledPanel)
         self.frame_234.setFrameShadow(QFrame.Raised)
@@ -3201,7 +3201,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_162.setContentsMargins(0, 0, 0, 0)
         self.label_escolaridade_colaborador_as = QLabel(self.frame_234)
         self.label_escolaridade_colaborador_as.setObjectName(u"label_escolaridade_colaborador_as")
-        self.label_escolaridade_colaborador_as.setMinimumSize(QSize(155, 0))
+        self.label_escolaridade_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_escolaridade_colaborador_as.setMaximumSize(QSize(155, 16777215))
         self.label_escolaridade_colaborador_as.setFont(font)
 
@@ -3216,7 +3216,7 @@ class Ui_MainWindow(object):
         self.input_escolaridade_colaborador_comboBox_as.addItem("")
         self.input_escolaridade_colaborador_comboBox_as.addItem("")
         self.input_escolaridade_colaborador_comboBox_as.setObjectName(u"input_escolaridade_colaborador_comboBox_as")
-        self.input_escolaridade_colaborador_comboBox_as.setMinimumSize(QSize(154, 30))
+        self.input_escolaridade_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_escolaridade_colaborador_comboBox_as.setMaximumSize(QSize(154, 30))
         self.input_escolaridade_colaborador_comboBox_as.setFont(font)
 
@@ -3227,7 +3227,7 @@ class Ui_MainWindow(object):
 
         self.frame_235 = QFrame(self.frame_230)
         self.frame_235.setObjectName(u"frame_235")
-        self.frame_235.setMinimumSize(QSize(211, 0))
+        self.frame_235.setMinimumSize(QSize(0, 0))
         self.frame_235.setMaximumSize(QSize(146, 16777215))
         self.frame_235.setFrameShape(QFrame.StyledPanel)
         self.frame_235.setFrameShadow(QFrame.Raised)
@@ -3237,7 +3237,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_165.setContentsMargins(0, 0, 0, 0)
         self.label_cargo_colaborador_as = QLabel(self.frame_235)
         self.label_cargo_colaborador_as.setObjectName(u"label_cargo_colaborador_as")
-        self.label_cargo_colaborador_as.setMinimumSize(QSize(240, 0))
+        self.label_cargo_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_cargo_colaborador_as.setMaximumSize(QSize(240, 16777215))
         self.label_cargo_colaborador_as.setFont(font)
 
@@ -3258,7 +3258,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setVerticalStretch(0)
         sizePolicy1.setHeightForWidth(self.input_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
         self.input_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy1)
-        self.input_cargo_colaborador_comboBox_as.setMinimumSize(QSize(210, 30))
+        self.input_cargo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_cargo_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
         self.input_cargo_colaborador_comboBox_as.setFont(font)
 
@@ -3290,7 +3290,7 @@ class Ui_MainWindow(object):
         self.input_periodo_colaborador_comboBox_as.addItem("")
         self.input_periodo_colaborador_comboBox_as.addItem("")
         self.input_periodo_colaborador_comboBox_as.setObjectName(u"input_periodo_colaborador_comboBox_as")
-        self.input_periodo_colaborador_comboBox_as.setMinimumSize(QSize(70, 30))
+        self.input_periodo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_periodo_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
         self.input_periodo_colaborador_comboBox_as.setFont(font)
 
@@ -3346,7 +3346,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_79.setContentsMargins(0, 0, 0, 0)
         self.frame_202 = QFrame(self.frame_201)
         self.frame_202.setObjectName(u"frame_202")
-        self.frame_202.setMinimumSize(QSize(155, 0))
+        self.frame_202.setMinimumSize(QSize(0, 0))
         self.frame_202.setMaximumSize(QSize(155, 16777215))
         self.frame_202.setFrameShape(QFrame.StyledPanel)
         self.frame_202.setFrameShadow(QFrame.Raised)
@@ -3356,7 +3356,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_141.setContentsMargins(0, 0, 0, 0)
         self.label_orgao_expedidor_colaborador_as = QLabel(self.frame_202)
         self.label_orgao_expedidor_colaborador_as.setObjectName(u"label_orgao_expedidor_colaborador_as")
-        self.label_orgao_expedidor_colaborador_as.setMinimumSize(QSize(155, 0))
+        self.label_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_orgao_expedidor_colaborador_as.setMaximumSize(QSize(155, 16777215))
         self.label_orgao_expedidor_colaborador_as.setFont(font)
 
@@ -3364,7 +3364,7 @@ class Ui_MainWindow(object):
 
         self.input_orgao_expedidor_colaborador_as = QLineEdit(self.frame_202)
         self.input_orgao_expedidor_colaborador_as.setObjectName(u"input_orgao_expedidor_colaborador_as")
-        self.input_orgao_expedidor_colaborador_as.setMinimumSize(QSize(154, 0))
+        self.input_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_orgao_expedidor_colaborador_as.setMaximumSize(QSize(145, 30))
         self.input_orgao_expedidor_colaborador_as.setFont(font)
 
@@ -3391,7 +3391,7 @@ class Ui_MainWindow(object):
 
         self.input_data_emissao_rg_colaborador_as = QLineEdit(self.frame_207)
         self.input_data_emissao_rg_colaborador_as.setObjectName(u"input_data_emissao_rg_colaborador_as")
-        self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(150, 30))
+        self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_emissao_rg_colaborador_as.setMaximumSize(QSize(150, 30))
         self.input_data_emissao_rg_colaborador_as.setFont(font)
 
@@ -3402,7 +3402,7 @@ class Ui_MainWindow(object):
 
         self.frame_203 = QFrame(self.frame_201)
         self.frame_203.setObjectName(u"frame_203")
-        self.frame_203.setMinimumSize(QSize(220, 0))
+        self.frame_203.setMinimumSize(QSize(0, 0))
         self.frame_203.setMaximumSize(QSize(155, 16777215))
         self.frame_203.setFrameShape(QFrame.StyledPanel)
         self.frame_203.setFrameShadow(QFrame.Raised)
@@ -3418,7 +3418,7 @@ class Ui_MainWindow(object):
 
         self.input_pis_colaborador_as = QLineEdit(self.frame_203)
         self.input_pis_colaborador_as.setObjectName(u"input_pis_colaborador_as")
-        self.input_pis_colaborador_as.setMinimumSize(QSize(218, 30))
+        self.input_pis_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_pis_colaborador_as.setMaximumSize(QSize(145, 30))
         self.input_pis_colaborador_as.setFont(font)
 
@@ -3429,7 +3429,7 @@ class Ui_MainWindow(object):
 
         self.frame_204 = QFrame(self.frame_201)
         self.frame_204.setObjectName(u"frame_204")
-        self.frame_204.setMinimumSize(QSize(146, 0))
+        self.frame_204.setMinimumSize(QSize(0, 0))
         self.frame_204.setMaximumSize(QSize(146, 16777215))
         self.frame_204.setFrameShape(QFrame.StyledPanel)
         self.frame_204.setFrameShadow(QFrame.Raised)
@@ -3448,7 +3448,7 @@ class Ui_MainWindow(object):
         self.input_sexo_colaborador_comboBox_as.addItem("")
         self.input_sexo_colaborador_comboBox_as.addItem("")
         self.input_sexo_colaborador_comboBox_as.setObjectName(u"input_sexo_colaborador_comboBox_as")
-        self.input_sexo_colaborador_comboBox_as.setMinimumSize(QSize(70, 30))
+        self.input_sexo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_sexo_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
         self.input_sexo_colaborador_comboBox_as.setFont(font)
 
@@ -3459,7 +3459,7 @@ class Ui_MainWindow(object):
 
         self.frame_205 = QFrame(self.frame_201)
         self.frame_205.setObjectName(u"frame_205")
-        self.frame_205.setMinimumSize(QSize(155, 0))
+        self.frame_205.setMinimumSize(QSize(0, 0))
         self.frame_205.setMaximumSize(QSize(155, 16777215))
         self.frame_205.setFrameShape(QFrame.StyledPanel)
         self.frame_205.setFrameShadow(QFrame.Raised)
@@ -3469,7 +3469,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_144.setContentsMargins(0, 0, 0, 0)
         self.label_telefone_colaborador_as = QLabel(self.frame_205)
         self.label_telefone_colaborador_as.setObjectName(u"label_telefone_colaborador_as")
-        self.label_telefone_colaborador_as.setMinimumSize(QSize(155, 0))
+        self.label_telefone_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_telefone_colaborador_as.setMaximumSize(QSize(155, 16777215))
         self.label_telefone_colaborador_as.setFont(font)
 
@@ -3477,7 +3477,7 @@ class Ui_MainWindow(object):
 
         self.input_telefone_colaborador_as = QLineEdit(self.frame_205)
         self.input_telefone_colaborador_as.setObjectName(u"input_telefone_colaborador_as")
-        self.input_telefone_colaborador_as.setMinimumSize(QSize(154, 30))
+        self.input_telefone_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_colaborador_as.setMaximumSize(QSize(145, 30))
         self.input_telefone_colaborador_as.setFont(font)
 
@@ -3488,7 +3488,7 @@ class Ui_MainWindow(object):
 
         self.frame_206 = QFrame(self.frame_201)
         self.frame_206.setObjectName(u"frame_206")
-        self.frame_206.setMinimumSize(QSize(240, 0))
+        self.frame_206.setMinimumSize(QSize(0, 0))
         self.frame_206.setMaximumSize(QSize(240, 16777215))
         self.frame_206.setFrameShape(QFrame.StyledPanel)
         self.frame_206.setFrameShadow(QFrame.Raised)
@@ -3498,7 +3498,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_145.setContentsMargins(0, 0, 0, 0)
         self.label_email_colaborador_as = QLabel(self.frame_206)
         self.label_email_colaborador_as.setObjectName(u"label_email_colaborador_as")
-        self.label_email_colaborador_as.setMinimumSize(QSize(240, 0))
+        self.label_email_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_email_colaborador_as.setMaximumSize(QSize(240, 16777215))
         self.label_email_colaborador_as.setFont(font)
 
@@ -3506,7 +3506,7 @@ class Ui_MainWindow(object):
 
         self.input_email_colaborador_as = QLineEdit(self.frame_206)
         self.input_email_colaborador_as.setObjectName(u"input_email_colaborador_as")
-        self.input_email_colaborador_as.setMinimumSize(QSize(239, 30))
+        self.input_email_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_email_colaborador_as.setMaximumSize(QSize(230, 30))
         self.input_email_colaborador_as.setFont(font)
 
@@ -3539,7 +3539,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_78.setContentsMargins(0, 0, 0, 0)
         self.frame_196 = QFrame(self.frame_195)
         self.frame_196.setObjectName(u"frame_196")
-        self.frame_196.setMinimumSize(QSize(160, 0))
+        self.frame_196.setMinimumSize(QSize(0, 0))
         self.frame_196.setMaximumSize(QSize(160, 16777215))
         self.frame_196.setFrameShape(QFrame.StyledPanel)
         self.frame_196.setFrameShadow(QFrame.Raised)
@@ -3549,7 +3549,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_136.setContentsMargins(0, 0, 0, 0)
         self.label_matricula_colaborador_as = QLabel(self.frame_196)
         self.label_matricula_colaborador_as.setObjectName(u"label_matricula_colaborador_as")
-        self.label_matricula_colaborador_as.setMinimumSize(QSize(160, 0))
+        self.label_matricula_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_matricula_colaborador_as.setMaximumSize(QSize(160, 16777215))
         self.label_matricula_colaborador_as.setFont(font)
 
@@ -3557,7 +3557,7 @@ class Ui_MainWindow(object):
 
         self.input_matricula_colaborador_as = QLineEdit(self.frame_196)
         self.input_matricula_colaborador_as.setObjectName(u"input_matricula_colaborador_as")
-        self.input_matricula_colaborador_as.setMinimumSize(QSize(159, 30))
+        self.input_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_colaborador_as.setMaximumSize(QSize(150, 30))
         self.input_matricula_colaborador_as.setFont(font)
 
@@ -3568,7 +3568,7 @@ class Ui_MainWindow(object):
 
         self.frame_197 = QFrame(self.frame_195)
         self.frame_197.setObjectName(u"frame_197")
-        self.frame_197.setMinimumSize(QSize(431, 0))
+        self.frame_197.setMinimumSize(QSize(0, 0))
         self.frame_197.setMaximumSize(QSize(431, 16777215))
         self.frame_197.setFrameShape(QFrame.StyledPanel)
         self.frame_197.setFrameShadow(QFrame.Raised)
@@ -3578,7 +3578,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_137.setContentsMargins(0, 0, 0, 0)
         self.label_nome_colaborador_as = QLabel(self.frame_197)
         self.label_nome_colaborador_as.setObjectName(u"label_nome_colaborador_as")
-        self.label_nome_colaborador_as.setMinimumSize(QSize(460, 0))
+        self.label_nome_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_nome_colaborador_as.setMaximumSize(QSize(460, 16777215))
         self.label_nome_colaborador_as.setFont(font)
 
@@ -3586,7 +3586,7 @@ class Ui_MainWindow(object):
 
         self.input_nome_colaborador_as = QLineEdit(self.frame_197)
         self.input_nome_colaborador_as.setObjectName(u"input_nome_colaborador_as")
-        self.input_nome_colaborador_as.setMinimumSize(QSize(430, 30))
+        self.input_nome_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_colaborador_as.setMaximumSize(QSize(430, 30))
         self.input_nome_colaborador_as.setFont(font)
 
@@ -3597,7 +3597,7 @@ class Ui_MainWindow(object):
 
         self.frame_200 = QFrame(self.frame_195)
         self.frame_200.setObjectName(u"frame_200")
-        self.frame_200.setMinimumSize(QSize(155, 0))
+        self.frame_200.setMinimumSize(QSize(0, 0))
         self.frame_200.setMaximumSize(QSize(155, 16777215))
         self.frame_200.setFrameShape(QFrame.StyledPanel)
         self.frame_200.setFrameShadow(QFrame.Raised)
@@ -3607,7 +3607,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_140.setContentsMargins(0, 0, 0, 0)
         self.label_data_nascimento_colaborador_as = QLabel(self.frame_200)
         self.label_data_nascimento_colaborador_as.setObjectName(u"label_data_nascimento_colaborador_as")
-        self.label_data_nascimento_colaborador_as.setMinimumSize(QSize(155, 0))
+        self.label_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_data_nascimento_colaborador_as.setMaximumSize(QSize(155, 16777215))
         self.label_data_nascimento_colaborador_as.setFont(font)
 
@@ -3615,7 +3615,7 @@ class Ui_MainWindow(object):
 
         self.input_data_nascimento_colaborador_as = QLineEdit(self.frame_200)
         self.input_data_nascimento_colaborador_as.setObjectName(u"input_data_nascimento_colaborador_as")
-        self.input_data_nascimento_colaborador_as.setMinimumSize(QSize(154, 30))
+        self.input_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_nascimento_colaborador_as.setMaximumSize(QSize(145, 16777215))
         self.input_data_nascimento_colaborador_as.setFont(font)
 
@@ -3626,7 +3626,7 @@ class Ui_MainWindow(object):
 
         self.frame_198 = QFrame(self.frame_195)
         self.frame_198.setObjectName(u"frame_198")
-        self.frame_198.setMinimumSize(QSize(180, 0))
+        self.frame_198.setMinimumSize(QSize(0, 0))
         self.frame_198.setMaximumSize(QSize(180, 16777215))
         self.frame_198.setFrameShape(QFrame.StyledPanel)
         self.frame_198.setFrameShadow(QFrame.Raised)
@@ -3636,7 +3636,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_138.setContentsMargins(0, 0, 0, 0)
         self.label_cpf_colaborador_as = QLabel(self.frame_198)
         self.label_cpf_colaborador_as.setObjectName(u"label_cpf_colaborador_as")
-        self.label_cpf_colaborador_as.setMinimumSize(QSize(180, 0))
+        self.label_cpf_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_cpf_colaborador_as.setMaximumSize(QSize(180, 16777215))
         self.label_cpf_colaborador_as.setFont(font)
 
@@ -3644,7 +3644,7 @@ class Ui_MainWindow(object):
 
         self.input_cpf_colaborador_as = QLineEdit(self.frame_198)
         self.input_cpf_colaborador_as.setObjectName(u"input_cpf_colaborador_as")
-        self.input_cpf_colaborador_as.setMinimumSize(QSize(179, 30))
+        self.input_cpf_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_colaborador_as.setMaximumSize(QSize(170, 16777215))
         self.input_cpf_colaborador_as.setFont(font)
 
@@ -3655,7 +3655,7 @@ class Ui_MainWindow(object):
 
         self.frame_199 = QFrame(self.frame_195)
         self.frame_199.setObjectName(u"frame_199")
-        self.frame_199.setMinimumSize(QSize(160, 0))
+        self.frame_199.setMinimumSize(QSize(0, 0))
         self.frame_199.setMaximumSize(QSize(160, 16777215))
         self.frame_199.setFrameShape(QFrame.StyledPanel)
         self.frame_199.setFrameShadow(QFrame.Raised)
@@ -3665,7 +3665,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_139.setContentsMargins(0, 0, 0, 0)
         self.label_rg_colaborador_as = QLabel(self.frame_199)
         self.label_rg_colaborador_as.setObjectName(u"label_rg_colaborador_as")
-        self.label_rg_colaborador_as.setMinimumSize(QSize(160, 0))
+        self.label_rg_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_rg_colaborador_as.setMaximumSize(QSize(160, 16777215))
         self.label_rg_colaborador_as.setFont(font)
 
@@ -3673,7 +3673,7 @@ class Ui_MainWindow(object):
 
         self.input_rg_colaborador_as = QLineEdit(self.frame_199)
         self.input_rg_colaborador_as.setObjectName(u"input_rg_colaborador_as")
-        self.input_rg_colaborador_as.setMinimumSize(QSize(159, 30))
+        self.input_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_colaborador_as.setMaximumSize(QSize(150, 16777215))
         self.input_rg_colaborador_as.setFont(font)
 
@@ -3698,7 +3698,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_89.setContentsMargins(0, 0, 0, 0)
         self.frame_240 = QFrame(self.frame_208)
         self.frame_240.setObjectName(u"frame_240")
-        self.frame_240.setMinimumSize(QSize(150, 0))
+        self.frame_240.setMinimumSize(QSize(0, 0))
         self.frame_240.setMaximumSize(QSize(151, 16777215))
         self.frame_240.setFrameShape(QFrame.StyledPanel)
         self.frame_240.setFrameShadow(QFrame.Raised)
@@ -3708,7 +3708,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_147.setContentsMargins(0, 0, 0, 0)
         self.label_cep_colaborador_as = QLabel(self.frame_240)
         self.label_cep_colaborador_as.setObjectName(u"label_cep_colaborador_as")
-        self.label_cep_colaborador_as.setMinimumSize(QSize(100, 0))
+        self.label_cep_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_cep_colaborador_as.setMaximumSize(QSize(100, 16777215))
         self.label_cep_colaborador_as.setFont(font)
 
@@ -3727,7 +3727,7 @@ class Ui_MainWindow(object):
 
         self.frame_209 = QFrame(self.frame_208)
         self.frame_209.setObjectName(u"frame_209")
-        self.frame_209.setMinimumSize(QSize(281, 0))
+        self.frame_209.setMinimumSize(QSize(0, 0))
         self.frame_209.setMaximumSize(QSize(281, 16777215))
         self.frame_209.setFrameShape(QFrame.StyledPanel)
         self.frame_209.setFrameShadow(QFrame.Raised)
@@ -3737,7 +3737,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_174.setContentsMargins(0, 0, 0, 0)
         self.label_logradouro_colaborador_as = QLabel(self.frame_209)
         self.label_logradouro_colaborador_as.setObjectName(u"label_logradouro_colaborador_as")
-        self.label_logradouro_colaborador_as.setMinimumSize(QSize(280, 0))
+        self.label_logradouro_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_logradouro_colaborador_as.setMaximumSize(QSize(280, 16777215))
         self.label_logradouro_colaborador_as.setFont(font)
 
@@ -3745,7 +3745,7 @@ class Ui_MainWindow(object):
 
         self.input_logradouro_colaborador_as = QLineEdit(self.frame_209)
         self.input_logradouro_colaborador_as.setObjectName(u"input_logradouro_colaborador_as")
-        self.input_logradouro_colaborador_as.setMinimumSize(QSize(280, 30))
+        self.input_logradouro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_colaborador_as.setMaximumSize(QSize(280, 30))
         self.input_logradouro_colaborador_as.setFont(font)
 
@@ -3756,7 +3756,7 @@ class Ui_MainWindow(object):
 
         self.frame_210 = QFrame(self.frame_208)
         self.frame_210.setObjectName(u"frame_210")
-        self.frame_210.setMinimumSize(QSize(160, 0))
+        self.frame_210.setMinimumSize(QSize(0, 0))
         self.frame_210.setMaximumSize(QSize(160, 16777215))
         self.frame_210.setFrameShape(QFrame.StyledPanel)
         self.frame_210.setFrameShadow(QFrame.Raised)
@@ -3766,7 +3766,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_173.setContentsMargins(0, 0, 0, 0)
         self.label_numero_colaborador_as = QLabel(self.frame_210)
         self.label_numero_colaborador_as.setObjectName(u"label_numero_colaborador_as")
-        self.label_numero_colaborador_as.setMinimumSize(QSize(160, 0))
+        self.label_numero_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_numero_colaborador_as.setMaximumSize(QSize(160, 16777215))
         self.label_numero_colaborador_as.setFont(font)
 
@@ -3774,7 +3774,7 @@ class Ui_MainWindow(object):
 
         self.input_numero_colaborador_as = QLineEdit(self.frame_210)
         self.input_numero_colaborador_as.setObjectName(u"input_numero_colaborador_as")
-        self.input_numero_colaborador_as.setMinimumSize(QSize(150, 30))
+        self.input_numero_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_colaborador_as.setMaximumSize(QSize(159, 30))
         self.input_numero_colaborador_as.setFont(font)
 
@@ -3785,7 +3785,7 @@ class Ui_MainWindow(object):
 
         self.frame_211 = QFrame(self.frame_208)
         self.frame_211.setObjectName(u"frame_211")
-        self.frame_211.setMinimumSize(QSize(230, 0))
+        self.frame_211.setMinimumSize(QSize(0, 0))
         self.frame_211.setMaximumSize(QSize(230, 16777215))
         self.frame_211.setFrameShape(QFrame.StyledPanel)
         self.frame_211.setFrameShadow(QFrame.Raised)
@@ -3795,7 +3795,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_149.setContentsMargins(0, 0, 0, 0)
         self.label_bairro_colaborador_as = QLabel(self.frame_211)
         self.label_bairro_colaborador_as.setObjectName(u"label_bairro_colaborador_as")
-        self.label_bairro_colaborador_as.setMinimumSize(QSize(230, 0))
+        self.label_bairro_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_bairro_colaborador_as.setMaximumSize(QSize(230, 16777215))
         self.label_bairro_colaborador_as.setFont(font)
 
@@ -3803,7 +3803,7 @@ class Ui_MainWindow(object):
 
         self.input_bairro_colaborador_as = QLineEdit(self.frame_211)
         self.input_bairro_colaborador_as.setObjectName(u"input_bairro_colaborador_as")
-        self.input_bairro_colaborador_as.setMinimumSize(QSize(220, 30))
+        self.input_bairro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_colaborador_as.setMaximumSize(QSize(229, 30))
         self.input_bairro_colaborador_as.setFont(font)
 
@@ -3814,7 +3814,7 @@ class Ui_MainWindow(object):
 
         self.frame_212 = QFrame(self.frame_208)
         self.frame_212.setObjectName(u"frame_212")
-        self.frame_212.setMinimumSize(QSize(180, 0))
+        self.frame_212.setMinimumSize(QSize(0, 0))
         self.frame_212.setMaximumSize(QSize(180, 16777215))
         self.frame_212.setFrameShape(QFrame.StyledPanel)
         self.frame_212.setFrameShadow(QFrame.Raised)
@@ -3824,7 +3824,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.label_cidade_colaborador_as = QLabel(self.frame_212)
         self.label_cidade_colaborador_as.setObjectName(u"label_cidade_colaborador_as")
-        self.label_cidade_colaborador_as.setMinimumSize(QSize(180, 0))
+        self.label_cidade_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_cidade_colaborador_as.setMaximumSize(QSize(180, 16777215))
         self.label_cidade_colaborador_as.setFont(font)
 
@@ -3832,7 +3832,7 @@ class Ui_MainWindow(object):
 
         self.input_cidade_colaborador_as = QLineEdit(self.frame_212)
         self.input_cidade_colaborador_as.setObjectName(u"input_cidade_colaborador_as")
-        self.input_cidade_colaborador_as.setMinimumSize(QSize(179, 30))
+        self.input_cidade_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_colaborador_as.setMaximumSize(QSize(179, 30))
         self.input_cidade_colaborador_as.setFont(font)
 
@@ -3843,7 +3843,7 @@ class Ui_MainWindow(object):
 
         self.frame_213 = QFrame(self.frame_208)
         self.frame_213.setObjectName(u"frame_213")
-        self.frame_213.setMinimumSize(QSize(80, 0))
+        self.frame_213.setMinimumSize(QSize(0, 0))
         self.frame_213.setMaximumSize(QSize(80, 16777215))
         self.frame_213.setFrameShape(QFrame.StyledPanel)
         self.frame_213.setFrameShadow(QFrame.Raised)
@@ -3853,7 +3853,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_148.setContentsMargins(0, 0, 0, 0)
         self.label_estado_colaborador_as = QLabel(self.frame_213)
         self.label_estado_colaborador_as.setObjectName(u"label_estado_colaborador_as")
-        self.label_estado_colaborador_as.setMinimumSize(QSize(80, 0))
+        self.label_estado_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_estado_colaborador_as.setMaximumSize(QSize(80, 16777215))
         self.label_estado_colaborador_as.setFont(font)
 
@@ -3861,7 +3861,7 @@ class Ui_MainWindow(object):
 
         self.input_estado_colaborador_as = QLineEdit(self.frame_213)
         self.input_estado_colaborador_as.setObjectName(u"input_estado_colaborador_as")
-        self.input_estado_colaborador_as.setMinimumSize(QSize(75, 30))
+        self.input_estado_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_estado_colaborador_as.setMaximumSize(QSize(75, 16777215))
         self.input_estado_colaborador_as.setFont(font)
 
@@ -4001,7 +4001,7 @@ class Ui_MainWindow(object):
 
         self.frame_239 = QFrame(self.frame_215)
         self.frame_239.setObjectName(u"frame_239")
-        self.frame_239.setMinimumSize(QSize(281, 0))
+        self.frame_239.setMinimumSize(QSize(0, 0))
         self.frame_239.setMaximumSize(QSize(281, 16777215))
         self.frame_239.setFrameShape(QFrame.StyledPanel)
         self.frame_239.setFrameShadow(QFrame.Raised)
@@ -4011,7 +4011,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_175.setContentsMargins(0, 0, 0, 0)
         self.label_usuario_colaborador_as = QLabel(self.frame_239)
         self.label_usuario_colaborador_as.setObjectName(u"label_usuario_colaborador_as")
-        self.label_usuario_colaborador_as.setMinimumSize(QSize(280, 0))
+        self.label_usuario_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_usuario_colaborador_as.setMaximumSize(QSize(280, 16777215))
         self.label_usuario_colaborador_as.setFont(font)
 
@@ -4019,7 +4019,7 @@ class Ui_MainWindow(object):
 
         self.input_usuario_colaborador_as = QLineEdit(self.frame_239)
         self.input_usuario_colaborador_as.setObjectName(u"input_usuario_colaborador_as")
-        self.input_usuario_colaborador_as.setMinimumSize(QSize(280, 30))
+        self.input_usuario_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_usuario_colaborador_as.setMaximumSize(QSize(280, 30))
         self.input_usuario_colaborador_as.setFont(font)
 
@@ -4030,7 +4030,7 @@ class Ui_MainWindow(object):
 
         self.frame_250 = QFrame(self.frame_215)
         self.frame_250.setObjectName(u"frame_250")
-        self.frame_250.setMinimumSize(QSize(230, 0))
+        self.frame_250.setMinimumSize(QSize(0, 0))
         self.frame_250.setMaximumSize(QSize(230, 16777215))
         self.frame_250.setFrameShape(QFrame.StyledPanel)
         self.frame_250.setFrameShadow(QFrame.Raised)
@@ -4040,7 +4040,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_168.setContentsMargins(0, 0, 0, 0)
         self.label_senha_colaborador_as = QLabel(self.frame_250)
         self.label_senha_colaborador_as.setObjectName(u"label_senha_colaborador_as")
-        self.label_senha_colaborador_as.setMinimumSize(QSize(230, 0))
+        self.label_senha_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_senha_colaborador_as.setMaximumSize(QSize(230, 16777215))
         self.label_senha_colaborador_as.setFont(font)
 
@@ -4048,7 +4048,7 @@ class Ui_MainWindow(object):
 
         self.input_senha_colaborador_as = QLineEdit(self.frame_250)
         self.input_senha_colaborador_as.setObjectName(u"input_senha_colaborador_as")
-        self.input_senha_colaborador_as.setMinimumSize(QSize(220, 30))
+        self.input_senha_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_senha_colaborador_as.setMaximumSize(QSize(229, 30))
         self.input_senha_colaborador_as.setFont(font)
 
@@ -4059,7 +4059,7 @@ class Ui_MainWindow(object):
 
         self.frame_256 = QFrame(self.frame_215)
         self.frame_256.setObjectName(u"frame_256")
-        self.frame_256.setMinimumSize(QSize(230, 0))
+        self.frame_256.setMinimumSize(QSize(0, 0))
         self.frame_256.setMaximumSize(QSize(230, 16777215))
         self.frame_256.setFrameShape(QFrame.StyledPanel)
         self.frame_256.setFrameShadow(QFrame.Raised)
@@ -4069,7 +4069,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_176.setContentsMargins(0, 0, 0, 0)
         self.label_confirmar_senha_colaborador_as = QLabel(self.frame_256)
         self.label_confirmar_senha_colaborador_as.setObjectName(u"label_confirmar_senha_colaborador_as")
-        self.label_confirmar_senha_colaborador_as.setMinimumSize(QSize(230, 0))
+        self.label_confirmar_senha_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_confirmar_senha_colaborador_as.setMaximumSize(QSize(230, 16777215))
         self.label_confirmar_senha_colaborador_as.setFont(font)
 
@@ -4077,7 +4077,7 @@ class Ui_MainWindow(object):
 
         self.input_confirmar_senha_colaborador_as = QLineEdit(self.frame_256)
         self.input_confirmar_senha_colaborador_as.setObjectName(u"input_confirmar_senha_colaborador_as")
-        self.input_confirmar_senha_colaborador_as.setMinimumSize(QSize(220, 30))
+        self.input_confirmar_senha_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_confirmar_senha_colaborador_as.setMaximumSize(QSize(229, 30))
         self.input_confirmar_senha_colaborador_as.setFont(font)
 
