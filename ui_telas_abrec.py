@@ -3193,13 +3193,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_163.addWidget(self.label_tipo_deficiencia_colaborador_as)
 
-        self.input_tipo_deficiencia_colaborador_as = QLineEdit(self.frame_233)
-        self.input_tipo_deficiencia_colaborador_as.setObjectName(u"input_tipo_deficiencia_colaborador_as")
-        self.input_tipo_deficiencia_colaborador_as.setMinimumSize(QSize(0, 0))
-        self.input_tipo_deficiencia_colaborador_as.setMaximumSize(QSize(250, 30))
-        self.input_tipo_deficiencia_colaborador_as.setFont(font)
+        self.input_tipo_deficiencia_colaborador_comboBox_as = QComboBox(self.frame_233)
+        self.input_tipo_deficiencia_colaborador_comboBox_as.addItem("---")
+        self.input_tipo_deficiencia_colaborador_comboBox_as.addItem("")
+        self.input_tipo_deficiencia_colaborador_comboBox_as.addItem("")
+        self.input_tipo_deficiencia_colaborador_comboBox_as.setObjectName(u"input_tipo_deficiencia_colaborador_comboBox_as")
+        self.input_tipo_deficiencia_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
+        self.input_tipo_deficiencia_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
+        self.input_tipo_deficiencia_colaborador_comboBox_as.setFont(font)
 
-        self.verticalLayout_163.addWidget(self.input_tipo_deficiencia_colaborador_as)
+
+        self.verticalLayout_163.addWidget(self.input_tipo_deficiencia_colaborador_comboBox_as)
 
 
         self.horizontalLayout_88.addWidget(self.frame_233)
