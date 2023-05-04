@@ -471,7 +471,7 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
-
+#testes
 
     ################ def POPUP Cuidador################
 

@@ -8891,6 +8891,9 @@ QPushButton:focus{outline:0}</string>
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_163">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
                                    <property name="leftMargin">
                                     <number>0</number>
                                    </property>
