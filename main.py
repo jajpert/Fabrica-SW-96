@@ -193,6 +193,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
 #BTN Voltar Colaborador
 
         ######SIGNALS POPUP recuperar senha login######
@@ -274,7 +275,7 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
-        data_inicio = '2004-06-25' # self.ui.input_data_inicio_usuario_as.text()
+        data_inicio = self.ui.input_data_inicio_usuario_as.text()
         periodo = self.ui.input_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_trasnporte = self.ui.input_vale_transporte_usuario_as.currentText()
@@ -360,7 +361,7 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         nome = self.ui.input_nome_colaborador_as.text()
-        data_nascimento = '00/00/0000'
+        data_nascimento = self.ui.input_data_nascimento_colaborador_as.text()
         cpf = self.ui.input_cpf_colaborador_as.text()
         rg = self.ui.input_rg_colaborador_as.text()
         data_emissao = self.ui.input_data_emissao_rg_colaborador_as.text()
@@ -371,6 +372,7 @@ class TelaPrincipal(QMainWindow):
         email = self.ui.input_email_colaborador_as.text()      
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
+
         if self.ui.input_pessoa_cdeficiencia_sim_colaborador_as.isChecked():
             pessoa_deficiencia = 'S'
         else:

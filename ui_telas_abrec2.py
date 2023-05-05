@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecUhXxOc.ui'
+## Form generated from reading UI file 'telas_abrecNDjLjK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -827,35 +827,56 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.frame_62)
 
-        self.frame_63 = QFrame(self.frame_48)
+        '''self.frame_63 = QFrame(self.frame_48)
         self.frame_63.setObjectName(u"frame_63")
-        self.frame_63.setMinimumSize(QSize(160, 0))
+        self.frame_63.setMinimumSize(QSize(0, 30))
         self.frame_63.setMaximumSize(QSize(160, 16777215))
         self.frame_63.setFrameShape(QFrame.StyledPanel)
         self.frame_63.setFrameShadow(QFrame.Raised)
         self.verticalLayout_31 = QVBoxLayout(self.frame_63)
-        self.verticalLayout_31.setSpacing(0)
+        self.verticalLayout_31.setSpacing(5)
         self.verticalLayout_31.setObjectName(u"verticalLayout_31")
         self.verticalLayout_31.setContentsMargins(0, 0, 0, 0)
         self.label_nascimento_usuario_as = QLabel(self.frame_63)
         self.label_nascimento_usuario_as.setObjectName(u"label_nascimento_usuario_as")
-        self.label_nascimento_usuario_as.setMinimumSize(QSize(160, 0))
+        self.label_nascimento_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_nascimento_usuario_as.setMaximumSize(QSize(160, 16777215))
         self.label_nascimento_usuario_as.setFont(font)
         self.label_nascimento_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_31.addWidget(self.label_nascimento_usuario_as)
 
-        self.input_nascimento_usuario_as = QLineEdit(self.frame_63)
+        self.input_nascimento_usuario_as = QDateEdit(self.frame_63)
         self.input_nascimento_usuario_as.setObjectName(u"input_nascimento_usuario_as")
-        self.input_nascimento_usuario_as.setMinimumSize(QSize(150, 30))
-        self.input_nascimento_usuario_as.setMaximumSize(QSize(150, 30))
-        self.input_nascimento_usuario_as.setFont(font)
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.input_nascimento_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_nascimento_usuario_as.setSizePolicy(sizePolicy)
+        self.input_nascimento_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_nascimento_usuario_as.setMaximumSize(QSize(16777215, 16777215))
+        font8 = QFont()
+        font8.setFamilies([u"Abel"])
+        font8.setPointSize(11)
+        self.input_nascimento_usuario_as.setFont(font8)
+        self.input_nascimento_usuario_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_nascimento_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_nascimento_usuario_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_nascimento_usuario_as.setAutoFillBackground(False)
+        self.input_nascimento_usuario_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_nascimento_usuario_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_nascimento_usuario_as.setAlignment(Qt.AlignCenter)
+        self.input_nascimento_usuario_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_nascimento_usuario_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_nascimento_usuario_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_nascimento_usuario_as.setCalendarPopup(False)
+        self.input_nascimento_usuario_as.setCurrentSectionIndex(0)
 
-        self.verticalLayout_31.addWidget(self.input_nascimento_usuario_as)
+        self.verticalLayout_31.addWidget(self.input_nascimento_usuario_as, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_7.addWidget(self.frame_63)
+        self.horizontalLayout_7.addWidget(self.frame_63)'''
 
         self.frame_64 = QFrame(self.frame_48)
         self.frame_64.setObjectName(u"frame_64")
@@ -886,9 +907,6 @@ class Ui_MainWindow(object):
         self.input_situacao_ativo_usuario_as = QRadioButton(self.frame_65)
         self.input_situacao_ativo_usuario_as.setObjectName(u"input_situacao_ativo_usuario_as")
         self.input_situacao_ativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        font8 = QFont()
-        font8.setFamilies([u"Abel"])
-        font8.setPointSize(11)
         self.input_situacao_ativo_usuario_as.setFont(font8)
         self.input_situacao_ativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
@@ -979,34 +997,49 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_34.addWidget(self.frame_67)
 
-        self.frame_68 = QFrame(self.frame_47)
+        ''' self.frame_68 = QFrame(self.frame_47)
         self.frame_68.setObjectName(u"frame_68")
-        self.frame_68.setMinimumSize(QSize(155, 0))
+        self.frame_68.setMinimumSize(QSize(0, 30))
         self.frame_68.setMaximumSize(QSize(155, 16777215))
         self.frame_68.setFrameShape(QFrame.StyledPanel)
         self.frame_68.setFrameShadow(QFrame.Raised)
         self.verticalLayout_41 = QVBoxLayout(self.frame_68)
-        self.verticalLayout_41.setSpacing(0)
+        self.verticalLayout_41.setSpacing(5)
         self.verticalLayout_41.setObjectName(u"verticalLayout_41")
         self.verticalLayout_41.setContentsMargins(0, 0, 0, 0)
         self.label_data_emissao_usuario_as = QLabel(self.frame_68)
         self.label_data_emissao_usuario_as.setObjectName(u"label_data_emissao_usuario_as")
-        self.label_data_emissao_usuario_as.setMinimumSize(QSize(155, 0))
+        self.label_data_emissao_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_data_emissao_usuario_as.setMaximumSize(QSize(155, 16777215))
         self.label_data_emissao_usuario_as.setFont(font)
 
         self.verticalLayout_41.addWidget(self.label_data_emissao_usuario_as)
 
-        self.input_data_emissao_usuario_as = QLineEdit(self.frame_68)
+        self.input_data_emissao_usuario_as = QDateEdit(self.frame_68)
         self.input_data_emissao_usuario_as.setObjectName(u"input_data_emissao_usuario_as")
-        self.input_data_emissao_usuario_as.setMinimumSize(QSize(145, 30))
-        self.input_data_emissao_usuario_as.setMaximumSize(QSize(145, 30))
-        self.input_data_emissao_usuario_as.setFont(font)
+        sizePolicy.setHeightForWidth(self.input_data_emissao_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_usuario_as.setSizePolicy(sizePolicy)
+        self.input_data_emissao_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_data_emissao_usuario_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_emissao_usuario_as.setFont(font8)
+        self.input_data_emissao_usuario_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_emissao_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_emissao_usuario_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_emissao_usuario_as.setAutoFillBackground(False)
+        self.input_data_emissao_usuario_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_emissao_usuario_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_emissao_usuario_as.setAlignment(Qt.AlignCenter)
+        self.input_data_emissao_usuario_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_emissao_usuario_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_emissao_usuario_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_emissao_usuario_as.setCalendarPopup(False)
+        self.input_data_emissao_usuario_as.setCurrentSectionIndex(0)
 
-        self.verticalLayout_41.addWidget(self.input_data_emissao_usuario_as)
+        self.verticalLayout_41.addWidget(self.input_data_emissao_usuario_as, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_34.addWidget(self.frame_68)
+        self.horizontalLayout_34.addWidget(self.frame_68)'''
 
         self.frame_69 = QFrame(self.frame_47)
         self.frame_69.setObjectName(u"frame_69")
@@ -1916,34 +1949,49 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_45.addWidget(self.frame_92)
 
-        self.frame_132 = QFrame(self.frame_44)
+        '''self.frame_132 = QFrame(self.frame_44)
         self.frame_132.setObjectName(u"frame_132")
-        self.frame_132.setMinimumSize(QSize(160, 0))
+        self.frame_132.setMinimumSize(QSize(0, 0))
         self.frame_132.setMaximumSize(QSize(160, 16777215))
         self.frame_132.setFrameShape(QFrame.StyledPanel)
         self.frame_132.setFrameShadow(QFrame.Raised)
         self.verticalLayout_62 = QVBoxLayout(self.frame_132)
-        self.verticalLayout_62.setSpacing(0)
+        self.verticalLayout_62.setSpacing(5)
         self.verticalLayout_62.setObjectName(u"verticalLayout_62")
         self.verticalLayout_62.setContentsMargins(0, 0, 0, 0)
         self.label_data_inicio_usuario_as = QLabel(self.frame_132)
         self.label_data_inicio_usuario_as.setObjectName(u"label_data_inicio_usuario_as")
-        self.label_data_inicio_usuario_as.setMinimumSize(QSize(160, 0))
+        self.label_data_inicio_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_data_inicio_usuario_as.setMaximumSize(QSize(160, 16777215))
         self.label_data_inicio_usuario_as.setFont(font)
 
         self.verticalLayout_62.addWidget(self.label_data_inicio_usuario_as)
 
-        self.input_data_inicio_usuario_as = QLineEdit(self.frame_132)
+        self.input_data_inicio_usuario_as = QDateEdit(self.frame_132)
         self.input_data_inicio_usuario_as.setObjectName(u"input_data_inicio_usuario_as")
-        self.input_data_inicio_usuario_as.setMinimumSize(QSize(150, 30))
-        self.input_data_inicio_usuario_as.setMaximumSize(QSize(150, 30))
-        self.input_data_inicio_usuario_as.setFont(font)
+        sizePolicy.setHeightForWidth(self.input_data_inicio_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_data_inicio_usuario_as.setSizePolicy(sizePolicy)
+        self.input_data_inicio_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_data_inicio_usuario_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_inicio_usuario_as.setFont(font8)
+        self.input_data_inicio_usuario_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_inicio_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_inicio_usuario_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_inicio_usuario_as.setAutoFillBackground(False)
+        self.input_data_inicio_usuario_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_inicio_usuario_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_inicio_usuario_as.setAlignment(Qt.AlignCenter)
+        self.input_data_inicio_usuario_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_inicio_usuario_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_inicio_usuario_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_inicio_usuario_as.setCalendarPopup(False)
+        self.input_data_inicio_usuario_as.setCurrentSectionIndex(0)
 
-        self.verticalLayout_62.addWidget(self.input_data_inicio_usuario_as)
+        self.verticalLayout_62.addWidget(self.input_data_inicio_usuario_as, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_45.addWidget(self.frame_132)
+        self.horizontalLayout_45.addWidget(self.frame_132)'''
 
         self.frame_131 = QFrame(self.frame_44)
         self.frame_131.setObjectName(u"frame_131")
@@ -2959,11 +3007,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_77.setContentsMargins(0, 0, 0, 0)
         self.frame_194 = QFrame(self.frame_193)
         self.frame_194.setObjectName(u"frame_194")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.frame_194.sizePolicy().hasHeightForWidth())
-        self.frame_194.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.frame_194.sizePolicy().hasHeightForWidth())
+        self.frame_194.setSizePolicy(sizePolicy1)
         self.frame_194.setStyleSheet(u"QLabel{margin-left: 0.25em}")
         self.frame_194.setFrameShape(QFrame.StyledPanel)
         self.frame_194.setFrameShadow(QFrame.Raised)
@@ -3274,11 +3322,8 @@ class Ui_MainWindow(object):
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.setObjectName(u"input_cargo_colaborador_comboBox_as")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.input_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
-        self.input_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.input_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
+        self.input_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy)
         self.input_cargo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_cargo_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
         self.input_cargo_colaborador_comboBox_as.setFont(font)
@@ -3421,8 +3466,8 @@ class Ui_MainWindow(object):
 
         self.input_data_emissao_rg_colaborador_as = QDateEdit(self.frame_207)
         self.input_data_emissao_rg_colaborador_as.setObjectName(u"input_data_emissao_rg_colaborador_as")
-        sizePolicy1.setHeightForWidth(self.input_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.input_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy)
         self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_emissao_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_data_emissao_rg_colaborador_as.setFont(font8)
@@ -3640,7 +3685,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_78.addWidget(self.frame_197)
 
-        '''self.frame_200 = QFrame(self.frame_195)
+        self.frame_200 = QFrame(self.frame_195)
         self.frame_200.setObjectName(u"frame_200")
         self.frame_200.setMinimumSize(QSize(0, 0))
         self.frame_200.setMaximumSize(QSize(155, 16777215))
@@ -3660,8 +3705,8 @@ class Ui_MainWindow(object):
 
         self.input_data_nascimento_colaborador_as = QDateEdit(self.frame_200)
         self.input_data_nascimento_colaborador_as.setObjectName(u"input_data_nascimento_colaborador_as")
-        sizePolicy1.setHeightForWidth(self.input_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_nascimento_colaborador_as.setSizePolicy(sizePolicy1)
+        sizePolicy.setHeightForWidth(self.input_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_nascimento_colaborador_as.setSizePolicy(sizePolicy)
         self.input_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_nascimento_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_data_nascimento_colaborador_as.setFont(font8)
@@ -3683,7 +3728,7 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_78.addWidget(self.frame_200, 0, Qt.AlignHCenter|Qt.AlignVCenter)
-'''
+
         self.frame_198 = QFrame(self.frame_195)
         self.frame_198.setObjectName(u"frame_198")
         self.frame_198.setMinimumSize(QSize(0, 0))
@@ -4037,7 +4082,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_83.addWidget(self.frame_193)
 
-        self.frame_215 = QFrame(self.page_cadastro_colaborador_as)
+        #self.frame_215 = QFrame(self.page_cadastro_colaborador_as)
         self.frame_215.setObjectName(u"frame_215")
         self.frame_215.setMinimumSize(QSize(0, 0))
         self.frame_215.setFrameShape(QFrame.StyledPanel)
@@ -4046,6 +4091,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_81.setSpacing(10)
         self.horizontalLayout_81.setObjectName(u"horizontalLayout_81")
         self.horizontalLayout_81.setContentsMargins(0, 0, 0, 0)
+
+
         self.frame_269 = QFrame(self.frame_215)
         self.frame_269.setObjectName(u"frame_269")
         self.frame_269.setFrameShape(QFrame.StyledPanel)
@@ -4065,7 +4112,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_184.addWidget(self.frame_270)
 
-        self.frame_272 = QFrame(self.frame_269)
+        '''self.frame_272 = QFrame(self.frame_269)
         self.frame_272.setObjectName(u"frame_272")
         self.frame_272.setFrameShape(QFrame.StyledPanel)
         self.frame_272.setFrameShadow(QFrame.Raised)
@@ -4085,7 +4132,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_183.addWidget(self.btn_voltar_cadastro_colaborador_as)
 
 
-        self.verticalLayout_184.addWidget(self.frame_272)
+        self.verticalLayout_184.addWidget(self.frame_272)'''
 
 
         self.horizontalLayout_81.addWidget(self.frame_269)
@@ -7378,7 +7425,7 @@ class Ui_MainWindow(object):
         self.inicio.setCurrentIndex(1)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(5)
+        self.stackedWidget_2.setCurrentIndex(2)
         self.stackedWidget.setCurrentIndex(1)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_4.setCurrentIndex(0)
