@@ -5403,19 +5403,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_131.setSpacing(0)
         self.verticalLayout_131.setObjectName(u"verticalLayout_131")
         self.verticalLayout_131.setContentsMargins(0, 0, 0, 0)
-        self.label_matricula_consulta_as_2 = QLabel(self.frame_185)
-        self.label_matricula_consulta_as_2.setObjectName(u"label_matricula_consulta_as_2")
-        self.label_matricula_consulta_as_2.setMaximumSize(QSize(160, 16777215))
-        self.label_matricula_consulta_as_2.setFont(font)
-
-        self.verticalLayout_131.addWidget(self.label_matricula_consulta_as_2)
-
-        self.input_matricula_consulta_as_2 = QLineEdit(self.frame_185)
-        self.input_matricula_consulta_as_2.setObjectName(u"input_matricula_consulta_as_2")
-        self.input_matricula_consulta_as_2.setMaximumSize(QSize(150, 30))
-        self.input_matricula_consulta_as_2.setFont(font)
-
-        self.verticalLayout_131.addWidget(self.input_matricula_consulta_as_2)
+        
 
 
         self.horizontalLayout_72.addWidget(self.frame_185)
@@ -5456,19 +5444,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_133.setSpacing(0)
         self.verticalLayout_133.setObjectName(u"verticalLayout_133")
         self.verticalLayout_133.setContentsMargins(0, 0, 0, 0)
-        self.label_cpf_consulta_as_2 = QLabel(self.frame_187)
-        self.label_cpf_consulta_as_2.setObjectName(u"label_cpf_consulta_as_2")
-        self.label_cpf_consulta_as_2.setMaximumSize(QSize(180, 16777215))
-        self.label_cpf_consulta_as_2.setFont(font)
 
-        self.verticalLayout_133.addWidget(self.label_cpf_consulta_as_2)
-
-        self.input_cpf_consulta_as_2 = QLineEdit(self.frame_187)
-        self.input_cpf_consulta_as_2.setObjectName(u"input_cpf_consulta_as_2")
-        self.input_cpf_consulta_as_2.setMaximumSize(QSize(170, 30))
-        self.input_cpf_consulta_as_2.setFont(font)
-
-        self.verticalLayout_133.addWidget(self.input_cpf_consulta_as_2)
 
 
         self.horizontalLayout_72.addWidget(self.frame_187)
@@ -11175,12 +11151,8 @@ class Ui_MainWindow(object):
         self.label_cidade_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.btn_buscar_consulta_as.setText("")
-        self.label_matricula_consulta_as_2.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
-        self.input_matricula_consulta_as_2.setText("")
         self.label_nome_usuario_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
         self.input_nome_usuario_consulta_as.setText("")
-        self.label_cpf_consulta_as_2.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
-        self.input_cpf_consulta_as_2.setText("")
         self.label_ultima_consulta_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Data da \u00faltima consulta", None))
         self.input_ultima_consulta_consulta_as.setText("")
         self.btn_imprimir_consulta_as.setText(QCoreApplication.translate("MainWindow", u"  IMPRIMIR", None))
