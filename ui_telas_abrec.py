@@ -5394,19 +5394,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_72.setSpacing(5)
         self.horizontalLayout_72.setObjectName(u"horizontalLayout_72")
         self.horizontalLayout_72.setContentsMargins(30, 0, 0, 0)
-        self.frame_185 = QFrame(self.frame_183)
-        self.frame_185.setObjectName(u"frame_185")
-        self.frame_185.setMaximumSize(QSize(160, 16777215))
-        self.frame_185.setFrameShape(QFrame.StyledPanel)
-        self.frame_185.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_131 = QVBoxLayout(self.frame_185)
-        self.verticalLayout_131.setSpacing(0)
-        self.verticalLayout_131.setObjectName(u"verticalLayout_131")
-        self.verticalLayout_131.setContentsMargins(0, 0, 0, 0)
-        
+        self.horizontalSpacer_69 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-
-        self.horizontalLayout_72.addWidget(self.frame_185)
+        self.horizontalLayout_72.addItem(self.horizontalSpacer_69)
 
         self.frame_186 = QFrame(self.frame_183)
         self.frame_186.setObjectName(u"frame_186")
@@ -5434,20 +5424,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_72.addWidget(self.frame_186)
-
-        self.frame_187 = QFrame(self.frame_183)
-        self.frame_187.setObjectName(u"frame_187")
-        self.frame_187.setMaximumSize(QSize(180, 16777215))
-        self.frame_187.setFrameShape(QFrame.StyledPanel)
-        self.frame_187.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_133 = QVBoxLayout(self.frame_187)
-        self.verticalLayout_133.setSpacing(0)
-        self.verticalLayout_133.setObjectName(u"verticalLayout_133")
-        self.verticalLayout_133.setContentsMargins(0, 0, 0, 0)
-
-
-
-        self.horizontalLayout_72.addWidget(self.frame_187)
 
         self.frame_188 = QFrame(self.frame_183)
         self.frame_188.setObjectName(u"frame_188")
