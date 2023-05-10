@@ -5475,10 +5475,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_72.addWidget(self.frame_188)
 
-        self.horizontalSpacer_70 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_72.addItem(self.horizontalSpacer_70)
-
         self.horizontalSpacer_57 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_72.addItem(self.horizontalSpacer_57)
