@@ -15040,6 +15040,19 @@ QLabel{margin-left: 0.25em;color: #000;}</string>
                                   <number>0</number>
                                  </property>
                                  <item>
+                                  <spacer name="horizontalSpacer_69">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
                                   <widget class="QFrame" name="frame_186">
                                    <property name="maximumSize">
                                     <size>
@@ -15186,6 +15199,32 @@ QLabel{margin-left: 0.25em;color: #000;}</string>
                                     </item>
                                    </layout>
                                   </widget>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_70">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_57">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
+                                   </property>
+                                   <property name="sizeHint" stdset="0">
+                                    <size>
+                                     <width>40</width>
+                                     <height>20</height>
+                                    </size>
+                                   </property>
+                                  </spacer>
                                  </item>
                                 </layout>
                                </widget>
