@@ -4280,49 +4280,60 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_84.addWidget(self.frame_121)
 
+
         self.frame_122 = QFrame(self.page_cadastrar_cursos_e_oficinas_as)
         self.frame_122.setObjectName(u"frame_122")
         self.frame_122.setFrameShape(QFrame.StyledPanel)
         self.frame_122.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_61 = QHBoxLayout(self.frame_122)
-        self.horizontalLayout_61.setSpacing(0)
         self.horizontalLayout_61.setObjectName(u"horizontalLayout_61")
-        self.horizontalLayout_61.setContentsMargins(0, 0, 0, 0)
-        self.horizontalSpacer_49 = QSpacerItem(185, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.frame_152 = QFrame(self.frame_122)
+        self.frame_152.setObjectName(u"frame_152")
+        self.frame_152.setFrameShape(QFrame.StyledPanel)
+        self.frame_152.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout_61.addItem(self.horizontalSpacer_49)
+        self.horizontalLayout_61.addWidget(self.frame_152)
 
         self.frame_125 = QFrame(self.frame_122)
         self.frame_125.setObjectName(u"frame_125")
-        self.frame_125.setStyleSheet(u"QLabel{margin-left: 0.25em}")
+        sizePolicy1.setHeightForWidth(self.frame_125.sizePolicy().hasHeightForWidth())
+        self.frame_125.setSizePolicy(sizePolicy1)
+        self.frame_125.setMaximumSize(QSize(1110, 16777215))
         self.frame_125.setFrameShape(QFrame.StyledPanel)
         self.frame_125.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_85 = QVBoxLayout(self.frame_125)
+        self.verticalLayout_190 = QVBoxLayout(self.frame_125)
+        self.verticalLayout_190.setObjectName(u"verticalLayout_190")
+        self.frame_127 = QFrame(self.frame_125)
+        self.frame_127.setObjectName(u"frame_127")
+        self.frame_127.setStyleSheet(u"QLabel{margin-left: 0.25em}")
+        self.frame_127.setFrameShape(QFrame.StyledPanel)
+        self.frame_127.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_85 = QVBoxLayout(self.frame_127)
         self.verticalLayout_85.setSpacing(0)
         self.verticalLayout_85.setObjectName(u"verticalLayout_85")
         self.verticalLayout_85.setContentsMargins(20, 0, 0, 0)
-        self.frame_126 = QFrame(self.frame_125)
-        self.frame_126.setObjectName(u"frame_126")
-        self.frame_126.setMaximumSize(QSize(16777215, 60))
-        self.frame_126.setFrameShape(QFrame.StyledPanel)
-        self.frame_126.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_62 = QHBoxLayout(self.frame_126)
+        self.frame_136 = QFrame(self.frame_127)
+        self.frame_136.setObjectName(u"frame_136")
+        self.frame_136.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_136.setFrameShape(QFrame.StyledPanel)
+        self.frame_136.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_62 = QHBoxLayout(self.frame_136)
         self.horizontalLayout_62.setSpacing(5)
         self.horizontalLayout_62.setObjectName(u"horizontalLayout_62")
         self.horizontalLayout_62.setContentsMargins(0, 0, 0, 0)
-        self.frame_141 = QFrame(self.frame_126)
+        self.frame_141 = QFrame(self.frame_136)
         self.frame_141.setObjectName(u"frame_141")
-        self.frame_141.setMinimumSize(QSize(160, 0))
+        self.frame_141.setMinimumSize(QSize(0, 0))
         self.frame_141.setMaximumSize(QSize(160, 16777215))
         self.frame_141.setFrameShape(QFrame.StyledPanel)
         self.frame_141.setFrameShadow(QFrame.Raised)
         self.verticalLayout_86 = QVBoxLayout(self.frame_141)
-        self.verticalLayout_86.setSpacing(0)
+        self.verticalLayout_86.setSpacing(5)
         self.verticalLayout_86.setObjectName(u"verticalLayout_86")
         self.verticalLayout_86.setContentsMargins(0, 0, 0, 0)
         self.label_data_inclusao_cursos_as = QLabel(self.frame_141)
         self.label_data_inclusao_cursos_as.setObjectName(u"label_data_inclusao_cursos_as")
-        self.label_data_inclusao_cursos_as.setMinimumSize(QSize(160, 0))
+        self.label_data_inclusao_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_data_inclusao_cursos_as.setMaximumSize(QSize(160, 16777215))
         self.label_data_inclusao_cursos_as.setFont(font)
 
@@ -4330,28 +4341,30 @@ class Ui_MainWindow(object):
 
         self.input_data_inclusao_cursos_as = QLineEdit(self.frame_141)
         self.input_data_inclusao_cursos_as.setObjectName(u"input_data_inclusao_cursos_as")
-        self.input_data_inclusao_cursos_as.setMinimumSize(QSize(150, 30))
+        self.input_data_inclusao_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_data_inclusao_cursos_as.setMaximumSize(QSize(150, 30))
         self.input_data_inclusao_cursos_as.setFont(font)
+        self.input_data_inclusao_cursos_as.setDragEnabled(False)
+        self.input_data_inclusao_cursos_as.setReadOnly(True)
 
         self.verticalLayout_86.addWidget(self.input_data_inclusao_cursos_as)
 
 
         self.horizontalLayout_62.addWidget(self.frame_141)
 
-        self.frame_142 = QFrame(self.frame_126)
+        self.frame_142 = QFrame(self.frame_136)
         self.frame_142.setObjectName(u"frame_142")
-        self.frame_142.setMinimumSize(QSize(460, 0))
+        self.frame_142.setMinimumSize(QSize(0, 0))
         self.frame_142.setMaximumSize(QSize(460, 16777215))
         self.frame_142.setFrameShape(QFrame.StyledPanel)
         self.frame_142.setFrameShadow(QFrame.Raised)
         self.verticalLayout_95 = QVBoxLayout(self.frame_142)
-        self.verticalLayout_95.setSpacing(0)
+        self.verticalLayout_95.setSpacing(5)
         self.verticalLayout_95.setObjectName(u"verticalLayout_95")
         self.verticalLayout_95.setContentsMargins(0, 0, 0, 0)
         self.label_nome_cursos_as = QLabel(self.frame_142)
         self.label_nome_cursos_as.setObjectName(u"label_nome_cursos_as")
-        self.label_nome_cursos_as.setMinimumSize(QSize(460, 0))
+        self.label_nome_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_nome_cursos_as.setMaximumSize(QSize(460, 16777215))
         self.label_nome_cursos_as.setFont(font)
 
@@ -4359,7 +4372,7 @@ class Ui_MainWindow(object):
 
         self.input_nome_cursos_as = QLineEdit(self.frame_142)
         self.input_nome_cursos_as.setObjectName(u"input_nome_cursos_as")
-        self.input_nome_cursos_as.setMinimumSize(QSize(450, 30))
+        self.input_nome_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_nome_cursos_as.setMaximumSize(QSize(450, 30))
         self.input_nome_cursos_as.setFont(font)
 
@@ -4368,9 +4381,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_142)
 
-        self.frame_143 = QFrame(self.frame_126)
+        self.frame_143 = QFrame(self.frame_136)
         self.frame_143.setObjectName(u"frame_143")
-        self.frame_143.setMinimumSize(QSize(185, 0))
+        self.frame_143.setMinimumSize(QSize(0, 0))
         self.frame_143.setMaximumSize(QSize(185, 16777215))
         self.frame_143.setFrameShape(QFrame.StyledPanel)
         self.frame_143.setFrameShadow(QFrame.Raised)
@@ -4380,7 +4393,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_96.setContentsMargins(0, 0, 0, 0)
         self.label_tipo_cursos_as = QLabel(self.frame_143)
         self.label_tipo_cursos_as.setObjectName(u"label_tipo_cursos_as")
-        self.label_tipo_cursos_as.setMinimumSize(QSize(185, 0))
+        self.label_tipo_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_tipo_cursos_as.setMaximumSize(QSize(185, 16777215))
         self.label_tipo_cursos_as.setFont(font)
 
@@ -4391,7 +4404,7 @@ class Ui_MainWindow(object):
         self.input_tipo_cursos_as.addItem("")
         self.input_tipo_cursos_as.addItem("")
         self.input_tipo_cursos_as.setObjectName(u"input_tipo_cursos_as")
-        self.input_tipo_cursos_as.setMinimumSize(QSize(175, 30))
+        self.input_tipo_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_tipo_cursos_as.setMaximumSize(QSize(175, 30))
         self.input_tipo_cursos_as.setFont(font)
 
@@ -4400,9 +4413,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_143)
 
-        self.frame_144 = QFrame(self.frame_126)
+        self.frame_282 = QFrame(self.frame_136)
+        self.frame_282.setObjectName(u"frame_282")
+        self.frame_282.setMaximumSize(QSize(150, 16777215))
+        self.frame_282.setFrameShape(QFrame.StyledPanel)
+        self.frame_282.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_62.addWidget(self.frame_282)
+
+        self.frame_144 = QFrame(self.frame_136)
         self.frame_144.setObjectName(u"frame_144")
-        self.frame_144.setMinimumSize(QSize(195, 50))
+        self.frame_144.setMinimumSize(QSize(0, 50))
         self.frame_144.setMaximumSize(QSize(195, 50))
         self.frame_144.setStyleSheet(u"background-color: #EC848C; border-radius: 10px")
         self.frame_144.setFrameShape(QFrame.StyledPanel)
@@ -4446,36 +4467,38 @@ class Ui_MainWindow(object):
         self.horizontalLayout_62.addWidget(self.frame_144)
 
 
-        self.verticalLayout_85.addWidget(self.frame_126)
+        self.verticalLayout_85.addWidget(self.frame_136)
 
-        self.frame_127 = QFrame(self.frame_125)
-        self.frame_127.setObjectName(u"frame_127")
-        self.frame_127.setMaximumSize(QSize(16777215, 100))
-        self.frame_127.setFrameShape(QFrame.StyledPanel)
-        self.frame_127.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_64 = QHBoxLayout(self.frame_127)
+        self.frame_138 = QFrame(self.frame_127)
+        self.frame_138.setObjectName(u"frame_138")
+        self.frame_138.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_138.setFrameShape(QFrame.StyledPanel)
+        self.frame_138.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_64 = QHBoxLayout(self.frame_138)
         self.horizontalLayout_64.setSpacing(5)
         self.horizontalLayout_64.setObjectName(u"horizontalLayout_64")
         self.horizontalLayout_64.setContentsMargins(0, 0, 0, 0)
-        self.frame_146 = QFrame(self.frame_127)
+        self.frame_146 = QFrame(self.frame_138)
         self.frame_146.setObjectName(u"frame_146")
-        self.frame_146.setMinimumSize(QSize(360, 0))
+        self.frame_146.setMinimumSize(QSize(0, 0))
         self.frame_146.setMaximumSize(QSize(360, 16777215))
         self.frame_146.setFrameShape(QFrame.StyledPanel)
         self.frame_146.setFrameShadow(QFrame.Raised)
         self.verticalLayout_98 = QVBoxLayout(self.frame_146)
+        self.verticalLayout_98.setSpacing(5)
         self.verticalLayout_98.setObjectName(u"verticalLayout_98")
+        self.verticalLayout_98.setContentsMargins(0, 0, 0, 0)
         self.label_responsavel_cursos_as = QLabel(self.frame_146)
         self.label_responsavel_cursos_as.setObjectName(u"label_responsavel_cursos_as")
-        self.label_responsavel_cursos_as.setMinimumSize(QSize(360, 0))
+        self.label_responsavel_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_responsavel_cursos_as.setMaximumSize(QSize(360, 16777215))
         self.label_responsavel_cursos_as.setFont(font)
 
-        self.verticalLayout_98.addWidget(self.label_responsavel_cursos_as)
+        self.verticalLayout_98.addWidget(self.label_responsavel_cursos_as, 0, Qt.AlignBottom)
 
         self.input_responsavel_cursos_as = QLineEdit(self.frame_146)
         self.input_responsavel_cursos_as.setObjectName(u"input_responsavel_cursos_as")
-        self.input_responsavel_cursos_as.setMinimumSize(QSize(350, 30))
+        self.input_responsavel_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_responsavel_cursos_as.setMaximumSize(QSize(350, 30))
         self.input_responsavel_cursos_as.setFont(font)
 
@@ -4484,61 +4507,95 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_146)
 
-        self.frame_147 = QFrame(self.frame_127)
+        self.frame_147 = QFrame(self.frame_138)
         self.frame_147.setObjectName(u"frame_147")
-        self.frame_147.setMinimumSize(QSize(160, 0))
+        self.frame_147.setMinimumSize(QSize(0, 0))
         self.frame_147.setMaximumSize(QSize(160, 16777215))
         self.frame_147.setFrameShape(QFrame.StyledPanel)
         self.frame_147.setFrameShadow(QFrame.Raised)
         self.verticalLayout_99 = QVBoxLayout(self.frame_147)
+        self.verticalLayout_99.setSpacing(5)
         self.verticalLayout_99.setObjectName(u"verticalLayout_99")
+        self.verticalLayout_99.setContentsMargins(0, 0, 0, 0)
         self.label_data_inicio_cursos_as = QLabel(self.frame_147)
         self.label_data_inicio_cursos_as.setObjectName(u"label_data_inicio_cursos_as")
-        self.label_data_inicio_cursos_as.setMinimumSize(QSize(160, 0))
+        self.label_data_inicio_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_data_inicio_cursos_as.setMaximumSize(QSize(160, 16777215))
         self.label_data_inicio_cursos_as.setFont(font)
 
-        self.verticalLayout_99.addWidget(self.label_data_inicio_cursos_as)
+        self.verticalLayout_99.addWidget(self.label_data_inicio_cursos_as, 0, Qt.AlignBottom)
 
-        self.input_data_inicio_cursos_as = QLineEdit(self.frame_147)
+        self.input_data_inicio_cursos_as = QDateEdit(self.frame_147)
         self.input_data_inicio_cursos_as.setObjectName(u"input_data_inicio_cursos_as")
-        self.input_data_inicio_cursos_as.setMinimumSize(QSize(150, 30))
-        self.input_data_inicio_cursos_as.setMaximumSize(QSize(150, 30))
-        self.input_data_inicio_cursos_as.setFont(font)
+        sizePolicy.setHeightForWidth(self.input_data_inicio_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_inicio_cursos_as.setSizePolicy(sizePolicy)
+        self.input_data_inicio_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_data_inicio_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_inicio_cursos_as.setFont(font8)
+        self.input_data_inicio_cursos_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_inicio_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_inicio_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_inicio_cursos_as.setAutoFillBackground(False)
+        self.input_data_inicio_cursos_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_inicio_cursos_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_inicio_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_data_inicio_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_inicio_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_inicio_cursos_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_inicio_cursos_as.setCalendarPopup(False)
+        self.input_data_inicio_cursos_as.setCurrentSectionIndex(0)
 
         self.verticalLayout_99.addWidget(self.input_data_inicio_cursos_as)
 
 
         self.horizontalLayout_64.addWidget(self.frame_147)
 
-        self.frame_148 = QFrame(self.frame_127)
+        self.frame_148 = QFrame(self.frame_138)
         self.frame_148.setObjectName(u"frame_148")
-        self.frame_148.setMinimumSize(QSize(160, 0))
+        self.frame_148.setMinimumSize(QSize(0, 0))
         self.frame_148.setMaximumSize(QSize(160, 16777215))
         self.frame_148.setFrameShape(QFrame.StyledPanel)
         self.frame_148.setFrameShadow(QFrame.Raised)
         self.verticalLayout_100 = QVBoxLayout(self.frame_148)
+        self.verticalLayout_100.setSpacing(5)
         self.verticalLayout_100.setObjectName(u"verticalLayout_100")
+        self.verticalLayout_100.setContentsMargins(-1, 0, 0, 0)
         self.label_data_termino_cursos_as = QLabel(self.frame_148)
         self.label_data_termino_cursos_as.setObjectName(u"label_data_termino_cursos_as")
-        self.label_data_termino_cursos_as.setMinimumSize(QSize(160, 0))
+        self.label_data_termino_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_data_termino_cursos_as.setMaximumSize(QSize(160, 16777215))
         self.label_data_termino_cursos_as.setFont(font)
 
-        self.verticalLayout_100.addWidget(self.label_data_termino_cursos_as)
+        self.verticalLayout_100.addWidget(self.label_data_termino_cursos_as, 0, Qt.AlignBottom)
 
-        self.input_data_termino_cursos_as = QLineEdit(self.frame_148)
+        self.input_data_termino_cursos_as = QDateEdit(self.frame_148)
         self.input_data_termino_cursos_as.setObjectName(u"input_data_termino_cursos_as")
-        self.input_data_termino_cursos_as.setMinimumSize(QSize(150, 30))
-        self.input_data_termino_cursos_as.setMaximumSize(QSize(150, 30))
-        self.input_data_termino_cursos_as.setFont(font)
+        sizePolicy.setHeightForWidth(self.input_data_termino_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_termino_cursos_as.setSizePolicy(sizePolicy)
+        self.input_data_termino_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_data_termino_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_termino_cursos_as.setFont(font8)
+        self.input_data_termino_cursos_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_termino_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_termino_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_termino_cursos_as.setAutoFillBackground(False)
+        self.input_data_termino_cursos_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_termino_cursos_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_termino_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_data_termino_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_termino_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_termino_cursos_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_termino_cursos_as.setCalendarPopup(False)
+        self.input_data_termino_cursos_as.setCurrentSectionIndex(0)
 
         self.verticalLayout_100.addWidget(self.input_data_termino_cursos_as)
 
 
         self.horizontalLayout_64.addWidget(self.frame_148)
 
-        self.frame_149 = QFrame(self.frame_127)
+        self.frame_149 = QFrame(self.frame_138)
         self.frame_149.setObjectName(u"frame_149")
         self.frame_149.setMaximumSize(QSize(400, 16777215))
         self.frame_149.setFrameShape(QFrame.StyledPanel)
@@ -4555,108 +4612,146 @@ class Ui_MainWindow(object):
 
         self.frame_150 = QFrame(self.frame_149)
         self.frame_150.setObjectName(u"frame_150")
-        self.frame_150.setMaximumSize(QSize(395, 16777215))
+        self.frame_150.setMaximumSize(QSize(16777215, 16777215))
         self.frame_150.setFrameShape(QFrame.StyledPanel)
         self.frame_150.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_65 = QHBoxLayout(self.frame_150)
-        self.horizontalLayout_65.setSpacing(0)
-        self.horizontalLayout_65.setObjectName(u"horizontalLayout_65")
-        self.horizontalLayout_65.setContentsMargins(10, 0, 0, 0)
-        self.frame_151 = QFrame(self.frame_150)
-        self.frame_151.setObjectName(u"frame_151")
-        self.frame_151.setMaximumSize(QSize(125, 16777215))
-        self.frame_151.setFrameShape(QFrame.StyledPanel)
-        self.frame_151.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_102 = QVBoxLayout(self.frame_151)
-        self.verticalLayout_102.setSpacing(5)
-        self.verticalLayout_102.setObjectName(u"verticalLayout_102")
-        self.verticalLayout_102.setContentsMargins(0, 0, 0, 0)
-        self.btn_segunda_cursos_as = QPushButton(self.frame_151)
-        self.btn_segunda_cursos_as.setObjectName(u"btn_segunda_cursos_as")
-        self.btn_segunda_cursos_as.setMinimumSize(QSize(120, 30))
-        self.btn_segunda_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_segunda_cursos_as.setFont(font8)
-        self.btn_segunda_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_segunda_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
-
-        self.verticalLayout_102.addWidget(self.btn_segunda_cursos_as)
-
-        self.btn_quinta_cursos_as = QPushButton(self.frame_151)
-        self.btn_quinta_cursos_as.setObjectName(u"btn_quinta_cursos_as")
-        self.btn_quinta_cursos_as.setMinimumSize(QSize(120, 30))
-        self.btn_quinta_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_quinta_cursos_as.setFont(font8)
-        self.btn_quinta_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_quinta_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
-
-        self.verticalLayout_102.addWidget(self.btn_quinta_cursos_as)
-
-
-        self.horizontalLayout_65.addWidget(self.frame_151)
-
-        self.frame_152 = QFrame(self.frame_150)
-        self.frame_152.setObjectName(u"frame_152")
-        self.frame_152.setMaximumSize(QSize(125, 16777215))
-        self.frame_152.setFrameShape(QFrame.StyledPanel)
-        self.frame_152.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_103 = QVBoxLayout(self.frame_152)
-        self.verticalLayout_103.setSpacing(5)
-        self.verticalLayout_103.setObjectName(u"verticalLayout_103")
-        self.verticalLayout_103.setContentsMargins(0, 0, 0, 0)
-        self.btn_terca_cursos_as = QPushButton(self.frame_152)
-        self.btn_terca_cursos_as.setObjectName(u"btn_terca_cursos_as")
-        self.btn_terca_cursos_as.setMinimumSize(QSize(120, 30))
-        self.btn_terca_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_terca_cursos_as.setFont(font8)
-        self.btn_terca_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_terca_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
-
-        self.verticalLayout_103.addWidget(self.btn_terca_cursos_as)
-
-        self.btn_sexta_cursos_as = QPushButton(self.frame_152)
-        self.btn_sexta_cursos_as.setObjectName(u"btn_sexta_cursos_as")
-        self.btn_sexta_cursos_as.setMinimumSize(QSize(120, 30))
-        self.btn_sexta_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_sexta_cursos_as.setFont(font8)
-        self.btn_sexta_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_sexta_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
-
-        self.verticalLayout_103.addWidget(self.btn_sexta_cursos_as)
-
-
-        self.horizontalLayout_65.addWidget(self.frame_152)
-
+        self.horizontalLayout_95 = QHBoxLayout(self.frame_150)
+        self.horizontalLayout_95.setSpacing(5)
+        self.horizontalLayout_95.setObjectName(u"horizontalLayout_95")
+        self.horizontalLayout_95.setContentsMargins(0, 0, 0, 0)
         self.frame_153 = QFrame(self.frame_150)
         self.frame_153.setObjectName(u"frame_153")
         self.frame_153.setMaximumSize(QSize(125, 16777215))
         self.frame_153.setFrameShape(QFrame.StyledPanel)
         self.frame_153.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_104 = QVBoxLayout(self.frame_153)
+        self.verticalLayout_102 = QVBoxLayout(self.frame_153)
+        self.verticalLayout_102.setSpacing(5)
+        self.verticalLayout_102.setObjectName(u"verticalLayout_102")
+        self.verticalLayout_102.setContentsMargins(0, 0, 0, 0)
+        self.frame_273 = QFrame(self.frame_153)
+        self.frame_273.setObjectName(u"frame_273")
+        self.frame_273.setMinimumSize(QSize(0, 30))
+        self.frame_273.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_273.setFrameShape(QFrame.StyledPanel)
+        self.frame_273.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_177 = QVBoxLayout(self.frame_273)
+        self.verticalLayout_177.setObjectName(u"verticalLayout_177")
+        self.input_segunda_feira = QCheckBox(self.frame_273)
+        self.input_segunda_feira.setObjectName(u"input_segunda_feira")
+        self.input_segunda_feira.setFont(font8)
+
+        self.verticalLayout_177.addWidget(self.input_segunda_feira, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_102.addWidget(self.frame_273)
+
+        self.frame_274 = QFrame(self.frame_153)
+        self.frame_274.setObjectName(u"frame_274")
+        self.frame_274.setMinimumSize(QSize(0, 30))
+        self.frame_274.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_274.setFrameShape(QFrame.StyledPanel)
+        self.frame_274.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_187 = QVBoxLayout(self.frame_274)
+        self.verticalLayout_187.setObjectName(u"verticalLayout_187")
+        self.checkBox_4 = QCheckBox(self.frame_274)
+        self.checkBox_4.setObjectName(u"checkBox_4")
+        self.checkBox_4.setFont(font8)
+
+        self.verticalLayout_187.addWidget(self.checkBox_4, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_102.addWidget(self.frame_274)
+
+
+        self.horizontalLayout_95.addWidget(self.frame_153)
+
+        self.frame_151 = QFrame(self.frame_150)
+        self.frame_151.setObjectName(u"frame_151")
+        self.frame_151.setMaximumSize(QSize(125, 16777215))
+        self.frame_151.setFrameShape(QFrame.StyledPanel)
+        self.frame_151.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_103 = QVBoxLayout(self.frame_151)
+        self.verticalLayout_103.setSpacing(5)
+        self.verticalLayout_103.setObjectName(u"verticalLayout_103")
+        self.verticalLayout_103.setContentsMargins(0, 0, 0, 0)
+        self.frame_276 = QFrame(self.frame_151)
+        self.frame_276.setObjectName(u"frame_276")
+        self.frame_276.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_276.setFrameShape(QFrame.StyledPanel)
+        self.frame_276.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_185 = QVBoxLayout(self.frame_276)
+        self.verticalLayout_185.setObjectName(u"verticalLayout_185")
+        self.input_terca_feira = QCheckBox(self.frame_276)
+        self.input_terca_feira.setObjectName(u"input_terca_feira")
+        self.input_terca_feira.setFont(font8)
+
+        self.verticalLayout_185.addWidget(self.input_terca_feira, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_103.addWidget(self.frame_276)
+
+        self.frame_275 = QFrame(self.frame_151)
+        self.frame_275.setObjectName(u"frame_275")
+        self.frame_275.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_275.setFrameShape(QFrame.StyledPanel)
+        self.frame_275.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_188 = QVBoxLayout(self.frame_275)
+        self.verticalLayout_188.setObjectName(u"verticalLayout_188")
+        self.checkBox_5 = QCheckBox(self.frame_275)
+        self.checkBox_5.setObjectName(u"checkBox_5")
+        self.checkBox_5.setFont(font8)
+
+        self.verticalLayout_188.addWidget(self.checkBox_5, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_103.addWidget(self.frame_275)
+
+
+        self.horizontalLayout_95.addWidget(self.frame_151)
+
+        self.frame_277 = QFrame(self.frame_150)
+        self.frame_277.setObjectName(u"frame_277")
+        self.frame_277.setMaximumSize(QSize(125, 16777215))
+        self.frame_277.setFrameShape(QFrame.StyledPanel)
+        self.frame_277.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_104 = QVBoxLayout(self.frame_277)
         self.verticalLayout_104.setSpacing(5)
         self.verticalLayout_104.setObjectName(u"verticalLayout_104")
         self.verticalLayout_104.setContentsMargins(0, 0, 0, 0)
-        self.btn_quarta_cursos_as = QPushButton(self.frame_153)
-        self.btn_quarta_cursos_as.setObjectName(u"btn_quarta_cursos_as")
-        self.btn_quarta_cursos_as.setMinimumSize(QSize(120, 30))
-        self.btn_quarta_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_quarta_cursos_as.setFont(font8)
-        self.btn_quarta_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_quarta_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_279 = QFrame(self.frame_277)
+        self.frame_279.setObjectName(u"frame_279")
+        self.frame_279.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_279.setFrameShape(QFrame.StyledPanel)
+        self.frame_279.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_186 = QVBoxLayout(self.frame_279)
+        self.verticalLayout_186.setObjectName(u"verticalLayout_186")
+        self.input_qa_feira = QCheckBox(self.frame_279)
+        self.input_qa_feira.setObjectName(u"input_qa_feira")
+        self.input_qa_feira.setFont(font8)
 
-        self.verticalLayout_104.addWidget(self.btn_quarta_cursos_as)
-
-        self.btn_sabado_cursos_as = QPushButton(self.frame_153)
-        self.btn_sabado_cursos_as.setObjectName(u"btn_sabado_cursos_as")
-        self.btn_sabado_cursos_as.setMinimumSize(QSize(120, 30))
-        self.btn_sabado_cursos_as.setMaximumSize(QSize(120, 30))
-        self.btn_sabado_cursos_as.setFont(font8)
-        self.btn_sabado_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_sabado_cursos_as.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
-
-        self.verticalLayout_104.addWidget(self.btn_sabado_cursos_as)
+        self.verticalLayout_186.addWidget(self.input_qa_feira, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_65.addWidget(self.frame_153)
+        self.verticalLayout_104.addWidget(self.frame_279)
+
+        self.frame_278 = QFrame(self.frame_277)
+        self.frame_278.setObjectName(u"frame_278")
+        self.frame_278.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_278.setFrameShape(QFrame.StyledPanel)
+        self.frame_278.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_189 = QVBoxLayout(self.frame_278)
+        self.verticalLayout_189.setObjectName(u"verticalLayout_189")
+        self.checkBox_6 = QCheckBox(self.frame_278)
+        self.checkBox_6.setObjectName(u"checkBox_6")
+        self.checkBox_6.setFont(font8)
+
+        self.verticalLayout_189.addWidget(self.checkBox_6, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_104.addWidget(self.frame_278)
+
+
+        self.horizontalLayout_95.addWidget(self.frame_277)
 
 
         self.verticalLayout_101.addWidget(self.frame_150)
@@ -4665,74 +4760,97 @@ class Ui_MainWindow(object):
         self.horizontalLayout_64.addWidget(self.frame_149)
 
 
-        self.verticalLayout_85.addWidget(self.frame_127)
+        self.verticalLayout_85.addWidget(self.frame_138)
 
-        self.frame_136 = QFrame(self.frame_125)
-        self.frame_136.setObjectName(u"frame_136")
-        self.frame_136.setMaximumSize(QSize(16777215, 60))
-        self.frame_136.setFrameShape(QFrame.StyledPanel)
-        self.frame_136.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_66 = QHBoxLayout(self.frame_136)
+        self.frame_139 = QFrame(self.frame_127)
+        self.frame_139.setObjectName(u"frame_139")
+        self.frame_139.setMaximumSize(QSize(16777215, 60))
+        self.frame_139.setFrameShape(QFrame.StyledPanel)
+        self.frame_139.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_66 = QHBoxLayout(self.frame_139)
         self.horizontalLayout_66.setSpacing(5)
         self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
         self.horizontalLayout_66.setContentsMargins(0, 0, 0, 0)
-        self.frame_154 = QFrame(self.frame_136)
+        self.frame_154 = QFrame(self.frame_139)
         self.frame_154.setObjectName(u"frame_154")
-        self.frame_154.setMaximumSize(QSize(90, 16777215))
+        self.frame_154.setMaximumSize(QSize(105, 16777215))
         self.frame_154.setFrameShape(QFrame.StyledPanel)
         self.frame_154.setFrameShadow(QFrame.Raised)
         self.verticalLayout_105 = QVBoxLayout(self.frame_154)
-        self.verticalLayout_105.setSpacing(0)
+        self.verticalLayout_105.setSpacing(5)
         self.verticalLayout_105.setObjectName(u"verticalLayout_105")
         self.verticalLayout_105.setContentsMargins(0, 0, 0, 0)
-        self.label_horario_cursos_as = QLabel(self.frame_154)
-        self.label_horario_cursos_as.setObjectName(u"label_horario_cursos_as")
-        self.label_horario_cursos_as.setMaximumSize(QSize(90, 16777215))
-        self.label_horario_cursos_as.setFont(font)
-        self.label_horario_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_horario_inicio_cursos_as = QLabel(self.frame_154)
+        self.label_horario_inicio_cursos_as.setObjectName(u"label_horario_inicio_cursos_as")
+        self.label_horario_inicio_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_horario_inicio_cursos_as.setFont(font)
+        self.label_horario_inicio_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_105.addWidget(self.label_horario_cursos_as)
+        self.verticalLayout_105.addWidget(self.label_horario_inicio_cursos_as)
 
-        self.input_horario_cursos_as = QLineEdit(self.frame_154)
-        self.input_horario_cursos_as.setObjectName(u"input_horario_cursos_as")
-        self.input_horario_cursos_as.setMinimumSize(QSize(80, 0))
-        self.input_horario_cursos_as.setMaximumSize(QSize(80, 30))
-        self.input_horario_cursos_as.setFont(font)
+        self.input_horario_inicio_cursos_as = QTimeEdit(self.frame_154)
+        self.input_horario_inicio_cursos_as.setObjectName(u"input_horario_inicio_cursos_as")
+        self.input_horario_inicio_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_horario_inicio_cursos_as.setMaximumSize(QSize(105, 16777215))
+        font11 = QFont()
+        font11.setFamilies([u"Abel"])
+        font11.setPointSize(11)
+        font11.setBold(False)
+        font11.setKerning(False)
+        self.input_horario_inicio_cursos_as.setFont(font11)
+        self.input_horario_inicio_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_horario_inicio_cursos_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_horario_inicio_cursos_as.setInputMethodHints(Qt.ImhPreferNumbers|Qt.ImhTime)
+        self.input_horario_inicio_cursos_as.setWrapping(False)
+        self.input_horario_inicio_cursos_as.setFrame(True)
+        self.input_horario_inicio_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_horario_inicio_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_horario_inicio_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
 
-        self.verticalLayout_105.addWidget(self.input_horario_cursos_as)
+        self.verticalLayout_105.addWidget(self.input_horario_inicio_cursos_as)
 
 
         self.horizontalLayout_66.addWidget(self.frame_154)
 
-        self.widget = QWidget(self.frame_136)
+        self.widget = QWidget(self.frame_139)
         self.widget.setObjectName(u"widget")
-        self.widget.setMaximumSize(QSize(90, 16777215))
+        self.widget.setMaximumSize(QSize(105, 16777215))
         self.verticalLayout_106 = QVBoxLayout(self.widget)
-        self.verticalLayout_106.setSpacing(0)
+        self.verticalLayout_106.setSpacing(5)
         self.verticalLayout_106.setObjectName(u"verticalLayout_106")
         self.verticalLayout_106.setContentsMargins(0, 0, 0, 0)
-        self.label_as_cursos_as = QLabel(self.widget)
-        self.label_as_cursos_as.setObjectName(u"label_as_cursos_as")
-        self.label_as_cursos_as.setMaximumSize(QSize(90, 16777215))
-        self.label_as_cursos_as.setFont(font)
-        self.label_as_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_horario_termino_cursos_as = QLabel(self.widget)
+        self.label_horario_termino_cursos_as.setObjectName(u"label_horario_termino_cursos_as")
+        self.label_horario_termino_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_horario_termino_cursos_as.setFont(font)
+        self.label_horario_termino_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.verticalLayout_106.addWidget(self.label_as_cursos_as)
+        self.verticalLayout_106.addWidget(self.label_horario_termino_cursos_as)
 
-        self.input_as_cursos_as = QLineEdit(self.widget)
-        self.input_as_cursos_as.setObjectName(u"input_as_cursos_as")
-        self.input_as_cursos_as.setMinimumSize(QSize(80, 30))
-        self.input_as_cursos_as.setMaximumSize(QSize(80, 30))
-        self.input_as_cursos_as.setFont(font)
+        self.input_horario_termino_cursos_as = QTimeEdit(self.widget)
+        self.input_horario_termino_cursos_as.setObjectName(u"input_horario_termino_cursos_as")
+        self.input_horario_termino_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_horario_termino_cursos_as.setMaximumSize(QSize(105, 16777215))
+        self.input_horario_termino_cursos_as.setFont(font11)
+        self.input_horario_termino_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_horario_termino_cursos_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_horario_termino_cursos_as.setInputMethodHints(Qt.ImhPreferNumbers|Qt.ImhTime)
+        self.input_horario_termino_cursos_as.setWrapping(False)
+        self.input_horario_termino_cursos_as.setFrame(True)
+        self.input_horario_termino_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_horario_termino_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_horario_termino_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
 
-        self.verticalLayout_106.addWidget(self.input_as_cursos_as)
+        self.verticalLayout_106.addWidget(self.input_horario_termino_cursos_as)
 
 
         self.horizontalLayout_66.addWidget(self.widget)
 
-        self.frame_155 = QFrame(self.frame_136)
+        self.frame_155 = QFrame(self.frame_139)
         self.frame_155.setObjectName(u"frame_155")
-        self.frame_155.setMinimumSize(QSize(250, 0))
+        self.frame_155.setMinimumSize(QSize(0, 0))
         self.frame_155.setMaximumSize(QSize(250, 16777215))
         self.frame_155.setFrameShape(QFrame.StyledPanel)
         self.frame_155.setFrameShadow(QFrame.Raised)
@@ -4742,7 +4860,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_107.setContentsMargins(0, 0, 0, 0)
         self.label_periodo_cursos_as = QLabel(self.frame_155)
         self.label_periodo_cursos_as.setObjectName(u"label_periodo_cursos_as")
-        self.label_periodo_cursos_as.setMinimumSize(QSize(250, 0))
+        self.label_periodo_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_periodo_cursos_as.setMaximumSize(QSize(250, 16777215))
         self.label_periodo_cursos_as.setFont(font)
 
@@ -4754,7 +4872,7 @@ class Ui_MainWindow(object):
         self.input_periodo_cursos_as.addItem("")
         self.input_periodo_cursos_as.addItem("")
         self.input_periodo_cursos_as.setObjectName(u"input_periodo_cursos_as")
-        self.input_periodo_cursos_as.setMinimumSize(QSize(240, 30))
+        self.input_periodo_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_periodo_cursos_as.setMaximumSize(QSize(240, 30))
         self.input_periodo_cursos_as.setFont(font)
 
@@ -4763,7 +4881,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.frame_155)
 
-        self.frame_156 = QFrame(self.frame_136)
+        self.frame_156 = QFrame(self.frame_139)
         self.frame_156.setObjectName(u"frame_156")
         self.frame_156.setMaximumSize(QSize(100, 16777215))
         self.frame_156.setFrameShape(QFrame.StyledPanel)
@@ -4781,7 +4899,7 @@ class Ui_MainWindow(object):
 
         self.input_vagas_cursos_as = QLineEdit(self.frame_156)
         self.input_vagas_cursos_as.setObjectName(u"input_vagas_cursos_as")
-        self.input_vagas_cursos_as.setMinimumSize(QSize(90, 30))
+        self.input_vagas_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_vagas_cursos_as.setMaximumSize(QSize(90, 30))
         self.input_vagas_cursos_as.setFont(font)
 
@@ -4790,9 +4908,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.frame_156)
 
-        self.frame_157 = QFrame(self.frame_136)
+        self.frame_157 = QFrame(self.frame_139)
         self.frame_157.setObjectName(u"frame_157")
-        self.frame_157.setMinimumSize(QSize(160, 0))
+        self.frame_157.setMinimumSize(QSize(0, 0))
         self.frame_157.setMaximumSize(QSize(160, 16777215))
         self.frame_157.setFrameShape(QFrame.StyledPanel)
         self.frame_157.setFrameShadow(QFrame.Raised)
@@ -4802,7 +4920,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_109.setContentsMargins(0, 0, 0, 0)
         self.label_cep_cursos_as = QLabel(self.frame_157)
         self.label_cep_cursos_as.setObjectName(u"label_cep_cursos_as")
-        self.label_cep_cursos_as.setMinimumSize(QSize(160, 0))
+        self.label_cep_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_cep_cursos_as.setMaximumSize(QSize(160, 16777215))
         self.label_cep_cursos_as.setFont(font)
 
@@ -4810,7 +4928,7 @@ class Ui_MainWindow(object):
 
         self.input_cep_cursos_as = QLineEdit(self.frame_157)
         self.input_cep_cursos_as.setObjectName(u"input_cep_cursos_as")
-        self.input_cep_cursos_as.setMinimumSize(QSize(150, 30))
+        self.input_cep_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_cep_cursos_as.setMaximumSize(QSize(150, 30))
         self.input_cep_cursos_as.setFont(font)
 
@@ -4819,9 +4937,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.frame_157)
 
-        self.frame_158 = QFrame(self.frame_136)
+        self.frame_158 = QFrame(self.frame_139)
         self.frame_158.setObjectName(u"frame_158")
-        self.frame_158.setMinimumSize(QSize(360, 0))
+        self.frame_158.setMinimumSize(QSize(0, 0))
         self.frame_158.setMaximumSize(QSize(360, 16777215))
         self.frame_158.setFrameShape(QFrame.StyledPanel)
         self.frame_158.setFrameShadow(QFrame.Raised)
@@ -4831,7 +4949,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_110.setContentsMargins(0, 0, 0, 0)
         self.label_logradouro_cursos_as = QLabel(self.frame_158)
         self.label_logradouro_cursos_as.setObjectName(u"label_logradouro_cursos_as")
-        self.label_logradouro_cursos_as.setMinimumSize(QSize(360, 0))
+        self.label_logradouro_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_logradouro_cursos_as.setMaximumSize(QSize(360, 16777215))
         self.label_logradouro_cursos_as.setFont(font)
 
@@ -4839,7 +4957,7 @@ class Ui_MainWindow(object):
 
         self.input_logradouro_cursos_as = QLineEdit(self.frame_158)
         self.input_logradouro_cursos_as.setObjectName(u"input_logradouro_cursos_as")
-        self.input_logradouro_cursos_as.setMinimumSize(QSize(350, 30))
+        self.input_logradouro_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_cursos_as.setMaximumSize(QSize(350, 30))
         self.input_logradouro_cursos_as.setFont(font)
 
@@ -4849,20 +4967,20 @@ class Ui_MainWindow(object):
         self.horizontalLayout_66.addWidget(self.frame_158)
 
 
-        self.verticalLayout_85.addWidget(self.frame_136)
+        self.verticalLayout_85.addWidget(self.frame_139)
 
-        self.frame_139 = QFrame(self.frame_125)
-        self.frame_139.setObjectName(u"frame_139")
-        self.frame_139.setMaximumSize(QSize(16777215, 60))
-        self.frame_139.setFrameShape(QFrame.StyledPanel)
-        self.frame_139.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_67 = QHBoxLayout(self.frame_139)
+        self.frame_140 = QFrame(self.frame_127)
+        self.frame_140.setObjectName(u"frame_140")
+        self.frame_140.setMaximumSize(QSize(16777215, 60))
+        self.frame_140.setFrameShape(QFrame.StyledPanel)
+        self.frame_140.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_67 = QHBoxLayout(self.frame_140)
         self.horizontalLayout_67.setSpacing(5)
         self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
         self.horizontalLayout_67.setContentsMargins(0, 0, 0, 0)
-        self.frame_159 = QFrame(self.frame_139)
+        self.frame_159 = QFrame(self.frame_140)
         self.frame_159.setObjectName(u"frame_159")
-        self.frame_159.setMinimumSize(QSize(160, 0))
+        self.frame_159.setMinimumSize(QSize(0, 0))
         self.frame_159.setMaximumSize(QSize(160, 16777215))
         self.frame_159.setFrameShape(QFrame.StyledPanel)
         self.frame_159.setFrameShadow(QFrame.Raised)
@@ -4872,7 +4990,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_111.setContentsMargins(0, 0, 0, 0)
         self.label_numero_cursos_as = QLabel(self.frame_159)
         self.label_numero_cursos_as.setObjectName(u"label_numero_cursos_as")
-        self.label_numero_cursos_as.setMinimumSize(QSize(160, 0))
+        self.label_numero_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_numero_cursos_as.setMaximumSize(QSize(160, 16777215))
         self.label_numero_cursos_as.setFont(font)
 
@@ -4880,7 +4998,7 @@ class Ui_MainWindow(object):
 
         self.input_numero_cursos_as = QLineEdit(self.frame_159)
         self.input_numero_cursos_as.setObjectName(u"input_numero_cursos_as")
-        self.input_numero_cursos_as.setMinimumSize(QSize(150, 30))
+        self.input_numero_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_numero_cursos_as.setMaximumSize(QSize(150, 30))
         self.input_numero_cursos_as.setFont(font)
 
@@ -4889,9 +5007,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_67.addWidget(self.frame_159)
 
-        self.frame_160 = QFrame(self.frame_139)
+        self.frame_160 = QFrame(self.frame_140)
         self.frame_160.setObjectName(u"frame_160")
-        self.frame_160.setMinimumSize(QSize(230, 0))
+        self.frame_160.setMinimumSize(QSize(0, 0))
         self.frame_160.setMaximumSize(QSize(230, 16777215))
         self.frame_160.setFrameShape(QFrame.StyledPanel)
         self.frame_160.setFrameShadow(QFrame.Raised)
@@ -4901,7 +5019,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_112.setContentsMargins(0, 0, 0, 0)
         self.label_bairro_cursos_as = QLabel(self.frame_160)
         self.label_bairro_cursos_as.setObjectName(u"label_bairro_cursos_as")
-        self.label_bairro_cursos_as.setMinimumSize(QSize(230, 0))
+        self.label_bairro_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_bairro_cursos_as.setMaximumSize(QSize(230, 16777215))
         self.label_bairro_cursos_as.setFont(font)
 
@@ -4909,7 +5027,7 @@ class Ui_MainWindow(object):
 
         self.input_bairro_cursos_as = QLineEdit(self.frame_160)
         self.input_bairro_cursos_as.setObjectName(u"input_bairro_cursos_as")
-        self.input_bairro_cursos_as.setMinimumSize(QSize(220, 30))
+        self.input_bairro_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_cursos_as.setMaximumSize(QSize(220, 30))
         self.input_bairro_cursos_as.setFont(font)
 
@@ -4918,9 +5036,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_67.addWidget(self.frame_160)
 
-        self.frame_161 = QFrame(self.frame_139)
+        self.frame_161 = QFrame(self.frame_140)
         self.frame_161.setObjectName(u"frame_161")
-        self.frame_161.setMinimumSize(QSize(240, 0))
+        self.frame_161.setMinimumSize(QSize(0, 0))
         self.frame_161.setMaximumSize(QSize(240, 16777215))
         self.frame_161.setFrameShape(QFrame.StyledPanel)
         self.frame_161.setFrameShadow(QFrame.Raised)
@@ -4930,7 +5048,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_113.setContentsMargins(0, 0, 0, 0)
         self.label_cidade_cursos_as = QLabel(self.frame_161)
         self.label_cidade_cursos_as.setObjectName(u"label_cidade_cursos_as")
-        self.label_cidade_cursos_as.setMinimumSize(QSize(240, 0))
+        self.label_cidade_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_cidade_cursos_as.setMaximumSize(QSize(240, 16777215))
         self.label_cidade_cursos_as.setFont(font)
 
@@ -4938,7 +5056,7 @@ class Ui_MainWindow(object):
 
         self.input_cidade_cursos_as = QLineEdit(self.frame_161)
         self.input_cidade_cursos_as.setObjectName(u"input_cidade_cursos_as")
-        self.input_cidade_cursos_as.setMinimumSize(QSize(230, 30))
+        self.input_cidade_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_cursos_as.setMaximumSize(QSize(230, 30))
         self.input_cidade_cursos_as.setFont(font)
 
@@ -4947,7 +5065,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_67.addWidget(self.frame_161)
 
-        self.frame_162 = QFrame(self.frame_139)
+        self.frame_162 = QFrame(self.frame_140)
         self.frame_162.setObjectName(u"frame_162")
         self.frame_162.setMinimumSize(QSize(80, 0))
         self.frame_162.setMaximumSize(QSize(80, 16777215))
@@ -4975,7 +5093,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_67.addWidget(self.frame_162)
 
-        self.frame_163 = QFrame(self.frame_139)
+        self.frame_163 = QFrame(self.frame_140)
         self.frame_163.setObjectName(u"frame_163")
         self.frame_163.setFrameShape(QFrame.StyledPanel)
         self.frame_163.setFrameShadow(QFrame.Raised)
@@ -4983,25 +5101,25 @@ class Ui_MainWindow(object):
         self.horizontalLayout_67.addWidget(self.frame_163)
 
 
-        self.verticalLayout_85.addWidget(self.frame_139)
+        self.verticalLayout_85.addWidget(self.frame_140)
 
-        self.frame_140 = QFrame(self.frame_125)
-        self.frame_140.setObjectName(u"frame_140")
-        self.frame_140.setFrameShape(QFrame.StyledPanel)
-        self.frame_140.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_115 = QVBoxLayout(self.frame_140)
+        self.frame_280 = QFrame(self.frame_127)
+        self.frame_280.setObjectName(u"frame_280")
+        self.frame_280.setFrameShape(QFrame.StyledPanel)
+        self.frame_280.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_115 = QVBoxLayout(self.frame_280)
         self.verticalLayout_115.setSpacing(0)
         self.verticalLayout_115.setObjectName(u"verticalLayout_115")
         self.verticalLayout_115.setContentsMargins(0, 0, 0, 0)
-        self.label_descricao_cursos_as = QLabel(self.frame_140)
+        self.label_descricao_cursos_as = QLabel(self.frame_280)
         self.label_descricao_cursos_as.setObjectName(u"label_descricao_cursos_as")
         self.label_descricao_cursos_as.setFont(font)
 
         self.verticalLayout_115.addWidget(self.label_descricao_cursos_as)
 
-        self.input_descricao_atividade_cursos_as = QTextEdit(self.frame_140)
+        self.input_descricao_atividade_cursos_as = QTextEdit(self.frame_280)
         self.input_descricao_atividade_cursos_as.setObjectName(u"input_descricao_atividade_cursos_as")
-        self.input_descricao_atividade_cursos_as.setMaximumSize(QSize(1400, 16777215))
+        self.input_descricao_atividade_cursos_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_descricao_atividade_cursos_as.setFont(font)
         self.input_descricao_atividade_cursos_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -5010,27 +5128,891 @@ class Ui_MainWindow(object):
         self.verticalLayout_115.addWidget(self.input_descricao_atividade_cursos_as)
 
 
-        self.verticalLayout_85.addWidget(self.frame_140)
+        self.verticalLayout_85.addWidget(self.frame_280)
 
-        self.frame_138 = QFrame(self.frame_125)
-        self.frame_138.setObjectName(u"frame_138")
-        self.frame_138.setFrameShape(QFrame.StyledPanel)
-        self.frame_138.setFrameShadow(QFrame.Raised)
 
-        self.verticalLayout_85.addWidget(self.frame_138)
+        self.verticalLayout_190.addWidget(self.frame_127)
 
 
         self.horizontalLayout_61.addWidget(self.frame_125)
 
-        self.horizontalSpacer_50 = QSpacerItem(185, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.frame_126 = QFrame(self.frame_122)
+        self.frame_126.setObjectName(u"frame_126")
+        self.frame_126.setFrameShape(QFrame.StyledPanel)
+        self.frame_126.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout_61.addItem(self.horizontalSpacer_50)
+        self.horizontalLayout_61.addWidget(self.frame_126)
 
-        self.horizontalLayout_61.setStretch(0, 1)
-        self.horizontalLayout_61.setStretch(1, 8)
-        self.horizontalLayout_61.setStretch(2, 1)
 
         self.verticalLayout_84.addWidget(self.frame_122)
+
+
+        '''self.frame_122 = QFrame(self.page_cadastrar_cursos_e_oficinas_as)
+        self.frame_122.setObjectName(u"frame_122")
+        self.frame_122.setFrameShape(QFrame.StyledPanel)
+        self.frame_122.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_61 = QHBoxLayout(self.frame_122)
+        self.horizontalLayout_61.setObjectName(u"horizontalLayout_61")
+        self.frame_152 = QFrame(self.frame_122)
+        self.frame_152.setObjectName(u"frame_152")
+        self.frame_152.setFrameShape(QFrame.StyledPanel)
+        self.frame_152.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_61.addWidget(self.frame_152)
+
+        self.frame_125 = QFrame(self.frame_122)
+        self.frame_125.setObjectName(u"frame_125")
+        sizePolicy1.setHeightForWidth(self.frame_125.sizePolicy().hasHeightForWidth())
+        self.frame_125.setSizePolicy(sizePolicy1)
+        self.frame_125.setMaximumSize(QSize(1110, 16777215))
+        self.frame_125.setFrameShape(QFrame.StyledPanel)
+        self.frame_125.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_190 = QVBoxLayout(self.frame_125)
+        self.verticalLayout_190.setObjectName(u"verticalLayout_190")
+        self.frame_127 = QFrame(self.frame_125)
+        self.frame_127.setObjectName(u"frame_127")
+        self.frame_127.setStyleSheet(u"QLabel{margin-left: 0.25em}")
+        self.frame_127.setFrameShape(QFrame.StyledPanel)
+        self.frame_127.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_85 = QVBoxLayout(self.frame_127)
+        self.verticalLayout_85.setSpacing(0)
+        self.verticalLayout_85.setObjectName(u"verticalLayout_85")
+        self.verticalLayout_85.setContentsMargins(20, 0, 0, 0)
+        self.frame_136 = QFrame(self.frame_127)
+        self.frame_136.setObjectName(u"frame_136")
+        self.frame_136.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_136.setFrameShape(QFrame.StyledPanel)
+        self.frame_136.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_62 = QHBoxLayout(self.frame_136)
+        self.horizontalLayout_62.setSpacing(5)
+        self.horizontalLayout_62.setObjectName(u"horizontalLayout_62")
+        self.horizontalLayout_62.setContentsMargins(0, 0, 0, 0)
+        self.frame_141 = QFrame(self.frame_136)
+        self.frame_141.setObjectName(u"frame_141")
+        self.frame_141.setMinimumSize(QSize(0, 0))
+        self.frame_141.setMaximumSize(QSize(160, 16777215))
+        self.frame_141.setFrameShape(QFrame.StyledPanel)
+        self.frame_141.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_86 = QVBoxLayout(self.frame_141)
+        self.verticalLayout_86.setSpacing(5)
+        self.verticalLayout_86.setObjectName(u"verticalLayout_86")
+        self.verticalLayout_86.setContentsMargins(0, 0, 0, 0)
+        self.label_data_inclusao_cursos_as = QLabel(self.frame_141)
+        self.label_data_inclusao_cursos_as.setObjectName(u"label_data_inclusao_cursos_as")
+        self.label_data_inclusao_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_data_inclusao_cursos_as.setMaximumSize(QSize(160, 16777215))
+        self.label_data_inclusao_cursos_as.setFont(font)
+
+        self.verticalLayout_86.addWidget(self.label_data_inclusao_cursos_as)
+
+        self.input_data_inclusao_cursos_as = QLineEdit(self.frame_141)
+        self.input_data_inclusao_cursos_as.setObjectName(u"input_data_inclusao_cursos_as")
+        self.input_data_inclusao_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_data_inclusao_cursos_as.setMaximumSize(QSize(150, 30))
+        self.input_data_inclusao_cursos_as.setFont(font)
+        self.input_data_inclusao_cursos_as.setDragEnabled(False)
+        self.input_data_inclusao_cursos_as.setReadOnly(True)
+
+        self.verticalLayout_86.addWidget(self.input_data_inclusao_cursos_as)
+
+
+        self.horizontalLayout_62.addWidget(self.frame_141)
+
+        self.frame_142 = QFrame(self.frame_136)
+        self.frame_142.setObjectName(u"frame_142")
+        self.frame_142.setMinimumSize(QSize(0, 0))
+        self.frame_142.setMaximumSize(QSize(460, 16777215))
+        self.frame_142.setFrameShape(QFrame.StyledPanel)
+        self.frame_142.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_95 = QVBoxLayout(self.frame_142)
+        self.verticalLayout_95.setSpacing(5)
+        self.verticalLayout_95.setObjectName(u"verticalLayout_95")
+        self.verticalLayout_95.setContentsMargins(0, 0, 0, 0)
+        self.label_nome_cursos_as = QLabel(self.frame_142)
+        self.label_nome_cursos_as.setObjectName(u"label_nome_cursos_as")
+        self.label_nome_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_nome_cursos_as.setMaximumSize(QSize(460, 16777215))
+        self.label_nome_cursos_as.setFont(font)
+
+        self.verticalLayout_95.addWidget(self.label_nome_cursos_as)
+
+        self.input_nome_cursos_as = QLineEdit(self.frame_142)
+        self.input_nome_cursos_as.setObjectName(u"input_nome_cursos_as")
+        self.input_nome_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_nome_cursos_as.setMaximumSize(QSize(450, 30))
+        self.input_nome_cursos_as.setFont(font)
+
+        self.verticalLayout_95.addWidget(self.input_nome_cursos_as)
+
+
+        self.horizontalLayout_62.addWidget(self.frame_142)
+
+        self.frame_143 = QFrame(self.frame_136)
+        self.frame_143.setObjectName(u"frame_143")
+        self.frame_143.setMinimumSize(QSize(0, 0))
+        self.frame_143.setMaximumSize(QSize(185, 16777215))
+        self.frame_143.setFrameShape(QFrame.StyledPanel)
+        self.frame_143.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_96 = QVBoxLayout(self.frame_143)
+        self.verticalLayout_96.setSpacing(0)
+        self.verticalLayout_96.setObjectName(u"verticalLayout_96")
+        self.verticalLayout_96.setContentsMargins(0, 0, 0, 0)
+        self.label_tipo_cursos_as = QLabel(self.frame_143)
+        self.label_tipo_cursos_as.setObjectName(u"label_tipo_cursos_as")
+        self.label_tipo_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_tipo_cursos_as.setMaximumSize(QSize(185, 16777215))
+        self.label_tipo_cursos_as.setFont(font)
+
+        self.verticalLayout_96.addWidget(self.label_tipo_cursos_as)
+
+        self.input_tipo_cursos_as = QComboBox(self.frame_143)
+        self.input_tipo_cursos_as.addItem("")
+        self.input_tipo_cursos_as.addItem("")
+        self.input_tipo_cursos_as.addItem("")
+        self.input_tipo_cursos_as.setObjectName(u"input_tipo_cursos_as")
+        self.input_tipo_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_tipo_cursos_as.setMaximumSize(QSize(175, 30))
+        self.input_tipo_cursos_as.setFont(font)
+
+        self.verticalLayout_96.addWidget(self.input_tipo_cursos_as)
+
+
+        self.horizontalLayout_62.addWidget(self.frame_143)
+
+        self.frame_282 = QFrame(self.frame_136)
+        self.frame_282.setObjectName(u"frame_282")
+        self.frame_282.setMaximumSize(QSize(150, 16777215))
+        self.frame_282.setFrameShape(QFrame.StyledPanel)
+        self.frame_282.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_62.addWidget(self.frame_282)
+
+        self.frame_144 = QFrame(self.frame_136)
+        self.frame_144.setObjectName(u"frame_144")
+        self.frame_144.setMinimumSize(QSize(0, 50))
+        self.frame_144.setMaximumSize(QSize(195, 50))
+        self.frame_144.setStyleSheet(u"background-color: #EC848C; border-radius: 10px")
+        self.frame_144.setFrameShape(QFrame.StyledPanel)
+        self.frame_144.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_97 = QVBoxLayout(self.frame_144)
+        self.verticalLayout_97.setSpacing(0)
+        self.verticalLayout_97.setObjectName(u"verticalLayout_97")
+        self.verticalLayout_97.setContentsMargins(15, 0, 0, 0)
+        self.label_situacao_cursos_as = QLabel(self.frame_144)
+        self.label_situacao_cursos_as.setObjectName(u"label_situacao_cursos_as")
+        self.label_situacao_cursos_as.setFont(font)
+
+        self.verticalLayout_97.addWidget(self.label_situacao_cursos_as)
+
+        self.frame_145 = QFrame(self.frame_144)
+        self.frame_145.setObjectName(u"frame_145")
+        self.frame_145.setFrameShape(QFrame.StyledPanel)
+        self.frame_145.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_63 = QHBoxLayout(self.frame_145)
+        self.horizontalLayout_63.setSpacing(0)
+        self.horizontalLayout_63.setObjectName(u"horizontalLayout_63")
+        self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
+        self.input_ativo_cursos_as = QRadioButton(self.frame_145)
+        self.input_ativo_cursos_as.setObjectName(u"input_ativo_cursos_as")
+        self.input_ativo_cursos_as.setFont(font8)
+        self.input_ativo_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.horizontalLayout_63.addWidget(self.input_ativo_cursos_as)
+
+        self.input_inativo_cursos_as = QRadioButton(self.frame_145)
+        self.input_inativo_cursos_as.setObjectName(u"input_inativo_cursos_as")
+        self.input_inativo_cursos_as.setFont(font8)
+        self.input_inativo_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.horizontalLayout_63.addWidget(self.input_inativo_cursos_as)
+
+
+        self.verticalLayout_97.addWidget(self.frame_145)
+
+
+        self.horizontalLayout_62.addWidget(self.frame_144)
+
+
+        self.verticalLayout_85.addWidget(self.frame_136)
+
+        self.frame_138 = QFrame(self.frame_127)
+        self.frame_138.setObjectName(u"frame_138")
+        self.frame_138.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_138.setFrameShape(QFrame.StyledPanel)
+        self.frame_138.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_64 = QHBoxLayout(self.frame_138)
+        self.horizontalLayout_64.setSpacing(5)
+        self.horizontalLayout_64.setObjectName(u"horizontalLayout_64")
+        self.horizontalLayout_64.setContentsMargins(0, 0, 0, 0)
+        self.frame_146 = QFrame(self.frame_138)
+        self.frame_146.setObjectName(u"frame_146")
+        self.frame_146.setMinimumSize(QSize(0, 0))
+        self.frame_146.setMaximumSize(QSize(360, 16777215))
+        self.frame_146.setFrameShape(QFrame.StyledPanel)
+        self.frame_146.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_98 = QVBoxLayout(self.frame_146)
+        self.verticalLayout_98.setSpacing(5)
+        self.verticalLayout_98.setObjectName(u"verticalLayout_98")
+        self.verticalLayout_98.setContentsMargins(0, 0, 0, 0)
+        self.label_responsavel_cursos_as = QLabel(self.frame_146)
+        self.label_responsavel_cursos_as.setObjectName(u"label_responsavel_cursos_as")
+        self.label_responsavel_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_responsavel_cursos_as.setMaximumSize(QSize(360, 16777215))
+        self.label_responsavel_cursos_as.setFont(font)
+
+        self.verticalLayout_98.addWidget(self.label_responsavel_cursos_as)
+
+        self.input_responsavel_cursos_as = QLineEdit(self.frame_146)
+        self.input_responsavel_cursos_as.setObjectName(u"input_responsavel_cursos_as")
+        self.input_responsavel_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_responsavel_cursos_as.setMaximumSize(QSize(350, 30))
+        self.input_responsavel_cursos_as.setFont(font)
+
+        self.verticalLayout_98.addWidget(self.input_responsavel_cursos_as)
+
+
+        self.horizontalLayout_64.addWidget(self.frame_146)
+
+        self.frame_147 = QFrame(self.frame_138)
+        self.frame_147.setObjectName(u"frame_147")
+        self.frame_147.setMinimumSize(QSize(0, 0))
+        self.frame_147.setMaximumSize(QSize(160, 16777215))
+        self.frame_147.setFrameShape(QFrame.StyledPanel)
+        self.frame_147.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_99 = QVBoxLayout(self.frame_147)
+        self.verticalLayout_99.setSpacing(5)
+        self.verticalLayout_99.setObjectName(u"verticalLayout_99")
+        self.verticalLayout_99.setContentsMargins(0, 0, 0, 0)
+        self.label_data_inicio_cursos_as = QLabel(self.frame_147)
+        self.label_data_inicio_cursos_as.setObjectName(u"label_data_inicio_cursos_as")
+        self.label_data_inicio_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_data_inicio_cursos_as.setMaximumSize(QSize(160, 16777215))
+        self.label_data_inicio_cursos_as.setFont(font)
+
+        self.verticalLayout_99.addWidget(self.label_data_inicio_cursos_as)
+
+        self.input_data_inicio_cursos_as = QDateEdit(self.frame_147)
+        self.input_data_inicio_cursos_as.setObjectName(u"input_data_inicio_cursos_as")
+        sizePolicy.setHeightForWidth(self.input_data_inicio_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_inicio_cursos_as.setSizePolicy(sizePolicy)
+        self.input_data_inicio_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_data_inicio_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_inicio_cursos_as.setFont(font8)
+        self.input_data_inicio_cursos_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_inicio_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_inicio_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_inicio_cursos_as.setAutoFillBackground(False)
+        self.input_data_inicio_cursos_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_inicio_cursos_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_inicio_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_data_inicio_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_inicio_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_inicio_cursos_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_inicio_cursos_as.setCalendarPopup(False)
+        self.input_data_inicio_cursos_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_99.addWidget(self.input_data_inicio_cursos_as)
+
+
+        self.horizontalLayout_64.addWidget(self.frame_147)
+
+        self.frame_148 = QFrame(self.frame_138)
+        self.frame_148.setObjectName(u"frame_148")
+        self.frame_148.setMinimumSize(QSize(0, 0))
+        self.frame_148.setMaximumSize(QSize(160, 16777215))
+        self.frame_148.setFrameShape(QFrame.StyledPanel)
+        self.frame_148.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_100 = QVBoxLayout(self.frame_148)
+        self.verticalLayout_100.setSpacing(5)
+        self.verticalLayout_100.setObjectName(u"verticalLayout_100")
+        self.verticalLayout_100.setContentsMargins(-1, 0, 0, 0)
+        self.label_data_termino_cursos_as = QLabel(self.frame_148)
+        self.label_data_termino_cursos_as.setObjectName(u"label_data_termino_cursos_as")
+        self.label_data_termino_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_data_termino_cursos_as.setMaximumSize(QSize(160, 16777215))
+        self.label_data_termino_cursos_as.setFont(font)
+
+        self.verticalLayout_100.addWidget(self.label_data_termino_cursos_as)
+
+        self.input_data_termino_cursos_as = QDateEdit(self.frame_148)
+        self.input_data_termino_cursos_as.setObjectName(u"input_data_termino_cursos_as")
+        sizePolicy.setHeightForWidth(self.input_data_termino_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_termino_cursos_as.setSizePolicy(sizePolicy)
+        self.input_data_termino_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_data_termino_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_termino_cursos_as.setFont(font8)
+        self.input_data_termino_cursos_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_termino_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_termino_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_termino_cursos_as.setAutoFillBackground(False)
+        self.input_data_termino_cursos_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_termino_cursos_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_termino_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_data_termino_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_termino_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_termino_cursos_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_termino_cursos_as.setCalendarPopup(False)
+        self.input_data_termino_cursos_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_100.addWidget(self.input_data_termino_cursos_as)
+
+
+        self.horizontalLayout_64.addWidget(self.frame_148)
+
+        self.frame_149 = QFrame(self.frame_138)
+        self.frame_149.setObjectName(u"frame_149")
+        self.frame_149.setMaximumSize(QSize(400, 16777215))
+        self.frame_149.setFrameShape(QFrame.StyledPanel)
+        self.frame_149.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_101 = QVBoxLayout(self.frame_149)
+        self.verticalLayout_101.setSpacing(0)
+        self.verticalLayout_101.setObjectName(u"verticalLayout_101")
+        self.verticalLayout_101.setContentsMargins(0, 0, 0, 0)
+        self.label_dias_aulas_cursos_as = QLabel(self.frame_149)
+        self.label_dias_aulas_cursos_as.setObjectName(u"label_dias_aulas_cursos_as")
+        self.label_dias_aulas_cursos_as.setFont(font)
+
+        self.verticalLayout_101.addWidget(self.label_dias_aulas_cursos_as)
+
+        self.frame_150 = QFrame(self.frame_149)
+        self.frame_150.setObjectName(u"frame_150")
+        self.frame_150.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_150.setFrameShape(QFrame.StyledPanel)
+        self.frame_150.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_95 = QHBoxLayout(self.frame_150)
+        self.horizontalLayout_95.setSpacing(5)
+        self.horizontalLayout_95.setObjectName(u"horizontalLayout_95")
+        self.horizontalLayout_95.setContentsMargins(0, 0, 0, 0)
+        self.frame_153 = QFrame(self.frame_150)
+        self.frame_153.setObjectName(u"frame_153")
+        self.frame_153.setMaximumSize(QSize(125, 16777215))
+        self.frame_153.setFrameShape(QFrame.StyledPanel)
+        self.frame_153.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_102 = QVBoxLayout(self.frame_153)
+        self.verticalLayout_102.setSpacing(5)
+        self.verticalLayout_102.setObjectName(u"verticalLayout_102")
+        self.verticalLayout_102.setContentsMargins(0, 0, 0, 0)
+        self.frame_273 = QFrame(self.frame_153)
+        self.frame_273.setObjectName(u"frame_273")
+        self.frame_273.setMinimumSize(QSize(0, 30))
+        self.frame_273.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_273.setFrameShape(QFrame.StyledPanel)
+        self.frame_273.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_177 = QVBoxLayout(self.frame_273)
+        self.verticalLayout_177.setObjectName(u"verticalLayout_177")
+        self.input_segunda_feira_cursos = QCheckBox(self.frame_273)
+        self.input_segunda_feira_cursos.setObjectName(u"input_segunda_feira_cursos")
+        self.input_segunda_feira_cursos.setFont(font8)
+
+        self.verticalLayout_177.addWidget(self.input_segunda_feira_cursos, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_102.addWidget(self.frame_273)
+
+        self.frame_274 = QFrame(self.frame_153)
+        self.frame_274.setObjectName(u"frame_274")
+        self.frame_274.setMinimumSize(QSize(0, 30))
+        self.frame_274.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_274.setFrameShape(QFrame.StyledPanel)
+        self.frame_274.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_187 = QVBoxLayout(self.frame_274)
+        self.verticalLayout_187.setObjectName(u"verticalLayout_187")
+        self.input_quinta_feira_cursos = QCheckBox(self.frame_274)
+        self.input_quinta_feira_cursos.setObjectName(u"input_quinta_feira_cursos")
+        self.input_quinta_feira_cursos.setFont(font8)
+
+        self.verticalLayout_187.addWidget(self.input_quinta_feira_cursos, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_102.addWidget(self.frame_274)
+
+
+        self.horizontalLayout_95.addWidget(self.frame_153)
+
+        self.frame_151 = QFrame(self.frame_150)
+        self.frame_151.setObjectName(u"frame_151")
+        self.frame_151.setMaximumSize(QSize(125, 16777215))
+        self.frame_151.setFrameShape(QFrame.StyledPanel)
+        self.frame_151.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_103 = QVBoxLayout(self.frame_151)
+        self.verticalLayout_103.setSpacing(5)
+        self.verticalLayout_103.setObjectName(u"verticalLayout_103")
+        self.verticalLayout_103.setContentsMargins(0, 0, 0, 0)
+        self.frame_276 = QFrame(self.frame_151)
+        self.frame_276.setObjectName(u"frame_276")
+        self.frame_276.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_276.setFrameShape(QFrame.StyledPanel)
+        self.frame_276.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_185 = QVBoxLayout(self.frame_276)
+        self.verticalLayout_185.setObjectName(u"verticalLayout_185")
+        self.input_terca_feira_cursos = QCheckBox(self.frame_276)
+        self.input_terca_feira_cursos.setObjectName(u"input_terca_feira_cursos")
+        self.input_terca_feira_cursos.setFont(font8)
+
+        self.verticalLayout_185.addWidget(self.input_terca_feira_cursos, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_103.addWidget(self.frame_276)
+
+        self.frame_275 = QFrame(self.frame_151)
+        self.frame_275.setObjectName(u"frame_275")
+        self.frame_275.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_275.setFrameShape(QFrame.StyledPanel)
+        self.frame_275.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_188 = QVBoxLayout(self.frame_275)
+        self.verticalLayout_188.setObjectName(u"verticalLayout_188")
+        self.input_sexta_feira_cursos = QCheckBox(self.frame_275)
+        self.input_sexta_feira_cursos.setObjectName(u"input_sexta_feira_cursos")
+        self.input_sexta_feira_cursos.setFont(font8)
+
+        self.verticalLayout_188.addWidget(self.input_sexta_feira_cursos, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_103.addWidget(self.frame_275)
+
+
+        self.horizontalLayout_95.addWidget(self.frame_151)
+
+        self.frame_277 = QFrame(self.frame_150)
+        self.frame_277.setObjectName(u"frame_277")
+        self.frame_277.setMaximumSize(QSize(125, 16777215))
+        self.frame_277.setFrameShape(QFrame.StyledPanel)
+        self.frame_277.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_104 = QVBoxLayout(self.frame_277)
+        self.verticalLayout_104.setSpacing(5)
+        self.verticalLayout_104.setObjectName(u"verticalLayout_104")
+        self.verticalLayout_104.setContentsMargins(0, 0, 0, 0)
+        self.frame_279 = QFrame(self.frame_277)
+        self.frame_279.setObjectName(u"frame_279")
+        self.frame_279.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_279.setFrameShape(QFrame.StyledPanel)
+        self.frame_279.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_186 = QVBoxLayout(self.frame_279)
+        self.verticalLayout_186.setObjectName(u"verticalLayout_186")
+        self.input_quarta_feira_cursos = QCheckBox(self.frame_279)
+        self.input_quarta_feira_cursos.setObjectName(u"input_quarta_feira_cursos")
+        self.input_quarta_feira_cursos.setFont(font8)
+
+        self.verticalLayout_186.addWidget(self.input_quarta_feira_cursos, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_104.addWidget(self.frame_279)
+
+        self.frame_278 = QFrame(self.frame_277)
+        self.frame_278.setObjectName(u"frame_278")
+        self.frame_278.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
+        self.frame_278.setFrameShape(QFrame.StyledPanel)
+        self.frame_278.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_189 = QVBoxLayout(self.frame_278)
+        self.verticalLayout_189.setObjectName(u"verticalLayout_189")
+        self.input_sabado_cursos = QCheckBox(self.frame_278)
+        self.input_sabado_cursos.setObjectName(u"input_sabado_cursos")
+        self.input_sabado_cursos.setFont(font8)
+
+        self.verticalLayout_189.addWidget(self.input_sabado_cursos, 0, Qt.AlignHCenter)
+
+
+        self.verticalLayout_104.addWidget(self.frame_278)
+
+
+        self.horizontalLayout_95.addWidget(self.frame_277)
+
+
+        self.verticalLayout_101.addWidget(self.frame_150)
+
+
+        self.horizontalLayout_64.addWidget(self.frame_149)
+
+
+        self.verticalLayout_85.addWidget(self.frame_138)
+
+        self.frame_139 = QFrame(self.frame_127)
+        self.frame_139.setObjectName(u"frame_139")
+        self.frame_139.setMaximumSize(QSize(16777215, 60))
+        self.frame_139.setFrameShape(QFrame.StyledPanel)
+        self.frame_139.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_66 = QHBoxLayout(self.frame_139)
+        self.horizontalLayout_66.setSpacing(5)
+        self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
+        self.horizontalLayout_66.setContentsMargins(0, 0, 0, 0)
+        self.frame_154 = QFrame(self.frame_139)
+        self.frame_154.setObjectName(u"frame_154")
+        self.frame_154.setMaximumSize(QSize(105, 16777215))
+        self.frame_154.setFrameShape(QFrame.StyledPanel)
+        self.frame_154.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_105 = QVBoxLayout(self.frame_154)
+        self.verticalLayout_105.setSpacing(5)
+        self.verticalLayout_105.setObjectName(u"verticalLayout_105")
+        self.verticalLayout_105.setContentsMargins(0, 0, 0, 0)
+        self.label_horario_inicio_cursos_as = QLabel(self.frame_154)
+        self.label_horario_inicio_cursos_as.setObjectName(u"label_horario_inicio_cursos_as")
+        self.label_horario_inicio_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_horario_inicio_cursos_as.setFont(font)
+        self.label_horario_inicio_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_105.addWidget(self.label_horario_inicio_cursos_as)
+
+        self.input_horario_inicio_cursos_as = QTimeEdit(self.frame_154)
+        self.input_horario_inicio_cursos_as.setObjectName(u"input_horario_inicio_cursos_as")
+        self.input_horario_inicio_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_horario_inicio_cursos_as.setMaximumSize(QSize(105, 16777215))
+        font11 = QFont()
+        font11.setFamilies([u"Abel"])
+        font11.setPointSize(11)
+        font11.setBold(False)
+        font11.setKerning(False)
+        self.input_horario_inicio_cursos_as.setFont(font11)
+        self.input_horario_inicio_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_horario_inicio_cursos_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_horario_inicio_cursos_as.setInputMethodHints(Qt.ImhPreferNumbers|Qt.ImhTime)
+        self.input_horario_inicio_cursos_as.setWrapping(False)
+        self.input_horario_inicio_cursos_as.setFrame(True)
+        self.input_horario_inicio_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_horario_inicio_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_horario_inicio_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+
+        self.verticalLayout_105.addWidget(self.input_horario_inicio_cursos_as)
+
+
+        self.horizontalLayout_66.addWidget(self.frame_154)
+
+        self.widget = QWidget(self.frame_139)
+        self.widget.setObjectName(u"widget")
+        self.widget.setMaximumSize(QSize(105, 16777215))
+        self.verticalLayout_106 = QVBoxLayout(self.widget)
+        self.verticalLayout_106.setSpacing(5)
+        self.verticalLayout_106.setObjectName(u"verticalLayout_106")
+        self.verticalLayout_106.setContentsMargins(0, 0, 0, 0)
+        self.label_horario_termino_cursos_as = QLabel(self.widget)
+        self.label_horario_termino_cursos_as.setObjectName(u"label_horario_termino_cursos_as")
+        self.label_horario_termino_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_horario_termino_cursos_as.setFont(font)
+        self.label_horario_termino_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_106.addWidget(self.label_horario_termino_cursos_as)
+
+        self.input_horario_termino_cursos_as = QTimeEdit(self.widget)
+        self.input_horario_termino_cursos_as.setObjectName(u"input_horario_termino_cursos_as")
+        self.input_horario_termino_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_horario_termino_cursos_as.setMaximumSize(QSize(105, 16777215))
+        self.input_horario_termino_cursos_as.setFont(font11)
+        self.input_horario_termino_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_horario_termino_cursos_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_horario_termino_cursos_as.setInputMethodHints(Qt.ImhPreferNumbers|Qt.ImhTime)
+        self.input_horario_termino_cursos_as.setWrapping(False)
+        self.input_horario_termino_cursos_as.setFrame(True)
+        self.input_horario_termino_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_horario_termino_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_horario_termino_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+
+        self.verticalLayout_106.addWidget(self.input_horario_termino_cursos_as)
+
+
+        self.horizontalLayout_66.addWidget(self.widget)
+
+        self.frame_155 = QFrame(self.frame_139)
+        self.frame_155.setObjectName(u"frame_155")
+        self.frame_155.setMinimumSize(QSize(0, 0))
+        self.frame_155.setMaximumSize(QSize(250, 16777215))
+        self.frame_155.setFrameShape(QFrame.StyledPanel)
+        self.frame_155.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_107 = QVBoxLayout(self.frame_155)
+        self.verticalLayout_107.setSpacing(0)
+        self.verticalLayout_107.setObjectName(u"verticalLayout_107")
+        self.verticalLayout_107.setContentsMargins(0, 0, 0, 0)
+        self.label_periodo_cursos_as = QLabel(self.frame_155)
+        self.label_periodo_cursos_as.setObjectName(u"label_periodo_cursos_as")
+        self.label_periodo_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_periodo_cursos_as.setMaximumSize(QSize(250, 16777215))
+        self.label_periodo_cursos_as.setFont(font)
+
+        self.verticalLayout_107.addWidget(self.label_periodo_cursos_as)
+
+        self.input_periodo_cursos_as = QComboBox(self.frame_155)
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.addItem("")
+        self.input_periodo_cursos_as.setObjectName(u"input_periodo_cursos_as")
+        self.input_periodo_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_periodo_cursos_as.setMaximumSize(QSize(240, 30))
+        self.input_periodo_cursos_as.setFont(font)
+
+        self.verticalLayout_107.addWidget(self.input_periodo_cursos_as)
+
+
+        self.horizontalLayout_66.addWidget(self.frame_155)
+
+        self.frame_156 = QFrame(self.frame_139)
+        self.frame_156.setObjectName(u"frame_156")
+        self.frame_156.setMaximumSize(QSize(100, 16777215))
+        self.frame_156.setFrameShape(QFrame.StyledPanel)
+        self.frame_156.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_108 = QVBoxLayout(self.frame_156)
+        self.verticalLayout_108.setSpacing(0)
+        self.verticalLayout_108.setObjectName(u"verticalLayout_108")
+        self.verticalLayout_108.setContentsMargins(0, 0, 0, 0)
+        self.label_vagas_cursos_as = QLabel(self.frame_156)
+        self.label_vagas_cursos_as.setObjectName(u"label_vagas_cursos_as")
+        self.label_vagas_cursos_as.setMaximumSize(QSize(100, 16777215))
+        self.label_vagas_cursos_as.setFont(font)
+
+        self.verticalLayout_108.addWidget(self.label_vagas_cursos_as)
+
+        self.input_vagas_cursos_as = QLineEdit(self.frame_156)
+        self.input_vagas_cursos_as.setObjectName(u"input_vagas_cursos_as")
+        self.input_vagas_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_vagas_cursos_as.setMaximumSize(QSize(90, 30))
+        self.input_vagas_cursos_as.setFont(font)
+
+        self.verticalLayout_108.addWidget(self.input_vagas_cursos_as)
+
+
+        self.horizontalLayout_66.addWidget(self.frame_156)
+
+        self.frame_157 = QFrame(self.frame_139)
+        self.frame_157.setObjectName(u"frame_157")
+        self.frame_157.setMinimumSize(QSize(0, 0))
+        self.frame_157.setMaximumSize(QSize(160, 16777215))
+        self.frame_157.setFrameShape(QFrame.StyledPanel)
+        self.frame_157.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_109 = QVBoxLayout(self.frame_157)
+        self.verticalLayout_109.setSpacing(0)
+        self.verticalLayout_109.setObjectName(u"verticalLayout_109")
+        self.verticalLayout_109.setContentsMargins(0, 0, 0, 0)
+        self.label_cep_cursos_as = QLabel(self.frame_157)
+        self.label_cep_cursos_as.setObjectName(u"label_cep_cursos_as")
+        self.label_cep_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_cep_cursos_as.setMaximumSize(QSize(160, 16777215))
+        self.label_cep_cursos_as.setFont(font)
+
+        self.verticalLayout_109.addWidget(self.label_cep_cursos_as)
+
+        self.input_cep_cursos_as = QLineEdit(self.frame_157)
+        self.input_cep_cursos_as.setObjectName(u"input_cep_cursos_as")
+        self.input_cep_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_cep_cursos_as.setMaximumSize(QSize(150, 30))
+        self.input_cep_cursos_as.setFont(font)
+
+        self.verticalLayout_109.addWidget(self.input_cep_cursos_as)
+
+
+        self.horizontalLayout_66.addWidget(self.frame_157)
+
+        self.frame_158 = QFrame(self.frame_139)
+        self.frame_158.setObjectName(u"frame_158")
+        self.frame_158.setMinimumSize(QSize(0, 0))
+        self.frame_158.setMaximumSize(QSize(360, 16777215))
+        self.frame_158.setFrameShape(QFrame.StyledPanel)
+        self.frame_158.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_110 = QVBoxLayout(self.frame_158)
+        self.verticalLayout_110.setSpacing(0)
+        self.verticalLayout_110.setObjectName(u"verticalLayout_110")
+        self.verticalLayout_110.setContentsMargins(0, 0, 0, 0)
+        self.label_logradouro_cursos_as = QLabel(self.frame_158)
+        self.label_logradouro_cursos_as.setObjectName(u"label_logradouro_cursos_as")
+        self.label_logradouro_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_logradouro_cursos_as.setMaximumSize(QSize(360, 16777215))
+        self.label_logradouro_cursos_as.setFont(font)
+
+        self.verticalLayout_110.addWidget(self.label_logradouro_cursos_as)
+
+        self.input_logradouro_cursos_as = QLineEdit(self.frame_158)
+        self.input_logradouro_cursos_as.setObjectName(u"input_logradouro_cursos_as")
+        self.input_logradouro_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_logradouro_cursos_as.setMaximumSize(QSize(350, 30))
+        self.input_logradouro_cursos_as.setFont(font)
+
+        self.verticalLayout_110.addWidget(self.input_logradouro_cursos_as)
+
+
+        self.horizontalLayout_66.addWidget(self.frame_158)
+
+
+        self.verticalLayout_85.addWidget(self.frame_139)
+
+        self.frame_140 = QFrame(self.frame_127)
+        self.frame_140.setObjectName(u"frame_140")
+        self.frame_140.setMaximumSize(QSize(16777215, 60))
+        self.frame_140.setFrameShape(QFrame.StyledPanel)
+        self.frame_140.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_67 = QHBoxLayout(self.frame_140)
+        self.horizontalLayout_67.setSpacing(5)
+        self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
+        self.horizontalLayout_67.setContentsMargins(0, 0, 0, 0)
+        self.frame_159 = QFrame(self.frame_140)
+        self.frame_159.setObjectName(u"frame_159")
+        self.frame_159.setMinimumSize(QSize(0, 0))
+        self.frame_159.setMaximumSize(QSize(160, 16777215))
+        self.frame_159.setFrameShape(QFrame.StyledPanel)
+        self.frame_159.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_111 = QVBoxLayout(self.frame_159)
+        self.verticalLayout_111.setSpacing(0)
+        self.verticalLayout_111.setObjectName(u"verticalLayout_111")
+        self.verticalLayout_111.setContentsMargins(0, 0, 0, 0)
+        self.label_numero_cursos_as = QLabel(self.frame_159)
+        self.label_numero_cursos_as.setObjectName(u"label_numero_cursos_as")
+        self.label_numero_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_numero_cursos_as.setMaximumSize(QSize(160, 16777215))
+        self.label_numero_cursos_as.setFont(font)
+
+        self.verticalLayout_111.addWidget(self.label_numero_cursos_as)
+
+        self.input_numero_cursos_as = QLineEdit(self.frame_159)
+        self.input_numero_cursos_as.setObjectName(u"input_numero_cursos_as")
+        self.input_numero_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_numero_cursos_as.setMaximumSize(QSize(150, 30))
+        self.input_numero_cursos_as.setFont(font)
+
+        self.verticalLayout_111.addWidget(self.input_numero_cursos_as)
+
+
+        self.horizontalLayout_67.addWidget(self.frame_159)
+
+        self.frame_160 = QFrame(self.frame_140)
+        self.frame_160.setObjectName(u"frame_160")
+        self.frame_160.setMinimumSize(QSize(0, 0))
+        self.frame_160.setMaximumSize(QSize(230, 16777215))
+        self.frame_160.setFrameShape(QFrame.StyledPanel)
+        self.frame_160.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_112 = QVBoxLayout(self.frame_160)
+        self.verticalLayout_112.setSpacing(0)
+        self.verticalLayout_112.setObjectName(u"verticalLayout_112")
+        self.verticalLayout_112.setContentsMargins(0, 0, 0, 0)
+        self.label_bairro_cursos_as = QLabel(self.frame_160)
+        self.label_bairro_cursos_as.setObjectName(u"label_bairro_cursos_as")
+        self.label_bairro_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_bairro_cursos_as.setMaximumSize(QSize(230, 16777215))
+        self.label_bairro_cursos_as.setFont(font)
+
+        self.verticalLayout_112.addWidget(self.label_bairro_cursos_as)
+
+        self.input_bairro_cursos_as = QLineEdit(self.frame_160)
+        self.input_bairro_cursos_as.setObjectName(u"input_bairro_cursos_as")
+        self.input_bairro_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_bairro_cursos_as.setMaximumSize(QSize(220, 30))
+        self.input_bairro_cursos_as.setFont(font)
+
+        self.verticalLayout_112.addWidget(self.input_bairro_cursos_as)
+
+
+        self.horizontalLayout_67.addWidget(self.frame_160)
+
+        self.frame_161 = QFrame(self.frame_140)
+        self.frame_161.setObjectName(u"frame_161")
+        self.frame_161.setMinimumSize(QSize(0, 0))
+        self.frame_161.setMaximumSize(QSize(240, 16777215))
+        self.frame_161.setFrameShape(QFrame.StyledPanel)
+        self.frame_161.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_113 = QVBoxLayout(self.frame_161)
+        self.verticalLayout_113.setSpacing(0)
+        self.verticalLayout_113.setObjectName(u"verticalLayout_113")
+        self.verticalLayout_113.setContentsMargins(0, 0, 0, 0)
+        self.label_cidade_cursos_as = QLabel(self.frame_161)
+        self.label_cidade_cursos_as.setObjectName(u"label_cidade_cursos_as")
+        self.label_cidade_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_cidade_cursos_as.setMaximumSize(QSize(240, 16777215))
+        self.label_cidade_cursos_as.setFont(font)
+
+        self.verticalLayout_113.addWidget(self.label_cidade_cursos_as)
+
+        self.input_cidade_cursos_as = QLineEdit(self.frame_161)
+        self.input_cidade_cursos_as.setObjectName(u"input_cidade_cursos_as")
+        self.input_cidade_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_cidade_cursos_as.setMaximumSize(QSize(230, 30))
+        self.input_cidade_cursos_as.setFont(font)
+
+        self.verticalLayout_113.addWidget(self.input_cidade_cursos_as)
+
+
+        self.horizontalLayout_67.addWidget(self.frame_161)
+
+        self.frame_162 = QFrame(self.frame_140)
+        self.frame_162.setObjectName(u"frame_162")
+        self.frame_162.setMinimumSize(QSize(80, 0))
+        self.frame_162.setMaximumSize(QSize(80, 16777215))
+        self.frame_162.setFrameShape(QFrame.StyledPanel)
+        self.frame_162.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_114 = QVBoxLayout(self.frame_162)
+        self.verticalLayout_114.setSpacing(0)
+        self.verticalLayout_114.setObjectName(u"verticalLayout_114")
+        self.verticalLayout_114.setContentsMargins(0, 0, 0, 0)
+        self.label_estado_cursos_as = QLabel(self.frame_162)
+        self.label_estado_cursos_as.setObjectName(u"label_estado_cursos_as")
+        self.label_estado_cursos_as.setMinimumSize(QSize(80, 0))
+        self.label_estado_cursos_as.setMaximumSize(QSize(80, 16777215))
+        self.label_estado_cursos_as.setFont(font)
+
+        self.verticalLayout_114.addWidget(self.label_estado_cursos_as)
+
+        self.input_estado_cursos_as = QLineEdit(self.frame_162)
+        self.input_estado_cursos_as.setObjectName(u"input_estado_cursos_as")
+        self.input_estado_cursos_as.setMinimumSize(QSize(70, 30))
+        self.input_estado_cursos_as.setMaximumSize(QSize(70, 30))
+
+        self.verticalLayout_114.addWidget(self.input_estado_cursos_as)
+
+
+        self.horizontalLayout_67.addWidget(self.frame_162)
+
+        self.frame_163 = QFrame(self.frame_140)
+        self.frame_163.setObjectName(u"frame_163")
+        self.frame_163.setFrameShape(QFrame.StyledPanel)
+        self.frame_163.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_67.addWidget(self.frame_163)
+
+
+        self.verticalLayout_85.addWidget(self.frame_140)
+
+        self.frame_280 = QFrame(self.frame_127)
+        self.frame_280.setObjectName(u"frame_280")
+        self.frame_280.setFrameShape(QFrame.StyledPanel)
+        self.frame_280.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_115 = QVBoxLayout(self.frame_280)
+        self.verticalLayout_115.setSpacing(0)
+        self.verticalLayout_115.setObjectName(u"verticalLayout_115")
+        self.verticalLayout_115.setContentsMargins(0, 0, 0, 0)
+        self.label_descricao_cursos_as = QLabel(self.frame_280)
+        self.label_descricao_cursos_as.setObjectName(u"label_descricao_cursos_as")
+        self.label_descricao_cursos_as.setFont(font)
+
+        self.verticalLayout_115.addWidget(self.label_descricao_cursos_as)
+
+        self.input_descricao_atividade_cursos_as = QTextEdit(self.frame_280)
+        self.input_descricao_atividade_cursos_as.setObjectName(u"input_descricao_atividade_cursos_as")
+        self.input_descricao_atividade_cursos_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_descricao_atividade_cursos_as.setFont(font)
+        self.input_descricao_atividade_cursos_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+"QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
+"")
+
+        self.verticalLayout_115.addWidget(self.input_descricao_atividade_cursos_as)
+
+
+        self.verticalLayout_85.addWidget(self.frame_280)
+
+
+        self.verticalLayout_190.addWidget(self.frame_127)
+
+
+        self.horizontalLayout_61.addWidget(self.frame_125)
+
+        self.frame_126 = QFrame(self.frame_122)
+        self.frame_126.setObjectName(u"frame_126")
+        self.frame_126.setFrameShape(QFrame.StyledPanel)
+        self.frame_126.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_61.addWidget(self.frame_126)
+
+
+        self.verticalLayout_84.addWidget(self.frame_122)'''
+
+       
 
         self.frame_124 = QFrame(self.page_cadastrar_cursos_e_oficinas_as)
         self.frame_124.setObjectName(u"frame_124")
