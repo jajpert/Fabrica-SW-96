@@ -183,6 +183,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
+        self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
+        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
 
 
         #############SIGNALS BOTOES voltar#############
@@ -229,6 +231,24 @@ class TelaPrincipal(QMainWindow):
 
 
 ########################### FUNÇÕES BANCO ###########################
+
+    def busca_pessoa(self):
+        tipo = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
+        nome = self.ui.lineEdit_alterar_nome_responsavel_as.text()
+        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as_2.text()
+
+        if tipo == 0 or nome == '' or cpf == '':
+            return self.ui.page_2
+        
+        
+
+        if tipo == 1:
+            return self.ui.page_alterar_cuidador
+        if tipo == 2:
+            return self.ui.page_alterar_usuario
+        if tipo == 3:
+            return self.ui.page_alterar_colaborador_as
+        #if lineEdit_alterar_nome_responsavel_as.text()
     
     def cadastroUsuario(self):
 

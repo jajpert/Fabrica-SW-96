@@ -54,6 +54,25 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def busca_pessoa(self, tipo, nome, cpf):
+        self.connect()
+        try:
+            if tipo == 1:
+                tabela = 'A'
+            if tipo == 2:
+                tabela = 'B'
+            if tipo == 3:
+                tabela = 'C'
+            args = (tabela, nome, cpf)
+            self.cursor.execute("SELECT* FROM %s WHERE NOME LIKE '%%s%' OR CPF LIKE '%%s%')", args)
+            result = self.cursor.fetchall()
+
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
 
     def cadastro_usuario(self,endereco,pessoa,usuario,cuidador):
         self.connect()
