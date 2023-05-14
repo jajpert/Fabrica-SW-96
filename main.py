@@ -221,10 +221,10 @@ class TelaPrincipal(QMainWindow):
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroUsuario)
+        self.ui.btn_finalizar_as.clicked.connect(self.verificarInputsUsuario)
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-
 
 
 

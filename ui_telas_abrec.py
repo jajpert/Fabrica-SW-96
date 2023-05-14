@@ -785,6 +785,7 @@ class Ui_MainWindow(object):
         self.input_matricula_usuario_as.setMinimumSize(QSize(150, 30))
         self.input_matricula_usuario_as.setMaximumSize(QSize(150, 30))
         self.input_matricula_usuario_as.setFont(font)
+        self.input_matricula_usuario_as.setReadOnly(True)
 
         self.verticalLayout_29.addWidget(self.input_matricula_usuario_as)
 
@@ -815,6 +816,14 @@ class Ui_MainWindow(object):
         self.input_nome_usuario_as.setMinimumSize(QSize(450, 30))
         self.input_nome_usuario_as.setMaximumSize(QSize(450, 30))
         self.input_nome_usuario_as.setFont(font)
+        self.input_nome_usuario_as.setPlaceholderText("")
+
+        # self.label_aviso_nome_usuario_as = QLabel(self.frame_62)
+        # self.label_aviso_nome_usuario_as.setObjectName(u"label_aviso_nome_usuario_as")
+        # self.label_aviso_nome_usuario_as.setMinimumSize(QSize(460, 0))
+        # self.label_aviso_nome_usuario_as.setMaximumSize(QSize(460, 16777215))
+        # self.label_aviso_nome_usuario_as.setFont(font)
+        # self.label_aviso_nome_usuario_as.setStyleSheet(u"background: rgba(0,0,0,0);")
 
         self.verticalLayout_30.addWidget(self.input_nome_usuario_as)
 
@@ -2157,6 +2166,7 @@ class Ui_MainWindow(object):
         self.input_matricula_cuidador_as.setMinimumSize(QSize(150, 30))
         self.input_matricula_cuidador_as.setMaximumSize(QSize(150, 30))
         self.input_matricula_cuidador_as.setFont(font)
+        self.input_matricula_cuidador_as.setReadOnly(True)
 
         self.verticalLayout_90.addWidget(self.input_matricula_cuidador_as)
 
@@ -3584,6 +3594,7 @@ class Ui_MainWindow(object):
         self.input_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_colaborador_as.setMaximumSize(QSize(150, 30))
         self.input_matricula_colaborador_as.setFont(font)
+        self.input_matricula_colaborador_as.setReadOnly(True)
 
         self.verticalLayout_136.addWidget(self.input_matricula_colaborador_as)
 
