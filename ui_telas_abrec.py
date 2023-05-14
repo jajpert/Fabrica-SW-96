@@ -11350,8 +11350,7 @@ class Ui_MainWindow(object):
         self.input_quinta_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Quinta-Feira", None))
         self.input_sexta_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Sexta-Feira", None))
         self.input_sabado_cursos_as.setText(QCoreApplication.translate("MainWindow", u"S\u00e1bado", None))
-        #self.label_horario_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rio", None))
-        #self.label_as_cursos_as.setText(QCoreApplication.translate("MainWindow", u"\u00e0s:", None))
+        
         self.label_horario_inicio_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rio In\u00edcio", None))
         self.label_horario_termino_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rio T\u00e9rmino", None))
         self.label_periodo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
