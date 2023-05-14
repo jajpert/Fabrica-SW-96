@@ -225,6 +225,13 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
+        ################ Validações de Inputs ################
+
+        self.ui.input_nome_usuario_as.setValidator(self.ui.validaNome)
+        self.ui.input_nome_usuario_as.setMaxLength(255)
+
+        
+
 
 
 
@@ -513,6 +520,7 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
+
 
 
         
