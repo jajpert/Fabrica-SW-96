@@ -5,6 +5,7 @@ from qtcore import *
 from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
+import cv2
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -514,8 +515,40 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         self.popup.hide()
 
+# class TirarFotoWebCam(Ui_Tirar_Foto):
+#     def __init__(self):
+#         super().__init__()
 
-        
+#         self.ui = Ui_Tirar_Foto()
+#         self.ui.setupUi(self)
+
+
+    def TirarFotoWeb(self):
+        if self.ui.btn_tirar_foto_popup_foto_as.clicked:
+            while(True):
+                
+                TirarFotoWeb = cv2.VideoCapture(0)
+                # Capture the video frame
+                # by frame
+                ret, frame = TirarFotoWeb.read()
+                # Display the resulting frame
+                cv2.imshow('frame', frame)
+                
+                # the 'q' button is set as the
+                # quitting button you may use any
+                # desired button of your choice
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+
+                cv2.imwrite("capture.png", frame)
+
+                # After the loop release the cap object
+                TirarFotoWeb.release()
+                # Destroy all the windows
+                cv2.destroyAllWindows()
+
+
+    
 
 
 if __name__ == "__main__":
