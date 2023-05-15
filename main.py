@@ -548,9 +548,6 @@ class TelaPrincipal(QMainWindow):
                 cv2.destroyAllWindows()
 
 
-    
-
-
 if __name__ == "__main__":
     
     myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string

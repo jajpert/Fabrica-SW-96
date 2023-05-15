@@ -220,6 +220,47 @@ class DataBase():
             self.conn.close()
             print("Conexão encerrada com sucesso!!")
 
+
+
+
+    def SalvarFotoBanco(FilePath,self):
+        #Função onde o usuario consegue selecionar o File
+        with open (FilePath,"rb") as File:
+
+            #Cria uma função onde escreve o arquivo como binario
+            BinaryData = File.read()
+
+        #Função Criada para dar Insert da imagem dentro da tabela desejada 
+        SQlStatement = "INSERT INTO imagem_save (imagem) values (%s)"
+        
+        #Função onde ele executa as duas funções *BinaryData, SQLStatement* e adiciona dentro do banco de dados
+        self.cursor.execute(SQlStatement, (BinaryData, ))
+        db.commit()
+
+
+
+    def PuxarFotoBanco(id,self):
+
+        #Função criada para dar select na tabela selecionada buscando a imagem pelo id selecionado/inserido
+        SQLStatement2 = "SELECT * FROM imagem_save WHERE id = '{0}'"
+        
+        #Executa o select da tabela selecionada e puxa o arquivo com base no id solicitado pelo usuario
+        self.cursor.execute(SQLStatement2.format(str(id)))
+        
+        #Retorna uma unica sequencia por padrão, a tupla retornada consiste em dados retornados pelo servidor MySQL, convertidos em objetos Python
+        MyResult = self.cursor.fetchone()[1]
+        
+        #Função em q salva a imagem com o nome de capture{id}.png, onde o id em q a imagem consta é alterado no nome do arquivo
+        StoreFilePath = "capture{0}.png".format(str(id))
+        
+        #Mostra o numero binario da imagem
+        print(MyResult)
+        
+        #Salva a imagem com o nome inserido na função StoreFilePath *capture{id}.png* para poder ser visualizada
+        with open(StoreFilePath, "wb") as File:
+            File.write(MyResult)
+            File.close()
+
 if __name__ == "__main__":
     db = DataBase()
     db.connect()
