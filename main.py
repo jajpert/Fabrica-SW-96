@@ -515,19 +515,12 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         self.popup.hide()
 
-# class TirarFotoWebCam(Ui_Tirar_Foto):
-#     def __init__(self):
-#         super().__init__()
-
-#         self.ui = Ui_Tirar_Foto()
-#         self.ui.setupUi(self)
-
-
+        
     def TirarFotoWeb(self):
         if self.ui.btn_tirar_foto_popup_foto_as.clicked:
+            TirarFotoWeb = cv2.VideoCapture(0)
             while(True):
-                
-                TirarFotoWeb = cv2.VideoCapture(0)
+
                 # Capture the video frame
                 # by frame
                 ret, frame = TirarFotoWeb.read()
