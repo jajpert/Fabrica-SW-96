@@ -2309,39 +2309,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_49.addWidget(self.frame_107)
 
-        '''self.frame_108 = QFrame(self.frame_101)
-        self.frame_108.setObjectName(u"frame_108")
-        self.frame_108.setMinimumSize(QSize(155, 0))
-        self.frame_108.setMaximumSize(QSize(155, 16777215))
-        self.frame_108.setFrameShape(QFrame.StyledPanel)
-        self.frame_108.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_72 = QVBoxLayout(self.frame_108)
-        self.verticalLayout_72.setSpacing(0)
-        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
-        self.verticalLayout_72.setContentsMargins(0, 0, 0, 0)
-        self.label_data_emissao_cuidador_as = QLabel(self.frame_108)
-        self.label_data_emissao_cuidador_as.setObjectName(u"label_data_emissao_cuidador_as")
-        self.label_data_emissao_cuidador_as.setMinimumSize(QSize(155, 0))
-        self.label_data_emissao_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_data_emissao_cuidador_as.setFont(font)
-
-        self.verticalLayout_72.addWidget(self.label_data_emissao_cuidador_as)
-
-        self.input_data_emissao_cuidador_as = QLineEdit(self.frame_108)
-        self.input_data_emissao_cuidador_as.setObjectName(u"input_data_emissao_cuidador_as")
-        self.input_data_emissao_cuidador_as.setMinimumSize(QSize(145, 30))
-        self.input_data_emissao_cuidador_as.setMaximumSize(QSize(145, 16777215))
-        self.input_data_emissao_cuidador_as.setFont(font)
-
-        self.verticalLayout_72.addWidget(self.input_data_emissao_cuidador_as)
-
-
-        self.horizontalLayout_49.addWidget(self.frame_108)'''
 
         self.frame_108 = QFrame(self.frame_101)
         self.frame_108.setObjectName(u"frame_108")
         self.frame_108.setMinimumSize(QSize(0, 0))
-        self.frame_108.setMaximumSize(QSize(180, 16777215))
+        self.frame_108.setMaximumSize(QSize(155, 16777215))
         self.frame_108.setFrameShape(QFrame.StyledPanel)
         self.frame_108.setFrameShadow(QFrame.Raised)
         self.verticalLayout_72 = QVBoxLayout(self.frame_108)
@@ -2354,13 +2326,10 @@ class Ui_MainWindow(object):
         self.label_data_emissao_cuidador_as.setMaximumSize(QSize(155, 16777215))
         self.label_data_emissao_cuidador_as.setFont(font)
 
-        self.verticalLayout_72.addWidget(self.label_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
+        self.verticalLayout_72.addWidget(self.label_data_emissao_cuidador_as)
 
         self.input_data_emissao_cuidador_as = QDateEdit(self.frame_108)
         self.input_data_emissao_cuidador_as.setObjectName(u"input_data_emissao_cuidador_as")
-        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.input_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
         self.input_data_emissao_cuidador_as.setSizePolicy(sizePolicy)
         self.input_data_emissao_cuidador_as.setMinimumSize(QSize(0, 30))
@@ -3754,6 +3723,35 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_78.addWidget(self.frame_200)
 
+        '''self.frame_198 = QFrame(self.frame_195)
+        self.frame_198.setObjectName(u"frame_198")
+        self.frame_198.setMinimumSize(QSize(0, 0))
+        self.frame_198.setMaximumSize(QSize(180, 16777215))
+        self.frame_198.setFrameShape(QFrame.StyledPanel)
+        self.frame_198.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_138 = QVBoxLayout(self.frame_198)
+        self.verticalLayout_138.setSpacing(0)
+        self.verticalLayout_138.setObjectName(u"verticalLayout_138")
+        self.verticalLayout_138.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_colaborador_as = QLabel(self.frame_198)
+        self.label_cpf_colaborador_as.setObjectName(u"label_cpf_colaborador_as")
+        self.label_cpf_colaborador_as.setMinimumSize(QSize(0, 0))
+        self.label_cpf_colaborador_as.setMaximumSize(QSize(180, 16777215))
+        self.label_cpf_colaborador_as.setFont(font)
+
+        self.verticalLayout_138.addWidget(self.label_cpf_colaborador_as)
+
+        self.input_cpf_colaborador_as = QLineEdit(self.frame_198)
+        self.input_cpf_colaborador_as.setObjectName(u"input_cpf_colaborador_as")
+        self.input_cpf_colaborador_as.setMinimumSize(QSize(0, 30))
+        self.input_cpf_colaborador_as.setMaximumSize(QSize(170, 16777215))
+        self.input_cpf_colaborador_as.setFont(font)
+
+        self.verticalLayout_138.addWidget(self.input_cpf_colaborador_as)
+
+
+        self.horizontalLayout_78.addWidget(self.frame_198)'''
+
         self.frame_198 = QFrame(self.frame_195)
         self.frame_198.setObjectName(u"frame_198")
         self.frame_198.setMinimumSize(QSize(0, 0))
@@ -3782,6 +3780,7 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_78.addWidget(self.frame_198)
+
 
         self.frame_199 = QFrame(self.frame_195)
         self.frame_199.setObjectName(u"frame_199")
@@ -11273,13 +11272,8 @@ class Ui_MainWindow(object):
         self.input_cpf_cuidador_as.setText("")
         self.label_rg_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"RG", None))
         self.input_rg_cuidador_as.setText("")
-        #self.label_data_emissao_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
-        
-        #self.input_data_emissao_cuidador_as.setText("")
-
         self.label_data_emissao_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
-        self.input_data_emissao_cuidador_as.setText("")
-
+        
         self.label_orgao_expedidor_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_sexo_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
         self.label_parentesco_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None))
@@ -11787,8 +11781,15 @@ class Ui_MainWindow(object):
 
         ################################ Validações #########################################
 
-        self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ-]+-"))
+        self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
+        self.input_nome_usuario_as.setValidator(self.validaNome)
+        self.input_nome_usuario_as.setMaxLength(255)
 
+        #Mascara CPF
+        self.maskCpf = QRegularExpressionValidator(QRegularExpression("[0-9]{11}"))
 
+        self.cpf = CPF()
+
+        
 
 

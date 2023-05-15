@@ -6,6 +6,7 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 
+
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -226,9 +227,10 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
         ################ Validações de Inputs ################
-
-        self.ui.input_nome_usuario_as.setValidator(self.ui.validaNome)
-        self.ui.input_nome_usuario_as.setMaxLength(255)
+        
+        
+        
+        
 
         
 
@@ -238,7 +240,8 @@ class TelaPrincipal(QMainWindow):
 ########################### FUNÇÕES BANCO ###########################
     
     def cadastroUsuario(self):
-
+         
+        
         parentesco = self.ui.input_parentesco_cuidador_as.text()
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
         id_matricula = 1
@@ -254,10 +257,10 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         #######################################################
-
-        nome = self.ui.input_nome_usuario_as.text()
-        data_nascimento = '2004-06-25'
-        cpf = self.ui.input_cpf_usuario_as.text()
+       
+        nome = self.ui.validaNome.validate(self.ui.input_nome_usuario_as.text(), 0)
+        data_nascimento = self.ui.input_nascimento_usuario_as.text()
+        cpf = self.ui.cpf.validate(self.ui.input_cpf_usuario_as.text())
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = '2004-06-25' #self.ui.input_data_emissao_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()

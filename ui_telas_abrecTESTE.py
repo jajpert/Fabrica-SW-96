@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecTESTEWcQVnU.ui'
+## Form generated from reading UI file 'telas_abrecTESTEvGGFUA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.2
 ##
@@ -945,6 +945,7 @@ class Ui_MainWindow(object):
         self.input_cpf_usuario_as.setMinimumSize(QSize(170, 30))
         self.input_cpf_usuario_as.setMaximumSize(QSize(170, 30))
         self.input_cpf_usuario_as.setFont(font)
+        self.input_cpf_usuario_as.setInputMethodHints(Qt.ImhPreferNumbers)
 
         self.verticalLayout_33.addWidget(self.input_cpf_usuario_as)
 
@@ -1061,6 +1062,7 @@ class Ui_MainWindow(object):
         self.input_nis_usuario_as.setMinimumSize(QSize(160, 30))
         self.input_nis_usuario_as.setMaximumSize(QSize(160, 30))
         self.input_nis_usuario_as.setFont(font)
+        self.input_nis_usuario_as.setInputMethodHints(Qt.ImhPreferNumbers)
 
         self.verticalLayout_43.addWidget(self.input_nis_usuario_as)
 
@@ -1302,6 +1304,7 @@ class Ui_MainWindow(object):
         self.input_numero_usuario_as.setMinimumSize(QSize(150, 30))
         self.input_numero_usuario_as.setMaximumSize(QSize(150, 30))
         self.input_numero_usuario_as.setFont(font)
+        self.input_numero_usuario_as.setInputMethodHints(Qt.ImhPreferNumbers)
 
         self.verticalLayout_52.addWidget(self.input_numero_usuario_as)
 
@@ -2257,7 +2260,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_49.addWidget(self.frame_107)
 
-        '''self.frame_108 = QFrame(self.frame_101)
+        self.frame_108 = QFrame(self.frame_101)
         self.frame_108.setObjectName(u"frame_108")
         self.frame_108.setMinimumSize(QSize(0, 0))
         self.frame_108.setMaximumSize(QSize(180, 16777215))
@@ -2302,7 +2305,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_72.addWidget(self.input_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_49.addWidget(self.frame_108)'''
+        self.horizontalLayout_49.addWidget(self.frame_108)
 
 
         self.verticalLayout_67.addWidget(self.frame_101)
@@ -3022,6 +3025,9 @@ class Ui_MainWindow(object):
         self.input_salario_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_salario_colaborador_as.setMaximumSize(QSize(150, 16777215))
         self.input_salario_colaborador_as.setFont(font)
+        self.input_salario_colaborador_as.setInputMethodHints(Qt.ImhPreferNumbers)
+        self.input_salario_colaborador_as.setEchoMode(QLineEdit.Normal)
+        self.input_salario_colaborador_as.setCursorPosition(0)
 
         self.verticalLayout_171.addWidget(self.input_salario_colaborador_as)
 
@@ -3635,6 +3641,7 @@ class Ui_MainWindow(object):
         self.input_nome_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_colaborador_as.setMaximumSize(QSize(430, 30))
         self.input_nome_colaborador_as.setFont(font)
+        self.input_nome_colaborador_as.setInputMethodHints(Qt.ImhNoPredictiveText|Qt.ImhPreferLatin|Qt.ImhUppercaseOnly)
 
         self.verticalLayout_137.addWidget(self.input_nome_colaborador_as)
 
@@ -3823,6 +3830,7 @@ class Ui_MainWindow(object):
         self.input_numero_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_colaborador_as.setMaximumSize(QSize(159, 30))
         self.input_numero_colaborador_as.setFont(font)
+        self.input_numero_colaborador_as.setInputMethodHints(Qt.ImhPreferNumbers)
 
         self.verticalLayout_173.addWidget(self.input_numero_colaborador_as)
 
@@ -7458,7 +7466,7 @@ class Ui_MainWindow(object):
         self.inicio.setCurrentIndex(1)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(3)
+        self.stackedWidget_2.setCurrentIndex(2)
         self.stackedWidget.setCurrentIndex(1)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_4.setCurrentIndex(0)
@@ -7508,15 +7516,21 @@ class Ui_MainWindow(object):
         self.input_situacao_ativo_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
         self.label_cpf_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
+        self.input_cpf_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.000.000-00", None))
         self.label_rg_usuario_as.setText(QCoreApplication.translate("MainWindow", u"RG", None))
+        self.input_rg_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.000.000", None))
         self.label_data_emissao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
         self.label_orgao_expedidor_usuario_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_nis_usuario_as.setText(QCoreApplication.translate("MainWindow", u"NIS", None))
+        self.input_nis_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.00000.00-0", None))
         self.label_cns_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CNS", None))
+        self.input_cns_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.0000.0000.0000", None))
         self.label_sexo_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
         self.label_telefone_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
+        self.input_telefone_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"(00)00000-0000", None))
         self.label_email_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.label_cep_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
+        self.input_cep_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"00000-000", None))
         self.label_logradouro_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None))
         self.label_numero_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
         self.label_bairro_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
@@ -7654,6 +7668,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_observacoes_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.label_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO COLABORADOR", None))
         self.label_salario_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Sal\u00e1rio", None))
+        self.input_salario_colaborador_as.setInputMask("")
         self.input_salario_colaborador_as.setText("")
         self.label_descricao_cargo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o do cargo", None))
         self.label_estado_civil_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
@@ -7698,12 +7713,14 @@ class Ui_MainWindow(object):
         self.label_orgao_expedidor_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_data_emissao_rg_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
         self.label_pis_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"PIS", None))
+        self.input_pis_colaborador_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.00000.00-0", None))
         self.label_sexo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
         self.input_sexo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
         self.input_sexo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
         self.input_sexo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
 
         self.label_telefone_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
+        self.input_telefone_colaborador_as.setInputMask(QCoreApplication.translate("MainWindow", u"(00)00000-0000", None))
         self.label_email_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.label_matricula_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Matricula", None))
         self.label_nome_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Nome colaborador", None))
@@ -7711,11 +7728,14 @@ class Ui_MainWindow(object):
         self.label_data_nascimento_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
         self.input_data_nascimento_colaborador_as.setText("")
         self.label_cpf_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
-        self.input_cpf_colaborador_as.setText("")
+        self.input_cpf_colaborador_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.000.000-00", None))
+        self.input_cpf_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"..-", None))
         self.label_rg_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"RG", None))
-        self.input_rg_colaborador_as.setText("")
+        self.input_rg_colaborador_as.setInputMask(QCoreApplication.translate("MainWindow", u"000.000.000", None))
+        self.input_rg_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"..", None))
         self.label_cep_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
-        self.input_cep_colaborador_as.setText("")
+        self.input_cep_colaborador_as.setInputMask(QCoreApplication.translate("MainWindow", u"00000-000", None))
+        self.input_cep_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"-", None))
         self.label_logradouro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None))
         self.label_numero_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
         self.label_bairro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
