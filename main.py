@@ -49,6 +49,7 @@ class DialogTirarFoto(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
+        self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -60,6 +61,15 @@ class DialogTirarFoto(QDialog):
     def closeEvent(self, event):
         self.timer_msg.stop()
         event.accept()
+    
+    def TirarFotoWeb(self):
+        TirarFotoWeb = cv2.VideoCapture(0)
+        ret, frame = TirarFotoWeb.read()
+        cv2.imwrite("capture.png", frame)
+        # After the loop release the cap object
+        TirarFotoWeb.release()
+        # Destroy all the windows
+        cv2.destroyAllWindows()
 
 
 ################Class POPUP Cuidador################
@@ -249,6 +259,7 @@ class TelaPrincipal(QMainWindow):
 
         #######################################################
 
+        imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
         data_nascimento = '2004-06-25'
         cpf = self.ui.input_cpf_usuario_as.text()
@@ -303,7 +314,7 @@ class TelaPrincipal(QMainWindow):
 
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
+        tupla_pessoa = (imagem,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
          
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
         print(result)
@@ -514,31 +525,6 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
-
-        
-    def TirarFotoWeb(self):
-        if self.ui.btn_tirar_foto_popup_foto_as.clicked:
-            TirarFotoWeb = cv2.VideoCapture(0)
-            while(True):
-
-                # Capture the video frame
-                # by frame
-                ret, frame = TirarFotoWeb.read()
-                # Display the resulting frame
-                cv2.imshow('frame', frame)
-                
-                # the 'q' button is set as the
-                # quitting button you may use any
-                # desired button of your choice
-                if cv2.waitKey(1) & 0xFF == ord('q'):
-                    break
-
-                cv2.imwrite("capture.png", frame)
-
-                # After the loop release the cap object
-                TirarFotoWeb.release()
-                # Destroy all the windows
-                cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
