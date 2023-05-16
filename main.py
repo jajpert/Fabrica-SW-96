@@ -50,6 +50,7 @@ class DialogTirarFoto(QDialog):
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
+        # self.ui.btn_importar_popup_foto_as.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -64,12 +65,22 @@ class DialogTirarFoto(QDialog):
     
     def TirarFotoWeb(self):
         TirarFotoWeb = cv2.VideoCapture(0)
-        ret, frame = TirarFotoWeb.read()
+        ret,frame = TirarFotoWeb.read()
         cv2.imwrite("capture.png", frame)
         # After the loop release the cap object
         TirarFotoWeb.release()
         # Destroy all the windows
         cv2.destroyAllWindows()
+
+    # def ImportarFoto(self):
+    #     File1 = open("C:\Users\User\Documents\GitHub\Fabrica-SW-96","w")
+        
+    #     with open (File1,"rb") as File1:
+    #         file_stuff=File1.read()
+    #         print(file_stuff)
+    #     print(File1.closed)
+    #     print(file_stuff)
+
 
 
 ################Class POPUP Cuidador################
@@ -253,13 +264,13 @@ class TelaPrincipal(QMainWindow):
         rua = self.ui.input_logradouro_usuario_as.text()
         numero = self.ui.input_numero_usuario_as.text()
         bairro = self.ui.input_bairro_usuario_as.text()
-        id_cidade=2
+        id_cidade = 2
 
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         #######################################################
 
-        imagem = self.ui.btn_foto_usuario_as.text()
+        foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
         data_nascimento = '2004-06-25'
         cpf = self.ui.input_cpf_usuario_as.text()
@@ -314,7 +325,7 @@ class TelaPrincipal(QMainWindow):
 
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
 
-        tupla_pessoa = (imagem,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp,foto_imagem)
          
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
         print(result)
