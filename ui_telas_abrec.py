@@ -3478,7 +3478,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_79.addWidget(self.frame_202)
 
-        self.frame_207 = QFrame(self.frame_201)
+        '''self.frame_207 = QFrame(self.frame_201)
         self.frame_207.setObjectName(u"frame_207")
         self.frame_207.setMaximumSize(QSize(151, 16777215))
         self.frame_207.setFrameShape(QFrame.StyledPanel)
@@ -3501,6 +3501,48 @@ class Ui_MainWindow(object):
         self.input_data_emissao_rg_colaborador_as.setFont(font)
 
         self.verticalLayout_146.addWidget(self.input_data_emissao_rg_colaborador_as)
+
+
+        self.horizontalLayout_79.addWidget(self.frame_207)'''
+
+        self.frame_207 = QFrame(self.frame_201)
+        self.frame_207.setObjectName(u"frame_207")
+        self.frame_207.setMaximumSize(QSize(151, 16777215))
+        self.frame_207.setFrameShape(QFrame.StyledPanel)
+        self.frame_207.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_146 = QVBoxLayout(self.frame_207)
+        self.verticalLayout_146.setSpacing(5)
+        self.verticalLayout_146.setObjectName(u"verticalLayout_146")
+        self.verticalLayout_146.setContentsMargins(0, 0, 0, 0)
+        self.label_data_emissao_rg_colaborador_as = QLabel(self.frame_207)
+        self.label_data_emissao_rg_colaborador_as.setObjectName(u"label_data_emissao_rg_colaborador_as")
+        self.label_data_emissao_rg_colaborador_as.setMaximumSize(QSize(170, 16777215))
+        self.label_data_emissao_rg_colaborador_as.setFont(font)
+
+        self.verticalLayout_146.addWidget(self.label_data_emissao_rg_colaborador_as)
+
+        self.input_data_emissao_rg_colaborador_as = QDateEdit(self.frame_207)
+        self.input_data_emissao_rg_colaborador_as.setObjectName(u"input_data_emissao_rg_colaborador_as")
+        sizePolicy1.setHeightForWidth(self.input_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy1)
+        self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
+        self.input_data_emissao_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_emissao_rg_colaborador_as.setFont(font8)
+        self.input_data_emissao_rg_colaborador_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_emissao_rg_colaborador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_emissao_rg_colaborador_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_emissao_rg_colaborador_as.setAutoFillBackground(False)
+        self.input_data_emissao_rg_colaborador_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_emissao_rg_colaborador_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_emissao_rg_colaborador_as.setAlignment(Qt.AlignCenter)
+        self.input_data_emissao_rg_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_emissao_rg_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_emissao_rg_colaborador_as.setCalendarPopup(False)
+        self.input_data_emissao_rg_colaborador_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_146.addWidget(self.input_data_emissao_rg_colaborador_as, 0, Qt.AlignHCenter)
 
 
         self.horizontalLayout_79.addWidget(self.frame_207)
@@ -3700,7 +3742,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_78.addWidget(self.frame_197)
 
-        self.frame_200 = QFrame(self.frame_195)
+        '''self.frame_200 = QFrame(self.frame_195)
         self.frame_200.setObjectName(u"frame_200")
         self.frame_200.setMinimumSize(QSize(0, 0))
         self.frame_200.setMaximumSize(QSize(155, 16777215))
@@ -3727,7 +3769,51 @@ class Ui_MainWindow(object):
         self.verticalLayout_140.addWidget(self.input_data_nascimento_colaborador_as)
 
 
-        self.horizontalLayout_78.addWidget(self.frame_200)
+        self.horizontalLayout_78.addWidget(self.frame_200)'''
+
+        self.frame_200 = QFrame(self.frame_195)
+        self.frame_200.setObjectName(u"frame_200")
+        self.frame_200.setMinimumSize(QSize(0, 0))
+        self.frame_200.setMaximumSize(QSize(155, 16777215))
+        self.frame_200.setFrameShape(QFrame.StyledPanel)
+        self.frame_200.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_140 = QVBoxLayout(self.frame_200)
+        self.verticalLayout_140.setSpacing(5)
+        self.verticalLayout_140.setObjectName(u"verticalLayout_140")
+        self.verticalLayout_140.setContentsMargins(0, 0, 0, 0)
+        self.label_data_nascimento_colaborador_as = QLabel(self.frame_200)
+        self.label_data_nascimento_colaborador_as.setObjectName(u"label_data_nascimento_colaborador_as")
+        self.label_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 0))
+        self.label_data_nascimento_colaborador_as.setMaximumSize(QSize(155, 16777215))
+        self.label_data_nascimento_colaborador_as.setFont(font)
+
+        self.verticalLayout_140.addWidget(self.label_data_nascimento_colaborador_as)
+
+        self.input_data_nascimento_colaborador_as = QDateEdit(self.frame_200)
+        self.input_data_nascimento_colaborador_as.setObjectName(u"input_data_nascimento_colaborador_as")
+        sizePolicy1.setHeightForWidth(self.input_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_nascimento_colaborador_as.setSizePolicy(sizePolicy1)
+        self.input_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 30))
+        self.input_data_nascimento_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_nascimento_colaborador_as.setFont(font8)
+        self.input_data_nascimento_colaborador_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_nascimento_colaborador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_nascimento_colaborador_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_nascimento_colaborador_as.setAutoFillBackground(False)
+        self.input_data_nascimento_colaborador_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_nascimento_colaborador_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_nascimento_colaborador_as.setAlignment(Qt.AlignCenter)
+        self.input_data_nascimento_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_nascimento_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_nascimento_colaborador_as.setCalendarPopup(False)
+        self.input_data_nascimento_colaborador_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_140.addWidget(self.input_data_nascimento_colaborador_as, 0, Qt.AlignHCenter)
+
+
+        self.horizontalLayout_78.addWidget(self.frame_200, 0, Qt.AlignHCenter|Qt.AlignVCenter)
 
         
         self.frame_198 = QFrame(self.frame_195)
@@ -11281,7 +11367,7 @@ class Ui_MainWindow(object):
         self.label_nome_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Nome colaborador", None))
         self.input_nome_colaborador_as.setText("")
         self.label_data_nascimento_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
-        self.input_data_nascimento_colaborador_as.setText("")
+        #self.input_data_nascimento_colaborador_as.setText("")
         self.label_cpf_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
         self.input_cpf_colaborador_as.setText("")
         self.label_rg_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"RG", None))
