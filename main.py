@@ -240,7 +240,7 @@ class TelaPrincipal(QMainWindow):
 ########################### FUNÇÕES BANCO ###########################
     
     def cadastroUsuario(self):
-        self.valida = Validacao()
+        #self.valida = Validacao()
 
         
         parentesco = self.ui.input_parentesco_cuidador_as.text()
@@ -259,17 +259,9 @@ class TelaPrincipal(QMainWindow):
 
         #######################################################
 
-        nome = self.ui.input_nome_usuario_as.text()
-        '''if self.valida.resultado:
-             return ("Entrada Válida")
-        else: 
-            return ("Entrada Invalido")'''
-
-
+        nome = self.ui.validaNome.validate(self.ui.input_nome_usuario_as.text())
         data_nascimento = self.ui.input_nascimento_usuario_as.text()
-        #cpf = self.ui.cpf.validate(self.ui.input_cpf_usuario_as.text())
-                
-
+        cpf = self.ui.cpf.validate(self.ui.input_cpf_usuario_as.text())
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = '2004-06-25' #self.ui.input_data_emissao_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()

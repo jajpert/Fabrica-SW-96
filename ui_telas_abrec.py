@@ -943,35 +943,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
         
-        '''self.frame_66 = QFrame(self.frame_47)
-        self.frame_66.setObjectName(u"frame_66")
-        self.frame_66.setMinimumSize(QSize(180, 0))
-        self.frame_66.setMaximumSize(QSize(180, 16777215))
-        self.frame_66.setFrameShape(QFrame.StyledPanel)
-        self.frame_66.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_33 = QVBoxLayout(self.frame_66)
-        self.verticalLayout_33.setSpacing(0)
-        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
-        self.verticalLayout_33.setContentsMargins(0, 0, 0, 0)
-        self.label_cpf_usuario_as = QLabel(self.frame_66)
-        self.label_cpf_usuario_as.setObjectName(u"label_cpf_usuario_as")
-        self.label_cpf_usuario_as.setMinimumSize(QSize(180, 0))
-        self.label_cpf_usuario_as.setMaximumSize(QSize(180, 16777215))
-        self.label_cpf_usuario_as.setFont(font)
-
-        self.verticalLayout_33.addWidget(self.label_cpf_usuario_as)
-
-        self.input_cpf_usuario_as = QLineEdit(self.frame_66)
-        self.input_cpf_usuario_as.setObjectName(u"input_cpf_usuario_as")
-        self.input_cpf_usuario_as.setMinimumSize(QSize(170, 30))
-        self.input_cpf_usuario_as.setMaximumSize(QSize(170, 30))
-        self.input_cpf_usuario_as.setFont(font)
-
-        self.verticalLayout_33.addWidget(self.input_cpf_usuario_as)
-
-
-        self.horizontalLayout_34.addWidget(self.frame_66)'''
-
+        
         self.frame_66 = QFrame(self.frame_47)
         self.frame_66.setObjectName(u"frame_66")
         self.frame_66.setMinimumSize(QSize(0, 0))
@@ -3757,35 +3729,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_78.addWidget(self.frame_200)
 
-        '''self.frame_198 = QFrame(self.frame_195)
-        self.frame_198.setObjectName(u"frame_198")
-        self.frame_198.setMinimumSize(QSize(0, 0))
-        self.frame_198.setMaximumSize(QSize(180, 16777215))
-        self.frame_198.setFrameShape(QFrame.StyledPanel)
-        self.frame_198.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_138 = QVBoxLayout(self.frame_198)
-        self.verticalLayout_138.setSpacing(0)
-        self.verticalLayout_138.setObjectName(u"verticalLayout_138")
-        self.verticalLayout_138.setContentsMargins(0, 0, 0, 0)
-        self.label_cpf_colaborador_as = QLabel(self.frame_198)
-        self.label_cpf_colaborador_as.setObjectName(u"label_cpf_colaborador_as")
-        self.label_cpf_colaborador_as.setMinimumSize(QSize(0, 0))
-        self.label_cpf_colaborador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_cpf_colaborador_as.setFont(font)
-
-        self.verticalLayout_138.addWidget(self.label_cpf_colaborador_as)
-
-        self.input_cpf_colaborador_as = QLineEdit(self.frame_198)
-        self.input_cpf_colaborador_as.setObjectName(u"input_cpf_colaborador_as")
-        self.input_cpf_colaborador_as.setMinimumSize(QSize(0, 30))
-        self.input_cpf_colaborador_as.setMaximumSize(QSize(170, 16777215))
-        self.input_cpf_colaborador_as.setFont(font)
-
-        self.verticalLayout_138.addWidget(self.input_cpf_colaborador_as)
-
-
-        self.horizontalLayout_78.addWidget(self.frame_198)'''
-
+        
         self.frame_198 = QFrame(self.frame_195)
         self.frame_198.setObjectName(u"frame_198")
         self.frame_198.setMinimumSize(QSize(0, 0))
@@ -11794,22 +11738,12 @@ class Ui_MainWindow(object):
 
 
         ################################ Validações #########################################
-class Validacao():
-                def __init__(self):
-                        super().__init__()
-                        
-                
-                        '''def validarNome(texto):
-                        validaNome = r'^[a-zA-Z\s0-9]+$'
-                        self.resultado = re.match(validaNome, texto)'''
-                
+                     
 
 
-        
-
-        #self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-][-]+"))
-        #self.input_nome_usuario_as.setValidator(self.validaNome)
-        #self.input_nome_usuario_as.setMaxLength(255)
+        self.validaNome = QRegularExpressionValidator(QRegularExpression("/\b[A-Za-zÀ-ú][A-Za-zÀ-ú]+,?\s[A-Za-zÀ-ú][A-Za-zÀ-ú]{2,19}\b/gi"))
+        self.input_nome_usuario_as.setValidator(self.validaNome)
+        self.input_nome_usuario_as.setMaxLength(255)
 
         #Mascara CPF
         #self.maskCpf = QRegularExpressionValidator(QRegularExpression("[0-9]{11}"))
