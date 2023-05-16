@@ -240,7 +240,8 @@ class TelaPrincipal(QMainWindow):
 ########################### FUNÇÕES BANCO ###########################
     
     def cadastroUsuario(self):
-         
+        self.valida = Validacao()
+
         
         parentesco = self.ui.input_parentesco_cuidador_as.text()
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
@@ -257,17 +258,25 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         #######################################################
-       
-        nome = self.ui.validaNome.validate(self.ui.input_nome_usuario_as.text(), 0)
+
+        nome = self.ui.input_nome_usuario_as.text()
+        '''if self.valida.resultado:
+             return ("Entrada Válida")
+        else: 
+            return ("Entrada Invalido")'''
+
+
         data_nascimento = self.ui.input_nascimento_usuario_as.text()
-        cpf = self.ui.cpf.validate(self.ui.input_cpf_usuario_as.text())
+        #cpf = self.ui.cpf.validate(self.ui.input_cpf_usuario_as.text())
+                
+
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = '2004-06-25' #self.ui.input_data_emissao_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.text()
         data_cadastro = '2004-06-25'
-        telefone = self.ui.input_telefone_usuario_as.text()
-        email = self.ui.input_email_usuario_as.text()
+        telefone = self.ui.validaTelefone.validate(self.ui.input_telefone_usuario_as.text())
+        email = self.ui.validaEmail.validate(self.ui.input_email_usuario_as.text())
         escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 

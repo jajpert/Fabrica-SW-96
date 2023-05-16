@@ -11,6 +11,7 @@
 from qtcore import * 
 from icons import *
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -791,6 +792,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.frame_61)
 
+        
         self.frame_62 = QFrame(self.frame_48)
         self.frame_62.setObjectName(u"frame_62")
         self.frame_62.setMinimumSize(QSize(0, 0))
@@ -815,6 +817,7 @@ class Ui_MainWindow(object):
         self.input_nome_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_nome_usuario_as.setMaximumSize(QSize(450, 30))
         self.input_nome_usuario_as.setFont(font)
+        self.input_nome_usuario_as.setEchoMode(QLineEdit.Normal)
 
         self.verticalLayout_30.addWidget(self.input_nome_usuario_as)
 
@@ -939,6 +942,36 @@ class Ui_MainWindow(object):
         self.horizontalLayout_34.setSpacing(5)
         self.horizontalLayout_34.setObjectName(u"horizontalLayout_34")
         self.horizontalLayout_34.setContentsMargins(0, 0, 0, 0)
+        
+        '''self.frame_66 = QFrame(self.frame_47)
+        self.frame_66.setObjectName(u"frame_66")
+        self.frame_66.setMinimumSize(QSize(180, 0))
+        self.frame_66.setMaximumSize(QSize(180, 16777215))
+        self.frame_66.setFrameShape(QFrame.StyledPanel)
+        self.frame_66.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_33 = QVBoxLayout(self.frame_66)
+        self.verticalLayout_33.setSpacing(0)
+        self.verticalLayout_33.setObjectName(u"verticalLayout_33")
+        self.verticalLayout_33.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_usuario_as = QLabel(self.frame_66)
+        self.label_cpf_usuario_as.setObjectName(u"label_cpf_usuario_as")
+        self.label_cpf_usuario_as.setMinimumSize(QSize(180, 0))
+        self.label_cpf_usuario_as.setMaximumSize(QSize(180, 16777215))
+        self.label_cpf_usuario_as.setFont(font)
+
+        self.verticalLayout_33.addWidget(self.label_cpf_usuario_as)
+
+        self.input_cpf_usuario_as = QLineEdit(self.frame_66)
+        self.input_cpf_usuario_as.setObjectName(u"input_cpf_usuario_as")
+        self.input_cpf_usuario_as.setMinimumSize(QSize(170, 30))
+        self.input_cpf_usuario_as.setMaximumSize(QSize(170, 30))
+        self.input_cpf_usuario_as.setFont(font)
+
+        self.verticalLayout_33.addWidget(self.input_cpf_usuario_as)
+
+
+        self.horizontalLayout_34.addWidget(self.frame_66)'''
+
         self.frame_66 = QFrame(self.frame_47)
         self.frame_66.setObjectName(u"frame_66")
         self.frame_66.setMinimumSize(QSize(0, 0))
@@ -962,6 +995,7 @@ class Ui_MainWindow(object):
         self.input_cpf_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_usuario_as.setMaximumSize(QSize(170, 30))
         self.input_cpf_usuario_as.setFont(font)
+        self.input_cpf_usuario_as.setInputMethodHints(Qt.ImhPreferNumbers)
 
         self.verticalLayout_33.addWidget(self.input_cpf_usuario_as)
 
@@ -4602,7 +4636,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_64.addWidget(self.frame_148)
-
         
         self.frame_149 = QFrame(self.frame_127)
         self.frame_149.setObjectName(u"frame_149")
@@ -4791,33 +4824,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
         self.horizontalLayout_66.setContentsMargins(0, 0, 0, 0)
         
-        '''self.frame_154 = QFrame(self.frame_136)
-        self.frame_154.setObjectName(u"frame_154")
-        self.frame_154.setMaximumSize(QSize(90, 16777215))
-        self.frame_154.setFrameShape(QFrame.StyledPanel)
-        self.frame_154.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_105 = QVBoxLayout(self.frame_154)
-        self.verticalLayout_105.setSpacing(0)
-        self.verticalLayout_105.setObjectName(u"verticalLayout_105")
-        self.verticalLayout_105.setContentsMargins(0, 0, 0, 0)
-        self.label_horario_cursos_as = QLabel(self.frame_154)
-        self.label_horario_cursos_as.setObjectName(u"label_horario_cursos_as")
-        self.label_horario_cursos_as.setMaximumSize(QSize(90, 16777215))
-        self.label_horario_cursos_as.setFont(font)
-        self.label_horario_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.verticalLayout_105.addWidget(self.label_horario_cursos_as)
-
-        self.input_horario_cursos_as = QLineEdit(self.frame_154)
-        self.input_horario_cursos_as.setObjectName(u"input_horario_cursos_as")
-        self.input_horario_cursos_as.setMinimumSize(QSize(80, 0))
-        self.input_horario_cursos_as.setMaximumSize(QSize(80, 30))
-        self.input_horario_cursos_as.setFont(font)
-
-        self.verticalLayout_105.addWidget(self.input_horario_cursos_as)
-
-
-        self.horizontalLayout_66.addWidget(self.frame_154)'''
+            
 
         self.frame_154 = QFrame(self.frame_136)
         self.frame_154.setObjectName(u"frame_154")
@@ -4852,31 +4859,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.frame_154)
 
-        '''self.widget = QWidget(self.frame_136)
-        self.widget.setObjectName(u"widget")
-        self.widget.setMaximumSize(QSize(90, 16777215))
-        self.verticalLayout_106 = QVBoxLayout(self.widget)
-        self.verticalLayout_106.setSpacing(0)
-        self.verticalLayout_106.setObjectName(u"verticalLayout_106")
-        self.verticalLayout_106.setContentsMargins(0, 0, 0, 0)
-        self.label_as_cursos_as = QLabel(self.widget)
-        self.label_as_cursos_as.setObjectName(u"label_as_cursos_as")
-        self.label_as_cursos_as.setMaximumSize(QSize(90, 16777215))
-        self.label_as_cursos_as.setFont(font)
-        self.label_as_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.verticalLayout_106.addWidget(self.label_as_cursos_as)
-
-        self.input_as_cursos_as = QLineEdit(self.widget)
-        self.input_as_cursos_as.setObjectName(u"input_as_cursos_as")
-        self.input_as_cursos_as.setMinimumSize(QSize(80, 30))
-        self.input_as_cursos_as.setMaximumSize(QSize(80, 30))
-        self.input_as_cursos_as.setFont(font)
-
-        self.verticalLayout_106.addWidget(self.input_as_cursos_as)
-
-
-        self.horizontalLayout_66.addWidget(self.widget)'''
 
         self.frame_horario = QFrame(self.frame_136)
         self.frame_horario.setObjectName(u"frame_horario")
@@ -5691,16 +5673,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_132.addWidget(self.label_nome_usuario_consulta_as)
 
-        self.input_nome_usuario_consulta_as = QLineEdit(self.frame_186)
-        self.input_nome_usuario_consulta_as.setObjectName(u"input_nome_usuario_consulta_as")
-        self.input_nome_usuario_consulta_as.setMinimumSize(QSize(450, 0))
-        self.input_nome_usuario_consulta_as.setMaximumSize(QSize(450, 30))
-        self.input_nome_usuario_consulta_as.setFont(font)
+        
+        self.input_nome_usuario_as = QLineEdit(self.frame_80)
+        self.input_nome_usuario_as.setObjectName(u"input_nome_usuario_as")
+        self.input_nome_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_nome_usuario_as.setMaximumSize(QSize(220, 30))
+        self.input_nome_usuario_as.setFont(font)
 
-        self.verticalLayout_132.addWidget(self.input_nome_usuario_consulta_as)
+        self.verticalLayout_132.addWidget(self.input_nome_usuario_as)
 
 
         self.horizontalLayout_72.addWidget(self.frame_186)
+
 
         self.frame_187 = QFrame(self.frame_183)
         self.frame_187.setObjectName(u"frame_187")
@@ -11434,7 +11418,7 @@ class Ui_MainWindow(object):
         self.label_matricula_consulta_as_2.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
         self.input_matricula_consulta_as_2.setText("")
         self.label_nome_usuario_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
-        self.input_nome_usuario_consulta_as.setText("")
+        #self.input_nome_usuario_consulta_as.setText("")
         self.label_cpf_consulta_as_2.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
         self.input_cpf_consulta_as_2.setText("")
         self.label_ultima_consulta_consulta_as.setText(QCoreApplication.translate("MainWindow", u"Data da \u00faltima consulta", None))
@@ -11778,6 +11762,7 @@ class Ui_MainWindow(object):
         self.btn_relatorios_sec.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
         self.btn_sair_sec.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
     # retranslateUi
+        ################################ Validações #########################################
 
         ################################ Validações #########################################
 
@@ -11787,8 +11772,49 @@ class Ui_MainWindow(object):
 
         #Mascara CPF
         self.maskCpf = QRegularExpressionValidator(QRegularExpression("[0-9]{11}"))
+        #VALIDADOR INTEIRO
+        self.validaInteiro = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
+        self.input_nome_usuario_as.setValidator(self.validaInteiro)
+	#VALIDADOR CEP
+        self.validaCep = QRegularExpressionValidator(QRegularExpression("[0-9]{5}-[0-9]{3}"))
+	#VALIDADOR DINHEIRO
+        self.validaValor = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
+	#VALIDADOR TEXTO
+        self.validaTexto = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
+	#VALIDADOR DATA
+        self.validaData = QRegularExpressionValidator(QRegularExpression("([0-9]{2}/){2}[0-9]{4}"))
+	#VALIDADADOR TELEFONE
+        self.validaTelefone = QRegularExpressionValidator(QRegularExpression("[0-9]{2} [0-9]{4,5}-[0-9]{4}"))
+	#VALIDADOR NOME
+        self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ-]+"))
+	#VALIDADOR EMAIL
+        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
 
-        self.cpf = CPF()
+        
+
+
+        ################################ Validações #########################################
+class Validacao():
+                def __init__(self):
+                        super().__init__()
+                        
+                
+                        '''def validarNome(texto):
+                        validaNome = r'^[a-zA-Z\s0-9]+$'
+                        self.resultado = re.match(validaNome, texto)'''
+                
+
+
+        
+
+        #self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-][-]+"))
+        #self.input_nome_usuario_as.setValidator(self.validaNome)
+        #self.input_nome_usuario_as.setMaxLength(255)
+
+        #Mascara CPF
+        #self.maskCpf = QRegularExpressionValidator(QRegularExpression("[0-9]{11}"))
+
+        #self.cpf = CPF()
 
         
 

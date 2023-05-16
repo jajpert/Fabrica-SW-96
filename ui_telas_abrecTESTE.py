@@ -797,7 +797,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_7.addWidget(self.frame_61)
 
-        self.frame_62 = QFrame(self.frame_48)
+        '''self.frame_62 = QFrame(self.frame_48)
         self.frame_62.setObjectName(u"frame_62")
         self.frame_62.setMinimumSize(QSize(0, 0))
         self.frame_62.setMaximumSize(QSize(460, 16777215))
@@ -826,7 +826,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_30.addWidget(self.input_nome_usuario_as)
 
 
-        self.horizontalLayout_7.addWidget(self.frame_62)
+        self.horizontalLayout_7.addWidget(self.frame_62)'''
 
         self.frame_63 = QFrame(self.frame_48)
         self.frame_63.setObjectName(u"frame_63")
