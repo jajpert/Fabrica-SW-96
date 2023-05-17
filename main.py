@@ -243,8 +243,42 @@ class TelaPrincipal(QMainWindow):
         
 
         if tipo == 1:
+            dados = self.db.busca_cuidador(nome, cpf)
+            print(dados)
+            self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
+            self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
+            self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
+            self.ui.input_rg_alterar_cuidador_as.setText(dados[3])
+            self.ui.input_orgao_expedidor_alterar_cuidador_as.setText(dados[5])
+            self.ui.input_parentesco_alterar_cuidador_as.setText(dados[6])  
+            self.ui.input_telefone_alterar_cuidador_as.setText(dados[8]) 
+            self.ui.input_email_alterar_cuidador_as.setText(dados[9]) 
+            self.ui.input_cep_alterar_cuidador_as.setText(dados[10]) 
+            self.ui.input_logradouro_alterar_cuidador_as.setText(dados[11]) 
+            self.ui.input_numero_alterar_cuidador_as.setText(str(dados[12])) 
+            self.ui.input_bairro_alterar_cuidador_as.setText(dados[13]) 
+            self.ui.input_cidade_alterar_cuidador_as.setText(dados[14])
+            #self.ui.input_estado_alterar_cuidador_as.setText(dados[15])
+            #self.ui.input_observacoes_gerais_alterar_cuidador_as = dados[16] #aqui
+
             return self.ui.page_alterar_cuidador
+        
+
         if tipo == 2:
+            dados = self.db.busca_usuario(nome, cpf)
+            print(dados)
+            self.ui.input_nome_alterar_usuario_as.setText(dados[1])
+            self.ui.input_cpf_alterar_usuario_as.setText(dados[2])
+            self.ui.input_rg_alterar_usuario_as.setText(dados[3])
+            self.ui.input_orgao_expedidor_alterar_usuario_as.setText(dados[5]) 
+            self.ui.input_telefone_alterar_usuario_as.setText(dados[8]) 
+            self.ui.input_email_alterar_usuario_as.setText(dados[9]) 
+            self.ui.input_cep_alterar_usuario_as.setText(dados[10]) 
+            self.ui.input_logradouro_alterar_usuario_as.setText(dados[11]) 
+            self.ui.input_numero_alterar_usuario_as.setText(str(dados[12])) 
+            self.ui.input_bairro_alterar_usuario_as.setText(dados[13]) 
+            self.ui.input_cidade_alterar_usuario_as.setText(dados[14])
+
             return self.ui.page_alterar_usuario
         if tipo == 3:
             return self.ui.page_alterar_colaborador_as

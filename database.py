@@ -5,11 +5,11 @@ class DataBase():
         self.banco = banco
 
     def connect(self):
-        self.conn = mysql.connector.connect(host='192.168.22.9',database=self.banco,user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
-            print("Conectado ao Servidor de Banco de Dados: ",db_info)
+            print("Conectado ao Servidor de Banco de Dados: ", db_info)
         else:
             print("Erro")  
 
@@ -54,25 +54,61 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def busca_pessoa(self, tipo, nome, cpf):
+    def busca_cuidador(self, nome, cpf):
+        print("entrei")
         self.connect()
         try:
-            if tipo == 1:
-                tabela = 'A'
-            if tipo == 2:
-                tabela = 'B'
-            if tipo == 3:
-                tabela = 'C'
-            args = (tabela, nome, cpf)
-            self.cursor.execute("SELECT* FROM %s WHERE NOME LIKE '%%s%' OR CPF LIKE '%%s%')", args)
+            
+            self.cursor.execute(f"""
+                select p.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,
+                    sexo, parentesco, telefone, email, cep, logradouro,
+                    numero, bairro, nome_cidade, sigla from pessoa p
+                left join endereco e on p.id_endereco = e.id_endereco 
+                left join cuidador c on p.id_matricula = c.id_matricula
+                left join cidade c2 on e.id_cidade = c2.id_cidade
+                left join estado e2 on c2.id_estado = e2.id_estado
+                where nome like '{nome}' or cpf like '{cpf}' """)
             result = self.cursor.fetchall()
-
-            return result
+            
+            #verifica os dados do select
+            # for linha in result:
+            #     print(linha)
+            
+            return result[0]
         except Exception as err:
             return "ERRO",str(err)
 
         finally:
             self.close_connection()
+
+    
+    def busca_usuario(self, nome, cpf):
+        print("entrei")
+        self.connect()
+        try:
+            
+            self.cursor.execute(f"""
+                select p.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,
+                    sexo, parentesco, telefone, email, cep, logradouro,
+                    numero, bairro, nome_cidade, sigla from pessoa p
+                left join endereco e on p.id_endereco = e.id_endereco 
+                left join cuidador c on p.id_matricula = c.id_matricula
+                left join cidade c2 on e.id_cidade = c2.id_cidade
+                left join estado e2 on c2.id_estado = e2.id_estado
+                where nome like '{nome}' or cpf like '{cpf}' """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            # for linha in result:
+            #     print(linha)
+            
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
 
     def cadastro_usuario(self,endereco,pessoa,usuario,cuidador):
         self.connect()
