@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1718</width>
+    <width>1763</width>
     <height>892</height>
    </rect>
   </property>
@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -8250,6 +8250,1393 @@ QPushButton:focus{outline:0}</string>
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QGridLayout" name="gridLayout_2">
+                             <item row="4" column="0">
+                              <spacer name="horizontalSpacer_51">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>123</width>
+                                 <height>55</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item row="0" column="2">
+                              <widget class="QFrame" name="frame_260">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_181">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_261">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>195</width>
+                                    <height>50</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>195</width>
+                                    <height>50</height>
+                                   </size>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: #EC848C; border-radius: 10px</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_180">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>15</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_situacao_colaborador_as">
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>130</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Situação</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_262">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_90">
+                                      <property name="spacing">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="leftMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="topMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="rightMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <item>
+                                       <widget class="QRadioButton" name="input_situacao_ativo_colaborador_as">
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>80</width>
+                                          <height>16777215</height>
+                                         </size>
+                                        </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>11</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="cursor">
+                                         <cursorShape>PointingHandCursor</cursorShape>
+                                        </property>
+                                        <property name="text">
+                                         <string>Ativo</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QRadioButton" name="input_situacao_inativo_colaborador_as">
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>80</width>
+                                          <height>16777215</height>
+                                         </size>
+                                        </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>11</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="cursor">
+                                         <cursorShape>PointingHandCursor</cursorShape>
+                                        </property>
+                                        <property name="text">
+                                         <string>Inativo</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="0" column="0" rowspan="3" alignment="Qt::AlignRight|Qt::AlignTop">
+                              <widget class="QFrame" name="frame_258">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>125</width>
+                                 <height>200</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>125</width>
+                                 <height>200</height>
+                                </size>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_179">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QPushButton" name="input_foto_colaborador_as">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>125</width>
+                                    <height>153</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>125</width>
+                                    <height>153</height>
+                                   </size>
+                                  </property>
+                                  <property name="cursor">
+                                   <cursorShape>PointingHandCursor</cursorShape>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: #F3B9BF; border: none</string>
+                                  </property>
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                  <property name="icon">
+                                   <iconset>
+                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                  </property>
+                                  <property name="iconSize">
+                                   <size>
+                                    <width>120</width>
+                                    <height>120</height>
+                                   </size>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_259">
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: rgb(243, 185, 191);</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_178">
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <spacer name="verticalSpacer">
+                                  <property name="orientation">
+                                   <enum>Qt::Vertical</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>20</width>
+                                    <height>19</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="1" column="1">
+                              <widget class="QFrame" name="frame_201">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>60</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_79">
+                                <property name="spacing">
+                                 <number>5</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_202">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>155</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_141">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_orgao_expedidor_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>155</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Órgão expedidor</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_orgao_expedidor_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>145</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_207">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>151</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_146">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_data_emissao_rg_colaborador_as">
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>170</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Data de emissão</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_data_emissao_rg_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>150</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_203">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>155</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_142">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_pis_colaborador_as">
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>PIS</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_pis_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>145</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_204">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>146</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_143">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_sexo_colaborador_as">
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Sexo</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QComboBox" name="input_sexo_colaborador_comboBox_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>145</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <item>
+                                      <property name="text">
+                                       <string>---</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Masculino</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Feminino</string>
+                                      </property>
+                                     </item>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_205">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>155</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_144">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_telefone_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>155</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Telefone</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_telefone_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>145</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_206">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>240</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_145">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_email_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>240</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Email</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_email_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>230</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="2" column="1">
+                              <widget class="QFrame" name="frame_208">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>0</width>
+                                 <height>0</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>60</height>
+                                </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true"/>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_89">
+                                <property name="spacing">
+                                 <number>5</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_240">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>151</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_147">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_cep_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>100</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>CEP</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_cep_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>150</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string/>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_209">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>281</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_174">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_logradouro_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>280</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Logradouro</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_logradouro_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>280</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_210">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>160</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_173">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_numero_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>160</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Número</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_numero_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>159</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_211">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>230</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_149">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_bairro_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>230</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Bairro</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_bairro_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>229</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_212">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>180</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_2">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_cidade_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>180</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Cidade</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_cidade_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>179</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_213">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>80</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_148">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_estado_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>80</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Estado</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_estado_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>75</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string/>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
                              <item row="5" column="1">
                               <widget class="QFrame" name="frame_241">
                                <property name="minimumSize">
@@ -9299,662 +10686,6 @@ QPushButton:focus{outline:0}</string>
                                </layout>
                               </widget>
                              </item>
-                             <item row="6" column="1">
-                              <widget class="QFrame" name="frame_214">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>300</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_172">
-                                <property name="spacing">
-                                 <number>0</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QLabel" name="label_observacoes_gerais_colaborador_as">
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>300</width>
-                                    <height>50</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>12</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="text">
-                                   <string>Observações/informações gerais</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_271">
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_182"/>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QTextEdit" name="input_observacoes_gerais_colaborador_as">
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>1185</width>
-                                    <height>235</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>12</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
-QTextEdit:focus{outline:0; border: 2px solid #A85751}
-</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item row="1" column="1">
-                              <widget class="QFrame" name="frame_201">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>60</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_79">
-                                <property name="spacing">
-                                 <number>5</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QFrame" name="frame_202">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>155</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_141">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_orgao_expedidor_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>155</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Órgão expedidor</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_orgao_expedidor_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>145</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_207">
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>151</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_146">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_data_emissao_rg_colaborador_as">
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>170</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Data de emissão</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_data_emissao_rg_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>150</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_203">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>155</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_142">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_pis_colaborador_as">
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>PIS</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_pis_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>145</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_204">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>146</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_143">
-                                   <property name="spacing">
-                                    <number>5</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_sexo_colaborador_as">
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Sexo</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QComboBox" name="input_sexo_colaborador_comboBox_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>145</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <item>
-                                      <property name="text">
-                                       <string>---</string>
-                                      </property>
-                                     </item>
-                                     <item>
-                                      <property name="text">
-                                       <string>Masculino</string>
-                                      </property>
-                                     </item>
-                                     <item>
-                                      <property name="text">
-                                       <string>Feminino</string>
-                                      </property>
-                                     </item>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_205">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>155</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_144">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_telefone_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>155</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Telefone</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_telefone_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>145</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_206">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>240</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_145">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_email_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>240</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Email</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_email_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>230</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item row="4" column="0">
-                              <spacer name="horizontalSpacer_51">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>123</width>
-                                 <height>55</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item row="4" column="2">
-                              <spacer name="horizontalSpacer_52">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>194</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
                              <item row="0" column="1">
                               <widget class="QFrame" name="frame_195">
                                <property name="minimumSize">
@@ -10439,8 +11170,21 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                </layout>
                               </widget>
                              </item>
-                             <item row="2" column="1">
-                              <widget class="QFrame" name="frame_208">
+                             <item row="4" column="2">
+                              <spacer name="horizontalSpacer_52">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>194</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item row="6" column="1">
+                              <widget class="QFrame" name="frame_214">
                                <property name="minimumSize">
                                 <size>
                                  <width>0</width>
@@ -10450,7 +11194,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                <property name="maximumSize">
                                 <size>
                                  <width>16777215</width>
-                                 <height>60</height>
+                                 <height>300</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
@@ -10462,568 +11206,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_89">
-                                <property name="spacing">
-                                 <number>5</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QFrame" name="frame_240">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>151</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_147">
-                                   <property name="spacing">
-                                    <number>5</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_cep_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>100</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>CEP</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_cep_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>150</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string/>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_209">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>281</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_174">
-                                   <property name="spacing">
-                                    <number>5</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_logradouro_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>280</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Logradouro</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_logradouro_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>280</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_210">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>160</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_173">
-                                   <property name="spacing">
-                                    <number>5</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_numero_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>160</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Número</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_numero_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>159</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_211">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>230</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_149">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_bairro_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>230</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Bairro</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_bairro_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>229</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_212">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>180</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_2">
-                                   <property name="spacing">
-                                    <number>5</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_cidade_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>180</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Cidade</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_cidade_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>179</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_213">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>80</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_148">
-                                   <property name="spacing">
-                                    <number>5</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_estado_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>80</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Estado</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_estado_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>75</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string/>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item row="0" column="0" rowspan="3" alignment="Qt::AlignRight|Qt::AlignTop">
-                              <widget class="QFrame" name="frame_258">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>125</width>
-                                 <height>200</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>125</width>
-                                 <height>200</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_179">
+                               <layout class="QVBoxLayout" name="verticalLayout_172">
                                 <property name="spacing">
                                  <number>0</number>
                                 </property>
@@ -11040,237 +11223,54 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="input_foto_colaborador_as">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>125</width>
-                                    <height>153</height>
-                                   </size>
-                                  </property>
+                                 <widget class="QLabel" name="label_observacoes_gerais_colaborador_as">
                                   <property name="maximumSize">
                                    <size>
-                                    <width>125</width>
-                                    <height>153</height>
+                                    <width>300</width>
+                                    <height>50</height>
                                    </size>
                                   </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: #F3B9BF; border: none</string>
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>12</pointsize>
+                                   </font>
                                   </property>
                                   <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
-                                  </property>
-                                  <property name="iconSize">
-                                   <size>
-                                    <width>120</width>
-                                    <height>120</height>
-                                   </size>
+                                   <string>Observações/informações gerais</string>
                                   </property>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QFrame" name="frame_259">
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(243, 185, 191);</string>
-                                  </property>
+                                 <widget class="QFrame" name="frame_271">
                                   <property name="frameShape">
                                    <enum>QFrame::StyledPanel</enum>
                                   </property>
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_178">
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                  </layout>
+                                  <layout class="QVBoxLayout" name="verticalLayout_182"/>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="verticalSpacer">
-                                  <property name="orientation">
-                                   <enum>Qt::Vertical</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>20</width>
-                                    <height>19</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item row="0" column="2">
-                              <widget class="QFrame" name="frame_260">
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_181">
-                                <property name="spacing">
-                                 <number>0</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QFrame" name="frame_261">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>195</width>
-                                    <height>50</height>
-                                   </size>
-                                  </property>
+                                 <widget class="QTextEdit" name="input_observacoes_gerais_colaborador_as">
                                   <property name="maximumSize">
                                    <size>
-                                    <width>195</width>
-                                    <height>50</height>
+                                    <width>1185</width>
+                                    <height>235</height>
                                    </size>
                                   </property>
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>12</pointsize>
+                                   </font>
+                                  </property>
                                   <property name="styleSheet">
-                                   <string notr="true">background-color: #EC848C; border-radius: 10px</string>
+                                   <string notr="true">QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
+QTextEdit:focus{outline:0; border: 2px solid #A85751}
+</string>
                                   </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_180">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>15</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_situacao_colaborador_as">
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>130</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string>Situação</string>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QFrame" name="frame_262">
-                                     <property name="frameShape">
-                                      <enum>QFrame::StyledPanel</enum>
-                                     </property>
-                                     <property name="frameShadow">
-                                      <enum>QFrame::Raised</enum>
-                                     </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_90">
-                                      <property name="spacing">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="leftMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="topMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="rightMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="bottomMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <item>
-                                       <widget class="QRadioButton" name="input_situacao_ativo_colaborador_as">
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>80</width>
-                                          <height>16777215</height>
-                                         </size>
-                                        </property>
-                                        <property name="font">
-                                         <font>
-                                          <family>Abel</family>
-                                          <pointsize>11</pointsize>
-                                         </font>
-                                        </property>
-                                        <property name="cursor">
-                                         <cursorShape>PointingHandCursor</cursorShape>
-                                        </property>
-                                        <property name="text">
-                                         <string>Ativo</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item>
-                                       <widget class="QRadioButton" name="input_situacao_inativo_colaborador_as">
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>80</width>
-                                          <height>16777215</height>
-                                         </size>
-                                        </property>
-                                        <property name="font">
-                                         <font>
-                                          <family>Abel</family>
-                                          <pointsize>11</pointsize>
-                                         </font>
-                                        </property>
-                                        <property name="cursor">
-                                         <cursorShape>PointingHandCursor</cursorShape>
-                                        </property>
-                                        <property name="text">
-                                         <string>Inativo</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                     </layout>
-                                    </widget>
-                                   </item>
-                                  </layout>
                                  </widget>
                                 </item>
                                </layout>
@@ -17660,7 +17660,7 @@ background-color: rgb(246, 176, 181);}</string>
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>0</number>
+                                <number>3</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">

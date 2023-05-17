@@ -584,7 +584,7 @@ class Ui_MainWindow(object):
         self.frame_32.setObjectName(u"frame_32")
         self.frame_32.setMinimumSize(QSize(0, 0))
         self.frame_32.setLayoutDirection(Qt.LeftToRight)
-        self.frame_32.setStyleSheet(u"QFrame{padding: 3em;}")
+        self.frame_32.setStyleSheet(u"QFrame{padding: 1.5em;}")
         self.frame_32.setFrameShape(QFrame.StyledPanel)
         self.frame_32.setFrameShadow(QFrame.Raised)
         self.verticalLayout_23 = QVBoxLayout(self.frame_32)
