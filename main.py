@@ -155,9 +155,6 @@ class TelaPrincipal(QMainWindow):
         self.db = DataBase()
 
 
-
-
-
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
         self.popup.setMinimumHeight(1080)
@@ -178,7 +175,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_consulta_as.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_consulta_depois))
 
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))
-        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))    
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
@@ -226,8 +223,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-
-
 
 
 ########################### FUNÇÕES BANCO ###########################
@@ -359,8 +354,7 @@ class TelaPrincipal(QMainWindow):
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
          
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
-        print(result)
-
+        #print(result)
         
     def cadastroCuidador(self):
 
@@ -374,7 +368,6 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         ######################pessoa#################################
-
         nome = self.ui.input_nome_cuidador_as.text()
         data_nascimento = '00/00/0000'
         cpf = self.ui.input_cpf_cuidador_as.text()
@@ -388,6 +381,7 @@ class TelaPrincipal(QMainWindow):
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
+        
 
         #############################cuidador#############################################3
 
@@ -395,14 +389,10 @@ class TelaPrincipal(QMainWindow):
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
         tupla_cuidador = (parentesco,observacao)
 
-        print(tupla_endereco)
-        print(tupla_pessoa)
-        print(tupla_cuidador)
-
         ##############################insert#######################################
 
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
-        print(result)
+        #print(result)
 
     def cadastroColaborador(self):
         cep = self.ui.input_cep_colaborador_as.text()
@@ -458,12 +448,8 @@ class TelaPrincipal(QMainWindow):
 
         tupla_login = (login, senha, perfil, data_login, status)
 
-        print(tupla_endereco)
-        print(tupla_pessoa)
-        print(tupla_colaborador)
-
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador,tupla_login)
-        print(result)
+        #print(result)
 
 
     def cadastroCurso(self):
@@ -494,12 +480,8 @@ class TelaPrincipal(QMainWindow):
         
         tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
 
-        print(tupla_curso)
-        print(tupla_endereco)
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
-
-        print(result)
-
+        #print(result)
 
 ####################### FUNÇÕES POP UP #######################
 
