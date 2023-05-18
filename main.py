@@ -6,6 +6,9 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
+import webbrowser, os
+from tkinter.filedialog import askopenfilename
+
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -50,7 +53,7 @@ class DialogTirarFoto(QDialog):
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
-        # self.ui.btn_importar_popup_foto_as.connect(self.ImportarFoto)
+        self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -66,20 +69,17 @@ class DialogTirarFoto(QDialog):
     def TirarFotoWeb(self):
         TirarFotoWeb = cv2.VideoCapture(0)
         ret,frame = TirarFotoWeb.read()
-        cv2.imwrite("capture.png", frame)
+        cv2.imwrite("C:/Users/User/Documents/GitHub/Fabrica-SW-96/capture.png", frame)
         # After the loop release the cap object
         TirarFotoWeb.release()
         # Destroy all the windows
         cv2.destroyAllWindows()
 
-    # def ImportarFoto(self):
-    #     File1 = open("C:\Users\User\Documents\GitHub\Fabrica-SW-96","w")
-        
-    #     with open (File1,"rb") as File1:
-    #         file_stuff=File1.read()
-    #         print(file_stuff)
-    #     print(File1.closed)
-    #     print(file_stuff)
+    def ImportarFoto(self):
+        caminho ="C:/Users/User/Documents/GitHub/Fabrica-SW-96"
+        webbrowser.open(os.filedialog.askopenfilename(caminho))
+
+
 
 
 
