@@ -2257,6 +2257,53 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_49.addWidget(self.frame_105)
 
+        self.frame_275 = QFrame(self.frame_101)
+        self.frame_275.setObjectName(u"frame_275")
+        self.frame_275.setMinimumSize(QSize(0, 0))
+        self.frame_275.setMaximumSize(QSize(180, 16777215))
+        self.frame_275.setFrameShape(QFrame.StyledPanel)
+        self.frame_275.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_90 = QVBoxLayout(self.frame_275)
+        self.verticalLayout_90.setSpacing(5)
+        self.verticalLayout_90.setObjectName(u"verticalLayout_90")
+        self.verticalLayout_90.setContentsMargins(0, 0, 0, 0)
+        self.label_data_nascimento_cuidador_as = QLabel(self.frame_275)
+        self.label_data_nascimento_cuidador_as.setObjectName(u"label_data_nascimento_cuidador_as")
+        self.label_data_nascimento_cuidador_as.setMinimumSize(QSize(0, 0))
+        self.label_data_nascimento_cuidador_as.setMaximumSize(QSize(155, 16777215))
+        self.label_data_nascimento_cuidador_as.setFont(font)
+
+        self.verticalLayout_90.addWidget(self.label_data_nascimento_cuidador_as, 0, Qt.AlignHCenter)
+
+        self.input_data_nascimento_cuidador_as = QDateEdit(self.frame_275)
+        self.input_data_nascimento_cuidador_as.setObjectName(u"input_data_nascimento_cuidador_as")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.input_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_nascimento_cuidador_as.setSizePolicy(sizePolicy)
+        self.input_data_nascimento_cuidador_as.setMinimumSize(QSize(0, 30))
+        self.input_data_nascimento_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_nascimento_cuidador_as.setFont(font8)
+        self.input_data_nascimento_cuidador_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_nascimento_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_nascimento_cuidador_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_nascimento_cuidador_as.setAutoFillBackground(False)
+        self.input_data_nascimento_cuidador_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_nascimento_cuidador_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_nascimento_cuidador_as.setAlignment(Qt.AlignCenter)
+        self.input_data_nascimento_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_nascimento_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_nascimento_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_nascimento_cuidador_as.setCalendarPopup(False)
+        self.input_data_nascimento_cuidador_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_90.addWidget(self.input_data_nascimento_cuidador_as)
+
+
+        self.horizontalLayout_49.addWidget(self.frame_275, 0, Qt.AlignHCenter)
+
         self.frame_106 = QFrame(self.frame_101)
         self.frame_106.setObjectName(u"frame_106")
         self.frame_106.setMinimumSize(QSize(180, 0))
@@ -2316,7 +2363,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_49.addWidget(self.frame_107)
 
 
-        self.frame_108 = QFrame(self.frame_101)
+        '''self.frame_108 = QFrame(self.frame_101)
         self.frame_108.setObjectName(u"frame_108")
         self.frame_108.setMinimumSize(QSize(0, 0))
         self.frame_108.setMaximumSize(QSize(155, 16777215))
@@ -2358,7 +2405,51 @@ class Ui_MainWindow(object):
         self.verticalLayout_72.addWidget(self.input_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_49.addWidget(self.frame_108)
+        self.horizontalLayout_49.addWidget(self.frame_108)'''
+
+        self.frame_108 = QFrame(self.frame_101)
+        self.frame_108.setObjectName(u"frame_108")
+        self.frame_108.setMinimumSize(QSize(0, 0))
+        self.frame_108.setMaximumSize(QSize(180, 16777215))
+        self.frame_108.setFrameShape(QFrame.StyledPanel)
+        self.frame_108.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_72 = QVBoxLayout(self.frame_108)
+        self.verticalLayout_72.setSpacing(5)
+        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
+        self.verticalLayout_72.setContentsMargins(0, 0, 0, 0)
+        self.label_data_emissao_cuidador_as = QLabel(self.frame_108)
+        self.label_data_emissao_cuidador_as.setObjectName(u"label_data_emissao_cuidador_as")
+        self.label_data_emissao_cuidador_as.setMinimumSize(QSize(0, 0))
+        self.label_data_emissao_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_data_emissao_cuidador_as.setFont(font)
+
+        self.verticalLayout_72.addWidget(self.label_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
+
+        self.input_data_emissao_cuidador_as = QDateEdit(self.frame_108)
+        self.input_data_emissao_cuidador_as.setObjectName(u"input_data_emissao_cuidador_as")
+        sizePolicy.setHeightForWidth(self.input_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_cuidador_as.setSizePolicy(sizePolicy)
+        self.input_data_emissao_cuidador_as.setMinimumSize(QSize(0, 30))
+        self.input_data_emissao_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_data_emissao_cuidador_as.setFont(font8)
+        self.input_data_emissao_cuidador_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_emissao_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_emissao_cuidador_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_emissao_cuidador_as.setAutoFillBackground(False)
+        self.input_data_emissao_cuidador_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_emissao_cuidador_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_emissao_cuidador_as.setAlignment(Qt.AlignCenter)
+        self.input_data_emissao_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_emissao_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_emissao_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_emissao_cuidador_as.setCalendarPopup(False)
+        self.input_data_emissao_cuidador_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_72.addWidget(self.input_data_emissao_cuidador_as)
+
+
+        self.horizontalLayout_49.addWidget(self.frame_108, 0, Qt.AlignHCenter)
 
 
         self.verticalLayout_67.addWidget(self.frame_101)
@@ -3742,34 +3833,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_78.addWidget(self.frame_197)
 
-        '''self.frame_200 = QFrame(self.frame_195)
-        self.frame_200.setObjectName(u"frame_200")
-        self.frame_200.setMinimumSize(QSize(0, 0))
-        self.frame_200.setMaximumSize(QSize(155, 16777215))
-        self.frame_200.setFrameShape(QFrame.StyledPanel)
-        self.frame_200.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_140 = QVBoxLayout(self.frame_200)
-        self.verticalLayout_140.setSpacing(0)
-        self.verticalLayout_140.setObjectName(u"verticalLayout_140")
-        self.verticalLayout_140.setContentsMargins(0, 0, 0, 0)
-        self.label_data_nascimento_colaborador_as = QLabel(self.frame_200)
-        self.label_data_nascimento_colaborador_as.setObjectName(u"label_data_nascimento_colaborador_as")
-        self.label_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 0))
-        self.label_data_nascimento_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_data_nascimento_colaborador_as.setFont(font)
-
-        self.verticalLayout_140.addWidget(self.label_data_nascimento_colaborador_as)
-
-        self.input_data_nascimento_colaborador_as = QLineEdit(self.frame_200)
-        self.input_data_nascimento_colaborador_as.setObjectName(u"input_data_nascimento_colaborador_as")
-        self.input_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 30))
-        self.input_data_nascimento_colaborador_as.setMaximumSize(QSize(145, 16777215))
-        self.input_data_nascimento_colaborador_as.setFont(font)
-
-        self.verticalLayout_140.addWidget(self.input_data_nascimento_colaborador_as)
-
-
-        self.horizontalLayout_78.addWidget(self.frame_200)'''
 
         self.frame_200 = QFrame(self.frame_195)
         self.frame_200.setObjectName(u"frame_200")
@@ -11287,6 +11350,7 @@ class Ui_MainWindow(object):
         self.label_rg_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"RG", None))
         self.input_rg_cuidador_as.setText("")
         self.label_data_emissao_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
+        self.label_data_nascimento_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
         
         self.label_orgao_expedidor_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_sexo_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))

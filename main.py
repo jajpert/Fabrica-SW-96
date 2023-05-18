@@ -261,7 +261,7 @@ class TelaPrincipal(QMainWindow):
 
         nome = self.ui.validaNome.validate(self.ui.input_nome_usuario_as.text())
         data_nascimento = self.ui.input_nascimento_usuario_as.text()
-        cpf = self.ui.cpf.validate(self.ui.input_cpf_usuario_as.text())
+        cpf = self.ui.input_cpf_usuario_as.text()
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = '2004-06-25' #self.ui.input_data_emissao_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
@@ -333,7 +333,7 @@ class TelaPrincipal(QMainWindow):
         ######################pessoa#################################
 
         nome = self.ui.input_nome_cuidador_as.text()
-        data_nascimento = '00/00/0000'
+        #data_nascimento = self.ui.input_data
         cpf = self.ui.input_cpf_cuidador_as.text()
         rg = self.ui.input_rg_cuidador_as.text()
         data_emissao = self.ui.input_data_emissao_cuidador_as.text()
@@ -344,7 +344,7 @@ class TelaPrincipal(QMainWindow):
         email = self.ui.input_email_cuidador_as.text()  
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
+        tupla_pessoa = (nome,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
 
         #############################cuidador#############################################3
 
@@ -433,20 +433,20 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         nome_curso=self.ui.input_nome_cursos_as.text()
-        data_inicio=self.ui.input_data_inicio_cursos_as.text()
-        data_termino=self.ui.input_data_termino_cursos_as.text()
+        #data_inicio=self.ui.input_data_inicio_cursos_as.text()
+        #data_termino=self.ui.input_data_termino_cursos_as.text()
         carga_horaria= 120 
         id_palestrante = 1
         periodo=self.ui.input_periodo_cursos_as.currentText()
-        data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
+        #data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
         if self.ui.input_ativo_cursos_as.isChecked():
             situacao="Ativo"
         else:
             situacao="Inativo"
         responsavel=self.ui.input_responsavel_cursos_as.text()
-        horario_inicial=self.ui.input_horario_cursos_as.text()
-        horario_final=self.ui.input_as_cursos_as.text()
+        #horario_inicial=self.ui.input_horario_cursos_as.text()
+        #horario_final=self.ui.input_as_cursos_as.text()
         vagas=self.ui.input_vagas_cursos_as.text()
         
         tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
