@@ -850,7 +850,8 @@ class Ui_MainWindow(object):
         self.input_nascimento_usuario_as.setMinimumSize(QSize(150, 30))
         self.input_nascimento_usuario_as.setMaximumSize(QSize(150, 30))
         self.input_nascimento_usuario_as.setFont(font)
-        self.input_nascimento_usuario_as.setInputMask("00/00/0000")
+        self.input_nascimento_usuario_as.setInputMask("00/00/0000")        
+        self.input_nascimento_usuario_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_31.addWidget(self.input_nascimento_usuario_as)
 
@@ -1005,6 +1006,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_usuario_as.setMaximumSize(QSize(145, 30))
         self.input_data_emissao_usuario_as.setFont(font)
         self.input_data_emissao_usuario_as.setInputMask("00/00/0000")
+        self.input_data_emissao_usuario_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_41.addWidget(self.input_data_emissao_usuario_as)
 
@@ -1959,6 +1961,7 @@ class Ui_MainWindow(object):
         self.input_data_inicio_usuario_as.setMaximumSize(QSize(150, 30))
         self.input_data_inicio_usuario_as.setFont(font)
         self.input_data_inicio_usuario_as.setInputMask("00/00/0000")
+        self.input_data_inicio_usuario_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_62.addWidget(self.input_data_inicio_usuario_as)
 
@@ -2244,6 +2247,7 @@ class Ui_MainWindow(object):
         self.input_data_nascimento_cuidador_as .setMaximumSize(QSize(145, 16777215))
         self.input_data_nascimento_cuidador_as .setFont(font)
         self.input_data_nascimento_cuidador_as .setInputMask("00/00/0000")
+        self.input_data_nascimento_cuidador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_72.addWidget(self.input_data_nascimento_cuidador_as)
 
@@ -2334,6 +2338,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_cuidador_as.setMaximumSize(QSize(145, 16777215))
         self.input_data_emissao_cuidador_as.setFont(font)
         self.input_data_emissao_cuidador_as.setInputMask("00/00/0000")
+        self.input_data_emissao_cuidador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_72.addWidget(self.input_data_emissao_cuidador_as)
 
@@ -3491,6 +3496,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_emissao_rg_colaborador_as.setMaximumSize(QSize(150, 30))
         self.input_data_emissao_rg_colaborador_as.setFont(font)
+        self.input_data_emissao_rg_colaborador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_146.addWidget(self.input_data_emissao_rg_colaborador_as)
 
@@ -3718,6 +3724,7 @@ class Ui_MainWindow(object):
         self.input_data_nascimento_colaborador_as.setMaximumSize(QSize(145, 16777215))
         self.input_data_nascimento_colaborador_as.setFont(font)
         self.input_data_nascimento_colaborador_as.setInputMask("00/00/0000")
+        self.input_data_nascimento_colaborador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_140.addWidget(self.input_data_nascimento_colaborador_as)
 
@@ -4514,6 +4521,8 @@ class Ui_MainWindow(object):
         self.input_data_inicio_cursos_as.setMinimumSize(QSize(150, 30))
         self.input_data_inicio_cursos_as.setMaximumSize(QSize(150, 30))
         self.input_data_inicio_cursos_as.setFont(font)
+        self.input_data_inicio_cursos_as.setInputMask("00/00/0000")
+        self.input_data_inicio_cursos_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_99.addWidget(self.input_data_inicio_cursos_as)
 
@@ -4541,6 +4550,8 @@ class Ui_MainWindow(object):
         self.input_data_termino_cursos_as.setMinimumSize(QSize(150, 30))
         self.input_data_termino_cursos_as.setMaximumSize(QSize(150, 30))
         self.input_data_termino_cursos_as.setFont(font)
+        self.input_data_inicio_cursos_as.setInputMask("00/00/0000")
+        self.input_data_inicio_cursos_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_100.addWidget(self.input_data_termino_cursos_as)
 
@@ -6949,6 +6960,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_alterar_cuidador_as.setMaximumSize(QSize(145, 16777215))
         self.input_data_emissao_alterar_cuidador_as.setFont(font)
         self.input_data_emissao_alterar_cuidador_as.setCursorPosition(0)
+        self.input_data_emissao_alterar_cuidador_as.setInputMask("00/00/0000")
         self.input_data_emissao_alterar_cuidador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_256.addWidget(self.input_data_emissao_alterar_cuidador_as)
@@ -7487,6 +7499,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_alterar_usuario_as.setMinimumSize(QSize(145, 30))
         self.input_data_emissao_alterar_usuario_as.setMaximumSize(QSize(145, 30))
         self.input_data_emissao_alterar_usuario_as.setFont(font)
+        self.input_data_emissao_alterar_usuario_as.setInputMask("00/00/0000")
         self.input_data_emissao_alterar_usuario_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_198.addWidget(self.input_data_emissao_alterar_usuario_as)
@@ -8513,6 +8526,7 @@ class Ui_MainWindow(object):
         self.input_data_inicio_alterar_usuario_as.setMinimumSize(QSize(150, 30))
         self.input_data_inicio_alterar_usuario_as.setMaximumSize(QSize(150, 30))
         self.input_data_inicio_alterar_usuario_as.setFont(font)
+        self.input_data_inicio_alterar_usuario_as.setInputMask("00/00/0000")
         self.input_data_inicio_alterar_usuario_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_225.addWidget(self.input_data_inicio_alterar_usuario_as)
@@ -8973,6 +8987,8 @@ class Ui_MainWindow(object):
         self.input_data_nascimento_alterar_colaborador_as.setMinimumSize(QSize(154, 30))
         self.input_data_nascimento_alterar_colaborador_as.setMaximumSize(QSize(145, 16777215))
         self.input_data_nascimento_alterar_colaborador_as.setFont(font)
+        self.input_data_nascimento_alterar_colaborador_as.setInputMask("00/00/0000")
+        self.input_data_nascimento_alterar_colaborador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_238.addWidget(self.input_data_nascimento_alterar_colaborador_as)
 
@@ -9170,6 +9186,8 @@ class Ui_MainWindow(object):
         self.input_data_emissao_rg_alterar_colaborador_as.setMinimumSize(QSize(150, 30))
         self.input_data_emissao_rg_alterar_colaborador_as.setMaximumSize(QSize(150, 30))
         self.input_data_emissao_rg_alterar_colaborador_as.setFont(font)
+        self.input_data_emissao_rg_alterar_colaborador_as.setInputMask("00/00/0000")
+        self.input_data_emissao_rg_alterar_colaborador_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_232.addWidget(self.input_data_emissao_rg_alterar_colaborador_as)
 
@@ -11610,3 +11628,4 @@ class Ui_MainWindow(object):
         self.btn_sair_sec.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
     # retranslateUi
 
+        self.validaData = QRegularExpressionValidator(QRegularExpression("([0-9]{2}/){2}[0-9]{4}"))
