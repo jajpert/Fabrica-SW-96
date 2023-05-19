@@ -17546,14 +17546,14 @@ QPushButton:focus{outline:0}</string>
                               <widget class="QFrame" name="frame_279">
                                <property name="minimumSize">
                                 <size>
-                                 <width>60</width>
-                                 <height>60</height>
+                                 <width>0</width>
+                                 <height>0</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
-                                 <width>60</width>
-                                 <height>60</height>
+                                 <width>50</width>
+                                 <height>50</height>
                                 </size>
                                </property>
                                <property name="font">
@@ -17561,6 +17561,26 @@ QPushButton:focus{outline:0}</string>
                                  <family>Abel</family>
                                  <pointsize>14</pointsize>
                                 </font>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">
+QPushButton{
+border-radius:20px;
+	background-color: rgb(249, 217, 221);
+border: 2px ;
+}
+QPushButton:hover{
+
+	border-image: url(:/newPrefix/marca-de-verificacao.png);
+	background-color: rgb(236, 132, 140);
+
+
+}
+QPushButton:pressed{
+
+background-color: rgb(246, 176, 181);
+
+}</string>
                                </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
@@ -17588,29 +17608,42 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QPushButton" name="btn_buscar_alterar_as">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>45</width>
-                                    <height>45</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>45</width>
-                                    <height>45</height>
+                                    <width>50</width>
+                                    <height>50</height>
+                                   </size>
+                                  </property>
+                                  <property name="sizeIncrement">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="styleSheet">
-                                   <string notr="true">image: url(:/newPrefix/marca-de-verificacao.png);
-background-color: rgb(243, 185, 191);
+                                   <string notr="true">border-image: url(:/newPrefix/marca-de-verificacao.png);
 QPushButton{
-border-radius:15px;
-background-color: rgb(246, 176, 181);
+border-radius:20px;
+	
+	background-color: rgb(249, 217, 221);
 border: 2px ;
 }
 QPushButton:hover{
-background-color: rgb(236, 132, 140);}
 
+	border-image: url(:/newPrefix/marca-de-verificacao.png);
+	background-color: rgb(236, 132, 140);
+
+
+}
 QPushButton:pressed{
-background-color: rgb(246, 176, 181);}</string>
+
+background-color: rgb(246, 176, 181);
+
+}</string>
                                   </property>
                                   <property name="text">
                                    <string/>
@@ -17660,7 +17693,7 @@ background-color: rgb(246, 176, 181);}</string>
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>3</number>
+                                <number>2</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -18314,7 +18347,7 @@ background-color: rgb(246, 176, 181);
                                         </spacer>
                                        </item>
                                        <item>
-                                        <widget class="QPushButton" name="pushButton_2">
+                                        <widget class="QPushButton" name="btn_cancelar_alterar_cuidador_as">
                                          <property name="minimumSize">
                                           <size>
                                            <width>140</width>
@@ -21583,7 +21616,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            <number>0</number>
                                           </property>
                                           <item>
-                                           <widget class="QLabel" name="label_bairro_alterar_usuario_as_2">
+                                           <widget class="QLabel" name="label_bairro_alterar_usuario_as">
                                             <property name="minimumSize">
                                              <size>
                                               <width>230</width>
@@ -22242,7 +22275,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                               </widget>
                                              </item>
                                              <item>
-                                              <widget class="QRadioButton" name="label_pessoa_cdeficiencia_nao_alterar_usuario_as">
+                                              <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_alterar_usuario_as">
                                                <property name="minimumSize">
                                                 <size>
                                                  <width>41</width>
@@ -22932,7 +22965,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            <number>0</number>
                                           </property>
                                           <item>
-                                           <widget class="QLabel" name="label_profisao_alterar_usuario_as">
+                                           <widget class="QLabel" name="label_profissao_alterar_usuario_as">
                                             <property name="minimumSize">
                                              <size>
                                               <width>260</width>
@@ -25604,7 +25637,7 @@ background-color: rgb(0, 168, 220);
                                            </widget>
                                           </item>
                                           <item>
-                                           <widget class="QComboBox" name="input_sexo_alterar_colaborador__as">
+                                           <widget class="QComboBox" name="input_sexo_alterar_colaborador_as">
                                             <property name="minimumSize">
                                              <size>
                                               <width>70</width>
@@ -25824,7 +25857,7 @@ background-color: rgb(0, 168, 220);
                                            <number>0</number>
                                           </property>
                                           <item>
-                                           <widget class="QLabel" name="label_cidade_colaborador_as_2">
+                                           <widget class="QLabel" name="label_cidade_alterar_colaborador_as">
                                             <property name="minimumSize">
                                              <size>
                                               <width>180</width>
@@ -25849,7 +25882,7 @@ background-color: rgb(0, 168, 220);
                                            </widget>
                                           </item>
                                           <item>
-                                           <widget class="QLineEdit" name="input_cidade_colaborador_as_2">
+                                           <widget class="QLineEdit" name="input_cidade_alterar_colaborador_as">
                                             <property name="minimumSize">
                                              <size>
                                               <width>179</width>
@@ -26239,6 +26272,18 @@ background-color: rgb(0, 168, 220);
                                           </property>
                                           <item>
                                            <widget class="QLabel" name="label_tipo_deficiencia_alterar_colaborador_as">
+                                            <property name="minimumSize">
+                                             <size>
+                                              <width>217</width>
+                                              <height>30</height>
+                                             </size>
+                                            </property>
+                                            <property name="maximumSize">
+                                             <size>
+                                              <width>217</width>
+                                              <height>30</height>
+                                             </size>
+                                            </property>
                                             <property name="font">
                                              <font>
                                               <family>Abel</family>
@@ -30061,6 +30106,8 @@ QPushButton:focus{outline:0}</string>
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../../../Documents/qrcTeste.qrc"/>
+ </resources>
  <connections/>
 </ui>
