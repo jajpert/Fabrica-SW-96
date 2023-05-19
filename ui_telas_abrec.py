@@ -2192,7 +2192,7 @@ class Ui_MainWindow(object):
 
         self.frame_105 = QFrame(self.frame_101)
         self.frame_105.setObjectName(u"frame_105")
-        self.frame_105.setMinimumSize(QSize(460, 0))
+        self.frame_105.setMinimumSize(QSize(0, 0))
         self.frame_105.setMaximumSize(QSize(460, 16777215))
         self.frame_105.setFrameShape(QFrame.StyledPanel)
         self.frame_105.setFrameShadow(QFrame.Raised)
@@ -2202,7 +2202,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_69.setContentsMargins(0, 0, 0, 0)
         self.label_nome_cuidador_as = QLabel(self.frame_105)
         self.label_nome_cuidador_as.setObjectName(u"label_nome_cuidador_as")
-        self.label_nome_cuidador_as.setMinimumSize(QSize(460, 0))
+        self.label_nome_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_nome_cuidador_as.setMaximumSize(QSize(460, 16777215))
         self.label_nome_cuidador_as.setFont(font)
 
@@ -2210,7 +2210,7 @@ class Ui_MainWindow(object):
 
         self.input_nome_cuidador_as = QLineEdit(self.frame_105)
         self.input_nome_cuidador_as.setObjectName(u"input_nome_cuidador_as")
-        self.input_nome_cuidador_as.setMinimumSize(QSize(450, 30))
+        self.input_nome_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_cuidador_as.setMaximumSize(QSize(450, 30))
         self.input_nome_cuidador_as.setFont(font)
         self.input_nome_cuidador_as.setValidator(validador)
@@ -2219,6 +2219,36 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_49.addWidget(self.frame_105)
+
+        self.frame_1000 = QFrame(self.frame_101)
+        self.frame_1000.setObjectName(u"frame_1000")
+        self.frame_1000.setMinimumSize(QSize(155, 0))
+        self.frame_1000.setMaximumSize(QSize(155, 16777215))
+        self.frame_1000.setFrameShape(QFrame.StyledPanel)
+        self.frame_1000.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_72 = QVBoxLayout(self.frame_1000)
+        self.verticalLayout_72.setSpacing(0)
+        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
+        self.verticalLayout_72.setContentsMargins(0, 0, 0, 0)
+        self.label_data_nascimento_cuidador_as = QLabel(self.frame_1000)
+        self.label_data_nascimento_cuidador_as.setObjectName(u"label_data_nascimento_cuidador_as")
+        self.label_data_nascimento_cuidador_as.setMinimumSize(QSize(155, 0))
+        self.label_data_nascimento_cuidador_as.setMaximumSize(QSize(155, 16777215))
+        self.label_data_nascimento_cuidador_as.setFont(font)
+
+        self.verticalLayout_72.addWidget(self.label_data_nascimento_cuidador_as)
+
+        self.input_data_nascimento_cuidador_as = QLineEdit(self.frame_1000)
+        self.input_data_nascimento_cuidador_as .setObjectName(u"input_data_nascimento_cuidador_as")
+        self.input_data_nascimento_cuidador_as .setMinimumSize(QSize(145, 30))
+        self.input_data_nascimento_cuidador_as .setMaximumSize(QSize(145, 16777215))
+        self.input_data_nascimento_cuidador_as .setFont(font)
+        self.input_data_nascimento_cuidador_as .setInputMask("00/00/0000")
+
+        self.verticalLayout_72.addWidget(self.input_data_nascimento_cuidador_as)
+
+
+        self.horizontalLayout_49.addWidget(self.frame_1000)
 
         self.frame_106 = QFrame(self.frame_101)
         self.frame_106.setObjectName(u"frame_106")
@@ -11074,6 +11104,8 @@ class Ui_MainWindow(object):
         self.input_rg_cuidador_as.setText("")
         self.label_data_emissao_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
         self.input_data_emissao_cuidador_as.setText("")
+        self.label_data_nascimento_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
+        self.input_data_nascimento_cuidador_as.setText("")
         self.label_orgao_expedidor_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_sexo_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
         self.label_parentesco_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None))
