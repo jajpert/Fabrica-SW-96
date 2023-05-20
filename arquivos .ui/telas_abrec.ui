@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>10</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -17441,6 +17441,7 @@ QPushButton:focus{outline:0}</string>
                                   <property name="font">
                                    <font>
                                     <family>Abel</family>
+                                    <pointsize>18</pointsize>
                                    </font>
                                   </property>
                                  </widget>
@@ -17693,7 +17694,7 @@ background-color: rgb(246, 176, 181);
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>0</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
