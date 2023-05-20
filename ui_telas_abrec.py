@@ -1154,34 +1154,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.setSpacing(5)
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
         self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
-        '''self.frame_72 = QFrame(self.frame_60)
-        self.frame_72.setObjectName(u"frame_72")
-        self.frame_72.setMinimumSize(QSize(0, 0))
-        self.frame_72.setMaximumSize(QSize(155, 16777215))
-        self.frame_72.setFrameShape(QFrame.StyledPanel)
-        self.frame_72.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_45 = QVBoxLayout(self.frame_72)
-        self.verticalLayout_45.setSpacing(0)
-        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
-        self.verticalLayout_45.setContentsMargins(0, 0, 0, 0)
-        self.label_sexo_usuario_as = QLabel(self.frame_72)
-        self.label_sexo_usuario_as.setObjectName(u"label_sexo_usuario_as")
-        self.label_sexo_usuario_as.setMinimumSize(QSize(0, 0))
-        self.label_sexo_usuario_as.setMaximumSize(QSize(155, 16777215))
-        self.label_sexo_usuario_as.setFont(font)
-
-        self.verticalLayout_45.addWidget(self.label_sexo_usuario_as)
-
-        self.input_sexo_usuario_as = QLineEdit(self.frame_72)
-        self.input_sexo_usuario_as.setObjectName(u"input_sexo_usuario_as")
-        self.input_sexo_usuario_as.setMinimumSize(QSize(0, 30))
-        self.input_sexo_usuario_as.setMaximumSize(QSize(145, 30))
-        self.input_sexo_usuario_as.setFont(font)
-
-        self.verticalLayout_45.addWidget(self.input_sexo_usuario_as)
-
-
-        self.horizontalLayout_41.addWidget(self.frame_72)'''
+        
 
         self.frame_72 = QFrame(self.frame_60)
         self.frame_72.setObjectName(u"frame_72")
@@ -2396,50 +2369,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_49.addWidget(self.frame_107)
 
 
-        '''self.frame_108 = QFrame(self.frame_101)
-        self.frame_108.setObjectName(u"frame_108")
-        self.frame_108.setMinimumSize(QSize(0, 0))
-        self.frame_108.setMaximumSize(QSize(155, 16777215))
-        self.frame_108.setFrameShape(QFrame.StyledPanel)
-        self.frame_108.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_72 = QVBoxLayout(self.frame_108)
-        self.verticalLayout_72.setSpacing(5)
-        self.verticalLayout_72.setObjectName(u"verticalLayout_72")
-        self.verticalLayout_72.setContentsMargins(0, 0, 0, 0)
-        self.label_data_emissao_cuidador_as = QLabel(self.frame_108)
-        self.label_data_emissao_cuidador_as.setObjectName(u"label_data_emissao_cuidador_as")
-        self.label_data_emissao_cuidador_as.setMinimumSize(QSize(0, 0))
-        self.label_data_emissao_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_data_emissao_cuidador_as.setFont(font)
-
-        self.verticalLayout_72.addWidget(self.label_data_emissao_cuidador_as)
-
-        self.input_data_emissao_cuidador_as = QDateEdit(self.frame_108)
-        self.input_data_emissao_cuidador_as.setObjectName(u"input_data_emissao_cuidador_as")
-        sizePolicy.setHeightForWidth(self.input_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_emissao_cuidador_as.setSizePolicy(sizePolicy)
-        self.input_data_emissao_cuidador_as.setMinimumSize(QSize(0, 30))
-        self.input_data_emissao_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_emissao_cuidador_as.setFont(font8)
-        self.input_data_emissao_cuidador_as.setFocusPolicy(Qt.WheelFocus)
-        self.input_data_emissao_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
-        self.input_data_emissao_cuidador_as.setLayoutDirection(Qt.LeftToRight)
-        self.input_data_emissao_cuidador_as.setAutoFillBackground(False)
-        self.input_data_emissao_cuidador_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
-"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_data_emissao_cuidador_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
-        self.input_data_emissao_cuidador_as.setAlignment(Qt.AlignCenter)
-        self.input_data_emissao_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
-        self.input_data_emissao_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_data_emissao_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
-        self.input_data_emissao_cuidador_as.setCalendarPopup(False)
-        self.input_data_emissao_cuidador_as.setCurrentSectionIndex(0)
-
-        self.verticalLayout_72.addWidget(self.input_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
-
-
-        self.horizontalLayout_49.addWidget(self.frame_108)'''
-
         self.frame_108 = QFrame(self.frame_101)
         self.frame_108.setObjectName(u"frame_108")
         self.frame_108.setMinimumSize(QSize(0, 0))
@@ -2526,35 +2455,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_50.addWidget(self.frame_109)
 
-        '''self.frame_95 = QFrame(self.frame_102)
-        self.frame_95.setObjectName(u"frame_95")
-        self.frame_95.setMinimumSize(QSize(155, 0))
-        self.frame_95.setMaximumSize(QSize(155, 16777215))
-        self.frame_95.setFrameShape(QFrame.StyledPanel)
-        self.frame_95.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_91 = QVBoxLayout(self.frame_95)
-        self.verticalLayout_91.setSpacing(0)
-        self.verticalLayout_91.setObjectName(u"verticalLayout_91")
-        self.verticalLayout_91.setContentsMargins(0, 0, 0, 0)
         
-        self.label_sexo_cuidador_as = QLabel(self.frame_95)
-        self.label_sexo_cuidador_as.setObjectName(u"label_sexo_cuidador_as")
-        self.label_sexo_cuidador_as.setFont(font)
-
-        self.verticalLayout_91.addWidget(self.label_sexo_cuidador_as)
-
-       
-        self.input_sexo_cuidador_as = QComboBox(self.frame_95)
-        self.input_sexo_cuidador_as.addItem("")
-        self.input_sexo_cuidador_as.addItem("")
-        self.input_sexo_cuidador_as.addItem("")
-        self.input_sexo_cuidador_as.setObjectName(u"input_sexo_cuidador_as")
-        self.input_sexo_cuidador_as.setMinimumSize(QSize(0, 30))
-        self.input_sexo_cuidador_as.setMaximumSize(QSize(145, 30))
-        self.input_sexo_cuidador_as.setFont(font)
-
-        self.verticalLayout_91.addWidget(self.input_sexo_cuidador_as)'''
-
         self.frame_95 = QFrame(self.frame_102)
         self.frame_95.setObjectName(u"frame_95")
         self.frame_95.setMinimumSize(QSize(0, 0))
@@ -3607,33 +3508,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_79.addWidget(self.frame_202)
 
-        '''self.frame_207 = QFrame(self.frame_201)
-        self.frame_207.setObjectName(u"frame_207")
-        self.frame_207.setMaximumSize(QSize(151, 16777215))
-        self.frame_207.setFrameShape(QFrame.StyledPanel)
-        self.frame_207.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_146 = QVBoxLayout(self.frame_207)
-        self.verticalLayout_146.setSpacing(0)
-        self.verticalLayout_146.setObjectName(u"verticalLayout_146")
-        self.verticalLayout_146.setContentsMargins(0, 0, 0, 0)
-        self.label_data_emissao_rg_colaborador_as = QLabel(self.frame_207)
-        self.label_data_emissao_rg_colaborador_as.setObjectName(u"label_data_emissao_rg_colaborador_as")
-        self.label_data_emissao_rg_colaborador_as.setMaximumSize(QSize(170, 16777215))
-        self.label_data_emissao_rg_colaborador_as.setFont(font)
-
-        self.verticalLayout_146.addWidget(self.label_data_emissao_rg_colaborador_as)
-
-        self.input_data_emissao_rg_colaborador_as = QLineEdit(self.frame_207)
-        self.input_data_emissao_rg_colaborador_as.setObjectName(u"input_data_emissao_rg_colaborador_as")
-        self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
-        self.input_data_emissao_rg_colaborador_as.setMaximumSize(QSize(150, 30))
-        self.input_data_emissao_rg_colaborador_as.setFont(font)
-
-        self.verticalLayout_146.addWidget(self.input_data_emissao_rg_colaborador_as)
-
-
-        self.horizontalLayout_79.addWidget(self.frame_207)'''
-
+        
         self.frame_207 = QFrame(self.frame_201)
         self.frame_207.setObjectName(u"frame_207")
         self.frame_207.setMaximumSize(QSize(151, 16777215))
