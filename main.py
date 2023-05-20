@@ -247,7 +247,7 @@ class TelaPrincipal(QMainWindow):
         data_nascimento = self.ui.input_nascimento_usuario_as.text()
         cpf = self.ui.input_cpf_usuario_as.text()
         rg = self.ui.input_rg_usuario_as.text()
-        data_emissao = self.ui.input_data_emissao_usuario_as.text()
+        data_emissao = self.ui.input_data_emissao_rg_usuario_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.text()
         data_inclusao = datetime.now()
