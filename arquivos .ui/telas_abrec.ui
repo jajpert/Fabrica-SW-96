@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -17516,7 +17516,7 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="lineEdit_alterar_buscar_cpf_cnpj_as_2">
+                                 <widget class="QLineEdit" name="lineEdit_alterar_buscar_cpf_cnpj_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>225</width>
@@ -18273,6 +18273,21 @@ background-color: rgb(246, 176, 181);
                                        <enum>QFrame::Raised</enum>
                                       </property>
                                       <layout class="QHBoxLayout" name="horizontalLayout_109">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
                                        <item>
                                         <spacer name="horizontalSpacer_63">
                                          <property name="orientation">
@@ -23892,6 +23907,18 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                         <enum>QFrame::Raised</enum>
                                        </property>
                                        <layout class="QVBoxLayout" name="verticalLayout_177">
+                                        <property name="spacing">
+                                         <number>0</number>
+                                        </property>
+                                        <property name="leftMargin">
+                                         <number>0</number>
+                                        </property>
+                                        <property name="topMargin">
+                                         <number>0</number>
+                                        </property>
+                                        <property name="bottomMargin">
+                                         <number>0</number>
+                                        </property>
                                         <item>
                                          <spacer name="verticalSpacer_16">
                                           <property name="orientation">
@@ -23929,6 +23956,9 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                            <enum>QFrame::Raised</enum>
                                           </property>
                                           <layout class="QHBoxLayout" name="horizontalLayout_122">
+                                           <property name="leftMargin">
+                                            <number>0</number>
+                                           </property>
                                            <item>
                                             <spacer name="horizontalSpacer_60">
                                              <property name="orientation">
@@ -27096,6 +27126,21 @@ background-color: rgb(0, 168, 220);
                                        <enum>QFrame::Raised</enum>
                                       </property>
                                       <layout class="QVBoxLayout" name="verticalLayout_280">
+                                       <property name="spacing">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="leftMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="topMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="rightMargin">
+                                        <number>0</number>
+                                       </property>
+                                       <property name="bottomMargin">
+                                        <number>0</number>
+                                       </property>
                                        <item>
                                         <widget class="QLabel" name="label_observacoes_gerais_alterar_colaborador_as">
                                          <property name="maximumSize">
@@ -27163,6 +27208,21 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                           <enum>QFrame::Raised</enum>
                                          </property>
                                          <layout class="QHBoxLayout" name="horizontalLayout_121">
+                                          <property name="spacing">
+                                           <number>0</number>
+                                          </property>
+                                          <property name="leftMargin">
+                                           <number>0</number>
+                                          </property>
+                                          <property name="topMargin">
+                                           <number>0</number>
+                                          </property>
+                                          <property name="rightMargin">
+                                           <number>0</number>
+                                          </property>
+                                          <property name="bottomMargin">
+                                           <number>0</number>
+                                          </property>
                                           <item>
                                            <spacer name="horizontalSpacer_62">
                                             <property name="orientation">

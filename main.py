@@ -6,6 +6,7 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 
+
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
