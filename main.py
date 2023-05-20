@@ -433,20 +433,20 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
         nome_curso=self.ui.input_nome_cursos_as.text()
-        #data_inicio=self.ui.input_data_inicio_cursos_as.text()
-        #data_termino=self.ui.input_data_termino_cursos_as.text()
+        data_inicio=self.ui.input_data_inicio_cursos_as.text()
+        data_termino=self.ui.input_data_termino_cursos_as.text()
         carga_horaria= 120 
         id_palestrante = 1
         periodo=self.ui.input_periodo_cursos_as.currentText()
-        #data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
+        data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
         if self.ui.input_ativo_cursos_as.isChecked():
             situacao="Ativo"
         else:
             situacao="Inativo"
         responsavel=self.ui.input_responsavel_cursos_as.text()
-        #horario_inicial=self.ui.input_horario_cursos_as.text()
-        #horario_final=self.ui.input_as_cursos_as.text()
+        horario_inicial=self.ui.input_horario_cursos_as.text()
+        horario_final=self.ui.input_as_cursos_as.text()
         vagas=self.ui.input_vagas_cursos_as.text()
         
         tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)

@@ -1154,7 +1154,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.setSpacing(5)
         self.horizontalLayout_41.setObjectName(u"horizontalLayout_41")
         self.horizontalLayout_41.setContentsMargins(0, 0, 0, 0)
-        self.frame_72 = QFrame(self.frame_60)
+        '''self.frame_72 = QFrame(self.frame_60)
         self.frame_72.setObjectName(u"frame_72")
         self.frame_72.setMinimumSize(QSize(0, 0))
         self.frame_72.setMaximumSize(QSize(155, 16777215))
@@ -1181,7 +1181,40 @@ class Ui_MainWindow(object):
         self.verticalLayout_45.addWidget(self.input_sexo_usuario_as)
 
 
+        self.horizontalLayout_41.addWidget(self.frame_72)'''
+
+        self.frame_72 = QFrame(self.frame_60)
+        self.frame_72.setObjectName(u"frame_72")
+        self.frame_72.setMinimumSize(QSize(155, 0))
+        self.frame_72.setMaximumSize(QSize(155, 16777215))
+        self.frame_72.setFrameShape(QFrame.StyledPanel)
+        self.frame_72.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_45 = QVBoxLayout(self.frame_72)
+        self.verticalLayout_45.setSpacing(5)
+        self.verticalLayout_45.setObjectName(u"verticalLayout_45")
+        self.verticalLayout_45.setContentsMargins(0, 0, 0, 0)
+        self.label_sexo_usuario_as = QLabel(self.frame_72)
+        self.label_sexo_usuario_as.setObjectName(u"label_sexo_usuario_as")
+        self.label_sexo_usuario_as.setMinimumSize(QSize(155, 0))
+        self.label_sexo_usuario_as.setMaximumSize(QSize(155, 16777215))
+        self.label_sexo_usuario_as.setFont(font)
+
+        self.verticalLayout_45.addWidget(self.label_sexo_usuario_as)
+
+        self.input_sexo_usuario_as = QComboBox(self.frame_72)
+        self.input_sexo_usuario_as.addItem("")
+        self.input_sexo_usuario_as.addItem("")
+        self.input_sexo_usuario_as.addItem("")
+        self.input_sexo_usuario_as.setObjectName(u"input_sexo_usuario_as")
+        self.input_sexo_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_sexo_usuario_as.setMaximumSize(QSize(145, 30))
+        self.input_sexo_usuario_as.setFont(font)
+
+        self.verticalLayout_45.addWidget(self.input_sexo_usuario_as)
+
+
         self.horizontalLayout_41.addWidget(self.frame_72)
+
 
         self.frame_73 = QFrame(self.frame_60)
         self.frame_73.setObjectName(u"frame_73")
@@ -2493,7 +2526,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_50.addWidget(self.frame_109)
 
-        self.frame_95 = QFrame(self.frame_102)
+        '''self.frame_95 = QFrame(self.frame_102)
         self.frame_95.setObjectName(u"frame_95")
         self.frame_95.setMinimumSize(QSize(155, 0))
         self.frame_95.setMaximumSize(QSize(155, 16777215))
@@ -2503,15 +2536,47 @@ class Ui_MainWindow(object):
         self.verticalLayout_91.setSpacing(0)
         self.verticalLayout_91.setObjectName(u"verticalLayout_91")
         self.verticalLayout_91.setContentsMargins(0, 0, 0, 0)
+        
         self.label_sexo_cuidador_as = QLabel(self.frame_95)
         self.label_sexo_cuidador_as.setObjectName(u"label_sexo_cuidador_as")
         self.label_sexo_cuidador_as.setFont(font)
 
         self.verticalLayout_91.addWidget(self.label_sexo_cuidador_as)
 
-        self.input_sexo_cuidador_as = QLineEdit(self.frame_95)
+       
+        self.input_sexo_cuidador_as = QComboBox(self.frame_95)
+        self.input_sexo_cuidador_as.addItem("")
+        self.input_sexo_cuidador_as.addItem("")
+        self.input_sexo_cuidador_as.addItem("")
         self.input_sexo_cuidador_as.setObjectName(u"input_sexo_cuidador_as")
-        self.input_sexo_cuidador_as.setMinimumSize(QSize(145, 30))
+        self.input_sexo_cuidador_as.setMinimumSize(QSize(0, 30))
+        self.input_sexo_cuidador_as.setMaximumSize(QSize(145, 30))
+        self.input_sexo_cuidador_as.setFont(font)
+
+        self.verticalLayout_91.addWidget(self.input_sexo_cuidador_as)'''
+
+        self.frame_95 = QFrame(self.frame_102)
+        self.frame_95.setObjectName(u"frame_95")
+        self.frame_95.setMinimumSize(QSize(0, 0))
+        self.frame_95.setMaximumSize(QSize(155, 16777215))
+        self.frame_95.setFrameShape(QFrame.StyledPanel)
+        self.frame_95.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_91 = QVBoxLayout(self.frame_95)
+        self.verticalLayout_91.setSpacing(5)
+        self.verticalLayout_91.setObjectName(u"verticalLayout_91")
+        self.verticalLayout_91.setContentsMargins(0, 0, 0, 0)
+        self.label_sexo_cuidador_as = QLabel(self.frame_95)
+        self.label_sexo_cuidador_as.setObjectName(u"label_sexo_cuidador_as")
+        self.label_sexo_cuidador_as.setFont(font)
+
+        self.verticalLayout_91.addWidget(self.label_sexo_cuidador_as)
+
+        self.input_sexo_cuidador_as = QComboBox(self.frame_95)
+        self.input_sexo_cuidador_as.addItem("")
+        self.input_sexo_cuidador_as.addItem("")
+        self.input_sexo_cuidador_as.addItem("")
+        self.input_sexo_cuidador_as.setObjectName(u"input_sexo_cuidador_as")
+        self.input_sexo_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_sexo_cuidador_as.setMaximumSize(QSize(145, 30))
         self.input_sexo_cuidador_as.setFont(font)
 
@@ -2519,6 +2584,7 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_50.addWidget(self.frame_95)
+
 
         self.frame_96 = QFrame(self.frame_102)
         self.frame_96.setObjectName(u"frame_96")
@@ -3175,35 +3241,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_80.addWidget(self.frame_255)
 
-        self.frame_249 = QFrame(self.frame_241)
-        self.frame_249.setObjectName(u"frame_249")
-        self.frame_249.setMinimumSize(QSize(0, 0))
-        self.frame_249.setMaximumSize(QSize(281, 16777215))
-        self.frame_249.setFrameShape(QFrame.StyledPanel)
-        self.frame_249.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_166 = QVBoxLayout(self.frame_249)
-        self.verticalLayout_166.setSpacing(5)
-        self.verticalLayout_166.setObjectName(u"verticalLayout_166")
-        self.verticalLayout_166.setContentsMargins(0, 0, 0, 0)
-        self.label_descricao_cargo_colaborador_as = QLabel(self.frame_249)
-        self.label_descricao_cargo_colaborador_as.setObjectName(u"label_descricao_cargo_colaborador_as")
-        self.label_descricao_cargo_colaborador_as.setMinimumSize(QSize(0, 0))
-        self.label_descricao_cargo_colaborador_as.setMaximumSize(QSize(280, 16777215))
-        self.label_descricao_cargo_colaborador_as.setFont(font)
-
-        self.verticalLayout_166.addWidget(self.label_descricao_cargo_colaborador_as)
-
-        self.input_descricao_cargo_colaborador_as = QLineEdit(self.frame_249)
-        self.input_descricao_cargo_colaborador_as.setObjectName(u"input_descricao_cargo_colaborador_as")
-        self.input_descricao_cargo_colaborador_as.setMinimumSize(QSize(0, 30))
-        self.input_descricao_cargo_colaborador_as.setMaximumSize(QSize(280, 30))
-        self.input_descricao_cargo_colaborador_as.setFont(font)
-
-        self.verticalLayout_166.addWidget(self.input_descricao_cargo_colaborador_as)
-
-
-        self.horizontalLayout_80.addWidget(self.frame_249)
-
+        
         self.frame_251 = QFrame(self.frame_241)
         self.frame_251.setObjectName(u"frame_251")
         self.frame_251.setMinimumSize(QSize(0, 0))
@@ -11234,6 +11272,9 @@ class Ui_MainWindow(object):
         self.label_nis_usuario_as.setText(QCoreApplication.translate("MainWindow", u"NIS", None))
         self.label_cns_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CNS", None))
         self.label_sexo_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
+        self.input_sexo_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_sexo_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
+        self.input_sexo_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
         self.label_telefone_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.label_email_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.label_cep_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
@@ -11243,7 +11284,7 @@ class Ui_MainWindow(object):
         self.label_cidade_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_estado_civil_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
-        self.input_estado_civil_usuario_as.setItemText(0, "")
+        self.input_estado_civil_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_estado_civil_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Casado(a)", None))
         self.input_estado_civil_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Solteiro(a)", None))
         self.input_estado_civil_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Uni\u00e3o Est\u00e1vel", None))
@@ -11251,7 +11292,7 @@ class Ui_MainWindow(object):
         self.input_estado_civil_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Divorciado(a)", None))
 
         self.label_escolaridade_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Escolaridade", None))
-        self.input_escolaridade_usuario_as.setItemText(0, "")
+        self.input_escolaridade_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_escolaridade_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Ensino fundamental incompleto", None))
         self.input_escolaridade_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Ensino fundamental completo", None))
         self.input_escolaridade_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Ensino m\u00e9dio incompleto", None))
@@ -11266,7 +11307,7 @@ class Ui_MainWindow(object):
         self.input_pessoa_cdeficiencia_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.label_pessoa_cdeficiencia_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
-        self.input_tipo_deficiencia_usuario_as.setItemText(0, "")
+        self.input_tipo_deficiencia_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Visual", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Motora", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Amputada", None))
@@ -11274,14 +11315,14 @@ class Ui_MainWindow(object):
         self.input_tipo_deficiencia_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Outra", None))
 
         self.label_renda_familiar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"M\u00e9dia de renda familiar", None))
-        self.input_renda_familiar_usuario_as.setItemText(0, "")
+        self.input_renda_familiar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_renda_familiar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Menos 1 sal\u00e1rio", None))
         self.input_renda_familiar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"1 sal\u00e1rio", None))
         self.input_renda_familiar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mais de 1 a 3 sal\u00e1rios", None))
         self.input_renda_familiar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Mais que 3 sal\u00e1rios", None))
 
         self.label_meio_transporte_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Meio de transporte", None))
-        self.input_meio_transporte_usuario_as.setItemText(0, "")
+        self.input_meio_transporte_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_meio_transporte_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Particular", None))
         self.input_meio_transporte_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Carona", None))
         self.input_meio_transporte_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"\u00d4nibus coletivo", None))
@@ -11291,13 +11332,13 @@ class Ui_MainWindow(object):
         self.input_meio_transporte_usuario_as.setItemText(7, QCoreApplication.translate("MainWindow", u"Outro", None))
 
         self.label_vale_transporte_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Vale transporte", None))
-        self.input_vale_transporte_usuario_as.setItemText(0, "")
+        self.input_vale_transporte_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_vale_transporte_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Passe para os dias de tratamento", None))
         self.input_vale_transporte_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Passe do idoso", None))
         self.input_vale_transporte_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Passe livre", None))
 
         self.label_situacao_trabalho_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o de trabalho", None))
-        self.input_situacao_trabalho_usuario_as.setItemText(0, "")
+        self.input_situacao_trabalho_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_situacao_trabalho_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Empregado/a Aut\u00f4nomo/a", None))
         self.input_situacao_trabalho_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Aposentado/a", None))
         self.input_situacao_trabalho_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Pensionista", None))
@@ -11306,7 +11347,7 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Outros", None))
 
         self.label_beneficios_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcios", None))
-        self.input_beneficios_usuario_as.setItemText(0, "")
+        self.input_beneficios_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_beneficios_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"BPC/Idoso", None))
         self.input_beneficios_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"BPC/PCD", None))
         self.input_beneficios_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mais Social (Gov. Estadual)", None))
@@ -11316,14 +11357,14 @@ class Ui_MainWindow(object):
         self.input_tarifa_social_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.input_tarifa_social_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_tratamento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de tratamento", None))
-        self.input_tipo_tratamento_usuario_as.setItemText(0, "")
+        self.input_tipo_tratamento_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_tipo_tratamento_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Pr\u00e9-Di\u00e1lise", None))
         self.input_tipo_tratamento_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Hemodi\u00e1lise", None))
         self.input_tipo_tratamento_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Di\u00e1lise Peritoneal", None))
 
         self.label_local_tratamento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Local de tratamento", None))
         self.label_patologia_base_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Patologia base", None))
-        self.input_patologia_base_usuario_as.setItemText(0, "")
+        self.input_patologia_base_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_patologia_base_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Hipertens\u00e3o", None))
         self.input_patologia_base_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Diabete 1", None))
         self.input_patologia_base_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Diabete 2", None))
@@ -11333,7 +11374,7 @@ class Ui_MainWindow(object):
 
         self.label_data_inicio_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de in\u00edcio", None))
         self.label_periodo_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.input_periodo_usuario_as.setItemText(0, "")
+        self.input_periodo_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_periodo_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
         self.input_periodo_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
         self.input_periodo_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
@@ -11354,6 +11395,9 @@ class Ui_MainWindow(object):
         
         self.label_orgao_expedidor_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_sexo_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
+        self.input_sexo_cuidador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_sexo_cuidador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
+        self.input_sexo_cuidador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
         self.label_parentesco_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None))
         self.label_telefone_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.label_email_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
@@ -11377,9 +11421,9 @@ class Ui_MainWindow(object):
         self.label_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO COLABORADOR", None))
         self.label_salario_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Sal\u00e1rio", None))
         self.input_salario_colaborador_as.setText("")
-        self.label_descricao_cargo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o do cargo", None))
+        #self.label_descricao_cargo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o do cargo", None))
         self.label_estado_civil_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
-        self.input_estado_civil_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_estado_civil_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_estado_civil_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Solteiro", None))
         self.input_estado_civil_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Casado", None))
         self.input_estado_civil_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Divorciado", None))
@@ -11391,7 +11435,7 @@ class Ui_MainWindow(object):
         self.input_pessoa_cdeficiencia_nao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
         self.label_escolaridade_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Escolaridade", None))
-        self.input_escolaridade_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_escolaridade_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", "Selecione", None))
         self.input_escolaridade_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Fundamental", None))
         self.input_escolaridade_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Fundamental incompleto", None))
         self.input_escolaridade_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
@@ -11400,7 +11444,7 @@ class Ui_MainWindow(object):
         self.input_escolaridade_colaborador_comboBox_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Superior incompleto", None))
 
         self.label_cargo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Cargo", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Recepcionista", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Assistente Social", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Farmac\u00eautico (a)", None))
@@ -11410,7 +11454,7 @@ class Ui_MainWindow(object):
         self.input_cargo_colaborador_comboBox_as.setItemText(7, "")
 
         self.label_periodo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.input_periodo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_periodo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_periodo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
         self.input_periodo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
         self.input_periodo_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
@@ -11421,7 +11465,7 @@ class Ui_MainWindow(object):
         self.label_data_emissao_rg_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
         self.label_pis_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"PIS", None))
         self.label_sexo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
-        self.input_sexo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_sexo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_sexo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
         self.input_sexo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
 
@@ -11457,7 +11501,7 @@ class Ui_MainWindow(object):
         self.label_data_inclusao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Data de inclus\u00e3o", None))
         self.label_nome_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Nome", None))
         self.label_tipo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Tipo", None))
-        self.input_tipo_cursos_as.setItemText(0, "")
+        self.input_tipo_cursos_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_tipo_cursos_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Interno", None))
         self.input_tipo_cursos_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Externo", None))
 
@@ -11478,7 +11522,7 @@ class Ui_MainWindow(object):
         self.label_horario_inicio_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rio In\u00edcio", None))
         self.label_horario_termino_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rio T\u00e9rmino", None))
         self.label_periodo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.input_periodo_cursos_as.setItemText(0, "")
+        self.input_periodo_cursos_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_periodo_cursos_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
         self.input_periodo_cursos_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
         self.input_periodo_cursos_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
@@ -11527,7 +11571,7 @@ class Ui_MainWindow(object):
         self.label_8.setText(QCoreApplication.translate("MainWindow", u"T\u00edtulo do relat\u00f3rio", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None))
         self.label_7.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios prontos", None))
-        self.comboBox.setItemText(0, "")
+        self.comboBox.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.comboBox.setItemText(1, QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.comboBox.setItemText(2, QCoreApplication.translate("MainWindow", u"Cuidador", None))
         self.comboBox.setItemText(3, QCoreApplication.translate("MainWindow", u"Colaborador", None))
@@ -11576,7 +11620,7 @@ class Ui_MainWindow(object):
         self.btn_concluir_agenda_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_altercao_de_dados.setText(QCoreApplication.translate("MainWindow", u"ALTERA\u00c7\u00c3O DE DADOS CADASTRADOS", None))
         self.label_tipo_alterar_cadastros_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de Cadastro", None))
-        self.comboBox_tipos_alterar_cadastros_as.setItemText(0, "")
+        self.comboBox_tipos_alterar_cadastros_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.comboBox_tipos_alterar_cadastros_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Cuidador", None))
         self.comboBox_tipos_alterar_cadastros_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Usuario", None))
         self.comboBox_tipos_alterar_cadastros_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Colaborador", None))
@@ -11606,9 +11650,9 @@ class Ui_MainWindow(object):
         self.input_data_emissao_alterar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"//", None))
         self.label_orgao_expedidor_alterar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_sexo_alterar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
-        self.comboBox_sexo_alterar_cuidador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Masculino", None))
-        self.comboBox_sexo_alterar_cuidador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Feminino", None))
-
+        self.comboBox_sexo_alterar_cuidador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.comboBox_sexo_alterar_cuidador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
+        self.comboBox_sexo_alterar_cuidador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
         self.label_parentesco_alterar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None))
         self.label_telefone_alterar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.input_telefone_alterar_cuidador_as.setInputMask(QCoreApplication.translate("MainWindow", u"00-000000000", None))
@@ -11640,8 +11684,10 @@ class Ui_MainWindow(object):
         self.label_nis_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"NIS", None))
         self.label_cns_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CNS", None))
         self.label_sexo_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
-        self.comboBox_sexo_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Masculino", None))
-        self.comboBox_sexo_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Feminino", None))
+        self.comboBox_sexo_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.comboBox_sexo_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
+        self.comboBox_sexo_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
+        
 
         self.label_telefone_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.input_telefone_alterar_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"(00)00000-0000", None))
@@ -11653,91 +11699,102 @@ class Ui_MainWindow(object):
         self.label_cidade_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_estado_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_estado_civil_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
-        self.input_estado_civil_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Casado(a)", None))
-        self.input_estado_civil_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Solteiro(a)", None))
-        self.input_estado_civil_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Uni\u00e3o Est\u00e1vel", None))
-        self.input_estado_civil_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Vi\u00favo(a)", None))
-        self.input_estado_civil_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Divorciado(a)", None))
+        self.input_estado_civil_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_estado_civil_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Casado(a)", None))
+        self.input_estado_civil_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Solteiro(a)", None))
+        self.input_estado_civil_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Uni\u00e3o Est\u00e1vel", None))
+        self.input_estado_civil_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Vi\u00favo(a)", None))
+        self.input_estado_civil_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Divorciado(a)", None))
 
         self.input_estado_civil_alterar_usuario_as.setCurrentText("")
         self.label_escolaridade_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Escolaridade", None))
-        self.input_escolaridade_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Fundamental", None))
-        self.input_escolaridade_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
-        self.input_escolaridade_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Superior", None))
-        self.input_escolaridade_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Analfabetos", None))
+        self.input_escolaridade_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_escolaridade_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Fundamental", None))
+        self.input_escolaridade_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
+        self.input_escolaridade_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Superior", None))
+        self.input_escolaridade_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Analfabetos", None))
 
         self.label_pessoa_cdeficiencia_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Pessoa c/ defici\u00eancia", None))
         self.input_pessoa_cdeficiencia_sim_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.label_pessoa_cdeficiencia_nao_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
-        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Visual", None))
-        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Motora", None))
-        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Amputada", None))
-        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mental", None))
-        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Outra", None))
+        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Visual", None))
+        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Motora", None))
+        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Amputada", None))
+        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Mental", None))
+        self.comboBox_tipo_deficiencia_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Outra", None))
 
         self.comboBox_tipo_deficiencia_alterar_usuario_as.setCurrentText("")
         self.label_renda_familiar_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"M\u00e9dia de renda familiar", None))
-        self.input_renda_familiar_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Menos 1 Sal\u00e1rio", None))
-        self.input_renda_familiar_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"1 Sal\u00e1rio", None))
-        self.input_renda_familiar_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Mais de  1 a 3 sal\u00e1rios", None))
-        self.input_renda_familiar_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mais que 3 sal\u00e1rios", None))
+        self.input_renda_familiar_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_renda_familiar_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Menos 1 Sal\u00e1rio", None))
+        self.input_renda_familiar_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"1 Sal\u00e1rio", None))
+        self.input_renda_familiar_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Mais de  1 a 3 sal\u00e1rios", None))
+        self.input_renda_familiar_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Mais que 3 sal\u00e1rios", None))
 
         self.label_meio_transporte_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Meio de transporte", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Particular", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Carona", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"\u00d4nibus Coletivo", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Ambul\u00e2ncia Municipal", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Moto", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Ambul\u00e2ncia Particular", None))
-        self.input_meio_transporte_alterar_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Outros", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Particular", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Carona", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"\u00d4nibus Coletivo", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Ambul\u00e2ncia Municipal", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Moto", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Ambul\u00e2ncia Particular", None))
+        self.input_meio_transporte_alterar_usuario_as.setItemText(7, QCoreApplication.translate("MainWindow", u"Outros", None))
 
         self.label_vale_transporte_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Vale transporte", None))
-        self.input_vale_transporte_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Passe para os dias de tramento", None))
-        self.input_vale_transporte_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Passe do Idoso", None))
-        self.input_vale_transporte_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Passe Livre", None))
+        self.input_vale_transporte_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_vale_transporte_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Passe para os dias de tramento", None))
+        self.input_vale_transporte_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Passe do Idoso", None))
+        self.input_vale_transporte_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Passe Livre", None))
 
         self.label_profisao_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Profiss\u00e3o", None))
         self.label_situacao_trabalho_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o de Trabalho ", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Empregado(a)", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Aut\u00f4nomo(a)", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Aposentado(a)", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Pensionista", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Desempregado(a)", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Auxilio Doen\u00e7a", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Ac\u00e3o Judicial", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(7, QCoreApplication.translate("MainWindow", u"Aux.Doen\u00e7a", None))
-        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(8, QCoreApplication.translate("MainWindow", u"Outros", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Empregado(a)", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Aut\u00f4nomo(a)", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Aposentado(a)", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Pensionista", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Desempregado(a)", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Auxilio Doen\u00e7a", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(7, QCoreApplication.translate("MainWindow", u"Ac\u00e3o Judicial", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(8, QCoreApplication.translate("MainWindow", u"Aux.Doen\u00e7a", None))
+        self.comboBox_situacao_trabalho_alterar_usuario_as.setItemText(9, QCoreApplication.translate("MainWindow", u"Outros", None))
 
         self.label_beneficios_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcios", None))
-        self.input_beneficios_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"BPC/Idoso", None))
-        self.input_beneficios_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"BPC/PCD", None))
-        self.input_beneficios_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Auxilio Brasil(Gov. Federal)", None))
+        self.input_beneficios_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_beneficios_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"BPC/Idoso", None))
+        self.input_beneficios_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"BPC/PCD", None))
+        self.input_beneficios_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Auxilio Brasil(Gov. Federal)", None))
 
         self.label_tarifa_social_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tarifa social", None))
         self.input_tarifa_social_sim_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.input_tarifa_social_nao_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_tratamento_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de tratamento", None))
-        self.input_tipo_tratamento_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Pr\u00e9-Di\u00e1lise", None))
-        self.input_tipo_tratamento_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Hemodi\u00e1lise", None))
-        self.input_tipo_tratamento_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Dia\u00e1lise Peritoneal", None))
+        self.input_tipo_tratamento_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_tipo_tratamento_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Pr\u00e9-Di\u00e1lise", None))
+        self.input_tipo_tratamento_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Hemodi\u00e1lise", None))
+        self.input_tipo_tratamento_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Dia\u00e1lise Peritoneal", None))
 
         self.label_patologia_base_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Patologia base", None))
-        self.input_patologia_base_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Hipertens\u00e3o", None))
-        self.input_patologia_base_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Diabete 1", None))
-        self.input_patologia_base_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Diabete 2", None))
-        self.input_patologia_base_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"L\u00fapos", None))
-        self.input_patologia_base_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Nefrites", None))
-        self.input_patologia_base_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Outros", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Hipertens\u00e3o", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Diabete 1", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Diabete 2", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"L\u00fapos", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Nefrites", None))
+        self.input_patologia_base_alterar_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Outros", None))
 
         self.label_local_tratamento_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Local de tratamento", None))
         self.label_data_inicio_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de in\u00edcio", None))
         self.input_data_inicio_alterar_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"00/00/0000", None))
         self.input_data_inicio_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"//", None))
         self.label_periodo_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.input_periodo_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Matutino", None))
-        self.input_periodo_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Vespertino", None))
-        self.input_periodo_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Noturno", None))
+        self.input_periodo_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_periodo_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
+        self.input_periodo_alterar_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
+        self.input_periodo_alterar_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
 
         self.btn_cancelar_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.btn_concluir_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Concluir", None))
@@ -11765,14 +11822,14 @@ class Ui_MainWindow(object):
         self.label_data_emissao_rg_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
         self.label_pis_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"PIS", None))
         self.label_sexo_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
-        self.input_sexo_alterar_colaborador__as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_sexo_alterar_colaborador__as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_sexo_alterar_colaborador__as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
         self.input_sexo_alterar_colaborador__as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
 
         self.label_telefone_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.label_email_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.label_estado_civil_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
-        self.input_estado_civil_alterar_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.input_estado_civil_alterar_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_estado_civil_alterar_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Solteiro", None))
         self.input_estado_civil_alterar_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Casado", None))
         self.input_estado_civil_alterar_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Divorciado", None))
@@ -11783,7 +11840,7 @@ class Ui_MainWindow(object):
         self.input_pessoa_cdeficiencia_sim_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
         self.input_pessoa_cdeficiencia_nao_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
-        self.comboBox_tipo_deficiencia_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.comboBox_tipo_deficiencia_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.comboBox_tipo_deficiencia_alterar_colaborador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Fundamental", None))
         self.comboBox_tipo_deficiencia_alterar_colaborador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Fundamental incompleto", None))
         self.comboBox_tipo_deficiencia_alterar_colaborador_as.setItemText(3, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
@@ -11792,7 +11849,7 @@ class Ui_MainWindow(object):
         self.comboBox_tipo_deficiencia_alterar_colaborador_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Superior incompleto", None))
 
         self.label_escolaridade_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Escolaridade", None))
-        self.comboBox_escolaridade_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.comboBox_escolaridade_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.comboBox_escolaridade_alterar_colaborador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Fundamental", None))
         self.comboBox_escolaridade_alterar_colaborador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Fundamental incompleto", None))
         self.comboBox_escolaridade_alterar_colaborador_as.setItemText(3, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
@@ -11801,7 +11858,7 @@ class Ui_MainWindow(object):
         self.comboBox_escolaridade_alterar_colaborador_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Superior incompleto", None))
 
         self.label_cargo_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Cargo", None))
-        self.comboBox_cargo_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.comboBox_cargo_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.comboBox_cargo_alterar_colaborador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Recepcionista", None))
         self.comboBox_cargo_alterar_colaborador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Assistente Social", None))
         self.comboBox_cargo_alterar_colaborador_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Farmac\u00eautico (a)", None))
@@ -11813,7 +11870,7 @@ class Ui_MainWindow(object):
         self.input_foto_alterar_colaborador_as.setText("")
         self.label_adicionar_foto_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"ADICIONAR FOTO", None))
         self.label_periodo_alterar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.comboBox_periodo_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"---", None))
+        self.comboBox_periodo_alterar_colaborador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.comboBox_periodo_alterar_colaborador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Matutino", None))
         self.comboBox_periodo_alterar_colaborador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Vespertino", None))
         self.comboBox_periodo_alterar_colaborador_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
@@ -11856,49 +11913,7 @@ class Ui_MainWindow(object):
         self.btn_relatorios_sec.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
         self.btn_sair_sec.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
     # retranslateUi
-        ################################ Validações #########################################
-
-        ################################ Validações #########################################
-
-        self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
-        self.input_nome_usuario_as.setValidator(self.validaNome)
-        self.input_nome_usuario_as.setMaxLength(255)
-
-        #Mascara CPF
-        self.maskCpf = QRegularExpressionValidator(QRegularExpression("[0-9]{11}"))
-        #VALIDADOR INTEIRO
-        self.validaInteiro = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
-        self.input_nome_usuario_as.setValidator(self.validaInteiro)
-	#VALIDADOR CEP
-        self.validaCep = QRegularExpressionValidator(QRegularExpression("[0-9]{5}-[0-9]{3}"))
-	#VALIDADOR DINHEIRO
-        self.validaValor = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
-	#VALIDADOR TEXTO
-        self.validaTexto = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
-	#VALIDADOR DATA
-        self.validaData = QRegularExpressionValidator(QRegularExpression("([0-9]{2}/){2}[0-9]{4}"))
-	#VALIDADADOR TELEFONE
-        self.validaTelefone = QRegularExpressionValidator(QRegularExpression("[0-9]{2} [0-9]{4,5}-[0-9]{4}"))
-	#VALIDADOR NOME
-        self.validaNome = QRegularExpressionValidator(QRegularExpression("[a-zA-z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ-]+"))
-	#VALIDADOR EMAIL
-        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
-
-        
-
-
-        ################################ Validações #########################################
-                     
-
-
-        self.validaNome = QRegularExpressionValidator(QRegularExpression("/\b[A-Za-zÀ-ú][A-Za-zÀ-ú]+,?\s[A-Za-zÀ-ú][A-Za-zÀ-ú]{2,19}\b/gi"))
-        self.input_nome_usuario_as.setValidator(self.validaNome)
-        self.input_nome_usuario_as.setMaxLength(255)
-
-        #Mascara CPF
-        #self.maskCpf = QRegularExpressionValidator(QRegularExpression("[0-9]{11}"))
-
-        #self.cpf = CPF()
+       
 
         
 
