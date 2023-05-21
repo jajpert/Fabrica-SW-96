@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1718</width>
+    <width>1763</width>
     <height>892</height>
    </rect>
   </property>
@@ -154,7 +154,7 @@
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>../icons/Logo ABREC.png</pixmap>
+                 <pixmap>../../../../.designer/icons/Logo ABREC.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -368,7 +368,7 @@ QFrame#frame_39:focus{outline:0; border: 2px solid #D62828}</string>
                           <string/>
                          </property>
                          <property name="pixmap">
-                          <pixmap>../icons/pessoas.png</pixmap>
+                          <pixmap>../../../../.designer/icons/pessoas.png</pixmap>
                          </property>
                          <property name="scaledContents">
                           <bool>true</bool>
@@ -457,7 +457,7 @@ QFrame#frame_40:focus{outline:0; border: 2px solid #D62828}</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../icons/olho_fechado.png</normaloff>../icons/olho_fechado.png</iconset>
+                           <normaloff>../../../../.designer/icons/olho_fechado.png</normaloff>../../../../.designer/icons/olho_fechado.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -722,7 +722,7 @@ QPushButton:focus{outline: 0} </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>../icons/Abrec logo paint-02 (2).png</pixmap>
+              <pixmap>../../../../.designer/icons/Abrec logo paint-02 (2).png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -855,7 +855,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../../.designer/icons/Ellipse 1.png</normaloff>../../../../.designer/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -999,7 +999,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
+                             <normaloff>../../../../.designer/icons/cadastro.png</normaloff>../../../../.designer/icons/cadastro.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1042,7 +1042,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../../.designer/icons/consultando.png</normaloff>../../../../.designer/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1085,7 +1085,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
+                             <normaloff>../../../../.designer/icons/agenda.png</normaloff>../../../../.designer/icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1128,7 +1128,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../../.designer/icons/relatorio-de-negocios.png</normaloff>../../../../.designer/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1171,7 +1171,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/cliente.png</normaloff>../icons/cliente.png</iconset>
+                             <normaloff>../../../../.designer/icons/cliente.png</normaloff>../../../../.designer/icons/cliente.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1313,7 +1313,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../../.designer/icons/ligar.png</normaloff>../../../../.designer/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1508,7 +1508,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cuidado.png</normaloff>../icons/cuidado.png</iconset>
+                              <normaloff>../../../../.designer/icons/cuidado.png</normaloff>../../../../.designer/icons/cuidado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1554,7 +1554,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/unidos.png</normaloff>../icons/unidos.png</iconset>
+                              <normaloff>../../../../.designer/icons/unidos.png</normaloff>../../../../.designer/icons/unidos.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1600,7 +1600,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/certificados.png</normaloff>../icons/certificados.png</iconset>
+                              <normaloff>../../../../.designer/icons/certificados.png</normaloff>../../../../.designer/icons/certificados.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1646,7 +1646,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                              <normaloff>../../../../.designer/icons/troca.png</normaloff>../../../../.designer/icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1856,7 +1856,7 @@ QPushButton:focus{outline: 0}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                    <normaloff>../../../../.designer/icons/adicionar foto.png</normaloff>../../../../.designer/icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -3228,50 +3228,252 @@ QPushButton:focus{outline: 0}</string>
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_cep_usuario_as">
+                                          <widget class="QFrame" name="frame_417">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>160</width>
-                                             <height>0</height>
+                                             <width>0</width>
+                                             <height>60</height>
                                             </size>
                                            </property>
                                            <property name="maximumSize">
                                             <size>
-                                             <width>160</width>
+                                             <width>170</width>
                                              <height>16777215</height>
                                             </size>
                                            </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>12</pointsize>
-                                            </font>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
-                                           <property name="text">
-                                            <string>CEP</string>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
                                            </property>
-                                          </widget>
-                                         </item>
-                                         <item>
-                                          <widget class="QLineEdit" name="input_cep_usuario_as">
-                                           <property name="minimumSize">
-                                            <size>
-                                             <width>150</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>150</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>12</pointsize>
-                                            </font>
-                                           </property>
+                                           <layout class="QHBoxLayout" name="horizontalLayout_123">
+                                            <property name="spacing">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item>
+                                             <widget class="QFrame" name="frame_418">
+                                              <property name="minimumSize">
+                                               <size>
+                                                <width>160</width>
+                                                <height>61</height>
+                                               </size>
+                                              </property>
+                                              <property name="maximumSize">
+                                               <size>
+                                                <width>150</width>
+                                                <height>61</height>
+                                               </size>
+                                              </property>
+                                              <property name="frameShape">
+                                               <enum>QFrame::StyledPanel</enum>
+                                              </property>
+                                              <property name="frameShadow">
+                                               <enum>QFrame::Raised</enum>
+                                              </property>
+                                              <layout class="QVBoxLayout" name="verticalLayout_285">
+                                               <property name="spacing">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="leftMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="topMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="rightMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="bottomMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <item>
+                                                <widget class="QLabel" name="label_cep_usuario_as">
+                                                 <property name="minimumSize">
+                                                  <size>
+                                                   <width>50</width>
+                                                   <height>15</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="maximumSize">
+                                                  <size>
+                                                   <width>50</width>
+                                                   <height>15</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="font">
+                                                  <font>
+                                                   <family>Abel</family>
+                                                   <pointsize>12</pointsize>
+                                                  </font>
+                                                 </property>
+                                                 <property name="text">
+                                                  <string>CEP</string>
+                                                 </property>
+                                                </widget>
+                                               </item>
+                                               <item>
+                                                <widget class="QLineEdit" name="input_cep_usuario_as">
+                                                 <property name="minimumSize">
+                                                  <size>
+                                                   <width>154</width>
+                                                   <height>30</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="maximumSize">
+                                                  <size>
+                                                   <width>145</width>
+                                                   <height>16777215</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="font">
+                                                  <font>
+                                                   <family>Abel</family>
+                                                   <pointsize>12</pointsize>
+                                                  </font>
+                                                 </property>
+                                                 <property name="styleSheet">
+                                                  <string notr="true"/>
+                                                 </property>
+                                                 <property name="inputMask">
+                                                  <string>00.000-000</string>
+                                                 </property>
+                                                 <property name="text">
+                                                  <string>.-</string>
+                                                 </property>
+                                                 <property name="alignment">
+                                                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                 </property>
+                                                </widget>
+                                               </item>
+                                              </layout>
+                                             </widget>
+                                            </item>
+                                            <item>
+                                             <widget class="QFrame" name="frame_419">
+                                              <property name="minimumSize">
+                                               <size>
+                                                <width>22</width>
+                                                <height>61</height>
+                                               </size>
+                                              </property>
+                                              <property name="maximumSize">
+                                               <size>
+                                                <width>31</width>
+                                                <height>61</height>
+                                               </size>
+                                              </property>
+                                              <property name="frameShape">
+                                               <enum>QFrame::StyledPanel</enum>
+                                              </property>
+                                              <property name="frameShadow">
+                                               <enum>QFrame::Raised</enum>
+                                              </property>
+                                              <layout class="QVBoxLayout" name="verticalLayout_286">
+                                               <property name="spacing">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="leftMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="topMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="rightMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="bottomMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <item>
+                                                <spacer name="verticalSpacer_17">
+                                                 <property name="orientation">
+                                                  <enum>Qt::Vertical</enum>
+                                                 </property>
+                                                 <property name="sizeType">
+                                                  <enum>QSizePolicy::Fixed</enum>
+                                                 </property>
+                                                 <property name="sizeHint" stdset="0">
+                                                  <size>
+                                                   <width>20</width>
+                                                   <height>18</height>
+                                                  </size>
+                                                 </property>
+                                                </spacer>
+                                               </item>
+                                               <item>
+                                                <widget class="QPushButton" name="btn_cep_buscar_usuario_as">
+                                                 <property name="sizePolicy">
+                                                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                   <horstretch>0</horstretch>
+                                                   <verstretch>0</verstretch>
+                                                  </sizepolicy>
+                                                 </property>
+                                                 <property name="minimumSize">
+                                                  <size>
+                                                   <width>0</width>
+                                                   <height>31</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="maximumSize">
+                                                  <size>
+                                                   <width>25</width>
+                                                   <height>31</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="styleSheet">
+                                                  <string notr="true">QPushButton{
+        background: rgb(243, 185, 191);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:hover{
+        background: rgb(255, 194, 201);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:pressed{
+        background: rgb(180, 106, 102);
+        border: 2px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}</string>
+                                                 </property>
+                                                 <property name="text">
+                                                  <string/>
+                                                 </property>
+                                                 <property name="icon">
+                                                  <iconset>
+                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                 </property>
+                                                </widget>
+                                               </item>
+                                              </layout>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                         </layout>
@@ -5762,7 +5964,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
+                              <normaloff>../../../../.designer/icons/cadeado.png</normaloff>../../../../.designer/icons/cadeado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -6871,7 +7073,7 @@ QPushButton:focus{outline:0}</string>
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_76">
+                                  <layout class="QHBoxLayout" name="horizontalLayout_122">
                                    <property name="spacing">
                                     <number>0</number>
                                    </property>
@@ -6888,44 +7090,213 @@ QPushButton:focus{outline:0}</string>
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_cep_cuidador_as">
-                                     <property name="maximumSize">
+                                    <widget class="QFrame" name="frame_415">
+                                     <property name="minimumSize">
                                       <size>
-                                       <width>170</width>
-                                       <height>16777215</height>
+                                       <width>160</width>
+                                       <height>61</height>
                                       </size>
                                      </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>150</width>
+                                       <height>61</height>
+                                      </size>
                                      </property>
-                                     <property name="text">
-                                      <string>CEP</string>
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
                                      </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_76">
+                                      <property name="spacing">
+                                       <number>2</number>
+                                      </property>
+                                      <property name="leftMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="topMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="rightMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <item>
+                                       <widget class="QLabel" name="label_cep_cuidador_as">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>50</width>
+                                          <height>15</height>
+                                         </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>50</width>
+                                          <height>15</height>
+                                         </size>
+                                        </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>CEP</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLineEdit" name="input_cep_cuidador_as">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>158</width>
+                                          <height>30</height>
+                                         </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>145</width>
+                                          <height>16777215</height>
+                                         </size>
+                                        </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true"/>
+                                        </property>
+                                        <property name="inputMask">
+                                         <string>00.000-000</string>
+                                        </property>
+                                        <property name="text">
+                                         <string>.-</string>
+                                        </property>
+                                        <property name="alignment">
+                                         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QLineEdit" name="input_cep_cuidador_as">
+                                    <widget class="QFrame" name="frame_416">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
-                                       <height>30</height>
+                                       <width>22</width>
+                                       <height>61</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
-                                       <height>30</height>
+                                       <width>31</width>
+                                       <height>61</height>
                                       </size>
                                      </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
                                      </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_284">
+                                      <property name="spacing">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="leftMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="topMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="rightMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <item>
+                                       <spacer name="verticalSpacer_16">
+                                        <property name="orientation">
+                                         <enum>Qt::Vertical</enum>
+                                        </property>
+                                        <property name="sizeType">
+                                         <enum>QSizePolicy::Fixed</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>20</width>
+                                          <height>18</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                      <item>
+                                       <widget class="QPushButton" name="btn_cep_buscar_cuidador_as">
+                                        <property name="sizePolicy">
+                                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                          <horstretch>0</horstretch>
+                                          <verstretch>0</verstretch>
+                                         </sizepolicy>
+                                        </property>
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>0</width>
+                                          <height>31</height>
+                                         </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>25</width>
+                                          <height>31</height>
+                                         </size>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true">QPushButton{
+        background: rgb(243, 185, 191);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:hover{
+        background: rgb(255, 194, 201);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:pressed{
+        background: rgb(180, 106, 102);
+        border: 2px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}</string>
+                                        </property>
+                                        <property name="text">
+                                         <string/>
+                                        </property>
+                                        <property name="icon">
+                                         <iconset>
+                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
                                     </widget>
                                    </item>
                                   </layout>
@@ -7063,13 +7434,13 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_133">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>150</width>
                                     <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>150</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -7122,15 +7493,21 @@ QPushButton:focus{outline:0}</string>
                                    </item>
                                    <item>
                                     <widget class="QLineEdit" name="input_numero_cuidador_as">
+                                     <property name="sizePolicy">
+                                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                                       <horstretch>0</horstretch>
+                                       <verstretch>0</verstretch>
+                                      </sizepolicy>
+                                     </property>
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>130</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>130</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -7155,7 +7532,7 @@ QPushButton:focus{outline:0}</string>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>230</width>
+                                    <width>250</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -7216,7 +7593,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>220</width>
+                                       <width>240</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -8015,7 +8392,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                              <normaloff>../../../../.designer/icons/troca.png</normaloff>../../../../.designer/icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -8052,7 +8429,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cancelar.png</normaloff>../icons/cancelar.png</iconset>
+                              <normaloff>../../../../.designer/icons/cancelar.png</normaloff>../../../../.designer/icons/cancelar.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -8089,7 +8466,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
+                              <normaloff>../../../../.designer/icons/salvar-arquivo.png</normaloff>../../../../.designer/icons/salvar-arquivo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -8126,7 +8503,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
+                              <normaloff>../../../../.designer/icons/lixeira-de-reciclagem.png</normaloff>../../../../.designer/icons/lixeira-de-reciclagem.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -10444,13 +10821,13 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                <property name="minimumSize">
                                 <size>
                                  <width>0</width>
-                                 <height>0</height>
+                                 <height>50</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
                                  <width>16777215</width>
-                                 <height>60</height>
+                                 <height>65</height>
                                 </size>
                                </property>
                                <property name="styleSheet">
@@ -10498,9 +10875,9 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_147">
+                                  <layout class="QVBoxLayout" name="verticalLayout_288">
                                    <property name="spacing">
-                                    <number>5</number>
+                                    <number>0</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -10515,53 +10892,246 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_cep_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
+                                    <widget class="QFrame" name="frame_420">
                                      <property name="maximumSize">
                                       <size>
-                                       <width>100</width>
+                                       <width>170</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
                                      </property>
-                                     <property name="text">
-                                      <string>CEP</string>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
                                      </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_cep_colaborador_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>150</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="text">
-                                      <string/>
-                                     </property>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_124">
+                                      <property name="spacing">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="leftMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="topMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="rightMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>0</number>
+                                      </property>
+                                      <item>
+                                       <widget class="QFrame" name="frame_421">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>160</width>
+                                          <height>62</height>
+                                         </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>150</width>
+                                          <height>62</height>
+                                         </size>
+                                        </property>
+                                        <property name="frameShape">
+                                         <enum>QFrame::StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                         <enum>QFrame::Raised</enum>
+                                        </property>
+                                        <layout class="QVBoxLayout" name="verticalLayout_147">
+                                         <property name="spacing">
+                                          <number>2</number>
+                                         </property>
+                                         <property name="leftMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="topMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="rightMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="bottomMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <item>
+                                          <widget class="QLabel" name="label_cep_colaborador_as">
+                                           <property name="minimumSize">
+                                            <size>
+                                             <width>50</width>
+                                             <height>15</height>
+                                            </size>
+                                           </property>
+                                           <property name="maximumSize">
+                                            <size>
+                                             <width>50</width>
+                                             <height>24</height>
+                                            </size>
+                                           </property>
+                                           <property name="font">
+                                            <font>
+                                             <family>Abel</family>
+                                             <pointsize>12</pointsize>
+                                            </font>
+                                           </property>
+                                           <property name="text">
+                                            <string>CEP</string>
+                                           </property>
+                                          </widget>
+                                         </item>
+                                         <item>
+                                          <widget class="QLineEdit" name="input_cep_colaborador_as">
+                                           <property name="minimumSize">
+                                            <size>
+                                             <width>145</width>
+                                             <height>30</height>
+                                            </size>
+                                           </property>
+                                           <property name="maximumSize">
+                                            <size>
+                                             <width>146</width>
+                                             <height>30</height>
+                                            </size>
+                                           </property>
+                                           <property name="font">
+                                            <font>
+                                             <family>Abel</family>
+                                             <pointsize>12</pointsize>
+                                            </font>
+                                           </property>
+                                           <property name="styleSheet">
+                                            <string notr="true"/>
+                                           </property>
+                                           <property name="inputMask">
+                                            <string>00.000-000</string>
+                                           </property>
+                                           <property name="text">
+                                            <string>.-</string>
+                                           </property>
+                                           <property name="alignment">
+                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                           </property>
+                                          </widget>
+                                         </item>
+                                        </layout>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QFrame" name="frame_422">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>22</width>
+                                          <height>61</height>
+                                         </size>
+                                        </property>
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>31</width>
+                                          <height>61</height>
+                                         </size>
+                                        </property>
+                                        <property name="frameShape">
+                                         <enum>QFrame::StyledPanel</enum>
+                                        </property>
+                                        <property name="frameShadow">
+                                         <enum>QFrame::Raised</enum>
+                                        </property>
+                                        <layout class="QVBoxLayout" name="verticalLayout_287">
+                                         <property name="spacing">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="leftMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="topMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="rightMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <property name="bottomMargin">
+                                          <number>0</number>
+                                         </property>
+                                         <item>
+                                          <spacer name="verticalSpacer_18">
+                                           <property name="orientation">
+                                            <enum>Qt::Vertical</enum>
+                                           </property>
+                                           <property name="sizeType">
+                                            <enum>QSizePolicy::Fixed</enum>
+                                           </property>
+                                           <property name="sizeHint" stdset="0">
+                                            <size>
+                                             <width>20</width>
+                                             <height>28</height>
+                                            </size>
+                                           </property>
+                                          </spacer>
+                                         </item>
+                                         <item>
+                                          <widget class="QPushButton" name="btn_cep_buscar_colaborador_as">
+                                           <property name="sizePolicy">
+                                            <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                             <horstretch>0</horstretch>
+                                             <verstretch>0</verstretch>
+                                            </sizepolicy>
+                                           </property>
+                                           <property name="minimumSize">
+                                            <size>
+                                             <width>0</width>
+                                             <height>30</height>
+                                            </size>
+                                           </property>
+                                           <property name="maximumSize">
+                                            <size>
+                                             <width>25</width>
+                                             <height>30</height>
+                                            </size>
+                                           </property>
+                                           <property name="styleSheet">
+                                            <string notr="true">QPushButton{
+        background: rgb(243, 185, 191);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:hover{
+        background: rgb(255, 194, 201);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:pressed{
+        background: rgb(180, 106, 102);
+        border: 2px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}</string>
+                                           </property>
+                                           <property name="text">
+                                            <string/>
+                                           </property>
+                                           <property name="icon">
+                                            <iconset>
+                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                           </property>
+                                          </widget>
+                                         </item>
+                                        </layout>
+                                       </widget>
+                                      </item>
+                                     </layout>
                                     </widget>
                                    </item>
                                   </layout>
@@ -10571,7 +11141,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <widget class="QFrame" name="frame_209">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
+                                    <width>281</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -10663,7 +11233,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>120</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -10699,7 +11269,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>60</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -10724,7 +11294,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>159</width>
+                                       <width>110</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -11064,7 +11634,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                    <normaloff>../../../../.designer/icons/adicionar foto.png</normaloff>../../../../.designer/icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -14043,7 +14613,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/adicionar-amigo.png</normaloff>../icons/adicionar-amigo.png</iconset>
+                              <normaloff>../../../../.designer/icons/adicionar-amigo.png</normaloff>../../../../.designer/icons/adicionar-amigo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -14942,7 +15512,7 @@ QLabel{margin-left: 0.25em}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../icons/marca-de-verificacao.png</normaloff>../icons/marca-de-verificacao.png</iconset>
+                                    <normaloff>../../../../.designer/icons/marca-de-verificacao.png</normaloff>../../../../.designer/icons/marca-de-verificacao.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -15475,7 +16045,7 @@ QPushButton:focus{outline:0}</string>
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>../icons/imprimir.png</normaloff>../icons/imprimir.png</iconset>
+                                        <normaloff>../../../../.designer/icons/imprimir.png</normaloff>../../../../.designer/icons/imprimir.png</iconset>
                                       </property>
                                       <property name="iconSize">
                                        <size>
@@ -15518,7 +16088,7 @@ QPushButton:focus{outline:0}</string>
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                                        <normaloff>../../../../.designer/icons/troca.png</normaloff>../../../../.designer/icons/troca.png</iconset>
                                       </property>
                                       <property name="iconSize">
                                        <size>
@@ -16281,7 +16851,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cancelar.png</normaloff>../icons/cancelar.png</iconset>
+                              <normaloff>../../../../.designer/icons/cancelar.png</normaloff>../../../../.designer/icons/cancelar.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -17001,7 +17571,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                              <normaloff>../../../../.designer/icons/troca.png</normaloff>../../../../.designer/icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -17047,7 +17617,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cancelar.png</normaloff>../icons/cancelar.png</iconset>
+                              <normaloff>../../../../.designer/icons/cancelar.png</normaloff>../../../../.designer/icons/cancelar.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -17808,7 +18378,7 @@ QPushButton:focus{outline:0}</string>
                                          </property>
                                          <property name="icon">
                                           <iconset>
-                                           <normaloff>../../../../../icons/cadeado.png</normaloff>../../../../../icons/cadeado.png</iconset>
+                                           <normaloff>../../../../../../icons/cadeado.png</normaloff>../../../../../../icons/cadeado.png</iconset>
                                          </property>
                                          <property name="iconSize">
                                           <size>
@@ -19689,7 +20259,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                             </property>
                                             <property name="icon">
                                              <iconset>
-                                              <normaloff>../../../../.designer/backup/icons/adicionar foto.png</normaloff>../../../../.designer/backup/icons/adicionar foto.png</iconset>
+                                              <normaloff>../../../../../../.designer/backup/icons/adicionar foto.png</normaloff>../../../../../../.designer/backup/icons/adicionar foto.png</iconset>
                                             </property>
                                             <property name="iconSize">
                                              <size>
@@ -23870,7 +24440,7 @@ background-color: rgb(246, 176, 181);
                                              </property>
                                              <property name="icon">
                                               <iconset>
-                                               <normaloff>../../../../.designer/icons/seta-direita.png</normaloff>../../../../.designer/icons/seta-direita.png</iconset>
+                                               <normaloff>../../../../../../.designer/icons/seta-direita.png</normaloff>../../../../../../.designer/icons/seta-direita.png</iconset>
                                              </property>
                                             </widget>
                                            </item>
@@ -23939,7 +24509,7 @@ background-color: rgb(0, 168, 220);
                                              </property>
                                              <property name="icon">
                                               <iconset>
-                                               <normaloff>../../../../.designer/icons/seta-direita.png</normaloff>../../../../.designer/icons/seta-direita.png</iconset>
+                                               <normaloff>../../../../../../.designer/icons/seta-direita.png</normaloff>../../../../../../.designer/icons/seta-direita.png</iconset>
                                              </property>
                                             </widget>
                                            </item>
@@ -26555,7 +27125,7 @@ background-color: rgb(0, 168, 220);
                                          </property>
                                          <property name="icon">
                                           <iconset>
-                                           <normaloff>../../../../.designer/backup/icons/adicionar foto.png</normaloff>../../../../.designer/backup/icons/adicionar foto.png</iconset>
+                                           <normaloff>../../../../../../.designer/backup/icons/adicionar foto.png</normaloff>../../../../../../.designer/backup/icons/adicionar foto.png</iconset>
                                          </property>
                                          <property name="iconSize">
                                           <size>
@@ -27194,7 +27764,7 @@ background-color: rgb(246, 176, 181);
                                             </property>
                                             <property name="icon">
                                              <iconset>
-                                              <normaloff>../../../../.designer/icons/seta-direita.png</normaloff>../../../../.designer/icons/seta-direita.png</iconset>
+                                              <normaloff>../../../../../../.designer/icons/seta-direita.png</normaloff>../../../../../../.designer/icons/seta-direita.png</iconset>
                                             </property>
                                            </widget>
                                           </item>
@@ -27411,7 +27981,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../../.designer/icons/Ellipse 1.png</normaloff>../../../../.designer/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -27534,7 +28104,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/remedio.png</normaloff>../icons/remedio.png</iconset>
+                             <normaloff>../../../../.designer/icons/remedio.png</normaloff>../../../../.designer/icons/remedio.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -27571,7 +28141,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/medicamento.png</normaloff>../icons/medicamento.png</iconset>
+                             <normaloff>../../../../.designer/icons/medicamento.png</normaloff>../../../../.designer/icons/medicamento.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -27608,7 +28178,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/estoque-pronto.png</normaloff>../icons/estoque-pronto.png</iconset>
+                             <normaloff>../../../../.designer/icons/estoque-pronto.png</normaloff>../../../../.designer/icons/estoque-pronto.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -27750,7 +28320,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../../.designer/icons/ligar.png</normaloff>../../../../.designer/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -27934,7 +28504,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../../.designer/icons/Ellipse 1.png</normaloff>../../../../.designer/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -28057,7 +28627,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../../.designer/icons/consultando.png</normaloff>../../../../.designer/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28094,7 +28664,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../../.designer/icons/relatorio-de-negocios.png</normaloff>../../../../.designer/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28233,7 +28803,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../../.designer/icons/ligar.png</normaloff>../../../../.designer/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28414,7 +28984,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../../.designer/icons/Ellipse 1.png</normaloff>../../../../.designer/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -28534,7 +29104,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/seguranca-alimentar.png</normaloff>../icons/seguranca-alimentar.png</iconset>
+                             <normaloff>../../../../.designer/icons/seguranca-alimentar.png</normaloff>../../../../.designer/icons/seguranca-alimentar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28571,7 +29141,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../../.designer/icons/consultando.png</normaloff>../../../../.designer/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28608,7 +29178,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../../.designer/icons/relatorio-de-negocios.png</normaloff>../../../../.designer/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28753,7 +29323,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../../.designer/icons/ligar.png</normaloff>../../../../.designer/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -28939,7 +29509,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
+                              <normaloff>../../../../.designer/icons/cadastro.png</normaloff>../../../../.designer/icons/cadastro.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -28985,7 +29555,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                              <normaloff>../../../../.designer/icons/relatorio-de-negocios.png</normaloff>../../../../.designer/icons/relatorio-de-negocios.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -29106,7 +29676,7 @@ QPushButton:focus{outline: 0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../../.designer/icons/Ellipse 1.png</normaloff>../../../../.designer/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -29235,7 +29805,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../../.designer/icons/consultando.png</normaloff>../../../../.designer/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -29272,7 +29842,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../../.designer/icons/relatorio-de-negocios.png</normaloff>../../../../.designer/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -29411,7 +29981,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../../.designer/icons/ligar.png</normaloff>../../../../.designer/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -29613,7 +30183,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../../.designer/icons/Ellipse 1.png</normaloff>../../../../.designer/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -29739,7 +30309,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
+                             <normaloff>../../../../.designer/icons/agenda.png</normaloff>../../../../.designer/icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -29776,7 +30346,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/festa-de-aniversario.png</normaloff>../icons/festa-de-aniversario.png</iconset>
+                             <normaloff>../../../../.designer/icons/festa-de-aniversario.png</normaloff>../../../../.designer/icons/festa-de-aniversario.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -29813,7 +30383,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../../.designer/icons/relatorio-de-negocios.png</normaloff>../../../../.designer/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -29955,7 +30525,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../../.designer/icons/ligar.png</normaloff>../../../../.designer/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>

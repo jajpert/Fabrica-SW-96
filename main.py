@@ -1,4 +1,5 @@
 import sys
+import requests
 from os import getcwd
 from ctypes import windll
 from qtcore import *
@@ -182,6 +183,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
 
 
+        self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         #############SIGNALS BOTOES voltar#############
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -221,25 +225,81 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
+    
+########################### Validar CEP ###############################
+    def validarCep(self):
+        cep = ""
+        inputCuidador = self.ui.input_cep_cuidador_as.text()
+        inputUsuario = self.ui.input_cep_usuario_as.text()
+        inputColaborador = self.ui.input_cep_colaborador_as.text()
+        sender = self.sender()
+        if 'cuidador' in sender.objectName():
+            cep = inputCuidador
+        elif 'usuario' in sender.objectName():
+            cep = inputUsuario
+        elif 'colaborador' in sender.objectName():
+            cep = inputColaborador
+        cep_tratado = str('')
+        print(cep)
+        for i in cep:
+            if(i == "." or i == '-' or i == ' '):
+                pass
+            else:
+                cep_tratado += i   
+        cep_tratado = int(cep_tratado)
+        print(cep_tratado)
+        if 'cuidador' in sender.objectName():
+            self.cadastroCuidador(cep_tratado)
+        elif 'usuario' in sender.objectName():
+            self.cadastroUsuario(cep_tratado)
+        elif 'colaborador' in sender.objectName():
+            self.cadastroColaborador(cep_tratado)
 
 
 ########################### FUNÇÕES BANCO ###########################
     
-    def cadastroUsuario(self):
+    def cadastroUsuario(self, cep_tratado):
 
         parentesco = self.ui.input_parentesco_cuidador_as.text()
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
         id_matricula = 1
         tupla_cuidador = (parentesco,observacao,id_matricula)
 
-        ################################################3#####
-        cep = self.ui.input_cep_usuario_as.text()
-        rua = self.ui.input_logradouro_usuario_as.text()
-        numero = self.ui.input_numero_usuario_as.text()
-        bairro = self.ui.input_bairro_usuario_as.text()
-        id_cidade=2
+        ################ endereço ##################################
 
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+        ##### cep requisição #########
+        cep_tratado = cep_tratado
+        
+        link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
+        requisicao = requests.get(link)
+        dic_requisicao = requisicao.json()
+
+        ##### tratamento da requisição - logradouro #######
+        logradouro = dic_requisicao['logradouro']
+        self.ui.input_logradouro_usuario_as.setText(str(logradouro))
+        rua = self.ui.input_logradouro_usuario_as.text()
+
+        ##### número #############
+        numero = self.ui.input_numero_usuario_as.text()
+
+        ##### tratamento da requisição - bairro #######
+        bairro = dic_requisicao['bairro']
+        self.ui.input_bairro_usuario_as.setText(str(bairro))
+        bairro = self.ui.input_bairro_usuario_as.text()
+
+        ##### tratamento da requisição - cidade #######
+        cidade = dic_requisicao['localidade']
+        self.ui.input_cidade_usuario_as.setText(str(cidade))
+        if(cidade == 'Campo Grande'):
+            id_cidade = 1
+        else:
+            id_cidade = 2
+
+        ##### tratamento da requisição - estado #######        
+        estado = dic_requisicao['uf']
+        self.ui.input_estado_usuario_as.setText(str(estado))
+
+        tupla_endereco = (cep_tratado,rua,numero,bairro,id_cidade)
 
         #######################################################
 
@@ -300,20 +360,47 @@ class TelaPrincipal(QMainWindow):
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
          
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
-        #print(result)
+        print(result)
         
-    def cadastroCuidador(self):
+    def cadastroCuidador(self, cep_tratado):
 
         ########################endereco################################
-        cep = self.ui.input_cep_cuidador_as.text()
-        rua = self.ui.input_logradouro_cuidador_as.text()
-        numero = self.ui.input_numero_cuidador_as.text()
-        bairro = self.ui.input_bairro_cuidador_as.text()
-        id_cidade = 2
-        
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
-        ######################pessoa#################################
+        ##### cep requisição #########
+        cep_tratado = cep_tratado
+        
+        link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
+        requisicao = requests.get(link)
+        dic_requisicao = requisicao.json()
+
+        ##### tratamento da requisição - logradouro #######
+        logradouro = dic_requisicao['logradouro']
+        self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
+        rua = self.ui.input_logradouro_cuidador_as.text()
+
+        ##### número #############
+        numero = self.ui.input_numero_cuidador_as.text()
+
+        ##### tratamento da requisição - bairro #######
+        bairro = dic_requisicao['bairro']
+        self.ui.input_bairro_cuidador_as.setText(str(bairro))
+        bairro = self.ui.input_bairro_cuidador_as.text()
+
+        ##### tratamento da requisição - cidade #######
+        cidade = dic_requisicao['localidade']
+        self.ui.input_cidade_cuidador_as.setText(str(cidade))
+        if(cidade == 'Campo Grande'):
+            id_cidade = 1
+        else:
+            id_cidade = 2
+
+        ##### tratamento da requisição - estado #######        
+        estado = dic_requisicao['uf']
+        self.ui.input_estado_cuidador_as.setText(str(estado))
+
+        tupla_endereco = (cep_tratado,rua,numero,bairro,id_cidade)
+
+        ######################pessoa####################################
         nome = self.ui.input_nome_cuidador_as.text()
         data_nascimento = '00/00/0000'
         cpf = self.ui.input_cpf_cuidador_as.text()
@@ -335,20 +422,50 @@ class TelaPrincipal(QMainWindow):
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
         tupla_cuidador = (parentesco,observacao)
 
-        ##############################insert#######################################
+        ############################## insert #######################################
 
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
-        #print(result)
+        print(result)
 
-    def cadastroColaborador(self):
-        cep = self.ui.input_cep_colaborador_as.text()
+    def cadastroColaborador(self, cep_tratado):
+
+
+        ######################## endereco ###########################
+
+        ##### cep requisição #########
+        cep_tratado = cep_tratado
+        link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
+        requisicao = requests.get(link)
+        dic_requisicao = requisicao.json()
+
+        ##### tratamento da requisição - logradouro #######
+        logradouro = dic_requisicao['logradouro']
+        self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
         rua = self.ui.input_logradouro_colaborador_as.text()
-        numero = self.ui.input_numero_colaborador_as.text()
-        bairro = self.ui.input_bairro_colaborador_as.text()
-        id_cidade = 2
-        
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
 
+        ##### número #############
+        numero = self.ui.input_numero_colaborador_as.text()
+
+        ##### tratamento da requisição - bairro #######
+        bairro = dic_requisicao['bairro']
+        self.ui.input_bairro_colaborador_as.setText(str(bairro))
+        bairro = self.ui.input_bairro_colaborador_as.text()
+
+        ##### tratamento da requisição - cidade #######
+        cidade = dic_requisicao['localidade']
+        self.ui.input_cidade_colaborador_as.setText(str(cidade))
+        if(cidade == 'Campo Grande'):
+            id_cidade = 1
+        else:
+            id_cidade = 2
+
+        ##### tratamento da requisição - estado #######        
+        estado = dic_requisicao['uf']
+        self.ui.input_estado_colaborador_as.setText(str(estado))
+        
+        tupla_endereco = (cep_tratado,rua,numero,bairro,id_cidade)
+
+        ####################################################
         nome = self.ui.input_nome_colaborador_as.text()
         data_nascimento = '00/00/0000'
         cpf = self.ui.input_cpf_colaborador_as.text()
@@ -395,7 +512,7 @@ class TelaPrincipal(QMainWindow):
         tupla_login = (login, senha, perfil, data_login, status)
 
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador,tupla_login)
-        #print(result)
+        print(result)
 
 
     def cadastroCurso(self):
@@ -427,7 +544,7 @@ class TelaPrincipal(QMainWindow):
         tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
-        #print(result)
+        print(result)
 
 ####################### FUNÇÕES POP UP #######################
 

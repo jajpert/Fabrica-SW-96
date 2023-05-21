@@ -20,7 +20,7 @@ class Ui_MainWindow(object):
         validador = QRegularExpressionValidator(QRegularExpression("[a-z-A-Z\s]+"))
         validadorNum = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
-        ########################################
+        #######################################
         
         #MainWindow.resize(2130, 917)
         font = QFont()
@@ -1221,23 +1221,108 @@ class Ui_MainWindow(object):
         self.verticalLayout_48.setSpacing(0)
         self.verticalLayout_48.setObjectName(u"verticalLayout_48")
         self.verticalLayout_48.setContentsMargins(0, 0, 0, 0)
-        self.label_cep_usuario_as = QLabel(self.frame_75)
+        self.frame_417 = QFrame(self.frame_75)
+        self.frame_417.setObjectName(u"frame_417")
+        self.frame_417.setMinimumSize(QSize(0, 60))
+        self.frame_417.setMaximumSize(QSize(170, 16777215))
+        self.frame_417.setFrameShape(QFrame.StyledPanel)
+        self.frame_417.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_123 = QHBoxLayout(self.frame_417)
+        self.horizontalLayout_123.setSpacing(0)
+        self.horizontalLayout_123.setObjectName(u"horizontalLayout_123")
+        self.horizontalLayout_123.setContentsMargins(0, 0, 0, 0)
+        self.frame_418 = QFrame(self.frame_417)
+        self.frame_418.setObjectName(u"frame_418")
+        self.frame_418.setMinimumSize(QSize(160, 61))
+        self.frame_418.setMaximumSize(QSize(150, 61))
+        self.frame_418.setFrameShape(QFrame.StyledPanel)
+        self.frame_418.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_285 = QVBoxLayout(self.frame_418)
+        self.verticalLayout_285.setSpacing(0)
+        self.verticalLayout_285.setObjectName(u"verticalLayout_285")
+        self.verticalLayout_285.setContentsMargins(0, 0, 0, 0)
+        self.label_cep_usuario_as = QLabel(self.frame_418)
         self.label_cep_usuario_as.setObjectName(u"label_cep_usuario_as")
-        self.label_cep_usuario_as.setMinimumSize(QSize(160, 0))
-        self.label_cep_usuario_as.setMaximumSize(QSize(160, 16777215))
+        self.label_cep_usuario_as.setMinimumSize(QSize(50, 15))
+        self.label_cep_usuario_as.setMaximumSize(QSize(50, 15))
         self.label_cep_usuario_as.setFont(font)
 
-        self.verticalLayout_48.addWidget(self.label_cep_usuario_as)
+        self.verticalLayout_285.addWidget(self.label_cep_usuario_as)
 
-        self.input_cep_usuario_as = QLineEdit(self.frame_75)
+        self.input_cep_usuario_as = QLineEdit(self.frame_418)
         self.input_cep_usuario_as.setObjectName(u"input_cep_usuario_as")
-        self.input_cep_usuario_as.setMinimumSize(QSize(150, 30))
-        self.input_cep_usuario_as.setMaximumSize(QSize(150, 30))
+        self.input_cep_usuario_as.setMinimumSize(QSize(154, 30))
+        self.input_cep_usuario_as.setMaximumSize(QSize(145, 16777215))
         self.input_cep_usuario_as.setFont(font)
+        self.input_cep_usuario_as.setStyleSheet(u"")
+        self.input_cep_usuario_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.input_cep_usuario_as.setInputMask("00.000-000")
 
-        self.verticalLayout_48.addWidget(self.input_cep_usuario_as)
+        self.verticalLayout_285.addWidget(self.input_cep_usuario_as)
 
+
+        self.horizontalLayout_123.addWidget(self.frame_418)
+
+        self.frame_419 = QFrame(self.frame_417)
+        self.frame_419.setObjectName(u"frame_419")
+        self.frame_419.setMinimumSize(QSize(22, 61))
+        self.frame_419.setMaximumSize(QSize(31, 61))
+        self.frame_419.setFrameShape(QFrame.StyledPanel)
+        self.frame_419.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_286 = QVBoxLayout(self.frame_419)
+        self.verticalLayout_286.setSpacing(0)
+        self.verticalLayout_286.setObjectName(u"verticalLayout_286")
+        self.verticalLayout_286.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_17 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_286.addItem(self.verticalSpacer_17)
+
+        self.btn_cep_buscar_usuario_as = QPushButton(self.frame_419)
+        self.btn_cep_buscar_usuario_as.setObjectName(u"btn_cep_buscar_usuario_as")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.btn_cep_buscar_usuario_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_usuario_as.setSizePolicy(sizePolicy)
+        self.btn_cep_buscar_usuario_as.setMinimumSize(QSize(0, 31))
+        self.btn_cep_buscar_usuario_as.setMaximumSize(QSize(25, 31))
+        self.btn_cep_buscar_usuario_as.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}")
+        icon25 = QIcon()
+        icon25.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cep_buscar_usuario_as.setIcon(icon25)
+
+        self.verticalLayout_286.addWidget(self.btn_cep_buscar_usuario_as)
+
+
+        self.horizontalLayout_123.addWidget(self.frame_419)
+
+
+        self.verticalLayout_48.addWidget(self.frame_417)
 
         self.horizontalLayout_41.addWidget(self.frame_75)
 
@@ -2474,25 +2559,94 @@ class Ui_MainWindow(object):
         self.frame_112.setMaximumSize(QSize(170, 16777215))
         self.frame_112.setFrameShape(QFrame.StyledPanel)
         self.frame_112.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_76 = QVBoxLayout(self.frame_112)
-        self.verticalLayout_76.setSpacing(0)
+        self.horizontalLayout_122 = QHBoxLayout(self.frame_112)
+        self.horizontalLayout_122.setSpacing(0)
+        self.horizontalLayout_122.setObjectName(u"horizontalLayout_122")
+        self.horizontalLayout_122.setContentsMargins(0, 0, 0, 0)
+        self.frame_415 = QFrame(self.frame_112)
+        self.frame_415.setObjectName(u"frame_415")
+        self.frame_415.setMinimumSize(QSize(160, 61))
+        self.frame_415.setMaximumSize(QSize(150, 61))
+        self.frame_415.setFrameShape(QFrame.StyledPanel)
+        self.frame_415.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_76 = QVBoxLayout(self.frame_415)
+        self.verticalLayout_76.setSpacing(2)
         self.verticalLayout_76.setObjectName(u"verticalLayout_76")
         self.verticalLayout_76.setContentsMargins(0, 0, 0, 0)
-        self.label_cep_cuidador_as = QLabel(self.frame_112)
+        self.label_cep_cuidador_as = QLabel(self.frame_415)
         self.label_cep_cuidador_as.setObjectName(u"label_cep_cuidador_as")
-        self.label_cep_cuidador_as.setMaximumSize(QSize(170, 16777215))
+        self.label_cep_cuidador_as.setMinimumSize(QSize(50, 15))
+        self.label_cep_cuidador_as.setMaximumSize(QSize(50, 15))
         self.label_cep_cuidador_as.setFont(font)
 
         self.verticalLayout_76.addWidget(self.label_cep_cuidador_as)
 
-        self.input_cep_cuidador_as = QLineEdit(self.frame_112)
+        self.input_cep_cuidador_as = QLineEdit(self.frame_415)
         self.input_cep_cuidador_as.setObjectName(u"input_cep_cuidador_as")
-        self.input_cep_cuidador_as.setMinimumSize(QSize(150, 30))
-        self.input_cep_cuidador_as.setMaximumSize(QSize(150, 30))
+        self.input_cep_cuidador_as.setMinimumSize(QSize(158, 30))
+        self.input_cep_cuidador_as.setMaximumSize(QSize(145, 16777215))
         self.input_cep_cuidador_as.setFont(font)
+        self.input_cep_cuidador_as.setStyleSheet(u"")
+        self.input_cep_cuidador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.input_cep_cuidador_as.setInputMask("00.000-000")
 
         self.verticalLayout_76.addWidget(self.input_cep_cuidador_as)
+
+
+        self.horizontalLayout_122.addWidget(self.frame_415)
+
+        self.frame_416 = QFrame(self.frame_112)
+        self.frame_416.setObjectName(u"frame_416")
+        self.frame_416.setMinimumSize(QSize(22, 61))
+        self.frame_416.setMaximumSize(QSize(31, 61))
+        self.frame_416.setFrameShape(QFrame.StyledPanel)
+        self.frame_416.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_284 = QVBoxLayout(self.frame_416)
+        self.verticalLayout_284.setSpacing(0)
+        self.verticalLayout_284.setObjectName(u"verticalLayout_284")
+        self.verticalLayout_284.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_16 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_284.addItem(self.verticalSpacer_16)
+
+        self.btn_cep_buscar_cuidador_as = QPushButton(self.frame_416)
+        self.btn_cep_buscar_cuidador_as.setObjectName(u"btn_cep_buscar_cuidador_as")
+        sizePolicy.setHeightForWidth(self.btn_cep_buscar_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_cuidador_as.setSizePolicy(sizePolicy)
+        self.btn_cep_buscar_cuidador_as.setMinimumSize(QSize(0, 31))
+        self.btn_cep_buscar_cuidador_as.setMaximumSize(QSize(25, 31))
+        self.btn_cep_buscar_cuidador_as.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_cep_buscar_cuidador_as.setIcon(icon25)
+
+        self.verticalLayout_284.addWidget(self.btn_cep_buscar_cuidador_as)
+
+
+        self.horizontalLayout_122.addWidget(self.frame_416)
 
 
         self.horizontalLayout_50.addWidget(self.frame_112)
@@ -3759,8 +3913,8 @@ class Ui_MainWindow(object):
 
         self.frame_208 = QFrame(self.frame_194)
         self.frame_208.setObjectName(u"frame_208")
-        self.frame_208.setMinimumSize(QSize(0, 0))
-        self.frame_208.setMaximumSize(QSize(16777215, 60))
+        self.frame_208.setMinimumSize(QSize(0, 50))
+        self.frame_208.setMaximumSize(QSize(16777215, 65))
         self.frame_208.setStyleSheet(u"")
         self.frame_208.setFrameShape(QFrame.StyledPanel)
         self.frame_208.setFrameShadow(QFrame.Raised)
@@ -3774,26 +3928,107 @@ class Ui_MainWindow(object):
         self.frame_240.setMaximumSize(QSize(151, 16777215))
         self.frame_240.setFrameShape(QFrame.StyledPanel)
         self.frame_240.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_147 = QVBoxLayout(self.frame_240)
-        self.verticalLayout_147.setSpacing(5)
+        self.verticalLayout_288 = QVBoxLayout(self.frame_240)
+        self.verticalLayout_288.setSpacing(0)
+        self.verticalLayout_288.setObjectName(u"verticalLayout_288")
+        self.verticalLayout_288.setContentsMargins(0, 0, 0, 0)
+        self.frame_420 = QFrame(self.frame_240)
+        self.frame_420.setObjectName(u"frame_420")
+        self.frame_420.setMaximumSize(QSize(170, 16777215))
+        self.frame_420.setFrameShape(QFrame.StyledPanel)
+        self.frame_420.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_124 = QHBoxLayout(self.frame_420)
+        self.horizontalLayout_124.setSpacing(0)
+        self.horizontalLayout_124.setObjectName(u"horizontalLayout_124")
+        self.horizontalLayout_124.setContentsMargins(0, 0, 0, 0)
+        self.frame_421 = QFrame(self.frame_420)
+        self.frame_421.setObjectName(u"frame_421")
+        self.frame_421.setMinimumSize(QSize(160, 62))
+        self.frame_421.setMaximumSize(QSize(150, 62))
+        self.frame_421.setFrameShape(QFrame.StyledPanel)
+        self.frame_421.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_147 = QVBoxLayout(self.frame_421)
+        self.verticalLayout_147.setSpacing(2)
         self.verticalLayout_147.setObjectName(u"verticalLayout_147")
         self.verticalLayout_147.setContentsMargins(0, 0, 0, 0)
-        self.label_cep_colaborador_as = QLabel(self.frame_240)
+        self.label_cep_colaborador_as = QLabel(self.frame_421)
         self.label_cep_colaborador_as.setObjectName(u"label_cep_colaborador_as")
-        self.label_cep_colaborador_as.setMinimumSize(QSize(0, 0))
-        self.label_cep_colaborador_as.setMaximumSize(QSize(100, 16777215))
+        self.label_cep_colaborador_as.setMinimumSize(QSize(50, 15))
+        self.label_cep_colaborador_as.setMaximumSize(QSize(50, 24))
         self.label_cep_colaborador_as.setFont(font)
 
         self.verticalLayout_147.addWidget(self.label_cep_colaborador_as)
 
-        self.input_cep_colaborador_as = QLineEdit(self.frame_240)
+        self.input_cep_colaborador_as = QLineEdit(self.frame_421)
         self.input_cep_colaborador_as.setObjectName(u"input_cep_colaborador_as")
-        self.input_cep_colaborador_as.setMinimumSize(QSize(0, 30))
-        self.input_cep_colaborador_as.setMaximumSize(QSize(150, 16777215))
+        self.input_cep_colaborador_as.setMinimumSize(QSize(145, 30))
+        self.input_cep_colaborador_as.setMaximumSize(QSize(146, 30))
         self.input_cep_colaborador_as.setFont(font)
+        self.input_cep_colaborador_as.setStyleSheet(u"")
+        self.input_cep_colaborador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.input_cep_colaborador_as.setInputMask("00.000-000")
 
         self.verticalLayout_147.addWidget(self.input_cep_colaborador_as)
+
+
+        self.horizontalLayout_124.addWidget(self.frame_421)
+
+        self.frame_422 = QFrame(self.frame_420)
+        self.frame_422.setObjectName(u"frame_422")
+        self.frame_422.setMinimumSize(QSize(22, 61))
+        self.frame_422.setMaximumSize(QSize(31, 61))
+        self.frame_422.setFrameShape(QFrame.StyledPanel)
+        self.frame_422.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_287 = QVBoxLayout(self.frame_422)
+        self.verticalLayout_287.setSpacing(0)
+        self.verticalLayout_287.setObjectName(u"verticalLayout_287")
+        self.verticalLayout_287.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_18 = QSpacerItem(20, 28, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_287.addItem(self.verticalSpacer_18)
+
+        self.btn_cep_buscar_colaborador_as = QPushButton(self.frame_422)
+        self.btn_cep_buscar_colaborador_as.setObjectName(u"btn_cep_buscar_colaborador_as")
+        sizePolicy.setHeightForWidth(self.btn_cep_buscar_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_colaborador_as.setSizePolicy(sizePolicy)
+        self.btn_cep_buscar_colaborador_as.setMinimumSize(QSize(0, 30))
+        self.btn_cep_buscar_colaborador_as.setMaximumSize(QSize(25, 30))
+        self.btn_cep_buscar_colaborador_as.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_cep_buscar_colaborador_as.setIcon(icon25)
+
+        self.verticalLayout_287.addWidget(self.btn_cep_buscar_colaborador_as)
+
+
+        self.horizontalLayout_124.addWidget(self.frame_422)
+
+
+        self.verticalLayout_288.addWidget(self.frame_420)
+
 
 
         self.horizontalLayout_89.addWidget(self.frame_240)
