@@ -53,7 +53,7 @@ class DialogTirarFoto(QDialog):
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
-        self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
+        #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -67,19 +67,16 @@ class DialogTirarFoto(QDialog):
         event.accept()
     
     def TirarFotoWeb(self):
-        TirarFotoWeb = cv2.VideoCapture(0)
-        ret,frame = TirarFotoWeb.read()
-        cv2.imwrite("C:/Users/User/Documents/GitHub/Fabrica-SW-96/capture.png", frame)
-        # After the loop release the cap object
-        TirarFotoWeb.release()
-        # Destroy all the windows
+        vid = cv2.VideoCapture(0)
+
+        while(True):
+            ret, frame = vid.read()
+            cv2.imshow('frame', frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+            cv2.imwrite("capture.png", frame)
+        vid.release()
         cv2.destroyAllWindows()
-
-    def ImportarFoto(self):
-        caminho ="C:/Users/User/Documents/GitHub/Fabrica-SW-96"
-        webbrowser.open(os.filedialog.askopenfilename(caminho))
-
-
 
 
 
