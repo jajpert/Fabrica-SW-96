@@ -81,6 +81,28 @@ class DialogAreaSigilo(QDialog):
         event.accept()
 
 
+################Class POPUP USUARIO################
+
+class DialogCadastroUsuarioSucesso(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Cadastro_Conclusao()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(8000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()
+
+    def closeMsg(self):
+        self.close()
+
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
+
+############################################################
+
 class DialogCadastroIncompletoUsuario(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -232,25 +254,25 @@ class TelaPrincipal(QMainWindow):
         id_matricula = 1
         tupla_cuidador = (parentesco,observacao,id_matricula)
 
-        ################################################3#####
+        ################################################ENDERECO#####
         cep = self.ui.input_cep_usuario_as.text()
         rua = self.ui.input_logradouro_usuario_as.text()
         numero = self.ui.input_numero_usuario_as.text()
         bairro = self.ui.input_bairro_usuario_as.text()
-        id_cidade=2
+        cidade = self.ui.input_cidade_usuario_as.text()
+        estado = self.ui.input_estado_usuario_as.text()
 
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
         #######################################################
 
         nome = self.ui.input_nome_usuario_as.text()
-        data_nascimento = '2004-06-25'
+        data_nascimento = '0000-00-00'
         cpf = self.ui.input_cpf_usuario_as.text()
         rg = self.ui.input_rg_usuario_as.text()
-        data_emissao = '2004-06-25' #self.ui.input_data_emissao_usuario_as.text()
+        data_emissao = self.ui.input_data_emissao_cuidador_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.text()
-        data_cadastro = '2004-06-25'
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
         escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
@@ -262,14 +284,14 @@ class TelaPrincipal(QMainWindow):
         
         nis = self.ui.input_nis_usuario_as.text()
         cns = self.ui.input_cns_usuario_as.text()
-        observacao_ = 'none'
+        observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_usuario_as.currentText()
         tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
-        data_inicio = '2004-06-25' # self.ui.input_data_inicio_usuario_as.text()
+        data_inicio = self.ui.input_data_inicio_usuario_as.text()
         periodo = self.ui.input_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_trasnporte = self.ui.input_vale_transporte_usuario_as.currentText()
@@ -297,21 +319,24 @@ class TelaPrincipal(QMainWindow):
 
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,data_cadastro,id_colaborador_resp)
-         
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
+        result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
         #print(result)
+        #result = []
+        self.msg(result[0],result[1])
         
     def cadastroCuidador(self):
 
-        ########################endereco################################
+        ################################################ENDERECO#####
         cep = self.ui.input_cep_cuidador_as.text()
         rua = self.ui.input_logradouro_cuidador_as.text()
         numero = self.ui.input_numero_cuidador_as.text()
         bairro = self.ui.input_bairro_cuidador_as.text()
-        id_cidade = 2
-        
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+        cidade = self.ui.input_cidade_cuidador_as.text()
+        estado = self.ui.input_estado_cuidador_as.text()
+
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
         ######################pessoa#################################
         nome = self.ui.input_nome_cuidador_as.text()
@@ -336,18 +361,21 @@ class TelaPrincipal(QMainWindow):
         tupla_cuidador = (parentesco,observacao)
 
         ##############################insert#######################################
-
+        result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
         #print(result)
+        self.msg(result[0],result[1])
 
     def cadastroColaborador(self):
+        ################################################ENDERECO#####
         cep = self.ui.input_cep_colaborador_as.text()
         rua = self.ui.input_logradouro_colaborador_as.text()
         numero = self.ui.input_numero_colaborador_as.text()
         bairro = self.ui.input_bairro_colaborador_as.text()
-        id_cidade = 2
-        
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+        cidade = self.ui.input_cidade_colaborador_as.text()
+        estado = self.ui.input_estado_colaborador_as.text()
+
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
         nome = self.ui.input_nome_colaborador_as.text()
         data_nascimento = '00/00/0000'
@@ -376,36 +404,37 @@ class TelaPrincipal(QMainWindow):
         ##########################################################################3
 
         salario = self.ui.input_salario_colaborador_as.text()
-        data_admissao = '00/00/0000'
-        pis = self.ui.input_pis_colaborador_as.text()
-        perido = self.ui.input_periodo_colaborador_comboBox_as.currentText()
+        data_admissao = '2023-00-00'
+        pis_colab = self.ui.input_pis_colaborador_as.text()
+        periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
+        cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
         descricao_cargo = self.ui.input_descricao_cargo_colaborador_as.text()
         
-        tupla_colaborador = (salario,data_admissao,pis,perido,descricao_cargo)
 
         ##########################################################################
 
         login = self.ui.input_usuario_colaborador_as.text()
         senha = self.ui.input_senha_colaborador_as.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
-        perfil = 'non'
-        data_login = '2004-06-25'
-        status = 'n'
-
-        tupla_login = (login, senha, perfil, data_login, status)
-
-        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador,tupla_login)
+        perfil = 'adm'
+        ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
+        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil,descricao_cargo)
+        result = []
+        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         #print(result)
+        self.msg(result[0],result[1])        
 
 
     def cadastroCurso(self):
-        cep = self.ui.input_cep_cursos_as.text()
-        rua = self.ui.input_logradouro_cursos_as.text()
-        numero = self.ui.input_numero_cursos_as.text()
-        bairro = self.ui.input_bairro_cursos_as.text()
-        id_cidade=2
+      ################################################ENDERECO#####
+        cep = self.ui.input_cep_usuario_as.text()
+        rua = self.ui.input_logradouro_usuario_as.text()
+        numero = self.ui.input_numero_usuario_as.text()
+        bairro = self.ui.input_bairro_usuario_as.text()
+        cidade = self.ui.input_cidade_usuario_as.text()
+        estado = self.ui.input_estado_usuario_as.text()
 
-        tupla_endereco = (cep,rua,numero,bairro,id_cidade)
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
         nome_curso=self.ui.input_nome_cursos_as.text()
         data_inicio=self.ui.input_data_inicio_cursos_as.text()
@@ -487,7 +516,7 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
-
+   
     ################ def POPUP Usuário################
 
     def tirarFoto(self):
@@ -495,6 +524,16 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
+
+    def msg(self,tipo,mensagem):
+        msg = DialogCadastroUsuarioSucesso(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        #self.clean()
+
+    def clean(self):
+        self.ui.input_nome_usuario_as.setText("")
 
 
         
