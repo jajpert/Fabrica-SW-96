@@ -176,6 +176,7 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
 
         self.db = DataBase()
+        self.cep_tratado = ''
 
 
         self.popup = Overlay(self)
@@ -262,17 +263,17 @@ class TelaPrincipal(QMainWindow):
             cep = inputUsuario
         elif 'colaborador' in sender.objectName():
             cep = inputColaborador
-        cep_tratado = str('')
+      
         print(cep)
         for i in cep:
             if(i == "." or i == '-' or i == ' '):
                 pass
             else:
-                cep_tratado += i   
-        cep_tratado = int(cep_tratado)
-        print(cep_tratado)
+                self.cep_tratado += i   
+        self.cep_tratado = int(self.cep_tratado)
+        print(self.cep_tratado)
         if 'cuidador' in sender.objectName():
-            self.cadastroCuidador(cep_tratado)
+            self.cadastroCuidador(self.cep_tratado)
         elif 'usuario' in sender.objectName():
             self.cadastroUsuario(cep_tratado)
         elif 'colaborador' in sender.objectName():
