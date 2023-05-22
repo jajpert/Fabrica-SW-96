@@ -263,6 +263,7 @@ class TelaPrincipal(QMainWindow):
         cidade = self.ui.input_cidade_usuario_as.text()
         estado = self.ui.input_estado_usuario_as.text()
 
+        #irei mudar a tupla com o validador do cep
         tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
         #######################################################
