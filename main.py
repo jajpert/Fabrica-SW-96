@@ -202,6 +202,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
+        self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
 
 
         #############SIGNALS BOTOES voltar#############
@@ -340,13 +341,13 @@ class TelaPrincipal(QMainWindow):
 
         ######################pessoa#################################
         nome = self.ui.input_nome_cuidador_as.text()
-        data_nascimento = '00/00/0000'
+        data_nascimento = '2004-06-25'
         cpf = self.ui.input_cpf_cuidador_as.text()
         rg = self.ui.input_rg_cuidador_as.text()
-        data_emissao = self.ui.input_data_emissao_cuidador_as.text()
+        data_emissao = '2004-06-25'
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
         sexo = self.ui.input_sexo_cuidador_as.text()
-        data_cadastro = '00/00/0000'
+        data_cadastro = '2004-06-25'
         telefone = self.ui.input_telefone_cuidador_as.text()
         email = self.ui.input_email_cuidador_as.text()  
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
@@ -357,13 +358,14 @@ class TelaPrincipal(QMainWindow):
         #############################cuidador#############################################3
 
         parentesco = self.ui.input_parentesco_cuidador_as.text()
-        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
+        observacao = 'none' #self.ui.input_informacoes_gerais_as.setText()''
         tupla_cuidador = (parentesco,observacao)
 
         ##############################insert#######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
-        #print(result)
+        print(tupla_pessoa, tupla_endereco, tupla_cuidador)
+        print(result)
         self.msg(result[0],result[1])
 
     def cadastroColaborador(self):
