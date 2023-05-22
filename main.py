@@ -313,17 +313,16 @@ class TelaPrincipal(QMainWindow):
         ##### tratamento da requisição - cidade #######
         cidade = dic_requisicao['localidade']
         self.ui.input_cidade_usuario_as.setText(str(cidade))
-        if(cidade == 'Campo Grande'):
-            id_cidade = 1
-        else:
-            id_cidade = 2
+        cidade = self.ui.input_cidade_usuario_as.text()
+
 
         ##### tratamento da requisição - estado #######        
         estado = dic_requisicao['uf']
         self.ui.input_estado_usuario_as.setText(str(estado))
+        estado = self.ui.input_estado_usuario_as.text()
 
         #irei mudar a tupla com o validador do cep
-        tupla_endereco = (cep_tratado,rua,numero,bairro,id_cidade)
+        tupla_endereco = (cep_tratado,rua,numero,bairro,cidade,estado)
 
         #######################################################
 
