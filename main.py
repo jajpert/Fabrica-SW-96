@@ -7,6 +7,7 @@ from ui_dialog import *
 from database import *
 import cv2
 import webbrowser, os
+from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 
 
@@ -53,7 +54,7 @@ class DialogTirarFoto(QDialog):
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
-        #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
+        self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -77,7 +78,17 @@ class DialogTirarFoto(QDialog):
             cv2.imwrite("capture.png", frame)
         vid.release()
         cv2.destroyAllWindows()
-
+    def ImportarFoto(self):        
+        # Cria uma janela oculta
+        root = Tk()
+        root.withdraw()
+        # Abre o explorador de arquivos e permite selecionar um arquivo
+        filename = askopenfilename()
+        # Verifica se um arquivo foi selecionado
+        if filename:
+            print("Arquivo selecionado:", filename)
+        else:
+            print("Nenhum arquivo selecionado.")
 
 
 ################Class POPUP Cuidador################
