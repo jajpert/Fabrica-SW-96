@@ -11268,6 +11268,7 @@ class Ui_MainWindow(object):
         self.label_data_emissao_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de emiss\u00e3o", None))
         self.label_data_nascimento_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
         
+                
         self.label_orgao_expedidor_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3rg\u00e3o expedidor", None))
         self.label_sexo_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
         self.input_sexo_cuidador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
