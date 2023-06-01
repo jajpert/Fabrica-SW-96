@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>6</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -8529,7 +8529,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -8618,7 +8618,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>280</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -8880,7 +8880,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string>---</string>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -9098,7 +9098,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>250</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9184,7 +9184,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>154</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9196,7 +9196,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string>---</string>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -9311,7 +9311,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9323,7 +9323,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string>---</string>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -9425,7 +9425,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9437,7 +9437,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string>---</string>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -9671,7 +9671,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9745,7 +9745,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9819,7 +9819,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9893,7 +9893,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -9905,7 +9905,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string>---</string>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -9994,7 +9994,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10080,7 +10080,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>230</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10234,7 +10234,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10320,7 +10320,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>430</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10360,7 +10360,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_140">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -10399,8 +10399,14 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                     </widget>
                                    </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_data_nascimento_colaborador_as">
+                                   <item alignment="Qt::AlignHCenter">
+                                    <widget class="QDateEdit" name="input_data_nascimento_colaborador_as">
+                                     <property name="sizePolicy">
+                                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                       <horstretch>0</horstretch>
+                                       <verstretch>0</verstretch>
+                                      </sizepolicy>
+                                     </property>
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
@@ -10409,18 +10415,52 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>145</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
-                                       <pointsize>12</pointsize>
+                                       <pointsize>11</pointsize>
                                       </font>
                                      </property>
-                                     <property name="text">
-                                      <string/>
+                                     <property name="focusPolicy">
+                                      <enum>Qt::WheelFocus</enum>
+                                     </property>
+                                     <property name="contextMenuPolicy">
+                                      <enum>Qt::DefaultContextMenu</enum>
+                                     </property>
+                                     <property name="layoutDirection">
+                                      <enum>Qt::LeftToRight</enum>
+                                     </property>
+                                     <property name="autoFillBackground">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                     </property>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
+                                     <property name="buttonSymbols">
+                                      <enum>QAbstractSpinBox::NoButtons</enum>
+                                     </property>
+                                     <property name="correctionMode">
+                                      <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                                     </property>
+                                     <property name="currentSection">
+                                      <enum>QDateTimeEdit::DaySection</enum>
+                                     </property>
+                                     <property name="calendarPopup">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="currentSectionIndex">
+                                      <number>0</number>
                                      </property>
                                     </widget>
                                    </item>
@@ -10498,7 +10538,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>170</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -10587,7 +10627,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -10718,7 +10758,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -10807,7 +10847,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>280</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10893,7 +10933,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>159</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10979,7 +11019,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>229</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -11065,7 +11105,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>179</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -11151,7 +11191,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>75</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -12113,7 +12153,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_141">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -12149,7 +12189,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_data_inclusao_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -12174,13 +12214,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_data_inclusao_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -12199,7 +12239,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_142">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>460</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -12235,7 +12275,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_nome_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>460</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -12260,13 +12300,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_nome_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>450</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>450</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -12285,7 +12325,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_143">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>185</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -12321,7 +12361,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_tipo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>185</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -12346,13 +12386,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QComboBox" name="input_tipo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>175</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>175</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -12533,7 +12573,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_146">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>360</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -12554,7 +12594,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_responsavel_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>360</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -12579,13 +12619,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_responsavel_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>350</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>350</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -12604,7 +12644,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_147">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -12621,11 +12661,26 @@ QPushButton:focus{outline:0}
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_99">
-                                   <item>
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>9</number>
+                                   </property>
+                                   <item alignment="Qt::AlignHCenter">
                                     <widget class="QLabel" name="label_data_inicio_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -12644,27 +12699,73 @@ QPushButton:focus{outline:0}
                                      <property name="text">
                                       <string>Data de início</string>
                                      </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
                                     </widget>
                                    </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_data_inicio_cursos_as">
+                                   <item alignment="Qt::AlignHCenter">
+                                    <widget class="QDateEdit" name="input_data_inicio_cursos_as">
+                                     <property name="sizePolicy">
+                                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                       <horstretch>0</horstretch>
+                                       <verstretch>0</verstretch>
+                                      </sizepolicy>
+                                     </property>
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
-                                       <height>30</height>
+                                       <width>16777215</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
-                                       <pointsize>12</pointsize>
+                                       <pointsize>11</pointsize>
                                       </font>
+                                     </property>
+                                     <property name="focusPolicy">
+                                      <enum>Qt::WheelFocus</enum>
+                                     </property>
+                                     <property name="contextMenuPolicy">
+                                      <enum>Qt::DefaultContextMenu</enum>
+                                     </property>
+                                     <property name="layoutDirection">
+                                      <enum>Qt::LeftToRight</enum>
+                                     </property>
+                                     <property name="autoFillBackground">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                     </property>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
+                                     <property name="buttonSymbols">
+                                      <enum>QAbstractSpinBox::NoButtons</enum>
+                                     </property>
+                                     <property name="correctionMode">
+                                      <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                                     </property>
+                                     <property name="currentSection">
+                                      <enum>QDateTimeEdit::DaySection</enum>
+                                     </property>
+                                     <property name="calendarPopup">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="currentSectionIndex">
+                                      <number>0</number>
                                      </property>
                                     </widget>
                                    </item>
@@ -12675,7 +12776,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_148">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -12692,11 +12793,23 @@ QPushButton:focus{outline:0}
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_100">
-                                   <item>
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item alignment="Qt::AlignHCenter">
                                     <widget class="QLabel" name="label_data_termino_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -12715,27 +12828,73 @@ QPushButton:focus{outline:0}
                                      <property name="text">
                                       <string>Data de término</string>
                                      </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
                                     </widget>
                                    </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_data_termino_cursos_as">
+                                   <item alignment="Qt::AlignHCenter">
+                                    <widget class="QDateEdit" name="input_data_termino_cursos_as">
+                                     <property name="sizePolicy">
+                                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                       <horstretch>0</horstretch>
+                                       <verstretch>0</verstretch>
+                                      </sizepolicy>
+                                     </property>
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
-                                       <height>30</height>
+                                       <width>16777215</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
-                                       <pointsize>12</pointsize>
+                                       <pointsize>11</pointsize>
                                       </font>
+                                     </property>
+                                     <property name="focusPolicy">
+                                      <enum>Qt::WheelFocus</enum>
+                                     </property>
+                                     <property name="contextMenuPolicy">
+                                      <enum>Qt::DefaultContextMenu</enum>
+                                     </property>
+                                     <property name="layoutDirection">
+                                      <enum>Qt::LeftToRight</enum>
+                                     </property>
+                                     <property name="autoFillBackground">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                     </property>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
+                                     <property name="buttonSymbols">
+                                      <enum>QAbstractSpinBox::NoButtons</enum>
+                                     </property>
+                                     <property name="correctionMode">
+                                      <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                                     </property>
+                                     <property name="currentSection">
+                                      <enum>QDateTimeEdit::DaySection</enum>
+                                     </property>
+                                     <property name="calendarPopup">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="currentSectionIndex">
+                                      <number>0</number>
                                      </property>
                                     </widget>
                                    </item>
@@ -12758,7 +12917,7 @@ QPushButton:focus{outline:0}
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_101">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -12789,7 +12948,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QFrame" name="frame_150">
                                      <property name="maximumSize">
                                       <size>
-                                       <width>395</width>
+                                       <width>400</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -12801,10 +12960,10 @@ QPushButton:focus{outline:0}
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_65">
                                       <property name="spacing">
-                                       <number>0</number>
+                                       <number>5</number>
                                       </property>
                                       <property name="leftMargin">
-                                       <number>10</number>
+                                       <number>0</number>
                                       </property>
                                       <property name="topMargin">
                                        <number>0</number>
@@ -12846,65 +13005,89 @@ QPushButton:focus{outline:0}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QPushButton" name="btn_segunda_cursos_as">
+                                          <widget class="QFrame" name="frame_415">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>120</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>120</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>11</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="cursor">
-                                            <cursorShape>PointingHandCursor</cursorShape>
                                            </property>
                                            <property name="styleSheet">
                                             <string notr="true">background-color: #F3B9BF; border: none; border-radius: 5px</string>
                                            </property>
-                                           <property name="text">
-                                            <string>segunda-feira</string>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
+                                           </property>
+                                           <layout class="QVBoxLayout" name="verticalLayout_104">
+                                            <property name="spacing">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item alignment="Qt::AlignHCenter">
+                                             <widget class="QCheckBox" name="input_segunda_cursos_as">
+                                              <property name="text">
+                                               <string>Segunda-Feira</string>
+                                              </property>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QPushButton" name="btn_quinta_cursos_as">
+                                          <widget class="QFrame" name="frame_416">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>120</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>120</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>11</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="cursor">
-                                            <cursorShape>PointingHandCursor</cursorShape>
                                            </property>
                                            <property name="styleSheet">
                                             <string notr="true">background-color: #F3B9BF; border: none; border-radius: 5px</string>
                                            </property>
-                                           <property name="text">
-                                            <string>quinta-feira</string>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
+                                           </property>
+                                           <layout class="QVBoxLayout" name="verticalLayout_103">
+                                            <property name="spacing">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item alignment="Qt::AlignHCenter">
+                                             <widget class="QCheckBox" name="input_terca_cursos_as">
+                                              <property name="text">
+                                               <string>Terça-Feira</string>
+                                              </property>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                         </layout>
@@ -12924,7 +13107,7 @@ QPushButton:focus{outline:0}
                                         <property name="frameShadow">
                                          <enum>QFrame::Raised</enum>
                                         </property>
-                                        <layout class="QVBoxLayout" name="verticalLayout_103">
+                                        <layout class="QVBoxLayout" name="verticalLayout_284">
                                          <property name="spacing">
                                           <number>5</number>
                                          </property>
@@ -12941,65 +13124,89 @@ QPushButton:focus{outline:0}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QPushButton" name="btn_terca_cursos_as">
+                                          <widget class="QFrame" name="frame_417">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>120</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>120</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>11</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="cursor">
-                                            <cursorShape>PointingHandCursor</cursorShape>
                                            </property>
                                            <property name="styleSheet">
                                             <string notr="true">background-color: #F3B9BF; border: none; border-radius: 5px</string>
                                            </property>
-                                           <property name="text">
-                                            <string>terça-feira</string>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
+                                           </property>
+                                           <layout class="QVBoxLayout" name="verticalLayout_285">
+                                            <property name="spacing">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item alignment="Qt::AlignHCenter">
+                                             <widget class="QCheckBox" name="input_quarta_cursos_as">
+                                              <property name="text">
+                                               <string>Quarta-Feira</string>
+                                              </property>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QPushButton" name="btn_sexta_cursos_as">
+                                          <widget class="QFrame" name="frame_418">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>120</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>120</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>11</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="cursor">
-                                            <cursorShape>PointingHandCursor</cursorShape>
                                            </property>
                                            <property name="styleSheet">
                                             <string notr="true">background-color: #F3B9BF; border: none; border-radius: 5px</string>
                                            </property>
-                                           <property name="text">
-                                            <string>sexta-feira</string>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
+                                           </property>
+                                           <layout class="QVBoxLayout" name="verticalLayout_286">
+                                            <property name="spacing">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item alignment="Qt::AlignHCenter">
+                                             <widget class="QCheckBox" name="input_quinta_cursos_as">
+                                              <property name="text">
+                                               <string>Quinta-Feira</string>
+                                              </property>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                         </layout>
@@ -13019,7 +13226,7 @@ QPushButton:focus{outline:0}
                                         <property name="frameShadow">
                                          <enum>QFrame::Raised</enum>
                                         </property>
-                                        <layout class="QVBoxLayout" name="verticalLayout_104">
+                                        <layout class="QVBoxLayout" name="verticalLayout_287">
                                          <property name="spacing">
                                           <number>5</number>
                                          </property>
@@ -13036,65 +13243,89 @@ QPushButton:focus{outline:0}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QPushButton" name="btn_quarta_cursos_as">
+                                          <widget class="QFrame" name="frame_419">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>120</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>120</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>11</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="cursor">
-                                            <cursorShape>PointingHandCursor</cursorShape>
                                            </property>
                                            <property name="styleSheet">
                                             <string notr="true">background-color: #F3B9BF; border: none; border-radius: 5px</string>
                                            </property>
-                                           <property name="text">
-                                            <string>quarta-feira</string>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
+                                           </property>
+                                           <layout class="QVBoxLayout" name="verticalLayout_288">
+                                            <property name="spacing">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item alignment="Qt::AlignHCenter">
+                                             <widget class="QCheckBox" name="input_sexta_cursos_as">
+                                              <property name="text">
+                                               <string>Sexta-Feira</string>
+                                              </property>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QPushButton" name="btn_sabado_cursos_as">
+                                          <widget class="QFrame" name="frame_420">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>120</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>120</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>11</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="cursor">
-                                            <cursorShape>PointingHandCursor</cursorShape>
                                            </property>
                                            <property name="styleSheet">
                                             <string notr="true">background-color: #F3B9BF; border: none; border-radius: 5px</string>
                                            </property>
-                                           <property name="text">
-                                            <string>sábado</string>
+                                           <property name="frameShape">
+                                            <enum>QFrame::StyledPanel</enum>
                                            </property>
+                                           <property name="frameShadow">
+                                            <enum>QFrame::Raised</enum>
+                                           </property>
+                                           <layout class="QVBoxLayout" name="verticalLayout_289">
+                                            <property name="spacing">
+                                             <number>5</number>
+                                            </property>
+                                            <property name="leftMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="topMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="rightMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <property name="bottomMargin">
+                                             <number>0</number>
+                                            </property>
+                                            <item alignment="Qt::AlignHCenter">
+                                             <widget class="QCheckBox" name="input_sabado_cursos_as">
+                                              <property name="text">
+                                               <string>Sábado</string>
+                                              </property>
+                                             </widget>
+                                            </item>
+                                           </layout>
                                           </widget>
                                          </item>
                                         </layout>
@@ -13143,7 +13374,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_154">
                                   <property name="maximumSize">
                                    <size>
-                                    <width>90</width>
+                                    <width>120</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -13155,7 +13386,7 @@ QPushButton:focus{outline:0}
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_105">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -13170,7 +13401,7 @@ QPushButton:focus{outline:0}
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_horario_cursos_as">
+                                    <widget class="QLabel" name="label_horario_inicio_cursos_as">
                                      <property name="maximumSize">
                                       <size>
                                        <width>90</width>
@@ -13184,7 +13415,7 @@ QPushButton:focus{outline:0}
                                       </font>
                                      </property>
                                      <property name="text">
-                                      <string>Horário</string>
+                                      <string>Horário Início</string>
                                      </property>
                                      <property name="alignment">
                                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -13192,16 +13423,16 @@ QPushButton:focus{outline:0}
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QLineEdit" name="input_horario_cursos_as">
+                                    <widget class="QTimeEdit" name="input_horario_inicio_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>80</width>
-                                       <height>0</height>
+                                       <width>0</width>
+                                       <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>80</width>
+                                       <width>120</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13210,6 +13441,19 @@ QPushButton:focus{outline:0}
                                        <family>Abel</family>
                                        <pointsize>12</pointsize>
                                       </font>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                     </property>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhPreferNumbers|Qt::ImhTime</set>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
+                                     <property name="buttonSymbols">
+                                      <enum>QAbstractSpinBox::NoButtons</enum>
                                      </property>
                                     </widget>
                                    </item>
@@ -13220,13 +13464,13 @@ QPushButton:focus{outline:0}
                                  <widget class="QWidget" name="widget" native="true">
                                   <property name="maximumSize">
                                    <size>
-                                    <width>90</width>
+                                    <width>120</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_106">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -13241,10 +13485,10 @@ QPushButton:focus{outline:0}
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_as_cursos_as">
+                                    <widget class="QLabel" name="label_horario_termino_cursos_as">
                                      <property name="maximumSize">
                                       <size>
-                                       <width>90</width>
+                                       <width>120</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -13255,7 +13499,7 @@ QPushButton:focus{outline:0}
                                       </font>
                                      </property>
                                      <property name="text">
-                                      <string>às:</string>
+                                      <string>Horário Término</string>
                                      </property>
                                      <property name="alignment">
                                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -13263,16 +13507,16 @@ QPushButton:focus{outline:0}
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QLineEdit" name="input_as_cursos_as">
+                                    <widget class="QTimeEdit" name="input_horario_termino_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>80</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>80</width>
+                                       <width>120</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13281,6 +13525,19 @@ QPushButton:focus{outline:0}
                                        <family>Abel</family>
                                        <pointsize>12</pointsize>
                                       </font>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                     </property>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhPreferNumbers|Qt::ImhTime</set>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
+                                     <property name="buttonSymbols">
+                                      <enum>QAbstractSpinBox::NoButtons</enum>
                                      </property>
                                     </widget>
                                    </item>
@@ -13291,7 +13548,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_155">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>250</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13327,7 +13584,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_periodo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>250</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -13352,13 +13609,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QComboBox" name="input_periodo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>240</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>240</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13370,7 +13627,7 @@ QPushButton:focus{outline:0}
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string/>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -13446,13 +13703,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_vagas_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>90</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>90</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13471,7 +13728,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_157">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13507,7 +13764,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_cep_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -13532,13 +13789,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_cep_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13557,7 +13814,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_158">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>360</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13593,7 +13850,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_logradouro_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>360</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -13618,13 +13875,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_logradouro_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>350</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>350</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13676,7 +13933,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_159">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13712,7 +13969,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_numero_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>160</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -13737,13 +13994,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_numero_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>150</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13765,7 +14022,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_160">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>230</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13801,7 +14058,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_bairro_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>230</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -13826,13 +14083,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_bairro_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>220</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>220</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13854,7 +14111,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_161">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>240</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13890,7 +14147,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_cidade_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>240</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -13915,13 +14172,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_cidade_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>230</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>230</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13943,7 +14200,7 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_162">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>80</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
@@ -13979,7 +14236,7 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_estado_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>80</width>
+                                       <width>0</width>
                                        <height>0</height>
                                       </size>
                                      </property>
@@ -14004,13 +14261,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_estado_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>70</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>70</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
