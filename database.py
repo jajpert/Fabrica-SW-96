@@ -10,7 +10,7 @@ class DataBase():
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
-            print("Conectado ao Servidor de Banco de Dados: ",db_info)
+            print("Conectado ao Servidor de Banco de Dados: ", db_info)
         else:
             print("Erro")  
 
@@ -51,6 +51,61 @@ class DataBase():
             #retorna a lista do banco para quem chamou a função
         except Exception as err:
             print(err)
+
+        finally:
+            self.close_connection()
+
+    def busca_cuidador(self, nome, cpf):
+        print("entrei")
+        self.connect()
+        try:
+            
+            self.cursor.execute(f"""
+                select p.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,
+                    sexo, parentesco, telefone, email, cep, logradouro,
+                    numero, bairro, nome_cidade, sigla from pessoa p
+                left join endereco e on p.id_endereco = e.id_endereco 
+                left join cuidador c on p.id_matricula = c.id_matricula
+                left join cidade c2 on e.id_cidade = c2.id_cidade
+                left join estado e2 on c2.id_estado = e2.id_estado
+                where nome like '{nome}' or cpf like '{cpf}' """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            # for linha in result:
+            #     print(linha)
+            
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    
+    def busca_usuario(self, nome, cpf):
+        print("entrei")
+        self.connect()
+        try:
+            
+            self.cursor.execute(f"""
+                select p.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,
+                    sexo, parentesco, telefone, email, cep, logradouro,
+                    numero, bairro, cidade, sigla from pessoa p
+                left join endereco e on p.id_endereco = e.id_endereco 
+                left join cuidador c on p.id_matricula = c.id_matricula
+                left join cidade c2 on e.id_cidade = c2.id_cidade
+                left join estado e2 on c2.id_estado = e2.id_estado
+                where nome like '{nome}' or cpf like '{cpf}' """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            # for linha in result:
+            #     print(linha)
+            
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -215,6 +270,47 @@ class DataBase():
             self.cursor.close()
             self.conn.close()
             print("Conexão encerrada com sucesso!!")
+
+
+
+
+    def SalvarFotoBanco(FilePath,self):
+        #Função onde o usuario consegue selecionar o File
+        with open (FilePath,"rb") as File:
+
+            #Cria uma função onde escreve o arquivo como binario
+            BinaryData = File.read()
+
+        #Função Criada para dar Insert da imagem dentro da tabela desejada 
+        SQlStatement = "INSERT INTO imagem_save (imagem) values (%s)"
+        
+        #Função onde ele executa as duas funções *BinaryData, SQLStatement* e adiciona dentro do banco de dados
+        self.cursor.execute(SQlStatement, (BinaryData, ))
+        db.commit()
+
+
+
+    def PuxarFotoBanco(id,self):
+
+        #Função criada para dar select na tabela selecionada buscando a imagem pelo id selecionado/inserido
+        SQLStatement2 = "SELECT * FROM imagem_save WHERE id = '{0}'"
+        
+        #Executa o select da tabela selecionada e puxa o arquivo com base no id solicitado pelo usuario
+        self.cursor.execute(SQLStatement2.format(str(id)))
+        
+        #Retorna uma unica sequencia por padrão, a tupla retornada consiste em dados retornados pelo servidor MySQL, convertidos em objetos Python
+        MyResult = self.cursor.fetchone()[1]
+        
+        #Função em q salva a imagem com o nome de capture{id}.png, onde o id em q a imagem consta é alterado no nome do arquivo
+        StoreFilePath = "capture{0}.png".format(str(id))
+        
+        #Mostra o numero binario da imagem
+        print(MyResult)
+        
+        #Salva a imagem com o nome inserido na função StoreFilePath *capture{id}.png* para poder ser visualizada
+        with open(StoreFilePath, "wb") as File:
+            File.write(MyResult)
+            File.close()
 
 if __name__ == "__main__":
     db = DataBase()

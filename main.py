@@ -6,6 +6,11 @@ from qtcore import *
 from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
+import cv2
+import webbrowser, os
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
+
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -49,6 +54,8 @@ class DialogTirarFoto(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
+        self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
+        self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -60,6 +67,29 @@ class DialogTirarFoto(QDialog):
     def closeEvent(self, event):
         self.timer_msg.stop()
         event.accept()
+    
+    def TirarFotoWeb(self):
+        vid = cv2.VideoCapture(0)
+
+        while(True):
+            ret, frame = vid.read()
+            cv2.imshow('frame', frame)
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
+            cv2.imwrite("capture.png", frame)
+        vid.release()
+        cv2.destroyAllWindows()
+    def ImportarFoto(self):        
+        # Cria uma janela oculta
+        root = Tk()
+        root.withdraw()
+        # Abre o explorador de arquivos e permite selecionar um arquivo
+        filename = askopenfilename()
+        # Verifica se um arquivo foi selecionado
+        if filename:
+            print("Arquivo selecionado:", filename)
+        else:
+            print("Nenhum arquivo selecionado.")
 
 
 ################Class POPUP Cuidador################
@@ -203,7 +233,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
-        self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
+        self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
+        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
 
 
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
@@ -217,6 +248,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
 
 
         ######SIGNALS POPUP recuperar senha login######
@@ -337,6 +369,58 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_colaborador_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
+
+    def busca_pessoa(self):
+        tipo = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
+        nome = self.ui.lineEdit_alterar_nome_responsavel_as.text()
+        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as_2.text()
+
+        if tipo == 0 or nome == '' or cpf == '':
+            return self.ui.page_2
+        
+        
+
+        if tipo == 1:
+            dados = self.db.busca_cuidador(nome, cpf)
+            print(dados)
+            self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
+            self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
+            self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
+            self.ui.input_rg_alterar_cuidador_as.setText(dados[3])
+            self.ui.input_orgao_expedidor_alterar_cuidador_as.setText(dados[5])
+            self.ui.input_parentesco_alterar_cuidador_as.setText(dados[6])  
+            self.ui.input_telefone_alterar_cuidador_as.setText(dados[8]) 
+            self.ui.input_email_alterar_cuidador_as.setText(dados[9]) 
+            self.ui.input_cep_alterar_cuidador_as.setText(dados[10]) 
+            self.ui.input_logradouro_alterar_cuidador_as.setText(dados[11]) 
+            self.ui.input_numero_alterar_cuidador_as.setText(str(dados[12])) 
+            self.ui.input_bairro_alterar_cuidador_as.setText(dados[13]) 
+            self.ui.input_cidade_alterar_cuidador_as.setText(dados[14])
+            self.ui.input_estado_alterar_cuidador_as.setText(dados[15])
+            #self.ui.input_observacoes_gerais_alterar_cuidador_as = dados[16] #aqui
+
+            return self.ui.page_alterar_cuidador
+        
+
+        if tipo == 2:
+            dados = self.db.busca_usuario(nome, cpf)
+            print(dados)
+            self.ui.input_nome_alterar_usuario_as.setText(dados[1])
+            self.ui.input_cpf_alterar_usuario_as.setText(dados[2])
+            self.ui.input_rg_alterar_usuario_as.setText(dados[3])
+            self.ui.input_orgao_expedidor_alterar_usuario_as.setText(dados[5]) 
+            self.ui.input_telefone_alterar_usuario_as.setText(dados[8]) 
+            self.ui.input_email_alterar_usuario_as.setText(dados[9]) 
+            self.ui.input_cep_alterar_usuario_as.setText(dados[10]) 
+            self.ui.input_logradouro_alterar_usuario_as.setText(dados[11]) 
+            self.ui.input_numero_alterar_usuario_as.setText(str(dados[12])) 
+            self.ui.input_bairro_alterar_usuario_as.setText(dados[13]) 
+            self.ui.input_cidade_alterar_usuario_as.setText(dados[14])
+
+            return self.ui.page_alterar_usuario
+        if tipo == 3:
+            return self.ui.page_alterar_colaborador_as
+        #if lineEdit_alterar_nome_responsavel_as.text()
     
     def cadastroUsuario(self):
 
@@ -358,6 +442,7 @@ class TelaPrincipal(QMainWindow):
 
         ################# pessoa ###################################
 
+        foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
         data_nascimento = '0000-00-00'
         cpf = self.ui.input_cpf_usuario_as.text()
