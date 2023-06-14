@@ -1,4 +1,5 @@
 import sys
+import requests
 from os import getcwd
 from ctypes import windll
 from qtcore import *
@@ -236,6 +237,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
 
 
+        self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         #############SIGNALS BOTOES voltar#############
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -276,7 +280,93 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
+    
+########################### Validar CEP ###############################
+    def validarCep(self):
+        cep = ""
+        inputCuidador = self.ui.input_cep_cuidador_as.text()
+        inputUsuario = self.ui.input_cep_usuario_as.text()
+        inputColaborador = self.ui.input_cep_colaborador_as.text()
+        sender = self.sender()
+        if 'cuidador' in sender.objectName():
+            cep = inputCuidador
+        elif 'usuario' in sender.objectName():
+            cep = inputUsuario
+        elif 'colaborador' in sender.objectName():
+            cep = inputColaborador
+        cep_tratado = str('')
+        print(cep)
+        for i in cep:
+            if(i == "." or i == '-' or i == ' '):
+                pass
+            else:
+                cep_tratado += i   
+        cep_tratado = int(cep_tratado)
+        print(cep_tratado)
+        self.puxarCep(cep_tratado, sender)
 
+############################## puxar cep e 'setar' nos inputs ########################
+    def puxarCep(self, cep_tratado, sender):
+        cep_tratado = cep_tratado
+        sender = self.sender()
+        print(cep_tratado)
+        link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
+        requisicao = requests.get(link)
+        dic_requisicao = requisicao.json()
+        print(dic_requisicao)
+        if 'cuidador' in sender.objectName():
+            print("entrou cuidador!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_cuidador_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_cuidador_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_cuidador_as.setText(str(estado))
+
+        elif 'usuario' in sender.objectName():
+            print("entrou usuário!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_usuario_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_usuario_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_usuario_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_usuario_as.setText(str(estado))
+
+        elif 'colaborador' in sender.objectName():
+            print("entrou colaborador!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_colaborador_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_colaborador_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_colaborador_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
 
@@ -339,7 +429,7 @@ class TelaPrincipal(QMainWindow):
         id_matricula = 1
         tupla_cuidador = (parentesco,observacao,id_matricula)
 
-        ################################################ENDERECO#####
+        ################ endereço ##################################
         cep = self.ui.input_cep_usuario_as.text()
         rua = self.ui.input_logradouro_usuario_as.text()
         numero = self.ui.input_numero_usuario_as.text()
@@ -347,9 +437,10 @@ class TelaPrincipal(QMainWindow):
         cidade = self.ui.input_cidade_usuario_as.text()
         estado = self.ui.input_estado_usuario_as.text()
 
+        #irei mudar a tupla com o validador do cep
         tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
-        #######################################################
+        ################# pessoa ###################################
 
         foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
@@ -366,7 +457,7 @@ class TelaPrincipal(QMainWindow):
 
         id_colaborador_resp = 1
 
-        #######################################################
+        ################ tratamento ##################################
         
         nis = self.ui.input_nis_usuario_as.text()
         cns = self.ui.input_cns_usuario_as.text()
@@ -400,12 +491,11 @@ class TelaPrincipal(QMainWindow):
             status = 'Ativo'
         else:
             status = 'Inativo'
-        
-
 
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
-
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
+
+        ######################## insert ##################################
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
         #print(result)
@@ -414,7 +504,7 @@ class TelaPrincipal(QMainWindow):
         
     def cadastroCuidador(self):
 
-        ################################################ENDERECO#####
+        ######################## endereço ################################
         cep = self.ui.input_cep_cuidador_as.text()
         rua = self.ui.input_logradouro_cuidador_as.text()
         numero = self.ui.input_numero_cuidador_as.text()
@@ -424,7 +514,7 @@ class TelaPrincipal(QMainWindow):
 
         tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
-        ######################pessoa#################################
+        ###################### pessoa ####################################
         nome = self.ui.input_nome_cuidador_as.text()
         data_nascimento = '2004-06-25'
         cpf = self.ui.input_cpf_cuidador_as.text()
@@ -440,30 +530,31 @@ class TelaPrincipal(QMainWindow):
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
         
 
-        #############################cuidador#############################################3
+        ################### cuidador ###################################
 
         parentesco = self.ui.input_parentesco_cuidador_as.text()
         observacao = 'none' #self.ui.input_informacoes_gerais_as.setText()''
         tupla_cuidador = (parentesco,observacao)
 
-        ##############################insert#######################################
+        ################## insert #######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
-        print(tupla_pessoa, tupla_endereco, tupla_cuidador)
-        print(result)
-        self.msg(result[0],result[1])
+        #print(result)
 
     def cadastroColaborador(self):
-        ################################################ENDERECO#####
+
+
+        ######################## endereço ###########################
         cep = self.ui.input_cep_colaborador_as.text()
         rua = self.ui.input_logradouro_colaborador_as.text()
         numero = self.ui.input_numero_colaborador_as.text()
         bairro = self.ui.input_bairro_colaborador_as.text()
         cidade = self.ui.input_cidade_colaborador_as.text()
         estado = self.ui.input_estado_colaborador_as.text()
-
+        
         tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
+        ###################### pessoa ##############################
         nome = self.ui.input_nome_colaborador_as.text()
         data_nascimento = '00/00/0000'
         cpf = self.ui.input_cpf_colaborador_as.text()
@@ -488,7 +579,7 @@ class TelaPrincipal(QMainWindow):
 
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
 
-        ##########################################################################3
+        ##################### cargo ###########################################
 
         salario = self.ui.input_salario_colaborador_as.text()
         data_admissao = '2023-00-00'
@@ -498,7 +589,7 @@ class TelaPrincipal(QMainWindow):
         descricao_cargo = self.ui.input_descricao_cargo_colaborador_as.text()
         
 
-        ##########################################################################
+        #################### login e senha ####################################
 
         login = self.ui.input_usuario_colaborador_as.text()
         senha = self.ui.input_senha_colaborador_as.text()
@@ -506,6 +597,8 @@ class TelaPrincipal(QMainWindow):
         perfil = 'adm'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
         tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil,descricao_cargo)
+
+        #################### insert ##########################################
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         #print(result)
@@ -543,7 +636,7 @@ class TelaPrincipal(QMainWindow):
         tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
-        #print(result)
+        print(result)
 
 ####################### FUNÇÕES POP UP #######################
 
