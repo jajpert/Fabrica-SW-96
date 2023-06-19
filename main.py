@@ -454,7 +454,7 @@ class TelaPrincipal(QMainWindow):
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = self.ui.input_data_emissao_cuidador_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
-        sexo = self.ui.input_sexo_usuario_as.text()
+        sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
         escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
