@@ -1397,7 +1397,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -5036,6 +5036,21 @@ QPushButton:pressed{
                                      <item>
                                       <property name="text">
                                        <string>Selecione</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Aposentado por Idade</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Aposentado tempo de serviço</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Aposentado invalidez</string>
                                       </property>
                                      </item>
                                      <item>
@@ -20685,7 +20700,7 @@ QPushButton:focus{outline:0}</string>
                                             </property>
                                             <property name="icon">
                                              <iconset>
-                                              <normaloff>.././backup/icons/adicionar foto.png</normaloff>.././backup/icons/adicionar foto.png</iconset>
+                                              <normaloff>../backup/icons/adicionar foto.png</normaloff>../backup/icons/adicionar foto.png</iconset>
                                             </property>
                                             <property name="iconSize">
                                              <size>
@@ -27551,7 +27566,7 @@ background-color: rgb(0, 168, 220);
                                          </property>
                                          <property name="icon">
                                           <iconset>
-                                           <normaloff>.././backup/icons/adicionar foto.png</normaloff>.././backup/icons/adicionar foto.png</iconset>
+                                           <normaloff>../backup/icons/adicionar foto.png</normaloff>../backup/icons/adicionar foto.png</iconset>
                                          </property>
                                          <property name="iconSize">
                                           <size>
