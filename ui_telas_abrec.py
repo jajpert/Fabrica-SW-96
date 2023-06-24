@@ -2998,6 +2998,8 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_55.addItem(self.horizontalSpacer_42)
 
+       
+
         self.frame_120 = QFrame(self.frame_118)
         self.frame_120.setObjectName(u"frame_120")
         self.frame_120.setMinimumSize(QSize(1185, 0))
@@ -3005,10 +3007,56 @@ class Ui_MainWindow(object):
         self.frame_120.setStyleSheet(u"QLabel{margin-left: 0.25em}")
         self.frame_120.setFrameShape(QFrame.StyledPanel)
         self.frame_120.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_81 = QVBoxLayout(self.frame_120)
-        self.verticalLayout_81.setSpacing(0)
-        self.verticalLayout_81.setObjectName(u"verticalLayout_81")
-        self.verticalLayout_81.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_291 = QVBoxLayout(self.frame_120)
+        self.verticalLayout_291.setObjectName(u"verticalLayout_291")
+        self.frame_423 = QFrame(self.frame_120)
+        self.frame_423.setObjectName(u"frame_423")
+        self.frame_423.setMinimumSize(QSize(0, 50))
+        self.frame_423.setMaximumSize(QSize(160, 50))
+        self.frame_423.setStyleSheet(u"background-color: #EC848C; border-radius: 10px")
+        self.frame_423.setFrameShape(QFrame.StyledPanel)
+        self.frame_423.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_290 = QVBoxLayout(self.frame_423)
+        self.verticalLayout_290.setSpacing(6)
+        self.verticalLayout_290.setObjectName(u"verticalLayout_290")
+        self.verticalLayout_290.setContentsMargins(15, 0, 0, 0)
+        self.label_obito_paciente_as = QLabel(self.frame_423)
+        self.label_obito_paciente_as.setObjectName(u"label_obito_paciente_as")
+        self.label_obito_paciente_as.setMaximumSize(QSize(130, 16777215))
+        self.label_obito_paciente_as.setFont(font)
+
+        self.verticalLayout_290.addWidget(self.label_obito_paciente_as)
+
+        self.frame_425 = QFrame(self.frame_423)
+        self.frame_425.setObjectName(u"frame_425")
+        self.frame_425.setFrameShape(QFrame.StyledPanel)
+        self.frame_425.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_126 = QHBoxLayout(self.frame_425)
+        self.horizontalLayout_126.setSpacing(0)
+        self.horizontalLayout_126.setObjectName(u"horizontalLayout_126")
+        self.horizontalLayout_126.setContentsMargins(0, 0, 0, 0)
+        self.input_obito_paciente_sim_as = QRadioButton(self.frame_425)
+        self.input_obito_paciente_sim_as.setObjectName(u"input_obito_paciente_sim_as")
+        self.input_obito_paciente_sim_as.setMaximumSize(QSize(80, 16777215))
+        self.input_obito_paciente_sim_as.setFont(font8)
+        self.input_obito_paciente_sim_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.horizontalLayout_126.addWidget(self.input_obito_paciente_sim_as)
+
+        self.input_obito_paciente_nao_as = QRadioButton(self.frame_425)
+        self.input_obito_paciente_nao_as.setObjectName(u"input_obito_paciente_nao_as")
+        self.input_obito_paciente_nao_as.setMaximumSize(QSize(80, 16777215))
+        self.input_obito_paciente_nao_as.setFont(font8)
+        self.input_obito_paciente_nao_as.setCursor(QCursor(Qt.PointingHandCursor))
+
+        self.horizontalLayout_126.addWidget(self.input_obito_paciente_nao_as)
+
+
+        self.verticalLayout_290.addWidget(self.frame_425)
+
+
+        self.verticalLayout_291.addWidget(self.frame_423)
+
         self.frame_123 = QFrame(self.frame_120)
         self.frame_123.setObjectName(u"frame_123")
         self.frame_123.setMaximumSize(QSize(16777215, 450))
@@ -3037,7 +3085,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_82.addWidget(self.input_observacoes_obs_sigilosas_as)
 
 
-        self.verticalLayout_81.addWidget(self.frame_123)
+        self.verticalLayout_291.addWidget(self.frame_123)
 
 
         self.horizontalLayout_55.addWidget(self.frame_120)
@@ -11728,6 +11776,10 @@ class Ui_MainWindow(object):
         self.label_sexo_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sexo", None))
         self.comboBox_sexo_alterar_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Masculino", None))
         self.comboBox_sexo_alterar_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Feminino", None))
+
+        self.label_obito_paciente_as.setText(QCoreApplication.translate("MainWindow", u"Óbito do Paciente", None))
+        self.input_obito_paciente_sim_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
+        self.input_obito_paciente_nao_as.setText(QCoreApplication.translate("MainWindow", u"Não", None))
 
         self.label_telefone_alterar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.input_telefone_alterar_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"(00)00000-0000", None))
