@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecADwUeU.ui'
+## Form generated from reading UI file 'telas_abrecfaHLit.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.1
 ##
@@ -1563,20 +1563,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_64.addWidget(self.label_escolaridade_usuario_as)
 
-        self.input_escolaridade_colaborador_comboBox_as_2 = QComboBox(self.frame_129)
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.addItem("")
-        self.input_escolaridade_colaborador_comboBox_as_2.setObjectName(u"input_escolaridade_colaborador_comboBox_as_2")
-        self.input_escolaridade_colaborador_comboBox_as_2.setMinimumSize(QSize(0, 30))
-        self.input_escolaridade_colaborador_comboBox_as_2.setMaximumSize(QSize(16777215, 30))
-        self.input_escolaridade_colaborador_comboBox_as_2.setFont(font)
+        self.input_escolaridade_usuario_as = QComboBox(self.frame_129)
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.addItem("")
+        self.input_escolaridade_usuario_as.setObjectName(u"input_escolaridade_usuario_as")
+        self.input_escolaridade_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_escolaridade_usuario_as.setMaximumSize(QSize(16777215, 30))
+        self.input_escolaridade_usuario_as.setFont(font)
 
-        self.verticalLayout_64.addWidget(self.input_escolaridade_colaborador_comboBox_as_2)
+        self.verticalLayout_64.addWidget(self.input_escolaridade_usuario_as)
 
 
         self.horizontalLayout_42.addWidget(self.frame_129)
@@ -11382,13 +11382,13 @@ class Ui_MainWindow(object):
         self.input_estado_civil_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Separado", None))
 
         self.label_escolaridade_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Escolaridade", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(1, QCoreApplication.translate("MainWindow", u"Fundamental", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(2, QCoreApplication.translate("MainWindow", u"Fundamental incompleto", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(3, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(4, QCoreApplication.translate("MainWindow", u"M\u00e9dio incompleto", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(5, QCoreApplication.translate("MainWindow", u"Superior completo", None))
-        self.input_escolaridade_colaborador_comboBox_as_2.setItemText(6, QCoreApplication.translate("MainWindow", u"Superior incompleto", None))
+        self.input_escolaridade_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_escolaridade_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Fundamental", None))
+        self.input_escolaridade_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Fundamental incompleto", None))
+        self.input_escolaridade_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"M\u00e9dio", None))
+        self.input_escolaridade_usuario_as.setItemText(4, QCoreApplication.translate("MainWindow", u"M\u00e9dio incompleto", None))
+        self.input_escolaridade_usuario_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Superior completo", None))
+        self.input_escolaridade_usuario_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Superior incompleto", None))
 
         self.label_pessoa_cdeficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Pessoa c/ defici\u00eancia", None))
         self.input_pessoa_cdeficiencia_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))

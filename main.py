@@ -7,7 +7,9 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
-
+import webbrowser, os
+from tkinter import Tk
+from tkinter.filedialog import askopenfilename
 
 
 class Overlay(QWidget):
@@ -77,6 +79,17 @@ class DialogTirarFoto(QDialog):
             cv2.imwrite("capture.png", frame)
         vid.release()
         cv2.destroyAllWindows()
+    def ImportarFoto(self):        
+        # Cria uma janela oculta
+        root = Tk()
+        root.withdraw()
+        # Abre o explorador de arquivos e permite selecionar um arquivo
+        filename = askopenfilename()
+        # Verifica se um arquivo foi selecionado
+        if filename:
+            print("Arquivo selecionado:", filename)
+        else:
+            print("Nenhum arquivo selecionado.")
 
 
 ################Class POPUP Cuidador################
