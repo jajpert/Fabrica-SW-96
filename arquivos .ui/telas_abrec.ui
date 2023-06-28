@@ -18855,7 +18855,7 @@ background-color: rgb(246, 176, 181);}</string>
                                       </property>
                                       <property name="sizeHint" stdset="0">
                                        <size>
-                                        <width>40</width>
+                                        <width>184</width>
                                         <height>20</height>
                                        </size>
                                       </property>
@@ -18869,7 +18869,20 @@ background-color: rgb(246, 176, 181);}</string>
                                       <property name="frameShadow">
                                        <enum>QFrame::Raised</enum>
                                       </property>
-                                      <layout class="QVBoxLayout" name="verticalLayout_81">
+                                      <layout class="QHBoxLayout" name="horizontalLayout_103">
+                                       <item>
+                                        <spacer name="horizontalSpacer_61">
+                                         <property name="orientation">
+                                          <enum>Qt::Horizontal</enum>
+                                         </property>
+                                         <property name="sizeHint" stdset="0">
+                                          <size>
+                                           <width>184</width>
+                                           <height>20</height>
+                                          </size>
+                                         </property>
+                                        </spacer>
+                                       </item>
                                        <item>
                                         <widget class="QFrame" name="frame_284">
                                          <property name="frameShape">
@@ -18982,7 +18995,7 @@ background-color: rgb(246, 176, 181);}</string>
                                                     <number>0</number>
                                                    </property>
                                                    <item>
-                                                    <widget class="QLabel" name="label_matricula_cuidador_as_2">
+                                                    <widget class="QLabel" name="label_alterar_matricula_cuidador_as">
                                                      <property name="minimumSize">
                                                       <size>
                                                        <width>0</width>
@@ -19007,7 +19020,7 @@ background-color: rgb(246, 176, 181);}</string>
                                                     </widget>
                                                    </item>
                                                    <item>
-                                                    <widget class="QLineEdit" name="input_matricula_cuidador_as_2">
+                                                    <widget class="QLineEdit" name="input_alterar_matricula_cuidador_as">
                                                      <property name="minimumSize">
                                                       <size>
                                                        <width>0</width>
@@ -20693,6 +20706,115 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                             </layout>
                                            </widget>
                                           </item>
+                                          <item>
+                                           <widget class="QFrame" name="frame_306">
+                                            <property name="minimumSize">
+                                             <size>
+                                              <width>0</width>
+                                              <height>0</height>
+                                             </size>
+                                            </property>
+                                            <property name="frameShape">
+                                             <enum>QFrame::StyledPanel</enum>
+                                            </property>
+                                            <property name="frameShadow">
+                                             <enum>QFrame::Raised</enum>
+                                            </property>
+                                            <layout class="QHBoxLayout" name="horizontalLayout_101">
+                                             <property name="spacing">
+                                              <number>20</number>
+                                             </property>
+                                             <property name="leftMargin">
+                                              <number>20</number>
+                                             </property>
+                                             <property name="topMargin">
+                                              <number>0</number>
+                                             </property>
+                                             <property name="rightMargin">
+                                              <number>0</number>
+                                             </property>
+                                             <property name="bottomMargin">
+                                              <number>0</number>
+                                             </property>
+                                             <item>
+                                              <widget class="QPushButton" name="btn_voltar_cuidador_as_2">
+                                               <property name="minimumSize">
+                                                <size>
+                                                 <width>100</width>
+                                                 <height>40</height>
+                                                </size>
+                                               </property>
+                                               <property name="maximumSize">
+                                                <size>
+                                                 <width>100</width>
+                                                 <height>40</height>
+                                                </size>
+                                               </property>
+                                               <property name="font">
+                                                <font>
+                                                 <family>Abel</family>
+                                                 <pointsize>18</pointsize>
+                                                </font>
+                                               </property>
+                                               <property name="cursor">
+                                                <cursorShape>PointingHandCursor</cursorShape>
+                                               </property>
+                                               <property name="styleSheet">
+                                                <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                               </property>
+                                               <property name="text">
+                                                <string>VOLTAR</string>
+                                               </property>
+                                              </widget>
+                                             </item>
+                                             <item>
+                                              <spacer name="horizontalSpacer_60">
+                                               <property name="orientation">
+                                                <enum>Qt::Horizontal</enum>
+                                               </property>
+                                               <property name="sizeHint" stdset="0">
+                                                <size>
+                                                 <width>1770</width>
+                                                 <height>20</height>
+                                                </size>
+                                               </property>
+                                              </spacer>
+                                             </item>
+                                             <item>
+                                              <widget class="QPushButton" name="btn_salvar_as_2">
+                                               <property name="minimumSize">
+                                                <size>
+                                                 <width>120</width>
+                                                 <height>40</height>
+                                                </size>
+                                               </property>
+                                               <property name="font">
+                                                <font>
+                                                 <family>Abel</family>
+                                                 <pointsize>18</pointsize>
+                                                </font>
+                                               </property>
+                                               <property name="cursor">
+                                                <cursorShape>PointingHandCursor</cursorShape>
+                                               </property>
+                                               <property name="layoutDirection">
+                                                <enum>Qt::RightToLeft</enum>
+                                               </property>
+                                               <property name="styleSheet">
+                                                <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                               </property>
+                                               <property name="text">
+                                                <string>SALVAR</string>
+                                               </property>
+                                              </widget>
+                                             </item>
+                                            </layout>
+                                           </widget>
+                                          </item>
                                          </layout>
                                         </widget>
                                        </item>
@@ -20709,7 +20831,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                       </property>
                                       <property name="sizeHint" stdset="0">
                                        <size>
-                                        <width>40</width>
+                                        <width>184</width>
                                         <height>20</height>
                                        </size>
                                       </property>
@@ -20758,133 +20880,6 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  </property>
                                 </layout>
                                </widget>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="frame_283">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>55</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_102">
-                             <item>
-                              <widget class="QFrame" name="frame_306">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_101">
-                                <property name="spacing">
-                                 <number>20</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>20</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QPushButton" name="btn_voltar_cuidador_as_2">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>100</width>
-                                    <height>40</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>100</width>
-                                    <height>40</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>18</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
-QPushButton:hover{background-color: #23B2EE}
-QPushButton:focus{outline:0}</string>
-                                  </property>
-                                  <property name="text">
-                                   <string>VOLTAR</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <spacer name="horizontalSpacer_60">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>1770</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                                <item>
-                                 <widget class="QPushButton" name="btn_salvar_as_2">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>120</width>
-                                    <height>40</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>18</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="layoutDirection">
-                                   <enum>Qt::RightToLeft</enum>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
-QPushButton:hover{background-color: #23B2EE}
-QPushButton:focus{outline:0}</string>
-                                  </property>
-                                  <property name="text">
-                                   <string>SALVAR</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
                               </widget>
                              </item>
                             </layout>
