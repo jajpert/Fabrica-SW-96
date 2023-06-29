@@ -378,7 +378,7 @@ class TelaPrincipal(QMainWindow):
     def busca_pessoa(self):
         tipo = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         nome = self.ui.lineEdit_alterar_nome_responsavel_as.text()
-        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as_2.text()
+        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
 
         if tipo == 0 or nome == '' or cpf == '':
             return self.ui.page_2
