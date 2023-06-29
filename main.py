@@ -526,7 +526,7 @@ class TelaPrincipal(QMainWindow):
         rg = self.ui.input_rg_cuidador_as.text()
         data_emissao = '2004-06-25'
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
-        sexo = self.ui.input_sexo_cuidador_as.text()
+        sexo = self.ui.input_sexo_cuidador_as.currentText()
         data_cadastro = '2004-06-25'
         telefone = self.ui.input_telefone_cuidador_as.text()
         email = self.ui.input_email_cuidador_as.text()  

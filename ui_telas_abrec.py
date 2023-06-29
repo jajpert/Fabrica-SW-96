@@ -1260,7 +1260,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_285 = QVBoxLayout(self.frame_418)
         self.verticalLayout_285.setSpacing(0)
         self.verticalLayout_285.setObjectName(u"verticalLayout_285")
-        self.verticalLayout_285.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_285.setContentsMargins(0, 0, 0, 1)
         self.label_cep_usuario_as = QLabel(self.frame_418)
         self.label_cep_usuario_as.setObjectName(u"label_cep_usuario_as")
         self.label_cep_usuario_as.setMinimumSize(QSize(50, 15))
@@ -1291,7 +1291,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_286 = QVBoxLayout(self.frame_419)
         self.verticalLayout_286.setSpacing(0)
         self.verticalLayout_286.setObjectName(u"verticalLayout_286")
-        self.verticalLayout_286.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_286.setContentsMargins(0, 0, 0, 1)
         self.verticalSpacer_17 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
         self.verticalLayout_286.addItem(self.verticalSpacer_17)
