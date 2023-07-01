@@ -122,12 +122,12 @@ class DataBase():
             print(id_endereco)
             print(pessoa)
 
-            '''self.cursor.execute("""
+            self.cursor.execute("""
                 INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
             """,(cuidador[0],cuidador[1],cuidador[2]))
 
             id_cuidador = self.cursor.lastrowid
-            print(id_cuidador)'''
+            print(id_cuidador)
             print(len(usuario))
             print(len(pessoa))
 
@@ -140,8 +140,8 @@ class DataBase():
 
             self.cursor.execute("""
                 INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula,id_beneficio,id_clinica,id_curso) 
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
-            """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula,1,1,1))
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+                """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula,1,1,1))
 
             self.conn.commit()
 

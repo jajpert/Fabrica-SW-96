@@ -4115,7 +4115,7 @@ class Ui_MainWindow(object):
 
         self.frame_209 = QFrame(self.frame_208)
         self.frame_209.setObjectName(u"frame_209")
-        self.frame_209.setMinimumSize(QSize(281, 0))
+        self.frame_209.setMinimumSize(QSize(0, 0))
         self.frame_209.setMaximumSize(QSize(281, 16777215))
         self.frame_209.setFrameShape(QFrame.StyledPanel)
         self.frame_209.setFrameShadow(QFrame.Raised)
