@@ -464,23 +464,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.btn_relatorios_as)
 
-        self.btn_comunidade_as = QPushButton(self.frame_14)
-        self.btn_comunidade_as.setObjectName(u"btn_comunidade_as")
-        self.btn_comunidade_as.setMinimumSize(QSize(140, 45))
-        self.btn_comunidade_as.setMaximumSize(QSize(140, 45))
-        self.btn_comunidade_as.setFont(font6)
-        self.btn_comunidade_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_comunidade_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px;}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        icon6 = QIcon()
-        icon6.addFile(u"./icons/cliente.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_comunidade_as.setIcon(icon6)
-        self.btn_comunidade_as.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_7.addWidget(self.btn_comunidade_as)
-
-
         self.horizontalLayout_35.addWidget(self.frame_14)
 
         self.horizontalSpacer_44 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
@@ -11337,7 +11320,7 @@ class Ui_MainWindow(object):
         self.btn_consulta_as.setText(QCoreApplication.translate("MainWindow", u"   CONSULTA", None))
         self.btn_agenda_as.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
         self.btn_relatorios_as.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
-        self.btn_comunidade_as.setText(QCoreApplication.translate("MainWindow", u" COMUNIDADE", None))
+        
         self.btn_sair_as.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.btn_cadastrar_cuidador_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CUIDADOR E USU\u00c1RIO                     ", None))
         self.btn_cadastrar_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"COLABORADOR                               ", None))
