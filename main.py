@@ -642,7 +642,7 @@ class TelaPrincipal(QMainWindow):
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
         print(result)
-
+#####Alterar SITUACAO de Trabalho Outros #########
 ####################### FUNÇÕES POP UP #######################
 
     def visibilidade(self):
