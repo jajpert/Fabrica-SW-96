@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -3355,7 +3355,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                 <number>0</number>
                                                </property>
                                                <property name="bottomMargin">
-                                                <number>0</number>
+                                                <number>2</number>
                                                </property>
                                                <item>
                                                 <widget class="QLabel" name="label_cep_usuario_as">
@@ -3453,7 +3453,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                 <number>0</number>
                                                </property>
                                                <property name="bottomMargin">
-                                                <number>0</number>
+                                                <number>4</number>
                                                </property>
                                                <item>
                                                 <spacer name="verticalSpacer_17">
@@ -11439,7 +11439,7 @@ QPushButton:pressed{
                                  <widget class="QFrame" name="frame_209">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>281</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
