@@ -1138,49 +1138,6 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                           </widget>
                          </item>
-                         <item>
-                          <widget class="QPushButton" name="btn_comunidade_as">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px;}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string> COMUNIDADE</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/cliente.png</normaloff>../icons/cliente.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
                         </layout>
                        </widget>
                       </item>
@@ -1397,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -3398,7 +3355,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                 <number>0</number>
                                                </property>
                                                <property name="bottomMargin">
-                                                <number>0</number>
+                                                <number>2</number>
                                                </property>
                                                <item>
                                                 <widget class="QLabel" name="label_cep_usuario_as">
@@ -3496,7 +3453,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                 <number>0</number>
                                                </property>
                                                <property name="bottomMargin">
-                                                <number>0</number>
+                                                <number>4</number>
                                                </property>
                                                <item>
                                                 <spacer name="verticalSpacer_17">
@@ -11660,7 +11617,7 @@ QPushButton:pressed{
                                  <widget class="QFrame" name="frame_209">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>281</width>
+                                    <width>0</width>
                                     <height>0</height>
                                    </size>
                                   </property>
