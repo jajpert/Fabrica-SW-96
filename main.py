@@ -92,26 +92,6 @@ class DialogTirarFoto(QDialog):
             print("Nenhum arquivo selecionado.")
 
 
-################Class POPUP Cuidador################
-class DialogAreaSigilo(QDialog):
-    def __init__(self, parent) -> None:
-        super().__init__(parent)
-        self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Area_Sob_Sigilo()
-        self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
-
-
 ################Class POPUP USUARIO################
 
 class DialogCadastroUsuarioSucesso(QDialog):
@@ -235,6 +215,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
+        self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
 
 
 
@@ -272,7 +253,6 @@ class TelaPrincipal(QMainWindow):
         ############SIGNALS POPUP Cuidador AS############
         #self.ui.btn_sair_as.clicked.connect(self.sair)
         #mudar tbm
-        self.ui.btn_observacoes_sigilo_as.clicked.connect(self.permissaoSigilosa)
         #self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoUsuario)
 
 
@@ -670,15 +650,6 @@ class TelaPrincipal(QMainWindow):
 
 
     ################ def POPUP Cuidador################
-
-    def permissaoSigilosa(self):
-        msg = DialogAreaSigilo(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.hide()
-
-        #conectar com o botão entrar depois
-        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as)
 
     def concluirCadastroIncompletoUsuario(self):
         msg = DialogCadastroIncompletoUsuario(self)
