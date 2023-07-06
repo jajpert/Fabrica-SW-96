@@ -429,10 +429,10 @@ class TelaPrincipal(QMainWindow):
     
     def cadastroUsuario(self):
 
-        parentesco = self.ui.input_parentesco_cuidador_as.text()
-        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
-        id_matricula = 1
-        tupla_cuidador = (parentesco,observacao,id_matricula)
+        # parentesco = self.ui.input_parentesco_cuidador_as.text()
+        # observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
+        # id_matricula = 1
+        # tupla_cuidador = (parentesco,observacao,id_matricula)
 
         ################ endereço ##################################
         cep = self.ui.input_cep_usuario_as.text()
@@ -457,10 +457,10 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
-        id_colaborador_resp = 1
+        # id_colaborador_resp = 1
 
         ################ tratamento ##################################
         
@@ -498,11 +498,11 @@ class TelaPrincipal(QMainWindow):
             status = 'Inativo'
 
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
 
         ######################## insert ##################################
         result = []
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
+        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         #print(result)
         #result = []
         self.msg(result[0],result[1])
@@ -544,7 +544,7 @@ class TelaPrincipal(QMainWindow):
         ################## insert #######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
-        #print(result)
+        print(result)
 
     def cadastroColaborador(self):
 
@@ -583,7 +583,7 @@ class TelaPrincipal(QMainWindow):
         tipo_deficiencia = self.ui.input_tipo_deficiencia_colaborador_as.text()
 
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-
+        print(tupla_pessoa)
         ##################### cargo ###########################################
 
         salario = self.ui.input_salario_colaborador_as.text()
@@ -606,7 +606,7 @@ class TelaPrincipal(QMainWindow):
         #################### insert ##########################################
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
-        #print(result)
+        print(result)
         self.msg(result[0],result[1])        
 
 
