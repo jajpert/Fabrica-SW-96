@@ -92,26 +92,6 @@ class DialogTirarFoto(QDialog):
             print("Nenhum arquivo selecionado.")
 
 
-################Class POPUP Cuidador################
-class DialogAreaSigilo(QDialog):
-    def __init__(self, parent) -> None:
-        super().__init__(parent)
-        self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Area_Sob_Sigilo()
-        self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
-
-
 ################Class POPUP USUARIO################
 
 class DialogCadastroUsuarioSucesso(QDialog):
@@ -235,6 +215,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
+        self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
 
 
 
@@ -272,7 +253,6 @@ class TelaPrincipal(QMainWindow):
         ############SIGNALS POPUP Cuidador AS############
         #self.ui.btn_sair_as.clicked.connect(self.sair)
         #mudar tbm
-        self.ui.btn_observacoes_sigilo_as.clicked.connect(self.permissaoSigilosa)
         #self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoUsuario)
 
 
@@ -447,7 +427,7 @@ class TelaPrincipal(QMainWindow):
 
         ################# pessoa ###################################
 
-        foto_imagem = self.ui.btn_foto_usuario_as.text()
+        #foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
         data_nascimento = '0000-00-00'
         cpf = self.ui.input_cpf_usuario_as.text()
@@ -466,7 +446,6 @@ class TelaPrincipal(QMainWindow):
         
         nis = self.ui.input_nis_usuario_as.text()
         cns = self.ui.input_cns_usuario_as.text()
-        observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_usuario_as.currentText()
         tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
@@ -476,7 +455,7 @@ class TelaPrincipal(QMainWindow):
         data_inicio = self.ui.input_data_inicio_usuario_as.text()
         periodo = self.ui.input_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
-        vale_trasnporte = self.ui.input_vale_transporte_usuario_as.currentText()
+        vale_transporte = self.ui.input_vale_transporte_usuario_as.currentText()
 
 
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
@@ -497,7 +476,7 @@ class TelaPrincipal(QMainWindow):
         else:
             status = 'Inativo'
 
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
+        tupla_usuario = (nis,cns,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
 
         ######################## insert ##################################
@@ -526,7 +505,7 @@ class TelaPrincipal(QMainWindow):
         rg = self.ui.input_rg_cuidador_as.text()
         data_emissao = '2004-06-25'
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
-        sexo = self.ui.input_sexo_cuidador_as.text()
+        sexo = self.ui.input_sexo_cuidador_as.currentText()
         data_cadastro = '2004-06-25'
         telefone = self.ui.input_telefone_cuidador_as.text()
         email = self.ui.input_email_cuidador_as.text()  
@@ -670,15 +649,6 @@ class TelaPrincipal(QMainWindow):
 
 
     ################ def POPUP Cuidador################
-
-    def permissaoSigilosa(self):
-        msg = DialogAreaSigilo(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.hide()
-
-        #conectar com o botão entrar depois
-        self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as)
 
     def concluirCadastroIncompletoUsuario(self):
         msg = DialogCadastroIncompletoUsuario(self)
