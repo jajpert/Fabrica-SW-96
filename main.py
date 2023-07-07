@@ -440,7 +440,7 @@ class TelaPrincipal(QMainWindow):
         escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
-        id_colaborador_resp = 1
+        # id_colaborador_resp = 1
 
         ################ tratamento ##################################
         
@@ -477,7 +477,7 @@ class TelaPrincipal(QMainWindow):
             status = 'Inativo'
 
         tupla_usuario = (nis,cns,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
 
         ######################## insert ##################################
         result = []
@@ -621,6 +621,47 @@ class TelaPrincipal(QMainWindow):
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
         print(result)
+
+    
+    def buascarDados(self):
+        buscarCPF_CNPJ = self.ui.input_alterar_buscar_cpf_cnpj_as.setText()
+        buscarNome_Responsavel = self.ui.input_alterar_nome_responsavel_as.setText()
+
+
+        if self.ui.comboBox_tipos_alterar_cadastros_as.currentText():
+            opcaoCuidador = "Cuidador"
+        elif self.ui.comboBox_tipos_alterar_cadastros_as.currentText():
+            opcaoUsuario = "Usuario"
+        elif self.ui.comboBox_tipos_alterar_cadastros_as.currentText():
+            opcaoColaborador = "Colaborador"
+
+            if self.ui.comboBox_tipos_alterar_cadastros_as.currentText(opcaoCuidador):
+                result = self.db.buscar_dados()
+                self.ui.input_alterar_matricula_cuidador_as.setText(result[0])
+                self.ui.input_alterar_nome_cuidador_as.setText(result[1])
+                self.ui.input_alterar_data_emissao_cuidador_as.setText(result[2])
+                self.ui.input_alterar_cpf_cuidador_as.setText (result[3])
+                self.ui.input_alterar_rg_cuidador_as.setText(result[4])
+                self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(result[6])
+                self.ui.input_alterar_sexo_cuidador_as.setText(result[7])
+                self.ui.input_alterar_parentesco_cuidador_as.setText(result[8])
+                self.ui.input_alterar_telefone_cuidador_as.setText(result[9])
+                self.ui.input_alterar_email_cuidador_as.setText(result[10])
+                self.ui.input_alterar_cep_cuidador_as.setText(result[11])
+                self.ui.input_alterar_logradouro_cuidador_as.setText(result[12])
+                self.ui.input_alterar_numero_cuidador_as.setText(result[13])
+                self.ui.input_alterar_bairro_cuidador_as.setText(result[14])
+                self.ui.input_alterar_cidade_cuidador_as.setText(result[15])
+                self.ui.input_alterar_estado_cuidador_as.setText(result[16])
+
+            elif self.ui.comboBox_tipos_alterar_cadastros_as.currentText(opcaoUsuario):
+                result = self.db.buscar_dados()
+            elif self.ui.comboBox_tipos_alterar_cadastros_as.currentText(opcaoColaborador):
+                result = self.db.buscar_dados()
+                self.ui.input_nome_alterar_colaborador_as.setText()
+                self.ui.input_data_nascimento_alterar_colaborador_as.setText()
+                self.ui.input_cpf_alterar_colaborador_as.setText()
+                self.ui.input_rg_alterar_colaborador_as.setText()
 
 ####################### FUNÇÕES POP UP #######################
 

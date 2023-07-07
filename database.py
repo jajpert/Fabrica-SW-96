@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec2',user='root',password='3545')
-        self.conn = mysql.connector.connect(host='192.168.22.9',database=self.banco,user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -111,38 +111,39 @@ class DataBase():
             self.close_connection()
 
 
-    def cadastro_usuario(self,endereco,pessoa,usuario,cuidador):
+    def cadastro_usuario(self,endereco,pessoa,usuario):
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
             self.cursor.execute('INSERT INTO endereco(cep,logradouro,numero,bairro,cidade,estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
             id_endereco = self.cursor.lastrowid
+            self.conn.commit()
 
             print(endereco)
             print(id_endereco)
             print(pessoa)
 
-            self.cursor.execute("""
-                INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
-            """,(cuidador[0],cuidador[1],cuidador[2]))
+            # self.cursor.execute("""
+            #     INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
+            # """,(cuidador[0],cuidador[1],cuidador[2]))
 
-            id_cuidador = self.cursor.lastrowid
-            print(id_cuidador)
-            print(len(usuario))
-            print(len(pessoa))
+            # id_cuidador = self.cursor.lastrowid
+            # print(id_cuidador)
+            # print(len(usuario))
+            # print(len(pessoa))
 
             self.cursor.execute("""
                 insert into pessoa (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_endereco,id_colaborador_resp)
                 values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
              """,(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],id_endereco,pessoa[13]))
             id_matricula = self.cursor.lastrowid
+            self.conn.commit()
             print(id_matricula)
 
             self.cursor.execute("""
                 INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula,id_beneficio,id_clinica,id_curso) 
                 VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
                 """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula,1,1,1))
-
             self.conn.commit()
 
             return "OK","Cadastro realizado com sucesso!!"
@@ -272,45 +273,24 @@ class DataBase():
             print("Conexão encerrada com sucesso!!")
 
 
-
-
-    def SalvarFotoBanco(FilePath,self):
-        #Função onde o usuario consegue selecionar o File
-        with open (FilePath,"rb") as File:
-
-            #Cria uma função onde escreve o arquivo como binario
-            BinaryData = File.read()
-
-        #Função Criada para dar Insert da imagem dentro da tabela desejada 
-        SQlStatement = "INSERT INTO imagem_save (imagem) values (%s)"
-        
-        #Função onde ele executa as duas funções *BinaryData, SQLStatement* e adiciona dentro do banco de dados
-        self.cursor.execute(SQlStatement, (BinaryData, ))
-        db.commit()
+    def buscar_dados(self,cuidador,colaborador,usuario,cpf,nome):
+        self.connect()
+        try:
+            if not cuidador:
+                if self.cursor.execute('SELECT * FROM cuidador WHERE cpf LIKE '%{cpf}%' or nome LIKE '%{nome}%''):
+                    self.cursor.execute('select pessoa.nome,pessoa.data_nascimento,pessoa.cpf,pessoa.rg,pessoa.data_emissao,pessoa.orgao_exp,pessoa.sexo,pessoa.telefone,pessoa.email,cuidador.parentesco,cuidador.observacao from pessoa inner join cuidador on pessoa.id_matricula = cuidador.id_matricula;')
+                
+                
 
 
 
-    def PuxarFotoBanco(id,self):
 
-        #Função criada para dar select na tabela selecionada buscando a imagem pelo id selecionado/inserido
-        SQLStatement2 = "SELECT * FROM imagem_save WHERE id = '{0}'"
-        
-        #Executa o select da tabela selecionada e puxa o arquivo com base no id solicitado pelo usuario
-        self.cursor.execute(SQLStatement2.format(str(id)))
-        
-        #Retorna uma unica sequencia por padrão, a tupla retornada consiste em dados retornados pelo servidor MySQL, convertidos em objetos Python
-        MyResult = self.cursor.fetchone()[1]
-        
-        #Função em q salva a imagem com o nome de capture{id}.png, onde o id em q a imagem consta é alterado no nome do arquivo
-        StoreFilePath = "capture{0}.png".format(str(id))
-        
-        #Mostra o numero binario da imagem
-        print(MyResult)
-        
-        #Salva a imagem com o nome inserido na função StoreFilePath *capture{id}.png* para poder ser visualizada
-        with open(StoreFilePath, "wb") as File:
-            File.write(MyResult)
-            File.close()
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+
+    
 
 if __name__ == "__main__":
     db = DataBase()

@@ -6872,15 +6872,15 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_187.addWidget(self.label_alterar_nome_responsavel_as)
 
-        self.lineEdit_alterar_nome_responsavel_as = QLineEdit(self.frame_277)
-        self.lineEdit_alterar_nome_responsavel_as.setObjectName(u"lineEdit_alterar_nome_responsavel_as")
-        self.lineEdit_alterar_nome_responsavel_as.setMinimumSize(QSize(440, 30))
-        self.lineEdit_alterar_nome_responsavel_as.setMaximumSize(QSize(440, 30))
+        self.input_alterar_nome_responsavel_as = QLineEdit(self.frame_277)
+        self.input_alterar_nome_responsavel_as.setObjectName(u"input_alterar_nome_responsavel_as")
+        self.input_alterar_nome_responsavel_as.setMinimumSize(QSize(440, 30))
+        self.input_alterar_nome_responsavel_as.setMaximumSize(QSize(440, 30))
         font14 = QFont()
         font14.setFamilies([u"Abel"])
-        self.lineEdit_alterar_nome_responsavel_as.setFont(font14)
+        self.input_alterar_nome_responsavel_as.setFont(font14)
 
-        self.verticalLayout_187.addWidget(self.lineEdit_alterar_nome_responsavel_as)
+        self.verticalLayout_187.addWidget(self.input_alterar_nome_responsavel_as)
 
 
         self.horizontalLayout_96.addWidget(self.frame_277)
@@ -6904,15 +6904,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_274.addWidget(self.label_alterar_cpf_cnpj_as)
 
-        self.lineEdit_alterar_buscar_cpf_cnpj_as_2 = QLineEdit(self.frame_278)
-        self.lineEdit_alterar_buscar_cpf_cnpj_as_2.setObjectName(u"lineEdit_alterar_buscar_cpf_cnpj_as_2")
-        self.lineEdit_alterar_buscar_cpf_cnpj_as_2.setMinimumSize(QSize(225, 30))
-        self.lineEdit_alterar_buscar_cpf_cnpj_as_2.setMaximumSize(QSize(225, 30))
-        self.lineEdit_alterar_buscar_cpf_cnpj_as_2.setFont(font14)
+        self.input_alterar_buscar_cpf_cnpj_as = QLineEdit(self.frame_278)
+        self.input_alterar_buscar_cpf_cnpj_as.setObjectName(u"input_alterar_buscar_cpf_cnpj_as")
+        self.input_alterar_buscar_cpf_cnpj_as.setMinimumSize(QSize(225, 30))
+        self.input_alterar_buscar_cpf_cnpj_as.setMaximumSize(QSize(225, 30))
+        self.input_alterar_buscar_cpf_cnpj_as.setFont(font14)
 
-        self.verticalLayout_274.addWidget(self.lineEdit_alterar_buscar_cpf_cnpj_as_2)
-
-
+        self.verticalLayout_274.addWidget(self.input_alterar_buscar_cpf_cnpj_as)
         self.horizontalLayout_96.addWidget(self.frame_278)
 
         self.frame_279 = QFrame(self.frame_275)
