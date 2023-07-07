@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -8335,7 +8335,22 @@ QPushButton:focus{outline:0}</string>
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_291">
+                            <layout class="QVBoxLayout" name="verticalLayout_305">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
                              <item>
                               <widget class="QFrame" name="frame_423">
                                <property name="minimumSize">
@@ -8542,6 +8557,217 @@ QPushButton:focus{outline:0}</string>
 QTextEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
                                   </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_437">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>450</height>
+                                </size>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_291">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QLabel" name="label_tabela_de_observacoes_obs_sigilosas_as">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>300</width>
+                                    <height>50</height>
+                                   </size>
+                                  </property>
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>12</pointsize>
+                                   </font>
+                                  </property>
+                                  <property name="text">
+                                   <string>Tabela de Observações</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QTableWidget" name="input_TableWidget_observacoes_sigilosas_as">
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>12</pointsize>
+                                   </font>
+                                  </property>
+                                  <property name="toolTip">
+                                   <string/>
+                                  </property>
+                                  <property name="layoutDirection">
+                                   <enum>Qt::LeftToRight</enum>
+                                  </property>
+                                  <property name="autoFillBackground">
+                                   <bool>false</bool>
+                                  </property>
+                                  <property name="inputMethodHints">
+                                   <set>Qt::ImhDate|Qt::ImhSensitiveData|Qt::ImhTime</set>
+                                  </property>
+                                  <property name="lineWidth">
+                                   <number>2222</number>
+                                  </property>
+                                  <property name="midLineWidth">
+                                   <number>10</number>
+                                  </property>
+                                  <property name="alternatingRowColors">
+                                   <bool>true</bool>
+                                  </property>
+                                  <property name="selectionMode">
+                                   <enum>QAbstractItemView::MultiSelection</enum>
+                                  </property>
+                                  <property name="verticalScrollMode">
+                                   <enum>QAbstractItemView::ScrollPerItem</enum>
+                                  </property>
+                                  <property name="horizontalScrollMode">
+                                   <enum>QAbstractItemView::ScrollPerItem</enum>
+                                  </property>
+                                  <property name="gridStyle">
+                                   <enum>Qt::SolidLine</enum>
+                                  </property>
+                                  <property name="sortingEnabled">
+                                   <bool>true</bool>
+                                  </property>
+                                  <property name="wordWrap">
+                                   <bool>true</bool>
+                                  </property>
+                                  <attribute name="horizontalHeaderCascadingSectionResizes">
+                                   <bool>true</bool>
+                                  </attribute>
+                                  <attribute name="horizontalHeaderDefaultSectionSize">
+                                   <number>130</number>
+                                  </attribute>
+                                  <attribute name="horizontalHeaderStretchLastSection">
+                                   <bool>true</bool>
+                                  </attribute>
+                                  <attribute name="verticalHeaderVisible">
+                                   <bool>false</bool>
+                                  </attribute>
+                                  <attribute name="verticalHeaderDefaultSectionSize">
+                                   <number>50</number>
+                                  </attribute>
+                                  <row>
+                                   <property name="text">
+                                    <string>1</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>2</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>3</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>4</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>5</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>6</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>7</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>8</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>9</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>10</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>11</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>12</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>13</string>
+                                   </property>
+                                  </row>
+                                  <row>
+                                   <property name="text">
+                                    <string>14</string>
+                                   </property>
+                                  </row>
+                                  <column>
+                                   <property name="text">
+                                    <string>Data</string>
+                                   </property>
+                                  </column>
+                                  <column>
+                                   <property name="text">
+                                    <string>Observação</string>
+                                   </property>
+                                  </column>
+                                  <item row="0" column="0">
+                                   <property name="text">
+                                    <string/>
+                                   </property>
+                                  </item>
+                                  <item row="0" column="1">
+                                   <property name="text">
+                                    <string/>
+                                   </property>
+                                  </item>
+                                  <item row="1" column="0">
+                                   <property name="text">
+                                    <string/>
+                                   </property>
+                                  </item>
                                  </widget>
                                 </item>
                                </layout>
