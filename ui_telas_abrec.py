@@ -17,9 +17,15 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
 
-        ############ valida email ##############
+        ############ Valida E-mail ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
-        #######################################
+        ############ Valida número inteiro ##############
+        self.validaNumeroInt = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
+        ############ Valida Salário ##############
+        self.validaSalario = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
+        ############ Valida String ##############
+        self.validaString = QRegularExpressionValidator(QRegularExpression("[a-zA-z0-9 çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
+        #########################################################
 
         MainWindow.resize(1779, 931)
         font = QFont()
@@ -786,6 +792,7 @@ class Ui_MainWindow(object):
         self.input_matricula_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_matricula_usuario_as.setFont(font)
+        self.input_matricula_usuario_as.setValidator(self.validaNumeroInt)
 
         self.verticalLayout_29.addWidget(self.input_matricula_usuario_as)
 
@@ -816,6 +823,7 @@ class Ui_MainWindow(object):
         self.input_nome_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_nome_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_nome_usuario_as.setFont(font)
+        self.input_nome_usuario_as.setValidator(self.validaString)
 
         self.verticalLayout_30.addWidget(self.input_nome_usuario_as)
 
@@ -957,6 +965,9 @@ class Ui_MainWindow(object):
         self.input_cpf_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_cpf_usuario_as.setFont(font)
+        self.input_cpf_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_cpf_usuario_as.setInputMask('999.999.999-99')
+        self.input_cpf_usuario_as.setMaxLength(14)
 
         self.verticalLayout_33.addWidget(self.input_cpf_usuario_as)
 
@@ -986,6 +997,8 @@ class Ui_MainWindow(object):
         self.input_rg_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_rg_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_rg_usuario_as.setFont(font)
+        self.input_rg_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_rg_usuario_as.setMaxLength(11)
 
         self.verticalLayout_40.addWidget(self.input_rg_usuario_as)
 
@@ -1030,6 +1043,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_usuario_as.setCurrentSection(QDateTimeEdit.DaySection)
         self.input_data_emissao_usuario_as.setCalendarPopup(False)
         self.input_data_emissao_usuario_as.setCurrentSectionIndex(0)
+        
 
         self.verticalLayout_41.addWidget(self.input_data_emissao_usuario_as, 0, Qt.AlignHCenter)
 
@@ -1059,6 +1073,7 @@ class Ui_MainWindow(object):
         self.input_orgao_expedidor_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_orgao_expedidor_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_orgao_expedidor_usuario_as.setFont(font)
+        self.input_orgao_expedidor_usuario_as.setValidator(self.validaString)
 
         self.verticalLayout_42.addWidget(self.input_orgao_expedidor_usuario_as)
 
@@ -1088,6 +1103,8 @@ class Ui_MainWindow(object):
         self.input_nis_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_nis_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_nis_usuario_as.setFont(font)
+        self.input_nis_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_nis_usuario_as.setMaxLength(11)
 
         self.verticalLayout_43.addWidget(self.input_nis_usuario_as)
 
@@ -1118,6 +1135,8 @@ class Ui_MainWindow(object):
         self.input_cns_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_cns_usuario_as.setFont(font)
         self.input_cns_usuario_as.setInputMethodHints(Qt.ImhNone)
+        self.input_cns_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_cns_usuario_as.setMaxLength(20)
 
         self.verticalLayout_44.addWidget(self.input_cns_usuario_as)
 
@@ -1196,6 +1215,9 @@ class Ui_MainWindow(object):
         self.input_telefone_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_usuario_as.setFont(font)
+        self.input_telefone_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_telefone_usuario_as.setInputMask('99 99999-9999')
+        self.input_telefone_usuario_as.setMaxLength(13)
 
         self.verticalLayout_46.addWidget(self.input_telefone_usuario_as)
 
@@ -1225,6 +1247,8 @@ class Ui_MainWindow(object):
         self.input_email_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_email_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_email_usuario_as.setFont(font)
+        self.input_email_usuario_as.setValidator(self.validaEmail)
+        self.input_email_usuario_as.setMaxLength(180)
 
         self.verticalLayout_47.addWidget(self.input_email_usuario_as)
 
@@ -1276,6 +1300,9 @@ class Ui_MainWindow(object):
         self.input_cep_usuario_as.setFont(font)
         self.input_cep_usuario_as.setStyleSheet(u"")
         self.input_cep_usuario_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.input_cep_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_cep_usuario_as.setInputMask('99999-999')
+        self.input_cep_usuario_as.setMaxLength(9)
 
         self.verticalLayout_285.addWidget(self.input_cep_usuario_as)
 
@@ -1370,6 +1397,7 @@ class Ui_MainWindow(object):
         self.input_logradouro_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_logradouro_usuario_as.setFont(font)
         self.input_logradouro_usuario_as.setStyleSheet(u"")
+        self.input_logradouro_usuario_as.setValidator(self.validaString)
 
         self.verticalLayout_87.addWidget(self.input_logradouro_usuario_as)
 
@@ -1418,6 +1446,7 @@ class Ui_MainWindow(object):
         self.input_numero_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_numero_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_numero_usuario_as.setFont(font)
+        
 
         self.verticalLayout_52.addWidget(self.input_numero_usuario_as)
 
@@ -1447,6 +1476,7 @@ class Ui_MainWindow(object):
         self.input_bairro_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_bairro_usuario_as.setFont(font)
+        self.input_bairro_usuario_as.setValidator(self.validaString)
 
         self.verticalLayout_53.addWidget(self.input_bairro_usuario_as)
 
@@ -1476,6 +1506,7 @@ class Ui_MainWindow(object):
         self.input_cidade_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_cidade_usuario_as.setFont(font)
+        self.input_cidade_usuario_as.setValidator(self.validaString)
 
         self.verticalLayout_49.addWidget(self.input_cidade_usuario_as)
 
@@ -1497,13 +1528,15 @@ class Ui_MainWindow(object):
         self.label_estado_usuario_as.setMinimumSize(QSize(80, 0))
         self.label_estado_usuario_as.setMaximumSize(QSize(80, 16777215))
         self.label_estado_usuario_as.setFont(font)
-
+        
         self.verticalLayout_50.addWidget(self.label_estado_usuario_as)
 
         self.input_estado_usuario_as = QLineEdit(self.frame_79)
         self.input_estado_usuario_as.setObjectName(u"input_estado_usuario_as")
         self.input_estado_usuario_as.setMinimumSize(QSize(70, 30))
         self.input_estado_usuario_as.setMaximumSize(QSize(16777215, 30))
+        self.input_estado_usuario_as.setValidator(self.validaString)
+        self.input_estado_usuario_as.setMaxLength(2)
 
         self.verticalLayout_50.addWidget(self.input_estado_usuario_as)
 
@@ -1973,6 +2006,7 @@ class Ui_MainWindow(object):
         self.input_local_tratamento_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_local_tratamento_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_local_tratamento_usuario_as.setFont(font)
+        self.input_local_tratamento_usuario_as.setValidator(self.validaString)
 
         self.verticalLayout_60.addWidget(self.input_local_tratamento_usuario_as)
 
@@ -2303,6 +2337,7 @@ class Ui_MainWindow(object):
         self.input_matricula_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_matricula_cuidador_as.setFont(font)
+        self.input_matricula_cuidador_as.setValidator(self.validaNumeroInt)
 
         self.verticalLayout_90.addWidget(self.input_matricula_cuidador_as)
 
@@ -2332,6 +2367,7 @@ class Ui_MainWindow(object):
         self.input_nome_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_nome_cuidador_as.setFont(font)
+        self.input_nome_cuidador_as.setValidator(self.validaString)
 
         self.verticalLayout_69.addWidget(self.input_nome_cuidador_as)
 
@@ -2361,6 +2397,9 @@ class Ui_MainWindow(object):
         self.input_cpf_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_cpf_cuidador_as.setFont(font)
+        self.input_cpf_cuidador_as.setValidator(self.validaNumeroInt)
+        self.input_cpf_cuidador_as.setInputMask('999.999.999-99')
+        self.input_cpf_cuidador_as.setMaxLength(14)
 
         self.verticalLayout_70.addWidget(self.input_cpf_cuidador_as)
 
@@ -2390,6 +2429,8 @@ class Ui_MainWindow(object):
         self.input_rg_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_rg_cuidador_as.setFont(font)
+        self.input_rg_cuidador_as.setValidator(self.validaNumeroInt)
+        self.input_rg_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_71.addWidget(self.input_rg_cuidador_as)
 
@@ -2476,6 +2517,7 @@ class Ui_MainWindow(object):
         self.input_orgao_expedidor_cuidador_as.setObjectName(u"input_orgao_expedidor_cuidador_as")
         self.input_orgao_expedidor_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_orgao_expedidor_cuidador_as.setFont(font)
+        self.input_orgao_expedidor_cuidador_as.setValidator(self.validaString)
 
         self.verticalLayout_73.addWidget(self.input_orgao_expedidor_cuidador_as)
 
@@ -2533,6 +2575,7 @@ class Ui_MainWindow(object):
         self.input_parentesco_cuidador_as.setMinimumSize(QSize(0, 0))
         self.input_parentesco_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_parentesco_cuidador_as.setFont(font)
+        self.input_parentesco_cuidador_as.setValidator(self.validaString)
 
         self.verticalLayout_92.addWidget(self.input_parentesco_cuidador_as)
 
@@ -2562,6 +2605,10 @@ class Ui_MainWindow(object):
         self.input_telefone_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_cuidador_as.setFont(font)
+        self.input_telefone_cuidador_as.setValidator(self.validaNumeroInt)
+        self.input_telefone_cuidador_as.setInputMask('99 99999-9999')
+        self.input_telefone_cuidador_as.setMaxLength(13)
+        
 
         self.verticalLayout_74.addWidget(self.input_telefone_cuidador_as)
 
@@ -2591,6 +2638,8 @@ class Ui_MainWindow(object):
         self.input_email_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_email_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_email_cuidador_as.setFont(font)
+        self.input_email_cuidador_as.setValidator(self.validaEmail)
+        
 
         self.verticalLayout_75.addWidget(self.input_email_cuidador_as)
 
@@ -2631,6 +2680,9 @@ class Ui_MainWindow(object):
         self.input_cep_cuidador_as.setFont(font)
         self.input_cep_cuidador_as.setStyleSheet(u"")
         self.input_cep_cuidador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.input_cep_cuidador_as.setValidator(self.validaNumeroInt)
+        self.input_cep_cuidador_as.setInputMask('99999-999')
+        self.input_cep_cuidador_as.setMaxLength(9)
 
         self.verticalLayout_76.addWidget(self.input_cep_cuidador_as)
 
@@ -2730,6 +2782,7 @@ class Ui_MainWindow(object):
         self.input_logradouro_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_logradouro_cuidador_as.setFont(font)
+        self.input_logradouro_cuidador_as.setValidator(self.validaString)
 
         self.verticalLayout_77.addWidget(self.input_logradouro_cuidador_as)
 
@@ -2764,6 +2817,7 @@ class Ui_MainWindow(object):
         self.input_numero_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_numero_cuidador_as.setFont(font)
+        self.input_numero_cuidador_as.setValidator(self.validaNumeroInt)
 
         self.verticalLayout_93.addWidget(self.input_numero_cuidador_as)
 
@@ -2793,6 +2847,7 @@ class Ui_MainWindow(object):
         self.input_bairro_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_bairro_cuidador_as.setFont(font)
+        self.input_bairro_cuidador_as.setValidator(self.validaString)
 
         self.verticalLayout_94.addWidget(self.input_bairro_cuidador_as)
 
@@ -2822,6 +2877,7 @@ class Ui_MainWindow(object):
         self.input_cidade_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_cidade_cuidador_as.setFont(font)
+        self.input_cidade_cuidador_as.setValidator(self.validaString)
 
         self.verticalLayout_78.addWidget(self.input_cidade_cuidador_as)
 
@@ -2851,6 +2907,8 @@ class Ui_MainWindow(object):
         self.input_estado_cuidador_as.setMinimumSize(QSize(70, 30))
         self.input_estado_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_estado_cuidador_as.setFont(font)
+        self.input_estado_cuidador_as.setValidator(self.validaString)
+        self.input_estado_cuidador_as.setMaxLength(2)
 
         self.verticalLayout_79.addWidget(self.input_estado_cuidador_as)
 
@@ -3269,6 +3327,8 @@ class Ui_MainWindow(object):
         self.input_salario_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_salario_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_salario_colaborador_as.setFont(font)
+        self.input_salario_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_salario_colaborador_as.setValidator(self.validaSalario)
 
         self.verticalLayout_171.addWidget(self.input_salario_colaborador_as)
 
@@ -3298,6 +3358,7 @@ class Ui_MainWindow(object):
         self.input_descricao_cargo_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_descricao_cargo_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_descricao_cargo_colaborador_as.setFont(font)
+        self.input_descricao_cargo_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_166.addWidget(self.input_descricao_cargo_colaborador_as)
 
@@ -3470,6 +3531,7 @@ class Ui_MainWindow(object):
         self.input_tipo_deficiencia_colaborador_as.setMinimumSize(QSize(0, 0))
         self.input_tipo_deficiencia_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_tipo_deficiencia_colaborador_as.setFont(font)
+        self.input_tipo_deficiencia_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_163.addWidget(self.input_tipo_deficiencia_colaborador_as)
 
@@ -3660,6 +3722,7 @@ class Ui_MainWindow(object):
         self.input_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 0))
         self.input_orgao_expedidor_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_orgao_expedidor_colaborador_as.setFont(font)
+        self.input_orgao_expedidor_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_141.addWidget(self.input_orgao_expedidor_colaborador_as)
 
@@ -3714,6 +3777,8 @@ class Ui_MainWindow(object):
         self.input_pis_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_pis_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_pis_colaborador_as.setFont(font)
+        self.input_pis_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_pis_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_142.addWidget(self.input_pis_colaborador_as)
 
@@ -3773,6 +3838,9 @@ class Ui_MainWindow(object):
         self.input_telefone_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_colaborador_as.setFont(font)
+        self.input_telefone_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_telefone_colaborador_as.setInputMask('99 99999-9999')
+        self.input_telefone_colaborador_as.setMaxLength(13)
 
         self.verticalLayout_144.addWidget(self.input_telefone_colaborador_as)
 
@@ -3802,6 +3870,7 @@ class Ui_MainWindow(object):
         self.input_email_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_email_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_email_colaborador_as.setFont(font)
+        self.input_email_colaborador_as.setValidator(self.validaEmail)
 
         self.verticalLayout_145.addWidget(self.input_email_colaborador_as)
 
@@ -3853,6 +3922,7 @@ class Ui_MainWindow(object):
         self.input_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_matricula_colaborador_as.setFont(font)
+        self.input_matricula_colaborador_as.setValidator(self.validaNumeroInt)
 
         self.verticalLayout_136.addWidget(self.input_matricula_colaborador_as)
 
@@ -3882,6 +3952,7 @@ class Ui_MainWindow(object):
         self.input_nome_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_nome_colaborador_as.setFont(font)
+        self.input_nome_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_137.addWidget(self.input_nome_colaborador_as)
 
@@ -3955,6 +4026,8 @@ class Ui_MainWindow(object):
         self.input_cpf_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_cpf_colaborador_as.setFont(font)
+        self.input_cpf_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_cpf_colaborador_as.setInputMask('999.999.999-99')
 
         self.verticalLayout_138.addWidget(self.input_cpf_colaborador_as)
 
@@ -3984,6 +4057,8 @@ class Ui_MainWindow(object):
         self.input_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_rg_colaborador_as.setFont(font)
+        self.input_rg_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_rg_colaborador_as.setMaxLength(10)
 
         self.verticalLayout_139.addWidget(self.input_rg_colaborador_as)
 
@@ -4048,6 +4123,9 @@ class Ui_MainWindow(object):
         self.input_cep_colaborador_as.setFont(font)
         self.input_cep_colaborador_as.setStyleSheet(u"")
         self.input_cep_colaborador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.input_cep_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_cep_colaborador_as.setInputMask('99999-999')
+        self.input_cep_colaborador_as.setMaxLength(2)
 
         self.verticalLayout_147.addWidget(self.input_cep_colaborador_as)
 
@@ -4136,6 +4214,7 @@ class Ui_MainWindow(object):
         self.input_logradouro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_logradouro_colaborador_as.setFont(font)
+        self.input_logradouro_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_174.addWidget(self.input_logradouro_colaborador_as)
 
@@ -4165,6 +4244,7 @@ class Ui_MainWindow(object):
         self.input_numero_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_numero_colaborador_as.setFont(font)
+        
 
         self.verticalLayout_173.addWidget(self.input_numero_colaborador_as)
 
@@ -4194,6 +4274,7 @@ class Ui_MainWindow(object):
         self.input_bairro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_bairro_colaborador_as.setFont(font)
+        self.input_bairro_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_149.addWidget(self.input_bairro_colaborador_as)
 
@@ -4223,6 +4304,7 @@ class Ui_MainWindow(object):
         self.input_cidade_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_cidade_colaborador_as.setFont(font)
+        self.input_cidade_colaborador_as.setValidator(self.validaString)
 
         self.verticalLayout_2.addWidget(self.input_cidade_colaborador_as)
 
@@ -4252,6 +4334,8 @@ class Ui_MainWindow(object):
         self.input_estado_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_estado_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_estado_colaborador_as.setFont(font)
+        self.input_estado_colaborador_as.setValidator(self.validaString)
+        self.input_estado_colaborador_as.setMaxLength(2)
 
         self.verticalLayout_148.addWidget(self.input_estado_colaborador_as)
 
@@ -8165,6 +8249,9 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_alterar_telefone_usuario_as.setFont(font)
+        self.input_alterar_telefone_usuario_as.setValidator(self.validaNumeroInt)
+        self.input_alterar_telefone_usuario_as.setInputMask('99 99999-9999')
+        self.input_alterar_telefone_usuario_as.setMaxLength(13)
 
         self.verticalLayout_222.addWidget(self.input_alterar_telefone_usuario_as)
 
@@ -8468,6 +8555,8 @@ class Ui_MainWindow(object):
         self.input_alterar_estado_usuario_as.setObjectName(u"input_alterar_estado_usuario_as")
         self.input_alterar_estado_usuario_as.setMinimumSize(QSize(70, 30))
         self.input_alterar_estado_usuario_as.setMaximumSize(QSize(16777215, 30))
+        self.input_alterar_estado_usuario_as.setValidator(self.validaString)
+        self.input_alterar_estado_usuario_as.setMaxLength(2)
 
         self.verticalLayout_229.addWidget(self.input_alterar_estado_usuario_as)
 
@@ -9776,6 +9865,10 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_alterar_telefone_colaborador_as.setFont(font)
+        self.input_alterar_telefone_colaborador_as.setValidator(self.validaNumeroInt)
+        self.input_alterar_telefone_colaborador_as.setInputMask('99 99999-9999')
+        self.input_alterar_telefone_colaborador_as.setMaxLength(13)
+        
 
         self.verticalLayout_273.addWidget(self.input_alterar_telefone_colaborador_as)
 
@@ -10255,6 +10348,9 @@ class Ui_MainWindow(object):
         self.input_alterar_estado_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_estado_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_alterar_estado_colaborador_as.setFont(font)
+        self.input_alterar_estado_colaborador_as.setValidator(self.validaString)
+        self.input_alterar_estado_colaborador_as.setMaxLength(2)
+
 
         self.verticalLayout_300.addWidget(self.input_alterar_estado_colaborador_as)
 

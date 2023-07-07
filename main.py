@@ -429,11 +429,6 @@ class TelaPrincipal(QMainWindow):
     
     def cadastroUsuario(self):
 
-        parentesco = self.ui.input_parentesco_cuidador_as.text()
-        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
-        id_matricula = 1
-        tupla_cuidador = (parentesco,observacao,id_matricula)
-
         ################ endereço ##################################
         cep = self.ui.input_cep_usuario_as.text()
         rua = self.ui.input_logradouro_usuario_as.text()
@@ -449,18 +444,18 @@ class TelaPrincipal(QMainWindow):
 
         foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
-        data_nascimento = '0000-00-00'
+        data_nascimento = self.ui.input_nascimento_usuario_as.text()
         cpf = self.ui.input_cpf_usuario_as.text()
+        #caracter = "-"
+        #cpf = ''.join(filter(lambda i: i not in caracter, cpf_form))
         rg = self.ui.input_rg_usuario_as.text()
         data_emissao = self.ui.input_data_emissao_cuidador_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
-
-        id_colaborador_resp = 1
 
         ################ tratamento ##################################
         
@@ -477,6 +472,7 @@ class TelaPrincipal(QMainWindow):
         periodo = self.ui.input_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_trasnporte = self.ui.input_vale_transporte_usuario_as.currentText()
+        tipo_deficiencia = self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText()
 
 
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
@@ -497,12 +493,13 @@ class TelaPrincipal(QMainWindow):
         else:
             status = 'Inativo'
 
+        
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_trasnporte)
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_colaborador_resp)
 
         ######################## insert ##################################
         result = []
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
+        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         #print(result)
         #result = []
         self.msg(result[0],result[1])
