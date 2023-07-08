@@ -194,6 +194,37 @@ class DialogAlterarSenhaFoto(QDialog):
         self.timer_msg.stop()
         event.accept()
 
+##############Class Confirma Saida##############
+class ConfirmaSaida(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.saida = Ui_Confirma_Saida()
+        self.ui = Ui_MainWindow()
+        self.popup = Overlay(self)
+        self.saida.setupUi(self)
+
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closeMsg)
+        
+        
+
+        
+
+    def closeMsg(self):
+        self.close()
+
+    
+
+    def saidaSim(self):
+        saida = ConfirmaSaida(self)
+        #self.ui.login.show()
+        self.ui.inicio.setCurrentWidget(self.ui.login)
+        saida.exec()
+        self.close()
+        
+        
+        
+
 
 #############################################################################
 class TelaPrincipal(QMainWindow):
@@ -207,6 +238,8 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
 
+        
+
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -218,10 +251,14 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS#################
+        
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        
+        
+
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
-
-        self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta_as))
@@ -667,6 +704,18 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
+
+############## POPUP Confirma Saida ##################
+
+    def sairSistema(self):
+        self.saida = Ui_Confirma_Saida()
+        msg = ConfirmaSaida(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+
+        self.saida.btn_sim_popup_confirma_saida.clicked.connect(lambda: self.ui.area_principal.setCurrentWidget(self.ui.inicio))
+
 
 
     ################ def POPUP Cuidador################
