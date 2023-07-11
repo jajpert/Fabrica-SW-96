@@ -632,7 +632,6 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
             self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))
 
-
     def recuperarSenha(self):
         msg = DialogRecuperarSenha(self)
         self.popup.show()

@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -5054,7 +5054,7 @@ QPushButton:pressed{
                                 <item>
                                  <widget class="QFrame" name="frame_438">
                                   <property name="enabled">
-                                   <bool>true</bool>
+                                   <bool>false</bool>
                                   </property>
                                   <property name="minimumSize">
                                    <size>
@@ -19078,7 +19078,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>3</number>
+                                <number>2</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -24541,6 +24541,101 @@ QPushButton:pressed{
                                                     </widget>
                                                    </item>
                                                    <item>
+                                                    <widget class="QFrame" name="frame_439">
+                                                     <property name="frameShape">
+                                                      <enum>QFrame::StyledPanel</enum>
+                                                     </property>
+                                                     <property name="frameShadow">
+                                                      <enum>QFrame::Raised</enum>
+                                                     </property>
+                                                     <widget class="QFrame" name="frame_440">
+                                                      <property name="enabled">
+                                                       <bool>true</bool>
+                                                      </property>
+                                                      <property name="geometry">
+                                                       <rect>
+                                                        <x>40</x>
+                                                        <y>0</y>
+                                                        <width>145</width>
+                                                        <height>58</height>
+                                                       </rect>
+                                                      </property>
+                                                      <property name="minimumSize">
+                                                       <size>
+                                                        <width>145</width>
+                                                        <height>0</height>
+                                                       </size>
+                                                      </property>
+                                                      <property name="maximumSize">
+                                                       <size>
+                                                        <width>145</width>
+                                                        <height>16777215</height>
+                                                       </size>
+                                                      </property>
+                                                      <property name="frameShape">
+                                                       <enum>QFrame::StyledPanel</enum>
+                                                      </property>
+                                                      <property name="frameShadow">
+                                                       <enum>QFrame::Raised</enum>
+                                                      </property>
+                                                      <layout class="QVBoxLayout" name="verticalLayout_306">
+                                                       <property name="spacing">
+                                                        <number>0</number>
+                                                       </property>
+                                                       <property name="leftMargin">
+                                                        <number>0</number>
+                                                       </property>
+                                                       <property name="topMargin">
+                                                        <number>0</number>
+                                                       </property>
+                                                       <property name="rightMargin">
+                                                        <number>0</number>
+                                                       </property>
+                                                       <property name="bottomMargin">
+                                                        <number>0</number>
+                                                       </property>
+                                                       <item>
+                                                        <spacer name="verticalSpacer_22">
+                                                         <property name="orientation">
+                                                          <enum>Qt::Vertical</enum>
+                                                         </property>
+                                                         <property name="sizeHint" stdset="0">
+                                                          <size>
+                                                           <width>20</width>
+                                                           <height>40</height>
+                                                          </size>
+                                                         </property>
+                                                        </spacer>
+                                                       </item>
+                                                       <item>
+                                                        <widget class="QLineEdit" name="input_situacao_trabalho_outros_usuario_as_2">
+                                                         <property name="enabled">
+                                                          <bool>true</bool>
+                                                         </property>
+                                                         <property name="minimumSize">
+                                                          <size>
+                                                           <width>140</width>
+                                                           <height>0</height>
+                                                          </size>
+                                                         </property>
+                                                         <property name="maximumSize">
+                                                          <size>
+                                                           <width>140</width>
+                                                           <height>16777215</height>
+                                                          </size>
+                                                         </property>
+                                                         <property name="font">
+                                                          <font>
+                                                           <family>Abel</family>
+                                                          </font>
+                                                         </property>
+                                                        </widget>
+                                                       </item>
+                                                      </layout>
+                                                     </widget>
+                                                    </widget>
+                                                   </item>
+                                                   <item>
                                                     <widget class="QFrame" name="frame_349">
                                                      <property name="minimumSize">
                                                       <size>
@@ -24886,6 +24981,42 @@ QPushButton:pressed{
                                                      </layout>
                                                     </widget>
                                                    </item>
+                                                  </layout>
+                                                 </widget>
+                                                </item>
+                                                <item>
+                                                 <widget class="QFrame" name="frame_354">
+                                                  <property name="maximumSize">
+                                                   <size>
+                                                    <width>16777215</width>
+                                                    <height>60</height>
+                                                   </size>
+                                                  </property>
+                                                  <property name="styleSheet">
+                                                   <string notr="true"/>
+                                                  </property>
+                                                  <property name="frameShape">
+                                                   <enum>QFrame::StyledPanel</enum>
+                                                  </property>
+                                                  <property name="frameShadow">
+                                                   <enum>QFrame::Raised</enum>
+                                                  </property>
+                                                  <layout class="QHBoxLayout" name="horizontalLayout_115">
+                                                   <property name="spacing">
+                                                    <number>5</number>
+                                                   </property>
+                                                   <property name="leftMargin">
+                                                    <number>0</number>
+                                                   </property>
+                                                   <property name="topMargin">
+                                                    <number>0</number>
+                                                   </property>
+                                                   <property name="rightMargin">
+                                                    <number>0</number>
+                                                   </property>
+                                                   <property name="bottomMargin">
+                                                    <number>0</number>
+                                                   </property>
                                                    <item>
                                                     <widget class="QFrame" name="frame_353">
                                                      <property name="minimumSize">
@@ -24972,42 +25103,6 @@ QPushButton:pressed{
                                                      </layout>
                                                     </widget>
                                                    </item>
-                                                  </layout>
-                                                 </widget>
-                                                </item>
-                                                <item>
-                                                 <widget class="QFrame" name="frame_354">
-                                                  <property name="maximumSize">
-                                                   <size>
-                                                    <width>16777215</width>
-                                                    <height>60</height>
-                                                   </size>
-                                                  </property>
-                                                  <property name="styleSheet">
-                                                   <string notr="true"/>
-                                                  </property>
-                                                  <property name="frameShape">
-                                                   <enum>QFrame::StyledPanel</enum>
-                                                  </property>
-                                                  <property name="frameShadow">
-                                                   <enum>QFrame::Raised</enum>
-                                                  </property>
-                                                  <layout class="QHBoxLayout" name="horizontalLayout_115">
-                                                   <property name="spacing">
-                                                    <number>5</number>
-                                                   </property>
-                                                   <property name="leftMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="topMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="rightMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="bottomMargin">
-                                                    <number>0</number>
-                                                   </property>
                                                    <item>
                                                     <widget class="QFrame" name="frame_355">
                                                      <property name="minimumSize">
@@ -32309,18 +32404,34 @@ QPushButton:focus{outline:0}</string>
  <resources/>
  <connections>
   <connection>
+   <sender>input_situacao_trabalho_outros_usuario_as</sender>
+   <signal>cursorPositionChanged(int,int)</signal>
+   <receiver>input_situacao_trabalho_usuario_as</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>690</x>
+     <y>530</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>586</x>
+     <y>534</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
    <sender>input_situacao_trabalho_usuario_as</sender>
    <signal>currentTextChanged(QString)</signal>
    <receiver>input_situacao_trabalho_outros_usuario_as</receiver>
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>565</x>
-     <y>531</y>
+     <x>486</x>
+     <y>526</y>
     </hint>
     <hint type="destinationlabel">
-     <x>664</x>
-     <y>526</y>
+     <x>644</x>
+     <y>531</y>
     </hint>
    </hints>
   </connection>
