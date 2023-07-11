@@ -214,7 +214,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
-        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
+        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
 
 
@@ -223,6 +223,13 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
+
+
+
+
+
+
+
 
 
         
@@ -355,39 +362,52 @@ class TelaPrincipal(QMainWindow):
 
 ########################### FUNÇÕES BANCO ###########################
 
-    def busca_pessoa(self):
-        tipo = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
-        nome = self.ui.lineEdit_alterar_nome_responsavel_as.text()
-        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
+    def buscar_Usuario(self):
 
-        if tipo == 0 or nome == '' or cpf == '':
+
+        valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
+        nome = self.ui.input_alterar_nome_responsavel_as.text()
+        cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
+        print("Valor selecionado:", valorSelecionado)
+
+        if valorSelecionado == 0:
+            print ('to funfando == 0')
             return self.ui.page_2
         
-        
-
-        if tipo == 1:
+        elif valorSelecionado == 1: 
+            print ('to funfando == 1')
+            
+            print(nome)
+            print(cpf)
             dados = self.db.busca_cuidador(nome, cpf)
             print(dados)
-            self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
-            self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
-            self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
-            self.ui.input_rg_alterar_cuidador_as.setText(dados[3])
-            self.ui.input_orgao_expedidor_alterar_cuidador_as.setText(dados[5])
-            self.ui.input_parentesco_alterar_cuidador_as.setText(dados[6])  
-            self.ui.input_telefone_alterar_cuidador_as.setText(dados[8]) 
-            self.ui.input_email_alterar_cuidador_as.setText(dados[9]) 
-            self.ui.input_cep_alterar_cuidador_as.setText(dados[10]) 
-            self.ui.input_logradouro_alterar_cuidador_as.setText(dados[11]) 
-            self.ui.input_numero_alterar_cuidador_as.setText(str(dados[12])) 
-            self.ui.input_bairro_alterar_cuidador_as.setText(dados[13]) 
-            self.ui.input_cidade_alterar_cuidador_as.setText(dados[14])
-            self.ui.input_estado_alterar_cuidador_as.setText(dados[15])
-            #self.ui.input_observacoes_gerais_alterar_cuidador_as = dados[16] #aqui
-
+            # self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
+            # self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
+            # self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
+            # self.ui.input_rg_alterar_cuidador_as.setText(dados[3])
+            # self.ui.input_orgao_expedidor_alterar_cuidador_as.setText(dados[5])
+            # self.ui.input_parentesco_alterar_cuidador_as.setText(dados[6])  
+            # self.ui.input_telefone_alterar_cuidador_as.setText(dados[8]) 
+            # self.ui.input_email_alterar_cuidador_as.setText(dados[9]) 
+            # self.ui.input_cep_alterar_cuidador_as.setText(dados[10]) 
+            # self.ui.input_logradouro_alterar_cuidador_as.setText(dados[11]) 
+            # self.ui.input_numero_alterar_cuidador_as.setText(str(dados[12])) 
+            # self.ui.input_bairro_alterar_cuidador_as.setText(dados[13]) 
+            # self.ui.input_cidade_alterar_cuidador_as.setText(dados[14])
+            # self.ui.input_estado_alterar_cuidador_as.setText(dados[15])
+            # self.ui.input_observacoes_gerais_alterar_cuidador_as = dados[16]
             return self.ui.page_alterar_cuidador
+
+        elif valorSelecionado == 2:
+            print ('to funfando == 2')
+            return self.ui.page_alterar_usuario
+        
+        elif valorSelecionado == 3:
+            print ('to funfando == 3')
+            return self.ui.page_alterar_colaborador_as
         
 
-        if tipo == 2:
+        if valorSelecionado == 333:
             dados = self.db.busca_usuario(nome, cpf)
             print(dados)
             self.ui.input_nome_alterar_usuario_as.setText(dados[1])
@@ -403,9 +423,10 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_cidade_alterar_usuario_as.setText(dados[14])
 
             return self.ui.page_alterar_usuario
-        if tipo == 3:
+        if valorSelecionado == 444:
             return self.ui.page_alterar_colaborador_as
         #if lineEdit_alterar_nome_responsavel_as.text()
+
     
     def cadastroUsuario(self):
 
