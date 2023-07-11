@@ -1,4 +1,5 @@
 import sys
+import re
 import requests
 from os import getcwd
 from ctypes import windll
@@ -444,12 +445,13 @@ class TelaPrincipal(QMainWindow):
 
         foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
-        data_nascimento = self.ui.input_nascimento_usuario_as.text()
-        cpf = self.ui.input_cpf_usuario_as.text()
-        #caracter = "-"
-        #cpf = ''.join(filter(lambda i: i not in caracter, cpf_form))
+        data_nasc = self.ui.input_nascimento_usuario_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
+        cpf_temp = self.ui.input_cpf_usuario_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_temp)
         rg = self.ui.input_rg_usuario_as.text()
-        data_emissao = self.ui.input_data_emissao_cuidador_as.text()
+        data_emi = self.ui.input_data_emissao_usuario_as.text()
+        data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
@@ -468,7 +470,8 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
-        data_inicio = self.ui.input_data_inicio_usuario_as.text()
+        data_ini = self.ui.input_data_inicio_usuario_as.text()
+        data_inicio = "-".join(data_ini.split("/")[::-1])
         periodo = self.ui.input_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_trasnporte = self.ui.input_vale_transporte_usuario_as.currentText()
@@ -478,9 +481,9 @@ class TelaPrincipal(QMainWindow):
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
 
         if self.ui.input_tarifa_social_sim_usuario_as.isChecked():
-            tarifa_social = 'S'
+            tarifa_social = 'SIM'
         else:
-            tarifa_social = 'N'
+            tarifa_social = 'NÃO'
 
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
             pessoa_deficiencia = 'SIM'
@@ -518,33 +521,33 @@ class TelaPrincipal(QMainWindow):
 
         ###################### pessoa ####################################
         nome = self.ui.input_nome_cuidador_as.text()
-        data_nascimento = '2004-06-25'
-        cpf = self.ui.input_cpf_cuidador_as.text()
+        cpf_temp = self.ui.input_cpf_cuidador_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_temp)
         rg = self.ui.input_rg_cuidador_as.text()
-        data_emissao = '2004-06-25'
+        data_emi = self.ui.input_data_emissao_cuidador_as.text()
+        data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
-        sexo = self.ui.input_sexo_cuidador_as.text()
-        data_cadastro = '2004-06-25'
+        sexo = self.ui.input_sexo_cuidador_as.currentText()
         telefone = self.ui.input_telefone_cuidador_as.text()
         email = self.ui.input_email_cuidador_as.text()  
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
+        tupla_pessoa = (nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade)
         
 
         ################### cuidador ###################################
 
         parentesco = self.ui.input_parentesco_cuidador_as.text()
-        observacao = 'none' #self.ui.input_informacoes_gerais_as.setText()''
+        observacao = self.ui.input_informacoes_gerais_as.toPlainText()
         tupla_cuidador = (parentesco,observacao)
 
         ################## insert #######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
         #print(result)
+        self.msg(result[0],result[1])
 
     def cadastroColaborador(self):
-
 
         ######################## endereço ###########################
         cep = self.ui.input_cep_colaborador_as.text()
@@ -558,33 +561,35 @@ class TelaPrincipal(QMainWindow):
 
         ###################### pessoa ##############################
         nome = self.ui.input_nome_colaborador_as.text()
-        data_nascimento = '00/00/0000'
-        cpf = self.ui.input_cpf_colaborador_as.text()
+        data_nasc = self.ui.input_data_nascimento_colaborador_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
+        cpf_temp = self.ui.input_cpf_colaborador_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_temp)
         rg = self.ui.input_rg_colaborador_as.text()
-        data_emissao = self.ui.input_data_emissao_rg_colaborador_as.text()
+        data_emi = self.ui.input_data_emissao_rg_colaborador_as.text()
+        data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_colaborador_as.text()
         sexo = self.ui.input_sexo_colaborador_comboBox_as.currentText()
-        data_cadastro = '00/00/0000'
         telefone = self.ui.input_telefone_colaborador_as.text()
         email = self.ui.input_email_colaborador_as.text()      
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
         if self.ui.input_pessoa_cdeficiencia_sim_colaborador_as.isChecked():
-            pessoa_deficiencia = 'S'
+            pessoa_deficiencia = 'SIM'
         else:
-            pessoa_deficiencia = 'N'
+            pessoa_deficiencia = 'NÃO'
         if self.ui.input_situacao_ativo_usuario_as.isChecked():
             status = 'Ativo'
         else:
             status = 'Inativo'
-        tipo_deficiencia = self.ui.input_tipo_deficiencia_colaborador_as.text()
+        
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
 
         ##################### cargo ###########################################
 
         salario = self.ui.input_salario_colaborador_as.text()
-        data_admissao = '2023-00-00'
+        data_admissao = "0000-00-00"
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
         cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
