@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>10</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -18371,7 +18371,7 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="lineEdit_alterar_nome_responsavel_as">
+                                 <widget class="QLineEdit" name="Input_alterar_nome_responsavel_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>440</width>
@@ -18462,7 +18462,7 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="lineEdit_alterar_buscar_cpf_cnpj_as">
+                                 <widget class="QLineEdit" name="Input_alterar_buscar_cpf_cnpj_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>225</width>
