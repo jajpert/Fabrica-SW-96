@@ -19,9 +19,10 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT * FROM cadastro ORDER BY ID DESC;
+                SELECT MAX(id_matricula) FROM pessoa;
             """)
             result = self.cursor.fetchall()
+            print(result)
             
             #verifica os dados do select
             #for linha in result:
@@ -162,8 +163,8 @@ class DataBase():
             id_endereco = self.cursor.lastrowid
             print('ID do endereco',id_endereco)
 
-            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],id_endereco,)
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],id_endereco)
+            self.cursor.execute('INSERT INTO pessoa(nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             id_matricula = self.cursor.lastrowid
             print('id matricula',id_matricula)
 

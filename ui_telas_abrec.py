@@ -769,6 +769,7 @@ class Ui_MainWindow(object):
         self.input_matricula_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_matricula_usuario_as.setFont(font)
+        self.input_matricula_usuario_as.setEnabled(False)
 
         self.verticalLayout_29.addWidget(self.input_matricula_usuario_as)
 
@@ -1314,9 +1315,9 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        icon13 = QIcon()
-        icon13.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cep_buscar_usuario_as.setIcon(icon13)
+        icon14 = QIcon()
+        icon14.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cep_buscar_usuario_as.setIcon(icon14)
 
         self.verticalLayout_286.addWidget(self.btn_cep_buscar_usuario_as)
 
@@ -2168,12 +2169,23 @@ class Ui_MainWindow(object):
         self.btn_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon14 = QIcon()
-        icon14.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_observacoes_sigilo_as.setIcon(icon14)
+        icon13 = QIcon()
+        icon13.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_observacoes_sigilo_as.setIcon(icon13)
         self.btn_observacoes_sigilo_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout.addWidget(self.btn_observacoes_sigilo_as)
+
+        self.btn_salvar_usuario_as = QPushButton(self.frame_4)
+        self.btn_salvar_usuario_as.setObjectName(u"btn_salvar_usuario_as")
+        self.btn_salvar_usuario_as.setMinimumSize(QSize(140, 40))
+        self.btn_salvar_usuario_as.setFont(font10)
+        self.btn_salvar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_salvar_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout.addWidget(self.btn_salvar_usuario_as)
 
         self.btn_proximo_as = QPushButton(self.frame_4)
         self.btn_proximo_as.setObjectName(u"btn_proximo_as")
@@ -2186,18 +2198,6 @@ class Ui_MainWindow(object):
 "QPushButton:focus{outline:0}")
 
         self.horizontalLayout.addWidget(self.btn_proximo_as)
-
-        self.btn_finalizar_as = QPushButton(self.frame_4)
-        self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
-        self.btn_finalizar_as.setMinimumSize(QSize(140, 40))
-        self.btn_finalizar_as.setFont(font10)
-        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.horizontalLayout.addWidget(self.btn_finalizar_as)
-
 
         self.verticalLayout_3.addWidget(self.frame_4)
 
@@ -2286,6 +2286,7 @@ class Ui_MainWindow(object):
         self.input_matricula_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_matricula_cuidador_as.setFont(font)
+        self.input_matricula_cuidador_as.setEnabled(False)
 
         self.verticalLayout_90.addWidget(self.input_matricula_cuidador_as)
 
@@ -2666,7 +2667,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_cuidador_as.setIcon(icon13)
+        self.btn_cep_buscar_cuidador_as.setIcon(icon14)
 
         self.verticalLayout_284.addWidget(self.btn_cep_buscar_cuidador_as)
 
@@ -2912,17 +2913,17 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_48.addItem(self.horizontalSpacer_8)
 
-        self.btn_salvar_as = QPushButton(self.frame_99)
-        self.btn_salvar_as.setObjectName(u"btn_salvar_as")
-        self.btn_salvar_as.setMinimumSize(QSize(120, 40))
-        self.btn_salvar_as.setFont(font10)
-        self.btn_salvar_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_salvar_as.setLayoutDirection(Qt.RightToLeft)
-        self.btn_salvar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_finalizar_as = QPushButton(self.frame_99)
+        self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
+        self.btn_finalizar_as.setMinimumSize(QSize(120, 40))
+        self.btn_finalizar_as.setFont(font10)
+        self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_finalizar_as.setLayoutDirection(Qt.RightToLeft)
+        self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.horizontalLayout_48.addWidget(self.btn_salvar_as)
+        self.horizontalLayout_48.addWidget(self.btn_finalizar_as)
 
 
         self.verticalLayout_66.addWidget(self.frame_99)
@@ -3914,6 +3915,7 @@ class Ui_MainWindow(object):
         self.input_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_matricula_colaborador_as.setFont(font)
+        self.input_matricula_colaborador_as.setEnabled(False)
 
         self.verticalLayout_136.addWidget(self.input_matricula_colaborador_as)
 
@@ -4161,7 +4163,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_colaborador_as.setIcon(icon13)
+        self.btn_cep_buscar_colaborador_as.setIcon(icon14)
 
         self.verticalLayout_287.addWidget(self.btn_cep_buscar_colaborador_as)
 
@@ -5695,6 +5697,7 @@ class Ui_MainWindow(object):
         self.input_matricula_consulta_as.setMinimumSize(QSize(150, 30))
         self.input_matricula_consulta_as.setMaximumSize(QSize(150, 30))
         self.input_matricula_consulta_as.setFont(font)
+        self.input_matricula_consulta_as.setEnabled(False)
 
         self.verticalLayout_125.addWidget(self.input_matricula_consulta_as)
 
@@ -5933,6 +5936,7 @@ class Ui_MainWindow(object):
         self.input_matricula_consulta_as_2.setObjectName(u"input_matricula_consulta_as_2")
         self.input_matricula_consulta_as_2.setMaximumSize(QSize(150, 30))
         self.input_matricula_consulta_as_2.setFont(font)
+        self.input_matricula_consulta_as_2.setEnabled(False)
 
         self.verticalLayout_131.addWidget(self.input_matricula_consulta_as_2)
 
@@ -7557,7 +7561,7 @@ class Ui_MainWindow(object):
         self.btn_observacoes_alterar_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_observacoes_alterar_sigilo_as.setIcon(icon14)
+        self.btn_observacoes_alterar_sigilo_as.setIcon(icon13)
         self.btn_observacoes_alterar_sigilo_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_116.addWidget(self.btn_observacoes_alterar_sigilo_as)
@@ -11533,7 +11537,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
         self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
-        self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
+        self.btn_salvar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
         self.label_36.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO CUIDADOR", None))
         self.label_matricula_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Matricula", None))
         self.label_nome_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Nome cuidador", None))
@@ -11563,7 +11567,7 @@ class Ui_MainWindow(object):
         self.label_estado_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es gerais Usu\u00e1rio e Cuidador", None))
         self.btn_voltar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.btn_salvar_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
+        self.btn_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"FINALIZAR", None))
         self.label_49.setText(QCoreApplication.translate("MainWindow", u"OBSERVA\u00c7\u00d5ES SIGILOSAS", None))
         self.label_obito_paciente_as.setText(QCoreApplication.translate("MainWindow", u"\u00d3bito do paciente", None))
         self.input_obito_paciente_sim_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))

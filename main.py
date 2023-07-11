@@ -186,6 +186,7 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
 
         self.db = DataBase()
+        self.db.select()
 
 
         self.popup = Overlay(self)
@@ -261,8 +262,8 @@ class TelaPrincipal(QMainWindow):
 
 
         ############SIGNALS BANCO ##########################
-        self.ui.btn_finalizar_as.clicked.connect(self.cadastroUsuario)
-        self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
+        self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
+        self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
     
@@ -500,18 +501,17 @@ class TelaPrincipal(QMainWindow):
 
         ###################### pessoa ####################################
         nome = self.ui.input_nome_cuidador_as.text()
-        data_nascimento = '2004-06-25'
         cpf = self.ui.input_cpf_cuidador_as.text()
         rg = self.ui.input_rg_cuidador_as.text()
-        data_emissao = '2004-06-25'
+        data_emissao = self.ui.input_data_emissao_cuidador_as.date()
+        data_emissao_conver = data_emissao.toPython()
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
         sexo = self.ui.input_sexo_cuidador_as.currentText()
-        data_cadastro = '2004-06-25'
         telefone = self.ui.input_telefone_cuidador_as.text()
         email = self.ui.input_email_cuidador_as.text()  
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,data_cadastro,telefone,email,escolaridade)
+        tupla_pessoa = (nome,cpf,rg,data_emissao_conver,orgao_exp,sexo,telefone,email,escolaridade)
         
 
         ################### cuidador ###################################
