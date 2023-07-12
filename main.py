@@ -379,8 +379,8 @@ class TelaPrincipal(QMainWindow):
             
             print(nome)
             print(cpf)
-            dados = self.db.busca_cuidador(nome, cpf)
-            print(dados)
+            # dados = self.db.busca_cuidador(nome, cpf)
+            # print(dados)
             # self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
             # self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
             # self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
@@ -407,7 +407,7 @@ class TelaPrincipal(QMainWindow):
             return self.ui.page_alterar_colaborador_as
         
 
-        if valorSelecionado == 333:
+        if valorSelecionado == 3:
             dados = self.db.busca_usuario(nome, cpf)
             print(dados)
             self.ui.input_nome_alterar_usuario_as.setText(dados[1])
@@ -430,10 +430,9 @@ class TelaPrincipal(QMainWindow):
     
     def cadastroUsuario(self):
 
-        '''parentesco = self.ui.input_parentesco_cuidador_as.text()
-        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()''
-        id_matricula = 1
-        tupla_cuidador = (parentesco,observacao,id_matricula)'''
+        parentesco = self.ui.input_parentesco_cuidador_as.text()
+        observacao ='none' #self.ui.input_informacoes_gerais_as.setText()
+        tupla_cuidador = (parentesco,observacao)
 
         ################ endereço ##################################
         cep = self.ui.input_cep_usuario_as.text()
@@ -453,12 +452,12 @@ class TelaPrincipal(QMainWindow):
         data_nascimento = '0000-00-00'
         cpf = self.ui.input_cpf_usuario_as.text()
         rg = self.ui.input_rg_usuario_as.text()
-        data_emissao = self.ui.input_data_emissao_cuidador_as.text()
+        data_emissao = '0000-00-00' #self.ui.input_data_emissao_cuidador_as.text()
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         id_colaborador_resp = 1
@@ -502,9 +501,9 @@ class TelaPrincipal(QMainWindow):
 
         ######################## insert ##################################
         result = []
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        #print(result)
-        #result = []
+        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
+        print(result)
+        # result = []
         self.msg(result[0],result[1])
         
     def cadastroCuidador(self):
@@ -544,7 +543,7 @@ class TelaPrincipal(QMainWindow):
         ################## insert #######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
-        #print(result)
+        print(result)
 
     def cadastroColaborador(self):
 
