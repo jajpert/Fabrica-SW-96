@@ -429,7 +429,7 @@ class TelaPrincipal(QMainWindow):
 
     
     def cadastroUsuario(self):
-
+        ###################Colaborador##########################
         parentesco = self.ui.input_parentesco_cuidador_as.text()
         observacao ='none' #self.ui.input_informacoes_gerais_as.setText()
         tupla_cuidador = (parentesco,observacao)
@@ -460,7 +460,7 @@ class TelaPrincipal(QMainWindow):
         escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
-        id_colaborador_resp = 1
+        id_colaborador_resp = 10
 
         ################ tratamento ##################################
         
@@ -476,14 +476,13 @@ class TelaPrincipal(QMainWindow):
         periodo = self.ui.input_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_vale_transporte_usuario_as.currentText()
-
-
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
 
+
         if self.ui.input_tarifa_social_sim_usuario_as.isChecked():
-            tarifa_social = 'S'
+            tarifa_social = 'SIM'
         else:
-            tarifa_social = 'N'
+            tarifa_social = 'NÃO'
 
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
             pessoa_deficiencia = 'SIM'
@@ -579,7 +578,7 @@ class TelaPrincipal(QMainWindow):
             status = 'Ativo'
         else:
             status = 'Inativo'
-        tipo_deficiencia = self.ui.input_tipo_deficiencia_colaborador_as.text()
+        tipo_deficiencia = self.ui.input_tipo_deficiencia_colaborador_as.currentText()
 
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
 
