@@ -215,7 +215,6 @@ class ConfirmaSaida(QDialog):
 
     def saidaSim(self):
         #if self.saida.btn_sim_popup_confirma_saida.clicked:
-           
         self.ui.show()         
         
         
