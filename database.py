@@ -6,7 +6,8 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec2',user='root',password='3545')
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -135,8 +136,8 @@ class DataBase():
             print(id_matricula)
 
             self.cursor.execute("""
-                INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula,id_beneficio,id_cuidador,id_clinica,id_curso) 
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);
+                INSERT INTO usuario (nis,cns,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula,id_beneficio,id_cuidador,id_clinica,id_curso)
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,s%);
                 """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula,1,1,1,1))
 
             self.conn.commit()
@@ -144,7 +145,7 @@ class DataBase():
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            #print(err)
+            print(err)
             return "ERRO",str(err)
 
         finally:
