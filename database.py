@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec2',user='root',password='3545')
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
+        #self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -111,9 +111,10 @@ class DataBase():
         print("entrei")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, pessoa.status, orgao_exp, data_emissao, pis, sexo, 
-                                    parentesco, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, pessoa_deficiencia, escolaridade, cargo, periodo, salario
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,  sexo, 
+                                    telefone, email, cep, logradouro,numero, bairro, cidade, estado,
+                                    estado_civil, pessoa_deficiencia, escolaridade, cargo, periodo, salario, descricao_cargo,
+                                    observacao,colaborador.pis,
                                     from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
                                     left join cuidador on pessoa.id_matricula = cuidador.id_matricula 
                                     left join colaborador on pessoa.id_matricula = colaborador.id_colaborador
