@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec2',user='root',password='3545')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()

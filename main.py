@@ -175,17 +175,41 @@ class DialogAlterarSenhaFoto(QDialog):
         event.accept()
 
 
+##############Class Confirma Saida##############
+class ConfirmaSaida(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.saida = Ui_Confirma_Saida()
+        self.ui = TelaPrincipal()
+        self.popup = Overlay(self)
+        self.saida.setupUi(self)
+
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closeMsg)
+        #self.saida.btn_sim_popup_confirma_saida.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))        
+
+    def closeMsg(self):
+        self.close()
+
+    
+
+    '''def saidaSim(self):
+        #self.close()
+        self.ui.show() '''  
+
+
 #############################################################################
 class TelaPrincipal(QMainWindow):
     def __init__(self):
         super().__init__()
 
         self.ui = Ui_MainWindow()
+        
         self.ui.setupUi(self)
 
         ######################### banco #########################
 
-        self.db = DataBase()
+        self.db = DataBase()        
 
 
         self.popup = Overlay(self)
@@ -198,10 +222,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS#################
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
-        self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        #self.saida.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta_as))
@@ -223,12 +249,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-
-
-
-
-
-
 
 
 
@@ -710,6 +730,15 @@ class TelaPrincipal(QMainWindow):
 
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
+
+############## POPUP Confirma Saida ##################
+
+    def sairSistema(self):
+        #self.saida = Ui_Confirma_Saida()
+        msg = ConfirmaSaida(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
 
 
         
