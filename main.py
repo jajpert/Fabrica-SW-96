@@ -186,7 +186,18 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
 
         self.db = DataBase()
-        self.db.select()
+        selected_id = self.db.select()
+        ultimo_id = (selected_id[0])
+        ultimo_id = ''.join(map(str, ultimo_id))
+        proximo_id = 1 + int(ultimo_id)
+        proximo_id = str(proximo_id).zfill(4)
+
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id}')
+        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id}')
+        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id}')
+        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
 
 
         self.popup = Overlay(self)
@@ -438,7 +449,7 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         # id_colaborador_resp = 1

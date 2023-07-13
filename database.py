@@ -19,10 +19,9 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT MAX(id_matricula) FROM pessoa;
+                SELECT id_matricula FROM pessoa ORDER BY id_matricula DESC LIMIT 1;
             """)
             result = self.cursor.fetchall()
-            print(result)
             
             #verifica os dados do select
             #for linha in result:
