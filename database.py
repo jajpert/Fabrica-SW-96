@@ -59,22 +59,18 @@ class DataBase():
         print("entrei")
         self.connect()
         try:
-            
-            self.cursor.execute(f"""
-                select p.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,
-                    sexo, parentesco, telefone, email, cep, logradouro,
-                    numero, bairro, nome_cidade, sigla from pessoa p
-                left join endereco e on p.id_endereco = e.id_endereco 
-                left join cuidador c on p.id_matricula = c.id_matricula
-                left join cidade c2 on e.id_cidade = c2.id_cidade
-                left join estado e2 on c2.id_estado = e2.id_estado
-                where nome like '{nome}' or cpf like '{cpf}' """)
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,sexo, 
+                                parentesco, observacao, telefone, email, cep, logradouro,numero, bairro, 
+                                cidade 
+                                from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
+                                left join cuidador on pessoa.id_matricula = cuidador.id_matricula 
+                                where nome like '{nome}' or cpf like '{cpf}';""")
+            self.conn.commit()
             result = self.cursor.fetchall()
             
             #verifica os dados do select
             # for linha in result:
             #     print(linha)
-            
             return result[0]
         except Exception as err:
             return "ERRO",str(err)
