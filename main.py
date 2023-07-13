@@ -364,7 +364,7 @@ class TelaPrincipal(QMainWindow):
             print ('to funfando == 1')
             print(nome)
             print(cpf)
-            dados = self.db.busca_cuidador(nome, cpf)
+            dados = self.db.busca_cuidador(cpf)
             sexo = str(dados[6])
             print(dados)
             self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
