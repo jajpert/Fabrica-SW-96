@@ -7,9 +7,6 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
-import webbrowser, os
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
 
 
 class Overlay(QWidget):
@@ -79,17 +76,6 @@ class DialogTirarFoto(QDialog):
             cv2.imwrite("capture.png", frame)
         vid.release()
         cv2.destroyAllWindows()
-    def ImportarFoto(self):        
-        # Cria uma janela oculta
-        root = Tk()
-        root.withdraw()
-        # Abre o explorador de arquivos e permite selecionar um arquivo
-        filename = askopenfilename()
-        # Verifica se um arquivo foi selecionado
-        if filename:
-            print("Arquivo selecionado:", filename)
-        else:
-            print("Nenhum arquivo selecionado.")
 
 
 ################Class POPUP USUARIO################
@@ -376,53 +362,133 @@ class TelaPrincipal(QMainWindow):
         
         elif valorSelecionado == 1: 
             print ('to funfando == 1')
-            
             print(nome)
             print(cpf)
-            # dados = self.db.busca_cuidador(nome, cpf)
-            # print(dados)
-            # self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
-            # self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
-            # self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
-            # self.ui.input_rg_alterar_cuidador_as.setText(dados[3])
-            # self.ui.input_orgao_expedidor_alterar_cuidador_as.setText(dados[5])
-            # self.ui.input_parentesco_alterar_cuidador_as.setText(dados[6])  
-            # self.ui.input_telefone_alterar_cuidador_as.setText(dados[8]) 
-            # self.ui.input_email_alterar_cuidador_as.setText(dados[9]) 
-            # self.ui.input_cep_alterar_cuidador_as.setText(dados[10]) 
-            # self.ui.input_logradouro_alterar_cuidador_as.setText(dados[11]) 
-            # self.ui.input_numero_alterar_cuidador_as.setText(str(dados[12])) 
-            # self.ui.input_bairro_alterar_cuidador_as.setText(dados[13]) 
-            # self.ui.input_cidade_alterar_cuidador_as.setText(dados[14])
-            # self.ui.input_estado_alterar_cuidador_as.setText(dados[15])
-            # self.ui.input_observacoes_gerais_alterar_cuidador_as = dados[16]
+            dados = self.db.busca_cuidador(nome, cpf)
+            sexo = str(dados[6])
+            print(dados)
+            self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
+            self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
+            self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
+            self.ui.input_alterar_rg_cuidador_as.setText(dados[3])
+            self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[5])
+
+            if sexo == 'Masculino':
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
+            else:
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
+
+            self.ui.input_alterar_parentesco_cuidador_as.setText(dados[7])  
+            self.ui.input_alterar_informacoes_gerais_as.setHtml(dados[8])
+            self.ui.input_alterar_telefone_cuidador_as.setText(dados[9]) 
+            self.ui.input_alterar_email_cuidador_as.setText(dados[10]) 
+            self.ui.input_alterar_cep_cuidador_as.setText(dados[11]) 
+            self.ui.input_alterar_logradouro_cuidador_as.setText(dados[12]) 
+            self.ui.input_alterar_numero_cuidador_as.setText(str(dados[13])) 
+            self.ui.input_alterar_bairro_cuidador_as.setText(str(dados[14]))
+            self.ui.input_alterar_cidade_cuidador_as.setText(dados[15])
+            self.ui.input_alterar_estado_cuidador_as.setText(dados[16])
+            
             return self.ui.page_alterar_cuidador
 
         elif valorSelecionado == 2:
             print ('to funfando == 2')
-            return self.ui.page_alterar_usuario
-        
-        elif valorSelecionado == 3:
-            print ('to funfando == 3')
-            return self.ui.page_alterar_colaborador_as
-        
-
-        if valorSelecionado == 3:
             dados = self.db.busca_usuario(nome, cpf)
             print(dados)
+            sexo = str(dados[9])
+            if sexo == 'Masculino':
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
+            else:
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
+
+
+            status = str(dados[3])
+            if self.ui.input_situacao_ativo_usuario_as.isChecked():
+                status = 'Ativo'
+            else:
+                status = 'Inativo'
+
             self.ui.input_nome_alterar_usuario_as.setText(dados[1])
-            self.ui.input_cpf_alterar_usuario_as.setText(dados[2])
-            self.ui.input_rg_alterar_usuario_as.setText(dados[3])
-            self.ui.input_orgao_expedidor_alterar_usuario_as.setText(dados[5]) 
-            self.ui.input_telefone_alterar_usuario_as.setText(dados[8]) 
-            self.ui.input_email_alterar_usuario_as.setText(dados[9]) 
-            self.ui.input_cep_alterar_usuario_as.setText(dados[10]) 
-            self.ui.input_logradouro_alterar_usuario_as.setText(dados[11]) 
-            self.ui.input_numero_alterar_usuario_as.setText(str(dados[12])) 
-            self.ui.input_bairro_alterar_usuario_as.setText(dados[13]) 
-            self.ui.input_cidade_alterar_usuario_as.setText(dados[14])
+            self.ui.input_alterar_nascimento_usuario.setText(dados[2]) 
+            self.ui.input_cpf_alterar_usuario_as.setText(dados[4])
+            self.ui.input_rg_alterar_usuario_as.setText(dados[5])
+            self.ui.input_orgao_expedidor_alterar_usuario_as.setText(dados[6]) 
+            self.ui.input_alterar_nis_usuario_as.setText(dados[7])
+            self.ui.input_alterar_cns_usuario_as.setText(dados[8])
+            self.ui.input_alterar_telefone_usuario_as.setText(dados[10])
+            self.ui.input_alterar_email_usuario_as.setText(dados[11])
+            self.ui.input_cep_alterar_usuario_as.setText(dados[12]) 
+            self.ui.input_logradouro_alterar_usuario_as.setText(dados[13]) 
+            self.ui.input_numero_alterar_usuario_as.setText(str(dados[14])) 
+            self.ui.input_bairro_alterar_usuario_as.setText(dados[15]) 
+            self.ui.input_cidade_alterar_usuario_as.setText(dados[16])
+
+            estadoCivil = str(dados[17])
+            if estadoCivil == 'Solteiro':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(1)
+
+            elif estadoCivil == 'Casado':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(2)
+
+            elif estadoCivil == 'Divorciado':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(3)
+            
+            elif estadoCivil == 'Viúvo':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(4)
+
+            elif estadoCivil == 'Separado':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
+
+            Escolaridade = str(dados[18])
+            if Escolaridade == 'Fundamental':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as(1)
+            
+            elif Escolaridade == 'Fundamental incompleto':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as(2)
+            
+            elif Escolaridade == 'Médio':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as(3)
+
+            elif Escolaridade == 'Médio imcompleto':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as(4)
+
+            elif Escolaridade == 'Superior completo':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as(5)
+            
+            elif Escolaridade == 'Superior incompleto':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as(6)
+
+            pessoa_deficiencia = (dados[19])
+            if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
+                pessoa_deficiencia = 'SIM'
+
+            else:
+                pessoa_deficiencia = 'NÃO'
+
+            tipoDeDeficiencia = (dados[20])
+
+            if tipoDeDeficiencia == 'Visual':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as(1)
+            
+            elif tipoDeDeficiencia == 'Motora':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as(2)
+
+            elif tipoDeDeficiencia == 'Amputada':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as(3)
+
+            elif tipoDeDeficiencia == 'Mental':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as(4)
+
+            elif tipoDeDeficiencia == 'Outra':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as(5)
+
+
+
+
+
 
             return self.ui.page_alterar_usuario
+
         if valorSelecionado == 444:
             return self.ui.page_alterar_colaborador_as
         #if lineEdit_alterar_nome_responsavel_as.text()
@@ -536,7 +602,7 @@ class TelaPrincipal(QMainWindow):
         ################### cuidador ###################################
 
         parentesco = self.ui.input_parentesco_cuidador_as.text()
-        observacao = 'none' #self.ui.input_informacoes_gerais_as.setText()''
+        observacao ='Teste'  #self.ui.input_informacoes_gerais_as.text()
         tupla_cuidador = (parentesco,observacao)
 
         ################## insert #######################################
