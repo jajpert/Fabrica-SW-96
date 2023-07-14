@@ -1212,6 +1212,10 @@ class Ui_Confirma_Saida(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
         Dialog.resize(440, 240)
         Dialog.setMinimumSize(QSize(440, 240))
         Dialog.setMaximumSize(QSize(440, 240))

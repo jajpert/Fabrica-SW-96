@@ -181,14 +181,15 @@ class ConfirmaSaida(QDialog):
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.saida = Ui_Confirma_Saida()
-        self.ui = TelaPrincipal()
+        self.ui = Ui_MainWindow()
         self.popup = Overlay(self)
         self.saida.setupUi(self)
 
-        #btn_nao_popup_confirma_saida = QPushButton(QApplication,QUndoCommand)
 
         self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closeMsg)
         self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.saidaSim)        
+        #self.saida.btn_sim_popup_confirma_saida.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+
 
     def closeMsg(self):
         self.close()
@@ -198,7 +199,7 @@ class ConfirmaSaida(QDialog):
 
     def saidaSim(self):
         #if self.saida.btn_sim_popup_confirma_saida.clicked:
-        #self.ui.show()
+        self.ui.show()
         self.close()
         exit(self.ui)
 
@@ -229,11 +230,12 @@ class TelaPrincipal(QMainWindow):
 
         ###############SIGNALS#################
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
-        #self.saida.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta_as))
