@@ -56,7 +56,7 @@ class DataBase():
             self.close_connection()
 
     def busca_cuidador(self, nome, cpf):
-        print("entrei")
+        print("entrou busca cuidador")
         self.connect()
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,sexo, 
@@ -80,7 +80,7 @@ class DataBase():
 
     
     def busca_usuario(self, nome, cpf):
-        print("entrei")
+        print("entrou busca usuario")
         self.connect()
         try:
             
@@ -108,7 +108,7 @@ class DataBase():
 
 
     def cadastro_usuario(self,endereco,pessoa,usuario):
-        print("Entrou banco!!")
+        print("Entrou cadastro usuario!!")
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
@@ -129,7 +129,7 @@ class DataBase():
             # print(len(usuario))
             # print(len(pessoa))
 
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],id_endereco))
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco))
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
             print(id_matricula)
@@ -177,14 +177,14 @@ class DataBase():
     def cadastro_colaborador(self,endereco,pessoa,colaborador):
         self.connect()
         try:
-            args = (endereco[0],endereco[1],endereco[2],endereco[3])
-            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro) VALUES (%s,%s,%s,%s)', args)
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
         
             id_endereco = self.cursor.lastrowid
             print('ID do endereco',id_endereco)
 
-            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco)
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status_,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],id_endereco)
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             id_matricula = self.cursor.lastrowid
             print('id matricula',id_matricula)
 
