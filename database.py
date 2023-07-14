@@ -15,11 +15,31 @@ class DataBase():
             print("Erro")  
 
 
-    def select(self):
+    def select_pessoa(self):
         self.connect()
         try:
             self.cursor.execute("""
                 SELECT id_matricula FROM pessoa ORDER BY id_matricula DESC LIMIT 1;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
+    def select_colaborador(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_colaborador FROM colaborador ORDER BY id_colaborador DESC LIMIT 1;
             """)
             result = self.cursor.fetchall()
             

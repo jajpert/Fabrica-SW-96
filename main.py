@@ -187,17 +187,24 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
 
         self.db = DataBase()
-        selected_id = self.db.select()
-        ultimo_id = (selected_id[0])
-        ultimo_id = ''.join(map(str, ultimo_id))
-        proximo_id = 1 + int(ultimo_id)
-        proximo_id = str(proximo_id).zfill(4)
 
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id}')
+        ########### selected último id das tabelas do banco ##########
+        selected_pessoa = self.db.select_pessoa()
+        selected_colaborador = self.db.select_colaborador()
+        ultimo_id_pessoa = (selected_pessoa[0])
+        ultimo_id_colaborador = (selected_colaborador[0])
+        ultimo_id_pessoa = ''.join(map(str, ultimo_id_pessoa))
+        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
+        proximo_id_pessoa = 1 + int(ultimo_id_pessoa)
+        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
+        proximo_id_pessoa = str(proximo_id_pessoa).zfill(4)
+        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
+
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_pessoa}')
         self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id}')
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_pessoa}')
         self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id}')
+        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
         self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
 
 
@@ -599,7 +606,8 @@ class TelaPrincipal(QMainWindow):
         ##################### cargo ###########################################
 
         salario = self.ui.input_salario_colaborador_as.text()
-        data_admissao = "0000-00-00"
+        data_admi = self.ui.input_data_admissao_colaborador_as_5.text()
+        data_admissao = "-".join(data_admi.split("/")[::-1])
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
         cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
