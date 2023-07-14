@@ -185,17 +185,23 @@ class ConfirmaSaida(QDialog):
         self.popup = Overlay(self)
         self.saida.setupUi(self)
 
+        #btn_nao_popup_confirma_saida = QPushButton(QApplication,QUndoCommand)
+
         self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closeMsg)
-        #self.saida.btn_sim_popup_confirma_saida.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))        
+        self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.saidaSim)        
 
     def closeMsg(self):
         self.close()
 
-    
+    '''def destroy(self, destroyWindow: bool = True, destroySubWindows: bool = True) -> None:
+        return super().destroy(destroyWindow, destroySubWindows)'''
 
-    '''def saidaSim(self):
-        #self.close()
-        self.ui.show() '''  
+    def saidaSim(self):
+        #if self.saida.btn_sim_popup_confirma_saida.clicked:
+        #self.ui.show()
+        self.close()
+        exit(self.ui)
+
 
 
 #############################################################################
@@ -738,7 +744,7 @@ class TelaPrincipal(QMainWindow):
         msg = ConfirmaSaida(self)
         self.popup.show()
         msg.exec()
-        self.popup.hide()
+        self.popup.close()
 
 
         
