@@ -5054,7 +5054,7 @@ QPushButton:pressed{
                                 <item>
                                  <widget class="QFrame" name="frame_438">
                                   <property name="enabled">
-                                   <bool>false</bool>
+                                   <bool>true</bool>
                                   </property>
                                   <property name="minimumSize">
                                    <size>
@@ -24441,7 +24441,7 @@ QPushButton:pressed{
                                                        <number>0</number>
                                                       </property>
                                                       <item>
-                                                       <widget class="QLabel" name="label_alterar_situacao_trabalho_usuario_as">
+                                                       <widget class="QLabel" name="label_situacao_trabalho_alterar_usuario_as">
                                                         <property name="minimumSize">
                                                          <size>
                                                           <width>0</width>
@@ -24466,7 +24466,7 @@ QPushButton:pressed{
                                                        </widget>
                                                       </item>
                                                       <item>
-                                                       <widget class="QComboBox" name="input_alterar_situacao_trabalho_usuario_as">
+                                                       <widget class="QComboBox" name="input_situacao_trabalho_alterar_usuario_as">
                                                         <property name="minimumSize">
                                                          <size>
                                                           <width>0</width>
@@ -24608,7 +24608,7 @@ QPushButton:pressed{
                                                         </spacer>
                                                        </item>
                                                        <item>
-                                                        <widget class="QLineEdit" name="input_situacao_trabalho_outros_usuario_as_2">
+                                                        <widget class="QLineEdit" name="input_situacao_trabalho_outros_alterar_usuario_as">
                                                          <property name="enabled">
                                                           <bool>true</bool>
                                                          </property>
@@ -32402,38 +32402,5 @@ QPushButton:focus{outline:0}</string>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>input_situacao_trabalho_outros_usuario_as</sender>
-   <signal>cursorPositionChanged(int,int)</signal>
-   <receiver>input_situacao_trabalho_usuario_as</receiver>
-   <slot>setCurrentIndex(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>690</x>
-     <y>530</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>586</x>
-     <y>534</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>input_situacao_trabalho_usuario_as</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>input_situacao_trabalho_outros_usuario_as</receiver>
-   <slot>setText(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>486</x>
-     <y>526</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>644</x>
-     <y>531</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

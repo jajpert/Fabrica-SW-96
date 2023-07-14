@@ -216,7 +216,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.busca_pessoa()))
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
-
+        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
+        
 
 
         #################SIGNALS CEP#################
@@ -265,7 +267,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-    
+        
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -689,8 +691,26 @@ class TelaPrincipal(QMainWindow):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
+    def on_tipo_usuario_changed(self):
+            
+        if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":  
+            
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(True)
+                       
+        else:
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_usuario_as.clear()
+            
+    def on_tipo_alterar_usuario_changed(self):
 
-        
+        if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
+
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
+        else:
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
+
+   
 
 
 if __name__ == "__main__":
