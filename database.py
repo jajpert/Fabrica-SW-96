@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec2',user='root',password='3545')
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -76,7 +76,7 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def busca_cuidador(self, nome, cpf):
+    def busca_cuidador(self, cpf):
         print("entrou busca cuidador")
         self.connect()
         try:
@@ -99,7 +99,7 @@ class DataBase():
             self.close_connection()
 
     
-    def busca_usuario(self, nome, cpf):
+    def busca_usuario(self, cpf):
         print("entrou busca usuario")
         self.connect()
         try:
@@ -199,9 +199,9 @@ class DataBase():
             print(id_matricula)
 
             self.cursor.execute("""
-                INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula,id_beneficio,id_clinica,id_curso) 
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula,1,1,1))
+                INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula) 
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],id_matricula))
 
             self.conn.commit()
 

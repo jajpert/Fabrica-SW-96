@@ -856,7 +856,7 @@ class TelaPrincipal(QMainWindow):
 
         ######################## insert ##################################
         result = []
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario,tupla_cuidador)
+        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         print(result)
         # result = []
         self.msg(result[0],result[1])
