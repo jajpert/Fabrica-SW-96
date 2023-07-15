@@ -491,6 +491,9 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
+        if patologia_base == "Outros":
+            #outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
+           
         data_ini = self.ui.input_data_inicio_usuario_as.text()
         data_inicio = "-".join(data_ini.split("/")[::-1])
         periodo = self.ui.input_periodo_usuario_as.currentText()
@@ -611,7 +614,7 @@ class TelaPrincipal(QMainWindow):
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
         cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
-        descricao_cargo = self.ui.input_descricao_cargo_colaborador_as.text()
+        
         
 
         #################### login e senha ####################################
@@ -621,7 +624,7 @@ class TelaPrincipal(QMainWindow):
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
         perfil = 'adm'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
-        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil,descricao_cargo)
+        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
 
         #################### insert ##########################################
         result = []
