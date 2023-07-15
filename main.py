@@ -636,7 +636,7 @@ class TelaPrincipal(QMainWindow):
         if valorSelecionado == 3:
             dados = self.db.busca_usuario(cpf)
             print(dados)
-            sexo = str(dados[8]) #
+            sexo = str(dados[10]) #
             if sexo == 'Masculino':
                 self.ui.input_alterar_sexo_colaborador_comboBox_as.setCurrentIndex(1)
             else:
@@ -653,104 +653,104 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_data_nascimento_colaborador_as.date().toString(str(dados[2]))
-            self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
-            self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
-            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(dados[7])#
-            self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(dados[6]) #
-            # self.ui.input_alterar_pis_colaborador_as.setText(dados[8]) #
-            self.ui.input_alterar_telefone_colaborador_as.setText(dados[9])
-            self.ui.input_alterar_email_colaborador_as.setText(dados[10 ])
-            # self.ui.input_alterar_cep_colaborador_as.setText(dados[12])
-            # self.ui.input_alterar_logradouro_colaborador_as.setText(dados[13])
-            # self.ui.input_alterar_numero_colaborador_as.setText(str(dados[14]))
-            # self.ui.input_alterar_bairro_colaborador_as.setText(str(dados[15]))
-            # self.ui.input_alterar_cidade_colaborador_as.setText(str(dados[16]))
-            # self.ui.input_alterar_estado_colaborador_as.setText(str(dados[17]))
+            self.ui.input_alterar_cpf_colaborador_as.setText(dados[4]) #
+            self.ui.input_alterar_rg_colaborador_as.setText(dados[5]) #
+            self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[7]))
+            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(dados[8])
+            self.ui.input_alterar_pis_colaborador_as.setText(dados[9]) #
+            self.ui.input_alterar_telefone_colaborador_as.setText(dados[11])
+            self.ui.input_alterar_email_colaborador_as.setText(dados[12 ])
+            self.ui.input_alterar_cep_colaborador_as.setText(dados[13])
+            self.ui.input_alterar_logradouro_colaborador_as.setText(dados[14])
+            self.ui.input_alterar_numero_colaborador_as.setText(str(dados[15]))
+            self.ui.input_alterar_bairro_colaborador_as.setText(str(dados[16]))
+            self.ui.input_alterar_cidade_colaborador_as.setText(str(dados[17]))
+            self.ui.input_alterar_estado_colaborador_as.setText(str(dados[18]))
 
-            # estadoCivil = str(dados[18]) #
-            # if estadoCivil == 'Solteiro':
-            #     self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(1)
+            estadoCivil = str(dados[19]) #
+            if estadoCivil == 'Solteiro':
+                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(1)
 
-            # elif estadoCivil == 'Casado':
-            #     self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(2)
+            elif estadoCivil == 'Casado':
+                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(2)
 
-            # elif estadoCivil == 'Divorciado':
-            #     self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(3)
+            elif estadoCivil == 'Divorciado':
+                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(3)
             
-            # elif estadoCivil == 'Viúvo':
-            #     self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(4)
+            elif estadoCivil == 'Viúvo':
+                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(4)
 
-            # elif estadoCivil == 'Separado':
-            #     self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(5)
+            elif estadoCivil == 'Separado':
+                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(5)
 
 
-            # pessoa_deficiencia = (dados[19])
+            pessoa_deficiencia = (dados[20])
 
-            # if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
-            #     pessoa_deficiencia = 'SIM'
+            if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
+                pessoa_deficiencia = 'SIM'
 
-            # else:
-            #     pessoa_deficiencia = 'NÃO'
+            else:
+                pessoa_deficiencia = 'NÃO'
 
-            # self.ui.input_alterar_tipo_deficiencia_colaborador_as.setText(dados[20])
+            self.ui.input_alterar_tipo_deficiencia_colaborador_as.setText(dados[21])
 
-            # Escolaridade = str(dados[21])
-            # if Escolaridade == 'Fundamental':
-            #     self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(1)
+            Escolaridade = str(dados[22])
+            if Escolaridade == 'Fundamental':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(1)
             
-            # elif Escolaridade == 'Fundamental incompleto':
-            #     self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(2)
+            elif Escolaridade == 'Fundamental incompleto':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(2)
             
-            # elif Escolaridade == 'Médio':
-            #     self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(3)
+            elif Escolaridade == 'Médio':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(3)
 
-            # elif Escolaridade == 'Médio imcompleto':
-            #     self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(4)
+            elif Escolaridade == 'Médio imcompleto':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(4)
 
-            # elif Escolaridade == 'Superior completo':
-            #     self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(5)
+            elif Escolaridade == 'Superior completo':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(5)
             
-            # elif Escolaridade == 'Superior incompleto':
-            #     self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(6)
+            elif Escolaridade == 'Superior incompleto':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(6)
 
-            # cargo = str(dados[22])
+            cargo = str(dados[23])
 
-            # if cargo == 'Recepcionista':
-            #     self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(1)
+            if cargo == 'Recepcionista':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(1)
 
-            # elif cargo == 'Assistente Social':
-            #     self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(2)
+            elif cargo == 'Assistente Social':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(2)
 
-            # elif cargo == 'Farmacêutico (a)':
-            #     self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(3)
+            elif cargo == 'Farmacêutico (a)':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(3)
 
-            # elif cargo == 'Psicólogo (a)':
-            #     self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(4)
+            elif cargo == 'Psicólogo (a)':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(4)
 
-            # elif cargo == 'Fisioterapeuta':
-            #     self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(4)
+            elif cargo == 'Fisioterapeuta':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(4)
 
-            # elif cargo == 'Nutricionista':
-            #     self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(5)
+            elif cargo == 'Nutricionista':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(5)
 
-            # periodo = str(dados[23])
+            periodo = str(dados[24])
 
-            # if periodo == 'Matutino':
-            #     self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
+            if periodo == 'Matutino':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
 
-            # elif periodo == 'Vespertino':
-            #     self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(2)
+            elif periodo == 'Vespertino':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(2)
 
-            # elif periodo == 'Noturno':
-            #     self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
+            elif periodo == 'Noturno':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
 
-            # elif periodo == 'Integral':
-            #     self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(4)
+            elif periodo == 'Integral':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(4)
 
-            # self.ui.input_alterar_salario_colaborador_as.setText(dados[24])
-            # self.ui.input_alterar_descricao_cargo_colaborador_as.setText(dados[25])
+            self.ui.input_alterar_salario_colaborador_as.setText(dados[25])
+            self.ui.input_alterar_descricao_cargo_colaborador_as.setText(dados[26])
 
-            # self.ui.input_alterar_observacoes_gerais_colaborador_as.setHtml(dados[26])
+            self.ui.input_alterar_observacoes_gerais_colaborador_as.setHtml(dados[27])
 
 
             return self.ui.page_alterar_colaborador_as
@@ -899,17 +899,11 @@ class TelaPrincipal(QMainWindow):
         email = self.ui.input_email_colaborador_as.text()      
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
-        if self.ui.input_pessoa_cdeficiencia_sim_colaborador_as.isChecked():
-            pessoa_deficiencia = 'S'
-        else:
-            pessoa_deficiencia = 'N'
         if self.ui.input_situacao_ativo_usuario_as.isChecked():
             status = 'Ativo'
         else:
             status = 'Inativo'
-        # tipo_deficiencia = self.ui.input_tipo_deficiencia_colaborador_as.text()
-
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil,pessoa_deficiencia)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,data_cadastro,telefone,email,escolaridade,estado_civil)
 
         ##################### cargo ###########################################
 
@@ -917,9 +911,7 @@ class TelaPrincipal(QMainWindow):
         data_admissao = '2023-00-00'
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
-        cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
-        descricao_cargo = self.ui.input_descricao_cargo_colaborador_as.text()
-        
+        cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO        
 
         #################### login e senha ####################################
 
@@ -928,7 +920,7 @@ class TelaPrincipal(QMainWindow):
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
         perfil = 'adm'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
-        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil,descricao_cargo)
+        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
 
         #################### insert ##########################################
         result = []

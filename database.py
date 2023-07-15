@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec2',user='root',password='3545')
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='thiago',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -111,12 +111,10 @@ class DataBase():
         print("entrei")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,  sexo, 
-                                    telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, pessoa_deficiencia, escolaridade, cargo, periodo, salario, descricao_cargo,
-                                    observacao,colaborador.pis,
-                                    from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
-                                    left join cuidador on pessoa.id_matricula = cuidador.id_matricula 
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,colaborador.pis,
+                                    sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
+                                    estado_civil, escolaridade, cargo, periodo, salario
+                                    from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
                                     left join colaborador on pessoa.id_matricula = colaborador.id_colaborador
                                     where cpf like '%{cpf}%';""")
             result = self.cursor.fetchall()
@@ -216,8 +214,8 @@ class DataBase():
             print('id matricula',id_matricula)
 
             self.cursor.execute("""
-                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,descricao_cargo,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],colaborador[8],id_matricula))
+                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """,(colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula))
             id_colaborador = self.cursor.lastrowid
             print(id_colaborador)
 
@@ -293,47 +291,6 @@ class DataBase():
             self.cursor.close()
             self.conn.close()
             print("Conexão encerrada com sucesso!!")
-
-
-
-
-    def SalvarFotoBanco(FilePath,self):
-        #Função onde o usuario consegue selecionar o File
-        with open (FilePath,"rb") as File:
-
-            #Cria uma função onde escreve o arquivo como binario
-            BinaryData = File.read()
-
-        #Função Criada para dar Insert da imagem dentro da tabela desejada 
-        SQlStatement = "INSERT INTO imagem_save (imagem) values (%s)"
-        
-        #Função onde ele executa as duas funções *BinaryData, SQLStatement* e adiciona dentro do banco de dados
-        self.cursor.execute(SQlStatement, (BinaryData, ))
-        db.commit()
-
-
-
-    def PuxarFotoBanco(id,self):
-
-        #Função criada para dar select na tabela selecionada buscando a imagem pelo id selecionado/inserido
-        SQLStatement2 = "SELECT * FROM imagem_save WHERE id = '{0}'"
-        
-        #Executa o select da tabela selecionada e puxa o arquivo com base no id solicitado pelo usuario
-        self.cursor.execute(SQLStatement2.format(str(id)))
-        
-        #Retorna uma unica sequencia por padrão, a tupla retornada consiste em dados retornados pelo servidor MySQL, convertidos em objetos Python
-        MyResult = self.cursor.fetchone()[1]
-        
-        #Função em q salva a imagem com o nome de capture{id}.png, onde o id em q a imagem consta é alterado no nome do arquivo
-        StoreFilePath = "capture{0}.png".format(str(id))
-        
-        #Mostra o numero binario da imagem
-        print(MyResult)
-        
-        #Salva a imagem com o nome inserido na função StoreFilePath *capture{id}.png* para poder ser visualizada
-        with open(StoreFilePath, "wb") as File:
-            File.write(MyResult)
-            File.close()
 
 if __name__ == "__main__":
     db = DataBase()
