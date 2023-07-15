@@ -187,7 +187,7 @@ class ConfirmaSaida(QDialog):
 
 
         self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closeMsg)
-        self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.saidaSim)        
+              
         #self.saida.btn_sim_popup_confirma_saida.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
 
 
@@ -197,11 +197,8 @@ class ConfirmaSaida(QDialog):
     '''def destroy(self, destroyWindow: bool = True, destroySubWindows: bool = True) -> None:
         return super().destroy(destroyWindow, destroySubWindows)'''
 
-    def saidaSim(self):
-        #if self.saida.btn_sim_popup_confirma_saida.clicked:
-        self.ui.show()
-        self.close()
-        exit(self.ui)
+    
+        
 
 
 
@@ -218,6 +215,8 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()        
 
+        self.saida = Ui_Confirma_Saida()
+        self.saida.setupUi(self)
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -230,7 +229,7 @@ class TelaPrincipal(QMainWindow):
 
         ###############SIGNALS#################
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        
+        self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.saidaSim)  
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
@@ -747,6 +746,11 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.close()
+
+    def saidaSim(self):
+        #if self.saida.btn_sim_popup_confirma_saida.clicked:
+        self.ui.login.show()
+        self.close()
 
 
         
