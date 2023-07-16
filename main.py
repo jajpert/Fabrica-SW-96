@@ -713,22 +713,35 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_nome_usuario_as.setText("")
 
     def on_tipo_usuario_changed(self):
-            
-        if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":  
-            
+        
+        if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":
+            self.ui.frame_438.setEnabled(True)
+            self.ui.frame_438.show()
+            self.ui.input_situacao_trabalho_outros_usuario_as.setStyleSheet("")  
             self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(True)
-                       
+            self.ui.input_situacao_trabalho_outros_usuario_as.show()           
         else:
+            self.ui.frame_438.hide()
+            self.ui.frame_438.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
             self.ui.input_situacao_trabalho_outros_usuario_as.clear()
+            
             
     def on_tipo_alterar_usuario_changed(self):
 
         if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
-
+            self.ui.frame_439.setEnabled(True)
+            self.ui.frame_439.show()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet("") 
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.show()
+            
         else:
+            self.ui.frame_439.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
 
    
@@ -738,11 +751,13 @@ if __name__ == "__main__":
     
     myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid) 
-
+    
     app = QApplication(sys.argv)
 
     app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
-
+    
     w = TelaPrincipal()
+    
     w.show()
     app.exec()
+    

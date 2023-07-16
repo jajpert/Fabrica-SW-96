@@ -5054,7 +5054,7 @@ QPushButton:pressed{
                                 <item>
                                  <widget class="QFrame" name="frame_438">
                                   <property name="enabled">
-                                   <bool>true</bool>
+                                   <bool>false</bool>
                                   </property>
                                   <property name="minimumSize">
                                    <size>
@@ -5124,6 +5124,11 @@ QPushButton:pressed{
                                       <font>
                                        <family>Abel</family>
                                       </font>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">    border: none;
+    background-color: rgba(0, 0, 0, 0);
+</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -24542,17 +24547,27 @@ QPushButton:pressed{
                                                    </item>
                                                    <item>
                                                     <widget class="QFrame" name="frame_439">
+                                                     <property name="enabled">
+                                                      <bool>false</bool>
+                                                     </property>
                                                      <property name="minimumSize">
                                                       <size>
                                                        <width>145</width>
-                                                       <height>60</height>
+                                                       <height>0</height>
                                                       </size>
                                                      </property>
                                                      <property name="maximumSize">
                                                       <size>
-                                                       <width>160</width>
+                                                       <width>145</width>
                                                        <height>16777215</height>
                                                       </size>
+                                                     </property>
+                                                     <property name="styleSheet">
+                                                      <string notr="true">QWidget frame_439 {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+</string>
                                                      </property>
                                                      <property name="frameShape">
                                                       <enum>QFrame::StyledPanel</enum>
@@ -24560,7 +24575,7 @@ QPushButton:pressed{
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <layout class="QVBoxLayout" name="verticalLayout_307">
+                                                     <layout class="QVBoxLayout" name="verticalLayout_306">
                                                       <property name="spacing">
                                                        <number>0</number>
                                                       </property>
@@ -24577,82 +24592,47 @@ QPushButton:pressed{
                                                        <number>0</number>
                                                       </property>
                                                       <item>
-                                                       <widget class="QFrame" name="frame_440">
+                                                       <spacer name="verticalSpacer_22">
+                                                        <property name="orientation">
+                                                         <enum>Qt::Vertical</enum>
+                                                        </property>
+                                                        <property name="sizeHint" stdset="0">
+                                                         <size>
+                                                          <width>20</width>
+                                                          <height>40</height>
+                                                         </size>
+                                                        </property>
+                                                       </spacer>
+                                                      </item>
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_situacao_trabalho_outros_alterar_usuario_as">
                                                         <property name="enabled">
-                                                         <bool>true</bool>
+                                                         <bool>false</bool>
                                                         </property>
                                                         <property name="minimumSize">
                                                          <size>
-                                                          <width>145</width>
+                                                          <width>140</width>
                                                           <height>0</height>
                                                          </size>
                                                         </property>
                                                         <property name="maximumSize">
                                                          <size>
-                                                          <width>145</width>
+                                                          <width>140</width>
                                                           <height>16777215</height>
                                                          </size>
                                                         </property>
-                                                        <property name="frameShape">
-                                                         <enum>QFrame::StyledPanel</enum>
+                                                        <property name="font">
+                                                         <font>
+                                                          <family>Abel</family>
+                                                         </font>
                                                         </property>
-                                                        <property name="frameShadow">
-                                                         <enum>QFrame::Raised</enum>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+</string>
                                                         </property>
-                                                        <layout class="QVBoxLayout" name="verticalLayout_306">
-                                                         <property name="spacing">
-                                                          <number>0</number>
-                                                         </property>
-                                                         <property name="leftMargin">
-                                                          <number>0</number>
-                                                         </property>
-                                                         <property name="topMargin">
-                                                          <number>0</number>
-                                                         </property>
-                                                         <property name="rightMargin">
-                                                          <number>0</number>
-                                                         </property>
-                                                         <property name="bottomMargin">
-                                                          <number>0</number>
-                                                         </property>
-                                                         <item>
-                                                          <spacer name="verticalSpacer_22">
-                                                           <property name="orientation">
-                                                            <enum>Qt::Vertical</enum>
-                                                           </property>
-                                                           <property name="sizeHint" stdset="0">
-                                                            <size>
-                                                             <width>20</width>
-                                                             <height>40</height>
-                                                            </size>
-                                                           </property>
-                                                          </spacer>
-                                                         </item>
-                                                         <item>
-                                                          <widget class="QLineEdit" name="input_situacao_trabalho_outros_alterar_usuario_as">
-                                                           <property name="enabled">
-                                                            <bool>false</bool>
-                                                           </property>
-                                                           <property name="minimumSize">
-                                                            <size>
-                                                             <width>140</width>
-                                                             <height>0</height>
-                                                            </size>
-                                                           </property>
-                                                           <property name="maximumSize">
-                                                            <size>
-                                                             <width>140</width>
-                                                             <height>16777215</height>
-                                                            </size>
-                                                           </property>
-                                                           <property name="font">
-                                                            <font>
-                                                             <family>Abel</family>
-                                                            </font>
-                                                           </property>
-                                                          </widget>
-                                                         </item>
-                                                        </layout>
                                                        </widget>
                                                       </item>
                                                      </layout>

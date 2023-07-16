@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecHNlZsO.ui'
+## Form generated from reading UI file 'telas_abreclbIgUZ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.0
 ##
@@ -10,7 +10,6 @@
 
 from qtcore import * 
 from icons import *
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -74,7 +73,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(36)
         self.label_Logo_ABREC.setFont(font1)
         self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
-        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
+        self.label_Logo_ABREC.setPixmap(QPixmap(u"/icons/Logo ABREC.png"))
         self.label_Logo_ABREC.setScaledContents(True)
 
         self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
@@ -149,7 +148,7 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(25, 25))
         self.label_2.setStyleSheet(u"QLabel{border-radius: 16px; background-color: #fff}")
-        self.label_2.setPixmap(QPixmap(u"./icons/pessoas.png"))
+        self.label_2.setPixmap(QPixmap(u"/icons/pessoas.png"))
         self.label_2.setScaledContents(True)
 
         self.horizontalLayout_29.addWidget(self.label_2)
@@ -185,7 +184,7 @@ class Ui_MainWindow(object):
         self.toolButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toolButton.setStyleSheet(u"background-color: #fff; border: hidden")
         icon = QIcon()
-        icon.addFile(u"./icons/olho_fechado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"/icons/olho_fechado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.toolButton.setIcon(icon)
         self.toolButton.setIconSize(QSize(25, 25))
 
@@ -302,7 +301,7 @@ class Ui_MainWindow(object):
         self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
         self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
         self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
-        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
+        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"/icons/Abrec logo paint-02 (2).png"))
         self.label_Abrec_Logo_Paint.setScaledContents(True)
 
         self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
@@ -358,7 +357,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_foto_senha_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_foto_senha_as.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
         icon1 = QIcon()
-        icon1.addFile(u"./icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"/icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_foto_senha_as.setIcon(icon1)
         self.btn_alterar_foto_senha_as.setIconSize(QSize(140, 180))
 
@@ -409,7 +408,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon2 = QIcon()
-        icon2.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"/icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_as.setIcon(icon2)
         self.btn_cadastrar_as.setIconSize(QSize(30, 30))
 
@@ -425,7 +424,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon3 = QIcon()
-        icon3.addFile(u"./icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"/icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_consulta_as.setIcon(icon3)
         self.btn_consulta_as.setIconSize(QSize(30, 30))
 
@@ -441,7 +440,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon4 = QIcon()
-        icon4.addFile(u"./icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"/icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_agenda_as.setIcon(icon4)
         self.btn_agenda_as.setIconSize(QSize(30, 30))
 
@@ -457,7 +456,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon5 = QIcon()
-        icon5.addFile(u"./icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"/icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_relatorios_as.setIcon(icon5)
         self.btn_relatorios_as.setIconSize(QSize(30, 30))
 
@@ -509,7 +508,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
         icon6 = QIcon()
-        icon6.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u"/icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_sair_as.setIcon(icon6)
         self.btn_sair_as.setIconSize(QSize(24, 24))
 
@@ -545,7 +544,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_2 = QStackedWidget(self.frame_10)
         self.stackedWidget_2.setObjectName(u"stackedWidget_2")
         self.page_principal_as = QWidget()
@@ -587,7 +586,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon7 = QIcon()
-        icon7.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"/icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_cuidador_usuario_as.setIcon(icon7)
         self.btn_cadastrar_cuidador_usuario_as.setIconSize(QSize(80, 80))
 
@@ -604,7 +603,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon8 = QIcon()
-        icon8.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"/icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_colaborador_as.setIcon(icon8)
         self.btn_cadastrar_colaborador_as.setIconSize(QSize(80, 80))
 
@@ -621,7 +620,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon9 = QIcon()
-        icon9.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u"/icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_cursos_oficinas_as.setIcon(icon9)
         self.btn_cadastrar_cursos_oficinas_as.setIconSize(QSize(80, 80))
 
@@ -638,7 +637,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon10 = QIcon()
-        icon10.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u"/icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_alterar_dados_as.setIcon(icon10)
         self.btn_cadastrar_alterar_dados_as.setIconSize(QSize(80, 80))
 
@@ -718,7 +717,7 @@ class Ui_MainWindow(object):
         self.btn_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_foto_usuario_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
         icon11 = QIcon()
-        icon11.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u"/icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_foto_usuario_as.setIcon(icon11)
         self.btn_foto_usuario_as.setIconSize(QSize(120, 120))
 
@@ -1315,7 +1314,7 @@ class Ui_MainWindow(object):
 "        color: rgb(249, 217, 221);   \n"
 "}")
         icon12 = QIcon()
-        icon12.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon12.addFile(u"/icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cep_buscar_usuario_as.setIcon(icon12)
 
         self.verticalLayout_286.addWidget(self.btn_cep_buscar_usuario_as)
@@ -1820,7 +1819,7 @@ class Ui_MainWindow(object):
 
         self.frame_438 = QFrame(self.frame_43)
         self.frame_438.setObjectName(u"frame_438")
-        self.frame_438.setEnabled(True)
+        self.frame_438.setEnabled(False)
         self.frame_438.setMinimumSize(QSize(145, 0))
         self.frame_438.setMaximumSize(QSize(145, 16777215))
         self.frame_438.setFrameShape(QFrame.StyledPanel)
@@ -1841,6 +1840,9 @@ class Ui_MainWindow(object):
         font10 = QFont()
         font10.setFamilies([u"Abel"])
         self.input_situacao_trabalho_outros_usuario_as.setFont(font10)
+        self.input_situacao_trabalho_outros_usuario_as.setStyleSheet(u"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"")
 
         self.verticalLayout_305.addWidget(self.input_situacao_trabalho_outros_usuario_as)
 
@@ -2203,7 +2205,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon13 = QIcon()
-        icon13.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u"/icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_observacoes_sigilo_as.setIcon(icon13)
         self.btn_observacoes_sigilo_as.setIconSize(QSize(28, 28))
 
@@ -3246,7 +3248,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon14 = QIcon()
-        icon14.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon14.addFile(u"/icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_observacoes_sigilosas_as.setIcon(icon14)
         self.btn_cancelar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
@@ -3261,7 +3263,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon15 = QIcon()
-        icon15.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u"/icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_salvar_observacoes_sigilosas_as.setIcon(icon15)
         self.btn_salvar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
@@ -3276,7 +3278,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon16 = QIcon()
-        icon16.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u"/icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excluir_observacoes_sigilosas_as.setIcon(icon16)
         self.btn_excluir_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
@@ -5547,7 +5549,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon17 = QIcon()
-        icon17.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon17.addFile(u"/icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_lista_pessoas_cursos_as.setIcon(icon17)
         self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
 
@@ -5908,7 +5910,7 @@ class Ui_MainWindow(object):
         self.btn_buscar_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_buscar_consulta_as.setStyleSheet(u"background-color: #F9D9DD; border: none")
         icon18 = QIcon()
-        icon18.addFile(u"./icons/marca-de-verificacao.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon18.addFile(u"/icons/marca-de-verificacao.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_consulta_as.setIcon(icon18)
         self.btn_buscar_consulta_as.setIconSize(QSize(40, 40))
 
@@ -6113,7 +6115,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon19 = QIcon()
-        icon19.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon19.addFile(u"/icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_imprimir_consulta_as.setIcon(icon19)
         self.btn_imprimir_consulta_as.setIconSize(QSize(25, 25))
 
@@ -8901,22 +8903,17 @@ class Ui_MainWindow(object):
 
         self.frame_439 = QFrame(self.frame_347)
         self.frame_439.setObjectName(u"frame_439")
-        self.frame_439.setMinimumSize(QSize(145, 60))
-        self.frame_439.setMaximumSize(QSize(160, 16777215))
+        self.frame_439.setEnabled(False)
+        self.frame_439.setMinimumSize(QSize(145, 0))
+        self.frame_439.setMaximumSize(QSize(145, 16777215))
+        self.frame_439.setStyleSheet(u"QWidget frame_439 {\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"")
         self.frame_439.setFrameShape(QFrame.StyledPanel)
         self.frame_439.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_307 = QVBoxLayout(self.frame_439)
-        self.verticalLayout_307.setSpacing(0)
-        self.verticalLayout_307.setObjectName(u"verticalLayout_307")
-        self.verticalLayout_307.setContentsMargins(0, 0, 0, 0)
-        self.frame_440 = QFrame(self.frame_439)
-        self.frame_440.setObjectName(u"frame_440")
-        self.frame_440.setEnabled(True)
-        self.frame_440.setMinimumSize(QSize(145, 0))
-        self.frame_440.setMaximumSize(QSize(145, 16777215))
-        self.frame_440.setFrameShape(QFrame.StyledPanel)
-        self.frame_440.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_306 = QVBoxLayout(self.frame_440)
+        self.verticalLayout_306 = QVBoxLayout(self.frame_439)
         self.verticalLayout_306.setSpacing(0)
         self.verticalLayout_306.setObjectName(u"verticalLayout_306")
         self.verticalLayout_306.setContentsMargins(0, 0, 0, 0)
@@ -8924,17 +8921,19 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_306.addItem(self.verticalSpacer_22)
 
-        self.input_situacao_trabalho_outros_alterar_usuario_as = QLineEdit(self.frame_440)
+        self.input_situacao_trabalho_outros_alterar_usuario_as = QLineEdit(self.frame_439)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setObjectName(u"input_situacao_trabalho_outros_alterar_usuario_as")
         self.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMinimumSize(QSize(140, 0))
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMaximumSize(QSize(140, 16777215))
         self.input_situacao_trabalho_outros_alterar_usuario_as.setFont(font10)
+        self.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet(u"\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"")
 
         self.verticalLayout_306.addWidget(self.input_situacao_trabalho_outros_alterar_usuario_as)
-
-
-        self.verticalLayout_307.addWidget(self.frame_440)
 
 
         self.horizontalLayout_113.addWidget(self.frame_439)
@@ -10803,7 +10802,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon20 = QIcon()
-        icon20.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon20.addFile(u"/icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_farm.setIcon(icon20)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
@@ -10818,7 +10817,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon21 = QIcon()
-        icon21.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon21.addFile(u"/icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_retirar_farm.setIcon(icon21)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
@@ -10833,7 +10832,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon22 = QIcon()
-        icon22.addFile(u"./icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon22.addFile(u"/icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_estoque_farm.setIcon(icon22)
         self.btn_estoque_farm.setIconSize(QSize(30, 30))
 
@@ -10920,7 +10919,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_4 = QStackedWidget(self.frame_22)
         self.stackedWidget_4.setObjectName(u"stackedWidget_4")
         self.page_principal_farm = QWidget()
@@ -11110,7 +11109,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22 = QHBoxLayout(self.frame_29)
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_22.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_5 = QStackedWidget(self.frame_29)
         self.stackedWidget_5.setObjectName(u"stackedWidget_5")
         self.page_principal_fisio = QWidget()
@@ -11204,7 +11203,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon23 = QIcon()
-        icon23.addFile(u"./icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon23.addFile(u"/icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_plano_alimentar_nutri.setIcon(icon23)
         self.btn_plano_alimentar_nutri.setIconSize(QSize(30, 30))
 
@@ -11317,7 +11316,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19 = QHBoxLayout(self.frame_26)
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.horizontalLayout_19.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_6 = QStackedWidget(self.frame_26)
         self.stackedWidget_6.setObjectName(u"stackedWidget_6")
         self.page_principal_nutri = QWidget()
@@ -11565,7 +11564,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24 = QHBoxLayout(self.frame_31)
         self.horizontalLayout_24.setSpacing(0)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.horizontalLayout_24.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_7 = QStackedWidget(self.frame_31)
         self.stackedWidget_7.setObjectName(u"stackedWidget_7")
         self.page_principal_psi = QWidget()
@@ -11676,7 +11675,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon24 = QIcon()
-        icon24.addFile(u"./icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon24.addFile(u"/icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_eventos_sec.setIcon(icon24)
         self.btn_eventos_sec.setIconSize(QSize(30, 30))
 
@@ -11775,7 +11774,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14 = QHBoxLayout(self.frame_16)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalLayout_14.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_3 = QStackedWidget(self.frame_16)
         self.stackedWidget_3.setObjectName(u"stackedWidget_3")
         self.page_principal_sec = QWidget()
