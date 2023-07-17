@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1763</width>
+    <width>1872</width>
     <height>892</height>
    </rect>
   </property>
@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                    <item>
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>10</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -25115,6 +25115,19 @@ QPushButton:pressed{
                                                       </item>
                                                      </layout>
                                                     </widget>
+                                                   </item>
+                                                   <item>
+                                                    <spacer name="horizontalSpacer_73">
+                                                     <property name="orientation">
+                                                      <enum>Qt::Horizontal</enum>
+                                                     </property>
+                                                     <property name="sizeHint" stdset="0">
+                                                      <size>
+                                                       <width>40</width>
+                                                       <height>20</height>
+                                                      </size>
+                                                     </property>
+                                                    </spacer>
                                                    </item>
                                                   </layout>
                                                  </widget>
