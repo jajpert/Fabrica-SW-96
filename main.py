@@ -415,18 +415,20 @@ class TelaPrincipal(QMainWindow):
 
 
 
-    
+        #######################USUARIO####################################################
+
         elif valorSelecionado == 2:
             print ('to funfando == 2\n')
             dados = self.db.busca_usuario(cpf)
             print(dados)
         
-            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
-            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
-            self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2])) #
-            self.ui.input_alterar_cpf_cuidador_as.setText(dados[4])
+            self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
+            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
             self.ui.input_alterar_data_emissao_usuario_as.date().toString(str(dados[6])) #
             self.ui.input_alterar_orgao_expedidor_usuario_as.setText(dados[7]) #
@@ -434,9 +436,9 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_cns_usuario_as.setText(dados[9]) #
             sexo = dados[10]
             if sexo == 'Masculino':
-                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(1)
             elif sexo == 'Feminino':
-                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(2)
             self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
             self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
             self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
@@ -610,7 +612,7 @@ class TelaPrincipal(QMainWindow):
 
             self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[27])
 
-            patologiaBase = str(dados[30])
+            patologiaBase = dados[30]
 
             if patologiaBase == 'Hipertensão':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
@@ -632,7 +634,7 @@ class TelaPrincipal(QMainWindow):
 
             self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[31]))
 
-            periodo = str(dados[32])
+            periodo = dados[32]
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
@@ -644,6 +646,8 @@ class TelaPrincipal(QMainWindow):
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
 
             return self.ui.page_alterar_usuario
+        
+        ##################################################################################
 
 
 
