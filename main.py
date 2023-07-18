@@ -388,8 +388,7 @@ class TelaPrincipal(QMainWindow):
 
 
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
-        nome = self.ui.input_alterar_nome_responsavel_as.text()
-        cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
+        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
         print("Valor selecionado:", valorSelecionado)
 
         if valorSelecionado == 0:
@@ -397,10 +396,9 @@ class TelaPrincipal(QMainWindow):
         
         elif valorSelecionado == 1: 
             
-            print(nome)
             print(cpf)
-            dados = self.db.busca_cuidador(nome, cpf)
-            print(dados)
+            #dados = self.db.busca_cuidador(nome, cpf)
+            #print(dados)
             # self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
             # self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
             # self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
@@ -426,7 +424,7 @@ class TelaPrincipal(QMainWindow):
         
 
         if valorSelecionado == 333:
-            dados = self.db.busca_usuario(nome, cpf)
+            dados = self.db.busca_usuario(cpf)
             print(dados)
             self.ui.input_nome_alterar_usuario_as.setText(dados[1])
             self.ui.input_cpf_alterar_usuario_as.setText(dados[2])
