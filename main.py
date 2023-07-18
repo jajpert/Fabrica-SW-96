@@ -374,16 +374,13 @@ class TelaPrincipal(QMainWindow):
 
 
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
-        nome = self.ui.input_alterar_nome_responsavel_as.text()
-        cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
+        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
         print("Valor selecionado:", valorSelecionado)
 
         if valorSelecionado == 0:
             return self.ui.page_2
         ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
-            
-            print(nome)
             print(cpf)
             dados = self.db.busca_cuidador(cpf)
             
@@ -557,31 +554,31 @@ class TelaPrincipal(QMainWindow):
             situacaoTrabalho = str(dados[26])
 
             if situacaoTrabalho == 'Aposentado por Idade':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(1)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
 
             elif situacaoTrabalho == 'Aposentado tempo de serviço':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(2)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(2)
 
             elif situacaoTrabalho == 'Aposentado invalidez':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(3)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(3)
 
             elif situacaoTrabalho == 'Empregado/a Autônomo/a':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(4)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(4)
 
             elif situacaoTrabalho == 'Aposentado/a':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(5)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(5)
 
             elif situacaoTrabalho == 'Pensionista':
                 self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(6)
 
             elif situacaoTrabalho == 'Desempregado/a':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(7)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(7)
 
             elif situacaoTrabalho  == 'Auxílio doença':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(8)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(8)
 
             elif situacaoTrabalho == 'Outros':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(9)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
             beneficio = str(dados[27])
 
@@ -612,9 +609,9 @@ class TelaPrincipal(QMainWindow):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[27])
+            self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[30])
 
-            patologiaBase = dados[30]
+            patologiaBase = dados[31]
 
             if patologiaBase == 'Hipertensão':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
@@ -636,7 +633,7 @@ class TelaPrincipal(QMainWindow):
 
             self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[31]))
 
-            periodo = dados[32]
+            periodo = dados[33]
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
@@ -674,7 +671,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_rg_colaborador_as.setText(dados[5]) #
             self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[7]))
             self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(dados[8])
-            self.ui.input_alterar_pis_colaborador_as.setText(dados[9]) #
+            self.ui.input_alterar_pis_colaborador_as.setText(str(dados[9]))
             self.ui.input_alterar_telefone_colaborador_as.setText(dados[11])
             self.ui.input_alterar_email_colaborador_as.setText(dados[12 ])
             self.ui.input_alterar_cep_colaborador_as.setText(dados[13])
@@ -684,21 +681,21 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_cidade_colaborador_as.setText(str(dados[17]))
             self.ui.input_alterar_estado_colaborador_as.setText(str(dados[18]))
 
-            estadoCivil = str(dados[19]) #
+            estadoCivil = str(dados[19]) 
             if estadoCivil == 'Solteiro':
-                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(1)
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(1)
 
             elif estadoCivil == 'Casado':
-                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(2)
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(2)
 
             elif estadoCivil == 'Divorciado':
-                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(3)
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(3)
             
             elif estadoCivil == 'Viúvo':
-                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(4)
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(4)
 
             elif estadoCivil == 'Separado':
-                self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(5)
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(5)
 
 
 
@@ -767,7 +764,6 @@ class TelaPrincipal(QMainWindow):
 
 
             return self.ui.page_alterar_colaborador_as
-        #if lineEdit_alterar_nome_responsavel_as.text()
 
     
     def cadastroUsuario(self):

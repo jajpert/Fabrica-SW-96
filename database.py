@@ -153,12 +153,12 @@ class DataBase():
         print("entrei")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,colaborador.pis,
-                                    sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, escolaridade, cargo, periodo, salario
-                                    from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
-                                    left join colaborador on pessoa.id_matricula = colaborador.id_colaborador
-                                    where cpf like '%{cpf}%';""")
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,sexo, 
+                                        telefone, email, cep, logradouro,numero, bairro, 
+                                        cidade, estado, estado_civil, escolaridade, cargo, periodo, salario
+                                        from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
+                                        left join colaborador on pessoa.id_matricula = colaborador.id_matricula 
+                                        where cpf like '%{cpf}%';""")
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -256,7 +256,7 @@ class DataBase():
             print('id matricula',id_matricula)
 
             self.cursor.execute("""
-                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
             """,(colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula))
             id_colaborador = self.cursor.lastrowid
             print(id_colaborador)
