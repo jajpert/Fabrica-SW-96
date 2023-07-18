@@ -2051,6 +2051,7 @@ class Ui_MainWindow(object):
 
         self.frame_141 = QFrame(self.frame_44)
         self.frame_141.setObjectName(u"frame_141")
+        self.frame_141.setEnabled(False)
         self.frame_141.setMinimumSize(QSize(0, 0))
         self.frame_141.setMaximumSize(QSize(160, 16777215))
         self.frame_141.setFrameShape(QFrame.StyledPanel)
@@ -2059,22 +2060,20 @@ class Ui_MainWindow(object):
         self.verticalLayout_98.setSpacing(5)
         self.verticalLayout_98.setObjectName(u"verticalLayout_98")
         self.verticalLayout_98.setContentsMargins(0, 0, 0, 0)
-        self.label_outras_patologias_usuario_as = QLabel(self.frame_141)
-        self.label_outras_patologias_usuario_as.setObjectName(u"label_outras_patologias_usuario_as")
-        self.label_outras_patologias_usuario_as.setMinimumSize(QSize(0, 0))
-        self.label_outras_patologias_usuario_as.setMaximumSize(QSize(160, 16777215))
-        self.label_outras_patologias_usuario_as.setFont(font)
+        self.verticalSpacer_23 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_98.addWidget(self.label_outras_patologias_usuario_as)
+        self.verticalLayout_98.addItem(self.verticalSpacer_23)
 
         self.input_outras_patologias_usuario_as = QLineEdit(self.frame_141)
         self.input_outras_patologias_usuario_as.setObjectName(u"input_outras_patologias_usuario_as")
-        self.input_outras_patologias_usuario_as.setEnabled(True)
+        self.input_outras_patologias_usuario_as.setEnabled(False)
         self.input_outras_patologias_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_outras_patologias_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_outras_patologias_usuario_as.setFont(font)
+        self.input_outras_patologias_usuario_as.setStyleSheet(""u"border: none;\n"
+"background-color: rgba(0, 0, 0, 0);")
         self.input_outras_patologias_usuario_as.setDragEnabled(False)
-        self.input_outras_patologias_usuario_as.setClearButtonEnabled(True)
+        self.input_outras_patologias_usuario_as.setClearButtonEnabled(False)
 
         self.verticalLayout_98.addWidget(self.input_outras_patologias_usuario_as)
 

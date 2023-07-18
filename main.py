@@ -494,10 +494,7 @@ class TelaPrincipal(QMainWindow):
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
-        if patologia_base == "Outros":
-            self.ui.input_outras_patologias_usuario_as.show()
-        else: 
-            self.ui.input_outras_patologias_usuario_as.hide()
+       
 
         
            
@@ -740,6 +737,7 @@ class TelaPrincipal(QMainWindow):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
+######################## Situação de trabalho outros ################################    
     def on_tipo_usuario_changed(self):
         
         if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":
@@ -755,7 +753,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
             self.ui.input_situacao_trabalho_outros_usuario_as.clear()
             
-            
+######################## Alterar Situação de trabalho outros ################################            
     def on_tipo_alterar_usuario_changed(self):
 
         if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
@@ -772,6 +770,25 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
 
+######################## Patologia base outros################################      
+    def on_tipo_alterar_usuario_changed(self):
+
+        if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
+            self.ui.frame_141.setEnabled(True)
+            self.ui.input_outras_patologias_usuario_as.setEnabled(True)
+            self.ui.frame_141.show()
+            self.ui.input_outras_patologias_usuario_as.setEnabled(True)
+
+            self.ui.input_outras_patologias_usuario_as.setStyleSheet("") 
+            
+            
+            self.ui.input_outras_patologias_usuario_as.show()
+            
+        else:
+            self.ui.frame_141.hide()
+            self.ui.input_outras_patologias_usuario_as.setEnabled(False)
+            self.ui.input_outras_patologias_usuario_as.hide()
+            self.ui.input_outras_patologias_usuario_as.clear()
    
 
 
