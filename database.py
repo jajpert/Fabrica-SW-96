@@ -80,8 +80,8 @@ class DataBase():
         print("entrou busca cuidador")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp,sexo, 
-                                parentesco, observacao, telefone, email, cep, logradouro,numero, bairro, 
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp, sexo, 
+                                parentesco, observacao, telefone, email, cep, logradouro, numero, bairro, 
                                 cidade,estado
                                 from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
                                 left join cuidador on pessoa.id_matricula = cuidador.id_matricula 

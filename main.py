@@ -378,23 +378,25 @@ class TelaPrincipal(QMainWindow):
 
         if valorSelecionado == 0:
             return self.ui.page_2
-        
+        ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
             
             print(nome)
             print(cpf)
             dados = self.db.busca_cuidador(cpf)
-            sexo = str(dados[6])
+            
             print(dados)
             self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
             self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
             self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
             self.ui.input_alterar_rg_cuidador_as.setText(dados[3])
+            self.ui.input_alterar_data_emissao_cuidador_as.date().toString(str(dados[4]))
             self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[5])
 
+            sexo = str(dados[6])
             if sexo == 'Masculino':
                 self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
-            else:
+            elif sexo == 'Feminino':
                 self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
 
             self.ui.input_alterar_parentesco_cuidador_as.setText(dados[7])  
@@ -409,32 +411,32 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_estado_cuidador_as.setText(dados[16])
             
             return self.ui.page_alterar_cuidador
+        ##################################################################################
 
+
+
+    
         elif valorSelecionado == 2:
-            print ('to funfando == 2')
+            print ('to funfando == 2\n')
             dados = self.db.busca_usuario(cpf)
             print(dados)
-            sexo = str(dados[10]) #
-            if sexo == 'Masculino':
-                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
-            else:
-                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
-
-
-            status = str(dados[3]) #
-            if self.ui.input_situacao_ativo_usuario_as.isChecked():
-                status = 'Ativo'
-            else:
-                status = 'Inativo'
+        
+            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
+            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2])) #
-            self.ui.input_alterar_cpf_cuidador_as .setText(dados[4]) #
+            self.ui.input_alterar_cpf_cuidador_as.setText(dados[4])
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
             self.ui.input_alterar_data_emissao_usuario_as.date().toString(str(dados[6])) #
             self.ui.input_alterar_orgao_expedidor_usuario_as.setText(dados[7]) #
             self.ui.input_alterar_nis_usuario_as.setText(dados[8]) #
             self.ui.input_alterar_cns_usuario_as.setText(dados[9]) #
+            sexo = dados[10]
+            if sexo == 'Masculino':
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
+            elif sexo == 'Feminino':
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
             self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
             self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
             self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
@@ -442,8 +444,9 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_numero_usuario_as.setText(str(dados[15])) #
             self.ui.input_alterar_bairro_usuario_as.setText(str(dados[16])) #
             self.ui.input_alterar_cidade_usuario_as.setText(dados[17]) #
+            self.ui.input_alterar_estado_usuario_as.setText(dados[18])
 
-            estadoCivil = str(dados[18]) #
+            estadoCivil = str(dados[19]) #
             if estadoCivil == 'Solteiro':
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(1)
 
@@ -459,7 +462,7 @@ class TelaPrincipal(QMainWindow):
             elif estadoCivil == 'Separado':
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
 
-            Escolaridade = str(dados[19])
+            Escolaridade = str(dados[20])
             if Escolaridade == 'Fundamental':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(1)
             
@@ -478,15 +481,11 @@ class TelaPrincipal(QMainWindow):
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
 
-            pessoa_deficiencia = (dados[20])
 
-            if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
-                pessoa_deficiencia = 'SIM'
+            self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
+            self.ui.label_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
 
-            else:
-                pessoa_deficiencia = 'NÃO'
-
-            tipoDeDeficiencia = str(dados[21])
+            tipoDeDeficiencia = str(dados[22])
 
             if tipoDeDeficiencia == 'Visual':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(1)
@@ -503,7 +502,7 @@ class TelaPrincipal(QMainWindow):
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
 
-            mediaRendaFamiliar = str(dados[22])
+            mediaRendaFamiliar = str(dados[23])
 
             if mediaRendaFamiliar == 'Menos 1 salário':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(1)
@@ -517,7 +516,7 @@ class TelaPrincipal(QMainWindow):
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
 
-            meioTransporte = str(dados[23])
+            meioTransporte = str(dados[24])
 
             if meioTransporte == 'Particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(1)
@@ -540,7 +539,7 @@ class TelaPrincipal(QMainWindow):
             elif meioTransporte == 'Outro':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
 
-            valeTransporte = str(dados[24])
+            valeTransporte = str(dados[25])
 
             if valeTransporte == 'Passe para os dias de tratamento':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(1)
@@ -551,7 +550,7 @@ class TelaPrincipal(QMainWindow):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
-            situacaoTrabalho = str(dados[25])
+            situacaoTrabalho = str(dados[26])
 
             if situacaoTrabalho == 'Aposentado por Idade':
                 self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(1)
@@ -580,7 +579,7 @@ class TelaPrincipal(QMainWindow):
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(9)
 
-            beneficio = str(dados[26])
+            beneficio = str(dados[27])
 
             if beneficio == 'BPC/Idoso':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(1)
@@ -593,15 +592,12 @@ class TelaPrincipal(QMainWindow):
 
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
-            
+    
+            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[28]))
+            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[28]))
 
-            tarifa_social = str(dados[27])
-            if self.ui.input_tarifa_social_sim_usuario_as.isChecked():
-                tarifa_social = 'SIM'
-            else:
-                tarifa_social = 'NÃO'
 
-            tipoTratamento = str(dados[28])
+            tipoTratamento = str(dados[29])
 
             if tipoTratamento == 'Pré-Diálise':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(1)
@@ -614,7 +610,7 @@ class TelaPrincipal(QMainWindow):
 
             self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[27])
 
-            patologiaBase = str(dados[29])
+            patologiaBase = str(dados[30])
 
             if patologiaBase == 'Hipertensão':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
@@ -634,9 +630,9 @@ class TelaPrincipal(QMainWindow):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
 
-            self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[30]))
+            self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[31]))
 
-            periodo = str(dados[31])
+            periodo = str(dados[32])
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
@@ -662,13 +658,9 @@ class TelaPrincipal(QMainWindow):
                 self.ui.input_alterar_sexo_colaborador_comboBox_as.setCurrentIndex(2)
 
 
-            status = str(dados[5]) #
-            if self.ui.input_alterar_situacao_ativo_colaborador_as.isChecked():
-                status = 'Ativo'
-            else:
-                status = 'Inativo'
 
-
+            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
+            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_data_nascimento_colaborador_as.date().toString(str(dados[2]))
@@ -703,13 +695,9 @@ class TelaPrincipal(QMainWindow):
                 self.ui.input_alterar_estado_civil_comboBox_colaborador_as.setCurrentIndex(5)
 
 
-            pessoa_deficiencia = (dados[20])
 
-            if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
-                pessoa_deficiencia = 'SIM'
-
-            else:
-                pessoa_deficiencia = 'NÃO'
+            self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[20]))
+            self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[20]))
 
             self.ui.input_alterar_tipo_deficiencia_colaborador_as.setText(dados[21])
 
