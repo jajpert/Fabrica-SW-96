@@ -236,7 +236,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
-
+        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
+        
 
 
         #################SIGNALS CEP#################
@@ -292,7 +294,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-    
+        
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -670,7 +672,7 @@ class TelaPrincipal(QMainWindow):
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
         print(result)
-
+#####Alterar SITUACAO de Trabalho Outros #########
 ####################### FUNÇÕES POP UP #######################
 
     def visibilidade(self):
@@ -680,7 +682,6 @@ class TelaPrincipal(QMainWindow):
         else:
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
             self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))
-
 
     def recuperarSenha(self):
         msg = DialogRecuperarSenha(self)
@@ -739,19 +740,52 @@ class TelaPrincipal(QMainWindow):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
-
+    def on_tipo_usuario_changed(self):
         
+        if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":
+            self.ui.frame_438.setEnabled(True)
+            self.ui.frame_438.show()
+            self.ui.input_situacao_trabalho_outros_usuario_as.setStyleSheet("")  
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_usuario_as.show()           
+        else:
+            self.ui.frame_438.hide()
+            self.ui.frame_438.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_usuario_as.hide()
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_usuario_as.clear()
+            
+            
+    def on_tipo_alterar_usuario_changed(self):
+
+        if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
+            self.ui.frame_439.setEnabled(True)
+            self.ui.frame_439.show()
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet("") 
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.show()
+            
+        else:
+            self.ui.frame_439.hide()
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
+
+   
 
 
 if __name__ == "__main__":
     
     myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
     windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid) 
-
+    
     app = QApplication(sys.argv)
 
     app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
-
+    
     w = TelaPrincipal()
+    
     w.show()
     app.exec()
+    
