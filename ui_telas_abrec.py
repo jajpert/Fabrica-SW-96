@@ -552,7 +552,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11 = QHBoxLayout(self.frame_10)
         self.horizontalLayout_11.setSpacing(0)
         self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
-        self.horizontalLayout_11.setContentsMargins(0, 0, 8, 0)
+        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_2 = QStackedWidget(self.frame_10)
         self.stackedWidget_2.setObjectName(u"stackedWidget_2")
         self.page_principal_as = QWidget()
