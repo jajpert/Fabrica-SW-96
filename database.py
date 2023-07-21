@@ -131,33 +131,11 @@ class DataBase():
         print("entrei")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,colaborador.pis,
-                                    sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, escolaridade, cargo, periodo, salario
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,
+                                    colaborador.pis, sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
+                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, login
                                     from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
-                                    left join colaborador on pessoa.id_matricula = colaborador.id_colaborador
-                                    where cpf like '%{cpf}%';""")
-            result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            # for linha in result:
-            #     print(linha)
-            return result[0]
-        except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
-
-    def busca_colaborador(self, cpf):
-        print("entrei")
-        self.connect()
-        try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,colaborador.pis,
-                                    sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, pessoa_deficiencia, escolaridade, cargo, periodo, salario
-                                    from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
-                                    left join colaborador on pessoa.id_matricula = colaborador.id_colaborador
+                                    left join colaborador on colaborador.id_matricula = pessoa.id_matricula
                                     where cpf like '%{cpf}%';""")
             result = self.cursor.fetchall()
             
