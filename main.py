@@ -652,35 +652,35 @@ class TelaPrincipal(QMainWindow):
 
 
         if valorSelecionado == 3:
-            dados = self.db.busca_usuario(cpf)
+            dados = self.db.busca_colaborador(cpf)
             print(dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_data_nascimento_colaborador_as.date().toString(str(dados[2]))
-            self.ui.input_alterar_cpf_colaborador_as.setText(dados[4]) #
-            self.ui.input_alterar_rg_colaborador_as.setText(dados[5]) #
-            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[6]))
-            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[6]))
-            self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[7]))
-            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(str(dados[8]))
-            self.ui.input_alterar_pis_colaborador_as.setText(dados[9])
+            self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
+            self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
+            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
+            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
+            self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
+            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(str(dados[7]))
+            self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
 
-            sexo = str(dados[10]) 
+            sexo = str(dados[9]) 
             if sexo == 'Masculino':
                 self.ui.input_alterar_sexo_colaborador_comboBox_as.setCurrentIndex(1)
             elif sexo == 'Feminino':
                 self.ui.input_alterar_sexo_colaborador_comboBox_as.setCurrentIndex(2)
 
-            self.ui.input_alterar_telefone_colaborador_as.setText(dados[11])
-            self.ui.input_alterar_email_colaborador_as.setText(dados[12 ])
-            self.ui.input_alterar_cep_colaborador_as.setText(dados[13])
-            self.ui.input_alterar_logradouro_colaborador_as.setText(dados[14])
-            self.ui.input_alterar_numero_colaborador_as.setText(str(dados[15]))
-            self.ui.input_alterar_bairro_colaborador_as.setText(str(dados[16]))
-            self.ui.input_alterar_cidade_colaborador_as.setText(str(dados[17]))
-            self.ui.input_alterar_estado_colaborador_as.setText(str(dados[18]))
+            self.ui.input_alterar_telefone_colaborador_as.setText(dados[10])
+            self.ui.input_alterar_email_colaborador_as.setText(dados[11])
+            self.ui.input_alterar_cep_colaborador_as.setText(dados[12])
+            self.ui.input_alterar_logradouro_colaborador_as.setText(str(dados[13]))
+            self.ui.input_alterar_numero_colaborador_as.setText(str(dados[14]))
+            self.ui.input_alterar_bairro_colaborador_as.setText(str(dados[15]))
+            self.ui.input_alterar_cidade_colaborador_as.setText(str(dados[16]))
+            self.ui.input_alterar_estado_colaborador_as.setText(str(dados[17]))
 
-            estadoCivil = str(dados[19]) 
+            estadoCivil = str(dados[18]) 
             if estadoCivil == 'Solteiro':
                 self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(1)
 
@@ -696,10 +696,8 @@ class TelaPrincipal(QMainWindow):
             elif estadoCivil == 'Separado':
                 self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(5)
 
-            self.ui.input_alterar_pessoa_cdeficiencia_sim_colaborador_as.setChecked(bool(dados[20]))
-            self.ui.input_alterar_pessoa_cdeficiencia_nao_colaborador_as.setChecked(bool(dados[20]))
 
-            Escolaridade = str(dados[21])
+            Escolaridade = str(dados[19])
             if Escolaridade == 'Fundamental':
                 self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(1)
             
@@ -718,7 +716,7 @@ class TelaPrincipal(QMainWindow):
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(6)
 
-            cargo = str(dados[22])
+            cargo = str(dados[20])
 
             if cargo == 'Recepcionista':
                 self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(1)
@@ -738,7 +736,7 @@ class TelaPrincipal(QMainWindow):
             elif cargo == 'Nutricionista':
                 self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(5)
 
-            periodo = str(dados[23])
+            periodo = str(dados[21])
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_colaborador_comboBox_as.setCurrentIndex(1)
@@ -752,8 +750,10 @@ class TelaPrincipal(QMainWindow):
             elif periodo == 'Integral':
                 self.ui.input_alterar_periodo_colaborador_comboBox_as.setCurrentIndex(4)
 
-            self.ui.input_alterar_salario_colaborador_as.setText(dados[24])
-
+            self.ui.input_alterar_salario_colaborador_as_2.setText(str(dados[22]))
+            self.ui.input_alterar_usuario_colaborador_as_2.setText(dados[23])
+            self.ui.input_alterar_senha_colaborador_as_2.setText(dados[24])
+            self.ui.input_alterar_confirmar_senha_colaborador_as_2.setText(dados[25])
             return self.ui.page_alterar_colaborador_as
 
     
