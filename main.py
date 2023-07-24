@@ -928,8 +928,8 @@ class TelaPrincipal(QMainWindow):
 
         #################### login e senha ####################################
 
-        login = self.ui.input_usuario_colaborador_as.text()
-        senha = self.ui.input_senha_colaborador_as.text()
+        login = self.ui.input_usuario_colaborador_as_2.text()
+        senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
         perfil = 'adm'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
