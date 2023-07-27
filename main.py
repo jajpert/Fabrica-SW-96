@@ -8,9 +8,6 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
-import webbrowser, os
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
 
 
 class Overlay(QWidget):
@@ -80,17 +77,6 @@ class DialogTirarFoto(QDialog):
             cv2.imwrite("capture.png", frame)
         vid.release()
         cv2.destroyAllWindows()
-    def ImportarFoto(self):        
-        # Cria uma janela oculta
-        root = Tk()
-        root.withdraw()
-        # Abre o explorador de arquivos e permite selecionar um arquivo
-        filename = askopenfilename()
-        # Verifica se um arquivo foi selecionado
-        if filename:
-            print("Arquivo selecionado:", filename)
-        else:
-            print("Nenhum arquivo selecionado.")
 
 
 ################Class POPUP USUARIO################
@@ -381,62 +367,387 @@ class TelaPrincipal(QMainWindow):
 
 
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
-        nome = self.ui.input_alterar_nome_responsavel_as.text()
-        cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
+        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
         print("Valor selecionado:", valorSelecionado)
 
         if valorSelecionado == 0:
             return self.ui.page_2
-        
+        ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
-            
-            print(nome)
             print(cpf)
-            dados = self.db.busca_cuidador(nome, cpf)
+            dados = self.db.busca_cuidador(cpf)
+            
             print(dados)
-            # self.ui.input_matricula_alterar_cuidador_as.setText(str(dados[0]))
-            # self.ui.input_nome_alterar_cuidador_as.setText(dados[1])
-            # self.ui.input_cpf_alterar_cuidador_as.setText(dados[2])
-            # self.ui.input_rg_alterar_cuidador_as.setText(dados[3])
-            # self.ui.input_orgao_expedidor_alterar_cuidador_as.setText(dados[5])
-            # self.ui.input_parentesco_alterar_cuidador_as.setText(dados[6])  
-            # self.ui.input_telefone_alterar_cuidador_as.setText(dados[8]) 
-            # self.ui.input_email_alterar_cuidador_as.setText(dados[9]) 
-            # self.ui.input_cep_alterar_cuidador_as.setText(dados[10]) 
-            # self.ui.input_logradouro_alterar_cuidador_as.setText(dados[11]) 
-            # self.ui.input_numero_alterar_cuidador_as.setText(str(dados[12])) 
-            # self.ui.input_bairro_alterar_cuidador_as.setText(dados[13]) 
-            # self.ui.input_cidade_alterar_cuidador_as.setText(dados[14])
-            # self.ui.input_estado_alterar_cuidador_as.setText(dados[15])
-            # self.ui.input_observacoes_gerais_alterar_cuidador_as = dados[16]
+            self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
+            self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
+            self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
+            self.ui.input_alterar_rg_cuidador_as.setText(dados[3])
+            self.ui.input_alterar_data_emissao_cuidador_as.date().toString(str(dados[4]))
+            self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[5])
+
+            sexo = str(dados[6])
+            if sexo == 'Masculino':
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
+            elif sexo == 'Feminino':
+                self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
+
+            self.ui.input_alterar_parentesco_cuidador_as.setText(dados[7])  
+            self.ui.input_alterar_informacoes_gerais_as.setHtml(dados[8])
+            self.ui.input_alterar_telefone_cuidador_as.setText(dados[9]) 
+            self.ui.input_alterar_email_cuidador_as.setText(dados[10]) 
+            self.ui.input_alterar_cep_cuidador_as.setText(dados[11]) 
+            self.ui.input_alterar_logradouro_cuidador_as.setText(dados[12]) 
+            self.ui.input_alterar_numero_cuidador_as.setText(str(dados[13])) 
+            self.ui.input_alterar_bairro_cuidador_as.setText(str(dados[14]))
+            self.ui.input_alterar_cidade_cuidador_as.setText(dados[15])
+            self.ui.input_alterar_estado_cuidador_as.setText(dados[16])
+            
             return self.ui.page_alterar_cuidador
+        ##################################################################################
+
+
+
+        #######################USUARIO####################################################
 
         elif valorSelecionado == 2:
-            return self.ui.page_alterar_usuario
-        
-        elif valorSelecionado == 3:
-            return self.ui.page_alterar_colaborador_as
-        
-
-        if valorSelecionado == 333:
-            dados = self.db.busca_usuario(nome, cpf)
+            print ('to funfando == 2\n')
+            dados = self.db.busca_usuario(cpf)
             print(dados)
-            self.ui.input_nome_alterar_usuario_as.setText(dados[1])
-            self.ui.input_cpf_alterar_usuario_as.setText(dados[2])
-            self.ui.input_rg_alterar_usuario_as.setText(dados[3])
-            self.ui.input_orgao_expedidor_alterar_usuario_as.setText(dados[5]) 
-            self.ui.input_telefone_alterar_usuario_as.setText(dados[8]) 
-            self.ui.input_email_alterar_usuario_as.setText(dados[9]) 
-            self.ui.input_cep_alterar_usuario_as.setText(dados[10]) 
-            self.ui.input_logradouro_alterar_usuario_as.setText(dados[11]) 
-            self.ui.input_numero_alterar_usuario_as.setText(str(dados[12])) 
-            self.ui.input_bairro_alterar_usuario_as.setText(dados[13]) 
-            self.ui.input_cidade_alterar_usuario_as.setText(dados[14])
+        
+            
+            self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
+            self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
+            self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
+            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
+            self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
+            self.ui.input_alterar_data_emissao_usuario_as.date().toString(str(dados[6])) #
+            self.ui.input_alterar_orgao_expedidor_usuario_as.setText(dados[7]) #
+            self.ui.input_alterar_nis_usuario_as.setText(dados[8]) #
+            self.ui.input_alterar_cns_usuario_as.setText(dados[9]) #
+            sexo = dados[10]
+            if sexo == 'Masculino':
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(1)
+            elif sexo == 'Feminino':
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(2)
+            self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
+            self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
+            self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
+            self.ui.input_alterar_logradouro_usuario_as.setText(dados[14]) #
+            self.ui.input_alterar_numero_usuario_as.setText(str(dados[15])) #
+            self.ui.input_alterar_bairro_usuario_as.setText(str(dados[16])) #
+            self.ui.input_alterar_cidade_usuario_as.setText(dados[17]) #
+            self.ui.input_alterar_estado_usuario_as.setText(dados[18])
+
+            estadoCivil = str(dados[19]) #
+            if estadoCivil == 'Solteiro':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(1)
+
+            elif estadoCivil == 'Casado':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(2)
+
+            elif estadoCivil == 'Divorciado':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(3)
+            
+            elif estadoCivil == 'Viúvo':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(4)
+
+            elif estadoCivil == 'Separado':
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
+
+            Escolaridade = str(dados[20])
+            if Escolaridade == 'Fundamental':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(1)
+            
+            elif Escolaridade == 'Fundamental incompleto':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(2)
+            
+            elif Escolaridade == 'Médio':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(3)
+
+            elif Escolaridade == 'Médio imcompleto':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(4)
+
+            elif Escolaridade == 'Superior completo':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(5)
+            
+            elif Escolaridade == 'Superior incompleto':
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
+
+
+            self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
+            self.ui.label_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+
+            tipoDeDeficiencia = str(dados[22])
+
+            if tipoDeDeficiencia == 'Visual':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(1)
+            
+            elif tipoDeDeficiencia == 'Motora':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(2)
+
+            elif tipoDeDeficiencia == 'Amputada':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(3)
+
+            elif tipoDeDeficiencia == 'Mental':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(4)
+
+            elif tipoDeDeficiencia == 'Outra':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+
+            mediaRendaFamiliar = str(dados[23])
+
+            if mediaRendaFamiliar == 'Menos 1 salário':
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(1)
+
+            elif mediaRendaFamiliar == '1 salário':
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(2)
+
+            elif mediaRendaFamiliar == 'Mais de 1 a 3 salários':
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(3)
+
+            elif mediaRendaFamiliar == 'Mais que 3 salários':
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
+
+            meioTransporte = str(dados[24])
+
+            if meioTransporte == 'Particular':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(1)
+
+            elif meioTransporte == 'Carona':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(2)
+
+            elif meioTransporte == 'Ônibus coletivo':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
+
+            elif meioTransporte == 'Ambulância municipal':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
+
+            elif meioTransporte == 'Moto':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(4)
+
+            elif meioTransporte == 'Ambulância particular':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(5)
+
+            elif meioTransporte == 'Outro':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+
+            valeTransporte = str(dados[25])
+
+            if valeTransporte == 'Passe para os dias de tratamento':
+                self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(1)
+
+            elif valeTransporte == 'Passe do idoso':
+                self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(2)
+
+            elif valeTransporte == 'Passe livre':
+                self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
+
+            situacaoTrabalho = str(dados[26])
+
+            if situacaoTrabalho == 'Aposentado por Idade':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
+
+            elif situacaoTrabalho == 'Aposentado tempo de serviço':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(2)
+
+            elif situacaoTrabalho == 'Aposentado invalidez':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(3)
+
+            elif situacaoTrabalho == 'Empregado/a Autônomo/a':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(4)
+
+            elif situacaoTrabalho == 'Aposentado/a':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(5)
+
+            elif situacaoTrabalho == 'Pensionista':
+                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(6)
+
+            elif situacaoTrabalho == 'Desempregado/a':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(7)
+
+            elif situacaoTrabalho  == 'Auxílio doença':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(8)
+
+            elif situacaoTrabalho == 'Outros':
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
+
+            beneficio = str(dados[27])
+
+            if beneficio == 'BPC/Idoso':
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(1)
+
+            elif beneficio == 'BPC/PCD':
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(2)
+
+            elif beneficio == 'Mais Social (Gov. Estadual)':
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(3)
+
+            elif beneficio == 'Auxílio Brasil (Gov. Federal)':
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
+    
+            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[28]))
+            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[28]))
+
+
+            tipoTratamento = str(dados[29])
+
+            if tipoTratamento == 'Pré-Diálise':
+                self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(1)
+            
+            elif tipoTratamento == 'Hemodiálise':
+                self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(2)
+
+            elif tipoTratamento == 'Diálise Peritoneal':
+                self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
+
+            self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[30])
+
+            patologiaBase = dados[31]
+
+            if patologiaBase == 'Hipertensão':
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
+
+            elif patologiaBase == 'Diabete 1':
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(2)
+
+            elif patologiaBase == 'Diabete 2':
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(3)
+
+            elif patologiaBase == 'Lúpus':
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(4)
+
+            elif patologiaBase == 'Nefrites':
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(5)
+
+            elif patologiaBase == 'Outros':
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
+
+            self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[31]))
+
+            periodo = dados[33]
+
+            if periodo == 'Matutino':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
+
+            elif periodo == 'Vespertino':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(2)
+
+            elif periodo == 'Noturno':
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
 
             return self.ui.page_alterar_usuario
-        if valorSelecionado == 444:
+        
+        ##################################################################################
+
+
+
+
+        if valorSelecionado == 3:
+            dados = self.db.busca_colaborador(cpf)
+            print(dados)
+            self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
+            self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
+            self.ui.input_data_nascimento_colaborador_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
+            self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
+            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
+            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
+            self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
+            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(str(dados[7]))
+            self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
+
+            sexo = str(dados[9]) 
+            if sexo == 'Masculino':
+                self.ui.input_alterar_sexo_colaborador_comboBox_as.setCurrentIndex(1)
+            elif sexo == 'Feminino':
+                self.ui.input_alterar_sexo_colaborador_comboBox_as.setCurrentIndex(2)
+
+            self.ui.input_alterar_telefone_colaborador_as.setText(dados[10])
+            self.ui.input_alterar_email_colaborador_as.setText(dados[11])
+            self.ui.input_alterar_cep_colaborador_as.setText(dados[12])
+            self.ui.input_alterar_logradouro_colaborador_as.setText(str(dados[13]))
+            self.ui.input_alterar_numero_colaborador_as.setText(str(dados[14]))
+            self.ui.input_alterar_bairro_colaborador_as.setText(str(dados[15]))
+            self.ui.input_alterar_cidade_colaborador_as.setText(str(dados[16]))
+            self.ui.input_alterar_estado_colaborador_as.setText(str(dados[17]))
+
+            estadoCivil = str(dados[18]) 
+            if estadoCivil == 'Solteiro':
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(1)
+
+            elif estadoCivil == 'Casado':
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(2)
+
+            elif estadoCivil == 'Divorciado':
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(3)
+            
+            elif estadoCivil == 'Viúvo':
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(4)
+
+            elif estadoCivil == 'Separado':
+                self.ui.input_alterar_estado_civil_colaborador_comboBox_as.setCurrentIndex(5)
+
+
+            Escolaridade = str(dados[19])
+            if Escolaridade == 'Fundamental':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(1)
+            
+            elif Escolaridade == 'Fundamental incompleto':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(2)
+            
+            elif Escolaridade == 'Médio':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(3)
+
+            elif Escolaridade == 'Médio imcompleto':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(4)
+
+            elif Escolaridade == 'Superior completo':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(5)
+            
+            elif Escolaridade == 'Superior incompleto':
+                self.ui.input_alterar_escolaridade_colaborador_comboBox_as.setCurrentIndex(6)
+
+            cargo = str(dados[20])
+
+            if cargo == 'Recepcionista':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(1)
+
+            elif cargo == 'Assistente Social':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(2)
+
+            elif cargo == 'Farmacêutico (a)':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(3)
+
+            elif cargo == 'Psicólogo (a)':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(4)
+
+            elif cargo == 'Fisioterapeuta':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(4)
+
+            elif cargo == 'Nutricionista':
+                self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(5)
+
+            periodo = str(dados[21])
+
+            if periodo == 'Matutino':
+                self.ui.input_alterar_periodo_colaborador_comboBox_as.setCurrentIndex(1)
+
+            elif periodo == 'Vespertino':
+                self.ui.input_alterar_periodo_colaborador_comboBox_as.setCurrentIndex(2)
+
+            elif periodo == 'Noturno':
+                self.ui.input_alterar_periodo_colaborador_comboBox_as.setCurrentIndex(3)
+
+            elif periodo == 'Integral':
+                self.ui.input_alterar_periodo_colaborador_comboBox_as.setCurrentIndex(4)
+
+            self.ui.input_alterar_salario_colaborador_as_2.setText(str(dados[22]))
+            self.ui.input_alterar_usuario_colaborador_as_2.setText(dados[23])
+            self.ui.input_alterar_senha_colaborador_as_2.setText(dados[24])
+            self.ui.input_alterar_confirmar_senha_colaborador_as_2.setText(dados[25])
             return self.ui.page_alterar_colaborador_as
-        #if lineEdit_alterar_nome_responsavel_as.text()
 
     
     def cadastroUsuario(self):
@@ -501,6 +812,7 @@ class TelaPrincipal(QMainWindow):
 
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
 
+
         if self.ui.input_tarifa_social_sim_usuario_as.isChecked():
             tarifa_social = 'SIM'
         else:
@@ -524,8 +836,8 @@ class TelaPrincipal(QMainWindow):
         ######################## insert ##################################
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        #print(result)
-        #result = []
+        print(result)
+        # result = []
         self.msg(result[0],result[1])
         
     def cadastroCuidador(self):
@@ -616,8 +928,8 @@ class TelaPrincipal(QMainWindow):
 
         #################### login e senha ####################################
 
-        login = self.ui.input_usuario_colaborador_as.text()
-        senha = self.ui.input_senha_colaborador_as.text()
+        login = self.ui.input_usuario_colaborador_as_2.text()
+        senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
         perfil = 'adm'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
