@@ -173,6 +173,7 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
 
         self.db = DataBase()
+        self.listarUsuarios()
 
         ########### selected último id das tabelas do banco ##########
         selected_pessoa = self.db.select_pessoa()
@@ -841,6 +842,16 @@ class TelaPrincipal(QMainWindow):
         print(result)
         # result = []
         self.msg(result[0],result[1])
+    
+    def listarUsuarios(self):
+        lista_usuarios = self.db.select_usuario()
+        nomes = []
+        for i in lista_usuarios:
+            id_matricula = i[1]
+            print(id_matricula)
+            nome = self.db.select_nome_usuario(id_matricula)
+            nomes.append(nome)
+        print(nomes)
         
     def cadastroCuidador(self):
 

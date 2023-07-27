@@ -54,6 +54,46 @@ class DataBase():
 
         finally:
             self.close_connection()
+    
+    def select_usuario(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_usuario, id_matricula FROM usuario ORDER BY id_usuario DESC;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
+    def select_nome_usuario(self,id_matricula):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT nome FROM pessoa WHERE id_matricula = {id_matricula};
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            for linha in result:
+               print(linha)
+            
+            return result
+            #retorna a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
 
     def filter(self,texto):
         self.connect()
