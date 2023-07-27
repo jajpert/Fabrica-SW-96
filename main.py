@@ -53,7 +53,7 @@ class DialogTirarFoto(QDialog):
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
-        self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
+        #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
