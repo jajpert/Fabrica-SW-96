@@ -17025,111 +17025,6 @@ QPushButton:focus{outline:0}</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_4">
-                          <item row="0" column="0">
-                           <widget class="QFrame" name="frame_223">
-                            <property name="minimumSize">
-                             <size>
-                              <width>1600</width>
-                              <height>80</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>1600</width>
-                              <height>80</height>
-                             </size>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">background-color: rgb(236, 132, 140);</string>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_82">
-                             <item>
-                              <spacer name="horizontalSpacer_55">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item>
-                              <widget class="QFrame" name="frame_225">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>300</width>
-                                 <height>61</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>300</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_87">
-                                <item>
-                                 <widget class="QLabel" name="label_relatorio_as">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>300</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>300</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>35</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(236, 132, 140);</string>
-                                  </property>
-                                  <property name="text">
-                                   <string>Relátorio</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item>
-                              <spacer name="horizontalSpacer_56">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>40</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
                           <item row="1" column="0">
                            <widget class="QFrame" name="frame_224">
                             <property name="minimumSize">
@@ -17660,7 +17555,7 @@ QPushButton:focus{outline:0}</string>
                                          </font>
                                         </property>
                                         <property name="text">
-                                         <string>Idade</string>
+                                         <string/>
                                         </property>
                                        </widget>
                                       </item>
@@ -17724,6 +17619,13 @@ QPushButton:focus{outline:0}</string>
                                              <height>16</height>
                                             </size>
                                            </property>
+                                           <property name="styleSheet">
+                                            <string notr="true">
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+</string>
+                                           </property>
                                            <property name="text">
                                             <string/>
                                            </property>
@@ -17749,8 +17651,15 @@ QPushButton:focus{outline:0}</string>
                                              <pointsize>13</pointsize>
                                             </font>
                                            </property>
+                                           <property name="styleSheet">
+                                            <string notr="true">
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+</string>
+                                           </property>
                                            <property name="text">
-                                            <string>de</string>
+                                            <string/>
                                            </property>
                                           </widget>
                                          </item>
@@ -17767,6 +17676,13 @@ QPushButton:focus{outline:0}</string>
                                              <width>34</width>
                                              <height>16</height>
                                             </size>
+                                           </property>
+                                           <property name="styleSheet">
+                                            <string notr="true">
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+</string>
                                            </property>
                                            <property name="text">
                                             <string/>
@@ -18397,6 +18313,168 @@ QPushButton:focus{outline:0}</string>
                                  </spacer>
                                 </item>
                                </layout>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item row="0" column="0">
+                           <widget class="QFrame" name="frame_223">
+                            <property name="minimumSize">
+                             <size>
+                              <width>1600</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>1600</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: rgb(236, 132, 140);</string>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QHBoxLayout" name="horizontalLayout_82">
+                             <item>
+                              <spacer name="horizontalSpacer_55">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>40</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_225">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>61</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>300</width>
+                                 <height>16777215</height>
+                                </size>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_87">
+                                <item>
+                                 <widget class="QLabel" name="label_relatorio_as">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>300</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>300</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>35</pointsize>
+                                   </font>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: rgb(236, 132, 140);</string>
+                                  </property>
+                                  <property name="text">
+                                   <string>Relátorio</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <spacer name="horizontalSpacer_56">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>40</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item row="3" column="0">
+                           <widget class="QFrame" name="frame_248">
+                            <property name="minimumSize">
+                             <size>
+                              <width>120</width>
+                              <height>45</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>120</width>
+                              <height>50</height>
+                             </size>
+                            </property>
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_154">
+                             <item>
+                              <widget class="QPushButton" name="btn_voltar_relatorios_as">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>100</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <family>Abel</family>
+                                 <pointsize>18</pointsize>
+                                </font>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                               </property>
+                               <property name="text">
+                                <string>VOLTAR</string>
+                               </property>
                               </widget>
                              </item>
                             </layout>

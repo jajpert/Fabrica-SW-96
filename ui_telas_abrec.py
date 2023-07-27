@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecBZnsWU.ui'
+## Form generated from reading UI file 'telas_abrecsLaxKS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.0
 ##
@@ -11,7 +11,6 @@
 from qtcore import * 
 from icons import *
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -20,7 +19,7 @@ class Ui_MainWindow(object):
         ############ valida email ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
         #######################################
-            
+
         MainWindow.resize(1872, 893)
         font = QFont()
         font.setFamilies([u"Abel"])
@@ -6170,49 +6169,6 @@ class Ui_MainWindow(object):
         self.frame_222.setFrameShadow(QFrame.Raised)
         self.gridLayout_4 = QGridLayout(self.frame_222)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.frame_223 = QFrame(self.frame_222)
-        self.frame_223.setObjectName(u"frame_223")
-        self.frame_223.setMinimumSize(QSize(1600, 80))
-        self.frame_223.setMaximumSize(QSize(1600, 80))
-        self.frame_223.setStyleSheet(u"background-color: rgb(236, 132, 140);")
-        self.frame_223.setFrameShape(QFrame.StyledPanel)
-        self.frame_223.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_82 = QHBoxLayout(self.frame_223)
-        self.horizontalLayout_82.setObjectName(u"horizontalLayout_82")
-        self.horizontalSpacer_55 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_82.addItem(self.horizontalSpacer_55)
-
-        self.frame_225 = QFrame(self.frame_223)
-        self.frame_225.setObjectName(u"frame_225")
-        self.frame_225.setMinimumSize(QSize(300, 61))
-        self.frame_225.setMaximumSize(QSize(300, 16777215))
-        self.frame_225.setFrameShape(QFrame.StyledPanel)
-        self.frame_225.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_87 = QHBoxLayout(self.frame_225)
-        self.horizontalLayout_87.setObjectName(u"horizontalLayout_87")
-        self.label_relatorio_as = QLabel(self.frame_225)
-        self.label_relatorio_as.setObjectName(u"label_relatorio_as")
-        self.label_relatorio_as.setMinimumSize(QSize(300, 0))
-        self.label_relatorio_as.setMaximumSize(QSize(300, 16777215))
-        font14 = QFont()
-        font14.setFamilies([u"Abel"])
-        font14.setPointSize(35)
-        self.label_relatorio_as.setFont(font14)
-        self.label_relatorio_as.setStyleSheet(u"background-color: rgb(236, 132, 140);")
-
-        self.horizontalLayout_87.addWidget(self.label_relatorio_as)
-
-
-        self.horizontalLayout_82.addWidget(self.frame_225)
-
-        self.horizontalSpacer_56 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_82.addItem(self.horizontalSpacer_56)
-
-
-        self.gridLayout_4.addWidget(self.frame_223, 0, 0, 1, 1)
-
         self.frame_224 = QFrame(self.frame_222)
         self.frame_224.setObjectName(u"frame_224")
         self.frame_224.setMinimumSize(QSize(1600, 150))
@@ -6390,11 +6346,11 @@ class Ui_MainWindow(object):
         self.frame_246.setMinimumSize(QSize(110, 30))
         self.frame_246.setMaximumSize(QSize(110, 30))
         self.frame_246.setSizeIncrement(QSize(0, 20))
-        font15 = QFont()
-        font15.setFamilies([u"Abel"])
-        font15.setPointSize(10)
-        font15.setKerning(False)
-        self.frame_246.setFont(font15)
+        font14 = QFont()
+        font14.setFamilies([u"Abel"])
+        font14.setPointSize(10)
+        font14.setKerning(False)
+        self.frame_246.setFont(font14)
         self.frame_246.setFrameShape(QFrame.StyledPanel)
         self.frame_246.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_94 = QHBoxLayout(self.frame_246)
@@ -6405,6 +6361,11 @@ class Ui_MainWindow(object):
         self.input_idade_inicial_relatorio_as.setObjectName(u"input_idade_inicial_relatorio_as")
         self.input_idade_inicial_relatorio_as.setMinimumSize(QSize(34, 16))
         self.input_idade_inicial_relatorio_as.setMaximumSize(QSize(34, 16))
+        self.input_idade_inicial_relatorio_as.setStyleSheet(u"\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"")
 
         self.horizontalLayout_94.addWidget(self.input_idade_inicial_relatorio_as)
 
@@ -6412,10 +6373,15 @@ class Ui_MainWindow(object):
         self.label_a_relatorio_as.setObjectName(u"label_a_relatorio_as")
         self.label_a_relatorio_as.setMinimumSize(QSize(16, 16))
         self.label_a_relatorio_as.setMaximumSize(QSize(16, 16))
-        font16 = QFont()
-        font16.setFamilies([u"Abel"])
-        font16.setPointSize(13)
-        self.label_a_relatorio_as.setFont(font16)
+        font15 = QFont()
+        font15.setFamilies([u"Abel"])
+        font15.setPointSize(13)
+        self.label_a_relatorio_as.setFont(font15)
+        self.label_a_relatorio_as.setStyleSheet(u"\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"")
 
         self.horizontalLayout_94.addWidget(self.label_a_relatorio_as)
 
@@ -6423,6 +6389,11 @@ class Ui_MainWindow(object):
         self.input_idade_final_relatorio_as.setObjectName(u"input_idade_final_relatorio_as")
         self.input_idade_final_relatorio_as.setMinimumSize(QSize(34, 16))
         self.input_idade_final_relatorio_as.setMaximumSize(QSize(34, 16))
+        self.input_idade_final_relatorio_as.setStyleSheet(u"\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"")
 
         self.horizontalLayout_94.addWidget(self.input_idade_final_relatorio_as)
 
@@ -6607,10 +6578,10 @@ class Ui_MainWindow(object):
         self.btn_visualizar_relatorio_as.setSizePolicy(sizePolicy1)
         self.btn_visualizar_relatorio_as.setMinimumSize(QSize(125, 40))
         self.btn_visualizar_relatorio_as.setMaximumSize(QSize(40, 40))
-        font17 = QFont()
-        font17.setFamilies([u"Abel"])
-        font17.setPointSize(15)
-        self.btn_visualizar_relatorio_as.setFont(font17)
+        font16 = QFont()
+        font16.setFamilies([u"Abel"])
+        font16.setPointSize(15)
+        self.btn_visualizar_relatorio_as.setFont(font16)
         self.btn_visualizar_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
@@ -6680,6 +6651,72 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout_4.addWidget(self.frame_226, 2, 0, 1, 1)
+
+        self.frame_223 = QFrame(self.frame_222)
+        self.frame_223.setObjectName(u"frame_223")
+        self.frame_223.setMinimumSize(QSize(1600, 80))
+        self.frame_223.setMaximumSize(QSize(1600, 80))
+        self.frame_223.setStyleSheet(u"background-color: rgb(236, 132, 140);")
+        self.frame_223.setFrameShape(QFrame.StyledPanel)
+        self.frame_223.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_82 = QHBoxLayout(self.frame_223)
+        self.horizontalLayout_82.setObjectName(u"horizontalLayout_82")
+        self.horizontalSpacer_55 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_82.addItem(self.horizontalSpacer_55)
+
+        self.frame_225 = QFrame(self.frame_223)
+        self.frame_225.setObjectName(u"frame_225")
+        self.frame_225.setMinimumSize(QSize(300, 61))
+        self.frame_225.setMaximumSize(QSize(300, 16777215))
+        self.frame_225.setFrameShape(QFrame.StyledPanel)
+        self.frame_225.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_87 = QHBoxLayout(self.frame_225)
+        self.horizontalLayout_87.setObjectName(u"horizontalLayout_87")
+        self.label_relatorio_as = QLabel(self.frame_225)
+        self.label_relatorio_as.setObjectName(u"label_relatorio_as")
+        self.label_relatorio_as.setMinimumSize(QSize(300, 0))
+        self.label_relatorio_as.setMaximumSize(QSize(300, 16777215))
+        font17 = QFont()
+        font17.setFamilies([u"Abel"])
+        font17.setPointSize(35)
+        self.label_relatorio_as.setFont(font17)
+        self.label_relatorio_as.setStyleSheet(u"background-color: rgb(236, 132, 140);")
+
+        self.horizontalLayout_87.addWidget(self.label_relatorio_as)
+
+
+        self.horizontalLayout_82.addWidget(self.frame_225)
+
+        self.horizontalSpacer_56 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_82.addItem(self.horizontalSpacer_56)
+
+
+        self.gridLayout_4.addWidget(self.frame_223, 0, 0, 1, 1)
+
+        self.frame_248 = QFrame(self.frame_222)
+        self.frame_248.setObjectName(u"frame_248")
+        self.frame_248.setMinimumSize(QSize(120, 45))
+        self.frame_248.setMaximumSize(QSize(120, 50))
+        self.frame_248.setFrameShape(QFrame.StyledPanel)
+        self.frame_248.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_154 = QVBoxLayout(self.frame_248)
+        self.verticalLayout_154.setObjectName(u"verticalLayout_154")
+        self.btn_voltar_relatorios_as = QPushButton(self.frame_248)
+        self.btn_voltar_relatorios_as.setObjectName(u"btn_voltar_relatorios_as")
+        self.btn_voltar_relatorios_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_as.setFont(font11)
+        self.btn_voltar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_relatorios_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_154.addWidget(self.btn_voltar_relatorios_as)
+
+
+        self.gridLayout_4.addWidget(self.frame_248, 3, 0, 1, 1)
 
 
         self.verticalLayout_151.addWidget(self.frame_222)
@@ -11834,7 +11871,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14 = QHBoxLayout(self.frame_16)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_14.setContentsMargins(0, 8, 8, 0)
         self.stackedWidget_3 = QStackedWidget(self.frame_16)
         self.stackedWidget_3.setObjectName(u"stackedWidget_3")
         self.page_principal_sec = QWidget()
@@ -11874,7 +11911,7 @@ class Ui_MainWindow(object):
         self.stack_assistente.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(0)
         self.stackedWidget.setCurrentIndex(0)
-        self.stackedWidget_8.setCurrentIndex(2)
+        self.stackedWidget_8.setCurrentIndex(0)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_4.setCurrentIndex(0)
         self.stack_fisioterapeuta.setCurrentIndex(0)
@@ -12266,7 +12303,6 @@ class Ui_MainWindow(object):
         self.btn_alterar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"  ALTERAR", None))
         self.btn_concluir_consulta_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.btn_voltar_consulta_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torio", None))
         self.label_inicio_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.label_final_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
@@ -12280,21 +12316,23 @@ class Ui_MainWindow(object):
         self.input_escolha_relatorio_as.setItemText(6, QCoreApplication.translate("MainWindow", u"BPC", None))
         self.input_escolha_relatorio_as.setItemText(7, QCoreApplication.translate("MainWindow", u"Aposentado", None))
 
-        self.label_idade_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Idade", None))
+        self.label_idade_relatorio_as.setText("")
         self.input_idade_inicial_relatorio_as.setText("")
-        self.label_a_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"de", None))
+        self.label_a_relatorio_as.setText("")
         self.input_idade_final_relatorio_as.setText("")
         self.btn_buscar_relatorio_as.setText("")
         self.input_buscar_dados_relatorio_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome /Cidade/ Bairro/Consulta", None))
         ___qtablewidgetitem16 = self.tableWidget_relatorio_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"New Column", None));
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Coluna Editavel", None));
         ___qtablewidgetitem17 = self.tableWidget_relatorio_as.verticalHeaderItem(0)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"New Row", None));
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Linha Editavel", None));
         self.btn_visualizar_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Visualizar", None))
         self.btn_alterar_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"  ALTERAR", None))
         self.btn_inativar_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Inativar", None))
         self.btn_imprimir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"  IMPRIMIR", None))
         self.btn_concluir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
+        self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torio", None))
+        self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"AGENDA", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rios", None))
         self.btn_7_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:00", None))
