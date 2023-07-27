@@ -2012,7 +2012,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_45.addWidget(self.frame_88)
 
-        self.frame_92 = QFrame(self.frame_44)
+        '''self.frame_92 = QFrame(self.frame_44)
         self.frame_92.setObjectName(u"frame_92")
         self.frame_92.setMinimumSize(QSize(0, 0))
         self.frame_92.setMaximumSize(QSize(260, 16777215))
@@ -2047,9 +2047,46 @@ class Ui_MainWindow(object):
         self.verticalLayout_61.addWidget(self.input_patologia_base_usuario_as)
 
 
+        self.horizontalLayout_45.addWidget(self.frame_92)'''
+
+        self.frame_92 = QFrame(self.frame_44)
+        self.frame_92.setObjectName(u"frame_92")
+        self.frame_92.setMinimumSize(QSize(0, 0))
+        self.frame_92.setMaximumSize(QSize(260, 16777215))
+        self.frame_92.setFrameShape(QFrame.StyledPanel)
+        self.frame_92.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_61 = QVBoxLayout(self.frame_92)
+        self.verticalLayout_61.setSpacing(0)
+        self.verticalLayout_61.setObjectName(u"verticalLayout_61")
+        self.verticalLayout_61.setContentsMargins(0, 0, 0, 0)
+        self.label_patologia_base_usuario_as = QLabel(self.frame_92)
+        self.label_patologia_base_usuario_as.setObjectName(u"label_patologia_base_usuario_as")
+        self.label_patologia_base_usuario_as.setMinimumSize(QSize(0, 0))
+        self.label_patologia_base_usuario_as.setMaximumSize(QSize(260, 16777215))
+        self.label_patologia_base_usuario_as.setFont(font)
+
+        self.verticalLayout_61.addWidget(self.label_patologia_base_usuario_as)
+
+        self.input_patologia_base_usuario_as = QComboBox(self.frame_92)
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.addItem("")
+        self.input_patologia_base_usuario_as.setObjectName(u"input_patologia_base_usuario_as")
+        self.input_patologia_base_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_patologia_base_usuario_as.setMaximumSize(QSize(260, 30))
+        self.input_patologia_base_usuario_as.setFont(font)
+        self.input_patologia_base_usuario_as.setToolTipDuration(-1)
+
+        self.verticalLayout_61.addWidget(self.input_patologia_base_usuario_as)
+
+
         self.horizontalLayout_45.addWidget(self.frame_92)
 
-        self.frame_141 = QFrame(self.frame_44)
+        '''self.frame_141 = QFrame(self.frame_44)
         self.frame_141.setObjectName(u"frame_141")
         self.frame_141.setEnabled(False)
         self.frame_141.setMinimumSize(QSize(0, 0))
@@ -2078,7 +2115,37 @@ class Ui_MainWindow(object):
         self.verticalLayout_98.addWidget(self.input_outras_patologias_usuario_as)
 
 
-        self.horizontalLayout_45.addWidget(self.frame_141)
+        self.horizontalLayout_45.addWidget(self.frame_141)'''
+
+        self.frame_440 = QFrame(self.frame_44)
+        self.frame_440.setObjectName(u"frame_440")
+        self.frame_440.setEnabled(False)
+        self.frame_440.setMinimumSize(QSize(0, 0))
+        self.frame_440.setMaximumSize(QSize(145, 16777215))
+        self.frame_440.setFrameShape(QFrame.StyledPanel)
+        self.frame_440.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_307 = QVBoxLayout(self.frame_440)
+        self.verticalLayout_307.setSpacing(0)
+        self.verticalLayout_307.setObjectName(u"verticalLayout_307")
+        self.verticalLayout_307.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_23 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_307.addItem(self.verticalSpacer_23)
+
+        self.input_outras_patologias_usuario_as = QLineEdit(self.frame_440)
+        self.input_outras_patologias_usuario_as.setObjectName(u"input_outras_patologias_usuario_as")
+        self.input_outras_patologias_usuario_as.setEnabled(False)
+        self.input_outras_patologias_usuario_as.setMinimumSize(QSize(0, 0))
+        self.input_outras_patologias_usuario_as.setMaximumSize(QSize(140, 16777215))
+        self.input_outras_patologias_usuario_as.setFont(font10)
+        self.input_outras_patologias_usuario_as.setStyleSheet(u"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"")
+
+        self.verticalLayout_307.addWidget(self.input_outras_patologias_usuario_as)
+
+
+        self.horizontalLayout_45.addWidget(self.frame_440)
 
         self.frame_132 = QFrame(self.frame_44)
         self.frame_132.setObjectName(u"frame_132")

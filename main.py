@@ -238,20 +238,13 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
-        
+        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-
-
-
-
-
-
-
 
 
         
@@ -771,23 +764,19 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
 
 ######################## Patologia base outros################################      
-    def on_tipo_alterar_usuario_changed(self):
+    def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
-            self.ui.frame_141.setEnabled(True)
+            self.ui.frame_440.setEnabled(True)
+            self.ui.frame_440.show()
+            self.ui.input_outras_patologias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_patologias_usuario_as.setEnabled(True)
-            self.ui.frame_141.show()
-            self.ui.input_outras_patologias_usuario_as.setEnabled(True)
-
-            self.ui.input_outras_patologias_usuario_as.setStyleSheet("") 
-            
-            
-            self.ui.input_outras_patologias_usuario_as.show()
-            
+            self.ui.input_outras_patologias_usuario_as.show()           
         else:
-            self.ui.frame_141.hide()
-            self.ui.input_outras_patologias_usuario_as.setEnabled(False)
+            self.ui.frame_440.hide()
+            self.ui.frame_440.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
+            self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
    
 
