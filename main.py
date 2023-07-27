@@ -748,8 +748,7 @@ class TelaPrincipal(QMainWindow):
         self.popup.close()
 
     def saidaSim(self):
-        #if self.saida.btn_sim_popup_confirma_saida.clicked:
-        self.ui.login.show()
+        self.ui.area_principal.setCurrentIndex(self.ui.inicio)
         self.close()
 
 
