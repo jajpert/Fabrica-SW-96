@@ -748,7 +748,7 @@ class TelaPrincipal(QMainWindow):
         self.popup.close()
 
     def saidaSim(self):
-        self.ui.area_principal.setCurrentIndex(self.ui.inicio)
+        self.ui.show()
         self.close()
 
 
