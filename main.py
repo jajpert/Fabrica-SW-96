@@ -485,7 +485,7 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.setCurrentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         id_colaborador_resp = 1
@@ -742,17 +742,18 @@ class TelaPrincipal(QMainWindow):
 
     def sairSistema(self):
         #self.saida = Ui_Confirma_Saida()
+        
         msg = ConfirmaSaida(self)
         self.popup.show()
         msg.exec()
         self.popup.close()
 
     def saidaSim(self):
-        self.ui.show()
-        self.close()
-
-
+        exit()
         
+        #self.show()
+        
+        #self.close()        
 
 
 if __name__ == "__main__":
