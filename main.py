@@ -848,11 +848,18 @@ class TelaPrincipal(QMainWindow):
         nomes = []
         for i in lista_usuarios:
             id_matricula = i[1]
-            print(id_matricula)
             nome = self.db.select_nome_usuario(id_matricula)
             nomes.append(nome)
-        print(nomes)
-        
+        convertendo = [i[0] for i in nomes]
+        convertendo = [i[0] for i in convertendo]
+        count = 0
+        itens = 1
+        while count < len(convertendo):
+            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{convertendo[count]}", None))
+            self.ui.input_usuario_cuidador_as.addItem("")
+            itens += 1
+            count += 1
+
     def cadastroCuidador(self):
 
         ######################## endereço ################################
@@ -867,6 +874,8 @@ class TelaPrincipal(QMainWindow):
 
         ###################### pessoa ####################################
         nome = self.ui.input_nome_cuidador_as.text()
+        data_nasc = self.ui.input_data_emissao_cuidador_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_cuidador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
         rg = self.ui.input_rg_cuidador_as.text()
@@ -878,7 +887,7 @@ class TelaPrincipal(QMainWindow):
         email = self.ui.input_email_cuidador_as.text()  
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
-        tupla_pessoa = (nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade)
         
 
         ################### cuidador ###################################
@@ -887,9 +896,12 @@ class TelaPrincipal(QMainWindow):
         observacao = self.ui.input_informacoes_gerais_as.toPlainText()
         tupla_cuidador = (parentesco,observacao)
 
+        ################## usuário ####################################
+        usuario_nome = self.ui.input_usuario_cuidador_as.currentText()
+
         ################## insert #######################################
         result = []
-        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
+        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_nome)
         #print(result)
         self.msg(result[0],result[1])
 

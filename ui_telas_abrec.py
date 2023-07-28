@@ -2618,7 +2618,6 @@ class Ui_MainWindow(object):
         self.input_usuario_cuidador_as = QComboBox(self.frame_237)
         self.input_usuario_cuidador_as.addItem("")
         self.input_usuario_cuidador_as.addItem("")
-        self.input_usuario_cuidador_as.addItem("")
         self.input_usuario_cuidador_as.setObjectName(u"input_usuario_cuidador_as")
         self.input_usuario_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_usuario_cuidador_as.setMaximumSize(QSize(16777215, 30))
