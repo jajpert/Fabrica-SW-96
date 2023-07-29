@@ -741,7 +741,7 @@ class TelaPrincipal(QMainWindow):
 ############## POPUP Confirma Saida ##################
 
     def sairSistema(self):
-        #self.saida = Ui_Confirma_Saida()
+        
         
         msg = ConfirmaSaida(self)
         self.popup.show()
@@ -749,7 +749,8 @@ class TelaPrincipal(QMainWindow):
         self.popup.close()
 
     def saidaSim(self):
-        exit()
+       
+        self.ui.login.show()
         
         #self.show()
         
