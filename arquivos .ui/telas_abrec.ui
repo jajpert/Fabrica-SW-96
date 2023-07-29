@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1864</width>
-    <height>893</height>
+    <height>894</height>
    </rect>
   </property>
   <property name="font">
@@ -5675,9 +5675,6 @@ QPushButton:pressed{
                                      <property name="text">
                                       <string>Patologia base</string>
                                      </property>
-                                     <property name="buddy">
-                                      <cstring>input_situacao_trabalho_outros_usuario_as</cstring>
-                                     </property>
                                     </widget>
                                    </item>
                                    <item>
@@ -5690,7 +5687,7 @@ QPushButton:pressed{
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>260</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -5700,8 +5697,8 @@ QPushButton:pressed{
                                        <pointsize>12</pointsize>
                                       </font>
                                      </property>
-                                     <property name="toolTipDuration">
-                                      <number>-1</number>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
                                      </property>
                                      <item>
                                       <property name="text">
@@ -5730,7 +5727,7 @@ QPushButton:pressed{
                                      </item>
                                      <item>
                                       <property name="text">
-                                       <string>Nefrites </string>
+                                       <string>Nefrites</string>
                                       </property>
                                      </item>
                                      <item>
@@ -5738,90 +5735,6 @@ QPushButton:pressed{
                                        <string>Outros</string>
                                       </property>
                                      </item>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_440">
-                                  <property name="enabled">
-                                   <bool>false</bool>
-                                  </property>
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>145</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_307">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <spacer name="verticalSpacer_23">
-                                     <property name="orientation">
-                                      <enum>Qt::Vertical</enum>
-                                     </property>
-                                     <property name="sizeHint" stdset="0">
-                                      <size>
-                                       <width>20</width>
-                                       <height>40</height>
-                                      </size>
-                                     </property>
-                                    </spacer>
-                                   </item>
-                                   <item>
-                                    <widget class="QLineEdit" name="input_outras_patologias_usuario_as">
-                                     <property name="enabled">
-                                      <bool>false</bool>
-                                     </property>
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>0</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>140</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                      </font>
-                                     </property>
-                                     <property name="styleSheet">
-                                      <string notr="true">    border: none;
-    background-color: rgba(0, 0, 0, 0);
-</string>
-                                     </property>
                                     </widget>
                                    </item>
                                   </layout>
@@ -9415,6 +9328,92 @@ QPushButton:focus{outline:0}</string>
                                      <property name="maximumSize">
                                       <size>
                                        <width>280</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_386">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>231</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>230</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_262">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_senha_colaborador_as_2">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>230</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Senha</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QLineEdit" name="input_senha_colaborador_as_2">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>229</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -17559,7 +17558,7 @@ QPushButton:focus{outline:0}</string>
                                        </font>
                                       </property>
                                       <property name="text">
-                                       <string>Idade</string>
+                                       <string/>
                                       </property>
                                      </widget>
                                     </item>
@@ -17633,7 +17632,11 @@ QPushButton:focus{outline:0}</string>
                                           </size>
                                          </property>
                                          <property name="styleSheet">
-                                          <string notr="true"/>
+                                          <string notr="true">
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+</string>
                                          </property>
                                          <property name="text">
                                           <string/>
@@ -17664,7 +17667,7 @@ QPushButton:focus{outline:0}</string>
                                           <string notr="true"/>
                                          </property>
                                          <property name="text">
-                                          <string>A</string>
+                                          <string/>
                                          </property>
                                         </widget>
                                        </item>
@@ -17686,7 +17689,11 @@ QPushButton:focus{outline:0}</string>
                                           </size>
                                          </property>
                                          <property name="styleSheet">
-                                          <string notr="true"/>
+                                          <string notr="true">
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+</string>
                                          </property>
                                          <property name="text">
                                           <string/>
@@ -17697,6 +17704,31 @@ QPushButton:focus{outline:0}</string>
                                      </widget>
                                     </item>
                                    </layout>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QFrame" name="frame_249">
+                                   <property name="enabled">
+                                    <bool>false</bool>
+                                   </property>
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>100</width>
+                                     <height>0</height>
+                                    </size>
+                                   </property>
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>100</width>
+                                     <height>16777215</height>
+                                    </size>
+                                   </property>
+                                   <property name="frameShape">
+                                    <enum>QFrame::StyledPanel</enum>
+                                   </property>
+                                   <property name="frameShadow">
+                                    <enum>QFrame::Raised</enum>
+                                   </property>
                                   </widget>
                                  </item>
                                  <item>
@@ -18155,7 +18187,47 @@ QPushButton:hover{background-color: #F89198}
 QPushButton:focus{outline:0}</string>
                                    </property>
                                    <property name="text">
-                                    <string>Gerar EXcel</string>
+                                    <string>Gerar Excel</string>
+                                   </property>
+                                   <property name="icon">
+                                    <iconset>
+                                     <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                   </property>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <widget class="QPushButton" name="btn_gerar_pdf_relatorio_as">
+                                   <property name="sizePolicy">
+                                    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                     <horstretch>0</horstretch>
+                                     <verstretch>0</verstretch>
+                                    </sizepolicy>
+                                   </property>
+                                   <property name="minimumSize">
+                                    <size>
+                                     <width>125</width>
+                                     <height>40</height>
+                                    </size>
+                                   </property>
+                                   <property name="maximumSize">
+                                    <size>
+                                     <width>40</width>
+                                     <height>40</height>
+                                    </size>
+                                   </property>
+                                   <property name="font">
+                                    <font>
+                                     <family>Abel</family>
+                                     <pointsize>15</pointsize>
+                                    </font>
+                                   </property>
+                                   <property name="styleSheet">
+                                    <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                                   </property>
+                                   <property name="text">
+                                    <string>Gerar PDF</string>
                                    </property>
                                    <property name="icon">
                                     <iconset>
@@ -18413,7 +18485,7 @@ QPushButton:focus{outline:0}</string>
 color: rgb(236, 132, 140);</string>
                                 </property>
                                 <property name="text">
-                                 <string>Relátorio</string>
+                                 <string>Relátorios</string>
                                 </property>
                                </widget>
                               </item>
