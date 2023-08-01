@@ -224,20 +224,15 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
+        self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
+        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-
-
-
-
-
-
-
 
 
         
@@ -804,6 +799,11 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
+        outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
+       
+
+        
+           
         data_ini = self.ui.input_data_inicio_usuario_as.text()
         data_inicio = "-".join(data_ini.split("/")[::-1])
         periodo = self.ui.input_periodo_usuario_as.currentText()
@@ -833,7 +833,7 @@ class TelaPrincipal(QMainWindow):
 
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
         result = []
@@ -924,7 +924,9 @@ class TelaPrincipal(QMainWindow):
         data_admissao = "-".join(data_admi.split("/")[::-1])
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
-        cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO        
+        cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
+        
+        
 
         #################### login e senha ####################################
 
@@ -1042,6 +1044,7 @@ class TelaPrincipal(QMainWindow):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
+######################## Situação de trabalho outros ################################    
     def on_tipo_usuario_changed(self):
         
         if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":
@@ -1057,7 +1060,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
             self.ui.input_situacao_trabalho_outros_usuario_as.clear()
             
-            
+######################## Alterar Situação de trabalho outros ################################            
     def on_tipo_alterar_usuario_changed(self):
 
         if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
@@ -1074,6 +1077,71 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
 
+    def on_idade_relatorio(self):
+        if self.ui.input_escolha_relatorio_as.currentText() == "Faixa etária":
+            self.ui.frame_237.setEnabled(True)
+            self.ui.frame_237.show()
+            self.ui.frame_246.setEnabled(True)
+            self.ui.frame_246.show()
+
+            self.ui.input_idade_inicial_relatorio_as.setEnabled(True)
+            self.ui.input_idade_inicial_relatorio_as.setStyleSheet("")
+            self.ui.input_idade_inicial_relatorio_as.show() 
+            
+            self.ui.input_idade_final_relatorio_as.setEnabled(True)
+            self.ui.input_idade_final_relatorio_as.setStyleSheet("")
+            self.ui.input_idade_final_relatorio_as.show()
+
+            texto = "A"
+            
+
+            self.ui.label_a_relatorio_as.setEnabled(True)
+            self.ui.label_a_relatorio_as.setStyleSheet("")
+            self.ui.label_a_relatorio_as.setText(texto)
+            self.ui.label_a_relatorio_as.show()
+
+            self.ui.label_idade_relatorio_as.setEnabled(True)
+            self.ui.label_idade_relatorio_as.setStyleSheet("")
+            self.ui.label_idade_relatorio_as.setText("idade")
+            self.ui.label_idade_relatorio_as.show()
+
+        else:
+            
+            self.ui.input_idade_inicial_relatorio_as.setEnabled(False)
+            self.ui.input_idade_inicial_relatorio_as.hide()
+            self.ui.input_idade_inicial_relatorio_as.clear()
+
+            
+            self.ui.label_a_relatorio_as.setEnabled(False)
+            self.ui.label_a_relatorio_as.hide()
+            self.ui.label_a_relatorio_as.clear()
+
+            
+            self.ui.input_idade_final_relatorio_as.setEnabled(False)
+            self.ui.input_idade_final_relatorio_as.hide()
+            self.ui.input_idade_final_relatorio_as.clear()
+
+            
+            self.ui.label_idade_relatorio_as.setEnabled(False)
+            self.ui.label_idade_relatorio_as.hide()
+            self.ui.label_idade_relatorio_as.clear()
+            self.ui.frame_246.hide()
+            self.ui.frame_237.hide()
+######################## Patologia base outros################################      
+    def on_patologia_base_usuario_changed(self):
+
+        if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
+            self.ui.frame_440.setEnabled(True)
+            self.ui.frame_440.show()
+            self.ui.input_outras_patologias_usuario_as.setStyleSheet("")  
+            self.ui.input_outras_patologias_usuario_as.setEnabled(True)
+            self.ui.input_outras_patologias_usuario_as.show()           
+        else:
+            self.ui.frame_440.hide()
+            self.ui.frame_440.setEnabled(False)
+            self.ui.input_outras_patologias_usuario_as.hide()
+            self.ui.input_outras_patologias_usuario_as.setEnabled(False)
+            self.ui.input_outras_patologias_usuario_as.clear()
    
 
 
