@@ -59,7 +59,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT id_usuario, id_matricula FROM usuario ORDER BY id_usuario DESC;
+                SELECT id_usuario, id_matricula FROM usuario WHERE id_cuidador IS NULL ORDER BY id_usuario DESC LIMIT 10;
             """)
             result = self.cursor.fetchall()
             
@@ -231,7 +231,7 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def cadastro_cuidador(self,endereco,pessoa,cuidador, usuario):
+    def cadastro_cuidador(self,endereco,pessoa,cuidador,usuario):
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
@@ -252,22 +252,21 @@ class DataBase():
                 INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
             """,(cuidador[0],cuidador[1],id_matricula))
             id_matricula_cuidador = self.cursor.lastrowid
-            print('id matricula cuidador',id_matricula_cuidador)
             self.conn.commit()
 
             self.cursor.execute(f"""
                 SELECT id_matricula FROM pessoa WHERE nome LIKE '%{usuario}%';
             """)
             id_matricula_usuario = self.cursor.fetchall()
-            print('id matricula usuario',id_matricula_usuario)
+            id_matricula_usuario = id_matricula_usuario[0][0]
 
             self.cursor.execute(f"""
                 SELECT id_usuario FROM usuario WHERE id_matricula = {id_matricula_usuario};
             """)
             id_usuario = self.cursor.fetchall()
-            print('id usuario',id_usuario)
+            id_usuario = id_usuario[0][0]
 
-            self.cursor.execute(f'INSERT INTO usuario(id_cuidador) VALUES ({id_matricula_cuidador}) WHERE id_usuario = {id_usuario}')
+            self.cursor.execute(f'UPDATE usuario SET id_cuidador = {id_matricula_cuidador} WHERE id_usuario = {id_usuario}')
             print("fez o inset do id")
             self.conn.commit()
 
