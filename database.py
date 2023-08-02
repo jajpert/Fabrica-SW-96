@@ -54,6 +54,46 @@ class DataBase():
 
         finally:
             self.close_connection()
+    
+    def select_usuario(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_usuario, id_matricula FROM usuario WHERE id_cuidador IS NULL ORDER BY id_usuario DESC LIMIT 10;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
+    def select_nome_usuario(self,id_matricula):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT nome FROM pessoa WHERE id_matricula = {id_matricula};
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            # for linha in result:
+            #    print(linha)
+            
+            return result
+            #retorna a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
 
     def filter(self,texto):
         self.connect()
@@ -191,7 +231,7 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def cadastro_cuidador(self,endereco,pessoa,cuidador):
+    def cadastro_cuidador(self,endereco,pessoa,cuidador,usuario):
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
@@ -201,8 +241,8 @@ class DataBase():
 
             print('ID do endereco',id_endereco)
 
-            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],id_endereco)
-            self.cursor.execute('INSERT INTO pessoa(nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],id_endereco)
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
 
@@ -211,7 +251,25 @@ class DataBase():
             self.cursor.execute("""
                 INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
             """,(cuidador[0],cuidador[1],id_matricula))
+            id_matricula_cuidador = self.cursor.lastrowid
             self.conn.commit()
+
+            self.cursor.execute(f"""
+                SELECT id_matricula FROM pessoa WHERE nome LIKE '%{usuario}%';
+            """)
+            id_matricula_usuario = self.cursor.fetchall()
+            id_matricula_usuario = id_matricula_usuario[0][0]
+
+            self.cursor.execute(f"""
+                SELECT id_usuario FROM usuario WHERE id_matricula = {id_matricula_usuario};
+            """)
+            id_usuario = self.cursor.fetchall()
+            id_usuario = id_usuario[0][0]
+
+            self.cursor.execute(f'UPDATE usuario SET id_cuidador = {id_matricula_cuidador} WHERE id_usuario = {id_usuario}')
+            print("fez o inset do id")
+            self.conn.commit()
+
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
