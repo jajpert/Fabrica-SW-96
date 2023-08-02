@@ -15,11 +15,10 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-
+            
         ############ valida email ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
         #######################################
-
         MainWindow.resize(1864, 894)
         font = QFont()
         font.setFamilies([u"Abel"])
@@ -4751,6 +4750,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_143)
 
+        self.frame_271 = QFrame(self.frame_126)
+        self.frame_271.setObjectName(u"frame_271")
+        self.frame_271.setFrameShape(QFrame.StyledPanel)
+        self.frame_271.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_62.addWidget(self.frame_271)
+
         self.frame_144 = QFrame(self.frame_126)
         self.frame_144.setObjectName(u"frame_144")
         self.frame_144.setMinimumSize(QSize(195, 50))
@@ -4795,6 +4801,13 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_62.addWidget(self.frame_144)
+
+        self.frame_263 = QFrame(self.frame_126)
+        self.frame_263.setObjectName(u"frame_263")
+        self.frame_263.setFrameShape(QFrame.StyledPanel)
+        self.frame_263.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_62.addWidget(self.frame_263)
 
 
         self.verticalLayout_85.addWidget(self.frame_126)
@@ -5099,6 +5112,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_149)
 
+        self.frame_392 = QFrame(self.frame_127)
+        self.frame_392.setObjectName(u"frame_392")
+        self.frame_392.setFrameShape(QFrame.StyledPanel)
+        self.frame_392.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_64.addWidget(self.frame_392)
+
 
         self.verticalLayout_85.addWidget(self.frame_127)
 
@@ -5293,6 +5313,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.frame_158)
 
+        self.frame_440 = QFrame(self.frame_136)
+        self.frame_440.setObjectName(u"frame_440")
+        self.frame_440.setFrameShape(QFrame.StyledPanel)
+        self.frame_440.setFrameShadow(QFrame.Raised)
+
+        self.horizontalLayout_66.addWidget(self.frame_440)
+
 
         self.verticalLayout_85.addWidget(self.frame_136)
 
@@ -5315,22 +5342,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_1111.setSpacing(0)
         self.verticalLayout_1111.setObjectName(u"verticalLayout_1111")
         self.verticalLayout_1111.setContentsMargins(0, 0, 0, 0)
-        self.label_numero_cursos_as = QLabel(self.frame_159)
-        self.label_numero_cursos_as.setObjectName(u"label_numero_cursos_as")
-        self.label_numero_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_numero_cursos_as.setMaximumSize(QSize(160, 16777215))
-        self.label_numero_cursos_as.setFont(font)
-
-        self.verticalLayout_1111.addWidget(self.label_numero_cursos_as)
-
-        self.input_numero_cursos_as = QLineEdit(self.frame_159)
-        self.input_numero_cursos_as.setObjectName(u"input_numero_cursos_as")
-        self.input_numero_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_numero_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_numero_cursos_as.setFont(font)
-
-        self.verticalLayout_1111.addWidget(self.input_numero_cursos_as)
-
 
         self.horizontalLayout_67.addWidget(self.frame_159)
 
@@ -5344,22 +5355,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_112.setSpacing(0)
         self.verticalLayout_112.setObjectName(u"verticalLayout_112")
         self.verticalLayout_112.setContentsMargins(0, 0, 0, 0)
-        self.label_bairro_cursos_as = QLabel(self.frame_160)
-        self.label_bairro_cursos_as.setObjectName(u"label_bairro_cursos_as")
-        self.label_bairro_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_bairro_cursos_as.setMaximumSize(QSize(230, 16777215))
-        self.label_bairro_cursos_as.setFont(font)
-
-        self.verticalLayout_112.addWidget(self.label_bairro_cursos_as)
-
-        self.input_bairro_cursos_as = QLineEdit(self.frame_160)
-        self.input_bairro_cursos_as.setObjectName(u"input_bairro_cursos_as")
-        self.input_bairro_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_bairro_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_bairro_cursos_as.setFont(font)
-
-        self.verticalLayout_112.addWidget(self.input_bairro_cursos_as)
-
 
         self.horizontalLayout_67.addWidget(self.frame_160)
 
@@ -5373,21 +5368,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_113.setSpacing(0)
         self.verticalLayout_113.setObjectName(u"verticalLayout_113")
         self.verticalLayout_113.setContentsMargins(0, 0, 0, 0)
-        self.label_cidade_cursos_as = QLabel(self.frame_161)
-        self.label_cidade_cursos_as.setObjectName(u"label_cidade_cursos_as")
-        self.label_cidade_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_cidade_cursos_as.setMaximumSize(QSize(240, 16777215))
-        self.label_cidade_cursos_as.setFont(font)
+        self.verticalSpacer_26 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_113.addWidget(self.label_cidade_cursos_as)
-
-        self.input_cidade_cursos_as = QLineEdit(self.frame_161)
-        self.input_cidade_cursos_as.setObjectName(u"input_cidade_cursos_as")
-        self.input_cidade_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_cidade_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cidade_cursos_as.setFont(font)
-
-        self.verticalLayout_113.addWidget(self.input_cidade_cursos_as)
+        self.verticalLayout_113.addItem(self.verticalSpacer_26)
 
 
         self.horizontalLayout_67.addWidget(self.frame_161)
@@ -5402,21 +5385,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_114.setSpacing(0)
         self.verticalLayout_114.setObjectName(u"verticalLayout_114")
         self.verticalLayout_114.setContentsMargins(0, 0, 0, 0)
-        self.label_estado_cursos_as = QLabel(self.frame_162)
-        self.label_estado_cursos_as.setObjectName(u"label_estado_cursos_as")
-        self.label_estado_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_estado_cursos_as.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_cursos_as.setFont(font)
-
-        self.verticalLayout_114.addWidget(self.label_estado_cursos_as)
-
-        self.input_estado_cursos_as = QLineEdit(self.frame_162)
-        self.input_estado_cursos_as.setObjectName(u"input_estado_cursos_as")
-        self.input_estado_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_estado_cursos_as.setMaximumSize(QSize(16777215, 30))
-
-        self.verticalLayout_114.addWidget(self.input_estado_cursos_as)
-
 
         self.horizontalLayout_67.addWidget(self.frame_162)
 
@@ -5456,13 +5424,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_85.addWidget(self.frame_140)
-
-        self.frame_138 = QFrame(self.frame_125)
-        self.frame_138.setObjectName(u"frame_138")
-        self.frame_138.setFrameShape(QFrame.StyledPanel)
-        self.frame_138.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_85.addWidget(self.frame_138)
 
 
         self.horizontalLayout_61.addWidget(self.frame_125)
@@ -12257,13 +12218,6 @@ class Ui_MainWindow(object):
         self.label_vagas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Vagas", None))
         self.label_cep_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
         self.label_logradouro_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None))
-        self.label_numero_cursos_as.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
-        self.input_numero_cursos_as.setText("")
-        self.label_bairro_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
-        self.input_bairro_cursos_as.setText("")
-        self.label_cidade_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
-        self.input_cidade_cursos_as.setText("")
-        self.label_estado_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_descricao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o da atividade", None))
         self.btn_voltar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_lista_pessoas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Lista pessoas cadastradas", None))
@@ -12621,6 +12575,5 @@ class Ui_MainWindow(object):
         self.btn_eventos_sec.setText(QCoreApplication.translate("MainWindow", u"   EVENTOS", None))
         self.btn_relatorios_sec.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
         self.btn_sair_sec.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
-    
     # retranslateUi
 
