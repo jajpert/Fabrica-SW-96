@@ -185,16 +185,14 @@ class ConfirmaSaida(QDialog):
         self.popup = Overlay(self)
         self.saida.setupUi(self)
 
-
+        
         self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.closeMsg)
-        
-        
-              
+            
         
     def closeMsg(self):
-        self.close()
+        self.close() 
 
-      
+    
 
 
 
@@ -224,10 +222,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS#################       
-        
+       
+
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        #self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closeMsg)
+        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closePopup)
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.toolButton.clicked.connect(self.visibilidade)        
@@ -749,7 +749,14 @@ class TelaPrincipal(QMainWindow):
     
 
     def closePopup(self):
-        self.hide()       
+        print("1")
+        msg = ConfirmaSaida(self)
+        print("2")
+        self.popup.close()
+        print("3")
+        msg.exec()
+        print("4")
+        self.popup.close()     
 
 
 if __name__ == "__main__":
