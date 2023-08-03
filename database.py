@@ -59,7 +59,47 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
+                SELECT id_usuario FROM usuario ORDER BY id_usuario DESC LIMIT 1;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
+    def select_usuario_ids(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
                 SELECT id_usuario, id_matricula FROM usuario WHERE id_cuidador IS NULL ORDER BY id_usuario DESC LIMIT 10;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
+    def select_cuidador(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_cuidador FROM cuidador ORDER BY id_cuidador DESC LIMIT 1;
             """)
             result = self.cursor.fetchall()
             
@@ -254,19 +294,7 @@ class DataBase():
             id_matricula_cuidador = self.cursor.lastrowid
             self.conn.commit()
 
-            self.cursor.execute(f"""
-                SELECT id_matricula FROM pessoa WHERE nome LIKE '%{usuario}%';
-            """)
-            id_matricula_usuario = self.cursor.fetchall()
-            id_matricula_usuario = id_matricula_usuario[0][0]
-
-            self.cursor.execute(f"""
-                SELECT id_usuario FROM usuario WHERE id_matricula = {id_matricula_usuario};
-            """)
-            id_usuario = self.cursor.fetchall()
-            id_usuario = id_usuario[0][0]
-
-            self.cursor.execute(f'UPDATE usuario SET id_cuidador = {id_matricula_cuidador} WHERE id_usuario = {id_usuario}')
+            self.cursor.execute(f'UPDATE usuario SET id_cuidador = {id_matricula_cuidador} WHERE id_usuario = {usuario}')
             print("fez o inset do id")
             self.conn.commit()
 

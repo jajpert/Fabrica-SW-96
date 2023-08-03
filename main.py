@@ -176,20 +176,25 @@ class TelaPrincipal(QMainWindow):
         self.listarUsuarios()
 
         ########### selected último id das tabelas do banco ##########
-        selected_pessoa = self.db.select_pessoa()
+        select_usuario = self.db.select_usuario()
+        select_cuidador = self.db.select_cuidador()
         selected_colaborador = self.db.select_colaborador()
-        ultimo_id_pessoa = (selected_pessoa[0])
+        ultimo_id_usuario = (select_usuario[0])
+        ultimo_id_cuidador = (select_cuidador[0])
         ultimo_id_colaborador = (selected_colaborador[0])
-        ultimo_id_pessoa = ''.join(map(str, ultimo_id_pessoa))
+        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
+        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
         ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
-        proximo_id_pessoa = 1 + int(ultimo_id_pessoa)
+        proximo_id_usuario = 1 + int(ultimo_id_usuario)
+        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
         proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
-        proximo_id_pessoa = str(proximo_id_pessoa).zfill(4)
+        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
+        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
         proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
 
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_pessoa}')
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
         self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_pessoa}')
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
         self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
         self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
         self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
@@ -844,18 +849,22 @@ class TelaPrincipal(QMainWindow):
         self.msg(result[0],result[1])
     
     def listarUsuarios(self):
-        lista_usuarios = self.db.select_usuario()
+        lista_usuarios = self.db.select_usuario_ids()
         nomes = []
+        id_usuarios = []
         for i in lista_usuarios:
+            id_usuario = i[0]
+            id_usuario = str(id_usuario).zfill(4)
             id_matricula = i[1]
             nome = self.db.select_nome_usuario(id_matricula)
+            id_usuarios.append(id_usuario)
             nomes.append(nome)
-        convertendo = [i[0] for i in nomes]
-        convertendo = [i[0] for i in convertendo]
+        convertendo_nome = [i[0] for i in nomes]
+        convertendo_nome = [i[0] for i in convertendo_nome]
         count = 0
         itens = 1
-        while count < len(convertendo):
-            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{convertendo[count]}", None))
+        while count < len(convertendo_nome):
+            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
             self.ui.input_usuario_cuidador_as.addItem("")
             itens += 1
             count += 1
@@ -897,11 +906,13 @@ class TelaPrincipal(QMainWindow):
         tupla_cuidador = (parentesco,observacao)
 
         ################## usuário ####################################
-        usuario_nome = self.ui.input_usuario_cuidador_as.currentText()
+        usuario_nome_id = self.ui.input_usuario_cuidador_as.currentText()
+        usuario_nome_id = usuario_nome_id.split("-")
+        usuario_id = int(usuario_nome_id[0])
 
         ################## insert #######################################
         result = []
-        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_nome)
+        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
         #print(result)
         self.msg(result[0],result[1])
 
