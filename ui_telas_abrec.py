@@ -2047,7 +2047,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_45.addWidget(self.frame_92)
-
         self.frame_440 = QFrame(self.frame_44)
         self.frame_440.setObjectName(u"frame_440")
         self.frame_440.setEnabled(False)
@@ -5052,6 +5051,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_148)
 
+        self.horizontalSpacer_81 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_64.addItem(self.horizontalSpacer_81)
+
         self.frame_149 = QFrame(self.frame_127)
         self.frame_149.setObjectName(u"frame_149")
         self.frame_149.setMaximumSize(QSize(400, 16777215))
@@ -5379,22 +5382,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_109.setSpacing(0)
         self.verticalLayout_109.setObjectName(u"verticalLayout_109")
         self.verticalLayout_109.setContentsMargins(0, 0, 0, 0)
-        self.label_cep_cursos_as = QLabel(self.frame_157)
-        self.label_cep_cursos_as.setObjectName(u"label_cep_cursos_as")
-        self.label_cep_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_cep_cursos_as.setMaximumSize(QSize(160, 16777215))
-        self.label_cep_cursos_as.setFont(font)
-
-        self.verticalLayout_109.addWidget(self.label_cep_cursos_as)
-
-        self.input_cep_cursos_as = QLineEdit(self.frame_157)
-        self.input_cep_cursos_as.setObjectName(u"input_cep_cursos_as")
-        self.input_cep_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_cep_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cep_cursos_as.setFont(font)
-
-        self.verticalLayout_109.addWidget(self.input_cep_cursos_as)
-
 
         self.horizontalLayout_66.addWidget(self.frame_157)
 
@@ -5408,32 +5395,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_110.setSpacing(0)
         self.verticalLayout_110.setObjectName(u"verticalLayout_110")
         self.verticalLayout_110.setContentsMargins(0, 0, 0, 0)
-        self.label_logradouro_cursos_as = QLabel(self.frame_158)
-        self.label_logradouro_cursos_as.setObjectName(u"label_logradouro_cursos_as")
-        self.label_logradouro_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_logradouro_cursos_as.setMaximumSize(QSize(360, 16777215))
-        self.label_logradouro_cursos_as.setFont(font)
-
-        self.verticalLayout_110.addWidget(self.label_logradouro_cursos_as)
-
-        self.input_logradouro_cursos_as = QLineEdit(self.frame_158)
-        self.input_logradouro_cursos_as.setObjectName(u"input_logradouro_cursos_as")
-        self.input_logradouro_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_logradouro_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_logradouro_cursos_as.setFont(font)
-
-        self.verticalLayout_110.addWidget(self.input_logradouro_cursos_as)
-
 
         self.horizontalLayout_66.addWidget(self.frame_158)
-
         self.frame_440 = QFrame(self.frame_136)
         self.frame_440.setObjectName(u"frame_440")
         self.frame_440.setFrameShape(QFrame.StyledPanel)
         self.frame_440.setFrameShadow(QFrame.Raised)
 
         self.horizontalLayout_66.addWidget(self.frame_440)
-
 
         self.verticalLayout_85.addWidget(self.frame_136)
 
@@ -5499,7 +5468,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_114.setSpacing(0)
         self.verticalLayout_114.setObjectName(u"verticalLayout_114")
         self.verticalLayout_114.setContentsMargins(0, 0, 0, 0)
-
+        
         self.horizontalLayout_67.addWidget(self.frame_162)
 
         self.frame_163 = QFrame(self.frame_139)
@@ -12162,6 +12131,8 @@ class Ui_MainWindow(object):
 
         self.label_usuario_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.input_usuario_cuidador_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_usuario_cuidador_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Masculino", None))
+        self.input_usuario_cuidador_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
 
         self.label_parentesco_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None))
         self.label_telefone_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
@@ -12334,8 +12305,6 @@ class Ui_MainWindow(object):
         self.input_periodo_cursos_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
 
         self.label_vagas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Vagas", None))
-        self.label_cep_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
-        self.label_logradouro_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None))
         self.label_descricao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o da atividade", None))
         self.btn_voltar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_lista_pessoas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Lista pessoas cadastradas", None))
