@@ -1351,7 +1351,7 @@ QPushButton:focus{outline:0}</string>
                    <item row="0" column="0">
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -9358,6 +9358,24 @@ QPushButton:focus{outline:0}</string>
                       <layout class="QVBoxLayout" name="verticalLayout_83">
                        <item>
                         <widget class="QFrame" name="frame_192">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>130</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>16777215</width>
+                           <height>130</height>
+                          </size>
+                         </property>
                          <property name="styleSheet">
                           <string notr="true">background-color: #F3B9BF; margin-bottom: 2em</string>
                          </property>
@@ -9407,6 +9425,12 @@ QPushButton:focus{outline:0}</string>
                        </item>
                        <item>
                         <widget class="QFrame" name="frame_193">
+                         <property name="sizePolicy">
+                          <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
                          </property>
@@ -9432,10 +9456,22 @@ QPushButton:focus{outline:0}</string>
                           <item>
                            <widget class="QFrame" name="frame_194">
                             <property name="sizePolicy">
-                             <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
                               <horstretch>0</horstretch>
                               <verstretch>0</verstretch>
                              </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>360</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>360</height>
+                             </size>
                             </property>
                             <property name="styleSheet">
                              <string notr="true">QLabel{margin-left: 0.25em}</string>
@@ -9447,6 +9483,32 @@ QPushButton:focus{outline:0}</string>
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QGridLayout" name="gridLayout_2">
+                             <item row="4" column="0">
+                              <spacer name="horizontalSpacer_51">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>123</width>
+                                 <height>55</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item row="4" column="2">
+                              <spacer name="horizontalSpacer_52">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>194</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
                              <item row="5" column="1">
                               <widget class="QFrame" name="frame_241">
                                <property name="minimumSize">
@@ -9745,104 +9807,20 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QFrame" name="frame_252">
-                                  <property name="minimumSize">
+                                 <spacer name="horizontalSpacer_81">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeType">
+                                   <enum>QSizePolicy::Fixed</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
                                    <size>
-                                    <width>0</width>
-                                    <height>0</height>
+                                    <width>40</width>
+                                    <height>20</height>
                                    </size>
                                   </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>230</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_169">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_253">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>180</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_254">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>0</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>80</width>
-                                    <height>16777215</height>
-                                   </size>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_170">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                  </layout>
-                                 </widget>
+                                 </spacer>
                                 </item>
                                </layout>
                               </widget>
@@ -9851,13 +9829,13 @@ QPushButton:focus{outline:0}</string>
                               <widget class="QFrame" name="frame_230">
                                <property name="minimumSize">
                                 <size>
-                                 <width>0</width>
+                                 <width>1019</width>
                                  <height>0</height>
                                 </size>
                                </property>
                                <property name="maximumSize">
                                 <size>
-                                 <width>16777215</width>
+                                 <width>1019</width>
                                  <height>60</height>
                                 </size>
                                </property>
@@ -9872,7 +9850,7 @@ QPushButton:focus{outline:0}</string>
                                </property>
                                <layout class="QHBoxLayout" name="horizontalLayout_88">
                                 <property name="spacing">
-                                 <number>37</number>
+                                 <number>0</number>
                                 </property>
                                 <property name="leftMargin">
                                  <number>0</number>
@@ -9890,14 +9868,14 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_231">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
+                                    <width>149</width>
                                     <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>155</width>
-                                    <height>16777215</height>
+                                    <width>149</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -9932,8 +9910,8 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>155</width>
-                                       <height>16777215</height>
+                                       <width>90</width>
+                                       <height>26</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -10006,14 +9984,14 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_255">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
-                                    <height>0</height>
+                                    <width>125</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>155</width>
-                                    <height>16777215</height>
+                                    <width>125</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -10073,8 +10051,8 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
-                                       <height>16777215</height>
+                                       <width>123</width>
+                                       <height>30</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -10095,14 +10073,14 @@ QPushButton:focus{outline:0}</string>
                                  <widget class="QFrame" name="frame_233">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
-                                    <height>0</height>
+                                    <width>120</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>251</width>
-                                    <height>16777215</height>
+                                    <width>120</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -10129,6 +10107,18 @@ QPushButton:focus{outline:0}</string>
                                    </property>
                                    <item>
                                     <widget class="QLabel" name="label_Data_de_admissao_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>114</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>118</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
@@ -10212,14 +10202,14 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  <widget class="QFrame" name="frame_234">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
-                                    <height>0</height>
+                                    <width>190</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>175</width>
-                                    <height>16777215</height>
+                                    <width>190</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -10333,14 +10323,14 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  <widget class="QFrame" name="frame_235">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
-                                    <height>0</height>
+                                    <width>144</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>146</width>
-                                    <height>16777215</height>
+                                    <width>145</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -10369,13 +10359,13 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <widget class="QLabel" name="label_cargo_colaborador_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>0</width>
+                                       <width>130</width>
                                        <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>240</width>
+                                       <width>130</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -10400,13 +10390,13 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <property name="minimumSize">
                                       <size>
-                                       <width>0</width>
+                                       <width>138</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
+                                       <width>138</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10463,10 +10453,16 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_236">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>153</width>
+                                    <height>58</height>
+                                   </size>
+                                  </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>170</width>
-                                    <height>16777215</height>
+                                    <width>150</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -10493,9 +10489,15 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </property>
                                    <item>
                                     <widget class="QLabel" name="label_periodo_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>130</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>170</width>
+                                       <width>130</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -10514,13 +10516,13 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <widget class="QComboBox" name="input_periodo_colaborador_comboBox_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>70</width>
+                                       <width>130</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
+                                       <width>150</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -10560,48 +10562,22 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </layout>
                                  </widget>
                                 </item>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item row="6" column="1">
-                              <widget class="QFrame" name="frame_214">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>0</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>16777215</width>
-                                 <height>300</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true"/>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_172">
-                                <property name="spacing">
-                                 <number>0</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
+                                <item>
+                                 <spacer name="horizontalSpacer_82">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeType">
+                                   <enum>QSizePolicy::Fixed</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>104</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
                                </layout>
                               </widget>
                              </item>
@@ -11185,32 +11161,6 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                </layout>
                               </widget>
                              </item>
-                             <item row="4" column="0">
-                              <spacer name="horizontalSpacer_51">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>123</width>
-                                 <height>55</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
-                             <item row="4" column="2">
-                              <spacer name="horizontalSpacer_52">
-                               <property name="orientation">
-                                <enum>Qt::Horizontal</enum>
-                               </property>
-                               <property name="sizeHint" stdset="0">
-                                <size>
-                                 <width>194</width>
-                                 <height>20</height>
-                                </size>
-                               </property>
-                              </spacer>
-                             </item>
                              <item row="0" column="1">
                               <widget class="QFrame" name="frame_195">
                                <property name="minimumSize">
@@ -11740,6 +11690,120 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </item>
                                   </layout>
                                  </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item row="0" column="0" rowspan="3" alignment="Qt::AlignRight|Qt::AlignTop">
+                              <widget class="QFrame" name="frame_258">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>125</width>
+                                 <height>200</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>125</width>
+                                 <height>200</height>
+                                </size>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_179">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QPushButton" name="input_foto_colaborador_as">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>125</width>
+                                    <height>153</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>125</width>
+                                    <height>153</height>
+                                   </size>
+                                  </property>
+                                  <property name="cursor">
+                                   <cursorShape>PointingHandCursor</cursorShape>
+                                  </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: #F3B9BF; border: none</string>
+                                  </property>
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                  <property name="icon">
+                                   <iconset>
+                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                  </property>
+                                  <property name="iconSize">
+                                   <size>
+                                    <width>120</width>
+                                    <height>120</height>
+                                   </size>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_259">
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: rgb(243, 185, 191);</string>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_178">
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <spacer name="verticalSpacer">
+                                  <property name="orientation">
+                                   <enum>Qt::Vertical</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>20</width>
+                                    <height>19</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
                                 </item>
                                </layout>
                               </widget>
@@ -12501,120 +12565,6 @@ QPushButton:pressed{
                                </layout>
                               </widget>
                              </item>
-                             <item row="0" column="0" rowspan="3" alignment="Qt::AlignRight|Qt::AlignTop">
-                              <widget class="QFrame" name="frame_258">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>125</width>
-                                 <height>200</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>125</width>
-                                 <height>200</height>
-                                </size>
-                               </property>
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_179">
-                                <property name="spacing">
-                                 <number>0</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QPushButton" name="input_foto_colaborador_as">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>125</width>
-                                    <height>153</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>125</width>
-                                    <height>153</height>
-                                   </size>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: #F3B9BF; border: none</string>
-                                  </property>
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
-                                  </property>
-                                  <property name="iconSize">
-                                   <size>
-                                    <width>120</width>
-                                    <height>120</height>
-                                   </size>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_259">
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: rgb(243, 185, 191);</string>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_178">
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <spacer name="verticalSpacer">
-                                  <property name="orientation">
-                                   <enum>Qt::Vertical</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>20</width>
-                                    <height>19</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
                              <item row="0" column="2">
                               <widget class="QFrame" name="frame_260">
                                <property name="frameShape">
@@ -12812,167 +12762,11 @@ QPushButton:pressed{
                           </property>
                           <item>
                            <widget class="QFrame" name="frame_269">
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_184">
-                             <property name="spacing">
-                              <number>5</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                             <item>
-                              <widget class="QFrame" name="frame_270">
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_167">
-                                <property name="spacing">
-                                 <number>0</number>
-                                </property>
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                               </layout>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QFrame" name="frame_272">
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
-                               <layout class="QVBoxLayout" name="verticalLayout_183">
-                                <property name="leftMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="topMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="rightMargin">
-                                 <number>0</number>
-                                </property>
-                                <property name="bottomMargin">
-                                 <number>0</number>
-                                </property>
-                                <item>
-                                 <widget class="QPushButton" name="btn_voltar_cadastro_colaborador_as">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>100</width>
-                                    <height>40</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>100</width>
-                                    <height>40</height>
-                                   </size>
-                                  </property>
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>18</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
-QPushButton:hover{background-color: #23B2EE}
-QPushButton:focus{outline:0}</string>
-                                  </property>
-                                  <property name="text">
-                                   <string>VOLTAR</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="frame_239">
-                            <property name="minimumSize">
-                             <size>
-                              <width>282</width>
-                              <height>0</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>281</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_175">
-                             <property name="spacing">
-                              <number>5</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="frame_250">
-                            <property name="minimumSize">
-                             <size>
-                              <width>231</width>
-                              <height>0</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>230</width>
-                              <height>16777215</height>
-                             </size>
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
                             </property>
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
@@ -12981,152 +12775,158 @@ QPushButton:focus{outline:0}</string>
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout_168">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <widget class="QFrame" name="frame_256">
-                            <property name="minimumSize">
-                             <size>
-                              <width>231</width>
-                              <height>0</height>
-                             </size>
-                            </property>
-                            <property name="maximumSize">
-                             <size>
-                              <width>230</width>
-                              <height>16777215</height>
-                             </size>
-                            </property>
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_176">
-                             <property name="spacing">
-                              <number>0</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
-                            </layout>
-                           </widget>
-                          </item>
-                          <item>
-                           <spacer name="horizontalSpacer_53">
-                            <property name="orientation">
-                             <enum>Qt::Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                             <enum>QSizePolicy::Preferred</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>100</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
-                          <item alignment="Qt::AlignHCenter">
-                           <widget class="QFrame" name="frame_257">
-                            <property name="frameShape">
-                             <enum>QFrame::StyledPanel</enum>
-                            </property>
-                            <property name="frameShadow">
-                             <enum>QFrame::Raised</enum>
-                            </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_5">
-                             <property name="spacing">
-                              <number>5</number>
-                             </property>
-                             <property name="leftMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="topMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="rightMargin">
-                              <number>0</number>
-                             </property>
-                             <property name="bottomMargin">
-                              <number>0</number>
-                             </property>
                              <item>
                               <spacer name="verticalSpacer_2">
                                <property name="orientation">
                                 <enum>Qt::Vertical</enum>
                                </property>
-                               <property name="sizeType">
-                                <enum>QSizePolicy::Minimum</enum>
-                               </property>
                                <property name="sizeHint" stdset="0">
                                 <size>
                                  <width>20</width>
-                                 <height>27</height>
+                                 <height>40</height>
                                 </size>
                                </property>
                               </spacer>
                              </item>
                              <item>
-                              <widget class="QPushButton" name="btn_concluir_cadastro_colaborador_as">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>140</width>
-                                 <height>40</height>
-                                </size>
+                              <widget class="QFrame" name="frame_250">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
                                </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>140</width>
-                                 <height>40</height>
-                                </size>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
                                </property>
-                               <property name="font">
-                                <font>
-                                 <family>Abel</family>
-                                 <pointsize>18</pointsize>
-                                </font>
-                               </property>
-                               <property name="cursor">
-                                <cursorShape>PointingHandCursor</cursorShape>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+                               <layout class="QHBoxLayout" name="horizontalLayout_94">
+                                <item>
+                                 <widget class="QFrame" name="frame_272">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>130</width>
+                                    <height>60</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>130</width>
+                                    <height>60</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_167">
+                                   <item>
+                                    <widget class="QPushButton" name="btn_voltar_cadastro_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>100</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>100</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>VOLTAR</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <spacer name="horizontalSpacer_53">
+                                  <property name="orientation">
+                                   <enum>Qt::Horizontal</enum>
+                                  </property>
+                                  <property name="sizeHint" stdset="0">
+                                   <size>
+                                    <width>40</width>
+                                    <height>20</height>
+                                   </size>
+                                  </property>
+                                 </spacer>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_239">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>130</width>
+                                    <height>60</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>150</width>
+                                    <height>60</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_5">
+                                   <item>
+                                    <widget class="QPushButton" name="btn_concluir_cadastro_colaborador_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>140</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>140</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
 QPushButton:hover{background-color: #23B2EE}
 QPushButton:focus{outline:0}
 
 </string>
-                               </property>
-                               <property name="text">
-                                <string>CONCLUIR</string>
-                               </property>
+                                     </property>
+                                     <property name="text">
+                                      <string>CONCLUIR</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
                               </widget>
                              </item>
                             </layout>
@@ -17439,10 +17239,16 @@ QPushButton:focus{outline:0}</string>
                                      </widget>
                                     </item>
                                     <item>
-                                     <widget class="QLineEdit" name="input_inicio_periodo_relatorio_as">
+                                     <widget class="QDateEdit" name="input_inicio_periodo_relatorio_as">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
                                       <property name="minimumSize">
                                        <size>
-                                        <width>120</width>
+                                        <width>0</width>
                                         <height>30</height>
                                        </size>
                                       </property>
@@ -17451,6 +17257,49 @@ QPushButton:focus{outline:0}</string>
                                         <width>120</width>
                                         <height>30</height>
                                        </size>
+                                      </property>
+                                      <property name="font">
+                                       <font>
+                                        <family>Abel</family>
+                                        <pointsize>11</pointsize>
+                                       </font>
+                                      </property>
+                                      <property name="focusPolicy">
+                                       <enum>Qt::WheelFocus</enum>
+                                      </property>
+                                      <property name="contextMenuPolicy">
+                                       <enum>Qt::DefaultContextMenu</enum>
+                                      </property>
+                                      <property name="layoutDirection">
+                                       <enum>Qt::LeftToRight</enum>
+                                      </property>
+                                      <property name="autoFillBackground">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="styleSheet">
+                                       <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                      </property>
+                                      <property name="inputMethodHints">
+                                       <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                      </property>
+                                      <property name="alignment">
+                                       <set>Qt::AlignCenter</set>
+                                      </property>
+                                      <property name="buttonSymbols">
+                                       <enum>QAbstractSpinBox::NoButtons</enum>
+                                      </property>
+                                      <property name="correctionMode">
+                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                                      </property>
+                                      <property name="currentSection">
+                                       <enum>QDateTimeEdit::DaySection</enum>
+                                      </property>
+                                      <property name="calendarPopup">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="currentSectionIndex">
+                                       <number>0</number>
                                       </property>
                                      </widget>
                                     </item>
@@ -17581,10 +17430,16 @@ QPushButton:focus{outline:0}</string>
                                      </widget>
                                     </item>
                                     <item>
-                                     <widget class="QLineEdit" name="input_final_periodo_relatorio_as">
+                                     <widget class="QDateEdit" name="input_final_periodo_relatorio_as">
+                                      <property name="sizePolicy">
+                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                        <horstretch>0</horstretch>
+                                        <verstretch>0</verstretch>
+                                       </sizepolicy>
+                                      </property>
                                       <property name="minimumSize">
                                        <size>
-                                        <width>120</width>
+                                        <width>0</width>
                                         <height>30</height>
                                        </size>
                                       </property>
@@ -17593,6 +17448,49 @@ QPushButton:focus{outline:0}</string>
                                         <width>120</width>
                                         <height>30</height>
                                        </size>
+                                      </property>
+                                      <property name="font">
+                                       <font>
+                                        <family>Abel</family>
+                                        <pointsize>11</pointsize>
+                                       </font>
+                                      </property>
+                                      <property name="focusPolicy">
+                                       <enum>Qt::WheelFocus</enum>
+                                      </property>
+                                      <property name="contextMenuPolicy">
+                                       <enum>Qt::DefaultContextMenu</enum>
+                                      </property>
+                                      <property name="layoutDirection">
+                                       <enum>Qt::LeftToRight</enum>
+                                      </property>
+                                      <property name="autoFillBackground">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="styleSheet">
+                                       <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                      </property>
+                                      <property name="inputMethodHints">
+                                       <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                      </property>
+                                      <property name="alignment">
+                                       <set>Qt::AlignCenter</set>
+                                      </property>
+                                      <property name="buttonSymbols">
+                                       <enum>QAbstractSpinBox::NoButtons</enum>
+                                      </property>
+                                      <property name="correctionMode">
+                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                                      </property>
+                                      <property name="currentSection">
+                                       <enum>QDateTimeEdit::DaySection</enum>
+                                      </property>
+                                      <property name="calendarPopup">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="currentSectionIndex">
+                                       <number>0</number>
                                       </property>
                                      </widget>
                                     </item>
@@ -18132,6 +18030,9 @@ QPushButton:pressed{
                                      <width>700</width>
                                      <height>30</height>
                                     </size>
+                                   </property>
+                                   <property name="text">
+                                    <string/>
                                    </property>
                                    <property name="placeholderText">
                                     <string>Nome /Cidade/ Bairro/Consulta</string>
