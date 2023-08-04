@@ -28974,6 +28974,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                    </property>
                                                    <item>
                                                     <widget class="QLineEdit" name="input_alterar_id_endereco_colaborador_as">
+                                                     <property name="enabled">
+                                                      <bool>false</bool>
+                                                     </property>
                                                      <property name="styleSheet">
                                                       <string notr="true">background-color:transparent;
 border-color: transparent;</string>
@@ -29006,6 +29009,9 @@ border-color: transparent;</string>
                                                   <layout class="QHBoxLayout" name="horizontalLayout_94">
                                                    <item>
                                                     <widget class="QLineEdit" name="input_alterar_id_matricula_colaborador_as">
+                                                     <property name="enabled">
+                                                      <bool>false</bool>
+                                                     </property>
                                                      <property name="styleSheet">
                                                       <string notr="true">background-color:transparent;
 border-color: transparent;</string>

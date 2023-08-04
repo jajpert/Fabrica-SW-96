@@ -10449,6 +10449,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_257.setContentsMargins(0, 0, 0, 0)
         self.input_alterar_id_endereco_colaborador_as = QLineEdit(self.frame_379)
         self.input_alterar_id_endereco_colaborador_as.setObjectName(u"input_alterar_id_endereco_colaborador_as")
+        self.input_alterar_id_endereco_colaborador_as.setEnabled(False)
         self.input_alterar_id_endereco_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
@@ -10467,6 +10468,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_94.setObjectName(u"horizontalLayout_94")
         self.input_alterar_id_matricula_colaborador_as = QLineEdit(self.frame_380)
         self.input_alterar_id_matricula_colaborador_as.setObjectName(u"input_alterar_id_matricula_colaborador_as")
+        self.input_alterar_id_matricula_colaborador_as.setEnabled(False)
         self.input_alterar_id_matricula_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
