@@ -6,7 +6,8 @@ class DataBase():
 
     def connect(self):
         ##self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='*Samela710*')
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -161,7 +162,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp, sexo, 
                                 parentesco, observacao, telefone, email, cep, logradouro, numero, bairro, 
-                                cidade,estado
+                                cidade,estado, endereco.id_endereco, cuidador.id_matricula
                                 from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
                                 left join cuidador on pessoa.id_matricula = cuidador.id_matricula 
                                 where cpf like '{cpf}';""")
@@ -189,7 +190,8 @@ class DataBase():
                 email, cep, logradouro, numero, bairro, cidade, estado,
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,data_inicio, periodo
+                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,data_inicio, periodo,
+                endereco.id_endereco, usuario.id_matricula
                 from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
                 left join usuario on pessoa.id_matricula = usuario.id_matricula where cpf like '%{cpf}%'; """)
             result = self.cursor.fetchall()
@@ -212,7 +214,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,
                                     colaborador.pis, sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, login
+                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, login, endereco.id_endereco, colaborador.id_matricula
                                     from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
                                     left join colaborador on colaborador.id_matricula = pessoa.id_matricula
                                     where cpf like '%{cpf}%';""")
@@ -227,6 +229,131 @@ class DataBase():
 
         finally:
             self.close_connection()
+    
+    def atualizar_cuidador (self,cuidador,pessoa,endereco):
+        print("Entrou ATT CUIDADOR")
+
+        id_matricula_cuidador = str(cuidador[2])
+        id_endereco_cuidador = str(endereco[0])
+
+        print(f"AQ É CUIDADOR -> {cuidador} ")
+        print(f"AQ É PESSOA -> {pessoa} ")
+        print(f"AQ É ENDERECO -> {endereco} ")
+
+
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE cuidador SET parentesco = '{cuidador[0]}', observacao = '{cuidador[1]}' WHERE id_matricula = '{id_matricula_cuidador}';""")
+            id_matricula = self.cursor.lastrowid
+            print(id_matricula)
+            self.conn.commit()
+
+            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', cpf = '{pessoa[2]}', rg = '{pessoa[3]}', data_emissao = '{pessoa[4]}',
+                                orgao_exp = '{pessoa[5]}', sexo = '{pessoa[6]}', telefone = '{pessoa[7]}', email = '{pessoa[8]}' WHERE id_matricula = {pessoa[0]};  """)
+            id_matricula = self.cursor.lastrowid
+            self.conn.commit()
+
+            self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
+                                numero = '{endereco[3]}', bairro = '{endereco[4]}', cidade = '{endereco[5]}',
+                                estado = '{endereco[6]}' WHERE id_endereco = '{id_endereco_cuidador}';""")
+            self.conn.commit()
+            
+
+
+            return "OK","Cuidador atualizado com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def atualizar_usuario(self,endereco,pessoa,usuario):
+        print("Entrou atualizar usuario!!")
+
+        id_endereco_usuario = str(endereco[0])
+        id_matricula_usuario = str(usuario[14])
+
+
+        print(f"AQ É ENDEREÇO -> {endereco}")
+        print(f"AQ É PESSOA -> {pessoa}")
+        print(f"AQ É USUARIO -> {usuario}")
+        self.connect()
+        try:
+            self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
+                                numero = '{endereco[3]}', bairro = '{endereco[4]}', cidade = '{endereco[5]}',
+                                estado = '{endereco[6]}' WHERE id_endereco = '{id_endereco_usuario}';""")
+            self.conn.commit()
+            
+            
+
+            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}',rg = '{pessoa[4]}', data_emissao = '{pessoa[5]}',
+                                orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', status = '{pessoa[8]}', telefone = '{pessoa[9]}', 
+                                email = '{pessoa[10]}', escolaridade = '{pessoa[11]}', estado_civil = '{pessoa[12]}',
+                                pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}' WHERE id_matricula = '{pessoa[0]}';  """)
+            self.conn.commit()
+
+
+            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',
+                                tipo_transporte = '{usuario[4]}', tipo_tratamento = '{usuario[5]}', beneficio = '{usuario[6]}', local_tratamento = '{usuario[7]}',
+                                periodo = '{usuario[8]}', data_inicio = '{usuario[9]}', patologia_base = '{usuario[10]}', tarifa_social = '{usuario[11]}', media_renda_familiar = '{usuario[12]}',
+                                vale_transporte = '{usuario[13]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
+            self.conn.commit()
+
+            return "OK","Usuario atualizado com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
+    def atualizar_colaborador(self,colaborador,pessoa,endereco):
+        print("Entrou ATT Colaborador")
+        
+        print(f"AQ É ENDERECO Colabo -> {endereco}")
+        print(f"AQ É PESSOA Colabo -> {pessoa}")
+        print(f"AQ É COLABORADOR Colabo -> {colaborador}")
+        
+        
+        id_matricula_pessoa = int(pessoa[0])
+        id_endereco_colaborador = int(endereco[0])
+        tipo_endereco = type(id_endereco_colaborador)
+        tipo_pessoa = type(id_matricula_pessoa)
+
+        print(f"ID PESSOA -> {id_matricula_pessoa}")
+        print(f"CLASSE PESSOA ID -> {tipo_pessoa}")
+        print(f"ID ENDERECO -> {id_endereco_colaborador}")
+        print(f"TIPO ENDERECO -> {tipo_endereco}")
+        self.connect()
+        try: 
+            self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
+                                numero = '{endereco[3]}', bairro = '{endereco[4]}', cidade = '{endereco[5]}',
+                                estado = '{endereco[6]}' WHERE id_endereco = '{id_endereco_colaborador}';""")
+            self.conn.commit()
+
+
+            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}', rg = '{pessoa[4]}',
+                                data_emissao = '{pessoa[5]}', orgao_exp = '{pessoa[6]}', sexo ='{pessoa[7]}', status = '{pessoa[8]}', telefone = '{pessoa[9]}',
+                                email = '{pessoa[10]}' WHERE id_matricula = '{id_matricula_pessoa}'; """)
+            self.conn.commit()
+            
+            self.cursor.execute(f"""UPDATE colaborador SET pis = '{colaborador[0]}', data_admissao = '{colaborador[1]}', salario = '{colaborador[2]}', cargo = '{colaborador[3]}',
+                                periodo = '{colaborador[4]}', login = '{colaborador[5]}', senha = '{colaborador[6]}', perfil = '{colaborador[7]}' WHERE id_matricula = '{id_matricula_pessoa}';""")
+            self.conn.commit()
+
+            return "OK","Colaborador atualizado com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
+
+
 
     def cadastro_usuario(self,endereco,pessoa,usuario):
         print("Entrou cadastro usuario!!")
