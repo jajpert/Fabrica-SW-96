@@ -829,7 +829,7 @@ class TelaPrincipal(QMainWindow):
         ################# pessoa ###################################
 
         #foto_imagem = self.ui.btn_foto_usuario_as.text()
-        id_matricula = self.ui.input_alterar_matricula_usuario_as.text()
+        id_matricula = self.ui.input_alterar_id_matricula_usuario_as.text()
         nome = self.ui.input_alterar_nome_usuario_as.text()
         data_nasc = self.ui.input_alterar_nascimento_usuario_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
