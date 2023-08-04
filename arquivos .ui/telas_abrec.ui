@@ -1351,7 +1351,7 @@ QPushButton:focus{outline:0}</string>
                    <item row="0" column="0">
                     <widget class="QStackedWidget" name="stackedWidget_2">
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>10</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -19977,7 +19977,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>1</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -21805,6 +21805,17 @@ QPushButton:pressed{
                                                     </widget>
                                                    </item>
                                                   </layout>
+                                                 </widget>
+                                                </item>
+                                                <item>
+                                                 <widget class="QLineEdit" name="input_alterar_id_endereco_cuidador_as">
+                                                  <property name="enabled">
+                                                   <bool>false</bool>
+                                                  </property>
+                                                  <property name="styleSheet">
+                                                   <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                  </property>
                                                  </widget>
                                                 </item>
                                                </layout>
