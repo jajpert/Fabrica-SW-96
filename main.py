@@ -276,7 +276,35 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-        
+
+########################### Validar Login #############################
+    def validarLogin(self, login, senha):
+        login = self.ui.input_usuario_colaborador_as_2.text()
+        senha = self.ui.input_senha_colaborador_as_2.text()
+       
+        if self.ui.input_usuario_colaborador_as_2.text() == 'ok':
+            print ("Login realizado com sucesso")
+
+        else:
+            print ("Usuário não encontrado")
+            #if self.ui.input_senha_colaborador_as_2.text()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
