@@ -246,7 +246,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
-
+        self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
 
         ######SIGNALS POPUP recuperar senha login######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
@@ -279,30 +279,37 @@ class TelaPrincipal(QMainWindow):
 
 ########################### Validar Login #############################
     def validarLogin(self, login, senha):
-        login = self.ui.input_usuario_colaborador_as_2.text()
-        senha = self.ui.input_senha_colaborador_as_2.text()
+        
+        login = self.ui.input_usuario_login.text()
+        senha = self.ui.input_senha_login.text()
+
+        try: 
+            cursor = self.connection.cursor()
+            self.cursor.execute("""
+                SELECT * FROM colaborador;
+                            """)
+            
+            for i in cursor.fetchall():
+                if i[7].upper() == login.upper and i[8] == senha: # and i[9] == "adm":
+                    return "Administrador"
+                    
+                elif i[7].upper() == login.upper and i[8] == senha: # and i[9] == "usuario":
+                    return "Usuário"
+                
+                else:
+                    continue
+            return "sem acesso"
+        except:
+            pass
+
+
+        
        
-        if self.ui.input_usuario_colaborador_as_2.text() == 'ok':
+        """if self.ui.input_usuario_login.text() == 'ok' and self.ui.input_senha_login.text() == 'ok':
+            
             print ("Login realizado com sucesso")
-
         else:
-            print ("Usuário não encontrado")
-            #if self.ui.input_senha_colaborador_as_2.text()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            print ("Usuário não encontrado")"""
 
 
 ########################### Validar CEP ###############################
