@@ -187,11 +187,14 @@ class ConfirmaSaida(QDialog):
 
         
         self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.closeMsg)
-        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.close)
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closePop_up)
          
         
     def closeMsg(self):
         self.close()
+
+    def closePop_up(self):
+        #self.ui.close()
 
     
 
@@ -221,13 +224,14 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS#################       
-       
-
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        #self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
         
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)
-        self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        
+        #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.saida.setCurrentWidget(self.saida.frame.close()))
+        
+
+        #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
         
 
