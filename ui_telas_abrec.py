@@ -7968,6 +7968,21 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_100.addWidget(self.frame_304)
 
+        self.input_alterar_id_endereco_cuidador_as = QLineEdit(self.frame_299)
+        self.input_alterar_id_endereco_cuidador_as.setObjectName(u"input_alterar_id_endereco_cuidador_as")
+        self.input_alterar_id_endereco_cuidador_as.setEnabled(False)
+        self.input_alterar_id_endereco_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_100.addWidget(self.input_alterar_id_endereco_cuidador_as)
+
+        self.input_alterar_id_matricula_cuidador_as = QLineEdit(self.frame_299)
+        self.input_alterar_id_matricula_cuidador_as.setObjectName(u"input_alterar_id_matricula_cuidador_as")
+        self.input_alterar_id_matricula_cuidador_as.setEnabled(False)
+        self.input_alterar_id_matricula_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_100.addWidget(self.input_alterar_id_matricula_cuidador_as)
 
         self.verticalLayout_189.addWidget(self.frame_299)
 
@@ -9527,6 +9542,23 @@ class Ui_MainWindow(object):
         self.frame_358.setMaximumSize(QSize(600, 16777215))
         self.frame_358.setFrameShape(QFrame.StyledPanel)
         self.frame_358.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_94 = QHBoxLayout(self.frame_358)
+        self.horizontalLayout_94.setObjectName(u"horizontalLayout_94")
+        self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_endereco_usuario_as.setEnabled(False)
+        self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
+        self.input_alterar_id_endereco_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_94.addWidget(self.input_alterar_id_endereco_usuario_as)
+
+        self.input_alterar_id_matricula_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_matricula_usuario_as.setEnabled(False)
+        self.input_alterar_id_matricula_usuario_as.setObjectName(u"input_alterar_id_matricula_usuario_as")
+        self.input_alterar_id_matricula_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_94.addWidget(self.input_alterar_id_matricula_usuario_as)
 
         self.horizontalLayout_115.addWidget(self.frame_358)
 
@@ -10411,10 +10443,18 @@ class Ui_MainWindow(object):
         self.frame_379.setMaximumSize(QSize(230, 16777215))
         self.frame_379.setFrameShape(QFrame.StyledPanel)
         self.frame_379.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_257 = QVBoxLayout(self.frame_379)
-        self.verticalLayout_257.setSpacing(0)
-        self.verticalLayout_257.setObjectName(u"verticalLayout_257")
-        self.verticalLayout_257.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_131 = QHBoxLayout(self.frame_379)
+        self.horizontalLayout_131.setSpacing(0)
+        self.horizontalLayout_131.setObjectName(u"horizontalLayout_131")
+        self.horizontalLayout_131.setContentsMargins(0, 0, 0, 0)
+        self.input_alterar_id_endereco_colaborador_as = QLineEdit(self.frame_379)
+        self.input_alterar_id_endereco_colaborador_as.setObjectName(u"input_alterar_id_endereco_colaborador_as")
+        self.input_alterar_id_endereco_colaborador_as.setEnabled(False)
+        self.input_alterar_id_endereco_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+
+        self.horizontalLayout_131.addWidget(self.input_alterar_id_endereco_colaborador_as)
 
         self.horizontalLayout_129.addWidget(self.frame_379)
 
@@ -10424,6 +10464,16 @@ class Ui_MainWindow(object):
         self.frame_380.setMaximumSize(QSize(180, 16777215))
         self.frame_380.setFrameShape(QFrame.StyledPanel)
         self.frame_380.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_138 = QHBoxLayout(self.frame_380)
+        self.horizontalLayout_138.setObjectName(u"horizontalLayout_138")
+        self.input_alterar_id_matricula_colaborador_as = QLineEdit(self.frame_380)
+        self.input_alterar_id_matricula_colaborador_as.setObjectName(u"input_alterar_id_matricula_colaborador_as")
+        self.input_alterar_id_matricula_colaborador_as.setEnabled(False)
+        self.input_alterar_id_matricula_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_138.addWidget(self.input_alterar_id_matricula_colaborador_as)
+
 
         self.horizontalLayout_129.addWidget(self.frame_380)
 
