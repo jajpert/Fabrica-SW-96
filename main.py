@@ -187,17 +187,13 @@ class ConfirmaSaida(QDialog):
 
         
         self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.closeMsg)
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)
+        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.close)
          
         
     def closeMsg(self):
-        self.close() 
-
-    def fecharPopup(self):
         self.close()
-        
 
-
+    
 
 #############################################################################
 class TelaPrincipal(QMainWindow):
@@ -228,8 +224,10 @@ class TelaPrincipal(QMainWindow):
        
 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
-        self.saida.btn_nao_popup_confirma_saida = self.ui.inicio
+        #self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)
+        self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
         
 
@@ -750,12 +748,8 @@ class TelaPrincipal(QMainWindow):
         self.popup.close()
 
     def fecharPopup(self):
-        msg = ConfirmaSaida(self)
-        #self.popup.show()
-        msg.exec()
-        self.popup.close()        
+        self.close()
 
-    
 
         
 
