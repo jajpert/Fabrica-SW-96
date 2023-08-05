@@ -479,7 +479,7 @@ class DataBase():
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
         self.conn()
         try:
-
+            self.cursor.execute(f"""SELECT id_matricula from usuario WHERE ususario.id_matricula = ;""")
 
             return(f"Puxei o id {id_matricula}")
         except Exception as err:
@@ -493,9 +493,10 @@ class DataBase():
 
     def cadastrar_area_sigilosa (self,area_sigilosa):
         self.connect()
+        print(area_sigilosa)
         try:
-            args = (area_sigilosa[0],area_sigilosa[1])
-            self.cursor.execute('INSERT INTO area_sigilosa(obito_paciente, observacao_gerais,id_matricula) VALUES (%s,%s)', args)
+            args = (area_sigilosa[0],area_sigilosa[1],area_sigilosa[2])
+            self.cursor.execute('INSERT INTO area_sigilosa(obito_paciente, observacao_gerais,id_matricula) VALUES (%s,%s,%s)', args)
             self.conn.commit()
 
             return("OK","Cadastro area sigilosa com sucesso!!!")
