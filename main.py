@@ -206,6 +206,8 @@ class TelaPrincipal(QMainWindow):
 
         ###############SIGNALS#################
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
+        
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
         self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
@@ -246,7 +248,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
-        self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
+        
 
         ######SIGNALS POPUP recuperar senha login######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
@@ -276,31 +278,16 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-
+# login_senha = self.db.validarLogin()
+#             login = self.ui.input_usuario_login.text(login_senha[0])
+#             senha = self.ui.input_senha_login.text()
 ########################### Validar Login #############################
     def validarLogin(self):
-        
-        login = self.ui.input_usuario_login.setText()
+
+    
+        login_senha = self.db.validarLogin()
+        login = self.ui.input_usuario_login.text(login_senha[0])
         senha = self.ui.input_senha_login.text()
-
-        try: 
-            cursor = self.connection.cursor()
-            self.cursor.execute(f"Select * from colaborador where login = {login} and senha = {senha}";)
-
-            result  = self.cursor.fetchAll()
-            if(
-                "login = {login} and senha = {senha}";
-            ):
-                print ("Login realizado com sucesso")
-            else:
-                print ("Usuário não encontrado")
-            
-
-        except:
-            pass
-
-
-        
        
         """if self.ui.input_usuario_login.text() == 'ok' and self.ui.input_senha_login.text() == 'ok':
             
