@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         
-        ##self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -331,6 +331,7 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+        
 
 
     def cadastro_curso(self,endereco,curso):
@@ -348,6 +349,36 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+        
+    def buscar_id_matricula_area_sigilosa(self,id_matricula):
+        self.conn()
+        try:
+
+
+            return(f"Puxei o id {id_matricula}")
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        finally:
+            self.close_connection()
+
+
+
+
+    def cadastrar_area_sigilosa (self,area_sigilosa):
+        self.connect()
+        try:
+            args = (area_sigilosa[0],area_sigilosa[1])
+            self.cursor.execute('INSERT INTO area_sigilosa(obito_paciente, observacao_gerais,id_matricula) VALUES (%s,%s)', args)
+            self.conn.commit()
+
+            return("OK","Cadastro area sigilosa com sucesso!!!")
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        finally:
+            self.close_connection()
         
     def update(self,tupla_de_dados):
         #print(tupla_de_dados)
