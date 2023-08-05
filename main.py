@@ -174,7 +174,7 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
         self.listarUsuarios()
-
+        self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
         select_cuidador = self.db.select_cuidador()
@@ -287,7 +287,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
-        
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -434,6 +434,7 @@ class TelaPrincipal(QMainWindow):
         
             
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
+            self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2]))
             self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
@@ -1220,9 +1221,7 @@ class TelaPrincipal(QMainWindow):
             situacao="Inativo"
         
         observacao_gerais = self.ui.input_observacoes_obs_sigilosas_as.toPlainText()
-        id_matricula_area_sigilosa = self.ui.lineEdit_id_matricula_area_sigilosa_as.text()
-
-        tupla_area_sigilosa = (situacao, observacao_gerais,id_matricula_area_sigilosa)
+        tupla_area_sigilosa = (situacao, observacao_gerais, self.id_area_sigilosa)
         result = self.db.cadastrar_area_sigilosa(tupla_area_sigilosa)
         print(result)
 
