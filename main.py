@@ -168,9 +168,10 @@ class ConfirmaSaida(QDialog):
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.saida = Ui_Confirma_Saida()
+        self.saida.setupUi(self)
         self.ui = Ui_MainWindow()
         self.popup = Overlay(self)
-        self.saida.setupUi(self)
+        
 
         
         self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.closeMsg)
@@ -182,7 +183,7 @@ class ConfirmaSaida(QDialog):
 
     def closePop_up(self):
         #self.ui.close()
-
+        pass
     
 
 #############################################################################
@@ -193,7 +194,7 @@ class TelaPrincipal(QMainWindow):
         self.ui = Ui_MainWindow()
         
         self.ui.setupUi(self)
-
+        self.saida = Ui_Confirma_Saida()
         ######################### banco #########################
 
         self.db = DataBase()        
@@ -219,7 +220,11 @@ class TelaPrincipal(QMainWindow):
 
         #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
+       #self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
         
+        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)
+
+        self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
 
     
 
@@ -241,7 +246,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
-        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
@@ -1297,7 +1302,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_nome_usuario_as.setText("")
 
 
-        
+    
+    def on_tipo_alterar_usuario_changed(self):
 
         if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
             self.ui.frame_439.setEnabled(True)
@@ -1378,6 +1384,21 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
+
+
+    def sairSistema(self):   
+        msg = ConfirmaSaida(self)
+            #self.popup.show()
+        msg.exec()
+        self.popup.close()        
+        self.close()
+
+    def fecharPopup(self):
+        msg = ConfirmaSaida(self)
+            #self.popup.show()
+        msg.exec()
+        self.popup.close()        
+        self.close()
    
 
 
