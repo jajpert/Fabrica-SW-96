@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>10</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -21806,6 +21806,17 @@ QPushButton:pressed{
                                                   </layout>
                                                  </widget>
                                                 </item>
+                                                <item>
+                                                 <widget class="QLineEdit" name="input_alterar_id_endereco_cuidador_as">
+                                                  <property name="enabled">
+                                                   <bool>false</bool>
+                                                  </property>
+                                                  <property name="styleSheet">
+                                                   <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                  </property>
+                                                 </widget>
+                                                </item>
                                                </layout>
                                               </widget>
                                              </item>
@@ -26388,6 +26399,30 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
+                                                     <layout class="QHBoxLayout" name="horizontalLayout_131">
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_alterar_id_endereco_usuario_as">
+                                                        <property name="enabled">
+                                                         <bool>false</bool>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                        <property name="enabled">
+                                                         <bool>false</bool>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                     </layout>
                                                     </widget>
                                                    </item>
                                                   </layout>
@@ -28936,6 +28971,17 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                    <property name="bottomMargin">
                                                     <number>0</number>
                                                    </property>
+                                                   <item>
+                                                    <widget class="QLineEdit" name="input_alterar_id_endereco_colaborador_as">
+                                                     <property name="enabled">
+                                                      <bool>false</bool>
+                                                     </property>
+                                                     <property name="styleSheet">
+                                                      <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                     </property>
+                                                    </widget>
+                                                   </item>
                                                   </layout>
                                                  </widget>
                                                 </item>
@@ -28959,6 +29005,19 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
+                                                  <layout class="QHBoxLayout" name="horizontalLayout_94">
+                                                   <item>
+                                                    <widget class="QLineEdit" name="input_alterar_id_matricula_colaborador_as">
+                                                     <property name="enabled">
+                                                      <bool>false</bool>
+                                                     </property>
+                                                     <property name="styleSheet">
+                                                      <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                     </property>
+                                                    </widget>
+                                                   </item>
+                                                  </layout>
                                                  </widget>
                                                 </item>
                                                 <item>
