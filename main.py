@@ -278,27 +278,24 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
 ########################### Validar Login #############################
-    def validarLogin(self, login, senha):
+    def validarLogin(self):
         
-        login = self.ui.input_usuario_login.text()
+        login = self.ui.input_usuario_login.setText()
         senha = self.ui.input_senha_login.text()
 
         try: 
             cursor = self.connection.cursor()
-            self.cursor.execute("""
-                SELECT * FROM colaborador;
-                            """)
+            self.cursor.execute(f"Select * from colaborador where login = {login} and senha = {senha}";)
+
+            result  = self.cursor.fetchAll()
+            if(
+                "login = {login} and senha = {senha}";
+            ):
+                print ("Login realizado com sucesso")
+            else:
+                print ("Usuário não encontrado")
             
-            for i in cursor.fetchall():
-                if i[7].upper() == login.upper and i[8] == senha: # and i[9] == "adm":
-                    return "Administrador"
-                    
-                elif i[7].upper() == login.upper and i[8] == senha: # and i[9] == "usuario":
-                    return "Usuário"
-                
-                else:
-                    continue
-            return "sem acesso"
+
         except:
             pass
 
