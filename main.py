@@ -53,7 +53,7 @@ class DialogTirarFoto(QDialog):
         self.ui = Ui_Tirar_Foto()
         self.ui.setupUi(self)
         self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
-        self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
+        #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
         self.timer_msg = QTimer(self)
         self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
@@ -173,22 +173,28 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
 
         self.db = DataBase()
+        self.listarUsuarios()
 
         ########### selected último id das tabelas do banco ##########
-        selected_pessoa = self.db.select_pessoa()
+        select_usuario = self.db.select_usuario()
+        select_cuidador = self.db.select_cuidador()
         selected_colaborador = self.db.select_colaborador()
-        ultimo_id_pessoa = (selected_pessoa[0])
+        ultimo_id_usuario = (select_usuario[0])
+        ultimo_id_cuidador = (select_cuidador[0])
         ultimo_id_colaborador = (selected_colaborador[0])
-        ultimo_id_pessoa = ''.join(map(str, ultimo_id_pessoa))
+        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
+        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
         ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
-        proximo_id_pessoa = 1 + int(ultimo_id_pessoa)
+        proximo_id_usuario = 1 + int(ultimo_id_usuario)
+        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
         proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
-        proximo_id_pessoa = str(proximo_id_pessoa).zfill(4)
+        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
+        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
         proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
 
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_pessoa}')
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
         self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_pessoa}')
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
         self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
         self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
         self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
@@ -275,6 +281,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
+        self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
+        self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
+        self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         
 ########################### Validar CEP ###############################
     def validarCep(self):
@@ -403,6 +412,10 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_bairro_cuidador_as.setText(str(dados[14]))
             self.ui.input_alterar_cidade_cuidador_as.setText(dados[15])
             self.ui.input_alterar_estado_cuidador_as.setText(dados[16])
+            self.ui.input_alterar_id_endereco_cuidador_as.setText(str(dados[17]))
+            self.ui.input_alterar_id_endereco_cuidador_as.hide()
+            self.ui.input_alterar_id_matricula_cuidador_as.setText(str(dados[18]))
+            self.ui.input_alterar_id_matricula_cuidador_as.hide()
             
             return self.ui.page_alterar_cuidador
         ##################################################################################
@@ -638,7 +651,10 @@ class TelaPrincipal(QMainWindow):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
-
+            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[34]))
+            self.ui.input_alterar_id_endereco_usuario_as.hide()
+            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[35]))
+            self.ui.input_alterar_id_matricula_usuario_as.hide()
             return self.ui.page_alterar_usuario
         
         ##################################################################################
@@ -749,7 +765,195 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_usuario_colaborador_as_2.setText(dados[23])
             self.ui.input_alterar_senha_colaborador_as_2.setText(dados[24])
             self.ui.input_alterar_confirmar_senha_colaborador_as_2.setText(dados[25])
+            self.ui.input_alterar_id_endereco_colaborador_as.setText(str(dados[26]))
+            self.ui.input_alterar_id_endereco_colaborador_as.hide()
+            self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[27]))
+            self.ui.input_alterar_id_matricula_colaborador_as.hide()
+            
+
+
             return self.ui.page_alterar_colaborador_as
+    def atualizar_cuidador(self):
+        ######################## endereço ################################
+        id_endereco_cuidador = self.ui.input_alterar_id_endereco_cuidador_as.text()
+        cep = self.ui.input_alterar_cep_cuidador_as.text()
+        rua = self.ui.input_alterar_logradouro_cuidador_as.text()
+        numero = self.ui.input_alterar_numero_cuidador_as.text()
+        bairro = self.ui.input_alterar_bairro_cuidador_as.text()
+        cidade = self.ui.input_alterar_cidade_cuidador_as.text()
+        estado = self.ui.input_alterar_estado_cuidador_as.text()
+
+        tupla_endereco = (id_endereco_cuidador,cep,rua,numero,bairro,cidade,estado)
+
+        ###################### pessoa ####################################
+        id_matricula = self.ui.input_alterar_matricula_cuidador_as.text()
+        nome = self.ui.input_alterar_nome_cuidador_as.text()
+        cpf_temp = self.ui.input_alterar_cpf_cuidador_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_temp)
+        rg = self.ui.input_alterar_rg_cuidador_as.text()
+        data_emi = self.ui.input_alterar_data_emissao_cuidador_as.text()
+        data_emissao = "-".join(data_emi.split("/")[::-1])
+        orgao_exp = self.ui.input_alterar_orgao_expedidor_cuidador_as.text()
+        sexo = self.ui.input_alterar_sexo_cuidador_as.currentText()
+        telefone = self.ui.input_alterar_telefone_cuidador_as.text()
+        email = self.ui.input_alterar_email_cuidador_as.text()  
+        tupla_pessoa = (id_matricula,nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email)
+        
+
+        ################### cuidador ###################################
+
+        parentesco = self.ui.input_alterar_parentesco_cuidador_as.text()
+        observacao = self.ui.input_alterar_informacoes_gerais_as.toPlainText()
+        id_matricula_cuidador = self.ui.input_alterar_id_matricula_cuidador_as.text()
+        tupla_cuidador = (parentesco,observacao,id_matricula_cuidador)
+
+        ################## insert #######################################
+        result = self.db.atualizar_cuidador(tupla_cuidador,tupla_pessoa,tupla_endereco)
+        print(result)
+
+
+    def atualizar_usuario(self):
+
+        ################ endereço ##################################
+        id_endereco_usuario = self.ui.input_alterar_id_endereco_usuario_as.text()
+        cep = self.ui.input_alterar_cep_usuario_as.text()
+        rua = self.ui.input_alterar_logradouro_usuario_as.text()
+        numero = self.ui.input_alterar_numero_usuario_as.text()
+        bairro = self.ui.input_alterar_bairro_usuario_as.text()
+        cidade = self.ui.input_alterar_cidade_usuario_as.text()
+        estado = self.ui.input_alterar_estado_usuario_as.text()
+
+        #irei mudar a tupla com o validador do cep
+        tupla_endereco = (id_endereco_usuario,cep,rua,numero,bairro,cidade,estado)
+
+        ################# pessoa ###################################
+
+        #foto_imagem = self.ui.btn_foto_usuario_as.text()
+        id_matricula = self.ui.input_alterar_id_matricula_usuario_as.text()
+        nome = self.ui.input_alterar_nome_usuario_as.text()
+        data_nasc = self.ui.input_alterar_nascimento_usuario_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
+        cpf_temp = self.ui.input_alterar_cpf_usuario_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_temp)
+        rg = self.ui.input_alterar_rg_usuario_as.text()
+        data_emi = self.ui.input_alterar_data_emissao_usuario_as.text()
+        data_emissao = "-".join(data_emi.split("/")[::-1])
+        orgao_exp = self.ui.input_alterar_orgao_expedidor_usuario_as.text()
+        sexo = self.ui.input_alterar_sexo_usuario_as.currentText()
+        telefone = self.ui.input_alterar_telefone_usuario_as.text()
+        email = self.ui.input_alterar_email_usuario_as.text()
+        escolaridade = self.ui.input_alterar_escolaridade_usuario_comboBox_as.currentText()
+        estado_civil = self.ui.input_alterar_estado_civil_usuario_as.currentText()
+
+        ################ tratamento ##################################
+        
+        nis = self.ui.input_alterar_nis_usuario_as.text()
+        cns = self.ui.input_alterar_cns_usuario_as.text()
+        observacao_ = "OBS"
+        situacao_trabalho = self.ui.input_situacao_trabalho_alterar_usuario_as.currentText()
+        tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
+        tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
+        beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
+        local_tratamento = self.ui.input_alterar_local_tratamento_usuario_as.text()
+        patologia_base  = self.ui.input_alterar_patologia_base_usuario_as.currentText()
+        data_ini = self.ui.input_alterar_data_inicio_usuario_as.text()
+        data_inicio = "-".join(data_ini.split("/")[::-1])
+        periodo = self.ui.input_alterar_periodo_usuario_as.currentText()
+        media_renda_familiar = self.ui.input_alterar_renda_familiar_usuario_as.currentText()
+        vale_transporte = self.ui.input_alterar_vale_transporte_usuario_as.currentText()
+        tipo_deficiencia = self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText()
+
+
+        tarifa_social =  self.ui.input_alterar_tarifa_social_sim_usuario_as.isChecked()
+
+
+        if self.ui.input_alterar_tarifa_social_sim_usuario_as.isChecked():
+            tarifa_social = 'SIM'
+        else:
+            tarifa_social = 'NÃO'
+
+        if self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.isChecked():
+            pessoa_deficiencia = 'SIM'
+
+        else:
+            pessoa_deficiencia = 'NÃO'
+        
+        if self.ui.input_alterar_situacao_ativo_usuario_as.isChecked():
+            status = 'Ativo'
+        else:
+            status = 'Inativo'
+        id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
+
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
+
+        ######################## insert ##################################
+        result = []
+        result = self.db.atualizar_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
+        print(result)
+        
+
+    def atualizar_colaborador(self):
+        
+        ######################## endereço ###########################
+        cep = self.ui.input_alterar_cep_colaborador_as.text()
+        rua = self.ui.input_alterar_logradouro_colaborador_as.text()
+        numero = self.ui.input_alterar_numero_colaborador_as.text()
+        bairro = self.ui.input_alterar_bairro_colaborador_as.text()
+        cidade = self.ui.input_alterar_cidade_colaborador_as.text()
+        estado = self.ui.input_alterar_estado_colaborador_as.text()
+        id_endereco = self.ui.input_alterar_id_endereco_colaborador_as.text()
+        tupla_endereco = (id_endereco,cep,rua,numero,bairro,cidade,estado)
+
+        ###################### pessoa ##############################
+        id_matricula = self.ui.input_alterar_id_matricula_colaborador_as.text()
+        nome = self.ui.input_alterar_nome_colaborador_as.text()
+        data_nasc = self.ui.input_alterar_data_nascimento_colaborador_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
+        cpf_temp = self.ui.input_alterar_cpf_colaborador_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_temp)
+        rg = self.ui.input_alterar_rg_colaborador_as.text()
+        data_emi = self.ui.input_alterar_data_emissao_rg_colaborador_as.text()
+        data_emissao = "-".join(data_emi.split("/")[::-1])
+        orgao_exp = self.ui.input_alterar_orgao_expedidor_colaborador_as.text()
+        sexo = self.ui.input_alterar_sexo_colaborador_comboBox_as.currentText()
+        telefone = self.ui.input_alterar_telefone_colaborador_as.text()
+        email = self.ui.input_alterar_email_colaborador_as.text()      
+        escolaridade = self.ui.input_alterar_escolaridade_colaborador_comboBox_as.currentText()
+        estado_civil = self.ui.input_alterar_estado_civil_colaborador_comboBox_as.currentText()
+        if self.ui.input_alterar_situacao_ativo_colaborador_as.isChecked():
+            status = 'Ativo'
+        else:
+            status = 'Inativo'
+        
+        
+
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil)
+
+        ##################### cargo ###########################################
+
+        salario = self.ui.input_alterar_salario_colaborador_as_2.text()
+        data_admi = self.ui.input_data_admissao_colaborador_as_5.text()
+        data_admissao = "-".join(data_admi.split("/")[::-1])
+        pis_colab = self.ui.input_alterar_pis_colaborador_as.text()
+        periodo = self.ui.input_alterar_periodo_colaborador_comboBox_as.currentText()
+        cargo = self.ui.input_alterar_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO        
+
+        #################### login e senha ####################################
+
+        login = self.ui.input_alterar_usuario_colaborador_as_2.text()
+        senha = self.ui.input_alterar_senha_colaborador_as_2.text()
+        # confirmar_senha = self.ui.input_alterar_confirmar_senha_colaborador_as_2.text()
+        perfil = self.ui.input_alterar_confirmar_senha_colaborador_as_2.text()
+        ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
+        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
+
+        #################### insert ##########################################
+        result = []
+        result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
+        print(result)
+
+
 
     
     def cadastroUsuario(self):
@@ -799,7 +1003,7 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
-        outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
+        #outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
        
 
         
@@ -833,7 +1037,7 @@ class TelaPrincipal(QMainWindow):
 
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
         result = []
@@ -841,7 +1045,28 @@ class TelaPrincipal(QMainWindow):
         print(result)
         # result = []
         self.msg(result[0],result[1])
-        
+    
+    def listarUsuarios(self):
+        lista_usuarios = self.db.select_usuario_ids()
+        nomes = []
+        id_usuarios = []
+        for i in lista_usuarios:
+            id_usuario = i[0]
+            id_usuario = str(id_usuario).zfill(4)
+            id_matricula = i[1]
+            nome = self.db.select_nome_usuario(id_matricula)
+            id_usuarios.append(id_usuario)
+            nomes.append(nome)
+        convertendo_nome = [i[0] for i in nomes]
+        convertendo_nome = [i[0] for i in convertendo_nome]
+        count = 0
+        itens = 1
+        while count < len(convertendo_nome):
+            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
+            self.ui.input_usuario_cuidador_as.addItem("")
+            itens += 1
+            count += 1
+
     def cadastroCuidador(self):
 
         ######################## endereço ################################
@@ -856,6 +1081,8 @@ class TelaPrincipal(QMainWindow):
 
         ###################### pessoa ####################################
         nome = self.ui.input_nome_cuidador_as.text()
+        data_nasc = self.ui.input_data_emissao_cuidador_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_cuidador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
         rg = self.ui.input_rg_cuidador_as.text()
@@ -867,7 +1094,7 @@ class TelaPrincipal(QMainWindow):
         email = self.ui.input_email_cuidador_as.text()  
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
-        tupla_pessoa = (nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade)
         
 
         ################### cuidador ###################################
@@ -876,9 +1103,14 @@ class TelaPrincipal(QMainWindow):
         observacao = self.ui.input_informacoes_gerais_as.toPlainText()
         tupla_cuidador = (parentesco,observacao)
 
+        ################## usuário ####################################
+        usuario_nome_id = self.ui.input_usuario_cuidador_as.currentText()
+        usuario_nome_id = usuario_nome_id.split("-")
+        usuario_id = int(usuario_nome_id[0])
+
         ################## insert #######################################
         result = []
-        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador)
+        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
         #print(result)
         self.msg(result[0],result[1])
 
