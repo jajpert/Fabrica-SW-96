@@ -5,7 +5,7 @@ class DataBase():
         self.banco = banco
 
     def connect(self):
-        ##self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='*Samela710*')
+        
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -457,6 +457,7 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+        
 
 
     def cadastro_curso(self,endereco,curso):
@@ -474,6 +475,37 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+        
+    def buscar_id_matricula_area_sigilosa(self,id_matricula):
+        self.conn()
+        try:
+            self.cursor.execute(f"""SELECT id_matricula from usuario WHERE ususario.id_matricula = ;""")
+
+            return(f"Puxei o id {id_matricula}")
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        finally:
+            self.close_connection()
+
+
+
+
+    def cadastrar_area_sigilosa (self,area_sigilosa):
+        self.connect()
+        print(area_sigilosa)
+        try:
+            args = (area_sigilosa[0],area_sigilosa[1],area_sigilosa[2])
+            self.cursor.execute('INSERT INTO area_sigilosa(obito_paciente, observacao_gerais,id_matricula) VALUES (%s,%s,%s)', args)
+            self.conn.commit()
+
+            return("OK","Cadastro area sigilosa com sucesso!!!")
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        finally:
+            self.close_connection()
         
     def update(self,tupla_de_dados):
         #print(tupla_de_dados)

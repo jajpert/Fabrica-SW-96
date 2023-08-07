@@ -3165,6 +3165,18 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_3051.addWidget(self.frame_423)
+        self.frame_117 = QFrame(self.frame_120)
+        self.frame_117.setObjectName(u"frame_117")
+        self.frame_117.setFrameShape(QFrame.StyledPanel)
+        self.frame_117.setFrameShadow(QFrame.Raised)
+        self.lineEdit_id_matricula_area_sigilosa_as = QLineEdit(self.frame_117)
+        self.lineEdit_id_matricula_area_sigilosa_as.setObjectName(u"lineEdit_id_matricula_area_sigilosa_as")
+        self.lineEdit_id_matricula_area_sigilosa_as.setEnabled(False)
+        self.lineEdit_id_matricula_area_sigilosa_as.setGeometry(QRect(230, 0, 113, 22))
+        self.lineEdit_id_matricula_area_sigilosa_as.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_3051.addWidget(self.frame_117)
 
         self.frame_123 = QFrame(self.frame_120)
         self.frame_123.setObjectName(u"frame_123")

@@ -174,7 +174,7 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
         self.listarUsuarios()
-
+        self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
         select_cuidador = self.db.select_cuidador()
@@ -228,6 +228,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
+        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -248,7 +249,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
-        self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
+        # page_alterar_usuario
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
 
@@ -284,7 +287,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
-        
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -431,6 +434,7 @@ class TelaPrincipal(QMainWindow):
         
             
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
+            self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2]))
             self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
@@ -1208,6 +1212,31 @@ class TelaPrincipal(QMainWindow):
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
         print(result)
+
+    def area_sigilosa(self):
+
+        if self.ui.input_obito_paciente_sim_as.isChecked:
+            situacao="Ativo"
+        else:
+            situacao="Inativo"
+        
+        observacao_gerais = self.ui.input_observacoes_obs_sigilosas_as.toPlainText()
+        tupla_area_sigilosa = (situacao, observacao_gerais, self.id_area_sigilosa)
+        result = self.db.cadastrar_area_sigilosa(tupla_area_sigilosa)
+        print(result)
+
+
+# btn_alterar_observacoes_sigilo_as
+
+
+
+
+
+
+
+
+
+
 #####Alterar SITUACAO de Trabalho Outros #########
 ####################### FUNÇÕES POP UP #######################
 
