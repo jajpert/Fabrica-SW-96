@@ -174,7 +174,6 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
         self.listarUsuarios()
-        self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
         select_cuidador = self.db.select_cuidador()
