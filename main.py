@@ -1392,14 +1392,14 @@ class TelaPrincipal(QMainWindow):
     def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
-            self.ui.frame_440.setEnabled(True)
-            self.ui.frame_440.show()
+            self.ui.frame_449.setEnabled(True)
+            self.ui.frame_449.show()
             self.ui.input_outras_patologias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_patologias_usuario_as.setEnabled(True)
             self.ui.input_outras_patologias_usuario_as.show()           
         else:
-            self.ui.frame_440.hide()
-            self.ui.frame_440.setEnabled(False)
+            self.ui.frame_449.hide()
+            self.ui.frame_449.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
