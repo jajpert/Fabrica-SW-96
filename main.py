@@ -400,7 +400,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
             self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
             self.ui.input_alterar_rg_cuidador_as.setText(dados[3])
-            self.ui.input_alterar_data_emissao_cuidador_as.date().toString(str(dados[4]))
+            self.ui.input_alterar_data_emissao_cuidador_as.setDate(QDate(dados[4]))
             self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[5])
 
             sexo = str(dados[6])
@@ -440,12 +440,12 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
-            self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
-            self.ui.input_alterar_data_emissao_usuario_as.date().toString(str(dados[6])) #
+            self.ui.input_alterar_data_emissao_usuario_as.setDate(QDate(dados[6])) #
             self.ui.input_alterar_orgao_expedidor_usuario_as.setText(dados[7]) #
             self.ui.input_alterar_nis_usuario_as.setText(dados[8]) #
             self.ui.input_alterar_cns_usuario_as.setText(dados[9]) #
@@ -647,7 +647,7 @@ class TelaPrincipal(QMainWindow):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
 
-            self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[31]))
+            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[32]))
 
             periodo = dados[33]
 
@@ -675,7 +675,7 @@ class TelaPrincipal(QMainWindow):
             print(dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
-            self.ui.input_data_nascimento_colaborador_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
             self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
             self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
