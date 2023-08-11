@@ -174,6 +174,7 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
         self.listarUsuarios()
+        self.relaotrio_pessoa()
         self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -1403,6 +1404,17 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
+            
+    def relaotrio_pessoa(self):
+        
+        result = self.db.relatorio_pessoa()
+
+        self.ui.tableWidget_relatorio_as.clearContents()
+        self.ui.tableWidget_relatorio_as.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
    
 
 

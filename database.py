@@ -74,6 +74,26 @@ class DataBase():
 
         finally:
             self.close_connection()
+            
+    def relatorio_pessoa(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                    SELECT nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,estado_civil,escolaridade,pessoa_deficiencia,tipo_deficiencia FROM pessoa;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
     
     def select_usuario_ids(self):
         self.connect()
