@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1880</width>
+    <width>2062</width>
     <height>895</height>
    </rect>
   </property>
@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>9</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -18602,7 +18602,7 @@ color: rgb(236, 132, 140);</string>
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_182">
                                          <item>
-                                          <widget class="QLabel" name="label_4">
+                                          <widget class="QLabel" name="label_cpf_agendamento_as">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -18615,7 +18615,7 @@ color: rgb(236, 132, 140);</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="lineEdit">
+                                          <widget class="QLineEdit" name="input_cpf_agendamento_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -18646,7 +18646,7 @@ color: rgb(236, 132, 140);</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QPushButton" name="btn_buscar_relatorio_as_2">
+                                       <widget class="QPushButton" name="btn_buscar_agendamento_as">
                                         <property name="sizePolicy">
                                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                           <horstretch>0</horstretch>
@@ -18724,7 +18724,7 @@ QPushButton:pressed{
                                      </property>
                                      <layout class="QVBoxLayout" name="verticalLayout_267">
                                       <item>
-                                       <widget class="QLabel" name="label_5">
+                                       <widget class="QLabel" name="label_nome_agendamento_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -18737,7 +18737,7 @@ QPushButton:pressed{
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="lineEdit_2">
+                                       <widget class="QLineEdit" name="input_nome_agendamento_as">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -18774,7 +18774,7 @@ QPushButton:pressed{
                                      </property>
                                      <layout class="QVBoxLayout" name="verticalLayout_307">
                                       <item>
-                                       <widget class="QLabel" name="label_7">
+                                       <widget class="QLabel" name="label_telefone_agendamento_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -18787,7 +18787,7 @@ QPushButton:pressed{
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="lineEdit_3">
+                                       <widget class="QLineEdit" name="input_telefone_agendamento_as">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -18827,7 +18827,7 @@ QPushButton:pressed{
                                        <number>0</number>
                                       </property>
                                       <item>
-                                       <widget class="QLabel" name="label_8">
+                                       <widget class="QLabel" name="label_profissional_agendamento_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -18849,7 +18849,7 @@ QPushButton:pressed{
                                         </property>
                                         <layout class="QHBoxLayout" name="horizontalLayout_138">
                                          <item>
-                                          <widget class="QRadioButton" name="radioButton">
+                                          <widget class="QRadioButton" name="input_profissional_as_agendamento_as">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -18862,7 +18862,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QRadioButton" name="radioButton_2">
+                                          <widget class="QRadioButton" name="input_profissional_nutri_agendamento_as">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -18875,7 +18875,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QRadioButton" name="radioButton_3">
+                                          <widget class="QRadioButton" name="input_profissional_psi_agendamento_as">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -18948,7 +18948,7 @@ QPushButton:pressed{
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_9">
+                                          <widget class="QLabel" name="label_data_agendamento_as">
                                            <property name="maximumSize">
                                             <size>
                                              <width>140</width>
@@ -18967,7 +18967,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QDateEdit" name="input_data_emissao_usuario_as_2">
+                                          <widget class="QDateEdit" name="input_data_agendamento_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                              <horstretch>0</horstretch>
@@ -19065,7 +19065,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_11">
+                                          <widget class="QLabel" name="label_hora_agendamento_as">
                                            <property name="maximumSize">
                                             <size>
                                              <width>140</width>
@@ -19084,7 +19084,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QTimeEdit" name="timeEdit">
+                                          <widget class="QTimeEdit" name="input_hora_agendamento_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>120</width>
@@ -19125,7 +19125,7 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <layout class="QVBoxLayout" name="verticalLayout_314">
                                       <item>
-                                       <widget class="QLabel" name="label_12">
+                                       <widget class="QLabel" name="label_clinica_agendamento_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -19138,7 +19138,7 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="lineEdit_4">
+                                       <widget class="QLineEdit" name="input_clinica_agendamento_as">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -19209,20 +19209,33 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_315">
                                 <item>
-                                 <widget class="QLabel" name="label_13">
+                                 <widget class="QLabel" name="label_filtro_agendamento_as">
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>13</pointsize>
+                                   </font>
+                                  </property>
                                   <property name="text">
                                    <string>Filtro</string>
                                   </property>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="lineEdit_5"/>
+                                 <widget class="QLineEdit" name="input_filtro_agendamento_as">
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>13</pointsize>
+                                   </font>
+                                  </property>
+                                 </widget>
                                 </item>
                                </layout>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QTableWidget" name="input_TableWidget_observacoes_sigilosas_as_2">
+                              <widget class="QTableWidget" name="input_TableWidget_agendamento_as">
                                <property name="font">
                                 <font>
                                  <family>Abel</family>
@@ -19365,6 +19378,11 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                <column>
                                 <property name="text">
                                  <string>Agendamento</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>Profissional</string>
                                 </property>
                                </column>
                                <item row="0" column="0">
