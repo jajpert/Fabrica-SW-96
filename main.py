@@ -182,8 +182,9 @@ class ConfirmaSaida(QDialog):
         self.close()
 
     def closePop_up(self):
-        #self.ui.close()
-        pass
+        self.popup.close()
+        self.saida.frame.close()
+        
     
 
 #############################################################################
@@ -212,19 +213,19 @@ class TelaPrincipal(QMainWindow):
 
         ###############SIGNALS#################       
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
         
         
-        #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.saida.setCurrentWidget(self.saida.frame.close()))
+        
+        #self.saida.btn_nao_popup_confirma_saida = self.ui.clicked.connect(lambda:self.saida.setCurrentWidget(self.popup.close()))
         
 
         #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
-       #self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
         
-        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)
+        
 
-        self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
 
     
 
@@ -250,20 +251,13 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
-        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        #self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-
-
-
-
-
-
-
 
 
         
@@ -1302,6 +1296,20 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_nome_usuario_as.setText("")
 
 
+    def sairSistema(self):   
+            msg = ConfirmaSaida(self)
+            #self.popup.show()
+            msg.exec()
+            self.popup.close()        
+            self.close()
+
+    def fecharPopup(self):
+        msg = ConfirmaSaida(self)
+                #self.popup.show()
+        msg.exec()
+        self.popup.close()        
+        self.close()
+
     
     def on_tipo_alterar_usuario_changed(self):
 
@@ -1370,7 +1378,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
 ######################## Patologia base outros################################      
-    def on_patologia_base_usuario_changed(self):
+        '''def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
             self.ui.frame_440.setEnabled(True)
@@ -1383,22 +1391,9 @@ class TelaPrincipal(QMainWindow):
             self.ui.frame_440.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
-            self.ui.input_outras_patologias_usuario_as.clear()
+            self.ui.input_outras_patologias_usuario_as.clear()'''
 
-
-    def sairSistema(self):   
-        msg = ConfirmaSaida(self)
-            #self.popup.show()
-        msg.exec()
-        self.popup.close()        
-        self.close()
-
-    def fecharPopup(self):
-        msg = ConfirmaSaida(self)
-            #self.popup.show()
-        msg.exec()
-        self.popup.close()        
-        self.close()
+        
    
 
 
