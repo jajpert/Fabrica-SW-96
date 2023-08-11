@@ -96,97 +96,46 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QFrame" name="frame_5">
+          <widget class="QToolButton" name="toolButton_alterar_foto_popup_perfil_as">
            <property name="minimumSize">
             <size>
-             <width>0</width>
-             <height>200</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>200</height>
-            </size>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_4">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_trocar_foto_popup_foto_as">
-              <property name="minimumSize">
-               <size>
-                <width>140</width>
-                <height>140</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>140</width>
-                <height>140</height>
-               </size>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap>../icons/camera.png</pixmap>
-              </property>
-              <property name="scaledContents">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_trocar_foto_popup_foto_as">
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>140</height>
+             <width>298</width>
+             <height>348</height>
             </size>
            </property>
            <property name="font">
             <font>
              <family>Abel</family>
              <pointsize>32</pointsize>
+             <bold>true</bold>
             </font>
            </property>
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton::hover{
+background-color: rgb(251, 207, 216);
+}</string>
+           </property>
            <property name="text">
-            <string>Trocar foto</string>
+            <string>Alterar foto</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../icons/camera.png</normaloff>../icons/camera.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>145</width>
+             <height>145</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
            </property>
           </widget>
          </item>
@@ -223,7 +172,7 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,0">
+        <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0">
          <property name="spacing">
           <number>0</number>
          </property>
@@ -240,97 +189,46 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QFrame" name="frame_4">
+          <widget class="QToolButton" name="toolButton_alterar_senha_popup_perfil_as">
            <property name="minimumSize">
             <size>
-             <width>0</width>
-             <height>200</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>200</height>
-            </size>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="frameShape">
-            <enum>QFrame::StyledPanel</enum>
-           </property>
-           <property name="frameShadow">
-            <enum>QFrame::Raised</enum>
-           </property>
-           <layout class="QHBoxLayout" name="horizontalLayout_3">
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="label_alterar_senha_popup_foto_as">
-              <property name="minimumSize">
-               <size>
-                <width>140</width>
-                <height>140</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>140</width>
-                <height>140</height>
-               </size>
-              </property>
-              <property name="cursor">
-               <cursorShape>PointingHandCursor</cursorShape>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-              <property name="pixmap">
-               <pixmap>../icons/troca.png</pixmap>
-              </property>
-              <property name="scaledContents">
-               <bool>true</bool>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPushButton" name="btn_alterar_senha_popup_alterar_as">
-           <property name="minimumSize">
-            <size>
-             <width>140</width>
-             <height>140</height>
+             <width>298</width>
+             <height>348</height>
             </size>
            </property>
            <property name="font">
             <font>
              <family>Abel</family>
              <pointsize>32</pointsize>
+             <bold>true</bold>
             </font>
            </property>
            <property name="cursor">
             <cursorShape>PointingHandCursor</cursorShape>
            </property>
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QToolButton::hover{
+background-color: rgb(251, 207, 216);
+}</string>
+           </property>
            <property name="text">
             <string>Alterar senha</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>145</width>
+             <height>145</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextUnderIcon</enum>
            </property>
           </widget>
          </item>
