@@ -286,28 +286,36 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-# login_senha = self.db.validarLogin()
-#             login = self.ui.input_usuario_login.text(login_senha[0])
-#             senha = self.ui.input_senha_login.text()
-########################### Validar Login #############################
-    def validarLogin(self):
-
-    
-        login_senha = self.db.validarLogin()
-        login = self.ui.input_usuario_login.text(login_senha[0])
-        senha = self.ui.input_senha_login.text()
-       
-        """if self.ui.input_usuario_login.text() == 'ok' and self.ui.input_senha_login.text() == 'ok':
-            
-            print ("Login realizado com sucesso")
-        else:
-            print ("Usuário não encontrado")"""
-
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
+
+########################### Validar Login #############################
+    def validarLogin(self,login,senha):
+        # login_senha = login_senha
+        # login = self.ui.input_usuario_login.text(login_senha[0])
+        # senha = self.ui.input_senha_login.text()
+
+    
+        resultado = self.db.validarLogin(login,senha)
+
+        login = resultado
+        senha = resultado
+        print (resultado,login,senha)
+        # login = self.ui.input_usuario_login.text(login_senha)
+        # senha = self.ui.input_senha_login.text(login_senha)
+        # print(resultado)
+
+        # if login == login_senha[0] and senha == login_senha[1]:
+            
+        #     print ("Login realizado com sucesso")
+        # else:
+        #     print ("Usuário não encontrado")
+        # auth_login = self.db.validarLogin(login)
+        # auth_senha = self.db.validarLogin(senha)
+
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
