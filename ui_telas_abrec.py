@@ -3173,6 +3173,18 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_3051.addWidget(self.frame_423)
+        self.frame_117 = QFrame(self.frame_120)
+        self.frame_117.setObjectName(u"frame_117")
+        self.frame_117.setFrameShape(QFrame.StyledPanel)
+        self.frame_117.setFrameShadow(QFrame.Raised)
+        self.lineEdit_id_matricula_area_sigilosa_as = QLineEdit(self.frame_117)
+        self.lineEdit_id_matricula_area_sigilosa_as.setObjectName(u"lineEdit_id_matricula_area_sigilosa_as")
+        self.lineEdit_id_matricula_area_sigilosa_as.setEnabled(False)
+        self.lineEdit_id_matricula_area_sigilosa_as.setGeometry(QRect(230, 0, 113, 22))
+        self.lineEdit_id_matricula_area_sigilosa_as.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_3051.addWidget(self.frame_117)
 
         self.frame_123 = QFrame(self.frame_120)
         self.frame_123.setObjectName(u"frame_123")
@@ -8673,6 +8685,22 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_100.addWidget(self.frame_304)
+        
+        self.input_alterar_id_matricula_cuidador_as = QLineEdit(self.frame_299)
+        self.input_alterar_id_matricula_cuidador_as.setObjectName(u"input_alterar_id_matricula_cuidador_as")
+        self.input_alterar_id_matricula_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_100.addWidget(self.input_alterar_id_matricula_cuidador_as)
+
+        self.input_alterar_id_endereco_cuidador_as = QLineEdit(self.frame_299)
+        self.input_alterar_id_endereco_cuidador_as.setObjectName(u"input_alterar_id_endereco_cuidador_as")
+        self.input_alterar_id_endereco_cuidador_as.setEnabled(False)
+        self.input_alterar_id_endereco_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+        
+
+        self.horizontalLayout_100.addWidget(self.input_alterar_id_endereco_cuidador_as)
 
         self.input_alterar_id_endereco_cuidador_as = QLineEdit(self.frame_299)
         self.input_alterar_id_endereco_cuidador_as.setObjectName(u"input_alterar_id_endereco_cuidador_as")
@@ -11872,7 +11900,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_4 = QStackedWidget(self.frame_22)
         self.stackedWidget_4.setObjectName(u"stackedWidget_4")
         self.page_principal_farm = QWidget()
@@ -12062,7 +12090,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22 = QHBoxLayout(self.frame_29)
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_22.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_5 = QStackedWidget(self.frame_29)
         self.stackedWidget_5.setObjectName(u"stackedWidget_5")
         self.page_principal_fisio = QWidget()
@@ -12269,7 +12297,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19 = QHBoxLayout(self.frame_26)
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.horizontalLayout_19.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_6 = QStackedWidget(self.frame_26)
         self.stackedWidget_6.setObjectName(u"stackedWidget_6")
         self.page_principal_nutri = QWidget()
@@ -12517,7 +12545,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24 = QHBoxLayout(self.frame_31)
         self.horizontalLayout_24.setSpacing(0)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.horizontalLayout_24.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_7 = QStackedWidget(self.frame_31)
         self.stackedWidget_7.setObjectName(u"stackedWidget_7")
         self.page_principal_psi = QWidget()
@@ -12727,7 +12755,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14 = QHBoxLayout(self.frame_16)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalLayout_14.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_3 = QStackedWidget(self.frame_16)
         self.stackedWidget_3.setObjectName(u"stackedWidget_3")
         self.page_principal_sec = QWidget()
