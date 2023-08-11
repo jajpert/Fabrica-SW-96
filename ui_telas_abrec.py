@@ -7998,12 +7998,20 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_100.addWidget(self.frame_304)
+        
+        self.input_alterar_id_matricula_cuidador_as = QLineEdit(self.frame_299)
+        self.input_alterar_id_matricula_cuidador_as.setObjectName(u"input_alterar_id_matricula_cuidador_as")
+        self.input_alterar_id_matricula_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_100.addWidget(self.input_alterar_id_matricula_cuidador_as)
 
         self.input_alterar_id_endereco_cuidador_as = QLineEdit(self.frame_299)
         self.input_alterar_id_endereco_cuidador_as.setObjectName(u"input_alterar_id_endereco_cuidador_as")
         self.input_alterar_id_endereco_cuidador_as.setEnabled(False)
         self.input_alterar_id_endereco_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
+        
 
         self.horizontalLayout_100.addWidget(self.input_alterar_id_endereco_cuidador_as)
 
