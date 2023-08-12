@@ -15,12 +15,11 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-
+            
         ############ valida email ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
         #######################################
-
-        MainWindow.resize(1880, 895)
+        MainWindow.resize(1864, 894)
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(12)
@@ -3166,6 +3165,18 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_3051.addWidget(self.frame_423)
+        self.frame_117 = QFrame(self.frame_120)
+        self.frame_117.setObjectName(u"frame_117")
+        self.frame_117.setFrameShape(QFrame.StyledPanel)
+        self.frame_117.setFrameShadow(QFrame.Raised)
+        self.lineEdit_id_matricula_area_sigilosa_as = QLineEdit(self.frame_117)
+        self.lineEdit_id_matricula_area_sigilosa_as.setObjectName(u"lineEdit_id_matricula_area_sigilosa_as")
+        self.lineEdit_id_matricula_area_sigilosa_as.setEnabled(False)
+        self.lineEdit_id_matricula_area_sigilosa_as.setGeometry(QRect(230, 0, 113, 22))
+        self.lineEdit_id_matricula_area_sigilosa_as.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_3051.addWidget(self.frame_117)
 
         self.frame_123 = QFrame(self.frame_120)
         self.frame_123.setObjectName(u"frame_123")
@@ -4780,6 +4791,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_143)
 
+        self.horizontalSpacer_84 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_62.addItem(self.horizontalSpacer_84)
+
         self.frame_144 = QFrame(self.frame_126)
         self.frame_144.setObjectName(u"frame_144")
         self.frame_144.setMinimumSize(QSize(195, 50))
@@ -4824,6 +4839,10 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_62.addWidget(self.frame_144)
+
+        self.horizontalSpacer_83 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_62.addItem(self.horizontalSpacer_83)
 
 
         self.verticalLayout_85.addWidget(self.frame_126)
@@ -4953,6 +4972,10 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_64.addWidget(self.frame_148)
+
+        self.horizontalSpacer_811 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_64.addItem(self.horizontalSpacer_811)
 
         self.frame_149 = QFrame(self.frame_127)
         self.frame_149.setObjectName(u"frame_149")
@@ -5128,6 +5151,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_149)
 
+        self.horizontalSpacer_821 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_64.addItem(self.horizontalSpacer_821)
+
 
         self.verticalLayout_85.addWidget(self.frame_127)
 
@@ -5274,22 +5301,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_109.setSpacing(0)
         self.verticalLayout_109.setObjectName(u"verticalLayout_109")
         self.verticalLayout_109.setContentsMargins(0, 0, 0, 0)
-        self.label_cep_cursos_as = QLabel(self.frame_157)
-        self.label_cep_cursos_as.setObjectName(u"label_cep_cursos_as")
-        self.label_cep_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_cep_cursos_as.setMaximumSize(QSize(160, 16777215))
-        self.label_cep_cursos_as.setFont(font)
-
-        self.verticalLayout_109.addWidget(self.label_cep_cursos_as)
-
-        self.input_cep_cursos_as = QLineEdit(self.frame_157)
-        self.input_cep_cursos_as.setObjectName(u"input_cep_cursos_as")
-        self.input_cep_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_cep_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cep_cursos_as.setFont(font)
-
-        self.verticalLayout_109.addWidget(self.input_cep_cursos_as)
-
 
         self.horizontalLayout_66.addWidget(self.frame_157)
 
@@ -5303,22 +5314,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_110.setSpacing(0)
         self.verticalLayout_110.setObjectName(u"verticalLayout_110")
         self.verticalLayout_110.setContentsMargins(0, 0, 0, 0)
-        self.label_logradouro_cursos_as = QLabel(self.frame_158)
-        self.label_logradouro_cursos_as.setObjectName(u"label_logradouro_cursos_as")
-        self.label_logradouro_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_logradouro_cursos_as.setMaximumSize(QSize(360, 16777215))
-        self.label_logradouro_cursos_as.setFont(font)
-
-        self.verticalLayout_110.addWidget(self.label_logradouro_cursos_as)
-
-        self.input_logradouro_cursos_as = QLineEdit(self.frame_158)
-        self.input_logradouro_cursos_as.setObjectName(u"input_logradouro_cursos_as")
-        self.input_logradouro_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_logradouro_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_logradouro_cursos_as.setFont(font)
-
-        self.verticalLayout_110.addWidget(self.input_logradouro_cursos_as)
-
 
         self.horizontalLayout_66.addWidget(self.frame_158)
 
@@ -5334,93 +5329,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_67.setSpacing(5)
         self.horizontalLayout_67.setObjectName(u"horizontalLayout_67")
         self.horizontalLayout_67.setContentsMargins(0, 0, 0, 0)
-        self.frame_159 = QFrame(self.frame_139)
-        self.frame_159.setObjectName(u"frame_159")
-        self.frame_159.setMinimumSize(QSize(0, 0))
-        self.frame_159.setMaximumSize(QSize(160, 16777215))
-        self.frame_159.setFrameShape(QFrame.StyledPanel)
-        self.frame_159.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_1111 = QVBoxLayout(self.frame_159)
-        self.verticalLayout_1111.setSpacing(0)
-        self.verticalLayout_1111.setObjectName(u"verticalLayout_1111")
-        self.verticalLayout_1111.setContentsMargins(0, 0, 0, 0)
-        self.label_numero_cursos_as = QLabel(self.frame_159)
-        self.label_numero_cursos_as.setObjectName(u"label_numero_cursos_as")
-        self.label_numero_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_numero_cursos_as.setMaximumSize(QSize(160, 16777215))
-        self.label_numero_cursos_as.setFont(font)
-
-        self.verticalLayout_1111.addWidget(self.label_numero_cursos_as)
-
-        self.input_numero_cursos_as = QLineEdit(self.frame_159)
-        self.input_numero_cursos_as.setObjectName(u"input_numero_cursos_as")
-        self.input_numero_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_numero_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_numero_cursos_as.setFont(font)
-
-        self.verticalLayout_1111.addWidget(self.input_numero_cursos_as)
-
-
-        self.horizontalLayout_67.addWidget(self.frame_159)
-
-        self.frame_160 = QFrame(self.frame_139)
-        self.frame_160.setObjectName(u"frame_160")
-        self.frame_160.setMinimumSize(QSize(0, 0))
-        self.frame_160.setMaximumSize(QSize(230, 16777215))
-        self.frame_160.setFrameShape(QFrame.StyledPanel)
-        self.frame_160.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_112 = QVBoxLayout(self.frame_160)
-        self.verticalLayout_112.setSpacing(0)
-        self.verticalLayout_112.setObjectName(u"verticalLayout_112")
-        self.verticalLayout_112.setContentsMargins(0, 0, 0, 0)
-        self.label_bairro_cursos_as = QLabel(self.frame_160)
-        self.label_bairro_cursos_as.setObjectName(u"label_bairro_cursos_as")
-        self.label_bairro_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_bairro_cursos_as.setMaximumSize(QSize(230, 16777215))
-        self.label_bairro_cursos_as.setFont(font)
-
-        self.verticalLayout_112.addWidget(self.label_bairro_cursos_as)
-
-        self.input_bairro_cursos_as = QLineEdit(self.frame_160)
-        self.input_bairro_cursos_as.setObjectName(u"input_bairro_cursos_as")
-        self.input_bairro_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_bairro_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_bairro_cursos_as.setFont(font)
-
-        self.verticalLayout_112.addWidget(self.input_bairro_cursos_as)
-
-
-        self.horizontalLayout_67.addWidget(self.frame_160)
-
-        self.frame_161 = QFrame(self.frame_139)
-        self.frame_161.setObjectName(u"frame_161")
-        self.frame_161.setMinimumSize(QSize(0, 0))
-        self.frame_161.setMaximumSize(QSize(240, 16777215))
-        self.frame_161.setFrameShape(QFrame.StyledPanel)
-        self.frame_161.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_113 = QVBoxLayout(self.frame_161)
-        self.verticalLayout_113.setSpacing(0)
-        self.verticalLayout_113.setObjectName(u"verticalLayout_113")
-        self.verticalLayout_113.setContentsMargins(0, 0, 0, 0)
-        self.label_cidade_cursos_as = QLabel(self.frame_161)
-        self.label_cidade_cursos_as.setObjectName(u"label_cidade_cursos_as")
-        self.label_cidade_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_cidade_cursos_as.setMaximumSize(QSize(240, 16777215))
-        self.label_cidade_cursos_as.setFont(font)
-
-        self.verticalLayout_113.addWidget(self.label_cidade_cursos_as)
-
-        self.input_cidade_cursos_as = QLineEdit(self.frame_161)
-        self.input_cidade_cursos_as.setObjectName(u"input_cidade_cursos_as")
-        self.input_cidade_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_cidade_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cidade_cursos_as.setFont(font)
-
-        self.verticalLayout_113.addWidget(self.input_cidade_cursos_as)
-
-
-        self.horizontalLayout_67.addWidget(self.frame_161)
-
         self.frame_162 = QFrame(self.frame_139)
         self.frame_162.setObjectName(u"frame_162")
         self.frame_162.setMinimumSize(QSize(0, 0))
@@ -5431,30 +5339,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_114.setSpacing(0)
         self.verticalLayout_114.setObjectName(u"verticalLayout_114")
         self.verticalLayout_114.setContentsMargins(0, 0, 0, 0)
-        self.label_estado_cursos_as = QLabel(self.frame_162)
-        self.label_estado_cursos_as.setObjectName(u"label_estado_cursos_as")
-        self.label_estado_cursos_as.setMinimumSize(QSize(0, 0))
-        self.label_estado_cursos_as.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_cursos_as.setFont(font)
+        self.verticalSpacer_26 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_114.addWidget(self.label_estado_cursos_as)
-
-        self.input_estado_cursos_as = QLineEdit(self.frame_162)
-        self.input_estado_cursos_as.setObjectName(u"input_estado_cursos_as")
-        self.input_estado_cursos_as.setMinimumSize(QSize(0, 30))
-        self.input_estado_cursos_as.setMaximumSize(QSize(16777215, 30))
-
-        self.verticalLayout_114.addWidget(self.input_estado_cursos_as)
+        self.verticalLayout_114.addItem(self.verticalSpacer_26)
 
 
         self.horizontalLayout_67.addWidget(self.frame_162)
-
-        self.frame_163 = QFrame(self.frame_139)
-        self.frame_163.setObjectName(u"frame_163")
-        self.frame_163.setFrameShape(QFrame.StyledPanel)
-        self.frame_163.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_67.addWidget(self.frame_163)
 
 
         self.verticalLayout_85.addWidget(self.frame_139)
@@ -5485,13 +5375,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_85.addWidget(self.frame_140)
-
-        self.frame_138 = QFrame(self.frame_125)
-        self.frame_138.setObjectName(u"frame_138")
-        self.frame_138.setFrameShape(QFrame.StyledPanel)
-        self.frame_138.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_85.addWidget(self.frame_138)
 
 
         self.horizontalLayout_61.addWidget(self.frame_125)
@@ -6810,196 +6693,314 @@ class Ui_MainWindow(object):
         self.frame_266.setObjectName(u"frame_266")
         self.frame_266.setFrameShape(QFrame.StyledPanel)
         self.frame_266.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_158 = QVBoxLayout(self.frame_266)
-        self.verticalLayout_158.setObjectName(u"verticalLayout_158")
-        self.calendario_agenda_as = QCalendarWidget(self.frame_266)
-        self.calendario_agenda_as.setObjectName(u"calendario_agenda_as")
+        self.horizontalLayout_941 = QHBoxLayout(self.frame_266)
+        self.horizontalLayout_941.setSpacing(0)
+        self.horizontalLayout_941.setObjectName(u"horizontalLayout_941")
+        self.horizontalLayout_941.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_812 = QSpacerItem(150, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.verticalLayout_158.addWidget(self.calendario_agenda_as)
+        self.horizontalLayout_941.addItem(self.horizontalSpacer_812)
 
-
-        self.horizontalLayout_93.addWidget(self.frame_266)
-
-        self.frame_267 = QFrame(self.frame_264)
-        self.frame_267.setObjectName(u"frame_267")
-        self.frame_267.setStyleSheet(u"QPushButton{color: #000; background-color: #FEE4E1; border: none;}\\nQPushButton:hover{background-color: hsl(6, 94%, 92%)}\\nQPushButton:focus{outline: 0}")
-        self.frame_267.setFrameShape(QFrame.StyledPanel)
-        self.frame_267.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_157 = QVBoxLayout(self.frame_267)
+        self.frame_263 = QFrame(self.frame_266)
+        self.frame_263.setObjectName(u"frame_263")
+        self.frame_263.setMinimumSize(QSize(200, 0))
+        self.frame_263.setFrameShape(QFrame.StyledPanel)
+        self.frame_263.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_157 = QVBoxLayout(self.frame_263)
         self.verticalLayout_157.setSpacing(0)
         self.verticalLayout_157.setObjectName(u"verticalLayout_157")
         self.verticalLayout_157.setContentsMargins(0, 0, 0, 0)
-        self.label_11 = QLabel(self.frame_267)
-        self.label_11.setObjectName(u"label_11")
-        self.label_11.setMaximumSize(QSize(16777215, 50))
-        self.label_11.setFont(font13)
-        self.label_11.setAlignment(Qt.AlignCenter)
+        self.frame_271 = QFrame(self.frame_263)
+        self.frame_271.setObjectName(u"frame_271")
+        self.frame_271.setFrameShape(QFrame.StyledPanel)
+        self.frame_271.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_158 = QVBoxLayout(self.frame_271)
+        self.verticalLayout_158.setSpacing(0)
+        self.verticalLayout_158.setObjectName(u"verticalLayout_158")
+        self.verticalLayout_158.setContentsMargins(0, 0, 0, 0)
+        self.frame_267 = QFrame(self.frame_271)
+        self.frame_267.setObjectName(u"frame_267")
+        self.frame_267.setFrameShape(QFrame.StyledPanel)
+        self.frame_267.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_131 = QHBoxLayout(self.frame_267)
+        self.horizontalLayout_131.setSpacing(0)
+        self.horizontalLayout_131.setObjectName(u"horizontalLayout_131")
+        self.horizontalLayout_131.setContentsMargins(0, 0, 0, 0)
+        self.frame_442 = QFrame(self.frame_267)
+        self.frame_442.setObjectName(u"frame_442")
+        self.frame_442.setFrameShape(QFrame.StyledPanel)
+        self.frame_442.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_182 = QVBoxLayout(self.frame_442)
+        self.verticalLayout_182.setObjectName(u"verticalLayout_182")
+        self.label_cpf_agendamento_as = QLabel(self.frame_442)
+        self.label_cpf_agendamento_as.setObjectName(u"label_cpf_agendamento_as")
+        self.label_cpf_agendamento_as.setFont(font)
 
-        self.verticalLayout_157.addWidget(self.label_11)
+        self.verticalLayout_182.addWidget(self.label_cpf_agendamento_as)
 
-        self.btn_7_agenda_as = QPushButton(self.frame_267)
-        self.btn_7_agenda_as.setObjectName(u"btn_7_agenda_as")
-        self.btn_7_agenda_as.setFont(font)
-        self.btn_7_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_cpf_agendamento_as = QLineEdit(self.frame_442)
+        self.input_cpf_agendamento_as.setObjectName(u"input_cpf_agendamento_as")
+        self.input_cpf_agendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_cpf_agendamento_as.setMaximumSize(QSize(16777215, 30))
+        self.input_cpf_agendamento_as.setFont(font)
 
-        self.verticalLayout_157.addWidget(self.btn_7_agenda_as)
-
-        self.btn_730_agenda_as = QPushButton(self.frame_267)
-        self.btn_730_agenda_as.setObjectName(u"btn_730_agenda_as")
-        self.btn_730_agenda_as.setFont(font)
-        self.btn_730_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_730_agenda_as)
-
-        self.btn_8_agenda_as = QPushButton(self.frame_267)
-        self.btn_8_agenda_as.setObjectName(u"btn_8_agenda_as")
-        self.btn_8_agenda_as.setFont(font)
-        self.btn_8_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_8_agenda_as)
-
-        self.btn_830_agenda_as = QPushButton(self.frame_267)
-        self.btn_830_agenda_as.setObjectName(u"btn_830_agenda_as")
-        self.btn_830_agenda_as.setFont(font)
-        self.btn_830_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_830_agenda_as)
-
-        self.btn_9_agenda_as = QPushButton(self.frame_267)
-        self.btn_9_agenda_as.setObjectName(u"btn_9_agenda_as")
-        self.btn_9_agenda_as.setFont(font)
-        self.btn_9_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_9_agenda_as)
-
-        self.btn_930_agenda_as = QPushButton(self.frame_267)
-        self.btn_930_agenda_as.setObjectName(u"btn_930_agenda_as")
-        self.btn_930_agenda_as.setFont(font)
-        self.btn_930_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_930_agenda_as)
-
-        self.btn_10_agenda_as = QPushButton(self.frame_267)
-        self.btn_10_agenda_as.setObjectName(u"btn_10_agenda_as")
-        self.btn_10_agenda_as.setFont(font)
-        self.btn_10_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_10_agenda_as)
-
-        self.btn_1030_agenda_as = QPushButton(self.frame_267)
-        self.btn_1030_agenda_as.setObjectName(u"btn_1030_agenda_as")
-        self.btn_1030_agenda_as.setFont(font)
-        self.btn_1030_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1030_agenda_as)
-
-        self.btn_11_agenda_as = QPushButton(self.frame_267)
-        self.btn_11_agenda_as.setObjectName(u"btn_11_agenda_as")
-        self.btn_11_agenda_as.setFont(font)
-        self.btn_11_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_11_agenda_as)
-
-        self.btn_1130_agenda_as = QPushButton(self.frame_267)
-        self.btn_1130_agenda_as.setObjectName(u"btn_1130_agenda_as")
-        self.btn_1130_agenda_as.setFont(font)
-        self.btn_1130_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1130_agenda_as)
-
-        self.btn_12_agenda_as = QPushButton(self.frame_267)
-        self.btn_12_agenda_as.setObjectName(u"btn_12_agenda_as")
-        self.btn_12_agenda_as.setFont(font)
-        self.btn_12_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_12_agenda_as)
-
-        self.btn_1230_agenda_as = QPushButton(self.frame_267)
-        self.btn_1230_agenda_as.setObjectName(u"btn_1230_agenda_as")
-        self.btn_1230_agenda_as.setFont(font)
-        self.btn_1230_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1230_agenda_as)
-
-        self.btn_13_agenda_as = QPushButton(self.frame_267)
-        self.btn_13_agenda_as.setObjectName(u"btn_13_agenda_as")
-        self.btn_13_agenda_as.setFont(font)
-        self.btn_13_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_13_agenda_as)
-
-        self.btn_1330_agenda_as = QPushButton(self.frame_267)
-        self.btn_1330_agenda_as.setObjectName(u"btn_1330_agenda_as")
-        self.btn_1330_agenda_as.setFont(font)
-        self.btn_1330_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1330_agenda_as)
-
-        self.btn_14_agenda_as = QPushButton(self.frame_267)
-        self.btn_14_agenda_as.setObjectName(u"btn_14_agenda_as")
-        self.btn_14_agenda_as.setFont(font)
-        self.btn_14_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_14_agenda_as)
-
-        self.btn_1430_agenda_as = QPushButton(self.frame_267)
-        self.btn_1430_agenda_as.setObjectName(u"btn_1430_agenda_as")
-        self.btn_1430_agenda_as.setFont(font)
-        self.btn_1430_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1430_agenda_as)
-
-        self.btn_15_agenda_as = QPushButton(self.frame_267)
-        self.btn_15_agenda_as.setObjectName(u"btn_15_agenda_as")
-        self.btn_15_agenda_as.setFont(font)
-        self.btn_15_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_15_agenda_as)
-
-        self.btn_1530_agenda_as = QPushButton(self.frame_267)
-        self.btn_1530_agenda_as.setObjectName(u"btn_1530_agenda_as")
-        self.btn_1530_agenda_as.setFont(font)
-        self.btn_1530_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1530_agenda_as)
-
-        self.btn_16_agenda_as = QPushButton(self.frame_267)
-        self.btn_16_agenda_as.setObjectName(u"btn_16_agenda_as")
-        self.btn_16_agenda_as.setFont(font)
-        self.btn_16_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_16_agenda_as)
-
-        self.btn_1630_agenda_as = QPushButton(self.frame_267)
-        self.btn_1630_agenda_as.setObjectName(u"btn_1630_agenda_as")
-        self.btn_1630_agenda_as.setFont(font)
-        self.btn_1630_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1630_agenda_as)
-
-        self.btn_17_agenda_as = QPushButton(self.frame_267)
-        self.btn_17_agenda_as.setObjectName(u"btn_17_agenda_as")
-        self.btn_17_agenda_as.setFont(font)
-        self.btn_17_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_17_agenda_as)
-
-        self.btn_1730_agenda_as = QPushButton(self.frame_267)
-        self.btn_1730_agenda_as.setObjectName(u"btn_1730_agenda_as")
-        self.btn_1730_agenda_as.setFont(font)
-        self.btn_1730_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_1730_agenda_as)
-
-        self.btn_18_agenda_as = QPushButton(self.frame_267)
-        self.btn_18_agenda_as.setObjectName(u"btn_18_agenda_as")
-        self.btn_18_agenda_as.setFont(font)
-        self.btn_18_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_157.addWidget(self.btn_18_agenda_as)
+        self.verticalLayout_182.addWidget(self.input_cpf_agendamento_as)
 
 
-        self.horizontalLayout_93.addWidget(self.frame_267)
+        self.horizontalLayout_131.addWidget(self.frame_442)
+
+        self.btn_buscar_agendamento_as = QPushButton(self.frame_267)
+        self.btn_buscar_agendamento_as.setObjectName(u"btn_buscar_agendamento_as")
+        sizePolicy2.setHeightForWidth(self.btn_buscar_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_agendamento_as.setSizePolicy(sizePolicy2)
+        self.btn_buscar_agendamento_as.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_agendamento_as.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_agendamento_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_buscar_agendamento_as.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"		border-top-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221); \n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;  \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"        colo"
+                        "r: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_buscar_agendamento_as.setIcon(icon12)
+
+        self.horizontalLayout_131.addWidget(self.btn_buscar_agendamento_as)
+
+
+        self.verticalLayout_158.addWidget(self.frame_267)
+
+        self.frame_392 = QFrame(self.frame_271)
+        self.frame_392.setObjectName(u"frame_392")
+        self.frame_392.setFrameShape(QFrame.StyledPanel)
+        self.frame_392.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_267 = QVBoxLayout(self.frame_392)
+        self.verticalLayout_267.setObjectName(u"verticalLayout_267")
+        self.label_nome_agendamento_as = QLabel(self.frame_392)
+        self.label_nome_agendamento_as.setObjectName(u"label_nome_agendamento_as")
+        self.label_nome_agendamento_as.setFont(font)
+
+        self.verticalLayout_267.addWidget(self.label_nome_agendamento_as)
+
+        self.input_nome_agendamento_as = QLineEdit(self.frame_392)
+        self.input_nome_agendamento_as.setObjectName(u"input_nome_agendamento_as")
+        self.input_nome_agendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_nome_agendamento_as.setMaximumSize(QSize(16777215, 30))
+        self.input_nome_agendamento_as.setFont(font)
+
+        self.verticalLayout_267.addWidget(self.input_nome_agendamento_as)
+
+
+        self.verticalLayout_158.addWidget(self.frame_392)
+
+        self.frame_440 = QFrame(self.frame_271)
+        self.frame_440.setObjectName(u"frame_440")
+        self.frame_440.setFrameShape(QFrame.StyledPanel)
+        self.frame_440.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_307 = QVBoxLayout(self.frame_440)
+        self.verticalLayout_307.setObjectName(u"verticalLayout_307")
+        self.label_telefone_agendamento_as = QLabel(self.frame_440)
+        self.label_telefone_agendamento_as.setObjectName(u"label_telefone_agendamento_as")
+        self.label_telefone_agendamento_as.setFont(font)
+
+        self.verticalLayout_307.addWidget(self.label_telefone_agendamento_as)
+
+        self.input_telefone_agendamento_as = QLineEdit(self.frame_440)
+        self.input_telefone_agendamento_as.setObjectName(u"input_telefone_agendamento_as")
+        self.input_telefone_agendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_telefone_agendamento_as.setMaximumSize(QSize(16777215, 30))
+
+        self.verticalLayout_307.addWidget(self.input_telefone_agendamento_as)
+
+
+        self.verticalLayout_158.addWidget(self.frame_440)
+
+        self.frame_441 = QFrame(self.frame_271)
+        self.frame_441.setObjectName(u"frame_441")
+        self.frame_441.setFrameShape(QFrame.StyledPanel)
+        self.frame_441.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_311 = QVBoxLayout(self.frame_441)
+        self.verticalLayout_311.setObjectName(u"verticalLayout_311")
+        self.verticalLayout_311.setContentsMargins(0, 0, 0, 0)
+        self.label_profissional_agendamento_as = QLabel(self.frame_441)
+        self.label_profissional_agendamento_as.setObjectName(u"label_profissional_agendamento_as")
+        self.label_profissional_agendamento_as.setFont(font)
+
+        self.verticalLayout_311.addWidget(self.label_profissional_agendamento_as)
+
+        self.frame_443 = QFrame(self.frame_441)
+        self.frame_443.setObjectName(u"frame_443")
+        self.frame_443.setFrameShape(QFrame.StyledPanel)
+        self.frame_443.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_138 = QHBoxLayout(self.frame_443)
+        self.horizontalLayout_138.setObjectName(u"horizontalLayout_138")
+        self.input_profissional_as_agendamento_as = QRadioButton(self.frame_443)
+        self.input_profissional_as_agendamento_as.setObjectName(u"input_profissional_as_agendamento_as")
+        self.input_profissional_as_agendamento_as.setFont(font8)
+
+        self.horizontalLayout_138.addWidget(self.input_profissional_as_agendamento_as)
+
+        self.input_profissional_nutri_agendamento_as = QRadioButton(self.frame_443)
+        self.input_profissional_nutri_agendamento_as.setObjectName(u"input_profissional_nutri_agendamento_as")
+        self.input_profissional_nutri_agendamento_as.setFont(font8)
+
+        self.horizontalLayout_138.addWidget(self.input_profissional_nutri_agendamento_as)
+
+        self.input_profissional_psi_agendamento_as = QRadioButton(self.frame_443)
+        self.input_profissional_psi_agendamento_as.setObjectName(u"input_profissional_psi_agendamento_as")
+        self.input_profissional_psi_agendamento_as.setFont(font8)
+
+        self.horizontalLayout_138.addWidget(self.input_profissional_psi_agendamento_as)
+
+
+        self.verticalLayout_311.addWidget(self.frame_443)
+
+
+        self.verticalLayout_158.addWidget(self.frame_441)
+
+        self.frame_444 = QFrame(self.frame_271)
+        self.frame_444.setObjectName(u"frame_444")
+        self.frame_444.setFrameShape(QFrame.StyledPanel)
+        self.frame_444.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_139 = QHBoxLayout(self.frame_444)
+        self.horizontalLayout_139.setSpacing(0)
+        self.horizontalLayout_139.setObjectName(u"horizontalLayout_139")
+        self.horizontalLayout_139.setContentsMargins(0, 0, 0, 0)
+        self.frame_446 = QFrame(self.frame_444)
+        self.frame_446.setObjectName(u"frame_446")
+        self.frame_446.setMaximumSize(QSize(140, 16777215))
+        self.frame_446.setFrameShape(QFrame.StyledPanel)
+        self.frame_446.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_312 = QVBoxLayout(self.frame_446)
+        self.verticalLayout_312.setSpacing(0)
+        self.verticalLayout_312.setObjectName(u"verticalLayout_312")
+        self.verticalLayout_312.setContentsMargins(0, 0, 0, 0)
+        self.label_data_agendamento_as = QLabel(self.frame_446)
+        self.label_data_agendamento_as.setObjectName(u"label_data_agendamento_as")
+        self.label_data_agendamento_as.setMaximumSize(QSize(140, 16777215))
+        self.label_data_agendamento_as.setFont(font)
+
+        self.verticalLayout_312.addWidget(self.label_data_agendamento_as)
+
+        self.input_data_agendamento_as = QDateEdit(self.frame_446)
+        self.input_data_agendamento_as.setObjectName(u"input_data_agendamento_as")
+        sizePolicy1.setHeightForWidth(self.input_data_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_data_agendamento_as.setSizePolicy(sizePolicy1)
+        self.input_data_agendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_data_agendamento_as.setMaximumSize(QSize(130, 30))
+        self.input_data_agendamento_as.setFont(font8)
+        self.input_data_agendamento_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_agendamento_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_agendamento_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_agendamento_as.setAutoFillBackground(False)
+        self.input_data_agendamento_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_agendamento_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_agendamento_as.setAlignment(Qt.AlignCenter)
+        self.input_data_agendamento_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_agendamento_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_agendamento_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_agendamento_as.setCalendarPopup(False)
+        self.input_data_agendamento_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_312.addWidget(self.input_data_agendamento_as)
+
+
+        self.horizontalLayout_139.addWidget(self.frame_446)
+
+        self.frame_447 = QFrame(self.frame_444)
+        self.frame_447.setObjectName(u"frame_447")
+        self.frame_447.setMaximumSize(QSize(140, 16777215))
+        self.frame_447.setFrameShape(QFrame.StyledPanel)
+        self.frame_447.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_313 = QVBoxLayout(self.frame_447)
+        self.verticalLayout_313.setSpacing(0)
+        self.verticalLayout_313.setObjectName(u"verticalLayout_313")
+        self.verticalLayout_313.setContentsMargins(0, 0, 0, 0)
+        self.label_hora_agendamento_as = QLabel(self.frame_447)
+        self.label_hora_agendamento_as.setObjectName(u"label_hora_agendamento_as")
+        self.label_hora_agendamento_as.setMaximumSize(QSize(140, 16777215))
+        self.label_hora_agendamento_as.setFont(font)
+
+        self.verticalLayout_313.addWidget(self.label_hora_agendamento_as)
+
+        self.input_hora_agendamento_as = QTimeEdit(self.frame_447)
+        self.input_hora_agendamento_as.setObjectName(u"input_hora_agendamento_as")
+        self.input_hora_agendamento_as.setMinimumSize(QSize(120, 30))
+        self.input_hora_agendamento_as.setMaximumSize(QSize(120, 30))
+        self.input_hora_agendamento_as.setFont(font)
+        self.input_hora_agendamento_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
+
+        self.verticalLayout_313.addWidget(self.input_hora_agendamento_as)
+
+
+        self.horizontalLayout_139.addWidget(self.frame_447)
+
+
+        self.verticalLayout_158.addWidget(self.frame_444)
+
+        self.frame_445 = QFrame(self.frame_271)
+        self.frame_445.setObjectName(u"frame_445")
+        self.frame_445.setFrameShape(QFrame.StyledPanel)
+        self.frame_445.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_314 = QVBoxLayout(self.frame_445)
+        self.verticalLayout_314.setObjectName(u"verticalLayout_314")
+        self.label_clinica_agendamento_as = QLabel(self.frame_445)
+        self.label_clinica_agendamento_as.setObjectName(u"label_clinica_agendamento_as")
+        self.label_clinica_agendamento_as.setFont(font)
+
+        self.verticalLayout_314.addWidget(self.label_clinica_agendamento_as)
+
+        self.input_clinica_agendamento_as = QLineEdit(self.frame_445)
+        self.input_clinica_agendamento_as.setObjectName(u"input_clinica_agendamento_as")
+        self.input_clinica_agendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_clinica_agendamento_as.setMaximumSize(QSize(16777215, 30))
+        self.input_clinica_agendamento_as.setFont(font)
+
+        self.verticalLayout_314.addWidget(self.input_clinica_agendamento_as)
+
+
+        self.verticalLayout_158.addWidget(self.frame_445)
+
+
+        self.verticalLayout_157.addWidget(self.frame_271)
+
+
+        self.horizontalLayout_941.addWidget(self.frame_263)
+
+        self.horizontalSpacer_822 = QSpacerItem(150, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_941.addItem(self.horizontalSpacer_822)
+
+
+        self.horizontalLayout_93.addWidget(self.frame_266)
 
         self.frame_268 = QFrame(self.frame_264)
         self.frame_268.setObjectName(u"frame_268")
@@ -7007,19 +7008,101 @@ class Ui_MainWindow(object):
         self.frame_268.setFrameShadow(QFrame.Raised)
         self.verticalLayout_159 = QVBoxLayout(self.frame_268)
         self.verticalLayout_159.setObjectName(u"verticalLayout_159")
-        self.input_anotacoes_agenda_as = QTextEdit(self.frame_268)
-        self.input_anotacoes_agenda_as.setObjectName(u"input_anotacoes_agenda_as")
-        self.input_anotacoes_agenda_as.setFont(font13)
-        self.input_anotacoes_agenda_as.setStyleSheet(u"background-color: #fff; color: #000; padding-left: 0.5em")
+        self.frame_448 = QFrame(self.frame_268)
+        self.frame_448.setObjectName(u"frame_448")
+        self.frame_448.setMinimumSize(QSize(0, 100))
+        self.frame_448.setFrameShape(QFrame.StyledPanel)
+        self.frame_448.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_315 = QVBoxLayout(self.frame_448)
+        self.verticalLayout_315.setObjectName(u"verticalLayout_315")
+        self.label_filtro_agendamento_as = QLabel(self.frame_448)
+        self.label_filtro_agendamento_as.setObjectName(u"label_filtro_agendamento_as")
+        self.label_filtro_agendamento_as.setFont(font15)
 
-        self.verticalLayout_159.addWidget(self.input_anotacoes_agenda_as)
+        self.verticalLayout_315.addWidget(self.label_filtro_agendamento_as)
+
+        self.input_filtro_agendamento_as = QLineEdit(self.frame_448)
+        self.input_filtro_agendamento_as.setObjectName(u"input_filtro_agendamento_as")
+        self.input_filtro_agendamento_as.setFont(font15)
+
+        self.verticalLayout_315.addWidget(self.input_filtro_agendamento_as)
+
+
+        self.verticalLayout_159.addWidget(self.frame_448)
+
+        self.input_TableWidget_agendamento_as = QTableWidget(self.frame_268)
+        if (self.input_TableWidget_agendamento_as.columnCount() < 3):
+            self.input_TableWidget_agendamento_as.setColumnCount(3)
+        __qtablewidgetitem21 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(0, __qtablewidgetitem21)
+        __qtablewidgetitem22 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(1, __qtablewidgetitem22)
+        __qtablewidgetitem23 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(2, __qtablewidgetitem23)
+        if (self.input_TableWidget_agendamento_as.rowCount() < 14):
+            self.input_TableWidget_agendamento_as.setRowCount(14)
+        __qtablewidgetitem24 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(0, __qtablewidgetitem24)
+        __qtablewidgetitem25 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(1, __qtablewidgetitem25)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(2, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(3, __qtablewidgetitem27)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(4, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(5, __qtablewidgetitem29)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(6, __qtablewidgetitem30)
+        __qtablewidgetitem31 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(7, __qtablewidgetitem31)
+        __qtablewidgetitem32 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(8, __qtablewidgetitem32)
+        __qtablewidgetitem33 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(9, __qtablewidgetitem33)
+        __qtablewidgetitem34 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(10, __qtablewidgetitem34)
+        __qtablewidgetitem35 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(11, __qtablewidgetitem35)
+        __qtablewidgetitem36 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(12, __qtablewidgetitem36)
+        __qtablewidgetitem37 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setVerticalHeaderItem(13, __qtablewidgetitem37)
+        __qtablewidgetitem38 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setItem(0, 0, __qtablewidgetitem38)
+        __qtablewidgetitem39 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setItem(0, 1, __qtablewidgetitem39)
+        __qtablewidgetitem40 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setItem(1, 0, __qtablewidgetitem40)
+        self.input_TableWidget_agendamento_as.setObjectName(u"input_TableWidget_agendamento_as")
+        self.input_TableWidget_agendamento_as.setFont(font)
+        self.input_TableWidget_agendamento_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_TableWidget_agendamento_as.setAutoFillBackground(False)
+        self.input_TableWidget_agendamento_as.setStyleSheet(u"QTableEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTableEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_TableWidget_agendamento_as.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
+        self.input_TableWidget_agendamento_as.setLineWidth(2222)
+        self.input_TableWidget_agendamento_as.setMidLineWidth(10)
+        self.input_TableWidget_agendamento_as.setAlternatingRowColors(True)
+        self.input_TableWidget_agendamento_as.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.input_TableWidget_agendamento_as.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.input_TableWidget_agendamento_as.setHorizontalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.input_TableWidget_agendamento_as.setGridStyle(Qt.SolidLine)
+        self.input_TableWidget_agendamento_as.setSortingEnabled(True)
+        self.input_TableWidget_agendamento_as.setWordWrap(True)
+        self.input_TableWidget_agendamento_as.horizontalHeader().setCascadingSectionResizes(True)
+        self.input_TableWidget_agendamento_as.horizontalHeader().setDefaultSectionSize(130)
+        self.input_TableWidget_agendamento_as.horizontalHeader().setStretchLastSection(True)
+        self.input_TableWidget_agendamento_as.verticalHeader().setVisible(False)
+        self.input_TableWidget_agendamento_as.verticalHeader().setDefaultSectionSize(50)
+
+        self.verticalLayout_159.addWidget(self.input_TableWidget_agendamento_as)
 
 
         self.horizontalLayout_93.addWidget(self.frame_268)
 
-        self.horizontalLayout_93.setStretch(0, 6)
-        self.horizontalLayout_93.setStretch(1, 1)
-        self.horizontalLayout_93.setStretch(2, 4)
+        self.horizontalLayout_93.setStretch(1, 4)
 
         self.verticalLayout_156.addWidget(self.frame_264)
 
@@ -7915,22 +7998,23 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_100.addWidget(self.frame_304)
+        
+        self.input_alterar_id_matricula_cuidador_as = QLineEdit(self.frame_299)
+        self.input_alterar_id_matricula_cuidador_as.setObjectName(u"input_alterar_id_matricula_cuidador_as")
+        self.input_alterar_id_matricula_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.horizontalLayout_100.addWidget(self.input_alterar_id_matricula_cuidador_as)
 
         self.input_alterar_id_endereco_cuidador_as = QLineEdit(self.frame_299)
         self.input_alterar_id_endereco_cuidador_as.setObjectName(u"input_alterar_id_endereco_cuidador_as")
         self.input_alterar_id_endereco_cuidador_as.setEnabled(False)
         self.input_alterar_id_endereco_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
+        
 
         self.horizontalLayout_100.addWidget(self.input_alterar_id_endereco_cuidador_as)
 
-        self.input_alterar_id_matricula_cuidador_as = QLineEdit(self.frame_299)
-        self.input_alterar_id_matricula_cuidador_as.setObjectName(u"input_alterar_id_matricula_cuidador_as")
-        self.input_alterar_id_matricula_cuidador_as.setEnabled(False)
-        self.input_alterar_id_matricula_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
-"border-color: transparent;")
-
-        self.horizontalLayout_100.addWidget(self.input_alterar_id_matricula_cuidador_as)
 
         self.verticalLayout_189.addWidget(self.frame_299)
 
@@ -9490,15 +9574,15 @@ class Ui_MainWindow(object):
         self.frame_358.setMaximumSize(QSize(600, 16777215))
         self.frame_358.setFrameShape(QFrame.StyledPanel)
         self.frame_358.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_131 = QHBoxLayout(self.frame_358)
-        self.horizontalLayout_131.setObjectName(u"horizontalLayout_131")
+        self.horizontalLayout_1311 = QHBoxLayout(self.frame_358)
+        self.horizontalLayout_1311.setObjectName(u"horizontalLayout_1311")
         self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
         self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
         self.input_alterar_id_endereco_usuario_as.setEnabled(False)
         self.input_alterar_id_endereco_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.horizontalLayout_131.addWidget(self.input_alterar_id_endereco_usuario_as)
+        self.horizontalLayout_1311.addWidget(self.input_alterar_id_endereco_usuario_as)
 
         self.input_alterar_id_matricula_usuario_as = QLineEdit(self.frame_358)
         self.input_alterar_id_matricula_usuario_as.setObjectName(u"input_alterar_id_matricula_usuario_as")
@@ -9506,7 +9590,8 @@ class Ui_MainWindow(object):
         self.input_alterar_id_matricula_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.horizontalLayout_131.addWidget(self.input_alterar_id_matricula_usuario_as)
+        self.horizontalLayout_1311.addWidget(self.input_alterar_id_matricula_usuario_as)
+
 
         self.horizontalLayout_115.addWidget(self.frame_358)
 
@@ -10415,34 +10500,15 @@ class Ui_MainWindow(object):
         self.frame_380.setMaximumSize(QSize(180, 16777215))
         self.frame_380.setFrameShape(QFrame.StyledPanel)
         self.frame_380.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_94 = QHBoxLayout(self.frame_380)
-        self.horizontalLayout_94.setObjectName(u"horizontalLayout_94")
+        self.horizontalLayout_942 = QHBoxLayout(self.frame_380)
+        self.horizontalLayout_942.setObjectName(u"horizontalLayout_942")
         self.input_alterar_id_matricula_colaborador_as = QLineEdit(self.frame_380)
         self.input_alterar_id_matricula_colaborador_as.setObjectName(u"input_alterar_id_matricula_colaborador_as")
         self.input_alterar_id_matricula_colaborador_as.setEnabled(False)
         self.input_alterar_id_matricula_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.horizontalLayout_94.addWidget(self.input_alterar_id_matricula_colaborador_as)
-
-
-        self.horizontalLayout_129.addWidget(self.frame_379)
-
-        self.frame_380 = QFrame(self.frame_375)
-        self.frame_380.setObjectName(u"frame_380")
-        self.frame_380.setMinimumSize(QSize(0, 0))
-        self.frame_380.setMaximumSize(QSize(180, 16777215))
-        self.frame_380.setFrameShape(QFrame.StyledPanel)
-        self.frame_380.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_138 = QHBoxLayout(self.frame_380)
-        self.horizontalLayout_138.setObjectName(u"horizontalLayout_138")
-        self.input_alterar_id_matricula_colaborador_as = QLineEdit(self.frame_380)
-        self.input_alterar_id_matricula_colaborador_as.setObjectName(u"input_alterar_id_matricula_colaborador_as")
-        self.input_alterar_id_matricula_colaborador_as.setEnabled(False)
-        self.input_alterar_id_matricula_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
-"border-color: transparent;")
-
-        self.horizontalLayout_138.addWidget(self.input_alterar_id_matricula_colaborador_as)
+        self.horizontalLayout_942.addWidget(self.input_alterar_id_matricula_colaborador_as)
 
 
         self.horizontalLayout_129.addWidget(self.frame_380)
@@ -12395,15 +12461,6 @@ class Ui_MainWindow(object):
         self.input_periodo_cursos_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Noturno", None))
 
         self.label_vagas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Vagas", None))
-        self.label_cep_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
-        self.label_logradouro_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None))
-        self.label_numero_cursos_as.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
-        self.input_numero_cursos_as.setText("")
-        self.label_bairro_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
-        self.input_bairro_cursos_as.setText("")
-        self.label_cidade_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
-        self.input_cidade_cursos_as.setText("")
-        self.label_estado_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_descricao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o da atividade", None))
         self.btn_voltar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_lista_pessoas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Lista pessoas cadastradas", None))
@@ -12463,30 +12520,63 @@ class Ui_MainWindow(object):
         self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
         self.label_10.setText(QCoreApplication.translate("MainWindow", u"AGENDA", None))
-        self.label_11.setText(QCoreApplication.translate("MainWindow", u"Hor\u00e1rios", None))
-        self.btn_7_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:00", None))
-        self.btn_730_agenda_as.setText(QCoreApplication.translate("MainWindow", u"07:30", None))
-        self.btn_8_agenda_as.setText(QCoreApplication.translate("MainWindow", u"08:00", None))
-        self.btn_830_agenda_as.setText(QCoreApplication.translate("MainWindow", u"08:30", None))
-        self.btn_9_agenda_as.setText(QCoreApplication.translate("MainWindow", u"09:00", None))
-        self.btn_930_agenda_as.setText(QCoreApplication.translate("MainWindow", u"09:30", None))
-        self.btn_10_agenda_as.setText(QCoreApplication.translate("MainWindow", u"10:00", None))
-        self.btn_1030_agenda_as.setText(QCoreApplication.translate("MainWindow", u"10:30", None))
-        self.btn_11_agenda_as.setText(QCoreApplication.translate("MainWindow", u"11:00", None))
-        self.btn_1130_agenda_as.setText(QCoreApplication.translate("MainWindow", u"11:30", None))
-        self.btn_12_agenda_as.setText(QCoreApplication.translate("MainWindow", u"12:00", None))
-        self.btn_1230_agenda_as.setText(QCoreApplication.translate("MainWindow", u"12:30", None))
-        self.btn_13_agenda_as.setText(QCoreApplication.translate("MainWindow", u"13:00", None))
-        self.btn_1330_agenda_as.setText(QCoreApplication.translate("MainWindow", u"13:30", None))
-        self.btn_14_agenda_as.setText(QCoreApplication.translate("MainWindow", u"14:00", None))
-        self.btn_1430_agenda_as.setText(QCoreApplication.translate("MainWindow", u"14:30", None))
-        self.btn_15_agenda_as.setText(QCoreApplication.translate("MainWindow", u"15:00", None))
-        self.btn_1530_agenda_as.setText(QCoreApplication.translate("MainWindow", u"15:30", None))
-        self.btn_16_agenda_as.setText(QCoreApplication.translate("MainWindow", u"16:00", None))
-        self.btn_1630_agenda_as.setText(QCoreApplication.translate("MainWindow", u"16:30", None))
-        self.btn_17_agenda_as.setText(QCoreApplication.translate("MainWindow", u"17:00", None))
-        self.btn_1730_agenda_as.setText(QCoreApplication.translate("MainWindow", u"17:30", None))
-        self.btn_18_agenda_as.setText(QCoreApplication.translate("MainWindow", u"18:00", None))
+        self.label_cpf_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
+        self.input_cpf_agendamento_as.setText("")
+        self.input_cpf_agendamento_as.setPlaceholderText("")
+        self.btn_buscar_agendamento_as.setText("")
+        self.label_nome_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Nome", None))
+        self.input_nome_agendamento_as.setText("")
+        self.label_telefone_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
+        self.label_profissional_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Profissional", None))
+        self.input_profissional_as_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Assistente Social", None))
+        self.input_profissional_nutri_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Nutricionista", None))
+        self.input_profissional_psi_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Psic\u00f3loga", None))
+        self.label_data_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Data", None))
+        self.label_hora_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Hora", None))
+        self.label_clinica_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None))
+        self.label_filtro_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Filtro", None))
+        ___qtablewidgetitem18 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem19 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Agendamento", None));
+        ___qtablewidgetitem20 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Profissional", None));
+        ___qtablewidgetitem21 = self.input_TableWidget_agendamento_as.verticalHeaderItem(0)
+        ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem22 = self.input_TableWidget_agendamento_as.verticalHeaderItem(1)
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem23 = self.input_TableWidget_agendamento_as.verticalHeaderItem(2)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem24 = self.input_TableWidget_agendamento_as.verticalHeaderItem(3)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"4", None));
+        ___qtablewidgetitem25 = self.input_TableWidget_agendamento_as.verticalHeaderItem(4)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        ___qtablewidgetitem26 = self.input_TableWidget_agendamento_as.verticalHeaderItem(5)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"6", None));
+        ___qtablewidgetitem27 = self.input_TableWidget_agendamento_as.verticalHeaderItem(6)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"7", None));
+        ___qtablewidgetitem28 = self.input_TableWidget_agendamento_as.verticalHeaderItem(7)
+        ___qtablewidgetitem28.setText(QCoreApplication.translate("MainWindow", u"8", None));
+        ___qtablewidgetitem29 = self.input_TableWidget_agendamento_as.verticalHeaderItem(8)
+        ___qtablewidgetitem29.setText(QCoreApplication.translate("MainWindow", u"9", None));
+        ___qtablewidgetitem30 = self.input_TableWidget_agendamento_as.verticalHeaderItem(9)
+        ___qtablewidgetitem30.setText(QCoreApplication.translate("MainWindow", u"10", None));
+        ___qtablewidgetitem31 = self.input_TableWidget_agendamento_as.verticalHeaderItem(10)
+        ___qtablewidgetitem31.setText(QCoreApplication.translate("MainWindow", u"11", None));
+        ___qtablewidgetitem32 = self.input_TableWidget_agendamento_as.verticalHeaderItem(11)
+        ___qtablewidgetitem32.setText(QCoreApplication.translate("MainWindow", u"12", None));
+        ___qtablewidgetitem33 = self.input_TableWidget_agendamento_as.verticalHeaderItem(12)
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"13", None));
+        ___qtablewidgetitem34 = self.input_TableWidget_agendamento_as.verticalHeaderItem(13)
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"14", None));
+
+        __sortingEnabled1 = self.input_TableWidget_agendamento_as.isSortingEnabled()
+        self.input_TableWidget_agendamento_as.setSortingEnabled(False)
+        self.input_TableWidget_agendamento_as.setSortingEnabled(__sortingEnabled1)
+
+#if QT_CONFIG(tooltip)
+        self.input_TableWidget_agendamento_as.setToolTip("")
+#endif // QT_CONFIG(tooltip)
         self.btn_voltar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_cancelar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))

@@ -200,7 +200,7 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()        
         self.listarUsuarios()
-
+        self.id_area_sigilosa = 5
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -248,7 +248,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
-        #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
+        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
@@ -268,7 +269,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
-        self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
+        # page_alterar_usuario
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
 
@@ -304,7 +307,11 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
-        
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
+        self.ui.btn_salvar_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
+        self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
+        self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -413,7 +420,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
             self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
             self.ui.input_alterar_rg_cuidador_as.setText(dados[3])
-            self.ui.input_alterar_data_emissao_cuidador_as.date().toString(str(dados[4]))
+            self.ui.input_alterar_data_emissao_cuidador_as.setDate(QDate(dados[4]))
             self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[5])
 
             sexo = str(dados[6])
@@ -451,13 +458,14 @@ class TelaPrincipal(QMainWindow):
         
             
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
+            self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
-            self.ui.input_alterar_nascimento_usuario_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
-            self.ui.input_alterar_data_emissao_usuario_as.date().toString(str(dados[6])) #
+            self.ui.input_alterar_data_emissao_usuario_as.setDate(QDate(dados[6])) #
             self.ui.input_alterar_orgao_expedidor_usuario_as.setText(dados[7]) #
             self.ui.input_alterar_nis_usuario_as.setText(dados[8]) #
             self.ui.input_alterar_cns_usuario_as.setText(dados[9]) #
@@ -659,7 +667,7 @@ class TelaPrincipal(QMainWindow):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
 
-            self.ui.input_alterar_data_inicio_usuario_as.date().toString(str(dados[31]))
+            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[32]))
 
             periodo = dados[33]
 
@@ -687,7 +695,7 @@ class TelaPrincipal(QMainWindow):
             print(dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
-            self.ui.input_data_nascimento_colaborador_as.date().toString(str(dados[2]))
+            self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
             self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
             self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
@@ -1228,6 +1236,137 @@ class TelaPrincipal(QMainWindow):
 
         result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
         print(result)
+
+    def area_sigilosa(self):
+
+        if self.ui.input_obito_paciente_sim_as.isChecked:
+            situacao="Ativo"
+        else:
+            situacao="Inativo"
+        
+        observacao_gerais = self.ui.input_observacoes_obs_sigilosas_as.toPlainText()
+        tupla_area_sigilosa = (situacao, observacao_gerais, self.id_area_sigilosa)
+        result = self.db.cadastrar_area_sigilosa(tupla_area_sigilosa)
+        print(result)
+
+
+    def limparCamposCadastroUsuario (self):
+        self.ui.input_nome_usuario_as.setText("") #
+        self.ui.input_nascimento_usuario_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_situacao_ativo_usuario_as.setCheckable(False)
+        self.ui.input_situacao_ativo_usuario_as.setCheckable(True)
+        self.ui.input_situacao_inativo_usuario_as.setCheckable(False)
+        self.ui.input_situacao_inativo_usuario_as.setCheckable(True)
+        self.ui.input_cpf_usuario_as.setText("")
+        self.ui.input_rg_usuario_as.setText("")
+        self.ui.input_data_emissao_usuario_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_orgao_expedidor_usuario_as.setText("")
+        self.ui.input_nis_usuario_as.setText("")
+        self.ui.input_cns_usuario_as.setText("")
+        self.ui.input_sexo_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_telefone_usuario_as.setText("")
+        self.ui.input_email_usuario_as.setText("")
+        self.ui.input_cep_usuario_as.setText("") #
+        self.ui.input_logradouro_usuario_as.setText("") #
+        self.ui.input_numero_usuario_as.setText("") #
+        self.ui.input_bairro_usuario_as.setText("") #
+        self.ui.input_cidade_usuario_as.setText("") #
+        self.ui.input_estado_usuario_as.setText("") #
+        self.ui.input_estado_civil_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_escolaridade_usuario_comboBox_as.setCurrentIndex(int(0))
+        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setCheckable(False)
+        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setCheckable(True)
+        self.ui.label_pessoa_cdeficiencia_nao_usuario_as.setCheckable(False)  
+        self.ui.label_pessoa_cdeficiencia_nao_usuario_as.setCheckable(True)        
+        self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_renda_familiar_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_meio_transporte_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_vale_transporte_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_situacao_trabalho_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_beneficios_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_tarifa_social_sim_usuario_as.setCheckable(False)
+        self.ui.input_tarifa_social_sim_usuario_as.setCheckable(True)
+        self.ui.input_tarifa_social_nao_usuario_as.setCheckable(False)
+        self.ui.input_tarifa_social_nao_usuario_as.setCheckable(True)
+        self.ui.input_tipo_tratamento_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_local_tratamento_usuario_as.setText("")
+        self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
+        self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
+
+        
+
+ 
+    def limparCamposCadastroCuidador(self):
+        self.ui.input_nome_cuidador_as.setText("")
+        self.ui.input_data_nascimento_cuidador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_cpf_cuidador_as.setText("")
+        self.ui.input_rg_cuidador_as.setText("")
+        self.ui.input_data_emissao_cuidador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_orgao_expedidor_cuidador_as.setText("")
+        self.ui.input_sexo_cuidador_as.setCurrentIndex(int(0))
+        self.ui.input_usuario_cuidador_as.setCurrentIndex(int(0))
+        self.ui.input_parentesco_cuidador_as.setText("")
+        self.ui.input_telefone_cuidador_as.setText("")
+        self.ui.input_email_cuidador_as.setText("") 
+        self.ui.input_cep_cuidador_as.setText("")
+        self.ui.input_logradouro_cuidador_as.setText("")
+        self.ui.input_numero_cuidador_as.setText("")
+        self.ui.input_bairro_cuidador_as.setText("")
+        self.ui.input_cidade_cuidador_as.setText("")
+        self.ui.input_estado_cuidador_as.setText("")        
+        self.ui.input_informacoes_gerais_as.setHtml("")
+
+
+
+    def limparCamposCadastroColaborador(self):
+        self.ui.input_nome_colaborador_as.setText("")
+        self.ui.input_data_nascimento_colaborador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_cpf_colaborador_as.setText("")
+        self.ui.input_rg_colaborador_as.setText("")
+        self.ui.input_situacao_ativo_colaborador_as.setCheckable(False)
+        self.ui.input_situacao_ativo_colaborador_as.setCheckable(True)
+        self.ui.input_situacao_inativo_colaborador_as.setCheckable(False)
+        self.ui.input_situacao_inativo_colaborador_as.setCheckable(True)
+        self.ui.input_orgao_expedidor_colaborador_as.setText("")
+        self.ui.input_data_emissao_rg_colaborador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_pis_colaborador_as.setText("")
+        self.ui.input_sexo_colaborador_comboBox_as.setCurrentIndex(int(0))
+        self.ui.input_telefone_colaborador_as.setText("")
+        self.ui.input_email_colaborador_as.setText("")      
+        self.ui.input_cep_colaborador_as.setText("")
+        self.ui.input_logradouro_colaborador_as.setText("")
+        self.ui.input_numero_colaborador_as.setText("")
+        self.ui.input_bairro_colaborador_as.setText("")
+        self.ui.input_cidade_colaborador_as.setText("")
+        self.ui.input_estado_colaborador_as.setText("")
+        self.ui.input_estado_civil_colaborador_comboBox_as.setCurrentIndex(int(0))
+        self.ui.input_salario_colaborador_as.setText("")
+        self.ui.input_data_admissao_colaborador_as_5.setDate(QDate(2000, 1, 1))
+        self.ui.input_escolaridade_colaborador_comboBox_as.setCurrentIndex(int(0))
+        self.ui.input_cargo_colaborador_comboBox_as.setCurrentIndex(int(0))
+        self.ui.input_periodo_colaborador_comboBox_as.setCurrentIndex(int(0))
+        self.ui.input_usuario_colaborador_as_2.setText("")
+        self.ui.input_senha_colaborador_as_2.setText("")
+        self.ui.input_confirmar_senha_colaborador_as_2.setText("")
+
+
+    def limparCamposAreaSigilosa(self):
+        self.ui.input_obito_paciente_sim_as.setCheckable(False)
+        self.ui.input_obito_paciente_sim_as.setCheckable(True)
+        self.ui.input_obito_paciente_nao_as.setCheckable(False)
+        self.ui.input_obito_paciente_nao_as.setCheckable(True)
+        self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
+
+
+
+
+
+
+
+
+
+
 #####Alterar SITUACAO de Trabalho Outros #########
 ####################### FUNÇÕES POP UP #######################
 
