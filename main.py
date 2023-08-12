@@ -175,16 +175,16 @@ class ConfirmaSaida(QDialog):
 
         
         self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.closeMsg)
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closePop_up)
+        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closePop_up)
          
         
     def closeMsg(self):
         self.close()
 
-    def closePop_up(self):
-        self.popup.close()
-        self.saida.frame.close()
+    '''def closePop_up(self):
         
+        self.popup.close()'''        
+               
     
 
 #############################################################################
@@ -211,17 +211,18 @@ class TelaPrincipal(QMainWindow):
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
-        ###############SIGNALS#################       
+        ###############SIGNALS################# 
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)      
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         
-        
+        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
         
         #self.saida.btn_nao_popup_confirma_saida = self.ui.clicked.connect(lambda:self.saida.setCurrentWidget(self.popup.close()))
         
 
         #self.saida.btn_nao_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
-        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        
         
         
 
@@ -1297,18 +1298,18 @@ class TelaPrincipal(QMainWindow):
 
 
     def sairSistema(self):   
-            msg = ConfirmaSaida(self)
-            #self.popup.show()
-            msg.exec()
-            self.popup.close()        
-            self.close()
+        msg = ConfirmaSaida(self)
+        #self.popup.show()
+        msg.exec()
+        self.popup.close()        
+        
 
     def fecharPopup(self):
         msg = ConfirmaSaida(self)
-                #self.popup.show()
+        self.popup.show()
         msg.exec()
         self.popup.close()        
-        self.close()
+    
 
     
     def on_tipo_alterar_usuario_changed(self):
