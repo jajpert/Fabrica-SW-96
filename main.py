@@ -293,17 +293,22 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
 
 ########################### Validar Login #############################
-    def validarLogin(self,login,senha):
-        # login_senha = login_senha
-        # login = self.ui.input_usuario_login.text(login_senha[0])
-        # senha = self.ui.input_senha_login.text()
-
+    def validarLogin(self):
+        login = self.ui.input_usuario_login.text()
+        senha = self.ui.input_senha_login.text()
+        
+        
+        
+        login_senha = self.db.validarLogin(login,senha)
+        self.ui.input_usuario_login.text(login_senha[0])
+        self.ui.input_senha_login.text(login_senha[1])
+        
     
-        resultado = self.db.validarLogin(login,senha)
+        #resultado
 
-        login = resultado
-        senha = resultado
-        print (resultado,login,senha)
+        # login = resultado
+        # senha = resultado
+        print (login_senha)
         # login = self.ui.input_usuario_login.text(login_senha)
         # senha = self.ui.input_senha_login.text(login_senha)
         # print(resultado)

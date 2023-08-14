@@ -55,10 +55,13 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def validarLogin(self,login, senha):
+    def validarLogin(self, login, senha):
+        print("entrou validação login")
         self.connect()
         try:
-            self.cursor.execute(f"Select * from colaborador where login = {login} and senha = {senha};")
+            #
+            self.cursor.execute(f"Select login, senha from colaborador where login = '{login}' and senha = '{senha}';")
+
             result = self.cursor.fetchall()
             print (result)
             
