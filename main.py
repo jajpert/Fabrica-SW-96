@@ -212,7 +212,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)      
+        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)    
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         
         self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
@@ -1436,18 +1436,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_nome_usuario_as.setText("")
 
 
-    def sairSistema(self):   
-        msg = ConfirmaSaida(self)
-        #self.popup.show()
-        msg.exec()
-        self.popup.close()        
-        
-
-    def fecharPopup(self):
-        msg = ConfirmaSaida(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.close()        
+           
     
 
     
@@ -1533,6 +1522,18 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()'''
 
+    def sairSistema(self):   
+        msg = ConfirmaSaida(self)
+        #self.popup.show()
+        msg.exec()
+        self.popup.close()        
+        
+
+    def fecharPopup(self):
+        msg = ConfirmaSaida(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.close() 
         
    
 
@@ -1545,7 +1546,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
-    
     w = TelaPrincipal()
     
     w.show()
