@@ -63,7 +63,7 @@ class DataBase():
             self.cursor.execute(f"""Select login, senha from colaborador where login = '{login}' and senha = '{senha}';""")
 
             result = self.cursor.fetchall()
-            print (result)
+            #print (result)
             
             return result
 

@@ -299,33 +299,16 @@ class TelaPrincipal(QMainWindow):
     def validarLogin(self):
         login = self.ui.input_usuario_login.text()
         senha = self.ui.input_senha_login.text()
-        
-        # self.ui.input_usuario_login = self.ui.input_usuario_colaborador_as_2.text()
-        # self.ui.input_senha_login = self.ui.input_senha_colaborador_as_2.text()
-        
         login_senha = []
         login_senha = self.db.validarLogin(login,senha)
-        self.ui.input_usuario_login.text() 
-        self.ui.input_senha_login.text()
-        
-    
-        #resultado
 
-        # login = resultado
-        # senha = resultado
-        print (login_senha)
-        # login = self.ui.input_usuario_login.text(login_senha)
-        # senha = self.ui.input_senha_login.text(login_senha)
-        # print(resultado)
+        print (login_senha[0][0])
+        print (login_senha[0][1])
 
-        # if login == login_senha[0] and senha == login_senha[1]:
-            
-        #     print ("Login realizado com sucesso")
-        # else:
-        #     print ("Usuário não encontrado")
-        # auth_login = self.db.validarLogin(login)
-        # auth_senha = self.db.validarLogin(senha)
-
+        if login == login_senha[0][0] and senha == login_senha[0][1]:            
+            print ("Login realizado com sucesso")
+        else:
+            print ("Usuário não encontrado")
         
 ########################### Validar CEP ###############################
     def validarCep(self):
