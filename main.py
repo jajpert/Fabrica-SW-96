@@ -193,9 +193,9 @@ class TelaPrincipal(QMainWindow):
         super().__init__()
 
         self.ui = Ui_MainWindow()
-        
-        self.ui.setupUi(self)
         self.saida = Ui_Confirma_Saida()
+        self.ui.setupUi(self)
+        
         ######################### banco #########################
 
         self.db = DataBase()        
@@ -212,7 +212,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)    
+        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.fecharPopup)
+
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         
         self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
@@ -249,7 +250,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
-        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
