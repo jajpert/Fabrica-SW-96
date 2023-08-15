@@ -304,10 +304,12 @@ class TelaPrincipal(QMainWindow):
         if len(login_senha)==0:
             print ("login vazio")
             return self.ui.inicio.setCurrentWidget(self.ui.login)
+        elif login_senha[0][0] == login_senha[0][1]:
+                print("Login e senha não podem ser iguais")
         else:
 
             if login == login_senha[0][0] and senha == login_senha[0][1]:            
-                print ("Login realizado com sucesso")
+                print ("Login realizado com sucesso")          
             else:
                 print ("Usuário não encontrado")
         
