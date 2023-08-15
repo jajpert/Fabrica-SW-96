@@ -293,6 +293,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
+        
+        self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -1525,6 +1527,19 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
+                
+                
+                
+    def filtrar_dados(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
+        res = self.db.filtrar_relatorio(txt)
+        #print(res)
+
+        self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
    
 
 
