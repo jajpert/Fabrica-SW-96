@@ -6474,8 +6474,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_112 = QVBoxLayout(self.frame_238)
         self.verticalLayout_112.setObjectName(u"verticalLayout_112")
         self.tableWidget_relatorio_as = QTableWidget(self.frame_238)
-        if (self.tableWidget_relatorio_as.columnCount() < 7):
-            self.tableWidget_relatorio_as.setColumnCount(7)
+        if (self.tableWidget_relatorio_as.columnCount() < 12):
+            self.tableWidget_relatorio_as.setColumnCount(12)
         __qtablewidgetitem19 = QTableWidgetItem()
         self.tableWidget_relatorio_as.setHorizontalHeaderItem(0, __qtablewidgetitem19)
         __qtablewidgetitem20 = QTableWidgetItem()
@@ -6490,6 +6490,16 @@ class Ui_MainWindow(object):
         self.tableWidget_relatorio_as.setHorizontalHeaderItem(5, __qtablewidgetitem24)
         __qtablewidgetitem25 = QTableWidgetItem()
         self.tableWidget_relatorio_as.setHorizontalHeaderItem(6, __qtablewidgetitem25)
+        __qtablewidgetitem26 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(7, __qtablewidgetitem26)
+        __qtablewidgetitem27 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(8, __qtablewidgetitem27)
+        __qtablewidgetitem28 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(9, __qtablewidgetitem28)
+        __qtablewidgetitem29 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(10, __qtablewidgetitem29)
+        __qtablewidgetitem30 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(11, __qtablewidgetitem30)
         self.tableWidget_relatorio_as.setObjectName(u"tableWidget_relatorio_as")
         self.tableWidget_relatorio_as.setMinimumSize(QSize(1200, 530))
         self.tableWidget_relatorio_as.setMaximumSize(QSize(1200, 530))
@@ -12326,7 +12336,21 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem21 = self.tableWidget_relatorio_as.horizontalHeaderItem(5)
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
         ___qtablewidgetitem22 = self.tableWidget_relatorio_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"LOCAL DE TRATAMENTO", None));
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
+        ___qtablewidgetitem23 = self.tableWidget_relatorio_as.horizontalHeaderItem(7)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"LOCAL DE TRATAMENTO", None));
+        ___qtablewidgetitem24 = self.tableWidget_relatorio_as.horizontalHeaderItem(8)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"APOSENTADO", None));
+        ___qtablewidgetitem25 = self.tableWidget_relatorio_as.horizontalHeaderItem(9)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"CLINICA", None));
+        ___qtablewidgetitem26 = self.tableWidget_relatorio_as.horizontalHeaderItem(10)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"BAIRRO", None));
+        ___qtablewidgetitem27 = self.tableWidget_relatorio_as.horizontalHeaderItem(11)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"CIDADE", None));
+        self.btn_gerar_excel_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_gerar_pdf_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
+        self.btn_imprimir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"  IMPRIMIR", None))
+        self.btn_excluir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         __sortingEnabled = self.input_TableWidget_observacoes_sigilosas_as.isSortingEnabled()
         self.input_TableWidget_observacoes_sigilosas_as.setSortingEnabled(False)
         self.input_TableWidget_observacoes_sigilosas_as.setSortingEnabled(__sortingEnabled)
@@ -12505,7 +12529,21 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem21 = self.tableWidget_relatorio_as.horizontalHeaderItem(5)
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
         ___qtablewidgetitem22 = self.tableWidget_relatorio_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"LOCAL DE TRATAMENTO", None));
+        ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
+        ___qtablewidgetitem23 = self.tableWidget_relatorio_as.horizontalHeaderItem(7)
+        ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"LOCAL DE TRATAMENTO", None));
+        ___qtablewidgetitem24 = self.tableWidget_relatorio_as.horizontalHeaderItem(8)
+        ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"APOSENTADO", None));
+        ___qtablewidgetitem25 = self.tableWidget_relatorio_as.horizontalHeaderItem(9)
+        ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"CLINICA", None));
+        ___qtablewidgetitem26 = self.tableWidget_relatorio_as.horizontalHeaderItem(10)
+        ___qtablewidgetitem26.setText(QCoreApplication.translate("MainWindow", u"BAIRRO", None));
+        ___qtablewidgetitem27 = self.tableWidget_relatorio_as.horizontalHeaderItem(11)
+        ___qtablewidgetitem27.setText(QCoreApplication.translate("MainWindow", u"CIDADE", None));
+        self.btn_gerar_excel_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_gerar_pdf_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
+        self.btn_imprimir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"  IMPRIMIR", None))
+        self.btn_excluir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.btn_gerar_excel_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_gerar_pdf_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
         self.btn_imprimir_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"  IMPRIMIR", None))
