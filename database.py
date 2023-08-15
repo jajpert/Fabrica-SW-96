@@ -79,7 +79,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                    SELECT nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,estado_civil,escolaridade,pessoa_deficiencia,tipo_deficiencia FROM pessoa;
+                    SELECT nome,cpf,sexo,telefone,beneficio,cns,nis,local_tratamento FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula;
             """)
             result = self.cursor.fetchall()
             
