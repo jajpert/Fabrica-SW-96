@@ -300,11 +300,13 @@ class TelaPrincipal(QMainWindow):
         login = self.ui.input_usuario_login.text()
         senha = self.ui.input_senha_login.text()
         
+        # self.ui.input_usuario_login = self.ui.input_usuario_colaborador_as_2.text()
+        # self.ui.input_senha_login = self.ui.input_senha_colaborador_as_2.text()
         
-        
+        login_senha = []
         login_senha = self.db.validarLogin(login,senha)
-        self.ui.input_usuario_login.text(login_senha[0])
-        self.ui.input_senha_login.text(login_senha[1])
+        self.ui.input_usuario_login.text() 
+        self.ui.input_senha_login.text()
         
     
         #resultado
