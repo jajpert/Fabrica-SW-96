@@ -113,9 +113,9 @@ class DataBase():
             """)
             result = self.cursor.fetchall()
             
-            #verifica os dados do select
-            for linha in result:
-               print(linha)
+            # #verifica os dados do select
+            # for linha in result:
+            #    print(linha)
             
             return result
             #retorna a lista do banco para quem chamou a função
@@ -189,25 +189,6 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def filter(self,texto):
-        self.connect()
-        try:
-            self.cursor.execute(f"""
-                SELECT * FROM cadastro WHERE nome LIKE '%{texto}%' or cnpj LIKE '%{texto}%';
-            """)
-            result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            for linha in result:
-               print(linha)
-            
-            return result
-            #retorna a lista do banco para quem chamou a função
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
 
     def busca_cuidador(self, cpf):
         print("entrou busca cuidador")
