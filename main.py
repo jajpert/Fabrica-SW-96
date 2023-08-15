@@ -301,14 +301,15 @@ class TelaPrincipal(QMainWindow):
         senha = self.ui.input_senha_login.text()
         login_senha = []
         login_senha = self.db.validarLogin(login,senha)
-
-        print (login_senha[0][0])
-        print (login_senha[0][1])
-
-        if login == login_senha[0][0] and senha == login_senha[0][1]:            
-            print ("Login realizado com sucesso")
+        if len(login_senha)==0:
+            print ("login vazio")
+            return self.ui.inicio.setCurrentWidget(self.ui.login)
         else:
-            print ("Usuário não encontrado")
+
+            if login == login_senha[0][0] and senha == login_senha[0][1]:            
+                print ("Login realizado com sucesso")
+            else:
+                print ("Usuário não encontrado")
         
 ########################### Validar CEP ###############################
     def validarCep(self):
