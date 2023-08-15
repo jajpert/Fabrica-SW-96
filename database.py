@@ -79,7 +79,11 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                    SELECT nome,cpf,sexo,telefone,beneficio,cns,nis,local_tratamento FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula;
+                    SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, endereco.cidade
+                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                    LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
             """)
             result = self.cursor.fetchall()
             
@@ -94,6 +98,36 @@ class DataBase():
 
         finally:
             self.close_connection()
+            
+    def filtrar_relatorio(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, endereco.cidade
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco
+                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
+                OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            for linha in result:
+               print(linha)
+            
+            return result
+            #retorna a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+            
+            
+            
+            
     
     def select_usuario_ids(self):
         self.connect()
