@@ -324,6 +324,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.inicio.setCurrentWidget(self.ui.login)
             self.loginIvalido()
 
+
         elif login_senha[0][0] == login_senha[0][1]:
                 print("Login e senha não podem ser iguais")
         else:
