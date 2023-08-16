@@ -4700,6 +4700,7 @@ class Ui_MainWindow(object):
         self.frame_141.setObjectName(u"frame_141")
         self.frame_141.setMinimumSize(QSize(150, 52))
         self.frame_141.setMaximumSize(QSize(140, 52))
+        self.frame_141.setFont(font10)
         self.frame_141.setFrameShape(QFrame.StyledPanel)
         self.frame_141.setFrameShadow(QFrame.Raised)
         self.verticalLayout_86 = QVBoxLayout(self.frame_141)
@@ -4714,11 +4715,26 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_86.addWidget(self.label_data_inclusao_cursos_as)
 
-        self.input_data_inclusao_cursos_as = QLineEdit(self.frame_141)
+        self.input_data_inclusao_cursos_as = QDateEdit(self.frame_141)
         self.input_data_inclusao_cursos_as.setObjectName(u"input_data_inclusao_cursos_as")
-        self.input_data_inclusao_cursos_as.setMinimumSize(QSize(135, 30))
-        self.input_data_inclusao_cursos_as.setMaximumSize(QSize(135, 30))
-        self.input_data_inclusao_cursos_as.setFont(font)
+        sizePolicy1.setHeightForWidth(self.input_data_inclusao_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_inclusao_cursos_as.setSizePolicy(sizePolicy1)
+        self.input_data_inclusao_cursos_as.setMinimumSize(QSize(98, 30))
+        self.input_data_inclusao_cursos_as.setMaximumSize(QSize(98, 16777215))
+        self.input_data_inclusao_cursos_as.setFont(font8)
+        self.input_data_inclusao_cursos_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_data_inclusao_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_data_inclusao_cursos_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_data_inclusao_cursos_as.setAutoFillBackground(False)
+        self.input_data_inclusao_cursos_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_data_inclusao_cursos_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_data_inclusao_cursos_as.setAlignment(Qt.AlignCenter)
+        self.input_data_inclusao_cursos_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_data_inclusao_cursos_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_data_inclusao_cursos_as.setCurrentSection(QDateTimeEdit.MonthSection)
+        self.input_data_inclusao_cursos_as.setCalendarPopup(False)
+        self.input_data_inclusao_cursos_as.setCurrentSectionIndex(0)
 
         self.verticalLayout_86.addWidget(self.input_data_inclusao_cursos_as)
 
@@ -4754,6 +4770,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_142)
 
+        self.horizontalSpacer_90 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_62.addItem(self.horizontalSpacer_90)
+
         self.frame_143 = QFrame(self.frame_126)
         self.frame_143.setObjectName(u"frame_143")
         self.frame_143.setMinimumSize(QSize(185, 55))
@@ -4786,7 +4806,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_143)
 
-        self.horizontalSpacer_83 = QSpacerItem(250, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_83 = QSpacerItem(175, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
         self.horizontalLayout_62.addItem(self.horizontalSpacer_83)
 
@@ -4843,7 +4863,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_62.addWidget(self.frame_144)
 
-        self.horizontalSpacer_87 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_87 = QSpacerItem(90, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
         self.horizontalLayout_62.addItem(self.horizontalSpacer_87)
 
@@ -4861,8 +4881,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_64.setContentsMargins(0, 0, 0, 0)
         self.frame_146 = QFrame(self.frame_127)
         self.frame_146.setObjectName(u"frame_146")
-        self.frame_146.setMinimumSize(QSize(0, 0))
-        self.frame_146.setMaximumSize(QSize(360, 16777215))
+        self.frame_146.setMinimumSize(QSize(430, 60))
+        self.frame_146.setMaximumSize(QSize(430, 60))
         self.frame_146.setFrameShape(QFrame.StyledPanel)
         self.frame_146.setFrameShadow(QFrame.Raised)
         self.verticalLayout_98 = QVBoxLayout(self.frame_146)
@@ -4888,10 +4908,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_146)
 
+        self.horizontalSpacer_91 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_64.addItem(self.horizontalSpacer_91)
+
         self.frame_147 = QFrame(self.frame_127)
         self.frame_147.setObjectName(u"frame_147")
-        self.frame_147.setMinimumSize(QSize(0, 0))
-        self.frame_147.setMaximumSize(QSize(160, 16777215))
+        self.frame_147.setMinimumSize(QSize(0, 60))
+        self.frame_147.setMaximumSize(QSize(160, 60))
         self.frame_147.setFrameShape(QFrame.StyledPanel)
         self.frame_147.setFrameShadow(QFrame.Raised)
         self.verticalLayout_99 = QVBoxLayout(self.frame_147)
@@ -4933,10 +4957,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_147)
 
+        self.horizontalSpacer_92 = QSpacerItem(40, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout_64.addItem(self.horizontalSpacer_92)
+
         self.frame_148 = QFrame(self.frame_127)
         self.frame_148.setObjectName(u"frame_148")
         self.frame_148.setMinimumSize(QSize(0, 0))
-        self.frame_148.setMaximumSize(QSize(160, 16777215))
+        self.frame_148.setMaximumSize(QSize(160, 60))
         self.frame_148.setFrameShape(QFrame.StyledPanel)
         self.frame_148.setFrameShadow(QFrame.Raised)
         self.verticalLayout_100 = QVBoxLayout(self.frame_148)
@@ -4978,7 +5006,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_148)
 
-        self.horizontalSpacer_85 = QSpacerItem(250, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_85 = QSpacerItem(180, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
         self.horizontalLayout_64.addItem(self.horizontalSpacer_85)
 
@@ -5115,8 +5143,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2871.setContentsMargins(0, 0, 0, 0)
         self.frame_4191 = QFrame(self.frame_153)
         self.frame_4191.setObjectName(u"frame_4191")
-        self.frame_4191.setMinimumSize(QSize(117, 30))
-        self.frame_4191.setMaximumSize(QSize(170, 30))
+        self.frame_4191.setMinimumSize(QSize(123, 30))
+        self.frame_4191.setMaximumSize(QSize(123, 30))
         self.frame_4191.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
         self.frame_4191.setFrameShape(QFrame.StyledPanel)
         self.frame_4191.setFrameShadow(QFrame.Raised)
@@ -5134,7 +5162,7 @@ class Ui_MainWindow(object):
 
         self.frame_4201 = QFrame(self.frame_153)
         self.frame_4201.setObjectName(u"frame_4201")
-        self.frame_4201.setMinimumSize(QSize(117, 30))
+        self.frame_4201.setMinimumSize(QSize(123, 30))
         self.frame_4201.setMaximumSize(QSize(117, 30))
         self.frame_4201.setStyleSheet(u"background-color: #F3B9BF; border: none; border-radius: 5px")
         self.frame_4201.setFrameShape(QFrame.StyledPanel)
@@ -5160,6 +5188,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_64.addWidget(self.frame_149)
 
+        self.horizontalSpacer_88 = QSpacerItem(90, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout_64.addItem(self.horizontalSpacer_88)
+
 
         self.verticalLayout_85.addWidget(self.frame_127)
 
@@ -5175,6 +5207,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_66.setSpacing(0)
         self.horizontalLayout_66.setObjectName(u"horizontalLayout_66")
         self.horizontalLayout_66.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_93 = QSpacerItem(67, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.horizontalLayout_66.addItem(self.horizontalSpacer_93)
+
         self.frame_154 = QFrame(self.frame_136)
         self.frame_154.setObjectName(u"frame_154")
         sizePolicy.setHeightForWidth(self.frame_154.sizePolicy().hasHeightForWidth())
@@ -5251,14 +5287,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.widget)
 
-        self.horizontalSpacer_89 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.horizontalSpacer_89 = QSpacerItem(100, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
         self.horizontalLayout_66.addItem(self.horizontalSpacer_89)
 
         self.frame_155 = QFrame(self.frame_136)
         self.frame_155.setObjectName(u"frame_155")
-        self.frame_155.setMinimumSize(QSize(250, 60))
-        self.frame_155.setMaximumSize(QSize(250, 60))
+        self.frame_155.setMinimumSize(QSize(280, 60))
+        self.frame_155.setMaximumSize(QSize(280, 60))
         self.frame_155.setFrameShape(QFrame.StyledPanel)
         self.frame_155.setFrameShadow(QFrame.Raised)
         self.verticalLayout_107 = QVBoxLayout(self.frame_155)
@@ -5290,7 +5326,7 @@ class Ui_MainWindow(object):
 
         self.frame_156 = QFrame(self.frame_136)
         self.frame_156.setObjectName(u"frame_156")
-        self.frame_156.setMinimumSize(QSize(120, 60))
+        self.frame_156.setMinimumSize(QSize(140, 60))
         self.frame_156.setMaximumSize(QSize(120, 60))
         self.frame_156.setFrameShape(QFrame.StyledPanel)
         self.frame_156.setFrameShadow(QFrame.Raised)
@@ -5317,7 +5353,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_66.addWidget(self.frame_156)
 
-        self.horizontalSpacer_84 = QSpacerItem(511, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.horizontalSpacer_84 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_66.addItem(self.horizontalSpacer_84)
 
@@ -5332,10 +5368,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_115.setSpacing(0)
         self.verticalLayout_115.setObjectName(u"verticalLayout_115")
         self.verticalLayout_115.setContentsMargins(0, 0, 0, 0)
-        self.verticalSpacer_28 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Fixed)
-
-        self.verticalLayout_115.addItem(self.verticalSpacer_28)
-
         self.label_descricao_cursos_as = QLabel(self.frame_140)
         self.label_descricao_cursos_as.setObjectName(u"label_descricao_cursos_as")
         self.label_descricao_cursos_as.setFont(font)
@@ -5344,7 +5376,8 @@ class Ui_MainWindow(object):
 
         self.input_descricao_atividade_cursos_as = QTextEdit(self.frame_140)
         self.input_descricao_atividade_cursos_as.setObjectName(u"input_descricao_atividade_cursos_as")
-        self.input_descricao_atividade_cursos_as.setMaximumSize(QSize(1400, 16777215))
+        self.input_descricao_atividade_cursos_as.setMinimumSize(QSize(1200, 0))
+        self.input_descricao_atividade_cursos_as.setMaximumSize(QSize(1218, 16777215))
         self.input_descricao_atividade_cursos_as.setFont(font)
         self.input_descricao_atividade_cursos_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -5367,6 +5400,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_61.setStretch(2, 1)
 
         self.verticalLayout_84.addWidget(self.frame_122)
+
 
         self.frame_124 = QFrame(self.page_cadastrar_cursos_e_oficinas_as)
         self.frame_124.setObjectName(u"frame_124")

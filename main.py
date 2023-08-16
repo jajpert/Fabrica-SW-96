@@ -1207,36 +1207,32 @@ class TelaPrincipal(QMainWindow):
 
     def cadastroCurso(self):
       ################################################ENDERECO#####
-        cep = self.ui.input_cep_usuario_as.text()
-        rua = self.ui.input_logradouro_usuario_as.text()
-        numero = self.ui.input_numero_usuario_as.text()
-        bairro = self.ui.input_bairro_usuario_as.text()
-        cidade = self.ui.input_cidade_usuario_as.text()
-        estado = self.ui.input_estado_usuario_as.text()
-
-        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
-
-        nome_curso=self.ui.input_nome_cursos_as.text()
-        data_inicio=self.ui.input_data_inicio_cursos_as.text()
-        data_termino=self.ui.input_data_termino_cursos_as.text()
-        carga_horaria= 120 
-        id_palestrante = 1
-        periodo=self.ui.input_periodo_cursos_as.currentText()
         data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
+        nome_curso=self.ui.input_nome_cursos_as.text()
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
         if self.ui.input_ativo_cursos_as.isChecked():
             situacao="Ativo"
-        else:
+        if self.ui.input_inativo_cursos_as.isChecked():
             situacao="Inativo"
-        responsavel=self.ui.input_responsavel_cursos_as.text()
-        horario_inicial=self.ui.input_horario_cursos_as.text()
-        horario_final=self.ui.input_as_cursos_as.text()
-        vagas=self.ui.input_vagas_cursos_as.text()
-        
-        tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
 
-        result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
-        print(result)
+        responsavel=self.ui.input_responsavel_cursos_as.text()
+        data_inicio=self.ui.input_data_inicio_cursos_as.text()
+        data_termino=self.ui.input_data_termino_cursos_as.text()
+        
+        
+        periodo=self.ui.input_periodo_cursos_as.currentText()
+        
+        
+        
+        
+        horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
+        horario_final=self.ui.input_horario_termino_cursos_as.text()
+        vagas=self.ui.input_vagas_cursos_as.text()
+        descricao = self.ui.input_descricao_atividade_cursos_as.toPlainText()
+        tupla_curso=(data_inclusao,nome_curso,tipo_curso,situacao,responsavel,data_inicio,data_termino,periodo,horario_inicial,horario_final,vagas,descricao)
+        print(tupla_curso)
+        #result=self.db.cadastro_curso(tupla_curso)
+        #print(result)
 
     def area_sigilosa(self):
 
