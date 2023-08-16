@@ -51,9 +51,9 @@ class DialogloginInvalido(QDialog):
         self.ui = Ui_Login_Ivalido()
         self.ui.setupUi(self)
         self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(8000)
+        self.timer_msg.setInterval(10000)
         self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()
+        self.timer_msg.start()   
 
     def closeMsg(self):
         self.close()
@@ -61,9 +61,6 @@ class DialogloginInvalido(QDialog):
     def closeEvent(self, event):
         self.timer_msg.stop()
         event.accept()
-
-
-
 ################Class POPUP Usuário################
 class DialogTirarFoto(QDialog):
     def __init__(self, parent) -> None:
@@ -323,10 +320,10 @@ class TelaPrincipal(QMainWindow):
         login_senha = []
         login_senha = self.db.validarLogin(login,senha)
         if len(login_senha)==0:
-            print ("login vazio")
+            print ("login vazio")           
+            self.ui.inicio.setCurrentWidget(self.ui.login)
             self.loginIvalido()
-            return self.ui.inicio.setCurrentWidget(self.ui.login)
-            
+
         elif login_senha[0][0] == login_senha[0][1]:
                 print("Login e senha não podem ser iguais")
         else:
