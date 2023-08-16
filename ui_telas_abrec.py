@@ -6296,14 +6296,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.input_idade_inicial_relatorio_as = QLineEdit(self.frame_246)
         self.input_idade_inicial_relatorio_as.setObjectName(u"input_idade_inicial_relatorio_as")
-        self.input_idade_inicial_relatorio_as.setEnabled(False)
+        self.input_idade_inicial_relatorio_as.setEnabled(True)
         self.input_idade_inicial_relatorio_as.setMinimumSize(QSize(45, 25))
         self.input_idade_inicial_relatorio_as.setMaximumSize(QSize(34, 16))
-        self.input_idade_inicial_relatorio_as.setStyleSheet(u"\n"
-"    border: none;\n"
-"    background-color: rgba(0, 0, 0, 0);\n"
-"\n"
-"")
+
 
         self.horizontalLayout_11.addWidget(self.input_idade_inicial_relatorio_as)
 
@@ -6321,14 +6317,10 @@ class Ui_MainWindow(object):
 
         self.input_idade_final_relatorio_as = QLineEdit(self.frame_246)
         self.input_idade_final_relatorio_as.setObjectName(u"input_idade_final_relatorio_as")
-        self.input_idade_final_relatorio_as.setEnabled(False)
+        self.input_idade_final_relatorio_as.setEnabled(True)
         self.input_idade_final_relatorio_as.setMinimumSize(QSize(45, 25))
         self.input_idade_final_relatorio_as.setMaximumSize(QSize(34, 16))
-        self.input_idade_final_relatorio_as.setStyleSheet(u"\n"
-"    border: none;\n"
-"    background-color: rgba(0, 0, 0, 0);\n"
-"\n"
-"")
+
 
         self.horizontalLayout_11.addWidget(self.input_idade_final_relatorio_as)
 

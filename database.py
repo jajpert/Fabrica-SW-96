@@ -80,10 +80,35 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, endereco.cidade
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+            
+    def filter_data(self,texto_data_inicio,texto_data_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, 
+                    endereco.cidade,pessoa.data_cadastro
+                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                    LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco WHERE data_cadastro BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
             result = self.cursor.fetchall()
             

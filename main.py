@@ -8,6 +8,10 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
+import pandas as pd
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 
 
 class Overlay(QWidget):
@@ -175,6 +179,7 @@ class TelaPrincipal(QMainWindow):
         self.db = DataBase()
         self.listarUsuarios()
         self.relaotrio_pessoa()
+        #self.gerar_excel()
         self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -295,6 +300,13 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
         
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
+        
+        self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
+        
+        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
+        
+        self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
+        
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -1528,8 +1540,7 @@ class TelaPrincipal(QMainWindow):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
                 
-                
-                
+                            
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
         res = self.db.filtrar_relatorio(txt)
@@ -1540,6 +1551,88 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def filtrar_data(self):
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_as.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_as.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        print(texto_data_inicio_tratada,texto_data_final_tratada)
+        
+        res = self.db.filter_data(texto_data_inicio_tratada,texto_data_final_tratada)
+        #print(res)
+
+        self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+       
+       
+    def gerar_excel(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
+            for column in range(self.ui.tableWidget_relatorio_as.columnCount()):
+                dados.append(self.ui.tableWidget_relatorio_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CNS', 'NIS',
+            'LOCAL DE TRATAMENTO','SITUAÇÃO DE TRABALHO','CLINICA','BAIRRO','CIDADE']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+        
+        #file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "/relatorio", "Text files (*.xlsx)") 
+        relatorio.to_excel("Relatorio.xlsx", sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+        
+    def gerar_pdf(self):
+        doc = SimpleDocTemplate("formatted_pdf.pdf", pagesize=letter)
+        
+        elements = []
+
+        data = [['NOME', 'CPF', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CNS', 'NIS',
+            'LOCAL DE TRATAMENTO','SITUAÇÃO DE TRABALHO','CLINICA','BAIRRO','CIDADE']]
+
+        for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
+            nome = self.ui.tableWidget_relatorio_as.item(row, 0).text()
+            cpf = self.ui.tableWidget_relatorio_as.item(row, 1).text()
+            sexo = self.ui.tableWidget_relatorio_as.item(row, 2).text()
+            telefone = self.ui.tableWidget_relatorio_as.item(row, 3).text()
+            beneficio = self.ui.tableWidget_relatorio_as.item(row, 4).text()
+            cns = self.ui.tableWidget_relatorio_as.item(row, 5).text()
+            nis = self.ui.tableWidget_relatorio_as.item(row, 6).text()
+            local_tratamento = self.ui.tableWidget_relatorio_as.item(row, 7).text()
+            situacao_trabalho = self.ui.tableWidget_relatorio_as.item(row, 8).text()
+            clinica = self.ui.tableWidget_relatorio_as.item(row, 9).text()
+            bairro = self.ui.tableWidget_relatorio_as.item(row, 10).text()
+            cidade = self.ui.tableWidget_relatorio_as.item(row, 11).text()
+            data.append([nome, cpf,sexo,telefone,beneficio,cns,nis,local_tratamento,situacao_trabalho,clinica,bairro,cidade])
+
+        table_style = TableStyle([
+            ('BACKGROUND', (0, 0), (-1, 0), colors.black),
+            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+            ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+            ('GRID', (0, 0), (-1, -1), 1, colors.black)
+        ])
+
+        table = Table(data)
+        table.setStyle(table_style)
+
+        elements.append(table)
+
+        doc.build(elements)
    
 
 
