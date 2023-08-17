@@ -1207,13 +1207,14 @@ class TelaPrincipal(QMainWindow):
 
     def cadastroCurso(self):
       ################################################ENDERECO#####
-        data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
+        
         nome_curso=self.ui.input_nome_cursos_as.text()
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
+
         if self.ui.input_ativo_cursos_as.isChecked():
-            situacao="Ativo"
+            status=1
         if self.ui.input_inativo_cursos_as.isChecked():
-            situacao="Inativo"
+            status=2
 
         responsavel=self.ui.input_responsavel_cursos_as.text()
         data_inicio=self.ui.input_data_inicio_cursos_as.text()
@@ -1221,18 +1222,32 @@ class TelaPrincipal(QMainWindow):
         
         
         periodo=self.ui.input_periodo_cursos_as.currentText()
-        
-        
+               
         
         
         horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
         horario_final=self.ui.input_horario_termino_cursos_as.text()
         vagas=self.ui.input_vagas_cursos_as.text()
         descricao = self.ui.input_descricao_atividade_cursos_as.toPlainText()
-        tupla_curso=(data_inclusao,nome_curso,tipo_curso,situacao,responsavel,data_inicio,data_termino,periodo,horario_inicial,horario_final,vagas,descricao)
+
+        
+        
+        segunda = 1 if self.ui.input_segunda_cursos_as.isChecked() else 0
+        terca = 1 if self.ui.input_terca_cursos_as.isChecked() else 0
+        quarta = 1 if self.ui.input_quarta_cursos_as.isChecked() else 0
+        quinta = 1 if self.ui.input_quinta_cursos_as.isChecked() else 0
+        sexta = 1 if self.ui.input_sexta_cursos_as.isChecked() else 0
+        sabado = 1 if self.ui.input_sabado_cursos_as.isChecked() else 0
+             
+
+        
+
+        
+
+        tupla_curso=(nome_curso,tipo_curso,status,responsavel,data_inicio,data_termino,periodo,horario_inicial,horario_final,vagas,descricao,segunda,terca,quarta,quinta,sexta,sabado)
         print(tupla_curso)
-        #result=self.db.cadastro_curso(tupla_curso)
-        #print(result)
+        result=self.db.cadastro_curso(tupla_curso)
+        print(result)
 
     def area_sigilosa(self):
 
