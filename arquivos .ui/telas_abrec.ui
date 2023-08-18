@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>9</number>
+                      <number>8</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -17918,14 +17918,64 @@ QPushButton:pressed{
                                   <height>530</height>
                                  </size>
                                 </property>
-                                <row>
-                                 <property name="text">
-                                  <string>New Row</string>
-                                 </property>
-                                </row>
                                 <column>
                                  <property name="text">
-                                  <string>New Column</string>
+                                  <string>Nome</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>CPF</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Idade</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Sexo</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Telefone</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Beneficio</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>CNS</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>NIS</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Aposentadoria</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Clinica</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Bairro</string>
+                                 </property>
+                                </column>
+                                <column>
+                                 <property name="text">
+                                  <string>Cidade</string>
                                  </property>
                                 </column>
                                </widget>
