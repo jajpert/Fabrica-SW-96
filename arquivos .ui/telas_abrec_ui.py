@@ -7269,25 +7269,25 @@ class Ui_MainWindow(object):
         self.verticalLayout_113.setSpacing(0)
         self.verticalLayout_113.setObjectName(u"verticalLayout_113")
         self.verticalLayout_113.setContentsMargins(0, 0, 0, 0)
-        self.label_codigo_cadastro_clinica = QLabel(self.frame_254)
-        self.label_codigo_cadastro_clinica.setObjectName(u"label_codigo_cadastro_clinica")
-        self.label_codigo_cadastro_clinica.setMinimumSize(QSize(0, 0))
-        self.label_codigo_cadastro_clinica.setMaximumSize(QSize(160, 16777215))
-        self.label_codigo_cadastro_clinica.setFont(font)
+        self.label_codigo_cadastro_clinica_as = QLabel(self.frame_254)
+        self.label_codigo_cadastro_clinica_as.setObjectName(u"label_codigo_cadastro_clinica_as")
+        self.label_codigo_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
+        self.label_codigo_cadastro_clinica_as.setMaximumSize(QSize(160, 16777215))
+        self.label_codigo_cadastro_clinica_as.setFont(font)
 
-        self.verticalLayout_113.addWidget(self.label_codigo_cadastro_clinica)
+        self.verticalLayout_113.addWidget(self.label_codigo_cadastro_clinica_as)
 
-        self.input_codigo_cadastro_clinica = QLineEdit(self.frame_254)
-        self.input_codigo_cadastro_clinica.setObjectName(u"input_codigo_cadastro_clinica")
-        self.input_codigo_cadastro_clinica.setEnabled(False)
-        self.input_codigo_cadastro_clinica.setMinimumSize(QSize(0, 30))
-        self.input_codigo_cadastro_clinica.setMaximumSize(QSize(110, 30))
-        self.input_codigo_cadastro_clinica.setFont(font)
-        self.input_codigo_cadastro_clinica.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_codigo_cadastro_clinica_as = QLineEdit(self.frame_254)
+        self.input_codigo_cadastro_clinica_as.setObjectName(u"input_codigo_cadastro_clinica_as")
+        self.input_codigo_cadastro_clinica_as.setEnabled(False)
+        self.input_codigo_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
+        self.input_codigo_cadastro_clinica_as.setMaximumSize(QSize(110, 30))
+        self.input_codigo_cadastro_clinica_as.setFont(font)
+        self.input_codigo_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_113.addWidget(self.input_codigo_cadastro_clinica)
+        self.verticalLayout_113.addWidget(self.input_codigo_cadastro_clinica_as)
 
 
         self.horizontalLayout_144.addWidget(self.frame_254)
@@ -7302,24 +7302,24 @@ class Ui_MainWindow(object):
         self.verticalLayout_172.setSpacing(0)
         self.verticalLayout_172.setObjectName(u"verticalLayout_172")
         self.verticalLayout_172.setContentsMargins(0, 0, 0, 0)
-        self.label_cnpj_cadastro_clinica = QLabel(self.frame_270)
-        self.label_cnpj_cadastro_clinica.setObjectName(u"label_cnpj_cadastro_clinica")
-        self.label_cnpj_cadastro_clinica.setMinimumSize(QSize(0, 0))
-        self.label_cnpj_cadastro_clinica.setMaximumSize(QSize(180, 16777215))
-        self.label_cnpj_cadastro_clinica.setFont(font)
+        self.label_cnpj_cadastro_clinica_as = QLabel(self.frame_270)
+        self.label_cnpj_cadastro_clinica_as.setObjectName(u"label_cnpj_cadastro_clinica_as")
+        self.label_cnpj_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
+        self.label_cnpj_cadastro_clinica_as.setMaximumSize(QSize(180, 16777215))
+        self.label_cnpj_cadastro_clinica_as.setFont(font)
 
-        self.verticalLayout_172.addWidget(self.label_cnpj_cadastro_clinica)
+        self.verticalLayout_172.addWidget(self.label_cnpj_cadastro_clinica_as)
 
-        self.input_cnpj_cadastro_clinica = QLineEdit(self.frame_270)
-        self.input_cnpj_cadastro_clinica.setObjectName(u"input_cnpj_cadastro_clinica")
-        self.input_cnpj_cadastro_clinica.setMinimumSize(QSize(0, 30))
-        self.input_cnpj_cadastro_clinica.setMaximumSize(QSize(16777215, 30))
-        self.input_cnpj_cadastro_clinica.setFont(font)
-        self.input_cnpj_cadastro_clinica.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_cnpj_cadastro_clinica_as = QLineEdit(self.frame_270)
+        self.input_cnpj_cadastro_clinica_as.setObjectName(u"input_cnpj_cadastro_clinica_as")
+        self.input_cnpj_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
+        self.input_cnpj_cadastro_clinica_as.setMaximumSize(QSize(16777215, 30))
+        self.input_cnpj_cadastro_clinica_as.setFont(font)
+        self.input_cnpj_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_172.addWidget(self.input_cnpj_cadastro_clinica)
+        self.verticalLayout_172.addWidget(self.input_cnpj_cadastro_clinica_as)
 
 
         self.horizontalLayout_144.addWidget(self.frame_270)
@@ -7334,24 +7334,24 @@ class Ui_MainWindow(object):
         self.verticalLayout_169.setSpacing(0)
         self.verticalLayout_169.setObjectName(u"verticalLayout_169")
         self.verticalLayout_169.setContentsMargins(0, 0, 0, 0)
-        self.label_razao_social_cadastro_clinica = QLabel(self.frame_256)
-        self.label_razao_social_cadastro_clinica.setObjectName(u"label_razao_social_cadastro_clinica")
-        self.label_razao_social_cadastro_clinica.setMinimumSize(QSize(0, 0))
-        self.label_razao_social_cadastro_clinica.setMaximumSize(QSize(16777215, 16777215))
-        self.label_razao_social_cadastro_clinica.setFont(font)
+        self.label_razao_social_cadastro_clinica_as = QLabel(self.frame_256)
+        self.label_razao_social_cadastro_clinica_as.setObjectName(u"label_razao_social_cadastro_clinica_as")
+        self.label_razao_social_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
+        self.label_razao_social_cadastro_clinica_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_razao_social_cadastro_clinica_as.setFont(font)
 
-        self.verticalLayout_169.addWidget(self.label_razao_social_cadastro_clinica)
+        self.verticalLayout_169.addWidget(self.label_razao_social_cadastro_clinica_as)
 
-        self.input_razao_social_cadastro_clinica = QLineEdit(self.frame_256)
-        self.input_razao_social_cadastro_clinica.setObjectName(u"input_razao_social_cadastro_clinica")
-        self.input_razao_social_cadastro_clinica.setMinimumSize(QSize(0, 30))
-        self.input_razao_social_cadastro_clinica.setMaximumSize(QSize(16777215, 30))
-        self.input_razao_social_cadastro_clinica.setFont(font)
-        self.input_razao_social_cadastro_clinica.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_razao_social_cadastro_clinica_as = QLineEdit(self.frame_256)
+        self.input_razao_social_cadastro_clinica_as.setObjectName(u"input_razao_social_cadastro_clinica_as")
+        self.input_razao_social_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
+        self.input_razao_social_cadastro_clinica_as.setMaximumSize(QSize(16777215, 30))
+        self.input_razao_social_cadastro_clinica_as.setFont(font)
+        self.input_razao_social_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_169.addWidget(self.input_razao_social_cadastro_clinica)
+        self.verticalLayout_169.addWidget(self.input_razao_social_cadastro_clinica_as)
 
 
         self.horizontalLayout_144.addWidget(self.frame_256)
@@ -7366,24 +7366,24 @@ class Ui_MainWindow(object):
         self.verticalLayout_170.setSpacing(0)
         self.verticalLayout_170.setObjectName(u"verticalLayout_170")
         self.verticalLayout_170.setContentsMargins(0, 0, 0, 0)
-        self.label_nome_fantasia_cadastro_clinica = QLabel(self.frame_257)
-        self.label_nome_fantasia_cadastro_clinica.setObjectName(u"label_nome_fantasia_cadastro_clinica")
-        self.label_nome_fantasia_cadastro_clinica.setMinimumSize(QSize(0, 0))
-        self.label_nome_fantasia_cadastro_clinica.setMaximumSize(QSize(16777215, 16777215))
-        self.label_nome_fantasia_cadastro_clinica.setFont(font)
+        self.label_nome_fantasia_cadastro_clinica_as = QLabel(self.frame_257)
+        self.label_nome_fantasia_cadastro_clinica_as.setObjectName(u"label_nome_fantasia_cadastro_clinica_as")
+        self.label_nome_fantasia_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
+        self.label_nome_fantasia_cadastro_clinica_as.setMaximumSize(QSize(16777215, 16777215))
+        self.label_nome_fantasia_cadastro_clinica_as.setFont(font)
 
-        self.verticalLayout_170.addWidget(self.label_nome_fantasia_cadastro_clinica)
+        self.verticalLayout_170.addWidget(self.label_nome_fantasia_cadastro_clinica_as)
 
-        self.input_nome_fantasia_cadastro_clinica = QLineEdit(self.frame_257)
-        self.input_nome_fantasia_cadastro_clinica.setObjectName(u"input_nome_fantasia_cadastro_clinica")
-        self.input_nome_fantasia_cadastro_clinica.setMinimumSize(QSize(0, 30))
-        self.input_nome_fantasia_cadastro_clinica.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_fantasia_cadastro_clinica.setFont(font)
-        self.input_nome_fantasia_cadastro_clinica.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_nome_fantasia_cadastro_clinica_as = QLineEdit(self.frame_257)
+        self.input_nome_fantasia_cadastro_clinica_as.setObjectName(u"input_nome_fantasia_cadastro_clinica_as")
+        self.input_nome_fantasia_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
+        self.input_nome_fantasia_cadastro_clinica_as.setMaximumSize(QSize(16777215, 30))
+        self.input_nome_fantasia_cadastro_clinica_as.setFont(font)
+        self.input_nome_fantasia_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_170.addWidget(self.input_nome_fantasia_cadastro_clinica)
+        self.verticalLayout_170.addWidget(self.input_nome_fantasia_cadastro_clinica_as)
 
 
         self.horizontalLayout_144.addWidget(self.frame_257)
@@ -7739,24 +7739,24 @@ class Ui_MainWindow(object):
         self.verticalLayout_325.setSpacing(0)
         self.verticalLayout_325.setObjectName(u"verticalLayout_325")
         self.verticalLayout_325.setContentsMargins(0, 0, 0, 0)
-        self.label_estado_cuidador_as_2 = QLabel(self.frame_466)
-        self.label_estado_cuidador_as_2.setObjectName(u"label_estado_cuidador_as_2")
-        self.label_estado_cuidador_as_2.setMinimumSize(QSize(0, 0))
-        self.label_estado_cuidador_as_2.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_cuidador_as_2.setFont(font)
+        self.label_estado_clinica__as = QLabel(self.frame_466)
+        self.label_estado_clinica__as.setObjectName(u"label_estado_clinica__as")
+        self.label_estado_clinica__as.setMinimumSize(QSize(0, 0))
+        self.label_estado_clinica__as.setMaximumSize(QSize(80, 16777215))
+        self.label_estado_clinica__as.setFont(font)
 
-        self.verticalLayout_325.addWidget(self.label_estado_cuidador_as_2)
+        self.verticalLayout_325.addWidget(self.label_estado_clinica__as)
 
-        self.input_estado_cuidador_as_2 = QLineEdit(self.frame_466)
-        self.input_estado_cuidador_as_2.setObjectName(u"input_estado_cuidador_as_2")
-        self.input_estado_cuidador_as_2.setMinimumSize(QSize(70, 30))
-        self.input_estado_cuidador_as_2.setMaximumSize(QSize(80, 30))
-        self.input_estado_cuidador_as_2.setFont(font)
-        self.input_estado_cuidador_as_2.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_estado_clinica_as = QLineEdit(self.frame_466)
+        self.input_estado_clinica_as.setObjectName(u"input_estado_clinica_as")
+        self.input_estado_clinica_as.setMinimumSize(QSize(70, 30))
+        self.input_estado_clinica_as.setMaximumSize(QSize(80, 30))
+        self.input_estado_clinica_as.setFont(font)
+        self.input_estado_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_325.addWidget(self.input_estado_cuidador_as_2)
+        self.verticalLayout_325.addWidget(self.input_estado_clinica_as)
 
 
         self.horizontalLayout_146.addWidget(self.frame_466)
@@ -7819,17 +7819,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_149.setSpacing(20)
         self.horizontalLayout_149.setObjectName(u"horizontalLayout_149")
         self.horizontalLayout_149.setContentsMargins(20, 0, 0, 0)
-        self.btn_voltar_cuidador_as_2 = QPushButton(self.frame_460)
-        self.btn_voltar_cuidador_as_2.setObjectName(u"btn_voltar_cuidador_as_2")
-        self.btn_voltar_cuidador_as_2.setMinimumSize(QSize(100, 40))
-        self.btn_voltar_cuidador_as_2.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cuidador_as_2.setFont(font11)
-        self.btn_voltar_cuidador_as_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_cuidador_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_voltar_as = QPushButton(self.frame_460)
+        self.btn_voltar_as.setObjectName(u"btn_voltar_as")
+        self.btn_voltar_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_as.setFont(font11)
+        self.btn_voltar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.horizontalLayout_149.addWidget(self.btn_voltar_cuidador_as_2)
+        self.horizontalLayout_149.addWidget(self.btn_voltar_as)
 
         self.horizontalSpacer_87 = QSpacerItem(1770, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -13261,13 +13261,13 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.btn_concluir_agenda_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"CADASTRO CL\u00cdNICA", None))
-        self.label_codigo_cadastro_clinica.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None))
-        self.label_cnpj_cadastro_clinica.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None))
-        self.input_cnpj_cadastro_clinica.setText("")
-        self.label_razao_social_cadastro_clinica.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o Social", None))
-        self.input_razao_social_cadastro_clinica.setText("")
-        self.label_nome_fantasia_cadastro_clinica.setText(QCoreApplication.translate("MainWindow", u"Nome Fantasia", None))
-        self.input_nome_fantasia_cadastro_clinica.setText("")
+        self.label_codigo_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None))
+        self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None))
+        self.input_cnpj_cadastro_clinica_as.setText("")
+        self.label_razao_social_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o Social", None))
+        self.input_razao_social_cadastro_clinica_as.setText("")
+        self.label_nome_fantasia_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Nome Fantasia", None))
+        self.input_nome_fantasia_cadastro_clinica_as.setText("")
         self.label_telefone_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.label_email_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
         self.label_cep_clinica_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
@@ -13278,9 +13278,9 @@ class Ui_MainWindow(object):
         self.label_numero_clinica_as.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
         self.label_bairro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
         self.label_cidade_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
-        self.label_estado_cuidador_as_2.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
+        self.label_estado_clinica__as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_informacoes_gerais_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es Gerais", None))
-        self.btn_voltar_cuidador_as_2.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_voltar_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_finalizar_as_2.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_altercao_de_dados.setText(QCoreApplication.translate("MainWindow", u"ALTERA\u00c7\u00c3O DE DADOS CADASTRADOS", None))
         self.label_tipo_alterar_cadastros_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de Cadastro", None))

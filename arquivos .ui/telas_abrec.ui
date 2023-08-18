@@ -19876,7 +19876,7 @@ background-color: rgb(249, 217, 221);</string>
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_codigo_cadastro_clinica">
+                                          <widget class="QLabel" name="label_codigo_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -19901,7 +19901,7 @@ background-color: rgb(249, 217, 221);</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_codigo_cadastro_clinica">
+                                          <widget class="QLineEdit" name="input_codigo_cadastro_clinica_as">
                                            <property name="enabled">
                                             <bool>false</bool>
                                            </property>
@@ -19970,7 +19970,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_cnpj_cadastro_clinica">
+                                          <widget class="QLabel" name="label_cnpj_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -19995,7 +19995,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_cnpj_cadastro_clinica">
+                                          <widget class="QLineEdit" name="input_cnpj_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -20064,7 +20064,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_razao_social_cadastro_clinica">
+                                          <widget class="QLabel" name="label_razao_social_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -20089,7 +20089,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_razao_social_cadastro_clinica">
+                                          <widget class="QLineEdit" name="input_razao_social_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -20158,7 +20158,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_nome_fantasia_cadastro_clinica">
+                                          <widget class="QLabel" name="label_nome_fantasia_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -20183,7 +20183,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_nome_fantasia_cadastro_clinica">
+                                          <widget class="QLineEdit" name="input_nome_fantasia_cadastro_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -21172,7 +21172,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_estado_cuidador_as_2">
+                                          <widget class="QLabel" name="label_estado_clinica__as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -21197,7 +21197,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_estado_cuidador_as_2">
+                                          <widget class="QLineEdit" name="input_estado_clinica_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>70</width>
@@ -21349,7 +21349,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="btn_voltar_cuidador_as_2">
+                                 <widget class="QPushButton" name="btn_voltar_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>100</width>
