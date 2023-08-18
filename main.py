@@ -184,7 +184,7 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
         self.listarUsuarios()
-        self.relaotrio_pessoa()
+        self.relatorio_pessoa()
         #self.gerar_excel()
         self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
@@ -1535,7 +1535,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
             
-    def relaotrio_pessoa(self):
+    def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
         
         result = self.db.relatorio_pessoa()
 
@@ -1558,7 +1558,9 @@ class TelaPrincipal(QMainWindow):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
                 
-    def filtrar_data(self):
+                
+                
+    def filtrar_data(self): ###DATA NASCIMENTO 
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_as.text()
         texto_data_final = self.ui.input_final_periodo_relatorio_as.text()
         texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
@@ -1638,7 +1640,7 @@ class TelaPrincipal(QMainWindow):
                     pdf.showPage() #adicionar nova folha
                     y_linha = 795 #topo da folha
                 pdf.drawString(6, y_linha, column_names[i]+':') #escrever nome da coluna
-                pdf.drawString(100, y_linha, '' + col) #escrever dado da coluna
+                pdf.drawString(100, y_linha, '' + col) #escrever dado da coluna     
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados

@@ -79,18 +79,17 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                    SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, endereco.cidade,pessoa.data_cadastro
+                    SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
-            """)
+                    """)
             result = self.cursor.fetchall()
-            
             #verifica os dados do select
             #for linha in result:
             #   print(linha)
-            
             return result
             #retorn a lista do banco para quem chamou a função
         except Exception as err:
@@ -129,11 +128,11 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, endereco.cidade
+                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho, clinica.nome_fantasia, endereco.bairro, endereco.cidade
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                 LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco
-                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
+                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
                 OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
