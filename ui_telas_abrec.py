@@ -7735,24 +7735,24 @@ class Ui_MainWindow(object):
         self.verticalLayout_325.setSpacing(0)
         self.verticalLayout_325.setObjectName(u"verticalLayout_325")
         self.verticalLayout_325.setContentsMargins(0, 0, 0, 0)
-        self.label_estado_cuidador_as_2 = QLabel(self.frame_466)
-        self.label_estado_cuidador_as_2.setObjectName(u"label_estado_cuidador_as_2")
-        self.label_estado_cuidador_as_2.setMinimumSize(QSize(0, 0))
-        self.label_estado_cuidador_as_2.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_cuidador_as_2.setFont(font)
+        self.label_estado_clinica_as = QLabel(self.frame_466)
+        self.label_estado_clinica_as.setObjectName(u"label_estado_clinica_as")
+        self.label_estado_clinica_as.setMinimumSize(QSize(0, 0))
+        self.label_estado_clinica_as.setMaximumSize(QSize(80, 16777215))
+        self.label_estado_clinica_as.setFont(font)
 
-        self.verticalLayout_325.addWidget(self.label_estado_cuidador_as_2)
+        self.verticalLayout_325.addWidget(self.label_estado_clinica_as)
 
-        self.input_estado_cuidador_as_2 = QLineEdit(self.frame_466)
-        self.input_estado_cuidador_as_2.setObjectName(u"input_estado_cuidador_as_2")
-        self.input_estado_cuidador_as_2.setMinimumSize(QSize(70, 30))
-        self.input_estado_cuidador_as_2.setMaximumSize(QSize(16777215, 30))
-        self.input_estado_cuidador_as_2.setFont(font)
-        self.input_estado_cuidador_as_2.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+        self.input_estado_clinica_as = QLineEdit(self.frame_466)
+        self.input_estado_clinica_as.setObjectName(u"input_estado_cuidador_as_2")
+        self.input_estado_clinica_as.setMinimumSize(QSize(70, 30))
+        self.input_estado_clinica_as.setMaximumSize(QSize(16777215, 30))
+        self.input_estado_clinica_as.setFont(font)
+        self.input_estado_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
 
-        self.verticalLayout_325.addWidget(self.input_estado_cuidador_as_2)
+        self.verticalLayout_325.addWidget(self.input_estado_clinica_as)
 
 
         self.horizontalLayout_146.addWidget(self.frame_466)
@@ -13286,7 +13286,7 @@ class Ui_MainWindow(object):
         self.label_numero_clinica_as.setText(QCoreApplication.translate("MainWindow", u"N\u00famero", None))
         self.label_bairro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Bairro", None))
         self.label_cidade_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
-        self.label_estado_cuidador_as_2.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
+        self.label_estado_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.label_informacoes_gerais_clinica_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es Gerais", None))
         self.btn_voltar_cuidador_as_2.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_finalizar_as_2.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))

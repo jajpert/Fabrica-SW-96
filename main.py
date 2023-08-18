@@ -198,7 +198,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
         self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
         self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-
+        
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -1202,7 +1202,30 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         #print(result)
-        self.msg(result[0],result[1])        
+        self.msg(result[0],result[1]) 
+        
+
+        #################################################### Cadastro Clinica ##############################################       
+    def cadastroClinica (self):
+        cep = self.ui.input_cep_clinica_as.text()
+        rua = self.ui.input_logradouro_clinica_as.text() 
+        numero = self.ui.input_numero_clinica_as.text()
+        bairro = self.ui.input_bairro_clinica_as.text()
+        cidade = self.ui.input_cidade_clinica_as.text()
+        estado = self.ui.input_estado_clinica_as.text()
+
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+
+        cnpj = self.ui.input_cnpj_cadastro_clinica.text()
+        razao_social = self.ui.input_razao_social_cadastro_clinica.text()
+        nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica.text()
+        telefone = self.ui.input_telefone_clinica_as.text()
+        email = self.ui.input_email_clinica_as.text()
+
+        tupla_empresa = (cnpj,razao_social,nome_fantasia,telefone,email)
+
+        result=self.db.cadastro_clinica(tupla_endereco,tupla_empresa)
+        print(result)
 
 
     def cadastroCurso(self):

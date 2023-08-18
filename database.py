@@ -565,6 +565,36 @@ class DataBase():
         
         finally:
             self.close_connection()
+            
+####################################### Cadastro Clinica ##############################################
+    def cadastro_clinica(self,endereco,empresa):
+        print("Entrou cadastro clinica!!")
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep,logradouro,numero,bairro,cidade,estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            id_endereco = self.cursor.lastrowid
+            self.conn.commit()
+
+            print(endereco)
+            print(id_endereco)
+            print(empresa)
+
+
+            self.cursor.execute('INSERT INTO clinica(cnpj,razao_social,nome_fantasia,telefone,email,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s)',(empresa[0],empresa[1],empresa[2],empresa[3],empresa[4],empresa[5],empresa[6],id_endereco))
+            id_clinica = self.cursor.lastrowid
+            self.conn.commit()
+            print(id_clinica)            
+            
+
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            print(err)
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
 
 
     def close_connection(self):
