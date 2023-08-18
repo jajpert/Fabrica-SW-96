@@ -8,6 +8,7 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
+from datetime import datetime
 
 
 class Overlay(QWidget):
@@ -278,7 +279,7 @@ class TelaPrincipal(QMainWindow):
 
 
         ############SIGNALS POPUP Cursos e oficinas AS############
-        self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
+        #self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
 
 
         ############SIGNALS BANCO ##########################
@@ -1212,20 +1213,41 @@ class TelaPrincipal(QMainWindow):
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
 
         if self.ui.input_ativo_cursos_as.isChecked():
-            status=1
+            situacao=1
         if self.ui.input_inativo_cursos_as.isChecked():
-            status=2
+            situacao=0
 
         responsavel=self.ui.input_responsavel_cursos_as.text()
-        data_inicio=self.ui.input_data_inicio_cursos_as.text()
-        data_termino=self.ui.input_data_termino_cursos_as.text()
+        data_ini_curso=self.ui.input_data_inicio_cursos_as.text()
+             
+        data_inicio = "-".join(data_ini_curso.split("/")[::-1])
+        
+        data_ter_curso =self.ui.input_data_termino_cursos_as.text()
+        data_termino= "-".join(data_ter_curso.split("/")[::-1])
+
+
+        
         
         
         periodo=self.ui.input_periodo_cursos_as.currentText()
                
         
         
-        horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
+       # horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
+
+        
+
+        horario_inicial_str = self.ui.input_horario_inicio_cursos_as.text()
+        horario_inicial_parts = horario_inicial_str.split(":")
+        horario_inicial = horario_inicial_parts[0] + ":" + horario_inicial_parts[1] + ":00"  # Formate o horário para 'HH:MM:00'
+
+
+
+
+
+
+
+
         horario_final=self.ui.input_horario_termino_cursos_as.text()
         vagas=self.ui.input_vagas_cursos_as.text()
         descricao = self.ui.input_descricao_atividade_cursos_as.toPlainText()
@@ -1244,7 +1266,8 @@ class TelaPrincipal(QMainWindow):
 
         
 
-        tupla_curso=(nome_curso,tipo_curso,status,responsavel,data_inicio,data_termino,periodo,horario_inicial,horario_final,vagas,descricao,segunda,terca,quarta,quinta,sexta,sabado)
+        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
+
         print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
         print(result)
