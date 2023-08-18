@@ -12,6 +12,7 @@ import pandas as pd
 from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib.pagesizes import landscape, A4
 
 
 class Overlay(QWidget):
@@ -1595,7 +1596,7 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         
     def gerar_pdf(self):
-        doc = SimpleDocTemplate("formatted_pdf.pdf", pagesize=letter)
+        doc = SimpleDocTemplate("formatted_pdf.pdf", pagesize=landscape(A4))
         
         elements = []
 
@@ -1623,16 +1624,22 @@ class TelaPrincipal(QMainWindow):
             ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
             ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
             ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+            ('BACKGROUND', (0, 1), (-1, -1), colors.pink),
             ('GRID', (0, 0), (-1, -1), 1, colors.black)
         ])
 
-        table = Table(data)
+        table = Table(data, colWidths=[100] * 12)
         table.setStyle(table_style)
 
         elements.append(table)
 
         doc.build(elements)
+        
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("PDF")
+        msg.setText("Relatório PDF gerado com sucesso!")
+        msg.exec()
    
 
 

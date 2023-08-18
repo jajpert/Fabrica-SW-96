@@ -80,7 +80,7 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, endereco.cidade,pessoa.data_cadastro
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
@@ -104,7 +104,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                     SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome, endereco.bairro, 
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
