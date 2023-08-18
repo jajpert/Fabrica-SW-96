@@ -212,9 +212,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        '''btn_nao = QDialogButtonBox.Cancel
+        btn_nao = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
         self.saida.btn_nao_popup_confirma_saida = QDialogButtonBox(btn_nao)
-        self.saida.btn_nao_popup_confirma_saida.rejected.connect(self.reject)'''
+        self.saida.btn_nao_popup_confirma_saida.rejected.connect(self.reject)
         
 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
