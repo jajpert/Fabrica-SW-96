@@ -1204,8 +1204,8 @@ class TelaPrincipal(QMainWindow):
         else:
             situacao="Inativo"
         responsavel=self.ui.input_responsavel_cursos_as.text()
-        horario_inicial=self.ui.input_horario_cursos_as.text()
-        horario_final=self.ui.input_as_cursos_as.text()
+        horario_inicial = self.ui.input_horario_cursos_as.text()
+        horario_final = self.ui.input_as_cursos_as.text()
         vagas=self.ui.input_vagas_cursos_as.text()
         
         tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
