@@ -54,6 +54,24 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def validarLogin(self, login, senha):
+        print("entrou validação login")
+        self.connect()
+        try:
+            #
+            self.cursor.execute(f"""Select login, senha from colaborador where login = '{login}' and senha = '{senha}';""")
+
+            result = self.cursor.fetchall()
+            #print (result)
+            
+            return result
+
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
     
     def select_usuario(self):
         self.connect()
