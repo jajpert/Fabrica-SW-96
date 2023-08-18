@@ -13,6 +13,11 @@ from reportlab.lib.pagesizes import letter
 from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
 from reportlab.lib.pagesizes import landscape, A4
+from openpyxl.styles import Font
+import pandas as pd
+from reportlab.pdfgen import canvas
+import sys
+import openpyxl
 
 
 class Overlay(QWidget):
@@ -1596,49 +1601,54 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         
     def gerar_pdf(self):
-        doc = SimpleDocTemplate("formatted_pdf.pdf", pagesize=landscape(A4))
-        
-        elements = []
+        #pegando o nome das colunas da tabela
+        column_names = []
+        for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
+            column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
 
-        data = [['NOME', 'CPF', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CNS', 'NIS',
-            'LOCAL DE TRATAMENTO','SITUAÇÃO DE TRABALHO','CLINICA','BAIRRO','CIDADE']]
+        #criando o pdf e escolhendo a fonte
+        pdf = canvas.Canvas("relatorioPDF.pdf")
+        pdf.setFont("Times-Roman", 12)
 
+        #pegando os dados de cada linha da tabela
+        filtered_data = []
         for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
-            nome = self.ui.tableWidget_relatorio_as.item(row, 0).text()
-            cpf = self.ui.tableWidget_relatorio_as.item(row, 1).text()
-            sexo = self.ui.tableWidget_relatorio_as.item(row, 2).text()
-            telefone = self.ui.tableWidget_relatorio_as.item(row, 3).text()
-            beneficio = self.ui.tableWidget_relatorio_as.item(row, 4).text()
-            cns = self.ui.tableWidget_relatorio_as.item(row, 5).text()
-            nis = self.ui.tableWidget_relatorio_as.item(row, 6).text()
-            local_tratamento = self.ui.tableWidget_relatorio_as.item(row, 7).text()
-            situacao_trabalho = self.ui.tableWidget_relatorio_as.item(row, 8).text()
-            clinica = self.ui.tableWidget_relatorio_as.item(row, 9).text()
-            bairro = self.ui.tableWidget_relatorio_as.item(row, 10).text()
-            cidade = self.ui.tableWidget_relatorio_as.item(row, 11).text()
-            data.append([nome, cpf,sexo,telefone,beneficio,cns,nis,local_tratamento,situacao_trabalho,clinica,bairro,cidade])
+            if not self.ui.tableWidget_relatorio_as.isRowHidden(row):
+                row_data = [self.ui.tableWidget_relatorio_as.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_as.columnCount())]
+                filtered_data.append(row_data)
+        #por exemplo: print(filter_data)
+        #saida: lista de linhas da tabela
+        """[['Calebe Pereira Lemos', '8932728', 'Ouvidor', '728', 'Cidade', 'Lagos', 'calebe.el@senc.ms', '67828293'], 
+        ['Pedro', '838443', 'ouvi', '44', 'iijo', '', 'dasdas@', '672838'], 
+        ['c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['c', '1', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['c', '4', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['calebe', '29718', 'ouvidor', '672', 'cailar', 'cg', 'casbh!@fmail', '217267'], 
+        ['eder', '7364', 'test', '67', 'ht', 'campo gran', 'asdbahs@gmail', '6791828'], 
+        ['lucas', '0989', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['oliver', '2763173', '65', '176', 'caiçara', 'campo grande', 'oli@senac', '56888'], 
+        ['test', '99089', 'tes', '653', 'rr', '', 'c@hmmn', '75676']]"""
+    
+        y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha
+        pdf.drawString(285, 820, "Relatório") #cabecalho do relatorio
+        for linha in filtered_data:
+            i=0 #definido para andar na lista de nomes das colunas
+            for col in linha:
+                if y_linha == 38: #se chegar ao final da folha, add uma nova
+                    pdf.showPage() #adicionar nova folha
+                    y_linha = 795 #topo da folha
+                pdf.drawString(6, y_linha, column_names[i]+':') #escrever nome da coluna
+                pdf.drawString(100, y_linha, '' + col) #escrever dado da coluna
+                y_linha-=20 #decrevementar y, para ir para prox linha
+                i+=1 #incrementar i para pegar nome da prox coluna da tabela
+            pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
+    
+            
+        pdf.save() #salvar pdf na raiz do projeto
 
-        table_style = TableStyle([
-            ('BACKGROUND', (0, 0), (-1, 0), colors.black),
-            ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-            ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-            ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-            ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-            ('BACKGROUND', (0, 1), (-1, -1), colors.pink),
-            ('GRID', (0, 0), (-1, -1), 1, colors.black)
-        ])
-
-        table = Table(data, colWidths=[100] * 12)
-        table.setStyle(table_style)
-
-        elements.append(table)
-
-        doc.build(elements)
-        
         msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("PDF")
-        msg.setText("Relatório PDF gerado com sucesso!")
+        msg.setWindowTitle('Relatório')
+        msg.setText('Relatório gerado com sucesso!')
         msg.exec()
    
 
