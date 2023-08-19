@@ -279,7 +279,7 @@ class TelaPrincipal(QMainWindow):
 
 
         ############SIGNALS POPUP Cursos e oficinas AS############
-        #self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
+        self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
 
 
         ############SIGNALS BANCO ##########################
@@ -1236,19 +1236,16 @@ class TelaPrincipal(QMainWindow):
        # horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
 
         
+        regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]"
 
-        horario_inicial_str = self.ui.input_horario_inicio_cursos_as.text()
-        horario_inicial_parts = horario_inicial_str.split(":")
-        horario_inicial = horario_inicial_parts[0] + ":" + horario_inicial_parts[1] + ":00"  # Formate o horário para 'HH:MM:00'
+        horario_inicial = self.ui.input_horario_inicio_cursos_as.text()
+        
+         
+        #novo_hr_inicial = horario_inicial_str.replace(" PM", ":00")
+        
+        horario_final = self.ui.input_horario_termino_cursos_as.text()
+        
 
-
-
-
-
-
-
-
-        horario_final=self.ui.input_horario_termino_cursos_as.text()
         vagas=self.ui.input_vagas_cursos_as.text()
         descricao = self.ui.input_descricao_atividade_cursos_as.toPlainText()
 

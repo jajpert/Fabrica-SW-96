@@ -484,7 +484,7 @@ class DataBase():
             
             
             args2 = (tupla_curso[0],tupla_curso[1],tupla_curso[2],tupla_curso[3],tupla_curso[4],tupla_curso[5],tupla_curso[6],tupla_curso[7],tupla_curso[8],tupla_curso[9],tupla_curso[10],tupla_curso[11],tupla_curso[12],tupla_curso[13],tupla_curso[14],tupla_curso[15],tupla_curso[16])
-
+            
             self.cursor.execute('INSERT INTO curso_evento (nome_curso_evento, tipo_curso, data_inicio, data_fim, periodo, responsavel, horario_inicial, horario_final, vagas, segunda_feira, terca_feira, quarta_feira, quinta_feira, sexta_feira, sabado, situacao,descricao) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)', args2)
 
             
