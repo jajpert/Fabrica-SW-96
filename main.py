@@ -170,20 +170,32 @@ class ConfirmaSaida(QDialog):
         self.saida = Ui_Confirma_Saida()
         self.saida.setupUi(self)
         self.ui = Ui_MainWindow()
-        self.popup = Overlay(self)     
-
+        self.popup = Overlay(self)
         
         
-        self.saida.btn_sim_popup_confirma_saida.clicked.connect(self.closeMsg)
-        self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closePop_up)
+        self.setWindowTitle("Confirmar Saida") 
+        Qbtn = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
+        self.btn_confirma = QDialogButtonBox(Qbtn) 
+        self.saida.btn_sim_popup_confirma_saida = self.btn_confirma.accepted.connect(self.accept) 
+        self.saida.btn_nao_popup_confirma_saida = self.btn_confirma.rejected.connect(self.reject)
 
+        self.tela_layout = QVBoxLayout()
+        msg = QLabel("Nova Janela!!!!")
         
-    def closeMsg(self):
-        self.close()
 
-    def closePop_up(self):
-        self.saida.frame.reject()
-        self.popup.close()       
+        self.tela_layout.addWidget(msg)
+        self.tela_layout.addWidget(self.btn_confirma)
+
+        self.setLayout(self.tela_layout)
+
+    '''def confirmaSim(self):
+        self.hide()
+        #self.saida.btn_nao_popup_confirma_saida.clicked.connect(self.closePop_up)
+
+    def confirmaNao(self):
+        self.hide()'''
+        
+       
                
     
 
@@ -212,14 +224,10 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        btn_nao = QDialogButtonBox.Ok | QDialogButtonBox.Cancel
-        self.saida.btn_nao_popup_confirma_saida = QDialogButtonBox(btn_nao)
-        self.saida.btn_nao_popup_confirma_saida.rejected.connect(self.reject)
-        
-
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+
         
-        self.saida.btn_sim_popup_confirma_saida = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
+        
         
         #self.saida.btn_nao_popup_confirma_saida = self.ui.clicked.connect(lambda:self.saida.setCurrentWidget(self.popup.close()))
         
@@ -1527,17 +1535,34 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.clear()'''
 
     def sairSistema(self):   
-        msg = ConfirmaSaida(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.close()        
         
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Confirma Saida")
+        dlg.setText("Deseja Sair?")
+        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dlg.setIcon(QMessageBox.Question)
+        button = dlg.exec()      
+       
+        if button == QMessageBox.Yes:
+            button = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+            dlg.close()
 
-    def fecharPopup(self):
+        else:
+            button = self.ui.btn_sair_as.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.login))
+            dlg.hide()
+        
+       
+            
+        
+            
+
+               
+        
+    '''def fecharPopup(self):
         msg = ConfirmaSaida(self)
         self.popup.show()
         msg.exec()
-        self.popup.close() 
+        self.popup.close() '''
         
    
 
