@@ -322,6 +322,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_salvar_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
