@@ -1546,6 +1546,8 @@ class TelaPrincipal(QMainWindow):
             
         if button == QMessageBox.Yes:
             self.ui.inicio.setCurrentIndex(0)
+            self.ui.input_usuario_login.setText("")
+            self.ui.input_senha_login.setText("")
         
         else:
             dlg.close()
