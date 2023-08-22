@@ -53,8 +53,24 @@ class DialogRecuperarSenha(QDialog):
     def closeEvent(self, event):
         self.timer_msg.stop()
         event.accept()
+##################LOGIN INVALIDO###################
+class DialogloginInvalido(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Login_Ivalido()
+        self.ui.setupUi(self)
+        self.timer_msg = QTimer(self)
+        self.timer_msg.setInterval(10000)
+        self.timer_msg.timeout.connect(self.closeMsg)
+        self.timer_msg.start()   
 
+    def closeMsg(self):
+        self.close()
 
+    def closeEvent(self, event):
+        self.timer_msg.stop()
+        event.accept()
 ################Class POPUP Usuário################
 class DialogTirarFoto(QDialog):
     def __init__(self, parent) -> None:
@@ -258,6 +274,8 @@ class TelaPrincipal(QMainWindow):
 
         
         #############SIGNALS BOTOES voltar#############
+        #self.self.btn_voltar_popup_as.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
@@ -316,8 +334,11 @@ class TelaPrincipal(QMainWindow):
         login_senha = []
         login_senha = self.db.validarLogin(login,senha)
         if len(login_senha)==0:
-            print ("login vazio")
-            return self.ui.inicio.setCurrentWidget(self.ui.login)
+            print ("login vazio")           
+            self.ui.inicio.setCurrentWidget(self.ui.login)
+            self.loginIvalido()
+
+
         elif login_senha[0][0] == login_senha[0][1]:
                 print("Login e senha não podem ser iguais")
         else:
@@ -1394,6 +1415,14 @@ class TelaPrincipal(QMainWindow):
 
 
 #####Alterar SITUACAO de Trabalho Outros #########
+######################LOGIN INVALIDO POPUP####################
+    def loginIvalido(self):       
+        msg = DialogloginInvalido(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+
+
 ####################### FUNÇÕES POP UP #######################
 
     def visibilidade(self):
