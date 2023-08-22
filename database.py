@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='127.0.0.1',database='abrec',user='root',password='senhadev')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -563,6 +563,36 @@ class DataBase():
         except Exception as err:
             print(err)
         
+        finally:
+            self.close_connection()
+
+    def cadastro_clinica(self,clinica,endereco):
+        print("Entrou cadastro usuario!!")
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            id_endereco = self.cursor.lastrowid
+            
+            args2 = (clinica[0],clinica[1],clinica[2],clinica[3],clinica[4],clinica[5],clinica[6],clinica[7])
+            self.cursor.execute('INSERT INTO clinica(cnpj,razao_social,nome_fantasia,telefone,email,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            id_clinica = self.cursor.lastrowid
+
+            
+            
+            
+
+            print(clinica)
+            print(id_clinica)
+            print(id_endereco)
+            self.conn.commit()
+
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            print(err)
+            return "ERRO",str(err)
+
         finally:
             self.close_connection()
 

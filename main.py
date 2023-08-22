@@ -248,7 +248,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
-        self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page))
+        self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros_as))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -260,7 +260,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-
+        self.ui.btn_cep_buscar_colaborador_as_3.clicked.connect(self.validarCep)
 
         
         #############SIGNALS BOTOES voltar#############
@@ -306,6 +306,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
+        self.ui.btn_finalizar_as_2.clicked.connect(self.cadastro_clinica)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
@@ -342,6 +343,7 @@ class TelaPrincipal(QMainWindow):
         inputCuidador = self.ui.input_cep_cuidador_as.text()
         inputUsuario = self.ui.input_cep_usuario_as.text()
         inputColaborador = self.ui.input_cep_colaborador_as.text()
+        inputClinica = self.ui.input_cep_clinica_as.text()
         sender = self.sender()
         if 'cuidador' in sender.objectName():
             cep = inputCuidador
@@ -349,6 +351,8 @@ class TelaPrincipal(QMainWindow):
             cep = inputUsuario
         elif 'colaborador' in sender.objectName():
             cep = inputColaborador
+        elif 'clinica' in sender.objectName():
+            cep = inputClinica
         cep_tratado = str('')
         print(cep)
         for i in cep:
@@ -422,6 +426,24 @@ class TelaPrincipal(QMainWindow):
             ##### tratamento da requisição - estado #######        
             estado = dic_requisicao['uf']
             self.ui.input_estado_colaborador_as.setText(str(estado))
+        
+        elif 'clinica' in sender.objectName():
+            print("entrou clinica!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_clinica_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_clinica_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_clinica_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_clinica_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
 
@@ -1550,6 +1572,36 @@ class TelaPrincipal(QMainWindow):
             self.ui.label_idade_relatorio_as.clear()
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
+    
+    
+    def cadastro_clinica(self):
+
+    ######################## endereço ################################
+        cep = self.ui.input_cep_clinica_as.text()
+        rua = self.ui.input_logradouro_clinica_as.text()
+        numero = self.ui.input_numero_clinica_as.text()
+        bairro = self.ui.input_bairro_clinica_as.text()
+        cidade = self.ui.input_cidade_clinica_as.text()
+        estado = self.ui.input_estado_clinica_as.text()
+
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+
+    ########################## dados ######################################       
+        id_clinica = self.ui.input_codigo_cadastro_clinica_as.text()
+        cnpj = self.ui.input_cnpj_cadastro_clinica_as.text()
+        razao_social = self.ui.input_razao_social_cadastro_clinica_as.text()
+        nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica_as.text()
+        telefone = self.ui.input_telefone_clinica_as.text()
+        email = self.input_email_clinica_as.text()
+        
+
+        tupla_clinica = (id_clinica,cnpj,razao_social,nome_fantasia,telefone,email)
+        
+        result = []
+        result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
+        print(result)
+        self.msg(result[0],result[1])
+    
 ######################## Patologia base outros################################      
     def on_patologia_base_usuario_changed(self):
 

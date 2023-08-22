@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecuCtiQT.ui'
+## Form generated from reading UI file 'telas_abrecsUtdDY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -679,15 +679,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_40.setStretch(1, 2)
         self.horizontalLayout_40.setStretch(2, 1)
         self.stackedWidget_2.addWidget(self.page_botoes_cadastrar_as)
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.horizontalLayout_145 = QHBoxLayout(self.page)
+        self.page_parceiros_as = QWidget()
+        self.page_parceiros_as.setObjectName(u"page_parceiros_as")
+        self.horizontalLayout_145 = QHBoxLayout(self.page_parceiros_as)
         self.horizontalLayout_145.setObjectName(u"horizontalLayout_145")
         self.horizontalSpacer_88 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_145.addItem(self.horizontalSpacer_88)
 
-        self.frame_450 = QFrame(self.page)
+        self.frame_450 = QFrame(self.page_parceiros_as)
         self.frame_450.setObjectName(u"frame_450")
         self.frame_450.setFrameShape(QFrame.StyledPanel)
         self.frame_450.setFrameShadow(QFrame.Raised)
@@ -748,7 +748,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_145.addItem(self.horizontalSpacer_89)
 
-        self.stackedWidget_2.addWidget(self.page)
+        self.stackedWidget_2.addWidget(self.page_parceiros_as)
         self.page_cadastro_usuario_as = QWidget()
         self.page_cadastro_usuario_as.setObjectName(u"page_cadastro_usuario_as")
         self.verticalLayout_3 = QVBoxLayout(self.page_cadastro_usuario_as)
