@@ -1659,7 +1659,7 @@ QPushButton:focus{outline: 0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page">
+                     <widget class="QWidget" name="page_parceiros_as">
                       <layout class="QHBoxLayout" name="horizontalLayout_145">
                        <item>
                         <spacer name="horizontalSpacer_88">
