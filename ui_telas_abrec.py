@@ -3427,6 +3427,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_83.addWidget(self.frame_192)
 
+        
+
         self.frame_193 = QFrame(self.page_cadastro_colaborador_as)
         self.frame_193.setObjectName(u"frame_193")
         sizePolicy.setHeightForWidth(self.frame_193.sizePolicy().hasHeightForWidth())
@@ -3436,14 +3438,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_77 = QHBoxLayout(self.frame_193)
         self.horizontalLayout_77.setSpacing(0)
         self.horizontalLayout_77.setObjectName(u"horizontalLayout_77")
-        self.horizontalLayout_77.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_77.setContentsMargins(0, 62, 0, 0)
         self.frame_194 = QFrame(self.frame_193)
         self.frame_194.setObjectName(u"frame_194")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.frame_194.sizePolicy().hasHeightForWidth())
-        self.frame_194.setSizePolicy(sizePolicy5)
+        self.frame_194.setEnabled(True)
         self.frame_194.setMinimumSize(QSize(360, 0))
         self.frame_194.setMaximumSize(QSize(16777215, 360))
         self.frame_194.setStyleSheet(u"QLabel{margin-left: 0.25em}")
@@ -3451,6 +3449,8 @@ class Ui_MainWindow(object):
         self.frame_194.setFrameShadow(QFrame.Raised)
         self.gridLayout_2 = QGridLayout(self.frame_194)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
+        self.gridLayout_2.setHorizontalSpacing(0)
+        self.gridLayout_2.setContentsMargins(0, 24, 0, 0)
         self.horizontalSpacer_51 = QSpacerItem(123, 55, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.gridLayout_2.addItem(self.horizontalSpacer_51, 4, 0, 1, 1)
@@ -3621,7 +3621,7 @@ class Ui_MainWindow(object):
         self.input_data_nascimento_colaborador_as.setAlignment(Qt.AlignCenter)
         self.input_data_nascimento_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_data_nascimento_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_data_nascimento_colaborador_as.setCalendarPopup(False)
         self.input_data_nascimento_colaborador_as.setCurrentSectionIndex(0)
 
@@ -4036,7 +4036,7 @@ class Ui_MainWindow(object):
         self.input_data_emissao_rg_colaborador_as.setAlignment(Qt.AlignCenter)
         self.input_data_emissao_rg_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_data_emissao_rg_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_data_emissao_rg_colaborador_as.setCalendarPopup(False)
         self.input_data_emissao_rg_colaborador_as.setCurrentSectionIndex(0)
 
@@ -4378,7 +4378,7 @@ class Ui_MainWindow(object):
         self.input_data_admissao_colaborador_as_5.setAlignment(Qt.AlignCenter)
         self.input_data_admissao_colaborador_as_5.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_data_admissao_colaborador_as_5.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_data_admissao_colaborador_as_5.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_data_admissao_colaborador_as_5.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_data_admissao_colaborador_as_5.setCalendarPopup(False)
         self.input_data_admissao_colaborador_as_5.setCurrentSectionIndex(0)
 
@@ -4556,7 +4556,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_81 = QHBoxLayout(self.frame_215)
         self.horizontalLayout_81.setSpacing(0)
         self.horizontalLayout_81.setObjectName(u"horizontalLayout_81")
-        self.horizontalLayout_81.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_81.setContentsMargins(0, 0, 0, 100)
         self.frame_269 = QFrame(self.frame_215)
         self.frame_269.setObjectName(u"frame_269")
         sizePolicy.setHeightForWidth(self.frame_269.sizePolicy().hasHeightForWidth())

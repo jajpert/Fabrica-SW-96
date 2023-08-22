@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2062</width>
-    <height>895</height>
+    <height>892</height>
    </rect>
   </property>
   <property name="font">
@@ -9475,7 +9475,7 @@ QPushButton:focus{outline:0}</string>
                            <number>0</number>
                           </property>
                           <property name="topMargin">
-                           <number>0</number>
+                           <number>62</number>
                           </property>
                           <property name="rightMargin">
                            <number>0</number>
@@ -9485,11 +9485,8 @@ QPushButton:focus{outline:0}</string>
                           </property>
                           <item>
                            <widget class="QFrame" name="frame_194">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
+                            <property name="enabled">
+                             <bool>true</bool>
                             </property>
                             <property name="minimumSize">
                              <size>
@@ -9513,6 +9510,21 @@ QPushButton:focus{outline:0}</string>
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QGridLayout" name="gridLayout_2">
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>24</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="horizontalSpacing">
+                              <number>0</number>
+                             </property>
                              <item row="4" column="0">
                               <spacer name="horizontalSpacer_51">
                                <property name="orientation">
@@ -11713,7 +11725,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_112">
+                                  <layout class="QVBoxLayout" name="verticalLayout_262">
                                    <property name="spacing">
                                     <number>0</number>
                                    </property>
@@ -11755,103 +11767,25 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QFrame" name="frame_138">
+                                    <widget class="QLineEdit" name="input_senha_colaborador_as_2">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>200</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
+                                       <width>229</width>
                                        <height>30</height>
                                       </size>
                                      </property>
-                                     <property name="styleSheet">
-                                      <string notr="true">QFrame#frame_138{background-color: #fff; border-radius: 15px; padding-left: 16px; padding-right: 16px;border: 1px solid #A85751}
-</string>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
                                      </property>
-                                     <property name="frameShape">
-                                      <enum>QFrame::StyledPanel</enum>
-                                     </property>
-                                     <property name="frameShadow">
-                                      <enum>QFrame::Raised</enum>
-                                     </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_140" stretch="0,0">
-                                      <property name="spacing">
-                                       <number>16</number>
-                                      </property>
-                                      <property name="leftMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="topMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="rightMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="bottomMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <item>
-                                       <widget class="QLineEdit" name="input_senha_login_2">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>0</width>
-                                          <height>25</height>
-                                         </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>229</width>
-                                          <height>25</height>
-                                         </size>
-                                        </property>
-                                        <property name="font">
-                                         <font>
-                                          <family>Abel</family>
-                                          <pointsize>15</pointsize>
-                                         </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                         <string notr="true">QLineEdit#input_senha_login_2{border-radius: 27px; background-color: #fff;border:none}
-</string>
-                                        </property>
-                                        <property name="text">
-                                         <string/>
-                                        </property>
-                                        <property name="placeholderText">
-                                         <string>Senha</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item>
-                                       <widget class="QToolButton" name="olinho">
-                                        <property name="cursor">
-                                         <cursorShape>PointingHandCursor</cursorShape>
-                                        </property>
-                                        <property name="styleSheet">
-                                         <string notr="true">background-color: #fff; border: hidden
-
-</string>
-                                        </property>
-                                        <property name="text">
-                                         <string/>
-                                        </property>
-                                        <property name="icon">
-                                         <iconset>
-                                          <normaloff>../icons/olho_fechado.png</normaloff>../icons/olho_fechado.png</iconset>
-                                        </property>
-                                        <property name="iconSize">
-                                         <size>
-                                          <width>25</width>
-                                          <height>25</height>
-                                         </size>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                     </layout>
                                     </widget>
                                    </item>
                                   </layout>
@@ -11877,7 +11811,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_113">
+                                  <layout class="QVBoxLayout" name="verticalLayout_266">
                                    <property name="spacing">
                                     <number>0</number>
                                    </property>
@@ -11919,103 +11853,25 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QFrame" name="frame_159">
+                                    <widget class="QLineEdit" name="input_confirmar_senha_colaborador_as_2">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>200</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
+                                       <width>229</width>
                                        <height>30</height>
                                       </size>
                                      </property>
-                                     <property name="styleSheet">
-                                      <string notr="true">QFrame#frame_159{background-color: #fff; border-radius: 15px; padding-left: 16px; padding-right: 16px;border: 1px solid #A85751}
-</string>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
                                      </property>
-                                     <property name="frameShape">
-                                      <enum>QFrame::StyledPanel</enum>
-                                     </property>
-                                     <property name="frameShadow">
-                                      <enum>QFrame::Raised</enum>
-                                     </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_141" stretch="0,0">
-                                      <property name="spacing">
-                                       <number>16</number>
-                                      </property>
-                                      <property name="leftMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="topMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="rightMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="bottomMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <item>
-                                       <widget class="QLineEdit" name="input_senha_colaborador_2">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>0</width>
-                                          <height>25</height>
-                                         </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>229</width>
-                                          <height>25</height>
-                                         </size>
-                                        </property>
-                                        <property name="font">
-                                         <font>
-                                          <family>Abel</family>
-                                          <pointsize>15</pointsize>
-                                         </font>
-                                        </property>
-                                        <property name="styleSheet">
-                                         <string notr="true">QLineEdit#input_senha_colaborador_2{border-radius: 27px; background-color: #fff;border:none}
-</string>
-                                        </property>
-                                        <property name="text">
-                                         <string/>
-                                        </property>
-                                        <property name="placeholderText">
-                                         <string>Senha</string>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                      <item>
-                                       <widget class="QToolButton" name="olinho_2">
-                                        <property name="cursor">
-                                         <cursorShape>PointingHandCursor</cursorShape>
-                                        </property>
-                                        <property name="styleSheet">
-                                         <string notr="true">background-color: #fff; border: hidden
-
-</string>
-                                        </property>
-                                        <property name="text">
-                                         <string/>
-                                        </property>
-                                        <property name="icon">
-                                         <iconset>
-                                          <normaloff>../icons/olho_fechado.png</normaloff>../icons/olho_fechado.png</iconset>
-                                        </property>
-                                        <property name="iconSize">
-                                         <size>
-                                          <width>25</width>
-                                          <height>25</height>
-                                         </size>
-                                        </property>
-                                       </widget>
-                                      </item>
-                                     </layout>
                                     </widget>
                                    </item>
                                   </layout>
@@ -12979,12 +12835,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                              <item>
                               <spacer name="verticalSpacer_2">
                                <property name="orientation">
-                                <enum>Qt::Vertical</enum>
+                                <enum>Qt::Horizontal</enum>
                                </property>
                                <property name="sizeHint" stdset="0">
                                 <size>
-                                 <width>20</width>
-                                 <height>40</height>
+                                 <width>40</width>
+                                 <height>20</height>
                                 </size>
                                </property>
                               </spacer>
@@ -18758,7 +18614,7 @@ color: rgb(236, 132, 140);</string>
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_182">
                                          <item>
-                                          <widget class="QLabel" name="label_cpf_agendamento_as">
+                                          <widget class="QLabel" name="label_4">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -18771,7 +18627,7 @@ color: rgb(236, 132, 140);</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_cpf_agendamento_as">
+                                          <widget class="QLineEdit" name="lineEdit">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -18802,7 +18658,7 @@ color: rgb(236, 132, 140);</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QPushButton" name="btn_buscar_agendamento_as">
+                                       <widget class="QPushButton" name="btn_buscar_relatorio_as_2">
                                         <property name="sizePolicy">
                                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                           <horstretch>0</horstretch>
@@ -18880,7 +18736,7 @@ QPushButton:pressed{
                                      </property>
                                      <layout class="QVBoxLayout" name="verticalLayout_267">
                                       <item>
-                                       <widget class="QLabel" name="label_nome_agendamento_as">
+                                       <widget class="QLabel" name="label_5">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -18893,7 +18749,7 @@ QPushButton:pressed{
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_nome_agendamento_as">
+                                       <widget class="QLineEdit" name="lineEdit_2">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -18930,7 +18786,7 @@ QPushButton:pressed{
                                      </property>
                                      <layout class="QVBoxLayout" name="verticalLayout_307">
                                       <item>
-                                       <widget class="QLabel" name="label_telefone_agendamento_as">
+                                       <widget class="QLabel" name="label_7">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -18943,7 +18799,7 @@ QPushButton:pressed{
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_telefone_agendamento_as">
+                                       <widget class="QLineEdit" name="lineEdit_3">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -18983,7 +18839,7 @@ QPushButton:pressed{
                                        <number>0</number>
                                       </property>
                                       <item>
-                                       <widget class="QLabel" name="label_profissional_agendamento_as">
+                                       <widget class="QLabel" name="label_8">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -19005,7 +18861,7 @@ QPushButton:pressed{
                                         </property>
                                         <layout class="QHBoxLayout" name="horizontalLayout_138">
                                          <item>
-                                          <widget class="QRadioButton" name="input_profissional_as_agendamento_as">
+                                          <widget class="QRadioButton" name="radioButton">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -19018,7 +18874,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QRadioButton" name="input_profissional_nutri_agendamento_as">
+                                          <widget class="QRadioButton" name="radioButton_2">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -19031,7 +18887,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QRadioButton" name="input_profissional_psi_agendamento_as">
+                                          <widget class="QRadioButton" name="radioButton_3">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -19104,7 +18960,7 @@ QPushButton:pressed{
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_data_agendamento_as">
+                                          <widget class="QLabel" name="label_9">
                                            <property name="maximumSize">
                                             <size>
                                              <width>140</width>
@@ -19123,7 +18979,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QDateEdit" name="input_data_agendamento_as">
+                                          <widget class="QDateEdit" name="input_data_emissao_usuario_as_2">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                              <horstretch>0</horstretch>
@@ -19221,7 +19077,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_hora_agendamento_as">
+                                          <widget class="QLabel" name="label_11">
                                            <property name="maximumSize">
                                             <size>
                                              <width>140</width>
@@ -19240,7 +19096,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QTimeEdit" name="input_hora_agendamento_as">
+                                          <widget class="QTimeEdit" name="timeEdit">
                                            <property name="minimumSize">
                                             <size>
                                              <width>120</width>
@@ -19281,7 +19137,7 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <layout class="QVBoxLayout" name="verticalLayout_314">
                                       <item>
-                                       <widget class="QLabel" name="label_clinica_agendamento_as">
+                                       <widget class="QLabel" name="label_12">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -19294,7 +19150,7 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_clinica_agendamento_as">
+                                       <widget class="QLineEdit" name="lineEdit_4">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -19365,33 +19221,20 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_315">
                                 <item>
-                                 <widget class="QLabel" name="label_filtro_agendamento_as">
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>13</pointsize>
-                                   </font>
-                                  </property>
+                                 <widget class="QLabel" name="label_13">
                                   <property name="text">
                                    <string>Filtro</string>
                                   </property>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QLineEdit" name="input_filtro_agendamento_as">
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>13</pointsize>
-                                   </font>
-                                  </property>
-                                 </widget>
+                                 <widget class="QLineEdit" name="lineEdit_5"/>
                                 </item>
                                </layout>
                               </widget>
                              </item>
                              <item>
-                              <widget class="QTableWidget" name="input_TableWidget_agendamento_as">
+                              <widget class="QTableWidget" name="input_TableWidget_observacoes_sigilosas_as_2">
                                <property name="font">
                                 <font>
                                  <family>Abel</family>
@@ -19534,11 +19377,6 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                <column>
                                 <property name="text">
                                  <string>Agendamento</string>
-                                </property>
-                               </column>
-                               <column>
-                                <property name="text">
-                                 <string>Profissional</string>
                                 </property>
                                </column>
                                <item row="0" column="0">
@@ -20255,7 +20093,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>3</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
