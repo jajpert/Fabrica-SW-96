@@ -120,7 +120,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                    SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
                     usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
@@ -145,7 +145,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
                 usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho, clinica.nome_fantasia, endereco.bairro, endereco.cidade
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -166,8 +166,43 @@ class DataBase():
 
         finally:
             self.close_connection()
+        
+    def filter_idade(self,texto_idade_inicio,texto_idade_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                endereco.cidade,pessoa.data_cadastro
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco WHERE TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) BETWEEN '{texto_idade_inicio}' and '{texto_idade_final}';""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
             
             
+    def filter_usuario_area_sigilosa(self,id_area_sigilosa):
+        self.connect()
+        try: 
+            self.cursor.execute(f"""select  area_sigilosa.data_cadastro, area_sigilosa.observacao_gerais from area_sigilosa
+                                INNER JOIN pessoa ON pessoa.id_matricula = area_sigilosa.id_matricula and 
+                                pessoa.id_matricula = '{id_area_sigilosa}';""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
             
             
     

@@ -184,9 +184,9 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()
         self.listarUsuarios()
-        self.relatorio_pessoa()
+        self.id_area_sigilosa = self.relatorio_pessoa()
+        self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
-        self.id_area_sigilosa = 5
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
         select_cuidador = self.db.select_cuidador()
@@ -266,7 +266,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         # page_alterar_usuario
-        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         
 
@@ -297,12 +297,14 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
+        # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
+        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_salvar_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
@@ -331,6 +333,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
+        
+        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
         
         self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
         
@@ -1578,7 +1582,16 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
-                
+    
+    def filtrar_usuario_area_sigilosa(self):
+        result = self.db.filter_usuario_area_sigilosa(self.id_area_sigilosa)
+        print(result)
+        self.ui.input_TableWidget_observacoes_sigilosas_as.clearContents()
+        self.ui.input_TableWidget_observacoes_sigilosas_as.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_observacoes_sigilosas_as.setItem(row, column,QTableWidgetItem(str(data)))
                 
                 
     def filtrar_data(self): ###DATA NASCIMENTO 
@@ -1596,6 +1609,29 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+        if self.ui.input_inicio_periodo_relatorio_as.text() == "":
+            self.filtrar_dados()
+        elif self.ui.input_final_periodo_relatorio_as.text() =="":
+            self.filtrar_dados()
+                
+                
+    def filter_idade(self):
+        # self.ui.input_idade_inicial_relatorio_as.text()
+        # self.ui.input_idade_final_relatorio_as.text()
+        if self.ui.input_escolha_relatorio_as.currentIndex() == 1:
+            texto_idade_inicio = 18
+            texto_idade_final = 23
+            print(texto_idade_inicio,texto_idade_final)
+            
+            res = self.db.filter_idade(texto_idade_inicio,texto_idade_final)
+            self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+            for row, text in enumerate(res):
+                for column, data in enumerate(text):
+                    self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+        elif self.ui.input_escolha_relatorio_as.currentIndex() == 0:
+            self.filtrar_dados()
+                
        
        
     def gerar_excel(self):
