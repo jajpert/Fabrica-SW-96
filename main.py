@@ -260,7 +260,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-        self.ui.btn_cep_buscar_colaborador_as_3.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
 
         
         #############SIGNALS BOTOES voltar#############
@@ -359,6 +359,7 @@ class TelaPrincipal(QMainWindow):
             if(i == "." or i == '-' or i == ' '):
                 pass
             else:
+                pass
                 cep_tratado += i   
         cep_tratado = int(cep_tratado)
         print(cep_tratado)
@@ -1587,15 +1588,15 @@ class TelaPrincipal(QMainWindow):
         tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
 
     ########################## dados ######################################       
-        id_clinica = self.ui.input_codigo_cadastro_clinica_as.text()
+        # id_clinica = self.ui.input_codigo_cadastro_clinica_as.text()
         cnpj = self.ui.input_cnpj_cadastro_clinica_as.text()
         razao_social = self.ui.input_razao_social_cadastro_clinica_as.text()
         nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica_as.text()
         telefone = self.ui.input_telefone_clinica_as.text()
-        email = self.input_email_clinica_as.text()
-        
+        email = self.ui.input_email_clinica_as.text()
+        obs = self.ui.input_informacoes_gerais_clinica_as.toPlainText()
 
-        tupla_clinica = (id_clinica,cnpj,razao_social,nome_fantasia,telefone,email)
+        tupla_clinica = (cnpj,razao_social,nome_fantasia,telefone,email,obs)
         
         result = []
         result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)

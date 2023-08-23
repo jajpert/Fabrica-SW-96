@@ -566,7 +566,7 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def cadastro_clinica(self,clinica,endereco):
+    def cadastro_clinica(self,endereco,clinica):
         print("Entrou cadastro usuario!!")
         self.connect()
         try:
@@ -574,17 +574,15 @@ class DataBase():
             self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
             id_endereco = self.cursor.lastrowid
             
-            args2 = (clinica[0],clinica[1],clinica[2],clinica[3],clinica[4],clinica[5],clinica[6],clinica[7])
-            self.cursor.execute('INSERT INTO clinica(cnpj,razao_social,nome_fantasia,telefone,email,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)', args2)
-            id_clinica = self.cursor.lastrowid
+
+
+            args2 = (clinica[0],clinica[1],clinica[2],clinica[3],clinica[4],clinica[5],id_endereco)
+            self.cursor.execute('INSERT INTO clinica(cnpj,razao_social,nome_fantasia,telefone,email,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s)', args2)
 
             
             
-            
-
-            print(clinica)
-            print(id_clinica)
-            print(id_endereco)
+            print(args)
+            print(args2)
             self.conn.commit()
 
             return "OK","Cadastro realizado com sucesso!!"
