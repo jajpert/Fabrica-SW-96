@@ -8,6 +8,7 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
+from datetime import datetime
 
 
 class Overlay(QWidget):
@@ -1209,35 +1210,65 @@ class TelaPrincipal(QMainWindow):
 
     def cadastroCurso(self):
       ################################################ENDERECO#####
-        cep = self.ui.input_cep_usuario_as.text()
-        rua = self.ui.input_logradouro_usuario_as.text()
-        numero = self.ui.input_numero_usuario_as.text()
-        bairro = self.ui.input_bairro_usuario_as.text()
-        cidade = self.ui.input_cidade_usuario_as.text()
-        estado = self.ui.input_estado_usuario_as.text()
-
-        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
-
-        nome_curso=self.ui.input_nome_cursos_as.text()
-        data_inicio=self.ui.input_data_inicio_cursos_as.text()
-        data_termino=self.ui.input_data_termino_cursos_as.text()
-        carga_horaria= 120 
-        id_palestrante = 1
-        periodo=self.ui.input_periodo_cursos_as.currentText()
-        data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
-        tipo_curso=self.ui.input_tipo_cursos_as.currentText()
-        if self.ui.input_ativo_cursos_as.isChecked():
-            situacao="Ativo"
-        else:
-            situacao="Inativo"
-        responsavel=self.ui.input_responsavel_cursos_as.text()
-        horario_inicial=self.ui.input_horario_cursos_as.text()
-        horario_final=self.ui.input_as_cursos_as.text()
-        vagas=self.ui.input_vagas_cursos_as.text()
         
-        tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
+        nome_curso=self.ui.input_nome_cursos_as.text()
+        tipo_curso=self.ui.input_tipo_cursos_as.currentText()
 
-        result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
+        if self.ui.input_ativo_cursos_as.isChecked():
+            situacao=1
+        if self.ui.input_inativo_cursos_as.isChecked():
+            situacao=0
+
+        responsavel=self.ui.input_responsavel_cursos_as.text()
+        data_ini_curso=self.ui.input_data_inicio_cursos_as.text()
+             
+        data_inicio = "-".join(data_ini_curso.split("/")[::-1])
+        
+        data_ter_curso =self.ui.input_data_termino_cursos_as.text()
+        data_termino= "-".join(data_ter_curso.split("/")[::-1])
+
+
+        
+        
+        
+        periodo=self.ui.input_periodo_cursos_as.currentText()
+               
+        
+        
+       # horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
+
+        
+        regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]"
+
+        horario_inicial = self.ui.input_horario_inicio_cursos_as.text()
+        
+         
+        #novo_hr_inicial = horario_inicial_str.replace(" PM", ":00")
+        
+        horario_final = self.ui.input_horario_termino_cursos_as.text()
+        
+
+        vagas=self.ui.input_vagas_cursos_as.text()
+        descricao = self.ui.input_descricao_atividade_cursos_as.toPlainText()
+
+        
+        
+        segunda = 1 if self.ui.input_segunda_cursos_as.isChecked() else 0
+        terca = 1 if self.ui.input_terca_cursos_as.isChecked() else 0
+        quarta = 1 if self.ui.input_quarta_cursos_as.isChecked() else 0
+        quinta = 1 if self.ui.input_quinta_cursos_as.isChecked() else 0
+        sexta = 1 if self.ui.input_sexta_cursos_as.isChecked() else 0
+        sabado = 1 if self.ui.input_sabado_cursos_as.isChecked() else 0
+             
+
+        
+
+        
+
+        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
+
+        print(tupla_curso)
+        result=self.db.cadastro_curso(tupla_curso)
         print(result)
 
     def area_sigilosa(self):
