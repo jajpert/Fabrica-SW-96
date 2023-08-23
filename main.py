@@ -1589,7 +1589,11 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
-            
+    ######################################################################
+    
+    
+    
+    
     def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
         
         result = self.db.relatorio_pessoa()
@@ -1697,14 +1701,16 @@ class TelaPrincipal(QMainWindow):
 
         #criando o pdf e escolhendo a fonte
         pdf = canvas.Canvas("relatorioPDF.pdf")
-        pdf.setFont("Times-Roman", 12)
+        pdf.setFont("Times-Roman", 9)
 
         #pegando os dados de cada linha da tabela
         filtered_data = []
+        
         for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
             if not self.ui.tableWidget_relatorio_as.isRowHidden(row):
                 row_data = [self.ui.tableWidget_relatorio_as.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_as.columnCount())]
                 filtered_data.append(row_data)
+        print(filtered_data)        
         #por exemplo: print(filter_data)
         #saida: lista de linhas da tabela
         """[['Calebe Pereira Lemos', '8932728', 'Ouvidor', '728', 'Cidade', 'Lagos', 'calebe.el@senc.ms', '67828293'], 
