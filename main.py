@@ -229,6 +229,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
+        self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -292,7 +293,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
         self.ui.btn_salvar_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
-        self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
+        self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)
+        self.ui.btn_finalizar_as_2.clicked.connect(self.cadastro_clinica)       
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
 ########################### Validar Login #############################
@@ -1392,6 +1394,20 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_obito_paciente_nao_as.setCheckable(True)
         self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
 
+    def limparCamposCadastroClinica(self):
+       self.ui.input_cnpj_cadastro_clinica_as.setText("")
+       self.ui.input_razao_social_cadastro_clinica_as.setText("")
+       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
+       self.ui.input_telefone_clinica_as.setText("")
+       self.ui.input_email_clinica_as.setText("")       
+       self.ui.input_cep_clinica_as.setText("")
+       self.ui.input_logradouro_clinica_as.setText("")
+       self.ui.input_numero_clinica_as.setText("")
+       self.ui.input_bairro_clinica_as.setText("")
+       self.ui.input_cidade_clinica_as.setText("")
+       self.ui.input_estado_clinica_as.setText("")
+       self.ui.input_informacoes_gerais_clinica_as.setHtml("")
+
 
 
 
@@ -1548,8 +1564,38 @@ class TelaPrincipal(QMainWindow):
             self.ui.label_idade_relatorio_as.clear()
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
+
+    def cadastro_clinica(self):
+
+        ######################## endereço ################################
+            cep = self.ui.input_cep_clinica_as.text()
+            rua = self.ui.input_logradouro_clinica_as.text()
+            numero = self.ui.input_numero_clinica_as.text()
+            bairro = self.ui.input_bairro_clinica_as.text()
+            cidade = self.ui.input_cidade_clinica_as.text()
+            estado = self.ui.input_estado_clinica_as.text()
+
+            tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+
+        ########################## dados ######################################       
+            # id_clinica = self.ui.input_codigo_cadastro_clinica_as.text()
+            cnpj = self.ui.input_cnpj_cadastro_clinica_as.text()
+            razao_social = self.ui.input_razao_social_cadastro_clinica_as.text()
+            nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica_as.text()
+            telefone = self.ui.input_telefone_clinica_as.text()
+            email = self.ui.input_email_clinica_as.text()
+            obs = self.ui.input_informacoes_gerais_clinica_as.toPlainText()
+
+            tupla_clinica = (cnpj,razao_social,nome_fantasia,telefone,email,obs)
+            
+            result = []
+            result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
+            print(result)
+            self.msg(result[0],result[1])
+
+
 ######################## Patologia base outros################################      
-        '''def on_patologia_base_usuario_changed(self):
+    '''def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
             self.ui.frame_440.setEnabled(True)
