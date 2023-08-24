@@ -1598,7 +1598,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
 ######################## Patologia base outros################################      
-        '''def on_patologia_base_usuario_changed(self):
+    def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
             self.ui.frame_440.setEnabled(True)
