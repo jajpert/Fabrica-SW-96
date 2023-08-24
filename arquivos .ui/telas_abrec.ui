@@ -151,7 +151,7 @@
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Logo ABREC.png</pixmap>
+                 <pixmap>../icons/Logo ABREC.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -365,7 +365,7 @@ QFrame#frame_39:focus{outline:0; border: 2px solid #D62828}</string>
                           <string/>
                          </property>
                          <property name="pixmap">
-                          <pixmap>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/pessoas.png</pixmap>
+                          <pixmap>../icons/pessoas.png</pixmap>
                          </property>
                          <property name="scaledContents">
                           <bool>true</bool>
@@ -454,7 +454,7 @@ QFrame#frame_40:focus{outline:0; border: 2px solid #D62828}</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/olho_fechado.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/olho_fechado.png</iconset>
+                           <normaloff>../icons/olho_fechado.png</normaloff>../icons/olho_fechado.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -719,7 +719,7 @@ QPushButton:focus{outline: 0} </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Abrec logo paint-02 (2).png</pixmap>
+              <pixmap>../icons/Abrec logo paint-02 (2).png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -852,7 +852,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -996,7 +996,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadastro.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadastro.png</iconset>
+                             <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1039,7 +1039,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1082,7 +1082,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/agenda.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/agenda.png</iconset>
+                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1125,7 +1125,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1267,7 +1267,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1354,7 +1354,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>9</number>
+                      <number>10</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1465,7 +1465,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cuidado.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cuidado.png</iconset>
+                              <normaloff>../icons/cuidado.png</normaloff>../icons/cuidado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1511,7 +1511,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/unidos.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/unidos.png</iconset>
+                              <normaloff>../icons/unidos.png</normaloff>../icons/unidos.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1557,7 +1557,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/certificados.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/certificados.png</iconset>
+                              <normaloff>../icons/certificados.png</normaloff>../icons/certificados.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1603,7 +1603,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</iconset>
+                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1813,7 +1813,7 @@ QPushButton:focus{outline: 0}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -2192,7 +2192,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -2661,7 +2661,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -3527,7 +3527,7 @@ QPushButton:pressed{
                                                  </property>
                                                  <property name="icon">
                                                   <iconset>
-                                                   <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                  </property>
                                                 </widget>
                                                </item>
@@ -5859,7 +5859,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -6156,7 +6156,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadeado.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadeado.png</iconset>
+                              <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -6700,7 +6700,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -7010,7 +7010,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -7844,7 +7844,7 @@ QPushButton:pressed{
                                         </property>
                                         <property name="icon">
                                          <iconset>
-                                          <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                         </property>
                                        </widget>
                                       </item>
@@ -9215,7 +9215,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</iconset>
+                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -9252,7 +9252,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png</iconset>
+                              <normaloff>../icons/cancelar.png</normaloff>../icons/cancelar.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -9289,7 +9289,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png</iconset>
+                              <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -9326,7 +9326,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</iconset>
+                              <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -10024,7 +10024,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -10526,7 +10526,7 @@ QPushButton:pressed{
                                            </property>
                                            <property name="icon">
                                             <iconset>
-                                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                            </property>
                                           </widget>
                                          </item>
@@ -11217,7 +11217,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -12244,7 +12244,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -12701,7 +12701,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -13132,18 +13132,6 @@ QPushButton:focus{outline:0}
                           </item>
                           <item>
                            <widget class="QFrame" name="frame_125">
-                            <property name="sizePolicy">
-                             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                              <horstretch>0</horstretch>
-                              <verstretch>0</verstretch>
-                             </sizepolicy>
-                            </property>
-                            <property name="minimumSize">
-                             <size>
-                              <width>1271</width>
-                              <height>0</height>
-                             </size>
-                            </property>
                             <property name="styleSheet">
                              <string notr="true">QLabel{margin-left: 0.25em}</string>
                             </property>
@@ -13158,7 +13146,7 @@ QPushButton:focus{outline:0}
                               <number>0</number>
                              </property>
                              <property name="leftMargin">
-                              <number>0</number>
+                              <number>20</number>
                              </property>
                              <property name="topMargin">
                               <number>0</number>
@@ -13171,21 +13159,9 @@ QPushButton:focus{outline:0}
                              </property>
                              <item>
                               <widget class="QFrame" name="frame_126">
-                               <property name="sizePolicy">
-                                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                                 <horstretch>0</horstretch>
-                                 <verstretch>0</verstretch>
-                                </sizepolicy>
-                               </property>
-                               <property name="minimumSize">
-                                <size>
-                                 <width>1270</width>
-                                 <height>65</height>
-                                </size>
-                               </property>
                                <property name="maximumSize">
                                 <size>
-                                 <width>1270</width>
+                                 <width>16777215</width>
                                  <height>60</height>
                                 </size>
                                </property>
@@ -13197,7 +13173,7 @@ QPushButton:focus{outline:0}
                                </property>
                                <layout class="QHBoxLayout" name="horizontalLayout_62">
                                 <property name="spacing">
-                                 <number>0</number>
+                                 <number>5</number>
                                 </property>
                                 <property name="leftMargin">
                                  <number>0</number>
@@ -13213,22 +13189,16 @@ QPushButton:focus{outline:0}
                                 </property>
                                 <item>
                                  <widget class="QFrame" name="frame_141">
-                                  <property name="sizePolicy">
-                                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                   </sizepolicy>
-                                  </property>
                                   <property name="minimumSize">
                                    <size>
-                                    <width>150</width>
-                                    <height>52</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>140</width>
-                                    <height>52</height>
+                                    <width>160</width>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -13257,14 +13227,14 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_data_inclusao_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>130</width>
-                                       <height>20</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>130</width>
-                                       <height>20</height>
+                                       <width>160</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -13282,13 +13252,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_data_inclusao_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>135</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>135</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13304,33 +13274,17 @@ QPushButton:focus{outline:0}
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_87">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Maximum</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>49</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                                <item>
                                  <widget class="QFrame" name="frame_142">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>470</width>
-                                    <height>55</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>470</width>
-                                    <height>55</height>
+                                    <width>460</width>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -13359,14 +13313,14 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_nome_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>400</width>
-                                       <height>20</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>400</width>
-                                       <height>20</height>
+                                       <width>460</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -13384,13 +13338,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QLineEdit" name="input_nome_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>450</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>450</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13406,33 +13360,17 @@ QPushButton:focus{outline:0}
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_88">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Minimum</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>40</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                                <item>
                                  <widget class="QFrame" name="frame_143">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>188</width>
-                                    <height>55</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>190</width>
-                                    <height>55</height>
+                                    <width>185</width>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -13461,14 +13399,14 @@ QPushButton:focus{outline:0}
                                     <widget class="QLabel" name="label_tipo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>170</width>
-                                       <height>20</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>170</width>
-                                       <height>20</height>
+                                       <width>185</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -13486,13 +13424,13 @@ QPushButton:focus{outline:0}
                                     <widget class="QComboBox" name="input_tipo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>170</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>170</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -13528,7 +13466,7 @@ QPushButton:focus{outline:0}
                                    <enum>Qt::Horizontal</enum>
                                   </property>
                                   <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
+                                   <enum>QSizePolicy::Minimum</enum>
                                   </property>
                                   <property name="sizeHint" stdset="0">
                                    <size>
@@ -13542,13 +13480,13 @@ QPushButton:focus{outline:0}
                                  <widget class="QFrame" name="frame_144">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>200</width>
+                                    <width>195</width>
                                     <height>50</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>200</width>
+                                    <width>195</width>
                                     <height>50</height>
                                    </size>
                                   </property>
@@ -13566,7 +13504,7 @@ QPushButton:focus{outline:0}
                                     <number>0</number>
                                    </property>
                                    <property name="leftMargin">
-                                    <number>33</number>
+                                    <number>15</number>
                                    </property>
                                    <property name="topMargin">
                                     <number>0</number>
@@ -13579,18 +13517,6 @@ QPushButton:focus{outline:0}
                                    </property>
                                    <item>
                                     <widget class="QLabel" name="label_situacao_cursos_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>140</width>
-                                       <height>25</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>140</width>
-                                       <height>25</height>
-                                      </size>
-                                     </property>
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
@@ -13604,18 +13530,6 @@ QPushButton:focus{outline:0}
                                    </item>
                                    <item>
                                     <widget class="QFrame" name="frame_145">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>140</width>
-                                       <height>20</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>140</width>
-                                       <height>20</height>
-                                      </size>
-                                     </property>
                                      <property name="frameShape">
                                       <enum>QFrame::StyledPanel</enum>
                                      </property>
@@ -13640,18 +13554,6 @@ QPushButton:focus{outline:0}
                                       </property>
                                       <item>
                                        <widget class="QRadioButton" name="input_ativo_cursos_as">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>85</width>
-                                          <height>19</height>
-                                         </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>85</width>
-                                          <height>19</height>
-                                         </size>
-                                        </property>
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -13668,18 +13570,6 @@ QPushButton:focus{outline:0}
                                       </item>
                                       <item>
                                        <widget class="QRadioButton" name="input_inativo_cursos_as">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>85</width>
-                                          <height>19</height>
-                                         </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>85</width>
-                                          <height>19</height>
-                                         </size>
-                                        </property>
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -13701,16 +13591,16 @@ QPushButton:focus{outline:0}
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_85">
+                                 <spacer name="horizontalSpacer_83">
                                   <property name="orientation">
                                    <enum>Qt::Horizontal</enum>
                                   </property>
                                   <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
+                                   <enum>QSizePolicy::Minimum</enum>
                                   </property>
                                   <property name="sizeHint" stdset="0">
                                    <size>
-                                    <width>48</width>
+                                    <width>40</width>
                                     <height>20</height>
                                    </size>
                                   </property>
@@ -13735,7 +13625,7 @@ QPushButton:focus{outline:0}
                                </property>
                                <layout class="QHBoxLayout" name="horizontalLayout_64">
                                 <property name="spacing">
-                                 <number>0</number>
+                                 <number>5</number>
                                 </property>
                                 <property name="leftMargin">
                                  <number>0</number>
@@ -13754,13 +13644,13 @@ QPushButton:focus{outline:0}
                                   <property name="minimumSize">
                                    <size>
                                     <width>0</width>
-                                    <height>60</height>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>360</width>
-                                    <height>60</height>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -13770,33 +13660,18 @@ QPushButton:focus{outline:0}
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_98">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
                                    <item>
                                     <widget class="QLabel" name="label_responsavel_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>200</width>
-                                       <height>30</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>200</width>
-                                       <height>30</height>
+                                       <width>360</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -13836,33 +13711,17 @@ QPushButton:focus{outline:0}
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_90">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>40</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                                <item>
                                  <widget class="QFrame" name="frame_147">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
-                                    <height>60</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>160</width>
-                                    <height>60</height>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -13873,7 +13732,7 @@ QPushButton:focus{outline:0}
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_99">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -13885,20 +13744,20 @@ QPushButton:focus{outline:0}
                                     <number>0</number>
                                    </property>
                                    <property name="bottomMargin">
-                                    <number>0</number>
+                                    <number>9</number>
                                    </property>
                                    <item alignment="Qt::AlignHCenter">
                                     <widget class="QLabel" name="label_data_inicio_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>120</width>
-                                       <height>30</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>120</width>
-                                       <height>30</height>
+                                       <width>160</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -13970,7 +13829,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -13987,14 +13846,14 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  <widget class="QFrame" name="frame_148">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>160</width>
-                                    <height>60</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>160</width>
-                                    <height>60</height>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -14005,7 +13864,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_100">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -14014,9 +13873,6 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <number>0</number>
                                    </property>
                                    <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
                                     <number>0</number>
                                    </property>
                                    <item alignment="Qt::AlignHCenter">
@@ -14102,7 +13958,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -14116,16 +13972,16 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_93">
+                                 <spacer name="horizontalSpacer_81">
                                   <property name="orientation">
                                    <enum>Qt::Horizontal</enum>
                                   </property>
                                   <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
+                                   <enum>QSizePolicy::Minimum</enum>
                                   </property>
                                   <property name="sizeHint" stdset="0">
                                    <size>
-                                    <width>96</width>
+                                    <width>40</width>
                                     <height>20</height>
                                    </size>
                                   </property>
@@ -14163,18 +14019,6 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </property>
                                    <item>
                                     <widget class="QLabel" name="label_dias_aulas_cursos_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>120</width>
-                                       <height>0</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>120</width>
-                                       <height>16777215</height>
-                                      </size>
-                                     </property>
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
@@ -14202,7 +14046,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_65">
                                       <property name="spacing">
-                                       <number>0</number>
+                                       <number>5</number>
                                       </property>
                                       <property name="leftMargin">
                                        <number>0</number>
@@ -14218,12 +14062,6 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </property>
                                       <item>
                                        <widget class="QFrame" name="frame_151">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>0</width>
-                                          <height>70</height>
-                                         </size>
-                                        </property>
                                         <property name="maximumSize">
                                          <size>
                                           <width>125</width>
@@ -14343,12 +14181,6 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </item>
                                       <item>
                                        <widget class="QFrame" name="frame_152">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>0</width>
-                                          <height>70</height>
-                                         </size>
-                                        </property>
                                         <property name="maximumSize">
                                          <size>
                                           <width>125</width>
@@ -14468,12 +14300,6 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </item>
                                       <item>
                                        <widget class="QFrame" name="frame_153">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>125</width>
-                                          <height>70</height>
-                                         </size>
-                                        </property>
                                         <property name="maximumSize">
                                          <size>
                                           <width>125</width>
@@ -14506,13 +14332,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           <widget class="QFrame" name="frame_419">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>117</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>170</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
                                            </property>
@@ -14555,13 +14375,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           <widget class="QFrame" name="frame_420">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>123</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>123</width>
+                                             <width>0</width>
                                              <height>30</height>
                                             </size>
                                            </property>
@@ -14610,12 +14424,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_83">
+                                 <spacer name="horizontalSpacer_82">
                                   <property name="orientation">
                                    <enum>Qt::Horizontal</enum>
                                   </property>
                                   <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
+                                   <enum>QSizePolicy::Minimum</enum>
                                   </property>
                                   <property name="sizeHint" stdset="0">
                                    <size>
@@ -14630,21 +14444,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                              </item>
                              <item>
                               <widget class="QFrame" name="frame_136">
-                               <property name="sizePolicy">
-                                <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                                 <horstretch>0</horstretch>
-                                 <verstretch>0</verstretch>
-                                </sizepolicy>
-                               </property>
-                               <property name="minimumSize">
-                                <size>
-                                 <width>1270</width>
-                                 <height>60</height>
-                                </size>
-                               </property>
                                <property name="maximumSize">
                                 <size>
-                                 <width>1285</width>
+                                 <width>16777215</width>
                                  <height>60</height>
                                 </size>
                                </property>
@@ -14656,7 +14458,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                </property>
                                <layout class="QHBoxLayout" name="horizontalLayout_66">
                                 <property name="spacing">
-                                 <number>0</number>
+                                 <number>5</number>
                                 </property>
                                 <property name="leftMargin">
                                  <number>0</number>
@@ -14672,22 +14474,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                 </property>
                                 <item>
                                  <widget class="QFrame" name="frame_154">
-                                  <property name="sizePolicy">
-                                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                    <horstretch>0</horstretch>
-                                    <verstretch>0</verstretch>
-                                   </sizepolicy>
-                                  </property>
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>140</width>
-                                    <height>60</height>
-                                   </size>
-                                  </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>120</width>
-                                    <height>60</height>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -14698,7 +14488,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_105">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -14714,16 +14504,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </property>
                                    <item>
                                     <widget class="QLabel" name="label_horario_inicio_cursos_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>90</width>
-                                       <height>25</height>
-                                      </size>
-                                     </property>
                                      <property name="maximumSize">
                                       <size>
                                        <width>90</width>
-                                       <height>25</height>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -14744,122 +14528,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <widget class="QTimeEdit" name="input_horario_inicio_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>130</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>130</width>
-                                       <height>30</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="styleSheet">
-                                      <string notr="true">QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
-QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
-                                     </property>
-                                     <property name="inputMethodHints">
-                                      <set>Qt::ImhPreferNumbers|Qt::ImhTime</set>
-                                     </property>
-                                     <property name="alignment">
-                                      <set>Qt::AlignCenter</set>
-                                     </property>
-                                     <property name="buttonSymbols">
-                                      <enum>QAbstractSpinBox::NoButtons</enum>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <spacer name="horizontalSpacer_86">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>40</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                                <item>
-                                 <widget class="QWidget" name="widget" native="true">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>140</width>
-                                    <height>55</height>
-                                   </size>
-                                  </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>140</width>
-                                    <height>55</height>
-                                   </size>
-                                  </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_106">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_horario_termino_cursos_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>110</width>
-                                       <height>25</height>
-                                      </size>
-                                     </property>
-                                     <property name="maximumSize">
-                                      <size>
-                                       <width>90</width>
-                                       <height>25</height>
-                                      </size>
-                                     </property>
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>12</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="locale">
-                                      <locale language="Portuguese" country="Brazil"/>
-                                     </property>
-                                     <property name="text">
-                                      <string>Horário Término</string>
-                                     </property>
-                                     <property name="alignment">
-                                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                   <item>
-                                    <widget class="QTimeEdit" name="input_horario_termino_cursos_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>130</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -14879,8 +14548,89 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <string notr="true">QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
 QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
-                                     <property name="locale">
-                                      <locale language="Portuguese" country="Brazil"/>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhPreferNumbers|Qt::ImhTime</set>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignCenter</set>
+                                     </property>
+                                     <property name="buttonSymbols">
+                                      <enum>QAbstractSpinBox::NoButtons</enum>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QWidget" name="widget" native="true">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>120</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_106">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_horario_termino_cursos_as">
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>120</width>
+                                       <height>16777215</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>Horário Término</string>
+                                     </property>
+                                     <property name="alignment">
+                                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QTimeEdit" name="input_horario_termino_cursos_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>120</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <property name="inputMethodHints">
                                       <set>Qt::ImhPreferNumbers|Qt::ImhTime</set>
@@ -14897,33 +14647,17 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_89">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>100</width>
-                                    <height>20</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
-                                </item>
-                                <item>
                                  <widget class="QFrame" name="frame_155">
                                   <property name="minimumSize">
                                    <size>
-                                    <width>250</width>
-                                    <height>60</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>250</width>
-                                    <height>60</height>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -14952,14 +14686,14 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <widget class="QLabel" name="label_periodo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>200</width>
-                                       <height>20</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>200</width>
-                                       <height>20</height>
+                                       <width>250</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -14977,13 +14711,13 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <widget class="QComboBox" name="input_periodo_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>200</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>200</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -15020,16 +14754,10 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_156">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>120</width>
-                                    <height>60</height>
-                                   </size>
-                                  </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>120</width>
-                                    <height>60</height>
+                                    <width>100</width>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -15056,16 +14784,10 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </property>
                                    <item>
                                     <widget class="QLabel" name="label_vagas_cursos_as">
-                                     <property name="minimumSize">
-                                      <size>
-                                       <width>90</width>
-                                       <height>20</height>
-                                      </size>
-                                     </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>90</width>
-                                       <height>20</height>
+                                       <width>100</width>
+                                       <height>16777215</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -15083,13 +14805,13 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <widget class="QLineEdit" name="input_vagas_cursos_as">
                                      <property name="minimumSize">
                                       <size>
-                                       <width>115</width>
+                                       <width>0</width>
                                        <height>30</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>115</width>
+                                       <width>16777215</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -15105,35 +14827,173 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_92">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
+                                 <widget class="QFrame" name="frame_157">
+                                  <property name="minimumSize">
                                    <size>
-                                    <width>40</width>
-                                    <height>20</height>
+                                    <width>0</width>
+                                    <height>0</height>
                                    </size>
                                   </property>
-                                 </spacer>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>160</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_109">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_158">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>360</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_110">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_139">
+                               <property name="maximumSize">
+                                <size>
+                                 <width>16777215</width>
+                                 <height>60</height>
+                                </size>
+                               </property>
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_67">
+                                <property name="spacing">
+                                 <number>5</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_162">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>0</height>
+                                   </size>
+                                  </property>
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>80</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_114">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <spacer name="verticalSpacer_26">
+                                     <property name="orientation">
+                                      <enum>Qt::Vertical</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>20</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                  </layout>
+                                 </widget>
                                 </item>
                                </layout>
                               </widget>
                              </item>
                              <item>
                               <widget class="QFrame" name="frame_140">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>1270</width>
-                                 <height>0</height>
-                                </size>
-                               </property>
-                               <property name="maximumSize">
-                                <size>
-                                 <width>1270</width>
-                                 <height>16777215</height>
-                                </size>
-                               </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
                                </property>
@@ -15157,32 +15017,23 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <spacer name="verticalSpacer_26">
-                                  <property name="orientation">
-                                   <enum>Qt::Vertical</enum>
+                                 <widget class="QLabel" name="label_descricao_cursos_as">
+                                  <property name="font">
+                                   <font>
+                                    <family>Abel</family>
+                                    <pointsize>12</pointsize>
+                                   </font>
                                   </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Fixed</enum>
+                                  <property name="text">
+                                   <string>Descrição da atividade</string>
                                   </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>20</width>
-                                    <height>40</height>
-                                   </size>
-                                  </property>
-                                 </spacer>
+                                 </widget>
                                 </item>
                                 <item>
                                  <widget class="QTextEdit" name="input_descricao_atividade_cursos_as">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>1225</width>
-                                    <height>0</height>
-                                   </size>
-                                  </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>1225</width>
+                                    <width>1400</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -15311,7 +15162,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar-amigo.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar-amigo.png</iconset>
+                              <normaloff>../icons/adicionar-amigo.png</normaloff>../icons/adicionar-amigo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -16213,7 +16064,7 @@ QLabel{margin-left: 0.25em}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/marca-de-verificacao.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/marca-de-verificacao.png</iconset>
+                                    <normaloff>../icons/marca-de-verificacao.png</normaloff>../icons/marca-de-verificacao.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -16746,7 +16597,7 @@ QPushButton:focus{outline:0}</string>
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/imprimir.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/imprimir.png</iconset>
+                                        <normaloff>../icons/imprimir.png</normaloff>../icons/imprimir.png</iconset>
                                       </property>
                                       <property name="iconSize">
                                        <size>
@@ -16789,7 +16640,7 @@ QPushButton:focus{outline:0}</string>
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</iconset>
+                                        <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
                                       </property>
                                       <property name="iconSize">
                                        <size>
@@ -17187,7 +17038,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                       </property>
                                       <property name="currentSection">
-                                       <enum>QDateTimeEdit::DaySection</enum>
+                                       <enum>QDateTimeEdit::MonthSection</enum>
                                       </property>
                                       <property name="calendarPopup">
                                        <bool>false</bool>
@@ -17378,7 +17229,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                       </property>
                                       <property name="currentSection">
-                                       <enum>QDateTimeEdit::DaySection</enum>
+                                       <enum>QDateTimeEdit::MonthSection</enum>
                                       </property>
                                       <property name="calendarPopup">
                                        <bool>false</bool>
@@ -17839,7 +17690,7 @@ QPushButton:pressed{
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                        <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                       </property>
                                      </widget>
                                     </item>
@@ -18216,7 +18067,7 @@ QPushButton:focus{outline:0}</string>
                                    </property>
                                    <property name="icon">
                                     <iconset>
-                                     <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                     <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                    </property>
                                   </widget>
                                  </item>
@@ -18256,7 +18107,7 @@ QPushButton:focus{outline:0}</string>
                                    </property>
                                    <property name="icon">
                                     <iconset>
-                                     <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                     <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                    </property>
                                   </widget>
                                  </item>
@@ -18293,7 +18144,7 @@ QPushButton:focus{outline:0}</string>
                                    </property>
                                    <property name="icon">
                                     <iconset>
-                                     <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/imprimir.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/imprimir.png</iconset>
+                                     <normaloff>../icons/imprimir.png</normaloff>../icons/imprimir.png</iconset>
                                    </property>
                                    <property name="iconSize">
                                     <size>
@@ -18537,7 +18388,22 @@ color: rgb(236, 132, 140);</string>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="page_agenda_as">
-                      <layout class="QVBoxLayout" name="verticalLayout_109">
+                      <layout class="QVBoxLayout" name="verticalLayout_156" stretch="1,8,0">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="topMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
                        <item>
                         <widget class="QFrame" name="frame_247">
                          <property name="styleSheet">
@@ -18619,7 +18485,7 @@ color: rgb(236, 132, 140);</string>
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_138">
+                            <layout class="QHBoxLayout" name="horizontalLayout_94">
                              <property name="spacing">
                               <number>0</number>
                              </property>
@@ -18636,7 +18502,7 @@ color: rgb(236, 132, 140);</string>
                               <number>0</number>
                              </property>
                              <item>
-                              <spacer name="horizontalSpacer_91">
+                              <spacer name="horizontalSpacer_81">
                                <property name="orientation">
                                 <enum>Qt::Horizontal</enum>
                                </property>
@@ -18710,7 +18576,7 @@ color: rgb(236, 132, 140);</string>
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_139">
+                                     <layout class="QHBoxLayout" name="horizontalLayout_131">
                                       <property name="spacing">
                                        <number>0</number>
                                       </property>
@@ -18981,7 +18847,7 @@ QPushButton:pressed{
                                         <property name="frameShadow">
                                          <enum>QFrame::Raised</enum>
                                         </property>
-                                        <layout class="QHBoxLayout" name="horizontalLayout_145">
+                                        <layout class="QHBoxLayout" name="horizontalLayout_138">
                                          <item>
                                           <widget class="QRadioButton" name="input_profissional_as_agendamento_as">
                                            <property name="font">
@@ -19035,7 +18901,7 @@ QPushButton:pressed{
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_150">
+                                     <layout class="QHBoxLayout" name="horizontalLayout_139">
                                       <property name="spacing">
                                        <number>0</number>
                                       </property>
@@ -19155,7 +19021,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -19303,7 +19169,7 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                               </widget>
                              </item>
                              <item>
-                              <spacer name="horizontalSpacer_94">
+                              <spacer name="horizontalSpacer_82">
                                <property name="orientation">
                                 <enum>Qt::Horizontal</enum>
                                </property>
@@ -19356,174 +19222,6 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QTableWidget" name="input_TableWidget_agendamento_as">
-                                  <property name="font">
-                                   <font>
-                                    <family>Abel</family>
-                                    <pointsize>12</pointsize>
-                                   </font>
-                                  </property>
-                                  <property name="toolTip">
-                                   <string/>
-                                  </property>
-                                  <property name="layoutDirection">
-                                   <enum>Qt::LeftToRight</enum>
-                                  </property>
-                                  <property name="autoFillBackground">
-                                   <bool>false</bool>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">QTableEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
-QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
-                                  </property>
-                                  <property name="inputMethodHints">
-                                   <set>Qt::ImhDate|Qt::ImhSensitiveData|Qt::ImhTime</set>
-                                  </property>
-                                  <property name="lineWidth">
-                                   <number>2222</number>
-                                  </property>
-                                  <property name="midLineWidth">
-                                   <number>10</number>
-                                  </property>
-                                  <property name="alternatingRowColors">
-                                   <bool>true</bool>
-                                  </property>
-                                  <property name="selectionMode">
-                                   <enum>QAbstractItemView::MultiSelection</enum>
-                                  </property>
-                                  <property name="verticalScrollMode">
-                                   <enum>QAbstractItemView::ScrollPerItem</enum>
-                                  </property>
-                                  <property name="horizontalScrollMode">
-                                   <enum>QAbstractItemView::ScrollPerItem</enum>
-                                  </property>
-                                  <property name="gridStyle">
-                                   <enum>Qt::SolidLine</enum>
-                                  </property>
-                                  <property name="sortingEnabled">
-                                   <bool>true</bool>
-                                  </property>
-                                  <property name="wordWrap">
-                                   <bool>true</bool>
-                                  </property>
-                                  <attribute name="horizontalHeaderCascadingSectionResizes">
-                                   <bool>true</bool>
-                                  </attribute>
-                                  <attribute name="horizontalHeaderDefaultSectionSize">
-                                   <number>130</number>
-                                  </attribute>
-                                  <attribute name="horizontalHeaderStretchLastSection">
-                                   <bool>true</bool>
-                                  </attribute>
-                                  <attribute name="verticalHeaderVisible">
-                                   <bool>false</bool>
-                                  </attribute>
-                                  <attribute name="verticalHeaderDefaultSectionSize">
-                                   <number>50</number>
-                                  </attribute>
-                                  <row>
-                                   <property name="text">
-                                    <string>1</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>2</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>3</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>4</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>5</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>6</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>7</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>8</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>9</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>10</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>11</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>12</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>13</string>
-                                   </property>
-                                  </row>
-                                  <row>
-                                   <property name="text">
-                                    <string>14</string>
-                                   </property>
-                                  </row>
-                                  <column>
-                                   <property name="text">
-                                    <string>Data</string>
-                                   </property>
-                                  </column>
-                                  <column>
-                                   <property name="text">
-                                    <string>Agendamento</string>
-                                   </property>
-                                  </column>
-                                  <column>
-                                   <property name="text">
-                                    <string>Profissional</string>
-                                   </property>
-                                  </column>
-                                  <item row="0" column="0">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
-                                  <item row="0" column="1">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
-                                  <item row="1" column="0">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
-                                 </widget>
-                                </item>
-                                <item>
                                  <widget class="QLineEdit" name="input_filtro_agendamento_as">
                                   <property name="font">
                                    <font>
@@ -19534,6 +19232,174 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QTableWidget" name="input_TableWidget_agendamento_as">
+                               <property name="font">
+                                <font>
+                                 <family>Abel</family>
+                                 <pointsize>12</pointsize>
+                                </font>
+                               </property>
+                               <property name="toolTip">
+                                <string/>
+                               </property>
+                               <property name="layoutDirection">
+                                <enum>Qt::LeftToRight</enum>
+                               </property>
+                               <property name="autoFillBackground">
+                                <bool>false</bool>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QTableEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                               </property>
+                               <property name="inputMethodHints">
+                                <set>Qt::ImhDate|Qt::ImhSensitiveData|Qt::ImhTime</set>
+                               </property>
+                               <property name="lineWidth">
+                                <number>2222</number>
+                               </property>
+                               <property name="midLineWidth">
+                                <number>10</number>
+                               </property>
+                               <property name="alternatingRowColors">
+                                <bool>true</bool>
+                               </property>
+                               <property name="selectionMode">
+                                <enum>QAbstractItemView::MultiSelection</enum>
+                               </property>
+                               <property name="verticalScrollMode">
+                                <enum>QAbstractItemView::ScrollPerItem</enum>
+                               </property>
+                               <property name="horizontalScrollMode">
+                                <enum>QAbstractItemView::ScrollPerItem</enum>
+                               </property>
+                               <property name="gridStyle">
+                                <enum>Qt::SolidLine</enum>
+                               </property>
+                               <property name="sortingEnabled">
+                                <bool>true</bool>
+                               </property>
+                               <property name="wordWrap">
+                                <bool>true</bool>
+                               </property>
+                               <attribute name="horizontalHeaderCascadingSectionResizes">
+                                <bool>true</bool>
+                               </attribute>
+                               <attribute name="horizontalHeaderDefaultSectionSize">
+                                <number>130</number>
+                               </attribute>
+                               <attribute name="horizontalHeaderStretchLastSection">
+                                <bool>true</bool>
+                               </attribute>
+                               <attribute name="verticalHeaderVisible">
+                                <bool>false</bool>
+                               </attribute>
+                               <attribute name="verticalHeaderDefaultSectionSize">
+                                <number>50</number>
+                               </attribute>
+                               <row>
+                                <property name="text">
+                                 <string>1</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>2</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>3</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>4</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>5</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>6</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>7</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>8</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>9</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>10</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>11</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>12</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>13</string>
+                                </property>
+                               </row>
+                               <row>
+                                <property name="text">
+                                 <string>14</string>
+                                </property>
+                               </row>
+                               <column>
+                                <property name="text">
+                                 <string>Data</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>Agendamento</string>
+                                </property>
+                               </column>
+                               <column>
+                                <property name="text">
+                                 <string>Profissional</string>
+                                </property>
+                               </column>
+                               <item row="0" column="0">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </item>
+                               <item row="0" column="1">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </item>
+                               <item row="1" column="0">
+                                <property name="text">
+                                 <string/>
+                                </property>
+                               </item>
                               </widget>
                              </item>
                             </layout>
@@ -22041,7 +21907,7 @@ QPushButton:pressed{
                                 </property>
                                 <property name="icon">
                                  <iconset>
-                                  <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                  <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                 </property>
                                </widget>
                               </widget>
@@ -22715,7 +22581,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
@@ -23418,7 +23284,7 @@ QPushButton:pressed{
                                                         </property>
                                                         <property name="icon">
                                                          <iconset>
-                                                          <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                         </property>
                                                        </widget>
                                                       </item>
@@ -24317,7 +24183,7 @@ QPushButton:focus{outline:0}</string>
                                                      </property>
                                                      <property name="icon">
                                                       <iconset>
-                                                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                                       <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                                      </property>
                                                      <property name="iconSize">
                                                       <size>
@@ -24693,7 +24559,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>false</bool>
@@ -25162,7 +25028,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>false</bool>
@@ -26028,7 +25894,7 @@ QPushButton:pressed{
                                                                     </property>
                                                                     <property name="icon">
                                                                      <iconset>
-                                                                      <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                                      <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                                     </property>
                                                                    </widget>
                                                                   </item>
@@ -28363,7 +28229,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                         </property>
                                                         <property name="currentSection">
-                                                         <enum>QDateTimeEdit::DaySection</enum>
+                                                         <enum>QDateTimeEdit::MonthSection</enum>
                                                         </property>
                                                         <property name="calendarPopup">
                                                          <bool>false</bool>
@@ -28708,7 +28574,7 @@ QPushButton:focus{outline:0}</string>
                                                </property>
                                                <property name="icon">
                                                 <iconset>
-                                                 <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadeado.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadeado.png</iconset>
+                                                 <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
                                                </property>
                                                <property name="iconSize">
                                                 <size>
@@ -30518,7 +30384,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
@@ -31470,7 +31336,7 @@ QPushButton:pressed{
                                                            </property>
                                                            <property name="icon">
                                                             <iconset>
-                                                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                            </property>
                                                           </widget>
                                                          </item>
@@ -31980,7 +31846,7 @@ QPushButton:pressed{
                                                   </property>
                                                   <property name="icon">
                                                    <iconset>
-                                                    <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                                   </property>
                                                   <property name="iconSize">
                                                    <size>
@@ -32543,7 +32409,7 @@ QPushButton:focus{outline:0}
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -32666,7 +32532,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/remedio.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/remedio.png</iconset>
+                             <normaloff>../icons/remedio.png</normaloff>../icons/remedio.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -32703,7 +32569,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/medicamento.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/medicamento.png</iconset>
+                             <normaloff>../icons/medicamento.png</normaloff>../icons/medicamento.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -32740,7 +32606,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/estoque-pronto.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/estoque-pronto.png</iconset>
+                             <normaloff>../icons/estoque-pronto.png</normaloff>../icons/estoque-pronto.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -32882,7 +32748,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33066,7 +32932,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -33189,7 +33055,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33226,7 +33092,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33365,7 +33231,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33546,7 +33412,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -33666,7 +33532,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/seguranca-alimentar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/seguranca-alimentar.png</iconset>
+                             <normaloff>../icons/seguranca-alimentar.png</normaloff>../icons/seguranca-alimentar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33703,7 +33569,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33740,7 +33606,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -33885,7 +33751,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34071,7 +33937,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadastro.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cadastro.png</iconset>
+                              <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -34117,7 +33983,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                              <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -34238,7 +34104,7 @@ QPushButton:focus{outline: 0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -34367,7 +34233,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34404,7 +34270,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34543,7 +34409,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34745,7 +34611,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -34871,7 +34737,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/agenda.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/agenda.png</iconset>
+                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34908,7 +34774,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/festa-de-aniversario.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/festa-de-aniversario.png</iconset>
+                             <normaloff>../icons/festa-de-aniversario.png</normaloff>../icons/festa-de-aniversario.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34945,7 +34811,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35087,7 +34953,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
