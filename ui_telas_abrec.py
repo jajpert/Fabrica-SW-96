@@ -1393,6 +1393,7 @@ class Ui_MainWindow(object):
         icon12 = QIcon()
         icon12.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cep_buscar_usuario_as.setIcon(icon12)
+        
 
         self.verticalLayout_286.addWidget(self.btn_cep_buscar_usuario_as)
 
@@ -2847,6 +2848,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_284.addItem(self.verticalSpacer_16)
 
+        
         self.btn_cep_buscar_cuidador_as = QPushButton(self.frame_416)
         self.btn_cep_buscar_cuidador_as.setObjectName(u"btn_cep_buscar_cuidador_as")
         sizePolicy2.setHeightForWidth(self.btn_cep_buscar_cuidador_as.sizePolicy().hasHeightForWidth())
@@ -2878,7 +2880,9 @@ class Ui_MainWindow(object):
 "		border-top-right-radius: 10px;\n"
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
-"}")
+"}")    
+        icon15 = QIcon()
+        icon15.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cep_buscar_cuidador_as.setIcon(icon15)
 
         self.verticalLayout_284.addWidget(self.btn_cep_buscar_cuidador_as)
