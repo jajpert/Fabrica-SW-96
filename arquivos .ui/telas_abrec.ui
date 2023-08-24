@@ -23,7 +23,7 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QGridLayout" name="gridLayout_5">
+   <layout class="QVBoxLayout" name="verticalLayout_316">
     <property name="leftMargin">
      <number>0</number>
     </property>
@@ -36,7 +36,7 @@
     <property name="bottomMargin">
      <number>0</number>
     </property>
-    <item row="0" column="0">
+    <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
        <number>1</number>
@@ -948,21 +948,6 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                          <enum>QFrame::Raised</enum>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_7">
-                         <property name="spacing">
-                          <number>20</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>10</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>10</number>
-                         </property>
                          <item>
                           <widget class="QPushButton" name="btn_cadastrar_as">
                            <property name="minimumSize">
@@ -1126,6 +1111,49 @@ QPushButton:focus{outline: 0}</string>
                            <property name="icon">
                             <iconset>
                              <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>30</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btn_parceiros_as">
+                           <property name="minimumSize">
+                            <size>
+                             <width>140</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>140</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Six Caps</family>
+                             <pointsize>24</pointsize>
+                            </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                           </property>
+                           <property name="text">
+                            <string>PARCEIROS</string>
+                           </property>
+                           <property name="icon">
+                            <iconset>
+                             <normaloff>../../../../Downloads/parceiro.png</normaloff>../../../../Downloads/parceiro.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1354,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>11</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1618,6 +1646,152 @@ QPushButton:focus{outline: 0}</string>
                        </item>
                        <item>
                         <spacer name="horizontalSpacer_30">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                      </layout>
+                     </widget>
+                     <widget class="QWidget" name="page_parceiros">
+                      <layout class="QHBoxLayout" name="horizontalLayout_145">
+                       <item>
+                        <spacer name="horizontalSpacer_88">
+                         <property name="orientation">
+                          <enum>Qt::Horizontal</enum>
+                         </property>
+                         <property name="sizeHint" stdset="0">
+                          <size>
+                           <width>40</width>
+                           <height>20</height>
+                          </size>
+                         </property>
+                        </spacer>
+                       </item>
+                       <item>
+                        <widget class="QFrame" name="frame_452">
+                         <property name="minimumSize">
+                          <size>
+                           <width>0</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="layoutDirection">
+                          <enum>Qt::LeftToRight</enum>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">QFrame{padding: 3em;}</string>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_175">
+                          <item>
+                           <widget class="QPushButton" name="btn_cadastrar_clinica_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Six Caps</family>
+                              <pointsize>60</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                            </property>
+                            <property name="text">
+                             <string>CLINICA    </string>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>../../../../Downloads/centro-medico.png</normaloff>../../../../Downloads/centro-medico.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>80</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_cadastrar_fornecedores_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Six Caps</family>
+                              <pointsize>60</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                            </property>
+                            <property name="text">
+                             <string>FORNECEDORES  </string>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>../../../../Downloads/fornecedor.png</normaloff>../../../../Downloads/fornecedor.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>80</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                       <item>
+                        <spacer name="horizontalSpacer_89">
                          <property name="orientation">
                           <enum>Qt::Horizontal</enum>
                          </property>
@@ -16110,7 +16284,7 @@ QLabel{margin-left: 0.25em}</string>
                           <item>
                            <widget class="QStackedWidget" name="stackedWidget">
                             <property name="currentIndex">
-                             <number>1</number>
+                             <number>0</number>
                             </property>
                             <widget class="QWidget" name="page_consulta_antes"/>
                             <widget class="QWidget" name="page_consulta_depois">
@@ -19738,9 +19912,9 @@ background-color: rgb(249, 217, 221);</string>
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_143" stretch="1,0,1">
+                               <layout class="QHBoxLayout" name="horizontalLayout_143" stretch="1,3,1">
                                 <property name="spacing">
-                                 <number>0</number>
+                                 <number>5</number>
                                 </property>
                                 <property name="leftMargin">
                                  <number>0</number>
@@ -19755,17 +19929,14 @@ background-color: rgb(249, 217, 221);</string>
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <spacer name="horizontalSpacer_85">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
+                                 <widget class="QFrame" name="frame_450">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
                                   </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>20</width>
-                                    <height>20</height>
-                                   </size>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
                                   </property>
-                                 </spacer>
+                                 </widget>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_252">
@@ -20658,7 +20829,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                 </spacer>
                                                </item>
                                                <item>
-                                                <widget class="QPushButton" name="btn_cep_buscar_colaborador_as_3">
+                                                <widget class="QPushButton" name="btn_cep_buscar_clinica_as">
                                                  <property name="sizePolicy">
                                                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                                    <horstretch>0</horstretch>
@@ -21300,17 +21471,14 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_86">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
+                                 <widget class="QFrame" name="frame_453">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
                                   </property>
-                                  <property name="sizeHint" stdset="0">
-                                   <size>
-                                    <width>20</width>
-                                    <height>20</height>
-                                   </size>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
                                   </property>
-                                 </spacer>
+                                 </widget>
                                 </item>
                                </layout>
                               </widget>
@@ -21349,7 +21517,7 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="btn_voltar_as">
+                                 <widget class="QPushButton" name="btn_voltar_clinica_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>100</width>
@@ -21395,7 +21563,7 @@ QPushButton:focus{outline:0}</string>
                                  </spacer>
                                 </item>
                                 <item>
-                                 <widget class="QPushButton" name="btn_finalizar_as_2">
+                                 <widget class="QPushButton" name="btn_finalizar_clinica_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>125</width>
