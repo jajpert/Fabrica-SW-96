@@ -8,6 +8,7 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
+from datetime import datetime
 
 
 class Overlay(QWidget):
@@ -175,8 +176,10 @@ class DialogAlterarSenhaFoto(QDialog):
 
     def closeEvent(self, event):
         self.timer_msg.stop()
-        event.accept()
-
+        event.accept() 
+       
+               
+    
 
 #############################################################################
 class TelaPrincipal(QMainWindow):
@@ -184,37 +187,14 @@ class TelaPrincipal(QMainWindow):
         super().__init__()
 
         self.ui = Ui_MainWindow()
+        self.saida = Ui_Confirma_Saida()
         self.ui.setupUi(self)
-
+        
         ######################### banco #########################
 
-        self.db = DataBase()
+        self.db = DataBase()        
         self.listarUsuarios()
         self.id_area_sigilosa = 5
-        ########### selected último id das tabelas do banco ##########
-        select_usuario = self.db.select_usuario()
-        select_cuidador = self.db.select_cuidador()
-        selected_colaborador = self.db.select_colaborador()
-        ultimo_id_usuario = (select_usuario[0])
-        ultimo_id_cuidador = (select_cuidador[0])
-        ultimo_id_colaborador = (selected_colaborador[0])
-        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
-        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
-        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
-        proximo_id_usuario = 1 + int(ultimo_id_usuario)
-        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
-        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
-        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
-        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
-        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
-
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
-        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
-        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
-        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -225,13 +205,15 @@ class TelaPrincipal(QMainWindow):
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
-        ###############SIGNALS#################
+        ###############SIGNALS################# 
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
-        self.ui.btn_sair_as.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
+        
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         # self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta_as))
@@ -247,11 +229,11 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
-        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
-        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        #self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
@@ -1039,7 +1021,7 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         ################ tratamento ##################################
@@ -1228,35 +1210,65 @@ class TelaPrincipal(QMainWindow):
 
     def cadastroCurso(self):
       ################################################ENDERECO#####
-        cep = self.ui.input_cep_usuario_as.text()
-        rua = self.ui.input_logradouro_usuario_as.text()
-        numero = self.ui.input_numero_usuario_as.text()
-        bairro = self.ui.input_bairro_usuario_as.text()
-        cidade = self.ui.input_cidade_usuario_as.text()
-        estado = self.ui.input_estado_usuario_as.text()
-
-        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
-
-        nome_curso=self.ui.input_nome_cursos_as.text()
-        data_inicio=self.ui.input_data_inicio_cursos_as.text()
-        data_termino=self.ui.input_data_termino_cursos_as.text()
-        carga_horaria= 120 
-        id_palestrante = 1
-        periodo=self.ui.input_periodo_cursos_as.currentText()
-        data_inclusao=self.ui.input_data_inclusao_cursos_as.text()
-        tipo_curso=self.ui.input_tipo_cursos_as.currentText()
-        if self.ui.input_ativo_cursos_as.isChecked():
-            situacao="Ativo"
-        else:
-            situacao="Inativo"
-        responsavel=self.ui.input_responsavel_cursos_as.text()
-        horario_inicial=self.ui.input_horario_cursos_as.text()
-        horario_final=self.ui.input_as_cursos_as.text()
-        vagas=self.ui.input_vagas_cursos_as.text()
         
-        tupla_curso=(nome_curso,data_inicio,data_termino,carga_horaria,id_palestrante,periodo,data_inclusao,tipo_curso,responsavel,horario_inicial,horario_final,vagas)
+        nome_curso=self.ui.input_nome_cursos_as.text()
+        tipo_curso=self.ui.input_tipo_cursos_as.currentText()
 
-        result=self.db.cadastro_curso(tupla_endereco,tupla_curso)
+        if self.ui.input_ativo_cursos_as.isChecked():
+            situacao=1
+        if self.ui.input_inativo_cursos_as.isChecked():
+            situacao=0
+
+        responsavel=self.ui.input_responsavel_cursos_as.text()
+        data_ini_curso=self.ui.input_data_inicio_cursos_as.text()
+             
+        data_inicio = "-".join(data_ini_curso.split("/")[::-1])
+        
+        data_ter_curso =self.ui.input_data_termino_cursos_as.text()
+        data_termino= "-".join(data_ter_curso.split("/")[::-1])
+
+
+        
+        
+        
+        periodo=self.ui.input_periodo_cursos_as.currentText()
+               
+        
+        
+       # horario_inicial=self.ui.input_horario_inicio_cursos_as.text()
+
+        
+        regex = "([01]?[0-9]|2[0-3]):[0-5][0-9]"
+
+        horario_inicial = self.ui.input_horario_inicio_cursos_as.text()
+        
+         
+        #novo_hr_inicial = horario_inicial_str.replace(" PM", ":00")
+        
+        horario_final = self.ui.input_horario_termino_cursos_as.text()
+        
+
+        vagas=self.ui.input_vagas_cursos_as.text()
+        descricao = self.ui.input_descricao_atividade_cursos_as.toPlainText()
+
+        
+        
+        segunda = 1 if self.ui.input_segunda_cursos_as.isChecked() else 0
+        terca = 1 if self.ui.input_terca_cursos_as.isChecked() else 0
+        quarta = 1 if self.ui.input_quarta_cursos_as.isChecked() else 0
+        quinta = 1 if self.ui.input_quinta_cursos_as.isChecked() else 0
+        sexta = 1 if self.ui.input_sexta_cursos_as.isChecked() else 0
+        sabado = 1 if self.ui.input_sabado_cursos_as.isChecked() else 0
+             
+
+        
+
+        
+
+        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
+
+        print(tupla_curso)
+        result=self.db.cadastro_curso(tupla_curso)
         print(result)
 
     def area_sigilosa(self):
@@ -1465,23 +1477,11 @@ class TelaPrincipal(QMainWindow):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
-######################## Situação de trabalho outros ################################    
-    def on_tipo_usuario_changed(self):
-        
-        if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":
-            self.ui.frame_438.setEnabled(True)
-            self.ui.frame_438.show()
-            self.ui.input_situacao_trabalho_outros_usuario_as.setStyleSheet("")  
-            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(True)
-            self.ui.input_situacao_trabalho_outros_usuario_as.show()           
-        else:
-            self.ui.frame_438.hide()
-            self.ui.frame_438.setEnabled(False)
-            self.ui.input_situacao_trabalho_outros_usuario_as.hide()
-            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
-            self.ui.input_situacao_trabalho_outros_usuario_as.clear()
-            
-######################## Alterar Situação de trabalho outros ################################            
+
+           
+    
+
+    
     def on_tipo_alterar_usuario_changed(self):
 
         if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
@@ -1549,7 +1549,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
 ######################## Patologia base outros################################      
-    def on_patologia_base_usuario_changed(self):
+        '''def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
             self.ui.frame_440.setEnabled(True)
@@ -1562,10 +1562,29 @@ class TelaPrincipal(QMainWindow):
             self.ui.frame_440.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
-            self.ui.input_outras_patologias_usuario_as.clear()
-   
+            self.ui.input_outras_patologias_usuario_as.clear()'''
 
+    def sairSistema(self):   
+        
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Confirma Saida")
+        dlg.setText("Deseja Sair?")
+        
+        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dlg.setIcon(QMessageBox.Question)
+        button = dlg.exec()      
 
+            
+        if button == QMessageBox.Yes:
+            self.ui.inicio.setCurrentIndex(0)
+            self.ui.input_usuario_login.setText("")
+            self.ui.input_senha_login.setText("")
+        
+        else:
+            dlg.close()
+                      
+        
+            
 if __name__ == "__main__":
     
     myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
@@ -1574,7 +1593,6 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
-    
     w = TelaPrincipal()
     
     w.show()
