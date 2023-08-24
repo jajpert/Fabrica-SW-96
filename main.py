@@ -20,6 +20,7 @@ import sys
 import openpyxl
 
 
+
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -241,7 +242,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+        # self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
@@ -333,6 +334,17 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
+        self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
+        
+        self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
+        
+        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
+        
+        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
+        
+        self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
+
+
 ########################### Validar Login #############################
     def validarLogin(self):
         login = self.ui.input_usuario_login.text()
@@ -355,15 +367,7 @@ class TelaPrincipal(QMainWindow):
                 print ("Usuário não encontrado")
         
         
-        self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
         
-        self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
-        
-        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
-        
-        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
-        
-        self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
         
 ########################### Validar CEP ###############################
     def validarCep(self):
@@ -1613,10 +1617,8 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
     ######################################################################
-    
-    
-    
-    
+
+
     def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
         
         result = self.db.relatorio_pessoa()
@@ -1627,7 +1629,7 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
-                
+
                             
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
