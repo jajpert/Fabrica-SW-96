@@ -10375,7 +10375,9 @@ class Ui_MainWindow(object):
         self.page_consulta = QWidget()
         self.page_consulta.setObjectName(u"page_consulta")
         self.verticalLayout_112 = QVBoxLayout(self.page_consulta)
+        self.verticalLayout_112.setSpacing(0)
         self.verticalLayout_112.setObjectName(u"verticalLayout_112")
+        self.verticalLayout_112.setContentsMargins(0, 0, 0, 0)
         self.frame_138 = QFrame(self.page_consulta)
         self.frame_138.setObjectName(u"frame_138")
         self.frame_138.setFrameShape(QFrame.StyledPanel)
@@ -10386,10 +10388,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_318.setContentsMargins(0, 0, 0, 0)
         self.label_titulo_pagina_consulta_geral = QLabel(self.frame_138)
         self.label_titulo_pagina_consulta_geral.setObjectName(u"label_titulo_pagina_consulta_geral")
-        self.label_titulo_pagina_consulta_geral.setMinimumSize(QSize(1824, 93))
-        font19 = QFont()
-        font19.setPointSize(36)
-        self.label_titulo_pagina_consulta_geral.setFont(font19)
+        self.label_titulo_pagina_consulta_geral.setMinimumSize(QSize(0, 0))
+        self.label_titulo_pagina_consulta_geral.setMaximumSize(QSize(1860, 102))
+        self.label_titulo_pagina_consulta_geral.setFont(font1)
         self.label_titulo_pagina_consulta_geral.setStyleSheet(u"color: #EC848C;\n"
 "background-color: rgb(243, 185, 191);")
         self.label_titulo_pagina_consulta_geral.setAlignment(Qt.AlignCenter)
@@ -10398,7 +10399,7 @@ class Ui_MainWindow(object):
 
         self.frame_161 = QFrame(self.frame_138)
         self.frame_161.setObjectName(u"frame_161")
-        self.frame_161.setMinimumSize(QSize(1811, 841))
+        self.frame_161.setMinimumSize(QSize(0, 0))
         self.frame_161.setFrameShape(QFrame.StyledPanel)
         self.frame_161.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_140 = QHBoxLayout(self.frame_161)
@@ -10466,6 +10467,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_150.setObjectName(u"horizontalLayout_150")
         self.input_cpf_pagina_consulta_geral = QLineEdit(self.frame_463)
         self.input_cpf_pagina_consulta_geral.setObjectName(u"input_cpf_pagina_consulta_geral")
+        sizePolicy2.setHeightForWidth(self.input_cpf_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.input_cpf_pagina_consulta_geral.setSizePolicy(sizePolicy2)
 
         self.horizontalLayout_150.addWidget(self.input_cpf_pagina_consulta_geral)
 
@@ -10532,6 +10535,8 @@ class Ui_MainWindow(object):
 
         self.input_nome_pagina_consulta_geral = QLineEdit(self.frame_449)
         self.input_nome_pagina_consulta_geral.setObjectName(u"input_nome_pagina_consulta_geral")
+        sizePolicy2.setHeightForWidth(self.input_nome_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.input_nome_pagina_consulta_geral.setSizePolicy(sizePolicy2)
 
         self.verticalLayout_170.addWidget(self.input_nome_pagina_consulta_geral)
 
@@ -10552,6 +10557,8 @@ class Ui_MainWindow(object):
 
         self.input_contato_pagina_consulta_geral = QLineEdit(self.frame_257)
         self.input_contato_pagina_consulta_geral.setObjectName(u"input_contato_pagina_consulta_geral")
+        sizePolicy2.setHeightForWidth(self.input_contato_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.input_contato_pagina_consulta_geral.setSizePolicy(sizePolicy2)
 
         self.verticalLayout_172.addWidget(self.input_contato_pagina_consulta_geral)
 
@@ -10572,6 +10579,8 @@ class Ui_MainWindow(object):
 
         self.input_clinica_pagina_consulta_geral = QLineEdit(self.frame_253)
         self.input_clinica_pagina_consulta_geral.setObjectName(u"input_clinica_pagina_consulta_geral")
+        sizePolicy2.setHeightForWidth(self.input_clinica_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.input_clinica_pagina_consulta_geral.setSizePolicy(sizePolicy2)
 
         self.verticalLayout_175.addWidget(self.input_clinica_pagina_consulta_geral)
 
@@ -10623,7 +10632,7 @@ class Ui_MainWindow(object):
 
         self.input_data_pagina_consulta_geral = QDateEdit(self.frame_452)
         self.input_data_pagina_consulta_geral.setObjectName(u"input_data_pagina_consulta_geral")
-        self.input_data_pagina_consulta_geral.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+        self.input_data_pagina_consulta_geral.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QDateEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_176.addWidget(self.input_data_pagina_consulta_geral)
@@ -10645,7 +10654,7 @@ class Ui_MainWindow(object):
 
         self.input_hora_pagina_consulta_geral = QTimeEdit(self.frame_453)
         self.input_hora_pagina_consulta_geral.setObjectName(u"input_hora_pagina_consulta_geral")
-        self.input_hora_pagina_consulta_geral.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+        self.input_hora_pagina_consulta_geral.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_177.addWidget(self.input_hora_pagina_consulta_geral)
@@ -10670,6 +10679,11 @@ class Ui_MainWindow(object):
 
         self.input_relatorio_pagina_consulta_geral = QTextEdit(self.frame_254)
         self.input_relatorio_pagina_consulta_geral.setObjectName(u"input_relatorio_pagina_consulta_geral")
+        sizePolicy7 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.input_relatorio_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.input_relatorio_pagina_consulta_geral.setSizePolicy(sizePolicy7)
         self.input_relatorio_pagina_consulta_geral.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 15px;\n"
 "border-color:  rgb(168, 87, 81);\n"
@@ -10689,8 +10703,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_147.setObjectName(u"horizontalLayout_147")
         self.btn_voltar_pagina_consulta_geral = QPushButton(self.frame_451)
         self.btn_voltar_pagina_consulta_geral.setObjectName(u"btn_voltar_pagina_consulta_geral")
-        self.btn_voltar_pagina_consulta_geral.setMinimumSize(QSize(100, 40))
-        self.btn_voltar_pagina_consulta_geral.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_pagina_consulta_geral.setMinimumSize(QSize(120, 40))
+        self.btn_voltar_pagina_consulta_geral.setMaximumSize(QSize(120, 40))
         self.btn_voltar_pagina_consulta_geral.setFont(font11)
         self.btn_voltar_pagina_consulta_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -10698,6 +10712,10 @@ class Ui_MainWindow(object):
 "QPushButton:focus{outline:0}")
 
         self.horizontalLayout_147.addWidget(self.btn_voltar_pagina_consulta_geral)
+
+        self.horizontalSpacer_86 = QSpacerItem(364, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_147.addItem(self.horizontalSpacer_86)
 
         self.btn_salvar_pagina_consulta_geral = QPushButton(self.frame_451)
         self.btn_salvar_pagina_consulta_geral.setObjectName(u"btn_salvar_pagina_consulta_geral")
@@ -10711,10 +10729,6 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_147.addWidget(self.btn_salvar_pagina_consulta_geral)
-
-        self.horizontalSpacer_86 = QSpacerItem(364, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_147.addItem(self.horizontalSpacer_86)
 
 
         self.verticalLayout_113.addWidget(self.frame_451)
@@ -10782,7 +10796,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_144.setObjectName(u"horizontalLayout_144")
         self.label_filtro_pagina_consulta_geral = QLabel(self.frame_457)
         self.label_filtro_pagina_consulta_geral.setObjectName(u"label_filtro_pagina_consulta_geral")
-        self.label_filtro_pagina_consulta_geral.setFont(font17)
+        self.label_filtro_pagina_consulta_geral.setFont(font12)
 
         self.horizontalLayout_144.addWidget(self.label_filtro_pagina_consulta_geral)
 
@@ -10832,6 +10846,8 @@ class Ui_MainWindow(object):
         __qtablewidgetitem44 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral.setItem(1, 0, __qtablewidgetitem44)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
+        sizePolicy3.setHeightForWidth(self.input_TableWidget_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.input_TableWidget_pagina_consulta_geral.setSizePolicy(sizePolicy3)
         self.input_TableWidget_pagina_consulta_geral.setFont(font)
         self.input_TableWidget_pagina_consulta_geral.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_pagina_consulta_geral.setAutoFillBackground(False)
@@ -10898,6 +10914,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_184.setStretch(0, 1)
         self.verticalLayout_184.setStretch(1, 3)
         self.verticalLayout_184.setStretch(2, 12)
+        self.verticalLayout_184.setStretch(3, 1)
 
         self.horizontalLayout_140.addWidget(self.frame_160)
 
