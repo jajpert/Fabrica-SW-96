@@ -306,7 +306,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-        self.ui.btn_finalizar_as_2.clicked.connect(self.cadastro_clinica)
+        self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
@@ -316,7 +316,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
-        self.ui.btn_finalizar_as_2.clicked.connect(self.limparCamposCadastroClinica)
+        self.ui.btn_finalizar_clinica_as.clicked.connect(self.limparCamposCadastroClinica)
 ########################### Validar Login #############################
     def validarLogin(self):
         login = self.ui.input_usuario_login.text()
