@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -92,6 +92,119 @@ class DataBase():
 
         finally:
             self.close_connection()
+            
+    def relatorio_pessoa(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                    SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    endereco.cidade,pessoa.data_cadastro
+                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                    LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
+                    """)
+            result = self.cursor.fetchall()
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+            
+    def filter_data(self,texto_data_inicio,texto_data_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    endereco.cidade,pessoa.data_cadastro
+                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                    LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco WHERE data_cadastro BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+            
+    def filtrar_relatorio(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho, clinica.nome_fantasia, endereco.bairro, endereco.cidade
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco
+                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
+                OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
+            """)
+            result = self.cursor.fetchall()
+            
+            # #verifica os dados do select
+            # for linha in result:
+            #    print(linha)
+            
+            return result
+            #retorna a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+        
+    def filter_idade(self,texto_idade_inicio,texto_idade_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
+                usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                endereco.cidade,pessoa.data_cadastro
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco WHERE TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) BETWEEN '{texto_idade_inicio}' and '{texto_idade_final}';""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+            
+            
+    def filter_usuario_area_sigilosa(self,id_area_sigilosa):
+        self.connect()
+        try: 
+            self.cursor.execute(f"""select  area_sigilosa.data_cadastro, area_sigilosa.observacao_gerais from area_sigilosa
+                                INNER JOIN pessoa ON pessoa.id_matricula = area_sigilosa.id_matricula and 
+                                pessoa.id_matricula = '{id_area_sigilosa}';""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+            
+            
     
     def select_usuario_ids(self):
         self.connect()
@@ -153,25 +266,6 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def filter(self,texto):
-        self.connect()
-        try:
-            self.cursor.execute(f"""
-                SELECT * FROM cadastro WHERE nome LIKE '%{texto}%' or cnpj LIKE '%{texto}%';
-            """)
-            result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            for linha in result:
-               print(linha)
-            
-            return result
-            #retorna a lista do banco para quem chamou a função
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
 
     def busca_cuidador(self, cpf):
         print("entrou busca cuidador")
@@ -547,6 +641,34 @@ class DataBase():
         except AttributeError as err:
             print(err)
         
+        finally:
+            self.close_connection()
+
+    def cadastro_clinica(self,endereco,clinica):
+        print("Entrou cadastro usuario!!")
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            id_endereco = self.cursor.lastrowid
+            
+
+
+            args2 = (clinica[0],clinica[1],clinica[2],clinica[3],clinica[4],clinica[5],id_endereco)
+            self.cursor.execute('INSERT INTO clinica(cnpj,razao_social,nome_fantasia,telefone,email,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s)', args2)
+
+            
+            
+            print(args)
+            print(args2)
+            self.conn.commit()
+
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            print(err)
+            return "ERRO",str(err)
+
         finally:
             self.close_connection()
 
