@@ -204,7 +204,19 @@ class DataBase():
         finally:
             self.close_connection()
             
-            
+    def teste_clninica(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT id_clinica FROM clinica;""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
     
     def select_usuario_ids(self):
         self.connect()
@@ -335,6 +347,19 @@ class DataBase():
             # for linha in result:
             #     print(linha)
             return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+            
+            
+    def busca_clinica_nome_fantasia(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT nome_fantasia FROM clinica;""")
+            result = self.cursor.fetchall()
+            return result
         except Exception as err:
             return "ERRO",str(err)
 

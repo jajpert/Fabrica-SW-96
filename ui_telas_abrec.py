@@ -2085,13 +2085,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_60.addWidget(self.label_local_tratamento_usuario_as)
 
-        self.input_local_tratamento_usuario_as = QLineEdit(self.frame_88)
-        self.input_local_tratamento_usuario_as.setObjectName(u"input_local_tratamento_usuario_as")
-        self.input_local_tratamento_usuario_as.setMinimumSize(QSize(0, 30))
-        self.input_local_tratamento_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_local_tratamento_usuario_as.setFont(font)
+        self.input_Local_Tratamento_Clinica_usuario_as = QComboBox(self.frame_88)
+        self.input_Local_Tratamento_Clinica_usuario_as.addItem("")
+        self.input_Local_Tratamento_Clinica_usuario_as.setObjectName(u"input_Local_Tratamento_Clinica_usuario_as")
+        self.input_Local_Tratamento_Clinica_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_Local_Tratamento_Clinica_usuario_as.setMaximumSize(QSize(16777215, 30))
+        self.input_Local_Tratamento_Clinica_usuario_as.setFont(font)
+        self.input_Local_Tratamento_Clinica_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_Local_Tratamento_Clinica_usuario_as.setToolTipDuration(-1)
 
-        self.verticalLayout_60.addWidget(self.input_local_tratamento_usuario_as)
+        self.verticalLayout_60.addWidget(self.input_Local_Tratamento_Clinica_usuario_as)
+
 
 
         self.horizontalLayout_45.addWidget(self.frame_88)

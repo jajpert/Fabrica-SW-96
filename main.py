@@ -256,7 +256,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
 
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
-        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))    
+        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
+        self.ui.btn_proximo_as.clicked.connect(self.buscar_clinica_nome_fantasia)
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
@@ -1489,6 +1490,41 @@ class TelaPrincipal(QMainWindow):
 
 
 
+    def buscar_clinica_nome_fantasia(self):
+
+        # self.items = []
+        
+        # # self.ui.input_Local_Tratamento_Clinica_usuario_as.clear()
+        
+        # retrive_data = self.db.busca_clinica_nome_fantasia()
+        
+        # print(retrive_data)
+        # for i in retrive_data:
+        #     self.items.append(retrive_data)
+        #     self.ui.input_Local_Tratamento_Clinica_usuario_as.addItems(self.items)
+        
+        id_clinicas = self.db.teste_clninica()
+        print("IDS CLINICA -> ",id_clinicas)
+        nome = self.db.busca_clinica_nome_fantasia()
+        print("NOME CLINICAS -> ",nome)
+        nomes = []
+        id_clinica = []
+        
+        for i in id_clinicas:
+            # id_clinica = i[0]
+            # id_clinica = str(id_clinica).zfill(4)
+            nome = self.db.busca_clinica_nome_fantasia()
+            id_clinicas.append(id_clinica)
+            nomes.append(nome)
+        convertendo_nome = [i[0] for i in nomes]
+        convertendo_nome = [i[0] for i in convertendo_nome]
+        count = 0
+        itens = 1
+        while count < len(convertendo_nome):
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_clinica[count]}-{convertendo_nome[count]}", None))
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
+            itens += 1
+            count += 1
 
 
 
