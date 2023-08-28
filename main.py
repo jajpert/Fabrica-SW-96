@@ -8,7 +8,17 @@ from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
-from datetime import datetime
+import pandas as pd
+from reportlab.lib.pagesizes import letter
+from reportlab.lib import colors
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib.pagesizes import landscape, A4
+from openpyxl.styles import Font
+import pandas as pd
+from reportlab.pdfgen import canvas
+import sys
+import openpyxl
+
 
 
 class Overlay(QWidget):
@@ -194,7 +204,33 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()        
         self.listarUsuarios()
-        self.id_area_sigilosa = 5
+        self.id_area_sigilosa = self.relatorio_pessoa()
+        self.filtrar_usuario_area_sigilosa()
+        #self.gerar_excel()
+        ########### selected último id das tabelas do banco ##########
+        select_usuario = self.db.select_usuario()
+        select_cuidador = self.db.select_cuidador()
+        selected_colaborador = self.db.select_colaborador()
+        ultimo_id_usuario = (select_usuario[0])
+        ultimo_id_cuidador = (select_cuidador[0])
+        ultimo_id_colaborador = (selected_colaborador[0])
+        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
+        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
+        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
+        proximo_id_usuario = 1 + int(ultimo_id_usuario)
+        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
+        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
+        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
+        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
+        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
+
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
+        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
+        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
+        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -206,7 +242,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+        # self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
@@ -229,6 +265,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
+        self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros_as))
+        self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -240,6 +278,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
 
 
         
@@ -254,7 +293,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         # page_alterar_usuario
-        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         
 
@@ -290,16 +329,31 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
+        # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
+        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_salvar_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
-        self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)        
+        self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)
+        self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
+        self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
+        
+        self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
+        
+        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
+        
+        self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
+        
+        self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
+
+
 ########################### Validar Login #############################
     def validarLogin(self):
         login = self.ui.input_usuario_login.text()
@@ -321,12 +375,16 @@ class TelaPrincipal(QMainWindow):
             else:
                 print ("Usuário não encontrado")
         
+        
+        
+        
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
         inputCuidador = self.ui.input_cep_cuidador_as.text()
         inputUsuario = self.ui.input_cep_usuario_as.text()
         inputColaborador = self.ui.input_cep_colaborador_as.text()
+        inputClinica = self.ui.input_cep_clinica_as.text()
         sender = self.sender()
         if 'cuidador' in sender.objectName():
             cep = inputCuidador
@@ -334,6 +392,8 @@ class TelaPrincipal(QMainWindow):
             cep = inputUsuario
         elif 'colaborador' in sender.objectName():
             cep = inputColaborador
+        elif 'clinica' in sender.objectName():
+            cep = inputClinica
         cep_tratado = str('')
         print(cep)
         for i in cep:
@@ -407,6 +467,24 @@ class TelaPrincipal(QMainWindow):
             ##### tratamento da requisição - estado #######        
             estado = dic_requisicao['uf']
             self.ui.input_estado_colaborador_as.setText(str(estado))
+        
+        elif 'clinica' in sender.objectName():
+            print("entrou clinica!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_clinica_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_clinica_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_clinica_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_clinica_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
 
@@ -1407,6 +1485,20 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_obito_paciente_nao_as.setCheckable(True)
         self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
 
+    def limparCamposCadastroClinica(self):
+       self.ui.input_cnpj_cadastro_clinica_as.setText("")
+       self.ui.input_razao_social_cadastro_clinica_as.setText("")
+       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
+       self.ui.input_telefone_clinica_as.setText("")
+       self.ui.input_email_clinica_as.setText("")       
+       self.ui.input_cep_clinica_as.setText("")
+       self.ui.input_logradouro_clinica_as.setText("")
+       self.ui.input_numero_clinica_as.setText("")
+       self.ui.input_bairro_clinica_as.setText("")
+       self.ui.input_cidade_clinica_as.setText("")
+       self.ui.input_estado_clinica_as.setText("")
+       self.ui.input_informacoes_gerais_clinica_as.setHtml("")
+
 
 
 
@@ -1563,8 +1655,40 @@ class TelaPrincipal(QMainWindow):
             self.ui.label_idade_relatorio_as.clear()
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
+
+    def cadastro_clinica(self):
+
+        ######################## endereço ################################
+            cep = self.ui.input_cep_clinica_as.text()
+            rua = self.ui.input_logradouro_clinica_as.text()
+            numero = self.ui.input_numero_clinica_as.text()
+            bairro = self.ui.input_bairro_clinica_as.text()
+            cidade = self.ui.input_cidade_clinica_as.text()
+            estado = self.ui.input_estado_clinica_as.text()
+
+            tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+
+        ########################## dados ######################################       
+            # id_clinica = self.ui.input_codigo_cadastro_clinica_as.text()
+            cnpj = self.ui.input_cnpj_cadastro_clinica_as.text()
+            razao_social = self.ui.input_razao_social_cadastro_clinica_as.text()
+            nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica_as.text()
+            telefone = self.ui.input_telefone_clinica_as.text()
+            email = self.ui.input_email_clinica_as.text()
+            obs = self.ui.input_informacoes_gerais_clinica_as.toPlainText()
+
+            tupla_clinica = (cnpj,razao_social,nome_fantasia,telefone,email,obs)
+            
+            result = []
+            result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
+            print(result)
+            self.msg(result[0],result[1])
+            self.limparCamposCadastroClinica()
+            
+
+
 ######################## Patologia base outros################################      
-        '''def on_patologia_base_usuario_changed(self):
+    def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
             self.ui.frame_440.setEnabled(True)
@@ -1577,29 +1701,164 @@ class TelaPrincipal(QMainWindow):
             self.ui.frame_440.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
-            self.ui.input_outras_patologias_usuario_as.clear()'''
+            self.ui.input_outras_patologias_usuario_as.clear()
+    ######################################################################
 
-    def sairSistema(self):   
-        
-        dlg = QMessageBox(self)
-        dlg.setWindowTitle("Confirma Saida")
-        dlg.setText("Deseja Sair?")
-        
-        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        dlg.setIcon(QMessageBox.Question)
-        button = dlg.exec()      
 
-            
-        if button == QMessageBox.Yes:
-            self.ui.inicio.setCurrentIndex(0)
-            self.ui.input_usuario_login.setText("")
-            self.ui.input_senha_login.setText("")
+    def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
         
-        else:
-            dlg.close()
-                      
+        result = self.db.relatorio_pessoa()
+
+        self.ui.tableWidget_relatorio_as.clearContents()
+        self.ui.tableWidget_relatorio_as.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+                            
+    def filtrar_dados(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
+        res = self.db.filtrar_relatorio(txt)
+        #print(res)
+
+        self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def filtrar_usuario_area_sigilosa(self):
+        result = self.db.filter_usuario_area_sigilosa(self.id_area_sigilosa)
+        print(result)
+        self.ui.input_TableWidget_observacoes_sigilosas_as.clearContents()
+        self.ui.input_TableWidget_observacoes_sigilosas_as.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_observacoes_sigilosas_as.setItem(row, column,QTableWidgetItem(str(data)))
+                
+                
+    def filtrar_data(self): ###DATA NASCIMENTO 
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_as.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_as.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        print(texto_data_inicio_tratada,texto_data_final_tratada)
         
+        res = self.db.filter_data(texto_data_inicio_tratada,texto_data_final_tratada)
+        #print(res)
+
+        self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+        if self.ui.input_inicio_periodo_relatorio_as.text() == "":
+            self.filtrar_dados()
+        elif self.ui.input_final_periodo_relatorio_as.text() =="":
+            self.filtrar_dados()
+                
+                
+    def filter_idade(self):
+        # self.ui.input_idade_inicial_relatorio_as.text()
+        # self.ui.input_idade_final_relatorio_as.text()
+        if self.ui.input_escolha_relatorio_as.currentIndex() == 1:
+            texto_idade_inicio = 18
+            texto_idade_final = 23
+            print(texto_idade_inicio,texto_idade_final)
             
+            res = self.db.filter_idade(texto_idade_inicio,texto_idade_final)
+            self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+            for row, text in enumerate(res):
+                for column, data in enumerate(text):
+                    self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+        elif self.ui.input_escolha_relatorio_as.currentIndex() == 0:
+            self.filtrar_dados()
+                
+       
+       
+    def gerar_excel(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
+            for column in range(self.ui.tableWidget_relatorio_as.columnCount()):
+                dados.append(self.ui.tableWidget_relatorio_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CNS', 'NIS',
+            'LOCAL DE TRATAMENTO','SITUAÇÃO DE TRABALHO','CLINICA','BAIRRO','CIDADE']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+        
+        #file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "/relatorio", "Text files (*.xlsx)") 
+        relatorio.to_excel("Relatorio.xlsx", sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+        
+    def gerar_pdf(self):
+        #pegando o nome das colunas da tabela
+        column_names = []
+        for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
+            column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
+
+        #criando o pdf e escolhendo a fonte
+        pdf = canvas.Canvas("relatorioPDF.pdf")
+        pdf.setFont("Times-Roman", 9)
+
+        #pegando os dados de cada linha da tabela
+        filtered_data = []
+        
+        for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
+            if not self.ui.tableWidget_relatorio_as.isRowHidden(row):
+                row_data = [self.ui.tableWidget_relatorio_as.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_as.columnCount())]
+                filtered_data.append(row_data)
+        print(filtered_data)        
+        #por exemplo: print(filter_data)
+        #saida: lista de linhas da tabela
+        """[['Calebe Pereira Lemos', '8932728', 'Ouvidor', '728', 'Cidade', 'Lagos', 'calebe.el@senc.ms', '67828293'], 
+        ['Pedro', '838443', 'ouvi', '44', 'iijo', '', 'dasdas@', '672838'], 
+        ['c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['c', '1', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['c', '4', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['calebe', '29718', 'ouvidor', '672', 'cailar', 'cg', 'casbh!@fmail', '217267'], 
+        ['eder', '7364', 'test', '67', 'ht', 'campo gran', 'asdbahs@gmail', '6791828'], 
+        ['lucas', '0989', 'c', 'c', 'c', 'c', 'c', 'c'], 
+        ['oliver', '2763173', '65', '176', 'caiçara', 'campo grande', 'oli@senac', '56888'], 
+        ['test', '99089', 'tes', '653', 'rr', '', 'c@hmmn', '75676']]"""
+    
+        y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha
+        pdf.drawString(285, 820, "Relatório") #cabecalho do relatorio
+        for linha in filtered_data:
+            i=0 #definido para andar na lista de nomes das colunas
+            for col in linha:
+                if y_linha == 38: #se chegar ao final da folha, add uma nova
+                    pdf.showPage() #adicionar nova folha
+                    y_linha = 795 #topo da folha
+                pdf.drawString(6, y_linha, column_names[i]+':') #escrever nome da coluna
+                pdf.drawString(100, y_linha, '' + col) #escrever dado da coluna     
+                y_linha-=20 #decrevementar y, para ir para prox linha
+                i+=1 #incrementar i para pegar nome da prox coluna da tabela
+            pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
+    
+            
+        pdf.save() #salvar pdf na raiz do projeto
+
+        msg = QMessageBox()
+        msg.setWindowTitle('Relatório')
+        msg.setText('Relatório gerado com sucesso!')
+        msg.exec()
+   
+
+
 if __name__ == "__main__":
     
     myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
