@@ -281,6 +281,11 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
 
 
+        #self.ui.btn_finalizar_as_2.clicked.connect(self.cadastroClinica)
+
+        
+
+
         ############SIGNALS BANCO ##########################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
@@ -1270,6 +1275,16 @@ class TelaPrincipal(QMainWindow):
         print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
         print(result)
+
+    def cadastroClinica(self):
+      ################################################ENDERECO#####
+        
+        teste = self.ui.input_cnpj_cadastro_clinica_as.text()
+
+        print(teste)
+        #result=self.db.cadastro_curso(tupla_curso)
+        #print(result)
+
 
     def area_sigilosa(self):
 
