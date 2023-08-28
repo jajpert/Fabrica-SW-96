@@ -6,7 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -203,26 +204,33 @@ class DataBase():
 
         finally:
             self.close_connection()
-            
-    def teste_clninica(self):
-        self.connect()
-        try:
-            self.cursor.execute(f"""SELECT id_clinica FROM clinica;""")
-            result = self.cursor.fetchall()
         
-            return result
-        
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
     
     def select_usuario_ids(self):
         self.connect()
         try:
             self.cursor.execute("""
                 SELECT id_usuario, id_matricula FROM usuario WHERE id_cuidador IS NULL ORDER BY id_usuario DESC LIMIT 10;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+
+    def select_clinica_ids(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_clinica FROM clinica ORDER BY id_clinica;
             """)
             result = self.cursor.fetchall()
             
@@ -263,6 +271,27 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT nome FROM pessoa WHERE id_matricula = {id_matricula};
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            # for linha in result:
+            #    print(linha)
+            
+            return result
+            #retorna a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+
+
+    def select_nome_Clinica(self,id_clinica):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT nome_fantasia FROM clinica WHERE id_clinica = {id_clinica};
             """)
             result = self.cursor.fetchall()
             

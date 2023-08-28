@@ -1606,6 +1606,9 @@ class Ui_MainWindow(object):
         self.input_estado_civil_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_estado_civil_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_estado_civil_usuario_as.setFont(font)
+        self.input_estado_civil_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_estado_civil_usuario_as.setStyleSheet(u"")
+
 
         self.verticalLayout_51.addWidget(self.input_estado_civil_usuario_as)
 
@@ -1642,6 +1645,9 @@ class Ui_MainWindow(object):
         self.input_escolaridade_usuario_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_escolaridade_usuario_comboBox_as.setMaximumSize(QSize(16777215, 30))
         self.input_escolaridade_usuario_comboBox_as.setFont(font)
+        self.input_escolaridade_usuario_comboBox_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_escolaridade_usuario_comboBox_as.setStyleSheet(u"")
+
 
         self.verticalLayout_64.addWidget(self.input_escolaridade_usuario_comboBox_as)
 
@@ -1737,6 +1743,9 @@ class Ui_MainWindow(object):
         self.input_tipo_deficiencia_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_tipo_deficiencia_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_tipo_deficiencia_usuario_as.setFont(font)
+        self.input_tipo_deficiencia_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_tipo_deficiencia_usuario_as.setStyleSheet(u"")
+
 
         self.verticalLayout_54.addWidget(self.input_tipo_deficiencia_usuario_as)
 
@@ -1896,6 +1905,8 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_situacao_trabalho_usuario_as.setFont(font)
         self.input_situacao_trabalho_usuario_as.setToolTipDuration(-1)
+        self.input_situacao_trabalho_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_situacao_trabalho_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_58.addWidget(self.input_situacao_trabalho_usuario_as)
 
@@ -2088,14 +2099,10 @@ class Ui_MainWindow(object):
         self.input_Local_Tratamento_Clinica_usuario_as = QComboBox(self.frame_88)
         self.input_Local_Tratamento_Clinica_usuario_as.addItem("")
         self.input_Local_Tratamento_Clinica_usuario_as.setObjectName(u"input_Local_Tratamento_Clinica_usuario_as")
-        self.input_Local_Tratamento_Clinica_usuario_as.setMinimumSize(QSize(0, 30))
-        self.input_Local_Tratamento_Clinica_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_Local_Tratamento_Clinica_usuario_as.setFont(font)
         self.input_Local_Tratamento_Clinica_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_Local_Tratamento_Clinica_usuario_as.setToolTipDuration(-1)
+        self.input_Local_Tratamento_Clinica_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_60.addWidget(self.input_Local_Tratamento_Clinica_usuario_as)
-
 
 
         self.horizontalLayout_45.addWidget(self.frame_88)
@@ -2700,6 +2707,9 @@ class Ui_MainWindow(object):
         self.input_usuario_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_usuario_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_usuario_cuidador_as.setFont(font)
+        self.input_usuario_cuidador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_usuario_cuidador_as.setStyleSheet(u"")
+
 
         self.verticalLayout_160.addWidget(self.input_usuario_cuidador_as)
 
@@ -4514,7 +4524,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_165.addWidget(self.label_cargo_colaborador_as)
 
         self.input_cargo_colaborador_comboBox_as = QComboBox(self.frame_235)
-        self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")

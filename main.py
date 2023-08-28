@@ -204,6 +204,7 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()        
         self.listarUsuarios()
+        self.buscar_clinica_nome_fantasia()
         self.id_area_sigilosa = self.relatorio_pessoa()
         self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
@@ -257,7 +258,6 @@ class TelaPrincipal(QMainWindow):
 
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
-        self.ui.btn_proximo_as.clicked.connect(self.buscar_clinica_nome_fantasia)
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
@@ -1101,7 +1101,7 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         ################ tratamento ##################################
@@ -1113,7 +1113,7 @@ class TelaPrincipal(QMainWindow):
         tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
-        local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
+        local_tratamento = self.ui.input_Local_Tratamento_Clinica_usuario_as.currentText()
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         #outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
        
@@ -1403,7 +1403,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_tarifa_social_nao_usuario_as.setCheckable(False)
         self.ui.input_tarifa_social_nao_usuario_as.setCheckable(True)
         self.ui.input_tipo_tratamento_usuario_as.setCurrentIndex(int(0))
-        self.ui.input_local_tratamento_usuario_as.setText("")
+        self.ui.input_Local_Tratamento_Clinica_usuario_as.setCurrentIndex(int(0))
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
@@ -1491,40 +1491,34 @@ class TelaPrincipal(QMainWindow):
 
 
     def buscar_clinica_nome_fantasia(self):
+        retrive_data = self.db.busca_clinica_nome_fantasia()
+        print("Clinicas Cadastradas -> ",retrive_data)
 
-        # self.items = []
-        
-        # # self.ui.input_Local_Tratamento_Clinica_usuario_as.clear()
-        
-        # retrive_data = self.db.busca_clinica_nome_fantasia()
-        
-        # print(retrive_data)
-        # for i in retrive_data:
-        #     self.items.append(retrive_data)
-        #     self.ui.input_Local_Tratamento_Clinica_usuario_as.addItems(self.items)
-        
-        id_clinicas = self.db.teste_clninica()
-        print("IDS CLINICA -> ",id_clinicas)
-        nome = self.db.busca_clinica_nome_fantasia()
-        print("NOME CLINICAS -> ",nome)
+        lista_clinica = self.db.select_clinica_ids()
+
         nomes = []
-        id_clinica = []
-        
-        for i in id_clinicas:
-            # id_clinica = i[0]
-            # id_clinica = str(id_clinica).zfill(4)
-            nome = self.db.busca_clinica_nome_fantasia()
+        id_clinicas = []
+
+        for i in lista_clinica:
+            id_clinica = i[0]
+            id_clinica = str(id_clinica).zfill(4)
+            nome = self.db.select_nome_Clinica(id_clinica)
             id_clinicas.append(id_clinica)
             nomes.append(nome)
+        # nomes = self.ui.input_Local_Tratamento_Clinica_usuario_as.addItems(retrive_data)
         convertendo_nome = [i[0] for i in nomes]
-        convertendo_nome = [i[0] for i in convertendo_nome]
+        convertendo_nome_clinica = [i[0] for i in convertendo_nome]
         count = 0
         itens = 1
-        while count < len(convertendo_nome):
-            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_clinica[count]}-{convertendo_nome[count]}", None))
+        while count < len(convertendo_nome_clinica):
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{convertendo_nome_clinica[count]}", None))
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
             itens += 1
             count += 1
+        print("Id_Clinica ->",id_clinica)
+        print("Id_Clinicas ->",id_clinicas)
+        print("Nomes -> ",nomes)
+        print("Nome Convertido -> ",convertendo_nome_clinica)
 
 
 
