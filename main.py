@@ -271,7 +271,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
-        #self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
@@ -1615,28 +1615,24 @@ class TelaPrincipal(QMainWindow):
 
             self.ui.label_idade_relatorio_as.setEnabled(True)
             self.ui.label_idade_relatorio_as.setStyleSheet("")
-            self.ui.label_idade_relatorio_as.setText("idade")
+            self.ui.label_idade_relatorio_as.setText("Idade")
             self.ui.label_idade_relatorio_as.show()
 
         else:
-            
-            self.ui.input_idade_inicial_relatorio_as.setEnabled(False)
             self.ui.input_idade_inicial_relatorio_as.hide()
+            self.ui.input_idade_inicial_relatorio_as.setEnabled(False)            
             self.ui.input_idade_inicial_relatorio_as.clear()
 
-            
-            self.ui.label_a_relatorio_as.setEnabled(False)
             self.ui.label_a_relatorio_as.hide()
+            self.ui.label_a_relatorio_as.setEnabled(False)            
             self.ui.label_a_relatorio_as.clear()
 
-            
-            self.ui.input_idade_final_relatorio_as.setEnabled(False)
             self.ui.input_idade_final_relatorio_as.hide()
+            self.ui.input_idade_final_relatorio_as.setEnabled(False)            
             self.ui.input_idade_final_relatorio_as.clear()
 
-            
-            self.ui.label_idade_relatorio_as.setEnabled(False)
             self.ui.label_idade_relatorio_as.hide()
+            self.ui.label_idade_relatorio_as.setEnabled(False)            
             self.ui.label_idade_relatorio_as.clear()
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
@@ -1676,8 +1672,8 @@ class TelaPrincipal(QMainWindow):
     def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
-            self.ui.frame_440.setEnabled(True)
-            self.ui.frame_440.show()
+            self.ui.frame_449.setEnabled(True)
+            self.ui.frame_449.show()
             self.ui.input_outras_patologias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_patologias_usuario_as.setEnabled(True)
             self.ui.input_outras_patologias_usuario_as.show()           
