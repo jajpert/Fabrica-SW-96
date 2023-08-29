@@ -12973,6 +12973,7 @@ class Ui_MainWindow(object):
         self.input_tipo_tratamento_usuario_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Di\u00e1lise Peritoneal", None))
 
         self.label_local_tratamento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Local de tratamento", None))
+        self.input_Local_Tratamento_Clinica_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow",u"Selecione", None))
         self.label_patologia_base_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Patologia base", None))
         self.input_patologia_base_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_patologia_base_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Hipertens\u00e3o", None))

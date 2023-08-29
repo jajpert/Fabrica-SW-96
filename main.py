@@ -1114,6 +1114,8 @@ class TelaPrincipal(QMainWindow):
         tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_Local_Tratamento_Clinica_usuario_as.currentText()
+        local_tratamento_id = local_tratamento.split("-")
+        local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         #outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
        
@@ -1149,7 +1151,7 @@ class TelaPrincipal(QMainWindow):
 
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
         result = []
@@ -1491,6 +1493,7 @@ class TelaPrincipal(QMainWindow):
 
 
     def buscar_clinica_nome_fantasia(self):
+
         retrive_data = self.db.busca_clinica_nome_fantasia()
         print("Clinicas Cadastradas -> ",retrive_data)
 
@@ -1501,17 +1504,16 @@ class TelaPrincipal(QMainWindow):
 
         for i in lista_clinica:
             id_clinica = i[0]
-            id_clinica = str(id_clinica).zfill(4)
+            id_clinica = str(id_clinica).zfill(3)
             nome = self.db.select_nome_Clinica(id_clinica)
             id_clinicas.append(id_clinica)
             nomes.append(nome)
-        # nomes = self.ui.input_Local_Tratamento_Clinica_usuario_as.addItems(retrive_data)
         convertendo_nome = [i[0] for i in nomes]
         convertendo_nome_clinica = [i[0] for i in convertendo_nome]
         count = 0
-        itens = 1
+        itens = 0
         while count < len(convertendo_nome_clinica):
-            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{convertendo_nome_clinica[count]}", None))
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
             itens += 1
             count += 1
