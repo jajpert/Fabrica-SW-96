@@ -7,6 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+
         
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -398,16 +399,47 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.cpf, pessoa.nome, pessoa.telefone, clinica.nome_fantasia 
+            self.cursor.execute(f"""SELECT usuario.id_usuario,pessoa.nome, pessoa.telefone, clinica.nome_fantasia 
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
-            # return result
+            result = self.cursor.fetchall()
+            return result[0]
         except Exception as err:
             return "ERRO",str(err)
 
         finally:
             self.close_connection()
     
+    def cadastro_consulta(self,consulta):
+        self.connect()
+        try:
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
+            self.cursor.execute('INSERT INTO consulta(situacao,data,hora,observacao,id_usuario) VALUES (%s,%s,%s,%s,%s)', args)
+            self.conn.commit()
+            return "Cadastrado com Sucesso!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_info_consulta(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT data_cadastro,data,observacao FROM consulta;
+                                """)
+            result = self.cursor.fetchall()
+            return result[0]
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
         print("Entrou ATT CUIDADOR")
 

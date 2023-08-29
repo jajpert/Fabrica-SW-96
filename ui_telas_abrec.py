@@ -11247,6 +11247,15 @@ class Ui_MainWindow(object):
         self.frame_4621.setFrameShadow(QFrame.Raised)
         self.verticalLayout_319 = QVBoxLayout(self.frame_4621)
         self.verticalLayout_319.setObjectName(u"verticalLayout_319")
+        self.lineEdit_id_usuario_consulta = QLineEdit(self.frame_4621)
+        self.lineEdit_id_usuario_consulta.setObjectName(u"lineEdit_id_usuario_consulta")
+        self.lineEdit_id_usuario_consulta.setEnabled(False)
+        self.lineEdit_id_usuario_consulta.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_319.addWidget(self.lineEdit_id_usuario_consulta)
+
+
         self.label_cpf_pagina_consulta_geral = QLabel(self.frame_4621)
         self.label_cpf_pagina_consulta_geral.setObjectName(u"label_cpf_pagina_consulta_geral")
         self.label_cpf_pagina_consulta_geral.setFont(font)
@@ -11384,17 +11393,17 @@ class Ui_MainWindow(object):
         self.horizontalLayout_1421.setSpacing(0)
         self.horizontalLayout_1421.setObjectName(u"horizontalLayout_1421")
         self.horizontalLayout_1421.setContentsMargins(0, 0, 0, 0)
-        self.radioButton_4 = QRadioButton(self.frame_2561)
-        self.radioButton_4.setObjectName(u"radioButton_4")
-        self.radioButton_4.setFont(font)
+        self.radioButton_Consulta_as = QRadioButton(self.frame_2561)
+        self.radioButton_Consulta_as.setObjectName(u"radioButton_Consulta_as")
+        self.radioButton_Consulta_as.setFont(font)
 
-        self.horizontalLayout_1421.addWidget(self.radioButton_4)
+        self.horizontalLayout_1421.addWidget(self.radioButton_Consulta_as)
 
-        self.radioButton_5 = QRadioButton(self.frame_2561)
-        self.radioButton_5.setObjectName(u"radioButton_5")
-        self.radioButton_5.setFont(font)
+        self.radioButton_Retorno_as = QRadioButton(self.frame_2561)
+        self.radioButton_Retorno_as.setObjectName(u"radioButton_Retorno_as")
+        self.radioButton_Retorno_as.setFont(font)
 
-        self.horizontalLayout_1421.addWidget(self.radioButton_5)
+        self.horizontalLayout_1421.addWidget(self.radioButton_Retorno_as)
 
 
         self.verticalLayout_1131.addWidget(self.frame_2561)
@@ -11615,20 +11624,23 @@ class Ui_MainWindow(object):
         self.horizontalLayout_1491.setObjectName(u"horizontalLayout_1491")
         self.horizontalLayout_1491.setContentsMargins(0, 0, 0, 0)
         self.input_TableWidget_pagina_consulta_geral = QTableWidget(self.frame_461)
-        if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 2):
-            self.input_TableWidget_pagina_consulta_geral.setColumnCount(2)
+        self.input_TableWidget_pagina_consulta_geral = QTableWidget(self.frame_461)
+        if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 3):
+            self.input_TableWidget_pagina_consulta_geral.setColumnCount(3)
         __qtablewidgetitem51 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem51)
         __qtablewidgetitem52 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem52)
+        __qtablewidgetitem53 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem53)
         if (self.input_TableWidget_pagina_consulta_geral.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
-        __qtablewidgetitem53 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setItem(0, 0, __qtablewidgetitem53)
         __qtablewidgetitem54 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setItem(0, 1, __qtablewidgetitem54)
+        self.input_TableWidget_pagina_consulta_geral.setItem(0, 0, __qtablewidgetitem54)
         __qtablewidgetitem55 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setItem(1, 0, __qtablewidgetitem55)
+        self.input_TableWidget_pagina_consulta_geral.setItem(0, 2, __qtablewidgetitem55)
+        __qtablewidgetitem56 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setItem(1, 0, __qtablewidgetitem56)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
         self.input_TableWidget_pagina_consulta_geral.setFont(font)
         self.input_TableWidget_pagina_consulta_geral.setLayoutDirection(Qt.LeftToRight)
@@ -11650,7 +11662,6 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral.verticalHeader().setDefaultSectionSize(50)
 
         self.horizontalLayout_1491.addWidget(self.input_TableWidget_pagina_consulta_geral)
-
 
         self.verticalLayout_184.addWidget(self.frame_461)
 
@@ -13564,8 +13575,8 @@ class Ui_MainWindow(object):
         self.label_nome_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"NOME", None))
         self.label_contato_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"CONTATO", None))
         self.label_clinica_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"CL\u00cdNICA", None))
-        self.radioButton_4.setText(QCoreApplication.translate("MainWindow", u"CONSULTA", None))
-        self.radioButton_5.setText(QCoreApplication.translate("MainWindow", u"RETORNO", None))
+        self.radioButton_Consulta_as.setText(QCoreApplication.translate("MainWindow", u"CONSULTA", None))
+        self.radioButton_Retorno_as.setText(QCoreApplication.translate("MainWindow", u"RETORNO", None))
         self.label_data_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"DATA", None))
         self.label_hora_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"HORA", None))
         self.label_relatorio_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO", None))
@@ -13577,7 +13588,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem45 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
         ___qtablewidgetitem45.setText(QCoreApplication.translate("MainWindow", u"Data", None));
         ___qtablewidgetitem46 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
-        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio", None));
+        ___qtablewidgetitem46.setText(QCoreApplication.translate("MainWindow", u"Hora Marcada", None));
+        ___qtablewidgetitem47 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
+        ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio", None));
 
         __sortingEnabled2 = self.input_TableWidget_pagina_consulta_geral.isSortingEnabled()
         self.input_TableWidget_pagina_consulta_geral.setSortingEnabled(False)
