@@ -350,6 +350,8 @@ class TelaPrincipal(QMainWindow):
         
         self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
 
+        self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
+
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -1523,7 +1525,15 @@ class TelaPrincipal(QMainWindow):
         print("Nome Convertido -> ",convertendo_nome_clinica)
 
 
+    def buscar_dados_consulta(self):
+        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        dados = self.db.buscar_consulta(cpf)
+        print(cpf)
 
+        self.ui.input_cpf_pagina_consulta_geral.setText(str(dados[0]))
+        self.ui.input_nome_pagina_consulta_geral.setText(str(dados[1]))
+        self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
+        self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
 
 
 #####Alterar SITUACAO de Trabalho Outros #########

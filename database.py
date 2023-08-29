@@ -394,6 +394,19 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def buscar_consulta(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT pessoa.cpf, pessoa.nome, pessoa.telefone, clinica.nome_fantasia 
+                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
+            # return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
     
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
         print("Entrou ATT CUIDADOR")
