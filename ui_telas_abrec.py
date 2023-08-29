@@ -1,33 +1,26 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecZnBgMT.ui'
+## Form generated from reading UI file 'telas_abrecvcBwpG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication, QCheckBox,
-    QComboBox, QDateEdit, QDateTimeEdit, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QStackedWidget, QTableWidget,
-    QTableWidgetItem, QTextEdit, QTimeEdit, QToolButton,
-    QVBoxLayout, QWidget)
+from qtcore import * 
+from icons import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(2098, 980)
+
+        ############ valida email ##############
+            self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
+        #######################################
+ 
+        MainWindow.resize(2062, 986)
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(12)
@@ -477,7 +470,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon6 = QIcon()
-        icon6.addFile(u"././././Downloads/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_parceiros_as.setIcon(icon6)
         self.btn_parceiros_as.setIconSize(QSize(30, 30))
 
@@ -707,7 +700,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon12 = QIcon()
-        icon12.addFile(u"././././Downloads/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon12.addFile(u"./icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_clinica_as.setIcon(icon12)
         self.btn_cadastrar_clinica_as.setIconSize(QSize(80, 80))
 
@@ -724,7 +717,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon13 = QIcon()
-        icon13.addFile(u"././././Downloads/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_fornecedores_as.setIcon(icon13)
         self.btn_cadastrar_fornecedores_as.setIconSize(QSize(80, 80))
 
