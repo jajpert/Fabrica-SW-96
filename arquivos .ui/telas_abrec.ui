@@ -17450,7 +17450,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                               <property name="font">
                                                <font>
                                                 <family>Abel</family>
-                                                <pointsize>14</pointsize>
+                                                <pointsize>13</pointsize>
                                                </font>
                                               </property>
                                               <property name="frameShape">
@@ -17476,7 +17476,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                 <number>0</number>
                                                </property>
                                                <item alignment="Qt::AlignHCenter">
-                                                <widget class="QLabel" name="label_6">
+                                                <widget class="QLabel" name="label_a_periodo_relatorio_as">
                                                  <property name="font">
                                                   <font>
                                                    <family>Abel</family>
@@ -17828,7 +17828,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                    <number>0</number>
                                                   </property>
                                                   <item>
-                                                   <widget class="QLabel" name="label_5">
+                                                   <widget class="QLabel" name="label_a_idade_relatorio_as">
                                                     <property name="font">
                                                      <font>
                                                       <family>Abel</family>
@@ -18345,7 +18345,7 @@ QPushButton:pressed{
                                              <number>20</number>
                                             </property>
                                             <item>
-                                             <widget class="QPushButton" name="btn_gerar_excel_relatorio_as_2">
+                                             <widget class="QPushButton" name="btn_gerar_excel_relatorio_as">
                                               <property name="sizePolicy">
                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                                 <horstretch>0</horstretch>
@@ -18385,7 +18385,7 @@ QPushButton:focus{outline:0}</string>
                                              </widget>
                                             </item>
                                             <item>
-                                             <widget class="QPushButton" name="btn_gerar_pdf_relatorio_as_2">
+                                             <widget class="QPushButton" name="btn_gerar_pdf_relatorio_as">
                                               <property name="sizePolicy">
                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                                 <horstretch>0</horstretch>

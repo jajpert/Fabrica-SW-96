@@ -270,7 +270,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
-        self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
+        #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
         #self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
@@ -290,7 +290,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
-        self.ui.btn_voltar_pagina_consulta_geral.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        #self.ui.btn_voltar_pagina_consulta_geral.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         # page_alterar_usuario
@@ -1591,7 +1591,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
 
-    def on_idade_relatorio(self):
+    '''def on_idade_relatorio(self):
         if self.ui.input_escolha_relatorio_as.currentText() == "Faixa etária":
             self.ui.frame_237.setEnabled(True)
             self.ui.frame_237.show()
@@ -1641,7 +1641,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.label_idade_relatorio_as.clear()
             self.ui.frame_246.hide()
             self.ui.frame_237.hide()
-
+'''
     def cadastro_clinica(self):
 
         ######################## endereço ################################
