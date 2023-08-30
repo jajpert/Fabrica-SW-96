@@ -331,7 +331,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-
+        self.ui.btn_finalizar_as_2.clicked.connect(self.cadastro_clinica)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
@@ -1659,14 +1659,29 @@ class TelaPrincipal(QMainWindow):
     def cadastro_clinica(self):
 
         ######################## endereço ################################
+            codigo = self.ui.input_codigo_cadastro_clinica_as.text()
+            cnpj = self.ui.input_cnpj_cadastro_clinica_as.text()
+            razao = self.ui.input_razao_social_cadastro_clinica_as.text()
+            nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica.text()
+            telefone = self.ui.input_telefone_clinica_as.text()
+            email = self.ui.input_email_clinica_as.text()
             cep = self.ui.input_cep_clinica_as.text()
-            rua = self.ui.input_logradouro_clinica_as.text()
+            logradouro = self.ui.input_logradouro_clinica_as.text()
             numero = self.ui.input_numero_clinica_as.text()
             bairro = self.ui.input_bairro_clinica_as.text()
             cidade = self.ui.input_cidade_clinica_as.text()
             estado = self.ui.input_estado_clinica_as.text()
+            informacoes_gerais = self.ui.input_informacoes_gerais_clinica_as.text()
 
-            tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+        
+ 
+            tupla_dados = (codigo,cnpj,razao,nome_fantasia,telefone,email,cep,logradouro,numero,bairro,cidade,estado,informacoes_gerais)
+
+            result = []
+            result=self.db.cadastro_clinica(tupla_dados,tupla_clinica)
+            print(result)
+            self.msg(result[0],result[1])
+            self.limparCamposCadastroClinica()
 
         ########################## dados ######################################       
             # id_clinica = self.ui.input_codigo_cadastro_clinica_as.text()
