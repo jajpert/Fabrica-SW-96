@@ -31061,7 +31061,7 @@ background-color: rgb(243, 185, 191);</string>
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_113" stretch="0,1,1,1,1,0,1,4,1">
+                                  <layout class="QVBoxLayout" name="verticalLayout_113" stretch="0,1,1,1,0,0,1,4,1">
                                    <property name="spacing">
                                     <number>0</number>
                                    </property>
@@ -31085,6 +31085,23 @@ background-color: rgb(243, 185, 191);</string>
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
+                                     <widget class="QLineEdit" name="input_id_usuario_consulta_as">
+                                      <property name="enabled">
+                                       <bool>false</bool>
+                                      </property>
+                                      <property name="geometry">
+                                       <rect>
+                                        <x>0</x>
+                                        <y>0</y>
+                                        <width>489</width>
+                                        <height>32</height>
+                                       </rect>
+                                      </property>
+                                      <property name="styleSheet">
+                                       <string notr="true">border-color: transparent;
+background-color: transparent;</string>
+                                      </property>
+                                     </widget>
                                     </widget>
                                    </item>
                                    <item>
@@ -31281,7 +31298,7 @@ QPushButton:pressed{
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <layout class="QVBoxLayout" name="verticalLayout_175">
+                                     <layout class="QVBoxLayout" name="verticalLayout_117">
                                       <item>
                                        <widget class="QLabel" name="label_clinica_pagina_consulta_geral">
                                         <property name="font">
@@ -31362,22 +31379,7 @@ QPushButton:pressed{
                                      <property name="frameShadow">
                                       <enum>QFrame::Raised</enum>
                                      </property>
-                                     <layout class="QHBoxLayout" name="horizontalLayout_143">
-                                      <property name="spacing">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="leftMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="topMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="rightMargin">
-                                       <number>0</number>
-                                      </property>
-                                      <property name="bottomMargin">
-                                       <number>0</number>
-                                      </property>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_68">
                                       <item>
                                        <widget class="QFrame" name="frame_452">
                                         <property name="frameShape">
@@ -31413,13 +31415,19 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </item>
                                       <item>
                                        <widget class="QFrame" name="frame_453">
+                                        <property name="maximumSize">
+                                         <size>
+                                          <width>265</width>
+                                          <height>79</height>
+                                         </size>
+                                        </property>
                                         <property name="frameShape">
                                          <enum>QFrame::StyledPanel</enum>
                                         </property>
                                         <property name="frameShadow">
                                          <enum>QFrame::Raised</enum>
                                         </property>
-                                        <layout class="QVBoxLayout" name="verticalLayout_177">
+                                        <layout class="QVBoxLayout" name="verticalLayout_118">
                                          <item>
                                           <widget class="QLabel" name="label_hora_pagina_consulta_geral">
                                            <property name="font">
@@ -31434,10 +31442,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QTimeEdit" name="input_hora_pagina_consulta_geral">
-                                           <property name="styleSheet">
-                                            <string notr="true">QTimeEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
-QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                          <widget class="QLineEdit" name="input_hora_consulta_as">
+                                           <property name="maximumSize">
+                                            <size>
+                                             <width>258</width>
+                                             <height>32</height>
+                                            </size>
                                            </property>
                                           </widget>
                                          </item>
@@ -31792,6 +31802,12 @@ QPushButton:focus{outline:0}</string>
                                      <property name="wordWrap">
                                       <bool>true</bool>
                                      </property>
+                                     <property name="rowCount">
+                                      <number>14</number>
+                                     </property>
+                                     <property name="columnCount">
+                                      <number>3</number>
+                                     </property>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>
                                      </attribute>
@@ -31828,24 +31844,14 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Relatório</string>
+                                       <string>Consulta/Retorno</string>
                                       </property>
                                      </column>
-                                     <item row="0" column="0">
+                                     <column>
                                       <property name="text">
-                                       <string/>
+                                       <string>Relatorio</string>
                                       </property>
-                                     </item>
-                                     <item row="0" column="1">
-                                      <property name="text">
-                                       <string/>
-                                      </property>
-                                     </item>
-                                     <item row="1" column="0">
-                                      <property name="text">
-                                       <string/>
-                                      </property>
-                                     </item>
+                                     </column>
                                     </widget>
                                    </item>
                                   </layout>

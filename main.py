@@ -206,8 +206,7 @@ class TelaPrincipal(QMainWindow):
         self.listarUsuarios()
         self.buscar_clinica_nome_fantasia()
         self.id_area_sigilosa = self.relatorio_pessoa()
-        self.filtrar_usuario_area_sigilosa()
-        # self.puxar_consulta()
+        # self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -348,6 +347,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
+        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
 
 
 ########################### Validar Login #############################
@@ -1487,10 +1488,6 @@ class TelaPrincipal(QMainWindow):
        self.ui.input_estado_clinica_as.setText("")
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
 
-
-
-
-
     def buscar_clinica_nome_fantasia(self):
 
         retrive_data = self.db.busca_clinica_nome_fantasia()
@@ -1526,8 +1523,8 @@ class TelaPrincipal(QMainWindow):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
         dados = self.db.buscar_consulta(cpf)
         print(cpf)
-        self.ui.lineEdit_id_usuario_consulta.setText(str(dados[0]))
-        self.ui.lineEdit_id_usuario_consulta.hide()
+        self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
+        self.ui.input_id_usuario_consulta_as.hide()
         self.ui.input_nome_pagina_consulta_geral.setText(str(dados[1]))
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
@@ -1553,22 +1550,33 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
         print(result)
-
+    
     def puxar_consulta(self):
-        result = self.db.buscar_info_consulta()
+        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        result = self.db.buscar_info_consulta(cpf)
         print(result)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 
-        
-        for row in enumerate(result):
-            for col in enumerate(row):
-                self.ui.input_TableWidget_pagina_consulta_geral = QTimeEdit(self)
-                self.ui.input_TableWidget_pagina_consulta_geral.setDisplayFormat("hh:mm:ss")
-                self.setCellWidget(row, col, self.ui.input_TableWidget_pagina_consulta_geral)
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_pagina_consulta_geral.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    
+    
+    def  alterar_usuario_consulta(self,campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+
+        for emp in update_dados:
+           res = self.db.alterar_usuario_consulta_as(tuple(emp))
+                
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       

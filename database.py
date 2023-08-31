@@ -424,20 +424,41 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def buscar_info_consulta(self):
+    def buscar_info_consulta(self,cpf):
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT data_cadastro,data,observacao FROM consulta;
+                                SELECT consulta.data,consulta.situacao,consulta.observacao FROM consulta 
+                                INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
+                                left join pessoa ON pessoa.id_matricula = usuario.id_matricula AND 
+                                pessoa.cpf LIKE '{cpf}';
                                 """)
             result = self.cursor.fetchall()
-            return result[0]
+            return result
 
         except Exception as err:
             return "ERRO",str(err)
 
         finally:
             self.close_connection()
+            
+    def alterar_usuario_consulta_as(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE consulta set
+
+            Data = '{campo[0]}',
+            situacao = '{campo[1]}',
+            relatorio = '{campo[2]}'
+            """)
+            self.conn.commit()
+            return("Alteração feita com Sucesso!!!")
+
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
 
 
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
