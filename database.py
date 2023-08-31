@@ -6,7 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
 
         
         if self.conn.is_connected():
@@ -445,21 +446,30 @@ class DataBase():
     def alterar_usuario_consulta_as(self, campo):
         self.connect()
         try:
-            self.cursor.execute(f""" UPDATE consulta set
-
-            data = '{campo[1]}',
-            situacao = '{campo[2]}',
-            relatorio = '{campo[3]}'
-            WHERE id_consulta = '{campo[0]}';
+            self.cursor.execute(f""" UPDATE consulta SET
+                                     observacao = '{campo[3]}'
+                                     WHERE id_consulta = '{campo[0]}';
             """)
             self.conn.commit()
-            return("Alteração feita com Sucesso!!!")
+            return "Alteração feita com Sucesso!!!"
 
         except Exception as err:
             return "ERRO",str(err)
         finally:
             self.conn.close()
             return ("Conexão encerrada com Sucesso!!!")
+    
+    def deletar_consulta_relatorio(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            print(err)
 
 
     def atualizar_cuidador (self,cuidador,pessoa,endereco):

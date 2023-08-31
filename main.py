@@ -349,6 +349,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
+        self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
 
 
 ########################### Validar Login #############################
@@ -1566,7 +1567,7 @@ class TelaPrincipal(QMainWindow):
                 
     
     
-    def alterar_usuario_consulta(self):
+    def alterar_usuario_consulta(self,campo):
         campo = []
         update_dados = []
 
@@ -1574,10 +1575,15 @@ class TelaPrincipal(QMainWindow):
             for column in range(self.ui.input_TableWidget_pagina_consulta_geral.columnCount()):
                 campo.append(self.ui.input_TableWidget_pagina_consulta_geral.item(row, column).text())
             update_dados.append(campo)
-
+            campo = []
         for emp in update_dados:
            res = self.db.alterar_usuario_consulta_as(tuple(emp))
-           print(res)
+           print("resultado ->",emp)
+
+    def excluir_usuario_consulta (self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_consulta_relatorio(id_consulta)
+    
                 
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
