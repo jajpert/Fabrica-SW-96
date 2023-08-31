@@ -1522,10 +1522,12 @@ class TelaPrincipal(QMainWindow):
     def buscar_dados_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
         dados = self.db.buscar_consulta(cpf)
-        print(cpf)
+        print(dados)
         self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
         self.ui.input_id_usuario_consulta_as.hide()
-        self.ui.input_nome_pagina_consulta_geral.setText(str(dados[1]))
+        # self.ui.input_id_consulta_as.setText(str(dados[1]))
+        # self.ui.input_id_consulta_as.hide()
+        self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         
@@ -1539,11 +1541,11 @@ class TelaPrincipal(QMainWindow):
         data = self.ui.input_data_pagina_consulta_geral.text()
         data_consulta = "-".join(data.split("/")[::-1])
 
-        hora_bruta = self.ui.input_hora_pagina_consulta_geral.text()
+        hora_bruta = self.ui.input_hora_consulta_as.text()
 
         relatorio = self.ui.input_relatorio_pagina_consulta_geral.toPlainText()
 
-        id_usuario = self.ui.lineEdit_id_usuario_consulta.text()
+        id_usuario = self.ui.input_id_usuario_consulta_as.text()
 
         tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
 
@@ -1564,7 +1566,7 @@ class TelaPrincipal(QMainWindow):
                 
     
     
-    def  alterar_usuario_consulta(self,campo):
+    def alterar_usuario_consulta(self):
         campo = []
         update_dados = []
 
@@ -1572,10 +1574,10 @@ class TelaPrincipal(QMainWindow):
             for column in range(self.ui.input_TableWidget_pagina_consulta_geral.columnCount()):
                 campo.append(self.ui.input_TableWidget_pagina_consulta_geral.item(row, column).text())
             update_dados.append(campo)
-            campo = []
 
         for emp in update_dados:
            res = self.db.alterar_usuario_consulta_as(tuple(emp))
+           print(res)
                 
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################

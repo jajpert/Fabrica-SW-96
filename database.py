@@ -399,7 +399,7 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_usuario,pessoa.nome, pessoa.telefone, clinica.nome_fantasia 
+            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
@@ -428,7 +428,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT consulta.data,consulta.situacao,consulta.observacao FROM consulta 
+                                SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
                                 INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
                                 left join pessoa ON pessoa.id_matricula = usuario.id_matricula AND 
                                 pessoa.cpf LIKE '{cpf}';
@@ -447,9 +447,10 @@ class DataBase():
         try:
             self.cursor.execute(f""" UPDATE consulta set
 
-            Data = '{campo[0]}',
-            situacao = '{campo[1]}',
-            relatorio = '{campo[2]}'
+            data = '{campo[1]}',
+            situacao = '{campo[2]}',
+            relatorio = '{campo[3]}'
+            WHERE id_consulta = '{campo[0]}';
             """)
             self.conn.commit()
             return("Alteração feita com Sucesso!!!")
