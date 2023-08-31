@@ -644,6 +644,19 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+    
+    def cadastro_agendamento(self, agendamento):
+        self.connect()
+        try:
+            args = (1, agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+    
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
         
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
         self.conn()

@@ -1415,7 +1415,6 @@ class TelaPrincipal(QMainWindow):
         anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
 
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
-        print(tupla_agendamento)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         self.msg(result[0],result[1])   
         
