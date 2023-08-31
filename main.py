@@ -282,6 +282,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
 
+        #################SIGNAL CPF##################
+        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
+
 
         
         #############SIGNALS BOTOES voltar#############
@@ -328,6 +331,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
+        self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
