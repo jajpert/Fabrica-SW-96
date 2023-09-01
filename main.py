@@ -204,7 +204,6 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()        
         self.listarUsuarios()
-        self.listarAgendamentos()
         self.id_area_sigilosa = self.relatorio_pessoa()
         self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
@@ -284,9 +283,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
 
-        #################SIGNAL CPF##################
-        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-
 
         
         #############SIGNALS BOTOES voltar#############
@@ -333,7 +329,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-        self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
@@ -490,41 +485,6 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_clinica_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
-    def buscarPessoa(self):
-        cpf = self.ui.input_cpf_agendamento_as.text()
-        result = self.db.select_pessoa_cpf(cpf)
-        id_matricula = result[0]
-        nome = result[1]
-        telefone = result[2]
-        tamanho = int(len(result))
-        if tamanho > 3:
-            clinica = result[3]
-        else:
-            clinica = 'Não possuí'
-        self.ui.input_nome_agendamento_as.setText(nome)
-        self.ui.input_telefone_agendamento_as.setText(telefone)
-        self.ui.input_clinica_agendamento_as.setText(clinica)
-        
-        # elif 'clinica' in sender.objectName():
-        #     print("entrou clinica!")
-        #      ##### tratamento da requisição - logradouro #######
-        #     logradouro = dic_requisicao['logradouro']
-        #     self.ui.input_logradouro_clinica_as.setText(str(logradouro))
-
-        #     ##### tratamento da requisição - bairro #######
-        #     bairro = dic_requisicao['bairro']
-        #     self.ui.input_bairro_clinica_as.setText(str(bairro))
-
-        #     ##### tratamento da requisição - cidade #######
-        #     cidade = dic_requisicao['localidade']
-        #     self.ui.input_cidade_clinica_as.setText(str(cidade))
-
-        #     ##### tratamento da requisição - estado #######        
-        #     estado = dic_requisicao['uf']
-        #     self.ui.input_estado_clinica_as.setText(str(estado))
-
-        return id_matricula
-
 
     def buscar_Usuario(self):
 
@@ -1219,16 +1179,6 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_usuario_cuidador_as.addItem("")
             itens += 1
             count += 1
-    
-    def listarAgendamentos(self):
-        res = self.db.select_agendamentos()
-
-        # self.ui.input_TableWidget_agendamento_as.setRowCount(len(res))
-
-        for row, text in enumerate(res):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
-
 
     def cadastroCuidador(self):
 
@@ -1357,6 +1307,10 @@ class TelaPrincipal(QMainWindow):
         
         data_ter_curso =self.ui.input_data_termino_cursos_as.text()
         data_termino= "-".join(data_ter_curso.split("/")[::-1])
+
+
+        
+        
         
         periodo=self.ui.input_periodo_cursos_as.currentText()
                
@@ -1386,40 +1340,17 @@ class TelaPrincipal(QMainWindow):
         quinta = 1 if self.ui.input_quinta_cursos_as.isChecked() else 0
         sexta = 1 if self.ui.input_sexta_cursos_as.isChecked() else 0
         sabado = 1 if self.ui.input_sabado_cursos_as.isChecked() else 0
-            
+             
+
+        
+
         
 
         tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
 
-        #print(tupla_curso)
+        print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
-    
-    def cadastroAgendamento(self):
-        id_matricula = self.buscarPessoa()
-        print("cadastro agendamento",id_matricula)
-        cpf = self.ui.input_cpf_agendamento_as.text()
-        nome = self.ui.input_nome_agendamento_as.text()
-        telefone = self.ui.input_telefone_agendamento_as.text()
-        clinica = self.ui.input_clinica_agendamento_as.text()
-
-        profissional = ''
-        if self.ui.input_profissional_as_agendamento_as.isChecked():
-            profissional = 'Assistente Social'
-        elif self.ui.input_profissional_fisio_agendamento_as.isChecked():
-            profissional = 'Fisioterapeuta'
-        elif self.ui.input_profissional_nutri_agendamento_as.isChecked():
-            profissional = 'Nutricionista'
-        if self.ui.input_profissional_psi_agendamento_as.isChecked():
-            profissional = 'Psicóloga'
-        data = self.ui.input_data_agendamento_as.text()
-        data_agend = "-".join(data.split("/")[::-1])
-        hora = self.ui.input_hora_agendamento_as.text()
-        anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
-
-        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
-        result = self.db.cadastro_agendamento(tupla_agendamento)
-        self.msg(result[0],result[1])   
-        
+        print(result)
 
     def area_sigilosa(self):
 
