@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec2',user='fabrica',password='fabrica@2022')
 
         
         if self.conn.is_connected():
