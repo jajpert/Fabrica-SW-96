@@ -355,6 +355,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
+        self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
 
 
 ########################### Validar Login #############################
@@ -1422,6 +1423,17 @@ class TelaPrincipal(QMainWindow):
         result = self.db.cadastro_agendamento(tupla_agendamento)
         self.msg(result[0],result[1])   
         
+    def filtrar_agenda(self):
+        txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
+        res = self.db.filter_agenda(txt)
+        #print(res)
+
+        self.ui.input_TableWidget_agendamento_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+        
 
     def area_sigilosa(self):
 
@@ -1831,6 +1843,7 @@ class TelaPrincipal(QMainWindow):
             self.msg(result[0],result[1])
             self.limparCamposCadastroClinica()
             
+        
 
 
 ######################## Patologia base outros################################      

@@ -237,6 +237,19 @@ class DataBase():
 
         finally:
             self.close_connection()
+    def filter_agenda(self,text):
+        self.connect()
+        try: 
+            self.cursor.execute(f"""select data, hora , nome, profissional, anotacao from agendamento where nome like '%{text}%' or  profissional like '%{text}%';""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
         
     
     def select_usuario_ids(self):
