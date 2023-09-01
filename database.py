@@ -7,7 +7,6 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -35,6 +34,40 @@ class DataBase():
 
         finally:
             self.close_connection()
+    
+    def select_pessoa_cpf(self, cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT id_matricula, nome, telefone FROM pessoa WHERE cpf IN ({cpf});
+            """)
+            resultado1 = self.cursor.fetchall()
+            id_matricu = resultado1[0][0]
+
+            self.cursor.execute(f"""
+                SELECT local_tratamento FROM usuario WHERE id_matricula IN ({id_matricu});
+            """)
+            resultado2 = self.cursor.fetchall()
+
+            lista = []
+            for i in resultado1:
+                for n in i:
+                    lista.append(n)
+            for i in resultado2:
+                for n in i:
+                    lista.append(n)          
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            return lista
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+
     
     def select_colaborador(self):
         self.connect()
@@ -232,6 +265,27 @@ class DataBase():
             self.cursor.execute("""
                 SELECT id_clinica FROM clinica ORDER BY id_clinica;
             """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
+    def select_agendamentos(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+            """)
+
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -637,6 +691,19 @@ class DataBase():
 
             
                                                                                                                                                  
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+    
+    def cadastro_agendamento(self, agendamento):
+        self.connect()
+        try:
+            args = (1, agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+    
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
 
