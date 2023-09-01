@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>9</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -5728,6 +5728,21 @@ QPushButton:pressed{
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_60">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
                                    <item>
                                     <widget class="QLabel" name="label_local_tratamento_usuario_as">
                                      <property name="minimumSize">
@@ -5755,6 +5770,27 @@ QPushButton:pressed{
                                    </item>
                                    <item>
                                     <widget class="QComboBox" name="input_Local_Tratamento_Clinica_usuario_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>213</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="toolTipDuration">
+                                      <number>-1</number>
+                                     </property>
                                      <item>
                                       <property name="text">
                                        <string>Selecione</string>
@@ -17522,19 +17558,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            <property name="alignment">
                                             <set>Qt::AlignCenter</set>
                                            </property>
-                                           <property name="buttonSymbols">
-                                            <enum>QAbstractSpinBox::NoButtons</enum>
-                                           </property>
-                                           <property name="correctionMode">
-                                            <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
-                                           </property>
-                                           <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
-                                           </property>
-                                           <property name="calendarPopup">
+                                           <property name="calendarPopup" stdset="0">
                                             <bool>false</bool>
                                            </property>
-                                           <property name="currentSectionIndex">
+                                           <property name="currentSectionIndex" stdset="0">
                                             <number>0</number>
                                            </property>
                                           </widget>
@@ -17968,7 +17995,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                </date>
                                               </property>
                                               <property name="currentSection">
-                                               <enum>QDateTimeEdit::DaySection</enum>
+                                               <enum>QDateTimeEdit::MonthSection</enum>
                                               </property>
                                               <property name="calendarPopup">
                                                <bool>false</bool>
