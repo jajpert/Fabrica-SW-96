@@ -1385,7 +1385,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1697,7 +1697,7 @@ QPushButton:focus{outline: 0}</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_175">
+                         <layout class="QVBoxLayout" name="verticalLayout_120">
                           <item>
                            <widget class="QPushButton" name="btn_cadastrar_clinica_as">
                             <property name="minimumSize">
@@ -1781,6 +1781,52 @@ QPushButton:focus{outline: 0}</string>
                             <property name="icon">
                              <iconset>
                               <normaloff>../../../../Downloads/fornecedor.png</normaloff>../../../../Downloads/fornecedor.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>80</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_cadastrar_beneficios">
+                            <property name="minimumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Six Caps</family>
+                              <pointsize>60</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                            </property>
+                            <property name="text">
+                             <string>BENEFÍCIOS</string>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>../../../../Downloads/centro-medico.png</normaloff>../../../../Downloads/centro-medico.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
