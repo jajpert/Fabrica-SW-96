@@ -1,5 +1,137 @@
 from qtcore import *
 
+class Ui_Login_Ivalido(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+        Dialog.resize(440, 450)
+        Dialog.setMinimumSize(QSize(440, 450))
+        Dialog.setMaximumSize(QSize(440, 450))
+        Dialog.setStyleSheet(u"")
+        self.horizontalLayout = QHBoxLayout(Dialog)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Dialog)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMinimumSize(QSize(0, 0))
+        self.frame.setMaximumSize(QSize(16777215, 16777215))
+        self.frame.setStyleSheet(u"background-color: #FEE2E6; border-radius: 20px; border: 1px solid #E58893")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"border: none")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_3.setSpacing(0)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label = QLabel(self.frame_2)
+        self.label.setObjectName(u"label")
+        self.label.setMinimumSize(QSize(200, 200))
+        self.label.setMaximumSize(QSize(200, 200))
+        self.label.setPixmap(QPixmap(u"./icons/perigo.png"))
+        self.label.setScaledContents(True)
+
+        self.horizontalLayout_3.addWidget(self.label)
+
+
+        self.verticalLayout.addWidget(self.frame_2)
+
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"border: none")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_4 = QFrame(self.frame_3)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_3.setSpacing(0)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
+        self.label_2 = QLabel(self.frame_4)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 0))
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(14)
+        self.label_2.setFont(font)
+        self.label_2.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_3.addWidget(self.label_2)
+
+
+        self.verticalLayout_2.addWidget(self.frame_4)
+
+        self.frame_5 = QFrame(self.frame_3)
+        self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_5)
+        self.horizontalLayout_4.setSpacing(0)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer = QSpacerItem(167, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer)
+
+        self.btn_voltar_popup_as = QPushButton(self.frame_5)
+        self.btn_voltar_popup_as.setObjectName(u"btn_voltar_popup_as")
+        self.btn_voltar_popup_as.setMinimumSize(QSize(100, 30))
+        self.btn_voltar_popup_as.setFont(font)
+        self.btn_voltar_popup_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_popup_as.setStyleSheet(u"QPushButton{\n"
+"border-radius:15px;\n"
+"background-color: rgb(247, 176, 181);\n"
+"border: 2px ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(236, 132, 140);}\n"
+"\n"
+"QPushButton:pressed{\n"
+"background-color: rgb(247, 176, 181);\n"
+"}")
+
+        self.horizontalLayout_4.addWidget(self.btn_voltar_popup_as)
+
+        self.horizontalSpacer_2 = QSpacerItem(167, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_4.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout_2.addWidget(self.frame_5)
+
+
+        self.verticalLayout.addWidget(self.frame_3)
+
+
+        self.horizontalLayout.addWidget(self.frame)
+
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.label.setText("")
+        self.label_2.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">Login Invalido</p></body></html>", None))
+        self.btn_voltar_popup_as.setText(QCoreApplication.translate("Dialog", u"VOLTAR", None))
+    # retranslateUi
+
 
 class Ui_Area_Sob_Sigilo(object):
     def setupUi(self, Dialog):
@@ -628,7 +760,7 @@ class Ui_Dados_Salvos(object):
         self.label_imagem_salvo.setObjectName(u"label_imagem_salvo")
         self.label_imagem_salvo.setMinimumSize(QSize(150, 150))
         self.label_imagem_salvo.setMaximumSize(QSize(150, 150))
-        self.label_imagem_salvo.setPixmap(QPixmap(u"../icons/salve-.png"))
+        self.label_imagem_salvo.setPixmap(QPixmap(u"./icons/salve-.png"))
         self.label_imagem_salvo.setScaledContents(True)
 
         self.horizontalLayout_2.addWidget(self.label_imagem_salvo)
@@ -1205,5 +1337,139 @@ class Ui_Restaurar_Senha(object):
         self.label_nova_senha_popup_senha.setText(QCoreApplication.translate("Dialog", u"Nova senha", None))
         self.label_confirmar_senha_popup_senha.setText(QCoreApplication.translate("Dialog", u"Confirmar senha", None))
         self.btn_verificar_popup_senha.setText(QCoreApplication.translate("Dialog", u"Verificar", None))
+    # retranslateUi
+
+######################################################################################################################################################
+class Ui_Confirma_Saida(object):
+    def setupUi(self, Dialog):
+        if not Dialog.objectName():
+            Dialog.setObjectName(u"Dialog")
+
+        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+
+        Dialog.resize(440, 240)
+        Dialog.setMinimumSize(QSize(440, 240))
+        Dialog.setMaximumSize(QSize(440, 240))
+        self.horizontalLayout = QHBoxLayout(Dialog)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Dialog)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMaximumSize(QSize(440, 16777215))
+        self.frame.setStyleSheet(u"background-color: rgb(254, 226, 230);\n"
+"border-radius: 20px; \n"
+"border:1px solid rgb(229, 136, 147);")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"border: 0px;")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.label_popup_confirma_saida = QLabel(self.frame_2)
+        self.label_popup_confirma_saida.setObjectName(u"label_popup_confirma_saida")
+        self.label_popup_confirma_saida.setGeometry(QRect(0, 0, 420, 111))
+        self.label_popup_confirma_saida.setMinimumSize(QSize(230, 40))
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(14)
+        self.label_popup_confirma_saida.setFont(font)
+
+        self.verticalLayout.addWidget(self.frame_2)
+
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"border: 0px;")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_3 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.horizontalSpacer = QSpacerItem(82, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer)
+
+        self.frame_4 = QFrame(self.frame_3)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame_4)
+        self.horizontalLayout_2.setSpacing(20)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.btn_nao_popup_confirma_saida = QPushButton(self.frame_4)
+        self.btn_nao_popup_confirma_saida.setObjectName(u"btn_nao_popup_confirma_saida")
+        self.btn_nao_popup_confirma_saida.setMinimumSize(QSize(100, 30))
+        self.btn_nao_popup_confirma_saida.setMaximumSize(QSize(100, 30))
+        font1 = QFont()
+        font1.setFamilies([u"Abel"])
+        font1.setPointSize(12)
+        self.btn_nao_popup_confirma_saida.setFont(font1)
+        self.btn_nao_popup_confirma_saida.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_nao_popup_confirma_saida.setStyleSheet(u"QPushButton{\n"
+"border-radius:15px;\n"
+"background-color: rgb(247, 176, 181);\n"
+"border: 2px ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(236, 132, 140);}\n"
+"\n"
+"QPushButton:pressed{\n"
+"background-color: rgb(247, 176, 181);\n"
+"}")
+
+        self.horizontalLayout_2.addWidget(self.btn_nao_popup_confirma_saida)
+
+        self.btn_sim_popup_confirma_saida = QPushButton(self.frame_4)
+        self.btn_sim_popup_confirma_saida.setObjectName(u"btn_sim_popup_confirma_saida")
+        self.btn_sim_popup_confirma_saida.setMinimumSize(QSize(100, 30))
+        self.btn_sim_popup_confirma_saida.setMaximumSize(QSize(100, 30))
+        self.btn_sim_popup_confirma_saida.setFont(font1)
+        self.btn_sim_popup_confirma_saida.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_sim_popup_confirma_saida.setStyleSheet(u"QPushButton{\n"
+"border-radius:15px;\n"
+"background-color: rgb(0, 168, 232);\n"
+"color: rgb(255, 255, 255);\n"
+"border: 2px ;\n"
+"}\n"
+"QPushButton:hover{\n"
+"background-color: rgb(0, 124, 191);}\n"
+"\n"
+"QPushButton:pressed{\n"
+"background-color: rgb(0, 168, 232);\n"
+"}\n"
+"\n"
+"\n"
+"")
+
+        self.horizontalLayout_2.addWidget(self.btn_sim_popup_confirma_saida)
+
+
+        self.horizontalLayout_3.addWidget(self.frame_4)
+
+        self.horizontalSpacer_2 = QSpacerItem(82, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_3.addItem(self.horizontalSpacer_2)
+
+
+        self.verticalLayout.addWidget(self.frame_3)
+
+
+        self.horizontalLayout.addWidget(self.frame)
+
+
+        self.retranslateUi(Dialog)
+
+        QMetaObject.connectSlotsByName(Dialog)
+    # setupUi
+
+    def retranslateUi(self, Dialog):
+        Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
+        self.label_popup_confirma_saida.setText(QCoreApplication.translate("", u"<html><head/><body><p align=\"center\"><br/></p><p align=\"center\">Deseja sair?</p></body></html>", None))
+        self.btn_nao_popup_confirma_saida.setText(QCoreApplication.translate("Dialog", u"N\u00c3O", None))
+        self.btn_sim_popup_confirma_saida.setText(QCoreApplication.translate("Dialog", u"SIM", None))
     # retranslateUi
 
