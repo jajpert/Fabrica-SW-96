@@ -1186,7 +1186,15 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_usuario_cuidador_as.addItem("")
             itens += 1
             count += 1
+    def listarAgendamentos(self):
+        res = self.db.select_agendamentos()
 
+        # self.ui.input_TableWidget_agendamento_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+                
     def cadastroCuidador(self):
 
         ######################## endereço ################################
