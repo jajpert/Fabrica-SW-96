@@ -206,6 +206,7 @@ class TelaPrincipal(QMainWindow):
         self.listarUsuarios()
         self.buscar_clinica_nome_fantasia()
         self.listarAgendamentos()
+        self.listarBeneficios()
         self.id_area_sigilosa = self.relatorio_pessoa()
         # self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
@@ -331,6 +332,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
+        self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
@@ -1195,6 +1197,13 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def listarBeneficios(self):
+        res = self.db.busca_beneficios()
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_cadastro_beneficio.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def cadastroCuidador(self):
 
@@ -1540,6 +1549,15 @@ class TelaPrincipal(QMainWindow):
        self.ui.input_estado_clinica_as.setText("")
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
 
+    def limparCamposCadastroBeneficios(self):
+        self.ui.input_tipo_cadastro_beneficio.setCurrentIndex(int(0))
+        self.ui.input_codigo_cadastro_beneficio.setText("")
+        self.ui.input_lote_cadastro_beneficio.setText("")
+        self.ui.input_comboBox_udm_cadastro_benefecio.setCurrentIndex(int(0))
+        self.ui.input_descricao_cadastro_beneficio.setText("")
+        self.ui.input_dateEdit_cadastro_beneficio.setDate(QDate(2000, 1, 1))          
+        self.ui.input_spinBox_cadastro_beneficio.setValue(0)
+
     def buscar_clinica_nome_fantasia(self):
 
         retrive_data = self.db.busca_clinica_nome_fantasia()
@@ -1812,6 +1830,52 @@ class TelaPrincipal(QMainWindow):
             print(result)
             self.msg(result[0],result[1])
             self.limparCamposCadastroClinica()
+
+###########################################################################
+    def cadastro_beneficios(self):
+            
+        ########################## dados ######################################       
+            dados = self.db.busca_beneficios()
+            print (dados)
+            tipo = self.ui.input_tipo_cadastro_beneficio.currentIndex()
+            
+            if tipo == 'Medicação':
+                self.ui.input_tipo_cadastro_beneficio.currentIndex(1)
+            
+            elif tipo == 'Alimentação':
+                self.ui.input_tipo_cadastro_beneficio.currentIndex(2)
+
+            codigo = self.ui.input_codigo_cadastro_beneficio.text()
+            lote = self.ui.input_lote_cadastro_beneficio.text()
+            dados = self.db.busca_beneficios()
+            unidade_medida = self.ui.input_comboBox_udm_cadastro_benefecio.currentIndex()
+            
+            
+            if unidade_medida == 'Quilo':
+                self.ui.input_comboBox_udm_cadastro_benefecio.currentIndex(1)
+            
+            elif unidade_medida == 'Frasco':
+                self.ui.input_comboBox_udm_cadastro_beneficio.currentIndex(2)
+            
+            elif unidade_medida == 'Grama':
+                self.ui.input_comboBox_udm_cadastro_beneficio.currentIndex(3)
+            
+            elif unidade_medida == 'Unidade':
+                self.ui.input_comboBox_udm_cadastro_beneficio.currentIndex(4)
+
+            descricao = self.ui.input_descricao_cadastro_beneficio.text()
+            vali=self.ui.input_dateEdit_cadastro_beneficio.text()
+             
+            validade = "-".join(vali.split("/")[::-1])          
+            quantidade = self.ui.input_spinBox_cadastro_beneficio.value()
+
+            tupla_beneficios = (tipo,codigo,lote,unidade_medida,descricao,validade,quantidade)
+            
+            result = []
+            result=self.db.cadastro_beneficios(tupla_beneficios)
+            print(result)
+            self.msg(result[0],result[1])
+            self.limparCamposCadastroBeneficios()
             
         
 

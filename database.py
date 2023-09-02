@@ -93,7 +93,20 @@ class DataBase():
 
         finally:
             self.close_connection()
-    
+
+    def cadastro_beneficios(self,beneficios):
+        self.connect()
+        try:
+            args = (beneficios[0],beneficios[1],beneficios[2],beneficios[3],beneficios[4],beneficios[5],beneficios[6])
+            self.cursor.execute('INSERT INTO beneficios(tipo, codigo, lote, unidade_medida, descricao, validade, quantidade) VALUES (%s,%s,%s,%s,%s,%s,%s)', args)
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
     def select_usuario(self):
         self.connect()
         try:
@@ -803,6 +816,22 @@ class DataBase():
         except AttributeError as err:
             print(err)
         
+        finally:
+            self.close_connection()
+
+    def busca_beneficios(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT codigo,lote,quantidade DATE_FORMAT,validade, descricao FROM beneficios;
+            """)
+
+            result = self.cursor.fetchall()
+            
+            return result
+        except Exception as err:
+            print(err)
+
         finally:
             self.close_connection()
 
