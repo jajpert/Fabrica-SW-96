@@ -882,10 +882,10 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_salario_colaborador_as_2.setText(str(dados[22]))
             self.ui.input_alterar_usuario_colaborador_as_2.setText(dados[23])
             self.ui.input_alterar_senha_colaborador_as_2.setText(dados[24])
-            self.ui.input_alterar_confirmar_senha_colaborador_as_2.setText(dados[25])
-            self.ui.input_alterar_id_endereco_colaborador_as.setText(str(dados[26]))
+            self.ui.input_alterar_confirmar_senha_colaborador_as_2.setText(dados[24])
+            self.ui.input_alterar_id_endereco_colaborador_as.setText(str(dados[25]))
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
-            self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[27]))
+            self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_matricula_colaborador_as.hide()
             
 
