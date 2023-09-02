@@ -433,7 +433,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,
                                     colaborador.pis, sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, login, endereco.id_endereco, colaborador.id_matricula
+                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, endereco.id_endereco, colaborador.id_matricula
                                     from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
                                     left join colaborador on colaborador.id_matricula = pessoa.id_matricula
                                     where cpf like '%{cpf}%';""")
