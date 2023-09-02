@@ -204,8 +204,10 @@ class TelaPrincipal(QMainWindow):
 
         self.db = DataBase()        
         self.listarUsuarios()
+        self.buscar_clinica_nome_fantasia()
+        self.listarAgendamentos()
         self.id_area_sigilosa = self.relatorio_pessoa()
-        self.filtrar_usuario_area_sigilosa()
+        # self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -257,7 +259,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_voltar_cadastro_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
-        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))    
+        self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
@@ -343,14 +345,16 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
-        
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
-        
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
-        
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
-        
         self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
+        self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
+        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
+        self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
+        self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
 
 
 ########################### Validar Login #############################
@@ -1103,7 +1107,7 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
         email = self.ui.input_email_usuario_as.text()
-        escolaridade = self.ui.input_escolaridade_usuario_as.currentText()
+        escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
         ################ tratamento ##################################
@@ -1115,7 +1119,9 @@ class TelaPrincipal(QMainWindow):
         tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
-        local_tratamento = self.ui.input_local_tratamento_usuario_as.text()
+        local_tratamento = self.ui.input_Local_Tratamento_Clinica_usuario_as.currentText()
+        local_tratamento_id = local_tratamento.split("-")
+        local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         #outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
        
@@ -1151,7 +1157,7 @@ class TelaPrincipal(QMainWindow):
 
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
         result = []
@@ -1351,7 +1357,44 @@ class TelaPrincipal(QMainWindow):
 
         print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
-        print(result)
+    
+    def cadastroAgendamento(self):
+        id_matricula = self.buscarPessoa()
+        print("cadastro agendamento",id_matricula)
+        cpf = self.ui.input_cpf_agendamento_as.text()
+        nome = self.ui.input_nome_agendamento_as.text()
+        telefone = self.ui.input_telefone_agendamento_as.text()
+        clinica = self.ui.input_clinica_agendamento_as.text()
+
+        profissional = ''
+        if self.ui.input_profissional_as_agendamento_as.isChecked():
+            profissional = 'Assistente Social'
+        elif self.ui.input_profissional_fisio_agendamento_as.isChecked():
+            profissional = 'Fisioterapeuta'
+        elif self.ui.input_profissional_nutri_agendamento_as.isChecked():
+            profissional = 'Nutricionista'
+        if self.ui.input_profissional_psi_agendamento_as.isChecked():
+            profissional = 'Psicóloga'
+        data = self.ui.input_data_agendamento_as.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_agendamento_as.text()
+        anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
+
+        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        result = self.db.cadastro_agendamento(tupla_agendamento)
+        self.msg(result[0],result[1])   
+        
+    def filtrar_agenda(self):
+        txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
+        res = self.db.filter_agenda(txt)
+        #print(res)
+
+        self.ui.input_TableWidget_agendamento_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+        
 
     def area_sigilosa(self):
 
@@ -1405,7 +1448,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_tarifa_social_nao_usuario_as.setCheckable(False)
         self.ui.input_tarifa_social_nao_usuario_as.setCheckable(True)
         self.ui.input_tipo_tratamento_usuario_as.setCurrentIndex(int(0))
-        self.ui.input_local_tratamento_usuario_as.setText("")
+        self.ui.input_Local_Tratamento_Clinica_usuario_as.setCurrentIndex(int(0))
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
@@ -1488,15 +1531,102 @@ class TelaPrincipal(QMainWindow):
        self.ui.input_estado_clinica_as.setText("")
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
 
+    def buscar_clinica_nome_fantasia(self):
+
+        retrive_data = self.db.busca_clinica_nome_fantasia()
+        print("Clinicas Cadastradas -> ",retrive_data)
+
+        lista_clinica = self.db.select_clinica_ids()
+
+        nomes = []
+        id_clinicas = []
+
+        for i in lista_clinica:
+            id_clinica = i[0]
+            id_clinica = str(id_clinica).zfill(3)
+            nome = self.db.select_nome_Clinica(id_clinica)
+            id_clinicas.append(id_clinica)
+            nomes.append(nome)
+        convertendo_nome = [i[0] for i in nomes]
+        convertendo_nome_clinica = [i[0] for i in convertendo_nome]
+        count = 0
+        itens = 0
+        while count < len(convertendo_nome_clinica):
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
+            itens += 1
+            count += 1
+        print("Id_Clinica ->",id_clinica)
+        print("Id_Clinicas ->",id_clinicas)
+        print("Nomes -> ",nomes)
+        print("Nome Convertido -> ",convertendo_nome_clinica)
 
 
+    def buscar_dados_consulta(self):
+        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        dados = self.db.buscar_consulta(cpf)
+        print(dados)
+        self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
+        self.ui.input_id_usuario_consulta_as.hide()
+        # self.ui.input_id_consulta_as.setText(str(dados[1]))
+        # self.ui.input_id_consulta_as.hide()
+        self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
+        self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
+        self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
+        
 
+    def cadastrar_consulta(self):
+        if self.ui.radioButton_Consulta_as.isChecked():
+            situacao = "Consulta"
+        if self.ui.radioButton_Retorno_as.isChecked():
+            situacao = "Retorno"
 
+        data = self.ui.input_data_pagina_consulta_geral.text()
+        data_consulta = "-".join(data.split("/")[::-1])
 
+        hora_bruta = self.ui.input_hora_consulta_as.text()
 
+        relatorio = self.ui.input_relatorio_pagina_consulta_geral.toPlainText()
 
+        id_usuario = self.ui.input_id_usuario_consulta_as.text()
 
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
 
+        result = []
+        result = self.db.cadastro_consulta(tupla_consulta)
+        print(result)
+    
+    def puxar_consulta(self):
+        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        result = self.db.buscar_info_consulta(cpf)
+        print(result)
+        self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    
+    
+    def alterar_usuario_consulta(self,campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+        for emp in update_dados:
+           res = self.db.alterar_usuario_consulta_as(tuple(emp))
+           print("resultado ->",emp)
+
+    def excluir_usuario_consulta (self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_consulta_relatorio(id_consulta)
+    
+                
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       
@@ -1674,6 +1804,7 @@ class TelaPrincipal(QMainWindow):
             self.msg(result[0],result[1])
             self.limparCamposCadastroClinica()
             
+        
 
 
 ######################## Patologia base outros################################      
