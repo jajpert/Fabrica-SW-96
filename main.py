@@ -270,6 +270,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
+        self.ui.btn_cadastrar_fornecedores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_fornecedor_as))
+        self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -282,6 +284,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
+        #self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)
+
 
         #################SIGNAL CPF##################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
