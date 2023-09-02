@@ -6456,7 +6456,7 @@ QPushButton:focus{outline:0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page">
+                     <widget class="QWidget" name="page_beneficios_as">
                       <layout class="QVBoxLayout" name="verticalLayout_122">
                        <property name="spacing">
                         <number>0</number>
@@ -22272,7 +22272,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>0</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
