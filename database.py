@@ -14,6 +14,26 @@ class DataBase():
         else:
             print("Erro")  
 
+    def select_agendamentos(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+            """)
+
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
 
     def select_pessoa(self):
         self.connect()
