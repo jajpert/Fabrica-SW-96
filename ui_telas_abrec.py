@@ -6848,7 +6848,7 @@ class Ui_MainWindow(object):
 "}")
         icon26 = QIcon()
         icon26.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_agendamento_as.setIcon(icon22)
+        self.btn_buscar_agendamento_as.setIcon(icon26)
 
         self.verticalLayout_117.addWidget(self.btn_buscar_agendamento_as)
 
@@ -7343,7 +7343,7 @@ class Ui_MainWindow(object):
 "QPushButton:focus{outline:0}")
         icon27 = QIcon()
         icon27.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_agenda_as.setIcon(icon23)
+        self.btn_alterar_agenda_as.setIcon(icon27)
         self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_70.addWidget(self.btn_alterar_agenda_as)
@@ -7360,7 +7360,7 @@ class Ui_MainWindow(object):
 "QPushButton:focus{outline:0}")
         icon28 = QIcon()
         icon28.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cancelar_agenda_as.setIcon(icon24)
+        self.btn_cancelar_agenda_as.setIcon(icon28)
         self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_70.addWidget(self.btn_cancelar_agenda_as)
