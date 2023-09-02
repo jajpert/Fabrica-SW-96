@@ -11782,14 +11782,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_1491.setObjectName(u"horizontalLayout_1491")
         self.horizontalLayout_1491.setContentsMargins(0, 0, 0, 0)
         self.input_TableWidget_pagina_consulta_geral = QTableWidget(self.frame_461)
-        if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 3):
-            self.input_TableWidget_pagina_consulta_geral.setColumnCount(3)
+        if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 4):
+            self.input_TableWidget_pagina_consulta_geral.setColumnCount(4)
         __qtablewidgetitem39 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem39)
         __qtablewidgetitem40 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem40)
         __qtablewidgetitem41 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem41)
+        __qtablewidgetitem42 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem42)
         if (self.input_TableWidget_pagina_consulta_geral.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
@@ -11807,7 +11809,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral.setSortingEnabled(True)
         self.input_TableWidget_pagina_consulta_geral.setWordWrap(True)
         self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
-        self.input_TableWidget_pagina_consulta_geral.setColumnCount(3)
+        self.input_TableWidget_pagina_consulta_geral.setColumnCount(4)
         self.input_TableWidget_pagina_consulta_geral.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_pagina_consulta_geral.horizontalHeader().setDefaultSectionSize(130)
         self.input_TableWidget_pagina_consulta_geral.horizontalHeader().setStretchLastSection(True)
@@ -13717,11 +13719,13 @@ class Ui_MainWindow(object):
         self.label_filtro_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"FILTRO", None))
         self.input_filtro_pagina_consulta_geral.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data.", None))
         ___qtablewidgetitem33 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
-        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem33.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem34 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
-        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Consulta/Retorno", None));
+        ___qtablewidgetitem34.setText(QCoreApplication.translate("MainWindow", u"Data", None));
         ___qtablewidgetitem35 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
-        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Relatorio", None));
+        ___qtablewidgetitem35.setText(QCoreApplication.translate("MainWindow", u"Consulta/Retorno", None));
+        ___qtablewidgetitem36 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
+        ___qtablewidgetitem36.setText(QCoreApplication.translate("MainWindow", u"Relatorio", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_pagina_consulta_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
