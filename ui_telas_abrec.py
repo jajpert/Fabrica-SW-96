@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecorKqsL.ui'
+## Form generated from reading UI file 'telas_abrecqrgBpB.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -2343,13 +2343,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setStretch(1, 8)
         self.verticalLayout_3.setStretch(2, 1)
         self.stackedWidget_2.addWidget(self.page_cadastro_usuario_as)
-        self.page = QWidget()
-        self.page.setObjectName(u"page")
-        self.verticalLayout_122 = QVBoxLayout(self.page)
+        self.page_beneficios_as = QWidget()
+        self.page_beneficios_as.setObjectName(u"page_beneficios_as")
+        self.verticalLayout_122 = QVBoxLayout(self.page_beneficios_as)
         self.verticalLayout_122.setSpacing(0)
         self.verticalLayout_122.setObjectName(u"verticalLayout_122")
         self.verticalLayout_122.setContentsMargins(0, -1, 0, 0)
-        self.frame_169 = QFrame(self.page)
+        self.frame_169 = QFrame(self.page_beneficios_as)
         self.frame_169.setObjectName(u"frame_169")
         self.frame_169.setFrameShape(QFrame.StyledPanel)
         self.frame_169.setFrameShadow(QFrame.Raised)
@@ -2893,7 +2893,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_122.addWidget(self.frame_169)
 
-        self.stackedWidget_2.addWidget(self.page)
+        self.stackedWidget_2.addWidget(self.page_beneficios_as)
         self.page_cadastro_cuidador_as = QWidget()
         self.page_cadastro_cuidador_as.setObjectName(u"page_cadastro_cuidador_as")
         self.verticalLayout_66 = QVBoxLayout(self.page_cadastro_cuidador_as)
