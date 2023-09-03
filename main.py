@@ -61,17 +61,7 @@ class DialogloginInvalido(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Login_Ivalido()
         self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
+        
 ################Class POPUP Usuário################
 class DialogTirarFoto(QDialog):
     def __init__(self, parent) -> None:

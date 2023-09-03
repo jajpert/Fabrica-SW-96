@@ -4,6 +4,9 @@ class Ui_Login_Ivalido(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
+        Dialog.setWindowFlags(Qt.FramelessWindowHint)
+        Dialog.setAttribute(Qt.WA_TranslucentBackground)
+        Dialog.setAttribute(Qt.WA_NoSystemBackground)
         Dialog.resize(440, 450)
         Dialog.setMinimumSize(QSize(440, 450))
         Dialog.setMaximumSize(QSize(440, 450))
@@ -32,14 +35,14 @@ class Ui_Login_Ivalido(object):
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label = QLabel(self.frame_2)
-        self.label.setObjectName(u"label")
-        self.label.setMinimumSize(QSize(200, 200))
-        self.label.setMaximumSize(QSize(200, 200))
-        self.label.setPixmap(QPixmap(u"./icons/perigo.png"))
-        self.label.setScaledContents(True)
+        self.label_imagem_login_invalido_popup_as = QLabel(self.frame_2)
+        self.label_imagem_login_invalido_popup_as.setObjectName(u"label_imagem_login_invalido_popup_as")
+        self.label_imagem_login_invalido_popup_as.setMinimumSize(QSize(200, 200))
+        self.label_imagem_login_invalido_popup_as.setMaximumSize(QSize(200, 200))
+        self.label_imagem_login_invalido_popup_as.setPixmap(QPixmap(u"./icons/perigo.png"))
+        self.label_imagem_login_invalido_popup_as.setScaledContents(True)
 
-        self.horizontalLayout_3.addWidget(self.label)
+        self.horizontalLayout_3.addWidget(self.label_imagem_login_invalido_popup_as)
 
 
         self.verticalLayout.addWidget(self.frame_2)
@@ -61,16 +64,16 @@ class Ui_Login_Ivalido(object):
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_2 = QLabel(self.frame_4)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(0, 0))
+        self.label_login_invalido_popup_as = QLabel(self.frame_4)
+        self.label_login_invalido_popup_as.setObjectName(u"label_login_invalido_popup_as")
+        self.label_login_invalido_popup_as.setMinimumSize(QSize(0, 0))
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(14)
-        self.label_2.setFont(font)
-        self.label_2.setAlignment(Qt.AlignCenter)
+        self.label_login_invalido_popup_as.setFont(font)
+        self.label_login_invalido_popup_as.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_3.addWidget(self.label_2)
+        self.verticalLayout_3.addWidget(self.label_login_invalido_popup_as)
 
 
         self.verticalLayout_2.addWidget(self.frame_4)
@@ -87,12 +90,12 @@ class Ui_Login_Ivalido(object):
 
         self.horizontalLayout_4.addItem(self.horizontalSpacer)
 
-        self.btn_voltar_popup_as = QPushButton(self.frame_5)
-        self.btn_voltar_popup_as.setObjectName(u"btn_voltar_popup_as")
-        self.btn_voltar_popup_as.setMinimumSize(QSize(100, 30))
-        self.btn_voltar_popup_as.setFont(font)
-        self.btn_voltar_popup_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_popup_as.setStyleSheet(u"QPushButton{\n"
+        self.btn_voltar_popup_login_invalido_as = QPushButton(self.frame_5)
+        self.btn_voltar_popup_login_invalido_as.setObjectName(u"btn_voltar_popup_login_invalido_as")
+        self.btn_voltar_popup_login_invalido_as.setMinimumSize(QSize(100, 30))
+        self.btn_voltar_popup_login_invalido_as.setFont(font)
+        self.btn_voltar_popup_login_invalido_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_popup_login_invalido_as.setStyleSheet(u"QPushButton{\n"
 "border-radius:15px;\n"
 "background-color: rgb(247, 176, 181);\n"
 "border: 2px ;\n"
@@ -104,7 +107,7 @@ class Ui_Login_Ivalido(object):
 "background-color: rgb(247, 176, 181);\n"
 "}")
 
-        self.horizontalLayout_4.addWidget(self.btn_voltar_popup_as)
+        self.horizontalLayout_4.addWidget(self.btn_voltar_popup_login_invalido_as)
 
         self.horizontalSpacer_2 = QSpacerItem(167, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -121,16 +124,20 @@ class Ui_Login_Ivalido(object):
 
 
         self.retranslateUi(Dialog)
+        self.btn_voltar_popup_login_invalido_as.clicked.connect(Dialog.reject)
 
         QMetaObject.connectSlotsByName(Dialog)
     # setupUi
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label.setText("")
-        self.label_2.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">Login Invalido</p></body></html>", None))
-        self.btn_voltar_popup_as.setText(QCoreApplication.translate("Dialog", u"VOLTAR", None))
+        self.label_imagem_login_invalido_popup_as.setText("")
+        self.label_login_invalido_popup_as.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\">Login Invalido</p></body></html>", None))
+        self.btn_voltar_popup_login_invalido_as.setText(QCoreApplication.translate("Dialog", u"VOLTAR", None))
     # retranslateUi
+
+
+
 
 
 class Ui_Area_Sob_Sigilo(object):
