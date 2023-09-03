@@ -175,19 +175,7 @@ class DialogAlterarSenhaFoto(QDialog):
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Alterar_Senha_Foto()
-        self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(8000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept() 
-       
+        self.ui.setupUi(self)  
                
     
 
@@ -1565,10 +1553,10 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
             itens += 1
             count += 1
-        print("Id_Clinica ->",id_clinica)
-        print("Id_Clinicas ->",id_clinicas)
-        print("Nomes -> ",nomes)
-        print("Nome Convertido -> ",convertendo_nome_clinica)
+        # print("Id_Clinica ->",id_clinica)
+        # print("Id_Clinicas ->",id_clinicas)
+        # print("Nomes -> ",nomes)
+        # print("Nome Convertido -> ",convertendo_nome_clinica)
 
 
     def buscar_dados_consulta(self):
