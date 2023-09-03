@@ -1075,7 +1075,7 @@ class Ui_Restaurar_Senha(object):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
 
-        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setWindowFlags(Qt.Popup|Qt.FramelessWindowHint)
         Dialog.setAttribute(Qt.WA_TranslucentBackground)
 
         Dialog.resize(440, 670)
@@ -1313,7 +1313,7 @@ class Ui_Restaurar_Senha(object):
     # retranslateUi
 
 ######################################################################################################################################################
-class Ui_Confirma_Saida(object):
+class Ui_Confirmar_Saida(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")

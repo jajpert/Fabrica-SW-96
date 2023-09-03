@@ -43,17 +43,7 @@ class DialogRecuperarSenha(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Restaurar_Senha()
         self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
+        
 ##################LOGIN INVALIDO###################
 class DialogloginInvalido(QDialog):
     def __init__(self, parent) -> None:
@@ -61,7 +51,7 @@ class DialogloginInvalido(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Login_Ivalido()
         self.ui.setupUi(self)
-        
+
 ################Class POPUP Usuário################
 class DialogTirarFoto(QDialog):
     def __init__(self, parent) -> None:
@@ -166,6 +156,15 @@ class DialogAlterarSenhaFoto(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Alterar_Senha_Foto()
         self.ui.setupUi(self)  
+
+
+##############Class Alterar Foto e Senha##############
+class DialogConfirmarSaida(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Confirmar_Saida()
+        self.ui.setupUi(self)  
                
     
 
@@ -175,7 +174,6 @@ class TelaPrincipal(QMainWindow):
         super().__init__()
 
         self.ui = Ui_MainWindow()
-        self.saida = Ui_Confirma_Saida()
         self.ui.setupUi(self)
         
         ######################### banco #########################
@@ -222,7 +220,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        # self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+        self.ui.btn_sair_as.clicked.connect(self.confirmarSaida)  
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
@@ -1689,6 +1687,13 @@ class TelaPrincipal(QMainWindow):
 
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
+    
+    ################ def POPUP COnfirmar Saída################
+    def confirmarSaida(self):
+        msg = DialogConfirmarSaida(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
 
 
            
@@ -1963,6 +1968,7 @@ class TelaPrincipal(QMainWindow):
         msg.setWindowTitle('Relatório')
         msg.setText('Relatório gerado com sucesso!')
         msg.exec()
+        
    
 
 
