@@ -164,8 +164,12 @@ class DialogConfirmarSaida(QDialog):
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Confirmar_Saida()
-        self.ui.setupUi(self)  
-               
+        self.ui.setupUi(self)    
+            
+        # if self.ui.btn_sim_popup_confirma_saida.clicked():
+        #     self.ui.inicio.setCurrentIndex(0)
+        #     self.ui.input_usuario_login.setText("")
+        #     self.ui.input_senha_login.setText("")
     
 
 #############################################################################
@@ -1611,14 +1615,6 @@ class TelaPrincipal(QMainWindow):
         id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
         self.db.deletar_consulta_relatorio(id_consulta)
     
-                
-#####Alterar SITUACAO de Trabalho Outros #########
-######################LOGIN INVALIDO POPUP####################
-    def loginIvalido(self):       
-        msg = DialogloginInvalido(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.hide()
 
 
 ####################### FUNÇÕES POP UP #######################
@@ -1636,7 +1632,13 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
+    
 
+    def loginIvalido(self):       
+        msg = DialogloginInvalido(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
 
 
     def trocarFotoSenha(self):
@@ -1645,8 +1647,6 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         self.popup.hide()
 
-
-    ################ def POPUP Cuidador################
 
     def concluirCadastroIncompletoUsuario(self):
         msg = DialogCadastroIncompletoUsuario(self)
@@ -1658,8 +1658,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as)
 
 
-    ################ def POPUP Cursos e oficinas################
-
     def cadastroIncompletoCursos(self):
         msg = DialogCadastroIncompletoCursos(self)
         self.popup.show()
@@ -1669,14 +1667,13 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
-   
-    ################ def POPUP Usuário################
 
     def tirarFoto(self):
         msg = DialogTirarFoto(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
+
 
     def msg(self,tipo,mensagem):
         msg = DialogCadastroUsuarioSucesso(self)
@@ -1685,15 +1682,19 @@ class TelaPrincipal(QMainWindow):
         self.popup.hide()
         #self.clean()
 
+
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
-    
-    ################ def POPUP COnfirmar Saída################
+
+
     def confirmarSaida(self):
         msg = DialogConfirmarSaida(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
+
+
+##################################################################
 
 
            

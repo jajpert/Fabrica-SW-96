@@ -1317,13 +1317,10 @@ class Ui_Confirmar_Saida(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-
-        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setWindowFlags(Qt.FramelessWindowHint)
         Dialog.setAttribute(Qt.WA_TranslucentBackground)
-
+        Dialog.setAttribute(Qt.WA_NoSystemBackground)
         Dialog.resize(440, 240)
-        Dialog.setMinimumSize(QSize(440, 240))
-        Dialog.setMaximumSize(QSize(440, 240))
         self.horizontalLayout = QHBoxLayout(Dialog)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -1337,20 +1334,22 @@ class Ui_Confirmar_Saida(object):
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
+        self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
         self.frame_2 = QFrame(self.frame)
         self.frame_2.setObjectName(u"frame_2")
         self.frame_2.setStyleSheet(u"border: 0px;")
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
-        self.label_popup_confirma_saida = QLabel(self.frame_2)
-        self.label_popup_confirma_saida.setObjectName(u"label_popup_confirma_saida")
-        self.label_popup_confirma_saida.setGeometry(QRect(0, 0, 420, 111))
-        self.label_popup_confirma_saida.setMinimumSize(QSize(230, 40))
+        self.label_popup_confirmar_sair = QLabel(self.frame_2)
+        self.label_popup_confirmar_sair.setObjectName(u"label_popup_confirmar_sair")
+        self.label_popup_confirmar_sair.setGeometry(QRect(0, 0, 420, 111))
+        self.label_popup_confirmar_sair.setMinimumSize(QSize(230, 40))
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(14)
-        self.label_popup_confirma_saida.setFont(font)
+        self.label_popup_confirmar_sair.setFont(font)
 
         self.verticalLayout.addWidget(self.frame_2)
 
@@ -1435,14 +1434,15 @@ class Ui_Confirmar_Saida(object):
 
 
         self.retranslateUi(Dialog)
+        self.btn_nao_popup_confirma_saida.clicked.connect(Dialog.reject)
 
         QMetaObject.connectSlotsByName(Dialog)
     # setupUi
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label_popup_confirma_saida.setText(QCoreApplication.translate("", u"<html><head/><body><p align=\"center\"><br/></p><p align=\"center\">Deseja sair?</p></body></html>", None))
-        self.btn_nao_popup_confirma_saida.setText(QCoreApplication.translate("Dialog", u"N\u00c3O", None))
+        self.label_popup_confirmar_sair.setText(QCoreApplication.translate("Dialog", u"<html><head/><body><p align=\"center\"><br/></p><p align=\"center\">Deseja realmente sair?</p></body></html>", None))
+        self.btn_nao_popup_confirma_saida.setText(QCoreApplication.translate("Dialog", u"N\u00e3o", None))
         self.btn_sim_popup_confirma_saida.setText(QCoreApplication.translate("Dialog", u"SIM", None))
     # retranslateUi
 
