@@ -1294,14 +1294,25 @@ class TelaPrincipal(QMainWindow):
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
-        perfil = 'adm'
+        if cargo in ["Recepcionista"]:
+            perfil = 'rep'
+        elif cargo in ["Assistente Social"]:
+            perfil = 'adm'
+        elif cargo in ["Farmacêutico (a)"]:
+            perfil = 'farm'
+        elif cargo in ["Psicólogo (a)"]:
+            perfil = 'pisc'
+        elif cargo in ["Fisioterapeuta"]:
+            perfil = 'fisio'
+        elif cargo in ["Nutricionista"]:
+            perfil = 'nutri'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
         tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
 
         #################### insert ##########################################
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
-        #print(result)
+        print(result)
         self.msg(result[0],result[1])        
 
 
