@@ -151,7 +151,7 @@
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>../../../GitHub/Fabrica-SW-96/icons/Logo ABREC.png</pixmap>
+                 <pixmap>../icons/Logo ABREC.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -365,7 +365,7 @@ QFrame#frame_39:focus{outline:0; border: 2px solid #D62828}</string>
                           <string/>
                          </property>
                          <property name="pixmap">
-                          <pixmap>../../../GitHub/Fabrica-SW-96/icons/pessoas.png</pixmap>
+                          <pixmap>../icons/pessoas.png</pixmap>
                          </property>
                          <property name="scaledContents">
                           <bool>true</bool>
@@ -454,7 +454,7 @@ QFrame#frame_40:focus{outline:0; border: 2px solid #D62828}</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../../../GitHub/Fabrica-SW-96/icons/olho_fechado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/olho_fechado.png</iconset>
+                           <normaloff>../icons/olho_fechado.png</normaloff>../icons/olho_fechado.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -719,7 +719,7 @@ QPushButton:focus{outline: 0} </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>../../../GitHub/Fabrica-SW-96/icons/Abrec logo paint-02 (2).png</pixmap>
+              <pixmap>../icons/Abrec logo paint-02 (2).png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -852,7 +852,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -981,7 +981,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</iconset>
+                             <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1024,7 +1024,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1067,7 +1067,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</iconset>
+                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1110,7 +1110,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1295,7 +1295,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>12</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1493,7 +1493,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cuidado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cuidado.png</iconset>
+                              <normaloff>../icons/cuidado.png</normaloff>../icons/cuidado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1539,7 +1539,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/unidos.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/unidos.png</iconset>
+                              <normaloff>../icons/unidos.png</normaloff>../icons/unidos.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1585,7 +1585,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/certificados.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/certificados.png</iconset>
+                              <normaloff>../icons/certificados.png</normaloff>../icons/certificados.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1631,7 +1631,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</iconset>
+                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -2033,7 +2033,7 @@ QPushButton:focus{outline: 0}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -3748,7 +3748,7 @@ QPushButton:pressed{
                                                  </property>
                                                  <property name="icon">
                                                   <iconset>
-                                                   <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                  </property>
                                                 </widget>
                                                </item>
@@ -6357,43 +6357,6 @@ QPushButton:focus{outline:0}</string>
                              </size>
                             </property>
                            </spacer>
-                          </item>
-                          <item>
-                           <widget class="QPushButton" name="btn_observacoes_sigilo_as">
-                            <property name="minimumSize">
-                             <size>
-                              <width>0</width>
-                              <height>40</height>
-                             </size>
-                            </property>
-                            <property name="font">
-                             <font>
-                              <family>Abel</family>
-                              <pointsize>18</pointsize>
-                             </font>
-                            </property>
-                            <property name="cursor">
-                             <cursorShape>PointingHandCursor</cursorShape>
-                            </property>
-                            <property name="styleSheet">
-                             <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
-QPushButton:hover{background-color: #F89198}
-QPushButton:focus{outline:0}</string>
-                            </property>
-                            <property name="text">
-                             <string>Observações em sigilo</string>
-                            </property>
-                            <property name="icon">
-                             <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</iconset>
-                            </property>
-                            <property name="iconSize">
-                             <size>
-                              <width>28</width>
-                              <height>28</height>
-                             </size>
-                            </property>
-                           </widget>
                           </item>
                           <item>
                            <widget class="QPushButton" name="btn_salvar_usuario_as">
@@ -9185,7 +9148,7 @@ QPushButton:pressed{
                                         </property>
                                         <property name="icon">
                                          <iconset>
-                                          <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                         </property>
                                        </widget>
                                       </item>
@@ -10556,7 +10519,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</iconset>
+                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -10593,7 +10556,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cancelar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cancelar.png</iconset>
+                              <normaloff>../icons/cancelar.png</normaloff>../icons/cancelar.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -10630,7 +10593,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</iconset>
+                              <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -10667,7 +10630,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</iconset>
+                              <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -11867,7 +11830,7 @@ QPushButton:pressed{
                                            </property>
                                            <property name="icon">
                                             <iconset>
-                                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                            </property>
                                           </widget>
                                          </item>
@@ -14042,7 +14005,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -16503,7 +16466,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar-amigo.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar-amigo.png</iconset>
+                              <normaloff>../icons/adicionar-amigo.png</normaloff>../icons/adicionar-amigo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -19212,7 +19175,7 @@ QPushButton:pressed{
                                       </property>
                                       <property name="icon">
                                        <iconset>
-                                        <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                        <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                       </property>
                                      </widget>
                                     </item>
@@ -22716,7 +22679,7 @@ QPushButton:pressed{
                                                  </property>
                                                  <property name="icon">
                                                   <iconset>
-                                                   <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                  </property>
                                                 </widget>
                                                </item>
@@ -23910,7 +23873,7 @@ QPushButton:pressed{
                                 </property>
                                 <property name="icon">
                                  <iconset>
-                                  <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                  <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                 </property>
                                </widget>
                               </widget>
@@ -25287,7 +25250,7 @@ QPushButton:pressed{
                                                         </property>
                                                         <property name="icon">
                                                          <iconset>
-                                                          <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                         </property>
                                                        </widget>
                                                       </item>
@@ -26186,7 +26149,7 @@ QPushButton:focus{outline:0}</string>
                                                      </property>
                                                      <property name="icon">
                                                       <iconset>
-                                                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                                       <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                                      </property>
                                                      <property name="iconSize">
                                                       <size>
@@ -27897,7 +27860,7 @@ QPushButton:pressed{
                                                                     </property>
                                                                     <property name="icon">
                                                                      <iconset>
-                                                                      <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                                      <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                                     </property>
                                                                    </widget>
                                                                   </item>
@@ -30577,7 +30540,7 @@ QPushButton:focus{outline:0}</string>
                                                </property>
                                                <property name="icon">
                                                 <iconset>
-                                                 <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</iconset>
+                                                 <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
                                                </property>
                                                <property name="iconSize">
                                                 <size>
@@ -33339,7 +33302,7 @@ QPushButton:pressed{
                                                            </property>
                                                            <property name="icon">
                                                             <iconset>
-                                                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                                            </property>
                                                           </widget>
                                                          </item>
@@ -33849,7 +33812,7 @@ QPushButton:pressed{
                                                   </property>
                                                   <property name="icon">
                                                    <iconset>
-                                                    <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
+                                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
                                                   </property>
                                                   <property name="iconSize">
                                                    <size>
@@ -34601,7 +34564,7 @@ QPushButton:pressed{
                                            </property>
                                            <property name="icon">
                                             <iconset>
-                                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
                                            </property>
                                           </widget>
                                          </item>
@@ -34939,7 +34902,7 @@ QPushButton:focus{outline:0}</string>
                                         </property>
                                         <property name="icon">
                                          <iconset>
-                                          <normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</iconset>
+                                          <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
                                         </property>
                                         <property name="iconSize">
                                          <size>
@@ -35288,7 +35251,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="icon">
                                       <iconset>
-                                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</iconset>
+                                       <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
                                      </property>
                                      <property name="iconSize">
                                       <size>
@@ -35325,7 +35288,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="icon">
                                       <iconset>
-                                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</iconset>
+                                       <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
                                      </property>
                                      <property name="iconSize">
                                       <size>
@@ -35456,7 +35419,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -35579,7 +35542,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/remedio.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/remedio.png</iconset>
+                             <normaloff>../icons/remedio.png</normaloff>../icons/remedio.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35616,7 +35579,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/medicamento.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/medicamento.png</iconset>
+                             <normaloff>../icons/medicamento.png</normaloff>../icons/medicamento.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35653,7 +35616,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/estoque-pronto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/estoque-pronto.png</iconset>
+                             <normaloff>../icons/estoque-pronto.png</normaloff>../icons/estoque-pronto.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35795,7 +35758,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35979,7 +35942,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -36102,7 +36065,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36139,7 +36102,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36278,7 +36241,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36459,7 +36422,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -36579,7 +36542,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/seguranca-alimentar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/seguranca-alimentar.png</iconset>
+                             <normaloff>../icons/seguranca-alimentar.png</normaloff>../icons/seguranca-alimentar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36616,7 +36579,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36653,7 +36616,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36798,7 +36761,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36984,7 +36947,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</iconset>
+                              <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -37030,7 +36993,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                              <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -37151,7 +37114,7 @@ QPushButton:focus{outline: 0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -37280,7 +37243,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
+                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -37317,7 +37280,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -37456,7 +37419,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -37658,7 +37621,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
+                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -37784,7 +37747,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</iconset>
+                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -37821,7 +37784,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/festa-de-aniversario.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/festa-de-aniversario.png</iconset>
+                             <normaloff>../icons/festa-de-aniversario.png</normaloff>../icons/festa-de-aniversario.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -37858,7 +37821,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -38000,7 +37963,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
+                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
