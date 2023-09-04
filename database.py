@@ -55,6 +55,39 @@ class DataBase():
         finally:
             self.close_connection()
     
+    def select_pessoa_cpf(self, cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT id_matricula, nome, telefone FROM pessoa WHERE cpf IN ({cpf});
+            """)
+            resultado1 = self.cursor.fetchall()
+            id_matricu = resultado1[0][0]
+
+            self.cursor.execute(f"""
+                SELECT local_tratamento FROM usuario WHERE id_matricula IN ({id_matricu});
+            """)
+            resultado2 = self.cursor.fetchall()
+
+            lista = []
+            for i in resultado1:
+                for n in i:
+                    lista.append(n)
+            for i in resultado2:
+                for n in i:
+                    lista.append(n)          
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            return lista
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+    
     def select_colaborador(self):
         self.connect()
         try:

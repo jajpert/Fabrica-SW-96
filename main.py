@@ -287,6 +287,10 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
 
 
+        #################SIGNAL CPF##################
+        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
+
+
         
         #############SIGNALS BOTOES voltar#############
         #self.self.btn_voltar_popup_as.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
@@ -491,6 +495,24 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_clinica_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
+    def buscarPessoa(self):
+        cpf = self.ui.input_cpf_agendamento_as.text()
+        result = self.db.select_pessoa_cpf(cpf)
+        id_matricula = result[0]
+        nome = result[1]
+        telefone = result[2]
+        tamanho = int(len(result))
+        if tamanho > 3:
+            clinica = result[3]
+        else:
+            clinica = 'Não possuí'
+        self.ui.input_nome_agendamento_as.setText(nome)
+        self.ui.input_telefone_agendamento_as.setText(telefone)
+        self.ui.input_clinica_agendamento_as.setText(clinica)
+
+        return id_matricula
+
+
 
     def buscar_Usuario(self):
 
