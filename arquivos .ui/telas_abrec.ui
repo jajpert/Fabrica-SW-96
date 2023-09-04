@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2082</width>
-    <height>986</height>
+    <width>2098</width>
+    <height>994</height>
    </rect>
   </property>
   <property name="font">
@@ -151,7 +151,7 @@
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap>../icons/Logo ABREC.png</pixmap>
+                 <pixmap>../../../GitHub/Fabrica-SW-96/icons/Logo ABREC.png</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -365,7 +365,7 @@ QFrame#frame_39:focus{outline:0; border: 2px solid #D62828}</string>
                           <string/>
                          </property>
                          <property name="pixmap">
-                          <pixmap>../icons/pessoas.png</pixmap>
+                          <pixmap>../../../GitHub/Fabrica-SW-96/icons/pessoas.png</pixmap>
                          </property>
                          <property name="scaledContents">
                           <bool>true</bool>
@@ -454,7 +454,7 @@ QFrame#frame_40:focus{outline:0; border: 2px solid #D62828}</string>
                          </property>
                          <property name="icon">
                           <iconset>
-                           <normaloff>../icons/olho_fechado.png</normaloff>../icons/olho_fechado.png</iconset>
+                           <normaloff>../../../GitHub/Fabrica-SW-96/icons/olho_fechado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/olho_fechado.png</iconset>
                          </property>
                          <property name="iconSize">
                           <size>
@@ -719,7 +719,7 @@ QPushButton:focus{outline: 0} </string>
               <string/>
              </property>
              <property name="pixmap">
-              <pixmap>../icons/Abrec logo paint-02 (2).png</pixmap>
+              <pixmap>../../../GitHub/Fabrica-SW-96/icons/Abrec logo paint-02 (2).png</pixmap>
              </property>
              <property name="scaledContents">
               <bool>true</bool>
@@ -852,7 +852,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -981,7 +981,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1024,7 +1024,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1067,7 +1067,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1110,7 +1110,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1295,7 +1295,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>9</number>
+                      <number>12</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -1493,7 +1493,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cuidado.png</normaloff>../icons/cuidado.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cuidado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cuidado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1539,7 +1539,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/unidos.png</normaloff>../icons/unidos.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/unidos.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/unidos.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1585,7 +1585,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/certificados.png</normaloff>../icons/certificados.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/certificados.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/certificados.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1631,7 +1631,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1694,7 +1694,7 @@ QPushButton:focus{outline: 0}</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <layout class="QVBoxLayout" name="verticalLayout_175">
+                         <layout class="QVBoxLayout" name="verticalLayout_123">
                           <item>
                            <widget class="QPushButton" name="btn_cadastrar_clinica_as">
                             <property name="minimumSize">
@@ -1774,6 +1774,52 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="text">
                              <string>FORNECEDORES  </string>
+                            </property>
+                            <property name="icon">
+                             <iconset>
+                              <normaloff>../../../../Downloads/fornecedor.png</normaloff>../../../../Downloads/fornecedor.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                             <size>
+                              <width>80</width>
+                              <height>80</height>
+                             </size>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QPushButton" name="btn_cadastrar_beneficios_as">
+                            <property name="minimumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>700</width>
+                              <height>154</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Six Caps</family>
+                              <pointsize>60</pointsize>
+                             </font>
+                            </property>
+                            <property name="cursor">
+                             <cursorShape>PointingHandCursor</cursorShape>
+                            </property>
+                            <property name="layoutDirection">
+                             <enum>Qt::RightToLeft</enum>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                            </property>
+                            <property name="text">
+                             <string>BENEFICIOS</string>
                             </property>
                             <property name="icon">
                              <iconset>
@@ -1987,7 +2033,7 @@ QPushButton:focus{outline: 0}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                    <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -3702,7 +3748,7 @@ QPushButton:pressed{
                                                  </property>
                                                  <property name="icon">
                                                   <iconset>
-                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                   <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                                  </property>
                                                 </widget>
                                                </item>
@@ -5729,6 +5775,21 @@ QPushButton:pressed{
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_60">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
                                    <item>
                                     <widget class="QLabel" name="label_local_tratamento_usuario_as">
                                      <property name="minimumSize">
@@ -5756,6 +5817,27 @@ QPushButton:pressed{
                                    </item>
                                    <item>
                                     <widget class="QComboBox" name="input_Local_Tratamento_Clinica_usuario_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>213</width>
+                                       <height>30</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="toolTipDuration">
+                                      <number>-1</number>
+                                     </property>
                                      <item>
                                       <property name="text">
                                        <string>Selecione</string>
@@ -6303,7 +6385,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -6368,6 +6450,1128 @@ QPushButton:focus{outline:0}</string>
                             <property name="text">
                              <string>PRÓXIMO</string>
                             </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </widget>
+                       </item>
+                      </layout>
+                     </widget>
+                     <widget class="QWidget" name="page_beneficios_as">
+                      <layout class="QVBoxLayout" name="verticalLayout_122">
+                       <property name="spacing">
+                        <number>0</number>
+                       </property>
+                       <property name="leftMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="rightMargin">
+                        <number>0</number>
+                       </property>
+                       <property name="bottomMargin">
+                        <number>0</number>
+                       </property>
+                       <item>
+                        <widget class="QFrame" name="frame_169">
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <layout class="QVBoxLayout" name="verticalLayout_120">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QLabel" name="label_titulo_cadastro_beneficio">
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>36</pointsize>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">color: #EC848C;background-color: rgb(243, 185, 191);</string>
+                            </property>
+                            <property name="text">
+                             <string>CADASTRO DE BENEFÍCIOS</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QFrame" name="frame_170">
+                            <property name="frameShape">
+                             <enum>QFrame::StyledPanel</enum>
+                            </property>
+                            <property name="frameShadow">
+                             <enum>QFrame::Raised</enum>
+                            </property>
+                            <layout class="QVBoxLayout" name="verticalLayout_121" stretch="2,4,1">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QFrame" name="frame_468">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QVBoxLayout" name="verticalLayout_329" stretch="1,1">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_469">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_154" stretch="1,3,3,3,3,1">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QFrame" name="frame_474">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_337">
+                                      <item>
+                                       <spacer name="horizontalSpacer_101">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>107</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_470">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_330">
+                                      <item>
+                                       <widget class="QLabel" name="label_tipo_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Tipo</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QComboBox" name="input_tipo_cadastro_beneficio">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>0</width>
+                                          <height>32</height>
+                                         </size>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true">border-radius: 15px;</string>
+                                        </property>
+                                        <item>
+                                         <property name="text">
+                                          <string>Selecione...</string>
+                                         </property>
+                                        </item>
+                                        <item>
+                                         <property name="text">
+                                          <string>Medicação</string>
+                                         </property>
+                                        </item>
+                                        <item>
+                                         <property name="text">
+                                          <string>Alimentação</string>
+                                         </property>
+                                        </item>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_471">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_331">
+                                      <item>
+                                       <widget class="QLabel" name="label_codigo_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Código</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLineEdit" name="input_codigo_cadastro_beneficio"/>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_472">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_332">
+                                      <item>
+                                       <widget class="QLabel" name="label_lote_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Lote</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLineEdit" name="input_lote_cadastro_beneficio"/>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_473">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_333">
+                                      <item>
+                                       <widget class="QLabel" name="label_udm_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Unidade de medida</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QComboBox" name="input_comboBox_udm_cadastro_benefecio">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>0</width>
+                                          <height>32</height>
+                                         </size>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true">border-color: rgb(168, 87, 81);
+border-radius: 15px;
+border-width:1px;
+border-style: solid;</string>
+                                        </property>
+                                        <item>
+                                         <property name="text">
+                                          <string>Selecione...</string>
+                                         </property>
+                                        </item>
+                                        <item>
+                                         <property name="text">
+                                          <string>Quilo</string>
+                                         </property>
+                                        </item>
+                                        <item>
+                                         <property name="text">
+                                          <string>Grama</string>
+                                         </property>
+                                        </item>
+                                        <item>
+                                         <property name="text">
+                                          <string>Frasco</string>
+                                         </property>
+                                        </item>
+                                        <item>
+                                         <property name="text">
+                                          <string>Unidade</string>
+                                         </property>
+                                        </item>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_475">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_334">
+                                      <item>
+                                       <spacer name="horizontalSpacer_97">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>107</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_476">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_155" stretch="1,6,3,2,1,1">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QFrame" name="frame_477">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_336">
+                                      <item>
+                                       <spacer name="horizontalSpacer_102">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>107</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_478">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_335">
+                                      <property name="spacing">
+                                       <number>6</number>
+                                      </property>
+                                      <property name="leftMargin">
+                                       <number>9</number>
+                                      </property>
+                                      <property name="topMargin">
+                                       <number>9</number>
+                                      </property>
+                                      <property name="rightMargin">
+                                       <number>9</number>
+                                      </property>
+                                      <property name="bottomMargin">
+                                       <number>9</number>
+                                      </property>
+                                      <item>
+                                       <widget class="QLabel" name="label_descricao_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Descrição</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QLineEdit" name="input_descricao_cadastro_beneficio"/>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_479">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_338">
+                                      <item>
+                                       <widget class="QLabel" name="label_validade_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Validade</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QDateEdit" name="input_dateEdit_cadastro_beneficio">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>0</width>
+                                          <height>32</height>
+                                         </size>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true">border-color: rgb(168, 87, 81);
+border-radius: 15px;
+border-width:1px;
+border-style: solid;</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_480">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_339">
+                                      <item>
+                                       <widget class="QLabel" name="label_quantidade_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="text">
+                                         <string>Quantidade</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                      <item>
+                                       <widget class="QSpinBox" name="input_spinBox_cadastro_beneficio">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>0</width>
+                                          <height>32</height>
+                                         </size>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true">border-color: rgb(168, 87, 81);
+border-radius: 15px;
+border-width:1px;
+border-style: solid;</string>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_481">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QVBoxLayout" name="verticalLayout_340">
+                                      <item>
+                                       <spacer name="verticalSpacer_33">
+                                        <property name="orientation">
+                                         <enum>Qt::Vertical</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>20</width>
+                                          <height>40</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                      <item>
+                                       <widget class="QPushButton" name="btn_salvar_cadastro_beneficio">
+                                        <property name="minimumSize">
+                                         <size>
+                                          <width>0</width>
+                                          <height>40</height>
+                                         </size>
+                                        </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>18</pointsize>
+                                         </font>
+                                        </property>
+                                        <property name="cursor">
+                                         <cursorShape>PointingHandCursor</cursorShape>
+                                        </property>
+                                        <property name="styleSheet">
+                                         <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                                        </property>
+                                        <property name="text">
+                                         <string>Salvar</string>
+                                        </property>
+                                        <property name="icon">
+                                         <iconset>
+                                          <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png</iconset>
+                                        </property>
+                                        <property name="iconSize">
+                                         <size>
+                                          <width>28</width>
+                                          <height>28</height>
+                                         </size>
+                                        </property>
+                                       </widget>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_482">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                     <layout class="QHBoxLayout" name="horizontalLayout_158">
+                                      <item>
+                                       <spacer name="horizontalSpacer_98">
+                                        <property name="orientation">
+                                         <enum>Qt::Horizontal</enum>
+                                        </property>
+                                        <property name="sizeHint" stdset="0">
+                                         <size>
+                                          <width>107</width>
+                                          <height>20</height>
+                                         </size>
+                                        </property>
+                                       </spacer>
+                                      </item>
+                                     </layout>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_171">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_156" stretch="1,12,1">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_483">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_341">
+                                   <item>
+                                    <spacer name="horizontalSpacer_103">
+                                     <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>108</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_484">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_342">
+                                   <item>
+                                    <widget class="QTableWidget" name="input_TableWidget_cadastro_beneficio">
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="toolTip">
+                                      <string/>
+                                     </property>
+                                     <property name="layoutDirection">
+                                      <enum>Qt::LeftToRight</enum>
+                                     </property>
+                                     <property name="autoFillBackground">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="inputMethodHints">
+                                      <set>Qt::ImhDate|Qt::ImhSensitiveData|Qt::ImhTime</set>
+                                     </property>
+                                     <property name="lineWidth">
+                                      <number>2222</number>
+                                     </property>
+                                     <property name="midLineWidth">
+                                      <number>10</number>
+                                     </property>
+                                     <property name="alternatingRowColors">
+                                      <bool>true</bool>
+                                     </property>
+                                     <property name="selectionMode">
+                                      <enum>QAbstractItemView::MultiSelection</enum>
+                                     </property>
+                                     <property name="verticalScrollMode">
+                                      <enum>QAbstractItemView::ScrollPerItem</enum>
+                                     </property>
+                                     <property name="horizontalScrollMode">
+                                      <enum>QAbstractItemView::ScrollPerItem</enum>
+                                     </property>
+                                     <property name="gridStyle">
+                                      <enum>Qt::SolidLine</enum>
+                                     </property>
+                                     <property name="sortingEnabled">
+                                      <bool>true</bool>
+                                     </property>
+                                     <property name="wordWrap">
+                                      <bool>true</bool>
+                                     </property>
+                                     <attribute name="horizontalHeaderCascadingSectionResizes">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderDefaultSectionSize">
+                                      <number>130</number>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderStretchLastSection">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="verticalHeaderVisible">
+                                      <bool>false</bool>
+                                     </attribute>
+                                     <attribute name="verticalHeaderDefaultSectionSize">
+                                      <number>50</number>
+                                     </attribute>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <column>
+                                      <property name="text">
+                                       <string>Código</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Lote</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Quantidade </string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Validade</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Descrição</string>
+                                      </property>
+                                     </column>
+                                     <item row="0" column="0">
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item row="0" column="1">
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                     <item row="1" column="0">
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                     </item>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_485">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_343">
+                                   <item>
+                                    <spacer name="horizontalSpacer_99">
+                                     <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>108</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QFrame" name="frame_172">
+                               <property name="frameShape">
+                                <enum>QFrame::StyledPanel</enum>
+                               </property>
+                               <property name="frameShadow">
+                                <enum>QFrame::Raised</enum>
+                               </property>
+                               <layout class="QHBoxLayout" name="horizontalLayout_157" stretch="1,0,6,1">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
+                                <item>
+                                 <widget class="QFrame" name="frame_486">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_344">
+                                   <item>
+                                    <spacer name="horizontalSpacer_104">
+                                     <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>108</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_487">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_159">
+                                   <item>
+                                    <widget class="QPushButton" name="btn_voltar_cadastro_beneficio">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>100</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>100</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>VOLTAR</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <spacer name="horizontalSpacer_95">
+                                     <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>654</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_488">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_160">
+                                   <item>
+                                    <spacer name="horizontalSpacer_96">
+                                     <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>397</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                   <item>
+                                    <widget class="QPushButton" name="btn_alterar_cadastro_beneficio">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Alterar</string>
+                                     </property>
+                                     <property name="icon">
+                                      <iconset>
+                                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png</iconset>
+                                     </property>
+                                     <property name="iconSize">
+                                      <size>
+                                       <width>28</width>
+                                       <height>28</height>
+                                      </size>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QPushButton" name="btn_excluir_cadastro_beneficio">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Excluir</string>
+                                     </property>
+                                     <property name="icon">
+                                      <iconset>
+                                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</iconset>
+                                     </property>
+                                     <property name="iconSize">
+                                      <size>
+                                       <width>28</width>
+                                       <height>28</height>
+                                      </size>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QPushButton" name="btn_cancelar_cadastro_beneficio">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Cancelar</string>
+                                     </property>
+                                     <property name="icon">
+                                      <iconset>
+                                       <normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png</normaloff>../OneDrive - Serviço Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png</iconset>
+                                     </property>
+                                     <property name="iconSize">
+                                      <size>
+                                       <width>28</width>
+                                       <height>28</height>
+                                      </size>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_489">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                  <layout class="QHBoxLayout" name="horizontalLayout_161">
+                                   <item>
+                                    <spacer name="horizontalSpacer_100">
+                                     <property name="orientation">
+                                      <enum>Qt::Horizontal</enum>
+                                     </property>
+                                     <property name="sizeHint" stdset="0">
+                                      <size>
+                                       <width>108</width>
+                                       <height>20</height>
+                                      </size>
+                                     </property>
+                                    </spacer>
+                                   </item>
+                                  </layout>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </widget>
+                             </item>
+                            </layout>
                            </widget>
                           </item>
                          </layout>
@@ -7981,7 +9185,7 @@ QPushButton:pressed{
                                         </property>
                                         <property name="icon">
                                          <iconset>
-                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                          <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                         </property>
                                        </widget>
                                       </item>
@@ -9352,7 +10556,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -9389,7 +10593,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cancelar.png</normaloff>../icons/cancelar.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cancelar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cancelar.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -9426,7 +10630,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -9463,7 +10667,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -10663,7 +11867,7 @@ QPushButton:pressed{
                                            </property>
                                            <property name="icon">
                                             <iconset>
-                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                            </property>
                                           </widget>
                                          </item>
@@ -12838,7 +14042,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                    <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -15299,7 +16503,7 @@ QPushButton:focus{outline:0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/adicionar-amigo.png</normaloff>../icons/adicionar-amigo.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar-amigo.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar-amigo.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -18002,119 +19206,23 @@ QPushButton:pressed{
 		border-bottom-right-radius: 20px;
         color: rgb(249, 217, 221);   
 }</string>
-                                              </property>
-                                              <property name="text">
-                                               <string/>
-                                              </property>
-                                              <property name="icon">
-                                               <iconset>
-                                                <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
-                                              </property>
-                                             </widget>
-                                            </item>
-                                           </layout>
-                                          </widget>
-                                         </item>
-                                         <item>
-                                          <spacer name="horizontalSpacer_76">
-                                           <property name="orientation">
-                                            <enum>Qt::Horizontal</enum>
-                                           </property>
-                                           <property name="sizeHint" stdset="0">
-                                            <size>
-                                             <width>160</width>
-                                             <height>20</height>
-                                            </size>
-                                           </property>
-                                          </spacer>
-                                         </item>
-                                        </layout>
-                                       </widget>
-                                      </item>
-                                      <item alignment="Qt::AlignLeft">
-                                       <widget class="QFrame" name="frame_461">
-                                        <property name="minimumSize">
-                                         <size>
-                                          <width>0</width>
-                                          <height>60</height>
-                                         </size>
-                                        </property>
-                                        <property name="maximumSize">
-                                         <size>
-                                          <width>870</width>
-                                          <height>60</height>
-                                         </size>
-                                        </property>
-                                        <property name="frameShape">
-                                         <enum>QFrame::StyledPanel</enum>
-                                        </property>
-                                        <property name="frameShadow">
-                                         <enum>QFrame::Raised</enum>
-                                        </property>
-                                        <layout class="QHBoxLayout" name="horizontalLayout_85">
-                                         <property name="spacing">
-                                          <number>0</number>
-                                         </property>
-                                         <property name="leftMargin">
-                                          <number>0</number>
-                                         </property>
-                                         <property name="topMargin">
-                                          <number>0</number>
-                                         </property>
-                                         <property name="rightMargin">
-                                          <number>0</number>
-                                         </property>
-                                         <property name="bottomMargin">
-                                          <number>0</number>
-                                         </property>
-                                         <item>
-                                          <widget class="QLineEdit" name="input_buscar_dados_relatorio_as">
-                                           <property name="minimumSize">
-                                            <size>
-                                             <width>700</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>700</width>
-                                             <height>30</height>
-                                            </size>
-                                           </property>
-                                           <property name="font">
-                                            <font>
-                                             <family>Abel</family>
-                                             <pointsize>12</pointsize>
-                                            </font>
-                                           </property>
-                                           <property name="text">
-                                            <string/>
-                                           </property>
-                                           <property name="placeholderText">
-                                            <string>Nome /Sexo/Bairro/Cidade/Clínica</string>
-                                           </property>
-                                          </widget>
-                                         </item>
-                                        </layout>
-                                       </widget>
-                                      </item>
-                                     </layout>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QFrame" name="frame_469">
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QHBoxLayout" name="horizontalLayout_86">
-                                   <property name="spacing">
-                                    <number>0</number>
+                                      </property>
+                                      <property name="text">
+                                       <string/>
+                                      </property>
+                                      <property name="icon">
+                                       <iconset>
+                                        <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                      </property>
+                                     </widget>
+                                    </item>
+                                   </layout>
+                                  </widget>
+                                 </item>
+                                 <item>
+                                  <spacer name="horizontalSpacer_77">
+                                   <property name="orientation">
+                                    <enum>Qt::Horizontal</enum>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -19247,19 +20355,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            <property name="alignment">
                                             <set>Qt::AlignCenter</set>
                                            </property>
-                                           <property name="buttonSymbols">
-                                            <enum>QAbstractSpinBox::NoButtons</enum>
-                                           </property>
-                                           <property name="correctionMode">
-                                            <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
-                                           </property>
-                                           <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
-                                           </property>
-                                           <property name="calendarPopup">
+                                           <property name="calendarPopup" stdset="0">
                                             <bool>false</bool>
                                            </property>
-                                           <property name="currentSectionIndex">
+                                           <property name="currentSectionIndex" stdset="0">
                                             <number>0</number>
                                            </property>
                                           </widget>
@@ -19687,7 +20786,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                </date>
                                               </property>
                                               <property name="currentSection">
-                                               <enum>QDateTimeEdit::DaySection</enum>
+                                               <enum>QDateTimeEdit::MonthSection</enum>
                                               </property>
                                               <property name="calendarPopup">
                                                <bool>false</bool>
@@ -21617,7 +22716,7 @@ QPushButton:pressed{
                                                  </property>
                                                  <property name="icon">
                                                   <iconset>
-                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                   <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                                  </property>
                                                 </widget>
                                                </item>
@@ -22811,7 +23910,7 @@ QPushButton:pressed{
                                 </property>
                                 <property name="icon">
                                  <iconset>
-                                  <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                  <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                 </property>
                                </widget>
                               </widget>
@@ -22846,7 +23945,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>3</number>
+                                <number>0</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -24188,7 +25287,7 @@ QPushButton:pressed{
                                                         </property>
                                                         <property name="icon">
                                                          <iconset>
-                                                          <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                          <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                                         </property>
                                                        </widget>
                                                       </item>
@@ -25087,7 +26186,7 @@ QPushButton:focus{outline:0}</string>
                                                      </property>
                                                      <property name="icon">
                                                       <iconset>
-                                                       <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
                                                      </property>
                                                      <property name="iconSize">
                                                       <size>
@@ -26798,7 +27897,7 @@ QPushButton:pressed{
                                                                     </property>
                                                                     <property name="icon">
                                                                      <iconset>
-                                                                      <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                                      <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                                                     </property>
                                                                    </widget>
                                                                   </item>
@@ -29478,7 +30577,7 @@ QPushButton:focus{outline:0}</string>
                                                </property>
                                                <property name="icon">
                                                 <iconset>
-                                                 <normaloff>../icons/cadeado.png</normaloff>../icons/cadeado.png</iconset>
+                                                 <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadeado.png</iconset>
                                                </property>
                                                <property name="iconSize">
                                                 <size>
@@ -32240,7 +33339,7 @@ QPushButton:pressed{
                                                            </property>
                                                            <property name="icon">
                                                             <iconset>
-                                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                                            </property>
                                                           </widget>
                                                          </item>
@@ -32750,7 +33849,7 @@ QPushButton:pressed{
                                                   </property>
                                                   <property name="icon">
                                                    <iconset>
-                                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
+                                                    <normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/adicionar foto.png</iconset>
                                                   </property>
                                                   <property name="iconSize">
                                                    <size>
@@ -33502,7 +34601,7 @@ QPushButton:pressed{
                                            </property>
                                            <property name="icon">
                                             <iconset>
-                                             <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
                                            </property>
                                           </widget>
                                          </item>
@@ -33840,7 +34939,7 @@ QPushButton:focus{outline:0}</string>
                                         </property>
                                         <property name="icon">
                                          <iconset>
-                                          <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
+                                          <normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/salvar-arquivo.png</iconset>
                                         </property>
                                         <property name="iconSize">
                                          <size>
@@ -34084,7 +35183,7 @@ QPushButton:focus{outline:0}</string>
                                       <number>14</number>
                                      </property>
                                      <property name="columnCount">
-                                      <number>3</number>
+                                      <number>4</number>
                                      </property>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>
@@ -34115,6 +35214,11 @@ QPushButton:focus{outline:0}</string>
                                      <row/>
                                      <row/>
                                      <row/>
+                                     <column>
+                                      <property name="text">
+                                       <string>Id</string>
+                                      </property>
+                                     </column>
                                      <column>
                                       <property name="text">
                                        <string>Data</string>
@@ -34184,7 +35288,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="icon">
                                       <iconset>
-                                       <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+                                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/troca.png</iconset>
                                      </property>
                                      <property name="iconSize">
                                       <size>
@@ -34221,7 +35325,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="icon">
                                       <iconset>
-                                       <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
+                                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/lixeira-de-reciclagem.png</iconset>
                                      </property>
                                      <property name="iconSize">
                                       <size>
@@ -34352,7 +35456,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -34475,7 +35579,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/remedio.png</normaloff>../icons/remedio.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/remedio.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/remedio.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34512,7 +35616,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/medicamento.png</normaloff>../icons/medicamento.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/medicamento.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/medicamento.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34549,7 +35653,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/estoque-pronto.png</normaloff>../icons/estoque-pronto.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/estoque-pronto.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/estoque-pronto.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34691,7 +35795,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -34875,7 +35979,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -34998,7 +36102,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35035,7 +36139,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35174,7 +36278,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35355,7 +36459,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -35475,7 +36579,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/seguranca-alimentar.png</normaloff>../icons/seguranca-alimentar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/seguranca-alimentar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/seguranca-alimentar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35512,7 +36616,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35549,7 +36653,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35694,7 +36798,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -35880,7 +36984,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/cadastro.png</normaloff>../icons/cadastro.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/cadastro.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -35926,7 +37030,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                              <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -36047,7 +37151,7 @@ QPushButton:focus{outline: 0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -36176,7 +37280,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/consultando.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36213,7 +37317,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36352,7 +37456,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36554,7 +37658,7 @@ QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="icon">
                       <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                       <normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/Ellipse 1.png</iconset>
                      </property>
                      <property name="iconSize">
                       <size>
@@ -36680,7 +37784,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/agenda.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36717,7 +37821,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/festa-de-aniversario.png</normaloff>../icons/festa-de-aniversario.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/festa-de-aniversario.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/festa-de-aniversario.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36754,7 +37858,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/relatorio-de-negocios.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -36896,7 +38000,7 @@ QPushButton:focus{outline:0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                             <normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</normaloff>../../../GitHub/Fabrica-SW-96/icons/ligar.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>

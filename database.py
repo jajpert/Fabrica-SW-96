@@ -6,9 +6,7 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec2',user='fabrica',password='fabrica@2022')
-
-        
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -16,6 +14,26 @@ class DataBase():
         else:
             print("Erro")  
 
+    def select_agendamentos(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+            """)
+
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
 
     def select_pessoa(self):
         self.connect()
@@ -36,40 +54,6 @@ class DataBase():
 
         finally:
             self.close_connection()
-    
-    def select_pessoa_cpf(self, cpf):
-        self.connect()
-        try:
-            self.cursor.execute(f"""
-                SELECT id_matricula, nome, telefone FROM pessoa WHERE cpf IN ({cpf});
-            """)
-            resultado1 = self.cursor.fetchall()
-            id_matricu = resultado1[0][0]
-
-            self.cursor.execute(f"""
-                SELECT local_tratamento FROM usuario WHERE id_matricula IN ({id_matricu});
-            """)
-            resultado2 = self.cursor.fetchall()
-
-            lista = []
-            for i in resultado1:
-                for n in i:
-                    lista.append(n)
-            for i in resultado2:
-                for n in i:
-                    lista.append(n)          
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            return lista
-            #retorn a lista do banco para quem chamou a função
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
-
     
     def select_colaborador(self):
         self.connect()
@@ -239,6 +223,19 @@ class DataBase():
 
         finally:
             self.close_connection()
+    def filter_agenda(self,text):
+        self.connect()
+        try: 
+            self.cursor.execute(f"""select data, hora , nome, profissional, anotacao from agendamento where nome like '%{text}%' or  profissional like '%{text}%';""")
+            result = self.cursor.fetchall()
+        
+            return result
+        
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
         
     
     def select_usuario_ids(self):
@@ -267,27 +264,6 @@ class DataBase():
             self.cursor.execute("""
                 SELECT id_clinica FROM clinica ORDER BY id_clinica;
             """)
-            result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
-            return result
-            #retorn a lista do banco para quem chamou a função
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
-    
-    def select_agendamentos(self):
-        self.connect()
-        try:
-            self.cursor.execute("""
-                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
-            """)
-
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -422,7 +398,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,
                                     colaborador.pis, sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, login, endereco.id_endereco, colaborador.id_matricula
+                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, endereco.id_endereco, colaborador.id_matricula
                                     from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
                                     left join colaborador on colaborador.id_matricula = pessoa.id_matricula
                                     where cpf like '%{cpf}%';""")
@@ -454,7 +430,7 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_usuario,pessoa.nome, pessoa.telefone, clinica.nome_fantasia 
+            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
@@ -483,7 +459,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT consulta.data,consulta.situacao,consulta.observacao FROM consulta 
+                                SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
                                 INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
                                 left join pessoa ON pessoa.id_matricula = usuario.id_matricula AND 
                                 pessoa.cpf LIKE '{cpf}';
@@ -500,20 +476,30 @@ class DataBase():
     def alterar_usuario_consulta_as(self, campo):
         self.connect()
         try:
-            self.cursor.execute(f""" UPDATE consulta set
-
-            Data = '{campo[0]}',
-            situacao = '{campo[1]}',
-            relatorio = '{campo[2]}'
+            self.cursor.execute(f""" UPDATE consulta SET
+                                     observacao = '{campo[3]}'
+                                     WHERE id_consulta = '{campo[0]}';
             """)
             self.conn.commit()
-            return("Alteração feita com Sucesso!!!")
+            return "Alteração feita com Sucesso!!!"
 
         except Exception as err:
             return "ERRO",str(err)
         finally:
             self.conn.close()
             return ("Conexão encerrada com Sucesso!!!")
+    
+    def deletar_consulta_relatorio(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            print(err)
 
 
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
@@ -758,19 +744,6 @@ class DataBase():
 
             
                                                                                                                                                  
-            self.conn.commit()
-            return "OK","Cadastro realizado com sucesso!!"
-
-        except Exception as err:
-            #print(err)
-            return "ERRO",str(err)
-    
-    def cadastro_agendamento(self, agendamento):
-        self.connect()
-        try:
-            args = (1, agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
-            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
-    
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
 
