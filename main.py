@@ -164,12 +164,13 @@ class DialogConfirmarSaida(QDialog):
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Confirmar_Saida()
-        self.ui.setupUi(self)    
-            
-        # if self.ui.btn_sim_popup_confirma_saida.clicked():
-        #     self.ui.inicio.setCurrentIndex(0)
-        #     self.ui.input_usuario_login.setText("")
-        #     self.ui.input_senha_login.setText("")
+        self.ui.setupUi(self)   
+
+        self.ui.btn_sim_popup_confirma_saida.clicked.connect(self.clicouSair) 
+    
+    def clicouSair(self):
+        resposta = 1
+        TelaPrincipal.confirmouSaida(self, resposta)
     
 
 #############################################################################
@@ -1692,6 +1693,16 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
+    
+    def confirmouSaida(self, resposta):
+        print("chegou")
+        if resposta == 1:
+            self.ui.inicio.setCurrentWidget(lambda: self.ui.login)
+            # self.ui.inicio.input_usuario_login.setText("")
+            # self.ui.input_senha_login.setText("")
+        else:
+            print("erro")
+
 
 
 ##################################################################
