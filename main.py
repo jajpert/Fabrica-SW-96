@@ -345,6 +345,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
+        self.ui.btn_concluir_cursos_as.clicked.connect(self.limparCadastroCursos)
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
@@ -1377,6 +1378,7 @@ class TelaPrincipal(QMainWindow):
 
         print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
+        
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
@@ -1550,6 +1552,36 @@ class TelaPrincipal(QMainWindow):
        self.ui.input_cidade_clinica_as.setText("")
        self.ui.input_estado_clinica_as.setText("")
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
+       
+    def limparCadastroCursos(self):
+        self.ui.input_data_inclusao_cursos_as.setText("")
+        self.ui.input_nome_cursos_as.setText("")
+        self.ui.input_tipo_cursos_as.setCurrentIndex(int(0))
+        self.ui.input_responsavel_cursos_as.setText("")
+        self.ui.input_data_inicio_cursos_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_termino_cursos_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_periodo_cursos_as.setCurrentIndex(int(0))
+        self.ui.input_vagas_cursos_as.setText("")
+        self.ui.input_ativo_cursos_as.setCheckable(False)
+        self.ui.input_ativo_cursos_as.setCheckable(True)
+        self.ui.input_inativo_cursos_as.setCheckable(False)
+        self.ui.input_inativo_cursos_as.setCheckable(True)
+        self.ui.input_descricao_atividade_cursos_as.setHtml("")
+        self.ui.input_segunda_cursos_as.setCheckable(False)
+        self.ui.input_segunda_cursos_as.setCheckable(True) 
+        self.ui.input_terca_cursos_as.setCheckable(False)
+        self.ui.input_terca_cursos_as.setCheckable(True) 
+        self.ui.input_quarta_cursos_as.setCheckable(False)
+        self.ui.input_quarta_cursos_as.setCheckable(True) 
+        self.ui.input_quinta_cursos_as.setCheckable(False)
+        self.ui.input_quinta_cursos_as.setCheckable(True) 
+        self.ui.input_sexta_cursos_as.setCheckable(False)
+        self.ui.input_sexta_cursos_as.setCheckable(True) 
+        self.ui.input_sabado_cursos_as.setCheckable(False)
+        self.ui.input_sabado_cursos_as.setCheckable(True) 
+        self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
+        self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
+
 
     def buscar_clinica_nome_fantasia(self):
 
