@@ -333,6 +333,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
+        self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.listarBeneficios)
+       
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
@@ -1837,32 +1839,18 @@ class TelaPrincipal(QMainWindow):
         ########################## dados ######################################       
             dados = self.db.busca_beneficios()
             print (dados)
-            tipo = self.ui.input_tipo_cadastro_beneficio.currentIndex()
-            
+            tipo = self.ui.input_tipo_cadastro_beneficio.currentText()   
             if tipo == 'Medicação':
-                self.ui.input_tipo_cadastro_beneficio.currentIndex(1)
-            
-            elif tipo == 'Alimentação':
-                self.ui.input_tipo_cadastro_beneficio.currentIndex(2)
+                self.ui.input_tipo_cadastro_beneficio.currentText()         
 
             codigo = self.ui.input_codigo_cadastro_beneficio.text()
             lote = self.ui.input_lote_cadastro_beneficio.text()
             dados = self.db.busca_beneficios()
-            unidade_medida = self.ui.input_comboBox_udm_cadastro_benefecio.currentIndex()
-            
+            unidade_medida = self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
             
             if unidade_medida == 'Quilo':
-                self.ui.input_comboBox_udm_cadastro_benefecio.currentIndex(1)
-            
-            elif unidade_medida == 'Frasco':
-                self.ui.input_comboBox_udm_cadastro_beneficio.currentIndex(2)
-            
-            elif unidade_medida == 'Grama':
-                self.ui.input_comboBox_udm_cadastro_beneficio.currentIndex(3)
-            
-            elif unidade_medida == 'Unidade':
-                self.ui.input_comboBox_udm_cadastro_beneficio.currentIndex(4)
-
+                self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
+              
             descricao = self.ui.input_descricao_cadastro_beneficio.text()
             vali=self.ui.input_dateEdit_cadastro_beneficio.text()
              
@@ -1874,6 +1862,8 @@ class TelaPrincipal(QMainWindow):
             result = []
             result=self.db.cadastro_beneficios(tupla_beneficios)
             print(result)
+            print (tipo)
+            print (unidade_medida)
             self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
             
