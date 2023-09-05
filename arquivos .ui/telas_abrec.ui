@@ -2412,7 +2412,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -2881,7 +2881,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -6087,7 +6087,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -7188,6 +7188,9 @@ QPushButton:focus{outline:0}</string>
                                      <property name="horizontalScrollMode">
                                       <enum>QAbstractItemView::ScrollPerItem</enum>
                                      </property>
+                                     <property name="showGrid">
+                                      <bool>true</bool>
+                                     </property>
                                      <property name="gridStyle">
                                       <enum>Qt::SolidLine</enum>
                                      </property>
@@ -7197,11 +7200,20 @@ QPushButton:focus{outline:0}</string>
                                      <property name="wordWrap">
                                       <bool>true</bool>
                                      </property>
+                                     <attribute name="horizontalHeaderVisible">
+                                      <bool>true</bool>
+                                     </attribute>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>
                                      </attribute>
                                      <attribute name="horizontalHeaderDefaultSectionSize">
-                                      <number>130</number>
+                                      <number>200</number>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderHighlightSections">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                                      <bool>true</bool>
                                      </attribute>
                                      <attribute name="horizontalHeaderStretchLastSection">
                                       <bool>true</bool>
@@ -7211,6 +7223,9 @@ QPushButton:focus{outline:0}</string>
                                      </attribute>
                                      <attribute name="verticalHeaderDefaultSectionSize">
                                       <number>50</number>
+                                     </attribute>
+                                     <attribute name="verticalHeaderStretchLastSection">
+                                      <bool>false</bool>
                                      </attribute>
                                      <row/>
                                      <row/>
@@ -7233,7 +7248,22 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
+                                       <string>Tipo</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Descrição</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
                                        <string>Lote</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Unidade de medida</string>
                                       </property>
                                      </column>
                                      <column>
@@ -7246,17 +7276,12 @@ QPushButton:focus{outline:0}</string>
                                        <string>Validade</string>
                                       </property>
                                      </column>
-                                     <column>
-                                      <property name="text">
-                                       <string>Descrição</string>
-                                      </property>
-                                     </column>
                                      <item row="0" column="0">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="0" column="1">
+                                     <item row="0" column="3">
                                       <property name="text">
                                        <string/>
                                       </property>
@@ -8050,7 +8075,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -8360,7 +8385,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -11364,7 +11389,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -12557,7 +12582,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -13584,7 +13609,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -15169,7 +15194,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -15298,7 +15323,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -16830,7 +16855,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                       </property>
                                       <property name="currentSection">
-                                       <enum>QDateTimeEdit::DaySection</enum>
+                                       <enum>QDateTimeEdit::MonthSection</enum>
                                       </property>
                                       <property name="calendarPopup">
                                        <bool>false</bool>
@@ -17021,7 +17046,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                       </property>
                                       <property name="currentSection">
-                                       <enum>QDateTimeEdit::DaySection</enum>
+                                       <enum>QDateTimeEdit::MonthSection</enum>
                                       </property>
                                       <property name="calendarPopup">
                                        <bool>false</bool>
@@ -19163,7 +19188,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                </date>
                                               </property>
                                               <property name="currentSection">
-                                               <enum>QDateTimeEdit::MonthSection</enum>
+                                               <enum>QDateTimeEdit::DaySection</enum>
                                               </property>
                                               <property name="calendarPopup">
                                                <bool>false</bool>
@@ -22911,7 +22936,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
@@ -24889,7 +24914,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>false</bool>
@@ -25358,7 +25383,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>false</bool>
@@ -28559,7 +28584,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                         </property>
                                                         <property name="currentSection">
-                                                         <enum>QDateTimeEdit::DaySection</enum>
+                                                         <enum>QDateTimeEdit::MonthSection</enum>
                                                         </property>
                                                         <property name="calendarPopup">
                                                          <bool>false</bool>
@@ -30714,7 +30739,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
