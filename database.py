@@ -822,7 +822,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT codigo,lote,quantidade DATE_FORMAT,validade, descricao FROM beneficios;
+                SELECT codigo,tipo,descricao,lote,unidade_medida,quantidade DATE_FORMAT,validade FROM beneficios;
             """)
 
             result = self.cursor.fetchall()
