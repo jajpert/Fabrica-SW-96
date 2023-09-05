@@ -750,14 +750,12 @@ class DataBase():
             id_matricula = self.cursor.lastrowid
             print('id matricula',id_matricula)
 
-            self.cursor.execute("""
-                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula))
+            args3 = (colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula)
+            self.cursor.execute("INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)", args3)
             id_colaborador = self.cursor.lastrowid
             print(id_colaborador)
-
-
             self.conn.commit()
+            
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
