@@ -36,7 +36,7 @@ class Overlay(QWidget):
         painter.end()
 
 
-################Class POPUP Login################
+################POPUP RECUPERAR SENHA################
 class DialogRecuperarSenha(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -44,34 +44,23 @@ class DialogRecuperarSenha(QDialog):
         self.ui = Ui_Restaurar_Senha()
         self.ui.setupUi(self)
         
-##################LOGIN INVALIDO###################
-class DialogloginInvalido(QDialog):
+##################POP UP LOGIN INVALIDO###################
+class DialogLoginInvalido(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Login_Ivalido()
         self.ui.setupUi(self)
 
-################Class POPUP Usuário################
-class DialogTirarFoto(QDialog):
+################POPUP TIRAR/IMPORTAR FOTO################
+class DialogTirarImportarFoto(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Tirar_Foto()
+        self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
-        self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
+        #self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
         #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
     
     def TirarFotoWeb(self):
         vid = cv2.VideoCapture(0)
@@ -287,17 +276,18 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         
 
-        ######SIGNALS POPUP recuperar senha login######
+        ######SIGNALS POPUP RECUPERAR SENHA AS######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
         
 
 
-        ######SIGNALS POPUP trocar foto e senha AS######
+        ######SIGNALS POPUP ALTERAR FOTO E SENHA AS######
         self.ui.btn_alterar_foto_senha_as.clicked.connect(self.trocarFotoSenha)
         
         
-        ############SIGNALS POPUP Usuario AS############
-        self.ui.btn_foto_usuario_as.clicked.connect(self.tirarFoto)
+        ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
+        self.ui.btn_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
+        self.ui.btn_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
 
 
         ############SIGNALS POPUP Cuidador AS############
@@ -351,7 +341,7 @@ class TelaPrincipal(QMainWindow):
         if len(login_senha)==0:
             print ("login vazio")           
             self.ui.inicio.setCurrentWidget(self.ui.login)
-            self.loginIvalido()
+            self.loginInvalido()
 
 
         elif login_senha[0][0] == login_senha[0][1]:
@@ -1667,8 +1657,8 @@ class TelaPrincipal(QMainWindow):
         self.popup.hide()
     
 
-    def loginIvalido(self):       
-        msg = DialogloginInvalido(self)
+    def loginInvalido(self):       
+        msg = DialogLoginInvalido(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
@@ -1701,8 +1691,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
 
-    def tirarFoto(self):
-        msg = DialogTirarFoto(self)
+    def tirarImportarFoto(self):
+        msg = DialogTirarImportarFoto(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()

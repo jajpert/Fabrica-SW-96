@@ -809,14 +809,13 @@ class Ui_Dados_Salvos(object):
 ############################################################################################
 
 
-class Ui_Tirar_Foto(object):
+class Ui_Tirar_Importar_Foto(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-
-        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setWindowFlags(Qt.Popup|Qt.FramelessWindowHint)
         Dialog.setAttribute(Qt.WA_TranslucentBackground)
-
+        Dialog.setAttribute(Qt.WA_NoSystemBackground)
         Dialog.resize(600, 350)
         Dialog.setMinimumSize(QSize(600, 350))
         Dialog.setMaximumSize(QSize(600, 350))
@@ -842,41 +841,26 @@ class Ui_Tirar_Foto(object):
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.frame_5 = QFrame(self.frame_2)
-        self.frame_5.setObjectName(u"frame_5")
-        self.frame_5.setMinimumSize(QSize(0, 200))
-        self.frame_5.setMaximumSize(QSize(16777215, 200))
-        self.frame_5.setCursor(QCursor(Qt.PointingHandCursor))
-        self.frame_5.setFrameShape(QFrame.StyledPanel)
-        self.frame_5.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame_5)
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
-        self.label_tirar_foto_popup_foto_as = QLabel(self.frame_5)
-        self.label_tirar_foto_popup_foto_as.setObjectName(u"label_tirar_foto_popup_foto_as")
-        self.label_tirar_foto_popup_foto_as.setMinimumSize(QSize(140, 140))
-        self.label_tirar_foto_popup_foto_as.setMaximumSize(QSize(140, 140))
-        self.label_tirar_foto_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.label_tirar_foto_popup_foto_as.setPixmap(QPixmap(u"./icons/camera.png"))
-        self.label_tirar_foto_popup_foto_as.setScaledContents(True)
-        self.label_tirar_foto_popup_foto_as.setAlignment(Qt.AlignCenter)
-
-        self.horizontalLayout_4.addWidget(self.label_tirar_foto_popup_foto_as)
-
-
-        self.verticalLayout.addWidget(self.frame_5)
-
-        self.btn_tirar_foto_popup_foto_as = QPushButton(self.frame_2)
-        self.btn_tirar_foto_popup_foto_as.setObjectName(u"btn_tirar_foto_popup_foto_as")
-        self.btn_tirar_foto_popup_foto_as.setMinimumSize(QSize(140, 140))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as = QToolButton(self.frame_2)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setObjectName(u"toolButton_tirar_foto_popup_perfil_cadastro_as")
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setMinimumSize(QSize(298, 348))
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(32)
-        self.btn_tirar_foto_popup_foto_as.setFont(font)
-        self.btn_tirar_foto_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
+        font.setBold(True)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setFont(font)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setFocusPolicy(Qt.StrongFocus)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setStyleSheet(u"QToolButton::hover{\n"
+"background-color: rgb(251, 207, 216);\n"
+"}")
+        icon = QIcon()
+        icon.addFile(u"./icons/camera.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setIcon(icon)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setIconSize(QSize(145, 145))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
 
-        self.verticalLayout.addWidget(self.btn_tirar_foto_popup_foto_as)
+        self.verticalLayout.addWidget(self.toolButton_tirar_foto_popup_perfil_cadastro_as)
 
 
         self.horizontalLayout_2.addWidget(self.frame_2)
@@ -899,38 +883,22 @@ class Ui_Tirar_Foto(object):
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.frame_4 = QFrame(self.frame_3)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setMinimumSize(QSize(0, 200))
-        self.frame_4.setMaximumSize(QSize(16777215, 200))
-        self.frame_4.setCursor(QCursor(Qt.PointingHandCursor))
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_3 = QHBoxLayout(self.frame_4)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.label_importar_popup_foto_as = QLabel(self.frame_4)
-        self.label_importar_popup_foto_as.setObjectName(u"label_importar_popup_foto_as")
-        self.label_importar_popup_foto_as.setMinimumSize(QSize(140, 140))
-        self.label_importar_popup_foto_as.setMaximumSize(QSize(140, 140))
-        self.label_importar_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.label_importar_popup_foto_as.setPixmap(QPixmap(u"./icons/seta-para-baixo.png"))
-        self.label_importar_popup_foto_as.setScaledContents(True)
-        self.label_importar_popup_foto_as.setAlignment(Qt.AlignCenter)
+        self.toolButton_importar_foto_popup_perfil_cadastro_as = QToolButton(self.frame_3)
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setObjectName(u"toolButton_importar_foto_popup_perfil_cadastro_as")
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setMinimumSize(QSize(298, 348))
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setFont(font)
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setFocusPolicy(Qt.StrongFocus)
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setStyleSheet(u"QToolButton::hover{\n"
+"background-color: rgb(251, 207, 216);\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setIcon(icon1)
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setIconSize(QSize(145, 145))
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
 
-        self.horizontalLayout_3.addWidget(self.label_importar_popup_foto_as)
-
-
-        self.verticalLayout_2.addWidget(self.frame_4)
-
-        self.btn_importar_popup_foto_as = QPushButton(self.frame_3)
-        self.btn_importar_popup_foto_as.setObjectName(u"btn_importar_popup_foto_as")
-        self.btn_importar_popup_foto_as.setMinimumSize(QSize(140, 140))
-        self.btn_importar_popup_foto_as.setFont(font)
-        self.btn_importar_popup_foto_as.setCursor(QCursor(Qt.PointingHandCursor))
-
-        self.verticalLayout_2.addWidget(self.btn_importar_popup_foto_as)
+        self.verticalLayout_2.addWidget(self.toolButton_importar_foto_popup_perfil_cadastro_as)
 
 
         self.horizontalLayout_2.addWidget(self.frame_3)
@@ -946,10 +914,8 @@ class Ui_Tirar_Foto(object):
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(QCoreApplication.translate("Dialog", u"Dialog", None))
-        self.label_tirar_foto_popup_foto_as.setText("")
-        self.btn_tirar_foto_popup_foto_as.setText(QCoreApplication.translate("Dialog", u"Tirar foto", None))
-        self.label_importar_popup_foto_as.setText("")
-        self.btn_importar_popup_foto_as.setText(QCoreApplication.translate("Dialog", u"Importar", None))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_as.setText(QCoreApplication.translate("Dialog", u"Tirar foto", None))
+        self.toolButton_importar_foto_popup_perfil_cadastro_as.setText(QCoreApplication.translate("Dialog", u"Importar foto", None))
     # retranslateUi
 
 

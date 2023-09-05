@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>7</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -14017,7 +14017,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="input_foto_colaborador_as">
+                                 <widget class="QPushButton" name="btn_foto_colaborador_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>125</width>
