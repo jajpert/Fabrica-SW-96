@@ -369,7 +369,6 @@ class TelaPrincipal(QMainWindow):
         login_senha = []
         login_senha = self.db.validarLogin(login,senha)
         if len(login_senha)==0:
-            print ("login vazio")           
             self.ui.inicio.setCurrentWidget(self.ui.login)
             self.loginIvalido()
 
@@ -403,27 +402,22 @@ class TelaPrincipal(QMainWindow):
         elif 'clinica' in sender.objectName():
             cep = inputClinica
         cep_tratado = str('')
-        print(cep)
         for i in cep:
             if(i == "." or i == '-' or i == ' '):
                 pass
             else:
                 cep_tratado += i   
         cep_tratado = int(cep_tratado)
-        print(cep_tratado)
         self.puxarCep(cep_tratado, sender)
 
 ############################## puxar cep e 'setar' nos inputs ########################
     def puxarCep(self, cep_tratado, sender):
         cep_tratado = cep_tratado
         sender = self.sender()
-        print(cep_tratado)
         link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
         requisicao = requests.get(link)
         dic_requisicao = requisicao.json()
-        print(dic_requisicao)
         if 'cuidador' in sender.objectName():
-            print("entrou cuidador!")
              ##### tratamento da requisição - logradouro #######
             logradouro = dic_requisicao['logradouro']
             self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
@@ -441,7 +435,6 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_cuidador_as.setText(str(estado))
 
         elif 'usuario' in sender.objectName():
-            print("entrou usuário!")
              ##### tratamento da requisição - logradouro #######
             logradouro = dic_requisicao['logradouro']
             self.ui.input_logradouro_usuario_as.setText(str(logradouro))
@@ -459,7 +452,6 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_usuario_as.setText(str(estado))
 
         elif 'colaborador' in sender.objectName():
-            print("entrou colaborador!")
              ##### tratamento da requisição - logradouro #######
             logradouro = dic_requisicao['logradouro']
             self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
@@ -477,7 +469,6 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_colaborador_as.setText(str(estado))
         
         elif 'clinica' in sender.objectName():
-            print("entrou clinica!")
              ##### tratamento da requisição - logradouro #######
             logradouro = dic_requisicao['logradouro']
             self.ui.input_logradouro_clinica_as.setText(str(logradouro))
@@ -519,16 +510,13 @@ class TelaPrincipal(QMainWindow):
 
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
-        print("Valor selecionado:", valorSelecionado)
 
         if valorSelecionado == 0:
             return self.ui.page_2
         ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
-            print(cpf)
             dados = self.db.busca_cuidador(cpf)
             
-            print(dados)
             self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
             self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
             self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
@@ -565,10 +553,7 @@ class TelaPrincipal(QMainWindow):
         #######################USUARIO####################################################
 
         elif valorSelecionado == 2:
-            print ('to funfando == 2\n')
-            dados = self.db.busca_usuario(cpf)
-            print(dados)
-        
+            dados = self.db.busca_usuario(cpf)        
             
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
@@ -805,7 +790,6 @@ class TelaPrincipal(QMainWindow):
 
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
-            print(dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
@@ -950,8 +934,6 @@ class TelaPrincipal(QMainWindow):
 
         ################## insert #######################################
         result = self.db.atualizar_cuidador(tupla_cuidador,tupla_pessoa,tupla_endereco)
-        print(result)
-
 
     def atualizar_usuario(self):
 
@@ -1030,9 +1012,7 @@ class TelaPrincipal(QMainWindow):
 
         ######################## insert ##################################
         result = []
-        result = self.db.atualizar_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        print(result)
-        
+        result = self.db.atualizar_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)        
 
     def atualizar_colaborador(self):
         
@@ -1092,10 +1072,6 @@ class TelaPrincipal(QMainWindow):
         #################### insert ##########################################
         result = []
         result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
-        print(result)
-
-
-
     
     def cadastroUsuario(self):
 
@@ -1185,8 +1161,6 @@ class TelaPrincipal(QMainWindow):
         ######################## insert ##################################
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        print(result)
-        # result = []
         self.msg(result[0],result[1])
     
     def listarUsuarios(self):
@@ -1262,7 +1236,6 @@ class TelaPrincipal(QMainWindow):
         ################## insert #######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
-        #print(result)
         self.msg(result[0],result[1])
 
     def cadastroColaborador(self):
@@ -1334,7 +1307,6 @@ class TelaPrincipal(QMainWindow):
         #################### insert ##########################################
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
-        print(result)
         self.msg(result[0],result[1])        
 
 
@@ -1397,13 +1369,11 @@ class TelaPrincipal(QMainWindow):
 
         tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
 
-        print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
         
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
-        print("cadastro agendamento",id_matricula)
         cpf = self.ui.input_cpf_agendamento_as.text()
         nome = self.ui.input_nome_agendamento_as.text()
         telefone = self.ui.input_telefone_agendamento_as.text()
@@ -1430,8 +1400,6 @@ class TelaPrincipal(QMainWindow):
     def filtrar_agenda(self):
         txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
         res = self.db.filter_agenda(txt)
-        #print(res)
-
         self.ui.input_TableWidget_agendamento_as.setRowCount(len(res))
 
         for row, text in enumerate(res):
@@ -1449,8 +1417,6 @@ class TelaPrincipal(QMainWindow):
         observacao_gerais = self.ui.input_observacoes_obs_sigilosas_as.toPlainText()
         tupla_area_sigilosa = (situacao, observacao_gerais, self.id_area_sigilosa)
         result = self.db.cadastrar_area_sigilosa(tupla_area_sigilosa)
-        print(result)
-
 
     def limparCamposCadastroUsuario (self):
         self.ui.input_nome_usuario_as.setText("") #
@@ -1605,10 +1571,7 @@ class TelaPrincipal(QMainWindow):
 
 
     def buscar_clinica_nome_fantasia(self):
-
         retrive_data = self.db.busca_clinica_nome_fantasia()
-        print("Clinicas Cadastradas -> ",retrive_data)
-
         lista_clinica = self.db.select_clinica_ids()
 
         nomes = []
@@ -1629,20 +1592,13 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
             itens += 1
             count += 1
-        print("Id_Clinica ->",id_clinica)
-        print("Id_Clinicas ->",id_clinicas)
-        print("Nomes -> ",nomes)
-        print("Nome Convertido -> ",convertendo_nome_clinica)
 
 
     def buscar_dados_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
         dados = self.db.buscar_consulta(cpf)
-        print(dados)
         self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
         self.ui.input_id_usuario_consulta_as.hide()
-        # self.ui.input_id_consulta_as.setText(str(dados[1]))
-        # self.ui.input_id_consulta_as.hide()
         self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
@@ -1667,12 +1623,11 @@ class TelaPrincipal(QMainWindow):
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
-        print(result)
+
     
     def puxar_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
         result = self.db.buscar_info_consulta(cpf)
-        print(result)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 
@@ -1693,7 +1648,6 @@ class TelaPrincipal(QMainWindow):
             campo = []
         for emp in update_dados:
            res = self.db.alterar_usuario_consulta_as(tuple(emp))
-           print("resultado ->",emp)
 
     def excluir_usuario_consulta (self):
         id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
@@ -1873,7 +1827,6 @@ class TelaPrincipal(QMainWindow):
             
             result = []
             result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
-            print(result)
             self.msg(result[0],result[1])
             self.limparCamposCadastroClinica()
             
@@ -1936,8 +1889,6 @@ class TelaPrincipal(QMainWindow):
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
         res = self.db.filtrar_relatorio(txt)
-        #print(res)
-
         self.ui.tableWidget_relatorio_as.setRowCount(len(res))
 
         for row, text in enumerate(res):
@@ -1946,7 +1897,6 @@ class TelaPrincipal(QMainWindow):
     
     def filtrar_usuario_area_sigilosa(self):
         result = self.db.filter_usuario_area_sigilosa(self.id_area_sigilosa)
-        print(result)
         self.ui.input_TableWidget_observacoes_sigilosas_as.clearContents()
         self.ui.input_TableWidget_observacoes_sigilosas_as.setRowCount(len(result))   
 
@@ -1960,10 +1910,8 @@ class TelaPrincipal(QMainWindow):
         texto_data_final = self.ui.input_final_periodo_relatorio_as.text()
         texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
         texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
-        print(texto_data_inicio_tratada,texto_data_final_tratada)
         
         res = self.db.filter_data(texto_data_inicio_tratada,texto_data_final_tratada)
-        #print(res)
 
         self.ui.tableWidget_relatorio_as.setRowCount(len(res))
 
@@ -1977,12 +1925,9 @@ class TelaPrincipal(QMainWindow):
                 
                 
     def filter_idade(self):
-        # self.ui.input_idade_inicial_relatorio_as.text()
-        # self.ui.input_idade_final_relatorio_as.text()
         if self.ui.input_escolha_relatorio_as.currentIndex() == 1:
             texto_idade_inicio = 18
             texto_idade_final = 23
-            print(texto_idade_inicio,texto_idade_final)
             
             res = self.db.filter_idade(texto_idade_inicio,texto_idade_final)
             self.ui.tableWidget_relatorio_as.setRowCount(len(res))
@@ -2037,19 +1982,6 @@ class TelaPrincipal(QMainWindow):
             if not self.ui.tableWidget_relatorio_as.isRowHidden(row):
                 row_data = [self.ui.tableWidget_relatorio_as.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_as.columnCount())]
                 filtered_data.append(row_data)
-        print(filtered_data)        
-        #por exemplo: print(filter_data)
-        #saida: lista de linhas da tabela
-        """[['Calebe Pereira Lemos', '8932728', 'Ouvidor', '728', 'Cidade', 'Lagos', 'calebe.el@senc.ms', '67828293'], 
-        ['Pedro', '838443', 'ouvi', '44', 'iijo', '', 'dasdas@', '672838'], 
-        ['c', 'c', 'c', 'c', 'c', 'c', 'c', 'c'], 
-        ['c', '1', 'c', 'c', 'c', 'c', 'c', 'c'], 
-        ['c', '4', 'c', 'c', 'c', 'c', 'c', 'c'], 
-        ['calebe', '29718', 'ouvidor', '672', 'cailar', 'cg', 'casbh!@fmail', '217267'], 
-        ['eder', '7364', 'test', '67', 'ht', 'campo gran', 'asdbahs@gmail', '6791828'], 
-        ['lucas', '0989', 'c', 'c', 'c', 'c', 'c', 'c'], 
-        ['oliver', '2763173', '65', '176', 'caiçara', 'campo grande', 'oli@senac', '56888'], 
-        ['test', '99089', 'tes', '653', 'rr', '', 'c@hmmn', '75676']]"""
     
         y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha
         pdf.drawString(285, 820, "Relatório") #cabecalho do relatorio
