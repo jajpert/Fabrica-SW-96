@@ -14,6 +14,26 @@ class DataBase():
         else:
             print("Erro")  
 
+    def select_agendamentos(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+            """)
+
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
 
     def select_pessoa(self):
         self.connect()
@@ -67,7 +87,6 @@ class DataBase():
 
         finally:
             self.close_connection()
-
     
     def select_colaborador(self):
         self.connect()
@@ -278,27 +297,6 @@ class DataBase():
             self.cursor.execute("""
                 SELECT id_clinica FROM clinica ORDER BY id_clinica;
             """)
-            result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
-            return result
-            #retorn a lista do banco para quem chamou a função
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
-    
-    def select_agendamentos(self):
-        self.connect()
-        try:
-            self.cursor.execute("""
-                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
-            """)
-
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -752,14 +750,12 @@ class DataBase():
             id_matricula = self.cursor.lastrowid
             print('id matricula',id_matricula)
 
-            self.cursor.execute("""
-                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula))
+            args3 = (colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula)
+            self.cursor.execute("INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)", args3)
             id_colaborador = self.cursor.lastrowid
             print(id_colaborador)
-
-
             self.conn.commit()
+            
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
@@ -770,8 +766,7 @@ class DataBase():
 
     def cadastro_curso(self,tupla_curso):
         self.connect()
-        try:
-            
+        try: 
             
             args2 = (tupla_curso[0],tupla_curso[1],tupla_curso[2],tupla_curso[3],tupla_curso[4],tupla_curso[5],tupla_curso[6],tupla_curso[7],tupla_curso[8],tupla_curso[9],tupla_curso[10],tupla_curso[11],tupla_curso[12],tupla_curso[13],tupla_curso[14],tupla_curso[15],tupla_curso[16])
             
@@ -798,6 +793,7 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+        
         
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
         self.conn()
