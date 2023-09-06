@@ -245,7 +245,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        # self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
 
         self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
@@ -267,7 +267,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
-        self.ui.btn_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
@@ -286,6 +285,10 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
+
+
+        #################SIGNAL CPF##################
+        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
 
 
         
@@ -497,6 +500,24 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_estado_clinica_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
+    def buscarPessoa(self):
+        cpf = self.ui.input_cpf_agendamento_as.text()
+        result = self.db.select_pessoa_cpf(cpf)
+        id_matricula = result[0]
+        nome = result[1]
+        telefone = result[2]
+        tamanho = int(len(result))
+        if tamanho > 3:
+            clinica = result[3]
+        else:
+            clinica = 'Não possuí'
+        self.ui.input_nome_agendamento_as.setText(nome)
+        self.ui.input_telefone_agendamento_as.setText(telefone)
+        self.ui.input_clinica_agendamento_as.setText(clinica)
+
+        return id_matricula
+
+
 
     def buscar_Usuario(self):
 
@@ -1307,14 +1328,25 @@ class TelaPrincipal(QMainWindow):
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
-        perfil = 'adm'
+        if cargo in ["Recepcionista"]:
+            perfil = 'rep'
+        elif cargo in ["Assistente Social"]:
+            perfil = 'adm'
+        elif cargo in ["Farmacêutico (a)"]:
+            perfil = 'farm'
+        elif cargo in ["Psicólogo (a)"]:
+            perfil = 'pisc'
+        elif cargo in ["Fisioterapeuta"]:
+            perfil = 'fisio'
+        elif cargo in ["Nutricionista"]:
+            perfil = 'nutri'
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
         tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
 
         #################### insert ##########################################
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
-        #print(result)
+        print(result)
         self.msg(result[0],result[1])        
 
 
@@ -1903,6 +1935,29 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
+            
+    ######################################################################
+
+    def sairSistema(self):  #Popup que Confirma saida - Botão Sair 
+        
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Confirma Saida")
+        dlg.setText("Deseja Sair?")
+        
+        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dlg.setIcon(QMessageBox.Question)
+        button = dlg.exec()      
+
+            
+        if button == QMessageBox.Yes:
+            self.ui.inicio.setCurrentIndex(0)
+            self.ui.input_usuario_login.setText("")
+            self.ui.input_senha_login.setText("")
+        
+        else:
+            dlg.close()
+
+
     ######################################################################
 
 

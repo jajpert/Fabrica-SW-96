@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -18749,7 +18749,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
                                            </property>
                                            <property name="alignment">
-                                            <set>Qt::AlignCenter</set>
+                                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                                            </property>
                                            <property name="calendarPopup" stdset="0">
                                             <bool>false</bool>
