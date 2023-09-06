@@ -273,10 +273,7 @@ class TelaPrincipal(QMainWindow):
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
-        
-        
-        
-        #self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
@@ -1145,9 +1142,6 @@ class TelaPrincipal(QMainWindow):
         local_tratamento_id = local_tratamento.split("-")
         local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
-
-        if patologia_base=="Outros":
-            
         outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
        
 

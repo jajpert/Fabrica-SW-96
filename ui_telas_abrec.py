@@ -1,7 +1,9 @@
+# -*- coding: utf-8 -*-
+
 ################################################################################
-## Form generated from reading UI file 'telas_abrecmqUuvJ.ui'
+## Form generated from reading UI file 'telas_abrecRYykYR.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.0
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -867,7 +869,7 @@ class Ui_MainWindow(object):
         self.frame_62 = QFrame(self.frame_48)
         self.frame_62.setObjectName(u"frame_62")
         self.frame_62.setMinimumSize(QSize(0, 0))
-        self.frame_62.setMaximumSize(QSize(460, 16777215))
+        self.frame_62.setMaximumSize(QSize(500, 16777215))
         self.frame_62.setFrameShape(QFrame.StyledPanel)
         self.frame_62.setFrameShadow(QFrame.Raised)
         self.verticalLayout_30 = QVBoxLayout(self.frame_62)
@@ -897,7 +899,7 @@ class Ui_MainWindow(object):
         self.frame_63 = QFrame(self.frame_48)
         self.frame_63.setObjectName(u"frame_63")
         self.frame_63.setMinimumSize(QSize(0, 0))
-        self.frame_63.setMaximumSize(QSize(160, 16777215))
+        self.frame_63.setMaximumSize(QSize(150, 16777215))
         self.frame_63.setFrameShape(QFrame.StyledPanel)
         self.frame_63.setFrameShadow(QFrame.Raised)
         self.verticalLayout_31 = QVBoxLayout(self.frame_63)
@@ -907,11 +909,11 @@ class Ui_MainWindow(object):
         self.label_nascimento_usuario_as = QLabel(self.frame_63)
         self.label_nascimento_usuario_as.setObjectName(u"label_nascimento_usuario_as")
         self.label_nascimento_usuario_as.setMinimumSize(QSize(0, 0))
-        self.label_nascimento_usuario_as.setMaximumSize(QSize(160, 16777215))
+        self.label_nascimento_usuario_as.setMaximumSize(QSize(150, 16777215))
         self.label_nascimento_usuario_as.setFont(font)
         self.label_nascimento_usuario_as.setStyleSheet(u"")
 
-        self.verticalLayout_31.addWidget(self.label_nascimento_usuario_as)
+        self.verticalLayout_31.addWidget(self.label_nascimento_usuario_as, 0, Qt.AlignHCenter)
 
         self.input_nascimento_usuario_as = QDateEdit(self.frame_63)
         self.input_nascimento_usuario_as.setObjectName(u"input_nascimento_usuario_as")
@@ -921,7 +923,7 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.input_nascimento_usuario_as.sizePolicy().hasHeightForWidth())
         self.input_nascimento_usuario_as.setSizePolicy(sizePolicy1)
         self.input_nascimento_usuario_as.setMinimumSize(QSize(0, 30))
-        self.input_nascimento_usuario_as.setMaximumSize(QSize(16777215, 16777215))
+        self.input_nascimento_usuario_as.setMaximumSize(QSize(16777215, 30))
         font8 = QFont()
         font8.setFamilies([u"Abel"])
         font8.setPointSize(11)
@@ -1080,7 +1082,7 @@ class Ui_MainWindow(object):
         self.label_data_emissao_usuario_as.setMaximumSize(QSize(155, 16777215))
         self.label_data_emissao_usuario_as.setFont(font)
 
-        self.verticalLayout_41.addWidget(self.label_data_emissao_usuario_as)
+        self.verticalLayout_41.addWidget(self.label_data_emissao_usuario_as, 0, Qt.AlignHCenter)
 
         self.input_data_emissao_usuario_as = QDateEdit(self.frame_68)
         self.input_data_emissao_usuario_as.setObjectName(u"input_data_emissao_usuario_as")
@@ -1325,8 +1327,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_123.setContentsMargins(0, 0, 0, 0)
         self.frame_418 = QFrame(self.frame_417)
         self.frame_418.setObjectName(u"frame_418")
-        self.frame_418.setMinimumSize(QSize(160, 61))
-        self.frame_418.setMaximumSize(QSize(150, 61))
+        self.frame_418.setMinimumSize(QSize(160, 60))
+        self.frame_418.setMaximumSize(QSize(150, 60))
         self.frame_418.setFrameShape(QFrame.StyledPanel)
         self.frame_418.setFrameShadow(QFrame.Raised)
         self.verticalLayout_285 = QVBoxLayout(self.frame_418)
@@ -1364,7 +1366,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_286.setSpacing(0)
         self.verticalLayout_286.setObjectName(u"verticalLayout_286")
         self.verticalLayout_286.setContentsMargins(0, 0, 0, 0)
-        self.verticalSpacer_17 = QSpacerItem(20, 18, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_17 = QSpacerItem(20, 16, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
         self.verticalLayout_286.addItem(self.verticalSpacer_17)
 
@@ -1910,8 +1912,8 @@ class Ui_MainWindow(object):
         self.frame_438 = QFrame(self.frame_43)
         self.frame_438.setObjectName(u"frame_438")
         self.frame_438.setEnabled(False)
-        self.frame_438.setMinimumSize(QSize(145, 0))
-        self.frame_438.setMaximumSize(QSize(145, 16777215))
+        self.frame_438.setMinimumSize(QSize(0, 0))
+        self.frame_438.setMaximumSize(QSize(170, 16777215))
         self.frame_438.setFrameShape(QFrame.StyledPanel)
         self.frame_438.setFrameShadow(QFrame.Raised)
         self.verticalLayout_305 = QVBoxLayout(self.frame_438)
@@ -1926,7 +1928,7 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_outros_usuario_as.setObjectName(u"input_situacao_trabalho_outros_usuario_as")
         self.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_usuario_as.setMinimumSize(QSize(140, 0))
-        self.input_situacao_trabalho_outros_usuario_as.setMaximumSize(QSize(140, 16777215))
+        self.input_situacao_trabalho_outros_usuario_as.setMaximumSize(QSize(170, 30))
         font10 = QFont()
         font10.setFamilies([u"Abel"])
         self.input_situacao_trabalho_outros_usuario_as.setFont(font10)
@@ -2094,7 +2096,7 @@ class Ui_MainWindow(object):
         self.input_Local_Tratamento_Clinica_usuario_as.addItem("")
         self.input_Local_Tratamento_Clinica_usuario_as.setObjectName(u"input_Local_Tratamento_Clinica_usuario_as")
         self.input_Local_Tratamento_Clinica_usuario_as.setMinimumSize(QSize(0, 30))
-        self.input_Local_Tratamento_Clinica_usuario_as.setMaximumSize(QSize(213, 30))
+        self.input_Local_Tratamento_Clinica_usuario_as.setMaximumSize(QSize(330, 30))
         self.input_Local_Tratamento_Clinica_usuario_as.setFont(font)
         self.input_Local_Tratamento_Clinica_usuario_as.setToolTipDuration(-1)
 
@@ -2106,7 +2108,7 @@ class Ui_MainWindow(object):
         self.frame_92 = QFrame(self.frame_44)
         self.frame_92.setObjectName(u"frame_92")
         self.frame_92.setMinimumSize(QSize(0, 0))
-        self.frame_92.setMaximumSize(QSize(260, 16777215))
+        self.frame_92.setMaximumSize(QSize(16777215, 16777215))
         self.frame_92.setFrameShape(QFrame.StyledPanel)
         self.frame_92.setFrameShadow(QFrame.Raised)
         self.verticalLayout_61 = QVBoxLayout(self.frame_92)
@@ -2143,8 +2145,10 @@ class Ui_MainWindow(object):
         self.frame_490 = QFrame(self.frame_44)
         self.frame_490.setObjectName(u"frame_490")
         self.frame_490.setEnabled(False)
-        self.frame_490.setMinimumSize(QSize(145, 0))
-        self.frame_490.setMaximumSize(QSize(145, 16777215))
+        sizePolicy.setHeightForWidth(self.frame_490.sizePolicy().hasHeightForWidth())
+        self.frame_490.setSizePolicy(sizePolicy)
+        self.frame_490.setMinimumSize(QSize(0, 0))
+        self.frame_490.setMaximumSize(QSize(170, 16777215))
         self.frame_490.setFrameShape(QFrame.StyledPanel)
         self.frame_490.setFrameShadow(QFrame.Raised)
         self.verticalLayout_345 = QVBoxLayout(self.frame_490)
@@ -2158,9 +2162,9 @@ class Ui_MainWindow(object):
         self.input_outras_patologias_usuario_as = QLineEdit(self.frame_490)
         self.input_outras_patologias_usuario_as.setObjectName(u"input_outras_patologias_usuario_as")
         self.input_outras_patologias_usuario_as.setEnabled(False)
-        self.input_outras_patologias_usuario_as.setMinimumSize(QSize(140, 0))
-        self.input_outras_patologias_usuario_as.setMaximumSize(QSize(140, 16777215))
-        self.input_outras_patologias_usuario_as.setFont(font10)
+        self.input_outras_patologias_usuario_as.setMinimumSize(QSize(0, 0))
+        self.input_outras_patologias_usuario_as.setMaximumSize(QSize(170, 30))
+        self.input_outras_patologias_usuario_as.setFont(font)
         self.input_outras_patologias_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
