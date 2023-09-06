@@ -872,7 +872,7 @@ class DataBase():
                                     lote = '{dados[4]}',
                                     unidade_medida = '{dados[5]}',
                                     quantidade = '{dados[6]}',
-                                    validade = '{dados[7]}'
+                                    validade = '{dados[7]}',
                                     WHERE id_beneficios = '{dados[0]}';""")
             self.conn.commit()
             return "OK","Beneficio atualizado com sucesso!!"
@@ -887,7 +887,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(
-                f"""DELETE FROM consulta WHERE id_beneficios = '{id_beneficios}' """
+                f"""DELETE FROM beneficios WHERE id_beneficios = '{id_beneficios}' """
             )
             self.conn.commit()
             return "OK","Cadastro excluído com sucesso!"
@@ -899,7 +899,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT codigo,tipo,descricao,lote,unidade_medida,quantidade DATE_FORMAT,validade FROM beneficios;
+                SELECT id_beneficios,codigo,tipo,descricao,lote,unidade_medida,quantidade DATE_FORMAT,validade FROM beneficios;
             """)
 
             result = self.cursor.fetchall()

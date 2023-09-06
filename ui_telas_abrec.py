@@ -2699,8 +2699,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_342 = QVBoxLayout(self.frame_484)
         self.verticalLayout_342.setObjectName(u"verticalLayout_342")
         self.input_TableWidget_cadastro_beneficio = QTableWidget(self.frame_484)
-        if (self.input_TableWidget_cadastro_beneficio.columnCount() < 7):
-            self.input_TableWidget_cadastro_beneficio.setColumnCount(7)
+        if (self.input_TableWidget_cadastro_beneficio.columnCount() < 8):
+            self.input_TableWidget_cadastro_beneficio.setColumnCount(8)
         __qtablewidgetitem = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
@@ -2715,14 +2715,16 @@ class Ui_MainWindow(object):
         self.input_TableWidget_cadastro_beneficio.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio.setHorizontalHeaderItem(6, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        self.input_TableWidget_cadastro_beneficio.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         if (self.input_TableWidget_cadastro_beneficio.rowCount() < 14):
             self.input_TableWidget_cadastro_beneficio.setRowCount(14)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        self.input_TableWidget_cadastro_beneficio.setItem(0, 0, __qtablewidgetitem7)
         __qtablewidgetitem8 = QTableWidgetItem()
-        self.input_TableWidget_cadastro_beneficio.setItem(0, 3, __qtablewidgetitem8)
+        self.input_TableWidget_cadastro_beneficio.setItem(0, 1, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
-        self.input_TableWidget_cadastro_beneficio.setItem(1, 0, __qtablewidgetitem9)
+        self.input_TableWidget_cadastro_beneficio.setItem(0, 4, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        self.input_TableWidget_cadastro_beneficio.setItem(1, 1, __qtablewidgetitem10)
         self.input_TableWidget_cadastro_beneficio.setObjectName(u"input_TableWidget_cadastro_beneficio")
         self.input_TableWidget_cadastro_beneficio.setFont(font)
         self.input_TableWidget_cadastro_beneficio.setLayoutDirection(Qt.LeftToRight)
@@ -12001,7 +12003,7 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_consulta_geral.setFont(font)
 
         self.verticalLayout_319.addWidget(self.label_cpf_pagina_consulta_geral)
-
+        
 
         self.verticalLayout_1691.addWidget(self.frame_4621)
 
@@ -13754,19 +13756,22 @@ class Ui_MainWindow(object):
         self.label_quantidade_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None))
         self.btn_salvar_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
         ___qtablewidgetitem = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Id_Beneficio", None));
         ___qtablewidgetitem1 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None));
         ___qtablewidgetitem2 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
         ___qtablewidgetitem3 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Lote", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
         ___qtablewidgetitem4 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Unidade de medida", None));
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Lote", None));
         ___qtablewidgetitem5 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Quantidade ", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Unidade de medida", None));
         ___qtablewidgetitem6 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Validade", None));
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Quantidade ", None));
+        ___qtablewidgetitem7 = self.input_TableWidget_cadastro_beneficio.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Validade", None));
+
 
         __sortingEnabled = self.input_TableWidget_cadastro_beneficio.isSortingEnabled()
         self.input_TableWidget_cadastro_beneficio.setSortingEnabled(False)
