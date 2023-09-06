@@ -297,10 +297,9 @@ class Ui_Cadastro_Conclusao(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")
-
-        Dialog.setWindowFlags(Qt.Dialog|Qt.FramelessWindowHint)
+        Dialog.setWindowFlags(Qt.FramelessWindowHint)
         Dialog.setAttribute(Qt.WA_TranslucentBackground)
-
+        Dialog.setAttribute(Qt.WA_NoSystemBackground)
         Dialog.resize(440, 240)
         Dialog.setMinimumSize(QSize(440, 240))
         Dialog.setMaximumSize(QSize(440, 240))
@@ -415,6 +414,7 @@ class Ui_Cadastro_Conclusao(object):
 
 
         self.retranslateUi(Dialog)
+        self.btn_voltar_popup_cadastro_conclusao.clicked.connect(Dialog.reject)
 
         QMetaObject.connectSlotsByName(Dialog)
     # setupUi

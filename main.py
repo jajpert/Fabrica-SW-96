@@ -77,23 +77,12 @@ class DialogTirarImportarFoto(QDialog):
 
 ################Class POPUP USUARIO################
 
-class DialogCadastroUsuarioSucesso(QDialog):
+class DialogConfirmarCadastro(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Cadastro_Conclusao()
         self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(8000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
 
 ############################################################
 
@@ -1157,7 +1146,7 @@ class TelaPrincipal(QMainWindow):
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         print(result)
         # result = []
-        self.msg(result[0],result[1])
+        self.confirmarCadastro()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
@@ -1233,7 +1222,7 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
         #print(result)
-        self.msg(result[0],result[1])
+        self.confirmarCadastro()
 
     def cadastroColaborador(self):
 
@@ -1305,7 +1294,7 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         print(result)
-        self.msg(result[0],result[1])        
+        self.confirmarCadastro()      
 
 
     def cadastroCurso(self):
@@ -1369,6 +1358,7 @@ class TelaPrincipal(QMainWindow):
 
         print(tupla_curso)
         result=self.db.cadastro_curso(tupla_curso)
+        self.confirmarCadastro()
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
@@ -1394,7 +1384,7 @@ class TelaPrincipal(QMainWindow):
 
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento(tupla_agendamento)
-        self.msg(result[0],result[1])   
+        self.confirmarCadastro() 
         
     def filtrar_agenda(self):
         txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
@@ -1607,6 +1597,7 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
         print(result)
+        self.confirmarCadastro()
     
     def puxar_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
@@ -1698,8 +1689,8 @@ class TelaPrincipal(QMainWindow):
         self.popup.hide()
 
 
-    def msg(self,tipo,mensagem):
-        msg = DialogCadastroUsuarioSucesso(self)
+    def confirmarCadastro(self):
+        msg = DialogConfirmarCadastro(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()

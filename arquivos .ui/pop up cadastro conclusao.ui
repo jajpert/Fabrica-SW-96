@@ -259,5 +259,22 @@ background-color: rgb(0, 168, 232);
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_voltar_popup_cadastro_conclusao</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>159</x>
+     <y>175</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
