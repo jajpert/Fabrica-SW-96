@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2268</width>
-    <height>1015</height>
+    <height>1021</height>
    </rect>
   </property>
   <property name="font">
@@ -15408,7 +15408,7 @@ QPushButton:focus{outline:0}</string>
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLabel" name="label_titulo_cadastrar_participante">
+                           <widget class="QLabel" name="label_titulo_pagina_consulta_geral_2">
                             <property name="minimumSize">
                              <size>
                               <width>1824</width>
@@ -15425,7 +15425,7 @@ QPushButton:focus{outline:0}</string>
 background-color: rgb(243, 185, 191);</string>
                             </property>
                             <property name="text">
-                             <string>CADASTRAR PARTICIPANTE</string>
+                             <string>CADASTRAR PACIENTE</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -15469,7 +15469,7 @@ background-color: rgb(243, 185, 191);</string>
                                </property>
                                <property name="sizeHint" stdset="0">
                                 <size>
-                                 <width>150</width>
+                                 <width>120</width>
                                  <height>20</height>
                                 </size>
                                </property>
@@ -15483,7 +15483,7 @@ background-color: rgb(243, 185, 191);</string>
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_155" stretch="0">
+                               <layout class="QHBoxLayout" name="horizontalLayout_155" stretch="4">
                                 <property name="spacing">
                                  <number>0</number>
                                 </property>
@@ -15558,7 +15558,7 @@ background-color: rgb(243, 185, 191);</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_cpf_cadastrar_participante"/>
+                                          <widget class="QLineEdit" name="input_cpf_pagina_consulta_geral_2"/>
                                          </item>
                                          <item>
                                           <widget class="QPushButton" name="btn_buscar_cpf_pagina_consulta_geral_2">
@@ -15655,7 +15655,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_nome_cadastrar_participante"/>
+                                          <widget class="QLineEdit" name="input_contato_pagina_consulta_geral_3"/>
                                          </item>
                                         </layout>
                                        </widget>
@@ -15689,7 +15689,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_telefone_cadastro_participante"/>
+                                          <widget class="QLineEdit" name="input_contato_pagina_consulta_geral_4"/>
                                          </item>
                                         </layout>
                                        </widget>
@@ -15723,7 +15723,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_email_cadastrar_participante"/>
+                                          <widget class="QLineEdit" name="input_contato_pagina_consulta_geral_5"/>
                                          </item>
                                         </layout>
                                        </widget>
@@ -15757,7 +15757,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_contato_cadastrar_participante"/>
+                                          <widget class="QLineEdit" name="input_contato_pagina_consulta_geral_6"/>
                                          </item>
                                         </layout>
                                        </widget>
@@ -15791,7 +15791,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QComboBox" name="comboBox_cadastrar_participante">
+                                          <widget class="QComboBox" name="comboBox">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -15818,27 +15818,30 @@ QPushButton:pressed{
                                     </widget>
                                    </item>
                                    <item>
-                                    <spacer name="verticalSpacer_33">
+                                    <spacer name="verticalSpacer_12">
                                      <property name="orientation">
                                       <enum>Qt::Vertical</enum>
                                      </property>
-                                     <property name="sizeType">
-                                      <enum>QSizePolicy::Minimum</enum>
-                                     </property>
                                      <property name="sizeHint" stdset="0">
                                       <size>
-                                       <width>35</width>
-                                       <height>35</height>
+                                       <width>50</width>
+                                       <height>60</height>
                                       </size>
                                      </property>
                                     </spacer>
                                    </item>
                                    <item>
                                     <widget class="QFrame" name="frame_481">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>120</height>
+                                      </size>
+                                     </property>
                                      <property name="maximumSize">
                                       <size>
                                        <width>16777215</width>
-                                       <height>120</height>
+                                       <height>400</height>
                                       </size>
                                      </property>
                                      <property name="frameShape">
@@ -15849,7 +15852,7 @@ QPushButton:pressed{
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_159">
                                       <item>
-                                       <widget class="QPushButton" name="btn_voltar_cadastrar_participante">
+                                       <widget class="QPushButton" name="btn_voltar_pagina_consulta_geral_2">
                                         <property name="minimumSize">
                                          <size>
                                           <width>100</width>
@@ -15882,7 +15885,7 @@ QPushButton:focus{outline:0}</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QPushButton" name="btn_salvar_cadastrar_participante">
+                                       <widget class="QPushButton" name="btn_salvar_pagina_consulta_geral_2">
                                         <property name="minimumSize">
                                          <size>
                                           <width>0</width>
@@ -16039,7 +16042,7 @@ QPushButton:focus{outline:0}</string>
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QTableWidget" name="input_TableWidget_cadastrar_participante">
+                                    <widget class="QTableWidget" name="input_TableWidget_pagina_consulta_geral_2">
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
@@ -16182,7 +16185,7 @@ QPushButton:focus{outline:0}</string>
                                     </spacer>
                                    </item>
                                    <item>
-                                    <widget class="QPushButton" name="btn_excluir_excel_cadastrar_participante">
+                                    <widget class="QPushButton" name="btn_excluir_pagina_consulta_geral_2">
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
@@ -16208,7 +16211,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="icon">
                                       <iconset>
-                                       <normaloff>../../../../Documents/GitHub/Fabrica-SW-96/icons/lupa.png</normaloff>../../../../Documents/GitHub/Fabrica-SW-96/icons/lupa.png</iconset>
+                                       <normaloff>../icons/lixeira-de-reciclagem.png</normaloff>../icons/lixeira-de-reciclagem.png</iconset>
                                      </property>
                                      <property name="iconSize">
                                       <size>
@@ -16222,7 +16225,7 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="verticalSpacer_12">
+                                 <spacer name="verticalSpacer_33">
                                   <property name="orientation">
                                    <enum>Qt::Vertical</enum>
                                   </property>
