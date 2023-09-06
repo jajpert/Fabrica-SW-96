@@ -337,6 +337,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
+        self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
@@ -1428,7 +1429,42 @@ class TelaPrincipal(QMainWindow):
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         self.msg(result[0],result[1])   
+
+
+    def cadastroFornecedor(self):
+        ######################## endereço ###########################   
+        cep = self.ui.input_cep_fornecedor_as.text()
+        rua = self.ui.input_logradouro_fornecedor_as.text()
+        numero = self.ui.input_numero_fornecedor_as.text()
+        bairro = self.ui.input_bairro_fornecedor_as.text()
+        cidade = self.ui.input_cidade_fornecedor_as.text()
+        estado = self.ui.input_estado_fornecedor_as.text()
         
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+         ###################### pessoa ##############################
+        cnpj = self.ui.input_cnpj_cadastro_fornecedor_as.text()
+        razao_social = self.ui.input_razao_social_cadastro_fornecedor_as.text()
+        nome_fantasia = self.ui.input_nome_fantasia_cadastro_fornecedor_as.text()
+        celular = self.ui.input_telefone_celular_fornecedor_as.text()
+        telefone_fixo = self.ui.input_telefone_fixo_fornecedor_as.text()
+        email = self.ui.input_email_fornecedor_as.text()
+        contato = self.ui.input_contato_fornecedor_as.text()
+        inscricao_estadual = self.ui.input_inscricao_estadual_fornecedor_as.text()
+        inscricao_municipal = self.ui.input_inscricao_municipal_fornecedor_as.text()
+        informacao_geral = self.ui.input_informacoes_gerais_fornecedor_as.toPlainText()
+
+        tupla_fornecedor = (razao_social,nome_fantasia,cnpj,celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,informacao_geral)
+                            #razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco
+        result = []
+        print(result)
+        result = self.db.cadastro_fornecedor(tupla_endereco,tupla_fornecedor)
+        print(result)
+
+       
+
+
+
+
     def filtrar_agenda(self):
         txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
         res = self.db.filter_agenda(txt)
