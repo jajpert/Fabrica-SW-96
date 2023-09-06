@@ -338,6 +338,8 @@ class TelaPrincipal(QMainWindow):
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
+        self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
+        self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
@@ -1201,9 +1203,9 @@ class TelaPrincipal(QMainWindow):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
 
     def listarBeneficios(self):
-        res = self.db.busca_beneficios()
-
-        for row, text in enumerate(res):
+        resultado = self.db.busca_beneficios()
+        
+        for row, text in enumerate(resultado):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_cadastro_beneficio.setItem(row, column, QTableWidgetItem(str(data)))
                 
@@ -1655,6 +1657,22 @@ class TelaPrincipal(QMainWindow):
         id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
         self.db.deletar_consulta_relatorio(id_consulta)
     
+    def alterar_cadastro_beneficios(self,dados):
+        dados = []
+        alterar_dados = []
+
+        for row in range(self.ui.input_TableWidget_cadastro_beneficio.rowCount()):
+            for column in range(self.ui.input_TableWidget_cadastro_beneficio.columnCount()):
+                dados.append(self.ui.input_TableWidget_cadastro_beneficio.item(row, column).text())
+            alterar_dados.append(dados)
+            dados = []
+        for emp in alterar_dados:
+           res = self.db.alterar_cadastro_beneficios(tuple(emp))
+           print("resultado ->",emp)
+
+    def excluir_cadastro_beneficios (self):
+        id_beneficios = self.ui.input_TableWidget_cadastro_beneficio.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_cadastro_beneficios(id_beneficios)
                 
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
