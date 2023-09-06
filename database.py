@@ -10,7 +10,7 @@ class DataBase():
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
-            print("Conectado ao Servidor de Banco de Dados: ", db_info)
+            # print("Conectado ao Servidor de Banco de Dados: ", db_info)
         else:
             print("Erro")  
 
@@ -65,7 +65,9 @@ class DataBase():
             id_matricu = resultado1[0][0]
 
             self.cursor.execute(f"""
-                SELECT local_tratamento FROM usuario WHERE id_matricula IN ({id_matricu});
+                SELECT local_tratamento FROM usuario 
+                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                WHERE id_matricula IN ({id_matricu});
             """)
             resultado2 = self.cursor.fetchall()
 
@@ -900,7 +902,7 @@ class DataBase():
         if self.conn.is_connected():
             self.cursor.close()
             self.conn.close()
-            print("Conexão encerrada com sucesso!!")
+            # print("Conexão encerrada com sucesso!!")
 
 if __name__ == "__main__":
     db = DataBase()
