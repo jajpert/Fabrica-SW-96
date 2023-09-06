@@ -250,7 +250,6 @@ class TelaPrincipal(QMainWindow):
         
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
-        # self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta_as))
         self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_cadastrar_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_voltar_cadastro_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
@@ -339,12 +338,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
-        self.ui.btn_salvar_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
-        self.ui.btn_finalizar_as.clicked.connect(self.limparCamposCadastroCuidador)
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
-        self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
-        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.limparCamposAreaSigilosa)
-        self.ui.btn_concluir_cursos_as.clicked.connect(self.limparCadastroCursos)
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
@@ -359,7 +353,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.buscar_clinica_nome_fantasia)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.listarAgendamentos)
-
+        self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -1161,6 +1155,7 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         self.msg(result[0],result[1])
+        self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
@@ -1236,6 +1231,7 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
         self.msg(result[0],result[1])
+        self.limparCamposCadastroCuidador()
 
     def cadastroColaborador(self):
 
@@ -1307,6 +1303,7 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         self.msg(result[0],result[1])        
+        self.limparCamposCadastroColaborador()
 
 
     def cadastroCurso(self):
@@ -1369,6 +1366,7 @@ class TelaPrincipal(QMainWindow):
         tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
 
         result=self.db.cadastro_curso(tupla_curso)
+        self.limparCadastroCursos()
         
     
     def cadastroAgendamento(self):
@@ -1395,6 +1393,7 @@ class TelaPrincipal(QMainWindow):
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         self.msg(result[0],result[1])   
+        self.limparCamposAgenda()
         
     def filtrar_agenda(self):
         txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
@@ -1416,6 +1415,7 @@ class TelaPrincipal(QMainWindow):
         observacao_gerais = self.ui.input_observacoes_obs_sigilosas_as.toPlainText()
         tupla_area_sigilosa = (situacao, observacao_gerais, self.id_area_sigilosa)
         result = self.db.cadastrar_area_sigilosa(tupla_area_sigilosa)
+        self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):
         self.ui.input_nome_usuario_as.setText("") #
@@ -1568,6 +1568,37 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
 
+    def limparCamposConsulta(self):
+        self.ui.input_nome_pagina_consulta_geral.setText("")
+        self.ui.input_contato_pagina_consulta_geral.setText("")
+        self.ui.input_clinica_pagina_consulta_geral.setText("")
+        self.ui.radioButton_Consulta_as.setCheckable(False)
+        self.ui.radioButton_Consulta_as.setCheckable(True)
+        self.ui.radioButton_Retorno_as.setCheckable(False)
+        self.ui.radioButton_Retorno_as.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_consulta_as.setText("")
+        self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
+
+    def limparCamposAgenda(self):
+        self.ui.input_nome_agendamento_as.setText("")
+        self.ui.input_telefone_agendamento_as.setText("")
+        self.ui.input_clinica_agendamento_as.setText("")
+        self.ui.input_profissional_as_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_as.setCheckable(True)
+        self.ui.input_data_agendamento_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_agendamento_as.setTime(QTime(00,00))
+        self.ui.input_anotacao_agendamento_as.setHtml("")
+    
+    
+        
+        
 
     def buscar_clinica_nome_fantasia(self):
         retrive_data = self.db.busca_clinica_nome_fantasia()
@@ -1622,7 +1653,7 @@ class TelaPrincipal(QMainWindow):
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
-
+        self.limparCamposConsulta()
     
     def puxar_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()

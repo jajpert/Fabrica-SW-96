@@ -65,8 +65,8 @@ class DataBase():
             id_matricu = resultado1[0][0]
 
             self.cursor.execute(f"""
-                SELECT local_tratamento FROM usuario 
-                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                SELECT clinica.nome_fantasia FROM clinica 
+                INNER JOIN usuario ON usuario.local_tratamento
                 WHERE id_matricula IN ({id_matricu});
             """)
             resultado2 = self.cursor.fetchall()
