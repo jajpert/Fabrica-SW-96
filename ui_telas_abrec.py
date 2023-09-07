@@ -1,15 +1,27 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecHyHFIH.ui'
+## Form generated from reading UI file 'telas_abreccYcvGT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from qtcore import * 
-from icons import *
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication, QCheckBox,
+    QComboBox, QDateEdit, QDateTimeEdit, QFrame,
+    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QRadioButton,
+    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QTextEdit, QTimeEdit,
+    QToolButton, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -6294,6 +6306,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_3321.addWidget(self.comboBox_cursos_participante_geral)
 
+        self.input_id_matricula_user_participante_geral = QLineEdit(self.frame_4741)
+        self.input_id_matricula_user_participante_geral.setObjectName(u"input_id_matricula_user_participante_geral")
+        self.input_id_matricula_user_participante_geral.setEnabled(False)
+        self.input_id_matricula_user_participante_geral.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_3321.addWidget(self.input_id_matricula_user_participante_geral)
+
 
         self.verticalLayout_124.addWidget(self.frame_4741)
 
@@ -6389,48 +6409,48 @@ class Ui_MainWindow(object):
         self.horizontalLayout_162.setSpacing(0)
         self.horizontalLayout_162.setObjectName(u"horizontalLayout_162")
         self.horizontalLayout_162.setContentsMargins(0, 0, 0, 0)
-        self.input_TableWidget_pagina_consulta_geral_2 = QTableWidget(self.frame_4871)
-        if (self.input_TableWidget_pagina_consulta_geral_2.columnCount() < 5):
-            self.input_TableWidget_pagina_consulta_geral_2.setColumnCount(5)
+        self.input_TableWidget_pagina_participante_geral = QTableWidget(self.frame_4871)
+        if (self.input_TableWidget_pagina_participante_geral.columnCount() < 5):
+            self.input_TableWidget_pagina_participante_geral.setColumnCount(5)
         __qtablewidgetitem27 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setHorizontalHeaderItem(0, __qtablewidgetitem27)
+        self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(0, __qtablewidgetitem27)
         __qtablewidgetitem28 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setHorizontalHeaderItem(1, __qtablewidgetitem28)
+        self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(1, __qtablewidgetitem28)
         __qtablewidgetitem29 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setHorizontalHeaderItem(2, __qtablewidgetitem29)
+        self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(2, __qtablewidgetitem29)
         __qtablewidgetitem30 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setHorizontalHeaderItem(3, __qtablewidgetitem30)
+        self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(3, __qtablewidgetitem30)
         __qtablewidgetitem31 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setHorizontalHeaderItem(4, __qtablewidgetitem31)
-        if (self.input_TableWidget_pagina_consulta_geral_2.rowCount() < 14):
-            self.input_TableWidget_pagina_consulta_geral_2.setRowCount(14)
+        self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(4, __qtablewidgetitem31)
+        if (self.input_TableWidget_pagina_participante_geral.rowCount() < 14):
+            self.input_TableWidget_pagina_participante_geral.setRowCount(14)
         __qtablewidgetitem32 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setItem(0, 0, __qtablewidgetitem32)
+        self.input_TableWidget_pagina_participante_geral.setItem(0, 0, __qtablewidgetitem32)
         __qtablewidgetitem33 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setItem(0, 4, __qtablewidgetitem33)
+        self.input_TableWidget_pagina_participante_geral.setItem(0, 4, __qtablewidgetitem33)
         __qtablewidgetitem34 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_2.setItem(1, 0, __qtablewidgetitem34)
-        self.input_TableWidget_pagina_consulta_geral_2.setObjectName(u"input_TableWidget_pagina_consulta_geral_2")
-        self.input_TableWidget_pagina_consulta_geral_2.setFont(font)
-        self.input_TableWidget_pagina_consulta_geral_2.setLayoutDirection(Qt.LeftToRight)
-        self.input_TableWidget_pagina_consulta_geral_2.setAutoFillBackground(False)
-        self.input_TableWidget_pagina_consulta_geral_2.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
-        self.input_TableWidget_pagina_consulta_geral_2.setLineWidth(2222)
-        self.input_TableWidget_pagina_consulta_geral_2.setMidLineWidth(10)
-        self.input_TableWidget_pagina_consulta_geral_2.setAlternatingRowColors(True)
-        self.input_TableWidget_pagina_consulta_geral_2.setSelectionMode(QAbstractItemView.MultiSelection)
-        self.input_TableWidget_pagina_consulta_geral_2.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
-        self.input_TableWidget_pagina_consulta_geral_2.setHorizontalScrollMode(QAbstractItemView.ScrollPerItem)
-        self.input_TableWidget_pagina_consulta_geral_2.setGridStyle(Qt.SolidLine)
-        self.input_TableWidget_pagina_consulta_geral_2.setSortingEnabled(True)
-        self.input_TableWidget_pagina_consulta_geral_2.setWordWrap(True)
-        self.input_TableWidget_pagina_consulta_geral_2.horizontalHeader().setCascadingSectionResizes(True)
-        self.input_TableWidget_pagina_consulta_geral_2.horizontalHeader().setDefaultSectionSize(130)
-        self.input_TableWidget_pagina_consulta_geral_2.horizontalHeader().setStretchLastSection(True)
-        self.input_TableWidget_pagina_consulta_geral_2.verticalHeader().setVisible(False)
-        self.input_TableWidget_pagina_consulta_geral_2.verticalHeader().setDefaultSectionSize(50)
+        self.input_TableWidget_pagina_participante_geral.setItem(1, 0, __qtablewidgetitem34)
+        self.input_TableWidget_pagina_participante_geral.setObjectName(u"input_TableWidget_pagina_participante_geral")
+        self.input_TableWidget_pagina_participante_geral.setFont(font)
+        self.input_TableWidget_pagina_participante_geral.setLayoutDirection(Qt.LeftToRight)
+        self.input_TableWidget_pagina_participante_geral.setAutoFillBackground(False)
+        self.input_TableWidget_pagina_participante_geral.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
+        self.input_TableWidget_pagina_participante_geral.setLineWidth(2222)
+        self.input_TableWidget_pagina_participante_geral.setMidLineWidth(10)
+        self.input_TableWidget_pagina_participante_geral.setAlternatingRowColors(True)
+        self.input_TableWidget_pagina_participante_geral.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.input_TableWidget_pagina_participante_geral.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.input_TableWidget_pagina_participante_geral.setHorizontalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.input_TableWidget_pagina_participante_geral.setGridStyle(Qt.SolidLine)
+        self.input_TableWidget_pagina_participante_geral.setSortingEnabled(True)
+        self.input_TableWidget_pagina_participante_geral.setWordWrap(True)
+        self.input_TableWidget_pagina_participante_geral.horizontalHeader().setCascadingSectionResizes(True)
+        self.input_TableWidget_pagina_participante_geral.horizontalHeader().setDefaultSectionSize(130)
+        self.input_TableWidget_pagina_participante_geral.horizontalHeader().setStretchLastSection(True)
+        self.input_TableWidget_pagina_participante_geral.verticalHeader().setVisible(False)
+        self.input_TableWidget_pagina_participante_geral.verticalHeader().setDefaultSectionSize(50)
 
-        self.horizontalLayout_162.addWidget(self.input_TableWidget_pagina_consulta_geral_2)
+        self.horizontalLayout_162.addWidget(self.input_TableWidget_pagina_participante_geral)
 
 
         self.verticalLayout_3371.addWidget(self.frame_4871)
@@ -6445,18 +6465,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_163.addItem(self.horizontalSpacer_94)
 
-        self.btn_excluir_pagina_consulta_geral_2 = QPushButton(self.frame_4881)
-        self.btn_excluir_pagina_consulta_geral_2.setObjectName(u"btn_excluir_pagina_consulta_geral_2")
-        self.btn_excluir_pagina_consulta_geral_2.setMinimumSize(QSize(0, 40))
-        self.btn_excluir_pagina_consulta_geral_2.setFont(font11)
-        self.btn_excluir_pagina_consulta_geral_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excluir_pagina_consulta_geral_2.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+        self.btn_excel_pagina_participante_geral = QPushButton(self.frame_4881)
+        self.btn_excel_pagina_participante_geral.setObjectName(u"btn_excel_pagina_participante_geral")
+        self.btn_excel_pagina_participante_geral.setMinimumSize(QSize(0, 40))
+        self.btn_excel_pagina_participante_geral.setFont(font11)
+        self.btn_excel_pagina_participante_geral.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_excel_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excluir_pagina_consulta_geral_2.setIcon(icon23)
-        self.btn_excluir_pagina_consulta_geral_2.setIconSize(QSize(28, 28))
+        icon25 = QIcon()
+        icon25.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excel_pagina_participante_geral.setIcon(icon25)
+        self.btn_excel_pagina_participante_geral.setIconSize(QSize(28, 28))
 
-        self.horizontalLayout_163.addWidget(self.btn_excluir_pagina_consulta_geral_2)
+        self.horizontalLayout_163.addWidget(self.btn_excel_pagina_participante_geral)
 
 
         self.verticalLayout_3371.addWidget(self.frame_4881)
@@ -6997,8 +7019,6 @@ class Ui_MainWindow(object):
         self.btn_imprimir_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon25 = QIcon()
-        icon25.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_imprimir_relatorio_as.setIcon(icon25)
         self.btn_imprimir_relatorio_as.setIconSize(QSize(25, 25))
 
@@ -13952,7 +13972,7 @@ class Ui_MainWindow(object):
         self.stack_fisioterapeuta.setCurrentIndex(0)
         self.stackedWidget_5.setCurrentIndex(0)
         self.stack_nutricionista.setCurrentIndex(0)
-        self.stackedWidget_6.setCurrentIndex(0)
+        self.stackedWidget_6.setCurrentIndex(1)
         self.stack_psicologa.setCurrentIndex(0)
         self.stackedWidget_7.setCurrentIndex(0)
         self.stack_secretaria.setCurrentIndex(0)
@@ -14368,25 +14388,25 @@ class Ui_MainWindow(object):
 
         self.btn_voltar_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_salvar_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
-        ___qtablewidgetitem21 = self.input_TableWidget_pagina_consulta_geral_2.horizontalHeaderItem(0)
+        ___qtablewidgetitem21 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(0)
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
-        ___qtablewidgetitem22 = self.input_TableWidget_pagina_consulta_geral_2.horizontalHeaderItem(1)
+        ___qtablewidgetitem22 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(1)
         ___qtablewidgetitem22.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
-        ___qtablewidgetitem23 = self.input_TableWidget_pagina_consulta_geral_2.horizontalHeaderItem(2)
+        ___qtablewidgetitem23 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(2)
         ___qtablewidgetitem23.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
-        ___qtablewidgetitem24 = self.input_TableWidget_pagina_consulta_geral_2.horizontalHeaderItem(3)
+        ___qtablewidgetitem24 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(3)
         ___qtablewidgetitem24.setText(QCoreApplication.translate("MainWindow", u"Clinica", None));
-        ___qtablewidgetitem25 = self.input_TableWidget_pagina_consulta_geral_2.horizontalHeaderItem(4)
+        ___qtablewidgetitem25 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(4)
         ___qtablewidgetitem25.setText(QCoreApplication.translate("MainWindow", u"Curso", None));
 
-        __sortingEnabled2 = self.input_TableWidget_pagina_consulta_geral_2.isSortingEnabled()
-        self.input_TableWidget_pagina_consulta_geral_2.setSortingEnabled(False)
-        self.input_TableWidget_pagina_consulta_geral_2.setSortingEnabled(__sortingEnabled2)
+        __sortingEnabled2 = self.input_TableWidget_pagina_participante_geral.isSortingEnabled()
+        self.input_TableWidget_pagina_participante_geral.setSortingEnabled(False)
+        self.input_TableWidget_pagina_participante_geral.setSortingEnabled(__sortingEnabled2)
 
 #if QT_CONFIG(tooltip)
-        self.input_TableWidget_pagina_consulta_geral_2.setToolTip("")
+        self.input_TableWidget_pagina_participante_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
-        self.btn_excluir_pagina_consulta_geral_2.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
+        self.btn_excel_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
         self.label_inicio_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.label_final_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))

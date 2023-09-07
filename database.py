@@ -313,7 +313,27 @@ class DataBase():
 
         finally:
             self.close_connection()
-    
+
+
+    def select_cursos_ids(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_curso_evento FROM curso_evento ORDER BY id_curso_evento;
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
     def select_cuidador(self):
         self.connect()
         try:
@@ -360,6 +380,27 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT nome_fantasia FROM clinica WHERE id_clinica = {id_clinica};
+            """)
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            # for linha in result:
+            #    print(linha)
+            
+            return result
+            #retorna a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
+
+
+    def select_nome_curso_evento(self,id_curso_evento):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT nome_curso_evento FROM curso_evento WHERE id_curso_evento = {id_curso_evento};
             """)
             result = self.cursor.fetchall()
             
@@ -476,6 +517,20 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def buscar_participante(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.email, clinica.nome_fantasia 
+                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
+            result = self.cursor.fetchall()
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
     
     def cadastro_consulta(self,consulta):
         self.connect()
@@ -502,6 +557,41 @@ class DataBase():
                                 """)
             result = self.cursor.fetchall()
             return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+    
+
+    def buscar_info_participante(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.nome_fantasia, curso_evento.nome_curso_evento
+                                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                RIGHT JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
+                                LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def cadastrar_participante(self,participante):
+        self.connect()
+        try:
+            args = (participante[0], participante[1])
+            self.cursor.execute("INSERT INTO participantes (id_evento,id_matricula) VALUES (%s,%s)", args)
+            self.conn.commit()
+
+            return "Cadastro feito com Sucesso!!"
 
         except Exception as err:
             return "ERRO",str(err)

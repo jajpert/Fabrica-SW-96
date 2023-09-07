@@ -264,6 +264,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -352,6 +353,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.listarAgendamentos)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
+        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.buscar_curso_evento)
+        self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.buscar_dados_participante)
+        self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
+        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.puxar_cadastro_participante)
+        self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.puxar_cadastro_participante)
+        self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -1564,6 +1571,82 @@ class TelaPrincipal(QMainWindow):
             itens += 1
             count += 1
 
+    def buscar_curso_evento(self):
+        lista_curso_evento = self.db.select_cursos_ids()
+        nome_curso = []
+        id_curso_eventos = []
+
+        for i in lista_curso_evento:
+            id_curso_evento = i[0]
+            id_curso_evento = str(id_curso_evento).zfill(3)
+            nome = self.db.select_nome_curso_evento(id_curso_evento)
+            id_curso_eventos.append(id_curso_evento)
+            nome_curso.append(nome)
+        convertendo_nome = [i[0] for i in nome_curso]
+        convertendo_nome_curso = [i[0] for i in convertendo_nome]
+        count = 0
+        itens = 0
+        while count < len(convertendo_nome_curso):
+            self.ui.comboBox_cursos_participante_geral.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_curso_eventos[count]}-{convertendo_nome_curso[count]}", None))
+            self.ui.comboBox_cursos_participante_geral.addItem("")
+            itens += 1
+            count += 1
+
+    def cadastrar_participante(self):
+        nome_curso = self.ui.comboBox_cursos_participante_geral.currentText()
+        nome_curso_id = nome_curso.split("-")
+        nome_curso_id_tratado = int(nome_curso_id[0])
+        id_matricula = self.ui.input_id_matricula_user_participante_geral.text()
+        
+        tupla_participante = (nome_curso_id_tratado,id_matricula)
+        result = []
+        result = self.db.cadastrar_participante(tupla_participante)
+        self.puxar_cadastro_participante()
+
+
+    def buscar_dados_participante(self):
+        cpf = self.ui.input_cpf_pagina_participante_geral.text()
+        dados = self.db.buscar_participante(cpf)
+        self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
+        self.ui.input_id_matricula_user_participante_geral.hide()
+        self.ui.input_nome_pagina_participante_geral.setText(dados[1])
+        self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
+        self.ui.input_email_pagina_participante_geral.setText(dados[3])
+        self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
+
+    def puxar_cadastro_participante(self):
+        cpf = self.ui.input_cpf_pagina_participante_geral.text()
+        result = self.db.buscar_info_participante(cpf)
+        self.ui.input_TableWidget_pagina_participante_geral.clearContents()
+        self.ui.input_TableWidget_pagina_participante_geral.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_participante_geral.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def gerar_excel_participante(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_pagina_participante_geral.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_participante_geral.columnCount()):
+                dados.append(self.ui.input_TableWidget_pagina_participante_geral.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF','TELEFONE', 'CLINICA', 'CURSO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+        
+        #file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "/relatorio", "Text files (*.xlsx)") 
+        relatorio.to_excel("RelatorioParticipante.xlsx", sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
 
     def buscar_dados_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
