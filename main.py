@@ -286,7 +286,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
-        #self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)
 
 
 
@@ -397,6 +397,7 @@ class TelaPrincipal(QMainWindow):
         inputUsuario = self.ui.input_cep_usuario_as.text()
         inputColaborador = self.ui.input_cep_colaborador_as.text()
         inputClinica = self.ui.input_cep_clinica_as.text()
+        inputFornecedor = self.ui.input_cep_fornecedor_as.text()
         sender = self.sender()
         if 'cuidador' in sender.objectName():
             cep = inputCuidador
@@ -406,6 +407,8 @@ class TelaPrincipal(QMainWindow):
             cep = inputColaborador
         elif 'clinica' in sender.objectName():
             cep = inputClinica
+        elif 'fornecedor' in sender.objectName():
+            cep = inputFornecedor
         cep_tratado = str('')
         print(cep)
         for i in cep:
@@ -497,6 +500,24 @@ class TelaPrincipal(QMainWindow):
             ##### tratamento da requisição - estado #######        
             estado = dic_requisicao['uf']
             self.ui.input_estado_clinica_as.setText(str(estado))
+
+        elif 'fornecedor' in sender.objectName():
+            print("entrou fornecedor!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_fornecedor_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_fornecedor_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_fornecedor_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
@@ -1441,7 +1462,7 @@ class TelaPrincipal(QMainWindow):
         estado = self.ui.input_estado_fornecedor_as.text()
         
         tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
-         ###################### pessoa ##############################
+         ###################### fornecedor ##############################
         cnpj = self.ui.input_cnpj_cadastro_fornecedor_as.text()
         razao_social = self.ui.input_razao_social_cadastro_fornecedor_as.text()
         nome_fantasia = self.ui.input_nome_fantasia_cadastro_fornecedor_as.text()
@@ -1456,9 +1477,12 @@ class TelaPrincipal(QMainWindow):
         tupla_fornecedor = (razao_social,nome_fantasia,cnpj,celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,informacao_geral)
                             #razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco
         result = []
-        print(result)
+        #print(result)
         result = self.db.cadastro_fornecedor(tupla_endereco,tupla_fornecedor)
-        print(result)
+        #print(result)
+        self.msg(result[0],result[1])
+        self.limparCamposCadastroFornecedor()
+
 
        
 
@@ -1611,6 +1635,27 @@ class TelaPrincipal(QMainWindow):
        self.ui.input_cidade_clinica_as.setText("")
        self.ui.input_estado_clinica_as.setText("")
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
+
+    def limparCamposCadastroFornecedor(self):
+         
+        self.ui.input_cep_fornecedor_as.setText("")
+        self.ui.input_logradouro_fornecedor_as.setText("")
+        self.ui.input_numero_fornecedor_as.setText("")
+        self.ui.input_bairro_fornecedor_as.setText("")
+        self.ui.input_cidade_fornecedor_as.setText("")
+        self.ui.input_estado_fornecedor_as.setText("")
+             
+        self.ui.input_cnpj_cadastro_fornecedor_as.setText("")
+        self.ui.input_razao_social_cadastro_fornecedor_as.setText("")
+        self.ui.input_nome_fantasia_cadastro_fornecedor_as.setText("")
+        self.ui.input_telefone_celular_fornecedor_as.setText("")
+        self.ui.input_telefone_fixo_fornecedor_as.setText("")
+        self.ui.input_email_fornecedor_as.setText("")
+        self.ui.input_contato_fornecedor_as.setText("")
+        self.ui.input_inscricao_estadual_fornecedor_as.setText("")
+        self.ui.input_inscricao_municipal_fornecedor_as.setText("")
+        self.ui.input_informacoes_gerais_fornecedor_as.setHtml("")
+        
 
     def buscar_clinica_nome_fantasia(self):
 

@@ -769,22 +769,16 @@ class DataBase():
             self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
             print(args)
             id_endereco = self.cursor.lastrowid
-            print('ID do endereco',id_endereco)
-            print('Chegou o id')
+            #print('ID do endereco',id_endereco)
+            #print('Chegou o id')
             
-            args2 = (fornecedor[0],fornecedor[1],fornecedor[2],fornecedor[3],fornecedor[4],fornecedor[5],fornecedor[6],fornecedor[7],fornecedor[8],fornecedor[9])
-            self.cursor.execute('INSERT INTO fornecedor(razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            args2 = (fornecedor[0],fornecedor[1],fornecedor[2],fornecedor[3],fornecedor[4],fornecedor[5],fornecedor[6],fornecedor[7],fornecedor[8],fornecedor[9],id_endereco)
+            self.cursor.execute('INSERT INTO fornecedor(razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             self.conn.commit()
             id_fornecedor = self.cursor.lastrowid
+            #print('ID do fornecedor', id_fornecedor)
 
-            print('id fornecedor',id_fornecedor)
-            self.cursor.execute('INSERT INTO fornecedor(id_endereco) VALUES (%s) Where id_fornecedor = id_endereco')
-            
-                
-
-
-
-            
+             
             return "OK","Cadastro Fornecedor realizado com sucesso!! "
 
         except Exception as err:
