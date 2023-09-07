@@ -7,6 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -866,13 +867,13 @@ class DataBase():
     def alterar_cadastro_beneficios(self, dados):
         try:
             self.cursor.execute(f"""UPDATE beneficios  SET 
-                                   codigo = '{dados[1]}',
-                                    tipo = '{dados[2]}',
-                                    descricao = '{dados[3]}',
-                                    lote = '{dados[4]}',
-                                    unidade_medida = '{dados[5]}',
-                                    quantidade = '{dados[6]}',
-                                    validade = '{dados[7]}',
+                                    tipo = '{dados[1]}',
+                                    codigo = '{dados[2]}',
+                                    lote = '{dados[3]}',
+                                    unidade_medida = '{dados[4]}',
+                                    descricao = '{dados[5]}',
+                                    validade = '{dados[6]}',
+                                    quantidade = '{dados[7]}'
                                     WHERE id_beneficios = '{dados[0]}';""")
             self.conn.commit()
             return "OK","Beneficio atualizado com sucesso!!"
@@ -899,7 +900,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT id_beneficios,codigo,tipo,descricao,lote,unidade_medida,quantidade DATE_FORMAT,validade FROM beneficios;
+                SELECT id_beneficios,tipo,codigo,lote,unidade_medida,descricao,validade,quantidade FROM beneficios;
             """)
 
             result = self.cursor.fetchall()

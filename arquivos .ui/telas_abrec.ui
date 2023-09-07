@@ -7248,17 +7248,12 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Código</string>
-                                      </property>
-                                     </column>
-                                     <column>
-                                      <property name="text">
                                        <string>Tipo</string>
                                       </property>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Descrição</string>
+                                       <string>Código</string>
                                       </property>
                                      </column>
                                      <column>
@@ -7273,7 +7268,7 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Quantidade </string>
+                                       <string>Descrição</string>
                                       </property>
                                      </column>
                                      <column>
@@ -7281,17 +7276,22 @@ QPushButton:focus{outline:0}</string>
                                        <string>Validade</string>
                                       </property>
                                      </column>
-                                     <item row="0" column="1">
+                                     <column>
+                                      <property name="text">
+                                       <string>Quantidade </string>
+                                      </property>
+                                     </column>
+                                     <item row="0" column="2">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="0" column="4">
+                                     <item row="0" column="3">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="1" column="1">
+                                     <item row="1" column="2">
                                       <property name="text">
                                        <string/>
                                       </property>
@@ -32737,7 +32737,7 @@ background-color: rgb(243, 185, 191);</string>
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_140" stretch="6,6,1">
+                            <layout class="QHBoxLayout" name="horizontalLayout_140" stretch="6,6">
                              <property name="spacing">
                               <number>0</number>
                              </property>
@@ -33593,6 +33593,16 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                     </widget>
                                    </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_459">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                    </widget>
+                                   </item>
                                   </layout>
                                  </widget>
                                 </item>
@@ -33696,16 +33706,6 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                </layout>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QFrame" name="frame_459">
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
                               </widget>
                              </item>
                             </layout>

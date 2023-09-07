@@ -1689,28 +1689,30 @@ class TelaPrincipal(QMainWindow):
     def excluir_usuario_consulta (self):
         id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
         self.db.deletar_consulta_relatorio(id_consulta)
-    
+
+
+
+
     def alterar_cadastro_beneficios_as(self,dados):
         dados = []
-        print("dados -> ",dados)
         alterar_dados = []
-        print("altera ->", alterar_dados)
 
         for row in range(self.ui.input_TableWidget_cadastro_beneficio.rowCount()):
             for column in range(self.ui.input_TableWidget_cadastro_beneficio.columnCount()):
                 dados.append(self.ui.input_TableWidget_cadastro_beneficio.item(row, column).text())
-            print("dados com info ->",dados)
             alterar_dados.append(dados)
-            print("alterar dados ->", alterar_dados)
+            print(alterar_dados)
             dados = []
         for emp in alterar_dados:
            res = self.db.alterar_cadastro_beneficios(tuple(emp))
            print("resultado ->",emp)
+        self.listarBeneficios()
 
     def excluir_cadastro_beneficios (self):
+        self.listarBeneficios()
         id_beneficios = self.ui.input_TableWidget_cadastro_beneficio.selectionModel().currentIndex().siblingAtColumn(0).data()
         self.db.deletar_cadastro_beneficios(id_beneficios)
-                
+        
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       
