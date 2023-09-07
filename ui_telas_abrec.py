@@ -1926,13 +1926,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_305.addItem(self.verticalSpacer_15)
 
         self.input_situacao_trabalho_outros_usuario_as = QLineEdit(self.frame_438)
-        self.input_situacao_trabalho_outros_usuario_as.setObjectName(u"input_situacao_trabalho_outros_usuario_as")
+        self.input_situacao_trabalho_outros_usuario_as.setObjectName(u"input_situacao_trabalho_outras_usuario_as")
         self.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_usuario_as.setMinimumSize(QSize(140, 0))
         self.input_situacao_trabalho_outros_usuario_as.setMaximumSize(QSize(140, 16777215))
         font10 = QFont()
         font10.setFamilies([u"Abel"])
-        self.input_situacao_trabalho_outros_usuario_as.setFont(font10)
+        self.input_situacao_trabalho_outros_usuario_as.setFont(font)
         self.input_situacao_trabalho_outros_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")

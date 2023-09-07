@@ -271,7 +271,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
-        #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
+        self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         
@@ -718,7 +718,7 @@ class TelaPrincipal(QMainWindow):
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(5)
 
             elif situacaoTrabalho == 'Pensionista':
-                self.ui.input_alterar_situacao_trabalho_usuario_as.setCurrentIndex(6)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(6)
 
             elif situacaoTrabalho == 'Desempregado/a':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(7)
@@ -992,6 +992,7 @@ class TelaPrincipal(QMainWindow):
         cns = self.ui.input_alterar_cns_usuario_as.text()
         observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_alterar_usuario_as.currentText()
+        situacao_trabalho_outras = self.ui.input_situacao_trabalho_outros_usuario_as.text()
         tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
@@ -1670,6 +1671,22 @@ class TelaPrincipal(QMainWindow):
     
                 
 #####Alterar SITUACAO de Trabalho Outros #########
+    def on_tipo_usuario_changed(self):
+
+        if self.ui.input_situacao_trabalho_usuario_as.currentText() == "Outros":
+            self.ui.frame_438.setEnabled(True)
+            self.ui.frame_438.show()
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_usuario_as.setStyleSheet("") 
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(True)
+            self.ui.input_situacao_trabalho_outros_usuario_as.show()
+            
+        else:
+            self.ui.frame_438.hide()
+            self.ui.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
+            self.ui.input_situacao_trabalho_outros_usuario_as.hide()
+            self.ui.input_situacao_trabalho_outros_usuario_as.clear()
+
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       
         msg = DialogloginInvalido(self)
@@ -1747,9 +1764,6 @@ class TelaPrincipal(QMainWindow):
 
 
            
-    
-
-    
     def on_tipo_alterar_usuario_changed(self):
 
         if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
