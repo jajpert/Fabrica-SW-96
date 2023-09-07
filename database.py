@@ -174,7 +174,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                     SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao_trabalho_outras,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -199,7 +199,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho, clinica.nome_fantasia, endereco.bairro, endereco.cidade
+                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao_trabalho_outras, clinica.nome_fantasia, endereco.bairro, endereco.cidade
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                 LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco
@@ -225,7 +225,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outras,clinica.nome_fantasia, endereco.bairro, 
                 endereco.cidade,pessoa.data_cadastro
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -406,7 +406,7 @@ class DataBase():
                 rg, data_emissao, orgao_exp, nis, cns, sexo, telefone, 
                 email, cep, logradouro, numero, bairro, cidade, estado,
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
-                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,
+                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,situacao_trabalho_outras,
                 beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
                 from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
@@ -599,10 +599,10 @@ class DataBase():
             self.conn.commit()
 
 
-            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',
-                                tipo_transporte = '{usuario[4]}', tipo_tratamento = '{usuario[5]}', beneficio = '{usuario[6]}', local_tratamento = '{usuario[7]}',
-                                periodo = '{usuario[8]}', data_inicio = '{usuario[9]}', patologia_base = '{usuario[10]}', tarifa_social = '{usuario[11]}', media_renda_familiar = '{usuario[12]}',
-                                vale_transporte = '{usuario[13]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
+            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',situacao_trabalho_outras = '{usuario[4]}',
+                                tipo_transporte = '{usuario[5]}', tipo_tratamento = '{usuario[6]}', beneficio = '{usuario[7]}', local_tratamento = '{usuario[8]}',
+                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}', tarifa_social = '{usuario[12]}', media_renda_familiar = '{usuario[13]}',
+                                vale_transporte = '{usuario[14]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
             self.conn.commit()
 
             return "OK","Usuario atualizado com sucesso!!"
