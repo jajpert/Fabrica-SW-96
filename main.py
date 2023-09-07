@@ -992,7 +992,7 @@ class TelaPrincipal(QMainWindow):
         cns = self.ui.input_alterar_cns_usuario_as.text()
         observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_alterar_usuario_as.currentText()
-        situacao_trabalho_outras = self.ui.input_situacao_trabalho_outros_usuario_as.text()
+        situacao_trabalho_alterar_outras = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.text()
         tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
@@ -1027,7 +1027,7 @@ class TelaPrincipal(QMainWindow):
         id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
 
         tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_alterar_outras,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
 
         ######################## insert ##################################
         result = []
@@ -1140,6 +1140,7 @@ class TelaPrincipal(QMainWindow):
         cns = self.ui.input_cns_usuario_as.text()
         observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_usuario_as.currentText()
+        situacao_trabalho_outras = self.ui.input_situacao_trabalho_outros_usuario_as.text()
         tipo_transporte = self.ui.input_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_beneficios_usuario_as.currentText()
@@ -1181,7 +1182,7 @@ class TelaPrincipal(QMainWindow):
 
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outras,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
         result = []

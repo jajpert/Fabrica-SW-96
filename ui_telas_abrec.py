@@ -10570,7 +10570,7 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMinimumSize(QSize(140, 0))
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMaximumSize(QSize(140, 16777215))
-        self.input_situacao_trabalho_outros_alterar_usuario_as.setFont(font10)
+        self.input_situacao_trabalho_outros_alterar_usuario_as.setFont(font)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet(u"\n"
 "    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
