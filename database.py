@@ -7,6 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='127.0.0.1',database='abrec',user='root',password='senhadev')
+
         
         #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
@@ -877,7 +878,7 @@ class DataBase():
                                     validade = '{dados[6]}',
                                     quantidade = '{dados[7]}'
 
-                                    WHERE id_beneficio = '{dados[0]}';
+                                    WHERE id_beneficios = '{dados[0]}';
             """)
             self.conn.commit()
             return "OK", "Beneficio atualizado com sucesso!!"
@@ -903,7 +904,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT id_beneficios, codigo, tipo, descricao, lote, unidade_medida, quantidade, DATE_FORMAT(validade, '%Y-%m-%d') as validade FROM beneficios;
+                SELECT id_beneficios,tipo,codigo,lote,unidade_medida,descricao,validade,quantidade FROM beneficios;
             """)
 
             result = self.cursor.fetchall()

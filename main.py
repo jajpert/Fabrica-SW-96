@@ -341,7 +341,7 @@ class TelaPrincipal(QMainWindow):
         # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
-        self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios_as)
+        self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
