@@ -199,7 +199,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.setupUi(self)
         
         ######################### banco #########################
-
         self.db = DataBase()        
         self.listarAgendamentos()
         self.id_area_sigilosa = self.relatorio_pessoa()
@@ -278,6 +277,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
+        self.ui.btn_alterar_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
+        self.ui.btn_alterar_cep_buscar_usuario_as.clicked.connect(self.validarCep)
+        self.ui.btn_alterar_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
 
 
         #################SIGNAL CPF##################
@@ -328,7 +330,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
-        self.ui.pushButton_agendamento.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
@@ -390,6 +391,9 @@ class TelaPrincipal(QMainWindow):
         inputUsuario = self.ui.input_cep_usuario_as.text()
         inputColaborador = self.ui.input_cep_colaborador_as.text()
         inputClinica = self.ui.input_cep_clinica_as.text()
+        alterarCuidador = self.ui.input_alterar_cep_cuidador_as.text()
+        alterarUsuario = self.ui.input_alterar_cep_usuario_as.text()
+        alterarColaborador = self.ui.input_alterar_cep_colaborador_as.text()
         sender = self.sender()
         if 'cuidador' in sender.objectName():
             cep = inputCuidador
@@ -399,6 +403,13 @@ class TelaPrincipal(QMainWindow):
             cep = inputColaborador
         elif 'clinica' in sender.objectName():
             cep = inputClinica
+        elif 'alterarCuidador' in sender.objectName():
+            cep = alterarCuidador
+        elif 'alteUsuario' in sender.objectName():
+            cep = alterarUsuario
+        elif 'alterarColaborador' in sender.objectName():
+            cep = alterarColaborador
+        print(cep)
         cep_tratado = str('')
         for i in cep:
             if(i == "." or i == '-' or i == ' '):
@@ -483,6 +494,57 @@ class TelaPrincipal(QMainWindow):
             estado = dic_requisicao['uf']
             self.ui.input_estado_clinica_as.setText(str(estado))
 
+        elif 'alterarCuidador' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_alterar_logradouro_cuidador_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_alterar_bairro_cuidador_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_alterar_cidade_cuidador_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_alterar_estado_cuidador_as.setText(str(estado))
+
+        elif 'alteUsuario' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_alterar_logradouro_usuario_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_alterar_bairro_usuario_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_alterar_cidade_usuario_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_alterar_estado_usuario_as.setText(str(estado))
+
+        elif 'alterarColaborador' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_alterar_logradouro_colaborador_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_alterar_bairro_colaborador_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_alterar_cidade_colaborador_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_alterar_estado_colaborador_as.setText(str(estado))
+
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
         cpf = self.ui.input_cpf_agendamento_as.text()
@@ -541,6 +603,7 @@ class TelaPrincipal(QMainWindow):
         #######################USUARIO####################################################
 
         elif valorSelecionado == 2:
+            self.buscar_clinica_nome_fantasia_alterar_usuario()
             dados = self.db.busca_usuario(cpf)        
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
@@ -730,7 +793,9 @@ class TelaPrincipal(QMainWindow):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[30])
+            local_tratamento = str(dados[30])
+            if local_tratamento == dados[30]:
+                self.ui.input_situacao_trabalho_alterar_usuario_as_2.setCurrentIndex(1)
 
             patologiaBase = dados[31]
 
@@ -877,10 +942,10 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
             self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_matricula_colaborador_as.hide()
-            
-
 
             return self.ui.page_alterar_colaborador_as
+        
+
     def atualizar_cuidador(self):
         ######################## endereço ################################
         id_endereco_cuidador = self.ui.input_alterar_id_endereco_cuidador_as.text()
@@ -924,6 +989,9 @@ class TelaPrincipal(QMainWindow):
 
         ################## insert #######################################
         result = self.db.atualizar_cuidador(tupla_cuidador,tupla_pessoa,tupla_endereco)
+        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
     def atualizar_usuario(self):
 
@@ -965,7 +1033,9 @@ class TelaPrincipal(QMainWindow):
         tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
-        local_tratamento = self.ui.input_alterar_local_tratamento_usuario_as.text()
+        local_tratamento = self.ui.input_Local_Tratamento_Clinica_usuario_as.currentText()
+        local_tratamento_id = local_tratamento.split("-")
+        local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_alterar_patologia_base_usuario_as.currentText()
         data_ini = self.ui.input_alterar_data_inicio_usuario_as.text()
         data_inicio = "-".join(data_ini.split("/")[::-1])
@@ -996,7 +1066,7 @@ class TelaPrincipal(QMainWindow):
         id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
 
         tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
 
         ######################## insert ##################################
         result = []
@@ -1007,6 +1077,10 @@ class TelaPrincipal(QMainWindow):
         msg.setText("Usuario Atualizado com sucesso!")
         msg.exec()
 
+        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+    
     def atualizar_colaborador(self):
         
         ######################## endereço ###########################
@@ -1069,6 +1143,10 @@ class TelaPrincipal(QMainWindow):
         msg.setWindowTitle("Atualizar Colaborador")
         msg.setText("Colaborador Atualizado com sucesso!")
         msg.exec()
+        
+        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
     def cadastroUsuario(self):
         ################ endereço ##################################
@@ -1370,7 +1448,6 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
-        
 
     def area_sigilosa(self):
 
@@ -1585,6 +1662,27 @@ class TelaPrincipal(QMainWindow):
         while count < len(convertendo_nome_clinica):
             self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
+            itens += 1
+            count += 1
+
+    def buscar_clinica_nome_fantasia_alterar_usuario(self):
+        lista_clinica = self.db.select_clinica_ids()
+        nomes = []
+        id_clinicas = []
+
+        for i in lista_clinica:
+            id_clinica = i[0]
+            id_clinica = str(id_clinica).zfill(3)
+            nome = self.db.select_nome_Clinica(id_clinica)
+            id_clinicas.append(id_clinica)
+            nomes.append(nome)
+        convertendo_nome = [i[0] for i in nomes]
+        convertendo_nome_clinica = [i[0] for i in convertendo_nome]
+        count = 0
+        itens = 0
+        while count < len(convertendo_nome_clinica):
+            self.ui.input_situacao_trabalho_alterar_usuario_as_2.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+            self.ui.input_situacao_trabalho_alterar_usuario_as_2.addItem("")
             itens += 1
             count += 1
 

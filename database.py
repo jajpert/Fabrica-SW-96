@@ -19,7 +19,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
             """)
 
             result = self.cursor.fetchall()
@@ -447,14 +447,15 @@ class DataBase():
             
             self.cursor.execute(f"""
                 SELECT pessoa.id_matricula, nome, data_nascimento,status, cpf,
-                rg, data_emissao, orgao_exp, nis, cns, sexo, telefone, 
-                email, cep, logradouro, numero, bairro, cidade, estado,
+                rg, data_emissao, orgao_exp, nis, cns, sexo, pessoa.telefone, 
+                pessoa.email, cep, logradouro, numero, bairro, cidade, estado,
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,data_inicio, periodo,
+                beneficio, tarifa_social, tipo_tratamento, clinica.nome_fantasia, patologia_base,data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
-                from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
-                left join usuario on pessoa.id_matricula = usuario.id_matricula where cpf like '%{cpf}%'; """)
+                FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
+                LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
+                RIGHT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -886,6 +887,24 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+
+    def alterar_agendamento(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE agendamento SET
+                                     data = '{campo[1]}',
+                                     hora = '{campo[2]}',
+                                     anotacao = '{campo[5]}'
+                                     WHERE id_agendamento = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
         
         
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
