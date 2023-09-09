@@ -259,7 +259,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
-        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
@@ -329,10 +328,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
+        self.ui.pushButton_agendamento.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
-        self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
+        # self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
+        self.ui.pushButton_tstes_usuairo.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
@@ -356,7 +357,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.buscar_curso_evento)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.buscar_dados_participante)
         self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
-        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.puxar_cadastro_participante)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.puxar_cadastro_participante)
         self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
 
@@ -604,8 +604,8 @@ class TelaPrincipal(QMainWindow):
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
 
 
-            self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            self.ui.label_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+            self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
+            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -896,6 +896,8 @@ class TelaPrincipal(QMainWindow):
         ###################### pessoa ####################################
         id_matricula = self.ui.input_alterar_matricula_cuidador_as.text()
         nome = self.ui.input_alterar_nome_cuidador_as.text()
+        data_nasc = self.ui.input_alterar_data_nascimento_cuidador_as.text()
+        data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_alterar_cpf_cuidador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
         rg = self.ui.input_alterar_rg_cuidador_as.text()
@@ -905,7 +907,7 @@ class TelaPrincipal(QMainWindow):
         sexo = self.ui.input_alterar_sexo_cuidador_as.currentText()
         telefone = self.ui.input_alterar_telefone_cuidador_as.text()
         email = self.ui.input_alterar_email_cuidador_as.text()  
-        tupla_pessoa = (id_matricula,nome,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email)
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email)
         
 
         ################### cuidador ###################################
@@ -914,6 +916,11 @@ class TelaPrincipal(QMainWindow):
         observacao = self.ui.input_alterar_informacoes_gerais_as.toPlainText()
         id_matricula_cuidador = self.ui.input_alterar_id_matricula_cuidador_as.text()
         tupla_cuidador = (parentesco,observacao,id_matricula_cuidador)
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Atualizar Cuidador")
+        msg.setText("Cuidador Atualizado com sucesso!")
+        msg.exec()
 
         ################## insert #######################################
         result = self.db.atualizar_cuidador(tupla_cuidador,tupla_pessoa,tupla_endereco)
@@ -994,6 +1001,11 @@ class TelaPrincipal(QMainWindow):
         ######################## insert ##################################
         result = []
         result = self.db.atualizar_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)        
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Atualizar Usuario")
+        msg.setText("Usuario Atualizado com sucesso!")
+        msg.exec()
 
     def atualizar_colaborador(self):
         
@@ -1052,7 +1064,12 @@ class TelaPrincipal(QMainWindow):
         #################### insert ##########################################
         result = []
         result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
-    
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Atualizar Colaborador")
+        msg.setText("Colaborador Atualizado com sucesso!")
+        msg.exec()
+
     def cadastroUsuario(self):
         ################ endereço ##################################
         cep = self.ui.input_cep_usuario_as.text()
@@ -1602,11 +1619,16 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastrar_participante(tupla_participante)
         self.puxar_cadastro_participante()
-
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Participante")
+        msg.setText("Participante cadastrado com sucesso!")
+        msg.exec()
 
     def buscar_dados_participante(self):
         cpf = self.ui.input_cpf_pagina_participante_geral.text()
         dados = self.db.buscar_participante(cpf)
+        print(dados)
         self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
         self.ui.input_id_matricula_user_participante_geral.hide()
         self.ui.input_nome_pagina_participante_geral.setText(dados[1])
@@ -1656,7 +1678,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
-        
+
     def cadastrar_consulta(self):
         if self.ui.radioButton_Consulta_as.isChecked():
             situacao = "Consulta"
@@ -1677,7 +1699,14 @@ class TelaPrincipal(QMainWindow):
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
         self.limparCamposConsulta()
-    
+        self.puxar_consulta()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Consulta")
+        msg.setText("Consulta Cadastrada com sucesso!")
+        msg.exec()
+
     def puxar_consulta(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral.text()
         result = self.db.buscar_info_consulta(cpf)
@@ -1700,10 +1729,26 @@ class TelaPrincipal(QMainWindow):
         for emp in update_dados:
            res = self.db.alterar_usuario_consulta_as(tuple(emp))
 
+        self.puxar_consulta()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Consulta Alterada com sucesso!")
+        msg.exec()
+
+
     def excluir_usuario_consulta (self):
         id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
         self.db.deletar_consulta_relatorio(id_consulta)
-    
+
+        self.puxar_consulta()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excluir Consulta")
+        msg.setText("Consulta Excluida com sucesso!")
+        msg.exec()
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       

@@ -646,8 +646,8 @@ class DataBase():
             print(id_matricula)
             self.conn.commit()
 
-            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', cpf = '{pessoa[2]}', rg = '{pessoa[3]}', data_emissao = '{pessoa[4]}',
-                                orgao_exp = '{pessoa[5]}', sexo = '{pessoa[6]}', telefone = '{pessoa[7]}', email = '{pessoa[8]}' WHERE id_matricula = {pessoa[0]};  """)
+            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}', rg = '{pessoa[4]}', data_emissao = '{pessoa[5]}',
+                                orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', telefone = '{pessoa[8]}', email = '{pessoa[9]}' WHERE id_matricula = {pessoa[0]};  """)
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
 
