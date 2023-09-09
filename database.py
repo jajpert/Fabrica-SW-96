@@ -6,7 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -14,6 +15,26 @@ class DataBase():
         else:
             print("Erro")  
 
+    def select_agendamentos(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+            """)
+
+            result = self.cursor.fetchall()
+            
+            #verifica os dados do select
+            #for linha in result:
+            #   print(linha)
+            
+            return result
+            #retorn a lista do banco para quem chamou a função
+        except Exception as err:
+            print(err)
+
+        finally:
+            self.close_connection()
 
     def select_pessoa(self):
         self.connect()
@@ -67,7 +88,6 @@ class DataBase():
 
         finally:
             self.close_connection()
-
     
     def select_colaborador(self):
         self.connect()
@@ -278,27 +298,6 @@ class DataBase():
             self.cursor.execute("""
                 SELECT id_clinica FROM clinica ORDER BY id_clinica;
             """)
-            result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
-            return result
-            #retorn a lista do banco para quem chamou a função
-        except Exception as err:
-            print(err)
-
-        finally:
-            self.close_connection()
-    
-    def select_agendamentos(self):
-        self.connect()
-        try:
-            self.cursor.execute("""
-                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
-            """)
-
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -752,26 +751,44 @@ class DataBase():
             id_matricula = self.cursor.lastrowid
             print('id matricula',id_matricula)
 
-            self.cursor.execute("""
-                INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula))
+            args3 = (colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula)
+            self.cursor.execute("INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)", args3)
             id_colaborador = self.cursor.lastrowid
             print(id_colaborador)
-
-
             self.conn.commit()
+            
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
         
+    def cadastro_fornecedor(self,endereco,fornecedor):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            print(args)
+            id_endereco = self.cursor.lastrowid
+            #print('ID do endereco',id_endereco)
+            #print('Chegou o id')
+            
+            args2 = (fornecedor[0],fornecedor[1],fornecedor[2],fornecedor[3],fornecedor[4],fornecedor[5],fornecedor[6],fornecedor[7],fornecedor[8],fornecedor[9],id_endereco)
+            self.cursor.execute('INSERT INTO fornecedor(razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            self.conn.commit()
+            id_fornecedor = self.cursor.lastrowid
+            #print('ID do fornecedor', id_fornecedor)
 
+             
+            return "OK","Cadastro Fornecedor realizado com sucesso!! "
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
 
     def cadastro_curso(self,tupla_curso):
         self.connect()
-        try:
-            
+        try: 
             
             args2 = (tupla_curso[0],tupla_curso[1],tupla_curso[2],tupla_curso[3],tupla_curso[4],tupla_curso[5],tupla_curso[6],tupla_curso[7],tupla_curso[8],tupla_curso[9],tupla_curso[10],tupla_curso[11],tupla_curso[12],tupla_curso[13],tupla_curso[14],tupla_curso[15],tupla_curso[16])
             
@@ -798,6 +815,7 @@ class DataBase():
         except Exception as err:
             #print(err)
             return "ERRO",str(err)
+        
         
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
         self.conn()
