@@ -206,7 +206,7 @@ class TelaPrincipal(QMainWindow):
         self.listarUsuarios()
         self.buscar_clinica_nome_fantasia()
         self.listarAgendamentos()
-        self.id_area_sigilosa = self.relatorio_pessoa()
+        #self.id_area_sigilosa = self.relatorio_pessoa()
         # self.filtrar_usuario_area_sigilosa()
         #self.gerar_excel()
         ########### selected último id das tabelas do banco ##########
@@ -573,7 +573,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
-            self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
+            #self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
@@ -1905,7 +1905,7 @@ class TelaPrincipal(QMainWindow):
     ######################################################################
 
 
-    def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
+    '''def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
         
         result = self.db.relatorio_pessoa()
 
@@ -1914,7 +1914,7 @@ class TelaPrincipal(QMainWindow):
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))'''
 
                             
     def filtrar_dados(self):
