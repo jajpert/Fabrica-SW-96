@@ -274,10 +274,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
-        
-        
-        
-        #self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
         #################SIGNALS CEP#################
@@ -1148,7 +1145,7 @@ class TelaPrincipal(QMainWindow):
         local_tratamento_id = local_tratamento.split("-")
         local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
-        #outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
+        outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
        
 
         
@@ -1182,7 +1179,7 @@ class TelaPrincipal(QMainWindow):
 
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
         result = []
@@ -1859,23 +1856,23 @@ class TelaPrincipal(QMainWindow):
             result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
             print(result)
             self.msg(result[0],result[1])
-            self.limparCamposCadastroClinica()
-            
+            self.limparCamposCadastroClinica()          
         
 
 
-######################## Patologia base outros################################      
+######################## Patologia base outros################################
+      
     def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
-            self.ui.frame_440.setEnabled(True)
-            self.ui.frame_440.show()
+            self.ui.frame_490.setEnabled(True)
+            self.ui.frame_490.show()
             self.ui.input_outras_patologias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_patologias_usuario_as.setEnabled(True)
             self.ui.input_outras_patologias_usuario_as.show()           
         else:
-            self.ui.frame_440.hide()
-            self.ui.frame_440.setEnabled(False)
+            self.ui.frame_490.hide()
+            self.ui.frame_490.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
@@ -1904,6 +1901,7 @@ class TelaPrincipal(QMainWindow):
 
     ######################################################################
 
+    ########################################################################
 
     '''def relatorio_pessoa(self): #ALIMENTA A TABELA A DE RELATORIO
         
