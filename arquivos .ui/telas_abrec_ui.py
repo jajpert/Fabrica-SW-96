@@ -10733,10 +10733,10 @@ class Ui_MainWindow(object):
         self.frame_354.setStyleSheet(u"")
         self.frame_354.setFrameShape(QFrame.StyledPanel)
         self.frame_354.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_115 = QHBoxLayout(self.frame_354)
-        self.horizontalLayout_115.setSpacing(5)
-        self.horizontalLayout_115.setObjectName(u"horizontalLayout_115")
-        self.horizontalLayout_115.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_71 = QHBoxLayout(self.frame_354)
+        self.horizontalLayout_71.setSpacing(5)
+        self.horizontalLayout_71.setObjectName(u"horizontalLayout_71")
+        self.horizontalLayout_71.setContentsMargins(0, 0, 0, 0)
         self.frame_353 = QFrame(self.frame_354)
         self.frame_353.setObjectName(u"frame_353")
         self.frame_353.setMinimumSize(QSize(0, 0))
@@ -10764,12 +10764,12 @@ class Ui_MainWindow(object):
         self.verticalLayout_241.addWidget(self.input_alterar_local_tratamento_usuario_as)
 
 
-        self.horizontalLayout_115.addWidget(self.frame_353)
+        self.horizontalLayout_71.addWidget(self.frame_353)
 
         self.frame_355 = QFrame(self.frame_354)
         self.frame_355.setObjectName(u"frame_355")
         self.frame_355.setMinimumSize(QSize(0, 0))
-        self.frame_355.setMaximumSize(QSize(260, 16777215))
+        self.frame_355.setMaximumSize(QSize(300, 16777215))
         self.frame_355.setFrameShape(QFrame.StyledPanel)
         self.frame_355.setFrameShadow(QFrame.Raised)
         self.verticalLayout_242 = QVBoxLayout(self.frame_355)
@@ -10779,7 +10779,7 @@ class Ui_MainWindow(object):
         self.label_alterar_patologia_base_usuario_as = QLabel(self.frame_355)
         self.label_alterar_patologia_base_usuario_as.setObjectName(u"label_alterar_patologia_base_usuario_as")
         self.label_alterar_patologia_base_usuario_as.setMinimumSize(QSize(0, 0))
-        self.label_alterar_patologia_base_usuario_as.setMaximumSize(QSize(260, 16777215))
+        self.label_alterar_patologia_base_usuario_as.setMaximumSize(QSize(16777215, 16777215))
         self.label_alterar_patologia_base_usuario_as.setFont(font)
 
         self.verticalLayout_242.addWidget(self.label_alterar_patologia_base_usuario_as)
@@ -10801,7 +10801,44 @@ class Ui_MainWindow(object):
         self.verticalLayout_242.addWidget(self.input_alterar_patologia_base_usuario_as)
 
 
-        self.horizontalLayout_115.addWidget(self.frame_355)
+        self.horizontalLayout_71.addWidget(self.frame_355)
+
+        self.frame_491 = QFrame(self.frame_354)
+        self.frame_491.setObjectName(u"frame_491")
+        self.frame_491.setEnabled(False)
+        self.frame_491.setMinimumSize(QSize(0, 0))
+        self.frame_491.setMaximumSize(QSize(160, 16777215))
+        self.frame_491.setStyleSheet(u"QWidget frame_439 {\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"")
+        self.frame_491.setFrameShape(QFrame.StyledPanel)
+        self.frame_491.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_345 = QVBoxLayout(self.frame_491)
+        self.verticalLayout_345.setSpacing(0)
+        self.verticalLayout_345.setObjectName(u"verticalLayout_345")
+        self.verticalLayout_345.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_34 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_345.addItem(self.verticalSpacer_34)
+
+        self.input_outras_patologias_usuario_alterar_as = QLineEdit(self.frame_491)
+        self.input_outras_patologias_usuario_alterar_as.setObjectName(u"input_outras_patologias_usuario_alterar_as")
+        self.input_outras_patologias_usuario_alterar_as.setEnabled(False)
+        self.input_outras_patologias_usuario_alterar_as.setMinimumSize(QSize(0, 0))
+        self.input_outras_patologias_usuario_alterar_as.setMaximumSize(QSize(160, 16777215))
+        self.input_outras_patologias_usuario_alterar_as.setFont(font10)
+        self.input_outras_patologias_usuario_alterar_as.setStyleSheet(u"\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"")
+
+        self.verticalLayout_345.addWidget(self.input_outras_patologias_usuario_alterar_as)
+
+
+        self.horizontalLayout_71.addWidget(self.frame_491)
 
         self.frame_356 = QFrame(self.frame_354)
         self.frame_356.setObjectName(u"frame_356")
@@ -10845,7 +10882,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_243.addWidget(self.input_alterar_data_inicio_usuario_as, 0, Qt.AlignHCenter)
 
 
-        self.horizontalLayout_115.addWidget(self.frame_356)
+        self.horizontalLayout_71.addWidget(self.frame_356)
 
         self.frame_357 = QFrame(self.frame_354)
         self.frame_357.setObjectName(u"frame_357")
@@ -10879,7 +10916,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_244.addWidget(self.input_alterar_periodo_usuario_as)
 
 
-        self.horizontalLayout_115.addWidget(self.frame_357)
+        self.horizontalLayout_71.addWidget(self.frame_357)
 
         self.frame_358 = QFrame(self.frame_354)
         self.frame_358.setObjectName(u"frame_358")
@@ -10905,7 +10942,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_131.addWidget(self.input_alterar_id_matricula_usuario_as)
 
 
-        self.horizontalLayout_115.addWidget(self.frame_358)
+        self.horizontalLayout_71.addWidget(self.frame_358)
 
 
         self.verticalLayout_208.addWidget(self.frame_354)
@@ -13957,8 +13994,8 @@ class Ui_MainWindow(object):
         self.inicio.setCurrentIndex(1)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(8)
-        self.stackedWidget_8.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(13)
+        self.stackedWidget_8.setCurrentIndex(2)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_4.setCurrentIndex(1)
         self.stack_fisioterapeuta.setCurrentIndex(0)
