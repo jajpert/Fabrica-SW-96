@@ -29367,7 +29367,7 @@ QPushButton:pressed{
                                                        </spacer>
                                                       </item>
                                                       <item>
-                                                       <widget class="QLineEdit" name="input_outras_patologias_usuario_alterar_as">
+                                                       <widget class="QLineEdit" name="input_alterar_outras_patologias_usuario_as">
                                                         <property name="enabled">
                                                          <bool>false</bool>
                                                         </property>

@@ -5,8 +5,8 @@ class DataBase():
         self.banco = banco
 
     def connect(self):
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -601,8 +601,8 @@ class DataBase():
 
             self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',situacao_trabalho_outros = '{usuario[4]}',
                                 tipo_transporte = '{usuario[5]}', tipo_tratamento = '{usuario[6]}', beneficio = '{usuario[7]}', local_tratamento = '{usuario[8]}',
-                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}', tarifa_social = '{usuario[12]}', media_renda_familiar = '{usuario[13]}',
-                                vale_transporte = '{usuario[14]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
+                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}',outras_patologias = '{usuario[12]}', tarifa_social = '{usuario[13]}', media_renda_familiar = '{usuario[14]}',
+                                vale_transporte = '{usuario[15]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
             self.conn.commit()
 
             return "OK","Usuario atualizado com sucesso!!"

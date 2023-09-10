@@ -10781,6 +10781,43 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_115.addWidget(self.frame_355)
 
+        self.frame_491 = QFrame(self.frame_354)
+        self.frame_491.setObjectName(u"frame_491")
+        self.frame_491.setEnabled(False)
+        self.frame_491.setMinimumSize(QSize(0, 0))
+        self.frame_491.setMaximumSize(QSize(160, 16777215))
+        self.frame_491.setStyleSheet(u"QWidget frame_439 {\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"}\n"
+"")
+        self.frame_491.setFrameShape(QFrame.StyledPanel)
+        self.frame_491.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_345 = QVBoxLayout(self.frame_491)
+        self.verticalLayout_345.setSpacing(0)
+        self.verticalLayout_345.setObjectName(u"verticalLayout_345")
+        self.verticalLayout_345.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_34 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_345.addItem(self.verticalSpacer_34)
+
+        self.input_alterar_outras_patologias_usuario_as = QLineEdit(self.frame_491)
+        self.input_alterar_outras_patologias_usuario_as.setObjectName(u"input_alterar_outras_patologias_usuario_as")
+        self.input_alterar_outras_patologias_usuario_as.setEnabled(False)
+        self.input_alterar_outras_patologias_usuario_as.setMinimumSize(QSize(0, 0))
+        self.input_alterar_outras_patologias_usuario_as.setMaximumSize(QSize(160, 16777215))
+        self.input_alterar_outras_patologias_usuario_as.setFont(font10)
+        self.input_alterar_outras_patologias_usuario_as.setStyleSheet(u"\n"
+"    border: none;\n"
+"    background-color: rgba(0, 0, 0, 0);\n"
+"\n"
+"")
+
+        self.verticalLayout_345.addWidget(self.input_alterar_outras_patologias_usuario_as)
+
+
+        self.horizontalLayout_71.addWidget(self.frame_491)
+
         self.frame_356 = QFrame(self.frame_354)
         self.frame_356.setObjectName(u"frame_356")
         self.frame_356.setMinimumSize(QSize(0, 0))
