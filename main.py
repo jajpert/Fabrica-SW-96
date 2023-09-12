@@ -1693,7 +1693,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       
-        msg = DialogloginInvalido(self)
+        msg = DialogLoginInvalido(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
