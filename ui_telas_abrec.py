@@ -4935,7 +4935,7 @@ class Ui_MainWindow(object):
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.horizontalSpacer_52 = QSpacerItem(194, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_2.addItem(self.horizontalSpacer_51, 4, 0, 1, 1)
+        self.gridLayout_2.addItem(self.horizontalSpacer_52, 4, 0, 1, 1)
 
         self.frame_260 = QFrame(self.frame_194)
         self.frame_260.setObjectName(u"frame_260")
@@ -6087,7 +6087,7 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout_2.addWidget(self.frame_201, 1, 1, 1, 1)
-        self.gridLayout_2.addItem(self.horizontalSpacer_51, 4, 0, 1, 1)
+        #self.gridLayout_2.addItem(self.horizontalSpacer_51, 4, 0, 1, 1)
 
         self.frame_241 = QFrame(self.frame_194)
         self.frame_241.setObjectName(u"frame_241")
