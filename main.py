@@ -361,7 +361,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
+        #self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
 
