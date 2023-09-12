@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -547,14 +547,14 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def buscar_info_consulta(self,cpf):
+    def buscar_info_consulta(self,id_usuario):
         self.connect()
         try:
             self.cursor.execute(f"""
                                 SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
                                 INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
-                                left join pessoa ON pessoa.id_matricula = usuario.id_matricula AND 
-                                pessoa.cpf LIKE '{cpf}';
+                                LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
+                                usuario.id_usuario LIKE '{id_usuario}';
                                 """)
             result = self.cursor.fetchall()
             return result
@@ -890,6 +890,7 @@ class DataBase():
 
     def alterar_agendamento(self, campo):
         self.connect()
+        
         try:
             self.cursor.execute(f""" UPDATE agendamento SET
                                      data = '{campo[1]}',
@@ -897,9 +898,10 @@ class DataBase():
                                      anotacao = '{campo[5]}'
                                      WHERE id_agendamento = '{campo[0]}';
             """)
+            
             self.conn.commit()
             return "Alteração feita com Sucesso!!!"
-
+            print(campo)
         except Exception as err:
             return "ERRO",str(err)
         finally:

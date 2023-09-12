@@ -357,6 +357,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.puxar_cadastro_participante)
         self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
+        self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
+        
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -1257,6 +1259,40 @@ class TelaPrincipal(QMainWindow):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
                 
+                
+    def alterarAgendamentos(self):
+        try:
+            dados = []
+            for row in range(self.ui.input_TableWidget_agendamento_as.rowCount()):
+                row_data = []
+                for column in range(self.ui.input_TableWidget_agendamento_as.columnCount()):
+                    item = self.ui.input_TableWidget_agendamento_as.item(row, column)
+                    if item is not None:
+                        row_data.append(item.text())
+                    else:
+                        row_data.append("")  
+                dados.append(row_data)
+
+            for emp in dados:
+                resultado = self.db.alterar_agendamento(emp)
+                print("resultado ->", emp)
+            
+                
+                return "OK", "Benefício(s) atualizado(s) com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO", str(err)
+        
+        
+        self.filtrar_agenda()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Agendamento")
+        msg.setText("Agendamento Alterado com sucesso!")
+        msg.exec()
+        
+                
     def cadastroCuidador(self):
 
         ######################## endereço ################################
@@ -1641,10 +1677,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_data_agendamento_as.setDate(QDate(2000, 1, 1))
         self.ui.input_hora_agendamento_as.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_as.setHtml("")
-    
-    
-        
-        
+
 
     def buscar_clinica_nome_fantasia(self):
         lista_clinica = self.db.select_clinica_ids()
@@ -1808,8 +1841,8 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
 
     def puxar_consulta(self):
-        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
-        result = self.db.buscar_info_consulta(cpf)
+        id_usuario = self.ui.input_id_usuario_consulta_as.text()
+        result = self.db.buscar_info_consulta(id_usuario)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 

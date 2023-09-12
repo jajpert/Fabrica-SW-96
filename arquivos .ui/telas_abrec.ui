@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>13</number>
+                      <number>11</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -20377,13 +20377,13 @@ border-radius: 0.8em;</string>
                                              <number>0</number>
                                             </property>
                                             <property name="topMargin">
-                                             <number>12</number>
+                                             <number>0</number>
                                             </property>
                                             <property name="rightMargin">
                                              <number>0</number>
                                             </property>
                                             <property name="bottomMargin">
-                                             <number>9</number>
+                                             <number>0</number>
                                             </property>
                                             <item>
                                              <widget class="QPushButton" name="btn_salvar_agenda_as">
@@ -20672,6 +20672,9 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   <property name="wordWrap">
                                    <bool>true</bool>
                                   </property>
+                                  <property name="rowCount">
+                                   <number>0</number>
+                                  </property>
                                   <attribute name="horizontalHeaderCascadingSectionResizes">
                                    <bool>true</bool>
                                   </attribute>
@@ -20687,20 +20690,6 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   <attribute name="verticalHeaderDefaultSectionSize">
                                    <number>50</number>
                                   </attribute>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
-                                  <row/>
                                   <column>
                                    <property name="text">
                                     <string>Id</string>
@@ -20731,21 +20720,6 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <string>Anotação</string>
                                    </property>
                                   </column>
-                                  <item row="0" column="1">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
-                                  <item row="0" column="2">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
-                                  <item row="1" column="1">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
                                  </widget>
                                 </item>
                                </layout>
