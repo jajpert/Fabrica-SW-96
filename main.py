@@ -152,7 +152,7 @@ class DialogConfirmarSaida(QDialog):
     
 
 #############################################################################
-class TelaPrincipal(QMainWindow):
+class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def __init__(self):
         super().__init__()
 
@@ -1844,22 +1844,22 @@ class TelaPrincipal(QMainWindow):
 
     def sairSistema(self):  #Popup que Confirma saida - Botão Sair 
         
-        dlg = QMessageBox(self)
-        dlg.setWindowTitle("Confirma Saida")
-        dlg.setText("Deseja Sair?")
+        dlg = Ui_Confirmar_Saida()
+        # dlg.setWindowTitle("Confirma Saida")
+        # dlg.setText("Deseja Sair?")
         
-        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        dlg.setIcon(QMessageBox.Question)
-        button = dlg.exec()      
+        # dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        # dlg.setIcon(QMessageBox.Question)
 
+        dlg.btn_sim_popup_confirma_saida.setCheckable(True)
+        dlg.btn_sim_popup_confirma_saida.clicked.connect(self.the_button_was_clicked)
             
-        if button == QMessageBox.Yes:
-            self.ui.inicio.setCurrentIndex(0)
-            self.ui.input_usuario_login.setText("")
-            self.ui.input_senha_login.setText("")
         
-        else:
-            dlg.close()
+    def the_button_was_clicked(self):
+        print("Clicked!")
+        self.ui.inicio.setCurrentIndex(0)
+        self.ui.input_usuario_login.setText("")
+        self.ui.input_senha_login.setText("")
 
 
     ######################################################################
