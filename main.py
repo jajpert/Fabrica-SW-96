@@ -361,7 +361,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
+        #self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
 
@@ -1275,7 +1275,17 @@ class TelaPrincipal(QMainWindow):
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
         #print(result)
         self.msg(result[0],result[1])
+####################################################
+    def formatar_salario(self):
+        text = self.input_salario_colaborador_as.text()
 
+        try:
+            salario_formatado = '{:,.2f}'.format(float(text))
+        except ValueError:
+            salario_formatado = ''
+
+        self.input_salario_colaborador_as.setText(salario_formatado)
+    
     def cadastroColaborador(self):
 
         ######################## endereço ###########################
@@ -1311,7 +1321,8 @@ class TelaPrincipal(QMainWindow):
 
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil)
 
-        ##################### cargo ###########################################
+    ##################### cargo ###########################################
+    # ...
 
         salario = self.ui.input_salario_colaborador_as.text()
         data_admi = self.ui.input_data_admissao_colaborador_as_5.text()
@@ -1319,11 +1330,9 @@ class TelaPrincipal(QMainWindow):
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
         cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
-        
-        
+        salario_formatado = self.ui.input_salario_colaborador_as.text().replace('.', '').replace(',', '.')
 
         #################### login e senha ####################################
-
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
@@ -1339,15 +1348,15 @@ class TelaPrincipal(QMainWindow):
             perfil = 'fisio'
         elif cargo in ["Nutricionista"]:
             perfil = 'nutri'
+
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
-        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
+        tupla_colaborador = (pis_colab, data_admissao, salario_formatado, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
         result = []
-        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
+        result = self.db.cadastro_colaborador(tupla_endereco, tupla_pessoa, tupla_colaborador)
         print(result)
-        self.msg(result[0],result[1])        
-
+        self.msg(result[0], result[1])
 
     def cadastroCurso(self):
       ################################################ENDERECO#####

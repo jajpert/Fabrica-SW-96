@@ -12345,19 +12345,19 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <set>Qt::ImhFormattedNumbersOnly</set>
                                      </property>
                                      <property name="inputMask">
-                                      <string>000.000.000,00</string>
+                                      <string>0.000.000,00</string>
                                      </property>
                                      <property name="text">
                                       <string>..,</string>
                                      </property>
                                      <property name="maxLength">
-                                      <number>14</number>
+                                      <number>12</number>
                                      </property>
                                      <property name="frame">
                                       <bool>true</bool>
                                      </property>
                                      <property name="cursorPosition">
-                                      <number>14</number>
+                                      <number>0</number>
                                      </property>
                                      <property name="alignment">
                                       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
