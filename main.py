@@ -201,6 +201,7 @@ class TelaPrincipal(QMainWindow):
         ######################### banco #########################
         self.db = DataBase()        
         self.listarAgendamentos()
+        self.listarBeneficios()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -327,8 +328,15 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
+        self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
+        self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.listarBeneficios)
+       
+        # self.filtrar_usuario_area_sigilosa()
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
+        self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
+        self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
+        self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.pushButton_tstes_usuairo.clicked.connect(self.atualizar_usuario)
@@ -345,7 +353,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
+        self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.buscar_clinica_nome_fantasia)
@@ -1265,6 +1273,13 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def listarBeneficios(self):
+        resultado = self.db.busca_beneficios()
+        
+        for row, text in enumerate(resultado):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_cadastro_beneficio.setItem(row, column, QTableWidgetItem(str(data)))
                 
                 
     def alterarAgendamentos(self):
@@ -1700,6 +1715,15 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_anotacao_agendamento_as.setHtml("")
 
 
+    def limparCamposCadastroBeneficios(self):
+        self.ui.input_tipo_cadastro_beneficio.setCurrentIndex(int(0))
+        self.ui.input_codigo_cadastro_beneficio.setText("")
+        self.ui.input_lote_cadastro_beneficio.setText("")
+        self.ui.input_comboBox_udm_cadastro_benefecio.setCurrentIndex(int(0))
+        self.ui.input_descricao_cadastro_beneficio.setText("")
+        self.ui.input_dateEdit_cadastro_beneficio.setDate(QDate(2000, 1, 1))          
+        self.ui.input_spinBox_cadastro_beneficio.setValue(0)
+
     def buscar_clinica_nome_fantasia(self):
         lista_clinica = self.db.select_clinica_ids()
         nomes = []
@@ -1880,6 +1904,7 @@ class TelaPrincipal(QMainWindow):
             for column in range(self.ui.input_TableWidget_pagina_consulta_geral.columnCount()):
                 campo.append(self.ui.input_TableWidget_pagina_consulta_geral.item(row, column).text())
             update_dados.append(campo)
+            print("consulta ->",update_dados)
             campo = []
         for emp in update_dados:
            res = self.db.alterar_usuario_consulta_as(tuple(emp))
@@ -1904,6 +1929,36 @@ class TelaPrincipal(QMainWindow):
         msg.setWindowTitle("Excluir Consulta")
         msg.setText("Consulta Excluida com sucesso!")
         msg.exec()
+    
+    def alterar_cadastro_beneficios(self, dados):
+        try:
+            dados = []
+
+            for row in range(self.ui.input_TableWidget_cadastro_beneficio.rowCount()):
+                row_data = []
+                for column in range(self.ui.input_TableWidget_cadastro_beneficio.columnCount()):
+                    item = self.ui.input_TableWidget_cadastro_beneficio.item(row, column)
+                    if item is not None:
+                        row_data.append(item.text())
+                    else:
+                        row_data.append("")  
+                dados.append(row_data)
+
+            for emp in dados:
+                resultado = self.db.alterar_cadastro_beneficios(emp)
+                print("resultado ->", emp)
+            
+                
+                return "OK", "Benefício(s) atualizado(s) com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO", str(err)
+
+    def excluir_cadastro_beneficios (self):
+        self.listarBeneficios()
+        id_beneficios = self.ui.input_TableWidget_cadastro_beneficio.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_cadastro_beneficios(id_beneficios)
+        
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       
@@ -2024,6 +2079,43 @@ class TelaPrincipal(QMainWindow):
             result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
             self.msg(result[0],result[1])
             self.limparCamposCadastroClinica()
+
+###########################################################################
+    def cadastro_beneficios(self):
+            
+        ########################## dados ######################################       
+            dados = self.db.busca_beneficios()
+            print (dados)
+            tipo = self.ui.input_tipo_cadastro_beneficio.currentText()   
+            if tipo == 'Medicação':
+                self.ui.input_tipo_cadastro_beneficio.currentText()         
+
+            codigo = self.ui.input_codigo_cadastro_beneficio.text()
+            lote = self.ui.input_lote_cadastro_beneficio.text()
+            dados = self.db.busca_beneficios()
+            unidade_medida = self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
+            
+            if unidade_medida == 'Quilo':
+                self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
+              
+            descricao = self.ui.input_descricao_cadastro_beneficio.text()
+            vali=self.ui.input_dateEdit_cadastro_beneficio.text()
+             
+            validade = "-".join(vali.split("/")[::-1])          
+            quantidade = self.ui.input_spinBox_cadastro_beneficio.value()
+
+            tupla_beneficios = (tipo,codigo,lote,unidade_medida,descricao,validade,quantidade)
+            
+            result = []
+            result=self.db.cadastro_beneficios(tupla_beneficios)
+            print(result)
+            print (tipo)
+            print (unidade_medida)
+            self.msg(result[0],result[1])
+            self.limparCamposCadastroBeneficios()
+            
+        
+
 
 ######################## Patologia base outros################################
       

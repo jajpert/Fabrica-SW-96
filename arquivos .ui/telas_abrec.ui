@@ -1153,7 +1153,7 @@ QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="icon">
                             <iconset>
-                             <normaloff>../../../../Downloads/parceiro.png</normaloff>../../../../Downloads/parceiro.png</iconset>
+                             <normaloff>../icons/parceiro.png</normaloff>../icons/parceiro.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
@@ -1731,7 +1731,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../../Downloads/centro-medico.png</normaloff>../../../../Downloads/centro-medico.png</iconset>
+                              <normaloff>../icons/centro-medico.png</normaloff>../icons/centro-medico.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -1777,7 +1777,7 @@ QPushButton:focus{outline: 0}</string>
                             </property>
                             <property name="icon">
                              <iconset>
-                              <normaloff>../../../../Downloads/fornecedor.png</normaloff>../../../../Downloads/fornecedor.png</iconset>
+                              <normaloff>../icons/fornecedor.png</normaloff>../icons/fornecedor.png</iconset>
                             </property>
                             <property name="iconSize">
                              <size>
@@ -7278,6 +7278,9 @@ QPushButton:focus{outline:0}</string>
                                      <property name="horizontalScrollMode">
                                       <enum>QAbstractItemView::ScrollPerItem</enum>
                                      </property>
+                                     <property name="showGrid">
+                                      <bool>true</bool>
+                                     </property>
                                      <property name="gridStyle">
                                       <enum>Qt::SolidLine</enum>
                                      </property>
@@ -7287,11 +7290,20 @@ QPushButton:focus{outline:0}</string>
                                      <property name="wordWrap">
                                       <bool>true</bool>
                                      </property>
+                                     <attribute name="horizontalHeaderVisible">
+                                      <bool>true</bool>
+                                     </attribute>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>
                                      </attribute>
                                      <attribute name="horizontalHeaderDefaultSectionSize">
-                                      <number>130</number>
+                                      <number>200</number>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderHighlightSections">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                                      <bool>true</bool>
                                      </attribute>
                                      <attribute name="horizontalHeaderStretchLastSection">
                                       <bool>true</bool>
@@ -7302,6 +7314,9 @@ QPushButton:focus{outline:0}</string>
                                      <attribute name="verticalHeaderDefaultSectionSize">
                                       <number>50</number>
                                      </attribute>
+                                     <attribute name="verticalHeaderStretchLastSection">
+                                      <bool>false</bool>
+                                     </attribute>
                                      <row/>
                                      <row/>
                                      <row/>
@@ -7316,6 +7331,16 @@ QPushButton:focus{outline:0}</string>
                                      <row/>
                                      <row/>
                                      <row/>
+                                     <column>
+                                      <property name="text">
+                                       <string>Id_Beneficio</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Tipo</string>
+                                      </property>
+                                     </column>
                                      <column>
                                       <property name="text">
                                        <string>Código</string>
@@ -7328,7 +7353,12 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Quantidade </string>
+                                       <string>Unidade de medida</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Descrição</string>
                                       </property>
                                      </column>
                                      <column>
@@ -7338,20 +7368,20 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Descrição</string>
+                                       <string>Quantidade </string>
                                       </property>
                                      </column>
-                                     <item row="0" column="0">
+                                     <item row="0" column="2">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="0" column="1">
+                                     <item row="0" column="3">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="1" column="0">
+                                     <item row="1" column="2">
                                       <property name="text">
                                        <string/>
                                       </property>
@@ -33616,7 +33646,7 @@ background-color: rgb(243, 185, 191);</string>
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_140" stretch="6,6,1">
+                            <layout class="QHBoxLayout" name="horizontalLayout_140" stretch="6,6">
                              <property name="spacing">
                               <number>0</number>
                              </property>
@@ -34479,6 +34509,16 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                     </widget>
                                    </item>
+                                   <item>
+                                    <widget class="QFrame" name="frame_459">
+                                     <property name="frameShape">
+                                      <enum>QFrame::StyledPanel</enum>
+                                     </property>
+                                     <property name="frameShadow">
+                                      <enum>QFrame::Raised</enum>
+                                     </property>
+                                    </widget>
+                                   </item>
                                   </layout>
                                  </widget>
                                 </item>
@@ -34582,16 +34622,6 @@ QPushButton:focus{outline:0}</string>
                                  </widget>
                                 </item>
                                </layout>
-                              </widget>
-                             </item>
-                             <item>
-                              <widget class="QFrame" name="frame_459">
-                               <property name="frameShape">
-                                <enum>QFrame::StyledPanel</enum>
-                               </property>
-                               <property name="frameShadow">
-                                <enum>QFrame::Raised</enum>
-                               </property>
                               </widget>
                              </item>
                             </layout>

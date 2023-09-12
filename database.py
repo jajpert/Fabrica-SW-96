@@ -102,7 +102,21 @@ class DataBase():
 
         finally:
             self.close_connection()
-    
+
+    def cadastro_beneficios(self,beneficios):
+        self.connect()
+        try:
+            args = (beneficios[0],beneficios[1],beneficios[2],beneficios[3],beneficios[4],beneficios[5],beneficios[6])
+            self.cursor.execute('INSERT INTO beneficios(tipo, codigo, lote, unidade_medida, descricao, validade, quantidade) VALUES (%s,%s,%s,%s,%s,%s,%s)', args)
+            id_beneficios = self.cursor.lastrowid
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
     def select_usuario(self):
         self.connect()
         try:
@@ -795,6 +809,58 @@ class DataBase():
             return "ERRO",str(err)
         finally:
             self.close_connection()
+    
+    def alterar_cadastro_beneficios(self, dados):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE beneficios SET
+                                    tipo = '{dados[1]}',
+                                    codigo = '{dados[2]}',
+                                    lote = '{dados[3]}',
+                                    unidade_medida = '{dados[4]}',
+                                    descricao = '{dados[5]}',
+                                    validade = '{dados[6]}',
+                                    quantidade = '{dados[7]}'
+
+                                    WHERE id_beneficios = '{dados[0]}';
+            """)
+            self.conn.commit()
+            return "OK", "Beneficio atualizado com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO", str(err)
+        finally:
+            self.close_connection()
+
+    def deletar_cadastro_beneficios(self,id_beneficios):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM beneficios WHERE id_beneficios = '{id_beneficios}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            print(err)
+
+    def busca_beneficios(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_beneficios,tipo,codigo,lote,unidade_medida,descricao,validade,quantidade FROM beneficios;
+            """)
+
+            result = self.cursor.fetchall()
+            print("Retrieved data from database:", result)
+
+            return result
+        except Exception as err:
+            print(err)
+        finally:
+            self.close_connection()
+
+
 
     def cadastro_clinica(self,endereco,clinica):
         self.connect()
