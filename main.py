@@ -361,7 +361,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
+        #self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
 
@@ -1151,6 +1151,7 @@ class TelaPrincipal(QMainWindow):
         local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
+        outras_deficiencias = self.input_outras_deficiencias_usuario_as.text()
        
 
         
@@ -1183,7 +1184,7 @@ class TelaPrincipal(QMainWindow):
             status = 'Inativo'
 
         
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
@@ -1801,7 +1802,7 @@ class TelaPrincipal(QMainWindow):
     
     def on_tipo_alterar_usuario_changed(self):
 
-        if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
+        if  self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
             self.ui.frame_438.setEnabled(True)
             self.ui.frame_438.show()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
@@ -1879,7 +1880,24 @@ class TelaPrincipal(QMainWindow):
             print (unidade_medida)
             self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
-            
+
+######################## Deficiência base outros################################
+
+    def on_deficiencia_base_usuario_changed(self):
+
+        if self.input_tipo_deficiencia_usuario_as.currentText() == "Outra":
+            self.ui.frame_491.setEnabled(True)
+            self.ui.frame_491.show()
+            self.ui.input_outras_deficiencias_usuario_as.setStyleSheet("")  
+            self.ui.input_outras_deficiencias_usuario_as.setEnabled(True)
+            self.ui.input_outras_deficiencias_usuario_as.show()           
+        else:
+            self.ui.frame_491.hide()
+            self.ui.frame_491.setEnabled(False)
+            self.ui.input_outras_deficiencias_usuario_as.hide()
+            self.ui.input_outras_deficiencias_usuario_as.setEnabled(False)
+            self.ui.input_outras_deficiencias_usuario_as.clear()
+          
         
 
 
