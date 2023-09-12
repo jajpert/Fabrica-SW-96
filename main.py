@@ -276,7 +276,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         #self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
-        self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
+        #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
 
 
@@ -1849,56 +1849,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
 
-    def on_idade_relatorio(self):
-        if self.ui.input_escolha_relatorio_as.currentText() == "Faixa etária":
-            self.ui.frame_237.setEnabled(True)
-            self.ui.frame_237.show()
-            self.ui.frame_246.setEnabled(True)
-            self.ui.frame_246.show()
-
-            self.ui.input_idade_inicial_relatorio_as.setEnabled(True)
-            self.ui.input_idade_inicial_relatorio_as.setStyleSheet("")
-            self.ui.input_idade_inicial_relatorio_as.show() 
-            
-            self.ui.input_idade_final_relatorio_as.setEnabled(True)
-            self.ui.input_idade_final_relatorio_as.setStyleSheet("")
-            self.ui.input_idade_final_relatorio_as.show()
-
-            texto = "A"
-            
-
-            self.ui.label_a_relatorio_as.setEnabled(True)
-            self.ui.label_a_relatorio_as.setStyleSheet("")
-            self.ui.label_a_relatorio_as.setText(texto)
-            self.ui.label_a_relatorio_as.show()
-
-            self.ui.label_idade_relatorio_as.setEnabled(True)
-            self.ui.label_idade_relatorio_as.setStyleSheet("")
-            self.ui.label_idade_relatorio_as.setText("idade")
-            self.ui.label_idade_relatorio_as.show()
-
-        else:
-            
-            self.ui.input_idade_inicial_relatorio_as.setEnabled(False)
-            self.ui.input_idade_inicial_relatorio_as.hide()
-            self.ui.input_idade_inicial_relatorio_as.clear()
-
-            
-            self.ui.label_a_relatorio_as.setEnabled(False)
-            self.ui.label_a_relatorio_as.hide()
-            self.ui.label_a_relatorio_as.clear()
-
-            
-            self.ui.input_idade_final_relatorio_as.setEnabled(False)
-            self.ui.input_idade_final_relatorio_as.hide()
-            self.ui.input_idade_final_relatorio_as.clear()
-
-            
-            self.ui.label_idade_relatorio_as.setEnabled(False)
-            self.ui.label_idade_relatorio_as.hide()
-            self.ui.label_idade_relatorio_as.clear()
-            self.ui.frame_246.hide()
-            self.ui.frame_237.hide()
+    
 
     def cadastro_clinica(self):
 
