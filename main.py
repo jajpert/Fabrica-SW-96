@@ -1898,22 +1898,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def sairSistema(self):  #Popup que Confirma saida - Botão Sair 
         
-        dlg = Ui_Confirmar_Saida()
-        # dlg.setWindowTitle("Confirma Saida")
-        # dlg.setText("Deseja Sair?")
+        dlg = QMessageBox(self)
+        dlg.setWindowTitle("Confirma Saida")
+        dlg.setText("Deseja Sair?")
         
-        # dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        # dlg.setIcon(QMessageBox.Question)
+        dlg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        dlg.setIcon(QMessageBox.Question)
+        button = dlg.exec()      
 
-        dlg.btn_sim_popup_confirma_saida.setCheckable(True)
-        dlg.btn_sim_popup_confirma_saida.clicked.connect(self.the_button_was_clicked)
             
+        if button == QMessageBox.Yes:
+            self.ui.inicio.setCurrentIndex(0)
+            self.ui.input_usuario_login.setText("")
+            self.ui.input_senha_login.setText("")
         
-    def the_button_was_clicked(self):
-        print("Clicked!")
-        self.ui.inicio.setCurrentIndex(0)
-        self.ui.input_usuario_login.setText("")
-        self.ui.input_senha_login.setText("")
+        else:
+            dlg.close()
 
 
     ######################################################################

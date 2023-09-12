@@ -5134,7 +5134,7 @@ class Ui_MainWindow(object):
         self.btn_foto_colaborador_as.setMaximumSize(QSize(125, 153))
         self.btn_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.btn_foto_colaborador_as.setIcon(icon14)
+        self.btn_foto_colaborador_as.setIcon(icon15)
         self.btn_foto_colaborador_as.setIconSize(QSize(120, 120))
 
         self.verticalLayout_179.addWidget(self.btn_foto_colaborador_as)
@@ -14337,7 +14337,7 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
-        self.input_foto_colaborador_as.setText("")
+        self.btn_foto_colaborador_as.setText("")
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
