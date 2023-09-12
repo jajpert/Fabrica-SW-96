@@ -777,7 +777,28 @@ class DataBase():
             #print(err)
             return "ERRO",str(err)
         
+    def cadastro_fornecedor(self,endereco,fornecedor):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            print(args)
+            id_endereco = self.cursor.lastrowid
+            #print('ID do endereco',id_endereco)
+            #print('Chegou o id')
+            
+            args2 = (fornecedor[0],fornecedor[1],fornecedor[2],fornecedor[3],fornecedor[4],fornecedor[5],fornecedor[6],fornecedor[7],fornecedor[8],fornecedor[9],id_endereco)
+            self.cursor.execute('INSERT INTO fornecedor(razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            self.conn.commit()
+            id_fornecedor = self.cursor.lastrowid
+            #print('ID do fornecedor', id_fornecedor)
 
+             
+            return "OK","Cadastro Fornecedor realizado com sucesso!! "
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
 
     def cadastro_curso(self,tupla_curso):
         self.connect()
