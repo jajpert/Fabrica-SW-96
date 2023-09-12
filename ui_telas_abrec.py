@@ -1757,8 +1757,8 @@ class Ui_MainWindow(object):
         self.frame_491.setEnabled(False)
         sizePolicy.setHeightForWidth(self.frame_491.sizePolicy().hasHeightForWidth())
         self.frame_491.setSizePolicy(sizePolicy)
-        self.frame_491.setMinimumSize(QSize(0, 0))
-        self.frame_491.setMaximumSize(QSize(170, 16777215))
+        self.frame_491.setMinimumSize(QSize(170, 58))
+        self.frame_491.setMaximumSize(QSize(170, 58))
         self.frame_491.setFrameShape(QFrame.StyledPanel)
         self.frame_491.setFrameShadow(QFrame.Raised)
         self.verticalLayout_346 = QVBoxLayout(self.frame_491)
@@ -1774,9 +1774,7 @@ class Ui_MainWindow(object):
         self.input_outras_deficiencias_usuario_as.setEnabled(False)
         self.input_outras_deficiencias_usuario_as.setMinimumSize(QSize(0, 0))
         self.input_outras_deficiencias_usuario_as.setMaximumSize(QSize(170, 30))
-        font10 = QFont()
-        font10.setFamilies([u"Abel"])
-        self.input_outras_deficiencias_usuario_as.setFont(font10)
+        self.input_outras_deficiencias_usuario_as.setFont(font)
         self.input_outras_deficiencias_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
@@ -1965,6 +1963,8 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_outros_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_usuario_as.setMinimumSize(QSize(140, 0))
         self.input_situacao_trabalho_outros_usuario_as.setMaximumSize(QSize(170, 30))
+        font10 = QFont()
+        font10.setFamilies([u"Abel"])
         self.input_situacao_trabalho_outros_usuario_as.setFont(font10)
         self.input_situacao_trabalho_outros_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"

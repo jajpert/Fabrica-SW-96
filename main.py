@@ -276,6 +276,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_deficiencia_base_usuario_changed)
+
 
 
         #################SIGNALS CEP#################
@@ -1007,6 +1009,7 @@ class TelaPrincipal(QMainWindow):
         media_renda_familiar = self.ui.input_alterar_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_alterar_vale_transporte_usuario_as.currentText()
         tipo_deficiencia = self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText()
+        outras_deficiencias = self.ui.input_outras_deficiencias_usuario_as.text()
 
 
         tarifa_social =  self.ui.input_alterar_tarifa_social_sim_usuario_as.isChecked()
@@ -1029,7 +1032,7 @@ class TelaPrincipal(QMainWindow):
             status = 'Inativo'
         id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
 
-        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
 
         ######################## insert ##################################
@@ -1151,7 +1154,7 @@ class TelaPrincipal(QMainWindow):
         local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
-        outras_deficiencias = self.input_outras_deficiencias_usuario_as.text()
+        
        
 
         
@@ -1162,6 +1165,7 @@ class TelaPrincipal(QMainWindow):
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_vale_transporte_usuario_as.currentText()
         tipo_deficiencia = self.ui.input_tipo_deficiencia_usuario_as.currentText()
+        outras_deficiencias = self.ui.input_outras_deficiencias_usuario_as.text()
 
 
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
@@ -1881,24 +1885,23 @@ class TelaPrincipal(QMainWindow):
             self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
 
-######################## Deficiência base outros################################
+######################## Deficiência base Outra################################
 
-    def on_deficiencia_base_usuario_changed(self):
-
-        if self.input_tipo_deficiencia_usuario_as.currentText() == "Outra":
+    def on_deficiencia_base_usuario_changed(self, index):
+        texto_selecionado = self.ui.input_tipo_deficiencia_usuario_as.itemText(index)
+        
+        if texto_selecionado == "Outra":
             self.ui.frame_491.setEnabled(True)
             self.ui.frame_491.show()
             self.ui.input_outras_deficiencias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(True)
-            self.ui.input_outras_deficiencias_usuario_as.show()           
+            self.ui.input_outras_deficiencias_usuario_as.show()
         else:
             self.ui.frame_491.hide()
             self.ui.frame_491.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.hide()
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.clear()
-          
-        
 
 
 ######################## Patologia base outros################################

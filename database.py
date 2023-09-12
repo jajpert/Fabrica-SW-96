@@ -6,7 +6,7 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='127.0.0.1',database='abrec',user='root',password='senhadev')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica2022')
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -697,7 +697,7 @@ class DataBase():
             # print(len(usuario))
             # print(len(pessoa))
 
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco))
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],pessoa[14],id_endereco))
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
             print(id_matricula)

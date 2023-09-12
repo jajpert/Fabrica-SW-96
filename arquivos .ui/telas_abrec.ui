@@ -4766,14 +4766,14 @@ QPushButton:pressed{
                                   </property>
                                   <property name="minimumSize">
                                    <size>
-                                    <width>0</width>
-                                    <height>0</height>
+                                    <width>170</width>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>170</width>
-                                    <height>16777215</height>
+                                    <height>58</height>
                                    </size>
                                   </property>
                                   <property name="frameShape">
@@ -4831,6 +4831,7 @@ QPushButton:pressed{
                                      <property name="font">
                                       <font>
                                        <family>Abel</family>
+                                       <pointsize>12</pointsize>
                                       </font>
                                      </property>
                                      <property name="styleSheet">
