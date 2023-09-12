@@ -319,7 +319,7 @@ class TelaPrincipal(QMainWindow):
 
 
         ############SIGNALS POPUP Cursos e oficinas AS############
-        self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
+        # self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
 
 
         ############SIGNALS BANCO ##########################
@@ -358,6 +358,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.puxar_cadastro_participante)
         self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
         self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
+        self.ui.btn_relatorios_as.clicked.connect(self.filtrar_dados)
         
 
 ########################### Validar Login #############################
@@ -1230,7 +1231,12 @@ class TelaPrincipal(QMainWindow):
         ######################## insert ##################################
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        self.msg(result[0],result[1])
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Usuário")
+        msg.setText("Usuário cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])
         self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
@@ -1281,7 +1287,6 @@ class TelaPrincipal(QMainWindow):
                 
                 return "OK", "Benefício(s) atualizado(s) com sucesso!!"
         except Exception as err:
-            print(err)
             return "ERRO", str(err)
         
         
@@ -1337,7 +1342,12 @@ class TelaPrincipal(QMainWindow):
         ################## insert #######################################
         result = []
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
-        self.msg(result[0],result[1])
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Cuidador")
+        msg.setText("Cuidador cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])
         self.limparCamposCadastroCuidador()
 
     def cadastroColaborador(self):
@@ -1406,7 +1416,12 @@ class TelaPrincipal(QMainWindow):
         #################### insert ##########################################
         result = []
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
-        self.msg(result[0],result[1])        
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Colaborador")
+        msg.setText("Colaborador cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])        
         self.limparCamposCadastroColaborador()
 
 
@@ -1450,6 +1465,11 @@ class TelaPrincipal(QMainWindow):
         tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
 
         result=self.db.cadastro_curso(tupla_curso)
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Curso")
+        msg.setText("Curso cadastrado com sucesso!")
+        msg.exec()
         self.limparCadastroCursos()
         
     
@@ -1762,7 +1782,6 @@ class TelaPrincipal(QMainWindow):
     def buscar_dados_participante(self):
         cpf = self.ui.input_cpf_pagina_participante_geral.text()
         dados = self.db.buscar_participante(cpf)
-        print(dados)
         self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
         self.ui.input_id_matricula_user_participante_geral.hide()
         self.ui.input_nome_pagina_participante_geral.setText(dados[1])
@@ -2091,25 +2110,19 @@ class TelaPrincipal(QMainWindow):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
-        if self.ui.input_inicio_periodo_relatorio_as.text() == "":
-            self.filtrar_dados()
-        elif self.ui.input_final_periodo_relatorio_as.text() =="":
-            self.filtrar_dados()
                    
     def filter_idade(self):
-        if self.ui.input_escolha_relatorio_as.currentIndex() == 1:
-            texto_idade_inicio = 18
-            texto_idade_final = 23
-            
-            res = self.db.filter_idade(texto_idade_inicio,texto_idade_final)
-            self.ui.tableWidget_relatorio_as.setRowCount(len(res))
 
-            for row, text in enumerate(res):
-                for column, data in enumerate(text):
-                    self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
-        elif self.ui.input_escolha_relatorio_as.currentIndex() == 0:
-            self.filtrar_dados()
-                
+        texto_idade_inicio = self.ui.input_idade_inicial_relatorio_as.text()
+        texto_idade_final = self.ui.input_idade_final_relatorio_as.text()
+        
+        res = self.db.filter_idade(texto_idade_inicio,texto_idade_final)
+        self.ui.tableWidget_relatorio_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+
     def gerar_excel(self):
         dados = []
         all_dados =  []
