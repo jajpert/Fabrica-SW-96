@@ -265,7 +265,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
-        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
+        self.ui.btn_buscar_alterar_as.clicked.connect(lambda:self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))       
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
@@ -275,6 +275,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
+        self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
 
 
         #################SIGNALS CEP#################
@@ -286,6 +287,7 @@ class TelaPrincipal(QMainWindow):
 
         #################SIGNAL CPF##################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
+
 
 
         
@@ -726,7 +728,10 @@ class TelaPrincipal(QMainWindow):
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
-            beneficio = str(dados[27])
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[27])
+            
+
+            beneficio = str(dados[28])
 
             if beneficio == 'BPC/Idoso':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(1)
@@ -740,11 +745,11 @@ class TelaPrincipal(QMainWindow):
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
     
-            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[28]))
-            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[28]))
+            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[29]))
+            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[29]))
 
 
-            tipoTratamento = str(dados[29])
+            tipoTratamento = str(dados[30])
 
             if tipoTratamento == 'Pré-Diálise':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(1)
@@ -755,9 +760,9 @@ class TelaPrincipal(QMainWindow):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[30])
+            self.ui.input_alterar_local_tratamento_usuario_as.setText(dados[31])
 
-            patologiaBase = dados[31]
+            patologiaBase = dados[32]
 
             if patologiaBase == 'Hipertensão':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
@@ -777,9 +782,11 @@ class TelaPrincipal(QMainWindow):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
 
-            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[32]))
+            self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[33])
 
-            periodo = dados[33]
+            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[34]))
+
+            periodo = dados[35]
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
@@ -789,9 +796,9 @@ class TelaPrincipal(QMainWindow):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
-            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[34]))
+            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[36]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
-            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[35]))
+            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_matricula_usuario_as.hide()
             return self.ui.page_alterar_usuario
         
@@ -995,6 +1002,7 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_alterar_local_tratamento_usuario_as.text()
         patologia_base  = self.ui.input_alterar_patologia_base_usuario_as.currentText()
+        outras_patologias = self.ui.input_alterar_outras_patologias_usuario_as.text()
         data_ini = self.ui.input_alterar_data_inicio_usuario_as.text()
         data_inicio = "-".join(data_ini.split("/")[::-1])
         periodo = self.ui.input_alterar_periodo_usuario_as.currentText()
@@ -1024,7 +1032,7 @@ class TelaPrincipal(QMainWindow):
         id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
 
         tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_alterar_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
+        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_alterar_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
 
         ######################## insert ##################################
         result = []
@@ -1876,6 +1884,21 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
+
+    def on_patologia_base_usuario_alterar(self):
+        if self.ui.input_alterar_patologia_base_usuario_as.currentText() == "Outros":
+            self.ui.frame_491.setEnabled(True)
+            self.ui.frame_491.show()
+            self.ui.input_alterar_outras_patologias_usuario_as.setStyleSheet("") 
+            self.ui.input_alterar_outras_patologias_usuario_as.setEnabled(True)
+            self.ui.input_alterar_outras_patologias_usuario_as.show()
+            
+        else:
+            self.ui.frame_491.hide()
+            self.ui.frame_491.setEnabled(False)
+            self.ui.input_alterar_outras_patologias_usuario_as.hide()
+            self.ui.input_alterar_outras_patologias_usuario_as.setEnabled(False)
+            self.ui.input_alterar_outras_patologias_usuario_as.clear()
             
     ######################################################################
 

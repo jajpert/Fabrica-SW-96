@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -408,7 +408,7 @@ class DataBase():
                 email, cep, logradouro, numero, bairro, cidade, estado,
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,situacao_trabalho_outros,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,data_inicio, periodo,
+                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,outras_patologias,data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
                 from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
                 left join usuario on pessoa.id_matricula = usuario.id_matricula where cpf like '%{cpf}%'; """)
@@ -578,7 +578,7 @@ class DataBase():
         print("Entrou atualizar usuario!!")
 
         id_endereco_usuario = str(endereco[0])
-        id_matricula_usuario = str(usuario[14])
+        id_matricula_usuario = str(usuario[16])
 
 
         print(f"AQ É ENDEREÇO -> {endereco}")
