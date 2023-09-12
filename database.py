@@ -906,7 +906,7 @@ class DataBase():
             """)
 
             result = self.cursor.fetchall()
-            print("Retrieved data from database:", result)
+            print("Data recolhida do banco:", result)
 
             return result
         except Exception as err:
