@@ -330,7 +330,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
 
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
-        # self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
+        self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.pushButton_tstes_usuairo.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
@@ -572,28 +572,29 @@ class TelaPrincipal(QMainWindow):
             dados = self.db.busca_cuidador(cpf)
             self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
             self.ui.input_alterar_nome_cuidador_as.setText(dados[1])
-            self.ui.input_alterar_cpf_cuidador_as.setText(dados[2])
-            self.ui.input_alterar_rg_cuidador_as.setText(dados[3])
-            self.ui.input_alterar_data_emissao_cuidador_as.setDate(QDate(dados[4]))
-            self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[5])
-            sexo = str(dados[6])
+            self.ui.input_alterar_data_nascimento_cuidador_as.setDate(QDate(dados[2]))
+            self.ui.input_alterar_cpf_cuidador_as.setText(dados[3])
+            self.ui.input_alterar_rg_cuidador_as.setText(dados[4])
+            self.ui.input_alterar_data_emissao_cuidador_as.setDate(QDate(dados[5]))
+            self.ui.input_alterar_orgao_expedidor_cuidador_as.setText(dados[6])
+            sexo = str(dados[7])
             if sexo == 'Masculino':
                 self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(1)
             elif sexo == 'Feminino':
                 self.ui.input_alterar_sexo_cuidador_as.setCurrentIndex(2)
-            self.ui.input_alterar_parentesco_cuidador_as.setText(dados[7])  
-            self.ui.input_alterar_informacoes_gerais_as.setHtml(dados[8])
-            self.ui.input_alterar_telefone_cuidador_as.setText(dados[9]) 
-            self.ui.input_alterar_email_cuidador_as.setText(dados[10]) 
-            self.ui.input_alterar_cep_cuidador_as.setText(dados[11]) 
-            self.ui.input_alterar_logradouro_cuidador_as.setText(dados[12]) 
-            self.ui.input_alterar_numero_cuidador_as.setText(str(dados[13])) 
-            self.ui.input_alterar_bairro_cuidador_as.setText(str(dados[14]))
-            self.ui.input_alterar_cidade_cuidador_as.setText(dados[15])
-            self.ui.input_alterar_estado_cuidador_as.setText(dados[16])
-            self.ui.input_alterar_id_endereco_cuidador_as.setText(str(dados[17]))
+            self.ui.input_alterar_parentesco_cuidador_as.setText(dados[8])  
+            self.ui.input_alterar_informacoes_gerais_as.setHtml(dados[9])
+            self.ui.input_alterar_telefone_cuidador_as.setText(dados[10]) 
+            self.ui.input_alterar_email_cuidador_as.setText(dados[11]) 
+            self.ui.input_alterar_cep_cuidador_as.setText(dados[12]) 
+            self.ui.input_alterar_logradouro_cuidador_as.setText(dados[13]) 
+            self.ui.input_alterar_numero_cuidador_as.setText(str(dados[14])) 
+            self.ui.input_alterar_bairro_cuidador_as.setText(str(dados[15]))
+            self.ui.input_alterar_cidade_cuidador_as.setText(dados[16])
+            self.ui.input_alterar_estado_cuidador_as.setText(dados[17])
+            self.ui.input_alterar_id_endereco_cuidador_as.setText(str(dados[18]))
             self.ui.input_alterar_id_endereco_cuidador_as.hide()
-            self.ui.input_alterar_id_matricula_cuidador_as.setText(str(dados[18]))
+            self.ui.input_alterar_id_matricula_cuidador_as.setText(str(dados[19]))
             self.ui.input_alterar_id_matricula_cuidador_as.hide()
             
             return self.ui.page_alterar_cuidador
@@ -1246,7 +1247,7 @@ class TelaPrincipal(QMainWindow):
         convertendo_nome = [i[0] for i in nomes]
         convertendo_nome = [i[0] for i in convertendo_nome]
         count = 0
-        itens = 1
+        itens = 0
         while count < len(convertendo_nome):
             self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
             self.ui.input_usuario_cuidador_as.addItem("")
@@ -1811,6 +1812,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
+        self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
+        self.ui.input_hora_consulta_as.setText(str(dados[5]))
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_Consulta_as.isChecked():

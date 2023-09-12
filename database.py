@@ -421,12 +421,12 @@ class DataBase():
         print("entrou busca cuidador")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp, sexo, 
-                                parentesco, observacao, telefone, email, cep, logradouro, numero, bairro, 
-                                cidade,estado, endereco.id_endereco, cuidador.id_matricula
-                                from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
-                                left join cuidador on pessoa.id_matricula = cuidador.id_matricula 
-                                where cpf like '{cpf}';""")
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, data_emissao, orgao_exp, sexo, 
+                                    parentesco, observacao, telefone,  email, cep, logradouro, numero, bairro, 
+                                    cidade,estado, endereco.id_endereco, cuidador.id_matricula
+                                    FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
+                                    LEFT JOIN cuidador ON pessoa.id_matricula = cuidador.id_matricula 
+                                    WHERE cpf LIKE '{cpf}';""")
             result = self.cursor.fetchall()
             
             #verifica os dados do select
@@ -508,9 +508,11 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia
+            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
             return result[0]
         except Exception as err:
@@ -604,6 +606,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f""" UPDATE consulta SET
+                                     data = '{campo[1]}',
                                      observacao = '{campo[3]}'
                                      WHERE id_consulta = '{campo[0]}';
             """)
