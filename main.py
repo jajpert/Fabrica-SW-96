@@ -1275,16 +1275,6 @@ class TelaPrincipal(QMainWindow):
         result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
         #print(result)
         self.msg(result[0],result[1])
-####################################################
-    def formatar_salario(self):
-        text = self.input_salario_colaborador_as.text()
-
-        try:
-            salario_formatado = '{:,.2f}'.format(float(text))
-        except ValueError:
-            salario_formatado = ''
-
-        self.input_salario_colaborador_as.setText(salario_formatado)
     
     def cadastroColaborador(self):
 
@@ -1350,7 +1340,7 @@ class TelaPrincipal(QMainWindow):
             perfil = 'nutri'
 
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
-        tupla_colaborador = (pis_colab, data_admissao, salario_formatado, cargo, periodo, login, senha, perfil)
+        tupla_colaborador = (pis_colab, data_admissao, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
         result = []
