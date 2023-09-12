@@ -1705,10 +1705,9 @@ class TelaPrincipal(QMainWindow):
 
             for emp in dados:
                 resultado = self.db.alterar_cadastro_beneficios(emp)
-                print("resultado ->", emp)
-            
-                
-                return "OK", "Benefício(s) atualizado(s) com sucesso!!"
+                #print("resultado ->", emp)
+
+            return "OK", "Benefício(s) atualizado(s) com sucesso!!"
         except Exception as err:
             print(err)
             return "ERRO", str(err)
