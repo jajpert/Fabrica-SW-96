@@ -1205,7 +1205,8 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_160.addWidget(self.frame_488)
-
+        font9 = QFont()
+        font9.setPointSize(7)
         self.horizontalSpacer_54 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_160.addItem(self.horizontalSpacer_54)
@@ -2306,7 +2307,9 @@ class Ui_MainWindow(object):
         self.input_numero_usuario_as.setFont(font)
 
         self.verticalLayout_52.addWidget(self.input_numero_usuario_as)
-
+        font11 = QFont()
+        font11.setFamilies([u"Abel"])
+        font11.setPointSize(18)
 
         self.horizontalLayout_42.addWidget(self.frame_77)
 
