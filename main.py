@@ -2027,29 +2027,29 @@ class TelaPrincipal(QMainWindow):
     def on_patologia_base_usuario_changed(self):
 
         if self.ui.input_patologia_base_usuario_as.currentText() == "Outros":
-            self.ui.frame_490.setEnabled(True)
-            self.ui.frame_490.show()
+            self.ui.frame_499.setEnabled(True)
+            self.ui.frame_499.show()
             self.ui.input_outras_patologias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_patologias_usuario_as.setEnabled(True)
             self.ui.input_outras_patologias_usuario_as.show()           
         else:
-            self.ui.frame_490.hide()
-            self.ui.frame_490.setEnabled(False)
+            self.ui.frame_499.hide()
+            self.ui.frame_499.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.hide()
             self.ui.input_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_outras_patologias_usuario_as.clear()
 
     def on_patologia_base_usuario_alterar(self):
         if self.ui.input_alterar_patologia_base_usuario_as.currentText() == "Outros":
-            self.ui.frame_491.setEnabled(True)
-            self.ui.frame_491.show()
+            self.ui.frame_500.setEnabled(True)
+            self.ui.frame_500.show()
             self.ui.input_alterar_outras_patologias_usuario_as.setStyleSheet("") 
             self.ui.input_alterar_outras_patologias_usuario_as.setEnabled(True)
             self.ui.input_alterar_outras_patologias_usuario_as.show()
             
         else:
-            self.ui.frame_491.hide()
-            self.ui.frame_491.setEnabled(False)
+            self.ui.frame_500.hide()
+            self.ui.frame_500.setEnabled(False)
             self.ui.input_alterar_outras_patologias_usuario_as.hide()
             self.ui.input_alterar_outras_patologias_usuario_as.setEnabled(False)
             self.ui.input_alterar_outras_patologias_usuario_as.clear()
