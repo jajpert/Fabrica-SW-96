@@ -1330,7 +1330,7 @@ class TelaPrincipal(QMainWindow):
             msg.setWindowTitle("Alterar Agendamento")
             msg.setText("Agendamento Alterado com sucesso!")
             msg.exec()    
-                return "OK", "Benefício(s) atualizado(s) com sucesso!!"
+            return "OK", "Benefício(s) atualizado(s) com sucesso!!"
         except Exception as err:
             return "ERRO", str(err)
         
