@@ -337,13 +337,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
-
+        self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
         self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
-        self.ui.pushButton_tstes_usuairo.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
@@ -357,7 +356,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        #self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.buscar_clinica_nome_fantasia)
@@ -403,9 +401,9 @@ class TelaPrincipal(QMainWindow):
         inputUsuario = self.ui.input_cep_usuario_as.text()
         inputColaborador = self.ui.input_cep_colaborador_as.text()
         inputClinica = self.ui.input_cep_clinica_as.text()
-        alterarCuidador = self.ui.input_alterar_cep_cuidador_as.text()
-        alterarUsuario = self.ui.input_alterar_cep_usuario_as.text()
-        alterarColaborador = self.ui.input_alterar_cep_colaborador_as.text()
+        inputAlterarCuidador = self.ui.input_alterar_cep_cuidador_as.text()
+        inputAlterarUsuario = self.ui.input_alterar_cep_usuario_as.text()
+        inputAlterarColaborador = self.ui.input_alterar_cep_colaborador_as.text()
         inputFornecedor = self.ui.input_cep_fornecedor_as.text()
         sender = self.sender()
         if 'cuidador' in sender.objectName():
@@ -416,12 +414,12 @@ class TelaPrincipal(QMainWindow):
             cep = inputColaborador
         elif 'clinica' in sender.objectName():
             cep = inputClinica
-        elif 'alterarCuidador' in sender.objectName():
-            cep = alterarCuidador
-        elif 'alteUsuario' in sender.objectName():
-            cep = alterarUsuario
-        elif 'alterarColaborador' in sender.objectName():
-            cep = alterarColaborador
+        elif 'alterarcuidador' in sender.objectName():
+            cep = inputAlterarCuidador
+        elif 'AlterarUsuario' in sender.objectName():
+            cep = inputAlterarUsuario
+        elif 'AlterarColaborador' in sender.objectName():
+            cep = inputAlterarColaborador
         elif 'fornecedor' in sender.objectName():
             cep = inputFornecedor
         cep_tratado = str('')
@@ -510,7 +508,7 @@ class TelaPrincipal(QMainWindow):
             estado = dic_requisicao['uf']
             self.ui.input_estado_clinica_as.setText(str(estado))
 
-        elif 'alterarCuidador' in sender.objectName():
+        elif 'alterarcuidador' in sender.objectName():
              ##### tratamento da requisição - logradouro #######
             logradouro = dic_requisicao['logradouro']
             self.ui.input_alterar_logradouro_cuidador_as.setText(str(logradouro))
@@ -561,8 +559,7 @@ class TelaPrincipal(QMainWindow):
             estado = dic_requisicao['uf']
             self.ui.input_alterar_estado_colaborador_as.setText(str(estado))
         elif 'fornecedor' in sender.objectName():
-            print("entrou fornecedor!")
-             ##### tratamento da requisição - logradouro #######
+            ##### tratamento da requisição - logradouro #######
             logradouro = dic_requisicao['logradouro']
             self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
 
@@ -829,7 +826,7 @@ class TelaPrincipal(QMainWindow):
 
             local_tratamento = str(dados[30])
             if local_tratamento == dados[30]:
-                self.ui.input_situacao_trabalho_alterar_usuario_as_2.setCurrentIndex(1)
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
 
             patologiaBase = dados[31]
 
@@ -1322,24 +1319,23 @@ class TelaPrincipal(QMainWindow):
                     else:
                         row_data.append("")  
                 dados.append(row_data)
-
-            for emp in dados:
-                resultado = self.db.alterar_agendamento(emp)
-                print("resultado ->", emp)
             
-                
+            for emp in dados:
+                resultado = self.db.alterar_agendamento(emp)   
+
+            self.filtrar_agenda()
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Alterar Agendamento")
+            msg.setText("Agendamento Alterado com sucesso!")
+            msg.exec()    
                 return "OK", "Benefício(s) atualizado(s) com sucesso!!"
         except Exception as err:
             return "ERRO", str(err)
         
         
-        self.filtrar_agenda()
-
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Alterar Agendamento")
-        msg.setText("Agendamento Alterado com sucesso!")
-        msg.exec()
+        
         
                 
     def cadastroCuidador(self):
@@ -1553,7 +1549,12 @@ class TelaPrincipal(QMainWindow):
 
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento(tupla_agendamento)
-        self.msg(result[0],result[1])   
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Agendamento")
+        msg.setText("Agendamento Cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])   
         self.limparCamposAgenda()
 
 
@@ -1582,16 +1583,14 @@ class TelaPrincipal(QMainWindow):
         tupla_fornecedor = (razao_social,nome_fantasia,cnpj,celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,informacao_geral)
                             #razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco
         result = []
-        #print(result)
         result = self.db.cadastro_fornecedor(tupla_endereco,tupla_fornecedor)
-        #print(result)
-        self.msg(result[0],result[1])
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Fornecedor")
+        msg.setText("Fornecedor cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])
         self.limparCamposCadastroFornecedor()
-
-
-       
-
-
 
 
     def filtrar_agenda(self):
@@ -1613,6 +1612,12 @@ class TelaPrincipal(QMainWindow):
         observacao_gerais = self.ui.input_observacoes_obs_sigilosas_as.toPlainText()
         tupla_area_sigilosa = (situacao, observacao_gerais, self.id_area_sigilosa)
         result = self.db.cadastrar_area_sigilosa(tupla_area_sigilosa)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Area Sigilosa")
+        msg.setText("Observção salva com sucesso!")
+        msg.exec()
         self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):
@@ -1861,8 +1866,8 @@ class TelaPrincipal(QMainWindow):
         count = 0
         itens = 0
         while count < len(convertendo_nome_clinica):
-            self.ui.input_situacao_trabalho_alterar_usuario_as_2.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
-            self.ui.input_situacao_trabalho_alterar_usuario_as_2.addItem("")
+            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+            self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
             itens += 1
             count += 1
 
@@ -2004,7 +2009,6 @@ class TelaPrincipal(QMainWindow):
             for column in range(self.ui.input_TableWidget_pagina_consulta_geral.columnCount()):
                 campo.append(self.ui.input_TableWidget_pagina_consulta_geral.item(row, column).text())
             update_dados.append(campo)
-            print("consulta ->",update_dados)
             campo = []
         for emp in update_dados:
            res = self.db.alterar_usuario_consulta_as(tuple(emp))
@@ -2046,18 +2050,30 @@ class TelaPrincipal(QMainWindow):
 
             for emp in dados:
                 resultado = self.db.alterar_cadastro_beneficios(emp)
-                print("resultado ->", emp)
+
+            self.listarBeneficios()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Alterção Beneficio")
+            msg.setText("Benefcio Alterado com sucesso!")
+            msg.exec()
             
                 
-                return "OK", "Benefício(s) atualizado(s) com sucesso!!"
+            return "OK", "Benefício(s) atualizado(s) com sucesso!!"
         except Exception as err:
-            print(err)
             return "ERRO", str(err)
+        
 
     def excluir_cadastro_beneficios (self):
-        self.listarBeneficios()
         id_beneficios = self.ui.input_TableWidget_cadastro_beneficio.selectionModel().currentIndex().siblingAtColumn(0).data()
         self.db.deletar_cadastro_beneficios(id_beneficios)
+        self.listarBeneficios()
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Beneficio Excluir")
+        msg.setText("Beneficio excluido com sucesso!")
+        msg.exec()
+        
         
 #####Alterar SITUACAO de Trabalho Outros #########
 ######################LOGIN INVALIDO POPUP####################
@@ -2177,7 +2193,12 @@ class TelaPrincipal(QMainWindow):
             
             result = []
             result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
-            self.msg(result[0],result[1])
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Clinica")
+            msg.setText("Clinica cadastrada com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
             self.limparCamposCadastroClinica()
 
 ###########################################################################
@@ -2185,7 +2206,6 @@ class TelaPrincipal(QMainWindow):
             
         ########################## dados ######################################       
             dados = self.db.busca_beneficios()
-            print (dados)
             tipo = self.ui.input_tipo_cadastro_beneficio.currentText()   
             if tipo == 'Medicação':
                 self.ui.input_tipo_cadastro_beneficio.currentText()         
@@ -2208,11 +2228,14 @@ class TelaPrincipal(QMainWindow):
             
             result = []
             result=self.db.cadastro_beneficios(tupla_beneficios)
-            print(result)
-            print (tipo)
-            print (unidade_medida)
-            self.msg(result[0],result[1])
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Beneficios")
+            msg.setText("Beneficio cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
+            self.listarBeneficios()
 
 ######################## Deficiência base Outra################################
 
