@@ -9444,7 +9444,7 @@ class Ui_MainWindow(object):
         self.lineEdit_alterar_buscar_cpf_cnpj_as.setObjectName(u"lineEdit_alterar_buscar_cpf_cnpj_as")
         self.lineEdit_alterar_buscar_cpf_cnpj_as.setMinimumSize(QSize(225, 30))
         self.lineEdit_alterar_buscar_cpf_cnpj_as.setMaximumSize(QSize(225, 30))
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setFont(font11)
+        self.lineEdit_alterar_buscar_cpf_cnpj_as.setFont(font9)
         self.lineEdit_alterar_buscar_cpf_cnpj_as.setMaxLength(11)
 
         self.verticalLayout_274.addWidget(self.lineEdit_alterar_buscar_cpf_cnpj_as)
@@ -13357,6 +13357,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_150.setObjectName(u"horizontalLayout_150")
         self.input_cpf_pagina_consulta_geral = QLineEdit(self.frame_4631)
         self.input_cpf_pagina_consulta_geral.setObjectName(u"input_cpf_pagina_consulta_geral")
+        self.input_cpf_pagina_consulta_geral.setMaxLength(11)
+
 
         self.horizontalLayout_150.addWidget(self.input_cpf_pagina_consulta_geral)
 
