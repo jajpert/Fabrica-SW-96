@@ -13729,7 +13729,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_260.addWidget(self.input_alterar_salario_colaborador_as_2)
 
 
-        self.horizontalLayout_130.addWidget(self.frame_384)
+        #self.horizontalLayout_130.addWidget(self.frame_384)
 
         self.frame_388 = QFrame(self.frame_382)
         self.frame_388.setObjectName(u"frame_388")
