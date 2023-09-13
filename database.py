@@ -641,7 +641,20 @@ class DataBase():
             id_endereco = self.cursor.lastrowid
             self.conn.commit()
 
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco))
+            print(endereco)
+            print(id_endereco)
+            print(pessoa)
+
+            # self.cursor.execute("""
+            #     INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
+            # """,(cuidador[0],cuidador[1],cuidador[2]))
+
+            # id_cuidador = self.cursor.lastrowid
+            # print(id_cuidador)
+            # print(len(usuario))
+            # print(len(pessoa))
+
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],pessoa[14],id_endereco))
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
 
@@ -711,7 +724,28 @@ class DataBase():
         except Exception as err:
             return "ERRO",str(err)
         
+    def cadastro_fornecedor(self,endereco,fornecedor):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            print(args)
+            id_endereco = self.cursor.lastrowid
+            #print('ID do endereco',id_endereco)
+            #print('Chegou o id')
+            
+            args2 = (fornecedor[0],fornecedor[1],fornecedor[2],fornecedor[3],fornecedor[4],fornecedor[5],fornecedor[6],fornecedor[7],fornecedor[8],fornecedor[9],id_endereco)
+            self.cursor.execute('INSERT INTO fornecedor(razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            self.conn.commit()
+            id_fornecedor = self.cursor.lastrowid
+            #print('ID do fornecedor', id_fornecedor)
 
+             
+            return "OK","Cadastro Fornecedor realizado com sucesso!! "
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
 
     def cadastro_curso(self,tupla_curso):
         self.connect()
