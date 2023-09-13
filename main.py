@@ -281,6 +281,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_deficiencia_base_usuario_changed)
+        self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_deficiencia_base_usuario_changed)
 
 
 
@@ -2020,6 +2021,22 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_outras_deficiencias_usuario_as.hide()
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.clear()
+
+    def on_alterar_deficiencia_base_usuario_changed(self, index):
+        texto_selecionado = self.ui.input_alterar_tipo_deficiencia_usuario_as.itemText(index)
+        
+        if texto_selecionado == "Outra":
+            self.ui.frame_492.setEnabled(True)
+            self.ui.frame_492.show()
+            self.ui.input_alterar_outras_deficiencias_usuario_as.setStyleSheet("")  
+            self.ui.input_alterar_outras_deficiencias_usuario_as.setEnabled(True)
+            self.ui.input_alterar_outras_deficiencias_usuario_as.show()
+        else:
+            self.ui.frame_492.hide()
+            self.ui.frame_492.setEnabled(False)
+            self.ui.input_alterar_outras_deficiencias_usuario_as.hide()
+            self.ui.input_alterar_outras_deficiencias_usuario_as.setEnabled(False)
+            self.ui.input_alterar_outras_deficiencias_usuario_as.clear()
 
 
 ######################## Patologia base outros################################
