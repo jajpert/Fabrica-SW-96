@@ -271,12 +271,17 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
+        self.ui.btn_cadastrar_fornecedores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_fornecedor_as))
+        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
+        self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_deficiencia_base_usuario_changed)
+
 
 
         #################SIGNALS CEP#################
@@ -284,6 +289,8 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_clinica_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)
+
 
 
         #################SIGNAL CPF##################
@@ -334,6 +341,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
+        self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
         self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.listarBeneficios)
@@ -363,7 +371,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
+        #self.ui.pushButton_testes.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
 
@@ -399,6 +407,7 @@ class TelaPrincipal(QMainWindow):
         inputUsuario = self.ui.input_cep_usuario_as.text()
         inputColaborador = self.ui.input_cep_colaborador_as.text()
         inputClinica = self.ui.input_cep_clinica_as.text()
+        inputFornecedor = self.ui.input_cep_fornecedor_as.text()
         sender = self.sender()
         if 'cuidador' in sender.objectName():
             cep = inputCuidador
@@ -408,6 +417,8 @@ class TelaPrincipal(QMainWindow):
             cep = inputColaborador
         elif 'clinica' in sender.objectName():
             cep = inputClinica
+        elif 'fornecedor' in sender.objectName():
+            cep = inputFornecedor
         cep_tratado = str('')
         print(cep)
         for i in cep:
@@ -499,6 +510,24 @@ class TelaPrincipal(QMainWindow):
             ##### tratamento da requisição - estado #######        
             estado = dic_requisicao['uf']
             self.ui.input_estado_clinica_as.setText(str(estado))
+
+        elif 'fornecedor' in sender.objectName():
+            print("entrou fornecedor!")
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
+
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_fornecedor_as.setText(str(bairro))
+
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_fornecedor_as.setText(str(cidade))
+
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_fornecedor_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
@@ -1016,6 +1045,7 @@ class TelaPrincipal(QMainWindow):
         media_renda_familiar = self.ui.input_alterar_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_alterar_vale_transporte_usuario_as.currentText()
         tipo_deficiencia = self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText()
+        outras_deficiencias = self.ui.input_outras_deficiencias_usuario_as.text()
 
 
         tarifa_social =  self.ui.input_alterar_tarifa_social_sim_usuario_as.isChecked()
@@ -1038,7 +1068,7 @@ class TelaPrincipal(QMainWindow):
             status = 'Inativo'
         id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
 
-        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_alterar_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
 
         ######################## insert ##################################
@@ -1161,6 +1191,7 @@ class TelaPrincipal(QMainWindow):
         local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_outras_patologias_usuario_as.text()
+        
        
 
         
@@ -1171,6 +1202,7 @@ class TelaPrincipal(QMainWindow):
         media_renda_familiar = self.ui.input_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_vale_transporte_usuario_as.currentText()
         tipo_deficiencia = self.ui.input_tipo_deficiencia_usuario_as.currentText()
+        outras_deficiencias = self.ui.input_outras_deficiencias_usuario_as.text()
 
 
         tarifa_social =  self.ui.input_tarifa_social_sim_usuario_as.isChecked()
@@ -1193,7 +1225,7 @@ class TelaPrincipal(QMainWindow):
             status = 'Inativo'
 
         
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
@@ -1286,6 +1318,16 @@ class TelaPrincipal(QMainWindow):
         #print(result)
         self.msg(result[0],result[1])
 
+    def formatar_salario(self):
+        text = self.input_salario_colaborador_as.text()
+
+        try:
+            salario_formatado = '{:,.2f}'.format(float(text))
+        except ValueError:
+            salario_formatado = ''
+
+        self.input_salario_colaborador_as.setText(salario_formatado)
+    
     def cadastroColaborador(self):
 
         ######################## endereço ###########################
@@ -1321,7 +1363,8 @@ class TelaPrincipal(QMainWindow):
 
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil)
 
-        ##################### cargo ###########################################
+    ##################### cargo ###########################################
+    # ...
 
         salario = self.ui.input_salario_colaborador_as.text()
         data_admi = self.ui.input_data_admissao_colaborador_as_5.text()
@@ -1329,11 +1372,9 @@ class TelaPrincipal(QMainWindow):
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
         cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
-        
-        
+        salario_formatado = self.ui.input_salario_colaborador_as.text().replace('.', '').replace(',', '.')
 
         #################### login e senha ####################################
-
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
@@ -1349,14 +1390,15 @@ class TelaPrincipal(QMainWindow):
             perfil = 'fisio'
         elif cargo in ["Nutricionista"]:
             perfil = 'nutri'
+
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
-        tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha,perfil)
+        tupla_colaborador = (pis_colab, data_admissao, salario_formatado, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
         result = []
-        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
+        result = self.db.cadastro_colaborador(tupla_endereco, tupla_pessoa, tupla_colaborador)
         print(result)
-        self.msg(result[0],result[1])        
+        self.msg(result[0], result[1])
 
 
     def cadastroCurso(self):
@@ -1446,7 +1488,45 @@ class TelaPrincipal(QMainWindow):
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         self.msg(result[0],result[1])   
+
+
+    def cadastroFornecedor(self):
+        ######################## endereço ###########################   
+        cep = self.ui.input_cep_fornecedor_as.text()
+        rua = self.ui.input_logradouro_fornecedor_as.text()
+        numero = self.ui.input_numero_fornecedor_as.text()
+        bairro = self.ui.input_bairro_fornecedor_as.text()
+        cidade = self.ui.input_cidade_fornecedor_as.text()
+        estado = self.ui.input_estado_fornecedor_as.text()
         
+        tupla_endereco = (cep,rua,numero,bairro,cidade,estado)
+         ###################### fornecedor ##############################
+        cnpj = self.ui.input_cnpj_cadastro_fornecedor_as.text()
+        razao_social = self.ui.input_razao_social_cadastro_fornecedor_as.text()
+        nome_fantasia = self.ui.input_nome_fantasia_cadastro_fornecedor_as.text()
+        celular = self.ui.input_telefone_celular_fornecedor_as.text()
+        telefone_fixo = self.ui.input_telefone_fixo_fornecedor_as.text()
+        email = self.ui.input_email_fornecedor_as.text()
+        contato = self.ui.input_contato_fornecedor_as.text()
+        inscricao_estadual = self.ui.input_inscricao_estadual_fornecedor_as.text()
+        inscricao_municipal = self.ui.input_inscricao_municipal_fornecedor_as.text()
+        informacao_geral = self.ui.input_informacoes_gerais_fornecedor_as.toPlainText()
+
+        tupla_fornecedor = (razao_social,nome_fantasia,cnpj,celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,informacao_geral)
+                            #razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco
+        result = []
+        #print(result)
+        result = self.db.cadastro_fornecedor(tupla_endereco,tupla_fornecedor)
+        #print(result)
+        self.msg(result[0],result[1])
+        self.limparCamposCadastroFornecedor()
+
+
+       
+
+
+
+
     def filtrar_agenda(self):
         txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_as.text())
         res = self.db.filter_agenda(txt)
@@ -1594,6 +1674,26 @@ class TelaPrincipal(QMainWindow):
        self.ui.input_estado_clinica_as.setText("")
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
 
+    def limparCamposCadastroFornecedor(self):
+         
+        self.ui.input_cep_fornecedor_as.setText("")
+        self.ui.input_logradouro_fornecedor_as.setText("")
+        self.ui.input_numero_fornecedor_as.setText("")
+        self.ui.input_bairro_fornecedor_as.setText("")
+        self.ui.input_cidade_fornecedor_as.setText("")
+        self.ui.input_estado_fornecedor_as.setText("")
+             
+        self.ui.input_cnpj_cadastro_fornecedor_as.setText("")
+        self.ui.input_razao_social_cadastro_fornecedor_as.setText("")
+        self.ui.input_nome_fantasia_cadastro_fornecedor_as.setText("")
+        self.ui.input_telefone_celular_fornecedor_as.setText("")
+        self.ui.input_telefone_fixo_fornecedor_as.setText("")
+        self.ui.input_email_fornecedor_as.setText("")
+        self.ui.input_contato_fornecedor_as.setText("")
+        self.ui.input_inscricao_estadual_fornecedor_as.setText("")
+        self.ui.input_inscricao_municipal_fornecedor_as.setText("")
+        self.ui.input_informacoes_gerais_fornecedor_as.setHtml("")
+        
     def limparCamposCadastroBeneficios(self):
         self.ui.input_tipo_cadastro_beneficio.setCurrentIndex(int(0))
         self.ui.input_codigo_cadastro_beneficio.setText("")
@@ -1824,16 +1924,16 @@ class TelaPrincipal(QMainWindow):
            
     def on_tipo_alterar_usuario_changed(self):
 
-        if self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
-            self.ui.frame_439.setEnabled(True)
-            self.ui.frame_439.show()
+        if  self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
+            self.ui.frame_438.setEnabled(True)
+            self.ui.frame_438.show()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet("") 
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.show()
             
         else:
-            self.ui.frame_439.hide()
+            self.ui.frame_438.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
@@ -1902,8 +2002,24 @@ class TelaPrincipal(QMainWindow):
             print (unidade_medida)
             self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
-            
+
+######################## Deficiência base Outra################################
+
+    def on_deficiencia_base_usuario_changed(self, index):
+        texto_selecionado = self.ui.input_tipo_deficiencia_usuario_as.itemText(index)
         
+        if texto_selecionado == "Outra":
+            self.ui.frame_491.setEnabled(True)
+            self.ui.frame_491.show()
+            self.ui.input_outras_deficiencias_usuario_as.setStyleSheet("")  
+            self.ui.input_outras_deficiencias_usuario_as.setEnabled(True)
+            self.ui.input_outras_deficiencias_usuario_as.show()
+        else:
+            self.ui.frame_491.hide()
+            self.ui.frame_491.setEnabled(False)
+            self.ui.input_outras_deficiencias_usuario_as.hide()
+            self.ui.input_outras_deficiencias_usuario_as.setEnabled(False)
+            self.ui.input_outras_deficiencias_usuario_as.clear()
 
 
 ######################## Patologia base outros################################
