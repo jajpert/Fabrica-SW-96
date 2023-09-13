@@ -102,7 +102,21 @@ class DataBase():
 
         finally:
             self.close_connection()
-    
+
+    def cadastro_beneficios(self,beneficios):
+        self.connect()
+        try:
+            args = (beneficios[0],beneficios[1],beneficios[2],beneficios[3],beneficios[4],beneficios[5],beneficios[6])
+            self.cursor.execute('INSERT INTO beneficios(tipo, codigo, lote, unidade_medida, descricao, validade, quantidade) VALUES (%s,%s,%s,%s,%s,%s,%s)', args)
+            id_beneficios = self.cursor.lastrowid
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
     def select_usuario(self):
         self.connect()
         try:
@@ -627,7 +641,20 @@ class DataBase():
             id_endereco = self.cursor.lastrowid
             self.conn.commit()
 
-            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],id_endereco))
+            print(endereco)
+            print(id_endereco)
+            print(pessoa)
+
+            # self.cursor.execute("""
+            #     INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
+            # """,(cuidador[0],cuidador[1],cuidador[2]))
+
+            # id_cuidador = self.cursor.lastrowid
+            # print(id_cuidador)
+            # print(len(usuario))
+            # print(len(pessoa))
+
+            self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],pessoa[14],id_endereco))
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
 
@@ -697,7 +724,28 @@ class DataBase():
         except Exception as err:
             return "ERRO",str(err)
         
+    def cadastro_fornecedor(self,endereco,fornecedor):
+        self.connect()
+        try:
+            args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
+            self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
+            print(args)
+            id_endereco = self.cursor.lastrowid
+            #print('ID do endereco',id_endereco)
+            #print('Chegou o id')
+            
+            args2 = (fornecedor[0],fornecedor[1],fornecedor[2],fornecedor[3],fornecedor[4],fornecedor[5],fornecedor[6],fornecedor[7],fornecedor[8],fornecedor[9],id_endereco)
+            self.cursor.execute('INSERT INTO fornecedor(razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
+            self.conn.commit()
+            id_fornecedor = self.cursor.lastrowid
+            #print('ID do fornecedor', id_fornecedor)
 
+             
+            return "OK","Cadastro Fornecedor realizado com sucesso!! "
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
 
     def cadastro_curso(self,tupla_curso):
         self.connect()
@@ -795,6 +843,58 @@ class DataBase():
             return "ERRO",str(err)
         finally:
             self.close_connection()
+    
+    def alterar_cadastro_beneficios(self, dados):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE beneficios SET
+                                    tipo = '{dados[1]}',
+                                    codigo = '{dados[2]}',
+                                    lote = '{dados[3]}',
+                                    unidade_medida = '{dados[4]}',
+                                    descricao = '{dados[5]}',
+                                    validade = '{dados[6]}',
+                                    quantidade = '{dados[7]}'
+
+                                    WHERE id_beneficios = '{dados[0]}';
+            """)
+            self.conn.commit()
+            return "OK", "Beneficio atualizado com sucesso!!"
+        except Exception as err:
+            print(err)
+            return "ERRO", str(err)
+        finally:
+            self.close_connection()
+
+    def deletar_cadastro_beneficios(self,id_beneficios):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM beneficios WHERE id_beneficios = '{id_beneficios}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            print(err)
+
+    def busca_beneficios(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_beneficios,tipo,codigo,lote,unidade_medida,descricao,validade,quantidade FROM beneficios;
+            """)
+
+            result = self.cursor.fetchall()
+            print("Retrieved data from database:", result)
+
+            return result
+        except Exception as err:
+            print(err)
+        finally:
+            self.close_connection()
+
+
 
     def cadastro_clinica(self,endereco,clinica):
         self.connect()
