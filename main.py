@@ -1925,15 +1925,15 @@ class TelaPrincipal(QMainWindow):
     def on_tipo_alterar_usuario_changed(self):
 
         if  self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":
-            self.ui.frame_438.setEnabled(True)
-            self.ui.frame_438.show()
+            self.ui.frame_439.setEnabled(True)
+            self.ui.frame_439.show()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet("") 
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(True)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.show()
             
         else:
-            self.ui.frame_438.hide()
+            self.ui.frame_439.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()

@@ -11418,11 +11418,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_306.addItem(self.verticalSpacer_22)
 
-        '''self.input_situacao_trabalho_outros_alterar_usuario_as = QLineEdit(self.frame_439)
+        self.input_situacao_trabalho_outros_alterar_usuario_as = QLineEdit(self.frame_439)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setObjectName(u"input_situacao_trabalho_outros_alterar_usuario_as")
         self.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
-        self.input_situacao_trabalho_outros_alterar_usuario_as.setMinimumSize(QSize(140, 0))
-        self.input_situacao_trabalho_outros_alterar_usuario_as.setMaximumSize(QSize(140, 16777215))
+        self.input_situacao_trabalho_outros_alterar_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_situacao_trabalho_outros_alterar_usuario_as.setMaximumSize(QSize(170, 30))
         self.input_situacao_trabalho_outros_alterar_usuario_as.setFont(font)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet(u"\n"
 "    border: none;\n"
@@ -11430,9 +11430,9 @@ class Ui_MainWindow(object):
 "\n"
 "")
 
-        self.verticalLayout_306.addWidget(self.input_situacao_trabalho_outros_alterar_usuario_as)'''
+        self.verticalLayout_306.addWidget(self.input_situacao_trabalho_outros_alterar_usuario_as)
 
-        self.input_situacao_trabalho_outros_alterar_usuario_as = QLineEdit(self.frame_439)
+        '''elf.input_situacao_trabalho_outros_alterar_usuario_as = QLineEdit(self.frame_439)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setObjectName(u"input_situacao_trabalho_outros_usuario_as")
         self.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMinimumSize(QSize(0, 30))
@@ -11442,7 +11442,7 @@ class Ui_MainWindow(object):
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
 
-        self.verticalLayout_305.addWidget(self.input_situacao_trabalho_outros_alterar_usuario_as)
+        self.verticalLayout_305.addWidget(self.input_situacao_trabalho_outros_alterar_usuario_as)'''
 
 
         self.horizontalLayout_113.addWidget(self.frame_439)
