@@ -7,11 +7,11 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')
+
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
-            print("Conectado ao Servidor de Banco de Dados: ", db_info)
+            # print("Conectado ao Servidor de Banco de Dados: ", db_info)
         else:
             print("Erro")  
 
@@ -19,19 +19,12 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
             """)
-
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -44,14 +37,9 @@ class DataBase():
             """)
             result = self.cursor.fetchall()
             
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -66,7 +54,9 @@ class DataBase():
             id_matricu = resultado1[0][0]
 
             self.cursor.execute(f"""
-                SELECT local_tratamento FROM usuario WHERE id_matricula IN ({id_matricu});
+                SELECT clinica.nome_fantasia FROM clinica 
+                INNER JOIN usuario ON usuario.local_tratamento
+                WHERE id_matricula IN ({id_matricu});
             """)
             resultado2 = self.cursor.fetchall()
 
@@ -77,14 +67,9 @@ class DataBase():
             for i in resultado2:
                 for n in i:
                     lista.append(n)          
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
             return lista
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -96,33 +81,24 @@ class DataBase():
                 SELECT id_colaborador FROM colaborador ORDER BY id_colaborador DESC LIMIT 1;
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
 
     def validarLogin(self, login, senha):
-        print("entrou validação login")
         self.connect()
         try:
             #
             self.cursor.execute(f"""Select login, senha from colaborador where login = '{login}' and senha = '{senha}';""")
 
-            result = self.cursor.fetchall()
-            #print (result)
-            
+            result = self.cursor.fetchall()            
             return result
 
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -148,15 +124,9 @@ class DataBase():
                 SELECT id_usuario FROM usuario ORDER BY id_usuario DESC LIMIT 1;
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -166,20 +136,16 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
                     """)
             result = self.cursor.fetchall()
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -189,22 +155,16 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                     SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco WHERE data_cadastro BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -214,7 +174,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho, clinica.nome_fantasia, endereco.bairro, endereco.cidade
+                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao_trabalho_outros, clinica.nome_fantasia, endereco.bairro, endereco.cidade
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                 LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco
@@ -222,15 +182,9 @@ class DataBase():
                 OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
-            
-            # #verifica os dados do select
-            # for linha in result:
-            #    print(linha)
-            
             return result
-            #retorna a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -240,7 +194,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,clinica.nome_fantasia, endereco.bairro, 
                 endereco.cidade,pessoa.data_cadastro
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -250,7 +204,7 @@ class DataBase():
             return result
         
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -267,7 +221,7 @@ class DataBase():
             return result
         
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -280,7 +234,7 @@ class DataBase():
             return result
         
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -293,15 +247,9 @@ class DataBase():
                 SELECT id_usuario, id_matricula FROM usuario WHERE id_cuidador IS NULL ORDER BY id_usuario DESC LIMIT 10;
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -313,19 +261,27 @@ class DataBase():
                 SELECT id_clinica FROM clinica ORDER BY id_clinica;
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
-    
+
+
+    def select_cursos_ids(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_curso_evento FROM curso_evento ORDER BY id_curso_evento;
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
     def select_cuidador(self):
         self.connect()
         try:
@@ -333,15 +289,9 @@ class DataBase():
                 SELECT id_cuidador FROM cuidador ORDER BY id_cuidador DESC LIMIT 1;
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            #for linha in result:
-            #   print(linha)
-            
             return result
-            #retorn a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -353,15 +303,9 @@ class DataBase():
                 SELECT nome FROM pessoa WHERE id_matricula = {id_matricula};
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            # for linha in result:
-            #    print(linha)
-            
             return result
-            #retorna a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
@@ -374,35 +318,39 @@ class DataBase():
                 SELECT nome_fantasia FROM clinica WHERE id_clinica = {id_clinica};
             """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            # for linha in result:
-            #    print(linha)
-            
             return result
-            #retorna a lista do banco para quem chamou a função
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
+    def select_nome_curso_evento(self,id_curso_evento):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT nome_curso_evento FROM curso_evento WHERE id_curso_evento = {id_curso_evento};
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
 
         finally:
             self.close_connection()
 
 
     def busca_cuidador(self, cpf):
-        print("entrou busca cuidador")
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, cpf, rg, data_emissao, orgao_exp, sexo, 
-                                parentesco, observacao, telefone, email, cep, logradouro, numero, bairro, 
-                                cidade,estado, endereco.id_endereco, cuidador.id_matricula
-                                from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
-                                left join cuidador on pessoa.id_matricula = cuidador.id_matricula 
-                                where cpf like '{cpf}';""")
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, data_emissao, orgao_exp, sexo, 
+                                    parentesco, observacao, telefone,  email, cep, logradouro, numero, bairro, 
+                                    cidade,estado, endereco.id_endereco, cuidador.id_matricula
+                                    FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
+                                    LEFT JOIN cuidador ON pessoa.id_matricula = cuidador.id_matricula 
+                                    WHERE cpf LIKE '{cpf}';""")
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            # for linha in result:
-            #     print(linha)
             return result[0]
         except Exception as err:
             return "ERRO",str(err)
@@ -412,26 +360,21 @@ class DataBase():
 
     
     def busca_usuario(self, cpf):
-        print("entrou busca usuario")
         self.connect()
         try:
             
             self.cursor.execute(f"""
                 SELECT pessoa.id_matricula, nome, data_nascimento,status, cpf,
-                rg, data_emissao, orgao_exp, nis, cns, sexo, telefone, 
-                email, cep, logradouro, numero, bairro, cidade, estado,
+                rg, data_emissao, orgao_exp, nis, cns, sexo, pessoa.telefone, 
+                pessoa.email, cep, logradouro, numero, bairro, cidade, estado,
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
-                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,data_inicio, periodo,
+                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,situacao_trabalho_outros,
+                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,outras_patologias,data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
-                from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco 
-                left join usuario on pessoa.id_matricula = usuario.id_matricula where cpf like '%{cpf}%'; """)
+                FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
+                LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
+                RIGHT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            # for linha in result:
-            #     print(linha)
-            
             return result[0]
         except Exception as err:
             return "ERRO",str(err)
@@ -441,7 +384,6 @@ class DataBase():
 
 
     def busca_colaborador(self, cpf):
-        print("entrei")
         self.connect()
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,
@@ -451,10 +393,6 @@ class DataBase():
                                     left join colaborador on colaborador.id_matricula = pessoa.id_matricula
                                     where cpf like '%{cpf}%';""")
             result = self.cursor.fetchall()
-            
-            #verifica os dados do select
-            # for linha in result:
-            #     print(linha)
             return result[0]
         except Exception as err:
             return "ERRO",str(err)
@@ -478,7 +416,23 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia
+            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora
+                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
+            result = self.cursor.fetchall()
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_participante(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.email, clinica.nome_fantasia 
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
@@ -503,17 +457,52 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def buscar_info_consulta(self,cpf):
+    def buscar_info_consulta(self,id_usuario):
         self.connect()
         try:
             self.cursor.execute(f"""
                                 SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
                                 INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
-                                left join pessoa ON pessoa.id_matricula = usuario.id_matricula AND 
-                                pessoa.cpf LIKE '{cpf}';
+                                LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
+                                usuario.id_usuario LIKE '{id_usuario}';
                                 """)
             result = self.cursor.fetchall()
             return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+    
+
+    def buscar_info_participante(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.nome_fantasia, curso_evento.nome_curso_evento
+                                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                RIGHT JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
+                                LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def cadastrar_participante(self,participante):
+        self.connect()
+        try:
+            args = (participante[0], participante[1])
+            self.cursor.execute("INSERT INTO participantes (id_evento,id_matricula) VALUES (%s,%s)", args)
+            self.conn.commit()
+
+            return "Cadastro feito com Sucesso!!"
 
         except Exception as err:
             return "ERRO",str(err)
@@ -525,6 +514,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f""" UPDATE consulta SET
+                                     data = '{campo[1]}',
                                      observacao = '{campo[3]}'
                                      WHERE id_consulta = '{campo[0]}';
             """)
@@ -547,29 +537,19 @@ class DataBase():
             return "OK","Cadastro excluído com sucesso!"
 
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
 
 
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
-        print("Entrou ATT CUIDADOR")
-
         id_matricula_cuidador = str(cuidador[2])
         id_endereco_cuidador = str(endereco[0])
-
-        print(f"AQ É CUIDADOR -> {cuidador} ")
-        print(f"AQ É PESSOA -> {pessoa} ")
-        print(f"AQ É ENDERECO -> {endereco} ")
-
-
         self.connect()
         try:
             self.cursor.execute(f""" UPDATE cuidador SET parentesco = '{cuidador[0]}', observacao = '{cuidador[1]}' WHERE id_matricula = '{id_matricula_cuidador}';""")
-            id_matricula = self.cursor.lastrowid
-            print(id_matricula)
             self.conn.commit()
 
-            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', cpf = '{pessoa[2]}', rg = '{pessoa[3]}', data_emissao = '{pessoa[4]}',
-                                orgao_exp = '{pessoa[5]}', sexo = '{pessoa[6]}', telefone = '{pessoa[7]}', email = '{pessoa[8]}' WHERE id_matricula = {pessoa[0]};  """)
+            self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}', rg = '{pessoa[4]}', data_emissao = '{pessoa[5]}',
+                                orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', telefone = '{pessoa[8]}', email = '{pessoa[9]}' WHERE id_matricula = {pessoa[0]};  """)
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
 
@@ -582,22 +562,14 @@ class DataBase():
 
             return "OK","Cuidador atualizado com sucesso!!"
         except Exception as err:
-            print(err)
             return "ERRO",str(err)
 
         finally:
             self.close_connection()
 
     def atualizar_usuario(self,endereco,pessoa,usuario):
-        print("Entrou atualizar usuario!!")
-
         id_endereco_usuario = str(endereco[0])
         id_matricula_usuario = str(usuario[14])
-
-
-        print(f"AQ É ENDEREÇO -> {endereco}")
-        print(f"AQ É PESSOA -> {pessoa}")
-        print(f"AQ É USUARIO -> {usuario}")
         self.connect()
         try:
             self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
@@ -614,38 +586,25 @@ class DataBase():
             self.conn.commit()
 
 
-            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',
-                                tipo_transporte = '{usuario[4]}', tipo_tratamento = '{usuario[5]}', beneficio = '{usuario[6]}', local_tratamento = '{usuario[7]}',
-                                periodo = '{usuario[8]}', data_inicio = '{usuario[9]}', patologia_base = '{usuario[10]}', tarifa_social = '{usuario[11]}', media_renda_familiar = '{usuario[12]}',
-                                vale_transporte = '{usuario[13]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
+            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',situacao_trabalho_outros = '{usuario[4]}',
+                                tipo_transporte = '{usuario[5]}', tipo_tratamento = '{usuario[6]}', beneficio = '{usuario[7]}', local_tratamento = '{usuario[8]}',
+                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}',outras_patologias = '{usuario[12]}', tarifa_social = '{usuario[13]}', media_renda_familiar = '{usuario[14]}',
+                                vale_transporte = '{usuario[15]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
             self.conn.commit()
 
             return "OK","Usuario atualizado com sucesso!!"
         except Exception as err:
-            print(err)
             return "ERRO",str(err)
 
         finally:
             self.close_connection()
 
 
-    def atualizar_colaborador(self,colaborador,pessoa,endereco):
-        print("Entrou ATT Colaborador")
-        
-        print(f"AQ É ENDERECO Colabo -> {endereco}")
-        print(f"AQ É PESSOA Colabo -> {pessoa}")
-        print(f"AQ É COLABORADOR Colabo -> {colaborador}")
-        
-        
+    def atualizar_colaborador(self,colaborador,pessoa,endereco):     
         id_matricula_pessoa = int(pessoa[0])
         id_endereco_colaborador = int(endereco[0])
         tipo_endereco = type(id_endereco_colaborador)
         tipo_pessoa = type(id_matricula_pessoa)
-
-        print(f"ID PESSOA -> {id_matricula_pessoa}")
-        print(f"CLASSE PESSOA ID -> {tipo_pessoa}")
-        print(f"ID ENDERECO -> {id_endereco_colaborador}")
-        print(f"TIPO ENDERECO -> {tipo_endereco}")
         self.connect()
         try: 
             self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
@@ -665,7 +624,6 @@ class DataBase():
 
             return "OK","Colaborador atualizado com sucesso!!"
         except Exception as err:
-            print(err)
             return "ERRO",str(err)
 
         finally:
@@ -676,7 +634,6 @@ class DataBase():
 
 
     def cadastro_usuario(self,endereco,pessoa,usuario):
-        print("Entrou cadastro usuario!!")
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
@@ -700,19 +657,17 @@ class DataBase():
             self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)',(pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],pessoa[12],pessoa[13],pessoa[14],id_endereco))
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
-            print(id_matricula)
 
             self.cursor.execute("""
-                INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte,id_matricula) 
-                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
-            """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],usuario[14],id_matricula))
+                INSERT INTO usuario (nis,cns,observacao,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte,id_matricula) 
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+            """,(usuario[0],usuario[1],usuario[2],usuario[3],usuario[4],usuario[5],usuario[6],usuario[7],usuario[8],usuario[9],usuario[10],usuario[11],usuario[12],usuario[13],usuario[14],usuario[15],id_matricula))
 
             self.conn.commit()
 
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            print(err)
             return "ERRO",str(err)
 
         finally:
@@ -726,14 +681,12 @@ class DataBase():
             id_endereco = self.cursor.lastrowid
             self.conn.commit()
 
-            print('ID do endereco',id_endereco)
 
             args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],id_endereco)
             self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             id_matricula = self.cursor.lastrowid
             self.conn.commit()
 
-            print('id matricula',id_matricula)
 
             self.cursor.execute("""
                 INSERT INTO cuidador (parentesco,observacao,id_matricula) VALUES (%s,%s,%s)
@@ -742,13 +695,11 @@ class DataBase():
             self.conn.commit()
 
             self.cursor.execute(f'UPDATE usuario SET id_cuidador = {id_matricula_cuidador} WHERE id_usuario = {usuario}')
-            print("fez o inset do id")
             self.conn.commit()
 
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            #print(err)
             return "ERRO",str(err)
         
     def cadastro_colaborador(self,endereco,pessoa,colaborador):
@@ -758,23 +709,19 @@ class DataBase():
             self.cursor.execute('INSERT INTO endereco(cep, logradouro, numero, bairro, cidade, estado) VALUES (%s,%s,%s,%s,%s,%s)', args)
         
             id_endereco = self.cursor.lastrowid
-            print('ID do endereco',id_endereco)
 
             args2 = (pessoa[0],pessoa[1],pessoa[2],pessoa[3],pessoa[4],pessoa[5],pessoa[6],pessoa[7],pessoa[8],pessoa[9],pessoa[10],pessoa[11],id_endereco)
             self.cursor.execute('INSERT INTO pessoa(nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args2)
             id_matricula = self.cursor.lastrowid
-            print('id matricula',id_matricula)
 
             args3 = (colaborador[0],colaborador[1],colaborador[2],colaborador[3],colaborador[4],colaborador[5],colaborador[6],colaborador[7],id_matricula)
             self.cursor.execute("INSERT INTO colaborador (pis,data_admissao,salario,cargo,periodo,login,senha,perfil,id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)", args3)
             id_colaborador = self.cursor.lastrowid
-            print(id_colaborador)
             self.conn.commit()
             
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            #print(err)
             return "ERRO",str(err)
         
     def cadastro_fornecedor(self,endereco,fornecedor):
@@ -814,7 +761,6 @@ class DataBase():
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            #print(err)
             return "ERRO",str(err)
     
     def cadastro_agendamento(self, agendamento):
@@ -827,8 +773,26 @@ class DataBase():
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            #print(err)
             return "ERRO",str(err)
+
+    def alterar_agendamento(self, campo):
+        self.connect()
+        
+        try:
+            self.cursor.execute(f""" UPDATE agendamento SET
+                                     data = '{campo[1]}',
+                                     hora = '{campo[2]}',
+                                     anotacao = '{campo[5]}'
+                                     WHERE id_agendamento = '{campo[0]}';
+            """)
+            
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
         
         
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
@@ -838,7 +802,6 @@ class DataBase():
 
             return(f"Puxei o id {id_matricula}")
         except Exception as err:
-            #print(err)
             return "ERRO",str(err)
         finally:
             self.close_connection()
@@ -848,7 +811,6 @@ class DataBase():
 
     def cadastrar_area_sigilosa (self,area_sigilosa):
         self.connect()
-        print(area_sigilosa)
         try:
             args = (area_sigilosa[0],area_sigilosa[1],area_sigilosa[2])
             self.cursor.execute('INSERT INTO area_sigilosa(obito_paciente, observacao_gerais,id_matricula) VALUES (%s,%s,%s)', args)
@@ -857,13 +819,11 @@ class DataBase():
             return("OK","Cadastro area sigilosa com sucesso!!!")
 
         except Exception as err:
-            #print(err)
             return "ERRO",str(err)
         finally:
             self.close_connection()
         
     def update(self,tupla_de_dados):
-        #print(tupla_de_dados)
         self.connect()
         try:
                 self.cursor.execute(f"""UPDATE cadastro SET 
@@ -880,8 +840,7 @@ class DataBase():
                 return 'OK','Dados atualizados com sucesso!!!'
 
         except AttributeError as err:
-            print(err)
-        
+            return "ERRO",str(err)
         finally:
             self.close_connection()
     
@@ -938,7 +897,6 @@ class DataBase():
 
 
     def cadastro_clinica(self,endereco,clinica):
-        print("Entrou cadastro Clinica!!")
         self.connect()
         try:
             args = (endereco[0],endereco[1],endereco[2],endereco[3],endereco[4],endereco[5])
@@ -951,15 +909,11 @@ class DataBase():
             self.cursor.execute('INSERT INTO clinica(cnpj,razao_social,nome_fantasia,telefone,email,observacao,id_endereco) VALUES (%s,%s,%s,%s,%s,%s,%s)', args2)
 
             
-            
-            print(args)
-            print(args2)
             self.conn.commit()
 
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            print(err)
             return "ERRO",str(err)
 
         finally:
@@ -978,7 +932,7 @@ class DataBase():
             return "OK","Cadastro excluído com sucesso!"
 
         except Exception as err:
-            print(err)
+            return "ERRO",str(err)
         
         finally:
             self.close_connection()
@@ -988,7 +942,7 @@ class DataBase():
         if self.conn.is_connected():
             self.cursor.close()
             self.conn.close()
-            print("Conexão encerrada com sucesso!!")
+            # print("Conexão encerrada com sucesso!!")
 
 if __name__ == "__main__":
     db = DataBase()
