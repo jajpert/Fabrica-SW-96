@@ -4,7 +4,7 @@ import requests
 from os import getcwd
 from ctypes import windll
 from qtcore import *
-from ui_telas_abrec import *
+from Velho_ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
@@ -369,7 +369,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.buscar_dados_participante)
         self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.puxar_cadastro_participante)
-        self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
+        #self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
         self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
         self.ui.btn_relatorios_as.clicked.connect(self.filtrar_dados)
         
