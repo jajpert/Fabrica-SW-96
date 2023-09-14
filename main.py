@@ -4,7 +4,7 @@ import requests
 from os import getcwd
 from ctypes import windll
 from qtcore import *
-from Velho_ui_telas_abrec import *
+from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
