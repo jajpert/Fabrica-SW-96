@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>11</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -4064,6 +4064,12 @@ QPushButton:focus{outline: 0}</string>
                       </layout>
                      </widget>
                      <widget class="QWidget" name="page_cadastro_usuario_as">
+                      <property name="minimumSize">
+                       <size>
+                        <width>148</width>
+                        <height>0</height>
+                       </size>
+                      </property>
                       <layout class="QVBoxLayout" name="verticalLayout_3" stretch="1,8,1">
                        <property name="spacing">
                         <number>0</number>
@@ -4576,13 +4582,13 @@ QPushButton:focus{outline: 0}</string>
                                            </property>
                                            <property name="minimumSize">
                                             <size>
-                                             <width>0</width>
+                                             <width>148</width>
                                              <height>30</height>
                                             </size>
                                            </property>
                                            <property name="maximumSize">
                                             <size>
-                                             <width>16777215</width>
+                                             <width>148</width>
                                              <height>30</height>
                                             </size>
                                            </property>
@@ -5054,7 +5060,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            </property>
                                            <property name="minimumSize">
                                             <size>
-                                             <width>0</width>
+                                             <width>148</width>
                                              <height>30</height>
                                             </size>
                                            </property>
