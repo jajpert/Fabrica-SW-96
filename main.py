@@ -340,20 +340,32 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login = self.ui.input_usuario_login.text()
         senha = self.ui.input_senha_login.text()
         login_senha = []
-        login_senha = self.db.validarLogin(login,senha)
-        if len(login_senha)==0:
+        resultados = self.db.validarLogin(login,senha)
+        print(resultados)
+
+        if resultados[0] == [] or resultados[1] == []:
             self.ui.inicio.setCurrentWidget(self.ui.login)
-            self.loginInvalido()
-
-
-        elif login_senha[0][0] == login_senha[0][1]:
-                print("Login e senha não podem ser iguais")
+            self.loginInvalido() 
+        
         else:
+            login_senha.append(resultados[0][0][0])
+            login_senha.append(resultados[0][0][1])
+            matricula_colaborador = resultados[1][0][0]
+            if len(login_senha)==0:
+                self.ui.inicio.setCurrentWidget(self.ui.login)
+                self.loginInvalido()    
 
-            if login == login_senha[0][0] and senha == login_senha[0][1]:            
-                print ("Login realizado com sucesso")          
+            elif login_senha[0] == login_senha[1]:
+                    print("Login e senha não podem ser iguais")
             else:
-                print ("Usuário não encontrado")
+
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)          
+                else:
+                    print ("Usuário não encontrado")
         # self.chama_funcoes()
         
         

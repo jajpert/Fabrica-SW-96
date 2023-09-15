@@ -370,13 +370,38 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.btn_alterar_foto_senha_as)
 
-        self.label_ola_nome_as = QLabel(self.frame_9)
-        self.label_ola_nome_as.setObjectName(u"label_ola_nome_as")
-        self.label_ola_nome_as.setFont(font2)
-        self.label_ola_nome_as.setStyleSheet(u"color: #fff;margin-bottom: 1em;")
-        self.label_ola_nome_as.setAlignment(Qt.AlignCenter)
+        self.label_bem_vindo_nome_as = QLabel(self.frame_9)
+        self.label_bem_vindo_nome_as.setObjectName(u"label_bem_vindo_nome_as")
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label_bem_vindo_nome_as.sizePolicy().hasHeightForWidth())
+        self.label_bem_vindo_nome_as.setSizePolicy(sizePolicy)
+        self.label_bem_vindo_nome_as.setMaximumSize(QSize(16777215, 45))
+        self.label_bem_vindo_nome_as.setFont(font2)
+        self.label_bem_vindo_nome_as.setStyleSheet(u"color: #fff;margin-bottom: 1em;")
+        self.label_bem_vindo_nome_as.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_6.addWidget(self.label_ola_nome_as)
+        self.verticalLayout_6.addWidget(self.label_bem_vindo_nome_as)
+
+        self.lineEdit_recebe_nome_as = QLineEdit(self.frame_9)
+        self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
+        self.lineEdit_recebe_nome_as.setEnabled(False)
+        sizePolicy1 = QSizePolicy(QSizePolicy.MinimumExpanding, QSizePolicy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.lineEdit_recebe_nome_as.sizePolicy().hasHeightForWidth())
+        self.lineEdit_recebe_nome_as.setSizePolicy(sizePolicy1)
+        font6 = QFont()
+        font6.setFamilies([u"Abel"])
+        font6.setPointSize(16)
+        self.lineEdit_recebe_nome_as.setFont(font6)
+        self.lineEdit_recebe_nome_as.setStyleSheet(u"background-color: rgb(227, 59, 78);\n"
+"color: #fff;\n"
+"border: none;")
+        self.lineEdit_recebe_nome_as.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_6.addWidget(self.lineEdit_recebe_nome_as)
 
         self.frame_13 = QFrame(self.frame_9)
         self.frame_13.setObjectName(u"frame_13")
@@ -14906,7 +14931,7 @@ class Ui_MainWindow(object):
         self.btn_esqueci_senha_login.setText(QCoreApplication.translate("MainWindow", u"Esqueci Senha", None))
         self.label_Abrec_Logo_Paint.setText("")
         self.btn_alterar_foto_senha_as.setText("")
-        self.label_ola_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
+        self.label_bem_vindo_nome_as.setText(QCoreApplication.translate("MainWindow", u"Bem-vindo(a)", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_consulta_as.setText(QCoreApplication.translate("MainWindow", u"   CONSULTA", None))
         self.btn_agenda_as.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))

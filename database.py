@@ -93,9 +93,13 @@ class DataBase():
         try:
             #
             self.cursor.execute(f"""Select login, senha from colaborador where login = '{login}' and senha = '{senha}';""")
+            result = self.cursor.fetchall() 
 
-            result = self.cursor.fetchall()            
-            return result
+            self.cursor.execute(f"""Select id_matricula from colaborador where login = '{login}' and senha = '{senha}';""")
+            result2 = self.cursor.fetchall()
+            print("id resulte = ",result2) 
+
+            return result, result2
 
         except Exception as err:
             return "ERRO",str(err)
