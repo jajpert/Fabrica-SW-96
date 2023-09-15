@@ -10012,6 +10012,19 @@ QPushButton:focus{outline:0}</string>
                            </widget>
                           </item>
                           <item>
+                           <spacer name="verticalSpacer_37">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>40</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
                            <widget class="QFrame" name="frame_176">
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
@@ -10739,7 +10752,7 @@ border-style: solid;</string>
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_167" stretch="">
+                               <layout class="QHBoxLayout" name="horizontalLayout_167">
                                 <property name="spacing">
                                  <number>0</number>
                                 </property>
@@ -10766,7 +10779,7 @@ border-style: solid;</string>
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_168" stretch="">
+                               <layout class="QHBoxLayout" name="horizontalLayout_168">
                                 <property name="spacing">
                                  <number>0</number>
                                 </property>
