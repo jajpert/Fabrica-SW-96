@@ -1721,7 +1721,7 @@ class Ui_MainWindow(object):
         self.frame_63 = QFrame(self.frame_48)
         self.frame_63.setObjectName(u"frame_63")
         self.frame_63.setMinimumSize(QSize(0, 0))
-        self.frame_63.setMaximumSize(QSize(150, 16777215))
+        self.frame_63.setMaximumSize(QSize(180, 16777215))
         self.frame_63.setFrameShape(QFrame.StyledPanel)
         self.frame_63.setFrameShadow(QFrame.Raised)
         self.verticalLayout_31 = QVBoxLayout(self.frame_63)
@@ -1730,7 +1730,7 @@ class Ui_MainWindow(object):
         self.label_nascimento_usuario_as = QLabel(self.frame_63)
         self.label_nascimento_usuario_as.setObjectName(u"label_nascimento_usuario_as")
         self.label_nascimento_usuario_as.setMinimumSize(QSize(0, 0))
-        self.label_nascimento_usuario_as.setMaximumSize(QSize(150, 16777215))
+        self.label_nascimento_usuario_as.setMaximumSize(QSize(16777215, 16777215))
         self.label_nascimento_usuario_as.setFont(font)
         self.label_nascimento_usuario_as.setStyleSheet(u"")
 
