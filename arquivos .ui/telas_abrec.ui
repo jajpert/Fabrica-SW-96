@@ -9991,7 +9991,7 @@ QPushButton:focus{outline:0}</string>
                             <property name="maximumSize">
                              <size>
                               <width>16777215</width>
-                              <height>16777215</height>
+                              <height>100</height>
                              </size>
                             </property>
                             <property name="font">
@@ -10010,19 +10010,6 @@ QPushButton:focus{outline:0}</string>
                              <set>Qt::AlignCenter</set>
                             </property>
                            </widget>
-                          </item>
-                          <item>
-                           <spacer name="verticalSpacer_37">
-                            <property name="orientation">
-                             <enum>Qt::Vertical</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>20</width>
-                              <height>40</height>
-                             </size>
-                            </property>
-                           </spacer>
                           </item>
                           <item>
                            <widget class="QFrame" name="frame_176">
