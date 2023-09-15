@@ -2427,9 +2427,12 @@ class TelaPrincipal(QMainWindow):
             'LOCAL DE TRATAMENTO','SITUAÇÃO DE TRABALHO','CLINICA','BAIRRO','CIDADE']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
+
         
-        #file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "/relatorio", "Text files (*.xlsx)") 
-        relatorio.to_excel("Relatorio.xlsx", sheet_name='relatorio', index=False)
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -2468,9 +2471,7 @@ class TelaPrincipal(QMainWindow):
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-    
-            
-        pdf.save() #salvar pdf na raiz do projeto
+
 
         msg = QMessageBox()
         msg.setWindowTitle('Relatório')
