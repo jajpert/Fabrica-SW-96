@@ -240,7 +240,7 @@ class TelaPrincipal(QMainWindow):
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
 
-        self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        #self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal)) DESCOMENTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
@@ -387,6 +387,10 @@ class TelaPrincipal(QMainWindow):
 
         elif login_senha[0][0] == login_senha[0][1]:
                 print("Login e senha não podem ser iguais")
+                
+        elif login_senha[0][0] == 'Psico':
+            self.LoginPsico()
+            
         else:
 
             if login == login_senha[0][0] and senha == login_senha[0][1]:            
@@ -394,7 +398,12 @@ class TelaPrincipal(QMainWindow):
             else:
                 print ("Usuário não encontrado")
         # self.chama_funcoes()
-        
+
+########################### Validar Login Psico#############################        
+    def LoginPsico(self):
+        # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        print("aqui foi")
+        self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.tipos_acesso.setCurrentWidget(self.ui.stackedWidget_7))
         
         
 ########################### Validar CEP ###############################
@@ -1303,6 +1312,8 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_usuario_cuidador_as.addItem("")
             itens += 1
             count += 1
+            
+            
     def listarAgendamentos(self):
         res = self.db.select_agendamentos()
 
