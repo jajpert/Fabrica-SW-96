@@ -2266,15 +2266,14 @@ class TelaPrincipal(QMainWindow):
 
 ######################## Deficiência base Outra################################
 
-    def on_deficiencia_base_usuario_changed(self, index):
-        texto_selecionado = self.ui.input_tipo_deficiencia_usuario_as.itemText(index)
-        
-        if texto_selecionado == "Outra":
+    def on_deficiencia_base_usuario_changed(self,):
+
+        if self.ui.input_patologia_base_usuario_as.currentText() == "Outra":
             self.ui.frame_491.setEnabled(True)
             self.ui.frame_491.show()
             self.ui.input_outras_deficiencias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(True)
-            self.ui.input_outras_deficiencias_usuario_as.show()
+            self.ui.input_outras_deficiencias_usuario_as.show()           
         else:
             self.ui.frame_491.hide()
             self.ui.frame_491.setEnabled(False)
