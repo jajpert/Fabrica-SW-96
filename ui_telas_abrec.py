@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecZXUArg.ui'
+## Form generated from reading UI file 'telas_abrecTUiwpU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -2494,7 +2494,7 @@ class Ui_MainWindow(object):
         self.frame_8.setFrameShape(QFrame.StyledPanel)
         self.frame_8.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_43 = QHBoxLayout(self.frame_8)
-        self.horizontalLayout_43.setSpacing(0)
+        self.horizontalLayout_43.setSpacing(5)
         self.horizontalLayout_43.setObjectName(u"horizontalLayout_43")
         self.horizontalLayout_43.setContentsMargins(0, 0, 0, 0)
         self.frame_90 = QFrame(self.frame_8)
@@ -2579,24 +2579,24 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_43.addWidget(self.frame_81)
 
-        self.frame_4911 = QFrame(self.frame_8)
-        self.frame_4911.setObjectName(u"frame_4911")
-        self.frame_4911.setEnabled(False)
-        sizePolicy.setHeightForWidth(self.frame_4911.sizePolicy().hasHeightForWidth())
-        self.frame_4911.setSizePolicy(sizePolicy)
-        self.frame_4911.setMinimumSize(QSize(170, 58))
-        self.frame_4911.setMaximumSize(QSize(170, 58))
-        self.frame_4911.setFrameShape(QFrame.StyledPanel)
-        self.frame_4911.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3461 = QVBoxLayout(self.frame_4911)
-        self.verticalLayout_3461.setSpacing(0)
-        self.verticalLayout_3461.setObjectName(u"verticalLayout_3461")
-        self.verticalLayout_3461.setContentsMargins(0, 0, 0, 0)
+        self.frame_502 = QFrame(self.frame_8)
+        self.frame_502.setObjectName(u"frame_502")
+        self.frame_502.setEnabled(False)
+        sizePolicy.setHeightForWidth(self.frame_502.sizePolicy().hasHeightForWidth())
+        self.frame_502.setSizePolicy(sizePolicy)
+        self.frame_502.setMinimumSize(QSize(170, 58))
+        self.frame_502.setMaximumSize(QSize(170, 58))
+        self.frame_502.setFrameShape(QFrame.StyledPanel)
+        self.frame_502.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_351 = QVBoxLayout(self.frame_502)
+        self.verticalLayout_351.setSpacing(0)
+        self.verticalLayout_351.setObjectName(u"verticalLayout_351")
+        self.verticalLayout_351.setContentsMargins(0, 0, 0, 0)
         self.verticalSpacer_35 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_3461.addItem(self.verticalSpacer_35)
+        self.verticalLayout_351.addItem(self.verticalSpacer_35)
 
-        self.input_outras_deficiencias_usuario_as = QLineEdit(self.frame_4911)
+        self.input_outras_deficiencias_usuario_as = QLineEdit(self.frame_502)
         self.input_outras_deficiencias_usuario_as.setObjectName(u"input_outras_deficiencias_usuario_as")
         self.input_outras_deficiencias_usuario_as.setEnabled(False)
         self.input_outras_deficiencias_usuario_as.setMinimumSize(QSize(0, 0))
@@ -2606,10 +2606,10 @@ class Ui_MainWindow(object):
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
 
-        self.verticalLayout_3461.addWidget(self.input_outras_deficiencias_usuario_as)
+        self.verticalLayout_351.addWidget(self.input_outras_deficiencias_usuario_as)
 
 
-        self.horizontalLayout_43.addWidget(self.frame_4911)
+        self.horizontalLayout_43.addWidget(self.frame_502)
 
         self.frame_82 = QFrame(self.frame_8)
         self.frame_82.setObjectName(u"frame_82")
@@ -11291,14 +11291,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_74.addWidget(self.frame_343)
 
-        self.frame_501 = QFrame(self.frame_340)
-        self.frame_501.setObjectName(u"frame_501")
-        self.frame_501.setEnabled(False)
-        self.frame_501.setMinimumSize(QSize(0, 0))
-        self.frame_501.setMaximumSize(QSize(170, 16777215))
-        self.frame_501.setFrameShape(QFrame.StyledPanel)
-        self.frame_501.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_350 = QVBoxLayout(self.frame_501)
+        self.frame_550 = QFrame(self.frame_340)
+        self.frame_550.setObjectName(u"frame_550")
+        self.frame_550.setEnabled(False)
+        self.frame_550.setMinimumSize(QSize(0, 0))
+        self.frame_550.setMaximumSize(QSize(170, 16777215))
+        self.frame_550.setFrameShape(QFrame.StyledPanel)
+        self.frame_550.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_350 = QVBoxLayout(self.frame_550)
         self.verticalLayout_350.setSpacing(0)
         self.verticalLayout_350.setObjectName(u"verticalLayout_350")
         self.verticalLayout_350.setContentsMargins(0, 0, 0, 0)
@@ -11306,7 +11306,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_350.addItem(self.verticalSpacer_37)
 
-        self.input_alterar_outras_deficiencias_usuario_as = QLineEdit(self.frame_501)
+        self.input_alterar_outras_deficiencias_usuario_as = QLineEdit(self.frame_550)
         self.input_alterar_outras_deficiencias_usuario_as.setObjectName(u"input_alterar_outras_deficiencias_usuario_as")
         self.input_alterar_outras_deficiencias_usuario_as.setEnabled(False)
         self.input_alterar_outras_deficiencias_usuario_as.setMinimumSize(QSize(0, 0))
@@ -11319,7 +11319,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_350.addWidget(self.input_alterar_outras_deficiencias_usuario_as)
 
 
-        self.horizontalLayout_74.addWidget(self.frame_501)
+        self.horizontalLayout_74.addWidget(self.frame_550)
 
         self.frame_344 = QFrame(self.frame_340)
         self.frame_344.setObjectName(u"frame_344")

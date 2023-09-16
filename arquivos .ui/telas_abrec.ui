@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>14</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -6709,7 +6709,7 @@ QPushButton:pressed{
                                </property>
                                <layout class="QHBoxLayout" name="horizontalLayout_43">
                                 <property name="spacing">
-                                 <number>0</number>
+                                 <number>5</number>
                                 </property>
                                 <property name="leftMargin">
                                  <number>0</number>
@@ -6975,7 +6975,7 @@ QPushButton:pressed{
                                  </widget>
                                 </item>
                                 <item>
-                                 <widget class="QFrame" name="frame_491">
+                                 <widget class="QFrame" name="frame_502">
                                   <property name="enabled">
                                    <bool>false</bool>
                                   </property>
@@ -7003,7 +7003,7 @@ QPushButton:pressed{
                                   <property name="frameShadow">
                                    <enum>QFrame::Raised</enum>
                                   </property>
-                                  <layout class="QVBoxLayout" name="verticalLayout_346">
+                                  <layout class="QVBoxLayout" name="verticalLayout_351">
                                    <property name="spacing">
                                     <number>0</number>
                                    </property>
@@ -30475,7 +30475,7 @@ QPushButton:pressed{
                                                     </widget>
                                                    </item>
                                                    <item>
-                                                    <widget class="QFrame" name="frame_501">
+                                                    <widget class="QFrame" name="frame_550">
                                                      <property name="enabled">
                                                       <bool>false</bool>
                                                      </property>

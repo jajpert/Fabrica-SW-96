@@ -1075,7 +1075,7 @@ class TelaPrincipal(QMainWindow):
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_Local_Tratamento_Clinica_usuario_as.currentText()
         local_tratamento_id = local_tratamento.split("-")
-        local_tratamento_id_clinica = int(local_tratamento_id[0])
+        #local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_alterar_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_alterar_outras_patologias_usuario_as.text()
         data_ini = self.ui.input_alterar_data_inicio_usuario_as.text()
@@ -1084,7 +1084,16 @@ class TelaPrincipal(QMainWindow):
         media_renda_familiar = self.ui.input_alterar_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_alterar_vale_transporte_usuario_as.currentText()
         tipo_deficiencia = self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText()
-        outras_deficiencias = self.ui.input_outras_deficiencias_usuario_as.text()
+        outras_deficiencias= self.ui.input_alterar_outras_deficiencias_usuario_as.text()
+
+        if tipo_deficiencia != "Outra":
+            outras_deficiencias = self.ui.input_alterar_outras_deficiencias_usuario_as.setText("")
+        else:
+            pass
+            
+
+        
+
 
 
         tarifa_social =  self.ui.input_alterar_tarifa_social_sim_usuario_as.isChecked()
@@ -2269,29 +2278,29 @@ class TelaPrincipal(QMainWindow):
     def on_tipo_deficiencia_usuario_changed(self):
 
         if self.ui.input_tipo_deficiencia_usuario_as.currentText() == "Outra":
-            self.ui.frame_491.setEnabled(True)
-            self.ui.frame_491.show()
+            self.ui.frame_502.setEnabled(True)
+            self.ui.frame_502.show()
             self.ui.input_outras_deficiencias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(True)
             self.ui.input_outras_deficiencias_usuario_as.show()           
         else:
-            self.ui.frame_491.hide()
-            self.ui.frame_491.setEnabled(False)
+            self.ui.frame_502.hide()
+            self.ui.frame_502.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.hide()
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.clear()
 
     def on_alterar_tipo_deficiencia_usuario_changed(self):
               
-        if  self.ui.input_alterar_tipo_deficiencia_usuario_as == "Outra":
-            self.ui.frame_501.setEnabled(True)
-            self.ui.frame_501.show()
+        if self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText() == "Outra":
+            self.ui.frame_550.setEnabled(True)
+            self.ui.frame_550.show()
             self.ui.input_alterar_outras_deficiencias_usuario_as.setStyleSheet("")  
             self.ui.input_alterar_outras_deficiencias_usuario_as.setEnabled(True)
-            self.ui.input_alterar_outras_deficiencias_usuario_as.show()
+            self.ui.input_alterar_outras_deficiencias_usuario_as.show()           
         else:
-            self.ui.frame_501.hide()
-            self.ui.frame_501.setEnabled(False)
+            self.ui.frame_550.hide()
+            self.ui.frame_550.setEnabled(False)
             self.ui.input_alterar_outras_deficiencias_usuario_as.hide()
             self.ui.input_alterar_outras_deficiencias_usuario_as.setEnabled(False)
             self.ui.input_alterar_outras_deficiencias_usuario_as.clear()
