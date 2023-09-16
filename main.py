@@ -241,6 +241,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
@@ -400,6 +401,9 @@ class TelaPrincipal(QMainWindow):
         elif login_senha[0][0] == 'Secre':
             self.LoginSecretaria()
 
+        elif login_senha[0][0] == 'Fisio':
+            self.LoginFisio()
+
         else:
 
             if login == login_senha[0][0] and senha == login_senha[0][1]:       
@@ -423,6 +427,11 @@ class TelaPrincipal(QMainWindow):
     def LoginSecretaria(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
         self.ui.tipos_acesso.setCurrentWidget(self.ui.secretaria)
+
+########################### Validar Login Fisioterapeuta #############################        
+    def LoginFisio(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.fisioterapeuta)
 
 
 ########################### Validar CEP ###############################
