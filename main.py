@@ -240,7 +240,6 @@ class TelaPrincipal(QMainWindow):
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
 
-        #self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal)) DESCOMENTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
@@ -390,10 +389,13 @@ class TelaPrincipal(QMainWindow):
                 
         elif login_senha[0][0] == 'Psico':
             self.LoginPsico()
-            
+
+        elif login_senha[0][0] == 'adm':
+            self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))     
         else:
 
-            if login == login_senha[0][0] and senha == login_senha[0][1]:            
+            if login == login_senha[0][0] and senha == login_senha[0][1]:       
+                
                 print ("Login realizado com sucesso")          
             else:
                 print ("Usuário não encontrado")
@@ -403,7 +405,7 @@ class TelaPrincipal(QMainWindow):
     def LoginPsico(self):
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         print("aqui foi")
-        self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.tipos_acesso.setCurrentWidget(self.ui.stackedWidget_7))
+        self.ui.btn_entrar_login.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.page_teste_psico))
         
         
 ########################### Validar CEP ###############################
