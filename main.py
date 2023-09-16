@@ -2441,16 +2441,13 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         
     def gerar_pdf(self):
-        #pegando o nome das colunas da tabela
         column_names = []
         for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
             column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
 
-        #criando o pdf e escolhendo a fonte
         pdf = canvas.Canvas("relatorioPDF.pdf")
         pdf.setFont("Times-Roman", 9)
-
-        #pegando os dados de cada linha da tabela
+        
         filtered_data = []
         
         for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
@@ -2471,8 +2468,9 @@ class TelaPrincipal(QMainWindow):
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-
-
+            
+        pdf.save()
+        
         msg = QMessageBox()
         msg.setWindowTitle('Relatório')
         msg.setText('Relatório gerado com sucesso!')
