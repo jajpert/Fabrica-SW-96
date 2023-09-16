@@ -238,9 +238,12 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
 
-        self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
@@ -387,16 +390,41 @@ class TelaPrincipal(QMainWindow):
 
         elif login_senha[0][0] == login_senha[0][1]:
                 print("Login e senha não podem ser iguais")
+                
+        elif login_senha[0][0] == 'Psico':
+            self.LoginPsico()
+
+        elif login_senha[0][0] == 'adm':
+            self.LoginAssistenteS() 
+
+        elif login_senha[0][0] == 'Secre':
+            self.LoginSecretaria()
+
         else:
 
-            if login == login_senha[0][0] and senha == login_senha[0][1]:            
+            if login == login_senha[0][0] and senha == login_senha[0][1]:       
+                
                 print ("Login realizado com sucesso")          
             else:
                 print ("Usuário não encontrado")
         # self.chama_funcoes()
         
         
-        
+########################### Validar Login Assistente S #############################        
+    def LoginAssistenteS(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+
+########################### Validar Login Psico #############################        
+    def LoginPsico(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.psicologa)
+
+########################### Validar Login Secretaria #############################        
+    def LoginSecretaria(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.secretaria)
+
+
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
