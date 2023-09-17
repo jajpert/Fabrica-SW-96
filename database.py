@@ -895,6 +895,38 @@ class DataBase():
             self.close_connection()
 
 
+    def select_retirada_beneficio_cpf(self, cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT nome, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idade, data, telefone,| cns, clinica, codigo_beneficio, descricao, quantidade FROM pessoa WHERE cpf IN ({cpf});
+            """)
+            resultado1 = self.cursor.fetchall()
+            id_matricu = resultado1[0][0]
+
+            self.cursor.execute(f"""
+                SELECT clinica.nome_fantasia FROM clinica 
+                INNER JOIN usuario ON usuario.cns
+                WHERE id_matricula IN ({id_matricu});
+            """)
+            resultado2 = self.cursor.fetchall()
+
+            lista = []
+            for i in resultado1:
+                for n in i:
+                    lista.append(n)
+            for i in resultado2:
+                for n in i:
+                    lista.append(n)          
+            return lista
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+    
+
+
 
     def cadastro_clinica(self,endereco,clinica):
         self.connect()
