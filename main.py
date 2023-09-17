@@ -720,8 +720,9 @@ class TelaPrincipal(QMainWindow):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+            self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
-            mediaRendaFamiliar = str(dados[23])
+            mediaRendaFamiliar = str(dados[24])
 
             if mediaRendaFamiliar == 'Menos 1 salário':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(1)
@@ -735,7 +736,7 @@ class TelaPrincipal(QMainWindow):
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
 
-            meioTransporte = str(dados[24])
+            meioTransporte = str(dados[25])
 
             if meioTransporte == 'Particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(1)
@@ -758,7 +759,7 @@ class TelaPrincipal(QMainWindow):
             elif meioTransporte == 'Outro':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
 
-            valeTransporte = str(dados[25])
+            valeTransporte = str(dados[26])
 
             if valeTransporte == 'Passe para os dias de tratamento':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(1)
@@ -769,7 +770,7 @@ class TelaPrincipal(QMainWindow):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
-            situacaoTrabalho = str(dados[26])
+            situacaoTrabalho = str(dados[27])
 
             if situacaoTrabalho == 'Aposentado por Idade':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
@@ -798,10 +799,10 @@ class TelaPrincipal(QMainWindow):
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
-            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[27])
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[28])
             
 
-            beneficio = str(dados[28])
+            beneficio = str(dados[29])
 
             if beneficio == 'BPC/Idoso':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(1)
@@ -815,11 +816,11 @@ class TelaPrincipal(QMainWindow):
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
     
-            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[29]))
-            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[29]))
+            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[30]))
+            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[30]))
 
 
-            tipoTratamento = str(dados[30])
+            tipoTratamento = str(dados[31])
 
             if tipoTratamento == 'Pré-Diálise':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(1)
@@ -830,11 +831,11 @@ class TelaPrincipal(QMainWindow):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            local_tratamento = str(dados[30])
-            if local_tratamento == dados[30]:
+            local_tratamento = str(dados[32])
+            if local_tratamento == dados[32]:
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
 
-            patologiaBase = dados[32]
+            patologiaBase = dados[33]
 
             if patologiaBase == 'Hipertensão':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
@@ -854,11 +855,11 @@ class TelaPrincipal(QMainWindow):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
 
-            self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[33])
+            self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[34])
 
-            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[34]))
+            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[35]))
 
-            periodo = dados[35]
+            periodo = dados[36]
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
@@ -868,9 +869,9 @@ class TelaPrincipal(QMainWindow):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
-            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[36]))
+            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
-            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[37]))
+            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_matricula_usuario_as.hide()
             return self.ui.page_alterar_usuario
         
@@ -1070,6 +1071,12 @@ class TelaPrincipal(QMainWindow):
         observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_alterar_usuario_as.currentText()
         situacao_trabalho_outros = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.text()
+
+        if situacao_trabalho != "Outros":
+            situacao_trabalho_outros = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText("")
+        else:
+            pass
+
         tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
@@ -1078,6 +1085,12 @@ class TelaPrincipal(QMainWindow):
         #local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_alterar_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_alterar_outras_patologias_usuario_as.text()
+
+        if patologia_base != "Outros":
+            outras_patologias = self.ui.input_alterar_outras_patologias_usuario_as.setText("")
+        else:
+            pass
+
         data_ini = self.ui.input_alterar_data_inicio_usuario_as.text()
         data_inicio = "-".join(data_ini.split("/")[::-1])
         periodo = self.ui.input_alterar_periodo_usuario_as.currentText()

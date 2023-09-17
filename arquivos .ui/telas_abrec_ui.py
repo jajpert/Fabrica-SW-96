@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecTUiwpU.ui'
+## Form generated from reading UI file 'telas_abrec.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.4.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -11294,7 +11294,7 @@ class Ui_MainWindow(object):
         self.frame_550 = QFrame(self.frame_340)
         self.frame_550.setObjectName(u"frame_550")
         self.frame_550.setEnabled(False)
-        self.frame_550.setMinimumSize(QSize(150, 0))
+        self.frame_550.setMinimumSize(QSize(0, 0))
         self.frame_550.setMaximumSize(QSize(170, 16777215))
         self.frame_550.setFrameShape(QFrame.StyledPanel)
         self.frame_550.setFrameShadow(QFrame.Raised)
