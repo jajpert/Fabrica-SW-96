@@ -297,7 +297,7 @@ class TelaPrincipal(QMainWindow):
 
         #################SIGNAL CPF##################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-
+        self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
 
 
         
@@ -2339,6 +2339,24 @@ class TelaPrincipal(QMainWindow):
             # self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
             self.listarBeneficios()
+    
+    def buscarRetirada(self):
+        cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+        result = self.db.select_retirada_beneficio_cpf(cpf)
+        id_matricula = result[0]
+        nome = result[1]
+        telefone = result[2]
+        tamanho = int(len(result))
+        if tamanho > 3:
+            clinica = result[3]
+        else:
+            clinica = 'Não possuí'
+        self.ui.input_nome_agendamento_as.setText(nome)
+        self.ui.input_telefone_agendamento_as.setText(telefone)
+        self.ui.input_clinica_agendamento_as.setText(clinica)
+
+        return id_matricula
+    
 
 ######################## Deficiência base Outra################################
 
