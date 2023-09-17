@@ -136,7 +136,7 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -367,9 +367,9 @@ class DataBase():
                 SELECT pessoa.id_matricula, nome, data_nascimento,status, cpf,
                 rg, data_emissao, orgao_exp, nis, cns, sexo, pessoa.telefone, 
                 pessoa.email, cep, logradouro, numero, bairro, cidade, estado,
-                estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,outras_deficiencias,
-                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,situacao_trabalho_outros,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,outras_patologias,data_inicio, periodo,
+                estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia, outras_deficiencias,
+                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho, situacao_trabalho_outros,
+                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base, outras_patologias, data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 

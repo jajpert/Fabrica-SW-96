@@ -755,9 +755,7 @@ class TelaPrincipal(QMainWindow):
 
             elif meioTransporte == 'Ambulância particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(5)
-
-            elif meioTransporte == 'Outro':
-                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+           
 
             valeTransporte = str(dados[26])
 
