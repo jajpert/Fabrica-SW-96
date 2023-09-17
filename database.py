@@ -367,7 +367,7 @@ class DataBase():
                 SELECT pessoa.id_matricula, nome, data_nascimento,status, cpf,
                 rg, data_emissao, orgao_exp, nis, cns, sexo, pessoa.telefone, 
                 pessoa.email, cep, logradouro, numero, bairro, cidade, estado,
-                estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
+                estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,outras_deficiencias,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,situacao_trabalho_outros,
                 beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,outras_patologias,data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula

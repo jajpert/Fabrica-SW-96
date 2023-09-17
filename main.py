@@ -1072,10 +1072,10 @@ class TelaPrincipal(QMainWindow):
         situacao_trabalho = self.ui.input_situacao_trabalho_alterar_usuario_as.currentText()
         situacao_trabalho_outros = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.text()
 
-        if situacao_trabalho != "Outros":
+        '''if situacao_trabalho != "Outros":
             situacao_trabalho_outros = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText("")
         else:
-            pass
+            pass'''
 
         tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
