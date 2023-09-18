@@ -901,9 +901,15 @@ class DataBase():
             self.cursor.execute(f"""
                 SELECT 
                     pessoa.nome, 
-                    TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade, 
-                    pessoa.telefone
+                    TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade,
+                    saida_beneficio.data
+                    pessoa.telefone,
+                    usuario.cns, 
+                    clinica.nome_fantasia
                 FROM pessoa
+                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN clinica ON usuario.id_clinica = clinica.id_clinica
+                INNER JOIN saida_beneficio ON usuario.id_usuario = saida_beneficio.id_usuario  
                 WHERE pessoa.cpf LIKE '{cpf}';
             """)
             
@@ -914,11 +920,38 @@ class DataBase():
                     'nome': resultado1[0][0],
                     'idade': resultado1[0][1],
                     'telefone': resultado1[0][2],
+                    'cns': resultado1[0][3],
+                    'clinica': resultado1[0][4],
                 }
             else:
                 return None
         except Exception as e:
             print(f"Error in select_retirada_beneficio_cpf: {e}")
+            return None
+
+    def select_retirada_beneficio_codigo(self, id_beneficios):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT 
+                    descricao, 
+                    quantidade
+                FROM beneficios
+                WHERE id_beneficios LIKE '{id_beneficios}';
+            """)
+            
+            resultado1 = self.cursor.fetchall()
+
+            if resultado1:
+                return {
+                    'descricao': resultado1[0][0],
+                    'quantidade': resultado1[0][1],
+                    
+                }
+            else:
+                return None
+        except Exception as e:
+            print(f"Erro na função select_retirada_beneficio_codigo: {e}")
             return None
 
 

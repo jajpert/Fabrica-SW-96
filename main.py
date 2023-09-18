@@ -381,6 +381,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
         self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
         self.ui.btn_relatorios_as.clicked.connect(self.filtrar_dados)
+        self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         
 
 ########################### Validar Login #############################
@@ -2350,16 +2351,49 @@ class TelaPrincipal(QMainWindow):
         if result:
             id_matricula = result.get('id_matricula', '')
             nome = result.get('nome', '')
+            idade = result.get('idade', '')
             telefone = result.get('telefone', '')
-            clinica = result.get('clinica_nome_fantasia', 'Não possui')
+            clinica = result.get('clinica', 'Não possui')
+            cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
+            self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
             self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
-
+            self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
             return id_matricula
         else:
-            print("Nenhuma informação para este CPF.")
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Retirada de Benefício")
+            msg.setText("Nenhuma informação para este CPF.")
+            msg.exec()
+            
+            return None
+    
+    def buscarCodigoRetirada(self):
+        codigo = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
+        result = self.db.select_retirada_beneficio_codigo(codigo)
+        
+        if result:
+            id_beneficios = result.get('id_beneficios', '')
+            descricao = result.get('descricao', '')
+            quantidade = result.get('data_nascimento', '')
+            
+            self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText(id_beneficios)
+            self.ui.input_descricao_cadastro_retirada_beneficio.setText(descricao)
+            if quantidade and quantidade.isdigit():
+                self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(int(quantidade))
+            else:
+                print("Quantidade invalidade:", quantidade)
+
+            return id_beneficios
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Retirada de Benefício")
+            msg.setText("Nenhuma informação para este Código.")
+            msg.exec()
             return None
 
     
