@@ -238,8 +238,15 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############SIGNALS################# 
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)  
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
 
+        # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
+        
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
@@ -271,8 +278,8 @@ class TelaPrincipal(QMainWindow):
         #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
-        self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_deficiencia_base_usuario_changed)
-        self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_deficiencia_base_usuario_changed)
+        self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
+        self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
 
 
 
@@ -392,6 +399,24 @@ class TelaPrincipal(QMainWindow):
 
         elif login_senha[0][0] == 'adm':
             self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))     
+        elif login_senha[0][0] == 'adm':
+            self.LoginAssistenteS() 
+
+        elif login_senha[0][0] == 'Farm':
+            self.LoginFarm()
+
+        elif login_senha[0][0] == 'Fisio':
+            self.LoginFisio()
+
+        elif login_senha[0][0] == 'Nutri':
+            self.LoginNutri()
+
+        elif login_senha[0][0] == 'Psico':
+            self.LoginPsico()
+
+        elif login_senha[0][0] == 'Secre':
+            self.LoginSecretaria()
+
         else:
 
             if login == login_senha[0][0] and senha == login_senha[0][1]:       
@@ -407,7 +432,37 @@ class TelaPrincipal(QMainWindow):
         print("aqui foi")
         self.ui.btn_entrar_login.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.page_teste_psico))
         
-        
+########################### Validar Login Assistente S #############################        
+    def LoginAssistenteS(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.assistente_social)
+
+########################### Validar Login Farm #############################        
+    def LoginFarm(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.farmaceutica)
+
+########################### Validar Login Fisioterapeuta #############################        
+    def LoginFisio(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.fisioterapeuta)
+
+
+########################### Validar Login Nutri #############################        
+    def LoginNutri(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.nutricionista)
+
+########################### Validar Login Psico #############################        
+    def LoginPsico(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.psicologa)
+
+########################### Validar Login Secretaria #############################        
+    def LoginSecretaria(self):
+        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+        self.ui.tipos_acesso.setCurrentWidget(self.ui.secretaria)
+
 ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
@@ -731,8 +786,9 @@ class TelaPrincipal(QMainWindow):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+            self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
-            mediaRendaFamiliar = str(dados[23])
+            mediaRendaFamiliar = str(dados[24])
 
             if mediaRendaFamiliar == 'Menos 1 salário':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(1)
@@ -746,7 +802,7 @@ class TelaPrincipal(QMainWindow):
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
 
-            meioTransporte = str(dados[24])
+            meioTransporte = str(dados[25])
 
             if meioTransporte == 'Particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(1)
@@ -765,11 +821,9 @@ class TelaPrincipal(QMainWindow):
 
             elif meioTransporte == 'Ambulância particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(5)
+           
 
-            elif meioTransporte == 'Outro':
-                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
-
-            valeTransporte = str(dados[25])
+            valeTransporte = str(dados[26])
 
             if valeTransporte == 'Passe para os dias de tratamento':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(1)
@@ -780,7 +834,7 @@ class TelaPrincipal(QMainWindow):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
-            situacaoTrabalho = str(dados[26])
+            situacaoTrabalho = str(dados[27])
 
             if situacaoTrabalho == 'Aposentado por Idade':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
@@ -809,10 +863,10 @@ class TelaPrincipal(QMainWindow):
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
-            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[27])
+            self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[28])
             
 
-            beneficio = str(dados[28])
+            beneficio = str(dados[29])
 
             if beneficio == 'BPC/Idoso':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(1)
@@ -826,11 +880,11 @@ class TelaPrincipal(QMainWindow):
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
     
-            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[29]))
-            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[29]))
+            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[30]))
+            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[30]))
 
 
-            tipoTratamento = str(dados[30])
+            tipoTratamento = str(dados[31])
 
             if tipoTratamento == 'Pré-Diálise':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(1)
@@ -841,11 +895,11 @@ class TelaPrincipal(QMainWindow):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            local_tratamento = str(dados[30])
-            if local_tratamento == dados[30]:
+            local_tratamento = str(dados[32])
+            if local_tratamento == dados[32]:
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
 
-            patologiaBase = dados[32]
+            patologiaBase = dados[33]
 
             if patologiaBase == 'Hipertensão':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(1)
@@ -865,11 +919,11 @@ class TelaPrincipal(QMainWindow):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
 
-            self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[33])
+            self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[34])
 
-            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[34]))
+            self.ui.input_alterar_data_inicio_usuario_as.setDate(QDate(dados[35]))
 
-            periodo = dados[35]
+            periodo = dados[36]
 
             if periodo == 'Matutino':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(1)
@@ -879,9 +933,9 @@ class TelaPrincipal(QMainWindow):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
-            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[36]))
+            self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
-            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[37]))
+            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_matricula_usuario_as.hide()
             return self.ui.page_alterar_usuario
         
@@ -1081,21 +1135,42 @@ class TelaPrincipal(QMainWindow):
         observacao_ = "OBS"
         situacao_trabalho = self.ui.input_situacao_trabalho_alterar_usuario_as.currentText()
         situacao_trabalho_outros = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.text()
+
+        if situacao_trabalho != "Outros":
+            situacao_trabalho_outros = self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText("")
+        else:
+            pass
+
         tipo_transporte = self.ui.input_alterar_meio_transporte_usuario_as.currentText()
         tipo_tratamento = self.ui.input_alterar_tipo_tratamento_usuario_as.currentText()
         beneficio = self.ui.input_alterar_beneficios_usuario_as.currentText()
         local_tratamento = self.ui.input_Local_Tratamento_Clinica_usuario_as.currentText()
         local_tratamento_id = local_tratamento.split("-")
-        local_tratamento_id_clinica = int(local_tratamento_id[0])
+        #local_tratamento_id_clinica = int(local_tratamento_id[0])
         patologia_base  = self.ui.input_alterar_patologia_base_usuario_as.currentText()
         outras_patologias = self.ui.input_alterar_outras_patologias_usuario_as.text()
+
+        if patologia_base != "Outros":
+            outras_patologias = self.ui.input_alterar_outras_patologias_usuario_as.setText("")
+        else:
+            pass
+
         data_ini = self.ui.input_alterar_data_inicio_usuario_as.text()
         data_inicio = "-".join(data_ini.split("/")[::-1])
         periodo = self.ui.input_alterar_periodo_usuario_as.currentText()
         media_renda_familiar = self.ui.input_alterar_renda_familiar_usuario_as.currentText()
         vale_transporte = self.ui.input_alterar_vale_transporte_usuario_as.currentText()
         tipo_deficiencia = self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText()
-        outras_deficiencias = self.ui.input_outras_deficiencias_usuario_as.text()
+        outras_deficiencias= self.ui.input_alterar_outras_deficiencias_usuario_as.text()
+
+        if tipo_deficiencia != "Outra":
+            outras_deficiencias = self.ui.input_alterar_outras_deficiencias_usuario_as.setText("")
+        else:
+            pass
+            
+
+        
+
 
 
         tarifa_social =  self.ui.input_alterar_tarifa_social_sim_usuario_as.isChecked()
@@ -2279,34 +2354,32 @@ class TelaPrincipal(QMainWindow):
 
 ######################## Deficiência base Outra################################
 
-    def on_deficiencia_base_usuario_changed(self, index):
-        texto_selecionado = self.ui.input_tipo_deficiencia_usuario_as.itemText(index)
-        
-        if texto_selecionado == "Outra":
-            self.ui.frame_491.setEnabled(True)
-            self.ui.frame_491.show()
+    def on_tipo_deficiencia_usuario_changed(self):
+
+        if self.ui.input_tipo_deficiencia_usuario_as.currentText() == "Outra":
+            self.ui.frame_502.setEnabled(True)
+            self.ui.frame_502.show()
             self.ui.input_outras_deficiencias_usuario_as.setStyleSheet("")  
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(True)
-            self.ui.input_outras_deficiencias_usuario_as.show()
+            self.ui.input_outras_deficiencias_usuario_as.show()           
         else:
-            self.ui.frame_491.hide()
-            self.ui.frame_491.setEnabled(False)
+            self.ui.frame_502.hide()
+            self.ui.frame_502.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.hide()
             self.ui.input_outras_deficiencias_usuario_as.setEnabled(False)
             self.ui.input_outras_deficiencias_usuario_as.clear()
 
-    def on_alterar_deficiencia_base_usuario_changed(self, index):
-        texto_selecionado = self.ui.input_alterar_tipo_deficiencia_usuario_as.itemText(index)
-        
-        if texto_selecionado == "Outra":
-            self.ui.frame_492.setEnabled(True)
-            self.ui.frame_492.show()
+    def on_alterar_tipo_deficiencia_usuario_changed(self):
+              
+        if self.ui.input_alterar_tipo_deficiencia_usuario_as.currentText() == "Outra":
+            self.ui.frame_550.setEnabled(True)
+            self.ui.frame_550.show()
             self.ui.input_alterar_outras_deficiencias_usuario_as.setStyleSheet("")  
             self.ui.input_alterar_outras_deficiencias_usuario_as.setEnabled(True)
-            self.ui.input_alterar_outras_deficiencias_usuario_as.show()
+            self.ui.input_alterar_outras_deficiencias_usuario_as.show()           
         else:
-            self.ui.frame_492.hide()
-            self.ui.frame_492.setEnabled(False)
+            self.ui.frame_550.hide()
+            self.ui.frame_550.setEnabled(False)
             self.ui.input_alterar_outras_deficiencias_usuario_as.hide()
             self.ui.input_alterar_outras_deficiencias_usuario_as.setEnabled(False)
             self.ui.input_alterar_outras_deficiencias_usuario_as.clear()
