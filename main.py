@@ -887,7 +887,9 @@ class TelaPrincipal(QMainWindow):
 
             local_tratamento = str(dados[32])
             if local_tratamento == dados[32]:
-                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
+                self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(1)
+            else:
+                pass
 
             patologiaBase = dados[33]
 
@@ -1157,8 +1159,6 @@ class TelaPrincipal(QMainWindow):
             outras_deficiencias = self.ui.input_alterar_outras_deficiencias_usuario_as.setText("")
         else:
             pass
-            
-
         
 
 

@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -136,7 +136,7 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -155,7 +155,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                     SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,usuario.situacao,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
