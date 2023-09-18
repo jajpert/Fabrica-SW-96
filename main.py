@@ -2352,12 +2352,14 @@ class TelaPrincipal(QMainWindow):
             id_matricula = result.get('id_matricula', '')
             nome = result.get('nome', '')
             idade = result.get('idade', '')
+            data = result.get('data', '')
             telefone = result.get('telefone', '')
             clinica = result.get('clinica', 'Não possui')
             cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
+            self.ui.input_data_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
             self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
@@ -2385,7 +2387,7 @@ class TelaPrincipal(QMainWindow):
             if quantidade and quantidade.isdigit():
                 self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(int(quantidade))
             else:
-                print("Quantidade invalidade:", quantidade)
+                print("Quantidade invalida:", quantidade)
 
             return id_beneficios
         else:

@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -900,15 +900,14 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT 
-                    pessoa.nome, 
-                    TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade,
-                    saida_beneficio.data
-                    pessoa.telefone,
-                    usuario.cns, 
-                    clinica.nome_fantasia
-                FROM pessoa
+                pessoa.nome,
+                TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade,
+                saida_beneficio.data,
+                pessoa.telefone,
+                usuario.cns,
+                clinica.nome_fantasia FROM pessoa
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                INNER JOIN clinica ON usuario.id_clinica = clinica.id_clinica
+                INNER JOIN clinica ON usuario.local_tratamento = clinica.id_clinica
                 INNER JOIN saida_beneficio ON usuario.id_usuario = saida_beneficio.id_usuario  
                 WHERE pessoa.cpf LIKE '{cpf}';
             """)
@@ -919,9 +918,10 @@ class DataBase():
                 return {
                     'nome': resultado1[0][0],
                     'idade': resultado1[0][1],
-                    'telefone': resultado1[0][2],
-                    'cns': resultado1[0][3],
-                    'clinica': resultado1[0][4],
+                    'data' : resultado1 [0][2],
+                    'telefone': resultado1[0][3],
+                    'cns': resultado1[0][4],
+                    'clinica': resultado1[0][5],
                 }
             else:
                 return None
