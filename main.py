@@ -18,6 +18,7 @@ import pandas as pd
 from reportlab.pdfgen import canvas
 import sys
 import openpyxl
+import os
 
 
 class Overlay(QWidget):
@@ -2521,6 +2522,7 @@ class TelaPrincipal(QMainWindow):
 
         pdf = canvas.Canvas("relatorioPDF.pdf")
         pdf.setFont("Times-Roman", 9)
+        pdf.setTitle("Relatório")
         
         filtered_data = []
         
@@ -2542,12 +2544,17 @@ class TelaPrincipal(QMainWindow):
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-            
-        pdf.save()
+            with open('C:/Users/vboxuser/Desktop/', 'wb') as f:
+                f.write(pdf.save())
+        
+
+        # pdf.save()
+        
+
         
         msg = QMessageBox()
-        msg.setWindowTitle('Relatório')
-        msg.setText('Relatório gerado com sucesso!')
+        msg.setWindowTitle('PDF')
+        msg.setText('PDF gerado com sucesso!')
         msg.exec()
         
 
