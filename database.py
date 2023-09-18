@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -92,7 +92,7 @@ class DataBase():
         self.connect()
         try:
             #
-            self.cursor.execute(f"""Select login, senha from colaborador where login = '{login}' and senha = '{senha}';""")
+            self.cursor.execute(f"""Select login, senha, perfil from colaborador where login = '{login}' and senha = '{senha}';""")
             result = self.cursor.fetchall() 
 
             self.cursor.execute(f"""Select id_matricula from colaborador where login = '{login}' and senha = '{senha}';""")

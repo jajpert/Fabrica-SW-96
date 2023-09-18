@@ -346,8 +346,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login = self.ui.input_usuario_login.text()
         senha = self.ui.input_senha_login.text()
         login_senha = []
+        perfil = []
         resultados = self.db.validarLogin(login,senha)
-        print(resultados)
+        #print(resultados)
 
         if resultados[0] == [] or resultados[1] == []:
             self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -356,43 +357,85 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         else:
             login_senha.append(resultados[0][0][0])
             login_senha.append(resultados[0][0][1])
+            perfil.append(resultados[0][0][2])
             matricula_colaborador = resultados[1][0][0]
             if len(login_senha)==0:
                 self.ui.inicio.setCurrentWidget(self.ui.login)
-                self.loginInvalido()    
-
-
-        elif login_senha[0][0] == login_senha[0][1]:
-                print("Login e senha não podem ser iguais")
-                
-        elif login_senha[0][0] == 'adm':
-            self.LoginAssistenteS() 
-
-        elif login_senha[0][0] == 'Farm':
-            self.LoginFarm()
-
-        elif login_senha[0][0] == 'Fisio':
-            self.LoginFisio()
-
-        elif login_senha[0][0] == 'Nutri':
-            self.LoginNutri()
-
-        elif login_senha[0][0] == 'Psico':
-            self.LoginPsico()
-
-        elif login_senha[0][0] == 'Secre':
-            self.LoginSecretaria()
-
-        else:
-
+                self.loginInvalido() 
+            elif perfil[0] == 'adm':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)          
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginAssistenteS()         
                 else:
                     print ("Usuário não encontrado")
-        # self.chama_funcoes()
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+            
+            elif perfil[0] == 'Farm':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginFarm()        
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+                
+            elif perfil[0] == 'Fisio':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginFisio()       
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido()    
+
+            elif perfil[0] == 'Nutri':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginNutri()       
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+
+            elif perfil[0] == 'Psico':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginPsico() 
+                         
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+
+            elif perfil[0] == 'Secre':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginSecretaria()      
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+                
+
         
         
 ########################### Validar Login Assistente S #############################        

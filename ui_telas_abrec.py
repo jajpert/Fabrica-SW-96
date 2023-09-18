@@ -389,7 +389,8 @@ class Ui_MainWindow(object):
         self.lineEdit_recebe_nome_as.setFont(font6)
         self.lineEdit_recebe_nome_as.setStyleSheet(u"background-color: rgb(227, 59, 78);\n"
 "color: #fff;\n"
-"border: none;")
+"border: none;\n"
+"font-size: 24")
         self.lineEdit_recebe_nome_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_6.addWidget(self.lineEdit_recebe_nome_as)
