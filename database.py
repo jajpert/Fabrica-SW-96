@@ -899,32 +899,27 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT nome, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idade, data, telefone,| cns, clinica, codigo_beneficio, descricao, quantidade FROM pessoa WHERE cpf IN ({cpf});
+                SELECT 
+                    pessoa.nome, 
+                    TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade, 
+                    pessoa.telefone
+                FROM pessoa
+                WHERE pessoa.cpf LIKE '{cpf}';
             """)
+            
             resultado1 = self.cursor.fetchall()
-            id_matricu = resultado1[0][0]
 
-            self.cursor.execute(f"""
-                SELECT clinica.nome_fantasia FROM clinica 
-                INNER JOIN usuario ON usuario.cns
-                WHERE id_matricula IN ({id_matricu});
-            """)
-            resultado2 = self.cursor.fetchall()
-
-            lista = []
-            for i in resultado1:
-                for n in i:
-                    lista.append(n)
-            for i in resultado2:
-                for n in i:
-                    lista.append(n)          
-            return lista
-        except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
-    
+            if resultado1:
+                return {
+                    'nome': resultado1[0][0],
+                    'idade': resultado1[0][1],
+                    'telefone': resultado1[0][2],
+                }
+            else:
+                return None
+        except Exception as e:
+            print(f"Error in select_retirada_beneficio_cpf: {e}")
+            return None
 
 
 

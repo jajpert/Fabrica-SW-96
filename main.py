@@ -261,7 +261,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
-        self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
+        self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_relatorio_pessoas.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
+        self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_retirada_beneficios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
@@ -312,8 +314,9 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         # page_alterar_usuario
-        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         
 
         ######SIGNALS POPUP recuperar senha login######
@@ -2343,19 +2346,22 @@ class TelaPrincipal(QMainWindow):
     def buscarRetirada(self):
         cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
         result = self.db.select_retirada_beneficio_cpf(cpf)
-        id_matricula = result[0]
-        nome = result[1]
-        telefone = result[2]
-        tamanho = int(len(result))
-        if tamanho > 3:
-            clinica = result[3]
-        else:
-            clinica = 'Não possuí'
-        self.ui.input_nome_agendamento_as.setText(nome)
-        self.ui.input_telefone_agendamento_as.setText(telefone)
-        self.ui.input_clinica_agendamento_as.setText(clinica)
+        
+        if result:
+            id_matricula = result.get('id_matricula', '')
+            nome = result.get('nome', '')
+            telefone = result.get('telefone', '')
+            clinica = result.get('clinica_nome_fantasia', 'Não possui')
 
-        return id_matricula
+            self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
+            self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
+
+            return id_matricula
+        else:
+            print("Nenhuma informação para este CPF.")
+            return None
+
     
 
 ######################## Deficiência base Outra################################
