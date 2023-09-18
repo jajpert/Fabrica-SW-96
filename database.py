@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-
+        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -140,7 +140,7 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -371,9 +371,9 @@ class DataBase():
                 SELECT pessoa.id_matricula, nome, data_nascimento,status, cpf,
                 rg, data_emissao, orgao_exp, nis, cns, sexo, pessoa.telefone, 
                 pessoa.email, cep, logradouro, numero, bairro, cidade, estado,
-                estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia,
-                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho,situacao_trabalho_outros,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base,outras_patologias,data_inicio, periodo,
+                estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia, outras_deficiencias,
+                media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho, situacao_trabalho_outros,
+                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base, outras_patologias, data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
@@ -573,7 +573,7 @@ class DataBase():
 
     def atualizar_usuario(self,endereco,pessoa,usuario):
         id_endereco_usuario = str(endereco[0])
-        id_matricula_usuario = str(usuario[14])
+        id_matricula_usuario = str(usuario[16])
         self.connect()
         try:
             self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
@@ -586,13 +586,13 @@ class DataBase():
             self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}',rg = '{pessoa[4]}', data_emissao = '{pessoa[5]}',
                                 orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', status = '{pessoa[8]}', telefone = '{pessoa[9]}', 
                                 email = '{pessoa[10]}', escolaridade = '{pessoa[11]}', estado_civil = '{pessoa[12]}',
-                                pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}' WHERE id_matricula = '{pessoa[0]}';  """)
+                                pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}', outras_deficiencias = '{pessoa[15]}' WHERE id_matricula = '{pessoa[0]}';  """)
             self.conn.commit()
 
 
-            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}',situacao_trabalho_outros = '{usuario[4]}',
+            self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}', situacao_trabalho_outros = '{usuario[4]}',
                                 tipo_transporte = '{usuario[5]}', tipo_tratamento = '{usuario[6]}', beneficio = '{usuario[7]}', local_tratamento = '{usuario[8]}',
-                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}',outras_patologias = '{usuario[12]}', tarifa_social = '{usuario[13]}', media_renda_familiar = '{usuario[14]}',
+                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}', outras_patologias = '{usuario[12]}', tarifa_social = '{usuario[13]}', media_renda_familiar = '{usuario[14]}',
                                 vale_transporte = '{usuario[15]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
             self.conn.commit()
 
