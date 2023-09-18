@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>9</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_botoes_cadastrar_as">
@@ -2303,7 +2303,7 @@ QPushButton:focus{outline: 0}</string>
                                         </property>
                                         <property name="maximumSize">
                                          <size>
-                                          <width>150</width>
+                                          <width>130</width>
                                           <height>16777215</height>
                                          </size>
                                         </property>
@@ -2357,7 +2357,7 @@ QPushButton:focus{outline: 0}</string>
                                            </property>
                                           </widget>
                                          </item>
-                                         <item alignment="Qt::AlignHCenter">
+                                         <item>
                                           <widget class="QDateEdit" name="input_nascimento_usuario_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2415,7 +2415,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
                                            <property name="calendarPopup">
-                                            <bool>false</bool>
+                                            <bool>true</bool>
                                            </property>
                                            <property name="currentSectionIndex">
                                             <number>0</number>
@@ -2826,7 +2826,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            </property>
                                           </widget>
                                          </item>
-                                         <item alignment="Qt::AlignHCenter">
+                                         <item>
                                           <widget class="QDateEdit" name="input_data_emissao_usuario_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -2884,7 +2884,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
                                            <property name="calendarPopup">
-                                            <bool>false</bool>
+                                            <bool>true</bool>
                                            </property>
                                            <property name="currentSectionIndex">
                                             <number>0</number>
@@ -4989,11 +4989,6 @@ QPushButton:pressed{
                                        <string>Ambulância particular</string>
                                       </property>
                                      </item>
-                                     <item>
-                                      <property name="text">
-                                       <string>Outro</string>
-                                      </property>
-                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -6071,7 +6066,7 @@ QPushButton:pressed{
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>130</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -6122,7 +6117,7 @@ QPushButton:pressed{
                                      </property>
                                     </widget>
                                    </item>
-                                   <item alignment="Qt::AlignHCenter">
+                                   <item>
                                     <widget class="QDateEdit" name="input_data_inicio_usuario_as">
                                      <property name="sizePolicy">
                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -6180,7 +6175,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
