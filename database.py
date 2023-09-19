@@ -92,7 +92,7 @@ class DataBase():
         self.connect()
         try:
             #
-            self.cursor.execute(f"""Select login, senha from colaborador where login = '{login}' and senha = '{senha}';""")
+            self.cursor.execute(f"""Select login, senha, perfil from colaborador where login = '{login}' and senha = '{senha}';""")
 
             result = self.cursor.fetchall()            
             return result

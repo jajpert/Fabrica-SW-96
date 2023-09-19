@@ -239,11 +239,11 @@ class TelaPrincipal(QMainWindow):
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_farm_2.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_fisio_2.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_nutri_2.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_psi_2.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_sec_2.clicked.connect(self.sairSistema)
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
@@ -394,28 +394,28 @@ class TelaPrincipal(QMainWindow):
         elif login_senha[0][0] == login_senha[0][1]:
                 print("Login e senha não podem ser iguais")
                 
-        elif login_senha[0][0] == 'Psico':
-            self.LoginPsico()
+        
+        
 
         elif login_senha[0][0] == 'adm':
             self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))     
-        elif login_senha[0][0] == 'adm':
+        elif login_senha[0][2] == 'adm':
             self.LoginAssistenteS() 
 
-        elif login_senha[0][0] == 'Farm':
+        elif login_senha[0][2] == 'farm':
             self.LoginFarm()
 
-        elif login_senha[0][0] == 'Fisio':
+        elif login_senha[0][2] == 'fisio':
             self.LoginFisio()
 
-        elif login_senha[0][0] == 'Nutri':
+        elif login_senha[0][2] == 'nutri':
             self.LoginNutri()
 
-        elif login_senha[0][0] == 'Psico':
+        elif login_senha[0][2] == 'pisc':
             self.LoginPsico()
 
-        elif login_senha[0][0] == 'Secre':
-            self.LoginSecretaria()
+        # elif login_senha[0][2] == 'secre':
+        #     self.LoginSecretaria()
 
         else:
 
@@ -427,41 +427,37 @@ class TelaPrincipal(QMainWindow):
         # self.chama_funcoes()
 
 ########################### Validar Login Psico#############################        
-    def LoginPsico(self):
-        # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
-        print("aqui foi")
-        self.ui.btn_entrar_login.clicked.connect(lambda:self.ui.inicio.setCurrentWidget(self.ui.page_teste_psico))
-        
+    
 ########################### Validar Login Assistente S #############################        
     def LoginAssistenteS(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.assistente_social)
+        self.ui.inicio.setCurrentWidget(self.ui.assistente_social)
 
 ########################### Validar Login Farm #############################        
     def LoginFarm(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.farmaceutica)
+        self.ui.inicio.setCurrentWidget(self.ui.page_farmaceutica)
 
 ########################### Validar Login Fisioterapeuta #############################        
     def LoginFisio(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.fisioterapeuta)
+        self.ui.inicio.setCurrentWidget(self.ui.page_fisioterapeuta)
 
 
 ########################### Validar Login Nutri #############################        
     def LoginNutri(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.nutricionista)
+        self.ui.inicio.setCurrentWidget(self.ui.page_nutricionista)
 
 ########################### Validar Login Psico #############################        
     def LoginPsico(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.psicologa)
+        self.ui.inicio.setCurrentWidget(self.ui.page_teste_psico)
 
 ########################### Validar Login Secretaria #############################        
-    def LoginSecretaria(self):
-        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.secretaria)
+    # def LoginSecretaria(self):
+    #     self.ui.inicio.setCurrentWidget(self.ui.area_principal)
+    #     self.ui.inicio.setCurrentWidget(self.ui.page_secretaria)
 
 ########################### Validar CEP ###############################
     def validarCep(self):

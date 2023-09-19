@@ -39,7 +39,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>5</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -733,6 +733,21 @@ QPushButton:focus{outline: 0} </string>
       </widget>
       <widget class="QWidget" name="page_teste_psico">
        <layout class="QHBoxLayout" name="horizontalLayout_93">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QStackedWidget" name="stack_psicologa_2">
           <property name="currentIndex">
@@ -1204,6 +1219,21 @@ QPushButton:focus{outline:0}</string>
       </widget>
       <widget class="QWidget" name="page_nutricionista">
        <layout class="QVBoxLayout" name="verticalLayout_133">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QStackedWidget" name="stack_nutricionista_2">
           <property name="currentIndex">
@@ -1881,6 +1911,21 @@ QPushButton:focus{outline: 0}</string>
       </widget>
       <widget class="QWidget" name="page_fisioterapeuta">
        <layout class="QVBoxLayout" name="verticalLayout_241">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QStackedWidget" name="stack_fisioterapeuta_2">
           <property name="currentIndex">
@@ -2343,6 +2388,516 @@ QPushButton:focus{outline:0}</string>
             </item>
            </layout>
           </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_farmaceutica">
+       <layout class="QVBoxLayout" name="verticalLayout_9">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="frame_12">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_8">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QStackedWidget" name="stack_fisioterapeuta_3">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="home_fisio_3">
+              <layout class="QHBoxLayout" name="horizontalLayout_170" stretch="0,6">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QFrame" name="frame_216">
+                 <property name="minimumSize">
+                  <size>
+                   <width>226</width>
+                   <height>892</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QFrame{background-color: #E33B4E}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_326">
+                  <property name="spacing">
+                   <number>16</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QPushButton" name="btn_alterar_foto_senha_farmaceutica">
+                    <property name="cursor">
+                     <cursorShape>PointingHandCursor</cursorShape>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
+                    </property>
+                    <property name="text">
+                     <string/>
+                    </property>
+                    <property name="icon">
+                     <iconset>
+                      <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
+                    </property>
+                    <property name="iconSize">
+                     <size>
+                      <width>140</width>
+                      <height>180</height>
+                     </size>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QLabel" name="label_ola_nome_farmaceutica">
+                    <property name="font">
+                     <font>
+                      <family>Abel</family>
+                      <pointsize>20</pointsize>
+                     </font>
+                    </property>
+                    <property name="styleSheet">
+                     <string notr="true">color: #fff; margin-bottom: 1em;</string>
+                    </property>
+                    <property name="text">
+                     <string>Olá, _ _ _ _ _ _</string>
+                    </property>
+                    <property name="alignment">
+                     <set>Qt::AlignCenter</set>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_217">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_171">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <spacer name="horizontalSpacer_119">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame_218">
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_352">
+                        <property name="spacing">
+                         <number>20</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>10</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>10</number>
+                        </property>
+                        <item>
+                         <widget class="QPushButton" name="btn_cadastrar_farmaceutica">
+                          <property name="minimumSize">
+                           <size>
+                            <width>140</width>
+                            <height>45</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Six Caps</family>
+                            <pointsize>24</pointsize>
+                           </font>
+                          </property>
+                          <property name="cursor">
+                           <cursorShape>PointingHandCursor</cursorShape>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                          </property>
+                          <property name="text">
+                           <string>CADASTRAR</string>
+                          </property>
+                          <property name="icon">
+                           <iconset>
+                            <normaloff>../icons/remedio.png</normaloff>../icons/remedio.png</iconset>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>30</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QPushButton" name="btn_retiradas_farmaceutica">
+                          <property name="minimumSize">
+                           <size>
+                            <width>140</width>
+                            <height>45</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Six Caps</family>
+                            <pointsize>24</pointsize>
+                           </font>
+                          </property>
+                          <property name="cursor">
+                           <cursorShape>PointingHandCursor</cursorShape>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                          </property>
+                          <property name="text">
+                           <string>RETIRADAS</string>
+                          </property>
+                          <property name="icon">
+                           <iconset>
+                            <normaloff>../icons/medicamento.png</normaloff>../icons/medicamento.png</iconset>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>30</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_120">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                  <item>
+                   <spacer name="verticalSpacer_40">
+                    <property name="orientation">
+                     <enum>Qt::Vertical</enum>
+                    </property>
+                    <property name="sizeHint" stdset="0">
+                     <size>
+                      <width>20</width>
+                      <height>200</height>
+                     </size>
+                    </property>
+                   </spacer>
+                  </item>
+                  <item>
+                   <widget class="QFrame" name="frame_507">
+                    <property name="styleSheet">
+                     <string notr="true"/>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_172">
+                     <property name="spacing">
+                      <number>0</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>20</number>
+                     </property>
+                     <item>
+                      <spacer name="horizontalSpacer_121">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame_508">
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QVBoxLayout" name="verticalLayout_353">
+                        <property name="spacing">
+                         <number>15</number>
+                        </property>
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>30</number>
+                        </property>
+                        <item>
+                         <widget class="QPushButton" name="btn_sair_farm_2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>120</width>
+                            <height>40</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <family>Abel</family>
+                            <pointsize>20</pointsize>
+                           </font>
+                          </property>
+                          <property name="cursor">
+                           <cursorShape>PointingHandCursor</cursorShape>
+                          </property>
+                          <property name="layoutDirection">
+                           <enum>Qt::RightToLeft</enum>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}
+QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}
+QPushButton:focus{outline:0}</string>
+                          </property>
+                          <property name="text">
+                           <string>SAIR  </string>
+                          </property>
+                          <property name="icon">
+                           <iconset>
+                            <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
+                          </property>
+                          <property name="iconSize">
+                           <size>
+                            <width>24</width>
+                            <height>24</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                        <item>
+                         <widget class="QFrame" name="frame_509">
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::StyledPanel</enum>
+                          </property>
+                          <property name="frameShadow">
+                           <enum>QFrame::Raised</enum>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <spacer name="horizontalSpacer_122">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_510">
+                 <property name="styleSheet">
+                  <string notr="true">QFrame{background-color:#F9D9DD}</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QHBoxLayout" name="horizontalLayout_173">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>8</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>8</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QStackedWidget" name="stackedWidget_12">
+                    <property name="currentIndex">
+                     <number>1</number>
+                    </property>
+                    <widget class="QWidget" name="page_principal_fisio_3"/>
+                    <widget class="QWidget" name="page_10"/>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -6240,7 +6795,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::MonthSection</enum>
+                                            <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -6715,7 +7270,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::MonthSection</enum>
+                                            <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>false</bool>
@@ -10096,7 +10651,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -12052,7 +12607,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -12368,7 +12923,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -15216,7 +15771,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -15645,7 +16200,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -16362,7 +16917,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -19176,7 +19731,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -19305,7 +19860,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>false</bool>
@@ -21859,7 +22414,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::MonthSection</enum>
+                                         <enum>QDateTimeEdit::DaySection</enum>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>false</bool>
@@ -22041,7 +22596,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::MonthSection</enum>
+                                         <enum>QDateTimeEdit::DaySection</enum>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>false</bool>
@@ -27342,7 +27897,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
@@ -27655,7 +28210,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
@@ -29665,7 +30220,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::MonthSection</enum>
+                                                               <enum>QDateTimeEdit::DaySection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>false</bool>
@@ -30140,7 +30695,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::MonthSection</enum>
+                                                               <enum>QDateTimeEdit::DaySection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>false</bool>
@@ -33515,7 +34070,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                         </property>
                                                         <property name="currentSection">
-                                                         <enum>QDateTimeEdit::MonthSection</enum>
+                                                         <enum>QDateTimeEdit::DaySection</enum>
                                                         </property>
                                                         <property name="calendarPopup">
                                                          <bool>false</bool>
@@ -35676,7 +36231,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>false</bool>
@@ -38735,1525 +39290,27 @@ QPushButton:focus{outline:0}</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="fisioterapeuta">
-           <layout class="QVBoxLayout" name="verticalLayout_19" stretch="0">
-            <property name="spacing">
-             <number>16</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QStackedWidget" name="stack_fisioterapeuta">
-              <property name="currentIndex">
-               <number>0</number>
-              </property>
-              <widget class="QWidget" name="home_fisio">
-               <layout class="QHBoxLayout" name="horizontalLayout_23" stretch="0,6">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QFrame" name="frame_19">
-                  <property name="minimumSize">
-                   <size>
-                    <width>226</width>
-                    <height>892</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{background-color: #E33B4E}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_11">
-                   <property name="spacing">
-                    <number>16</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QPushButton" name="btn_alterar_foto_senha_fisio">
-                     <property name="cursor">
-                      <cursorShape>PointingHandCursor</cursorShape>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_ola_nome_fisio">
-                     <property name="font">
-                      <font>
-                       <family>Abel</family>
-                       <pointsize>20</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: #fff; margin-bottom: 1em;</string>
-                     </property>
-                     <property name="text">
-                      <string>Olá, _ _ _ _ _ _</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_30">
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QHBoxLayout" name="horizontalLayout_37">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                      <item>
-                       <spacer name="horizontalSpacer_19">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_53">
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_20">
-                         <property name="spacing">
-                          <number>20</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>10</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>10</number>
-                         </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_consulta_fisio">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>    CONSULTA</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QPushButton" name="btn_relatorios_fisio">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>  RELATÓRIOS</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_20">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item>
-                    <spacer name="verticalSpacer_7">
-                     <property name="orientation">
-                      <enum>Qt::Vertical</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>20</width>
-                       <height>200</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_28">
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QHBoxLayout" name="horizontalLayout_21">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <spacer name="horizontalSpacer_25">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_54">
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_36">
-                         <property name="spacing">
-                          <number>15</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>30</number>
-                         </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_sair_fisio">
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Abel</family>
-                             <pointsize>20</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="layoutDirection">
-                            <enum>Qt::RightToLeft</enum>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}
-QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}
-QPushButton:focus{outline:0}</string>
-                           </property>
-                           <property name="text">
-                            <string>SAIR  </string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>24</width>
-                             <height>24</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QFrame" name="frame_217">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_26">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_29">
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{background-color:#F9D9DD}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_22">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>8</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>8</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QStackedWidget" name="stackedWidget_5">
-                     <property name="currentIndex">
-                      <number>1</number>
-                     </property>
-                     <widget class="QWidget" name="page_principal_fisio"/>
-                     <widget class="QWidget" name="page_8"/>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="psicologa">
-           <layout class="QVBoxLayout" name="verticalLayout_22">
-            <property name="spacing">
-             <number>16</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QStackedWidget" name="stack_psicologa">
-              <property name="currentIndex">
-               <number>0</number>
-              </property>
-              <widget class="QWidget" name="home_psi">
-               <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="0,6">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QFrame" name="frame_33">
-                  <property name="minimumSize">
-                   <size>
-                    <width>226</width>
-                    <height>892</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{background-color: #E33B4E}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_24">
-                   <property name="spacing">
-                    <number>16</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QPushButton" name="btn_alterar_foto_senha_psi">
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_ola_nome_psi">
-                     <property name="font">
-                      <font>
-                       <family>Abel</family>
-                       <pointsize>20</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: #fff; margin-bottom: 1em;</string>
-                     </property>
-                     <property name="text">
-                      <string>Olá, _ _ _ _ _ _</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_58">
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QHBoxLayout" name="horizontalLayout_39">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                      <item>
-                       <spacer name="horizontalSpacer_31">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_59">
-                        <property name="font">
-                         <font>
-                          <family>Six Caps</family>
-                          <pointsize>20</pointsize>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_39">
-                         <property name="spacing">
-                          <number>20</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>10</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>10</number>
-                         </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_consulta_psi">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>   CONSULTA</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/consultando.png</normaloff>../icons/consultando.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QPushButton" name="btn_relatorios_psi">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>  RELATÓRIOS</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_32">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item>
-                    <spacer name="verticalSpacer_8">
-                     <property name="orientation">
-                      <enum>Qt::Vertical</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>20</width>
-                       <height>200</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_34">
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QHBoxLayout" name="horizontalLayout_25">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <spacer name="horizontalSpacer_27">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_57">
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_38">
-                         <property name="spacing">
-                          <number>15</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>30</number>
-                         </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_sair_psi">
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Abel</family>
-                             <pointsize>20</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="layoutDirection">
-                            <enum>Qt::RightToLeft</enum>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}
-QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}
-QPushButton:focus{outline:0}</string>
-                           </property>
-                           <property name="text">
-                            <string>SAIR  </string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>24</width>
-                             <height>24</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QFrame" name="frame_219">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_28">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_31">
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{background-color:#F9D9DD}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_24">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>8</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>8</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QStackedWidget" name="stackedWidget_7">
-                     <property name="currentIndex">
-                      <number>1</number>
-                     </property>
-                     <widget class="QWidget" name="page_principal_psi"/>
-                     <widget class="QWidget" name="page_14"/>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="secretaria">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="font">
-            <font>
-             <family>Abel</family>
-             <pointsize>20</pointsize>
-            </font>
-           </property>
-           <property name="cursor">
-            <cursorShape>PointingHandCursor</cursorShape>
-           </property>
-           <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="styleSheet">
-            <string notr="true"/>
-           </property>
-           <layout class="QVBoxLayout" name="verticalLayout_9">
-            <property name="spacing">
-             <number>16</number>
-            </property>
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <item>
-             <widget class="QStackedWidget" name="stack_secretaria">
-              <property name="currentIndex">
-               <number>0</number>
-              </property>
-              <widget class="QWidget" name="home_sec">
-               <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0,6">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>0</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QFrame" name="frame_15">
-                  <property name="minimumSize">
-                   <size>
-                    <width>226</width>
-                    <height>892</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{background-color: #E33B4E}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_10">
-                   <property name="spacing">
-                    <number>16</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QPushButton" name="btn_alterar_foto_senha_secret">
-                     <property name="styleSheet">
-                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="label_ola_nome_secret">
-                     <property name="font">
-                      <font>
-                       <family>Abel</family>
-                       <pointsize>20</pointsize>
-                      </font>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">color: #fff; margin-bottom: 1em;</string>
-                     </property>
-                     <property name="text">
-                      <string>Olá, _ _ _ _ _ _</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_18">
-                     <property name="styleSheet">
-                      <string notr="true"/>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QHBoxLayout" name="horizontalLayout_13">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>0</number>
-                      </property>
-                      <item>
-                       <spacer name="horizontalSpacer_13">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_50">
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_12" stretch="0,0,0">
-                         <property name="spacing">
-                          <number>20</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>10</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>10</number>
-                         </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_agenda_sec">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="layoutDirection">
-                            <enum>Qt::LeftToRight</enum>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>    AGENDA</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QPushButton" name="btn_eventos_sec">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string>   EVENTOS</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/festa-de-aniversario.png</normaloff>../icons/festa-de-aniversario.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QPushButton" name="btn_relatorios_sec">
-                           <property name="minimumSize">
-                            <size>
-                             <width>140</width>
-                             <height>45</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Six Caps</family>
-                             <pointsize>24</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
-QPushButton:hover{background-color: hsl(6, 94%, 92%)}
-QPushButton:focus{outline: 0}</string>
-                           </property>
-                           <property name="text">
-                            <string> RELATÓRIOS</string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>30</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_14">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item>
-                    <spacer name="verticalSpacer_4">
-                     <property name="orientation">
-                      <enum>Qt::Vertical</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                      <size>
-                       <width>20</width>
-                       <height>200</height>
-                      </size>
-                     </property>
-                    </spacer>
-                   </item>
-                   <item>
-                    <widget class="QFrame" name="frame_17">
-                     <property name="minimumSize">
-                      <size>
-                       <width>0</width>
-                       <height>0</height>
-                      </size>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QHBoxLayout" name="horizontalLayout_12" stretch="0,0,0">
-                      <property name="spacing">
-                       <number>0</number>
-                      </property>
-                      <property name="leftMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="topMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="rightMargin">
-                       <number>0</number>
-                      </property>
-                      <property name="bottomMargin">
-                       <number>20</number>
-                      </property>
-                      <item>
-                       <spacer name="horizontalSpacer_11">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                      <item>
-                       <widget class="QFrame" name="frame_12">
-                        <property name="styleSheet">
-                         <string notr="true"/>
-                        </property>
-                        <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                        </property>
-                        <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                        </property>
-                        <layout class="QVBoxLayout" name="verticalLayout_8">
-                         <property name="spacing">
-                          <number>15</number>
-                         </property>
-                         <property name="leftMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="topMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="rightMargin">
-                          <number>0</number>
-                         </property>
-                         <property name="bottomMargin">
-                          <number>30</number>
-                         </property>
-                         <item>
-                          <widget class="QPushButton" name="btn_sair_sec">
-                           <property name="minimumSize">
-                            <size>
-                             <width>120</width>
-                             <height>40</height>
-                            </size>
-                           </property>
-                           <property name="font">
-                            <font>
-                             <family>Abel</family>
-                             <pointsize>20</pointsize>
-                            </font>
-                           </property>
-                           <property name="cursor">
-                            <cursorShape>PointingHandCursor</cursorShape>
-                           </property>
-                           <property name="layoutDirection">
-                            <enum>Qt::RightToLeft</enum>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}
-QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}
-QPushButton:focus{outline:0}</string>
-                           </property>
-                           <property name="text">
-                            <string>SAIR  </string>
-                           </property>
-                           <property name="icon">
-                            <iconset>
-                             <normaloff>../icons/ligar.png</normaloff>../icons/ligar.png</iconset>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>24</width>
-                             <height>24</height>
-                            </size>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <widget class="QFrame" name="frame_220">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="maximumSize">
-                            <size>
-                             <width>16777215</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::StyledPanel</enum>
-                           </property>
-                           <property name="frameShadow">
-                            <enum>QFrame::Raised</enum>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </widget>
-                      </item>
-                      <item>
-                       <spacer name="horizontalSpacer_12">
-                        <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                        </property>
-                        <property name="sizeHint" stdset="0">
-                         <size>
-                          <width>40</width>
-                          <height>20</height>
-                         </size>
-                        </property>
-                       </spacer>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_16">
-                  <property name="styleSheet">
-                   <string notr="true">QFrame{background-color:#F9D9DD}</string>
-                  </property>
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="0">
-                   <property name="spacing">
-                    <number>0</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>8</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>8</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QStackedWidget" name="stackedWidget_3">
-                     <property name="currentIndex">
-                      <number>1</number>
-                     </property>
-                     <widget class="QWidget" name="page_principal_sec"/>
-                     <widget class="QWidget" name="page_4"/>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </widget>
-            </item>
-           </layout>
-          </widget>
          </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="page_secretaria">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QStackedWidget" name="stack_secretaria_2">
           <property name="currentIndex">
