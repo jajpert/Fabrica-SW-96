@@ -120,9 +120,9 @@ class DataBase():
     def cadastro_retirada_beneficios(self,saida_beneficio):
         self.connect()
         try:
-            args = (saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,)
-            self.cursor.execute('INSERT INTO saida_beneficio')
-            idsaida_beneficio = self.cursor.lastrowid
+            args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4],saida_beneficio[5],saida_beneficio[6],saida_beneficio[7],saida_beneficio[8],saida_beneficio[9],saida_beneficio[10],saida_beneficio[11],saida_beneficio[12],saida_beneficio[13])
+            self.cursor.execute('INSERT INTO saida_beneficio (id_saida_beneficio,cpf,nome_retirada,idade_retirada,data_retirada,telefone_retirada,cns_retirada,clinica_retirada,codigo_retirada,descricao_retirada,quantidade_retirada,id_usuario,id_beneficio) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            id_saida_beneficio = self.cursor.lastrowid
 
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"

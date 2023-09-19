@@ -350,6 +350,7 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
         self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
+        self.ui.btn_finalizar_cadastro_retirada_beneficio.clicked.connect(self.cadastro_retirada_beneficios)
         self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
@@ -1924,7 +1925,7 @@ class TelaPrincipal(QMainWindow):
             self.ui.input_cpf_cadastro_retirada_beneficio.setText("")
             self.ui.input_nome_cadastro_retirada_beneficio.setText("")
             self.ui.input_idade_cadastro_retirada_beneficio.setText("")
-            self.ui.input_dateEdit_cadastro_retirada_beneficio.setDate(QDate(2020, 1, 1))
+            self.ui.input_data_cadastro_retirada_beneficio.setDate(QDate(2020, 1, 1))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText("")
             self.ui.input_cns_cadastro_retirada_beneficio.setText("")
             self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
@@ -2404,35 +2405,34 @@ class TelaPrincipal(QMainWindow):
             msg.exec()
             return None
 
-    def buscar_clinica_nome_fantasia_retirada_beneficio(self):
-        lista_clinica = self.db.select_clinica_ids()
-        nomes = []
-        id_clinicas = []
+    # def buscar_clinica_nome_fantasia_retirada_beneficio(self):
+    #     lista_clinica = self.db.select_clinica_ids()
+    #     nomes = []
+    #     id_clinicas = []
 
-        for i in lista_clinica:
-            id_clinica = i[0]
-            id_clinica = str(id_clinica).zfill(3)
-            nome = self.db.select_nome_Clinica(id_clinica)
-            id_clinicas.append(id_clinica)
-            nomes.append(nome)
-        convertendo_nome = [i[0] for i in nomes]
-        convertendo_nome_clinica = [i[0] for i in convertendo_nome]
-        count = 0
-        itens = 0
-        while count < len(convertendo_nome_clinica):
-            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
-            self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
-            itens += 1
-            count += 1
-
-
-
+    #     for i in lista_clinica:
+    #         id_clinica = i[0]
+    #         id_clinica = str(id_clinica).zfill(3)
+    #         nome = self.db.select_nome_Clinica(id_clinica)
+    #         id_clinicas.append(id_clinica)
+    #         nomes.append(nome)
+    #     convertendo_nome = [i[0] for i in nomes]
+    #     convertendo_nome_clinica = [i[0] for i in convertendo_nome]
+    #     count = 0
+    #     itens = 0
+    #     while count < len(convertendo_nome_clinica):
+    #         self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+    #         self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
+    #         itens += 1
+    #         count += 1
 
     def cadastro_retirada_beneficios(self):
             cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
             nome = self.ui.input_nome_cadastro_retirada_beneficio.text()
             idade = self.ui.input_idade_cadastro_retirada_beneficio.text()
-            data = self.ui.input_dateEdit_cadastro_retirada_beneficio.text()
+            data = self.ui.input_data_cadastro_retirada_beneficio.text()
+            data_consulta = "-".join(data.split("/")[::-1])
+
             telefone = self.ui.input_telefone_cadastro_retirada_beneficio.text()
             cns = self.ui.input_cns_cadastro_retirada_beneficio.text()
             clinica = self.ui.input_clinica_cadastro_retirada_beneficio.text()
@@ -2441,7 +2441,7 @@ class TelaPrincipal(QMainWindow):
             descricao = self.ui.input_descricao_cadastro_beneficio.text()         
             quantidade = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
 
-            tupla_retirada_beneficios = (cpf,nome,idade,data,telefone,cns,clinica,codigo,descricao,quantidade)
+            tupla_retirada_beneficios = (cpf,nome,idade,data,data_consulta,telefone,cns,clinica,codigo,descricao,quantidade)
             
             result = []
             result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
