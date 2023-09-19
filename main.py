@@ -2544,7 +2544,15 @@ class TelaPrincipal(QMainWindow):
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-            with open('C:/Users/vboxuser/Desktop/', 'wb') as f:
+            
+            path = "C:/Abrec/"
+            os.path.isdir(path)
+            # if os.path.isdir(path):
+            #     return "True"
+            # else:
+            #     return "False"
+            
+            with open(path, 'wb') as f:
                 f.write(pdf.save())
         
 
