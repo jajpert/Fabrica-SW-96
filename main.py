@@ -2367,13 +2367,12 @@ class TelaPrincipal(QMainWindow):
             idade = result.get('idade', '')
            
             telefone = result.get('telefone', '')
-            clinica = result.get('clinica', 'Não possui')
             cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
-            self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
+            self.buscar_clinica_nome_fantasia_retirada_beneficio()
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
             return id_matricula
         else:
@@ -2404,6 +2403,30 @@ class TelaPrincipal(QMainWindow):
             msg.setText("Nenhuma informação para este Código.")
             msg.exec()
             return None
+
+    def buscar_clinica_nome_fantasia_retirada_beneficio(self):
+        lista_clinica = self.db.select_clinica_ids()
+        nomes = []
+        id_clinicas = []
+
+        for i in lista_clinica:
+            id_clinica = i[0]
+            id_clinica = str(id_clinica).zfill(3)
+            nome = self.db.select_nome_Clinica(id_clinica)
+            id_clinicas.append(id_clinica)
+            nomes.append(nome)
+        convertendo_nome = [i[0] for i in nomes]
+        convertendo_nome_clinica = [i[0] for i in convertendo_nome]
+        count = 0
+        itens = 0
+        while count < len(convertendo_nome_clinica):
+            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+            self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
+            itens += 1
+            count += 1
+
+
+
 
     def cadastro_retirada_beneficios(self):
             cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
