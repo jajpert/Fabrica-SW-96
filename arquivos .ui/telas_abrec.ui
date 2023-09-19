@@ -1421,7 +1421,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>15</number>
+                      <number>8</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -4554,7 +4554,7 @@ QPushButton:focus{outline: 0}</string>
                                         </property>
                                         <property name="maximumSize">
                                          <size>
-                                          <width>150</width>
+                                          <width>130</width>
                                           <height>16777215</height>
                                          </size>
                                         </property>
@@ -4580,7 +4580,7 @@ QPushButton:focus{outline: 0}</string>
                                          <property name="bottomMargin">
                                           <number>0</number>
                                          </property>
-                                         <item alignment="Qt::AlignHCenter">
+                                         <item>
                                           <widget class="QLabel" name="label_nascimento_usuario_as">
                                            <property name="minimumSize">
                                             <size>
@@ -4608,7 +4608,7 @@ QPushButton:focus{outline: 0}</string>
                                            </property>
                                           </widget>
                                          </item>
-                                         <item alignment="Qt::AlignHCenter">
+                                         <item>
                                           <widget class="QDateEdit" name="input_nascimento_usuario_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -4663,10 +4663,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::MonthSection</enum>
+                                            <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
                                            <property name="calendarPopup">
-                                            <bool>false</bool>
+                                            <bool>true</bool>
                                            </property>
                                            <property name="currentSectionIndex">
                                             <number>0</number>
@@ -5032,7 +5032,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         </property>
                                         <property name="maximumSize">
                                          <size>
-                                          <width>155</width>
+                                          <width>130</width>
                                           <height>16777215</height>
                                          </size>
                                         </property>
@@ -5083,7 +5083,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            </property>
                                           </widget>
                                          </item>
-                                         <item alignment="Qt::AlignHCenter">
+                                         <item>
                                           <widget class="QDateEdit" name="input_data_emissao_usuario_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -5138,10 +5138,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::MonthSection</enum>
+                                            <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
                                            <property name="calendarPopup">
-                                            <bool>false</bool>
+                                            <bool>true</bool>
                                            </property>
                                            <property name="currentSectionIndex">
                                             <number>0</number>
@@ -8413,7 +8413,7 @@ QPushButton:pressed{
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>130</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -8464,7 +8464,7 @@ QPushButton:pressed{
                                      </property>
                                     </widget>
                                    </item>
-                                   <item alignment="Qt::AlignHCenter">
+                                   <item>
                                     <widget class="QDateEdit" name="input_data_inicio_usuario_as">
                                      <property name="sizePolicy">
                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -8519,10 +8519,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -9047,6 +9047,12 @@ QPushButton:focus{outline:0}</string>
                                           <height>32</height>
                                          </size>
                                         </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
                                         <property name="styleSheet">
                                          <string notr="true">border-radius: 15px;</string>
                                         </property>
@@ -9093,7 +9099,14 @@ QPushButton:focus{outline:0}</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_codigo_cadastro_beneficio"/>
+                                       <widget class="QLineEdit" name="input_codigo_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                       </widget>
                                       </item>
                                      </layout>
                                     </widget>
@@ -9121,7 +9134,14 @@ QPushButton:focus{outline:0}</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_lote_cadastro_beneficio"/>
+                                       <widget class="QLineEdit" name="input_lote_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                       </widget>
                                       </item>
                                      </layout>
                                     </widget>
@@ -9155,6 +9175,12 @@ QPushButton:focus{outline:0}</string>
                                           <width>0</width>
                                           <height>32</height>
                                          </size>
+                                        </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
                                         </property>
                                         <property name="styleSheet">
                                          <string notr="true">border-color: rgb(168, 87, 81);
@@ -9307,7 +9333,14 @@ border-style: solid;</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_descricao_cadastro_beneficio"/>
+                                       <widget class="QLineEdit" name="input_descricao_cadastro_beneficio">
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
+                                       </widget>
                                       </item>
                                      </layout>
                                     </widget>
@@ -9342,11 +9375,36 @@ border-style: solid;</string>
                                           <height>32</height>
                                          </size>
                                         </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
                                         <property name="styleSheet">
-                                         <string notr="true">border-color: rgb(168, 87, 81);
-border-radius: 15px;
-border-width:1px;
-border-style: solid;</string>
+                                         <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                        </property>
+                                        <property name="inputMethodHints">
+                                         <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                        </property>
+                                        <property name="wrapping">
+                                         <bool>true</bool>
+                                        </property>
+                                        <property name="frame">
+                                         <bool>true</bool>
+                                        </property>
+                                        <property name="alignment">
+                                         <set>Qt::AlignCenter</set>
+                                        </property>
+                                        <property name="buttonSymbols">
+                                         <enum>QAbstractSpinBox::NoButtons</enum>
+                                        </property>
+                                        <property name="correctionMode">
+                                         <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+                                        </property>
+                                        <property name="calendarPopup">
+                                         <bool>true</bool>
                                         </property>
                                        </widget>
                                       </item>
@@ -9383,11 +9441,29 @@ border-style: solid;</string>
                                           <height>32</height>
                                          </size>
                                         </property>
+                                        <property name="font">
+                                         <font>
+                                          <family>Abel</family>
+                                          <pointsize>12</pointsize>
+                                         </font>
+                                        </property>
                                         <property name="styleSheet">
                                          <string notr="true">border-color: rgb(168, 87, 81);
 border-radius: 15px;
 border-width:1px;
 border-style: solid;</string>
+                                        </property>
+                                        <property name="inputMethodHints">
+                                         <set>Qt::ImhDigitsOnly|Qt::ImhPreferNumbers</set>
+                                        </property>
+                                        <property name="alignment">
+                                         <set>Qt::AlignCenter</set>
+                                        </property>
+                                        <property name="maximum">
+                                         <number>1000000</number>
+                                        </property>
+                                        <property name="stepType">
+                                         <enum>QAbstractSpinBox::AdaptiveDecimalStepType</enum>
                                         </property>
                                        </widget>
                                       </item>
@@ -10475,10 +10551,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -10791,10 +10867,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -13533,7 +13609,7 @@ QPushButton:focus{outline:0}</string>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>155</width>
+                                    <width>130</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -13584,7 +13660,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                     </widget>
                                    </item>
-                                   <item alignment="Qt::AlignHCenter">
+                                   <item>
                                     <widget class="QDateEdit" name="input_data_nascimento_colaborador_as">
                                      <property name="sizePolicy">
                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -13639,10 +13715,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -13968,7 +14044,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  <widget class="QFrame" name="frame_207">
                                   <property name="maximumSize">
                                    <size>
-                                    <width>151</width>
+                                    <width>130</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -14068,10 +14144,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -14659,10 +14735,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </font>
                                      </property>
                                      <property name="inputMask">
-                                      <string>000.000.000</string>
+                                      <string/>
                                      </property>
                                      <property name="text">
-                                      <string>..</string>
+                                      <string/>
                                      </property>
                                     </widget>
                                    </item>
@@ -14679,7 +14755,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>120</width>
+                                    <width>130</width>
                                     <height>58</height>
                                    </size>
                                   </property>
@@ -14730,7 +14806,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                     </widget>
                                    </item>
-                                   <item alignment="Qt::AlignHCenter">
+                                   <item>
                                     <widget class="QDateEdit" name="input_data_admissao_colaborador_as_5">
                                      <property name="sizePolicy">
                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -14785,10 +14861,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -17490,7 +17566,7 @@ QPushButton:focus{outline:0}
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>130</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -17544,7 +17620,7 @@ QPushButton:focus{outline:0}
                                      </property>
                                     </widget>
                                    </item>
-                                   <item alignment="Qt::AlignHCenter">
+                                   <item>
                                     <widget class="QDateEdit" name="input_data_inicio_cursos_as">
                                      <property name="sizePolicy">
                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -17599,10 +17675,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -17622,7 +17698,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>160</width>
+                                    <width>130</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -17673,7 +17749,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                     </widget>
                                    </item>
-                                   <item alignment="Qt::AlignHCenter">
+                                   <item>
                                     <widget class="QDateEdit" name="input_data_termino_cursos_as">
                                      <property name="sizePolicy">
                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -17728,10 +17804,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                      <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
                                      <property name="calendarPopup">
-                                      <bool>false</bool>
+                                      <bool>true</bool>
                                      </property>
                                      <property name="currentSectionIndex">
                                       <number>0</number>
@@ -20282,10 +20358,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::MonthSection</enum>
+                                         <enum>QDateTimeEdit::DaySection</enum>
                                         </property>
                                         <property name="calendarPopup">
-                                         <bool>false</bool>
+                                         <bool>true</bool>
                                         </property>
                                         <property name="currentSectionIndex">
                                          <number>0</number>
@@ -20464,10 +20540,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::MonthSection</enum>
+                                         <enum>QDateTimeEdit::DaySection</enum>
                                         </property>
                                         <property name="calendarPopup">
-                                         <bool>false</bool>
+                                         <bool>true</bool>
                                         </property>
                                         <property name="currentSectionIndex">
                                          <number>0</number>
@@ -22318,7 +22394,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                <enum>QDateTimeEdit::DaySection</enum>
                                               </property>
                                               <property name="displayFormat">
-                                               <string>d/M/yyyy</string>
+                                               <string>dd/MM/yyyy</string>
                                               </property>
                                               <property name="calendarPopup">
                                                <bool>true</bool>
@@ -25659,7 +25735,7 @@ QPushButton:pressed{
                                                   </property>
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>155</width>
+                                                    <width>130</width>
                                                     <height>16777215</height>
                                                    </size>
                                                   </property>
@@ -25710,7 +25786,7 @@ QPushButton:pressed{
                                                      </property>
                                                     </widget>
                                                    </item>
-                                                   <item alignment="Qt::AlignHCenter">
+                                                   <item>
                                                     <widget class="QDateEdit" name="input_alterar_data_nascimento_cuidador_as">
                                                      <property name="sizePolicy">
                                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -25765,10 +25841,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
-                                                      <bool>false</bool>
+                                                      <bool>true</bool>
                                                      </property>
                                                      <property name="currentSectionIndex">
                                                       <number>0</number>
@@ -25972,7 +26048,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                   </property>
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>155</width>
+                                                    <width>130</width>
                                                     <height>16777215</height>
                                                    </size>
                                                   </property>
@@ -26023,7 +26099,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      </property>
                                                     </widget>
                                                    </item>
-                                                   <item alignment="Qt::AlignHCenter">
+                                                   <item>
                                                     <widget class="QDateEdit" name="input_alterar_data_emissao_cuidador_as">
                                                      <property name="sizePolicy">
                                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -26078,10 +26154,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
-                                                      <bool>false</bool>
+                                                      <bool>true</bool>
                                                      </property>
                                                      <property name="currentSectionIndex">
                                                       <number>0</number>
@@ -27979,7 +28055,7 @@ QPushButton:focus{outline:0}</string>
                                                            </property>
                                                            <property name="maximumSize">
                                                             <size>
-                                                             <width>160</width>
+                                                             <width>130</width>
                                                              <height>16777215</height>
                                                             </size>
                                                            </property>
@@ -28033,7 +28109,7 @@ QPushButton:focus{outline:0}</string>
                                                               </property>
                                                              </widget>
                                                             </item>
-                                                            <item alignment="Qt::AlignHCenter">
+                                                            <item>
                                                              <widget class="QDateEdit" name="input_alterar_nascimento_usuario_as">
                                                               <property name="sizePolicy">
                                                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -28088,10 +28164,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::MonthSection</enum>
+                                                               <enum>QDateTimeEdit::DaySection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
-                                                               <bool>false</bool>
+                                                               <bool>true</bool>
                                                               </property>
                                                               <property name="currentSectionIndex">
                                                                <number>0</number>
@@ -28457,7 +28533,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                            </property>
                                                            <property name="maximumSize">
                                                             <size>
-                                                             <width>155</width>
+                                                             <width>130</width>
                                                              <height>16777215</height>
                                                             </size>
                                                            </property>
@@ -28508,7 +28584,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                               </property>
                                                              </widget>
                                                             </item>
-                                                            <item alignment="Qt::AlignHCenter">
+                                                            <item>
                                                              <widget class="QDateEdit" name="input_alterar_data_emissao_usuario_as">
                                                               <property name="sizePolicy">
                                                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -28563,10 +28639,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::MonthSection</enum>
+                                                               <enum>QDateTimeEdit::DaySection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
-                                                               <bool>false</bool>
+                                                               <bool>true</bool>
                                                               </property>
                                                               <property name="currentSectionIndex">
                                                                <number>0</number>
@@ -29204,7 +29280,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                               <property name="maximumSize">
                                                                <size>
                                                                 <width>170</width>
-                                                                <height>16777215</height>
+                                                                <height>60</height>
                                                                </size>
                                                               </property>
                                                               <property name="frameShape">
@@ -29270,13 +29346,13 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                     <property name="minimumSize">
                                                                      <size>
                                                                       <width>50</width>
-                                                                      <height>15</height>
+                                                                      <height>14</height>
                                                                      </size>
                                                                     </property>
                                                                     <property name="maximumSize">
                                                                      <size>
                                                                       <width>50</width>
-                                                                      <height>15</height>
+                                                                      <height>14</height>
                                                                      </size>
                                                                     </property>
                                                                     <property name="font">
@@ -29374,7 +29450,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                     <property name="sizeHint" stdset="0">
                                                                      <size>
                                                                       <width>20</width>
-                                                                      <height>18</height>
+                                                                      <height>17</height>
                                                                      </size>
                                                                     </property>
                                                                    </spacer>
@@ -31832,7 +31908,7 @@ QPushButton:pressed{
                                                      </property>
                                                      <property name="maximumSize">
                                                       <size>
-                                                       <width>160</width>
+                                                       <width>130</width>
                                                        <height>16777215</height>
                                                       </size>
                                                      </property>
@@ -31883,7 +31959,7 @@ QPushButton:pressed{
                                                         </property>
                                                        </widget>
                                                       </item>
-                                                      <item alignment="Qt::AlignHCenter">
+                                                      <item>
                                                        <widget class="QDateEdit" name="input_alterar_data_inicio_usuario_as">
                                                         <property name="sizePolicy">
                                                          <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -31938,10 +32014,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                         </property>
                                                         <property name="currentSection">
-                                                         <enum>QDateTimeEdit::MonthSection</enum>
+                                                         <enum>QDateTimeEdit::DaySection</enum>
                                                         </property>
                                                         <property name="calendarPopup">
-                                                         <bool>false</bool>
+                                                         <bool>true</bool>
                                                         </property>
                                                         <property name="currentSectionIndex">
                                                          <number>0</number>
@@ -33196,7 +33272,7 @@ QPushButton:focus{outline:0}</string>
                                                  <widget class="QFrame" name="frame_395">
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>151</width>
+                                                    <width>130</width>
                                                     <height>16777215</height>
                                                    </size>
                                                   </property>
@@ -33206,7 +33282,7 @@ QPushButton:focus{outline:0}</string>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
-                                                  <layout class="QVBoxLayout" name="verticalLayout_269">
+                                                  <layout class="QVBoxLayout" name="verticalLayout_127">
                                                    <property name="spacing">
                                                     <number>0</number>
                                                    </property>
@@ -33242,7 +33318,13 @@ QPushButton:focus{outline:0}</string>
                                                     </widget>
                                                    </item>
                                                    <item>
-                                                    <widget class="QLineEdit" name="input_alterar_data_emissao_rg_colaborador_as">
+                                                    <widget class="QDateEdit" name="input_alterar_data_emissao_rg_colaborador_as">
+                                                     <property name="sizePolicy">
+                                                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                                       <horstretch>0</horstretch>
+                                                       <verstretch>0</verstretch>
+                                                      </sizepolicy>
+                                                     </property>
                                                      <property name="minimumSize">
                                                       <size>
                                                        <width>0</width>
@@ -33252,14 +33334,51 @@ QPushButton:focus{outline:0}</string>
                                                      <property name="maximumSize">
                                                       <size>
                                                        <width>16777215</width>
-                                                       <height>30</height>
+                                                       <height>16777215</height>
                                                       </size>
                                                      </property>
                                                      <property name="font">
                                                       <font>
                                                        <family>Abel</family>
-                                                       <pointsize>12</pointsize>
+                                                       <pointsize>11</pointsize>
                                                       </font>
+                                                     </property>
+                                                     <property name="focusPolicy">
+                                                      <enum>Qt::WheelFocus</enum>
+                                                     </property>
+                                                     <property name="contextMenuPolicy">
+                                                      <enum>Qt::DefaultContextMenu</enum>
+                                                     </property>
+                                                     <property name="layoutDirection">
+                                                      <enum>Qt::LeftToRight</enum>
+                                                     </property>
+                                                     <property name="autoFillBackground">
+                                                      <bool>false</bool>
+                                                     </property>
+                                                     <property name="styleSheet">
+                                                      <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                                     </property>
+                                                     <property name="inputMethodHints">
+                                                      <set>Qt::ImhDate|Qt::ImhPreferNumbers</set>
+                                                     </property>
+                                                     <property name="alignment">
+                                                      <set>Qt::AlignCenter</set>
+                                                     </property>
+                                                     <property name="buttonSymbols">
+                                                      <enum>QAbstractSpinBox::NoButtons</enum>
+                                                     </property>
+                                                     <property name="correctionMode">
+                                                      <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+                                                     </property>
+                                                     <property name="currentSection">
+                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                     </property>
+                                                     <property name="calendarPopup">
+                                                      <bool>true</bool>
+                                                     </property>
+                                                     <property name="currentSectionIndex">
+                                                      <number>0</number>
                                                      </property>
                                                     </widget>
                                                    </item>
@@ -33993,7 +34112,7 @@ QPushButton:focus{outline:0}</string>
                                                   </property>
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>155</width>
+                                                    <width>130</width>
                                                     <height>16777215</height>
                                                    </size>
                                                   </property>
@@ -34044,7 +34163,7 @@ QPushButton:focus{outline:0}</string>
                                                      </property>
                                                     </widget>
                                                    </item>
-                                                   <item alignment="Qt::AlignHCenter">
+                                                   <item>
                                                     <widget class="QDateEdit" name="input_alterar_data_nascimento_colaborador_as">
                                                      <property name="sizePolicy">
                                                       <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
@@ -34099,10 +34218,10 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
-                                                      <bool>false</bool>
+                                                      <bool>true</bool>
                                                      </property>
                                                      <property name="currentSectionIndex">
                                                       <number>0</number>
@@ -36518,6 +36637,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            </property>
                                            <property name="locale">
                                             <locale language="Portuguese" country="Brazil"/>
+                                           </property>
+                                           <property name="alignment">
+                                            <set>Qt::AlignCenter</set>
                                            </property>
                                            <property name="displayFormat">
                                             <string>dd/MM/yyyy</string>
