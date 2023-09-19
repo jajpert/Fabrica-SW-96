@@ -1382,7 +1382,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>7</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -10809,18 +10809,15 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                           </spacer>
                                          </item>
                                          <item>
-                                          <widget class="QFrame" name="frame_507">
-                                           <property name="minimumSize">
-                                            <size>
-                                             <width>111</width>
-                                             <height>55</height>
-                                            </size>
-                                           </property>
+                                          <widget class="QFrame" name="frame_511">
                                            <property name="maximumSize">
                                             <size>
-                                             <width>111</width>
-                                             <height>55</height>
+                                             <width>200</width>
+                                             <height>16777215</height>
                                             </size>
+                                           </property>
+                                           <property name="locale">
+                                            <locale language="Portuguese" country="Brazil"/>
                                            </property>
                                            <property name="frameShape">
                                             <enum>QFrame::StyledPanel</enum>
@@ -10828,7 +10825,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                            <property name="frameShadow">
                                             <enum>QFrame::Raised</enum>
                                            </property>
-                                           <layout class="QVBoxLayout" name="verticalLayout_350">
+                                           <layout class="QVBoxLayout" name="verticalLayout_354">
                                             <property name="spacing">
                                              <number>0</number>
                                             </property>
@@ -10846,18 +10843,6 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                             </property>
                                             <item>
                                              <widget class="QLabel" name="label_data_cadastro_retirada_beneficio">
-                                              <property name="minimumSize">
-                                               <size>
-                                                <width>0</width>
-                                                <height>0</height>
-                                               </size>
-                                              </property>
-                                              <property name="maximumSize">
-                                               <size>
-                                                <width>16777215</width>
-                                                <height>16777215</height>
-                                               </size>
-                                              </property>
                                               <property name="font">
                                                <font>
                                                 <family>Abel</family>
@@ -10870,23 +10855,32 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                              </widget>
                                             </item>
                                             <item>
-                                             <widget class="QDateEdit" name="input_dateEdit_cadastro_retirada_beneficio">
-                                              <property name="minimumSize">
+                                             <widget class="QDateEdit" name="input_data_cadastro_retirada_beneficio">
+                                              <property name="maximumSize">
                                                <size>
-                                                <width>0</width>
-                                                <height>32</height>
+                                                <width>120</width>
+                                                <height>16777215</height>
                                                </size>
                                               </property>
                                               <property name="styleSheet">
-                                               <string notr="true">QDateEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
-QDateEdit:focus{outline:0; border: 2px solid #A85751};
-border-color: rgb(168, 87, 81);
-border-radius: 15px;
-border-width:1px;
-border-style: solid;
-
-
-</string>
+                                               <string notr="true">QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
+                                              </property>
+                                              <property name="locale">
+                                               <locale language="Portuguese" country="Brazil"/>
+                                              </property>
+                                              <property name="displayFormat">
+                                               <string>dd/MM/yyyy</string>
+                                              </property>
+                                              <property name="calendarPopup">
+                                               <bool>true</bool>
+                                              </property>
+                                              <property name="date">
+                                               <date>
+                                                <year>2023</year>
+                                                <month>1</month>
+                                                <day>1</day>
+                                               </date>
                                               </property>
                                              </widget>
                                             </item>
