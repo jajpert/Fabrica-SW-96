@@ -2367,12 +2367,13 @@ class TelaPrincipal(QMainWindow):
             idade = result.get('idade', '')
            
             telefone = result.get('telefone', '')
+            # clinica = result.get('clinica', 'Não possui')
             cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
-            self.buscar_clinica_nome_fantasia_retirada_beneficio()
+            # self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
             return id_matricula
         else:
