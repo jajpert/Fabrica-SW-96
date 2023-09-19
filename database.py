@@ -914,12 +914,13 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT 
-                    pessoa.nome, 
+                    pessoa.nome,
                     TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade, 
                     pessoa.telefone,
-                    usuario.cns
-                FROM pessoa
+                    usuario.cns,
+                    clinica.nome_fantasia FROM pessoa
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                 WHERE pessoa.cpf LIKE '{cpf}';
             """)
             
@@ -929,9 +930,9 @@ class DataBase():
                 return {
                     'nome': resultado1[0][0],
                     'idade': resultado1[0][1],
-                    'telefone': resultado1[0][3],
-                    'cns': resultado1[0][4],
-                    'clinica': resultado1[0][5],
+                    'telefone': resultado1[0][2],
+                    'cns': resultado1[0][3],
+                    'clinica': resultado1[0][4],
                 }
             else:
                 return None
@@ -944,8 +945,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT 
-                    descricao, 
-                    quantidade
+                    descricao
                 FROM beneficios
                 WHERE id_beneficios LIKE '{id_beneficios}';
             """)

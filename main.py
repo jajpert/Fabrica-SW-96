@@ -2364,16 +2364,15 @@ class TelaPrincipal(QMainWindow):
         if result:
             id_matricula = result.get('id_matricula', '')
             nome = result.get('nome', '')
-            idade = result.get('idade', '')
-           
+            idade = result.get('idade', '')          
             telefone = result.get('telefone', '')
-            # clinica = result.get('clinica', 'Não possui')
+            clinica = result.get('clinica', 'Não possui')
             cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
-            # self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
             return id_matricula
         else:
@@ -2395,8 +2394,8 @@ class TelaPrincipal(QMainWindow):
             
             self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText(id_beneficios)
             self.ui.input_descricao_cadastro_retirada_beneficio.setText(descricao)
-
             return id_beneficios
+        
         else:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
