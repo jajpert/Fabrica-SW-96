@@ -117,6 +117,20 @@ class DataBase():
             #print(err)
             return "ERRO",str(err)
         
+    def cadastro_retirada_beneficios(self,saida_beneficio):
+        self.connect()
+        try:
+            args = (saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,saida_beneficio,)
+            self.cursor.execute('INSERT INTO saida_beneficio')
+            idsaida_beneficio = self.cursor.lastrowid
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
     def select_usuario(self):
         self.connect()
         try:
@@ -918,7 +932,6 @@ class DataBase():
                 return {
                     'nome': resultado1[0][0],
                     'idade': resultado1[0][1],
-                    'data' : resultado1 [0][2],
                     'telefone': resultado1[0][3],
                     'cns': resultado1[0][4],
                     'clinica': resultado1[0][5],
@@ -944,8 +957,7 @@ class DataBase():
 
             if resultado1:
                 return {
-                    'descricao': resultado1[0][0],
-                    'quantidade': resultado1[0][1],
+                'descricao': resultado1[0][0],                    
                     
                 }
             else:

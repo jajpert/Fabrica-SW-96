@@ -1919,7 +1919,20 @@ class TelaPrincipal(QMainWindow):
         self.ui.input_descricao_cadastro_beneficio.setText("")
         self.ui.input_dateEdit_cadastro_beneficio.setDate(QDate(2000, 1, 1))          
         self.ui.input_spinBox_cadastro_beneficio.setValue(0)
-
+    
+    def limparCamposCadastroRetiradaBeneficios(self):
+            self.ui.input_cpf_cadastro_retirada_beneficio.setText("")
+            self.ui.input_nome_cadastro_retirada_beneficio.setText("")
+            self.ui.input_idade_cadastro_retirada_beneficio.setText("")
+            self.ui.input_dateEdit_cadastro_retirada_beneficio.setDate(QDate(2020, 1, 1))
+            self.ui.input_telefone_cadastro_retirada_beneficio.setText("")
+            self.ui.input_cns_cadastro_retirada_beneficio.setText("")
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
+            
+            self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText("")
+            self.ui.input_descricao_cadastro_beneficio.setText("")       
+            self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(0)
+        
     def buscar_clinica_nome_fantasia(self):
         lista_clinica = self.db.select_clinica_ids()
         nomes = []
@@ -2352,14 +2365,13 @@ class TelaPrincipal(QMainWindow):
             id_matricula = result.get('id_matricula', '')
             nome = result.get('nome', '')
             idade = result.get('idade', '')
-            data = result.get('data', '')
+           
             telefone = result.get('telefone', '')
             clinica = result.get('clinica', 'Não possui')
             cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
-            self.ui.input_data_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
             self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
@@ -2380,14 +2392,9 @@ class TelaPrincipal(QMainWindow):
         if result:
             id_beneficios = result.get('id_beneficios', '')
             descricao = result.get('descricao', '')
-            quantidade = result.get('data_nascimento', '')
             
             self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText(id_beneficios)
             self.ui.input_descricao_cadastro_retirada_beneficio.setText(descricao)
-            if quantidade and quantidade.isdigit():
-                self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(int(quantidade))
-            else:
-                print("Quantidade invalida:", quantidade)
 
             return id_beneficios
         else:
@@ -2398,6 +2405,31 @@ class TelaPrincipal(QMainWindow):
             msg.exec()
             return None
 
+    def cadastro_retirada_beneficios(self):
+            cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+            nome = self.ui.input_nome_cadastro_retirada_beneficio.text()
+            idade = self.ui.input_idade_cadastro_retirada_beneficio.text()
+            data = self.ui.input_dateEdit_cadastro_retirada_beneficio.text()
+            telefone = self.ui.input_telefone_cadastro_retirada_beneficio.text()
+            cns = self.ui.input_cns_cadastro_retirada_beneficio.text()
+            clinica = self.ui.input_clinica_cadastro_retirada_beneficio.text()
+            
+            codigo = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
+            descricao = self.ui.input_descricao_cadastro_beneficio.text()         
+            quantidade = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
+
+            tupla_retirada_beneficios = (cpf,nome,idade,data,telefone,cns,clinica,codigo,descricao,quantidade)
+            
+            result = []
+            result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Retirada de Beneficios")
+            msg.setText("Cadastro de retirada efetuado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
+            self.limparCamposCadastroRetiradaBeneficios()
+    
     
 
 ######################## Deficiência base Outra################################
