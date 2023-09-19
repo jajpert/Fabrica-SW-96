@@ -2428,20 +2428,20 @@ class TelaPrincipal(QMainWindow):
 
     def cadastro_retirada_beneficios(self):
             cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
-            nome = self.ui.input_nome_cadastro_retirada_beneficio.text()
-            idade = self.ui.input_idade_cadastro_retirada_beneficio.text()
-            data = self.ui.input_data_cadastro_retirada_beneficio.text()
-            data_consulta = "-".join(data.split("/")[::-1])
+            nome_retirada = self.ui.input_nome_cadastro_retirada_beneficio.text()
+            idade_retirada = self.ui.input_idade_cadastro_retirada_beneficio.text()
+            data_retirada = self.ui.input_data_cadastro_retirada_beneficio.text()
+            data_consulta = "-".join(data_retirada.split("/")[::-1])
 
-            telefone = self.ui.input_telefone_cadastro_retirada_beneficio.text()
-            cns = self.ui.input_cns_cadastro_retirada_beneficio.text()
-            clinica = self.ui.input_clinica_cadastro_retirada_beneficio.text()
+            telefone_retirada = self.ui.input_telefone_cadastro_retirada_beneficio.text()
+            cns_retirada = self.ui.input_cns_cadastro_retirada_beneficio.text()
+            clinica_retirada = self.ui.input_clinica_cadastro_retirada_beneficio.text()
             
-            codigo = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
-            descricao = self.ui.input_descricao_cadastro_beneficio.text()         
-            quantidade = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
+            codigo_retirada = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
+            descricao_retirada = self.ui.input_descricao_cadastro_beneficio.text()         
+            quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
 
-            tupla_retirada_beneficios = (cpf,nome,idade,data,data_consulta,telefone,cns,clinica,codigo,descricao,quantidade)
+            tupla_retirada_beneficios = (cpf,nome_retirada,idade_retirada,data_retirada,data_consulta,telefone_retirada,cns_retirada,clinica_retirada,codigo_retirada,descricao_retirada,quantidade_retirada)
             
             result = []
             result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
