@@ -1,33 +1,24 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrec.ui'
+## Form generated from reading UI file 'telas_abreccsHCdP.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.2
+## Created by: Qt User Interface Compiler version 6.4.1
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication, QCheckBox,
-    QComboBox, QDateEdit, QDateTimeEdit, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QTextEdit, QTimeEdit,
-    QToolButton, QVBoxLayout, QWidget)
+from qtcore import * 
+from icons import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(2080, 1021)
+        ############ valida email ##############
+        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
+        #######################################
+        MainWindow.resize(1864, 894)
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(12)
@@ -80,7 +71,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(36)
         self.label_Logo_ABREC.setFont(font1)
         self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
-        self.label_Logo_ABREC.setPixmap(QPixmap(u"../icons/Logo ABREC.png"))
+        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
         self.label_Logo_ABREC.setScaledContents(True)
 
         self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
@@ -155,7 +146,7 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(25, 25))
         self.label_2.setStyleSheet(u"QLabel{border-radius: 16px; background-color: #fff}")
-        self.label_2.setPixmap(QPixmap(u"../icons/pessoas.png"))
+        self.label_2.setPixmap(QPixmap(u"./icons/pessoas.png"))
         self.label_2.setScaledContents(True)
 
         self.horizontalLayout_29.addWidget(self.label_2)
@@ -191,7 +182,7 @@ class Ui_MainWindow(object):
         self.toolButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toolButton.setStyleSheet(u"background-color: #fff; border: hidden")
         icon = QIcon()
-        icon.addFile(u"../icons/olho_fechado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./icons/olho_fechado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.toolButton.setIcon(icon)
         self.toolButton.setIconSize(QSize(25, 25))
 
@@ -308,7 +299,7 @@ class Ui_MainWindow(object):
         self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
         self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
         self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
-        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"../icons/Abrec logo paint-02 (2).png"))
+        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
         self.label_Abrec_Logo_Paint.setScaledContents(True)
 
         self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
@@ -364,7 +355,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_foto_senha_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_foto_senha_as.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
         icon1 = QIcon()
-        icon1.addFile(u"../icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"./icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_foto_senha_as.setIcon(icon1)
         self.btn_alterar_foto_senha_as.setIconSize(QSize(140, 180))
 
@@ -398,7 +389,8 @@ class Ui_MainWindow(object):
         self.lineEdit_recebe_nome_as.setFont(font6)
         self.lineEdit_recebe_nome_as.setStyleSheet(u"background-color: rgb(227, 59, 78);\n"
 "color: #fff;\n"
-"border: none;")
+"border: none;\n"
+"font-size: 24")
         self.lineEdit_recebe_nome_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_6.addWidget(self.lineEdit_recebe_nome_as)
@@ -429,16 +421,16 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_as.setObjectName(u"btn_cadastrar_as")
         self.btn_cadastrar_as.setMinimumSize(QSize(140, 45))
         self.btn_cadastrar_as.setMaximumSize(QSize(140, 45))
-        font7 = QFont()
-        font7.setFamilies([u"Six Caps"])
-        font7.setPointSize(24)
-        self.btn_cadastrar_as.setFont(font7)
+        font6 = QFont()
+        font6.setFamilies([u"Six Caps"])
+        font6.setPointSize(24)
+        self.btn_cadastrar_as.setFont(font6)
         self.btn_cadastrar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon2 = QIcon()
-        icon2.addFile(u"../icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_as.setIcon(icon2)
         self.btn_cadastrar_as.setIconSize(QSize(30, 30))
 
@@ -448,13 +440,13 @@ class Ui_MainWindow(object):
         self.btn_consulta_as.setObjectName(u"btn_consulta_as")
         self.btn_consulta_as.setMinimumSize(QSize(140, 45))
         self.btn_consulta_as.setMaximumSize(QSize(140, 45))
-        self.btn_consulta_as.setFont(font7)
+        self.btn_consulta_as.setFont(font6)
         self.btn_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon3 = QIcon()
-        icon3.addFile(u"../icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"./icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_consulta_as.setIcon(icon3)
         self.btn_consulta_as.setIconSize(QSize(30, 30))
 
@@ -464,13 +456,13 @@ class Ui_MainWindow(object):
         self.btn_agenda_as.setObjectName(u"btn_agenda_as")
         self.btn_agenda_as.setMinimumSize(QSize(140, 45))
         self.btn_agenda_as.setMaximumSize(QSize(140, 45))
-        self.btn_agenda_as.setFont(font7)
+        self.btn_agenda_as.setFont(font6)
         self.btn_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_agenda_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon4 = QIcon()
-        icon4.addFile(u"../icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"./icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_agenda_as.setIcon(icon4)
         self.btn_agenda_as.setIconSize(QSize(30, 30))
 
@@ -480,13 +472,13 @@ class Ui_MainWindow(object):
         self.btn_relatorios_as.setObjectName(u"btn_relatorios_as")
         self.btn_relatorios_as.setMinimumSize(QSize(140, 45))
         self.btn_relatorios_as.setMaximumSize(QSize(140, 45))
-        self.btn_relatorios_as.setFont(font7)
+        self.btn_relatorios_as.setFont(font6)
         self.btn_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon5 = QIcon()
-        icon5.addFile(u"../icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"./icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_relatorios_as.setIcon(icon5)
         self.btn_relatorios_as.setIconSize(QSize(30, 30))
 
@@ -496,13 +488,13 @@ class Ui_MainWindow(object):
         self.btn_parceiros_as.setObjectName(u"btn_parceiros_as")
         self.btn_parceiros_as.setMinimumSize(QSize(140, 45))
         self.btn_parceiros_as.setMaximumSize(QSize(140, 45))
-        self.btn_parceiros_as.setFont(font7)
+        self.btn_parceiros_as.setFont(font6)
         self.btn_parceiros_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_parceiros_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon6 = QIcon()
-        icon6.addFile(u"../icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_parceiros_as.setIcon(icon6)
         self.btn_parceiros_as.setIconSize(QSize(30, 30))
 
@@ -554,7 +546,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
         icon7 = QIcon()
-        icon7.addFile(u"../icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_sair_as.setIcon(icon7)
         self.btn_sair_as.setIconSize(QSize(24, 24))
 
@@ -579,10 +571,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.frame_49)
 
-        self.verticalLayout_6.setStretch(0, 2)
-        self.verticalLayout_6.setStretch(1, 2)
-        self.verticalLayout_6.setStretch(2, 2)
-        self.verticalLayout_6.setStretch(5, 2)
 
         self.horizontalLayout_9.addWidget(self.frame_9)
 
@@ -596,11 +584,11 @@ class Ui_MainWindow(object):
         self.gridLayout_4.setContentsMargins(0, 0, 8, 0)
         self.stackedWidget_2 = QStackedWidget(self.frame_10)
         self.stackedWidget_2.setObjectName(u"stackedWidget_2")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.stackedWidget_2.sizePolicy().hasHeightForWidth())
-        self.stackedWidget_2.setSizePolicy(sizePolicy2)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.stackedWidget_2.sizePolicy().hasHeightForWidth())
+        self.stackedWidget_2.setSizePolicy(sizePolicy)
         self.page_principal_as = QWidget()
         self.page_principal_as.setObjectName(u"page_principal_as")
         self.stackedWidget_2.addWidget(self.page_principal_as)
@@ -673,8 +661,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_329.setContentsMargins(20, 0, 0, 0)
         self.frame_473 = QFrame(self.frame_472)
         self.frame_473.setObjectName(u"frame_473")
-        sizePolicy2.setHeightForWidth(self.frame_473.sizePolicy().hasHeightForWidth())
-        self.frame_473.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_473.sizePolicy().hasHeightForWidth())
+        self.frame_473.setSizePolicy(sizePolicy)
         self.frame_473.setMinimumSize(QSize(0, 70))
         self.frame_473.setMaximumSize(QSize(16777215, 70))
         self.frame_473.setStyleSheet(u"")
@@ -1078,8 +1066,11 @@ class Ui_MainWindow(object):
 
         self.btn_cep_buscar_fornecedor_as = QPushButton(self.frame_497)
         self.btn_cep_buscar_fornecedor_as.setObjectName(u"btn_cep_buscar_fornecedor_as")
-        sizePolicy.setHeightForWidth(self.btn_cep_buscar_fornecedor_as.sizePolicy().hasHeightForWidth())
-        self.btn_cep_buscar_fornecedor_as.setSizePolicy(sizePolicy)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btn_cep_buscar_fornecedor_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_fornecedor_as.setSizePolicy(sizePolicy1)
         self.btn_cep_buscar_fornecedor_as.setMinimumSize(QSize(25, 30))
         self.btn_cep_buscar_fornecedor_as.setMaximumSize(QSize(25, 30))
         self.btn_cep_buscar_fornecedor_as.setStyleSheet(u"QPushButton{\n"
@@ -1109,7 +1100,7 @@ class Ui_MainWindow(object):
 "        color: rgb(249, 217, 221);   \n"
 "}")
         icon8 = QIcon()
-        icon8.addFile(u"../icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cep_buscar_fornecedor_as.setIcon(icon8)
 
         self.verticalLayout_345.addWidget(self.btn_cep_buscar_fornecedor_as)
@@ -1180,11 +1171,11 @@ class Ui_MainWindow(object):
 
         self.input_numero_fornecedor_as = QLineEdit(self.frame_487)
         self.input_numero_fornecedor_as.setObjectName(u"input_numero_fornecedor_as")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.input_numero_fornecedor_as.sizePolicy().hasHeightForWidth())
-        self.input_numero_fornecedor_as.setSizePolicy(sizePolicy3)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.input_numero_fornecedor_as.sizePolicy().hasHeightForWidth())
+        self.input_numero_fornecedor_as.setSizePolicy(sizePolicy2)
         self.input_numero_fornecedor_as.setMinimumSize(QSize(60, 30))
         self.input_numero_fornecedor_as.setMaximumSize(QSize(60, 30))
         self.input_numero_fornecedor_as.setFont(font)
@@ -1382,10 +1373,10 @@ class Ui_MainWindow(object):
         self.btn_voltar_fornecedor_as.setObjectName(u"btn_voltar_fornecedor_as")
         self.btn_voltar_fornecedor_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_fornecedor_as.setMaximumSize(QSize(100, 40))
-        font8 = QFont()
-        font8.setFamilies([u"Abel"])
-        font8.setPointSize(18)
-        self.btn_voltar_fornecedor_as.setFont(font8)
+        font7 = QFont()
+        font7.setFamilies([u"Abel"])
+        font7.setPointSize(18)
+        self.btn_voltar_fornecedor_as.setFont(font7)
         self.btn_voltar_fornecedor_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_fornecedor_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -1400,7 +1391,7 @@ class Ui_MainWindow(object):
         self.btn_finalizar_fornecedor_as = QPushButton(self.frame_493)
         self.btn_finalizar_fornecedor_as.setObjectName(u"btn_finalizar_fornecedor_as")
         self.btn_finalizar_fornecedor_as.setMinimumSize(QSize(125, 40))
-        self.btn_finalizar_fornecedor_as.setFont(font8)
+        self.btn_finalizar_fornecedor_as.setFont(font7)
         self.btn_finalizar_fornecedor_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_finalizar_fornecedor_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_finalizar_fornecedor_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -1448,17 +1439,17 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_cuidador_usuario_as.setObjectName(u"btn_cadastrar_cuidador_usuario_as")
         self.btn_cadastrar_cuidador_usuario_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_cuidador_usuario_as.setMaximumSize(QSize(700, 154))
-        font9 = QFont()
-        font9.setFamilies([u"Six Caps"])
-        font9.setPointSize(60)
-        self.btn_cadastrar_cuidador_usuario_as.setFont(font9)
+        font8 = QFont()
+        font8.setFamilies([u"Six Caps"])
+        font8.setPointSize(60)
+        self.btn_cadastrar_cuidador_usuario_as.setFont(font8)
         self.btn_cadastrar_cuidador_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_cuidador_usuario_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_cuidador_usuario_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon9 = QIcon()
-        icon9.addFile(u"../icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_cuidador_usuario_as.setIcon(icon9)
         self.btn_cadastrar_cuidador_usuario_as.setIconSize(QSize(80, 80))
 
@@ -1468,14 +1459,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_colaborador_as.setObjectName(u"btn_cadastrar_colaborador_as")
         self.btn_cadastrar_colaborador_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_colaborador_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_colaborador_as.setFont(font9)
+        self.btn_cadastrar_colaborador_as.setFont(font8)
         self.btn_cadastrar_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_colaborador_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_colaborador_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon10 = QIcon()
-        icon10.addFile(u"../icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_colaborador_as.setIcon(icon10)
         self.btn_cadastrar_colaborador_as.setIconSize(QSize(80, 80))
 
@@ -1485,14 +1476,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_cursos_oficinas_as.setObjectName(u"btn_cadastrar_cursos_oficinas_as")
         self.btn_cadastrar_cursos_oficinas_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_cursos_oficinas_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_cursos_oficinas_as.setFont(font9)
+        self.btn_cadastrar_cursos_oficinas_as.setFont(font8)
         self.btn_cadastrar_cursos_oficinas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_cursos_oficinas_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_cursos_oficinas_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon11 = QIcon()
-        icon11.addFile(u"../icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_cursos_oficinas_as.setIcon(icon11)
         self.btn_cadastrar_cursos_oficinas_as.setIconSize(QSize(80, 80))
 
@@ -1502,14 +1493,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_alterar_dados_as.setObjectName(u"btn_cadastrar_alterar_dados_as")
         self.btn_cadastrar_alterar_dados_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_alterar_dados_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_alterar_dados_as.setFont(font9)
+        self.btn_cadastrar_alterar_dados_as.setFont(font8)
         self.btn_cadastrar_alterar_dados_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_alterar_dados_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_alterar_dados_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon12 = QIcon()
-        icon12.addFile(u"../icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon12.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_alterar_dados_as.setIcon(icon12)
         self.btn_cadastrar_alterar_dados_as.setIconSize(QSize(80, 80))
 
@@ -1547,14 +1538,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_clinica_as.setObjectName(u"btn_cadastrar_clinica_as")
         self.btn_cadastrar_clinica_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_clinica_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_clinica_as.setFont(font9)
+        self.btn_cadastrar_clinica_as.setFont(font8)
         self.btn_cadastrar_clinica_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_clinica_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_clinica_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon13 = QIcon()
-        icon13.addFile(u"../icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u"./icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_clinica_as.setIcon(icon13)
         self.btn_cadastrar_clinica_as.setIconSize(QSize(80, 80))
 
@@ -1564,14 +1555,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_fornecedores_as.setObjectName(u"btn_cadastrar_fornecedores_as")
         self.btn_cadastrar_fornecedores_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_fornecedores_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_fornecedores_as.setFont(font9)
+        self.btn_cadastrar_fornecedores_as.setFont(font8)
         self.btn_cadastrar_fornecedores_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_fornecedores_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_fornecedores_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon14 = QIcon()
-        icon14.addFile(u"../icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon14.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_fornecedores_as.setIcon(icon14)
         self.btn_cadastrar_fornecedores_as.setIconSize(QSize(80, 80))
 
@@ -1581,14 +1572,14 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_beneficios_as.setObjectName(u"btn_cadastrar_beneficios_as")
         self.btn_cadastrar_beneficios_as.setMinimumSize(QSize(700, 154))
         self.btn_cadastrar_beneficios_as.setMaximumSize(QSize(700, 154))
-        self.btn_cadastrar_beneficios_as.setFont(font9)
+        self.btn_cadastrar_beneficios_as.setFont(font8)
         self.btn_cadastrar_beneficios_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_beneficios_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_cadastrar_beneficios_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon15 = QIcon()
-        icon15.addFile(u"../../../../Downloads/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_beneficios_as.setIcon(icon15)
         self.btn_cadastrar_beneficios_as.setIconSize(QSize(80, 80))
 
@@ -1665,7 +1656,7 @@ class Ui_MainWindow(object):
         self.btn_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_foto_usuario_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
         icon16 = QIcon()
-        icon16.addFile(u"../icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_foto_usuario_as.setIcon(icon16)
         self.btn_foto_usuario_as.setIconSize(QSize(120, 120))
 
@@ -1774,17 +1765,17 @@ class Ui_MainWindow(object):
 
         self.input_nascimento_usuario_as = QDateEdit(self.frame_63)
         self.input_nascimento_usuario_as.setObjectName(u"input_nascimento_usuario_as")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-        sizePolicy4.setHorizontalStretch(0)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.input_nascimento_usuario_as.sizePolicy().hasHeightForWidth())
-        self.input_nascimento_usuario_as.setSizePolicy(sizePolicy4)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy3.setHorizontalStretch(0)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.input_nascimento_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_nascimento_usuario_as.setSizePolicy(sizePolicy3)
         self.input_nascimento_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_nascimento_usuario_as.setMaximumSize(QSize(16777215, 30))
-        font10 = QFont()
-        font10.setFamilies([u"Abel"])
-        font10.setPointSize(11)
-        self.input_nascimento_usuario_as.setFont(font10)
+        font9 = QFont()
+        font9.setFamilies([u"Abel"])
+        font9.setPointSize(11)
+        self.input_nascimento_usuario_as.setFont(font9)
         self.input_nascimento_usuario_as.setFocusPolicy(Qt.WheelFocus)
         self.input_nascimento_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_nascimento_usuario_as.setLayoutDirection(Qt.LeftToRight)
@@ -1833,7 +1824,7 @@ class Ui_MainWindow(object):
         self.input_situacao_ativo_usuario_as = QRadioButton(self.frame_65)
         self.input_situacao_ativo_usuario_as.setObjectName(u"input_situacao_ativo_usuario_as")
         self.input_situacao_ativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_ativo_usuario_as.setFont(font10)
+        self.input_situacao_ativo_usuario_as.setFont(font9)
         self.input_situacao_ativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_33.addWidget(self.input_situacao_ativo_usuario_as)
@@ -1841,7 +1832,7 @@ class Ui_MainWindow(object):
         self.input_situacao_inativo_usuario_as = QRadioButton(self.frame_65)
         self.input_situacao_inativo_usuario_as.setObjectName(u"input_situacao_inativo_usuario_as")
         self.input_situacao_inativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_inativo_usuario_as.setFont(font10)
+        self.input_situacao_inativo_usuario_as.setFont(font9)
         self.input_situacao_inativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_33.addWidget(self.input_situacao_inativo_usuario_as)
@@ -1945,11 +1936,11 @@ class Ui_MainWindow(object):
 
         self.input_data_emissao_usuario_as = QDateEdit(self.frame_68)
         self.input_data_emissao_usuario_as.setObjectName(u"input_data_emissao_usuario_as")
-        sizePolicy4.setHeightForWidth(self.input_data_emissao_usuario_as.sizePolicy().hasHeightForWidth())
-        self.input_data_emissao_usuario_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_emissao_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_usuario_as.setSizePolicy(sizePolicy3)
         self.input_data_emissao_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_data_emissao_usuario_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_emissao_usuario_as.setFont(font10)
+        self.input_data_emissao_usuario_as.setFont(font9)
         self.input_data_emissao_usuario_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_emissao_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_emissao_usuario_as.setLayoutDirection(Qt.LeftToRight)
@@ -2063,9 +2054,9 @@ class Ui_MainWindow(object):
         self.frame_60 = QFrame(self.frame_46)
         self.frame_60.setObjectName(u"frame_60")
         self.frame_60.setMaximumSize(QSize(16777215, 60))
-        font11 = QFont()
-        font11.setPointSize(7)
-        self.frame_60.setFont(font11)
+        font10 = QFont()
+        font10.setPointSize(7)
+        self.frame_60.setFont(font10)
         self.frame_60.setStyleSheet(u"")
         self.frame_60.setFrameShape(QFrame.StyledPanel)
         self.frame_60.setFrameShadow(QFrame.Raised)
@@ -2232,8 +2223,8 @@ class Ui_MainWindow(object):
 
         self.btn_cep_buscar_usuario_as = QPushButton(self.frame_419)
         self.btn_cep_buscar_usuario_as.setObjectName(u"btn_cep_buscar_usuario_as")
-        sizePolicy.setHeightForWidth(self.btn_cep_buscar_usuario_as.sizePolicy().hasHeightForWidth())
-        self.btn_cep_buscar_usuario_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_cep_buscar_usuario_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_usuario_as.setSizePolicy(sizePolicy1)
         self.btn_cep_buscar_usuario_as.setMinimumSize(QSize(0, 31))
         self.btn_cep_buscar_usuario_as.setMaximumSize(QSize(25, 31))
         self.btn_cep_buscar_usuario_as.setStyleSheet(u"QPushButton{\n"
@@ -2554,13 +2545,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_58.setContentsMargins(0, 0, 0, 0)
         self.input_pessoa_cdeficiencia_sim_usuario_as = QRadioButton(self.frame_130)
         self.input_pessoa_cdeficiencia_sim_usuario_as.setObjectName(u"input_pessoa_cdeficiencia_sim_usuario_as")
-        self.input_pessoa_cdeficiencia_sim_usuario_as.setFont(font10)
+        self.input_pessoa_cdeficiencia_sim_usuario_as.setFont(font9)
 
         self.horizontalLayout_58.addWidget(self.input_pessoa_cdeficiencia_sim_usuario_as)
 
         self.label_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_130)
         self.label_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"label_pessoa_cdeficiencia_nao_usuario_as")
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setFont(font10)
+        self.label_pessoa_cdeficiencia_nao_usuario_as.setFont(font9)
 
         self.horizontalLayout_58.addWidget(self.label_pessoa_cdeficiencia_nao_usuario_as)
 
@@ -2608,8 +2599,8 @@ class Ui_MainWindow(object):
         self.frame_502 = QFrame(self.frame_8)
         self.frame_502.setObjectName(u"frame_502")
         self.frame_502.setEnabled(False)
-        sizePolicy2.setHeightForWidth(self.frame_502.sizePolicy().hasHeightForWidth())
-        self.frame_502.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_502.sizePolicy().hasHeightForWidth())
+        self.frame_502.setSizePolicy(sizePolicy)
         self.frame_502.setMinimumSize(QSize(170, 58))
         self.frame_502.setMaximumSize(QSize(170, 58))
         self.frame_502.setFrameShape(QFrame.StyledPanel)
@@ -2888,14 +2879,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_59.setContentsMargins(0, 0, 0, 0)
         self.input_tarifa_social_sim_usuario_as = QRadioButton(self.frame_87)
         self.input_tarifa_social_sim_usuario_as.setObjectName(u"input_tarifa_social_sim_usuario_as")
-        self.input_tarifa_social_sim_usuario_as.setFont(font10)
+        self.input_tarifa_social_sim_usuario_as.setFont(font9)
         self.input_tarifa_social_sim_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_59.addWidget(self.input_tarifa_social_sim_usuario_as)
 
         self.input_tarifa_social_nao_usuario_as = QRadioButton(self.frame_87)
         self.input_tarifa_social_nao_usuario_as.setObjectName(u"input_tarifa_social_nao_usuario_as")
-        self.input_tarifa_social_nao_usuario_as.setFont(font10)
+        self.input_tarifa_social_nao_usuario_as.setFont(font9)
         self.input_tarifa_social_nao_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_59.addWidget(self.input_tarifa_social_nao_usuario_as)
@@ -3076,11 +3067,11 @@ class Ui_MainWindow(object):
 
         self.input_data_inicio_usuario_as = QDateEdit(self.frame_132)
         self.input_data_inicio_usuario_as.setObjectName(u"input_data_inicio_usuario_as")
-        sizePolicy4.setHeightForWidth(self.input_data_inicio_usuario_as.sizePolicy().hasHeightForWidth())
-        self.input_data_inicio_usuario_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_inicio_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_data_inicio_usuario_as.setSizePolicy(sizePolicy3)
         self.input_data_inicio_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_data_inicio_usuario_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_inicio_usuario_as.setFont(font10)
+        self.input_data_inicio_usuario_as.setFont(font9)
         self.input_data_inicio_usuario_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_inicio_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_inicio_usuario_as.setLayoutDirection(Qt.LeftToRight)
@@ -3189,7 +3180,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_usuario_as.setObjectName(u"btn_voltar_usuario_as")
         self.btn_voltar_usuario_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_usuario_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_usuario_as.setFont(font8)
+        self.btn_voltar_usuario_as.setFont(font7)
         self.btn_voltar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -3204,7 +3195,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_usuario_as = QPushButton(self.frame_4)
         self.btn_salvar_usuario_as.setObjectName(u"btn_salvar_usuario_as")
         self.btn_salvar_usuario_as.setMinimumSize(QSize(140, 40))
-        self.btn_salvar_usuario_as.setFont(font8)
+        self.btn_salvar_usuario_as.setFont(font7)
         self.btn_salvar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -3215,7 +3206,7 @@ class Ui_MainWindow(object):
         self.btn_proximo_as = QPushButton(self.frame_4)
         self.btn_proximo_as.setObjectName(u"btn_proximo_as")
         self.btn_proximo_as.setMinimumSize(QSize(140, 40))
-        self.btn_proximo_as.setFont(font8)
+        self.btn_proximo_as.setFont(font7)
         self.btn_proximo_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_proximo_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_proximo_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -3531,13 +3522,13 @@ class Ui_MainWindow(object):
         self.btn_salvar_cadastro_beneficio = QPushButton(self.frame_4811)
         self.btn_salvar_cadastro_beneficio.setObjectName(u"btn_salvar_cadastro_beneficio")
         self.btn_salvar_cadastro_beneficio.setMinimumSize(QSize(0, 40))
-        self.btn_salvar_cadastro_beneficio.setFont(font8)
+        self.btn_salvar_cadastro_beneficio.setFont(font7)
         self.btn_salvar_cadastro_beneficio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon17 = QIcon()
-        icon17.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon17.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_salvar_cadastro_beneficio.setIcon(icon17)
         self.btn_salvar_cadastro_beneficio.setIconSize(QSize(28, 28))
 
@@ -3707,7 +3698,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_cadastro_beneficio.setObjectName(u"btn_voltar_cadastro_beneficio")
         self.btn_voltar_cadastro_beneficio.setMinimumSize(QSize(100, 40))
         self.btn_voltar_cadastro_beneficio.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cadastro_beneficio.setFont(font8)
+        self.btn_voltar_cadastro_beneficio.setFont(font7)
         self.btn_voltar_cadastro_beneficio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -3735,13 +3726,13 @@ class Ui_MainWindow(object):
         self.btn_alterar_cadastro_beneficio = QPushButton(self.frame_4881)
         self.btn_alterar_cadastro_beneficio.setObjectName(u"btn_alterar_cadastro_beneficio")
         self.btn_alterar_cadastro_beneficio.setMinimumSize(QSize(0, 40))
-        self.btn_alterar_cadastro_beneficio.setFont(font8)
+        self.btn_alterar_cadastro_beneficio.setFont(font7)
         self.btn_alterar_cadastro_beneficio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon18 = QIcon()
-        icon18.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon18.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_cadastro_beneficio.setIcon(icon18)
         self.btn_alterar_cadastro_beneficio.setIconSize(QSize(28, 28))
 
@@ -3750,13 +3741,13 @@ class Ui_MainWindow(object):
         self.btn_excluir_cadastro_beneficio = QPushButton(self.frame_4881)
         self.btn_excluir_cadastro_beneficio.setObjectName(u"btn_excluir_cadastro_beneficio")
         self.btn_excluir_cadastro_beneficio.setMinimumSize(QSize(0, 40))
-        self.btn_excluir_cadastro_beneficio.setFont(font8)
+        self.btn_excluir_cadastro_beneficio.setFont(font7)
         self.btn_excluir_cadastro_beneficio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_excluir_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon19 = QIcon()
-        icon19.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon19.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excluir_cadastro_beneficio.setIcon(icon19)
         self.btn_excluir_cadastro_beneficio.setIconSize(QSize(28, 28))
 
@@ -3765,13 +3756,13 @@ class Ui_MainWindow(object):
         self.btn_cancelar_cadastro_beneficio = QPushButton(self.frame_4881)
         self.btn_cancelar_cadastro_beneficio.setObjectName(u"btn_cancelar_cadastro_beneficio")
         self.btn_cancelar_cadastro_beneficio.setMinimumSize(QSize(0, 40))
-        self.btn_cancelar_cadastro_beneficio.setFont(font8)
+        self.btn_cancelar_cadastro_beneficio.setFont(font7)
         self.btn_cancelar_cadastro_beneficio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cancelar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon20 = QIcon()
-        icon20.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon20.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_cadastro_beneficio.setIcon(icon20)
         self.btn_cancelar_cadastro_beneficio.setIconSize(QSize(28, 28))
 
@@ -3858,8 +3849,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_67.setContentsMargins(20, 0, 0, 0)
         self.frame_101 = QFrame(self.frame_100)
         self.frame_101.setObjectName(u"frame_101")
-        sizePolicy2.setHeightForWidth(self.frame_101.sizePolicy().hasHeightForWidth())
-        self.frame_101.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_101.sizePolicy().hasHeightForWidth())
+        self.frame_101.setSizePolicy(sizePolicy)
         self.frame_101.setMinimumSize(QSize(0, 0))
         self.frame_101.setMaximumSize(QSize(16777215, 60))
         self.frame_101.setStyleSheet(u"")
@@ -3939,11 +3930,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_146.setContentsMargins(12, 0, 12, 0)
         self.label_data_nascimento_cuidador_as = QLabel(self.frame_232)
         self.label_data_nascimento_cuidador_as.setObjectName(u"label_data_nascimento_cuidador_as")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.label_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.label_data_nascimento_cuidador_as.setSizePolicy(sizePolicy5)
+        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.label_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.label_data_nascimento_cuidador_as.setSizePolicy(sizePolicy4)
         self.label_data_nascimento_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_data_nascimento_cuidador_as.setMaximumSize(QSize(155, 16777215))
         self.label_data_nascimento_cuidador_as.setFont(font)
@@ -3953,11 +3944,11 @@ class Ui_MainWindow(object):
 
         self.input_data_nascimento_cuidador_as = QDateEdit(self.frame_232)
         self.input_data_nascimento_cuidador_as.setObjectName(u"input_data_nascimento_cuidador_as")
-        sizePolicy4.setHeightForWidth(self.input_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_nascimento_cuidador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_nascimento_cuidador_as.setSizePolicy(sizePolicy3)
         self.input_data_nascimento_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_data_nascimento_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_nascimento_cuidador_as.setFont(font10)
+        self.input_data_nascimento_cuidador_as.setFont(font9)
         self.input_data_nascimento_cuidador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_nascimento_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_nascimento_cuidador_as.setLayoutDirection(Qt.LeftToRight)
@@ -4058,11 +4049,11 @@ class Ui_MainWindow(object):
 
         self.input_data_emissao_cuidador_as = QDateEdit(self.frame_108)
         self.input_data_emissao_cuidador_as.setObjectName(u"input_data_emissao_cuidador_as")
-        sizePolicy3.setHeightForWidth(self.input_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_emissao_cuidador_as.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.input_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_cuidador_as.setSizePolicy(sizePolicy2)
         self.input_data_emissao_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_data_emissao_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_emissao_cuidador_as.setFont(font10)
+        self.input_data_emissao_cuidador_as.setFont(font9)
         self.input_data_emissao_cuidador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_emissao_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_emissao_cuidador_as.setLayoutDirection(Qt.LeftToRight)
@@ -4338,8 +4329,8 @@ class Ui_MainWindow(object):
 
         self.btn_cep_buscar_cuidador_as = QPushButton(self.frame_416)
         self.btn_cep_buscar_cuidador_as.setObjectName(u"btn_cep_buscar_cuidador_as")
-        sizePolicy.setHeightForWidth(self.btn_cep_buscar_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.btn_cep_buscar_cuidador_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_cep_buscar_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_cuidador_as.setSizePolicy(sizePolicy1)
         self.btn_cep_buscar_cuidador_as.setMinimumSize(QSize(0, 31))
         self.btn_cep_buscar_cuidador_as.setMaximumSize(QSize(25, 31))
         self.btn_cep_buscar_cuidador_as.setStyleSheet(u"QPushButton{\n"
@@ -4427,8 +4418,8 @@ class Ui_MainWindow(object):
 
         self.input_numero_cuidador_as = QLineEdit(self.frame_133)
         self.input_numero_cuidador_as.setObjectName(u"input_numero_cuidador_as")
-        sizePolicy3.setHeightForWidth(self.input_numero_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_numero_cuidador_as.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.input_numero_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_numero_cuidador_as.setSizePolicy(sizePolicy2)
         self.input_numero_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_numero_cuidador_as.setFont(font)
@@ -4585,7 +4576,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_cuidador_as.setObjectName(u"btn_voltar_cuidador_as")
         self.btn_voltar_cuidador_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_cuidador_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cuidador_as.setFont(font8)
+        self.btn_voltar_cuidador_as.setFont(font7)
         self.btn_voltar_cuidador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_cuidador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -4600,7 +4591,7 @@ class Ui_MainWindow(object):
         self.btn_finalizar_as = QPushButton(self.frame_99)
         self.btn_finalizar_as.setObjectName(u"btn_finalizar_as")
         self.btn_finalizar_as.setMinimumSize(QSize(120, 40))
-        self.btn_finalizar_as.setFont(font8)
+        self.btn_finalizar_as.setFont(font7)
         self.btn_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_finalizar_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -4709,7 +4700,7 @@ class Ui_MainWindow(object):
         self.input_obito_paciente_sim_as = QRadioButton(self.frame_425)
         self.input_obito_paciente_sim_as.setObjectName(u"input_obito_paciente_sim_as")
         self.input_obito_paciente_sim_as.setMaximumSize(QSize(80, 16777215))
-        self.input_obito_paciente_sim_as.setFont(font10)
+        self.input_obito_paciente_sim_as.setFont(font9)
         self.input_obito_paciente_sim_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_126.addWidget(self.input_obito_paciente_sim_as)
@@ -4717,7 +4708,7 @@ class Ui_MainWindow(object):
         self.input_obito_paciente_nao_as = QRadioButton(self.frame_425)
         self.input_obito_paciente_nao_as.setObjectName(u"input_obito_paciente_nao_as")
         self.input_obito_paciente_nao_as.setMaximumSize(QSize(80, 16777215))
-        self.input_obito_paciente_nao_as.setFont(font10)
+        self.input_obito_paciente_nao_as.setFont(font9)
         self.input_obito_paciente_nao_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_126.addWidget(self.input_obito_paciente_nao_as)
@@ -4867,7 +4858,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_observacoes_sigilosas_as.setObjectName(u"btn_voltar_observacoes_sigilosas_as")
         self.btn_voltar_observacoes_sigilosas_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_observacoes_sigilosas_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_voltar_observacoes_sigilosas_as.setFont(font7)
         self.btn_voltar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -4878,7 +4869,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_alterar_observacoes_sigilosas_as.setObjectName(u"btn_alterar_observacoes_sigilosas_as")
         self.btn_alterar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_alterar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_alterar_observacoes_sigilosas_as.setFont(font7)
         self.btn_alterar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -4891,13 +4882,13 @@ class Ui_MainWindow(object):
         self.btn_cancelar_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_cancelar_observacoes_sigilosas_as.setObjectName(u"btn_cancelar_observacoes_sigilosas_as")
         self.btn_cancelar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_cancelar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_cancelar_observacoes_sigilosas_as.setFont(font7)
         self.btn_cancelar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cancelar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon21 = QIcon()
-        icon21.addFile(u"../icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon21.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_observacoes_sigilosas_as.setIcon(icon21)
         self.btn_cancelar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
@@ -4906,13 +4897,13 @@ class Ui_MainWindow(object):
         self.btn_salvar_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_salvar_observacoes_sigilosas_as.setObjectName(u"btn_salvar_observacoes_sigilosas_as")
         self.btn_salvar_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_salvar_observacoes_sigilosas_as.setFont(font8)
+        self.btn_salvar_observacoes_sigilosas_as.setFont(font7)
         self.btn_salvar_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon22 = QIcon()
-        icon22.addFile(u"../icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon22.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_salvar_observacoes_sigilosas_as.setIcon(icon22)
         self.btn_salvar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
@@ -4921,13 +4912,13 @@ class Ui_MainWindow(object):
         self.btn_excluir_observacoes_sigilosas_as = QPushButton(self.frame_119)
         self.btn_excluir_observacoes_sigilosas_as.setObjectName(u"btn_excluir_observacoes_sigilosas_as")
         self.btn_excluir_observacoes_sigilosas_as.setMinimumSize(QSize(0, 40))
-        self.btn_excluir_observacoes_sigilosas_as.setFont(font8)
+        self.btn_excluir_observacoes_sigilosas_as.setFont(font7)
         self.btn_excluir_observacoes_sigilosas_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_excluir_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon23 = QIcon()
-        icon23.addFile(u"../icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon23.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excluir_observacoes_sigilosas_as.setIcon(icon23)
         self.btn_excluir_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
@@ -4952,8 +4943,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_83.setContentsMargins(0, 0, 0, 0)
         self.frame_192 = QFrame(self.page_cadastro_colaborador_as)
         self.frame_192.setObjectName(u"frame_192")
-        sizePolicy2.setHeightForWidth(self.frame_192.sizePolicy().hasHeightForWidth())
-        self.frame_192.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_192.sizePolicy().hasHeightForWidth())
+        self.frame_192.setSizePolicy(sizePolicy)
         self.frame_192.setMinimumSize(QSize(1826, 92))
         self.frame_192.setMaximumSize(QSize(16777215, 92))
         self.frame_192.setStyleSheet(u"background-color: #F3B9BF; ")
@@ -4978,8 +4969,8 @@ class Ui_MainWindow(object):
 
         self.frame_193 = QFrame(self.page_cadastro_colaborador_as)
         self.frame_193.setObjectName(u"frame_193")
-        sizePolicy2.setHeightForWidth(self.frame_193.sizePolicy().hasHeightForWidth())
-        self.frame_193.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_193.sizePolicy().hasHeightForWidth())
+        self.frame_193.setSizePolicy(sizePolicy)
         self.frame_193.setFrameShape(QFrame.StyledPanel)
         self.frame_193.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_77 = QHBoxLayout(self.frame_193)
@@ -4988,11 +4979,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_77.setContentsMargins(0, 0, 0, 0)
         self.frame_194 = QFrame(self.frame_193)
         self.frame_194.setObjectName(u"frame_194")
-        sizePolicy6 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
-        sizePolicy6.setHorizontalStretch(0)
-        sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.frame_194.sizePolicy().hasHeightForWidth())
-        self.frame_194.setSizePolicy(sizePolicy6)
+        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Maximum)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.frame_194.sizePolicy().hasHeightForWidth())
+        self.frame_194.setSizePolicy(sizePolicy5)
         self.frame_194.setMinimumSize(QSize(360, 0))
         self.frame_194.setMaximumSize(QSize(16777215, 360))
         self.frame_194.setStyleSheet(u"QLabel{margin-left: 0.25em}")
@@ -5036,8 +5027,8 @@ class Ui_MainWindow(object):
         self.input_matricula_colaborador_as = QLineEdit(self.frame_196)
         self.input_matricula_colaborador_as.setObjectName(u"input_matricula_colaborador_as")
         self.input_matricula_colaborador_as.setEnabled(False)
-        sizePolicy3.setHeightForWidth(self.input_matricula_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_matricula_colaborador_as.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.input_matricula_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_matricula_colaborador_as.setSizePolicy(sizePolicy2)
         self.input_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_colaborador_as.setMaximumSize(QSize(110, 30))
         self.input_matricula_colaborador_as.setFont(font)
@@ -5096,11 +5087,11 @@ class Ui_MainWindow(object):
 
         self.input_data_nascimento_colaborador_as = QDateEdit(self.frame_200)
         self.input_data_nascimento_colaborador_as.setObjectName(u"input_data_nascimento_colaborador_as")
-        sizePolicy4.setHeightForWidth(self.input_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_nascimento_colaborador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_nascimento_colaborador_as.setSizePolicy(sizePolicy3)
         self.input_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_nascimento_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_nascimento_colaborador_as.setFont(font10)
+        self.input_data_nascimento_colaborador_as.setFont(font9)
         self.input_data_nascimento_colaborador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_nascimento_colaborador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_nascimento_colaborador_as.setLayoutDirection(Qt.LeftToRight)
@@ -5241,11 +5232,11 @@ class Ui_MainWindow(object):
 
         self.input_data_emissao_rg_colaborador_as = QDateEdit(self.frame_207)
         self.input_data_emissao_rg_colaborador_as.setObjectName(u"input_data_emissao_rg_colaborador_as")
-        sizePolicy4.setHeightForWidth(self.input_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy3)
         self.input_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_data_emissao_rg_colaborador_as.setMaximumSize(QSize(150, 16777215))
-        self.input_data_emissao_rg_colaborador_as.setFont(font10)
+        self.input_data_emissao_rg_colaborador_as.setFont(font9)
         self.input_data_emissao_rg_colaborador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_emissao_rg_colaborador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_emissao_rg_colaborador_as.setLayoutDirection(Qt.LeftToRight)
@@ -5479,11 +5470,11 @@ class Ui_MainWindow(object):
 
         self.input_data_admissao_colaborador_as_5 = QDateEdit(self.frame_233)
         self.input_data_admissao_colaborador_as_5.setObjectName(u"input_data_admissao_colaborador_as_5")
-        sizePolicy4.setHeightForWidth(self.input_data_admissao_colaborador_as_5.sizePolicy().hasHeightForWidth())
-        self.input_data_admissao_colaborador_as_5.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_admissao_colaborador_as_5.sizePolicy().hasHeightForWidth())
+        self.input_data_admissao_colaborador_as_5.setSizePolicy(sizePolicy3)
         self.input_data_admissao_colaborador_as_5.setMinimumSize(QSize(0, 30))
         self.input_data_admissao_colaborador_as_5.setMaximumSize(QSize(150, 16777215))
-        self.input_data_admissao_colaborador_as_5.setFont(font10)
+        self.input_data_admissao_colaborador_as_5.setFont(font9)
         self.input_data_admissao_colaborador_as_5.setFocusPolicy(Qt.WheelFocus)
         self.input_data_admissao_colaborador_as_5.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_admissao_colaborador_as_5.setLayoutDirection(Qt.LeftToRight)
@@ -5567,8 +5558,8 @@ class Ui_MainWindow(object):
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.setObjectName(u"input_cargo_colaborador_comboBox_as")
-        sizePolicy4.setHeightForWidth(self.input_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
-        self.input_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
+        self.input_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy3)
         self.input_cargo_colaborador_comboBox_as.setMinimumSize(QSize(138, 30))
         self.input_cargo_colaborador_comboBox_as.setMaximumSize(QSize(138, 30))
         self.input_cargo_colaborador_comboBox_as.setFont(font)
@@ -5696,8 +5687,8 @@ class Ui_MainWindow(object):
 
         self.btn_cep_buscar_colaborador_as = QPushButton(self.frame_422)
         self.btn_cep_buscar_colaborador_as.setObjectName(u"btn_cep_buscar_colaborador_as")
-        sizePolicy.setHeightForWidth(self.btn_cep_buscar_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.btn_cep_buscar_colaborador_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_cep_buscar_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_colaborador_as.setSizePolicy(sizePolicy1)
         self.btn_cep_buscar_colaborador_as.setMinimumSize(QSize(0, 30))
         self.btn_cep_buscar_colaborador_as.setMaximumSize(QSize(25, 30))
         self.btn_cep_buscar_colaborador_as.setStyleSheet(u"QPushButton{\n"
@@ -6008,7 +5999,7 @@ class Ui_MainWindow(object):
         self.btn_foto_colaborador_as.setMaximumSize(QSize(125, 153))
         self.btn_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.btn_foto_colaborador_as.setIcon(icon16)
+        self.btn_foto_colaborador_as.setIcon(icon15)
         self.btn_foto_colaborador_as.setIconSize(QSize(120, 120))
 
         self.verticalLayout_179.addWidget(self.btn_foto_colaborador_as)
@@ -6068,7 +6059,7 @@ class Ui_MainWindow(object):
         self.input_situacao_ativo_colaborador_as = QRadioButton(self.frame_262)
         self.input_situacao_ativo_colaborador_as.setObjectName(u"input_situacao_ativo_colaborador_as")
         self.input_situacao_ativo_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_ativo_colaborador_as.setFont(font10)
+        self.input_situacao_ativo_colaborador_as.setFont(font9)
         self.input_situacao_ativo_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_90.addWidget(self.input_situacao_ativo_colaborador_as)
@@ -6076,7 +6067,7 @@ class Ui_MainWindow(object):
         self.input_situacao_inativo_colaborador_as = QRadioButton(self.frame_262)
         self.input_situacao_inativo_colaborador_as.setObjectName(u"input_situacao_inativo_colaborador_as")
         self.input_situacao_inativo_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.input_situacao_inativo_colaborador_as.setFont(font10)
+        self.input_situacao_inativo_colaborador_as.setFont(font9)
         self.input_situacao_inativo_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_90.addWidget(self.input_situacao_inativo_colaborador_as)
@@ -6107,8 +6098,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_81.setContentsMargins(0, 0, 0, 0)
         self.frame_269 = QFrame(self.frame_215)
         self.frame_269.setObjectName(u"frame_269")
-        sizePolicy2.setHeightForWidth(self.frame_269.sizePolicy().hasHeightForWidth())
-        self.frame_269.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_269.sizePolicy().hasHeightForWidth())
+        self.frame_269.setSizePolicy(sizePolicy)
         self.frame_269.setFrameShape(QFrame.StyledPanel)
         self.frame_269.setFrameShadow(QFrame.Raised)
         self.verticalLayout_168 = QVBoxLayout(self.frame_269)
@@ -6141,7 +6132,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_cadastro_colaborador_as.setObjectName(u"btn_voltar_cadastro_colaborador_as")
         self.btn_voltar_cadastro_colaborador_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_cadastro_colaborador_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cadastro_colaborador_as.setFont(font8)
+        self.btn_voltar_cadastro_colaborador_as.setFont(font7)
         self.btn_voltar_cadastro_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_cadastro_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -6170,7 +6161,7 @@ class Ui_MainWindow(object):
         self.btn_concluir_cadastro_colaborador_as.setObjectName(u"btn_concluir_cadastro_colaborador_as")
         self.btn_concluir_cadastro_colaborador_as.setMinimumSize(QSize(140, 40))
         self.btn_concluir_cadastro_colaborador_as.setMaximumSize(QSize(140, 40))
-        self.btn_concluir_cadastro_colaborador_as.setFont(font8)
+        self.btn_concluir_cadastro_colaborador_as.setFont(font7)
         self.btn_concluir_cadastro_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_concluir_cadastro_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -6249,6 +6240,35 @@ class Ui_MainWindow(object):
         self.horizontalLayout_62.setSpacing(5)
         self.horizontalLayout_62.setObjectName(u"horizontalLayout_62")
         self.horizontalLayout_62.setContentsMargins(0, 0, 0, 0)
+        self.frame_141 = QFrame(self.frame_126)
+        self.frame_141.setObjectName(u"frame_141")
+        self.frame_141.setMinimumSize(QSize(0, 0))
+        self.frame_141.setMaximumSize(QSize(160, 16777215))
+        self.frame_141.setFrameShape(QFrame.StyledPanel)
+        self.frame_141.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_86 = QVBoxLayout(self.frame_141)
+        self.verticalLayout_86.setSpacing(0)
+        self.verticalLayout_86.setObjectName(u"verticalLayout_86")
+        self.verticalLayout_86.setContentsMargins(0, 0, 0, 0)
+        self.label_data_inclusao_cursos_as = QLabel(self.frame_141)
+        self.label_data_inclusao_cursos_as.setObjectName(u"label_data_inclusao_cursos_as")
+        self.label_data_inclusao_cursos_as.setMinimumSize(QSize(0, 0))
+        self.label_data_inclusao_cursos_as.setMaximumSize(QSize(160, 16777215))
+        self.label_data_inclusao_cursos_as.setFont(font)
+
+        self.verticalLayout_86.addWidget(self.label_data_inclusao_cursos_as)
+
+        self.input_data_inclusao_cursos_as = QLineEdit(self.frame_141)
+        self.input_data_inclusao_cursos_as.setObjectName(u"input_data_inclusao_cursos_as")
+        self.input_data_inclusao_cursos_as.setMinimumSize(QSize(0, 30))
+        self.input_data_inclusao_cursos_as.setMaximumSize(QSize(16777215, 30))
+        self.input_data_inclusao_cursos_as.setFont(font)
+
+        self.verticalLayout_86.addWidget(self.input_data_inclusao_cursos_as)
+
+
+        self.horizontalLayout_62.addWidget(self.frame_141)
+
         self.frame_142 = QFrame(self.frame_126)
         self.frame_142.setObjectName(u"frame_142")
         self.frame_142.setMinimumSize(QSize(0, 0))
@@ -6341,14 +6361,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_63.setContentsMargins(0, 0, 0, 0)
         self.input_ativo_cursos_as = QRadioButton(self.frame_145)
         self.input_ativo_cursos_as.setObjectName(u"input_ativo_cursos_as")
-        self.input_ativo_cursos_as.setFont(font10)
+        self.input_ativo_cursos_as.setFont(font9)
         self.input_ativo_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_63.addWidget(self.input_ativo_cursos_as)
 
         self.input_inativo_cursos_as = QRadioButton(self.frame_145)
         self.input_inativo_cursos_as.setObjectName(u"input_inativo_cursos_as")
-        self.input_inativo_cursos_as.setFont(font10)
+        self.input_inativo_cursos_as.setFont(font9)
         self.input_inativo_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_63.addWidget(self.input_inativo_cursos_as)
@@ -6382,9 +6402,7 @@ class Ui_MainWindow(object):
         self.frame_146.setFrameShape(QFrame.StyledPanel)
         self.frame_146.setFrameShadow(QFrame.Raised)
         self.verticalLayout_98 = QVBoxLayout(self.frame_146)
-        self.verticalLayout_98.setSpacing(5)
         self.verticalLayout_98.setObjectName(u"verticalLayout_98")
-        self.verticalLayout_98.setContentsMargins(0, 0, 0, 9)
         self.label_responsavel_cursos_as = QLabel(self.frame_146)
         self.label_responsavel_cursos_as.setObjectName(u"label_responsavel_cursos_as")
         self.label_responsavel_cursos_as.setMinimumSize(QSize(0, 0))
@@ -6425,11 +6443,11 @@ class Ui_MainWindow(object):
 
         self.input_data_inicio_cursos_as = QDateEdit(self.frame_147)
         self.input_data_inicio_cursos_as.setObjectName(u"input_data_inicio_cursos_as")
-        sizePolicy4.setHeightForWidth(self.input_data_inicio_cursos_as.sizePolicy().hasHeightForWidth())
-        self.input_data_inicio_cursos_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_inicio_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_inicio_cursos_as.setSizePolicy(sizePolicy3)
         self.input_data_inicio_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_data_inicio_cursos_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_inicio_cursos_as.setFont(font10)
+        self.input_data_inicio_cursos_as.setFont(font9)
         self.input_data_inicio_cursos_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_inicio_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_inicio_cursos_as.setLayoutDirection(Qt.LeftToRight)
@@ -6470,11 +6488,11 @@ class Ui_MainWindow(object):
 
         self.input_data_termino_cursos_as = QDateEdit(self.frame_148)
         self.input_data_termino_cursos_as.setObjectName(u"input_data_termino_cursos_as")
-        sizePolicy4.setHeightForWidth(self.input_data_termino_cursos_as.sizePolicy().hasHeightForWidth())
-        self.input_data_termino_cursos_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_termino_cursos_as.sizePolicy().hasHeightForWidth())
+        self.input_data_termino_cursos_as.setSizePolicy(sizePolicy3)
         self.input_data_termino_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_data_termino_cursos_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_data_termino_cursos_as.setFont(font10)
+        self.input_data_termino_cursos_as.setFont(font9)
         self.input_data_termino_cursos_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_termino_cursos_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_termino_cursos_as.setLayoutDirection(Qt.LeftToRight)
@@ -6922,7 +6940,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_cursos_as.setObjectName(u"btn_voltar_cursos_as")
         self.btn_voltar_cursos_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_cursos_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cursos_as.setFont(font8)
+        self.btn_voltar_cursos_as.setFont(font7)
         self.btn_voltar_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -6934,13 +6952,13 @@ class Ui_MainWindow(object):
         self.btn_lista_pessoas_cursos_as.setObjectName(u"btn_lista_pessoas_cursos_as")
         self.btn_lista_pessoas_cursos_as.setMinimumSize(QSize(0, 40))
         self.btn_lista_pessoas_cursos_as.setMaximumSize(QSize(16777215, 40))
-        self.btn_lista_pessoas_cursos_as.setFont(font8)
+        self.btn_lista_pessoas_cursos_as.setFont(font7)
         self.btn_lista_pessoas_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_lista_pessoas_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon24 = QIcon()
-        icon24.addFile(u"../icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon24.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_lista_pessoas_cursos_as.setIcon(icon24)
         self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
 
@@ -6954,7 +6972,7 @@ class Ui_MainWindow(object):
         self.btn_concluir_cursos_as.setObjectName(u"btn_concluir_cursos_as")
         self.btn_concluir_cursos_as.setMinimumSize(QSize(140, 40))
         self.btn_concluir_cursos_as.setMaximumSize(QSize(140, 40))
-        self.btn_concluir_cursos_as.setFont(font8)
+        self.btn_concluir_cursos_as.setFont(font7)
         self.btn_concluir_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_concluir_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -6984,9 +7002,9 @@ class Ui_MainWindow(object):
         self.label_titulo_cadastrar_participante_curso_as = QLabel(self.frame_1692)
         self.label_titulo_cadastrar_participante_curso_as.setObjectName(u"label_titulo_cadastrar_participante_curso_as")
         self.label_titulo_cadastrar_participante_curso_as.setMinimumSize(QSize(0, 0))
-        font12 = QFont()
-        font12.setPointSize(36)
-        self.label_titulo_cadastrar_participante_curso_as.setFont(font12)
+        font11 = QFont()
+        font11.setPointSize(36)
+        self.label_titulo_cadastrar_participante_curso_as.setFont(font11)
         self.label_titulo_cadastrar_participante_curso_as.setStyleSheet(u"color: #EC848C;\n"
 "background-color: rgb(243, 185, 191);")
         self.label_titulo_cadastrar_participante_curso_as.setAlignment(Qt.AlignCenter)
@@ -7054,8 +7072,8 @@ class Ui_MainWindow(object):
 
         self.btn_buscar_cpf_pagina_participante_geral = QPushButton(self.frame_4722)
         self.btn_buscar_cpf_pagina_participante_geral.setObjectName(u"btn_buscar_cpf_pagina_participante_geral")
-        sizePolicy.setHeightForWidth(self.btn_buscar_cpf_pagina_participante_geral.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_cpf_pagina_participante_geral.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_buscar_cpf_pagina_participante_geral.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_cpf_pagina_participante_geral.setSizePolicy(sizePolicy1)
         self.btn_buscar_cpf_pagina_participante_geral.setMinimumSize(QSize(40, 40))
         self.btn_buscar_cpf_pagina_participante_geral.setMaximumSize(QSize(40, 40))
         self.btn_buscar_cpf_pagina_participante_geral.setStyleSheet(u"QPushButton{\n"
@@ -7225,7 +7243,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_pagina_participante_geral.setObjectName(u"btn_voltar_pagina_participante_geral")
         self.btn_voltar_pagina_participante_geral.setMinimumSize(QSize(100, 40))
         self.btn_voltar_pagina_participante_geral.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_pagina_participante_geral.setFont(font8)
+        self.btn_voltar_pagina_participante_geral.setFont(font7)
         self.btn_voltar_pagina_participante_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -7236,7 +7254,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_participante_geral = QPushButton(self.frame_4812)
         self.btn_salvar_pagina_participante_geral.setObjectName(u"btn_salvar_pagina_participante_geral")
         self.btn_salvar_pagina_participante_geral.setMinimumSize(QSize(0, 40))
-        self.btn_salvar_pagina_participante_geral.setFont(font8)
+        self.btn_salvar_pagina_participante_geral.setFont(font7)
         self.btn_salvar_pagina_participante_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -7362,13 +7380,13 @@ class Ui_MainWindow(object):
         self.btn_excel_pagina_participante_geral = QPushButton(self.frame_4882)
         self.btn_excel_pagina_participante_geral.setObjectName(u"btn_excel_pagina_participante_geral")
         self.btn_excel_pagina_participante_geral.setMinimumSize(QSize(0, 40))
-        self.btn_excel_pagina_participante_geral.setFont(font8)
+        self.btn_excel_pagina_participante_geral.setFont(font7)
         self.btn_excel_pagina_participante_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_excel_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon25 = QIcon()
-        icon25.addFile(u"../icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon25.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excel_pagina_participante_geral.setIcon(icon25)
         self.btn_excel_pagina_participante_geral.setIconSize(QSize(28, 28))
 
@@ -7436,10 +7454,10 @@ class Ui_MainWindow(object):
         self.label_relatorio_as.setObjectName(u"label_relatorio_as")
         self.label_relatorio_as.setMinimumSize(QSize(300, 0))
         self.label_relatorio_as.setMaximumSize(QSize(300, 16777215))
-        font13 = QFont()
-        font13.setFamilies([u"Abel"])
-        font13.setPointSize(35)
-        self.label_relatorio_as.setFont(font13)
+        font12 = QFont()
+        font12.setFamilies([u"Abel"])
+        font12.setPointSize(35)
+        self.label_relatorio_as.setFont(font12)
         self.label_relatorio_as.setStyleSheet(u"background-color: rgb(243, 185, 191);\n"
 "color: rgb(236, 132, 140);")
 
@@ -7505,20 +7523,20 @@ class Ui_MainWindow(object):
         self.label_inicio_periodo_relatorio_as.setObjectName(u"label_inicio_periodo_relatorio_as")
         self.label_inicio_periodo_relatorio_as.setMinimumSize(QSize(60, 20))
         self.label_inicio_periodo_relatorio_as.setMaximumSize(QSize(60, 20))
-        font14 = QFont()
-        font14.setFamilies([u"Abel"])
-        font14.setPointSize(14)
-        self.label_inicio_periodo_relatorio_as.setFont(font14)
+        font13 = QFont()
+        font13.setFamilies([u"Abel"])
+        font13.setPointSize(14)
+        self.label_inicio_periodo_relatorio_as.setFont(font13)
 
         self.verticalLayout_1601.addWidget(self.label_inicio_periodo_relatorio_as)
 
         self.input_inicio_periodo_relatorio_as = QDateEdit(self.frame_243)
         self.input_inicio_periodo_relatorio_as.setObjectName(u"input_inicio_periodo_relatorio_as")
-        sizePolicy4.setHeightForWidth(self.input_inicio_periodo_relatorio_as.sizePolicy().hasHeightForWidth())
-        self.input_inicio_periodo_relatorio_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_inicio_periodo_relatorio_as.sizePolicy().hasHeightForWidth())
+        self.input_inicio_periodo_relatorio_as.setSizePolicy(sizePolicy3)
         self.input_inicio_periodo_relatorio_as.setMinimumSize(QSize(0, 30))
         self.input_inicio_periodo_relatorio_as.setMaximumSize(QSize(120, 30))
-        self.input_inicio_periodo_relatorio_as.setFont(font10)
+        self.input_inicio_periodo_relatorio_as.setFont(font9)
         self.input_inicio_periodo_relatorio_as.setFocusPolicy(Qt.WheelFocus)
         self.input_inicio_periodo_relatorio_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_inicio_periodo_relatorio_as.setLayoutDirection(Qt.LeftToRight)
@@ -7554,7 +7572,7 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName(u"label_6")
         self.label_6.setMinimumSize(QSize(20, 20))
         self.label_6.setMaximumSize(QSize(40, 20))
-        self.label_6.setFont(font14)
+        self.label_6.setFont(font13)
 
         self.verticalLayout_1461.addWidget(self.label_6)
 
@@ -7577,11 +7595,11 @@ class Ui_MainWindow(object):
 
         self.input_final_periodo_relatorio_as = QDateEdit(self.frame_244)
         self.input_final_periodo_relatorio_as.setObjectName(u"input_final_periodo_relatorio_as")
-        sizePolicy4.setHeightForWidth(self.input_final_periodo_relatorio_as.sizePolicy().hasHeightForWidth())
-        self.input_final_periodo_relatorio_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_final_periodo_relatorio_as.sizePolicy().hasHeightForWidth())
+        self.input_final_periodo_relatorio_as.setSizePolicy(sizePolicy3)
         self.input_final_periodo_relatorio_as.setMinimumSize(QSize(0, 30))
         self.input_final_periodo_relatorio_as.setMaximumSize(QSize(120, 30))
-        self.input_final_periodo_relatorio_as.setFont(font10)
+        self.input_final_periodo_relatorio_as.setFont(font9)
         self.input_final_periodo_relatorio_as.setFocusPolicy(Qt.WheelFocus)
         self.input_final_periodo_relatorio_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_final_periodo_relatorio_as.setLayoutDirection(Qt.LeftToRight)
@@ -7631,7 +7649,7 @@ class Ui_MainWindow(object):
         self.label_idade_relatorio_as.setMinimumSize(QSize(40, 15))
         self.label_idade_relatorio_as.setMaximumSize(QSize(40, 15))
         self.label_idade_relatorio_as.setSizeIncrement(QSize(0, 20))
-        self.label_idade_relatorio_as.setFont(font14)
+        self.label_idade_relatorio_as.setFont(font13)
         self.label_idade_relatorio_as.setStyleSheet(u"color: rgb(0, 0, 0);")
 
         self.verticalLayout_153.addWidget(self.label_idade_relatorio_as)
@@ -7642,11 +7660,11 @@ class Ui_MainWindow(object):
         self.frame_246.setMinimumSize(QSize(127, 35))
         self.frame_246.setMaximumSize(QSize(16777215, 16777215))
         self.frame_246.setSizeIncrement(QSize(0, 20))
-        font15 = QFont()
-        font15.setFamilies([u"Abel"])
-        font15.setPointSize(11)
-        font15.setKerning(False)
-        self.frame_246.setFont(font15)
+        font14 = QFont()
+        font14.setFamilies([u"Abel"])
+        font14.setPointSize(11)
+        font14.setKerning(False)
+        self.frame_246.setFont(font14)
         self.frame_246.setFrameShape(QFrame.StyledPanel)
         self.frame_246.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_11 = QHBoxLayout(self.frame_246)
@@ -7664,10 +7682,10 @@ class Ui_MainWindow(object):
         self.label_a_relatorio_as.setObjectName(u"label_a_relatorio_as")
         self.label_a_relatorio_as.setMinimumSize(QSize(16, 16))
         self.label_a_relatorio_as.setMaximumSize(QSize(16, 16))
-        font16 = QFont()
-        font16.setFamilies([u"Abel"])
-        font16.setPointSize(13)
-        self.label_a_relatorio_as.setFont(font16)
+        font15 = QFont()
+        font15.setFamilies([u"Abel"])
+        font15.setPointSize(13)
+        self.label_a_relatorio_as.setFont(font15)
         self.label_a_relatorio_as.setStyleSheet(u"color: rgb(0, 0, 0);")
 
         self.horizontalLayout_11.addWidget(self.label_a_relatorio_as)
@@ -7688,15 +7706,15 @@ class Ui_MainWindow(object):
         self.frame_391.setObjectName(u"frame_391")
         self.frame_391.setMinimumSize(QSize(50, 50))
         self.frame_391.setMaximumSize(QSize(50, 50))
-        self.frame_391.setFont(font14)
+        self.frame_391.setFont(font13)
         self.frame_391.setFrameShape(QFrame.StyledPanel)
         self.frame_391.setFrameShadow(QFrame.Raised)
         self.verticalLayout_152 = QVBoxLayout(self.frame_391)
         self.verticalLayout_152.setObjectName(u"verticalLayout_152")
         self.btn_buscar_relatorio_as = QPushButton(self.frame_391)
         self.btn_buscar_relatorio_as.setObjectName(u"btn_buscar_relatorio_as")
-        sizePolicy.setHeightForWidth(self.btn_buscar_relatorio_as.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_relatorio_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_buscar_relatorio_as.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_relatorio_as.setSizePolicy(sizePolicy1)
         self.btn_buscar_relatorio_as.setMinimumSize(QSize(40, 40))
         self.btn_buscar_relatorio_as.setMaximumSize(QSize(40, 40))
         self.btn_buscar_relatorio_as.setStyleSheet(u"QPushButton{\n"
@@ -7869,14 +7887,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_308.setContentsMargins(0, 0, 20, 20)
         self.btn_gerar_excel_relatorio_as = QPushButton(self.frame_251)
         self.btn_gerar_excel_relatorio_as.setObjectName(u"btn_gerar_excel_relatorio_as")
-        sizePolicy.setHeightForWidth(self.btn_gerar_excel_relatorio_as.sizePolicy().hasHeightForWidth())
-        self.btn_gerar_excel_relatorio_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_gerar_excel_relatorio_as.sizePolicy().hasHeightForWidth())
+        self.btn_gerar_excel_relatorio_as.setSizePolicy(sizePolicy1)
         self.btn_gerar_excel_relatorio_as.setMinimumSize(QSize(125, 40))
         self.btn_gerar_excel_relatorio_as.setMaximumSize(QSize(40, 40))
-        font17 = QFont()
-        font17.setFamilies([u"Abel"])
-        font17.setPointSize(15)
-        self.btn_gerar_excel_relatorio_as.setFont(font17)
+        font16 = QFont()
+        font16.setFamilies([u"Abel"])
+        font16.setPointSize(15)
+        self.btn_gerar_excel_relatorio_as.setFont(font16)
         self.btn_gerar_excel_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
@@ -7886,11 +7904,11 @@ class Ui_MainWindow(object):
 
         self.btn_gerar_pdf_relatorio_as = QPushButton(self.frame_251)
         self.btn_gerar_pdf_relatorio_as.setObjectName(u"btn_gerar_pdf_relatorio_as")
-        sizePolicy.setHeightForWidth(self.btn_gerar_pdf_relatorio_as.sizePolicy().hasHeightForWidth())
-        self.btn_gerar_pdf_relatorio_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_gerar_pdf_relatorio_as.sizePolicy().hasHeightForWidth())
+        self.btn_gerar_pdf_relatorio_as.setSizePolicy(sizePolicy1)
         self.btn_gerar_pdf_relatorio_as.setMinimumSize(QSize(125, 40))
         self.btn_gerar_pdf_relatorio_as.setMaximumSize(QSize(40, 40))
-        self.btn_gerar_pdf_relatorio_as.setFont(font17)
+        self.btn_gerar_pdf_relatorio_as.setFont(font16)
         self.btn_gerar_pdf_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
@@ -7929,7 +7947,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_relatorios_as.setObjectName(u"btn_voltar_relatorios_as")
         self.btn_voltar_relatorios_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_relatorios_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_relatorios_as.setFont(font8)
+        self.btn_voltar_relatorios_as.setFont(font7)
         self.btn_voltar_relatorios_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_relatorios_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -7968,8 +7986,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_68.setContentsMargins(0, 5, 0, 5)
         self.label_agenda_as = QLabel(self.frame_263)
         self.label_agenda_as.setObjectName(u"label_agenda_as")
-        sizePolicy2.setHeightForWidth(self.label_agenda_as.sizePolicy().hasHeightForWidth())
-        self.label_agenda_as.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.label_agenda_as.sizePolicy().hasHeightForWidth())
+        self.label_agenda_as.setSizePolicy(sizePolicy)
         self.label_agenda_as.setFont(font1)
         self.label_agenda_as.setStyleSheet(u"color: #EC848C")
         self.label_agenda_as.setAlignment(Qt.AlignCenter)
@@ -8019,8 +8037,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_158.setContentsMargins(0, 0, 0, 0)
         self.frame_267 = QFrame(self.frame_271)
         self.frame_267.setObjectName(u"frame_267")
-        sizePolicy2.setHeightForWidth(self.frame_267.sizePolicy().hasHeightForWidth())
-        self.frame_267.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_267.sizePolicy().hasHeightForWidth())
+        self.frame_267.setSizePolicy(sizePolicy)
         self.frame_267.setFrameShape(QFrame.StyledPanel)
         self.frame_267.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_151 = QHBoxLayout(self.frame_267)
@@ -8028,8 +8046,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_151.setContentsMargins(-1, 35, -1, -1)
         self.frame_442 = QFrame(self.frame_267)
         self.frame_442.setObjectName(u"frame_442")
-        sizePolicy4.setHeightForWidth(self.frame_442.sizePolicy().hasHeightForWidth())
-        self.frame_442.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.frame_442.sizePolicy().hasHeightForWidth())
+        self.frame_442.setSizePolicy(sizePolicy3)
         self.frame_442.setMaximumSize(QSize(210, 16777215))
         self.frame_442.setFrameShape(QFrame.StyledPanel)
         self.frame_442.setFrameShadow(QFrame.Raised)
@@ -8039,11 +8057,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_182.setContentsMargins(0, 0, 0, 0)
         self.label_cpf_agendamento_as = QLabel(self.frame_442)
         self.label_cpf_agendamento_as.setObjectName(u"label_cpf_agendamento_as")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.label_cpf_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.label_cpf_agendamento_as.setSizePolicy(sizePolicy7)
+        sizePolicy6 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Preferred)
+        sizePolicy6.setHorizontalStretch(0)
+        sizePolicy6.setVerticalStretch(0)
+        sizePolicy6.setHeightForWidth(self.label_cpf_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.label_cpf_agendamento_as.setSizePolicy(sizePolicy6)
         self.label_cpf_agendamento_as.setFont(font)
         self.label_cpf_agendamento_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -8073,8 +8091,8 @@ class Ui_MainWindow(object):
 
         self.btn_buscar_agendamento_as = QPushButton(self.frame_165)
         self.btn_buscar_agendamento_as.setObjectName(u"btn_buscar_agendamento_as")
-        sizePolicy.setHeightForWidth(self.btn_buscar_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_agendamento_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_buscar_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_agendamento_as.setSizePolicy(sizePolicy1)
         self.btn_buscar_agendamento_as.setMinimumSize(QSize(40, 40))
         self.btn_buscar_agendamento_as.setMaximumSize(QSize(40, 40))
         self.btn_buscar_agendamento_as.setCursor(QCursor(Qt.PointingHandCursor))
@@ -8112,7 +8130,7 @@ class Ui_MainWindow(object):
                         "r: rgb(249, 217, 221);   \n"
 "}")
         icon26 = QIcon()
-        icon26.addFile(u"../../../../icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon26.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_agendamento_as.setIcon(icon26)
 
         self.verticalLayout_117.addWidget(self.btn_buscar_agendamento_as)
@@ -8125,11 +8143,11 @@ class Ui_MainWindow(object):
 
         self.frame_392 = QFrame(self.frame_271)
         self.frame_392.setObjectName(u"frame_392")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.frame_392.sizePolicy().hasHeightForWidth())
-        self.frame_392.setSizePolicy(sizePolicy8)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Maximum)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.frame_392.sizePolicy().hasHeightForWidth())
+        self.frame_392.setSizePolicy(sizePolicy7)
         self.frame_392.setFrameShape(QFrame.StyledPanel)
         self.frame_392.setFrameShadow(QFrame.Raised)
         self.verticalLayout_267 = QVBoxLayout(self.frame_392)
@@ -8165,8 +8183,8 @@ class Ui_MainWindow(object):
 
         self.frame_440 = QFrame(self.frame_271)
         self.frame_440.setObjectName(u"frame_440")
-        sizePolicy3.setHeightForWidth(self.frame_440.sizePolicy().hasHeightForWidth())
-        self.frame_440.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.frame_440.sizePolicy().hasHeightForWidth())
+        self.frame_440.setSizePolicy(sizePolicy2)
         self.frame_440.setFrameShape(QFrame.StyledPanel)
         self.frame_440.setFrameShadow(QFrame.Raised)
         self.verticalLayout_307 = QVBoxLayout(self.frame_440)
@@ -8192,8 +8210,8 @@ class Ui_MainWindow(object):
 
         self.frame_441 = QFrame(self.frame_271)
         self.frame_441.setObjectName(u"frame_441")
-        sizePolicy.setHeightForWidth(self.frame_441.sizePolicy().hasHeightForWidth())
-        self.frame_441.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.frame_441.sizePolicy().hasHeightForWidth())
+        self.frame_441.setSizePolicy(sizePolicy1)
         self.frame_441.setFrameShape(QFrame.StyledPanel)
         self.frame_441.setFrameShadow(QFrame.Raised)
         self.verticalLayout_311 = QVBoxLayout(self.frame_441)
@@ -8202,8 +8220,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_311.setContentsMargins(0, 0, 0, 0)
         self.frame_166 = QFrame(self.frame_441)
         self.frame_166.setObjectName(u"frame_166")
-        sizePolicy3.setHeightForWidth(self.frame_166.sizePolicy().hasHeightForWidth())
-        self.frame_166.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.frame_166.sizePolicy().hasHeightForWidth())
+        self.frame_166.setSizePolicy(sizePolicy2)
         self.frame_166.setMinimumSize(QSize(0, 0))
         self.frame_166.setFrameShape(QFrame.StyledPanel)
         self.frame_166.setFrameShadow(QFrame.Raised)
@@ -8229,16 +8247,16 @@ class Ui_MainWindow(object):
 
         self.label_profissional_agendamento_as = QLabel(self.frame_441)
         self.label_profissional_agendamento_as.setObjectName(u"label_profissional_agendamento_as")
-        sizePolicy.setHeightForWidth(self.label_profissional_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.label_profissional_agendamento_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_profissional_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.label_profissional_agendamento_as.setSizePolicy(sizePolicy1)
         self.label_profissional_agendamento_as.setFont(font)
 
         self.verticalLayout_311.addWidget(self.label_profissional_agendamento_as)
 
         self.frame_443 = QFrame(self.frame_441)
         self.frame_443.setObjectName(u"frame_443")
-        sizePolicy.setHeightForWidth(self.frame_443.sizePolicy().hasHeightForWidth())
-        self.frame_443.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.frame_443.sizePolicy().hasHeightForWidth())
+        self.frame_443.setSizePolicy(sizePolicy1)
         self.frame_443.setFrameShape(QFrame.StyledPanel)
         self.frame_443.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_139 = QHBoxLayout(self.frame_443)
@@ -8247,33 +8265,33 @@ class Ui_MainWindow(object):
         self.horizontalLayout_139.setContentsMargins(0, 0, 0, 10)
         self.frame_167 = QFrame(self.frame_443)
         self.frame_167.setObjectName(u"frame_167")
-        sizePolicy.setHeightForWidth(self.frame_167.sizePolicy().hasHeightForWidth())
-        self.frame_167.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.frame_167.sizePolicy().hasHeightForWidth())
+        self.frame_167.setSizePolicy(sizePolicy1)
         self.frame_167.setFrameShape(QFrame.StyledPanel)
         self.frame_167.setFrameShadow(QFrame.Raised)
         self.verticalLayout_118 = QVBoxLayout(self.frame_167)
         self.verticalLayout_118.setObjectName(u"verticalLayout_118")
         self.input_profissional_as_agendamento_as = QRadioButton(self.frame_167)
         self.input_profissional_as_agendamento_as.setObjectName(u"input_profissional_as_agendamento_as")
-        self.input_profissional_as_agendamento_as.setFont(font10)
+        self.input_profissional_as_agendamento_as.setFont(font9)
 
         self.verticalLayout_118.addWidget(self.input_profissional_as_agendamento_as)
 
         self.input_profissional_psi_agendamento_as = QRadioButton(self.frame_167)
         self.input_profissional_psi_agendamento_as.setObjectName(u"input_profissional_psi_agendamento_as")
-        self.input_profissional_psi_agendamento_as.setFont(font10)
+        self.input_profissional_psi_agendamento_as.setFont(font9)
 
         self.verticalLayout_118.addWidget(self.input_profissional_psi_agendamento_as)
 
         self.input_profissional_nutri_agendamento_as = QRadioButton(self.frame_167)
         self.input_profissional_nutri_agendamento_as.setObjectName(u"input_profissional_nutri_agendamento_as")
-        self.input_profissional_nutri_agendamento_as.setFont(font10)
+        self.input_profissional_nutri_agendamento_as.setFont(font9)
 
         self.verticalLayout_118.addWidget(self.input_profissional_nutri_agendamento_as)
 
         self.input_profissional_fisio_agendamento_as = QRadioButton(self.frame_167)
         self.input_profissional_fisio_agendamento_as.setObjectName(u"input_profissional_fisio_agendamento_as")
-        self.input_profissional_fisio_agendamento_as.setFont(font10)
+        self.input_profissional_fisio_agendamento_as.setFont(font9)
 
         self.verticalLayout_118.addWidget(self.input_profissional_fisio_agendamento_as)
 
@@ -8288,8 +8306,8 @@ class Ui_MainWindow(object):
 
         self.frame_444 = QFrame(self.frame_271)
         self.frame_444.setObjectName(u"frame_444")
-        sizePolicy.setHeightForWidth(self.frame_444.sizePolicy().hasHeightForWidth())
-        self.frame_444.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.frame_444.sizePolicy().hasHeightForWidth())
+        self.frame_444.setSizePolicy(sizePolicy1)
         self.frame_444.setFrameShape(QFrame.StyledPanel)
         self.frame_444.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_152 = QHBoxLayout(self.frame_444)
@@ -8314,11 +8332,11 @@ class Ui_MainWindow(object):
 
         self.input_data_agendamento_as = QDateEdit(self.frame_446)
         self.input_data_agendamento_as.setObjectName(u"input_data_agendamento_as")
-        sizePolicy4.setHeightForWidth(self.input_data_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.input_data_agendamento_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_data_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_data_agendamento_as.setSizePolicy(sizePolicy3)
         self.input_data_agendamento_as.setMinimumSize(QSize(0, 30))
         self.input_data_agendamento_as.setMaximumSize(QSize(130, 30))
-        self.input_data_agendamento_as.setFont(font10)
+        self.input_data_agendamento_as.setFont(font9)
         self.input_data_agendamento_as.setFocusPolicy(Qt.WheelFocus)
         self.input_data_agendamento_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_data_agendamento_as.setLayoutDirection(Qt.LeftToRight)
@@ -8353,8 +8371,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_314.setContentsMargins(0, 0, 0, 0)
         self.label_hora_agendamento_as = QLabel(self.frame_447)
         self.label_hora_agendamento_as.setObjectName(u"label_hora_agendamento_as")
-        sizePolicy.setHeightForWidth(self.label_hora_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.label_hora_agendamento_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_hora_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.label_hora_agendamento_as.setSizePolicy(sizePolicy1)
         self.label_hora_agendamento_as.setMaximumSize(QSize(140, 16777215))
         self.label_hora_agendamento_as.setFont(font)
 
@@ -8383,8 +8401,8 @@ class Ui_MainWindow(object):
 
         self.frame_445 = QFrame(self.frame_271)
         self.frame_445.setObjectName(u"frame_445")
-        sizePolicy2.setHeightForWidth(self.frame_445.sizePolicy().hasHeightForWidth())
-        self.frame_445.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_445.sizePolicy().hasHeightForWidth())
+        self.frame_445.setSizePolicy(sizePolicy)
         self.frame_445.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         self.frame_445.setFrameShape(QFrame.StyledPanel)
         self.frame_445.setFrameShadow(QFrame.Raised)
@@ -8394,16 +8412,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_315.setContentsMargins(0, 0, 0, 50)
         self.label_anotacao_agendamento_as = QLabel(self.frame_445)
         self.label_anotacao_agendamento_as.setObjectName(u"label_anotacao_agendamento_as")
-        sizePolicy.setHeightForWidth(self.label_anotacao_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.label_anotacao_agendamento_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.label_anotacao_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.label_anotacao_agendamento_as.setSizePolicy(sizePolicy1)
         self.label_anotacao_agendamento_as.setFont(font)
 
         self.verticalLayout_315.addWidget(self.label_anotacao_agendamento_as)
 
         self.input_anotacao_agendamento_as = QTextEdit(self.frame_445)
         self.input_anotacao_agendamento_as.setObjectName(u"input_anotacao_agendamento_as")
-        sizePolicy4.setHeightForWidth(self.input_anotacao_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.input_anotacao_agendamento_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_anotacao_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_anotacao_agendamento_as.setSizePolicy(sizePolicy3)
         self.input_anotacao_agendamento_as.setMaximumSize(QSize(16777215, 80))
         self.input_anotacao_agendamento_as.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
 "border-radius: 0.8em;")
@@ -8426,7 +8444,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_agenda_as.setObjectName(u"btn_salvar_agenda_as")
         self.btn_salvar_agenda_as.setMinimumSize(QSize(120, 40))
         self.btn_salvar_agenda_as.setMaximumSize(QSize(120, 40))
-        self.btn_salvar_agenda_as.setFont(font8)
+        self.btn_salvar_agenda_as.setFont(font7)
         self.btn_salvar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_agenda_as.setLayoutDirection(Qt.LeftToRight)
         self.btn_salvar_agenda_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -8477,18 +8495,18 @@ class Ui_MainWindow(object):
         self.verticalLayout_327.setContentsMargins(0, 40, 0, 10)
         self.label_filtro_agendamento_as = QLabel(self.frame_filtro_agenda)
         self.label_filtro_agendamento_as.setObjectName(u"label_filtro_agendamento_as")
-        sizePolicy7.setHeightForWidth(self.label_filtro_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.label_filtro_agendamento_as.setSizePolicy(sizePolicy7)
-        self.label_filtro_agendamento_as.setFont(font16)
+        sizePolicy6.setHeightForWidth(self.label_filtro_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.label_filtro_agendamento_as.setSizePolicy(sizePolicy6)
+        self.label_filtro_agendamento_as.setFont(font15)
 
         self.verticalLayout_327.addWidget(self.label_filtro_agendamento_as)
 
         self.input_filtro_agendamento_as = QLineEdit(self.frame_filtro_agenda)
         self.input_filtro_agendamento_as.setObjectName(u"input_filtro_agendamento_as")
-        sizePolicy3.setHeightForWidth(self.input_filtro_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.input_filtro_agendamento_as.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.input_filtro_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_filtro_agendamento_as.setSizePolicy(sizePolicy2)
         self.input_filtro_agendamento_as.setMinimumSize(QSize(790, 0))
-        self.input_filtro_agendamento_as.setFont(font16)
+        self.input_filtro_agendamento_as.setFont(font15)
 
         self.verticalLayout_327.addWidget(self.input_filtro_agendamento_as)
 
@@ -8519,11 +8537,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem58 = QTableWidgetItem()
         self.input_TableWidget_agendamento_as.setItem(1, 1, __qtablewidgetitem58)
         self.input_TableWidget_agendamento_as.setObjectName(u"input_TableWidget_agendamento_as")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.input_TableWidget_agendamento_as.sizePolicy().hasHeightForWidth())
-        self.input_TableWidget_agendamento_as.setSizePolicy(sizePolicy9)
+        sizePolicy8 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Expanding)
+        sizePolicy8.setHorizontalStretch(0)
+        sizePolicy8.setVerticalStretch(0)
+        sizePolicy8.setHeightForWidth(self.input_TableWidget_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_TableWidget_agendamento_as.setSizePolicy(sizePolicy8)
         self.input_TableWidget_agendamento_as.setMinimumSize(QSize(900, 0))
         self.input_TableWidget_agendamento_as.setFont(font)
         self.input_TableWidget_agendamento_as.setLayoutDirection(Qt.LeftToRight)
@@ -8564,7 +8582,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_agenda_as.setObjectName(u"btn_voltar_agenda_as")
         self.btn_voltar_agenda_as.setMinimumSize(QSize(120, 40))
         self.btn_voltar_agenda_as.setMaximumSize(QSize(120, 40))
-        self.btn_voltar_agenda_as.setFont(font8)
+        self.btn_voltar_agenda_as.setFont(font7)
         self.btn_voltar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_agenda_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -8580,14 +8598,17 @@ class Ui_MainWindow(object):
         self.btn_alterar_agenda_as.setObjectName(u"btn_alterar_agenda_as")
         self.btn_alterar_agenda_as.setMinimumSize(QSize(120, 40))
         self.btn_alterar_agenda_as.setMaximumSize(QSize(120, 40))
-        self.btn_alterar_agenda_as.setFont(font6)
+        font17 = QFont()
+        font17.setFamilies([u"Abel"])
+        font17.setPointSize(16)
+        self.btn_alterar_agenda_as.setFont(font17)
         self.btn_alterar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_agenda_as.setAutoFillBackground(False)
         self.btn_alterar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon27 = QIcon()
-        icon27.addFile(u"../../../../icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon27.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_agenda_as.setIcon(icon27)
         self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
 
@@ -8597,14 +8618,14 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_as.setObjectName(u"btn_cancelar_agenda_as")
         self.btn_cancelar_agenda_as.setMinimumSize(QSize(120, 40))
         self.btn_cancelar_agenda_as.setMaximumSize(QSize(120, 40))
-        self.btn_cancelar_agenda_as.setFont(font6)
+        self.btn_cancelar_agenda_as.setFont(font17)
         self.btn_cancelar_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cancelar_agenda_as.setAutoFillBackground(False)
         self.btn_cancelar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon28 = QIcon()
-        icon28.addFile(u"../../../../icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon28.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_agenda_as.setIcon(icon28)
         self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
 
@@ -8698,8 +8719,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_112.setContentsMargins(20, 0, 0, 0)
         self.frame_253 = QFrame(self.frame_252)
         self.frame_253.setObjectName(u"frame_253")
-        sizePolicy2.setHeightForWidth(self.frame_253.sizePolicy().hasHeightForWidth())
-        self.frame_253.setSizePolicy(sizePolicy2)
+        sizePolicy.setHeightForWidth(self.frame_253.sizePolicy().hasHeightForWidth())
+        self.frame_253.setSizePolicy(sizePolicy)
         self.frame_253.setMinimumSize(QSize(0, 0))
         self.frame_253.setMaximumSize(QSize(16777215, 60))
         self.frame_253.setStyleSheet(u"")
@@ -8955,8 +8976,8 @@ class Ui_MainWindow(object):
 
         self.btn_cep_buscar_clinica_as = QPushButton(self.frame_459)
         self.btn_cep_buscar_clinica_as.setObjectName(u"btn_cep_buscar_clinica_as")
-        sizePolicy.setHeightForWidth(self.btn_cep_buscar_clinica_as.sizePolicy().hasHeightForWidth())
-        self.btn_cep_buscar_clinica_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_cep_buscar_clinica_as.sizePolicy().hasHeightForWidth())
+        self.btn_cep_buscar_clinica_as.setSizePolicy(sizePolicy1)
         self.btn_cep_buscar_clinica_as.setMinimumSize(QSize(0, 30))
         self.btn_cep_buscar_clinica_as.setMaximumSize(QSize(25, 30))
         self.btn_cep_buscar_clinica_as.setStyleSheet(u"QPushButton{\n"
@@ -9068,8 +9089,8 @@ class Ui_MainWindow(object):
 
         self.input_numero_clinica_as = QLineEdit(self.frame_463)
         self.input_numero_clinica_as.setObjectName(u"input_numero_clinica_as")
-        sizePolicy3.setHeightForWidth(self.input_numero_clinica_as.sizePolicy().hasHeightForWidth())
-        self.input_numero_clinica_as.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.input_numero_clinica_as.sizePolicy().hasHeightForWidth())
+        self.input_numero_clinica_as.setSizePolicy(sizePolicy2)
         self.input_numero_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_numero_clinica_as.setMaximumSize(QSize(16777215, 30))
         self.input_numero_clinica_as.setFont(font)
@@ -9244,7 +9265,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_clinica_as.setObjectName(u"btn_voltar_clinica_as")
         self.btn_voltar_clinica_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_clinica_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_clinica_as.setFont(font8)
+        self.btn_voltar_clinica_as.setFont(font7)
         self.btn_voltar_clinica_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_clinica_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -9259,7 +9280,7 @@ class Ui_MainWindow(object):
         self.btn_finalizar_clinica_as = QPushButton(self.frame_460)
         self.btn_finalizar_clinica_as.setObjectName(u"btn_finalizar_clinica_as")
         self.btn_finalizar_clinica_as.setMinimumSize(QSize(125, 40))
-        self.btn_finalizar_clinica_as.setFont(font8)
+        self.btn_finalizar_clinica_as.setFont(font7)
         self.btn_finalizar_clinica_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_finalizar_clinica_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_finalizar_clinica_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -9356,7 +9377,7 @@ class Ui_MainWindow(object):
         self.label_tipo_alterar_cadastros_as.setMinimumSize(QSize(200, 20))
         self.label_tipo_alterar_cadastros_as.setMaximumSize(QSize(200, 20))
         self.label_tipo_alterar_cadastros_as.setSizeIncrement(QSize(126, 20))
-        self.label_tipo_alterar_cadastros_as.setFont(font8)
+        self.label_tipo_alterar_cadastros_as.setFont(font7)
 
         self.verticalLayout_186.addWidget(self.label_tipo_alterar_cadastros_as)
 
@@ -9368,7 +9389,7 @@ class Ui_MainWindow(object):
         self.comboBox_tipos_alterar_cadastros_as.setObjectName(u"comboBox_tipos_alterar_cadastros_as")
         self.comboBox_tipos_alterar_cadastros_as.setMinimumSize(QSize(0, 30))
         self.comboBox_tipos_alterar_cadastros_as.setMaximumSize(QSize(16777215, 30))
-        self.comboBox_tipos_alterar_cadastros_as.setFont(font8)
+        self.comboBox_tipos_alterar_cadastros_as.setFont(font7)
 
         self.verticalLayout_186.addWidget(self.comboBox_tipos_alterar_cadastros_as)
 
@@ -9390,7 +9411,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cpf_cnpj_as.setMinimumSize(QSize(126, 20))
         self.label_alterar_cpf_cnpj_as.setMaximumSize(QSize(126, 20))
         self.label_alterar_cpf_cnpj_as.setSizeIncrement(QSize(126, 20))
-        self.label_alterar_cpf_cnpj_as.setFont(font8)
+        self.label_alterar_cpf_cnpj_as.setFont(font7)
 
         self.verticalLayout_274.addWidget(self.label_alterar_cpf_cnpj_as)
 
@@ -9410,14 +9431,14 @@ class Ui_MainWindow(object):
         self.frame_279.setObjectName(u"frame_279")
         self.frame_279.setMinimumSize(QSize(80, 60))
         self.frame_279.setMaximumSize(QSize(60, 60))
-        self.frame_279.setFont(font14)
+        self.frame_279.setFont(font13)
         self.frame_279.setFrameShape(QFrame.StyledPanel)
         self.frame_279.setFrameShadow(QFrame.Raised)
         self.btn_buscar_alterar_as = QPushButton(self.frame_279)
         self.btn_buscar_alterar_as.setObjectName(u"btn_buscar_alterar_as")
         self.btn_buscar_alterar_as.setGeometry(QRect(20, 10, 40, 40))
-        sizePolicy.setHeightForWidth(self.btn_buscar_alterar_as.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_alterar_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_buscar_alterar_as.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_alterar_as.setSizePolicy(sizePolicy1)
         self.btn_buscar_alterar_as.setMinimumSize(QSize(40, 40))
         self.btn_buscar_alterar_as.setMaximumSize(QSize(40, 40))
         self.btn_buscar_alterar_as.setStyleSheet(u"QPushButton{\n"
@@ -9615,11 +9636,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_data_nascimento_cuidador_as = QDateEdit(self.frame_4991)
         self.input_alterar_data_nascimento_cuidador_as.setObjectName(u"input_alterar_data_nascimento_cuidador_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_data_nascimento_cuidador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_data_nascimento_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_data_nascimento_cuidador_as.setSizePolicy(sizePolicy3)
         self.input_alterar_data_nascimento_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_data_nascimento_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_data_nascimento_cuidador_as.setFont(font10)
+        self.input_alterar_data_nascimento_cuidador_as.setFont(font9)
         self.input_alterar_data_nascimento_cuidador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_data_nascimento_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_data_nascimento_cuidador_as.setLayoutDirection(Qt.LeftToRight)
@@ -9719,11 +9740,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_data_emissao_cuidador_as = QDateEdit(self.frame_291)
         self.input_alterar_data_emissao_cuidador_as.setObjectName(u"input_alterar_data_emissao_cuidador_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_data_emissao_cuidador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_data_emissao_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_data_emissao_cuidador_as.setSizePolicy(sizePolicy3)
         self.input_alterar_data_emissao_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_data_emissao_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_data_emissao_cuidador_as.setFont(font10)
+        self.input_alterar_data_emissao_cuidador_as.setFont(font9)
         self.input_alterar_data_emissao_cuidador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_data_emissao_cuidador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_data_emissao_cuidador_as.setLayoutDirection(Qt.LeftToRight)
@@ -9957,8 +9978,8 @@ class Ui_MainWindow(object):
 
         self.btn_alterar_cep_buscar_cuidador_as = QPushButton(self.frame_426)
         self.btn_alterar_cep_buscar_cuidador_as.setObjectName(u"btn_alterar_cep_buscar_cuidador_as")
-        sizePolicy.setHeightForWidth(self.btn_alterar_cep_buscar_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.btn_alterar_cep_buscar_cuidador_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_alterar_cep_buscar_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.btn_alterar_cep_buscar_cuidador_as.setSizePolicy(sizePolicy1)
         self.btn_alterar_cep_buscar_cuidador_as.setMinimumSize(QSize(0, 31))
         self.btn_alterar_cep_buscar_cuidador_as.setMaximumSize(QSize(25, 31))
         self.btn_alterar_cep_buscar_cuidador_as.setStyleSheet(u"QPushButton{\n"
@@ -10060,8 +10081,8 @@ class Ui_MainWindow(object):
 
         self.input_alterar_numero_cuidador_as = QLineEdit(self.frame_301)
         self.input_alterar_numero_cuidador_as.setObjectName(u"input_alterar_numero_cuidador_as")
-        sizePolicy3.setHeightForWidth(self.input_alterar_numero_cuidador_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_numero_cuidador_as.setSizePolicy(sizePolicy3)
+        sizePolicy2.setHeightForWidth(self.input_alterar_numero_cuidador_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_numero_cuidador_as.setSizePolicy(sizePolicy2)
         self.input_alterar_numero_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_numero_cuidador_as.setMaximumSize(QSize(16777215, 30))
         self.input_alterar_numero_cuidador_as.setFont(font)
@@ -10226,7 +10247,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_voltar_cuidador_as.setObjectName(u"btn_alterar_voltar_cuidador_as")
         self.btn_alterar_voltar_cuidador_as.setMinimumSize(QSize(100, 40))
         self.btn_alterar_voltar_cuidador_as.setMaximumSize(QSize(100, 40))
-        self.btn_alterar_voltar_cuidador_as.setFont(font8)
+        self.btn_alterar_voltar_cuidador_as.setFont(font7)
         self.btn_alterar_voltar_cuidador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_voltar_cuidador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -10241,7 +10262,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_salvar_as = QPushButton(self.frame_306)
         self.btn_alterar_salvar_as.setObjectName(u"btn_alterar_salvar_as")
         self.btn_alterar_salvar_as.setMinimumSize(QSize(120, 40))
-        self.btn_alterar_salvar_as.setFont(font8)
+        self.btn_alterar_salvar_as.setFont(font7)
         self.btn_alterar_salvar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_salvar_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_alterar_salvar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -10439,11 +10460,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_nascimento_usuario_as = QDateEdit(self.frame_317)
         self.input_alterar_nascimento_usuario_as.setObjectName(u"input_alterar_nascimento_usuario_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_nascimento_usuario_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_nascimento_usuario_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_nascimento_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_nascimento_usuario_as.setSizePolicy(sizePolicy3)
         self.input_alterar_nascimento_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_nascimento_usuario_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_nascimento_usuario_as.setFont(font10)
+        self.input_alterar_nascimento_usuario_as.setFont(font9)
         self.input_alterar_nascimento_usuario_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_nascimento_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_nascimento_usuario_as.setLayoutDirection(Qt.LeftToRight)
@@ -10492,7 +10513,7 @@ class Ui_MainWindow(object):
         self.input_alterar_situacao_ativo_usuario_as = QRadioButton(self.frame_319)
         self.input_alterar_situacao_ativo_usuario_as.setObjectName(u"input_alterar_situacao_ativo_usuario_as")
         self.input_alterar_situacao_ativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        self.input_alterar_situacao_ativo_usuario_as.setFont(font10)
+        self.input_alterar_situacao_ativo_usuario_as.setFont(font9)
         self.input_alterar_situacao_ativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_107.addWidget(self.input_alterar_situacao_ativo_usuario_as)
@@ -10500,7 +10521,7 @@ class Ui_MainWindow(object):
         self.input_alterar_situacao_inativo_usuario_as = QRadioButton(self.frame_319)
         self.input_alterar_situacao_inativo_usuario_as.setObjectName(u"input_alterar_situacao_inativo_usuario_as")
         self.input_alterar_situacao_inativo_usuario_as.setMaximumSize(QSize(80, 16777215))
-        self.input_alterar_situacao_inativo_usuario_as.setFont(font10)
+        self.input_alterar_situacao_inativo_usuario_as.setFont(font9)
         self.input_alterar_situacao_inativo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_107.addWidget(self.input_alterar_situacao_inativo_usuario_as)
@@ -10604,11 +10625,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_data_emissao_usuario_as = QDateEdit(self.frame_323)
         self.input_alterar_data_emissao_usuario_as.setObjectName(u"input_alterar_data_emissao_usuario_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_data_emissao_usuario_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_data_emissao_usuario_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_data_emissao_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_data_emissao_usuario_as.setSizePolicy(sizePolicy3)
         self.input_alterar_data_emissao_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_data_emissao_usuario_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_data_emissao_usuario_as.setFont(font10)
+        self.input_alterar_data_emissao_usuario_as.setFont(font9)
         self.input_alterar_data_emissao_usuario_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_data_emissao_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_data_emissao_usuario_as.setLayoutDirection(Qt.LeftToRight)
@@ -10722,7 +10743,7 @@ class Ui_MainWindow(object):
         self.frame_327 = QFrame(self.frame_313)
         self.frame_327.setObjectName(u"frame_327")
         self.frame_327.setMaximumSize(QSize(16777215, 60))
-        self.frame_327.setFont(font11)
+        self.frame_327.setFont(font10)
         self.frame_327.setStyleSheet(u"")
         self.frame_327.setFrameShape(QFrame.StyledPanel)
         self.frame_327.setFrameShadow(QFrame.Raised)
@@ -10889,8 +10910,8 @@ class Ui_MainWindow(object):
 
         self.btn_alterar_cep_buscar_usuario_as = QPushButton(self.frame_429)
         self.btn_alterar_cep_buscar_usuario_as.setObjectName(u"btn_alterar_cep_buscar_usuario_as")
-        sizePolicy.setHeightForWidth(self.btn_alterar_cep_buscar_usuario_as.sizePolicy().hasHeightForWidth())
-        self.btn_alterar_cep_buscar_usuario_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_alterar_cep_buscar_usuario_as.sizePolicy().hasHeightForWidth())
+        self.btn_alterar_cep_buscar_usuario_as.setSizePolicy(sizePolicy1)
         self.btn_alterar_cep_buscar_usuario_as.setMinimumSize(QSize(0, 31))
         self.btn_alterar_cep_buscar_usuario_as.setMaximumSize(QSize(25, 31))
         self.btn_alterar_cep_buscar_usuario_as.setStyleSheet(u"QPushButton{\n"
@@ -11211,13 +11232,13 @@ class Ui_MainWindow(object):
         self.horizontalLayout_112.setContentsMargins(0, 0, 0, 0)
         self.input_alterar_pessoa_cdeficiencia_sim_usuario_as = QRadioButton(self.frame_342)
         self.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setObjectName(u"input_alterar_pessoa_cdeficiencia_sim_usuario_as")
-        self.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setFont(font10)
+        self.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setFont(font9)
 
         self.horizontalLayout_112.addWidget(self.input_alterar_pessoa_cdeficiencia_sim_usuario_as)
 
         self.input_alterar_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_342)
         self.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"input_alterar_pessoa_cdeficiencia_nao_usuario_as")
-        self.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setFont(font10)
+        self.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setFont(font9)
 
         self.horizontalLayout_112.addWidget(self.input_alterar_pessoa_cdeficiencia_nao_usuario_as)
 
@@ -11549,14 +11570,14 @@ class Ui_MainWindow(object):
         self.horizontalLayout_114.setContentsMargins(0, 0, 0, 0)
         self.input_alterar_tarifa_social_sim_usuario_as = QRadioButton(self.frame_351)
         self.input_alterar_tarifa_social_sim_usuario_as.setObjectName(u"input_alterar_tarifa_social_sim_usuario_as")
-        self.input_alterar_tarifa_social_sim_usuario_as.setFont(font10)
+        self.input_alterar_tarifa_social_sim_usuario_as.setFont(font9)
         self.input_alterar_tarifa_social_sim_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_114.addWidget(self.input_alterar_tarifa_social_sim_usuario_as)
 
         self.input_alterar_tarifa_social_nao_usuario_as = QRadioButton(self.frame_351)
         self.input_alterar_tarifa_social_nao_usuario_as.setObjectName(u"input_alterar_tarifa_social_nao_usuario_as")
-        self.input_alterar_tarifa_social_nao_usuario_as.setFont(font10)
+        self.input_alterar_tarifa_social_nao_usuario_as.setFont(font9)
         self.input_alterar_tarifa_social_nao_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_114.addWidget(self.input_alterar_tarifa_social_nao_usuario_as)
@@ -11736,11 +11757,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_data_inicio_usuario_as = QDateEdit(self.frame_356)
         self.input_alterar_data_inicio_usuario_as.setObjectName(u"input_alterar_data_inicio_usuario_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_data_inicio_usuario_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_data_inicio_usuario_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_data_inicio_usuario_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_data_inicio_usuario_as.setSizePolicy(sizePolicy3)
         self.input_alterar_data_inicio_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_data_inicio_usuario_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_data_inicio_usuario_as.setFont(font10)
+        self.input_alterar_data_inicio_usuario_as.setFont(font9)
         self.input_alterar_data_inicio_usuario_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_data_inicio_usuario_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_data_inicio_usuario_as.setLayoutDirection(Qt.LeftToRight)
@@ -11877,7 +11898,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_voltar_usuario_as.setObjectName(u"btn_alterar_voltar_usuario_as")
         self.btn_alterar_voltar_usuario_as.setMinimumSize(QSize(100, 40))
         self.btn_alterar_voltar_usuario_as.setMaximumSize(QSize(100, 40))
-        self.btn_alterar_voltar_usuario_as.setFont(font8)
+        self.btn_alterar_voltar_usuario_as.setFont(font7)
         self.btn_alterar_voltar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_voltar_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -11892,13 +11913,13 @@ class Ui_MainWindow(object):
         self.btn_alterar_observacoes_sigilo_as = QPushButton(self.frame_361)
         self.btn_alterar_observacoes_sigilo_as.setObjectName(u"btn_alterar_observacoes_sigilo_as")
         self.btn_alterar_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
-        self.btn_alterar_observacoes_sigilo_as.setFont(font8)
+        self.btn_alterar_observacoes_sigilo_as.setFont(font7)
         self.btn_alterar_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon29 = QIcon()
-        icon29.addFile(u"../icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon29.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_observacoes_sigilo_as.setIcon(icon29)
         self.btn_alterar_observacoes_sigilo_as.setIconSize(QSize(28, 28))
 
@@ -11907,7 +11928,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_proximo_as = QPushButton(self.frame_361)
         self.btn_alterar_proximo_as.setObjectName(u"btn_alterar_proximo_as")
         self.btn_alterar_proximo_as.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_proximo_as.setFont(font8)
+        self.btn_alterar_proximo_as.setFont(font7)
         self.btn_alterar_proximo_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_proximo_as.setLayoutDirection(Qt.RightToLeft)
         self.btn_alterar_proximo_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
@@ -11919,7 +11940,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_finalizar_as = QPushButton(self.frame_361)
         self.btn_alterar_finalizar_as.setObjectName(u"btn_alterar_finalizar_as")
         self.btn_alterar_finalizar_as.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_finalizar_as.setFont(font8)
+        self.btn_alterar_finalizar_as.setFont(font7)
         self.btn_alterar_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -11974,11 +11995,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_137.setObjectName(u"horizontalLayout_137")
         self.frame_374 = QFrame(self.frame_364)
         self.frame_374.setObjectName(u"frame_374")
-        sizePolicy10 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy10.setHorizontalStretch(0)
-        sizePolicy10.setVerticalStretch(0)
-        sizePolicy10.setHeightForWidth(self.frame_374.sizePolicy().hasHeightForWidth())
-        self.frame_374.setSizePolicy(sizePolicy10)
+        sizePolicy9 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy9.setHorizontalStretch(0)
+        sizePolicy9.setVerticalStretch(0)
+        sizePolicy9.setHeightForWidth(self.frame_374.sizePolicy().hasHeightForWidth())
+        self.frame_374.setSizePolicy(sizePolicy9)
         self.frame_374.setStyleSheet(u"QLabel{margin-left: 0.25em}")
         self.frame_374.setFrameShape(QFrame.StyledPanel)
         self.frame_374.setFrameShadow(QFrame.Raised)
@@ -12123,8 +12144,8 @@ class Ui_MainWindow(object):
         self.input_alterar_cargo_colaborador_comboBox_as.addItem("")
         self.input_alterar_cargo_colaborador_comboBox_as.addItem("")
         self.input_alterar_cargo_colaborador_comboBox_as.setObjectName(u"input_alterar_cargo_colaborador_comboBox_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_cargo_colaborador_comboBox_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy3)
         self.input_alterar_cargo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cargo_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
         self.input_alterar_cargo_colaborador_comboBox_as.setFont(font)
@@ -12234,11 +12255,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_data_emissao_rg_colaborador_as = QDateEdit(self.frame_395)
         self.input_alterar_data_emissao_rg_colaborador_as.setObjectName(u"input_alterar_data_emissao_rg_colaborador_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_data_emissao_rg_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_data_emissao_rg_colaborador_as.setSizePolicy(sizePolicy3)
         self.input_alterar_data_emissao_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_data_emissao_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_data_emissao_rg_colaborador_as.setFont(font10)
+        self.input_alterar_data_emissao_rg_colaborador_as.setFont(font9)
         self.input_alterar_data_emissao_rg_colaborador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_data_emissao_rg_colaborador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_data_emissao_rg_colaborador_as.setLayoutDirection(Qt.LeftToRight)
@@ -12414,7 +12435,7 @@ class Ui_MainWindow(object):
         self.input_alterar_situacao_ativo_colaborador_as = QRadioButton(self.frame_436)
         self.input_alterar_situacao_ativo_colaborador_as.setObjectName(u"input_alterar_situacao_ativo_colaborador_as")
         self.input_alterar_situacao_ativo_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.input_alterar_situacao_ativo_colaborador_as.setFont(font10)
+        self.input_alterar_situacao_ativo_colaborador_as.setFont(font9)
         self.input_alterar_situacao_ativo_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_136.addWidget(self.input_alterar_situacao_ativo_colaborador_as)
@@ -12422,7 +12443,7 @@ class Ui_MainWindow(object):
         self.input_alterar_situacao_inativo_colaborador_as = QRadioButton(self.frame_436)
         self.input_alterar_situacao_inativo_colaborador_as.setObjectName(u"input_alterar_situacao_inativo_colaborador_as")
         self.input_alterar_situacao_inativo_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.input_alterar_situacao_inativo_colaborador_as.setFont(font10)
+        self.input_alterar_situacao_inativo_colaborador_as.setFont(font9)
         self.input_alterar_situacao_inativo_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.horizontalLayout_136.addWidget(self.input_alterar_situacao_inativo_colaborador_as)
@@ -12526,11 +12547,11 @@ class Ui_MainWindow(object):
 
         self.input_alterar_data_nascimento_colaborador_as = QDateEdit(self.frame_404)
         self.input_alterar_data_nascimento_colaborador_as.setObjectName(u"input_alterar_data_nascimento_colaborador_as")
-        sizePolicy4.setHeightForWidth(self.input_alterar_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.input_alterar_data_nascimento_colaborador_as.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.input_alterar_data_nascimento_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.input_alterar_data_nascimento_colaborador_as.setSizePolicy(sizePolicy3)
         self.input_alterar_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_data_nascimento_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_data_nascimento_colaborador_as.setFont(font10)
+        self.input_alterar_data_nascimento_colaborador_as.setFont(font9)
         self.input_alterar_data_nascimento_colaborador_as.setFocusPolicy(Qt.WheelFocus)
         self.input_alterar_data_nascimento_colaborador_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_alterar_data_nascimento_colaborador_as.setLayoutDirection(Qt.LeftToRight)
@@ -12852,8 +12873,8 @@ class Ui_MainWindow(object):
 
         self.btn_alterar_cep_buscar_colaborador_as = QPushButton(self.frame_432)
         self.btn_alterar_cep_buscar_colaborador_as.setObjectName(u"btn_alterar_cep_buscar_colaborador_as")
-        sizePolicy.setHeightForWidth(self.btn_alterar_cep_buscar_colaborador_as.sizePolicy().hasHeightForWidth())
-        self.btn_alterar_cep_buscar_colaborador_as.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_alterar_cep_buscar_colaborador_as.sizePolicy().hasHeightForWidth())
+        self.btn_alterar_cep_buscar_colaborador_as.setSizePolicy(sizePolicy1)
         self.btn_alterar_cep_buscar_colaborador_as.setMinimumSize(QSize(0, 30))
         self.btn_alterar_cep_buscar_colaborador_as.setMaximumSize(QSize(25, 30))
         self.btn_alterar_cep_buscar_colaborador_as.setStyleSheet(u"QPushButton{\n"
@@ -13134,7 +13155,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_voltar_cadastro_colaborador_as.setObjectName(u"btn_alterar_voltar_cadastro_colaborador_as")
         self.btn_alterar_voltar_cadastro_colaborador_as.setMinimumSize(QSize(100, 40))
         self.btn_alterar_voltar_cadastro_colaborador_as.setMaximumSize(QSize(100, 40))
-        self.btn_alterar_voltar_cadastro_colaborador_as.setFont(font8)
+        self.btn_alterar_voltar_cadastro_colaborador_as.setFont(font7)
         self.btn_alterar_voltar_cadastro_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_voltar_cadastro_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -13207,7 +13228,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_concluir_cadastro_colaborador_as.setObjectName(u"btn_alterar_concluir_cadastro_colaborador_as")
         self.btn_alterar_concluir_cadastro_colaborador_as.setMinimumSize(QSize(140, 40))
         self.btn_alterar_concluir_cadastro_colaborador_as.setMaximumSize(QSize(140, 40))
-        self.btn_alterar_concluir_cadastro_colaborador_as.setFont(font8)
+        self.btn_alterar_concluir_cadastro_colaborador_as.setFont(font7)
         self.btn_alterar_concluir_cadastro_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_concluir_cadastro_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -13262,7 +13283,7 @@ class Ui_MainWindow(object):
         self.label_titulo_pagina_consulta_geral = QLabel(self.frame_1381)
         self.label_titulo_pagina_consulta_geral.setObjectName(u"label_titulo_pagina_consulta_geral")
         self.label_titulo_pagina_consulta_geral.setMinimumSize(QSize(1824, 93))
-        self.label_titulo_pagina_consulta_geral.setFont(font12)
+        self.label_titulo_pagina_consulta_geral.setFont(font11)
         self.label_titulo_pagina_consulta_geral.setStyleSheet(u"color: #EC848C;\n"
 "background-color: rgb(243, 185, 191);")
         self.label_titulo_pagina_consulta_geral.setAlignment(Qt.AlignCenter)
@@ -13347,8 +13368,8 @@ class Ui_MainWindow(object):
 
         self.btn_buscar_cpf_pagina_consulta_geral = QPushButton(self.frame_4631)
         self.btn_buscar_cpf_pagina_consulta_geral.setObjectName(u"btn_buscar_cpf_pagina_consulta_geral")
-        sizePolicy.setHeightForWidth(self.btn_buscar_cpf_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_cpf_pagina_consulta_geral.setSizePolicy(sizePolicy)
+        sizePolicy1.setHeightForWidth(self.btn_buscar_cpf_pagina_consulta_geral.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_cpf_pagina_consulta_geral.setSizePolicy(sizePolicy1)
         self.btn_buscar_cpf_pagina_consulta_geral.setMinimumSize(QSize(40, 40))
         self.btn_buscar_cpf_pagina_consulta_geral.setMaximumSize(QSize(40, 40))
         self.btn_buscar_cpf_pagina_consulta_geral.setStyleSheet(u"QPushButton{\n"
@@ -13469,11 +13490,11 @@ class Ui_MainWindow(object):
 
         self.radioButton_Retorno_as = QRadioButton(self.frame_2561)
         self.radioButton_Retorno_as.setObjectName(u"radioButton_Retorno_as")
-        sizePolicy11 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
-        sizePolicy11.setHorizontalStretch(0)
-        sizePolicy11.setVerticalStretch(0)
-        sizePolicy11.setHeightForWidth(self.radioButton_Retorno_as.sizePolicy().hasHeightForWidth())
-        self.radioButton_Retorno_as.setSizePolicy(sizePolicy11)
+        sizePolicy10 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
+        sizePolicy10.setHorizontalStretch(0)
+        sizePolicy10.setVerticalStretch(0)
+        sizePolicy10.setHeightForWidth(self.radioButton_Retorno_as.sizePolicy().hasHeightForWidth())
+        self.radioButton_Retorno_as.setSizePolicy(sizePolicy10)
         self.radioButton_Retorno_as.setFont(font)
 
         self.horizontalLayout_741.addWidget(self.radioButton_Retorno_as)
@@ -13589,7 +13610,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_pagina_consulta_geral.setObjectName(u"btn_voltar_pagina_consulta_geral")
         self.btn_voltar_pagina_consulta_geral.setMinimumSize(QSize(100, 40))
         self.btn_voltar_pagina_consulta_geral.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_pagina_consulta_geral.setFont(font8)
+        self.btn_voltar_pagina_consulta_geral.setFont(font7)
         self.btn_voltar_pagina_consulta_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -13600,7 +13621,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral = QPushButton(self.frame_4511)
         self.btn_salvar_pagina_consulta_geral.setObjectName(u"btn_salvar_pagina_consulta_geral")
         self.btn_salvar_pagina_consulta_geral.setMinimumSize(QSize(0, 40))
-        self.btn_salvar_pagina_consulta_geral.setFont(font8)
+        self.btn_salvar_pagina_consulta_geral.setFont(font7)
         self.btn_salvar_pagina_consulta_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_salvar_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -13650,7 +13671,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_316.setObjectName(u"verticalLayout_316")
         self.label_historico_pagina_consulta_geral = QLabel(self.frame_4541)
         self.label_historico_pagina_consulta_geral.setObjectName(u"label_historico_pagina_consulta_geral")
-        self.label_historico_pagina_consulta_geral.setFont(font8)
+        self.label_historico_pagina_consulta_geral.setFont(font7)
         self.label_historico_pagina_consulta_geral.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_316.addWidget(self.label_historico_pagina_consulta_geral)
@@ -13674,7 +13695,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_1441.setObjectName(u"horizontalLayout_1441")
         self.label_filtro_pagina_consulta_geral = QLabel(self.frame_4571)
         self.label_filtro_pagina_consulta_geral.setObjectName(u"label_filtro_pagina_consulta_geral")
-        self.label_filtro_pagina_consulta_geral.setFont(font6)
+        self.label_filtro_pagina_consulta_geral.setFont(font17)
 
         self.horizontalLayout_1441.addWidget(self.label_filtro_pagina_consulta_geral)
 
@@ -13761,7 +13782,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral = QPushButton(self.frame_4561)
         self.btn_alterar_pagina_consulta_geral.setObjectName(u"btn_alterar_pagina_consulta_geral")
         self.btn_alterar_pagina_consulta_geral.setMinimumSize(QSize(0, 40))
-        self.btn_alterar_pagina_consulta_geral.setFont(font8)
+        self.btn_alterar_pagina_consulta_geral.setFont(font7)
         self.btn_alterar_pagina_consulta_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_alterar_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -13774,7 +13795,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral = QPushButton(self.frame_4561)
         self.btn_excluir_pagina_consulta_geral.setObjectName(u"btn_excluir_pagina_consulta_geral")
         self.btn_excluir_pagina_consulta_geral.setMinimumSize(QSize(0, 40))
-        self.btn_excluir_pagina_consulta_geral.setFont(font8)
+        self.btn_excluir_pagina_consulta_geral.setFont(font7)
         self.btn_excluir_pagina_consulta_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_excluir_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
@@ -13883,13 +13904,13 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_farm = QPushButton(self.frame_52)
         self.btn_cadastrar_farm.setObjectName(u"btn_cadastrar_farm")
         self.btn_cadastrar_farm.setMinimumSize(QSize(140, 45))
-        self.btn_cadastrar_farm.setFont(font7)
+        self.btn_cadastrar_farm.setFont(font6)
         self.btn_cadastrar_farm.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_cadastrar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon30 = QIcon()
-        icon30.addFile(u"../icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon30.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_farm.setIcon(icon30)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
@@ -13898,13 +13919,13 @@ class Ui_MainWindow(object):
         self.btn_retirar_farm = QPushButton(self.frame_52)
         self.btn_retirar_farm.setObjectName(u"btn_retirar_farm")
         self.btn_retirar_farm.setMinimumSize(QSize(140, 45))
-        self.btn_retirar_farm.setFont(font7)
+        self.btn_retirar_farm.setFont(font6)
         self.btn_retirar_farm.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_retirar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon31 = QIcon()
-        icon31.addFile(u"../icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon31.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_retirar_farm.setIcon(icon31)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
@@ -13913,13 +13934,13 @@ class Ui_MainWindow(object):
         self.btn_estoque_farm = QPushButton(self.frame_52)
         self.btn_estoque_farm.setObjectName(u"btn_estoque_farm")
         self.btn_estoque_farm.setMinimumSize(QSize(140, 45))
-        self.btn_estoque_farm.setFont(font7)
+        self.btn_estoque_farm.setFont(font6)
         self.btn_estoque_farm.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_estoque_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon32 = QIcon()
-        icon32.addFile(u"../icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon32.addFile(u"./icons/estoque-pronto.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_estoque_farm.setIcon(icon32)
         self.btn_estoque_farm.setIconSize(QSize(30, 30))
 
@@ -14006,7 +14027,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_16 = QHBoxLayout(self.frame_22)
         self.horizontalLayout_16.setSpacing(0)
         self.horizontalLayout_16.setObjectName(u"horizontalLayout_16")
-        self.horizontalLayout_16.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_16.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_4 = QStackedWidget(self.frame_22)
         self.stackedWidget_4.setObjectName(u"stackedWidget_4")
         self.page_principal_farm = QWidget()
@@ -14093,7 +14114,7 @@ class Ui_MainWindow(object):
         self.btn_consulta_fisio = QPushButton(self.frame_53)
         self.btn_consulta_fisio.setObjectName(u"btn_consulta_fisio")
         self.btn_consulta_fisio.setMinimumSize(QSize(140, 45))
-        self.btn_consulta_fisio.setFont(font7)
+        self.btn_consulta_fisio.setFont(font6)
         self.btn_consulta_fisio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_fisio.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14106,7 +14127,7 @@ class Ui_MainWindow(object):
         self.btn_relatorios_fisio = QPushButton(self.frame_53)
         self.btn_relatorios_fisio.setObjectName(u"btn_relatorios_fisio")
         self.btn_relatorios_fisio.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_fisio.setFont(font7)
+        self.btn_relatorios_fisio.setFont(font6)
         self.btn_relatorios_fisio.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_fisio.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14196,7 +14217,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22 = QHBoxLayout(self.frame_29)
         self.horizontalLayout_22.setSpacing(0)
         self.horizontalLayout_22.setObjectName(u"horizontalLayout_22")
-        self.horizontalLayout_22.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_22.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_5 = QStackedWidget(self.frame_29)
         self.stackedWidget_5.setObjectName(u"stackedWidget_5")
         self.page_principal_fisio = QWidget()
@@ -14290,7 +14311,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon33 = QIcon()
-        icon33.addFile(u"../icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon33.addFile(u"./icons/seguranca-alimentar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_plano_alimentar_nutri.setIcon(icon33)
         self.btn_plano_alimentar_nutri.setIconSize(QSize(30, 30))
 
@@ -14299,7 +14320,7 @@ class Ui_MainWindow(object):
         self.btn_consulta_nutri = QPushButton(self.frame_56)
         self.btn_consulta_nutri.setObjectName(u"btn_consulta_nutri")
         self.btn_consulta_nutri.setMinimumSize(QSize(140, 45))
-        self.btn_consulta_nutri.setFont(font7)
+        self.btn_consulta_nutri.setFont(font6)
         self.btn_consulta_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14312,7 +14333,7 @@ class Ui_MainWindow(object):
         self.btn_relatorios_nutri = QPushButton(self.frame_56)
         self.btn_relatorios_nutri.setObjectName(u"btn_relatorios_nutri")
         self.btn_relatorios_nutri.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_nutri.setFont(font7)
+        self.btn_relatorios_nutri.setFont(font6)
         self.btn_relatorios_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14403,7 +14424,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_19 = QHBoxLayout(self.frame_26)
         self.horizontalLayout_19.setSpacing(0)
         self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
-        self.horizontalLayout_19.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_6 = QStackedWidget(self.frame_26)
         self.stackedWidget_6.setObjectName(u"stackedWidget_6")
         self.page_principal_nutri = QWidget()
@@ -14433,7 +14454,7 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_cadastrar_nutri.setObjectName(u"btn_plano_alimentar_cadastrar_nutri")
         self.btn_plano_alimentar_cadastrar_nutri.setMinimumSize(QSize(700, 154))
         self.btn_plano_alimentar_cadastrar_nutri.setMaximumSize(QSize(700, 154))
-        self.btn_plano_alimentar_cadastrar_nutri.setFont(font9)
+        self.btn_plano_alimentar_cadastrar_nutri.setFont(font8)
         self.btn_plano_alimentar_cadastrar_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_plano_alimentar_cadastrar_nutri.setLayoutDirection(Qt.RightToLeft)
         self.btn_plano_alimentar_cadastrar_nutri.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
@@ -14448,7 +14469,7 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_buscar_nutri.setObjectName(u"btn_plano_alimentar_buscar_nutri")
         self.btn_plano_alimentar_buscar_nutri.setMinimumSize(QSize(700, 154))
         self.btn_plano_alimentar_buscar_nutri.setMaximumSize(QSize(700, 154))
-        self.btn_plano_alimentar_buscar_nutri.setFont(font9)
+        self.btn_plano_alimentar_buscar_nutri.setFont(font8)
         self.btn_plano_alimentar_buscar_nutri.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_plano_alimentar_buscar_nutri.setLayoutDirection(Qt.RightToLeft)
         self.btn_plano_alimentar_buscar_nutri.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
@@ -14548,7 +14569,7 @@ class Ui_MainWindow(object):
         self.btn_consulta_psi = QPushButton(self.frame_59)
         self.btn_consulta_psi.setObjectName(u"btn_consulta_psi")
         self.btn_consulta_psi.setMinimumSize(QSize(140, 45))
-        self.btn_consulta_psi.setFont(font7)
+        self.btn_consulta_psi.setFont(font6)
         self.btn_consulta_psi.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_consulta_psi.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14561,7 +14582,7 @@ class Ui_MainWindow(object):
         self.btn_relatorios_psi = QPushButton(self.frame_59)
         self.btn_relatorios_psi.setObjectName(u"btn_relatorios_psi")
         self.btn_relatorios_psi.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_psi.setFont(font7)
+        self.btn_relatorios_psi.setFont(font6)
         self.btn_relatorios_psi.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_psi.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14651,7 +14672,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24 = QHBoxLayout(self.frame_31)
         self.horizontalLayout_24.setSpacing(0)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.horizontalLayout_24.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_7 = QStackedWidget(self.frame_31)
         self.stackedWidget_7.setObjectName(u"stackedWidget_7")
         self.page_principal_psi = QWidget()
@@ -14742,7 +14763,7 @@ class Ui_MainWindow(object):
         self.btn_agenda_sec = QPushButton(self.frame_50)
         self.btn_agenda_sec.setObjectName(u"btn_agenda_sec")
         self.btn_agenda_sec.setMinimumSize(QSize(140, 45))
-        self.btn_agenda_sec.setFont(font7)
+        self.btn_agenda_sec.setFont(font6)
         self.btn_agenda_sec.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_agenda_sec.setLayoutDirection(Qt.LeftToRight)
         self.btn_agenda_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
@@ -14756,13 +14777,13 @@ class Ui_MainWindow(object):
         self.btn_eventos_sec = QPushButton(self.frame_50)
         self.btn_eventos_sec.setObjectName(u"btn_eventos_sec")
         self.btn_eventos_sec.setMinimumSize(QSize(140, 45))
-        self.btn_eventos_sec.setFont(font7)
+        self.btn_eventos_sec.setFont(font6)
         self.btn_eventos_sec.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_eventos_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon34 = QIcon()
-        icon34.addFile(u"../icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon34.addFile(u"./icons/festa-de-aniversario.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_eventos_sec.setIcon(icon34)
         self.btn_eventos_sec.setIconSize(QSize(30, 30))
 
@@ -14771,7 +14792,7 @@ class Ui_MainWindow(object):
         self.btn_relatorios_sec = QPushButton(self.frame_50)
         self.btn_relatorios_sec.setObjectName(u"btn_relatorios_sec")
         self.btn_relatorios_sec.setMinimumSize(QSize(140, 45))
-        self.btn_relatorios_sec.setFont(font7)
+        self.btn_relatorios_sec.setFont(font6)
         self.btn_relatorios_sec.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_relatorios_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
@@ -14861,7 +14882,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_14 = QHBoxLayout(self.frame_16)
         self.horizontalLayout_14.setSpacing(0)
         self.horizontalLayout_14.setObjectName(u"horizontalLayout_14")
-        self.horizontalLayout_14.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_3 = QStackedWidget(self.frame_16)
         self.stackedWidget_3.setObjectName(u"stackedWidget_3")
         self.page_principal_sec = QWidget()
@@ -14896,21 +14917,21 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.inicio.setCurrentIndex(1)
+        self.inicio.setCurrentIndex(0)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(9)
-        self.stackedWidget_8.setCurrentIndex(2)
+        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_8.setCurrentIndex(0)
         self.stack_farmaceutica.setCurrentIndex(0)
-        self.stackedWidget_4.setCurrentIndex(1)
+        self.stackedWidget_4.setCurrentIndex(0)
         self.stack_fisioterapeuta.setCurrentIndex(0)
-        self.stackedWidget_5.setCurrentIndex(1)
+        self.stackedWidget_5.setCurrentIndex(0)
         self.stack_nutricionista.setCurrentIndex(0)
-        self.stackedWidget_6.setCurrentIndex(1)
+        self.stackedWidget_6.setCurrentIndex(0)
         self.stack_psicologa.setCurrentIndex(0)
-        self.stackedWidget_7.setCurrentIndex(1)
+        self.stackedWidget_7.setCurrentIndex(0)
         self.stack_secretaria.setCurrentIndex(0)
-        self.stackedWidget_3.setCurrentIndex(1)
+        self.stackedWidget_3.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -15316,6 +15337,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_concluir_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DE CURSOS E OFICINAS", None))
+        self.label_data_inclusao_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Data de inclus\u00e3o", None))
         self.label_nome_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Nome", None))
         self.label_tipo_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Tipo", None))
         self.input_tipo_cursos_as.setItemText(0, "")
