@@ -2064,7 +2064,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-        self.ui.input_hora_consulta_as.setText(str(dados[5]))
+        self.ui.input_hora_consulta_as.setTime(QTime(dados[5]))
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_Consulta_as.isChecked():
