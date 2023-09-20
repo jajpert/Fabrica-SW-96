@@ -2519,11 +2519,12 @@ class TelaPrincipal(QMainWindow):
         column_names = []
         for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
             column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
-
-        pdf = canvas.Canvas("relatorioPDF.pdf")
+        file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "C:/Abrec/", "PDF files (*.pdf)")
+        pdf = canvas.Canvas(file)
         pdf.setFont("Times-Roman", 9)
         pdf.setTitle("Relatório")
         
+
         filtered_data = []
         
         for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
@@ -2544,19 +2545,11 @@ class TelaPrincipal(QMainWindow):
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-            
-            path = "C:/Abrec/"
-            os.path.isdir(path)
-            # if os.path.isdir(path):
-            #     return "True"
-            # else:
-            #     return "False"
-            
-            with open(path, 'wb') as f:
-                f.write(pdf.save())
+  
+        if file:
+            pdf.save()
         
 
-        # pdf.save()
         
 
         
