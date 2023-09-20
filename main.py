@@ -348,7 +348,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login_senha = []
         perfil = []
         resultados = self.db.validarLogin(login,senha)
-        #print(resultados)
+        print(resultados)
 
         if resultados[0] == [] or resultados[1] == []:
             self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -356,13 +356,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         else:
             login_senha.append(resultados[0][0][0])
+            # print(login_senha)
             login_senha.append(resultados[0][0][1])
+            # print(login_senha)
             perfil.append(resultados[0][0][2])
+            # print(perfil)
+            # print(login_senha)
             matricula_colaborador = resultados[1][0][0]
+            print(perfil)
+            print(login, senha)
+            print(login_senha)
             if len(login_senha)==0:
                 self.ui.inicio.setCurrentWidget(self.ui.login)
                 self.loginInvalido() 
             elif perfil[0] == 'adm':
+                print(perfil)
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -374,7 +382,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
             
-            elif perfil[0] == 'Farm':
+            elif perfil[0] == 'farm':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -386,7 +394,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
                 
-            elif perfil[0] == 'Fisio':
+            elif perfil[0] == 'fisio':
+                print(perfil)
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -398,7 +407,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido()    
 
-            elif perfil[0] == 'Nutri':
+            elif perfil[0] == 'nutri':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -410,7 +419,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
 
-            elif perfil[0] == 'Psico':
+            elif perfil[0] == 'pisc':
+                print(perfil)
+                print(login, senha)
+                print(login_senha)
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -423,17 +435,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
 
-            elif perfil[0] == 'Secre':
-                if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
-                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
-                    nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
-                    self.LoginSecretaria()      
-                else:
-                    print ("Usuário não encontrado")
-                    self.ui.inicio.setCurrentWidget(self.ui.login)
-                    self.loginInvalido() 
+            # elif perfil[0] == 'Secre':
+            #     if login == login_senha[0] and senha == login_senha[1]:            
+            #         print ("Login realizado com sucesso")
+            #         nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+            #         nome_colaborador = nome_colab[0][0]
+            #         self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+            #         self.LoginSecretaria()      
+            #     else:
+                    # print ("Usuário não encontrado")
+                    # self.ui.inicio.setCurrentWidget(self.ui.login)
+                    # self.loginInvalido() 
                 
 
         
