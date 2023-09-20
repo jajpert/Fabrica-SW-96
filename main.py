@@ -198,12 +198,28 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
         ###############VALIDADORES E MASKS#############
+        ############ Validadores ##############
+        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
+        self.validaNumeroInt = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
+        self.validaSalario = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
+        self.validaString = QRegularExpressionValidator(QRegularExpression("[a-zA-Z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
+
+        ########### Mask CPF e RG ##############
         self.ui.input_cpf_agendamento_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_usuario_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_cuidador_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_colaborador_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_consulta_geral.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
+
+        self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
+        self.ui.input_rg_cuidador_as.setInputMask("00.000.000-0")
+        self.ui.input_rg_colaborador_as.setInputMask("00.000.000-0")
+
+        ########## Colocando os validadores ############
+        self.ui.input_nome_usuario_as.setValidator(self.validaString)
+        self.ui.input_nome_cuidador_as.setValidator(self.validaString)
+        self.ui.input_nome_colaborador_as.setValidator(self.validaString)        
         
 
         ###############SIGNALS################# 
@@ -1316,7 +1332,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_usuario_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
-        rg = self.ui.input_rg_usuario_as.text()
+        rg_temp = self.ui.input_rg_usuario_as.text()
+        rg = re.sub(r'[^\w\s]','',rg_temp)
+        print(rg)
         data_emi = self.ui.input_data_emissao_usuario_as.text()
         data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
@@ -1473,7 +1491,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_cuidador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
-        rg = self.ui.input_rg_cuidador_as.text()
+        rg_temp = self.ui.input_rg_cuidador_as.text()
+        rg = re.sub(r'[^\w\s]','',rg_temp)
         data_emi = self.ui.input_data_emissao_cuidador_as.text()
         data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
@@ -1534,7 +1553,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_colaborador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
-        rg = self.ui.input_rg_colaborador_as.text()
+        rg_temp = self.ui.input_rg_colaborador_as.text()
+        rg = re.sub(r'[^\w\s]','',rg_temp)
         data_emi = self.ui.input_data_emissao_rg_colaborador_as.text()
         data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_colaborador_as.text()
