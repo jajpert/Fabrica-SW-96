@@ -96,7 +96,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QToolButton" name="toolButton_alterar_foto_popup_perfil_as">
+          <widget class="QToolButton" name="toolButton_tirar_foto_popup_perfil_cadastro_as">
            <property name="minimumSize">
             <size>
              <width>298</width>
@@ -122,7 +122,7 @@ background-color: rgb(251, 207, 216);
 }</string>
            </property>
            <property name="text">
-            <string>Alterar foto</string>
+            <string>Tirar foto</string>
            </property>
            <property name="icon">
             <iconset>
@@ -189,7 +189,7 @@ background-color: rgb(251, 207, 216);
           <number>0</number>
          </property>
          <item>
-          <widget class="QToolButton" name="toolButton_alterar_senha_popup_perfil_as">
+          <widget class="QToolButton" name="toolButton_importar_foto_popup_perfil_cadastro_as">
            <property name="minimumSize">
             <size>
              <width>298</width>
@@ -215,11 +215,11 @@ background-color: rgb(251, 207, 216);
 }</string>
            </property>
            <property name="text">
-            <string>Alterar senha</string>
+            <string>Importar foto</string>
            </property>
            <property name="icon">
             <iconset>
-             <normaloff>../icons/troca.png</normaloff>../icons/troca.png</iconset>
+             <normaloff>../icons/salvar-arquivo.png</normaloff>../icons/salvar-arquivo.png</iconset>
            </property>
            <property name="iconSize">
             <size>
