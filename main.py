@@ -200,7 +200,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ###############VALIDADORES E MASKS#############
         ############ Validadores ##############
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
-        self.validaNumeroInt = QRegularExpressionValidator(QRegularExpression("[0-9]+"))
+        self.validaNumeroInt = QRegularExpressionValidator(QRegularExpression("[0-9] \\.-]+"))
         self.validaSalario = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
         self.validaString = QRegularExpressionValidator(QRegularExpression("[a-zA-Z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
 
@@ -219,7 +219,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ########## Colocando os validadores ############
         self.ui.input_nome_usuario_as.setValidator(self.validaString)
         self.ui.input_nome_cuidador_as.setValidator(self.validaString)
-        self.ui.input_nome_colaborador_as.setValidator(self.validaString)        
+        self.ui.input_nome_colaborador_as.setValidator(self.validaString)  
+
+        self.ui.input_orgao_expedidor_usuario_as.setValidator(self.validaString) 
+        self.ui.input_orgao_expedidor_cuidador_as.setValidator(self.validaString)
+        self.ui.input_orgao_expedidor_colaborador_as.setValidator(self.validaString) 
+
+        # self.ui.input_nis_usuario_as.setValidator(self.validaNumeroInt)    
         
 
         ###############SIGNALS################# 
