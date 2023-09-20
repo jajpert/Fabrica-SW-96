@@ -1421,13 +1421,18 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>8</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
                       <layout class="QGridLayout" name="gridLayout">
                        <item row="0" column="0">
                         <widget class="QFrame" name="frame_169">
+                         <property name="font">
+                          <font>
+                           <pointsize>5</pointsize>
+                          </font>
+                         </property>
                          <property name="frameShape">
                           <enum>QFrame::StyledPanel</enum>
                          </property>
@@ -1435,7 +1440,22 @@ QPushButton:focus{outline:0}</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QGridLayout" name="gridLayout_5">
-                          <item row="0" column="0">
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <item row="2" column="0">
                            <widget class="QFrame" name="frame_170">
                             <property name="frameShape">
                              <enum>QFrame::StyledPanel</enum>
@@ -1444,6 +1464,21 @@ QPushButton:focus{outline:0}</string>
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QVBoxLayout" name="verticalLayout_120">
+                             <property name="spacing">
+                              <number>0</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
                              <item>
                               <widget class="QFrame" name="frame_468">
                                <property name="frameShape">
@@ -1453,55 +1488,21 @@ QPushButton:focus{outline:0}</string>
                                 <enum>QFrame::Raised</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_342">
-                                <item>
-                                 <widget class="QFrame" name="frame_469">
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: #F3B9BF; margin-bottom: 2em</string>
-                                  </property>
-                                  <property name="frameShape">
-                                   <enum>QFrame::StyledPanel</enum>
-                                  </property>
-                                  <property name="frameShadow">
-                                   <enum>QFrame::Raised</enum>
-                                  </property>
-                                  <layout class="QHBoxLayout" name="horizontalLayout_154">
-                                   <property name="spacing">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="leftMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="topMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="rightMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <property name="bottomMargin">
-                                    <number>0</number>
-                                   </property>
-                                   <item>
-                                    <widget class="QLabel" name="label_38">
-                                     <property name="font">
-                                      <font>
-                                       <family>Abel</family>
-                                       <pointsize>36</pointsize>
-                                      </font>
-                                     </property>
-                                     <property name="styleSheet">
-                                      <string notr="true">color: #EC848C; padding-top: 1.5em</string>
-                                     </property>
-                                     <property name="text">
-                                      <string>CADASTRO FORNECEDOR</string>
-                                     </property>
-                                     <property name="alignment">
-                                      <set>Qt::AlignCenter</set>
-                                     </property>
-                                    </widget>
-                                   </item>
-                                  </layout>
-                                 </widget>
-                                </item>
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
                                 <item>
                                  <widget class="QFrame" name="frame_470">
                                   <property name="styleSheet">
@@ -1515,7 +1516,7 @@ QPushButton:focus{outline:0}</string>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_155" stretch="1,3,1">
                                    <property name="spacing">
-                                    <number>5</number>
+                                    <number>0</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -1555,7 +1556,7 @@ QPushButton:focus{outline:0}</string>
                                        <number>0</number>
                                       </property>
                                       <property name="leftMargin">
-                                       <number>20</number>
+                                       <number>0</number>
                                       </property>
                                       <property name="topMargin">
                                        <number>0</number>
@@ -1597,7 +1598,7 @@ QPushButton:focus{outline:0}</string>
                                         </property>
                                         <layout class="QHBoxLayout" name="horizontalLayout_156" stretch="2,3,3">
                                          <property name="spacing">
-                                          <number>5</number>
+                                          <number>0</number>
                                          </property>
                                          <property name="leftMargin">
                                           <number>0</number>
@@ -2671,7 +2672,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                  </property>
                                                  <property name="maximumSize">
                                                   <size>
-                                                   <width>50</width>
+                                                   <width>33</width>
                                                    <height>20</height>
                                                   </size>
                                                  </property>
@@ -2690,13 +2691,13 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                 <widget class="QLineEdit" name="input_cep_fornecedor_as">
                                                  <property name="minimumSize">
                                                   <size>
-                                                   <width>145</width>
+                                                   <width>159</width>
                                                    <height>30</height>
                                                   </size>
                                                  </property>
                                                  <property name="maximumSize">
                                                   <size>
-                                                   <width>146</width>
+                                                   <width>158</width>
                                                    <height>30</height>
                                                   </size>
                                                  </property>
@@ -2759,20 +2760,20 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                 <number>0</number>
                                                </property>
                                                <property name="bottomMargin">
-                                                <number>0</number>
+                                                <number>2</number>
                                                </property>
                                                <item>
-                                                <spacer name="verticalSpacer_33">
+                                                <spacer name="verticalSpacer_39">
                                                  <property name="orientation">
                                                   <enum>Qt::Vertical</enum>
                                                  </property>
                                                  <property name="sizeType">
-                                                  <enum>QSizePolicy::Fixed</enum>
+                                                  <enum>QSizePolicy::Maximum</enum>
                                                  </property>
                                                  <property name="sizeHint" stdset="0">
                                                   <size>
                                                    <width>20</width>
-                                                   <height>17</height>
+                                                   <height>30</height>
                                                   </size>
                                                  </property>
                                                 </spacer>
@@ -3532,10 +3533,10 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_161">
                                    <property name="spacing">
-                                    <number>20</number>
+                                    <number>0</number>
                                    </property>
                                    <property name="leftMargin">
-                                    <number>20</number>
+                                    <number>0</number>
                                    </property>
                                    <property name="topMargin">
                                     <number>0</number>
@@ -3629,6 +3630,37 @@ QPushButton:focus{outline:0}</string>
                               </widget>
                              </item>
                             </layout>
+                           </widget>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_38">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize">
+                             <size>
+                              <width>0</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="font">
+                             <font>
+                              <family>Abel</family>
+                              <pointsize>37</pointsize>
+                             </font>
+                            </property>
+                            <property name="styleSheet">
+                             <string notr="true">background-color: #F3B9BF; color: #EC848C; </string>
+                            </property>
+                            <property name="text">
+                             <string>CADASTRO FORNECEDOR</string>
+                            </property>
+                            <property name="alignment">
+                             <set>Qt::AlignCenter</set>
+                            </property>
                            </widget>
                           </item>
                          </layout>
@@ -4663,7 +4695,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>true</bool>
@@ -5138,7 +5170,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>true</bool>
@@ -8519,7 +8551,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -10551,7 +10583,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -10867,7 +10899,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -13234,7 +13266,7 @@ QPushButton:focus{outline:0}</string>
                          </property>
                          <property name="minimumSize">
                           <size>
-                           <width>1826</width>
+                           <width>0</width>
                            <height>92</height>
                           </size>
                          </property>
@@ -13273,14 +13305,14 @@ QPushButton:focus{outline:0}</string>
                            <widget class="QLabel" name="label_cadastro_colaborador_as">
                             <property name="minimumSize">
                              <size>
-                              <width>1800</width>
-                              <height>90</height>
+                              <width>0</width>
+                              <height>0</height>
                              </size>
                             </property>
                             <property name="maximumSize">
                              <size>
                               <width>16777215</width>
-                              <height>90</height>
+                              <height>16777215</height>
                              </size>
                             </property>
                             <property name="font">
@@ -13715,7 +13747,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -14144,7 +14176,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -14861,7 +14893,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -17675,7 +17707,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -17804,7 +17836,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -20358,7 +20390,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::DaySection</enum>
+                                         <enum>QDateTimeEdit::MonthSection</enum>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
@@ -20540,7 +20572,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::DaySection</enum>
+                                         <enum>QDateTimeEdit::MonthSection</enum>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
@@ -25841,7 +25873,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -26154,7 +26186,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -28164,7 +28196,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>true</bool>
@@ -28639,7 +28671,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>true</bool>
@@ -32014,7 +32046,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                         </property>
                                                         <property name="currentSection">
-                                                         <enum>QDateTimeEdit::DaySection</enum>
+                                                         <enum>QDateTimeEdit::MonthSection</enum>
                                                         </property>
                                                         <property name="calendarPopup">
                                                          <bool>true</bool>
@@ -33372,7 +33404,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -34218,7 +34250,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -36182,7 +36214,7 @@ QPushButton:focus{outline:0}
                            <widget class="QLabel" name="label_titulo_pagina_consulta_geral">
                             <property name="minimumSize">
                              <size>
-                              <width>1824</width>
+                              <width>0</width>
                               <height>93</height>
                              </size>
                             </property>
@@ -37167,6 +37199,21 @@ QPushButton:focus{outline:0}</string>
                                    <enum>QFrame::Raised</enum>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_146">
+                                   <property name="spacing">
+                                    <number>5</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
                                    <item>
                                     <spacer name="horizontalSpacer_85">
                                      <property name="orientation">
