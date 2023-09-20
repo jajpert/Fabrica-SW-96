@@ -36,62 +36,31 @@ class Overlay(QWidget):
         painter.end()
 
 
-################Class POPUP Login################
+################POPUP RECUPERAR SENHA################
 class DialogRecuperarSenha(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Restaurar_Senha()
         self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
-##################LOGIN INVALIDO###################
-class DialogloginInvalido(QDialog):
+        
+##################POP UP LOGIN INVALIDO###################
+class DialogLoginInvalido(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Login_Ivalido()
         self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
 
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
-################Class POPUP Usuário################
-class DialogTirarFoto(QDialog):
+################POPUP TIRAR/IMPORTAR FOTO################
+class DialogTirarImportarFoto(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Tirar_Foto()
+        self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
-        self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
+        #self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
         #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(10000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()   
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
     
     def TirarFotoWeb(self):
         vid = cv2.VideoCapture(0)
@@ -108,23 +77,12 @@ class DialogTirarFoto(QDialog):
 
 ################Class POPUP USUARIO################
 
-class DialogCadastroUsuarioSucesso(QDialog):
+class DialogConfirmarCadastro(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Cadastro_Conclusao()
         self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(8000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()
-
-    def closeMsg(self):
-        self.close()
-
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept()
 
 ############################################################
 
@@ -175,28 +133,30 @@ class DialogAlterarSenhaFoto(QDialog):
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Alterar_Senha_Foto()
-        self.ui.setupUi(self)
-        self.timer_msg = QTimer(self)
-        self.timer_msg.setInterval(8000)
-        self.timer_msg.timeout.connect(self.closeMsg)
-        self.timer_msg.start()
+        self.ui.setupUi(self)  
 
-    def closeMsg(self):
-        self.close()
 
-    def closeEvent(self, event):
-        self.timer_msg.stop()
-        event.accept() 
-       
+##############Class Alterar Foto e Senha##############
+class DialogConfirmarSaida(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Confirmar_Saida()
+        self.ui.setupUi(self)   
+
+        self.ui.btn_sim_popup_confirma_saida.clicked.connect(self.clicouSair) 
+    
+    def clicouSair(self):
+        resposta = 1
+        TelaPrincipal.confirmouSaida(self, resposta)
     
 
 #############################################################################
-class TelaPrincipal(QMainWindow):
+class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def __init__(self):
         super().__init__()
 
         self.ui = Ui_MainWindow()
-        self.saida = Ui_Confirma_Saida()
         self.ui.setupUi(self)
         
         ######################### banco #########################
@@ -317,17 +277,18 @@ class TelaPrincipal(QMainWindow):
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         
 
-        ######SIGNALS POPUP recuperar senha login######
+        ######SIGNALS POPUP RECUPERAR SENHA AS######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
         
 
 
-        ######SIGNALS POPUP trocar foto e senha AS######
+        ######SIGNALS POPUP ALTERAR FOTO E SENHA AS######
         self.ui.btn_alterar_foto_senha_as.clicked.connect(self.trocarFotoSenha)
         
         
-        ############SIGNALS POPUP Usuario AS############
-        self.ui.btn_foto_usuario_as.clicked.connect(self.tirarFoto)
+        ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
+        self.ui.btn_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
+        self.ui.btn_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
 
 
         ############SIGNALS POPUP Cuidador AS############
@@ -386,41 +347,96 @@ class TelaPrincipal(QMainWindow):
         login = self.ui.input_usuario_login.text()
         senha = self.ui.input_senha_login.text()
         login_senha = []
-        login_senha = self.db.validarLogin(login,senha)
-        if len(login_senha)==0:
+        perfil = []
+        resultados = self.db.validarLogin(login,senha)
+        #print(resultados)
+
+        if resultados[0] == [] or resultados[1] == []:
             self.ui.inicio.setCurrentWidget(self.ui.login)
-            self.loginIvalido()
-
-
-        elif login_senha[0][0] == login_senha[0][1]:
-                print("Login e senha não podem ser iguais")
-                
-        elif login_senha[0][0] == 'adm':
-            self.LoginAssistenteS() 
-
-        elif login_senha[0][0] == 'Farm':
-            self.LoginFarm()
-
-        elif login_senha[0][0] == 'Fisio':
-            self.LoginFisio()
-
-        elif login_senha[0][0] == 'Nutri':
-            self.LoginNutri()
-
-        elif login_senha[0][0] == 'Psico':
-            self.LoginPsico()
-
-        elif login_senha[0][0] == 'Secre':
-            self.LoginSecretaria()
-
+            self.loginInvalido() 
+        
         else:
-
-            if login == login_senha[0][0] and senha == login_senha[0][1]:       
+            login_senha.append(resultados[0][0][0])
+            login_senha.append(resultados[0][0][1])
+            perfil.append(resultados[0][0][2])
+            matricula_colaborador = resultados[1][0][0]
+            if len(login_senha)==0:
+                self.ui.inicio.setCurrentWidget(self.ui.login)
+                self.loginInvalido() 
+            elif perfil[0] == 'adm':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginAssistenteS()         
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+            
+            elif perfil[0] == 'Farm':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginFarm()        
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
                 
-                print ("Login realizado com sucesso")          
-            else:
-                print ("Usuário não encontrado")
-        # self.chama_funcoes()
+            elif perfil[0] == 'Fisio':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginFisio()       
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido()    
+
+            elif perfil[0] == 'Nutri':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginNutri()       
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+
+            elif perfil[0] == 'Psico':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginPsico() 
+                         
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+
+            elif perfil[0] == 'Secre':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.LoginSecretaria()      
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
+                
+
         
         
 ########################### Validar Login Assistente S #############################        
@@ -888,7 +904,9 @@ class TelaPrincipal(QMainWindow):
 
             local_tratamento = str(dados[32])
             if local_tratamento == dados[32]:
-                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(1)
+                self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(1)
+            else:
+                pass
 
             patologiaBase = dados[33]
 
@@ -1158,8 +1176,6 @@ class TelaPrincipal(QMainWindow):
             outras_deficiencias = self.ui.input_alterar_outras_deficiencias_usuario_as.setText("")
         else:
             pass
-            
-
         
 
 
@@ -2182,7 +2198,7 @@ class TelaPrincipal(QMainWindow):
 
 ######################LOGIN INVALIDO POPUP####################
     def loginIvalido(self):       
-        msg = DialogloginInvalido(self)
+        msg = DialogLoginInvalido(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
@@ -2203,7 +2219,13 @@ class TelaPrincipal(QMainWindow):
         self.popup.show()
         msg.exec()
         self.popup.hide()
+    
 
+    def loginInvalido(self):       
+        msg = DialogLoginInvalido(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
 
 
     def trocarFotoSenha(self):
@@ -2212,8 +2234,6 @@ class TelaPrincipal(QMainWindow):
         msg.exec()
         self.popup.hide()
 
-
-    ################ def POPUP Cuidador################
 
     def concluirCadastroIncompletoUsuario(self):
         msg = DialogCadastroIncompletoUsuario(self)
@@ -2225,8 +2245,6 @@ class TelaPrincipal(QMainWindow):
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as)
 
 
-    ################ def POPUP Cursos e oficinas################
-
     def cadastroIncompletoCursos(self):
         msg = DialogCadastroIncompletoCursos(self)
         self.popup.show()
@@ -2236,25 +2254,50 @@ class TelaPrincipal(QMainWindow):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
-   
-    ################ def POPUP Usuário################
 
-    def tirarFoto(self):
-        msg = DialogTirarFoto(self)
+    def tirarImportarFoto(self):
+        msg = DialogTirarImportarFoto(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
 
-    def msg(self,tipo,mensagem):
-        msg = DialogCadastroUsuarioSucesso(self)
+
+    def confirmarCadastro(self):
+        msg = DialogConfirmarCadastro(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
         #self.clean()
 
+
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
+
+    def confirmarSaida(self):
+        msg = DialogConfirmarSaida(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+    
+    def confirmouSaida(self, resposta):
+        print("chegou")
+        if resposta == 1:
+            self.ui.inicio.setCurrentWidget(lambda: self.ui.login)
+            # self.ui.inicio.input_usuario_login.setText("")
+            # self.ui.input_senha_login.setText("")
+        else:
+            print("erro")
+
+
+
+##################################################################
+
+
+           
+    
+
+    
     def on_tipo_alterar_usuario_changed(self):
 
         if  self.ui.input_situacao_trabalho_alterar_usuario_as.currentText() == "Outros":

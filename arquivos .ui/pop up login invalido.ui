@@ -111,7 +111,7 @@
           <number>0</number>
          </property>
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="label_imagem_login_invalido_popup_as">
            <property name="minimumSize">
             <size>
              <width>200</width>
@@ -190,7 +190,7 @@
              <number>0</number>
             </property>
             <item>
-             <widget class="QLabel" name="label_2">
+             <widget class="QLabel" name="label_login_invalido_popup_as">
               <property name="minimumSize">
                <size>
                 <width>0</width>
@@ -252,7 +252,7 @@
              </spacer>
             </item>
             <item>
-             <widget class="QPushButton" name="btn_voltar_popup_as">
+             <widget class="QPushButton" name="btn_voltar_popup_login_invalido_as">
               <property name="minimumSize">
                <size>
                 <width>100</width>
@@ -311,5 +311,22 @@ background-color: rgb(247, 176, 181);
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>btn_voltar_popup_login_invalido_as</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>219</x>
+     <y>392</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>219</x>
+     <y>224</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
