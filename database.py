@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')
+        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -124,12 +124,17 @@ class DataBase():
     def cadastro_retirada_beneficios(self,saida_beneficio):
         self.connect()
         try:
-            args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4],saida_beneficio[5],saida_beneficio[6],saida_beneficio[7],saida_beneficio[8],saida_beneficio[9],saida_beneficio[10],saida_beneficio[11],saida_beneficio[12],saida_beneficio[13])
-            self.cursor.execute('INSERT INTO saida_beneficio (id_saida_beneficio,cpf,nome_retirada,idade_retirada,data_retirada,telefone_retirada,cns_retirada,clinica_retirada,codigo_retirada,descricao_retirada,quantidade_retirada,id_usuario,id_beneficio) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (saida_beneficio[0], saida_beneficio[1], saida_beneficio[2], saida_beneficio[3], saida_beneficio[4], saida_beneficio[5], saida_beneficio[6])
+            self.cursor.execute('INSERT INTO saida_beneficio (id_saida_beneficio, cpf, DATE_FORMAT,(validade,"%d/%m/%Y") AS data_retirada, codigo_retirada, quantidade_retirada, id_usuario, id_beneficio) VALUES (%s, %s, %s, %s, %s, %s, %s)', args)              # Retrieve the ID of the last inserted row
             id_saida_beneficio = self.cursor.lastrowid
+
 
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
+
+            # args = (id_saida_beneficio,saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4],id_usuario, id_beneficio)
+            # self.cursor.execute('INSERT INTO saida_beneficio (id_saida_beneficio, cpf, data_retirada, codigo_retirada, quantidade_retirada, id_usuario, id_beneficio) VALUES (%s, %s, %s, %s, %s, %s, %s)', args)
+            # id_saida_beneficio = self.cursor.lastrowid
 
         except Exception as err:
             #print(err)
@@ -918,14 +923,16 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT 
-                    pessoa.nome,
+                    pessoa.nome AS pessoa_nome,
                     TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade, 
-                    pessoa.telefone,
-                    usuario.cns,
-                    clinica.nome_fantasia FROM pessoa
-                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                WHERE pessoa.cpf LIKE '{cpf}';
+                    pessoa.telefone AS pessoa_telefone,
+                    usuario.cns AS usuario_cns,
+                    usuario.id_matricula AS id_usuario,
+                    clinica.nome_fantasia AS clinica_nome_fantasia
+                    FROM pessoa
+            INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+            LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+            WHERE pessoa.cpf LIKE '{cpf}';
             """)
             
             resultado1 = self.cursor.fetchall()
@@ -949,6 +956,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT 
+                    id_beneficios,
                     descricao
                 FROM beneficios
                 WHERE id_beneficios LIKE '{id_beneficios}';
@@ -958,14 +966,15 @@ class DataBase():
 
             if resultado1:
                 return {
-                'descricao': resultado1[0][0],                    
-                    
+                    'id_beneficios': resultado1[0][0],
+                    'descricao': resultado1[0][1]
                 }
             else:
                 return None
         except Exception as e:
             print(f"Erro na função select_retirada_beneficio_codigo: {e}")
             return None
+
 
 
 

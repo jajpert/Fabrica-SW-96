@@ -1947,7 +1947,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
             
             self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText("")
-            self.ui.input_descricao_cadastro_beneficio.setText("")       
+            self.ui.input_descricao_cadastro_retirada_beneficio.setText("")       
             self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(0)
         
     def buscar_clinica_nome_fantasia(self):
@@ -2410,7 +2410,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             nome = result.get('nome', '')
             idade = result.get('idade', '')          
             telefone = result.get('telefone', '')
-            clinica = result.get('clinica', 'Não possui')
+            clinica = result.get('nome_fantasia', 'Não possui')
             cns = result.get('cns','')
 
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
@@ -2436,7 +2436,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             id_beneficios = result.get('id_beneficios', '')
             descricao = result.get('descricao', '')
             
-            self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText(id_beneficios)
+            self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText(str(id_beneficios))
             self.ui.input_descricao_cadastro_retirada_beneficio.setText(descricao)
             return id_beneficios
         
@@ -2471,20 +2471,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastro_retirada_beneficios(self):
             cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
-            nome_retirada = self.ui.input_nome_cadastro_retirada_beneficio.text()
-            idade_retirada = self.ui.input_idade_cadastro_retirada_beneficio.text()
             data_retirada = self.ui.input_data_cadastro_retirada_beneficio.text()
-            data_consulta = "-".join(data_retirada.split("/")[::-1])
-
-            telefone_retirada = self.ui.input_telefone_cadastro_retirada_beneficio.text()
-            cns_retirada = self.ui.input_cns_cadastro_retirada_beneficio.text()
-            clinica_retirada = self.ui.input_clinica_cadastro_retirada_beneficio.text()
-            
+            data_consulta = "-".join(data_retirada.split("/")[::-1]) 
             codigo_retirada = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
-            descricao_retirada = self.ui.input_descricao_cadastro_beneficio.text()         
             quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
 
-            tupla_retirada_beneficios = (cpf,nome_retirada,idade_retirada,data_retirada,data_consulta,telefone_retirada,cns_retirada,clinica_retirada,codigo_retirada,descricao_retirada,quantidade_retirada)
+            tupla_retirada_beneficios = (cpf,data_retirada,data_consulta,codigo_retirada,quantidade_retirada)
             
             result = []
             result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
