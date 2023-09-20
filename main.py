@@ -197,6 +197,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
+        ###############VALIDADORES E MASKS#############
+        self.ui.input_cpf_agendamento_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_usuario_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_cuidador_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_colaborador_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_consulta_geral.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
+        
+
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
@@ -257,7 +266,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################SIGNAL CPF##################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-
 
 
         
@@ -652,7 +660,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
-        cpf = self.ui.input_cpf_agendamento_as.text()
+        cpf_temp = self.ui.input_cpf_agendamento_as.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         result = self.db.select_pessoa_cpf(cpf)
         id_matricula = result[0]
         nome = result[1]
@@ -2056,7 +2070,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
 
     def buscar_dados_consulta(self):
-        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        cpf_temp = self.ui.input_cpf_pagina_consulta_geral.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         dados = self.db.buscar_consulta(cpf)
         self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
         self.ui.input_id_usuario_consulta_as.hide()
