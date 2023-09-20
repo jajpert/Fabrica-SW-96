@@ -1846,7 +1846,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
        
     def limparCadastroCursos(self):
-        self.ui.input_data_inclusao_cursos_as.setText("")
+        
         self.ui.input_nome_cursos_as.setText("")
         self.ui.input_tipo_cursos_as.setCurrentIndex(int(0))
         self.ui.input_responsavel_cursos_as.setText("")
