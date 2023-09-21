@@ -7009,9 +7009,9 @@ class Ui_MainWindow(object):
         self.label_titulo_cadastrar_participante_curso_as.setFont(font14)
         self.label_titulo_cadastrar_participante_curso_as.setStyleSheet(u"color: #EC848C;\n"
 "background-color: rgb(243, 185, 191);")
-        self.label_titulo_pagina_consulta_geral_2.setAlignment(Qt.AlignCenter)
+        #self.label_titulo_pagina_consulta_geral_2.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_1211.addWidget(self.label_titulo_pagina_consulta_geral_2)
+        #self.verticalLayout_1211.addWidget(self.label_titulo_pagina_consulta_geral_2)
 
         self.frame_1702 = QFrame(self.frame_1692)
         self.frame_1702.setObjectName(u"frame_1702")
@@ -15407,7 +15407,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_lista_pessoas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Lista pessoas cadastradas", None))
         self.btn_concluir_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
-        self.label_titulo_pagina_consulta_geral_2.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR PACIENTE", None))
+        #self.label_titulo_pagina_consulta_geral_2.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR PACIENTE", None))
         self.label_cpf_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
         self.btn_buscar_cpf_pagina_participante_geral.setText("")
         self.label_nome_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"NOME", None))
