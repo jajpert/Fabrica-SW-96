@@ -2470,16 +2470,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     #         count += 1
 
     def cadastro_retirada_beneficios(self):
+            
             cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
             data_retirada = self.ui.input_data_cadastro_retirada_beneficio.text()
             data_consulta = "-".join(data_retirada.split("/")[::-1]) 
             codigo_retirada = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
             quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
 
-            tupla_retirada_beneficios = (cpf,data_retirada,data_consulta,codigo_retirada,quantidade_retirada)
+            tupla_retirada_beneficios = (cpf,codigo_retirada,quantidade_retirada,data_consulta)
             
             result = []
             result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
+            print (result)
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Cadastro Retirada de Beneficios")
