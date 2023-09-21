@@ -2412,7 +2412,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             idade = result.get('idade', '')          
             telefone = result.get('telefone', '')
             cns = result.get('cns','')
-            clinica = result.get('nome_fantasia', 'Não possui')
+            clinica = result.get('clinica', 'Não possui')
 
             self.ui.input_id_usuario_retirada_beneficio.setText(str(id_matricula))
             self.ui.input_id_usuario_retirada_beneficio.hide()
@@ -2420,7 +2420,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
             self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)            
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
-            self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText(str(clinica))
             return id_matricula
         else:
             msg = QMessageBox()

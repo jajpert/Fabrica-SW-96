@@ -932,7 +932,7 @@ class DataBase():
                     pessoa.telefone ,
                     usuario.cns ,
                     usuario.id_matricula ,
-                    clinica.nome_fantasia  
+                    clinica.razao_social 
                     FROM pessoa
             INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
             LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
