@@ -1421,7 +1421,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>8</number>
+                      <number>14</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -4665,6 +4665,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            <property name="currentSection">
                                             <enum>QDateTimeEdit::DaySection</enum>
                                            </property>
+                                           <property name="displayFormat">
+                                            <string>dd/MM/yyyy</string>
+                                           </property>
                                            <property name="calendarPopup">
                                             <bool>true</bool>
                                            </property>
@@ -5139,6 +5142,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            </property>
                                            <property name="currentSection">
                                             <enum>QDateTimeEdit::DaySection</enum>
+                                           </property>
+                                           <property name="displayFormat">
+                                            <string>dd/MM/yyyy</string>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>true</bool>
@@ -8521,6 +8527,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
+                                     </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
                                      </property>
@@ -9402,6 +9411,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         </property>
                                         <property name="correctionMode">
                                          <enum>QAbstractSpinBox::CorrectToPreviousValue</enum>
+                                        </property>
+                                        <property name="displayFormat">
+                                         <string>dd/MM/yyyy</string>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
@@ -10553,6 +10565,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
+                                     </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
                                      </property>
@@ -10868,6 +10883,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
+                                     </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -13717,6 +13735,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
+                                     </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
                                      </property>
@@ -14145,6 +14166,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
+                                     </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -14862,6 +14886,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
+                                     </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -17190,7 +17217,7 @@ QPushButton:focus{outline:0}
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
+                                       <width>290</width>
                                        <height>30</height>
                                       </size>
                                      </property>
@@ -17202,7 +17229,7 @@ QPushButton:focus{outline:0}
                                      </property>
                                      <item>
                                       <property name="text">
-                                       <string/>
+                                       <string>Selecione</string>
                                       </property>
                                      </item>
                                      <item>
@@ -17221,20 +17248,20 @@ QPushButton:focus{outline:0}
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_84">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Minimum</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
+                                 <widget class="QFrame" name="frame_141">
+                                  <property name="maximumSize">
                                    <size>
-                                    <width>40</width>
-                                    <height>20</height>
+                                    <width>290</width>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
-                                 </spacer>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                 </widget>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_144">
@@ -17606,6 +17633,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
+                                     </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
                                      </property>
@@ -17735,6 +17765,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      <property name="currentSection">
                                       <enum>QDateTimeEdit::DaySection</enum>
                                      </property>
+                                     <property name="displayFormat">
+                                      <string>dd/MM/yyyy</string>
+                                     </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
                                      </property>
@@ -17747,20 +17780,20 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                  </widget>
                                 </item>
                                 <item>
-                                 <spacer name="horizontalSpacer_81">
-                                  <property name="orientation">
-                                   <enum>Qt::Horizontal</enum>
-                                  </property>
-                                  <property name="sizeType">
-                                   <enum>QSizePolicy::Minimum</enum>
-                                  </property>
-                                  <property name="sizeHint" stdset="0">
+                                 <widget class="QFrame" name="frame_174">
+                                  <property name="maximumSize">
                                    <size>
-                                    <width>40</width>
-                                    <height>20</height>
+                                    <width>100</width>
+                                    <height>16777215</height>
                                    </size>
                                   </property>
-                                 </spacer>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
+                                  </property>
+                                 </widget>
                                 </item>
                                 <item>
                                  <widget class="QFrame" name="frame_149">
@@ -18326,11 +18359,37 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      <property name="inputMethodHints">
                                       <set>Qt::ImhPreferNumbers|Qt::ImhTime</set>
                                      </property>
+                                     <property name="frame">
+                                      <bool>true</bool>
+                                     </property>
                                      <property name="alignment">
                                       <set>Qt::AlignCenter</set>
                                      </property>
                                      <property name="buttonSymbols">
                                       <enum>QAbstractSpinBox::NoButtons</enum>
+                                     </property>
+                                     <property name="keyboardTracking">
+                                      <bool>true</bool>
+                                     </property>
+                                     <property name="maximumTime">
+                                      <time>
+                                       <hour>23</hour>
+                                       <minute>59</minute>
+                                       <second>59</second>
+                                      </time>
+                                     </property>
+                                     <property name="minimumTime">
+                                      <time>
+                                       <hour>0</hour>
+                                       <minute>0</minute>
+                                       <second>0</second>
+                                      </time>
+                                     </property>
+                                     <property name="currentSection">
+                                      <enum>QDateTimeEdit::HourSection</enum>
+                                     </property>
+                                     <property name="displayFormat">
+                                      <string>hh:mm</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -18415,6 +18474,9 @@ QTimeEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </property>
                                      <property name="buttonSymbols">
                                       <enum>QAbstractSpinBox::NoButtons</enum>
+                                     </property>
+                                     <property name="displayFormat">
+                                      <string>hh:mm</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -20268,6 +20330,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         <property name="currentSection">
                                          <enum>QDateTimeEdit::DaySection</enum>
                                         </property>
+                                        <property name="displayFormat">
+                                         <string>dd/MM/yyyy</string>
+                                        </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
                                         </property>
@@ -20449,6 +20514,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         </property>
                                         <property name="currentSection">
                                          <enum>QDateTimeEdit::DaySection</enum>
+                                        </property>
+                                        <property name="displayFormat">
+                                         <string>dd/MM/yyyy</string>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
@@ -22350,7 +22418,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                </date>
                                               </property>
                                               <property name="currentSection">
-                                               <enum>QDateTimeEdit::DaySection</enum>
+                                               <enum>QDateTimeEdit::MonthSection</enum>
                                               </property>
                                               <property name="displayFormat">
                                                <string>dd/MM/yyyy</string>
@@ -25379,7 +25447,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>0</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -25845,6 +25913,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="currentSection">
                                                       <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
+                                                     <property name="displayFormat">
+                                                      <string>dd/MM/yyyy</string>
+                                                     </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
                                                      </property>
@@ -26157,6 +26228,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      </property>
                                                      <property name="currentSection">
                                                       <enum>QDateTimeEdit::DaySection</enum>
+                                                     </property>
+                                                     <property name="displayFormat">
+                                                      <string>dd/MM/yyyy</string>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -28168,6 +28242,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                               <property name="currentSection">
                                                                <enum>QDateTimeEdit::DaySection</enum>
                                                               </property>
+                                                              <property name="displayFormat">
+                                                               <string>dd/MM/yyyy</string>
+                                                              </property>
                                                               <property name="calendarPopup">
                                                                <bool>true</bool>
                                                               </property>
@@ -28642,6 +28719,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                               </property>
                                                               <property name="currentSection">
                                                                <enum>QDateTimeEdit::DaySection</enum>
+                                                              </property>
+                                                              <property name="displayFormat">
+                                                               <string>dd/MM/yyyy</string>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>true</bool>
@@ -32018,6 +32098,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                         <property name="currentSection">
                                                          <enum>QDateTimeEdit::DaySection</enum>
                                                         </property>
+                                                        <property name="displayFormat">
+                                                         <string>dd/MM/yyyy</string>
+                                                        </property>
                                                         <property name="calendarPopup">
                                                          <bool>true</bool>
                                                         </property>
@@ -33376,6 +33459,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="currentSection">
                                                       <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
+                                                     <property name="displayFormat">
+                                                      <string>dd/MM/yyyy</string>
+                                                     </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
                                                      </property>
@@ -34221,6 +34307,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      </property>
                                                      <property name="currentSection">
                                                       <enum>QDateTimeEdit::DaySection</enum>
+                                                     </property>
+                                                     <property name="displayFormat">
+                                                      <string>dd/MM/yyyy</string>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
