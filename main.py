@@ -2405,19 +2405,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
         result = self.db.select_retirada_beneficio_cpf(cpf)
         
+        print (result)
         if result:
             id_matricula = result.get('id_matricula', '')
             nome = result.get('nome', '')
             idade = result.get('idade', '')          
             telefone = result.get('telefone', '')
-            clinica = result.get('nome_fantasia', 'Não possui')
             cns = result.get('cns','')
+            clinica = result.get('nome_fantasia', 'Não possui')
 
+            self.ui.input_id_usuario_retirada_beneficio.setText(str(id_matricula))
+            self.ui.input_id_usuario_retirada_beneficio.hide()
             self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
             self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
-            self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)
-            self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
+            self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)            
             self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText(clinica)
             return id_matricula
         else:
             msg = QMessageBox()
@@ -2448,36 +2451,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
             return None
 
-    # def buscar_clinica_nome_fantasia_retirada_beneficio(self):
-    #     lista_clinica = self.db.select_clinica_ids()
-    #     nomes = []
-    #     id_clinicas = []
-
-    #     for i in lista_clinica:
-    #         id_clinica = i[0]
-    #         id_clinica = str(id_clinica).zfill(3)
-    #         nome = self.db.select_nome_Clinica(id_clinica)
-    #         id_clinicas.append(id_clinica)
-    #         nomes.append(nome)
-    #     convertendo_nome = [i[0] for i in nomes]
-    #     convertendo_nome_clinica = [i[0] for i in convertendo_nome]
-    #     count = 0
-    #     itens = 0
-    #     while count < len(convertendo_nome_clinica):
-    #         self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
-    #         self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
-    #         itens += 1
-    #         count += 1
 
     def cadastro_retirada_beneficios(self):
-            
+            id_matricula = self.ui.input_id_usuario_retirada_beneficio.text()
             cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
             data_retirada = self.ui.input_data_cadastro_retirada_beneficio.text()
             data_consulta = "-".join(data_retirada.split("/")[::-1]) 
             codigo_retirada = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
             quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
 
-            tupla_retirada_beneficios = (cpf,codigo_retirada,quantidade_retirada,data_consulta)
+            tupla_retirada_beneficios = (id_matricula,cpf,codigo_retirada,quantidade_retirada,data_consulta)
             
             result = []
             result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)

@@ -124,8 +124,8 @@ class DataBase():
     def cadastro_retirada_beneficios(self,saida_beneficio):
         self.connect()
         try:
-            args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3])
-            self.cursor.execute('INSERT INTO saida_beneficio (id_usuario, id_beneficio, quantidade_retirada, data_retirada) VALUES (%s, %s, %s, %s)', args)
+            args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4])
+            self.cursor.execute('INSERT INTO saida_beneficio (id_matricula,cpf, id_beneficio, quantidade_retirada, data_retirada) VALUES (%s,%s, %s, %s, %s)', args)
             #id_saida_beneficio = self.cursor.lastrowid
 
 
@@ -925,28 +925,31 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT 
-                    pessoa.nome AS pessoa_nome,
+                SELECT
+                    pessoa.id_matricula, 
+                    pessoa.nome ,
                     TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade, 
-                    pessoa.telefone AS pessoa_telefone,
-                    usuario.cns AS usuario_cns,
-                    usuario.id_matricula AS id_usuario,
-                    clinica.nome_fantasia AS nome_fantasia
+                    pessoa.telefone ,
+                    usuario.cns ,
+                    usuario.id_matricula ,
+                    clinica.nome_fantasia  
                     FROM pessoa
             INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
             LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
             WHERE pessoa.cpf LIKE '{cpf}';
             """)
-            
+            #clinica.nome_fantasia razao_social
             resultado1 = self.cursor.fetchall()
 
             if resultado1:
                 return {
-                    'nome': resultado1[0][0],
-                    'idade': resultado1[0][1],
-                    'telefone': resultado1[0][2],
-                    'cns': resultado1[0][3],
-                    'clinica': resultado1[0][4],
+
+                    'id_matricula': resultado1[0][0],
+                    'nome': resultado1[0][1],
+                    'idade': resultado1[0][2],
+                    'telefone': resultado1[0][3],
+                    'cns': resultado1[0][4],
+                    'clinica': resultado1[0][5]
                 }
             else:
                 return None

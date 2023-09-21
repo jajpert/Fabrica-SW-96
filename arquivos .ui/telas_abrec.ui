@@ -1421,7 +1421,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>8</number>
+                      <number>7</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -4813,7 +4813,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>true</bool>
@@ -5288,7 +5288,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                            </property>
                                            <property name="currentSection">
-                                            <enum>QDateTimeEdit::DaySection</enum>
+                                            <enum>QDateTimeEdit::MonthSection</enum>
                                            </property>
                                            <property name="calendarPopup">
                                             <bool>true</bool>
@@ -8669,7 +8669,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -10713,117 +10713,111 @@ QPushButton:pressed{
                                               </layout>
                                              </widget>
                                             </item>
-                                           </layout>
-                                          </widget>
-                                         </item>
-                                         <item>
-                                          <widget class="QFrame" name="frame_506">
-                                           <property name="minimumSize">
-                                            <size>
-                                             <width>171</width>
-                                             <height>53</height>
-                                            </size>
-                                           </property>
-                                           <property name="maximumSize">
-                                            <size>
-                                             <width>198</width>
-                                             <height>58</height>
-                                            </size>
-                                           </property>
-                                           <property name="frameShape">
-                                            <enum>QFrame::StyledPanel</enum>
-                                           </property>
-                                           <property name="frameShadow">
-                                            <enum>QFrame::Raised</enum>
-                                           </property>
-                                           <layout class="QVBoxLayout" name="verticalLayout_241">
-                                            <property name="spacing">
-                                             <number>0</number>
-                                            </property>
-                                            <property name="leftMargin">
-                                             <number>0</number>
-                                            </property>
-                                            <property name="topMargin">
-                                             <number>0</number>
-                                            </property>
-                                            <property name="rightMargin">
-                                             <number>0</number>
-                                            </property>
-                                            <property name="bottomMargin">
-                                             <number>0</number>
-                                            </property>
                                             <item>
-                                             <widget class="QLabel" name="label_nome_cadastro_retirada_beneficio">
+                                             <widget class="QFrame" name="frame_525">
                                               <property name="minimumSize">
                                                <size>
-                                                <width>0</width>
-                                                <height>0</height>
+                                                <width>341</width>
+                                                <height>58</height>
                                                </size>
                                               </property>
                                               <property name="maximumSize">
                                                <size>
-                                                <width>180</width>
-                                                <height>16777215</height>
+                                                <width>341</width>
+                                                <height>58</height>
                                                </size>
                                               </property>
-                                              <property name="font">
-                                               <font>
-                                                <family>Abel</family>
-                                                <pointsize>12</pointsize>
-                                               </font>
+                                              <property name="frameShape">
+                                               <enum>QFrame::StyledPanel</enum>
                                               </property>
-                                              <property name="text">
-                                               <string>Nome</string>
+                                              <property name="frameShadow">
+                                               <enum>QFrame::Raised</enum>
                                               </property>
-                                             </widget>
-                                            </item>
-                                            <item>
-                                             <widget class="QLineEdit" name="input_nome_cadastro_retirada_beneficio">
-                                              <property name="minimumSize">
-                                               <size>
-                                                <width>0</width>
-                                                <height>30</height>
-                                               </size>
-                                              </property>
-                                              <property name="maximumSize">
-                                               <size>
-                                                <width>16777215</width>
-                                                <height>30</height>
-                                               </size>
-                                              </property>
-                                              <property name="font">
-                                               <font>
-                                                <family>Abel</family>
-                                                <pointsize>12</pointsize>
-                                               </font>
-                                              </property>
-                                              <property name="styleSheet">
-                                               <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
+                                              <layout class="QVBoxLayout" name="verticalLayout_359">
+                                               <property name="spacing">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="leftMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="topMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="rightMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <property name="bottomMargin">
+                                                <number>0</number>
+                                               </property>
+                                               <item>
+                                                <widget class="QLabel" name="label_nome_cadastro_retirada_beneficio">
+                                                 <property name="minimumSize">
+                                                  <size>
+                                                   <width>339</width>
+                                                   <height>26</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="maximumSize">
+                                                  <size>
+                                                   <width>16777215</width>
+                                                   <height>16777215</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="font">
+                                                  <font>
+                                                   <family>Abel</family>
+                                                   <pointsize>12</pointsize>
+                                                  </font>
+                                                 </property>
+                                                 <property name="text">
+                                                  <string>NOME</string>
+                                                 </property>
+                                                </widget>
+                                               </item>
+                                               <item>
+                                                <widget class="QLineEdit" name="input_nome_cadastro_retirada_beneficio">
+                                                 <property name="minimumSize">
+                                                  <size>
+                                                   <width>0</width>
+                                                   <height>30</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="maximumSize">
+                                                  <size>
+                                                   <width>16777215</width>
+                                                   <height>30</height>
+                                                  </size>
+                                                 </property>
+                                                 <property name="font">
+                                                  <font>
+                                                   <family>Abel</family>
+                                                   <pointsize>12</pointsize>
+                                                  </font>
+                                                 </property>
+                                                 <property name="styleSheet">
+                                                  <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
 QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
-                                              </property>
-                                              <property name="text">
-                                               <string/>
-                                              </property>
-                                              <property name="maxLength">
-                                               <number>14</number>
-                                              </property>
+                                                 </property>
+                                                </widget>
+                                               </item>
+                                              </layout>
                                              </widget>
                                             </item>
                                            </layout>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QFrame" name="frame_513">
+                                          <widget class="QFrame" name="frame_520">
                                            <property name="minimumSize">
                                             <size>
-                                             <width>171</width>
-                                             <height>53</height>
+                                             <width>81</width>
+                                             <height>58</height>
                                             </size>
                                            </property>
                                            <property name="maximumSize">
                                             <size>
-                                             <width>198</width>
+                                             <width>81</width>
                                              <height>58</height>
                                             </size>
                                            </property>
@@ -10833,7 +10827,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                            <property name="frameShadow">
                                             <enum>QFrame::Raised</enum>
                                            </property>
-                                           <layout class="QVBoxLayout" name="verticalLayout_353">
+                                           <layout class="QVBoxLayout" name="verticalLayout_355">
                                             <property name="spacing">
                                              <number>0</number>
                                             </property>
@@ -10859,7 +10853,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                               </property>
                                               <property name="maximumSize">
                                                <size>
-                                                <width>180</width>
+                                                <width>16777215</width>
                                                 <height>16777215</height>
                                                </size>
                                               </property>
@@ -10884,7 +10878,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                               </property>
                                               <property name="maximumSize">
                                                <size>
-                                                <width>16777215</width>
+                                                <width>79</width>
                                                 <height>30</height>
                                                </size>
                                               </property>
@@ -10898,12 +10892,6 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
 QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
-                                              </property>
-                                              <property name="text">
-                                               <string/>
-                                              </property>
-                                              <property name="maxLength">
-                                               <number>14</number>
                                               </property>
                                              </widget>
                                             </item>
@@ -11026,6 +11014,44 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         <property name="frameShadow">
                                          <enum>QFrame::Raised</enum>
                                         </property>
+                                        <widget class="QLineEdit" name="input_id_usuario_retirada_beneficio">
+                                         <property name="enabled">
+                                          <bool>false</bool>
+                                         </property>
+                                         <property name="geometry">
+                                          <rect>
+                                           <x>0</x>
+                                           <y>0</y>
+                                           <width>339</width>
+                                           <height>30</height>
+                                          </rect>
+                                         </property>
+                                         <property name="minimumSize">
+                                          <size>
+                                           <width>0</width>
+                                           <height>30</height>
+                                          </size>
+                                         </property>
+                                         <property name="maximumSize">
+                                          <size>
+                                           <width>16777215</width>
+                                           <height>30</height>
+                                          </size>
+                                         </property>
+                                         <property name="font">
+                                          <font>
+                                           <family>Abel</family>
+                                           <pointsize>12</pointsize>
+                                          </font>
+                                         </property>
+                                         <property name="styleSheet">
+                                          <string notr="true">
+border-color: transparent ;
+background-color: transparent;
+
+</string>
+                                         </property>
+                                        </widget>
                                        </widget>
                                       </item>
                                       <item>
@@ -12427,7 +12453,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -12743,7 +12769,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -15591,7 +15617,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -16020,7 +16046,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -16737,7 +16763,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -19551,7 +19577,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -19680,7 +19706,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                      </property>
                                      <property name="currentSection">
-                                      <enum>QDateTimeEdit::DaySection</enum>
+                                      <enum>QDateTimeEdit::MonthSection</enum>
                                      </property>
                                      <property name="calendarPopup">
                                       <bool>true</bool>
@@ -22234,7 +22260,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::DaySection</enum>
+                                         <enum>QDateTimeEdit::MonthSection</enum>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
@@ -22416,7 +22442,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                         </property>
                                         <property name="currentSection">
-                                         <enum>QDateTimeEdit::DaySection</enum>
+                                         <enum>QDateTimeEdit::MonthSection</enum>
                                         </property>
                                         <property name="calendarPopup">
                                          <bool>true</bool>
@@ -27717,7 +27743,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -28030,7 +28056,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -30040,7 +30066,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>true</bool>
@@ -30515,7 +30541,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                               </property>
                                                               <property name="currentSection">
-                                                               <enum>QDateTimeEdit::DaySection</enum>
+                                                               <enum>QDateTimeEdit::MonthSection</enum>
                                                               </property>
                                                               <property name="calendarPopup">
                                                                <bool>true</bool>
@@ -33890,7 +33916,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                          <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                         </property>
                                                         <property name="currentSection">
-                                                         <enum>QDateTimeEdit::DaySection</enum>
+                                                         <enum>QDateTimeEdit::MonthSection</enum>
                                                         </property>
                                                         <property name="calendarPopup">
                                                          <bool>true</bool>
@@ -35248,7 +35274,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -36094,7 +36120,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
