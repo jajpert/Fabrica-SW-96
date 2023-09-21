@@ -225,8 +225,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_orgao_expedidor_cuidador_as.setValidator(self.validaString)
         self.ui.input_orgao_expedidor_colaborador_as.setValidator(self.validaString) 
 
-        # self.ui.input_nis_usuario_as.setValidator(self.validaNumeroInt)    
-        
+        # self.ui.input_nis_usuario_as.setValidator(self.validaNumeroInt) 
+         
+           
+        ######### Arrumando a data padrão ###########
+        self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_emissao_usuario_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_nascimento_cuidador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_emissao_cuidador_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_emissao_rg_colaborador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_nascimento_colaborador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_admissao_colaborador_as_5.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_inicio_cursos_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_termino_cursos_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_pagina_consulta_geral.setDateTime(QDateTime.currentDateTime())
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)

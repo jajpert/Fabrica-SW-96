@@ -5999,7 +5999,7 @@ class Ui_MainWindow(object):
         self.btn_foto_colaborador_as.setMaximumSize(QSize(125, 153))
         self.btn_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.btn_foto_colaborador_as.setIcon(icon15)
+        self.btn_foto_colaborador_as.setIcon(icon16)
         self.btn_foto_colaborador_as.setIconSize(QSize(120, 120))
 
         self.verticalLayout_179.addWidget(self.btn_foto_colaborador_as)
