@@ -18,6 +18,7 @@ import pandas as pd
 from reportlab.pdfgen import canvas
 import sys
 import openpyxl
+import os
 
 
 class Overlay(QWidget):
@@ -2607,9 +2608,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             'LOCAL DE TRATAMENTO','SITUAÇÃO DE TRABALHO','CLINICA','BAIRRO','CIDADE']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
+
         
-        #file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "/relatorio", "Text files (*.xlsx)") 
-        relatorio.to_excel("Relatorio.xlsx", sheet_name='relatorio', index=False)
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -2618,16 +2622,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
         
     def gerar_pdf(self):
-        #pegando o nome das colunas da tabela
         column_names = []
         for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
             column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
-
-        #criando o pdf e escolhendo a fonte
-        pdf = canvas.Canvas("relatorioPDF.pdf")
+        file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "C:/Abrec/", "PDF files (*.pdf)")
+        pdf = canvas.Canvas(file)
         pdf.setFont("Times-Roman", 9)
+        pdf.setTitle("Relatório")
+        
 
-        #pegando os dados de cada linha da tabela
         filtered_data = []
         
         for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
@@ -2648,13 +2651,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 y_linha-=20 #decrevementar y, para ir para prox linha
                 i+=1 #incrementar i para pegar nome da prox coluna da tabela
             pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-    
-            
-        pdf.save() #salvar pdf na raiz do projeto
+  
+        if file:
+            pdf.save()
+        
 
+        
+
+        
         msg = QMessageBox()
-        msg.setWindowTitle('Relatório')
-        msg.setText('Relatório gerado com sucesso!')
+        msg.setWindowTitle('PDF')
+        msg.setText('PDF gerado com sucesso!')
         msg.exec()
         
 
