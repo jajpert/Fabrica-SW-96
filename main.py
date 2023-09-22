@@ -198,6 +198,87 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
+        ###############VALIDADORES E MASKS#############
+        ############ Validadores ##############
+        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
+        self.validaNumeroInt = QRegularExpressionValidator(QRegularExpression("[0-9] \\.-]+"))
+        self.validaSalario = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
+        self.validaString = QRegularExpressionValidator(QRegularExpression("[a-zA-Z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
+
+        ########### Mask CPF e RG ##############
+        self.ui.input_cpf_agendamento_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_usuario_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_cuidador_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_colaborador_as.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_consulta_geral.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
+
+        self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
+        self.ui.input_rg_cuidador_as.setInputMask("00.000.000-0")
+        self.ui.input_rg_colaborador_as.setInputMask("00.000.000-0")
+
+        ########## Colocando os validadores ############
+        self.ui.input_nome_usuario_as.setValidator(self.validaString)
+        self.ui.input_nome_cuidador_as.setValidator(self.validaString)
+        self.ui.input_nome_colaborador_as.setValidator(self.validaString)  
+
+        self.ui.input_orgao_expedidor_usuario_as.setValidator(self.validaString) 
+        self.ui.input_orgao_expedidor_cuidador_as.setValidator(self.validaString)
+        self.ui.input_orgao_expedidor_colaborador_as.setValidator(self.validaString) 
+
+        # self.ui.input_nis_usuario_as.setValidator(self.validaNumeroInt) 
+         
+           
+        ######### Arrumando a data padrão ###########
+        
+        self.ui.input_nascimento_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_emissao_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_emissao_usuario_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_inicio_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
+        
+        self.ui.input_data_nascimento_cuidador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_nascimento_cuidador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_emissao_cuidador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_emissao_cuidador_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_emissao_rg_colaborador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_emissao_rg_colaborador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_nascimento_colaborador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_nascimento_colaborador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_admissao_colaborador_as_5.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_admissao_colaborador_as_5.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_inicio_cursos_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_inicio_cursos_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_termino_cursos_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_termino_cursos_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_alterar_data_nascimento_cuidador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_emissao_cuidador_as.setDisplayFormat("dd/MM/yyyy")   
+        self.ui.input_alterar_nascimento_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_emissao_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_inicio_usuario_as.setDisplayFormat("dd/MM/yyyy")
+
+        self.ui.input_alterar_data_nascimento_colaborador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_emissao_rg_colaborador_as.setDisplayFormat("dd/MM/yyyy")
+
+        self.ui.input_data_pagina_consulta_geral.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_pagina_consulta_geral.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_agendamento_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_agendamento_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_inicio_periodo_relatorio_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_dateEdit_cadastro_beneficio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())
+
+
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
@@ -258,7 +339,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################SIGNAL CPF##################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-
 
 
         
@@ -653,7 +733,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
-        cpf = self.ui.input_cpf_agendamento_as.text()
+        cpf_temp = self.ui.input_cpf_agendamento_as.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         result = self.db.select_pessoa_cpf(cpf)
         id_matricula = result[0]
         nome = result[1]
@@ -711,7 +797,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
-            dados = self.db.busca_usuario(cpf)        
+            dados = self.db.busca_usuario(cpf) 
+            print(dados)   
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
@@ -959,7 +1046,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
             self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
             self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
-            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(str(dados[7]))
+            self.ui.input_alterar_data_emissao_rg_colaborador_as.setDate(QDate(dados[7]))
             self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
 
             sexo = str(dados[9]) 
@@ -1303,7 +1390,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_usuario_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
-        rg = self.ui.input_rg_usuario_as.text()
+        rg_temp = self.ui.input_rg_usuario_as.text()
+        rg = re.sub(r'[^\w\s]','',rg_temp)
+        print(rg)
         data_emi = self.ui.input_data_emissao_usuario_as.text()
         data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
@@ -1460,7 +1549,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_cuidador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
-        rg = self.ui.input_rg_cuidador_as.text()
+        rg_temp = self.ui.input_rg_cuidador_as.text()
+        rg = re.sub(r'[^\w\s]','',rg_temp)
         data_emi = self.ui.input_data_emissao_cuidador_as.text()
         data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
@@ -1521,7 +1611,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_colaborador_as.text()
         cpf = re.sub(r'[^\w\s]','',cpf_temp)
-        rg = self.ui.input_rg_colaborador_as.text()
+        rg_temp = self.ui.input_rg_colaborador_as.text()
+        rg = re.sub(r'[^\w\s]','',rg_temp)
         data_emi = self.ui.input_data_emissao_rg_colaborador_as.text()
         data_emissao = "-".join(data_emi.split("/")[::-1])
         orgao_exp = self.ui.input_orgao_expedidor_colaborador_as.text()
@@ -2057,7 +2148,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
 
     def buscar_dados_consulta(self):
-        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        cpf_temp = self.ui.input_cpf_pagina_consulta_geral.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         dados = self.db.buscar_consulta(cpf)
         self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
         self.ui.input_id_usuario_consulta_as.hide()
