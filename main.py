@@ -288,7 +288,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
-        self.ui.btn_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
+        #self.ui.btn_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
 
 
         ############SIGNALS POPUP Cuidador AS############
