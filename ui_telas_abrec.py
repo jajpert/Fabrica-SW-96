@@ -8,26 +8,17 @@
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
-    QMetaObject, QObject, QPoint, QRect,
-    QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
-    QFont, QFontDatabase, QGradient, QIcon,
-    QImage, QKeySequence, QLinearGradient, QPainter,
-    QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication, QCheckBox,
-    QComboBox, QDateEdit, QDateTimeEdit, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QTextEdit, QTimeEdit,
-    QToolButton, QVBoxLayout, QWidget)
+from qtcore import * 
+from icons import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(2080, 1021)
+        ############ valida email ##############
+        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
+        #######################################
+        MainWindow.resize(1864, 894)
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(12)
@@ -613,19 +604,25 @@ class Ui_MainWindow(object):
         self.frame_169.setFrameShape(QFrame.StyledPanel)
         self.frame_169.setFrameShadow(QFrame.Raised)
         self.gridLayout_5 = QGridLayout(self.frame_169)
+        self.gridLayout_5.setSpacing(0)
         self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
         self.frame_170 = QFrame(self.frame_169)
         self.frame_170.setObjectName(u"frame_170")
         self.frame_170.setFrameShape(QFrame.StyledPanel)
         self.frame_170.setFrameShadow(QFrame.Raised)
         self.verticalLayout_120 = QVBoxLayout(self.frame_170)
+        self.verticalLayout_120.setSpacing(0)
         self.verticalLayout_120.setObjectName(u"verticalLayout_120")
+        self.verticalLayout_120.setContentsMargins(0, 0, 0, 0)
         self.frame_468 = QFrame(self.frame_170)
         self.frame_468.setObjectName(u"frame_468")
         self.frame_468.setFrameShape(QFrame.StyledPanel)
         self.frame_468.setFrameShadow(QFrame.Raised)
         self.verticalLayout_342 = QVBoxLayout(self.frame_468)
+        self.verticalLayout_342.setSpacing(0)
         self.verticalLayout_342.setObjectName(u"verticalLayout_342")
+        self.verticalLayout_342.setContentsMargins(0, 0, 0, 0)
         self.frame_469 = QFrame(self.frame_468)
         self.frame_469.setObjectName(u"frame_469")
         self.frame_469.setStyleSheet(u"background-color: #F3B9BF; margin-bottom: 2em")
@@ -795,13 +792,13 @@ class Ui_MainWindow(object):
         self.frame_478.setFrameShape(QFrame.StyledPanel)
         self.frame_478.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_157 = QHBoxLayout(self.frame_478)
-        self.horizontalLayout_157.setSpacing(0)
+        self.horizontalLayout_157.setSpacing(5)
         self.horizontalLayout_157.setObjectName(u"horizontalLayout_157")
         self.horizontalLayout_157.setContentsMargins(0, 0, 0, 0)
         self.frame_479 = QFrame(self.frame_478)
         self.frame_479.setObjectName(u"frame_479")
-        self.frame_479.setMinimumSize(QSize(145, 55))
-        self.frame_479.setMaximumSize(QSize(145, 55))
+        self.frame_479.setMinimumSize(QSize(0, 55))
+        self.frame_479.setMaximumSize(QSize(180, 55))
         self.frame_479.setFrameShape(QFrame.StyledPanel)
         self.frame_479.setFrameShadow(QFrame.Raised)
         self.verticalLayout_333 = QVBoxLayout(self.frame_479)
@@ -818,8 +815,8 @@ class Ui_MainWindow(object):
 
         self.input_telefone_celular_fornecedor_as = QLineEdit(self.frame_479)
         self.input_telefone_celular_fornecedor_as.setObjectName(u"input_telefone_celular_fornecedor_as")
-        self.input_telefone_celular_fornecedor_as.setMinimumSize(QSize(140, 30))
-        self.input_telefone_celular_fornecedor_as.setMaximumSize(QSize(140, 30))
+        self.input_telefone_celular_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_telefone_celular_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_celular_fornecedor_as.setFont(font)
         self.input_telefone_celular_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -833,8 +830,8 @@ class Ui_MainWindow(object):
 
         self.frame_494 = QFrame(self.frame_478)
         self.frame_494.setObjectName(u"frame_494")
-        self.frame_494.setMinimumSize(QSize(150, 55))
-        self.frame_494.setMaximumSize(QSize(150, 55))
+        self.frame_494.setMinimumSize(QSize(0, 55))
+        self.frame_494.setMaximumSize(QSize(180, 55))
         self.frame_494.setFrameShape(QFrame.StyledPanel)
         self.frame_494.setFrameShadow(QFrame.Raised)
         self.verticalLayout_343 = QVBoxLayout(self.frame_494)
@@ -851,8 +848,8 @@ class Ui_MainWindow(object):
 
         self.input_telefone_fixo_fornecedor_as = QLineEdit(self.frame_494)
         self.input_telefone_fixo_fornecedor_as.setObjectName(u"input_telefone_fixo_fornecedor_as")
-        self.input_telefone_fixo_fornecedor_as.setMinimumSize(QSize(140, 30))
-        self.input_telefone_fixo_fornecedor_as.setMaximumSize(QSize(140, 30))
+        self.input_telefone_fixo_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_telefone_fixo_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_fixo_fornecedor_as.setFont(font)
         self.input_telefone_fixo_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -867,7 +864,7 @@ class Ui_MainWindow(object):
         self.frame_480 = QFrame(self.frame_478)
         self.frame_480.setObjectName(u"frame_480")
         self.frame_480.setMinimumSize(QSize(250, 55))
-        self.frame_480.setMaximumSize(QSize(250, 55))
+        self.frame_480.setMaximumSize(QSize(320, 55))
         self.frame_480.setFrameShape(QFrame.StyledPanel)
         self.frame_480.setFrameShadow(QFrame.Raised)
         self.verticalLayout_334 = QVBoxLayout(self.frame_480)
@@ -884,8 +881,8 @@ class Ui_MainWindow(object):
 
         self.input_email_fornecedor_as = QLineEdit(self.frame_480)
         self.input_email_fornecedor_as.setObjectName(u"input_email_fornecedor_as")
-        self.input_email_fornecedor_as.setMinimumSize(QSize(240, 30))
-        self.input_email_fornecedor_as.setMaximumSize(QSize(240, 30))
+        self.input_email_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_email_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_email_fornecedor_as.setFont(font)
         self.input_email_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -898,8 +895,8 @@ class Ui_MainWindow(object):
 
         self.frame_481 = QFrame(self.frame_478)
         self.frame_481.setObjectName(u"frame_481")
-        self.frame_481.setMinimumSize(QSize(135, 55))
-        self.frame_481.setMaximumSize(QSize(135, 55))
+        self.frame_481.setMinimumSize(QSize(0, 55))
+        self.frame_481.setMaximumSize(QSize(180, 55))
         self.frame_481.setFrameShape(QFrame.StyledPanel)
         self.frame_481.setFrameShadow(QFrame.Raised)
         self.verticalLayout_335 = QVBoxLayout(self.frame_481)
@@ -916,8 +913,8 @@ class Ui_MainWindow(object):
 
         self.input_contato_fornecedor_as = QLineEdit(self.frame_481)
         self.input_contato_fornecedor_as.setObjectName(u"input_contato_fornecedor_as")
-        self.input_contato_fornecedor_as.setMinimumSize(QSize(130, 30))
-        self.input_contato_fornecedor_as.setMaximumSize(QSize(130, 30))
+        self.input_contato_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_contato_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_contato_fornecedor_as.setFont(font)
         self.input_contato_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -929,14 +926,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_157.addWidget(self.frame_481)
 
-        self.horizontalSpacer_93 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_157.addItem(self.horizontalSpacer_93)
-
         self.frame_498 = QFrame(self.frame_478)
         self.frame_498.setObjectName(u"frame_498")
-        self.frame_498.setMinimumSize(QSize(150, 55))
-        self.frame_498.setMaximumSize(QSize(150, 55))
+        self.frame_498.setMinimumSize(QSize(0, 55))
+        self.frame_498.setMaximumSize(QSize(180, 55))
         self.frame_498.setFrameShape(QFrame.StyledPanel)
         self.frame_498.setFrameShadow(QFrame.Raised)
         self.verticalLayout_347 = QVBoxLayout(self.frame_498)
@@ -953,8 +946,8 @@ class Ui_MainWindow(object):
 
         self.input_inscricao_estadual_fornecedor_as = QLineEdit(self.frame_498)
         self.input_inscricao_estadual_fornecedor_as.setObjectName(u"input_inscricao_estadual_fornecedor_as")
-        self.input_inscricao_estadual_fornecedor_as.setMinimumSize(QSize(140, 30))
-        self.input_inscricao_estadual_fornecedor_as.setMaximumSize(QSize(140, 30))
+        self.input_inscricao_estadual_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_inscricao_estadual_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_estadual_fornecedor_as.setFont(font)
         self.input_inscricao_estadual_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -964,10 +957,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_157.addWidget(self.frame_498)
-
-        self.horizontalSpacer_94 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_157.addItem(self.horizontalSpacer_94)
 
 
         self.verticalLayout_329.addWidget(self.frame_478)
@@ -980,13 +969,13 @@ class Ui_MainWindow(object):
         self.frame_486.setFrameShape(QFrame.StyledPanel)
         self.frame_486.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_159 = QHBoxLayout(self.frame_486)
-        self.horizontalLayout_159.setSpacing(0)
+        self.horizontalLayout_159.setSpacing(5)
         self.horizontalLayout_159.setObjectName(u"horizontalLayout_159")
         self.horizontalLayout_159.setContentsMargins(0, 0, 0, 0)
         self.frame_482 = QFrame(self.frame_486)
         self.frame_482.setObjectName(u"frame_482")
-        self.frame_482.setMinimumSize(QSize(150, 55))
-        self.frame_482.setMaximumSize(QSize(150, 55))
+        self.frame_482.setMinimumSize(QSize(0, 0))
+        self.frame_482.setMaximumSize(QSize(210, 55))
         self.frame_482.setFrameShape(QFrame.StyledPanel)
         self.frame_482.setFrameShadow(QFrame.Raised)
         self.verticalLayout_346 = QVBoxLayout(self.frame_482)
@@ -1004,7 +993,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_municipal_fornecedor_as = QLineEdit(self.frame_482)
         self.input_inscricao_municipal_fornecedor_as.setObjectName(u"input_inscricao_municipal_fornecedor_as")
         self.input_inscricao_municipal_fornecedor_as.setMinimumSize(QSize(0, 30))
-        self.input_inscricao_municipal_fornecedor_as.setMaximumSize(QSize(140, 30))
+        self.input_inscricao_municipal_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_municipal_fornecedor_as.setFont(font)
         self.input_inscricao_municipal_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -1014,10 +1003,6 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_159.addWidget(self.frame_482)
-
-        self.horizontalSpacer_100 = QSpacerItem(40, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
-
-        self.horizontalLayout_159.addItem(self.horizontalSpacer_100)
 
         self.frame_495 = QFrame(self.frame_486)
         self.frame_495.setObjectName(u"frame_495")
@@ -1031,8 +1016,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_158.setContentsMargins(0, 0, 0, 0)
         self.frame_496 = QFrame(self.frame_495)
         self.frame_496.setObjectName(u"frame_496")
-        self.frame_496.setMinimumSize(QSize(156, 55))
-        self.frame_496.setMaximumSize(QSize(156, 55))
+        self.frame_496.setMinimumSize(QSize(135, 55))
+        self.frame_496.setMaximumSize(QSize(135, 55))
         self.frame_496.setFrameShape(QFrame.StyledPanel)
         self.frame_496.setFrameShadow(QFrame.Raised)
         self.verticalLayout_344 = QVBoxLayout(self.frame_496)
@@ -1072,7 +1057,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_345.setSpacing(0)
         self.verticalLayout_345.setObjectName(u"verticalLayout_345")
         self.verticalLayout_345.setContentsMargins(0, 0, 0, 0)
-        self.verticalSpacer_33 = QSpacerItem(20, 17, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_33 = QSpacerItem(20, 23, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
         self.verticalLayout_345.addItem(self.verticalSpacer_33)
 
@@ -1124,13 +1109,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_159.addWidget(self.frame_495)
 
-        self.horizontalSpacer_96 = QSpacerItem(40, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
-
-        self.horizontalLayout_159.addItem(self.horizontalSpacer_96)
-
         self.frame_485 = QFrame(self.frame_486)
         self.frame_485.setObjectName(u"frame_485")
-        self.frame_485.setMinimumSize(QSize(350, 65))
+        self.frame_485.setMinimumSize(QSize(0, 65))
         self.frame_485.setMaximumSize(QSize(360, 65))
         self.frame_485.setFrameShape(QFrame.StyledPanel)
         self.frame_485.setFrameShadow(QFrame.Raised)
@@ -1148,8 +1129,8 @@ class Ui_MainWindow(object):
 
         self.input_logradouro_fornecedor_as = QLineEdit(self.frame_485)
         self.input_logradouro_fornecedor_as.setObjectName(u"input_logradouro_fornecedor_as")
-        self.input_logradouro_fornecedor_as.setMinimumSize(QSize(340, 30))
-        self.input_logradouro_fornecedor_as.setMaximumSize(QSize(340, 30))
+        self.input_logradouro_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_logradouro_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_logradouro_fornecedor_as.setFont(font)
         self.input_logradouro_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -1197,9 +1178,12 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_159.addWidget(self.frame_487)
 
-        self.horizontalSpacer_97 = QSpacerItem(40, 20, QSizePolicy.Maximum, QSizePolicy.Minimum)
+        self.frame_168 = QFrame(self.frame_486)
+        self.frame_168.setObjectName(u"frame_168")
+        self.frame_168.setFrameShape(QFrame.StyledPanel)
+        self.frame_168.setFrameShadow(QFrame.Raised)
 
-        self.horizontalLayout_159.addItem(self.horizontalSpacer_97)
+        self.horizontalLayout_159.addWidget(self.frame_168)
 
 
         self.verticalLayout_329.addWidget(self.frame_486)
@@ -1211,11 +1195,13 @@ class Ui_MainWindow(object):
         self.frame_474.setFrameShape(QFrame.StyledPanel)
         self.frame_474.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_160 = QHBoxLayout(self.frame_474)
+        self.horizontalLayout_160.setSpacing(5)
         self.horizontalLayout_160.setObjectName(u"horizontalLayout_160")
+        self.horizontalLayout_160.setContentsMargins(0, 0, 0, 0)
         self.frame_488 = QFrame(self.frame_474)
         self.frame_488.setObjectName(u"frame_488")
-        self.frame_488.setMinimumSize(QSize(185, 65))
-        self.frame_488.setMaximumSize(QSize(185, 65))
+        self.frame_488.setMinimumSize(QSize(0, 65))
+        self.frame_488.setMaximumSize(QSize(210, 65))
         self.frame_488.setFrameShape(QFrame.StyledPanel)
         self.frame_488.setFrameShadow(QFrame.Raised)
         self.verticalLayout_338 = QVBoxLayout(self.frame_488)
@@ -1233,7 +1219,7 @@ class Ui_MainWindow(object):
         self.input_bairro_fornecedor_as = QLineEdit(self.frame_488)
         self.input_bairro_fornecedor_as.setObjectName(u"input_bairro_fornecedor_as")
         self.input_bairro_fornecedor_as.setMinimumSize(QSize(0, 30))
-        self.input_bairro_fornecedor_as.setMaximumSize(QSize(180, 30))
+        self.input_bairro_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_bairro_fornecedor_as.setFont(font)
         self.input_bairro_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -1244,14 +1230,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_160.addWidget(self.frame_488)
 
-        self.horizontalSpacer_54 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_160.addItem(self.horizontalSpacer_54)
-
         self.frame_489 = QFrame(self.frame_474)
         self.frame_489.setObjectName(u"frame_489")
-        self.frame_489.setMinimumSize(QSize(205, 60))
-        self.frame_489.setMaximumSize(QSize(205, 60))
+        self.frame_489.setMinimumSize(QSize(0, 60))
+        self.frame_489.setMaximumSize(QSize(210, 60))
         self.frame_489.setFrameShape(QFrame.StyledPanel)
         self.frame_489.setFrameShadow(QFrame.Raised)
         self.verticalLayout_339 = QVBoxLayout(self.frame_489)
@@ -1269,7 +1251,7 @@ class Ui_MainWindow(object):
         self.input_cidade_fornecedor_as = QLineEdit(self.frame_489)
         self.input_cidade_fornecedor_as.setObjectName(u"input_cidade_fornecedor_as")
         self.input_cidade_fornecedor_as.setMinimumSize(QSize(0, 30))
-        self.input_cidade_fornecedor_as.setMaximumSize(QSize(200, 30))
+        self.input_cidade_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_cidade_fornecedor_as.setFont(font)
         self.input_cidade_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -1280,13 +1262,9 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_160.addWidget(self.frame_489)
 
-        self.horizontalSpacer_98 = QSpacerItem(90, 20, QSizePolicy.Fixed, QSizePolicy.Minimum)
-
-        self.horizontalLayout_160.addItem(self.horizontalSpacer_98)
-
         self.frame_490 = QFrame(self.frame_474)
         self.frame_490.setObjectName(u"frame_490")
-        self.frame_490.setMinimumSize(QSize(180, 60))
+        self.frame_490.setMinimumSize(QSize(0, 60))
         self.frame_490.setMaximumSize(QSize(180, 60))
         self.frame_490.setFrameShape(QFrame.StyledPanel)
         self.frame_490.setFrameShadow(QFrame.Raised)
@@ -1304,8 +1282,8 @@ class Ui_MainWindow(object):
 
         self.input_estado_fornecedor_as = QLineEdit(self.frame_490)
         self.input_estado_fornecedor_as.setObjectName(u"input_estado_fornecedor_as")
-        self.input_estado_fornecedor_as.setMinimumSize(QSize(150, 30))
-        self.input_estado_fornecedor_as.setMaximumSize(QSize(150, 30))
+        self.input_estado_fornecedor_as.setMinimumSize(QSize(0, 30))
+        self.input_estado_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_estado_fornecedor_as.setFont(font)
         self.input_estado_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
@@ -1420,6 +1398,7 @@ class Ui_MainWindow(object):
 
 
         self.gridLayout.addWidget(self.frame_169, 0, 0, 1, 1)
+
 
         self.stackedWidget_2.addWidget(self.page_fornecedor_as)
         self.page_botoes_cadastrar_as = QWidget()
@@ -1587,9 +1566,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_beneficios_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon15 = QIcon()
-        icon15.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_beneficios_as.setIcon(icon15)
+        self.btn_cadastrar_beneficios_as.setIcon(icon14)
         self.btn_cadastrar_beneficios_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_123.addWidget(self.btn_cadastrar_beneficios_as)
