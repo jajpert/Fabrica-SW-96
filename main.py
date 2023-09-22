@@ -230,21 +230,54 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
          
            
         ######### Arrumando a data padrão ###########
+        
+        self.ui.input_nascimento_usuario_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_emissao_usuario_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_emissao_usuario_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_inicio_usuario_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
-
+        
+        self.ui.input_data_nascimento_cuidador_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_nascimento_cuidador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_emissao_cuidador_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_emissao_cuidador_as.setDateTime(QDateTime.currentDateTime())
 
+        self.ui.input_data_emissao_rg_colaborador_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_emissao_rg_colaborador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_nascimento_colaborador_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_nascimento_colaborador_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_admissao_colaborador_as_5.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_admissao_colaborador_as_5.setDateTime(QDateTime.currentDateTime())
 
+        self.ui.input_data_inicio_cursos_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_inicio_cursos_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_termino_cursos_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_termino_cursos_as.setDateTime(QDateTime.currentDateTime())
 
+        self.ui.input_alterar_data_nascimento_cuidador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_emissao_cuidador_as.setDisplayFormat("dd/MM/yyyy")   
+        self.ui.input_alterar_nascimento_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_emissao_usuario_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_inicio_usuario_as.setDisplayFormat("dd/MM/yyyy")
+
+        self.ui.input_alterar_data_nascimento_colaborador_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_alterar_data_emissao_rg_colaborador_as.setDisplayFormat("dd/MM/yyyy")
+
+        self.ui.input_data_pagina_consulta_geral.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_pagina_consulta_geral.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_data_agendamento_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_agendamento_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_inicio_periodo_relatorio_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_dateEdit_cadastro_beneficio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())
+
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
@@ -764,7 +797,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
-            dados = self.db.busca_usuario(cpf)        
+            dados = self.db.busca_usuario(cpf) 
+            print(dados)   
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
@@ -1012,7 +1046,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
             self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
             self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
-            self.ui.input_alterar_data_emissao_rg_colaborador_as.setText(str(dados[7]))
+            self.ui.input_alterar_data_emissao_rg_colaborador_as.setDate(QDate(dados[7]))
             self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
 
             sexo = str(dados[9]) 
