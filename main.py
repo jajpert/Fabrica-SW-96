@@ -349,7 +349,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login_senha = []
         perfil = []
         resultados = self.db.validarLogin(login,senha)
-        #print(resultados)
+        print(resultados)
 
         if resultados[0] == [] or resultados[1] == []:
             self.ui.inicio.setCurrentWidget(self.ui.login)
