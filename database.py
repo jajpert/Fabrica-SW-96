@@ -949,7 +949,7 @@ class DataBase():
                     'idade': resultado1[0][2],
                     'telefone': resultado1[0][3],
                     'cns': resultado1[0][4],
-                    'clinica': resultado1[0][5]
+                    'clinica': resultado1[0][6]
                 }
             else:
                 return None
