@@ -93,9 +93,13 @@ class DataBase():
         try:
             #
             self.cursor.execute(f"""Select login, senha, perfil from colaborador where login = '{login}' and senha = '{senha}';""")
+            result = self.cursor.fetchall() 
 
-            result = self.cursor.fetchall()            
-            return result
+            self.cursor.execute(f"""Select id_matricula from colaborador where login = '{login}' and senha = '{senha}';""")
+            result2 = self.cursor.fetchall()
+            print("id resulte = ",result2) 
+
+            return result, result2
 
         except Exception as err:
             return "ERRO",str(err)
@@ -136,7 +140,7 @@ class DataBase():
         try:
             self.cursor.execute("""
                     SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -155,7 +159,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                     SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao,clinica.nome_fantasia, endereco.bairro, 
+                    usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao_trabalho_outros,usuario.situacao,clinica.nome_fantasia, endereco.bairro, 
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -174,10 +178,10 @@ class DataBase():
         try:
             self.cursor.execute(f"""
                 SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,
-                usuario.nis, usuario.local_tratamento, usuario.situacao_trabalho,usuario.situacao_trabalho_outros, clinica.nome_fantasia, endereco.bairro, endereco.cidade
+                usuario.nis, usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, endereco.cidade
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco
+                LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento 
                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
                 OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
             """)
