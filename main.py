@@ -285,7 +285,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
         self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         
@@ -322,6 +321,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
+        self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
+        self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
 
 
 
@@ -350,7 +351,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_pagina_consulta_geral.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
-        self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_alterar_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_alterar_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         # page_alterar_usuario
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -455,7 +458,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
             
-            elif perfil[0] == 'Farm':
+            elif perfil[0] == 'farm':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -467,7 +470,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
                 
-            elif perfil[0] == 'Fisio':
+            elif perfil[0] == 'fisio':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -479,7 +482,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido()    
 
-            elif perfil[0] == 'Nutri':
+            elif perfil[0] == 'nutri':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -491,7 +494,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
 
-            elif perfil[0] == 'Psico':
+            elif perfil[0] == 'pisc':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
@@ -499,18 +502,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.LoginPsico() 
                          
-                else:
-                    print ("Usuário não encontrado")
-                    self.ui.inicio.setCurrentWidget(self.ui.login)
-                    self.loginInvalido() 
-
-            elif perfil[0] == 'Secre':
-                if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
-                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
-                    nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
-                    self.LoginSecretaria()      
                 else:
                     print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -526,29 +517,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 ########################### Validar Login Farm #############################        
     def LoginFarm(self):
-        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.farmaceutica)
+        self.ui.inicio.setCurrentWidget(self.ui.page_farmaceutica)
 
 ########################### Validar Login Fisioterapeuta #############################        
     def LoginFisio(self):
-        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.fisioterapeuta)
+        self.ui.inicio.setCurrentWidget(self.ui.page_fisioterapeuta)
 
 
 ########################### Validar Login Nutri #############################        
     def LoginNutri(self):
-        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.nutricionista)
+        self.ui.inicio.setCurrentWidget(self.ui.page_nutricionista)
 
 ########################### Validar Login Psico #############################        
     def LoginPsico(self):
-        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.psicologa)
-
-########################### Validar Login Secretaria #############################        
-    def LoginSecretaria(self):
-        self.ui.inicio.setCurrentWidget(self.ui.area_principal)
-        self.ui.tipos_acesso.setCurrentWidget(self.ui.secretaria)
+        self.ui.inicio.setCurrentWidget(self.ui.page_psicologa)
 
 ########################### Validar CEP ###############################
     def validarCep(self):
@@ -2162,7 +2144,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-        self.ui.input_hora_consulta_as.setText(str(dados[5]))
+        self.ui.input_hora_consulta_as.setTime(QTime(dados[5]))
+        self.puxar_consulta()
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_Consulta_as.isChecked():
