@@ -2124,8 +2124,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
         
-        #file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "/relatorio", "Text files (*.xlsx)") 
-        relatorio.to_excel("RelatorioParticipante.xlsx", sheet_name='relatorio', index=False)
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
