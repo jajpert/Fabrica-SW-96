@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecFyHCvo.ui'
+## Form generated from reading UI file 'telas_abrecCcXBbv.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.2
+## Created by: Qt User Interface Compiler version 6.5.0
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -7792,11 +7792,19 @@ class Ui_MainWindow(object):
         self.frame_175.setMaximumSize(QSize(400, 16777215))
         self.frame_175.setFrameShape(QFrame.StyledPanel)
         self.frame_175.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_124 = QVBoxLayout(self.frame_175)
-        self.verticalLayout_124.setObjectName(u"verticalLayout_124")
+        self.verticalLayout_9 = QVBoxLayout(self.frame_175)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalSpacer_30 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_124.addItem(self.verticalSpacer_30)
+        self.verticalLayout_9.addItem(self.verticalSpacer_30)
+
+        self.input_id_matricula_user_participante_geral = QLineEdit(self.frame_175)
+        self.input_id_matricula_user_participante_geral.setObjectName(u"input_id_matricula_user_participante_geral")
+        self.input_id_matricula_user_participante_geral.setMaximumSize(QSize(50, 32))
+        self.input_id_matricula_user_participante_geral.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_9.addWidget(self.input_id_matricula_user_participante_geral)
 
         self.frame_4722 = QFrame(self.frame_175)
         self.frame_4722.setObjectName(u"frame_4722")
@@ -7861,7 +7869,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_1562.addWidget(self.btn_buscar_cpf_pagina_participante_geral)
 
 
-        self.verticalLayout_124.addWidget(self.frame_4722)
+        self.verticalLayout_9.addWidget(self.frame_4722)
 
         self.frame_4762 = QFrame(self.frame_175)
         self.frame_4762.setObjectName(u"frame_4762")
@@ -7882,7 +7890,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3352.addWidget(self.input_nome_pagina_participante_geral)
 
 
-        self.verticalLayout_124.addWidget(self.frame_4762)
+        self.verticalLayout_9.addWidget(self.frame_4762)
 
         self.frame_4772 = QFrame(self.frame_175)
         self.frame_4772.setObjectName(u"frame_4772")
@@ -7903,7 +7911,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3362.addWidget(self.input_telefone_pagina_participante_geral)
 
 
-        self.verticalLayout_124.addWidget(self.frame_4772)
+        self.verticalLayout_9.addWidget(self.frame_4772)
 
         self.frame_4782 = QFrame(self.frame_175)
         self.frame_4782.setObjectName(u"frame_4782")
@@ -7924,7 +7932,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3402.addWidget(self.input_email_pagina_participante_geral)
 
 
-        self.verticalLayout_124.addWidget(self.frame_4782)
+        self.verticalLayout_9.addWidget(self.frame_4782)
 
         self.frame_4792 = QFrame(self.frame_175)
         self.frame_4792.setObjectName(u"frame_4792")
@@ -7945,7 +7953,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3412.addWidget(self.input_clinica_pagina_participante_geral)
 
 
-        self.verticalLayout_124.addWidget(self.frame_4792)
+        self.verticalLayout_9.addWidget(self.frame_4792)
 
         self.frame_4742 = QFrame(self.frame_175)
         self.frame_4742.setObjectName(u"frame_4742")
@@ -7969,7 +7977,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3322.addWidget(self.comboBox_cursos_participante_geral)
 
 
-        self.verticalLayout_124.addWidget(self.frame_4742)
+        self.verticalLayout_9.addWidget(self.frame_4742)
 
 
         self.verticalLayout_1202.addWidget(self.frame_175)
@@ -14298,28 +14306,19 @@ class Ui_MainWindow(object):
         self.frame_4531.setMaximumSize(QSize(200, 79))
         self.frame_4531.setFrameShape(QFrame.StyledPanel)
         self.frame_4531.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_126 = QVBoxLayout(self.frame_4531)
-        self.verticalLayout_126.setObjectName(u"verticalLayout_126")
+        self.verticalLayout_8 = QVBoxLayout(self.frame_4531)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.label_hora_pagina_consulta_geral = QLabel(self.frame_4531)
         self.label_hora_pagina_consulta_geral.setObjectName(u"label_hora_pagina_consulta_geral")
         self.label_hora_pagina_consulta_geral.setFont(font)
 
-        self.verticalLayout_126.addWidget(self.label_hora_pagina_consulta_geral)
+        self.verticalLayout_8.addWidget(self.label_hora_pagina_consulta_geral)
 
-        self.input_hora_consulta_as = QTimeEdit(self.frame_4531)
+        self.input_hora_consulta_as = QLineEdit(self.frame_4531)
         self.input_hora_consulta_as.setObjectName(u"input_hora_consulta_as")
-        self.input_hora_consulta_as.setMinimumSize(QSize(120, 30))
-        self.input_hora_consulta_as.setMaximumSize(QSize(120, 30))
-        self.input_hora_consulta_as.setFont(font)
-        self.input_hora_consulta_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
-"QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_hora_consulta_as.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.input_hora_consulta_as.setAlignment(Qt.AlignCenter)
-        self.input_hora_consulta_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
-        self.input_hora_consulta_as.setProperty("showGroupSeparator", False)
-        self.input_hora_consulta_as.setTimeSpec(Qt.LocalTime)
+        self.input_hora_consulta_as.setMaximumSize(QSize(120, 32))
 
-        self.verticalLayout_126.addWidget(self.input_hora_consulta_as)
+        self.verticalLayout_8.addWidget(self.input_hora_consulta_as)
 
 
         self.horizontalLayout_681.addWidget(self.frame_4531)
@@ -15482,7 +15481,6 @@ class Ui_MainWindow(object):
         self.label_data_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"DATA", None))
         self.input_data_pagina_consulta_geral.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_hora_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"HORA", None))
-        self.input_hora_consulta_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"hh:mm", None))
         self.label_relatorio_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO", None))
         self.btn_voltar_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_salvar_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))

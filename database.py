@@ -7,7 +7,6 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -232,7 +231,7 @@ class DataBase():
     def filter_agenda(self,text):
         self.connect()
         try: 
-            self.cursor.execute(f"""select data, hora , nome, profissional, anotacao from agendamento where nome like '%{text}%' or  profissional like '%{text}%';""")
+            self.cursor.execute(f"""select id_agendamento, data, hora, nome, profissional, anotacao from agendamento where nome like '%{text}%' or  profissional like '%{text}%';""")
             result = self.cursor.fetchall()
         
             return result

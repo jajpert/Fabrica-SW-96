@@ -163,6 +163,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.db = DataBase()        
         self.listarAgendamentos()
         self.listarBeneficios()
+        self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -423,6 +424,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
         self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
         self.ui.btn_relatorios_as.clicked.connect(self.filtrar_dados)
+        self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         
 
 ########################### Validar Login #############################
@@ -1539,9 +1541,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         sexo = self.ui.input_sexo_cuidador_as.currentText()
         telefone = self.ui.input_telefone_cuidador_as.text()
         email = self.ui.input_email_cuidador_as.text()  
-        escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()     
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email,escolaridade)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email)
 
         ################### cuidador ###################################
 
@@ -1726,13 +1727,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento(tupla_agendamento)
+        
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Cadastro Agendamento")
         msg.setText("Agendamento Cadastrado com sucesso!")
         msg.exec()
         # self.msg(result[0],result[1])   
-        self.limparCamposAgenda()
+        self.limparCamposAgenda() 
+        self.listarAgendamentos()
 
 
     def cadastroFornecedor(self):
@@ -1920,7 +1923,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
        self.ui.input_informacoes_gerais_clinica_as.setHtml("")
        
     def limparCadastroCursos(self):
-        self.ui.input_data_inclusao_cursos_as.setText("")
         self.ui.input_nome_cursos_as.setText("")
         self.ui.input_tipo_cursos_as.setCurrentIndex(int(0))
         self.ui.input_responsavel_cursos_as.setText("")
@@ -2078,15 +2080,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_participante = (nome_curso_id_tratado,id_matricula)
         result = []
         result = self.db.cadastrar_participante(tupla_participante)
-        self.puxar_cadastro_participante()
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Cadastro Participante")
         msg.setText("Participante cadastrado com sucesso!")
         msg.exec()
+        self.puxar_cadastro_participante()
 
     def buscar_dados_participante(self):
-        cpf = self.ui.input_cpf_pagina_participante_geral.text()
+        cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         dados = self.db.buscar_participante(cpf)
         self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
         self.ui.input_id_matricula_user_participante_geral.hide()
@@ -2096,7 +2099,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
 
     def puxar_cadastro_participante(self):
-        cpf = self.ui.input_cpf_pagina_participante_geral.text()
+        cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         result = self.db.buscar_info_participante(cpf)
         self.ui.input_TableWidget_pagina_participante_geral.clearContents()
         self.ui.input_TableWidget_pagina_participante_geral.setRowCount(len(result))   
@@ -2144,7 +2148,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-        self.ui.input_hora_consulta_as.setTime(QTime(dados[5]))
+        self.ui.input_hora_consulta_as.setText(str(dados[5]))
         self.puxar_consulta()
 
     def cadastrar_consulta(self):
