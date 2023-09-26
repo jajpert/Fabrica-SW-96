@@ -455,7 +455,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginAssistenteS()         
                 else:
                     print ("Usuário não encontrado")
@@ -467,7 +467,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginFarm()        
                 else:
                     print ("Usuário não encontrado")
@@ -479,7 +479,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginFisio()       
                 else:
                     print ("Usuário não encontrado")
@@ -491,7 +491,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginNutri()       
                 else:
                     print ("Usuário não encontrado")
@@ -503,7 +503,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginPsico() 
                          
                 else:
