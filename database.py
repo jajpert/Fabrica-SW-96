@@ -5,8 +5,9 @@ class DataBase():
         self.banco = banco
 
     def connect(self):
-        
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # 
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -365,6 +366,19 @@ class DataBase():
         finally:
             self.close_connection()
 
+
+    def tirar_foto_usuario(self, foto):
+        self.connect()
+        try:
+            args = (foto[0], foto[1], foto[2])
+            self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_matricula) VALUES (%s, %s, %s)""", args)
+            self.conn.commit()
+            return "Entrou banco"
+        except Exception as err:
+            return "ERRO",str(err)
+        
+        finally:
+            self.close_connection()
 
     def busca_cuidador(self, cpf):
         self.connect()
@@ -1023,6 +1037,9 @@ class DataBase():
         
         finally:
             self.close_connection()
+
+
+
 
 
     def close_connection(self):

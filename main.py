@@ -17,6 +17,7 @@ from openpyxl.styles import Font
 import pandas as pd
 from reportlab.pdfgen import canvas
 import sys
+from PIL import Image
 import openpyxl
 import os
 
@@ -57,24 +58,44 @@ class DialogTirarImportarFoto(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
+        self.fb = Ui_MainWindow()
         self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
-        #self.ui.btn_tirar_foto_popup_foto_as.clicked.connect(self.TirarFotoWeb)
+        self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto)
         #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
-    
-    def TirarFotoWeb(self):
+
+    def Tirar_foto(self):
         vid = cv2.VideoCapture(0)
+        # nome_usuario = self.fb.input_nome_usuario_as.text()
+        nome_usuario = "teste"
+        # id_matricula = self.fb.input_matricula_usuario_as.text()
+        id_matricula = 130
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
+        self.db = DataBase()  
+        try:
+            while True:
+                ret, frame = vid.read()
+                cv2.imshow("Janela", frame)
+                if not ret:
+                    print('failed to grab frame')
+                    break
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture"
+                    if not os.path.exists(directory):
+                        os.makedirs(directory)
+                    image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                    image_pil.save(StoreFilePath)
+                    print("Imagem salva em:", StoreFilePath)
 
-        while(True):
-            ret, frame = vid.read()
-            cv2.imshow('frame', frame)
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-            cv2.imwrite("capture.png", frame)
-        vid.release()
-        cv2.destroyAllWindows()
-
-
+                    cv2.waitKey(0)
+                    cv2.destroyAllWindows()
+                    break
+        except mysql.connector.Error as error:
+            print("Failed inserting BLOB data into MySQL table {}".format(error))
+            
+        tupla_foto = (nome_usuario, StoreFilePath, id_matricula)
+        print(tupla_foto)
+        result = self.db.tirar_foto_usuario(tupla_foto)  
 ################Class POPUP USUARIO################
 
 class DialogConfirmarCadastro(QDialog):
@@ -374,7 +395,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
-        self.ui.btn_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
+        self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
         #self.ui.btn_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
 
 
@@ -459,7 +480,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
-                    self.LoginAssistenteS()         
+                    self.LoginAssistenteS()  
                 else:
                     print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
