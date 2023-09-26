@@ -303,7 +303,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
-        self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
+        self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_relatorio_pessoas.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
+        self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_retirada_beneficios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
@@ -341,7 +343,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################SIGNAL CPF##################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-
+        self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
 
         
         #############SIGNALS BOTOES voltar#############
@@ -357,8 +359,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         # page_alterar_usuario
-        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         
 
         ######SIGNALS POPUP RECUPERAR SENHA AS######
@@ -393,6 +396,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
         self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroCurso)
         self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
+        self.ui.btn_finalizar_cadastro_retirada_beneficio.clicked.connect(self.cadastro_retirada_beneficios)
         self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
@@ -424,6 +428,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_excel_pagina_participante_geral.clicked.connect(self.gerar_excel_participante)
         self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
         self.ui.btn_relatorios_as.clicked.connect(self.filtrar_dados)
+        self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         
 
@@ -2007,7 +2012,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_descricao_cadastro_beneficio.setText("")
         self.ui.input_dateEdit_cadastro_beneficio.setDate(QDate(2000, 1, 1))          
         self.ui.input_spinBox_cadastro_beneficio.setValue(0)
-
+    
+    def limparCamposCadastroRetiradaBeneficios(self):
+            self.ui.input_cpf_cadastro_retirada_beneficio.setText("")
+            self.ui.input_nome_cadastro_retirada_beneficio.setText("")
+            self.ui.input_idade_cadastro_retirada_beneficio.setText("")
+            self.ui.input_data_cadastro_retirada_beneficio.setDate(QDate(2020, 1, 1))
+            self.ui.input_telefone_cadastro_retirada_beneficio.setText("")
+            self.ui.input_cns_cadastro_retirada_beneficio.setText("")
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
+            
+            self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText("")
+            self.ui.input_descricao_cadastro_retirada_beneficio.setText("")       
+            self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(0)
+        
     def buscar_clinica_nome_fantasia(self):
         lista_clinica = self.db.select_clinica_ids()
         nomes = []
@@ -2469,6 +2487,80 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             # self.msg(result[0],result[1])
             self.limparCamposCadastroBeneficios()
             self.listarBeneficios()
+    
+    def buscarRetirada(self):
+        cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+        result = self.db.select_retirada_beneficio_cpf(cpf)
+        
+        print (result)
+        if result:
+            id_matricula = result.get('id_matricula', '')
+            nome = result.get('nome', '')
+            idade = result.get('idade', '')          
+            telefone = result.get('telefone', '')
+            cns = result.get('cns','')
+            clinica = result.get('clinica', 'Não possui')
+
+            self.ui.input_id_usuario_retirada_beneficio.setText(str(id_matricula))
+            self.ui.input_id_usuario_retirada_beneficio.hide()
+            self.ui.input_nome_cadastro_retirada_beneficio.setText(nome)
+            self.ui.input_idade_cadastro_retirada_beneficio.setText(str(idade))
+            self.ui.input_telefone_cadastro_retirada_beneficio.setText(telefone)            
+            self.ui.input_cns_cadastro_retirada_beneficio.setText(cns)
+            self.ui.input_clinica_cadastro_retirada_beneficio.setText(str(clinica))
+            return id_matricula
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Retirada de Benefício")
+            msg.setText("Nenhuma informação para este CPF.")
+            msg.exec()
+            
+            return None
+    
+    def buscarCodigoRetirada(self):
+        codigo = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
+        result = self.db.select_retirada_beneficio_codigo(codigo)
+        
+        if result:
+            id_beneficios = result.get('id_beneficios', '')
+            descricao = result.get('descricao', '')
+            
+            self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText(str(id_beneficios))
+            self.ui.input_descricao_cadastro_retirada_beneficio.setText(descricao)
+            return id_beneficios
+        
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Retirada de Benefício")
+            msg.setText("Nenhuma informação para este Código.")
+            msg.exec()
+            return None
+
+
+    def cadastro_retirada_beneficios(self):
+            id_matricula = self.ui.input_id_usuario_retirada_beneficio.text()
+            cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+            data_retirada = self.ui.input_data_cadastro_retirada_beneficio.text()
+            data_consulta = "-".join(data_retirada.split("/")[::-1]) 
+            codigo_retirada = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
+            quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
+
+            tupla_retirada_beneficios = (id_matricula,cpf,codigo_retirada,quantidade_retirada,data_consulta)
+            
+            result = []
+            result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
+            print (result)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Retirada de Beneficios")
+            msg.setText("Cadastro de retirada efetuado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
+            self.limparCamposCadastroRetiradaBeneficios()
+    
+    
 
 ######################## Deficiência base Outra################################
 

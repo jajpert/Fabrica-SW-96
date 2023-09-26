@@ -120,6 +120,28 @@ class DataBase():
             #print(err)
             return "ERRO",str(err)
         
+    def cadastro_retirada_beneficios(self,saida_beneficio):
+        self.connect()
+        try:
+            args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4])
+            self.cursor.execute('INSERT INTO saida_beneficio (id_matricula,cpf, id_beneficio, quantidade_retirada, data_retirada) VALUES (%s,%s, %s, %s, %s)', args)
+            #id_saida_beneficio = self.cursor.lastrowid
+
+
+
+            # args = (saida_beneficio[0], saida_beneficio[1], saida_beneficio[2], saida_beneficio[3], saida_beneficio[4], saida_beneficio[5], saida_beneficio[6])
+            # self.cursor.execute('INSERT INTO saida_beneficio (id_saida_beneficio, cpf, DATE_FORMAT,(validade,"%d/%m/%Y") AS data_retirada, codigo_retirada, quantidade_retirada, id_usuario, id_beneficio) VALUES (%s, %s, %s, %s, %s, %s, %s)', args)              # Retrieve the ID of the last inserted row
+            # id_saida_beneficio = self.cursor.lastrowid
+
+
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+
+        except Exception as err:
+            #print(err)
+            return "ERRO",str(err)
+        
     def select_usuario(self):
         self.connect()
         try:
@@ -896,6 +918,68 @@ class DataBase():
             print(err)
         finally:
             self.close_connection()
+
+
+    def select_retirada_beneficio_cpf(self, cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT
+                    pessoa.id_matricula, 
+                    pessoa.nome ,
+                    TIMESTAMPDIFF(YEAR, pessoa.data_nascimento, NOW()) as idade, 
+                    pessoa.telefone ,
+                    usuario.cns ,
+                    usuario.id_matricula ,
+                    clinica.razao_social 
+                    FROM pessoa
+            INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+            LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+            WHERE pessoa.cpf LIKE '{cpf}';
+            """)
+            #clinica.nome_fantasia razao_social
+            resultado1 = self.cursor.fetchall()
+
+            if resultado1:
+                return {
+
+                    'id_matricula': resultado1[0][0],
+                    'nome': resultado1[0][1],
+                    'idade': resultado1[0][2],
+                    'telefone': resultado1[0][3],
+                    'cns': resultado1[0][4],
+                    'clinica': resultado1[0][6]
+                }
+            else:
+                return None
+        except Exception as e:
+            print(f"Error in select_retirada_beneficio_cpf: {e}")
+            return None
+
+    def select_retirada_beneficio_codigo(self, id_beneficios):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT 
+                    id_beneficios,
+                    descricao
+                FROM beneficios
+                WHERE id_beneficios LIKE '{id_beneficios}';
+            """)
+            
+            resultado1 = self.cursor.fetchall()
+
+            if resultado1:
+                return {
+                    'id_beneficios': resultado1[0][0],
+                    'descricao': resultado1[0][1]
+                }
+            else:
+                return None
+        except Exception as e:
+            print(f"Erro na função select_retirada_beneficio_codigo: {e}")
+            return None
+
 
 
 
