@@ -37,6 +37,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setStyleSheet(u"")
         self.horizontalLayout_8 = QHBoxLayout(self.centralwidget)
         self.horizontalLayout_8.setObjectName(u"horizontalLayout_8")
+        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
         self.inicio = QStackedWidget(self.centralwidget)
         self.inicio.setObjectName(u"inicio")
         self.login = QWidget()
