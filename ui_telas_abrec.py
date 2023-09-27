@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecdauzpV.ui'
+## Form generated from reading UI file 'telas_abrecPqarKF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.0
 ##
@@ -11895,16 +11895,23 @@ class Ui_MainWindow(object):
         self.horizontalLayout_105.setSpacing(5)
         self.horizontalLayout_105.setObjectName(u"horizontalLayout_105")
         self.horizontalLayout_105.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_usuario_as = QPushButton(self.frame_312)
-        self.btn_alterar_foto_usuario_as.setObjectName(u"btn_alterar_foto_usuario_as")
-        self.btn_alterar_foto_usuario_as.setMinimumSize(QSize(125, 153))
-        self.btn_alterar_foto_usuario_as.setMaximumSize(QSize(125, 153))
-        self.btn_alterar_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_usuario_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.btn_alterar_foto_usuario_as.setIcon(icon22)
-        self.btn_alterar_foto_usuario_as.setIconSize(QSize(120, 120))
+        self.frame_15 = QFrame(self.frame_312)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_11 = QVBoxLayout(self.frame_15)
+        self.verticalLayout_11.setSpacing(0)
+        self.verticalLayout_11.setObjectName(u"verticalLayout_11")
+        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_usuario_alterar_as = QLabel(self.frame_15)
+        self.label_foto_usuario_alterar_as.setObjectName(u"label_foto_usuario_alterar_as")
+        self.label_foto_usuario_alterar_as.setMinimumSize(QSize(250, 250))
+        self.label_foto_usuario_alterar_as.setMaximumSize(QSize(250, 250))
 
-        self.horizontalLayout_105.addWidget(self.btn_alterar_foto_usuario_as)
+        self.verticalLayout_11.addWidget(self.label_foto_usuario_alterar_as)
+
+
+        self.horizontalLayout_105.addWidget(self.frame_15)
 
         self.frame_313 = QFrame(self.frame_312)
         self.frame_313.setObjectName(u"frame_313")
@@ -15396,19 +15403,19 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.inicio.setCurrentIndex(0)
+        self.inicio.setCurrentIndex(5)
         self.stack_nutricionista.setCurrentIndex(0)
         self.stackedWidget_12.setCurrentIndex(0)
         self.stack_psicologa.setCurrentIndex(0)
-        self.stackedWidget_7.setCurrentIndex(0)
+        self.stackedWidget_7.setCurrentIndex(1)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_10.setCurrentIndex(0)
         self.stack_fisioterapeuta.setCurrentIndex(0)
         self.stackedWidget_11.setCurrentIndex(0)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(0)
-        self.stackedWidget_8.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(16)
+        self.stackedWidget_8.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -16072,7 +16079,7 @@ class Ui_MainWindow(object):
         self.label_alterar_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es gerais Usu\u00e1rio e Cuidador", None))
         self.btn_alterar_voltar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_salvar_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
-        self.btn_alterar_foto_usuario_as.setText("")
+        self.label_foto_usuario_alterar_as.setText("")
         self.label_alterar_matricula_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
         self.label_alterar_nome_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
         self.label_alterar_nascimento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))

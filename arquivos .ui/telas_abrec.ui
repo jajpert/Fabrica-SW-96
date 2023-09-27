@@ -3480,7 +3480,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>16</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -29314,7 +29314,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>3</number>
+                                <number>2</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -31698,38 +31698,46 @@ QPushButton:focus{outline:0}</string>
                                                     <number>0</number>
                                                    </property>
                                                    <item>
-                                                    <widget class="QPushButton" name="btn_alterar_foto_usuario_as">
-                                                     <property name="minimumSize">
-                                                      <size>
-                                                       <width>125</width>
-                                                       <height>153</height>
-                                                      </size>
+                                                    <widget class="QFrame" name="frame_15">
+                                                     <property name="frameShape">
+                                                      <enum>QFrame::StyledPanel</enum>
                                                      </property>
-                                                     <property name="maximumSize">
-                                                      <size>
-                                                       <width>125</width>
-                                                       <height>153</height>
-                                                      </size>
+                                                     <property name="frameShadow">
+                                                      <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <property name="cursor">
-                                                      <cursorShape>PointingHandCursor</cursorShape>
-                                                     </property>
-                                                     <property name="styleSheet">
-                                                      <string notr="true">background-color: #F3B9BF; border: none</string>
-                                                     </property>
-                                                     <property name="text">
-                                                      <string/>
-                                                     </property>
-                                                     <property name="icon">
-                                                      <iconset>
-                                                       <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
-                                                     </property>
-                                                     <property name="iconSize">
-                                                      <size>
-                                                       <width>120</width>
-                                                       <height>120</height>
-                                                      </size>
-                                                     </property>
+                                                     <layout class="QVBoxLayout" name="verticalLayout_11">
+                                                      <property name="spacing">
+                                                       <number>0</number>
+                                                      </property>
+                                                      <property name="topMargin">
+                                                       <number>0</number>
+                                                      </property>
+                                                      <property name="rightMargin">
+                                                       <number>0</number>
+                                                      </property>
+                                                      <property name="bottomMargin">
+                                                       <number>0</number>
+                                                      </property>
+                                                      <item>
+                                                       <widget class="QLabel" name="label_foto_usuario_alterar_as">
+                                                        <property name="minimumSize">
+                                                         <size>
+                                                          <width>125</width>
+                                                          <height>153</height>
+                                                         </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                         <size>
+                                                          <width>125</width>
+                                                          <height>153</height>
+                                                         </size>
+                                                        </property>
+                                                        <property name="text">
+                                                         <string/>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                     </layout>
                                                     </widget>
                                                    </item>
                                                    <item>

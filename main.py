@@ -58,18 +58,21 @@ class DialogTirarImportarFoto(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
-        self.fb = Ui_MainWindow()
         self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto)
-        #self.ui.btn_importar_popup_foto_as.clicked.connect(self.ImportarFoto)
+        self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFoto)
+        self.fb = Ui_MainWindow()
+
+
+
 
     def Tirar_foto(self):
         vid = cv2.VideoCapture(0)
-        nome_usuario = self.fb.input_nome_usuario_as.text()
-        # nome_usuario = "teste"
-        id_matricula = self.fb.input_matricula_usuario_as.text()
-        # id_matricula = 130
+        # nome_usuario = self.fb.input_nome_usuario_as.text()
+        nome_usuario = "teste2"
+        # id_matricula = self.fb.input_matricula_usuario_as.text()
+        id_matricula = 125
         StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
         self.db = DataBase()  
         try:
@@ -83,10 +86,16 @@ class DialogTirarImportarFoto(QDialog):
                     directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
+                    img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)            
+                    scale_percent = 45 # percent of original size
+                    width = int(img.shape[1] * scale_percent / 150)
+                    height = int(img.shape[0] * scale_percent / 90)
+                    dim = (width, height)
+                    # resize image
+                    resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-                    image_pil.save(StoreFilePath)
+                    image_pil.save(resized)
                     print("Imagem salva em:", StoreFilePath)
-
                     cv2.waitKey(0)
                     cv2.destroyAllWindows()
                     break
@@ -98,10 +107,13 @@ class DialogTirarImportarFoto(QDialog):
         result = self.db.tirar_foto_usuario(tupla_foto)  
         
     def ImportarFoto(self):
-        imagem = []
-        if imagem:
-            with open(imagem, "w") as f:
-                cv2.imread("Imagem Importada",imagem)
+        pasta_desejada = "F:/Open-cv2/imagens/cidaderox.jpg"
+        # imagem = Image.open(pasta_desejada).convert('RGB')
+        pixmap = QPixmap(pasta_desejada)
+        self.fb.label_foto_usuario_as.setPixmap(pixmap)
+        self.fb.label_foto_usuario_as.setGeometry(10, 10, pixmap.width(), pixmap.height())
+
+
 ################Class POPUP USUARIO################
 
 class DialogConfirmarCadastro(QDialog):
@@ -770,7 +782,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_clinica_agendamento_as.setText(clinica)
 
         return id_matricula
-    
+        
+
+
+
+        
     def buscar_Usuario(self):
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
@@ -1049,6 +1065,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_matricula_usuario_as.hide()
+            pixmap = QPixmap(dados[39])
+            self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
             return self.ui.page_alterar_usuario
         
         ##################################################################################
@@ -2802,8 +2820,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
     
     
-    def execute(self):
-        for(int i=0; i<10; i++):
+    # def execute(self):
+    #     for(int i=0; i<10; i++):
             
             
     
