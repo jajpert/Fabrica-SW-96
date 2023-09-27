@@ -66,10 +66,10 @@ class DialogTirarImportarFoto(QDialog):
 
     def Tirar_foto(self):
         vid = cv2.VideoCapture(0)
-        # nome_usuario = self.fb.input_nome_usuario_as.text()
-        nome_usuario = "teste"
-        # id_matricula = self.fb.input_matricula_usuario_as.text()
-        id_matricula = 130
+        nome_usuario = self.fb.input_nome_usuario_as.text()
+        # nome_usuario = "teste"
+        id_matricula = self.fb.input_matricula_usuario_as.text()
+        # id_matricula = 130
         StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
         self.db = DataBase()  
         try:
@@ -80,7 +80,7 @@ class DialogTirarImportarFoto(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture"
+                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
@@ -96,6 +96,12 @@ class DialogTirarImportarFoto(QDialog):
         tupla_foto = (nome_usuario, StoreFilePath, id_matricula)
         print(tupla_foto)
         result = self.db.tirar_foto_usuario(tupla_foto)  
+        
+    def ImportarFoto(self):
+        imagem = []
+        if imagem:
+            with open(imagem, "w") as f:
+                cv2.imread("Imagem Importada",imagem)
 ################Class POPUP USUARIO################
 
 class DialogConfirmarCadastro(QDialog):
@@ -2790,17 +2796,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
   
         if file:
             pdf.save()
-        
-
-        
-
-        
         msg = QMessageBox()
         msg.setWindowTitle('PDF')
         msg.setText('PDF gerado com sucesso!')
         msg.exec()
-        
-
+    
+    
+    def execute(self):
+        for(int i=0; i<10; i++):
+            
+            
+    
 if __name__ == "__main__":
     
     myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
