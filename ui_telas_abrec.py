@@ -4868,7 +4868,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon8)
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon10)
 
         self.verticalLayout_132.addWidget(self.btn_buscar_cpf_cadastro_retirada_beneficio)
 
@@ -5221,7 +5221,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon8)
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon10)
 
         self.verticalLayout_131.addWidget(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio)
 
