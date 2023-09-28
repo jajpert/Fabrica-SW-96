@@ -4576,7 +4576,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>17</number>
+                      <number>12</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -24195,6 +24195,9 @@ background-color: rgb(243, 185, 191);</string>
                                   <layout class="QVBoxLayout" name="verticalLayout_120">
                                    <item>
                                     <widget class="QFrame" name="frame_175">
+                                     <property name="enabled">
+                                      <bool>false</bool>
+                                     </property>
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
@@ -24203,7 +24206,7 @@ background-color: rgb(243, 185, 191);</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>400</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
@@ -24229,6 +24232,9 @@ background-color: rgb(243, 185, 191);</string>
                                       </item>
                                       <item>
                                        <widget class="QLineEdit" name="input_id_matricula_user_participante_geral">
+                                        <property name="enabled">
+                                         <bool>false</bool>
+                                        </property>
                                         <property name="maximumSize">
                                          <size>
                                           <width>50</width>
