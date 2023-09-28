@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -11438,7 +11438,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="lineEdit_recebe_nome_as">
+                    <widget class="QLabel" name="label_ola_nome_as">
                      <property name="font">
                       <font>
                        <family>Abel</family>
