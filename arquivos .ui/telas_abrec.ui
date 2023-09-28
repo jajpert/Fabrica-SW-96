@@ -4576,7 +4576,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>17</number>
+                      <number>12</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -24203,7 +24203,7 @@ background-color: rgb(243, 185, 191);</string>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>400</width>
+                                       <width>16777215</width>
                                        <height>16777215</height>
                                       </size>
                                      </property>
