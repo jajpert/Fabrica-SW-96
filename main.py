@@ -1503,10 +1503,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_usuarios = []
         for i in lista_usuarios:
             id_usuario = i[0]
-            id_usuario = str(id_usuario).zfill(1)
+            id_usuario = str(id_usuario).zfill(4)
             id_matricula = i[1]
             nome = self.db.select_nome_usuario(id_matricula)
-            print("id_Usuarios ->", id_usuarios)
+            id_usuarios.append(id_usuario)
             nomes.append(nome)
         convertendo_nome = [i[0] for i in nomes]
         convertendo_nome = [i[0] for i in convertendo_nome]
