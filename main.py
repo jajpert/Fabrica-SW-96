@@ -163,6 +163,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.db = DataBase()        
         self.listarAgendamentos()
         self.listarBeneficios()
+        self.buscar_clinica_nome_fantasia()
         self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
@@ -417,7 +418,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
-        self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.buscar_clinica_nome_fantasia)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.listarAgendamentos)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
@@ -977,11 +977,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            local_tratamento = str(dados[32])
-            if local_tratamento == dados[32]:
-                self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(1)
-            else:
-                pass
+            # local_tratamento = str(dados[32])
+            # if local_tratamento == dados[32]:
+            self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(int(dados[32]))
+
 
             patologiaBase = dados[33]
 

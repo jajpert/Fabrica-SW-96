@@ -394,7 +394,7 @@ class DataBase():
                 pessoa.email, cep, logradouro, numero, bairro, cidade, estado,
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia, outras_deficiencias,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho, situacao_trabalho_outros,
-                beneficio, tarifa_social, tipo_tratamento, local_tratamento, patologia_base, outras_patologias, data_inicio, periodo,
+                beneficio, tarifa_social, tipo_tratamento, clinica.id_clinica, patologia_base, outras_patologias, data_inicio, periodo,
                 endereco.id_endereco, usuario.id_matricula
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
