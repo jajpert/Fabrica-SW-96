@@ -70,8 +70,8 @@ class DialogTirarImportarFoto(QDialog):
     def Tirar_foto(self):
         vid = cv2.VideoCapture(0)
         # nome_usuario = self.fb.input_nome_usuario_as.text()
-        nome_usuario = "teste2"
-        id_matricula = self.fb.input_matricula_usuario_as.text()
+        nome_usuario = "jacas"
+        # id_matricula = self.fb.input_matricula_usuario_as.text()
         id_matricula = 125
         StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
         self.db = DataBase()  
@@ -86,25 +86,30 @@ class DialogTirarImportarFoto(QDialog):
                     directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
-                    img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)            
-                    # scale_percent = 45 # percent of original size
-                    # width = int(img.shape[1] * scale_percent / 150)
-                    # height = int(img.shape[0] * scale_percent / 90)
-                    # dim = (width, height)
-                    # # resize image
-                    # resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
-                    # Defina a largura e a altura desejadas
-                    largura_desejada = 240
-                    altura_desejada = 240
-
-                    # Configure a resolução da câmera
-                    cv2.set(img.CAP_PROP_FRAME_WIDTH, largura_desejada)
-                    cv2.set(img.CAP_PROP_FRAME_HEIGHT, altura_desejada)
-                    image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-                    image_pil.save(cv2)
-                    print("Imagem salva em:", StoreFilePath)
-                    cv2.waitKey(0)
+                    cv2.waitKey(0) 
                     cv2.destroyAllWindows()
+                    img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)         
+                    dimensions = img.shape
+        
+                    # height, width, number of channels in image
+                    height = img.shape[0]
+                    width = img.shape[1]
+                    channels = img.shape[2]
+                    
+                    print('Image Dimension    : ',dimensions)
+                    print('Image Height       : ',height)
+                    print('Image Width        : ',width)
+                    print('Number of Channels : ',channels)   
+                    # Defina a largura e a altura desejadas
+                    # largura_desejada = 320
+                    # altura_desejada = 180
+                    
+                    # # Configure a resolução da câmera
+                    # vid.set(cv2.CAP_PROP_FRAME_WIDTH, largura_desejada)
+                    # vid.set(cv2.CAP_PROP_FRAME_HEIGHT, altura_desejada)
+                    image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                    image_pil.save(StoreFilePath)
+                    print("Imagem salva em:", StoreFilePath)
                     break
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table {}".format(error))
@@ -119,8 +124,6 @@ class DialogTirarImportarFoto(QDialog):
         pixmap = QPixmap(pasta_desejada)
         self.fb.label_foto_usuario_as.setPixmap(pixmap)
         self.fb.label_foto_usuario_as.setGeometry(10, 10, pixmap.width(), pixmap.height())
-
-
 ################Class POPUP USUARIO################
 
 class DialogConfirmarCadastro(QDialog):
@@ -1072,6 +1075,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_matricula_usuario_as.hide()
             pixmap = QPixmap(dados[39])
             self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+            self.ui.label_foto_usuario_alterar_as.setGeometry(10, 10, 320, 180)
             return self.ui.page_alterar_usuario
         
         ##################################################################################
