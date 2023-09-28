@@ -87,14 +87,21 @@ class DialogTirarImportarFoto(QDialog):
                     if not os.path.exists(directory):
                         os.makedirs(directory)
                     img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)            
-                    scale_percent = 45 # percent of original size
-                    width = int(img.shape[1] * scale_percent / 150)
-                    height = int(img.shape[0] * scale_percent / 90)
-                    dim = (width, height)
-                    # resize image
-                    resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+                    # scale_percent = 45 # percent of original size
+                    # width = int(img.shape[1] * scale_percent / 150)
+                    # height = int(img.shape[0] * scale_percent / 90)
+                    # dim = (width, height)
+                    # # resize image
+                    # resized = cv2.resize(img, dim, interpolation = cv2.INTER_AREA)
+                    # Defina a largura e a altura desejadas
+                    largura_desejada = 240
+                    altura_desejada = 240
+
+                    # Configure a resolução da câmera
+                    cv2.set(img.CAP_PROP_FRAME_WIDTH, largura_desejada)
+                    cv2.set(img.CAP_PROP_FRAME_HEIGHT, altura_desejada)
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
-                    image_pil.save(resized)
+                    image_pil.save(cv2)
                     print("Imagem salva em:", StoreFilePath)
                     cv2.waitKey(0)
                     cv2.destroyAllWindows()
