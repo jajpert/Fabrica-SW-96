@@ -71,7 +71,7 @@ class DialogTirarImportarFoto(QDialog):
         vid = cv2.VideoCapture(0)
         # nome_usuario = self.fb.input_nome_usuario_as.text()
         nome_usuario = "teste2"
-        # id_matricula = self.fb.input_matricula_usuario_as.text()
+        id_matricula = self.fb.input_matricula_usuario_as.text()
         id_matricula = 125
         StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
         self.db = DataBase()  
@@ -202,7 +202,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.db = DataBase()        
         self.listarAgendamentos()
         self.listarBeneficios()
-        self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -468,7 +467,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_as.clicked.connect(self.alterarAgendamentos)
         self.ui.btn_relatorios_as.clicked.connect(self.filtrar_dados)
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
-        self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         
 
 ########################### Validar Login #############################
@@ -1505,20 +1503,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_usuarios = []
         for i in lista_usuarios:
             id_usuario = i[0]
-            id_usuario = str(id_usuario).zfill(4)
+            id_usuario = str(id_usuario).zfill(1)
             id_matricula = i[1]
             nome = self.db.select_nome_usuario(id_matricula)
-            id_usuarios.append(id_usuario)
+            print("id_Usuarios ->", id_usuarios)
             nomes.append(nome)
         convertendo_nome = [i[0] for i in nomes]
         convertendo_nome = [i[0] for i in convertendo_nome]
         count = 0
-        itens = 0
+        itens = 1
+        c = 0
+        while c < len(convertendo_nome):
+            self.ui.input_usuario_cuidador_as.addItem("")
+            c += 1
         while count < len(convertendo_nome):
             self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
-            self.ui.input_usuario_cuidador_as.addItem("")
             itens += 1
             count += 1
+            
     def listarAgendamentos(self):
         res = self.db.select_agendamentos()
 
@@ -2085,10 +2087,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         convertendo_nome = [i[0] for i in nomes]
         convertendo_nome_clinica = [i[0] for i in convertendo_nome]
         count = 0
-        itens = 0
+        itens = 1
+        c = 0
+        while c < len(convertendo_nome_clinica):
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("") 
+            c += 1
         while count < len(convertendo_nome_clinica):
             self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
-            self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("")
             itens += 1
             count += 1
 
@@ -2106,10 +2111,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         convertendo_nome = [i[0] for i in nomes]
         convertendo_nome_clinica = [i[0] for i in convertendo_nome]
         count = 0
-        itens = 0
+        itens = 1
+        c = 0
+        while c < len(convertendo_nome_clinica):
+            self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
+            c += 1
         while count < len(convertendo_nome_clinica):
             self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
-            self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
             itens += 1
             count += 1
 
@@ -2127,10 +2135,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         convertendo_nome = [i[0] for i in nome_curso]
         convertendo_nome_curso = [i[0] for i in convertendo_nome]
         count = 0
-        itens = 0
+        itens = 1
+        c = 0
+        while c < len(convertendo_nome_curso):
+            self.ui.comboBox_cursos_participante_geral.addItem("")
+            c += 1
         while count < len(convertendo_nome_curso):
             self.ui.comboBox_cursos_participante_geral.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_curso_eventos[count]}-{convertendo_nome_curso[count]}", None))
-            self.ui.comboBox_cursos_participante_geral.addItem("")
             itens += 1
             count += 1
 
