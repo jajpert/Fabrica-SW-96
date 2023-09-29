@@ -426,12 +426,14 @@ class DataBase():
     def busca_colaborador(self, cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, nome, data_nascimento, cpf, rg, pessoa.status, orgao_exp, data_emissao,
-                                    colaborador.pis, sexo, telefone, email, cep, logradouro,numero, bairro, cidade, estado,
-                                    estado_civil, escolaridade, cargo, periodo, salario, perfil, senha, endereco.id_endereco, colaborador.id_matricula
-                                    from pessoa inner join endereco on pessoa.id_endereco = endereco.id_endereco  
-                                    left join colaborador on colaborador.id_matricula = pessoa.id_matricula
-                                    where cpf like '%{cpf}%';""")
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.data_nascimento, pessoa.cpf, pessoa.rg, pessoa.status, pessoa.orgao_exp, pessoa.data_emissao,
+                                    colaborador.pis, pessoa.sexo, pessoa.telefone, pessoa.email, endereco.cep, endereco.logradouro, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado,
+                                    pessoa.estado_civil, pessoa.escolaridade, colaborador.cargo, colaborador.periodo, colaborador.salario, colaborador.perfil, colaborador.senha, endereco.id_endereco, colaborador.id_matricula,
+                                    foto_usuario.caminho
+                                    FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco  
+                                    LEFT JOIN colaborador ON colaborador.id_matricula = pessoa.id_matricula
+                                    INNER JOIN foto_usuario ON pessoa.id_matricula = foto_usuario.id_matricula
+                                    WHERE cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
             return result[0]
         except Exception as err:

@@ -1073,14 +1073,30 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_matricula_usuario_as.hide()
-            pixmap = QPixmap(dados[39])
+            original_image = cv2.imread(dados[39])
+
+            desired_size = (180, 240)
+            resized_image = cv2.resize(original_image, desired_size)
+
+            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+            h, w, ch = resized_image.shape
+            bytes_per_line = ch * w
+            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+            pixmap = QPixmap.fromImage(qt_image)
+
             self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_usuario_alterar_as.setGeometry(10, 10, 320, 180)
+
+            self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+
+            self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             return self.ui.page_alterar_usuario
         
         ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
+            print("Colab -> ", dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
@@ -1185,6 +1201,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
             self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_matricula_colaborador_as.hide()
+            original_image = cv2.imread(dados[27])
+
+            desired_size = (200, 280)
+            resized_image = cv2.resize(original_image, desired_size)
+
+            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+            h, w, ch = resized_image.shape
+            bytes_per_line = ch * w
+            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+            pixmap = QPixmap.fromImage(qt_image)
+
+            self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+
+            self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+
+            self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
 
             return self.ui.page_alterar_colaborador_as
         

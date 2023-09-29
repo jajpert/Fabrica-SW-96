@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecPqarKF.ui'
+## Form generated from reading UI file 'telas_abrecjNPiBQ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.0
 ##
@@ -11902,11 +11902,11 @@ class Ui_MainWindow(object):
         self.verticalLayout_11 = QVBoxLayout(self.frame_15)
         self.verticalLayout_11.setSpacing(0)
         self.verticalLayout_11.setObjectName(u"verticalLayout_11")
-        self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_11.setContentsMargins(-1, 0, 0, 0)
         self.label_foto_usuario_alterar_as = QLabel(self.frame_15)
         self.label_foto_usuario_alterar_as.setObjectName(u"label_foto_usuario_alterar_as")
-        self.label_foto_usuario_alterar_as.setMinimumSize(QSize(250, 250))
-        self.label_foto_usuario_alterar_as.setMaximumSize(QSize(250, 250))
+        self.label_foto_usuario_alterar_as.setMinimumSize(QSize(180, 240))
+        self.label_foto_usuario_alterar_as.setMaximumSize(QSize(180, 240))
 
         self.verticalLayout_11.addWidget(self.label_foto_usuario_alterar_as)
 
@@ -14623,39 +14623,20 @@ class Ui_MainWindow(object):
 
         self.frame_414 = QFrame(self.frame_374)
         self.frame_414.setObjectName(u"frame_414")
-        self.frame_414.setMinimumSize(QSize(125, 200))
-        self.frame_414.setMaximumSize(QSize(125, 200))
+        self.frame_414.setMinimumSize(QSize(200, 280))
+        self.frame_414.setMaximumSize(QSize(200, 280))
         self.frame_414.setFrameShape(QFrame.StyledPanel)
         self.frame_414.setFrameShadow(QFrame.Raised)
         self.verticalLayout_301 = QVBoxLayout(self.frame_414)
         self.verticalLayout_301.setSpacing(0)
         self.verticalLayout_301.setObjectName(u"verticalLayout_301")
         self.verticalLayout_301.setContentsMargins(0, 0, 0, 0)
-        self.input_alterar_foto_colaborador_as = QPushButton(self.frame_414)
-        self.input_alterar_foto_colaborador_as.setObjectName(u"input_alterar_foto_colaborador_as")
-        self.input_alterar_foto_colaborador_as.setMinimumSize(QSize(125, 153))
-        self.input_alterar_foto_colaborador_as.setMaximumSize(QSize(125, 153))
-        self.input_alterar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_alterar_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.input_alterar_foto_colaborador_as.setIcon(icon22)
-        self.input_alterar_foto_colaborador_as.setIconSize(QSize(120, 120))
+        self.label_foto_colaborador_alterar_as = QLabel(self.frame_414)
+        self.label_foto_colaborador_alterar_as.setObjectName(u"label_foto_colaborador_alterar_as")
+        self.label_foto_colaborador_alterar_as.setMinimumSize(QSize(200, 280))
+        self.label_foto_colaborador_alterar_as.setMaximumSize(QSize(200, 280))
 
-        self.verticalLayout_301.addWidget(self.input_alterar_foto_colaborador_as)
-
-        self.frame_433 = QFrame(self.frame_414)
-        self.frame_433.setObjectName(u"frame_433")
-        self.frame_433.setStyleSheet(u"background-color: rgb(243, 185, 191);")
-        self.frame_433.setFrameShape(QFrame.StyledPanel)
-        self.frame_433.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_302 = QVBoxLayout(self.frame_433)
-        self.verticalLayout_302.setObjectName(u"verticalLayout_302")
-        self.verticalLayout_302.setContentsMargins(0, 0, 0, 0)
-
-        self.verticalLayout_301.addWidget(self.frame_433)
-
-        self.verticalSpacer_14 = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_301.addItem(self.verticalSpacer_14)
+        self.verticalLayout_301.addWidget(self.label_foto_colaborador_alterar_as)
 
 
         self.gridLayout_3.addWidget(self.frame_414, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
@@ -15415,7 +15396,7 @@ class Ui_MainWindow(object):
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
         self.stackedWidget_2.setCurrentIndex(16)
-        self.stackedWidget_8.setCurrentIndex(2)
+        self.stackedWidget_8.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -16282,7 +16263,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cidade_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_alterar_estado_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.input_alterar_estado_colaborador_as.setText("")
-        self.input_alterar_foto_colaborador_as.setText("")
+        self.label_foto_colaborador_alterar_as.setText("")
         self.btn_alterar_voltar_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_concluir_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_titulo_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"CONSULTA", None))
