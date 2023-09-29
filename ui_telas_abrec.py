@@ -80,7 +80,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(36)
         self.label_Logo_ABREC.setFont(font1)
         self.label_Logo_ABREC.setStyleSheet(u"color: #fff; background-color: #FA5858")
-        self.label_Logo_ABREC.setPixmap(QPixmap(u"../icons/Logo ABREC.png"))
+        self.label_Logo_ABREC.setPixmap(QPixmap(u"./icons/Logo ABREC.png"))
         self.label_Logo_ABREC.setScaledContents(True)
 
         self.horizontalLayout_27.addWidget(self.label_Logo_ABREC)
@@ -155,7 +155,7 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName(u"label_2")
         self.label_2.setMaximumSize(QSize(25, 25))
         self.label_2.setStyleSheet(u"QLabel{border-radius: 16px; background-color: #fff}")
-        self.label_2.setPixmap(QPixmap(u"../icons/pessoas.png"))
+        self.label_2.setPixmap(QPixmap(u"./icons/pessoas.png"))
         self.label_2.setScaledContents(True)
 
         self.horizontalLayout_29.addWidget(self.label_2)
@@ -191,7 +191,7 @@ class Ui_MainWindow(object):
         self.toolButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toolButton.setStyleSheet(u"background-color: #fff; border: hidden")
         icon = QIcon()
-        icon.addFile(u"../icons/olho_fechado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"./icons/olho_fechado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.toolButton.setIcon(icon)
         self.toolButton.setIconSize(QSize(25, 25))
 
@@ -308,7 +308,7 @@ class Ui_MainWindow(object):
         self.label_Abrec_Logo_Paint = QLabel(self.frame_164)
         self.label_Abrec_Logo_Paint.setObjectName(u"label_Abrec_Logo_Paint")
         self.label_Abrec_Logo_Paint.setMaximumSize(QSize(75, 75))
-        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"../icons/Abrec logo paint-02 (2).png"))
+        self.label_Abrec_Logo_Paint.setPixmap(QPixmap(u"./icons/Abrec logo paint-02 (2).png"))
         self.label_Abrec_Logo_Paint.setScaledContents(True)
 
         self.verticalLayout_116.addWidget(self.label_Abrec_Logo_Paint)
@@ -345,7 +345,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_foto_senha_nutri.setObjectName(u"btn_alterar_foto_senha_nutri")
         self.btn_alterar_foto_senha_nutri.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
         icon1 = QIcon()
-        icon1.addFile(u"../icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u"./icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_foto_senha_nutri.setIcon(icon1)
         self.btn_alterar_foto_senha_nutri.setIconSize(QSize(140, 180))
 
@@ -392,7 +392,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon2 = QIcon()
-        icon2.addFile(u"../icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u"./icons/consultando.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_consulta_nutri.setIcon(icon2)
         self.btn_consulta_nutri.setIconSize(QSize(30, 30))
 
@@ -407,7 +407,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon3 = QIcon()
-        icon3.addFile(u"../icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u"./icons/relatorio-de-negocios.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_relatorios_nutri.setIcon(icon3)
         self.btn_relatorios_nutri.setIconSize(QSize(30, 30))
 
@@ -460,7 +460,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
         icon4 = QIcon()
-        icon4.addFile(u"../icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_sair_nutri.setIcon(icon4)
         self.btn_sair_nutri.setIconSize(QSize(24, 24))
 
@@ -536,7 +536,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon5 = QIcon()
-        icon5.addFile(u"../icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon5)
         self.btn_plano_alimentar_cadastrar_nutri.setIconSize(QSize(80, 80))
 
@@ -845,7 +845,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon6 = QIcon()
-        icon6.addFile(u"../icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_farm.setIcon(icon6)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
@@ -860,7 +860,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon7 = QIcon()
-        icon7.addFile(u"../icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_retirar_farm.setIcon(icon7)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
@@ -1280,7 +1280,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon8 = QIcon()
-        icon8.addFile(u"../icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"./icons/agenda.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_agenda_as.setIcon(icon8)
         self.btn_agenda_as.setIconSize(QSize(30, 30))
 
@@ -1310,7 +1310,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon9 = QIcon()
-        icon9.addFile(u"../icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_parceiros_as.setIcon(icon9)
         self.btn_parceiros_as.setIconSize(QSize(30, 30))
 
@@ -1910,7 +1910,7 @@ class Ui_MainWindow(object):
 "        color: rgb(249, 217, 221);   \n"
 "}")
         icon10 = QIcon()
-        icon10.addFile(u"../icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cep_buscar_fornecedor_as.setIcon(icon10)
 
         self.verticalLayout_345.addWidget(self.btn_cep_buscar_fornecedor_as)
@@ -2252,7 +2252,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon11 = QIcon()
-        icon11.addFile(u"../icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_cuidador_usuario_as.setIcon(icon11)
         self.btn_cadastrar_cuidador_usuario_as.setIconSize(QSize(80, 80))
 
@@ -2269,7 +2269,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon12 = QIcon()
-        icon12.addFile(u"../icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon12.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_colaborador_as.setIcon(icon12)
         self.btn_cadastrar_colaborador_as.setIconSize(QSize(80, 80))
 
@@ -2286,7 +2286,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon13 = QIcon()
-        icon13.addFile(u"../icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_cursos_oficinas_as.setIcon(icon13)
         self.btn_cadastrar_cursos_oficinas_as.setIconSize(QSize(80, 80))
 
@@ -2303,7 +2303,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon14 = QIcon()
-        icon14.addFile(u"../icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon14.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_alterar_dados_as.setIcon(icon14)
         self.btn_cadastrar_alterar_dados_as.setIconSize(QSize(80, 80))
 
@@ -2348,7 +2348,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon15 = QIcon()
-        icon15.addFile(u"../icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u"./icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_clinica_as.setIcon(icon15)
         self.btn_cadastrar_clinica_as.setIconSize(QSize(80, 80))
 
@@ -2365,7 +2365,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon16 = QIcon()
-        icon16.addFile(u"../icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cadastrar_fornecedores_as.setIcon(icon16)
         self.btn_cadastrar_fornecedores_as.setIconSize(QSize(80, 80))
 
@@ -2524,14 +2524,13 @@ class Ui_MainWindow(object):
         self.label_foto_usuario_as = QLabel(self.frame_12)
         self.label_foto_usuario_as.setObjectName(u"label_foto_usuario_as")
         self.label_foto_usuario_as.setTextFormat(Qt.PlainText)
-        self.label_foto_usuario_as.setPixmap(QPixmap(u"../icons/adicionar foto.png"))
+        self.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
 
         self.verticalLayout_10.addWidget(self.label_foto_usuario_as)
 
         self.btn_tirar_foto_usuario_as = QPushButton(self.frame_12)
         self.btn_tirar_foto_usuario_as.setObjectName(u"btn_tirar_foto_usuario_as")
         self.btn_tirar_foto_usuario_as.setMinimumSize(QSize(140, 40))
-        self.btn_tirar_foto_usuario_as.setFont(font9)
         self.btn_tirar_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_tirar_foto_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -4797,7 +4796,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_75.setSpacing(0)
         self.horizontalLayout_75.setObjectName(u"horizontalLayout_75")
         self.horizontalLayout_75.setContentsMargins(0, 0, 0, 0)
-        self.frame_519 = QFrame(self.frame_5041)
+        self.frame_519 = QFrame(self.frame_504)
         self.frame_519.setObjectName(u"frame_519")
         self.frame_519.setFrameShape(QFrame.StyledPanel)
         self.frame_519.setFrameShadow(QFrame.Raised)
@@ -4927,7 +4926,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_75.addWidget(self.frame_519)
 
-        self.frame_520 = QFrame(self.frame_5041)
+        self.frame_520 = QFrame(self.frame_504)
         self.frame_520.setObjectName(u"frame_520")
         self.frame_520.setMinimumSize(QSize(81, 58))
         self.frame_520.setMaximumSize(QSize(81, 58))
@@ -4963,7 +4962,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_75.addItem(self.horizontalSpacer_109)
 
-        self.frame_511 = QFrame(self.frame_5041)
+        self.frame_511 = QFrame(self.frame_504)
         self.frame_511.setObjectName(u"frame_511")
         self.frame_511.setMaximumSize(QSize(200, 16777215))
         self.frame_511.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -4998,7 +4997,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_75.addItem(self.horizontalSpacer_110)
 
 
-        self.verticalLayout_127.addWidget(self.frame_5041)
+        self.verticalLayout_127.addWidget(self.frame_504)
 
         self.frame_180 = QFrame(self.frame_5031)
         self.frame_180.setObjectName(u"frame_180")
@@ -8526,7 +8525,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon23 = QIcon()
-        icon23.addFile(u"../icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon23.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_lista_pessoas_cursos_as.setIcon(icon23)
         self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
 
@@ -8965,7 +8964,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon24 = QIcon()
-        icon24.addFile(u"../icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon24.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excel_pagina_participante_geral.setIcon(icon24)
         self.btn_excel_pagina_participante_geral.setIconSize(QSize(28, 28))
 
@@ -13512,7 +13511,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon28 = QIcon()
-        icon28.addFile(u"../icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon28.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_observacoes_sigilo_as.setIcon(icon28)
         self.btn_alterar_observacoes_sigilo_as.setIconSize(QSize(28, 28))
 
@@ -14672,7 +14671,7 @@ class Ui_MainWindow(object):
         self.label_foto_colaborador_alterar_as.setMinimumSize(QSize(200, 280))
         self.label_foto_colaborador_alterar_as.setMaximumSize(QSize(200, 280))
 
-        self.verticalLayout_301.addWidget(self.frame_433)
+        # self.verticalLayout_301.addWidget(self.frame_433)
 
         self.verticalSpacer_14 = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
@@ -15381,7 +15380,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon29 = QIcon()
-        icon29.addFile(u"../icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon29.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excluir_pagina_consulta_geral.setIcon(icon29)
         self.btn_excluir_pagina_consulta_geral.setIconSize(QSize(28, 28))
 
@@ -15433,19 +15432,19 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.inicio.setCurrentIndex(5)
+        self.inicio.setCurrentIndex(0)
         self.stack_nutricionista.setCurrentIndex(0)
         self.stackedWidget_12.setCurrentIndex(0)
         self.stack_psicologa.setCurrentIndex(0)
-        self.stackedWidget_7.setCurrentIndex(1)
+        self.stackedWidget_7.setCurrentIndex(0)
         self.stack_farmaceutica.setCurrentIndex(0)
         self.stackedWidget_10.setCurrentIndex(0)
         self.stack_fisioterapeuta.setCurrentIndex(0)
         self.stackedWidget_11.setCurrentIndex(0)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(16)
-        self.stackedWidget_8.setCurrentIndex(3)
+        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_8.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -15672,14 +15671,14 @@ class Ui_MainWindow(object):
         self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
         self.label_titulo_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DE BENEF\u00cdCIOS", None))
         self.label_tipo_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Tipo", None))
-        self.input_tipo_cadastro_beneficio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione...", None))
+        self.input_tipo_cadastro_beneficio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione..", None))
         self.input_tipo_cadastro_beneficio.setItemText(1, QCoreApplication.translate("MainWindow", u"Medica\u00e7\u00e3o", None))
         self.input_tipo_cadastro_beneficio.setItemText(2, QCoreApplication.translate("MainWindow", u"Alimenta\u00e7\u00e3o", None))
 
         self.label_codigo_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None))
         self.label_lote_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Lote", None))
         self.label_udm_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Unidade de medida", None))
-        self.input_comboBox_udm_cadastro_benefecio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione...", None))
+        self.input_comboBox_udm_cadastro_benefecio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione..", None))
         self.input_comboBox_udm_cadastro_benefecio.setItemText(1, QCoreApplication.translate("MainWindow", u"Quilo", None))
         self.input_comboBox_udm_cadastro_benefecio.setItemText(2, QCoreApplication.translate("MainWindow", u"Grama", None))
         self.input_comboBox_udm_cadastro_benefecio.setItemText(3, QCoreApplication.translate("MainWindow", u"Frasco", None))
@@ -16333,7 +16332,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
         self.label_historico_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"HIST\u00d3RICO", None))
         self.label_filtro_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"FILTRO", None))
-        self.input_filtro_pagina_consulta_geral.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data...", None))
+        self.input_filtro_pagina_consulta_geral.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data..", None))
         ___qtablewidgetitem47 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
         ___qtablewidgetitem47.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem48 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
