@@ -329,8 +329,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
 
         ########################### FISIOTERAPEUTA ###########################
-        
-
+        self.ui.btn_consulta_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
+        self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
+        self.ui.btn_voltar_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
+        self.ui.btn_voltar_pagina_consulta_geral_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
 
 
         #################SIGNALS CEP#################
