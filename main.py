@@ -4,7 +4,7 @@ import requests
 from os import getcwd
 from ctypes import windll
 from qtcore import *
-from ui_telas_abrec import *
+from ui_telas_abrec2 import *
 from ui_dialog import *
 from database import *
 import cv2
@@ -328,11 +328,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
 
+
+
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_consulta_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
         self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
         self.ui.btn_voltar_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
         self.ui.btn_voltar_pagina_consulta_geral_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
+
+
+        ########################### NUTRICIONISTA ###########################
+        self.ui.btn_consulta_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
+        self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
+        self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+
 
 
         #################SIGNALS CEP#################
