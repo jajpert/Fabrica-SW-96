@@ -212,6 +212,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.db = DataBase()        
         self.listarAgendamentos()
         self.listarBeneficios()
+        self.buscar_clinica_nome_fantasia()
+        self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
         select_usuario = self.db.select_usuario()
@@ -353,7 +355,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_pessoas.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
-        self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_retirada_beneficios_as))
+        self.ui.btn_cadastro_retirada_de_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_retirada_beneficios_as))
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
@@ -465,7 +467,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
-        self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.buscar_clinica_nome_fantasia)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.listarAgendamentos)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
@@ -505,8 +506,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
-                    self.LoginAssistenteS()  
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
+                    self.LoginAssistenteS()         
                 else:
                     print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -517,7 +518,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginFarm()        
                 else:
                     print ("Usuário não encontrado")
@@ -529,7 +530,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginFisio()       
                 else:
                     print ("Usuário não encontrado")
@@ -541,7 +542,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginNutri()       
                 else:
                     print ("Usuário não encontrado")
@@ -553,7 +554,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_as.setText(nome_colaborador)
                     self.LoginPsico() 
                          
                 else:
@@ -1029,11 +1030,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            local_tratamento = str(dados[32])
-            if local_tratamento == dados[32]:
-                self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(1)
-            else:
-                pass
+            # local_tratamento = str(dados[32])
+            # if local_tratamento == dados[32]:
+            self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(int(dados[32]))
+
 
             patologiaBase = dados[33]
 
@@ -2154,15 +2154,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             id_clinicas.append(id_clinica)
             nomes.append(nome)
         convertendo_nome = [i[0] for i in nomes]
-        convertendo_nome_clinica = [i[0] for i in convertendo_nome]
+        convertendo_nome_clinica_alterar = [i[0] for i in convertendo_nome]
         count = 0
         itens = 1
         c = 0
-        while c < len(convertendo_nome_clinica):
+        while c < len(convertendo_nome_clinica_alterar):
             self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
             c += 1
-        while count < len(convertendo_nome_clinica):
-            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+        while count < len(convertendo_nome_clinica_alterar):
+            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica_alterar[count]}", None))
             itens += 1
             count += 1
 
