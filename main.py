@@ -62,16 +62,19 @@ class DialogTirarImportarFoto(QDialog):
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto)
         self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFoto)
-        self.fb = Ui_MainWindow()
 
-
-
+    # def Ui_Main(self):
+    #     # super().__init__()
+    #     self.setAttribute(Qt.WA_DeleteOnClose)
+    #     self.fb = Ui_MainWindow()
+    #     self.fb.setupUi(self)
 
     def Tirar_foto(self):
-        vid = cv2.VideoCapture(0)
-        # nome_usuario = self.fb.input_nome_usuario_as.text()
+        vid = cv2.VideoCapture(1)
+        self.fb = Ui_MainWindow()
+        # nome_usuario = self.fb.input_nome_usuario_as.text()       
         nome_usuario = "jacas"
-        # id_matricula = self.fb.input_matricula_usuario_as.text()
+        # id_matricula = self.fb.input_matricula_usuario_as.text()   
         id_matricula = 125
         StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
         self.db = DataBase()  
@@ -100,15 +103,9 @@ class DialogTirarImportarFoto(QDialog):
                     print('Image Height       : ',height)
                     print('Image Width        : ',width)
                     print('Number of Channels : ',channels)   
-                    # Defina a largura e a altura desejadas
-                    # largura_desejada = 320
-                    # altura_desejada = 180
-                    
-                    # # Configure a resolução da câmera
-                    # vid.set(cv2.CAP_PROP_FRAME_WIDTH, largura_desejada)
-                    # vid.set(cv2.CAP_PROP_FRAME_HEIGHT, altura_desejada)
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
+                    
                     print("Imagem salva em:", StoreFilePath)
                     break
         except mysql.connector.Error as error:
@@ -121,9 +118,24 @@ class DialogTirarImportarFoto(QDialog):
     def ImportarFoto(self):
         pasta_desejada = "F:/Open-cv2/imagens/cidaderox.jpg"
         # imagem = Image.open(pasta_desejada).convert('RGB')
-        pixmap = QPixmap(pasta_desejada)
-        self.fb.label_foto_usuario_as.setPixmap(pixmap)
-        self.fb.label_foto_usuario_as.setGeometry(10, 10, pixmap.width(), pixmap.height())
+        original_image = cv2.imread(pasta_desejada)
+
+        desired_size = (140, 220)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+        bytes_per_line = ch * w
+        qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+        pixmap = QPixmap.fromImage(qt_image)
+
+        self.fb.label_foto_usuario_alterar_as.setPixmap(pixmap)
+
+        self.fb.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+
+        self.fb.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
 ################Class POPUP USUARIO################
 
 class DialogConfirmarCadastro(QDialog):
@@ -425,7 +437,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
-        #self.ui.btn_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
+        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
 
 
         ############SIGNALS POPUP Cuidador AS############
@@ -800,6 +812,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
         if valorSelecionado == 0:
+            self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
             return self.ui.page_2
         ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
@@ -2425,6 +2438,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
         self.popup.hide()
     
+    def insertFoto(self):
+        ft = DialogTirarImportarFoto(self)
+        id_matricula = self.ui.input_matricula_usuario_as.text()
+        nome_usuario = self.ui.input_nome_usuario_as.text()
+
+        ft.Tirar_foto(id_matricula, nome_usuario)
 
     def loginInvalido(self):       
         msg = DialogLoginInvalido(self)
