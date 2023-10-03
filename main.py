@@ -2203,7 +2203,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
-        self.limparCamposConsulta()
+        
         self.puxar_consulta()
 
         msg = QMessageBox()
@@ -2211,6 +2211,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Cadastro Consulta")
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
+        
+        self.limparCamposConsulta()
 
     def puxar_consulta(self):
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
