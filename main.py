@@ -2203,8 +2203,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
-        
-        self.puxar_consulta()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -2213,6 +2211,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
         
         self.limparCamposConsulta()
+        self.puxar_consulta()
 
     def puxar_consulta(self):
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
