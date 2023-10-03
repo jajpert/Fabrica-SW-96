@@ -12260,7 +12260,7 @@ class Ui_MainWindow(object):
         self.frame_175 = QFrame(self.frame_1721)
         self.frame_175.setObjectName(u"frame_175")
         self.frame_175.setMinimumSize(QSize(0, 0))
-        self.frame_175.setMaximumSize(QSize(400, 16777215))
+        self.frame_175.setMaximumSize(QSize(16777215, 16777215))
         self.frame_175.setFrameShape(QFrame.StyledPanel)
         self.frame_175.setFrameShadow(QFrame.Raised)
         self.verticalLayout_9 = QVBoxLayout(self.frame_175)
@@ -12274,8 +12274,10 @@ class Ui_MainWindow(object):
         self.input_id_matricula_user_participante_geral.setMaximumSize(QSize(50, 32))
         self.input_id_matricula_user_participante_geral.setStyleSheet(u"background-color: transparent;\n"
 "border-color: transparent;")
+        self.input_id_matricula_user_participante_geral.setEnabled(False)
 
         self.verticalLayout_9.addWidget(self.input_id_matricula_user_participante_geral)
+
 
         self.frame_4722 = QFrame(self.frame_175)
         self.frame_4722.setObjectName(u"frame_4722")
@@ -12287,6 +12289,7 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_participante_geral = QLabel(self.frame_4722)
         self.label_cpf_pagina_participante_geral.setObjectName(u"label_cpf_pagina_participante_geral")
         self.label_cpf_pagina_participante_geral.setFont(font)
+
 
         self.horizontalLayout_1562.addWidget(self.label_cpf_pagina_participante_geral)
 
