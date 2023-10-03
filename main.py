@@ -1966,7 +1966,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
-        self.ui.input_hora_consulta_as.setText("")
+        self.ui.input_hora_consulta_as.setTime(QTime(00,00))
         self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
 
     def limparCamposAgenda(self):
