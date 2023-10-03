@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         # 
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -412,7 +412,7 @@ class DataBase():
                 endereco.id_endereco, usuario.id_matricula, caminho
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
-                INNER JOIN foto_usuario ON pessoa.id_matricula = foto_usuario.id_matricula
+                INNER JOIN foto_usuario ON usuario.id_usuario = foto_usuario.id_usuario
                 RIGHT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
             result = self.cursor.fetchall()
             return result[0]

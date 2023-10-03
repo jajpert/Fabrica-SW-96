@@ -11945,8 +11945,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_11.setContentsMargins(-1, 0, 0, 0)
         self.label_foto_usuario_alterar_as = QLabel(self.frame_15)
         self.label_foto_usuario_alterar_as.setObjectName(u"label_foto_usuario_alterar_as")
-        self.label_foto_usuario_alterar_as.setMinimumSize(QSize(180, 240))
-        self.label_foto_usuario_alterar_as.setMaximumSize(QSize(180, 240))
+        self.label_foto_usuario_alterar_as.setMinimumSize(QSize(240, 240))
+        self.label_foto_usuario_alterar_as.setMaximumSize(QSize(240, 240))
 
         self.verticalLayout_11.addWidget(self.label_foto_usuario_alterar_as)
 
@@ -14663,8 +14663,8 @@ class Ui_MainWindow(object):
 
         self.frame_414 = QFrame(self.frame_374)
         self.frame_414.setObjectName(u"frame_414")
-        self.frame_414.setMinimumSize(QSize(200, 280))
-        self.frame_414.setMaximumSize(QSize(200, 280))
+        self.frame_414.setMinimumSize(QSize(240, 240))
+        self.frame_414.setMaximumSize(QSize(240, 240))
         self.frame_414.setFrameShape(QFrame.StyledPanel)
         self.frame_414.setFrameShadow(QFrame.Raised)
         self.verticalLayout_301 = QVBoxLayout(self.frame_414)
@@ -14673,8 +14673,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_301.setContentsMargins(0, 0, 0, 0)
         self.label_foto_colaborador_alterar_as = QLabel(self.frame_414)
         self.label_foto_colaborador_alterar_as.setObjectName(u"label_foto_colaborador_alterar_as")
-        self.label_foto_colaborador_alterar_as.setMinimumSize(QSize(200, 280))
-        self.label_foto_colaborador_alterar_as.setMaximumSize(QSize(200, 280))
+        self.label_foto_colaborador_alterar_as.setMinimumSize(QSize(240, 240))
+        self.label_foto_colaborador_alterar_as.setMaximumSize(QSize(240, 240))
 
         # self.verticalLayout_301.addWidget(self.frame_433)
 

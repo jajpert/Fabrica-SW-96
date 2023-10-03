@@ -62,21 +62,17 @@ class DialogTirarImportarFoto(QDialog):
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto)
         self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFoto)
-
-    # def Ui_Main(self):
-    #     # super().__init__()
-    #     self.setAttribute(Qt.WA_DeleteOnClose)
-    #     self.fb = Ui_MainWindow()
-    #     self.fb.setupUi(self)
-
-    def Tirar_foto(self):
-        vid = cv2.VideoCapture(1)
         self.fb = Ui_MainWindow()
-        # nome_usuario = self.fb.input_nome_usuario_as.text()       
-        nome_usuario = "jacas"
-        # id_matricula = self.fb.input_matricula_usuario_as.text()   
-        id_matricula = 125
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")   
+    
+
+    # def gerar_nome_aleatorio(tamanho):
+    #     tamanho_nome = 10
+    #     nome_aleatorio = uuid.uuid4().hex[:tamanho]
+    #     return nome_aleatorio
+
+    def Tirar_foto_Usuario(self, nome_usuario, id_usuario):
+        vid = cv2.VideoCapture(0)
+        StoreFilePath =(f"C:/Users/vboxuser/balbalba/capture{nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             while True:
@@ -86,23 +82,23 @@ class DialogTirarImportarFoto(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
+                    directory = "C:/Users/vboxuser/balbalba/"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
                     cv2.waitKey(0) 
                     cv2.destroyAllWindows()
-                    img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)         
-                    dimensions = img.shape
+                    # img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)         
+                    # dimensions = img.shape
         
-                    # height, width, number of channels in image
-                    height = img.shape[0]
-                    width = img.shape[1]
-                    channels = img.shape[2]
+                    # # height, width, number of channels in image
+                    # height = img.shape[0]
+                    # width = img.shape[1]
+                    # channels = img.shape[2]
                     
-                    print('Image Dimension    : ',dimensions)
-                    print('Image Height       : ',height)
-                    print('Image Width        : ',width)
-                    print('Number of Channels : ',channels)   
+                    # print('Image Dimension    : ',dimensions)
+                    # print('Image Height       : ',height)
+                    # print('Image Width        : ',width)
+                    # print('Number of Channels : ',channels)   
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
                     
@@ -111,7 +107,7 @@ class DialogTirarImportarFoto(QDialog):
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table {}".format(error))
             
-        tupla_foto = (nome_usuario, StoreFilePath, id_matricula)
+        tupla_foto = (nome_usuario, StoreFilePath, id_usuario)
         print(tupla_foto)
         result = self.db.tirar_foto_usuario(tupla_foto)  
         
@@ -436,8 +432,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
-        self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFoto)
-        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFoto)
+        self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
+        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
 
 
         ############SIGNALS POPUP Cuidador AS############
@@ -1088,7 +1084,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_matricula_usuario_as.hide()
             original_image = cv2.imread(dados[39])
 
-            desired_size = (180, 240)
+            desired_size = (240, 240)
             resized_image = cv2.resize(original_image, desired_size)
 
             resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
@@ -1100,9 +1096,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             pixmap = QPixmap.fromImage(qt_image)
 
             self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
-
+            self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
             self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
-
             self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             return self.ui.page_alterar_usuario
         
@@ -1215,22 +1210,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_matricula_colaborador_as.hide()
             original_image = cv2.imread(dados[27])
-
-            desired_size = (200, 280)
+            desired_size = (240, 240)
             resized_image = cv2.resize(original_image, desired_size)
-
             resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-
             h, w, ch = resized_image.shape
             bytes_per_line = ch * w
             qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-
             pixmap = QPixmap.fromImage(qt_image)
-
             self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
-
+            self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
             self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
-
             self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
 
             return self.ui.page_alterar_colaborador_as
@@ -2437,13 +2426,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.popup.show()
         msg.exec()
         self.popup.hide()
-    
-    def insertFoto(self):
-        ft = DialogTirarImportarFoto(self)
-        id_matricula = self.ui.input_matricula_usuario_as.text()
-        nome_usuario = self.ui.input_nome_usuario_as.text()
-
-        ft.Tirar_foto(id_matricula, nome_usuario)
 
     def loginInvalido(self):       
         msg = DialogLoginInvalido(self)
@@ -2478,13 +2460,31 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
+    
 
-    def tirarImportarFoto(self):
+        
+
+    def tirarImportarFotoUsuario(self):
         msg = DialogTirarImportarFoto(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
-
+        nome_usuario = self.ui.input_nome_usuario_as.text()
+        print("Usuario ->", nome_usuario)
+        id_usuario = self.ui.input_matricula_usuario_as.text()
+        print("Id matricula -> ", id_usuario)
+        msg.Tirar_foto(nome_usuario, id_usuario)
+        
+    def tirarImportarFotoColaborador(self):
+        msg = DialogTirarImportarFoto(self)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        nome_colab = self.ui.input_nome_colaborador_as.text()
+        print("Usuario ->", nome_colab)
+        id_colaborador = self.ui.input_matricula_colaborador_as.text()
+        print("Id matricula -> ", id_colaborador)
+        msg.Tirar_foto(nome_colab, id_colaborador)
 
     def confirmarCadastro(self):
         msg = DialogConfirmarCadastro(self)
