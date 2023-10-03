@@ -1970,6 +1970,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
 
     def limparCamposAgenda(self):
+        self.ui.input_cpf_agendamento_as.setText("")
         self.ui.input_nome_agendamento_as.setText("")
         self.ui.input_telefone_agendamento_as.setText("")
         self.ui.input_clinica_agendamento_as.setText("")
