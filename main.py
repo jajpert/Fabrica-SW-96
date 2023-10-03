@@ -167,29 +167,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
-        select_usuario = self.db.select_usuario()
-        select_cuidador = self.db.select_cuidador()
-        selected_colaborador = self.db.select_colaborador()
-        ultimo_id_usuario = (select_usuario[0])
-        ultimo_id_cuidador = (select_cuidador[0])
-        ultimo_id_colaborador = (selected_colaborador[0])
-        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
-        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
-        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
-        proximo_id_usuario = 1 + int(ultimo_id_usuario)
-        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
-        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
-        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
-        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
-        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
-
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
-        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
-        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
-        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-
+        self.ultimosIds()
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -1492,6 +1470,31 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(resultado):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_cadastro_beneficio.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def ultimosIds(self):
+        select_usuario = self.db.select_usuario()
+        select_cuidador = self.db.select_cuidador()
+        selected_colaborador = self.db.select_colaborador()
+        ultimo_id_usuario = (select_usuario[0])
+        ultimo_id_cuidador = (select_cuidador[0])
+        ultimo_id_colaborador = (selected_colaborador[0])
+        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
+        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
+        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
+        proximo_id_usuario = 1 + int(ultimo_id_usuario)
+        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
+        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
+        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
+        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
+        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
+
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
+        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
+        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
+        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+
                 
                 
     def alterarAgendamentos(self):
@@ -1811,6 +1814,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):
+        self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
         self.ui.input_nascimento_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_situacao_ativo_usuario_as.setCheckable(False)
@@ -1858,6 +1862,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
  
     def limparCamposCadastroCuidador(self):
+        self.ultimosIds()
         self.ui.input_nome_cuidador_as.setText("")
         self.ui.input_data_nascimento_cuidador_as.setDate(QDate(2000, 1, 1))
         self.ui.input_cpf_cuidador_as.setText("")
@@ -1880,6 +1885,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def limparCamposCadastroColaborador(self):
+        self.ultimosIds()
         self.ui.input_nome_colaborador_as.setText("")
         self.ui.input_data_nascimento_colaborador_as.setDate(QDate(2000, 1, 1))
         self.ui.input_cpf_colaborador_as.setText("")
