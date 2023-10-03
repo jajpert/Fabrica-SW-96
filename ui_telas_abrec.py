@@ -7579,8 +7579,8 @@ class Ui_MainWindow(object):
 
         self.frame_258 = QFrame(self.frame_194)
         self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(140, 220))
-        self.frame_258.setMaximumSize(QSize(140, 220))
+        self.frame_258.setMinimumSize(QSize(240, 240))
+        self.frame_258.setMaximumSize(QSize(240, 240))
         self.frame_258.setFrameShape(QFrame.StyledPanel)
         self.frame_258.setFrameShadow(QFrame.Raised)
         self.verticalLayout_14 = QVBoxLayout(self.frame_258)

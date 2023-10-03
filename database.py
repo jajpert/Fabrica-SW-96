@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         # 
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -371,7 +371,7 @@ class DataBase():
         self.connect()
         try:
             args = (foto[0], foto[1], foto[2])
-            self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_matricula) VALUES (%s, %s, %s)""", args)
+            self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_usuario) VALUES (%s, %s, %s)""", args)
             self.conn.commit()
             return "Entrou banco"
         except Exception as err:
@@ -380,6 +380,44 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def tirar_foto_colaborador(self, foto):
+        self.connect()
+        try:
+            args = (foto[0], foto[1], foto[2])
+            self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_colaborador) VALUES (%s, %s, %s)""", args)
+            self.conn.commit()
+            return "Entrou banco"
+        except Exception as err:
+            return "ERRO",str(err)
+        
+        finally:
+            self.close_connection()
+
+    def buscar_foto_colaborador(self, id_colaborador):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT caminho FROM foto_usuario WHERE id_colaborador ={id_colaborador};""")
+            result = self.cursor.fetchall()
+            return result[0]
+        
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_foto_usuario(self, id_usuario):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT caminho FROM foto_usuario WHERE id_usuario ={id_usuario};""")
+            result = self.cursor.fetchall()
+            return result[0]
+        
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
     def busca_cuidador(self, cpf):
         self.connect()
         try:

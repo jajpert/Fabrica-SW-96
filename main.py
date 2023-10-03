@@ -18,6 +18,7 @@ import pandas as pd
 from reportlab.pdfgen import canvas
 import sys
 from PIL import Image
+import numpy as np
 import openpyxl
 import os
 
@@ -54,25 +55,18 @@ class DialogLoginInvalido(QDialog):
         self.ui.setupUi(self)
 
 ################POPUP TIRAR/IMPORTAR FOTO################
-class DialogTirarImportarFoto(QDialog):
+class DialogTirarImportarFotoUsuario(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
-        self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto)
+        self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto_Usuario)
         self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFoto)
-        self.fb = Ui_MainWindow()
-    
-
-    # def gerar_nome_aleatorio(tamanho):
-    #     tamanho_nome = 10
-    #     nome_aleatorio = uuid.uuid4().hex[:tamanho]
-    #     return nome_aleatorio
 
     def Tirar_foto_Usuario(self, nome_usuario, id_usuario):
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/balbalba/capture{nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             while True:
@@ -82,23 +76,11 @@ class DialogTirarImportarFoto(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/vboxuser/balbalba/"
+                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
-                    cv2.waitKey(0) 
+                    cv2.waitKey(0)
                     cv2.destroyAllWindows()
-                    # img = cv2.imread(StoreFilePath, cv2.IMREAD_UNCHANGED)         
-                    # dimensions = img.shape
-        
-                    # # height, width, number of channels in image
-                    # height = img.shape[0]
-                    # width = img.shape[1]
-                    # channels = img.shape[2]
-                    
-                    # print('Image Dimension    : ',dimensions)
-                    # print('Image Height       : ',height)
-                    # print('Image Width        : ',width)
-                    # print('Number of Channels : ',channels)   
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
                     
@@ -110,6 +92,69 @@ class DialogTirarImportarFoto(QDialog):
         tupla_foto = (nome_usuario, StoreFilePath, id_usuario)
         print(tupla_foto)
         result = self.db.tirar_foto_usuario(tupla_foto)  
+        
+    def ImportarFoto(self):
+        pasta_desejada = "F:/Open-cv2/imagens/cidaderox.jpg"
+        # imagem = Image.open(pasta_desejada).convert('RGB')
+        original_image = cv2.imread(pasta_desejada)
+
+        desired_size = (140, 220)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+        bytes_per_line = ch * w
+        qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+        pixmap = QPixmap.fromImage(qt_image)
+
+        self.fb.label_foto_usuario_alterar_as.setPixmap(pixmap)
+
+        self.fb.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+
+        self.fb.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+class DialogTirarImportarFotoColaborador(QDialog):
+    def __init__(self, parent) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Tirar_Importar_Foto_Colaborador()
+        self.ui.setupUi(self)
+        self.ui.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.Tirar_foto_Colaborador)
+        self.ui.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.ImportarFoto)
+
+    def testes(self, nome_colab, id_colaborador):
+        self.Tirar_foto_Colaborador(nome_colab, id_colaborador)
+
+    def Tirar_foto_Colaborador(self, nome_colab, id_colaborador):
+        self.testes()
+        vid = cv2.VideoCapture(0)
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_colab}.jpg")
+        self.db = DataBase()  
+        try:
+            while True:
+                ret, frame = vid.read()
+                cv2.imshow("Janela", frame)
+                if not ret:
+                    print('failed to grab frame')
+                    break
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture"
+                    if not os.path.exists(directory):
+                        os.makedirs(directory)
+                    cv2.waitKey(0)
+                    cv2.destroyAllWindows()
+                    image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                    image_pil.save(StoreFilePath)
+                    
+                    print("Imagem salva em:", StoreFilePath)
+                    break
+        except mysql.connector.Error as error:
+            print("Failed inserting BLOB data into MySQL table {}".format(error))
+            
+        tupla_foto = (nome_colab, StoreFilePath, id_colaborador)
+        print(tupla_foto)
+        result = self.db.tirar_foto_colaborador(tupla_foto)  
         
     def ImportarFoto(self):
         pasta_desejada = "F:/Open-cv2/imagens/cidaderox.jpg"
@@ -2460,12 +2505,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
 
-    
-
-        
 
     def tirarImportarFotoUsuario(self):
-        msg = DialogTirarImportarFoto(self)
+        msg = DialogTirarImportarFotoUsuario(self)
         self.popup.show()
         msg.exec()
         self.popup.hide()
@@ -2473,18 +2515,90 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         print("Usuario ->", nome_usuario)
         id_usuario = self.ui.input_matricula_usuario_as.text()
         print("Id matricula -> ", id_usuario)
-        msg.Tirar_foto(nome_usuario, id_usuario)
+        msg.Tirar_foto_Usuario(nome_usuario, id_usuario)
         
+        caminho = self.db.buscar_foto_usuario(id_usuario)
+        caminho_tratado = "".join(caminho)
+        print(caminho_tratado)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                # print("Original From-string -> ", original_image)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_usuario_as.setPixmap(pixmap)
+
+                    self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
+
+
+
+
+
+
+
     def tirarImportarFotoColaborador(self):
-        msg = DialogTirarImportarFoto(self)
+        msg = DialogTirarImportarFotoColaborador(self)
+        nome_colab = self.ui.input_nome_colaborador_as.text()
+        print("Colab ->", nome_colab)
+        id_colaborador = self.ui.input_matricula_colaborador_as.text()
+        print("Id Colab -> ", id_colaborador)
+        msg.testes(nome_colab, id_colaborador)
+        # msg.Tirar_foto_Colaborador(msg.testes)
         self.popup.show()
         msg.exec()
         self.popup.hide()
-        nome_colab = self.ui.input_nome_colaborador_as.text()
-        print("Usuario ->", nome_colab)
-        id_colaborador = self.ui.input_matricula_colaborador_as.text()
-        print("Id matricula -> ", id_colaborador)
-        msg.Tirar_foto(nome_colab, id_colaborador)
+
+
+        caminho = self.db.buscar_foto_colaborador(id_colaborador)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                # print("Original From-string -> ", original_image)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colaborador_as.setPixmap(pixmap)
+
+                    self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
+
+        
+
 
     def confirmarCadastro(self):
         msg = DialogConfirmarCadastro(self)

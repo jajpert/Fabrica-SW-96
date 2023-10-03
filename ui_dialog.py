@@ -1412,3 +1412,111 @@ class Ui_Confirmar_Saida(object):
         self.btn_sim_popup_confirma_saida.setText(QCoreApplication.translate("Dialog", u"SIM", None))
     # retranslateUi
 
+#####################################################################################
+
+class Ui_Tirar_Importar_Foto_Colaborador(object):
+    def setupUi(self, Tirar_Importar_Foto_Colaborador):
+        if not Tirar_Importar_Foto_Colaborador.objectName():
+            Tirar_Importar_Foto_Colaborador.setObjectName(u"Tirar_Importar_Foto_Colaborador")
+        Tirar_Importar_Foto_Colaborador.resize(600, 350)
+        Tirar_Importar_Foto_Colaborador.setMinimumSize(QSize(600, 350))
+        Tirar_Importar_Foto_Colaborador.setMaximumSize(QSize(600, 350))
+        self.horizontalLayout = QHBoxLayout(Tirar_Importar_Foto_Colaborador)
+        self.horizontalLayout.setSpacing(0)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.frame = QFrame(Tirar_Importar_Foto_Colaborador)
+        self.frame.setObjectName(u"frame")
+        self.frame.setStyleSheet(u"background-color: #FEE2E6; border-radius: 15px; border: 1px solid #E58893;")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.frame_2 = QFrame(self.frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setStyleSheet(u"border: none;")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout = QVBoxLayout(self.frame_2)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as = QToolButton(self.frame_2)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setObjectName(u"toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as")
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setMinimumSize(QSize(298, 348))
+        font = QFont()
+        font.setFamilies([u"Abel"])
+        font.setPointSize(32)
+        font.setBold(True)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setFont(font)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setFocusPolicy(Qt.StrongFocus)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setStyleSheet(u"QToolButton::hover{\n"
+"background-color: rgb(251, 207, 216);\n"
+"}")
+        icon = QIcon()
+        icon.addFile(u"../icons/camera.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setIcon(icon)
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setIconSize(QSize(145, 145))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+
+        self.verticalLayout.addWidget(self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_2)
+
+        self.line = QFrame(self.frame)
+        self.line.setObjectName(u"line")
+        self.line.setMinimumSize(QSize(2, 0))
+        self.line.setMaximumSize(QSize(2, 16777215))
+        self.line.setFrameShape(QFrame.VLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_2.addWidget(self.line)
+
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setStyleSheet(u"border: none;")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_2 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as = QToolButton(self.frame_3)
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setObjectName(u"toolButton_importar_foto_popup_perfil_cadastro_colaborador_as")
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setMinimumSize(QSize(298, 348))
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setFont(font)
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setFocusPolicy(Qt.StrongFocus)
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setStyleSheet(u"QToolButton::hover{\n"
+"background-color: rgb(251, 207, 216);\n"
+"}")
+        icon1 = QIcon()
+        icon1.addFile(u"../icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setIcon(icon1)
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setIconSize(QSize(145, 145))
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setToolButtonStyle(Qt.ToolButtonTextUnderIcon)
+
+        self.verticalLayout_2.addWidget(self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_3)
+
+
+        self.horizontalLayout.addWidget(self.frame)
+
+
+        self.retranslateUi(Tirar_Importar_Foto_Colaborador)
+
+        QMetaObject.connectSlotsByName(Tirar_Importar_Foto_Colaborador)
+    # setupUi
+
+    def retranslateUi(self, Tirar_Importar_Foto_Colaborador):
+        Tirar_Importar_Foto_Colaborador.setWindowTitle(QCoreApplication.translate("Tirar_Importar_Foto_Colaborador", u"Dialog", None))
+        self.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.setText(QCoreApplication.translate("Tirar_Importar_Foto_Colaborador", u"Tirar foto", None))
+        self.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.setText(QCoreApplication.translate("Tirar_Importar_Foto_Colaborador", u"Importar foto", None))
+    # retranslateUi
+
