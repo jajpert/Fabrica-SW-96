@@ -79,16 +79,20 @@ class DialogTirarImportarFotoUsuario(QDialog):
                 if not ret:
                     print('failed to grab frame')
                     break
+
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                     directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/"
                     # directory = "C:/Users/vboxuser/Pictures/"
+                    cv2.waitKey(0)
+                    cv2.destroyAllWindows()
                     if not os.path.exists(directory):
                         os.makedirs(directory)
-                        cv2.waitKey(0)
-                        cv2.destroyAllWindows()
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
                     break
+                else:
+                    break
+                
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table {}".format(error))
             
@@ -98,7 +102,7 @@ class DialogTirarImportarFotoUsuario(QDialog):
     def ImportarFotoUsuario(self, caminho_importado):
         self.db = DataBase()  
         options = QFileDialog.Options()
-        options |= QFileDialog.ReadOnly
+        # options |= QFileDialog.ReadOnly
 
         file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
         caminho_importado = file_path
@@ -119,7 +123,8 @@ class DialogTirarImportarFotoColaborador(QDialog):
 
     def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/teste/capture{self.nome_colab}.jpg")
+        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
         try:
             while True:
@@ -129,11 +134,13 @@ class DialogTirarImportarFotoColaborador(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/vboxuser/teste/"
-                    if not os.path.exists(directory):
-                        os.makedirs(directory)
+                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/"
+                    # directory = "C:/Users/vboxuser/Pictures/"
                     cv2.waitKey(0)
                     cv2.destroyAllWindows()
+                    if not os.path.exists(directory):
+                        os.makedirs(directory)
+                        
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
                     
@@ -1111,8 +1118,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
             self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
-            self.ui.input_alterar_id_matricula_usuario_as.setText(str(dados[38]))
-            self.ui.input_alterar_id_matricula_usuario_as.hide()
+            self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
+            self.ui.input_alterar_id_usuario_as.hide()
             original_image = cv2.imread(dados[39])
 
             desired_size = (240, 240)
@@ -2648,11 +2655,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 print("O arquivo de imagem não existe:", caminho)
         else:
             print("Caminho inválido:", caminho)
-
-
-
-
-
 
 
     def tirarImportarFotoColaborador(self):
