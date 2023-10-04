@@ -62,7 +62,7 @@ class DialogTirarImportarFotoUsuario(QDialog):
         self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto_Usuario)
-        self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFoto)
+        self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFotoUsuario)
         self.nome_usuario = nome_usuario
         self.id_usuario = id_usuario
         
@@ -95,27 +95,17 @@ class DialogTirarImportarFotoUsuario(QDialog):
         tupla_foto = (self.nome_usuario, StoreFilePath, self.id_usuario)
         result = self.db.tirar_foto_usuario(tupla_foto)  
         
-    def ImportarFoto(self):
-        pasta_desejada = "F:/Open-cv2/imagens/cidaderox.jpg"
-        # imagem = Image.open(pasta_desejada).convert('RGB')
-        original_image = cv2.imread(pasta_desejada)
+    def ImportarFotoUsuario(self, caminho_importado):
+        self.db = DataBase()  
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
 
-        desired_size = (140, 220)
-        resized_image = cv2.resize(original_image, desired_size)
+        file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+        caminho_importado = file_path
+        tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
+        result = self.db.tirar_foto_usuario(tupla_foto)
 
-        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
 
-        h, w, ch = resized_image.shape
-        bytes_per_line = ch * w
-        qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-
-        pixmap = QPixmap.fromImage(qt_image)
-
-        self.fb.label_foto_usuario_alterar_as.setPixmap(pixmap)
-
-        self.fb.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
-
-        self.fb.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
 class DialogTirarImportarFotoColaborador(QDialog):
     def __init__(self, parent, nome_colab, id_colaborador) -> None:
         super().__init__(parent)
@@ -123,10 +113,10 @@ class DialogTirarImportarFotoColaborador(QDialog):
         self.ui = Ui_Tirar_Importar_Foto_Colaborador()
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.Tirar_foto_Colaborador)
-        self.ui.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.ImportarFoto)
+        self.ui.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.ImportarFotoColaborador)
         self.nome_colab = nome_colab
         self.id_colaborador = id_colaborador
-        # self.caminho_importado = self.ImportarFoto(caminho_importado)
+
     def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
         StoreFilePath =(f"C:/Users/vboxuser/teste/capture{self.nome_colab}.jpg")
@@ -155,7 +145,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
         tupla_foto = (self.nome_colab, StoreFilePath, self.id_colaborador)
         result = self.db.tirar_foto_colaborador(tupla_foto)  
         
-    def ImportarFoto(self,caminho_importado):
+    def ImportarFotoColaborador(self,caminho_importado):
         self.db = DataBase()  
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
