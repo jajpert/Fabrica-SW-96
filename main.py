@@ -56,17 +56,20 @@ class DialogLoginInvalido(QDialog):
 
 ################POPUP TIRAR/IMPORTAR FOTO################
 class DialogTirarImportarFotoUsuario(QDialog):
-    def __init__(self, parent) -> None:
+    def __init__(self, parent, nome_usuario, id_usuario) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Tirar_Importar_Foto()
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_as.clicked.connect(self.Tirar_foto_Usuario)
         self.ui.toolButton_importar_foto_popup_perfil_cadastro_as.clicked.connect(self.ImportarFoto)
-
-    def Tirar_foto_Usuario(self, nome_usuario, id_usuario):
+        self.nome_usuario = nome_usuario
+        self.id_usuario = id_usuario
+        
+    def Tirar_foto_Usuario(self):
+        
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             while True:
@@ -76,21 +79,18 @@ class DialogTirarImportarFotoUsuario(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture"
+                    directory = "C:/Users/vboxuser/Pictures/"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
                     cv2.waitKey(0)
                     cv2.destroyAllWindows()
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
-                    
-                    print("Imagem salva em:", StoreFilePath)
                     break
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table {}".format(error))
             
-        tupla_foto = (nome_usuario, StoreFilePath, id_usuario)
-        print(tupla_foto)
+        tupla_foto = (self.nome_usuario, StoreFilePath, self.id_usuario)
         result = self.db.tirar_foto_usuario(tupla_foto)  
         
     def ImportarFoto(self):
@@ -115,21 +115,25 @@ class DialogTirarImportarFotoUsuario(QDialog):
 
         self.fb.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
 class DialogTirarImportarFotoColaborador(QDialog):
-    def __init__(self, parent) -> None:
+    def __init__(self, parent, nome_colab, id_colaborador) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Tirar_Importar_Foto_Colaborador()
         self.ui.setupUi(self)
         self.ui.toolButton_tirar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.Tirar_foto_Colaborador)
         self.ui.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.ImportarFoto)
+        self.nome_colab = nome_colab
+        self.id_colaborador = id_colaborador
+    # def testes(self, nome_colab, id_colaborador):
+    #     # self.Tirar_foto_Colaborador(nome_colab, id_colaborador)
+    #     print(nome_colab)
+    #     print(id_colaborador)
 
-    def testes(self, nome_colab, id_colaborador):
-        self.Tirar_foto_Colaborador(nome_colab, id_colaborador)
-
-    def Tirar_foto_Colaborador(self, nome_colab, id_colaborador):
-        self.testes()
+    def Tirar_foto_Colaborador(self):
+        
+        
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{nome_colab}.jpg")
+        StoreFilePath =(f"C:/Users/vboxuser/teste/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
         try:
             while True:
@@ -139,7 +143,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture"
+                    directory = "C:/Users/vboxuser/teste/"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
                     cv2.waitKey(0)
@@ -152,7 +156,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table {}".format(error))
             
-        tupla_foto = (nome_colab, StoreFilePath, id_colaborador)
+        tupla_foto = (self.nome_colab, StoreFilePath, self.id_colaborador)
         print(tupla_foto)
         result = self.db.tirar_foto_colaborador(tupla_foto)  
         
@@ -2507,19 +2511,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def tirarImportarFotoUsuario(self):
-        msg = DialogTirarImportarFotoUsuario(self)
+        nome_usuario = self.ui.input_nome_usuario_as.text()
+        id_usuario = self.ui.input_matricula_usuario_as.text()
+        msg = DialogTirarImportarFotoUsuario(self, nome_usuario, id_usuario)
         self.popup.show()
         msg.exec()
         self.popup.hide()
-        nome_usuario = self.ui.input_nome_usuario_as.text()
-        print("Usuario ->", nome_usuario)
-        id_usuario = self.ui.input_matricula_usuario_as.text()
-        print("Id matricula -> ", id_usuario)
-        msg.Tirar_foto_Usuario(nome_usuario, id_usuario)
         
         caminho = self.db.buscar_foto_usuario(id_usuario)
         caminho_tratado = "".join(caminho)
-        print(caminho_tratado)
+        
         if caminho_tratado is not None and isinstance(caminho_tratado, str):
             if os.path.isfile(caminho_tratado):
                 original_image = cv2.imread(caminho_tratado)
@@ -2555,13 +2556,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def tirarImportarFotoColaborador(self):
-        msg = DialogTirarImportarFotoColaborador(self)
         nome_colab = self.ui.input_nome_colaborador_as.text()
         print("Colab ->", nome_colab)
         id_colaborador = self.ui.input_matricula_colaborador_as.text()
         print("Id Colab -> ", id_colaborador)
-        msg.testes(nome_colab, id_colaborador)
-        # msg.Tirar_foto_Colaborador(msg.testes)
+        msg = DialogTirarImportarFotoColaborador(self, nome_colab, id_colaborador)
         self.popup.show()
         msg.exec()
         self.popup.hide()
