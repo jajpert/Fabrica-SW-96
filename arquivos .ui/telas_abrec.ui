@@ -11949,7 +11949,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>16</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -17394,6 +17394,11 @@ QPushButton:pressed{
                                        <string>Superior incompleto</string>
                                       </property>
                                      </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Não possui</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -17681,6 +17686,11 @@ QPushButton:pressed{
                                        <string>Outra</string>
                                       </property>
                                      </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Não possui</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -17889,6 +17899,11 @@ QPushButton:pressed{
                                        <string>Mais que 3 salários</string>
                                       </property>
                                      </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Não possui</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -18013,6 +18028,11 @@ QPushButton:pressed{
                                        <string>Ambulância particular</string>
                                       </property>
                                      </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Não possui</string>
+                                      </property>
+                                     </item>
                                     </widget>
                                    </item>
                                   </layout>
@@ -18108,6 +18128,11 @@ QPushButton:pressed{
                                      <item>
                                       <property name="text">
                                        <string>Passe livre</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Não possui</string>
                                       </property>
                                      </item>
                                     </widget>
@@ -18488,6 +18513,11 @@ QPushButton:pressed{
                                      <item>
                                       <property name="text">
                                        <string>Auxílio Brasil (Gov. Federal)</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Não possui</string>
                                       </property>
                                      </item>
                                     </widget>
@@ -42599,7 +42629,7 @@ QPushButton:pressed{
                                                         </item>
                                                         <item>
                                                          <property name="text">
-                                                          <string>Fundamental</string>
+                                                          <string>Fundamental completo</string>
                                                          </property>
                                                         </item>
                                                         <item>
@@ -42609,7 +42639,7 @@ QPushButton:pressed{
                                                         </item>
                                                         <item>
                                                          <property name="text">
-                                                          <string>Médio</string>
+                                                          <string>Médio completo</string>
                                                          </property>
                                                         </item>
                                                         <item>
@@ -42625,6 +42655,11 @@ QPushButton:pressed{
                                                         <item>
                                                          <property name="text">
                                                           <string>Superior incompleto</string>
+                                                         </property>
+                                                        </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Não possui</string>
                                                          </property>
                                                         </item>
                                                        </widget>
@@ -42914,6 +42949,11 @@ QPushButton:pressed{
                                                           <string>Outra</string>
                                                          </property>
                                                         </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Não possui</string>
+                                                         </property>
+                                                        </item>
                                                        </widget>
                                                       </item>
                                                      </layout>
@@ -43116,6 +43156,11 @@ QPushButton:pressed{
                                                           <string>Mais que 3 salários</string>
                                                          </property>
                                                         </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Não possui</string>
+                                                         </property>
+                                                        </item>
                                                        </widget>
                                                       </item>
                                                      </layout>
@@ -43240,6 +43285,11 @@ QPushButton:pressed{
                                                           <string>Ambulância particular</string>
                                                          </property>
                                                         </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Não possui</string>
+                                                         </property>
+                                                        </item>
                                                        </widget>
                                                       </item>
                                                      </layout>
@@ -43335,6 +43385,11 @@ QPushButton:pressed{
                                                         <item>
                                                          <property name="text">
                                                           <string>Passe livre</string>
+                                                         </property>
+                                                        </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Não possui</string>
                                                          </property>
                                                         </item>
                                                        </widget>
@@ -43718,6 +43773,11 @@ QPushButton:pressed{
                                                         <item>
                                                          <property name="text">
                                                           <string>Auxílio Brasil (Gov. Federal)</string>
+                                                         </property>
+                                                        </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Não possui</string>
                                                          </property>
                                                         </item>
                                                        </widget>
