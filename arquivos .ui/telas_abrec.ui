@@ -17255,22 +17255,22 @@ QPushButton:pressed{
                                      </item>
                                      <item>
                                       <property name="text">
-                                       <string>Solteiro</string>
+                                       <string>Solteiro/a</string>
                                       </property>
                                      </item>
                                      <item>
                                       <property name="text">
-                                       <string>Casado</string>
+                                       <string>Casado/a</string>
                                       </property>
                                      </item>
                                      <item>
                                       <property name="text">
-                                       <string>Divorciado</string>
+                                       <string>Divorciado/a</string>
                                       </property>
                                      </item>
                                      <item>
                                       <property name="text">
-                                       <string>Viúvo</string>
+                                       <string>Viúvo/a</string>
                                       </property>
                                      </item>
                                     </widget>
@@ -18732,6 +18732,16 @@ QPushButton:pressed{
                                      <item>
                                       <property name="text">
                                        <string>Selecione</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Transplantado/a</string>
+                                      </property>
+                                     </item>
+                                     <item>
+                                      <property name="text">
+                                       <string>Prevenção</string>
                                       </property>
                                      </item>
                                      <item>
@@ -42518,22 +42528,22 @@ QPushButton:pressed{
                                                         </item>
                                                         <item>
                                                          <property name="text">
-                                                          <string>Solteiro</string>
+                                                          <string>Solteiro/a</string>
                                                          </property>
                                                         </item>
                                                         <item>
                                                          <property name="text">
-                                                          <string>Casado</string>
+                                                          <string>Casado/a</string>
                                                          </property>
                                                         </item>
                                                         <item>
                                                          <property name="text">
-                                                          <string>Divorciado</string>
+                                                          <string>Divorciado/a</string>
                                                          </property>
                                                         </item>
                                                         <item>
                                                          <property name="text">
-                                                          <string>Viúvo</string>
+                                                          <string>Viúvo/a</string>
                                                          </property>
                                                         </item>
                                                        </widget>
@@ -43992,6 +44002,16 @@ QPushButton:pressed{
                                                         <item>
                                                          <property name="text">
                                                           <string>Selecione</string>
+                                                         </property>
+                                                        </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Transplantado/a</string>
+                                                         </property>
+                                                        </item>
+                                                        <item>
+                                                         <property name="text">
+                                                          <string>Prevenção</string>
                                                          </property>
                                                         </item>
                                                         <item>
