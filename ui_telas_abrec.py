@@ -19063,6 +19063,11 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.input_senha_login.editingFinished.connect(self.btn_entrar_login.click)
+        self.btn_sair_as.clicked.connect(self.input_usuario_login.setFocus)
+        self.btn_sair_psi.clicked.connect(self.input_usuario_login.setFocus)
+        self.btn_sair_farm.clicked.connect(self.input_usuario_login.setFocus)
+        self.btn_sair_nutri.clicked.connect(self.input_usuario_login.setFocus)
+        self.btn_sair_fisio.clicked.connect(self.input_usuario_login.setFocus)
         self.inicio.setCurrentIndex(0)
         self.stack_nutricionista.setCurrentIndex(0)
         self.stackedWidget_12.setCurrentIndex(0)

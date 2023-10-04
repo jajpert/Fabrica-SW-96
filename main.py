@@ -499,7 +499,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
 
-            elif perfil[0] == 'pisc':
+            elif perfil[0] == 'psic':
                 if login == login_senha[0] and senha == login_senha[1]:            
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)

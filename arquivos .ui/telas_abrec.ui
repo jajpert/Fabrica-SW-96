@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -49708,6 +49708,86 @@ QPushButton:focus{outline:0}</string>
     <hint type="destinationlabel">
      <x>989</x>
      <y>685</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_sair_as</sender>
+   <signal>clicked()</signal>
+   <receiver>input_usuario_login</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>902</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>479</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_sair_psi</sender>
+   <signal>clicked()</signal>
+   <receiver>input_usuario_login</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>902</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>479</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_sair_farm</sender>
+   <signal>clicked()</signal>
+   <receiver>input_usuario_login</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>112</x>
+     <y>902</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>479</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_sair_nutri</sender>
+   <signal>clicked()</signal>
+   <receiver>input_usuario_login</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>902</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>479</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btn_sair_fisio</sender>
+   <signal>clicked()</signal>
+   <receiver>input_usuario_login</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>121</x>
+     <y>902</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>969</x>
+     <y>479</y>
     </hint>
    </hints>
   </connection>
