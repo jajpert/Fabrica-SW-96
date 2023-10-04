@@ -902,6 +902,21 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_37">
+                     <property name="spacing">
+                      <number>20</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item>
                       <widget class="QPushButton" name="btn_consulta_nutri">
                        <property name="minimumSize">
@@ -972,7 +987,7 @@ QPushButton:focus{outline: 0}</string>
                        </property>
                        <property name="icon">
                         <iconset>
-                         <normaloff>../../../icons/agenda.png</normaloff>../../../icons/agenda.png</iconset>
+                         <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -1010,6 +1025,49 @@ QPushButton:focus{outline: 0}</string>
                        <property name="icon">
                         <iconset>
                          <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_backup_nutri">
+                       <property name="minimumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Six Caps</family>
+                         <pointsize>24</pointsize>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                       </property>
+                       <property name="text">
+                        <string>    BACKUP</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>../icons/backup.png</normaloff>../icons/backup.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -4385,6 +4443,21 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_39">
+                     <property name="spacing">
+                      <number>20</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item>
                       <widget class="QPushButton" name="btn_consulta_psi">
                        <property name="minimumSize">
@@ -4455,7 +4528,7 @@ QPushButton:focus{outline: 0}</string>
                        </property>
                        <property name="icon">
                         <iconset>
-                         <normaloff>../../../icons/agenda.png</normaloff>../../../icons/agenda.png</iconset>
+                         <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -4493,6 +4566,49 @@ QPushButton:focus{outline: 0}</string>
                        <property name="icon">
                         <iconset>
                          <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_backup_psi">
+                       <property name="minimumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Six Caps</family>
+                         <pointsize>24</pointsize>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                       </property>
+                       <property name="text">
+                        <string>    BACKUP</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>../icons/backup.png</normaloff>../icons/backup.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -7677,7 +7793,7 @@ QPushButton:focus{outline:0}</string>
                     <property name="frameShadow">
                      <enum>QFrame::Raised</enum>
                     </property>
-                    <layout class="QVBoxLayout" name="verticalLayout_132">
+                    <layout class="QVBoxLayout" name="verticalLayout_86">
                      <property name="spacing">
                       <number>20</number>
                      </property>
@@ -7685,13 +7801,13 @@ QPushButton:focus{outline:0}</string>
                       <number>0</number>
                      </property>
                      <property name="topMargin">
-                      <number>10</number>
+                      <number>0</number>
                      </property>
                      <property name="rightMargin">
                       <number>0</number>
                      </property>
                      <property name="bottomMargin">
-                      <number>10</number>
+                      <number>0</number>
                      </property>
                      <item>
                       <widget class="QPushButton" name="btn_cadastrar_farm">
@@ -7758,6 +7874,49 @@ QPushButton:focus{outline: 0}</string>
                        <property name="icon">
                         <iconset>
                          <normaloff>../icons/medicamento.png</normaloff>../icons/medicamento.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_backup_farm">
+                       <property name="minimumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Six Caps</family>
+                         <pointsize>24</pointsize>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                       </property>
+                       <property name="text">
+                        <string>    BACKUP</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>../icons/backup.png</normaloff>../icons/backup.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -8171,6 +8330,21 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                      <enum>QFrame::Raised</enum>
                     </property>
                     <layout class="QVBoxLayout" name="verticalLayout_35">
+                     <property name="spacing">
+                      <number>20</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
                      <item>
                       <widget class="QPushButton" name="btn_consulta_fisio">
                        <property name="minimumSize">
@@ -8241,7 +8415,7 @@ QPushButton:focus{outline: 0}</string>
                        </property>
                        <property name="icon">
                         <iconset>
-                         <normaloff>../../../icons/agenda.png</normaloff>../../../icons/agenda.png</iconset>
+                         <normaloff>../icons/agenda.png</normaloff>../icons/agenda.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -8279,6 +8453,49 @@ QPushButton:focus{outline: 0}</string>
                        <property name="icon">
                         <iconset>
                          <normaloff>../icons/relatorio-de-negocios.png</normaloff>../icons/relatorio-de-negocios.png</iconset>
+                       </property>
+                       <property name="iconSize">
+                        <size>
+                         <width>30</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QPushButton" name="btn_backup_fisio">
+                       <property name="minimumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>140</width>
+                         <height>45</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <family>Six Caps</family>
+                         <pointsize>24</pointsize>
+                        </font>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>PointingHandCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                       </property>
+                       <property name="text">
+                        <string>    BACKUP</string>
+                       </property>
+                       <property name="icon">
+                        <iconset>
+                         <normaloff>../icons/backup.png</normaloff>../icons/backup.png</iconset>
                        </property>
                        <property name="iconSize">
                         <size>
@@ -11515,6 +11732,21 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                          <enum>QFrame::Raised</enum>
                         </property>
                         <layout class="QVBoxLayout" name="verticalLayout_7">
+                         <property name="spacing">
+                          <number>15</number>
+                         </property>
+                         <property name="leftMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="topMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="rightMargin">
+                          <number>0</number>
+                         </property>
+                         <property name="bottomMargin">
+                          <number>0</number>
+                         </property>
                          <item>
                           <widget class="QPushButton" name="btn_cadastrar_as">
                            <property name="minimumSize">
@@ -11721,6 +11953,49 @@ QPushButton:focus{outline: 0}</string>
                            <property name="icon">
                             <iconset>
                              <normaloff>../icons/parceiro.png</normaloff>../icons/parceiro.png</iconset>
+                           </property>
+                           <property name="iconSize">
+                            <size>
+                             <width>30</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                          </widget>
+                         </item>
+                         <item>
+                          <widget class="QPushButton" name="btn_backup_as">
+                           <property name="minimumSize">
+                            <size>
+                             <width>140</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>140</width>
+                             <height>45</height>
+                            </size>
+                           </property>
+                           <property name="font">
+                            <font>
+                             <family>Six Caps</family>
+                             <pointsize>24</pointsize>
+                            </font>
+                           </property>
+                           <property name="cursor">
+                            <cursorShape>PointingHandCursor</cursorShape>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                           </property>
+                           <property name="text">
+                            <string>    BACKUP</string>
+                           </property>
+                           <property name="icon">
+                            <iconset>
+                             <normaloff>../icons/backup.png</normaloff>../icons/backup.png</iconset>
                            </property>
                            <property name="iconSize">
                             <size>
