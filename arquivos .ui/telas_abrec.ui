@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -11949,7 +11949,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>6</number>
+                      <number>16</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -37820,7 +37820,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>3</number>
+                                <number>2</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -38284,7 +38284,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -38597,7 +38597,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -40211,19 +40211,7 @@ QPushButton:focus{outline:0}</string>
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <layout class="QVBoxLayout" name="verticalLayout_11">
-                                                      <property name="spacing">
-                                                       <number>0</number>
-                                                      </property>
-                                                      <property name="topMargin">
-                                                       <number>0</number>
-                                                      </property>
-                                                      <property name="rightMargin">
-                                                       <number>0</number>
-                                                      </property>
-                                                      <property name="bottomMargin">
-                                                       <number>0</number>
-                                                      </property>
+                                                     <layout class="QVBoxLayout" name="verticalLayout_301">
                                                       <item>
                                                        <widget class="QLabel" name="label_foto_usuario_alterar_as">
                                                         <property name="minimumSize">
@@ -40240,6 +40228,49 @@ QPushButton:focus{outline:0}</string>
                                                         </property>
                                                         <property name="text">
                                                          <string/>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                      <item>
+                                                       <spacer name="verticalSpacer_5">
+                                                        <property name="orientation">
+                                                         <enum>Qt::Vertical</enum>
+                                                        </property>
+                                                        <property name="sizeType">
+                                                         <enum>QSizePolicy::Fixed</enum>
+                                                        </property>
+                                                        <property name="sizeHint" stdset="0">
+                                                         <size>
+                                                          <width>20</width>
+                                                          <height>20</height>
+                                                         </size>
+                                                        </property>
+                                                       </spacer>
+                                                      </item>
+                                                      <item>
+                                                       <widget class="QPushButton" name="btn_alterar_foto_usuario_as">
+                                                        <property name="minimumSize">
+                                                         <size>
+                                                          <width>140</width>
+                                                          <height>40</height>
+                                                         </size>
+                                                        </property>
+                                                        <property name="font">
+                                                         <font>
+                                                          <family>Abel</family>
+                                                          <pointsize>18</pointsize>
+                                                         </font>
+                                                        </property>
+                                                        <property name="cursor">
+                                                         <cursorShape>PointingHandCursor</cursorShape>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                         <string>Alterar Foto</string>
                                                         </property>
                                                        </widget>
                                                       </item>
@@ -44613,7 +44644,18 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <layout class="QHBoxLayout" name="horizontalLayout_131">
+                                                     <layout class="QVBoxLayout" name="verticalLayout_258">
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                        <property name="enabled">
+                                                         <bool>false</bool>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
                                                       <item>
                                                        <widget class="QLineEdit" name="input_alterar_id_endereco_usuario_as">
                                                         <property name="enabled">
@@ -44626,7 +44668,7 @@ border-color: transparent;</string>
                                                        </widget>
                                                       </item>
                                                       <item>
-                                                       <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                       <widget class="QLineEdit" name="input_id_foto_alterar_usuario_as">
                                                         <property name="enabled">
                                                          <bool>false</bool>
                                                         </property>
@@ -45595,12 +45637,46 @@ QPushButton:focus{outline:0}</string>
                                                 </item>
                                                 <item>
                                                  <widget class="QFrame" name="frame_277">
+                                                  <property name="maximumSize">
+                                                   <size>
+                                                    <width>0</width>
+                                                    <height>0</height>
+                                                   </size>
+                                                  </property>
                                                   <property name="frameShape">
                                                    <enum>QFrame::StyledPanel</enum>
                                                   </property>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
+                                                  <layout class="QVBoxLayout" name="verticalLayout_175">
+                                                   <item>
+                                                    <widget class="QLineEdit" name="input_alterar_id_foto_usuario_as">
+                                                     <property name="minimumSize">
+                                                      <size>
+                                                       <width>0</width>
+                                                       <height>30</height>
+                                                      </size>
+                                                     </property>
+                                                     <property name="maximumSize">
+                                                      <size>
+                                                       <width>229</width>
+                                                       <height>30</height>
+                                                      </size>
+                                                     </property>
+                                                     <property name="font">
+                                                      <font>
+                                                       <family>Abel</family>
+                                                       <pointsize>12</pointsize>
+                                                      </font>
+                                                     </property>
+                                                     <property name="styleSheet">
+                                                      <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                     </property>
+                                                    </widget>
+                                                   </item>
+                                                  </layout>
                                                  </widget>
                                                 </item>
                                                </layout>
@@ -45835,7 +45911,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -46681,7 +46757,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -47276,7 +47352,7 @@ border-color: transparent;</string>
                                                   </property>
                                                   <layout class="QHBoxLayout" name="horizontalLayout_94">
                                                    <item>
-                                                    <widget class="QLineEdit" name="input_alterar_id_matricula_colaborador_as">
+                                                    <widget class="QLineEdit" name="input_alterar_id_colaborador_as">
                                                      <property name="enabled">
                                                       <bool>false</bool>
                                                      </property>
@@ -47309,23 +47385,6 @@ border-color: transparent;</string>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
-                                                  <layout class="QVBoxLayout" name="verticalLayout_258">
-                                                   <property name="spacing">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="leftMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="topMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="rightMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="bottomMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                  </layout>
                                                  </widget>
                                                 </item>
                                                </layout>
@@ -48108,7 +48167,7 @@ QPushButton:pressed{
                                                <property name="frameShadow">
                                                 <enum>QFrame::Raised</enum>
                                                </property>
-                                               <layout class="QVBoxLayout" name="verticalLayout_301">
+                                               <layout class="QVBoxLayout" name="verticalLayout_86">
                                                 <property name="spacing">
                                                  <number>0</number>
                                                 </property>
@@ -48128,18 +48187,58 @@ QPushButton:pressed{
                                                  <widget class="QLabel" name="label_foto_colaborador_alterar_as">
                                                   <property name="minimumSize">
                                                    <size>
-                                                    <width>200</width>
-                                                    <height>280</height>
+                                                    <width>180</width>
+                                                    <height>200</height>
                                                    </size>
                                                   </property>
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>200</width>
-                                                    <height>280</height>
+                                                    <width>180</width>
+                                                    <height>200</height>
                                                    </size>
                                                   </property>
                                                   <property name="text">
                                                    <string/>
+                                                  </property>
+                                                 </widget>
+                                                </item>
+                                                <item>
+                                                 <spacer name="verticalSpacer_4">
+                                                  <property name="orientation">
+                                                   <enum>Qt::Vertical</enum>
+                                                  </property>
+                                                  <property name="sizeHint" stdset="0">
+                                                   <size>
+                                                    <width>20</width>
+                                                    <height>40</height>
+                                                   </size>
+                                                  </property>
+                                                 </spacer>
+                                                </item>
+                                                <item>
+                                                 <widget class="QPushButton" name="btn_alterar_foto_colab_as">
+                                                  <property name="minimumSize">
+                                                   <size>
+                                                    <width>140</width>
+                                                    <height>40</height>
+                                                   </size>
+                                                  </property>
+                                                  <property name="font">
+                                                   <font>
+                                                    <family>Abel</family>
+                                                    <pointsize>18</pointsize>
+                                                   </font>
+                                                  </property>
+                                                  <property name="cursor">
+                                                   <cursorShape>PointingHandCursor</cursorShape>
+                                                  </property>
+                                                  <property name="styleSheet">
+                                                   <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                                  </property>
+                                                  <property name="text">
+                                                   <string>Alterar Foto</string>
                                                   </property>
                                                  </widget>
                                                 </item>

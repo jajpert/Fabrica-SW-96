@@ -69,7 +69,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
     def Tirar_foto_Usuario(self):
         
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
+        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/capture{self.nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             while True:
@@ -79,11 +80,12 @@ class DialogTirarImportarFotoUsuario(QDialog):
                     print('failed to grab frame')
                     break
                 if cv2.waitKey(1) & 0xFF == ord('q'):
-                    directory = "C:/Users/vboxuser/Pictures/"
+                    directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/"
+                    # directory = "C:/Users/vboxuser/Pictures/"
                     if not os.path.exists(directory):
                         os.makedirs(directory)
-                    cv2.waitKey(0)
-                    cv2.destroyAllWindows()
+                        cv2.waitKey(0)
+                        cv2.destroyAllWindows()
                     image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                     image_pil.save(StoreFilePath)
                     break
@@ -124,14 +126,8 @@ class DialogTirarImportarFotoColaborador(QDialog):
         self.ui.toolButton_importar_foto_popup_perfil_cadastro_colaborador_as.clicked.connect(self.ImportarFoto)
         self.nome_colab = nome_colab
         self.id_colaborador = id_colaborador
-    # def testes(self, nome_colab, id_colaborador):
-    #     # self.Tirar_foto_Colaborador(nome_colab, id_colaborador)
-    #     print(nome_colab)
-    #     print(id_colaborador)
-
-    def Tirar_foto_Colaborador(self):
-        
-        
+        # self.caminho_importado = self.ImportarFoto(caminho_importado)
+    def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
         StoreFilePath =(f"C:/Users/vboxuser/teste/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
@@ -157,30 +153,20 @@ class DialogTirarImportarFotoColaborador(QDialog):
             print("Failed inserting BLOB data into MySQL table {}".format(error))
             
         tupla_foto = (self.nome_colab, StoreFilePath, self.id_colaborador)
-        print(tupla_foto)
         result = self.db.tirar_foto_colaborador(tupla_foto)  
         
-    def ImportarFoto(self):
-        pasta_desejada = "F:/Open-cv2/imagens/cidaderox.jpg"
-        # imagem = Image.open(pasta_desejada).convert('RGB')
-        original_image = cv2.imread(pasta_desejada)
+    def ImportarFoto(self,caminho_importado):
+        self.db = DataBase()  
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
 
-        desired_size = (140, 220)
-        resized_image = cv2.resize(original_image, desired_size)
+        file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+        caminho_importado = file_path
+        tupla_foto = (self.nome_colab, caminho_importado, self.id_colaborador)
+        result = self.db.tirar_foto_colaborador(tupla_foto) 
 
-        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+    
 
-        h, w, ch = resized_image.shape
-        bytes_per_line = ch * w
-        qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-
-        pixmap = QPixmap.fromImage(qt_image)
-
-        self.fb.label_foto_usuario_alterar_as.setPixmap(pixmap)
-
-        self.fb.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
-
-        self.fb.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
 ################Class POPUP USUARIO################
 
 class DialogConfirmarCadastro(QDialog):
@@ -482,6 +468,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
         self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
+        self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
+        
 
 
         ############SIGNALS POPUP Cuidador AS############
@@ -1151,6 +1140,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
             self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
             self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+            self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
+            self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
         
         ##################################################################################
@@ -1259,8 +1250,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_confirmar_senha_colaborador_as_2.setText(dados[24])
             self.ui.input_alterar_id_endereco_colaborador_as.setText(str(dados[25]))
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
-            self.ui.input_alterar_id_matricula_colaborador_as.setText(str(dados[26]))
-            self.ui.input_alterar_id_matricula_colaborador_as.hide()
+            self.ui.input_alterar_id_colaborador_as.setText(str(dados[26]))
+            self.ui.input_alterar_id_colaborador_as.hide()
             original_image = cv2.imread(dados[27])
             desired_size = (240, 240)
             resized_image = cv2.resize(original_image, desired_size)
@@ -1273,6 +1264,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
             self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
             self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+            self.ui.input_alterar_id_foto_usuario_as.setText(str(dados[28]))
+            self.ui.input_alterar_id_foto_usuario_as.hide()
 
             return self.ui.page_alterar_colaborador_as
         
@@ -1447,7 +1440,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_endereco = (id_endereco,cep,rua,numero,bairro,cidade,estado)
 
         ###################### pessoa ##############################
-        id_matricula = self.ui.input_alterar_id_matricula_colaborador_as.text()
+        id_matricula = self.ui.input_alterar_matricula_colaborador_as.text()
         nome = self.ui.input_alterar_nome_colaborador_as.text()
         data_nasc = self.ui.input_alterar_data_nascimento_colaborador_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
@@ -1500,6 +1493,91 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+
+    def AlterarFotoColaborador(self):
+        nome_colab = self.ui.input_alterar_nome_colaborador_as.text()
+        id_foto = self.ui.input_alterar_id_foto_usuario_as.text()
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+        file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+        caminho_importado = file_path
+        tupla_foto = (id_foto,nome_colab, caminho_importado)
+        result = self.db.alterar_foto_colaborador(tupla_foto) 
+        original_image = cv2.imread(caminho_importado)
+
+        desired_size = (240, 240)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+        bytes_per_line = ch * w
+        qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+        pixmap = QPixmap.fromImage(qt_image)
+
+        self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+        self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+        self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+        self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Foto Colaborador")
+        msg.setText("Foto do Colaborador Atualizado com sucesso!")
+        msg.exec()
+
+
+    def AlterarFotoUsuario(self):
+        nome_usua = self.ui.input_alterar_nome_usuario_as.text()
+        id_foto = self.ui.input_id_foto_alterar_usuario_as.text()
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+        file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+        caminho_importado = file_path
+        tupla_foto = (id_foto, nome_usua, caminho_importado)
+        result = self.db.alterar_foto_usuario(tupla_foto) 
+        original_image = cv2.imread(caminho_importado)
+
+        desired_size = (240, 240)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+        bytes_per_line = ch * w
+        qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+        pixmap = QPixmap.fromImage(qt_image)
+
+        self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+        self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+        self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+        self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Foto Usuario")
+        msg.setText("Foto do Usuario Atualizado com sucesso!")
+        msg.exec()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def cadastroUsuario(self):
         ################ endereço ##################################
@@ -1797,7 +1875,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         pis_colab = self.ui.input_pis_colaborador_as.text()
         periodo = self.ui.input_periodo_colaborador_comboBox_as.currentText()
         cargo = self.ui.input_cargo_colaborador_comboBox_as.currentText() ##### ADDDDDD NO CÓDIGO
-        salario_formatado = self.ui.input_salario_colaborador_as.text().replace('.', '').replace(',', '.')
+        # salario_formatado = self.ui.input_salario_colaborador_as.text().replace('.', '').replace(',', '.')
 
         #################### login e senha ####################################
         login = self.ui.input_usuario_colaborador_as_2.text()
@@ -1817,7 +1895,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             perfil = 'nutri'
 
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
-        tupla_colaborador = (pis_colab, data_admissao, salario_formatado, cargo, periodo, login, senha, perfil)
+        tupla_colaborador = (pis_colab, data_admissao, salario, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
         result = []
@@ -2020,6 +2098,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
+        self.ui.label_foto_usuario_alterar_as.setPixmap("")
 
         
 
@@ -2627,7 +2706,47 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         else:
             print("Caminho inválido:", caminho)
 
-        
+
+    def AlterarImportarFotoColaborador(self):
+        nome_colab = self.ui.input_alterar_nome_colaborador_as.text()
+        print("Colab ->", nome_colab)
+        id_colaborador = self.ui.input_alterar_id_colaborador_as.text()
+        print("Id Colab -> ", id_colaborador)
+        msg = DialogTirarImportarFotoColaborador(self, nome_colab, id_colaborador)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+
+
+        caminho = self.db.buscar_foto_colaborador(id_colaborador)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                # print("Original From-string -> ", original_image)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colaborador_as.setPixmap(pixmap)
+
+                    self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
 
 
     def confirmarCadastro(self):

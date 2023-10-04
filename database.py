@@ -6,9 +6,8 @@ class DataBase():
 
     def connect(self):
         # 
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -394,6 +393,34 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def alterar_foto_colaborador(self, foto):
+        self.connect()
+        try:
+            id_foto = str(foto[0])
+            print(id_foto)
+            self.cursor.execute(f"""UPDATE foto_usuario SET nome = '{foto[1]}', caminho = '{foto[2]}' WHERE idfoto_usuario = {id_foto}""")
+            self.conn.commit()
+            return "Entrou banco"
+        except Exception as err:
+            return "ERRO",str(err)
+        
+        finally:
+            self.close_connection()
+
+    def alterar_foto_usuario(self, foto):
+        self.connect()
+        try:
+            id_foto = str(foto[0])
+            print(id_foto)
+            self.cursor.execute(f"""UPDATE foto_usuario SET nome = '{foto[1]}', caminho = '{foto[2]}' WHERE idfoto_usuario = {id_foto}""")
+            self.conn.commit()
+            return "Entrou banco"
+        except Exception as err:
+            return "ERRO",str(err)
+        
+        finally:
+            self.close_connection()
+
     def buscar_foto_colaborador(self, id_colaborador):
         self.connect()
         try:
@@ -448,7 +475,7 @@ class DataBase():
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia, outras_deficiencias,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho, situacao_trabalho_outros,
                 beneficio, tarifa_social, tipo_tratamento, clinica.id_clinica, patologia_base, outras_patologias, data_inicio, periodo,
-                endereco.id_endereco, usuario.id_matricula, caminho
+                endereco.id_endereco, usuario.id_matricula, foto_usuario.caminho, foto_usuario.idfoto_usuario
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
                 INNER JOIN foto_usuario ON usuario.id_usuario = foto_usuario.id_usuario
@@ -467,11 +494,11 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.data_nascimento, pessoa.cpf, pessoa.rg, pessoa.status, pessoa.orgao_exp, pessoa.data_emissao,
                                     colaborador.pis, pessoa.sexo, pessoa.telefone, pessoa.email, endereco.cep, endereco.logradouro, endereco.numero, endereco.bairro, endereco.cidade, endereco.estado,
-                                    pessoa.estado_civil, pessoa.escolaridade, colaborador.cargo, colaborador.periodo, colaborador.salario, colaborador.perfil, colaborador.senha, endereco.id_endereco, colaborador.id_matricula,
-                                    foto_usuario.caminho
+                                    pessoa.estado_civil, pessoa.escolaridade, colaborador.cargo, colaborador.periodo, colaborador.salario, colaborador.perfil, colaborador.senha, endereco.id_endereco, colaborador.id_colaborador,
+                                    foto_usuario.caminho, foto_usuario.idfoto_usuario
                                     FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco  
                                     LEFT JOIN colaborador ON colaborador.id_matricula = pessoa.id_matricula
-                                    INNER JOIN foto_usuario ON pessoa.id_matricula = foto_usuario.id_matricula
+                                    INNER JOIN foto_usuario ON colaborador.id_colaborador = foto_usuario.id_colaborador
                                     WHERE cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
             return result[0]
