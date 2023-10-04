@@ -19062,7 +19062,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(shortcut)
 
         self.retranslateUi(MainWindow)
-
+        self.input_senha_login.editingFinished.connect(self.btn_entrar_login.click)
         self.inicio.setCurrentIndex(0)
         self.stack_nutricionista.setCurrentIndex(0)
         self.stackedWidget_12.setCurrentIndex(0)
