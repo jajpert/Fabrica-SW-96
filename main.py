@@ -69,8 +69,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
     def Tirar_foto_Usuario(self):
         
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
-        # StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/capture{self.nome_usuario}.jpg")
+        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/capture{self.nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_usuario == "":
@@ -91,8 +91,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
                         break
                     
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        # directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/"
-                        directory = "C:/Users/vboxuser/Pictures/"
+                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/"
+                        # directory = "C:/Users/vboxuser/Pictures/"
                         
                         
                         if not os.path.exists(directory):
@@ -121,9 +121,12 @@ class DialogTirarImportarFotoUsuario(QDialog):
             
           
         
-    def ImportarFotoUsuario(self, caminho_importado):
+    def ImportarFotoUsuario(self):
         self.db = DataBase()  
         
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+        print(self.nome_usuario)
         
         if self.nome_usuario == "":
             msg = QMessageBox()
@@ -132,28 +135,26 @@ class DialogTirarImportarFotoUsuario(QDialog):
             msg.setText("Insira um nome para salvar a imagem")
             msg.exec()
         else:
-            options = QFileDialog.Options()
-            options |= QFileDialog.ReadOnly
-            
-            file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            file_dialog = QFileDialog()
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
             caminho_importado = file_path
             
-            if caminho_importado == "":
-                msg = QMessageBox()
-                msg.setIcon(QMessageBox.Information)
-                msg.setWindowTitle("Erro ao abrir")
-                msg.setText("Erro ao abrir o explorer")
-                msg.exec()
-            else:  
-                tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
-                result = self.db.tirar_foto_usuario(tupla_foto)
+        if caminho_importado == "":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Insira um Nome")
+            msg.setText("Insira um nome para salvar a imagem")
+            msg.exec()
+        else:  
+            tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
+            result = self.db.tirar_foto_usuario(tupla_foto)
+            
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Imagem Salva")
+            msg.setText("Imagem Salva com Sucesso!!!")
+            msg.exec()
                 
-                msg = QMessageBox()
-                msg.setIcon(QMessageBox.Information)
-                msg.setWindowTitle("Imagem Salva")
-                msg.setText("Imagem Salva com Sucesso!!!")
-                msg.exec()
-                  
 
 
 class DialogTirarImportarFotoColaborador(QDialog):
@@ -222,7 +223,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
             
          
         
-    def ImportarFotoColaborador(self,caminho_importado):
+    def ImportarFotoColaborador(self):
         self.db = DataBase()  
         
         options = QFileDialog.Options()
@@ -235,7 +236,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
             msg.setText("Insira um nome para salvar a imagem")
             msg.exec()
         else:
-            file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            file_path, _ = QFileDialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
             caminho_importado = file_path
             
             if caminho_importado == "":
@@ -2752,51 +2753,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def tirarImportarFotoColaborador(self):
         nome_colab = self.ui.input_nome_colaborador_as.text()
-        print("Colab ->", nome_colab)
         id_colaborador = self.ui.input_matricula_colaborador_as.text()
-        print("Id Colab -> ", id_colaborador)
-        msg = DialogTirarImportarFotoColaborador(self, nome_colab, id_colaborador)
-        self.popup.show()
-        msg.exec()
-        self.popup.hide()
-
-
-        caminho = self.db.buscar_foto_colaborador(id_colaborador)
-        caminho_tratado = "".join(caminho)
-        if caminho_tratado is not None and isinstance(caminho_tratado, str):
-            if os.path.isfile(caminho_tratado):
-                original_image = cv2.imread(caminho_tratado)
-                # print("Original From-string -> ", original_image)
-                if original_image is not None:
-                    desired_size = (240, 240)
-                    resized_image = cv2.resize(original_image, desired_size)
-
-                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-
-                    h, w, ch = resized_image.shape
-                    bytes_per_line = ch * w
-                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-
-                    pixmap = QPixmap.fromImage(qt_image)
-
-                    self.ui.label_foto_colaborador_as.setPixmap(pixmap)
-
-                    self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
-
-                    self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
-                else:
-                    print("Erro ao ler a imagem.")
-            else:
-                print("O arquivo de imagem não existe:", caminho)
-        else:
-            print("Caminho inválido:", caminho)
-
-
-    def AlterarImportarFotoColaborador(self):
-        nome_colab = self.ui.input_alterar_nome_colaborador_as.text()
-        print("Colab ->", nome_colab)
-        id_colaborador = self.ui.input_alterar_id_colaborador_as.text()
-        print("Id Colab -> ", id_colaborador)
         msg = DialogTirarImportarFotoColaborador(self, nome_colab, id_colaborador)
         self.popup.show()
         msg.exec()
