@@ -458,7 +458,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ########################### ASSISTENTE SOCIAL ###########################
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
-        self.ui.btn_consulta_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
+        self.ui.btn_atendimento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_cadastrar_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_voltar_cadastro_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
@@ -492,21 +492,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         ########################### FISIOTERAPEUTA ###########################
-        self.ui.btn_consulta_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
+        self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
         self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
         self.ui.btn_voltar_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
         self.ui.btn_voltar_pagina_consulta_geral_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
 
 
         ########################### NUTRICIONISTA ###########################
-        self.ui.btn_consulta_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
+        self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
         self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
         self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
 
 
         ########################### PSICOLOGA ###########################
-        self.ui.btn_consulta_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
+        self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
