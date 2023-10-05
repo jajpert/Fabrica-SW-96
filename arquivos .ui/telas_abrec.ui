@@ -18702,7 +18702,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>17</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -55598,7 +55598,7 @@ QPushButton:focus{outline:0}
 background-color: rgb(243, 185, 191);</string>
                             </property>
                             <property name="text">
-                             <string>CONSULTA</string>
+                             <string>ATENDIMENTO</string>
                             </property>
                             <property name="alignment">
                              <set>Qt::AlignCenter</set>
@@ -55951,7 +55951,7 @@ QPushButton:pressed{
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_74">
                                       <item>
-                                       <widget class="QRadioButton" name="radioButton_Consulta_as">
+                                       <widget class="QRadioButton" name="radioButton_atendimento_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -55959,7 +55959,7 @@ QPushButton:pressed{
                                          </font>
                                         </property>
                                         <property name="text">
-                                         <string>CONSULTA</string>
+                                         <string>ATENDIMENTO</string>
                                         </property>
                                        </widget>
                                       </item>
@@ -56128,7 +56128,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        </spacer>
                                       </item>
                                       <item>
-                                       <widget class="QLabel" name="label_relatorio_pagina_consulta_geral">
+                                       <widget class="QLabel" name="label_evolucao_pagina_consulta_geral">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
@@ -56136,12 +56136,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                          </font>
                                         </property>
                                         <property name="text">
-                                         <string>RELATÓRIO</string>
+                                         <string>EVOLUÇÃO</string>
                                         </property>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QTextEdit" name="input_relatorio_pagina_consulta_geral">
+                                       <widget class="QTextEdit" name="input_evolucao_pagina_consulta_geral">
                                         <property name="styleSheet">
                                          <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 15px;
@@ -56513,12 +56513,12 @@ QPushButton:focus{outline:0}</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Consulta/Retorno</string>
+                                       <string>Atendimento/Retorno</string>
                                       </property>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Relatorio</string>
+                                       <string>Evolução</string>
                                       </property>
                                      </column>
                                     </widget>
