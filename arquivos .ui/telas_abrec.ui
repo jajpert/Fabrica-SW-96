@@ -918,7 +918,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                       <number>0</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="btn_consulta_nutri">
+                      <widget class="QPushButton" name="btn_atendimento_nutri">
                        <property name="minimumSize">
                         <size>
                          <width>140</width>
@@ -940,7 +940,7 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                        </property>
                        <property name="text">
-                        <string>    CONSULTA</string>
+                        <string>ATENDIMENTO</string>
                        </property>
                        <property name="icon">
                         <iconset>
@@ -6568,7 +6568,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                       <number>0</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="btn_consulta_psi">
+                      <widget class="QPushButton" name="btn_atendimento_psi">
                        <property name="minimumSize">
                         <size>
                          <width>140</width>
@@ -6590,7 +6590,7 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                        </property>
                        <property name="text">
-                        <string>   CONSULTA</string>
+                        <string>ATENDIMENTO</string>
                        </property>
                        <property name="icon">
                         <iconset>
@@ -13382,7 +13382,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                       <number>0</number>
                      </property>
                      <item>
-                      <widget class="QPushButton" name="btn_consulta_fisio">
+                      <widget class="QPushButton" name="btn_atendimento_fisio">
                        <property name="minimumSize">
                         <size>
                          <width>140</width>
@@ -13404,7 +13404,7 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                        </property>
                        <property name="text">
-                        <string>    CONSULTA</string>
+                        <string>ATENDIMENTO</string>
                        </property>
                        <property name="icon">
                         <iconset>
@@ -18269,7 +18269,7 @@ QPushButton:focus{outline: 0}</string>
                           </widget>
                          </item>
                          <item>
-                          <widget class="QPushButton" name="btn_consulta_as">
+                          <widget class="QPushButton" name="btn_atendimento_as">
                            <property name="minimumSize">
                             <size>
                              <width>140</width>
@@ -18297,7 +18297,7 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                            </property>
                            <property name="text">
-                            <string>   CONSULTA</string>
+                            <string>ATENDIMENTO</string>
                            </property>
                            <property name="icon">
                             <iconset>
