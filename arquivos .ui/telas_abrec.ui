@@ -18702,11 +18702,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-<<<<<<< HEAD
-                      <number>16</number>
-=======
                       <number>17</number>
->>>>>>> main
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">

@@ -5,15 +5,9 @@ class DataBase():
         self.banco = banco
 
     def connect(self):
-<<<<<<< HEAD
         # 
         self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
         # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-=======
-        
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
->>>>>>> main
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
