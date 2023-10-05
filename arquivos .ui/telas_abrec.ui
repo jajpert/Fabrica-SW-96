@@ -4578,7 +4578,7 @@ QPushButton:focus{outline:0}</string>
                                   <number>14</number>
                                  </property>
                                  <property name="columnCount">
-                                  <number>4</number>
+                                  <number>5</number>
                                  </property>
                                  <attribute name="horizontalHeaderCascadingSectionResizes">
                                   <bool>true</bool>
@@ -4621,12 +4621,17 @@ QPushButton:focus{outline:0}</string>
                                  </column>
                                  <column>
                                   <property name="text">
+                                   <string>Idade</string>
+                                  </property>
+                                 </column>
+                                 <column>
+                                  <property name="text">
                                    <string>Consulta/Retorno</string>
                                   </property>
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Relatorio</string>
+                                   <string>Evolução</string>
                                   </property>
                                  </column>
                                 </widget>
