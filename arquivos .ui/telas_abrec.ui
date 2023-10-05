@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -18702,7 +18702,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>13</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -21409,7 +21409,64 @@ QPushButton:focus{outline: 0}</string>
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QVBoxLayout" name="verticalLayout_133">
+                            <layout class="QVBoxLayout" name="verticalLayout_491">
+                             <property name="spacing">
+                              <number>40</number>
+                             </property>
+                             <property name="leftMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="topMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="rightMargin">
+                              <number>0</number>
+                             </property>
+                             <property name="bottomMargin">
+                              <number>0</number>
+                             </property>
+                             <item>
+                              <widget class="QPushButton" name="btn_relatorio_participantes">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>700</width>
+                                 <height>154</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>700</width>
+                                 <height>154</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <family>Six Caps</family>
+                                 <pointsize>60</pointsize>
+                                </font>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="layoutDirection">
+                                <enum>Qt::RightToLeft</enum>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                               </property>
+                               <property name="text">
+                                <string>RELATÓRIO PARTICIPANTES</string>
+                               </property>
+                               <property name="iconSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>80</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
                              <item>
                               <widget class="QPushButton" name="btn_relatorio_pessoas">
                                <property name="minimumSize">
@@ -21443,6 +21500,48 @@ QPushButton:focus{outline: 0}</string>
                                </property>
                                <property name="text">
                                 <string>RELATÓRIO PESSOAS</string>
+                               </property>
+                               <property name="iconSize">
+                                <size>
+                                 <width>80</width>
+                                 <height>80</height>
+                                </size>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_relatorio_cursos_participantes">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>700</width>
+                                 <height>154</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>700</width>
+                                 <height>154</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <family>Six Caps</family>
+                                 <pointsize>60</pointsize>
+                                </font>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="layoutDirection">
+                                <enum>Qt::RightToLeft</enum>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}
+QPushButton:hover{background-color: hsl(6, 94%, 92%)}
+QPushButton:focus{outline: 0}</string>
+                               </property>
+                               <property name="text">
+                                <string>RELATÓRIO CURSOS E PARTICIPANTES</string>
                                </property>
                                <property name="iconSize">
                                 <size>
