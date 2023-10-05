@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -1296,7 +1296,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -3056,7 +3056,7 @@ QPushButton:focus{outline:0}</string>
 background-color: rgb(243, 185, 191);</string>
                         </property>
                         <property name="text">
-                         <string>CONSULTA</string>
+                         <string>ATENDIMENTO</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignCenter</set>
@@ -3994,7 +3994,7 @@ QPushButton:pressed{
                                    <number>0</number>
                                   </property>
                                   <item>
-                                   <widget class="QRadioButton" name="radioButton_Consulta_as_nutri">
+                                   <widget class="QRadioButton" name="radioButton_atendimento_as_nutri">
                                     <property name="font">
                                      <font>
                                       <family>Abel</family>
@@ -4002,7 +4002,7 @@ QPushButton:pressed{
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>CONSULTA</string>
+                                     <string>ATENDIMENTO</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -4230,7 +4230,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    <number>0</number>
                                   </property>
                                   <item>
-                                   <widget class="QLabel" name="label_relatorio_pagina_consulta_geral_nutri">
+                                   <widget class="QLabel" name="label_evolucao_pagina_consulta_geral_nutri">
                                     <property name="font">
                                      <font>
                                       <family>Abel</family>
@@ -4238,12 +4238,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>RELATÓRIO</string>
+                                     <string>EVOLUÇÃO</string>
                                     </property>
                                    </widget>
                                   </item>
                                   <item>
-                                   <widget class="QTextEdit" name="input_relatorio_pagina_consulta_geral_nutri">
+                                   <widget class="QTextEdit" name="input_evolucao_pagina_consulta_geral_nutri">
                                     <property name="maximumSize">
                                      <size>
                                       <width>16777215</width>
@@ -4626,7 +4626,7 @@ QPushButton:focus{outline:0}</string>
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Consulta/Retorno</string>
+                                   <string>Atendimento/Retorno</string>
                                   </property>
                                  </column>
                                  <column>
@@ -6940,7 +6940,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_7">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="page_principal_psi"/>
                  <widget class="QWidget" name="page_agenda_psi">
@@ -8688,7 +8688,7 @@ QPushButton:focus{outline:0}</string>
 background-color: rgb(243, 185, 191);</string>
                         </property>
                         <property name="text">
-                         <string>CONSULTA</string>
+                         <string>ATENDIMENTO</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignCenter</set>
@@ -9041,7 +9041,7 @@ QPushButton:pressed{
                                  </property>
                                  <layout class="QHBoxLayout" name="horizontalLayout_201">
                                   <item>
-                                   <widget class="QRadioButton" name="radioButton_Consulta_as_psi">
+                                   <widget class="QRadioButton" name="radioButton_atendimento_as_psi">
                                     <property name="font">
                                      <font>
                                       <family>Abel</family>
@@ -9049,7 +9049,7 @@ QPushButton:pressed{
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>CONSULTA</string>
+                                     <string>ATENDIMENTO</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -9218,7 +9218,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </spacer>
                                   </item>
                                   <item>
-                                   <widget class="QLabel" name="label_relatorio_pagina_consulta_geral_psi">
+                                   <widget class="QLabel" name="label_evolucao_pagina_consulta_geral_psi">
                                     <property name="font">
                                      <font>
                                       <family>Abel</family>
@@ -9226,12 +9226,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>RELATÓRIO</string>
+                                     <string>EVOLUÇÃO</string>
                                     </property>
                                    </widget>
                                   </item>
                                   <item>
-                                   <widget class="QTextEdit" name="input_relatorio_pagina_consulta_geral_psi">
+                                   <widget class="QTextEdit" name="input_evolucao_pagina_consulta_geral_psi">
                                     <property name="styleSheet">
                                      <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 15px;
@@ -9603,12 +9603,12 @@ QPushButton:focus{outline:0}</string>
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Consulta/Retorno</string>
+                                   <string>Atendimento/Retorno</string>
                                   </property>
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Relatorio</string>
+                                   <string>Evolução</string>
                                   </property>
                                  </column>
                                 </widget>
@@ -13754,7 +13754,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_11">
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_fisio"/>
                  <widget class="QWidget" name="page_relatorio_fisio">
@@ -16944,7 +16944,7 @@ QPushButton:focus{outline:0}</string>
 background-color: rgb(243, 185, 191);</string>
                         </property>
                         <property name="text">
-                         <string>CONSULTA</string>
+                         <string>ATENDIMENTO</string>
                         </property>
                         <property name="alignment">
                          <set>Qt::AlignCenter</set>
@@ -17297,7 +17297,7 @@ QPushButton:pressed{
                                  </property>
                                  <layout class="QHBoxLayout" name="horizontalLayout_181">
                                   <item>
-                                   <widget class="QRadioButton" name="radioButton_Consulta_as_fisio">
+                                   <widget class="QRadioButton" name="radioButton_atendimento_as_fisio">
                                     <property name="font">
                                      <font>
                                       <family>Abel</family>
@@ -17305,7 +17305,7 @@ QPushButton:pressed{
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>CONSULTA</string>
+                                     <string>ATENDIMENTO</string>
                                     </property>
                                    </widget>
                                   </item>
@@ -17474,7 +17474,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                    </spacer>
                                   </item>
                                   <item>
-                                   <widget class="QLabel" name="label_relatorio_pagina_consulta_geral_farm_2">
+                                   <widget class="QLabel" name="label_evolucao_pagina_consulta_geral_farm_2">
                                     <property name="font">
                                      <font>
                                       <family>Abel</family>
@@ -17482,12 +17482,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                      </font>
                                     </property>
                                     <property name="text">
-                                     <string>RELATÓRIO</string>
+                                     <string>EVOLUÇÃO</string>
                                     </property>
                                    </widget>
                                   </item>
                                   <item>
-                                   <widget class="QTextEdit" name="input_relatorio_pagina_consulta_geral_fisio">
+                                   <widget class="QTextEdit" name="input_relatorio_pagina_evolucao_geral_fisio">
                                     <property name="styleSheet">
                                      <string notr="true">background-color: rgb(255, 255, 255);
 border-radius: 15px;
@@ -17859,12 +17859,12 @@ QPushButton:focus{outline:0}</string>
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Consulta/Retorno</string>
+                                   <string>Atendimento/Retorno</string>
                                   </property>
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Relatorio</string>
+                                   <string>Evolução</string>
                                   </property>
                                  </column>
                                 </widget>
