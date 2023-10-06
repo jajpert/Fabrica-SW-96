@@ -479,7 +479,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nome_as.setText(nome_colaborador)
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.LoginAssistenteS()         
                 else:
                     print ("Usuário não encontrado")
@@ -491,7 +491,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nome_as.setText(nome_colaborador)
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.LoginFarm()        
                 else:
                     print ("Usuário não encontrado")
@@ -503,7 +503,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nome_as.setText(nome_colaborador)
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.LoginFisio()       
                 else:
                     print ("Usuário não encontrado")
@@ -515,7 +515,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nome_as.setText(nome_colaborador)
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.LoginNutri()       
                 else:
                     print ("Usuário não encontrado")
@@ -527,7 +527,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nome_as.setText(nome_colaborador)
+                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.LoginPsico() 
                          
                 else:
@@ -1983,13 +1983,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
         self.ui.input_clinica_pagina_consulta_geral.setText("")
-        self.ui.radioButton_Consulta_as.setCheckable(False)
-        self.ui.radioButton_Consulta_as.setCheckable(True)
+        self.ui.radioButton_atendimento_as.setCheckable(False)
+        self.ui.radioButton_atendimento_as.setCheckable(True)
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
         self.ui.input_hora_consulta_as.setTime(QTime(00,00))
-        self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
+        self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
 
     def limparCamposAgenda(self):
         self.ui.input_cpf_agendamento_as.setText("")
@@ -2208,7 +2208,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.puxar_consulta()
 
     def cadastrar_consulta(self):
-        if self.ui.radioButton_Consulta_as.isChecked():
+        if self.ui.radioButton_atendimento_as.isChecked():
             situacao = "Consulta"
         if self.ui.radioButton_Retorno_as.isChecked():
             situacao = "Retorno"
@@ -2218,7 +2218,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         hora_bruta = self.ui.input_hora_consulta_as.text()
 
-        relatorio = self.ui.input_relatorio_pagina_consulta_geral.toPlainText()
+        relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
 
