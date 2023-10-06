@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         # 
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -678,6 +678,11 @@ class DataBase():
     def atualizar_usuario(self,endereco,pessoa,usuario):
         id_endereco_usuario = str(endereco[0])
         id_matricula_usuario = str(usuario[16])
+        id_matricula_pessoa = str(pessoa[0])
+        print("Pessoa: ", pessoa)
+        print("id pessoa: ", id_matricula_pessoa)
+        print("usuario: ", usuario)
+        print("id usuario: ", id_matricula_usuario)
         self.connect()
         try:
             self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
@@ -690,7 +695,7 @@ class DataBase():
             self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}',rg = '{pessoa[4]}', data_emissao = '{pessoa[5]}',
                                 orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', status = '{pessoa[8]}', telefone = '{pessoa[9]}', 
                                 email = '{pessoa[10]}', escolaridade = '{pessoa[11]}', estado_civil = '{pessoa[12]}',
-                                pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}', outras_deficiencias = '{pessoa[15]}' WHERE id_matricula = '{pessoa[0]}';  """)
+                                pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}', outras_deficiencias = '{pessoa[15]}' WHERE id_matricula = '{id_matricula_pessoa}';  """)
             self.conn.commit()
 
 
@@ -727,7 +732,7 @@ class DataBase():
             self.conn.commit()
             
             self.cursor.execute(f"""UPDATE colaborador SET pis = '{colaborador[0]}', data_admissao = '{colaborador[1]}', salario = '{colaborador[2]}', cargo = '{colaborador[3]}',
-                                periodo = '{colaborador[4]}', login = '{colaborador[5]}', senha = '{colaborador[6]}', perfil = '{colaborador[7]}' WHERE id_matricula = '{id_matricula_pessoa}';""")
+                                periodo = '{colaborador[4]}', login = '{colaborador[5]}', senha = '{colaborador[6]}' WHERE id_matricula = '{id_matricula_pessoa}';""")
             self.conn.commit()
 
             return "OK","Colaborador atualizado com sucesso!!"

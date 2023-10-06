@@ -18085,42 +18085,38 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,0,0,0">
-                   <property name="spacing">
-                    <number>16</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_6">
                    <item>
-                    <widget class="QPushButton" name="btn_alterar_foto_senha_as">
+                    <widget class="QLabel" name="label_4">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_alterar_foto_colab_as_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>140</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Abel</family>
+                       <pointsize>18</pointsize>
+                      </font>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
+                      <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
+                      <string>Alterar Foto</string>
                      </property>
                     </widget>
                    </item>
@@ -18702,7 +18698,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>17</number>
+                      <number>16</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -44754,7 +44750,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>3</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">

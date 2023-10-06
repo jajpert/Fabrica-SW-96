@@ -19497,7 +19497,14 @@ class Ui_MainWindow(object):
         self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.verticalLayout_258.addWidget(self.input_alterar_id_usuario_as)
+        self.input_alterar_id_matricula_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_matricula_usuario_as.setObjectName(u"input_alterar_id_matricula_usuario_as")
+        self.input_alterar_id_matricula_usuario_as.setEnabled(False)
+        self.input_alterar_id_matricula_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+
+        self.verticalLayout_258.addWidget(self.input_alterar_id_matricula_usuario_as)
 
         self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
         self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
