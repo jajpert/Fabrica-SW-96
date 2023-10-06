@@ -7,7 +7,9 @@ class DataBase():
     def connect(self):
         
         #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -491,6 +493,25 @@ class DataBase():
                                 INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
                                 LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
                                 usuario.id_usuario LIKE '{id_usuario}';
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
+    def buscar_participantes_curso(self,):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT nome, cpf, telefone, email, nome_curso_evento, tipo_curso, descricao
+                                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
+                                LEFT JOIN curso_evento on curso_evento.id_curso_evento = participantes.id_evento;
                                 """)
             result = self.cursor.fetchall()
             return result

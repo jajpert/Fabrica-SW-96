@@ -15062,6 +15062,202 @@ class Ui_MainWindow(object):
         self.verticalLayout_1231.addWidget(self.frame_1692)
 
         self.stackedWidget_2.addWidget(self.page_cadastrar_participante)
+
+        self.page_relatorios_aluno_curso = QWidget()
+        self.page_relatorios_aluno_curso.setObjectName(u"page_relatorios_aluno_curso")
+        self.verticalLayout_503 = QVBoxLayout(self.page_relatorios_aluno_curso)
+        self.verticalLayout_503.setSpacing(0)
+        self.verticalLayout_503.setObjectName(u"verticalLayout_503")
+        self.verticalLayout_503.setContentsMargins(0, 0, 0, 0)
+        self.frame_736 = QFrame(self.page_relatorios_aluno_curso)
+        self.frame_736.setObjectName(u"frame_736")
+        self.frame_736.setFrameShape(QFrame.StyledPanel)
+        self.frame_736.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_492 = QVBoxLayout(self.frame_736)
+        self.verticalLayout_492.setSpacing(0)
+        self.verticalLayout_492.setObjectName(u"verticalLayout_492")
+        self.verticalLayout_492.setContentsMargins(0, 0, 0, 0)
+        self.label_titulo_relatorio_aluno_curso = QLabel(self.frame_736)
+        self.label_titulo_relatorio_aluno_curso.setObjectName(u"label_titulo_relatorio_aluno_curso")
+        self.label_titulo_relatorio_aluno_curso.setMinimumSize(QSize(0, 0))
+        self.label_titulo_relatorio_aluno_curso.setMaximumSize(QSize(1842, 61))
+        self.label_titulo_relatorio_aluno_curso.setFont(font1)
+        self.label_titulo_relatorio_aluno_curso.setStyleSheet(u"color: #EC848C;background-color: rgb(243, 185, 191);")
+        self.label_titulo_relatorio_aluno_curso.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_492.addWidget(self.label_titulo_relatorio_aluno_curso)
+
+        self.frame_15 = QFrame(self.frame_736)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_493 = QVBoxLayout(self.frame_15)
+        self.verticalLayout_493.setSpacing(0)
+        self.verticalLayout_493.setObjectName(u"verticalLayout_493")
+        self.verticalLayout_493.setContentsMargins(0, 0, 0, 0)
+        self.frame_16 = QFrame(self.frame_15)
+        self.frame_16.setObjectName(u"frame_16")
+        self.frame_16.setFrameShape(QFrame.StyledPanel)
+        self.frame_16.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_493.addWidget(self.frame_16)
+
+        self.frame_17 = QFrame(self.frame_15)
+        self.frame_17.setObjectName(u"frame_17")
+        self.frame_17.setFrameShape(QFrame.StyledPanel)
+        self.frame_17.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_246 = QHBoxLayout(self.frame_17)
+        self.horizontalLayout_246.setSpacing(0)
+        self.horizontalLayout_246.setObjectName(u"horizontalLayout_246")
+        self.horizontalLayout_246.setContentsMargins(0, 0, 0, 0)
+        self.frame_42 = QFrame(self.frame_17)
+        self.frame_42.setObjectName(u"frame_42")
+        self.frame_42.setFrameShape(QFrame.StyledPanel)
+        self.frame_42.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_494 = QVBoxLayout(self.frame_42)
+        self.verticalLayout_494.setObjectName(u"verticalLayout_494")
+        self.horizontalSpacer_3 = QSpacerItem(54, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.verticalLayout_494.addItem(self.horizontalSpacer_3)
+
+
+        self.horizontalLayout_246.addWidget(self.frame_42)
+
+        self.frame_26 = QFrame(self.frame_17)
+        self.frame_26.setObjectName(u"frame_26")
+        self.frame_26.setFrameShape(QFrame.StyledPanel)
+        self.frame_26.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_495 = QVBoxLayout(self.frame_26)
+        self.verticalLayout_495.setObjectName(u"verticalLayout_495")
+        self.input_TableWidget_relatorio_aluno_curso = QTableWidget(self.frame_26)
+        if (self.input_TableWidget_relatorio_aluno_curso.columnCount() < 7):
+            self.input_TableWidget_relatorio_aluno_curso.setColumnCount(7)
+        __qtablewidgetitem126 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(0, __qtablewidgetitem126)
+        __qtablewidgetitem127 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(1, __qtablewidgetitem127)
+        __qtablewidgetitem128 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(2, __qtablewidgetitem128)
+        __qtablewidgetitem129 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(3, __qtablewidgetitem129)
+        __qtablewidgetitem130 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(4, __qtablewidgetitem130)
+        __qtablewidgetitem131 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(5, __qtablewidgetitem131)
+        __qtablewidgetitem132 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalHeaderItem(6, __qtablewidgetitem132)
+        if (self.input_TableWidget_relatorio_aluno_curso.rowCount() < 14):
+            self.input_TableWidget_relatorio_aluno_curso.setRowCount(14)
+        self.input_TableWidget_relatorio_aluno_curso.setObjectName(u"input_TableWidget_relatorio_aluno_curso")
+        self.input_TableWidget_relatorio_aluno_curso.setFont(font)
+        self.input_TableWidget_relatorio_aluno_curso.setLayoutDirection(Qt.LeftToRight)
+        self.input_TableWidget_relatorio_aluno_curso.setAutoFillBackground(False)
+        self.input_TableWidget_relatorio_aluno_curso.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
+        self.input_TableWidget_relatorio_aluno_curso.setLineWidth(2222)
+        self.input_TableWidget_relatorio_aluno_curso.setMidLineWidth(10)
+        self.input_TableWidget_relatorio_aluno_curso.setAlternatingRowColors(True)
+        self.input_TableWidget_relatorio_aluno_curso.setSelectionMode(QAbstractItemView.MultiSelection)
+        self.input_TableWidget_relatorio_aluno_curso.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.input_TableWidget_relatorio_aluno_curso.setHorizontalScrollMode(QAbstractItemView.ScrollPerItem)
+        self.input_TableWidget_relatorio_aluno_curso.setGridStyle(Qt.SolidLine)
+        self.input_TableWidget_relatorio_aluno_curso.setSortingEnabled(True)
+        self.input_TableWidget_relatorio_aluno_curso.setWordWrap(True)
+        self.input_TableWidget_relatorio_aluno_curso.setRowCount(14)
+        self.input_TableWidget_relatorio_aluno_curso.setColumnCount(7)
+        self.input_TableWidget_relatorio_aluno_curso.horizontalHeader().setCascadingSectionResizes(True)
+        self.input_TableWidget_relatorio_aluno_curso.horizontalHeader().setDefaultSectionSize(130)
+        self.input_TableWidget_relatorio_aluno_curso.horizontalHeader().setStretchLastSection(True)
+        self.input_TableWidget_relatorio_aluno_curso.verticalHeader().setVisible(False)
+        self.input_TableWidget_relatorio_aluno_curso.verticalHeader().setDefaultSectionSize(50)
+
+        self.verticalLayout_495.addWidget(self.input_TableWidget_relatorio_aluno_curso)
+        self.horizontalLayout_246.addWidget(self.frame_26)
+
+        self.frame_50 = QFrame(self.frame_17)
+        self.frame_50.setObjectName(u"frame_50")
+        self.frame_50.setFrameShape(QFrame.StyledPanel)
+        self.frame_50.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_496 = QVBoxLayout(self.frame_50)
+        self.verticalLayout_496.setObjectName(u"verticalLayout_496")
+        self.verticalSpacer_5 = QSpacerItem(20, 335, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_496.addItem(self.verticalSpacer_5)
+
+        self.btn_gerar_excel_relatorio_aluno_curso = QPushButton(self.frame_50)
+        self.btn_gerar_excel_relatorio_aluno_curso.setObjectName(u"btn_gerar_excel_relatorio_aluno_curso")
+        sizePolicy3.setHeightForWidth(self.btn_gerar_excel_relatorio_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.btn_gerar_excel_relatorio_aluno_curso.setSizePolicy(sizePolicy3)
+        self.btn_gerar_excel_relatorio_aluno_curso.setMinimumSize(QSize(125, 40))
+        self.btn_gerar_excel_relatorio_aluno_curso.setMaximumSize(QSize(40, 40))
+        self.btn_gerar_excel_relatorio_aluno_curso.setFont(font14)
+        self.btn_gerar_excel_relatorio_aluno_curso.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_gerar_excel_relatorio_aluno_curso.setIcon(icon14)
+
+        self.verticalSpacer_4 = QSpacerItem(20, 334, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_496.addItem(self.verticalSpacer_4)
+
+
+        self.horizontalLayout_246.addWidget(self.frame_50)
+
+        self.frame_27 = QFrame(self.frame_17)
+        self.frame_27.setObjectName(u"frame_27")
+        self.frame_27.setFrameShape(QFrame.StyledPanel)
+        self.frame_27.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_248 = QHBoxLayout(self.frame_27)
+        self.horizontalLayout_248.setObjectName(u"horizontalLayout_248")
+        self.horizontalSpacer_4 = QSpacerItem(54, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_248.addItem(self.horizontalSpacer_4)
+
+
+        self.horizontalLayout_246.addWidget(self.frame_27)
+
+        self.horizontalLayout_246.setStretch(0, 1)
+        self.horizontalLayout_246.setStretch(1, 20)
+        self.horizontalLayout_246.setStretch(2, 2)
+        self.horizontalLayout_246.setStretch(3, 1)
+
+        self.verticalLayout_493.addWidget(self.frame_17)
+
+        self.frame_18 = QFrame(self.frame_15)
+        self.frame_18.setObjectName(u"frame_18")
+        self.frame_18.setFrameShape(QFrame.StyledPanel)
+        self.frame_18.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_247 = QHBoxLayout(self.frame_18)
+        self.horizontalLayout_247.setObjectName(u"horizontalLayout_247")
+        self.btn_voltar_pagina_relatorio_aluno_curso = QPushButton(self.frame_18)
+        self.btn_voltar_pagina_relatorio_aluno_curso.setObjectName(u"btn_voltar_pagina_relatorio_aluno_curso")
+        self.btn_voltar_pagina_relatorio_aluno_curso.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_pagina_relatorio_aluno_curso.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_pagina_relatorio_aluno_curso.setFont(font7)
+        self.btn_voltar_pagina_relatorio_aluno_curso.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_pagina_relatorio_aluno_curso.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_247.addWidget(self.btn_voltar_pagina_relatorio_aluno_curso)
+
+        self.horizontalSpacer_11 = QSpacerItem(1711, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_247.addItem(self.horizontalSpacer_11)
+
+
+        self.verticalLayout_493.addWidget(self.frame_18)
+
+        self.verticalLayout_493.setStretch(0, 1)
+        self.verticalLayout_493.setStretch(1, 10)
+        self.verticalLayout_493.setStretch(2, 1)
+
+        self.verticalLayout_492.addWidget(self.frame_15)
+
+
+        self.verticalLayout_503.addWidget(self.frame_736)
+
+        self.stackedWidget_2.addWidget(self.page_relatorios_aluno_curso)
+
         self.page_relatorios_as = QWidget()
         self.page_relatorios_as.setObjectName(u"page_relatorios_as")
         self.page_relatorios_as.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -22435,6 +22631,26 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_participante_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
         self.btn_excel_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
+        self.label_titulo_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Aluno", None))
+        ___qtablewidgetitem108 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(0)
+        ___qtablewidgetitem108.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem109 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(1)
+        ___qtablewidgetitem109.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem110 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(2)
+        ___qtablewidgetitem110.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem111 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(3)
+        ___qtablewidgetitem111.setText(QCoreApplication.translate("MainWindow", u"Email", None));
+        ___qtablewidgetitem112 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(4)
+        ___qtablewidgetitem112.setText(QCoreApplication.translate("MainWindow", u"Curso", None));
+        ___qtablewidgetitem113 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(5)
+        ___qtablewidgetitem113.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
+        ___qtablewidgetitem114 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(6)
+        ___qtablewidgetitem114.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
+#if QT_CONFIG(tooltip)
+        self.input_TableWidget_relatorio_aluno_curso.setToolTip("")
+#endif // QT_CONFIG(tooltip)
+        self.btn_gerar_excel_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_voltar_pagina_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
         self.label_inicio_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
