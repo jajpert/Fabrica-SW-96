@@ -20,6 +20,7 @@ import sys
 from PIL import Image
 import numpy as np
 import openpyxl
+import imghdr
 import os
 
 
@@ -69,8 +70,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
     def Tirar_foto_Usuario(self):
         
         vid = cv2.VideoCapture(0)
-        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_usuario}.jpg")
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/vboxuser/Pictures/Foto_{self.nome_usuario}.jpg")
+        # StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_usuario == "":
@@ -91,9 +92,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
                         break
                     
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
-                        # directory = "C:/Users/vboxuser/Pictures/"
-                        
+                        # directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
+                        directory = "C:/Users/vboxuser/Pictures/"
                         
                         if not os.path.exists(directory):
                             os.makedirs(directory)
@@ -129,7 +129,30 @@ class DialogTirarImportarFotoUsuario(QDialog):
                             elif resposta == QMessageBox.No:
                                 cv2.destroyAllWindows()
                                 break
-            
+                            
+                        image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                        image_pil.save(StoreFilePath)
+                        
+                        cv2.waitKey(0)
+                        cv2.destroyAllWindows()
+                        
+                        tupla_foto = (self.nome_usuario, StoreFilePath, self.id_usuario)
+                        result = self.db.tirar_foto_usuario(tupla_foto) 
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!")
+                        msg.exec()
+                        
+                        print("Imagem salva em:", StoreFilePath)
+                        cv2.destroyAllWindows()
+                        break
+                    
+                    elif cv2.waitKey(1) & 0xFF == ord('x'):
+                        cv2.destroyAllWindows()
+                        break
+                    
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table")
             
@@ -140,7 +163,7 @@ class DialogTirarImportarFotoUsuario(QDialog):
         
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
-        format =  ("*.png *.jpg *.jpeg *.gif *.bmp *.ico")
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
         print(self.nome_usuario)
         
         if self.nome_usuario == "":
@@ -149,39 +172,72 @@ class DialogTirarImportarFotoUsuario(QDialog):
             msg.setWindowTitle("Insira um Nome")
             msg.setText("Insira um nome para salvar a imagem")
             msg.exec()
+            return
             
         else:
             file_dialog = QFileDialog()
-            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
             caminho_importado = file_path
+            formato_importado = imghdr.what(caminho_importado)
+            tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
+            result = self.db.tirar_foto_usuario(tupla_foto)
             
-            if caminho_importado != format:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Imagem Salva")
+            msg.setText("Imagem Salva com Sucesso!!!")
+            msg.exec()
+            
+            if formato_importado not in format:
+
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
-                msg.setWindowTitle("Formato Incorreto")
-                msg.setText("Formato incorreto selecione apenas imagens")
-                msg.exec()
-
-                file_dialog = QFileDialog()
-                file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
-                caminho_importado = file_path
-
-            else:
-                if caminho_importado == "":
-                    msg = QMessageBox()
-                    msg.setIcon(QMessageBox.Information)
-                    msg.setWindowTitle("Imagem Não Selecionada")
-                    msg.setText("Nenhuma imagem foi selecionada")
-                    msg.exec()
-                else:  
-                    tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
-                    result = self.db.tirar_foto_usuario(tupla_foto)
+                msg.setWindowTitle("Erro ao importar")
+                msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                resposta = msg.exec()
+                
+                if resposta == QMessageBox.Yes:
+                    file_dialog = QFileDialog()
+                    file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                    caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
                     
-                    msg = QMessageBox()
-                    msg.setIcon(QMessageBox.Information)
-                    msg.setWindowTitle("Imagem Salva")
-                    msg.setText("Imagem Salva com Sucesso!!!")
-                    msg.exec()
+                    if formato_importado not in format:
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
+                        
+                    if formato_importado in format:
+                        
+                        tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
+                        result = self.db.tirar_foto_usuario(tupla_foto)
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!!")
+                        msg.exec() 
+                          
+                if resposta == QMessageBox.No:
+                    return
+
+                
+                
+            else:
+                return
+                # if formato_importado in format:
+                #     msg = QMessageBox()
+                #     msg.setIcon(QMessageBox.Information)
+                #     msg.setWindowTitle("Imagem Não Selecionada")
+                #     msg.setText("Nenhuma imagem foi selecionada")
+                #     msg.exec()
+                #     print(caminho_importado)
+                
                 
 
 
@@ -199,7 +255,8 @@ class DialogTirarImportarFotoColaborador(QDialog):
     def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
         # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_colab}.jpg")
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_colab}.jpg")
+        StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
+        # StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_colab == "":
@@ -220,12 +277,12 @@ class DialogTirarImportarFotoColaborador(QDialog):
                         break
                         
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
-                        # directory = "C:/Users/vboxuser/Pictures/"
+                        # directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
+                        directory = "C:/Users/vboxuser/Desktop/"
                         
                         if not os.path.exists(directory):
                             os.makedirs(directory)
-                            
+
                         if os.path.exists(StoreFilePath):
                             msg = QMessageBox()
                             msg.setIcon(QMessageBox.Information)
@@ -233,11 +290,13 @@ class DialogTirarImportarFotoColaborador(QDialog):
                             msg.setText("Imagem já existe. Deseja sobrescrever?")
                             msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
                             resposta = msg.exec()
-
+                            
                             if resposta == QMessageBox.Yes:
+                                
                                 image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
                                 image_pil.save(StoreFilePath)
                                 
+                            
                                 cv2.waitKey(0)
                                 cv2.destroyAllWindows()
                                 
@@ -249,7 +308,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
                                 msg.setWindowTitle("Imagem Salva")
                                 msg.setText("Imagem Salva com Sucesso!!")
                                 msg.exec()
-                                
+                                    
                                 print("Imagem salva em:", StoreFilePath)
                                 cv2.destroyAllWindows()
                                 break
@@ -257,7 +316,26 @@ class DialogTirarImportarFotoColaborador(QDialog):
                             elif resposta == QMessageBox.No:
                                 cv2.destroyAllWindows()
                                 break
+                            
+                        image_pil = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+                        image_pil.save(StoreFilePath)
                         
+                        tupla_foto = (self.nome_colab, StoreFilePath, self.id_colaborador)
+                        result = self.db.tirar_foto_colaborador(tupla_foto) 
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!")
+                        msg.exec()
+                        
+                        print("Imagem salva em:", StoreFilePath)
+                        cv2.destroyAllWindows()
+                        break
+                    
+                    elif cv2.waitKey(1) & 0xFF == ord('x'):
+                        cv2.destroyAllWindows()
+                        break
         except mysql.connector.Error as error:
             print("Failed inserting BLOB data into MySQL table {}".format(error))
         
@@ -270,8 +348,8 @@ class DialogTirarImportarFotoColaborador(QDialog):
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
 
-        format =  ("*.png *.jpg *.jpeg *.gif *.bmp *.ico")
-
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
         if self.nome_colab == "":
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
@@ -283,7 +361,10 @@ class DialogTirarImportarFotoColaborador(QDialog):
         else:
             file_path, _ = QFileDialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
             caminho_importado = file_path
-            if caminho_importado != format:
+            formato_importado = imghdr.what(caminho_importado)
+            print(formato_importado)
+            
+            if formato_importado not in format:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
                 msg.setWindowTitle("Formato Incorreto")
@@ -296,34 +377,51 @@ class DialogTirarImportarFotoColaborador(QDialog):
                     file_dialog = QFileDialog()
                     file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/Imagens_Banco_Teste/", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
                     caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
 
-                    if caminho_importado == "":
+                    if formato_importado not in format:
                         msg = QMessageBox()
                         msg.setIcon(QMessageBox.Information)
-                        msg.setWindowTitle("Imagem Não Selecionada")
-                        msg.setText("Nenhuma imagem foi selecionada")
-                        msg.exec()
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
 
-                    if caminho_importado == format:
+                    if formato_importado in format:
+                        
                         tupla_foto = (self.nome_colab, caminho_importado, self.id_colaborador)
-                        result = self.db.tirar_foto_colaborador(tupla_foto) 
+                        result = self.db.tirar_foto_colaborador(tupla_foto)
                         
                         msg = QMessageBox()
                         msg.setIcon(QMessageBox.Information)
                         msg.setWindowTitle("Imagem Salva")
                         msg.setText("Imagem Salva com Sucesso!!!")
                         msg.exec()
-                    else:
-                        msg = QMessageBox()
-                        msg.setIcon(QMessageBox.Information)
-                        msg.setWindowTitle("Formato incorreto")
-                        msg.setText("Formato Incorreto")
-                        msg.exec()
                         
                     
-                elif resposta == QMessageBox.No:
-                    return
+                    if resposta == QMessageBox.No:
+                        return
 
+            else:
+                if formato_importado in format:
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setWindowTitle("Imagem Não Selecionada")
+                    msg.setText("Nenhuma imagem foi selecionada")
+                    msg.exec()
+                    return
+                
+                else:  
+                    tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
+                    result = self.db.tirar_foto_usuario(tupla_foto)
+                    
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setWindowTitle("Imagem Salva")
+                    msg.setText("Imagem Salva com Sucesso!!!")
+                    msg.exec()
+                    print(caminho_importado)
 
     
 
@@ -1690,12 +1788,53 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def AlterarFotoUsuario(self):
         nome_usua = self.ui.input_alterar_nome_usuario_as.text()
         id_foto = self.ui.input_id_foto_alterar_usuario_as.text()
+        
         options = QFileDialog.Options()
         options |= QFileDialog.ReadOnly
+        
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
         file_path, _ = QFileDialog.getOpenFileName(self, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
         caminho_importado = file_path
+        formato_importado = imghdr.what(caminho_importado)
+        
+        if formato_importado not in format:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro ao importar")
+            msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+            msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+            resposta = msg.exec()
+                
+            if resposta == QMessageBox.Yes:
+                file_dialog = QFileDialog()
+                file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                caminho_importado = file_path
+                formato_importado = imghdr.what(caminho_importado)
+                print(formato_importado)
+                
+                if formato_importado not in format:
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setWindowTitle("Erro ao importar")
+                    msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                    msg.exec() 
+                    return
+                    
+                if formato_importado in format:
+                    
+                    tupla_foto = (id_foto, nome_usua, caminho_importado)
+                    result = self.db.alterar_foto_usuario(tupla_foto) 
+                    
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setWindowTitle("Imagem Salva")
+                    msg.setText("Imagem Salva com Sucesso!!!")
+                    msg.exec()
+                    
         tupla_foto = (id_foto, nome_usua, caminho_importado)
         result = self.db.alterar_foto_usuario(tupla_foto) 
+        
         original_image = cv2.imread(caminho_importado)
 
         desired_size = (240, 240)
