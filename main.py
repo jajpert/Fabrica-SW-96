@@ -415,6 +415,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
+        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
@@ -1988,6 +1989,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
 
     def limparCamposConsulta(self):
+        self.ui.input_cpf_pagina_consulta_geral.setText("")
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
         self.ui.input_clinica_pagina_consulta_geral.setText("")
@@ -1996,10 +1998,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
-        self.ui.input_hora_consulta_as.setText("")
+        self.ui.input_hora_consulta_as.setTime(QTime(00,00))
         self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
 
     def limparCamposAgenda(self):
+        self.ui.input_cpf_agendamento_as.setText("")
         self.ui.input_nome_agendamento_as.setText("")
         self.ui.input_telefone_agendamento_as.setText("")
         self.ui.input_clinica_agendamento_as.setText("")
@@ -2210,7 +2213,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-        self.ui.input_hora_consulta_as.setText(str(dados[5]))
+        hora  = str(dados[5]).split(":")
+        self.ui.input_hora_consulta_as.setTime(QTime(int(hora[0]),int(hora[1])))
         self.puxar_consulta()
 
     def cadastrar_consulta(self):
@@ -2232,14 +2236,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
-        self.limparCamposConsulta()
-        self.puxar_consulta()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Cadastro Consulta")
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
+        
+        self.limparCamposConsulta()
+        self.puxar_consulta()
 
     def puxar_consulta(self):
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
