@@ -613,8 +613,6 @@ class DataBase():
         except Exception as err:
             return "ERRO",str(err)
 
-
-
     def alterar_usuario_consulta_as(self, campo):
         self.connect()
         try:
@@ -644,17 +642,6 @@ class DataBase():
         except Exception as err:
             return "ERRO",str(err)
 
-    def deletar_consulta_relatorio_psi(self,id_consulta):
-        self.connect()
-        try:
-            self.cursor.execute(
-                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
-            )
-            self.conn.commit()
-            return "OK","Cadastro excluído com sucesso!"
-
-        except Exception as err:
-            return "ERRO",str(err)
 
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
         id_matricula_cuidador = str(cuidador[2])
