@@ -499,6 +499,20 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def cadastro_consulta_psi(self,consulta):
+        self.connect()
+        try:
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
+            self.cursor.execute('INSERT INTO consulta(situacao,data,hora,observacao,id_usuario) VALUES (%s,%s,%s,%s,%s)', args)
+            self.conn.commit()
+            return "Cadastrado com Sucesso!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
     def buscar_info_consulta(self,id_usuario):
         self.connect()
         try:
@@ -569,7 +583,38 @@ class DataBase():
 
         finally:
             self.close_connection()
-            
+
+    def alterar_usuario_consulta_psi(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE consulta SET
+                                     data = '{campo[1]}',
+                                     observacao = '{campo[3]}'
+                                     WHERE id_consulta = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
+    
+    def deletar_consulta_relatorio_psi(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+
+
     def alterar_usuario_consulta_as(self, campo):
         self.connect()
         try:
@@ -599,6 +644,17 @@ class DataBase():
         except Exception as err:
             return "ERRO",str(err)
 
+    def deletar_consulta_relatorio_psi(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            return "ERRO",str(err)
 
     def atualizar_cuidador (self,cuidador,pessoa,endereco):
         id_matricula_cuidador = str(cuidador[2])

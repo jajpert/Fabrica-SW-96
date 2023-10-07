@@ -191,6 +191,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_cuidador_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_colaborador_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_consulta_geral.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_consulta_geral_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
 
         self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
@@ -296,6 +297,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -414,8 +416,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
+        self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.puxar_consulta_psi)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.buscar_dados_consulta_psi)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
@@ -1992,13 +1995,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
         self.ui.input_clinica_pagina_consulta_geral.setText("")
-        self.ui.radioButton_Consulta_as.setCheckable(False)
-        self.ui.radioButton_Consulta_as.setCheckable(True)
+        self.ui.radioButton_atendimento_as.setCheckable(False)
+        self.ui.radioButton_atendimento_as.setCheckable(True)
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
         self.ui.input_hora_consulta_as.setText("")
-        self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
+        self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
+
+    def limparCamposConsulta_psi(self):
+        self.ui.input_nome_pagina_consulta_geral_psi.setText("")
+        self.ui.input_contato_pagina_consulta_geral_psi.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
+        self.ui.radioButton_atendimento_as_psi.setCheckable(False)
+        self.ui.radioButton_atendimento_as_psi.setCheckable(True)
+        self.ui.radioButton_Retorno_as_psi.setCheckable(False)
+        self.ui.radioButton_Retorno_as_psi.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_consulta_as_psi.setText("")
+        self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
 
     def limparCamposAgenda(self):
         self.ui.input_nome_agendamento_as.setText("")
@@ -2244,7 +2259,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         hora_bruta = self.ui.input_hora_consulta_as.text()
 
-        relatorio = self.ui.input_relatorio_pagina_consulta_geral.toPlainText()
+        relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
 
@@ -2261,7 +2276,36 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
 
+    def cadastrar_consulta_psi(self):
+        if self.ui.radioButton_atendimento_as_psi.isChecked():
+            situacao = "Consulta"
+        if self.ui.radioButton_Retorno_as_psi.isChecked():
+            situacao = "Retorno"
+
+        data = self.ui.input_hora_consulta_as_psi.text()
+        data_consulta = "-".join(data.split("/")[::-1])
+
+        hora_bruta = self.ui.input_hora_consulta_as_psi.text()
+
+        relatorio = self.ui.input_evolucao_pagina_consulta_geral_psi.toPlainText()
+
+        id_usuario = self.ui.input_id_usuario_consulta_psi.text()
+
+        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
+
+        result = []
+        result = self.db.cadastro_consulta_psi(tupla_consulta_psi)
+        self.limparCamposConsulta_psi()
+        self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Consulta")
+        msg.setText("Consulta Cadastrada com sucesso!")
+        msg.exec()
+
     def puxar_consulta_psi(self):
+
         id_usuario = self.ui.input_id_usuario_consulta_psi.text()
         result = self.db.buscar_info_consulta_psi(id_usuario)
         self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
@@ -2271,6 +2315,38 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
 
+    def alterar_usuario_consulta_psi(self,campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral_psi.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral_psi.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral_psi.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+        for emp in update_dados:
+           res = self.db.alterar_usuario_consulta_psi(tuple(emp))
+
+        self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Consulta Alterada com sucesso!")
+        msg.exec()
+
+
+    def excluir_usuario_consulta_psi (self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_psi.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_consulta_relatorio_psi(id_consulta)
+
+        self.puxar_consulta()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excluir Consulta")
+        msg.setText("Consulta Excluida com sucesso!")
+        msg.exec()
 
 
     def puxar_consulta(self):
