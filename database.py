@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -28,6 +28,21 @@ class DataBase():
 
         finally:
             self.close_connection()
+    
+    def select_agendamentos_psi(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
 
     def select_pessoa(self):
         self.connect()
@@ -897,6 +912,37 @@ class DataBase():
             self.conn.close()
             return ("Conexão encerrada com Sucesso!!!")
         
+
+    def cadastro_agendamento_psi(self, agendamento):
+        self.connect()
+        try:
+            args = (1, agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+    
+            self.conn.commit()
+            return "OK","Cadastro realizado com sucesso!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+    def alterar_agendamento_psi(self, campo):
+        self.connect()
+        
+        try:
+            self.cursor.execute(f""" UPDATE agendamento SET
+                                     data = '{campo[1]}',
+                                     hora = '{campo[2]}',
+                                     anotacao = '{campo[5]}'
+                                     WHERE id_agendamento = '{campo[0]}';
+            """)
+            
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")    
         
     def buscar_id_matricula_area_sigilosa(self,id_matricula):
         self.conn()
