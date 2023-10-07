@@ -415,6 +415,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.puxar_consulta_psi)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
@@ -2195,6 +2196,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
 
+    def buscar_dados_consulta_psi(self):
+        cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
+        dados = self.db.buscar_consulta_psi(cpf)
+        self.ui.input_id_usuario_consulta_psi.setText(str(dados[0]))
+        self.ui.input_id_usuario_consulta_psi.hide()
+        self.ui.input_nome_pagina_consulta_geral_psi.setText(dados[1])
+        self.ui.input_contato_pagina_consulta_geral_psi.setText(dados[2])
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText(dados[3])
+        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(dados[4]))
+        self.ui.input_hora_consulta_as_psi.setText(str(dados[5]))
+        self.puxar_consulta_psi()
+
+
     def buscar_dados_consulta(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral.text()
         cpf = ''
@@ -2214,7 +2234,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.puxar_consulta()
 
     def cadastrar_consulta(self):
-        if self.ui.radioButton_Consulta_as.isChecked():
+        if self.ui.radioButton_atendimento_as.isChecked():
             situacao = "Consulta"
         if self.ui.radioButton_Retorno_as.isChecked():
             situacao = "Retorno"
@@ -2240,6 +2260,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Cadastro Consulta")
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
+
+    def puxar_consulta_psi(self):
+        id_usuario = self.ui.input_id_usuario_consulta_psi.text()
+        result = self.db.buscar_info_consulta_psi(id_usuario)
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
+
+
 
     def puxar_consulta(self):
         id_usuario = self.ui.input_id_usuario_consulta_as.text()

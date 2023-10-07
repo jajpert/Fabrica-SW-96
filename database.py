@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='3545')
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -455,6 +455,22 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def buscar_consulta_psi(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora
+                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
+            result = self.cursor.fetchall()
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
     def buscar_participante(self,cpf):
         self.connect()
         try:
@@ -484,6 +500,24 @@ class DataBase():
             self.close_connection()
 
     def buscar_info_consulta(self,id_usuario):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
+                                INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
+                                LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
+                                usuario.id_usuario LIKE '{id_usuario}';
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+    
+    def buscar_info_consulta_psi(self,id_usuario):
         self.connect()
         try:
             self.cursor.execute(f"""
