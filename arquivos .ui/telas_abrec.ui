@@ -8778,7 +8778,7 @@ background-color: rgb(243, 185, 191);</string>
                                  <property name="frameShadow">
                                   <enum>QFrame::Raised</enum>
                                  </property>
-                                 <widget class="QLineEdit" name="input_id_usuario_consulta_as_5">
+                                 <widget class="QLineEdit" name="input_id_usuario_consulta_psi">
                                   <property name="enabled">
                                    <bool>false</bool>
                                   </property>
@@ -8859,7 +8859,7 @@ background-color: transparent;</string>
                                       <widget class="QLineEdit" name="input_cpf_pagina_consulta_geral_psi"/>
                                      </item>
                                      <item>
-                                      <widget class="QPushButton" name="btn_buscar_cpf_pagina_consulta_geral_3">
+                                      <widget class="QPushButton" name="btn_buscar_cpf_pagina_consulta_geral_psi">
                                        <property name="sizePolicy">
                                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                          <horstretch>0</horstretch>

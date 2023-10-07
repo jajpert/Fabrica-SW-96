@@ -1,24 +1,33 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abreccsHCdP.ui'
+## Form generated from reading UI file 'telas_abrecDauaWW.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.4.1
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
 
-from qtcore import * 
-from icons import *
+from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
+    QMetaObject, QObject, QPoint, QRect,
+    QSize, QTime, QUrl, Qt)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
+from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication, QCheckBox,
+    QComboBox, QDateEdit, QDateTimeEdit, QFrame,
+    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QRadioButton,
+    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
+    QTableWidget, QTableWidgetItem, QTextEdit, QTimeEdit,
+    QToolButton, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        ############ valida email ##############
-        self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
-        #######################################
-        MainWindow.resize(1864, 894)
+        MainWindow.resize(2080, 1021)
         font = QFont()
         font.setFamilies([u"Abel"])
         font.setPointSize(12)
@@ -427,6 +436,22 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_37.addWidget(self.btn_relatorios_nutri)
 
+        self.btn_backup_nutri = QPushButton(self.frame_190)
+        self.btn_backup_nutri.setObjectName(u"btn_backup_nutri")
+        self.btn_backup_nutri.setMinimumSize(QSize(140, 45))
+        self.btn_backup_nutri.setMaximumSize(QSize(140, 45))
+        self.btn_backup_nutri.setFont(font5)
+        self.btn_backup_nutri.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_backup_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
+"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
+"QPushButton:focus{outline: 0}")
+        icon5 = QIcon()
+        icon5.addFile(u"./icons/backup.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_backup_nutri.setIcon(icon5)
+        self.btn_backup_nutri.setIconSize(QSize(30, 30))
+
+        self.verticalLayout_37.addWidget(self.btn_backup_nutri)
+
 
         self.horizontalLayout_166.addWidget(self.frame_190)
 
@@ -473,9 +498,9 @@ class Ui_MainWindow(object):
         self.btn_sair_nutri.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        icon5 = QIcon()
-        icon5.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_sair_nutri.setIcon(icon5)
+        icon6 = QIcon()
+        icon6.addFile(u"./icons/ligar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_sair_nutri.setIcon(icon6)
         self.btn_sair_nutri.setIconSize(QSize(24, 24))
 
         self.verticalLayout_20.addWidget(self.btn_sair_nutri)
@@ -510,7 +535,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_23 = QHBoxLayout(self.frame_53)
         self.horizontalLayout_23.setSpacing(0)
         self.horizontalLayout_23.setObjectName(u"horizontalLayout_23")
-        self.horizontalLayout_23.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_23.setContentsMargins(0, 8, 8, 0)
         self.stackedWidget_12 = QStackedWidget(self.frame_53)
         self.stackedWidget_12.setObjectName(u"stackedWidget_12")
         self.page_principal_nutri = QWidget()
@@ -691,9 +716,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        icon6 = QIcon()
-        icon6.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_agendamento_nutri.setIcon(icon6)
+        icon7 = QIcon()
+        icon7.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_buscar_agendamento_nutri.setIcon(icon7)
 
         self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
 
@@ -1184,9 +1209,9 @@ class Ui_MainWindow(object):
         self.btn_alterar_agenda_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon7 = QIcon()
-        icon7.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_agenda_nutri.setIcon(icon7)
+        icon8 = QIcon()
+        icon8.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_alterar_agenda_nutri.setIcon(icon8)
         self.btn_alterar_agenda_nutri.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_213.addWidget(self.btn_alterar_agenda_nutri)
@@ -1201,9 +1226,9 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon8 = QIcon()
-        icon8.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cancelar_agenda_nutri.setIcon(icon8)
+        icon9 = QIcon()
+        icon9.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cancelar_agenda_nutri.setIcon(icon9)
         self.btn_cancelar_agenda_nutri.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_213.addWidget(self.btn_cancelar_agenda_nutri)
@@ -1345,9 +1370,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_cpf_pagina_consulta_geral_2.setIcon(icon9)
+        icon10 = QIcon()
+        icon10.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_buscar_cpf_pagina_consulta_geral_2.setIcon(icon10)
 
         self.horizontalLayout_190.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_2)
 
@@ -1775,9 +1800,9 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon10 = QIcon()
-        icon10.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_salvar_pagina_consulta_geral_nutri.setIcon(icon10)
+        icon11 = QIcon()
+        icon11.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_salvar_pagina_consulta_geral_nutri.setIcon(icon11)
         self.btn_salvar_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_193.addWidget(self.btn_salvar_pagina_consulta_geral_nutri)
@@ -1939,9 +1964,9 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon11 = QIcon()
-        icon11.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_pagina_consulta_geral_nutri.setIcon(icon11)
+        icon12 = QIcon()
+        icon12.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_alterar_pagina_consulta_geral_nutri.setIcon(icon12)
         self.btn_alterar_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_197.addWidget(self.btn_alterar_pagina_consulta_geral_nutri)
@@ -1954,9 +1979,9 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon12 = QIcon()
-        icon12.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_excluir_pagina_consulta_geral_nutri.setIcon(icon12)
+        icon13 = QIcon()
+        icon13.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excluir_pagina_consulta_geral_nutri.setIcon(icon13)
         self.btn_excluir_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_197.addWidget(self.btn_excluir_pagina_consulta_geral_nutri)
@@ -2308,9 +2333,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        icon13 = QIcon()
-        icon13.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_relatorio_nutri.setIcon(icon13)
+        icon14 = QIcon()
+        icon14.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_buscar_relatorio_nutri.setIcon(icon14)
 
         self.verticalLayout_461.addWidget(self.btn_buscar_relatorio_nutri)
 
@@ -2458,7 +2483,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_nutri.setIcon(icon13)
+        self.btn_gerar_excel_relatorio_nutri.setIcon(icon14)
 
         self.verticalLayout_464.addWidget(self.btn_gerar_excel_relatorio_nutri)
 
@@ -2472,7 +2497,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_nutri.setIcon(icon13)
+        self.btn_gerar_pdf_relatorio_nutri.setIcon(icon14)
 
         self.verticalLayout_464.addWidget(self.btn_gerar_pdf_relatorio_nutri)
 
@@ -2555,9 +2580,9 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_cadastrar_nutri.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon14 = QIcon()
-        icon14.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon14)
+        icon15 = QIcon()
+        icon15.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon15)
         self.btn_plano_alimentar_cadastrar_nutri.setIconSize(QSize(80, 80))
 
         self.verticalLayout_36.addWidget(self.btn_plano_alimentar_cadastrar_nutri)
@@ -2712,6 +2737,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_39.addWidget(self.btn_relatorios_psi)
 
+        self.btn_backup_psi = QPushButton(self.frame_59)
+        self.btn_backup_psi.setObjectName(u"btn_backup_psi")
+        self.btn_backup_psi.setMinimumSize(QSize(140, 45))
+        self.btn_backup_psi.setMaximumSize(QSize(140, 45))
+        self.btn_backup_psi.setFont(font5)
+        self.btn_backup_psi.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_backup_psi.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
+"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
+"QPushButton:focus{outline: 0}")
+        self.btn_backup_psi.setIcon(icon5)
+        self.btn_backup_psi.setIconSize(QSize(30, 30))
+
+        self.verticalLayout_39.addWidget(self.btn_backup_psi)
+
 
         self.horizontalLayout_39.addWidget(self.frame_59)
 
@@ -2757,7 +2796,7 @@ class Ui_MainWindow(object):
         self.btn_sair_psi.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_psi.setIcon(icon5)
+        self.btn_sair_psi.setIcon(icon6)
         self.btn_sair_psi.setIconSize(QSize(24, 24))
 
         self.verticalLayout_38.addWidget(self.btn_sair_psi)
@@ -2792,7 +2831,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_24 = QHBoxLayout(self.frame_31)
         self.horizontalLayout_24.setSpacing(0)
         self.horizontalLayout_24.setObjectName(u"horizontalLayout_24")
-        self.horizontalLayout_24.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_24.setContentsMargins(0, 8, 8, 0)
         self.stackedWidget_7 = QStackedWidget(self.frame_31)
         self.stackedWidget_7.setObjectName(u"stackedWidget_7")
         self.page_principal_psi = QWidget()
@@ -2960,7 +2999,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_agendamento_psi.setIcon(icon6)
+        self.btn_buscar_agendamento_psi.setIcon(icon7)
 
         self.verticalLayout_427.addWidget(self.btn_buscar_agendamento_psi)
 
@@ -3430,7 +3469,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_agenda_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_agenda_psi.setIcon(icon7)
+        self.btn_alterar_agenda_psi.setIcon(icon8)
         self.btn_alterar_agenda_psi.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_221.addWidget(self.btn_alterar_agenda_psi)
@@ -3445,7 +3484,7 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_cancelar_agenda_psi.setIcon(icon8)
+        self.btn_cancelar_agenda_psi.setIcon(icon9)
         self.btn_cancelar_agenda_psi.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_221.addWidget(self.btn_cancelar_agenda_psi)
@@ -3516,11 +3555,11 @@ class Ui_MainWindow(object):
         self.frame_596.setObjectName(u"frame_596")
         self.frame_596.setFrameShape(QFrame.StyledPanel)
         self.frame_596.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_consulta_as_5 = QLineEdit(self.frame_596)
-        self.input_id_usuario_consulta_as_5.setObjectName(u"input_id_usuario_consulta_as_5")
-        self.input_id_usuario_consulta_as_5.setEnabled(False)
-        self.input_id_usuario_consulta_as_5.setGeometry(QRect(0, 0, 489, 32))
-        self.input_id_usuario_consulta_as_5.setStyleSheet(u"border-color: transparent;\n"
+        self.input_id_usuario_consulta_psi = QLineEdit(self.frame_596)
+        self.input_id_usuario_consulta_psi.setObjectName(u"input_id_usuario_consulta_psi")
+        self.input_id_usuario_consulta_psi.setEnabled(False)
+        self.input_id_usuario_consulta_psi.setGeometry(QRect(0, 0, 489, 32))
+        self.input_id_usuario_consulta_psi.setStyleSheet(u"border-color: transparent;\n"
 "background-color: transparent;")
 
         self.verticalLayout_394.addWidget(self.frame_596)
@@ -3559,13 +3598,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_200.addWidget(self.input_cpf_pagina_consulta_geral_psi)
 
-        self.btn_buscar_cpf_pagina_consulta_geral_3 = QPushButton(self.frame_599)
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setObjectName(u"btn_buscar_cpf_pagina_consulta_geral_3")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_cpf_pagina_consulta_geral_3.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setSizePolicy(sizePolicy3)
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setStyleSheet(u"QPushButton{\n"
+        self.btn_buscar_cpf_pagina_consulta_geral_psi = QPushButton(self.frame_599)
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setObjectName(u"btn_buscar_cpf_pagina_consulta_geral_psi")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_cpf_pagina_consulta_geral_psi.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setSizePolicy(sizePolicy3)
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{\n"
 "        background: rgb(243, 185, 191);\n"
 "        border: 1px  solid rgb(180, 106, 102);\n"
 "        border-width: 2px;\n"
@@ -3598,9 +3637,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setIcon(icon9)
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setIcon(icon10)
 
-        self.horizontalLayout_200.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_3)
+        self.horizontalLayout_200.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_psi)
 
 
         self.verticalLayout_395.addWidget(self.frame_599)
@@ -3807,7 +3846,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_salvar_pagina_consulta_geral_psi.setIcon(icon10)
+        self.btn_salvar_pagina_consulta_geral_psi.setIcon(icon11)
         self.btn_salvar_pagina_consulta_geral_psi.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_203.addWidget(self.btn_salvar_pagina_consulta_geral_psi)
@@ -3968,7 +4007,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_pagina_consulta_geral_psi.setIcon(icon11)
+        self.btn_alterar_pagina_consulta_geral_psi.setIcon(icon12)
         self.btn_alterar_pagina_consulta_geral_psi.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_207.addWidget(self.btn_alterar_pagina_consulta_geral_psi)
@@ -3981,7 +4020,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excluir_pagina_consulta_geral_psi.setIcon(icon12)
+        self.btn_excluir_pagina_consulta_geral_psi.setIcon(icon13)
         self.btn_excluir_pagina_consulta_geral_psi.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_207.addWidget(self.btn_excluir_pagina_consulta_geral_psi)
@@ -4323,7 +4362,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_as_2.setIcon(icon13)
+        self.btn_buscar_relatorio_as_2.setIcon(icon14)
 
         self.verticalLayout_473.addWidget(self.btn_buscar_relatorio_as_2)
 
@@ -4468,7 +4507,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_psi.setIcon(icon13)
+        self.btn_gerar_excel_relatorio_psi.setIcon(icon14)
 
         self.verticalLayout_476.addWidget(self.btn_gerar_excel_relatorio_psi)
 
@@ -4482,7 +4521,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_psi.setIcon(icon13)
+        self.btn_gerar_pdf_relatorio_psi.setIcon(icon14)
 
         self.verticalLayout_476.addWidget(self.btn_gerar_pdf_relatorio_psi)
 
@@ -4615,9 +4654,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon15 = QIcon()
-        icon15.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_farm.setIcon(icon15)
+        icon16 = QIcon()
+        icon16.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_farm.setIcon(icon16)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_86.addWidget(self.btn_cadastrar_farm)
@@ -4644,12 +4683,26 @@ class Ui_MainWindow(object):
         self.btn_retirar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon16 = QIcon()
-        icon16.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_retirar_farm.setIcon(icon16)
+        icon17 = QIcon()
+        icon17.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_retirar_farm.setIcon(icon17)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_86.addWidget(self.btn_retirar_farm)
+
+        self.btn_backup_farm = QPushButton(self.frame_183)
+        self.btn_backup_farm.setObjectName(u"btn_backup_farm")
+        self.btn_backup_farm.setMinimumSize(QSize(140, 45))
+        self.btn_backup_farm.setMaximumSize(QSize(140, 45))
+        self.btn_backup_farm.setFont(font5)
+        self.btn_backup_farm.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_backup_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
+"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
+"QPushButton:focus{outline: 0}")
+        self.btn_backup_farm.setIcon(icon5)
+        self.btn_backup_farm.setIconSize(QSize(30, 30))
+
+        self.verticalLayout_86.addWidget(self.btn_backup_farm)
 
 
         self.horizontalLayout_98.addWidget(self.frame_183)
@@ -4697,7 +4750,7 @@ class Ui_MainWindow(object):
         self.btn_sair_farm.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_farm.setIcon(icon5)
+        self.btn_sair_farm.setIcon(icon6)
         self.btn_sair_farm.setIconSize(QSize(24, 24))
 
         self.verticalLayout_133.addWidget(self.btn_sair_farm)
@@ -4732,7 +4785,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_111 = QHBoxLayout(self.frame_186)
         self.horizontalLayout_111.setSpacing(0)
         self.horizontalLayout_111.setObjectName(u"horizontalLayout_111")
-        self.horizontalLayout_111.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_111.setContentsMargins(0, 8, 8, 0)
         self.stackedWidget_10 = QStackedWidget(self.frame_186)
         self.stackedWidget_10.setObjectName(u"stackedWidget_10")
         self.page_principal_farm = QWidget()
@@ -5054,7 +5107,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_farm.setIcon(icon13)
+        self.btn_buscar_relatorio_farm.setIcon(icon14)
 
         self.verticalLayout_485.addWidget(self.btn_buscar_relatorio_farm)
 
@@ -5199,7 +5252,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_farm.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_farm.setIcon(icon13)
+        self.btn_gerar_excel_relatorio_farm.setIcon(icon14)
 
         self.verticalLayout_488.addWidget(self.btn_gerar_excel_relatorio_farm)
 
@@ -5213,7 +5266,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_farm.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_farm.setIcon(icon13)
+        self.btn_gerar_pdf_relatorio_farm.setIcon(icon14)
 
         self.verticalLayout_488.addWidget(self.btn_gerar_pdf_relatorio_farm)
 
@@ -5387,6 +5440,20 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_35.addWidget(self.btn_relatorios_fisio)
 
+        self.btn_backup_fisio = QPushButton(self.frame_187)
+        self.btn_backup_fisio.setObjectName(u"btn_backup_fisio")
+        self.btn_backup_fisio.setMinimumSize(QSize(140, 45))
+        self.btn_backup_fisio.setMaximumSize(QSize(140, 45))
+        self.btn_backup_fisio.setFont(font5)
+        self.btn_backup_fisio.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_backup_fisio.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
+"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
+"QPushButton:focus{outline: 0}")
+        self.btn_backup_fisio.setIcon(icon5)
+        self.btn_backup_fisio.setIconSize(QSize(30, 30))
+
+        self.verticalLayout_35.addWidget(self.btn_backup_fisio)
+
 
         self.horizontalLayout_115.addWidget(self.frame_187)
 
@@ -5432,7 +5499,7 @@ class Ui_MainWindow(object):
         self.btn_sair_fisio.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_fisio.setIcon(icon5)
+        self.btn_sair_fisio.setIcon(icon6)
         self.btn_sair_fisio.setIconSize(QSize(24, 24))
 
         self.verticalLayout_150.addWidget(self.btn_sair_fisio)
@@ -5467,7 +5534,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_165 = QHBoxLayout(self.frame_189)
         self.horizontalLayout_165.setSpacing(0)
         self.horizontalLayout_165.setObjectName(u"horizontalLayout_165")
-        self.horizontalLayout_165.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_165.setContentsMargins(0, 8, 8, 0)
         self.stackedWidget_11 = QStackedWidget(self.frame_189)
         self.stackedWidget_11.setObjectName(u"stackedWidget_11")
         self.page_principal_fisio = QWidget()
@@ -5792,7 +5859,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_fisio.setIcon(icon13)
+        self.btn_buscar_relatorio_fisio.setIcon(icon14)
 
         self.verticalLayout_449.addWidget(self.btn_buscar_relatorio_fisio)
 
@@ -5937,7 +6004,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_fisio.setIcon(icon13)
+        self.btn_gerar_excel_relatorio_fisio.setIcon(icon14)
 
         self.verticalLayout_452.addWidget(self.btn_gerar_excel_relatorio_fisio)
 
@@ -5951,7 +6018,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_fisio.setIcon(icon13)
+        self.btn_gerar_pdf_relatorio_fisio.setIcon(icon14)
 
         self.verticalLayout_452.addWidget(self.btn_gerar_pdf_relatorio_fisio)
 
@@ -6163,7 +6230,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_agendamento_fisio.setIcon(icon6)
+        self.btn_buscar_agendamento_fisio.setIcon(icon7)
 
         self.verticalLayout_126.addWidget(self.btn_buscar_agendamento_fisio)
 
@@ -6633,7 +6700,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_agenda_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_agenda_fisio.setIcon(icon7)
+        self.btn_alterar_agenda_fisio.setIcon(icon8)
         self.btn_alterar_agenda_fisio.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_175.addWidget(self.btn_alterar_agenda_fisio)
@@ -6648,7 +6715,7 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_cancelar_agenda_fisio.setIcon(icon8)
+        self.btn_cancelar_agenda_fisio.setIcon(icon9)
         self.btn_cancelar_agenda_fisio.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_175.addWidget(self.btn_cancelar_agenda_fisio)
@@ -6801,7 +6868,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_consulta_geral_fisio.setIcon(icon9)
+        self.btn_buscar_cpf_pagina_consulta_geral_fisio.setIcon(icon10)
 
         self.horizontalLayout_180.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_fisio)
 
@@ -7010,7 +7077,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_salvar_pagina_consulta_geral_fisio.setIcon(icon10)
+        self.btn_salvar_pagina_consulta_geral_fisio.setIcon(icon11)
         self.btn_salvar_pagina_consulta_geral_fisio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_183.addWidget(self.btn_salvar_pagina_consulta_geral_fisio)
@@ -7171,7 +7238,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_pagina_consulta_geral_fisio.setIcon(icon11)
+        self.btn_alterar_pagina_consulta_geral_fisio.setIcon(icon12)
         self.btn_alterar_pagina_consulta_geral_fisio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_187.addWidget(self.btn_alterar_pagina_consulta_geral_fisio)
@@ -7184,7 +7251,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excluir_pagina_consulta_geral_fisio.setIcon(icon12)
+        self.btn_excluir_pagina_consulta_geral_fisio.setIcon(icon13)
         self.btn_excluir_pagina_consulta_geral_fisio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_187.addWidget(self.btn_excluir_pagina_consulta_geral_fisio)
@@ -7311,7 +7378,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_cadastrar_as.setIcon(icon14)
+        self.btn_cadastrar_as.setIcon(icon15)
         self.btn_cadastrar_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_cadastrar_as)
@@ -7367,9 +7434,9 @@ class Ui_MainWindow(object):
         self.btn_parceiros_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon17 = QIcon()
-        icon17.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_parceiros_as.setIcon(icon17)
+        icon18 = QIcon()
+        icon18.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_parceiros_as.setIcon(icon18)
         self.btn_parceiros_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_parceiros_as)
@@ -7383,9 +7450,7 @@ class Ui_MainWindow(object):
         self.btn_backup_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon18 = QIcon()
-        icon18.addFile(u"./icons/backup.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_backup_as.setIcon(icon18)
+        self.btn_backup_as.setIcon(icon5)
         self.btn_backup_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_backup_as)
@@ -7435,7 +7500,7 @@ class Ui_MainWindow(object):
         self.btn_sair_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #FF3636; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: 	hsl(0, 100%, 64%)}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_sair_as.setIcon(icon5)
+        self.btn_sair_as.setIcon(icon6)
         self.btn_sair_as.setIconSize(QSize(24, 24))
 
         self.verticalLayout_34.addWidget(self.btn_sair_as)
@@ -7977,7 +8042,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_fornecedor_as.setIcon(icon13)
+        self.btn_cep_buscar_fornecedor_as.setIcon(icon14)
 
         self.verticalLayout_345.addWidget(self.btn_cep_buscar_fornecedor_as)
 
@@ -9201,7 +9266,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_usuario_as.setIcon(icon13)
+        self.btn_cep_buscar_usuario_as.setIcon(icon14)
 
         self.verticalLayout_286.addWidget(self.btn_cep_buscar_usuario_as)
 
@@ -10974,7 +11039,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon13)
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon14)
 
         self.verticalLayout_132.addWidget(self.btn_buscar_cpf_cadastro_retirada_beneficio)
 
@@ -11327,7 +11392,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon13)
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon14)
 
         self.verticalLayout_1311.addWidget(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio)
 
@@ -12056,7 +12121,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_cuidador_as.setIcon(icon13)
+        self.btn_cep_buscar_cuidador_as.setIcon(icon14)
 
         self.verticalLayout_284.addWidget(self.btn_cep_buscar_cuidador_as)
 
@@ -13385,7 +13450,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_colaborador_as.setIcon(icon13)
+        self.btn_cep_buscar_colaborador_as.setIcon(icon14)
 
         self.verticalLayout_287.addWidget(self.btn_cep_buscar_colaborador_as)
 
@@ -14756,7 +14821,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_participante_geral.setIcon(icon13)
+        self.btn_buscar_cpf_pagina_participante_geral.setIcon(icon14)
 
         self.horizontalLayout_1562.addWidget(self.btn_buscar_cpf_pagina_participante_geral)
 
@@ -15384,7 +15449,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_as.setIcon(icon13)
+        self.btn_buscar_relatorio_as.setIcon(icon14)
 
         self.verticalLayout_152.addWidget(self.btn_buscar_relatorio_as)
 
@@ -15529,7 +15594,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_as.setIcon(icon13)
+        self.btn_gerar_excel_relatorio_as.setIcon(icon14)
 
         self.verticalLayout_308.addWidget(self.btn_gerar_excel_relatorio_as)
 
@@ -15543,7 +15608,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_as.setIcon(icon13)
+        self.btn_gerar_pdf_relatorio_as.setIcon(icon14)
 
         self.verticalLayout_308.addWidget(self.btn_gerar_pdf_relatorio_as)
 
@@ -15758,7 +15823,7 @@ class Ui_MainWindow(object):
                         "r: rgb(249, 217, 221);   \n"
 "}")
         icon33 = QIcon()
-        icon33.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon33.addFile(u".././icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_agendamento_as.setIcon(icon33)
 
         self.verticalLayout_117.addWidget(self.btn_buscar_agendamento_as)
@@ -16230,7 +16295,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon34 = QIcon()
-        icon34.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon34.addFile(u".././icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_agenda_as.setIcon(icon34)
         self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
 
@@ -16247,7 +16312,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon35 = QIcon()
-        icon35.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon35.addFile(u".././icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_agenda_as.setIcon(icon35)
         self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
 
@@ -16628,7 +16693,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_clinica_as.setIcon(icon13)
+        self.btn_cep_buscar_clinica_as.setIcon(icon14)
 
         self.verticalLayout_328.addWidget(self.btn_cep_buscar_clinica_as)
 
@@ -17097,7 +17162,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_alterar_as.setIcon(icon13)
+        self.btn_buscar_alterar_as.setIcon(icon14)
 
         self.horizontalLayout_96.addWidget(self.frame_279)
 
@@ -17274,7 +17339,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_nascimento_cuidador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_nascimento_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_nascimento_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_nascimento_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_nascimento_cuidador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_nascimento_cuidador_as.setCalendarPopup(True)
         self.input_alterar_data_nascimento_cuidador_as.setCurrentSectionIndex(0)
 
@@ -17378,7 +17443,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_emissao_cuidador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_emissao_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_emissao_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_emissao_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_emissao_cuidador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_emissao_cuidador_as.setCalendarPopup(True)
         self.input_alterar_data_emissao_cuidador_as.setCurrentSectionIndex(0)
 
@@ -17631,7 +17696,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_alterar_cep_buscar_cuidador_as.setIcon(icon13)
+        self.btn_alterar_cep_buscar_cuidador_as.setIcon(icon14)
 
         self.verticalLayout_292.addWidget(self.btn_alterar_cep_buscar_cuidador_as)
 
@@ -18564,7 +18629,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_alterar_cep_buscar_usuario_as.setIcon(icon13)
+        self.btn_alterar_cep_buscar_usuario_as.setIcon(icon14)
 
         self.verticalLayout_294.addWidget(self.btn_alterar_cep_buscar_usuario_as)
 
@@ -19900,7 +19965,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_emissao_rg_colaborador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_emissao_rg_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_emissao_rg_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_emissao_rg_colaborador_as.setCalendarPopup(True)
         self.input_alterar_data_emissao_rg_colaborador_as.setCurrentSectionIndex(0)
 
@@ -20192,7 +20257,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_nascimento_colaborador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_nascimento_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_nascimento_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_nascimento_colaborador_as.setCalendarPopup(True)
         self.input_alterar_data_nascimento_colaborador_as.setCurrentSectionIndex(0)
 
@@ -20533,7 +20598,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_alterar_cep_buscar_colaborador_as.setIcon(icon13)
+        self.btn_alterar_cep_buscar_colaborador_as.setIcon(icon14)
 
         self.verticalLayout_296.addWidget(self.btn_alterar_cep_buscar_colaborador_as)
 
@@ -21037,7 +21102,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_consulta_geral.setIcon(icon13)
+        self.btn_buscar_cpf_pagina_consulta_geral.setIcon(icon14)
 
         self.horizontalLayout_150.addWidget(self.btn_buscar_cpf_pagina_consulta_geral)
 
@@ -21529,6 +21594,7 @@ class Ui_MainWindow(object):
         self.btn_atendimento_nutri.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.btn_agenda_nutri.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
         self.btn_relatorios_nutri.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIOS", None))
+        self.btn_backup_nutri.setText(QCoreApplication.translate("MainWindow", u"    BACKUP", None))
         self.btn_sair_nutri.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.label_agenda_nutri.setText(QCoreApplication.translate("MainWindow", u"AGENDA", None))
         self.label_cpf_agendamento_nutri.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
@@ -21672,6 +21738,7 @@ class Ui_MainWindow(object):
         self.btn_atendimento_psi.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.btn_agenda_psi.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
         self.btn_relatorios_psi.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIOS", None))
+        self.btn_backup_psi.setText(QCoreApplication.translate("MainWindow", u"    BACKUP", None))
         self.btn_sair_psi.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.label_agenda_as_3.setText(QCoreApplication.translate("MainWindow", u"AGENDA", None))
         self.label_cpf_agendamento_psi.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
@@ -21718,7 +21785,7 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_psi.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_titulo_pagina_consulta_geral_3.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.label_cpf_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
-        self.btn_buscar_cpf_pagina_consulta_geral_3.setText("")
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setText("")
         self.label_nome_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"NOME", None))
         self.label_contato_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"CONTATO", None))
         self.label_clinica_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"CL\u00cdNICA", None))
@@ -21788,6 +21855,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR", None))
         self.btn_relatorios_farm.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
         self.btn_retirar_farm.setText(QCoreApplication.translate("MainWindow", u"   RETIRAR", None))
+        self.btn_backup_farm.setText(QCoreApplication.translate("MainWindow", u"    BACKUP", None))
         self.btn_sair_farm.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.label_relatorio_farm.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
         self.label_inicio_periodo_relatorio_farm.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
@@ -21831,6 +21899,7 @@ class Ui_MainWindow(object):
         self.btn_atendimento_fisio.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.btn_agenda_fisio.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
         self.btn_relatorios_fisio.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIOS", None))
+        self.btn_backup_fisio.setText(QCoreApplication.translate("MainWindow", u"    BACKUP", None))
         self.btn_sair_fisio.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.label_relatorio_as_2.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
         self.label_inicio_periodo_relatorio_fisio.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
