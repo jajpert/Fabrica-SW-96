@@ -23,7 +23,7 @@
    <property name="styleSheet">
     <string notr="true"/>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout_18">
+   <layout class="QHBoxLayout" name="horizontalLayout_8">
     <property name="spacing">
      <number>0</number>
     </property>
@@ -735,14 +735,6 @@ QPushButton:focus{outline: 0} </string>
        </layout>
       </widget>
       <widget class="QWidget" name="page_nutricionista">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
-QLineEdit:focus{outline:0; border: 2px solid #A85751}
-QComboBox{color: #A85751; border-radius: 10px; border-width: 1px; border-style: solid; border-color:#A85751; padding-left: 10px;}
-QComboBox:drop-down:hover{background-color:#fff}
-QComboBox:drop-down{width: 24px; border-top-right-radius:9px; border-bottom-right-radius:9px; border-top-left-radius:1px; border-bottom-left-radius:1px;}
-QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
-       </property>
        <layout class="QHBoxLayout" name="horizontalLayout_17">
         <property name="spacing">
          <number>0</number>
@@ -6376,14 +6368,6 @@ QPushButton:focus{outline: 0}</string>
        </layout>
       </widget>
       <widget class="QWidget" name="page_psicologa">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
-QLineEdit:focus{outline:0; border: 2px solid #A85751}
-QComboBox{color: #A85751; border-radius: 10px; border-width: 1px; border-style: solid; border-color:#A85751; padding-left: 10px;}
-QComboBox:drop-down:hover{background-color:#fff}
-QComboBox:drop-down{width: 24px; border-top-right-radius:9px; border-bottom-right-radius:9px; border-top-left-radius:1px; border-bottom-left-radius:1px;}
-QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
-       </property>
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <property name="spacing">
          <number>0</number>
@@ -6940,7 +6924,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_7">
                  <property name="currentIndex">
-                  <number>2</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_psi"/>
                  <widget class="QWidget" name="page_agenda_psi">
@@ -8794,7 +8778,7 @@ background-color: rgb(243, 185, 191);</string>
                                  <property name="frameShadow">
                                   <enum>QFrame::Raised</enum>
                                  </property>
-                                 <widget class="QLineEdit" name="input_id_usuario_consulta_as_5">
+                                 <widget class="QLineEdit" name="input_id_usuario_consulta_psi">
                                   <property name="enabled">
                                    <bool>false</bool>
                                   </property>
@@ -8875,7 +8859,7 @@ background-color: transparent;</string>
                                       <widget class="QLineEdit" name="input_cpf_pagina_consulta_geral_psi"/>
                                      </item>
                                      <item>
-                                      <widget class="QPushButton" name="btn_buscar_cpf_pagina_consulta_geral_3">
+                                      <widget class="QPushButton" name="btn_buscar_cpf_pagina_consulta_geral_psi">
                                        <property name="sizePolicy">
                                         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                          <horstretch>0</horstretch>
@@ -11736,7 +11720,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_10">
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_farm">
                   <layout class="QVBoxLayout" name="verticalLayout_490">
@@ -13193,14 +13177,6 @@ QPushButton:focus{outline:0}</string>
        </layout>
       </widget>
       <widget class="QWidget" name="page_fisioterapeuta">
-       <property name="styleSheet">
-        <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
-QLineEdit:focus{outline:0; border: 2px solid #A85751}
-QComboBox{color: #A85751; border-radius: 10px; border-width: 1px; border-style: solid; border-color:#A85751; padding-left: 10px;}
-QComboBox:drop-down:hover{background-color:#fff}
-QComboBox:drop-down{width: 24px; border-top-right-radius:9px; border-bottom-right-radius:9px; border-top-left-radius:1px; border-bottom-left-radius:1px;}
-QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
-       </property>
        <layout class="QHBoxLayout" name="horizontalLayout_15">
         <property name="spacing">
          <number>0</number>
@@ -45214,7 +45190,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -45527,7 +45503,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -52871,7 +52847,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -53717,7 +53693,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>

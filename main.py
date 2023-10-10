@@ -497,7 +497,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
-        self.ultimosIds()
+        select_usuario = self.db.select_usuario()
+        select_cuidador = self.db.select_cuidador()
+        selected_colaborador = self.db.select_colaborador()
+        ultimo_id_usuario = (select_usuario[0])
+        ultimo_id_cuidador = (select_cuidador[0])
+        ultimo_id_colaborador = (selected_colaborador[0])
+        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
+        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
+        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
+        proximo_id_usuario = 1 + int(ultimo_id_usuario)
+        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
+        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
+        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
+        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
+        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
+
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
+        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
+        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
+        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+
 
         self.popup = Overlay(self)
         self.popup.setMinimumWidth(1920)
@@ -521,6 +543,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_cuidador_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_colaborador_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_consulta_geral.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_consulta_geral_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
 
         self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
@@ -603,7 +626,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
         
-        ########################### ASSISTENTE SOCIAL ###########################
+        
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_atendimento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_cadastrar_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
@@ -626,6 +649,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         #self.ui.input_escolha_relatorio_as.currentIndexChanged.connect(self.on_idade_relatorio)
@@ -657,7 +681,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
-
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.buscar_dados_consulta_psi)
+        self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi)
+        self.ui.btn_alterar_pagina_consulta_geral_psi.clicked.connect(self.alterar_usuario_consulta_psi)
+        self.ui.btn_excluir_pagina_consulta_geral_psi.clicked.connect(self.excluir_usuario_consulta_psi)
+        self.ui.btn_buscar_agendamento_psi.clicked.connect(self.buscarPessoa_psi)
+        self.ui.btn_salvar_agenda_psi.clicked.connect(self.cadastroAgendamento_psi)
+        self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi)
 
         #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
@@ -748,6 +778,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
+        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
@@ -882,24 +913,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         inputAlterarColaborador = self.ui.input_alterar_cep_colaborador_as.text()
         inputFornecedor = self.ui.input_cep_fornecedor_as.text()
         sender = self.sender()
-        if 'alterar' in sender.objectName():
-            if 'cuidador' in sender.objectName():
-                cep = inputAlterarCuidador
-            elif 'usuario' in sender.objectName():
-                cep = inputAlterarUsuario
-            elif 'colaborador' in sender.objectName():
-                cep = inputAlterarColaborador
-        else:
-            if 'cuidador' in sender.objectName():
-                cep = inputCuidador
-            elif 'usuario' in sender.objectName():
-                cep = inputUsuario
-            elif 'colaborador' in sender.objectName():
-                cep = inputColaborador
-            elif 'clinica' in sender.objectName():
-                cep = inputClinica
-            elif 'fornecedor' in sender.objectName():
-                cep = inputFornecedor
+        if 'cuidador' in sender.objectName():
+            cep = inputCuidador
+        elif 'usuario' in sender.objectName():
+            cep = inputUsuario
+        elif 'colaborador' in sender.objectName():
+            cep = inputColaborador
+        elif 'clinica' in sender.objectName():
+            cep = inputClinica
+        elif 'alterarcuidador' in sender.objectName():
+            cep = inputAlterarCuidador
+        elif 'AlterarUsuario' in sender.objectName():
+            cep = inputAlterarUsuario
+        elif 'AlterarColaborador' in sender.objectName():
+            cep = inputAlterarColaborador
+        elif 'fornecedor' in sender.objectName():
+            cep = inputFornecedor
         cep_tratado = str('')
         print(cep)
         cep_tratado = str('')
@@ -918,142 +947,140 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
         requisicao = requests.get(link)
         dic_requisicao = requisicao.json()
-        if 'alterar' in sender.objectName():
-            if 'cuidador' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_alterar_logradouro_cuidador_as.setText(str(logradouro))
+        if 'cuidador' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_alterar_bairro_cuidador_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_cuidador_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_alterar_cidade_cuidador_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_cuidador_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_alterar_estado_cuidador_as.setText(str(estado))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_cuidador_as.setText(str(estado))
 
-            elif 'usuario' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_alterar_logradouro_usuario_as.setText(str(logradouro))
+        elif 'usuario' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_usuario_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_alterar_bairro_usuario_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_usuario_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_alterar_cidade_usuario_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_usuario_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_alterar_estado_usuario_as.setText(str(estado))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_usuario_as.setText(str(estado))
 
-            elif 'colaborador' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_alterar_logradouro_colaborador_as.setText(str(logradouro))
+        elif 'colaborador' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_alterar_bairro_colaborador_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_colaborador_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_alterar_cidade_colaborador_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_colaborador_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_alterar_estado_colaborador_as.setText(str(estado))
-        else:
-            if 'cuidador' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_colaborador_as.setText(str(estado))
+        
+        elif 'clinica' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_clinica_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_bairro_cuidador_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_clinica_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_cidade_cuidador_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_clinica_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_estado_cuidador_as.setText(str(estado))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_clinica_as.setText(str(estado))
 
-            elif 'usuario' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_logradouro_usuario_as.setText(str(logradouro))
+        elif 'alterarcuidador' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_alterar_logradouro_cuidador_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_bairro_usuario_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_alterar_bairro_cuidador_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_cidade_usuario_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_alterar_cidade_cuidador_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_estado_usuario_as.setText(str(estado))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_alterar_estado_cuidador_as.setText(str(estado))
 
-            elif 'colaborador' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
+        elif 'alteUsuario' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_alterar_logradouro_usuario_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_bairro_colaborador_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_alterar_bairro_usuario_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_cidade_colaborador_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_alterar_cidade_usuario_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_estado_colaborador_as.setText(str(estado))
-            
-            elif 'clinica' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_logradouro_clinica_as.setText(str(logradouro))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_alterar_estado_usuario_as.setText(str(estado))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_bairro_clinica_as.setText(str(bairro))
+        elif 'alterarColaborador' in sender.objectName():
+             ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_alterar_logradouro_colaborador_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_cidade_clinica_as.setText(str(cidade))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_alterar_bairro_colaborador_as.setText(str(bairro))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_estado_clinica_as.setText(str(estado))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_alterar_cidade_colaborador_as.setText(str(cidade))
 
-            elif 'fornecedor' in sender.objectName():
-                ##### tratamento da requisição - logradouro #######
-                logradouro = dic_requisicao['logradouro']
-                self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_alterar_estado_colaborador_as.setText(str(estado))
+        elif 'fornecedor' in sender.objectName():
+            ##### tratamento da requisição - logradouro #######
+            logradouro = dic_requisicao['logradouro']
+            self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
 
-                ##### tratamento da requisição - bairro #######
-                bairro = dic_requisicao['bairro']
-                self.ui.input_bairro_fornecedor_as.setText(str(bairro))
+            ##### tratamento da requisição - bairro #######
+            bairro = dic_requisicao['bairro']
+            self.ui.input_bairro_fornecedor_as.setText(str(bairro))
 
-                ##### tratamento da requisição - cidade #######
-                cidade = dic_requisicao['localidade']
-                self.ui.input_cidade_fornecedor_as.setText(str(cidade))
+            ##### tratamento da requisição - cidade #######
+            cidade = dic_requisicao['localidade']
+            self.ui.input_cidade_fornecedor_as.setText(str(cidade))
 
-                ##### tratamento da requisição - estado #######        
-                estado = dic_requisicao['uf']
-                self.ui.input_estado_fornecedor_as.setText(str(estado))
+            ##### tratamento da requisição - estado #######        
+            estado = dic_requisicao['uf']
+            self.ui.input_estado_fornecedor_as.setText(str(estado))
 
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
@@ -1078,11 +1105,31 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_clinica_agendamento_as.setText(clinica)
 
         return id_matricula
+
+    def buscarPessoa_psi(self):
+        cpf_temp = self.ui.input_cpf_agendamento_psi.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
+        result = self.db.select_pessoa_cpf(cpf)
+        id_matricula = result[0]
+        nome = result[1]
+        telefone = result[2]
+        tamanho = int(len(result))
+        if tamanho > 3:
+            clinica = result[3]
+        else:
+            clinica = 'Não possuí'
+        self.ui.input_nome_agendamento_psi.setText(nome)
+        self.ui.input_telefone_agendamento_psi.setText(telefone)
+        self.ui.input_clinica_agendamento_psi.setText(clinica)
+        self.listarAgendamentos_psi()
+        return id_matricula
         
 
-
-
-        
     def buscar_Usuario(self):
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
@@ -2051,6 +2098,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def listarAgendamentos_psi(self):
+        res = self.db.select_agendamentos_psi()
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
     def listarBeneficios(self):
         resultado = self.db.busca_beneficios()
@@ -2058,31 +2112,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(resultado):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_cadastro_beneficio.setItem(row, column, QTableWidgetItem(str(data)))
-
-    def ultimosIds(self):
-        select_usuario = self.db.select_usuario()
-        select_cuidador = self.db.select_cuidador()
-        selected_colaborador = self.db.select_colaborador()
-        ultimo_id_usuario = (select_usuario[0])
-        ultimo_id_cuidador = (select_cuidador[0])
-        ultimo_id_colaborador = (selected_colaborador[0])
-        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
-        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
-        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
-        proximo_id_usuario = 1 + int(ultimo_id_usuario)
-        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
-        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
-        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
-        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
-        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
-
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
-        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
-        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
-        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-
                 
                 
     def alterarAgendamentos(self):
@@ -2113,7 +2142,32 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             return "ERRO", str(err)
         
         
-        
+    def alterarAgendamentos_psi(self):
+        try:
+            dados = []
+            for row in range(self.ui.input_TableWidget_agendamento_psi.rowCount()):
+                row_data = []
+                for column in range(self.ui.input_TableWidget_agendamento_psi.columnCount()):
+                    item = self.ui.input_TableWidget_agendamento_psi.item(row, column)
+                    if item is not None:
+                        row_data.append(item.text())
+                    else:
+                        row_data.append("")  
+                dados.append(row_data)
+            
+            for emp in dados:
+                resultado = self.db.alterar_agendamento_psi(emp)   
+
+            self.filtrar_agenda_psi()
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Alterar Agendamento")
+            msg.setText("Agendamento Alterado com sucesso!")
+            msg.exec()    
+            return "OK", "Benefício(s) atualizado(s) com sucesso!!"
+        except Exception as err:
+            return "ERRO", str(err)   
         
                 
     def cadastroCuidador(self):
@@ -2339,6 +2393,40 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.listarAgendamentos()
 
 
+    def cadastroAgendamento_psi(self):
+        id_matricula = self.buscarPessoa_psi()
+        cpf = self.ui.input_cpf_agendamento_psi.text()
+        nome = self.ui.input_nome_agendamento_psi.text()
+        telefone = self.ui.input_telefone_agendamento_psi.text()
+        clinica = self.ui.input_clinica_agendamento_psi.text()
+
+        profissional = ''
+        if self.ui.input_profissional_as_agendamento_psi.isChecked():
+            profissional = 'Assistente Social'
+        elif self.ui.input_profissional_fisio_agendamento_psi.isChecked():
+            profissional = 'Fisioterapeuta'
+        elif self.ui.input_profissional_nutri_agendamento_psi.isChecked():
+            profissional = 'Nutricionista'
+        if self.ui.input_profissional_psi_agendamento_psi.isChecked():
+            profissional = 'Psicóloga'
+        data = self.ui.input_data_agendamento_psi.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_agendamento_psi.text()
+        anotacao = self.ui.input_anotacao_agendamento_psi.toPlainText()
+
+        tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
+        
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Agendamento")
+        msg.setText("Agendamento Cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])   
+        self.limparCamposAgenda_psi() 
+        self.listarAgendamentos_psi()
+
+
     def cadastroFornecedor(self):
         ######################## endereço ###########################   
         cep = self.ui.input_cep_fornecedor_as.text()
@@ -2382,6 +2470,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def filtrar_agenda_psi(self):
+        txt = re.sub('[\W_]+','',self.ui.input_filtro_agendamento_psi.text())
+        res = self.db.filter_agenda(txt)
+        self.ui.input_TableWidget_agendamento_psi.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
     def area_sigilosa(self):
 
@@ -2402,7 +2499,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):
-        self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
         self.ui.input_nascimento_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_situacao_ativo_usuario_as.setCheckable(False)
@@ -2451,7 +2547,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
  
     def limparCamposCadastroCuidador(self):
-        self.ultimosIds()
         self.ui.input_nome_cuidador_as.setText("")
         self.ui.input_data_nascimento_cuidador_as.setDate(QDate(2000, 1, 1))
         self.ui.input_cpf_cuidador_as.setText("")
@@ -2474,7 +2569,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def limparCamposCadastroColaborador(self):
-        self.ultimosIds()
         self.ui.input_nome_colaborador_as.setText("")
         self.ui.input_data_nascimento_colaborador_as.setDate(QDate(2000, 1, 1))
         self.ui.input_cpf_colaborador_as.setText("")
@@ -2556,18 +2650,49 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
 
     def limparCamposConsulta(self):
+        self.ui.input_cpf_pagina_consulta_geral.setText("")
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
         self.ui.input_clinica_pagina_consulta_geral.setText("")
-        self.ui.radioButton_Consulta_as.setCheckable(False)
-        self.ui.radioButton_Consulta_as.setCheckable(True)
+        self.ui.radioButton_atendimento_as.setCheckable(False)
+        self.ui.radioButton_atendimento_as.setCheckable(True)
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
-        self.ui.input_hora_consulta_as.setText("")
-        self.ui.input_relatorio_pagina_consulta_geral.setHtml("")
+        self.ui.input_hora_consulta_as.setText(00,00)
+        self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
+
+    def limparCamposConsulta_psi(self):
+        self.ui.input_cpf_agendamento_psi.setText("")
+        self.ui.input_nome_pagina_consulta_geral_psi.setText("")
+        self.ui.input_contato_pagina_consulta_geral_psi.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
+        self.ui.radioButton_atendimento_as_psi.setCheckable(False)
+        self.ui.radioButton_atendimento_as_psi.setCheckable(True)
+        self.ui.radioButton_Retorno_as_psi.setCheckable(False)
+        self.ui.radioButton_Retorno_as_psi.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_consulta_as_psi.setText("")
+        self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
 
     def limparCamposAgenda(self):
+        self.ui.input_cpf_agendamento_as.setText("")
+        self.ui.input_nome_agendamento_as.setText("")
+        self.ui.input_telefone_agendamento_as.setText("")
+        self.ui.input_clinica_agendamento_as.setText("")
+        self.ui.input_profissional_as_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_as.setCheckable(True)
+        self.ui.input_data_agendamento_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_agendamento_as.setTime(QTime(00,00))
+        self.ui.input_anotacao_agendamento_as.setHtml("")
+    
+    def limparCamposAgenda_psi(self):
         self.ui.input_nome_agendamento_as.setText("")
         self.ui.input_telefone_agendamento_as.setText("")
         self.ui.input_clinica_agendamento_as.setText("")
@@ -2762,6 +2887,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
 
+    def buscar_dados_consulta_psi(self):
+        cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
+        dados = self.db.buscar_consulta_psi(cpf)
+        self.ui.input_id_usuario_consulta_psi.setText(str(dados[0]))
+        self.ui.input_id_usuario_consulta_psi.hide()
+        self.ui.input_nome_pagina_consulta_geral_psi.setText(dados[1])
+        self.ui.input_contato_pagina_consulta_geral_psi.setText(dados[2])
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText(dados[3])
+        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(dados[4]))
+        self.ui.input_hora_consulta_as_psi.setText(str(dados[5]))
+        self.puxar_consulta_psi()
+
+
     def buscar_dados_consulta(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral.text()
         cpf = ''
@@ -2777,11 +2921,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-        self.ui.input_hora_consulta_as.setText(str(dados[5]))
+        hora  = str(dados[5]).split(":")
+        self.ui.input_hora_consulta_as.setTime(QTime(int(hora[0]),int(hora[1])))
         self.puxar_consulta()
 
     def cadastrar_consulta(self):
-        if self.ui.radioButton_Consulta_as.isChecked():
+        if self.ui.radioButton_atendimento_as.isChecked():
             situacao = "Consulta"
         if self.ui.radioButton_Retorno_as.isChecked():
             situacao = "Retorno"
@@ -2791,7 +2936,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         hora_bruta = self.ui.input_hora_consulta_as.text()
 
-        relatorio = self.ui.input_relatorio_pagina_consulta_geral.toPlainText()
+        relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
 
@@ -2799,14 +2944,88 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
-        self.limparCamposConsulta()
-        self.puxar_consulta()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Cadastro Consulta")
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
+        
+        self.limparCamposConsulta()
+        self.puxar_consulta()
+
+    def cadastrar_consulta_psi(self):
+        if self.ui.radioButton_atendimento_as_psi.isChecked():
+            situacao = "Consulta"
+        if self.ui.radioButton_Retorno_as_psi.isChecked():
+            situacao = "Retorno"
+
+        data = self.ui.input_data_pagina_consulta_geral_psi.text()
+        data_consulta = "-".join(data.split("/")[::-1])
+
+        hora_bruta = self.ui.input_hora_consulta_as_psi.text()
+
+        relatorio = self.ui.input_evolucao_pagina_consulta_geral_psi.toPlainText()
+
+        id_usuario = self.ui.input_id_usuario_consulta_psi.text()
+
+        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
+
+        result = []
+        result = self.db.cadastro_consulta_psi(tupla_consulta_psi)
+        self.limparCamposConsulta_psi()
+        self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Consulta")
+        msg.setText("Consulta Cadastrada com sucesso!")
+        msg.exec()
+
+    def puxar_consulta_psi(self):
+
+        id_usuario = self.ui.input_id_usuario_consulta_psi.text()
+        result = self.db.buscar_info_consulta_psi(id_usuario)
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def alterar_usuario_consulta_psi(self,campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral_psi.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral_psi.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral_psi.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+        for emp in update_dados:
+           res = self.db.alterar_usuario_consulta_psi(tuple(emp))
+
+        self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Consulta Alterada com sucesso!")
+        msg.exec()
+
+
+    def excluir_usuario_consulta_psi (self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_psi.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_consulta_relatorio_psi(id_consulta)
+
+        self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excluir Consulta")
+        msg.setText("Consulta Excluida com sucesso!")
+        msg.exec()
+
 
     def puxar_consulta(self):
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
