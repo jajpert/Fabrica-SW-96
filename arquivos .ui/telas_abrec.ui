@@ -18061,42 +18061,38 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,0,0,0">
-                   <property name="spacing">
-                    <number>16</number>
-                   </property>
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="rightMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_6">
                    <item>
-                    <widget class="QPushButton" name="btn_alterar_foto_senha_as">
+                    <widget class="QLabel" name="label_4">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btn_alterar_foto_colab_as_2">
+                     <property name="minimumSize">
+                      <size>
+                       <width>140</width>
+                       <height>40</height>
+                      </size>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <family>Abel</family>
+                       <pointsize>18</pointsize>
+                      </font>
+                     </property>
                      <property name="cursor">
                       <cursorShape>PointingHandCursor</cursorShape>
                      </property>
                      <property name="styleSheet">
-                      <string notr="true">QPushButton{background-color: #E33B4E; border: none}</string>
+                      <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
                      </property>
                      <property name="text">
-                      <string/>
-                     </property>
-                     <property name="icon">
-                      <iconset>
-                       <normaloff>../icons/Ellipse 1.png</normaloff>../icons/Ellipse 1.png</iconset>
-                     </property>
-                     <property name="iconSize">
-                      <size>
-                       <width>140</width>
-                       <height>180</height>
-                      </size>
+                      <string>Alterar Foto</string>
                      </property>
                     </widget>
                    </item>
@@ -21751,38 +21747,70 @@ QPushButton:focus{outline: 0}</string>
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="btn_foto_usuario_as">
-                                  <property name="minimumSize">
-                                   <size>
-                                    <width>125</width>
-                                    <height>153</height>
-                                   </size>
+                                 <widget class="QFrame" name="frame_12">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
                                   </property>
-                                  <property name="maximumSize">
-                                   <size>
-                                    <width>125</width>
-                                    <height>153</height>
-                                   </size>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
                                   </property>
-                                  <property name="cursor">
-                                   <cursorShape>PointingHandCursor</cursorShape>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">background-color: #F3B9BF; border: none</string>
-                                  </property>
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="icon">
-                                   <iconset>
-                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
-                                  </property>
-                                  <property name="iconSize">
-                                   <size>
-                                    <width>120</width>
-                                    <height>120</height>
-                                   </size>
-                                  </property>
+                                  <layout class="QVBoxLayout" name="verticalLayout_10">
+                                   <property name="spacing">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="leftMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="topMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="rightMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <property name="bottomMargin">
+                                    <number>0</number>
+                                   </property>
+                                   <item>
+                                    <widget class="QLabel" name="label_foto_usuario_as">
+                                     <property name="text">
+                                      <string/>
+                                     </property>
+                                     <property name="textFormat">
+                                      <enum>Qt::PlainText</enum>
+                                     </property>
+                                     <property name="pixmap">
+                                      <pixmap>../icons/adicionar foto.png</pixmap>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                   <item>
+                                    <widget class="QPushButton" name="btn_tirar_foto_usuario_as">
+                                     <property name="minimumSize">
+                                      <size>
+                                       <width>140</width>
+                                       <height>40</height>
+                                      </size>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>18</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="cursor">
+                                      <cursorShape>PointingHandCursor</cursorShape>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                     </property>
+                                     <property name="text">
+                                      <string>Tirar Foto</string>
+                                     </property>
+                                    </widget>
+                                   </item>
+                                  </layout>
                                  </widget>
                                 </item>
                                 <item>
@@ -45845,7 +45873,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>3</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -48229,38 +48257,77 @@ QPushButton:focus{outline:0}</string>
                                                     <number>0</number>
                                                    </property>
                                                    <item>
-                                                    <widget class="QPushButton" name="btn_alterar_foto_usuario_as">
-                                                     <property name="minimumSize">
-                                                      <size>
-                                                       <width>125</width>
-                                                       <height>153</height>
-                                                      </size>
+                                                    <widget class="QFrame" name="frame_15">
+                                                     <property name="frameShape">
+                                                      <enum>QFrame::StyledPanel</enum>
                                                      </property>
-                                                     <property name="maximumSize">
-                                                      <size>
-                                                       <width>125</width>
-                                                       <height>153</height>
-                                                      </size>
+                                                     <property name="frameShadow">
+                                                      <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <property name="cursor">
-                                                      <cursorShape>PointingHandCursor</cursorShape>
-                                                     </property>
-                                                     <property name="styleSheet">
-                                                      <string notr="true">background-color: #F3B9BF; border: none</string>
-                                                     </property>
-                                                     <property name="text">
-                                                      <string/>
-                                                     </property>
-                                                     <property name="icon">
-                                                      <iconset>
-                                                       <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
-                                                     </property>
-                                                     <property name="iconSize">
-                                                      <size>
-                                                       <width>120</width>
-                                                       <height>120</height>
-                                                      </size>
-                                                     </property>
+                                                     <layout class="QVBoxLayout" name="verticalLayout_301">
+                                                      <item>
+                                                       <widget class="QLabel" name="label_foto_usuario_alterar_as">
+                                                        <property name="minimumSize">
+                                                         <size>
+                                                          <width>180</width>
+                                                          <height>240</height>
+                                                         </size>
+                                                        </property>
+                                                        <property name="maximumSize">
+                                                         <size>
+                                                          <width>180</width>
+                                                          <height>240</height>
+                                                         </size>
+                                                        </property>
+                                                        <property name="text">
+                                                         <string/>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                      <item>
+                                                       <spacer name="verticalSpacer_5">
+                                                        <property name="orientation">
+                                                         <enum>Qt::Vertical</enum>
+                                                        </property>
+                                                        <property name="sizeType">
+                                                         <enum>QSizePolicy::Fixed</enum>
+                                                        </property>
+                                                        <property name="sizeHint" stdset="0">
+                                                         <size>
+                                                          <width>20</width>
+                                                          <height>20</height>
+                                                         </size>
+                                                        </property>
+                                                       </spacer>
+                                                      </item>
+                                                      <item>
+                                                       <widget class="QPushButton" name="btn_alterar_foto_usuario_as">
+                                                        <property name="minimumSize">
+                                                         <size>
+                                                          <width>140</width>
+                                                          <height>40</height>
+                                                         </size>
+                                                        </property>
+                                                        <property name="font">
+                                                         <font>
+                                                          <family>Abel</family>
+                                                          <pointsize>18</pointsize>
+                                                         </font>
+                                                        </property>
+                                                        <property name="cursor">
+                                                         <cursorShape>PointingHandCursor</cursorShape>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                                        </property>
+                                                        <property name="text">
+                                                         <string>Alterar Foto</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                     </layout>
                                                     </widget>
                                                    </item>
                                                    <item>
@@ -52665,7 +52732,18 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <layout class="QHBoxLayout" name="horizontalLayout_131">
+                                                     <layout class="QVBoxLayout" name="verticalLayout_258">
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                        <property name="enabled">
+                                                         <bool>false</bool>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
                                                       <item>
                                                        <widget class="QLineEdit" name="input_alterar_id_endereco_usuario_as">
                                                         <property name="enabled">
@@ -52678,7 +52756,7 @@ border-color: transparent;</string>
                                                        </widget>
                                                       </item>
                                                       <item>
-                                                       <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                       <widget class="QLineEdit" name="input_id_foto_alterar_usuario_as">
                                                         <property name="enabled">
                                                          <bool>false</bool>
                                                         </property>
@@ -53642,12 +53720,46 @@ QPushButton:focus{outline:0}</string>
                                                 </item>
                                                 <item>
                                                  <widget class="QFrame" name="frame_277">
+                                                  <property name="maximumSize">
+                                                   <size>
+                                                    <width>0</width>
+                                                    <height>0</height>
+                                                   </size>
+                                                  </property>
                                                   <property name="frameShape">
                                                    <enum>QFrame::StyledPanel</enum>
                                                   </property>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
+                                                  <layout class="QVBoxLayout" name="verticalLayout_175">
+                                                   <item>
+                                                    <widget class="QLineEdit" name="input_alterar_id_foto_usuario_as">
+                                                     <property name="minimumSize">
+                                                      <size>
+                                                       <width>0</width>
+                                                       <height>30</height>
+                                                      </size>
+                                                     </property>
+                                                     <property name="maximumSize">
+                                                      <size>
+                                                       <width>229</width>
+                                                       <height>30</height>
+                                                      </size>
+                                                     </property>
+                                                     <property name="font">
+                                                      <font>
+                                                       <family>Abel</family>
+                                                       <pointsize>12</pointsize>
+                                                      </font>
+                                                     </property>
+                                                     <property name="styleSheet">
+                                                      <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                     </property>
+                                                    </widget>
+                                                   </item>
+                                                  </layout>
                                                  </widget>
                                                 </item>
                                                </layout>
@@ -55323,7 +55435,7 @@ border-color: transparent;</string>
                                                   </property>
                                                   <layout class="QHBoxLayout" name="horizontalLayout_94">
                                                    <item>
-                                                    <widget class="QLineEdit" name="input_alterar_id_matricula_colaborador_as">
+                                                    <widget class="QLineEdit" name="input_alterar_id_colaborador_as">
                                                      <property name="enabled">
                                                       <bool>false</bool>
                                                      </property>
@@ -55356,23 +55468,6 @@ border-color: transparent;</string>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
-                                                  <layout class="QVBoxLayout" name="verticalLayout_258">
-                                                   <property name="spacing">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="leftMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="topMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="rightMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="bottomMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                  </layout>
                                                  </widget>
                                                 </item>
                                                </layout>
@@ -56139,14 +56234,14 @@ QPushButton:pressed{
                                               <widget class="QFrame" name="frame_414">
                                                <property name="minimumSize">
                                                 <size>
-                                                 <width>125</width>
-                                                 <height>200</height>
+                                                 <width>200</width>
+                                                 <height>280</height>
                                                 </size>
                                                </property>
                                                <property name="maximumSize">
                                                 <size>
-                                                 <width>125</width>
-                                                 <height>200</height>
+                                                 <width>200</width>
+                                                 <height>280</height>
                                                 </size>
                                                </property>
                                                <property name="frameShape">
@@ -56155,7 +56250,7 @@ QPushButton:pressed{
                                                <property name="frameShadow">
                                                 <enum>QFrame::Raised</enum>
                                                </property>
-                                               <layout class="QVBoxLayout" name="verticalLayout_301">
+                                               <layout class="QVBoxLayout" name="verticalLayout_86">
                                                 <property name="spacing">
                                                  <number>0</number>
                                                 </property>
@@ -56172,79 +56267,63 @@ QPushButton:pressed{
                                                  <number>0</number>
                                                 </property>
                                                 <item>
-                                                 <widget class="QPushButton" name="input_alterar_foto_colaborador_as">
+                                                 <widget class="QLabel" name="label_foto_colaborador_alterar_as">
                                                   <property name="minimumSize">
                                                    <size>
-                                                    <width>125</width>
-                                                    <height>153</height>
+                                                    <width>180</width>
+                                                    <height>200</height>
                                                    </size>
                                                   </property>
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>125</width>
-                                                    <height>153</height>
+                                                    <width>180</width>
+                                                    <height>200</height>
                                                    </size>
-                                                  </property>
-                                                  <property name="cursor">
-                                                   <cursorShape>PointingHandCursor</cursorShape>
-                                                  </property>
-                                                  <property name="styleSheet">
-                                                   <string notr="true">background-color: #F3B9BF; border: none</string>
                                                   </property>
                                                   <property name="text">
                                                    <string/>
                                                   </property>
-                                                  <property name="icon">
-                                                   <iconset>
-                                                    <normaloff>../icons/adicionar foto.png</normaloff>../icons/adicionar foto.png</iconset>
-                                                  </property>
-                                                  <property name="iconSize">
-                                                   <size>
-                                                    <width>120</width>
-                                                    <height>120</height>
-                                                   </size>
-                                                  </property>
                                                  </widget>
                                                 </item>
                                                 <item>
-                                                 <widget class="QFrame" name="frame_433">
-                                                  <property name="styleSheet">
-                                                   <string notr="true">background-color: rgb(243, 185, 191);</string>
-                                                  </property>
-                                                  <property name="frameShape">
-                                                   <enum>QFrame::StyledPanel</enum>
-                                                  </property>
-                                                  <property name="frameShadow">
-                                                   <enum>QFrame::Raised</enum>
-                                                  </property>
-                                                  <layout class="QVBoxLayout" name="verticalLayout_302">
-                                                   <property name="leftMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="topMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="rightMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                   <property name="bottomMargin">
-                                                    <number>0</number>
-                                                   </property>
-                                                  </layout>
-                                                 </widget>
-                                                </item>
-                                                <item>
-                                                 <spacer name="verticalSpacer_14">
+                                                 <spacer name="verticalSpacer_4">
                                                   <property name="orientation">
                                                    <enum>Qt::Vertical</enum>
                                                   </property>
                                                   <property name="sizeHint" stdset="0">
                                                    <size>
                                                     <width>20</width>
-                                                    <height>19</height>
+                                                    <height>40</height>
                                                    </size>
                                                   </property>
                                                  </spacer>
+                                                </item>
+                                                <item>
+                                                 <widget class="QPushButton" name="btn_alterar_foto_colab_as">
+                                                  <property name="minimumSize">
+                                                   <size>
+                                                    <width>140</width>
+                                                    <height>40</height>
+                                                   </size>
+                                                  </property>
+                                                  <property name="font">
+                                                   <font>
+                                                    <family>Abel</family>
+                                                    <pointsize>18</pointsize>
+                                                   </font>
+                                                  </property>
+                                                  <property name="cursor">
+                                                   <cursorShape>PointingHandCursor</cursorShape>
+                                                  </property>
+                                                  <property name="styleSheet">
+                                                   <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
+QPushButton:hover{background-color: #23B2EE}
+QPushButton:focus{outline:0}</string>
+                                                  </property>
+                                                  <property name="text">
+                                                   <string>Alterar Foto</string>
+                                                  </property>
+                                                 </widget>
                                                 </item>
                                                </layout>
                                               </widget>

@@ -8665,18 +8665,33 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6.setSpacing(5)
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
         self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.btn_foto_usuario_as = QPushButton(self.frame_6)
-        self.btn_foto_usuario_as.setObjectName(u"btn_foto_usuario_as")
-        self.btn_foto_usuario_as.setMinimumSize(QSize(125, 153))
-        self.btn_foto_usuario_as.setMaximumSize(QSize(125, 153))
-        self.btn_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_foto_usuario_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        icon25 = QIcon()
-        icon25.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_foto_usuario_as.setIcon(icon25)
-        self.btn_foto_usuario_as.setIconSize(QSize(120, 120))
+        self.frame_12 = QFrame(self.frame_6)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setFrameShape(QFrame.StyledPanel)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.frame_12)
+        self.verticalLayout_10.setSpacing(0)
+        self.verticalLayout_10.setObjectName(u"verticalLayout_10")
+        self.verticalLayout_10.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_usuario_as = QLabel(self.frame_12)
+        self.label_foto_usuario_as.setObjectName(u"label_foto_usuario_as")
+        self.label_foto_usuario_as.setTextFormat(Qt.PlainText)
+        self.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
 
-        self.horizontalLayout_6.addWidget(self.btn_foto_usuario_as)
+        self.verticalLayout_10.addWidget(self.label_foto_usuario_as)
+
+        self.btn_tirar_foto_usuario_as = QPushButton(self.frame_12)
+        self.btn_tirar_foto_usuario_as.setObjectName(u"btn_tirar_foto_usuario_as")
+        self.btn_tirar_foto_usuario_as.setMinimumSize(QSize(140, 40))
+        self.btn_tirar_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_tirar_foto_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_10.addWidget(self.btn_tirar_foto_usuario_as)
+
+
+        self.horizontalLayout_6.addWidget(self.frame_12)
 
         self.frame_46 = QFrame(self.frame_6)
         self.frame_46.setObjectName(u"frame_46")
@@ -13718,42 +13733,47 @@ class Ui_MainWindow(object):
 
         self.frame_258 = QFrame(self.frame_194)
         self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(125, 200))
-        self.frame_258.setMaximumSize(QSize(125, 200))
+        self.frame_258.setMinimumSize(QSize(240, 240))
+        self.frame_258.setMaximumSize(QSize(240, 240))
         self.frame_258.setFrameShape(QFrame.StyledPanel)
         self.frame_258.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_179 = QVBoxLayout(self.frame_258)
-        self.verticalLayout_179.setSpacing(0)
-        self.verticalLayout_179.setObjectName(u"verticalLayout_179")
-        self.verticalLayout_179.setContentsMargins(0, 0, 0, 0)
-        self.input_foto_colaborador_as = QPushButton(self.frame_258)
-        self.input_foto_colaborador_as.setObjectName(u"input_foto_colaborador_as")
-        self.input_foto_colaborador_as.setMinimumSize(QSize(125, 153))
-        self.input_foto_colaborador_as.setMaximumSize(QSize(125, 153))
-        self.input_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.input_foto_colaborador_as.setIcon(icon25)
-        self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
-
-        self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
-
+        self.verticalLayout_14 = QVBoxLayout(self.frame_258)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.frame_259 = QFrame(self.frame_258)
         self.frame_259.setObjectName(u"frame_259")
         self.frame_259.setStyleSheet(u"background-color: rgb(243, 185, 191);")
         self.frame_259.setFrameShape(QFrame.StyledPanel)
         self.frame_259.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_178 = QVBoxLayout(self.frame_259)
-        self.verticalLayout_178.setObjectName(u"verticalLayout_178")
-        self.verticalLayout_178.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_259)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_colaborador_as = QLabel(self.frame_259)
+        self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
+        self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
+        self.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
 
-        self.verticalLayout_179.addWidget(self.frame_259)
+        self.verticalLayout_12.addWidget(self.label_foto_colaborador_as)
 
-        self.verticalSpacer = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_259)
+        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
+        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(120, 40))
+        self.btn_tirar_foto_colaborador_as.setFont(font9)
+        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
 
-        self.verticalLayout_179.addItem(self.verticalSpacer)
+        self.verticalLayout_12.addWidget(self.btn_tirar_foto_colaborador_as)
+
+
+        self.verticalLayout_14.addWidget(self.frame_259)
 
 
         self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
+
 
         self.frame_260 = QFrame(self.frame_194)
         self.frame_260.setObjectName(u"frame_260")
@@ -18510,16 +18530,34 @@ class Ui_MainWindow(object):
         self.horizontalLayout_105.setSpacing(5)
         self.horizontalLayout_105.setObjectName(u"horizontalLayout_105")
         self.horizontalLayout_105.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_usuario_as = QPushButton(self.frame_312)
-        self.btn_alterar_foto_usuario_as.setObjectName(u"btn_alterar_foto_usuario_as")
-        self.btn_alterar_foto_usuario_as.setMinimumSize(QSize(125, 153))
-        self.btn_alterar_foto_usuario_as.setMaximumSize(QSize(125, 153))
-        self.btn_alterar_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_usuario_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.btn_alterar_foto_usuario_as.setIcon(icon25)
-        self.btn_alterar_foto_usuario_as.setIconSize(QSize(120, 120))
+        self.frame_15 = QFrame(self.frame_312)
+        self.frame_15.setObjectName(u"frame_15")
+        self.frame_15.setFrameShape(QFrame.StyledPanel)
+        self.frame_15.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_301 = QVBoxLayout(self.frame_15)
+        self.verticalLayout_301.setSpacing(0)
+        self.verticalLayout_301.setObjectName(u"verticalLayout_301")
+        self.verticalLayout_301.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_usuario_alterar_as = QLabel(self.frame_15)
+        self.label_foto_usuario_alterar_as.setObjectName(u"label_foto_usuario_alterar_as")
+        self.label_foto_usuario_alterar_as.setMinimumSize(QSize(180, 240))
+        self.label_foto_usuario_alterar_as.setMaximumSize(QSize(180, 240))
 
-        self.horizontalLayout_105.addWidget(self.btn_alterar_foto_usuario_as)
+        self.verticalLayout_301.addWidget(self.label_foto_usuario_alterar_as)
+
+        self.btn_alterar_foto_usuario_as = QPushButton(self.frame_15)
+        self.btn_alterar_foto_usuario_as.setObjectName(u"btn_alterar_foto_usuario_as")
+        self.btn_alterar_foto_usuario_as.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_usuario_as.setFont(font7)
+        self.btn_alterar_foto_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_301.addWidget(self.btn_alterar_foto_usuario_as)
+
+
+        self.horizontalLayout_105.addWidget(self.frame_15)
 
         self.frame_313 = QFrame(self.frame_312)
         self.frame_313.setObjectName(u"frame_313")
@@ -19992,15 +20030,13 @@ class Ui_MainWindow(object):
         self.frame_358.setMaximumSize(QSize(600, 16777215))
         self.frame_358.setFrameShape(QFrame.StyledPanel)
         self.frame_358.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_131 = QHBoxLayout(self.frame_358)
-        self.horizontalLayout_131.setObjectName(u"horizontalLayout_131")
-        self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
-        self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
-        self.input_alterar_id_endereco_usuario_as.setEnabled(False)
-        self.input_alterar_id_endereco_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+        self.verticalLayout_258 = QVBoxLayout(self.frame_358)
+        self.verticalLayout_258.setObjectName(u"verticalLayout_258")
+        self.input_alterar_id_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_usuario_as.setObjectName(u"input_alterar_id_usuario_as")
+        self.input_alterar_id_usuario_as.setEnabled(False)
+        self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
-
-        self.horizontalLayout_131.addWidget(self.input_alterar_id_endereco_usuario_as)
 
         self.input_alterar_id_matricula_usuario_as = QLineEdit(self.frame_358)
         self.input_alterar_id_matricula_usuario_as.setObjectName(u"input_alterar_id_matricula_usuario_as")
@@ -20008,13 +20044,31 @@ class Ui_MainWindow(object):
         self.input_alterar_id_matricula_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.horizontalLayout_131.addWidget(self.input_alterar_id_matricula_usuario_as)
+
+        self.verticalLayout_258.addWidget(self.input_alterar_id_matricula_usuario_as)
+
+        self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
+        self.input_alterar_id_endereco_usuario_as.setEnabled(False)
+        self.input_alterar_id_endereco_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_258.addWidget(self.input_alterar_id_endereco_usuario_as)
+
+        self.input_id_foto_alterar_usuario_as = QLineEdit(self.frame_358)
+        self.input_id_foto_alterar_usuario_as.setObjectName(u"input_id_foto_alterar_usuario_as")
+        self.input_id_foto_alterar_usuario_as.setEnabled(False)
+        self.input_id_foto_alterar_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_258.addWidget(self.input_id_foto_alterar_usuario_as)
 
 
         self.horizontalLayout_721.addWidget(self.frame_358)
 
 
         self.verticalLayout_208.addWidget(self.frame_354)
+
 
         self.frame_359 = QFrame(self.frame_311)
         self.frame_359.setObjectName(u"frame_359")
@@ -20360,8 +20414,21 @@ class Ui_MainWindow(object):
 
         self.frame_277 = QFrame(self.frame_382)
         self.frame_277.setObjectName(u"frame_277")
+        self.frame_277.setMaximumSize(QSize(0, 0))
         self.frame_277.setFrameShape(QFrame.StyledPanel)
         self.frame_277.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_175 = QVBoxLayout(self.frame_277)
+        self.verticalLayout_175.setObjectName(u"verticalLayout_175")
+        self.input_alterar_id_foto_usuario_as = QLineEdit(self.frame_277)
+        self.input_alterar_id_foto_usuario_as.setObjectName(u"input_alterar_id_foto_usuario_as")
+        self.input_alterar_id_foto_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_alterar_id_foto_usuario_as.setMaximumSize(QSize(229, 30))
+        self.input_alterar_id_foto_usuario_as.setFont(font)
+        self.input_alterar_id_foto_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_175.addWidget(self.input_alterar_id_foto_usuario_as)
+
 
         self.horizontalLayout_130.addWidget(self.frame_277)
 
@@ -20940,13 +21007,13 @@ class Ui_MainWindow(object):
         self.frame_380.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_941 = QHBoxLayout(self.frame_380)
         self.horizontalLayout_941.setObjectName(u"horizontalLayout_941")
-        self.input_alterar_id_matricula_colaborador_as = QLineEdit(self.frame_380)
-        self.input_alterar_id_matricula_colaborador_as.setObjectName(u"input_alterar_id_matricula_colaborador_as")
-        self.input_alterar_id_matricula_colaborador_as.setEnabled(False)
-        self.input_alterar_id_matricula_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
+        self.input_alterar_id_colaborador_as = QLineEdit(self.frame_380)
+        self.input_alterar_id_colaborador_as.setObjectName(u"input_alterar_id_colaborador_as")
+        self.input_alterar_id_colaborador_as.setEnabled(False)
+        self.input_alterar_id_colaborador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.horizontalLayout_941.addWidget(self.input_alterar_id_matricula_colaborador_as)
+        self.horizontalLayout_941.addWidget(self.input_alterar_id_colaborador_as)
 
 
         self.horizontalLayout_129.addWidget(self.frame_380)
@@ -21237,42 +21304,39 @@ class Ui_MainWindow(object):
 
         self.frame_414 = QFrame(self.frame_374)
         self.frame_414.setObjectName(u"frame_414")
-        self.frame_414.setMinimumSize(QSize(125, 200))
-        self.frame_414.setMaximumSize(QSize(125, 200))
+        self.frame_414.setMinimumSize(QSize(200, 280))
+        self.frame_414.setMaximumSize(QSize(200, 280))
         self.frame_414.setFrameShape(QFrame.StyledPanel)
         self.frame_414.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_301 = QVBoxLayout(self.frame_414)
-        self.verticalLayout_301.setSpacing(0)
-        self.verticalLayout_301.setObjectName(u"verticalLayout_301")
-        self.verticalLayout_301.setContentsMargins(0, 0, 0, 0)
-        self.input_alterar_foto_colaborador_as = QPushButton(self.frame_414)
-        self.input_alterar_foto_colaborador_as.setObjectName(u"input_alterar_foto_colaborador_as")
-        self.input_alterar_foto_colaborador_as.setMinimumSize(QSize(125, 153))
-        self.input_alterar_foto_colaborador_as.setMaximumSize(QSize(125, 153))
-        self.input_alterar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_alterar_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        self.input_alterar_foto_colaborador_as.setIcon(icon25)
-        self.input_alterar_foto_colaborador_as.setIconSize(QSize(120, 120))
+        self.verticalLayout_86 = QVBoxLayout(self.frame_414)
+        self.verticalLayout_86.setSpacing(0)
+        self.verticalLayout_86.setObjectName(u"verticalLayout_86")
+        self.verticalLayout_86.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_colaborador_alterar_as = QLabel(self.frame_414)
+        self.label_foto_colaborador_alterar_as.setObjectName(u"label_foto_colaborador_alterar_as")
+        self.label_foto_colaborador_alterar_as.setMinimumSize(QSize(180, 200))
+        self.label_foto_colaborador_alterar_as.setMaximumSize(QSize(180, 200))
 
-        self.verticalLayout_301.addWidget(self.input_alterar_foto_colaborador_as)
+        self.verticalLayout_86.addWidget(self.label_foto_colaborador_alterar_as)
 
-        self.frame_433 = QFrame(self.frame_414)
-        self.frame_433.setObjectName(u"frame_433")
-        self.frame_433.setStyleSheet(u"background-color: rgb(243, 185, 191);")
-        self.frame_433.setFrameShape(QFrame.StyledPanel)
-        self.frame_433.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_302 = QVBoxLayout(self.frame_433)
-        self.verticalLayout_302.setObjectName(u"verticalLayout_302")
-        self.verticalLayout_302.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_301.addWidget(self.frame_433)
+        self.verticalLayout_86.addItem(self.verticalSpacer_4)
 
-        self.verticalSpacer_14 = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.btn_alterar_foto_colab_as = QPushButton(self.frame_414)
+        self.btn_alterar_foto_colab_as.setObjectName(u"btn_alterar_foto_colab_as")
+        self.btn_alterar_foto_colab_as.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as.setFont(font7)
+        self.btn_alterar_foto_colab_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
 
-        self.verticalLayout_301.addItem(self.verticalSpacer_14)
+        self.verticalLayout_86.addWidget(self.btn_alterar_foto_colab_as)
 
 
         self.gridLayout_3.addWidget(self.frame_414, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
+
 
 
         self.horizontalLayout_137.addWidget(self.frame_374)
@@ -22542,7 +22606,8 @@ class Ui_MainWindow(object):
         self.btn_relatorio_cursos_participantes.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO CURSOS E PARTICIPANTES", None))
         self.btn_relatorio_beneficios.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO BENEF\u00cdCIOS", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO USU\u00c1RIO", None))
-        self.btn_foto_usuario_as.setText("")
+        self.label_foto_usuario_as.setText("")
+        self.btn_tirar_foto_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tirar Foto", None))
         self.label_matricula_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
         self.label_nome_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
         self.label_nascimento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
@@ -22683,14 +22748,14 @@ class Ui_MainWindow(object):
         self.btn_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
         self.label_titulo_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DE BENEF\u00cdCIOS", None))
         self.label_tipo_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Tipo", None))
-        self.input_tipo_cadastro_beneficio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione...", None))
+        self.input_tipo_cadastro_beneficio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione..", None))
         self.input_tipo_cadastro_beneficio.setItemText(1, QCoreApplication.translate("MainWindow", u"Medica\u00e7\u00e3o", None))
         self.input_tipo_cadastro_beneficio.setItemText(2, QCoreApplication.translate("MainWindow", u"Alimenta\u00e7\u00e3o", None))
 
         self.label_codigo_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo", None))
         self.label_lote_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Lote", None))
         self.label_udm_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Unidade de medida", None))
-        self.input_comboBox_udm_cadastro_benefecio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione...", None))
+        self.input_comboBox_udm_cadastro_benefecio.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione..", None))
         self.input_comboBox_udm_cadastro_benefecio.setItemText(1, QCoreApplication.translate("MainWindow", u"Quilo", None))
         self.input_comboBox_udm_cadastro_benefecio.setItemText(2, QCoreApplication.translate("MainWindow", u"Grama", None))
         self.input_comboBox_udm_cadastro_benefecio.setItemText(3, QCoreApplication.translate("MainWindow", u"Frasco", None))
@@ -22906,7 +22971,8 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
-        self.input_foto_colaborador_as.setText("")
+        self.label_foto_colaborador_as.setText("")
+        self.btn_tirar_foto_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tirar Foto", None))
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
@@ -23154,7 +23220,7 @@ class Ui_MainWindow(object):
         self.label_alterar_observacoes_gerais_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Informa\u00e7\u00f5es gerais Usu\u00e1rio e Cuidador", None))
         self.btn_alterar_voltar_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_salvar_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
-        self.btn_alterar_foto_usuario_as.setText("")
+        self.label_foto_usuario_alterar_as.setText("")
         self.label_alterar_matricula_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Matr\u00edcula", None))
         self.label_alterar_nome_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Nome do usu\u00e1rio", None))
         self.label_alterar_nascimento_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Data de nascimento", None))
@@ -23363,7 +23429,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cidade_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Cidade", None))
         self.label_alterar_estado_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Estado", None))
         self.input_alterar_estado_colaborador_as.setText("")
-        self.input_alterar_foto_colaborador_as.setText("")
+        self.label_foto_colaborador_alterar_as.setText("")
         self.btn_alterar_voltar_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_concluir_cadastro_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_titulo_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
