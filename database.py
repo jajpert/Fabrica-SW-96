@@ -376,7 +376,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT nome_fantasia FROM clinica WHERE id_clinica = {id_clinica};
+                SELECT razao_social FROM clinica WHERE id_clinica = {id_clinica};
             """)
             result = self.cursor.fetchall()
             return result
