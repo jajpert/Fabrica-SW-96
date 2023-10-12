@@ -14798,6 +14798,7 @@ class Ui_MainWindow(object):
         self.input_id_matricula_user_participante_geral = QLineEdit(self.frame_175)
         self.input_id_matricula_user_participante_geral.setObjectName(u"input_id_matricula_user_participante_geral")
         self.input_id_matricula_user_participante_geral.setMaximumSize(QSize(50, 32))
+        self.input_id_matricula_user_participante_geral.setEnabled(False)
         self.input_id_matricula_user_participante_geral.setStyleSheet(u"background-color: transparent;\n"
 "border-color: transparent;")
 
