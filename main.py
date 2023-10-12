@@ -672,6 +672,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ########################### NUTRICIONISTA ###########################
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
         self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
+        self.ui.btn_agenda_nutri.clicked.connect(self.tabela_agenda_nutri)
         self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
 
@@ -796,6 +797,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
         self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri)
+        self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri)
+        self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.tabela_agenda_nutri_atendimento)
+        self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario)
+        self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri)
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -1958,21 +1965,91 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
+    def buscar_usuario_nutri(self):
+        cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
+        dados = self.db.busca_usuario_nutri(cpf)
+        print(dados)
+        self.ui.input_nome_pagina_consulta_geral_nutri.setText(dados[0])
+        self.ui.input_contato_pagina_consulta_geral_nutri.setText(dados[1])
+        self.ui.input_clinica_pagina_consulta_geral_nutri.setText(dados[2])
+
+        tipo_pat = str(dados[3])
+
+        if tipo_pat == "":
+            self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(0)
+        elif tipo_pat == "Transplantado/a":
+            self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(1)
+        elif tipo_pat == "Prevenção":
+            self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(2)
+        elif tipo_pat == "Pré-Diálise":
+            self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(3)
+        elif tipo_pat == "Hemodiálise":
+            self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(4)
+        elif tipo_pat == "Diálise Peritoneal":
+            self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(5)
+            
+        pat_base = str(dados[4])
+        
+        if pat_base == "":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(0)
+        elif pat_base == "Hipertensão":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(1)
+        elif pat_base == "Diabete 1":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(2)
+        elif pat_base == "Diabete 2":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(3)
+        elif pat_base == "Lúpus":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(4)
+        elif pat_base == "Nefrites":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(5)
+        elif pat_base == "Outros":
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(6)
+
+        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(dados[5]))
+
+        self.ui.input_hora_consulta_as_nutri.setText(str(dados[6]))
+        self.ui.input_id_usuario_nutri_consulta.setText(str(dados[7]))
+        self.ui.input_id_usuario_nutri_consulta.hide()
+        self.tabela_agenda_nutri()
 
 
+    def nutri_imc_usuario(self):
+        peso = int(self.ui.input_peso_consulta_nutri.text())
+        altura = float(self.ui.input_altura_consulta_nutri.text())
+        altura2x = altura ** altura
+        imc = peso//altura2x
+        self.ui.input_imc_consulta_nutri.setText(str(imc))
+
+    def buscar_usuario_agenda_nutri(self):
+        cpf = self.ui.input_cpf_agendamento_nutri.text()
+        dados = self.db.busca_nutri_agenda(cpf)
+        print(dados)
+
+        self.ui.input_nome_agendamento_nutri.setText(dados[0])
+        self.ui.input_telefone_agendamento_nutri.setText(dados[1])
+        self.ui.input_clinica_agendamento_nutri.setText(dados[2])
+        self.ui.input_id_matricula_nutri_consulta.setText(str(dados[3]))
+        self.ui.input_id_matricula_nutri_consulta.hide()
 
 
+    def tabela_agenda_nutri(self):
+        result = self.db.busca_nutri_agenda_tabela()
+        self.ui.input_TableWidget_agendamento_nutri.clearContents()
+        self.ui.input_TableWidget_agendamento_nutri.setRowCount(len(result))   
 
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    def tabela_agenda_nutri_atendimento(self):
+        cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
+        result = self.db.busca_usuario_nutri_tabela(cpf)
+        self.ui.input_TableWidget_pagina_consulta_geral_nutri.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(len(result))   
 
-
-
-
-
-
-
-
-
-
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_nutri.setItem(row, column,QTableWidgetItem(str(data)))
 
 
 
@@ -2395,7 +2472,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAgenda() 
         self.listarAgendamentos()
 
-
     def cadastroAgendamento_psi(self):
         id_matricula = self.buscarPessoa_psi()
         cpf = self.ui.input_cpf_agendamento_psi.text()
@@ -2428,6 +2504,53 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         # self.msg(result[0],result[1])   
         self.limparCamposAgenda_psi() 
         self.listarAgendamentos_psi()
+
+    def cadastroAgendamentoNutri(self):
+        id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
+        cpf = self.ui.input_cpf_agendamento_nutri.text()
+        nome = self.ui.input_nome_agendamento_nutri.text()
+        telefone = self.ui.input_telefone_agendamento_nutri.text()
+        clinica = self.ui.input_clinica_agendamento_nutri.text()
+
+
+        profissional = ''
+        if self.ui.input_profissional_as_agendamento_nutri.isChecked():
+            profissional = 'Assistente Social'
+        elif self.ui.input_profissional_fisio_agendamento_nutri.isChecked():
+            profissional = 'Fisioterapeuta'
+        elif self.ui.input_profissional_nutri_agendamento_nutri.isChecked():
+            profissional = 'Nutricionista'
+        if self.ui.input_profissional_psi_agendamento_nutri.isChecked():
+            profissional = 'Psicóloga'
+        data = self.ui.input_data_agendamento_nutri.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_agendamento_nutri.text()
+        anotacao = self.ui.input_anotacao_agendamento_nutri.toPlainText()
+
+        tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
+        
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Agendamento")
+        msg.setText("Agendamento Cadastrado com sucesso!")
+        msg.exec()
+        # self.msg(result[0],result[1])   
+        # self.limparCamposAgenda_psi() 
+        self.tabela_agenda_nutri()
+        self.limparCamposAgendaNutri()
+
+    def cadastroIMC(self):
+        peso = self.ui.input_peso_consulta_nutri.text()
+        altura = self.ui.input_altura_consulta_nutri.text()
+        imc = self.ui.input_imc_consulta_nutri.text()
+        evolucao = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
+        id_usuario = self.ui.input_id_usuario_nutri_consulta.text()
+
+
+        tupla_IMC = (peso, altura, imc, evolucao, id_usuario)
+        result = self.db.cadastroIMC(tupla_IMC)
+        print(result)
 
 
     def cadastroFornecedor(self):
@@ -2664,6 +2787,37 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
         self.ui.input_hora_consulta_as.setText(00,00)
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
+
+    def limparCamposConsultaNutri(self):
+        self.ui.input_cpf_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_nome_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_contato_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(0)
+        self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(0)
+        self.ui.input_peso_consulta_nutri.setText("")
+        self.ui.input_altura_consulta_nutri.setText("")
+        self.ui.input_imc_consulta_nutri.setText("")
+        self.ui.radioButton_atendimento_as_nutri.setCheckable(False)
+        self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
+        self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
+        self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_consulta_as_nutri.setText("")
+        self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
+
+    def limparCamposAgendaNutri(self):
+        self.ui.input_cpf_agendamento_nutri.setText("")
+        self.ui.input_nome_agendamento_nutri.setText("")
+        self.ui.input_telefone_agendamento_nutri.setText("")
+        self.ui.input_clinica_agendamento_nutri.setText("")
+        self.ui.radioButton_atendimento_as_nutri.setCheckable(False)
+        self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
+        self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
+        self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
+        self.ui.input_data_agendamento_nutri.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
+        self.ui.input_anotacao_agendamento_nutri.setHtml("")
 
     def limparCamposConsulta_psi(self):
         self.ui.input_cpf_agendamento_psi.setText("")
@@ -2925,7 +3079,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
         hora  = str(dados[5]).split(":")
-        self.ui.input_hora_consulta_as.setTime(QTime(int(hora[0]),int(hora[1])))
+        self.ui.input_hora_consulta_as.setText(str(dados[5]))
         self.puxar_consulta()
 
     def cadastrar_consulta(self):
@@ -2956,6 +3110,36 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         self.limparCamposConsulta()
         self.puxar_consulta()
+        
+    def cadastrar_consulta_nutri(self):
+        self.cadastroIMC()
+        if self.ui.radioButton_atendimento_as_nutri.isChecked():
+            situacao = "Consulta"
+        if self.ui.radioButton_Retorno_as_nutri.isChecked():
+            situacao = "Retorno"
+
+        data = self.ui.input_data_pagina_consulta_geral_nutri.text()
+        data_consulta = "-".join(data.split("/")[::-1])
+
+        hora_bruta = self.ui.input_hora_consulta_as_nutri.text()
+
+        relatorio = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
+
+        id_usuario = self.ui.input_id_usuario_nutri_consulta.text()
+
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
+
+        result = []
+        result = self.db.cadastro_consulta_nutri(tupla_consulta)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Consulta")
+        msg.setText("Consulta Cadastrada com sucesso!")
+        msg.exec()
+        
+        self.tabela_agenda_nutri_atendimento()
+        self.limparCamposConsultaNutri()
 
     def cadastrar_consulta_psi(self):
         if self.ui.radioButton_atendimento_as_psi.isChecked():

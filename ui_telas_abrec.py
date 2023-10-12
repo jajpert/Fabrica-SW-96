@@ -615,6 +615,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_410.setSpacing(0)
         self.verticalLayout_410.setObjectName(u"verticalLayout_410")
         self.verticalLayout_410.setContentsMargins(0, 0, 0, 0)
+        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_620)
+        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
+        self.input_id_matricula_nutri_consulta.setEnabled(False)
+        self.input_id_matricula_nutri_consulta.setMinimumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setFont(font)
+        self.input_id_matricula_nutri_consulta.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+        self.input_id_matricula_nutri_consulta.setMaxLength(11)
+
+        self.verticalLayout_410.addWidget(self.input_id_matricula_nutri_consulta)
         self.frame_621 = QFrame(self.frame_620)
         self.frame_621.setObjectName(u"frame_621")
         sizePolicy.setHeightForWidth(self.frame_621.sizePolicy().hasHeightForWidth())
@@ -1305,6 +1316,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_383.setSpacing(0)
         self.verticalLayout_383.setObjectName(u"verticalLayout_383")
         self.verticalLayout_383.setContentsMargins(0, 0, 0, 0)
+        self.input_id_usuario_nutri_consulta = QLineEdit(self.frame_573)
+        self.input_id_usuario_nutri_consulta.setObjectName(u"input_id_usuario_nutri_consulta")
+        self.input_id_usuario_nutri_consulta.setEnabled(False)
+        self.input_id_usuario_nutri_consulta.setMaximumSize(QSize(15, 15))
+        self.input_id_usuario_nutri_consulta.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_383.addWidget(self.input_id_usuario_nutri_consulta)
         self.frame_574 = QFrame(self.frame_573)
         self.frame_574.setObjectName(u"frame_574")
         self.frame_574.setFrameShape(QFrame.StyledPanel)
@@ -1376,6 +1395,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_190.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_2)
 
+        
 
         self.verticalLayout_383.addWidget(self.frame_575)
 
