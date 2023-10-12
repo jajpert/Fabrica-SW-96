@@ -7,6 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -747,6 +748,22 @@ class DataBase():
                                      data = '{campo[1]}',
                                      observacao = '{campo[3]}'
                                      WHERE id_consulta = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
+        
+    def alterarAreaSigilosa(self, campo, id_matricula):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE area_sigilosa SET
+                                     observacao_gerais = '{campo[1]}'
+                                     WHERE id_matricula = '{id_matricula}';
             """)
             self.conn.commit()
             return "Alteração feita com Sucesso!!!"
