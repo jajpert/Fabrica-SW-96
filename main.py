@@ -796,6 +796,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
         self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_alterar_observacoes_sigilosas_as.clicked.connect(self.alterarAreaSigilosa)
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -2234,6 +2235,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.input_salario_colaborador_as.setText(salario_formatado)
     
+
+    def alterarAreaSigilosa(self):
+        campo = []
+        update_dados = []
+        for row in range(self.ui.input_TableWidget_observacoes_sigilosas_as.rowCount()):
+            for column in range(self.ui.input_TableWidget_observacoes_sigilosas_as.columnCount()):
+                campo.append(self.ui.input_TableWidget_observacoes_sigilosas_as.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+
+        for emp in update_dados:
+           res = self.db.alterarAreaSigilosa(tuple(emp), self.id_area_sigilosa)
+
+
     def cadastroColaborador(self):
 
         ######################## endereço ###########################
