@@ -6,7 +6,9 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
             db_info = self.conn.get_server_info()
@@ -375,7 +377,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT nome_fantasia FROM clinica WHERE id_clinica = {id_clinica};
+                SELECT razao_social FROM clinica WHERE id_clinica = {id_clinica};
             """)
             result = self.cursor.fetchall()
             return result
