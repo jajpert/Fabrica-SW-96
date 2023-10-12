@@ -842,7 +842,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_farm_3.setText(nome_colaborador)
                     self.LoginFarm()        
                 else:
                     print ("Usuário não encontrado")
@@ -854,7 +854,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_fisio.setText(nome_colaborador)
                     self.LoginFisio()       
                 else:
                     print ("Usuário não encontrado")
@@ -866,7 +866,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nutri_2.setText(nome_colaborador)
                     self.LoginNutri()       
                 else:
                     print ("Usuário não encontrado")
@@ -878,7 +878,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.ui.label_ola_nome_psi.setText(nome_colaborador)
                     self.LoginPsico() 
                          
                 else:
@@ -2311,6 +2311,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.input_salario_colaborador_as.setText(salario_formatado)
     
+
+    def alterarAreaSigilosa(self):
+        campo = []
+        update_dados = []
+        for row in range(self.ui.input_TableWidget_observacoes_sigilosas_as.rowCount()):
+            for column in range(self.ui.input_TableWidget_observacoes_sigilosas_as.columnCount()):
+                campo.append(self.ui.input_TableWidget_observacoes_sigilosas_as.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+
+        for emp in update_dados:
+           res = self.db.alterarAreaSigilosa(tuple(emp), self.id_area_sigilosa)
+
+
     def cadastroColaborador(self):
 
         ######################## endereço ###########################
@@ -2811,10 +2825,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_nome_agendamento_nutri.setText("")
         self.ui.input_telefone_agendamento_nutri.setText("")
         self.ui.input_clinica_agendamento_nutri.setText("")
-        self.ui.radioButton_atendimento_as_nutri.setCheckable(False)
-        self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
-        self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
-        self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
+        self.ui.input_profissional_as_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_nutri.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_nutri.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
         self.ui.input_data_agendamento_nutri.setDate(QDate(2000, 1, 1))
         self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_nutri.setHtml("")
