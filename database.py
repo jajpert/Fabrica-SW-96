@@ -403,6 +403,35 @@ class DataBase():
             self.close_connection()
 
 
+    def select_nome_colab_login(self,login_colab):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT id_matricula FROM pessoa WHERE nome LIKE '{login_colab}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscarIdFotoColab(self,id_colab):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT idFoto_usuario FROM foto_usuario WHERE id_colaborador = {id_colab};
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
     def tirar_foto_usuario(self, foto):
         self.connect()
         try:
@@ -460,7 +489,7 @@ class DataBase():
     def buscar_foto_colaborador(self, id_colaborador):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT caminho FROM foto_usuario WHERE id_colaborador ={id_colaborador};""")
+            self.cursor.execute(f"""SELECT caminho FROM foto_usuario WHERE id_colaborador = {id_colaborador};""")
             result = self.cursor.fetchall()
             return result[0]
         

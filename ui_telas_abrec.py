@@ -7347,15 +7347,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setSpacing(16)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_as = QPushButton(self.frame_9)
-        self.btn_alterar_foto_senha_as.setObjectName(u"btn_alterar_foto_senha_as")
-        self.btn_alterar_foto_senha_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_senha_as.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        self.btn_alterar_foto_senha_as.setIcon(icon1)
-        self.btn_alterar_foto_senha_as.setIconSize(QSize(140, 180))
+        self.label_foto_colab_inicio = QLabel(self.frame_9)
+        self.label_foto_colab_inicio.setObjectName(u"label_foto_colab_inicio")
 
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_senha_as)
+        self.verticalLayout_6.addWidget(self.label_foto_colab_inicio)
+
+        self.btn_alterar_foto_colab_inicio = QPushButton(self.frame_9)
+        self.btn_alterar_foto_colab_inicio.setObjectName(u"btn_alterar_foto_colab_inicio")
+        self.btn_alterar_foto_colab_inicio.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_inicio.setFont(font7)
+        self.btn_alterar_foto_colab_inicio.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_inicio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_inicio)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -22572,7 +22578,6 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.btn_alterar_foto_senha_as.setText("")
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
