@@ -179,15 +179,6 @@ class DialogTirarImportarFotoUsuario(QDialog):
             file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
             caminho_importado = file_path
             formato_importado = imghdr.what(caminho_importado)
-            tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
-            result = self.db.tirar_foto_usuario(tupla_foto)
-            
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Imagem Salva")
-            msg.setText("Imagem Salva com Sucesso!!!")
-            msg.exec()
-            
             if formato_importado not in format:
 
                 msg = QMessageBox()
@@ -225,10 +216,18 @@ class DialogTirarImportarFotoUsuario(QDialog):
                           
                 if resposta == QMessageBox.No:
                     return
-
-
+            else:
+                tupla_foto = (self.nome_usuario, caminho_importado, self.id_usuario)
+                result = self.db.tirar_foto_usuario(tupla_foto)
                 
-                
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()
+            
+            
+
 
 
 class DialogTirarImportarFotoColaborador(QDialog):
@@ -355,14 +354,6 @@ class DialogTirarImportarFotoColaborador(QDialog):
             file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
             caminho_importado = file_path
             formato_importado = imghdr.what(caminho_importado)
-            tupla_foto = (self.nome_colab, caminho_importado, self.id_colaborador)
-            result = self.db.tirar_foto_colaborador(tupla_foto)
-
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Imagem Salva")
-            msg.setText("Imagem Salva com Sucesso!!!")
-            msg.exec()  
             
             if formato_importado not in format:
                 msg = QMessageBox()
@@ -402,6 +393,16 @@ class DialogTirarImportarFotoColaborador(QDialog):
                     
                     if resposta == QMessageBox.No:
                         return
+            else:
+                tupla_foto = (self.nome_colab, caminho_importado, self.id_colaborador)
+                result = self.db.tirar_foto_colaborador(tupla_foto)
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+            
 
     
 
@@ -495,23 +496,6 @@ class DialogAlterarSenhaFoto(QDialog):
             caminho_importado = file_path
             formato_importado = imghdr.what(caminho_importado)
 
-            #Trata o ID do Select feito no banco
-            id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
-            id_foto_nt = id_foto[0][0]
-            id_foto_tratada = id_foto_nt
-
-            #Altera no Banco o caminho da imagem
-            tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
-            print(tupla_foto)
-            result = self.db.alterar_foto_colaborador(tupla_foto)
-            
-
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Imagem Salva")
-            msg.setText("Imagem Salva com Sucesso!!!")
-            msg.exec()  
-            
             if formato_importado not in format:
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
@@ -550,6 +534,25 @@ class DialogAlterarSenhaFoto(QDialog):
                     
                     if resposta == QMessageBox.No:
                         return
+            else:
+                #Trata o ID do Select feito no banco
+                id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                id_foto_nt = id_foto[0][0]
+                id_foto_tratada = id_foto_nt
+
+                #Altera no Banco o caminho da imagem
+                tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
+                print(tupla_foto)
+                result = self.db.alterar_foto_colaborador(tupla_foto)
+                
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+            
+            
 
 ##############Class Alterar Foto e Senha##############
 class DialogConfirmarSaida(QDialog):
