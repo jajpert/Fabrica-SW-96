@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecOiggjJ.ui'
+## Form generated from reading UI file 'telas_abrecWaLROr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -7349,10 +7349,10 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.label_foto_colab_inicio = QLabel(self.frame_9)
-        self.label_foto_colab_inicio.setObjectName(u"label_foto_colab_inicio")
+        self.label_4 = QLabel(self.frame_9)
+        self.label_4.setObjectName(u"label_4")
 
-        self.verticalLayout_6.addWidget(self.label_foto_colab_inicio)
+        self.verticalLayout_6.addWidget(self.label_4)
 
         self.btn_alterar_foto_colab_inicio = QPushButton(self.frame_9)
         self.btn_alterar_foto_colab_inicio.setObjectName(u"btn_alterar_foto_colab_inicio")
@@ -13757,6 +13757,74 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_80.addWidget(self.frame_387)
 
+        self.frame_258 = QFrame(self.frame_194)
+        self.frame_258.setObjectName(u"frame_258")
+        self.frame_258.setMinimumSize(QSize(240, 240))
+        self.frame_258.setMaximumSize(QSize(240, 240))
+        self.frame_258.setFrameShape(QFrame.StyledPanel)
+        self.frame_258.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_14 = QVBoxLayout(self.frame_258)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.frame_259 = QFrame(self.frame_258)
+        self.frame_259.setObjectName(u"frame_259")
+        self.frame_259.setStyleSheet(u"background-color: rgb(243, 185, 191);")
+        self.frame_259.setFrameShape(QFrame.StyledPanel)
+        self.frame_259.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_259)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_colaborador_as = QLabel(self.frame_259)
+        self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
+        self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
+        self.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
+
+        self.verticalLayout_12.addWidget(self.label_foto_colaborador_as)
+
+        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_259)
+        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
+        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(120, 40))
+        self.btn_tirar_foto_colaborador_as.setFont(font9)
+        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_12.addWidget(self.btn_tirar_foto_colaborador_as)
+
+
+        self.verticalLayout_14.addWidget(self.frame_259)
+
+
+        self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
+
+
+        self.frame_260 = QFrame(self.frame_194)
+        self.frame_260.setObjectName(u"frame_260")
+        self.frame_260.setFrameShape(QFrame.StyledPanel)
+        self.frame_260.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_181 = QVBoxLayout(self.frame_260)
+        self.verticalLayout_181.setSpacing(0)
+        self.verticalLayout_181.setObjectName(u"verticalLayout_181")
+        self.verticalLayout_181.setContentsMargins(0, 0, 0, 0)
+        self.frame_261 = QFrame(self.frame_260)
+        self.frame_261.setObjectName(u"frame_261")
+        self.frame_261.setMinimumSize(QSize(195, 50))
+        self.frame_261.setMaximumSize(QSize(195, 50))
+        self.frame_261.setStyleSheet(u"background-color: #EC848C; border-radius: 10px")
+        self.frame_261.setFrameShape(QFrame.StyledPanel)
+        self.frame_261.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_180 = QVBoxLayout(self.frame_261)
+        self.verticalLayout_180.setSpacing(0)
+        self.verticalLayout_180.setObjectName(u"verticalLayout_180")
+        self.verticalLayout_180.setContentsMargins(15, 0, 0, 0)
+        self.label_situacao_colaborador_as = QLabel(self.frame_261)
+        self.label_situacao_colaborador_as.setObjectName(u"label_situacao_colaborador_as")
+        self.label_situacao_colaborador_as.setMaximumSize(QSize(130, 16777215))
+        self.label_situacao_colaborador_as.setFont(font)
+
 
         self.gridLayout_2.addWidget(self.frame_241, 5, 1, 1, 1)
 
@@ -15375,58 +15443,6 @@ class Ui_MainWindow(object):
         self.frame_746.setFrameShadow(QFrame.Raised)
         self.verticalLayout_504 = QVBoxLayout(self.frame_746)
         self.verticalLayout_504.setObjectName(u"verticalLayout_504")
-        self.btn_buscar_relatorios_aluno_curso = QPushButton(self.frame_746)
-        self.btn_buscar_relatorios_aluno_curso.setObjectName(u"btn_buscar_relatorios_aluno_curso")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_relatorios_aluno_curso.setSizePolicy(sizePolicy3)
-        self.btn_buscar_relatorios_aluno_curso.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_relatorios_aluno_curso.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_relatorios_aluno_curso.setStyleSheet(u"QPushButton{\n"
-"        background: rgb(243, 185, 191);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"		border-top-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221);   \n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"        background: rgb(255, 194, 201);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221); \n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;  \n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"        background: rgb(180, 106, 102);\n"
-"        border: 2px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"        colo"
-                        "r: rgb(249, 217, 221);   \n"
-"}")
-        self.btn_buscar_relatorios_aluno_curso.setIcon(icon14)
-
-        self.verticalLayout_504.addWidget(self.btn_buscar_relatorios_aluno_curso)
-
-        self.frame_746 = QFrame(self.frame_739)
-        self.frame_746.setObjectName(u"frame_746")
-        self.frame_746.setMinimumSize(QSize(50, 50))
-        self.frame_746.setMaximumSize(QSize(50, 50))
-        self.frame_746.setFont(font12)
-        self.frame_746.setFrameShape(QFrame.StyledPanel)
-        self.frame_746.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_504 = QVBoxLayout(self.frame_746)
-        self.verticalLayout_504.setObjectName(u"verticalLayout_504")
         self.btn_buscar_relatorio_as_3 = QPushButton(self.frame_746)
         self.btn_buscar_relatorio_as_3.setObjectName(u"btn_buscar_relatorio_as_3")
         sizePolicy3.setHeightForWidth(self.btn_buscar_relatorio_as_3.sizePolicy().hasHeightForWidth())
@@ -15505,18 +15521,6 @@ class Ui_MainWindow(object):
 "")
 
         self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorio_as_2)
-
-        self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_250.addItem(self.horizontalSpacer_13)
-        self.input_buscar_dados_relatorios_aluno_curso = QLineEdit(self.frame_738)
-        self.input_buscar_dados_relatorios_aluno_curso.setObjectName(u"input_buscar_dados_relatorios_aluno_curso")
-        self.input_buscar_dados_relatorios_aluno_curso.setMinimumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorios_aluno_curso.setMaximumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
-"")
-
-        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorios_aluno_curso)
 
         self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -20520,6 +20524,58 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_721.addWidget(self.frame_500)
 
+        self.frame_746 = QFrame(self.frame_739)
+        self.frame_746.setObjectName(u"frame_746")
+        self.frame_746.setMinimumSize(QSize(50, 50))
+        self.frame_746.setMaximumSize(QSize(50, 50))
+        self.frame_746.setFont(font12)
+        self.frame_746.setFrameShape(QFrame.StyledPanel)
+        self.frame_746.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_504 = QVBoxLayout(self.frame_746)
+        self.verticalLayout_504.setObjectName(u"verticalLayout_504")
+        self.btn_buscar_relatorios_aluno_curso = QPushButton(self.frame_746)
+        self.btn_buscar_relatorios_aluno_curso.setObjectName(u"btn_buscar_relatorios_aluno_curso")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_relatorios_aluno_curso.setSizePolicy(sizePolicy3)
+        self.btn_buscar_relatorios_aluno_curso.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_relatorios_aluno_curso.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_relatorios_aluno_curso.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"		border-top-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221); \n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;  \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"        colo"
+                        "r: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_buscar_relatorios_aluno_curso.setIcon(icon14)
+
+        self.verticalLayout_504.addWidget(self.btn_buscar_relatorios_aluno_curso)
+
         self.frame_356 = QFrame(self.frame_354)
         self.frame_356.setObjectName(u"frame_356")
         self.frame_356.setMinimumSize(QSize(0, 0))
@@ -23533,6 +23589,7 @@ class Ui_MainWindow(object):
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
         self.input_foto_colaborador_as.setText("")
+        
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
@@ -23614,9 +23671,6 @@ class Ui_MainWindow(object):
         self.btn_buscar_relatorio_as_3.setText("")
         self.input_buscar_dados_relatorio_as_2.setText("")
         self.input_buscar_dados_relatorio_as_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
-        self.btn_buscar_relatorios_aluno_curso.setText("")
-        self.input_buscar_dados_relatorios_aluno_curso.setText("")
-        self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         ___qtablewidgetitem108 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(0)
         ___qtablewidgetitem108.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem109 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(1)
@@ -23647,6 +23701,27 @@ class Ui_MainWindow(object):
         self.input_inicio_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.input_final_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
+        self.input_buscar_dados_relatorios_aluno_curso = QLineEdit(self.frame_738)
+        self.input_buscar_dados_relatorios_aluno_curso.setObjectName(u"input_buscar_dados_relatorios_aluno_curso")
+        self.input_buscar_dados_relatorios_aluno_curso.setMinimumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorios_aluno_curso.setMaximumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
+"")
+
+        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorios_aluno_curso)
+
+        self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_250.addItem(self.horizontalSpacer_13)
+
+
+        self.verticalLayout_497.addWidget(self.frame_738)
+
+
+        self.horizontalLayout_249.addWidget(self.frame_56)
+        self.btn_buscar_relatorios_aluno_curso.setText("")
+        self.input_buscar_dados_relatorios_aluno_curso.setText("")
+        self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         self.btn_buscar_relatorio_beneficios_as.setText("")
         self.input_buscar_dados_relatorio_beneficios_as.setText("")
         self.input_buscar_dados_relatorio_beneficios_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
