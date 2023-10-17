@@ -326,6 +326,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
         self.ui.input_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
         self.ui.input_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
+        self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
@@ -2887,6 +2889,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
             self.ui.input_tipo_deficiencia_usuario_as.show()
+
+    def pessoa_com_deficiencia_alterar (self):
+
+        if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.isChecked():
+            
+            self.ui.frame_343.hide()
+            self.ui.frame_343.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()        
+
+        else:
+            
+            self.ui.frame_343.setEnabled(True)
+            self.ui.frame_343.show()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
+            
             
 
 ######################## Deficiência base Outra################################
