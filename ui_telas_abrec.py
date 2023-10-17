@@ -615,6 +615,17 @@ class Ui_MainWindow(object):
         self.verticalLayout_410.setSpacing(0)
         self.verticalLayout_410.setObjectName(u"verticalLayout_410")
         self.verticalLayout_410.setContentsMargins(0, 0, 0, 0)
+        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_620)
+        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
+        self.input_id_matricula_nutri_consulta.setEnabled(False)
+        self.input_id_matricula_nutri_consulta.setMinimumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setFont(font)
+        self.input_id_matricula_nutri_consulta.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+        self.input_id_matricula_nutri_consulta.setMaxLength(11)
+
+        self.verticalLayout_410.addWidget(self.input_id_matricula_nutri_consulta)
         self.frame_621 = QFrame(self.frame_620)
         self.frame_621.setObjectName(u"frame_621")
         sizePolicy.setHeightForWidth(self.frame_621.sizePolicy().hasHeightForWidth())
@@ -1305,6 +1316,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_383.setSpacing(0)
         self.verticalLayout_383.setObjectName(u"verticalLayout_383")
         self.verticalLayout_383.setContentsMargins(0, 0, 0, 0)
+        self.input_id_usuario_nutri_consulta = QLineEdit(self.frame_573)
+        self.input_id_usuario_nutri_consulta.setObjectName(u"input_id_usuario_nutri_consulta")
+        self.input_id_usuario_nutri_consulta.setEnabled(False)
+        self.input_id_usuario_nutri_consulta.setMaximumSize(QSize(15, 15))
+        self.input_id_usuario_nutri_consulta.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_383.addWidget(self.input_id_usuario_nutri_consulta)
         self.frame_574 = QFrame(self.frame_573)
         self.frame_574.setObjectName(u"frame_574")
         self.frame_574.setFrameShape(QFrame.StyledPanel)
@@ -1376,6 +1395,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_190.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_2)
 
+        
 
         self.verticalLayout_383.addWidget(self.frame_575)
 
@@ -7327,15 +7347,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setSpacing(16)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_as = QPushButton(self.frame_9)
-        self.btn_alterar_foto_senha_as.setObjectName(u"btn_alterar_foto_senha_as")
-        self.btn_alterar_foto_senha_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_senha_as.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        self.btn_alterar_foto_senha_as.setIcon(icon1)
-        self.btn_alterar_foto_senha_as.setIconSize(QSize(140, 180))
+        self.label_foto_colab_inicio = QLabel(self.frame_9)
+        self.label_foto_colab_inicio.setObjectName(u"label_foto_colab_inicio")
 
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_senha_as)
+        self.verticalLayout_6.addWidget(self.label_foto_colab_inicio)
+
+        self.btn_alterar_foto_colab_inicio = QPushButton(self.frame_9)
+        self.btn_alterar_foto_colab_inicio.setObjectName(u"btn_alterar_foto_colab_inicio")
+        self.btn_alterar_foto_colab_inicio.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_inicio.setFont(font7)
+        self.btn_alterar_foto_colab_inicio.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_inicio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_inicio)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -14778,6 +14804,7 @@ class Ui_MainWindow(object):
         self.input_id_matricula_user_participante_geral = QLineEdit(self.frame_175)
         self.input_id_matricula_user_participante_geral.setObjectName(u"input_id_matricula_user_participante_geral")
         self.input_id_matricula_user_participante_geral.setMaximumSize(QSize(50, 32))
+        self.input_id_matricula_user_participante_geral.setEnabled(False)
         self.input_id_matricula_user_participante_geral.setStyleSheet(u"background-color: transparent;\n"
 "border-color: transparent;")
 
@@ -22551,7 +22578,6 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.btn_alterar_foto_senha_as.setText("")
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
