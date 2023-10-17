@@ -15375,6 +15375,58 @@ class Ui_MainWindow(object):
         self.frame_746.setFrameShadow(QFrame.Raised)
         self.verticalLayout_504 = QVBoxLayout(self.frame_746)
         self.verticalLayout_504.setObjectName(u"verticalLayout_504")
+        self.btn_buscar_relatorios_aluno_curso = QPushButton(self.frame_746)
+        self.btn_buscar_relatorios_aluno_curso.setObjectName(u"btn_buscar_relatorios_aluno_curso")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_relatorios_aluno_curso.setSizePolicy(sizePolicy3)
+        self.btn_buscar_relatorios_aluno_curso.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_relatorios_aluno_curso.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_relatorios_aluno_curso.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"		border-top-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221); \n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;  \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"        colo"
+                        "r: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_buscar_relatorios_aluno_curso.setIcon(icon14)
+
+        self.verticalLayout_504.addWidget(self.btn_buscar_relatorios_aluno_curso)
+
+        self.frame_746 = QFrame(self.frame_739)
+        self.frame_746.setObjectName(u"frame_746")
+        self.frame_746.setMinimumSize(QSize(50, 50))
+        self.frame_746.setMaximumSize(QSize(50, 50))
+        self.frame_746.setFont(font12)
+        self.frame_746.setFrameShape(QFrame.StyledPanel)
+        self.frame_746.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_504 = QVBoxLayout(self.frame_746)
+        self.verticalLayout_504.setObjectName(u"verticalLayout_504")
         self.btn_buscar_relatorio_as_3 = QPushButton(self.frame_746)
         self.btn_buscar_relatorio_as_3.setObjectName(u"btn_buscar_relatorio_as_3")
         sizePolicy3.setHeightForWidth(self.btn_buscar_relatorio_as_3.sizePolicy().hasHeightForWidth())
