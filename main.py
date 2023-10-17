@@ -731,12 +731,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         ######SIGNALS POPUP ALTERAR FOTO E SENHA AS######
-        #self.ui.btn_alterar_foto_senha_as.clicked.connect(self.trocarFotoSenha)
+        self.ui.btn_alterar_foto_senha_as.clicked.connect(self.trocarFotoSenha)
         
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
-        #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
         
@@ -772,7 +772,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
-        #self.ui.input_buscar_dados_relatorios_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
+        self.ui.input_buscar_dados_relatorios_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
@@ -796,7 +796,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
-        #self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
         self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri)
         self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri)
         self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri)
