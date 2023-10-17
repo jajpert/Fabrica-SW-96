@@ -7,6 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -140,7 +141,7 @@ class DataBase():
         self.connect()
         try:
             args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4])
-            self.cursor.execute('INSERT INTO saida_beneficio (id_matricula,cpf, id_beneficio, quantidade_retirada, data_retirada) VALUES (%s,%s, %s, %s, %s)', args)
+            self.cursor.execute('INSERT INTO saida_beneficio (id_matricula,cpf, cod_beneficio, quantidade_retirada, data_retirada) VALUES (%s,%s, %s, %s, %s)', args)
             #id_saida_beneficio = self.cursor.lastrowid
 
 
@@ -402,6 +403,35 @@ class DataBase():
             self.close_connection()
 
 
+    def select_nome_colab_login(self,login_colab):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT id_matricula FROM pessoa WHERE nome LIKE '{login_colab}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscarIdFotoColab(self,id_colab):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT idFoto_usuario FROM foto_usuario WHERE id_colaborador = {id_colab};
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
     def tirar_foto_usuario(self, foto):
         self.connect()
         try:
@@ -459,7 +489,7 @@ class DataBase():
     def buscar_foto_colaborador(self, id_colaborador):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT caminho FROM foto_usuario WHERE id_colaborador ={id_colaborador};""")
+            self.cursor.execute(f"""SELECT caminho FROM foto_usuario WHERE id_colaborador = {id_colaborador};""")
             result = self.cursor.fetchall()
             return result[0]
         
@@ -1329,15 +1359,15 @@ class DataBase():
             print(f"Error in select_retirada_beneficio_cpf: {e}")
             return None
 
-    def select_retirada_beneficio_codigo(self, id_beneficios):
+    def select_retirada_beneficio_codigo(self, codigo):
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT 
-                    id_beneficios,
+                SELECT
+                    codigo,
                     descricao
                 FROM beneficios
-                WHERE id_beneficios LIKE '{id_beneficios}';
+                WHERE codigo LIKE '{codigo}';
             """)
             
             resultado1 = self.cursor.fetchall()
