@@ -15457,6 +15457,18 @@ class Ui_MainWindow(object):
         self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_250.addItem(self.horizontalSpacer_13)
+        self.input_buscar_dados_relatorios_aluno_curso = QLineEdit(self.frame_738)
+        self.input_buscar_dados_relatorios_aluno_curso.setObjectName(u"input_buscar_dados_relatorios_aluno_curso")
+        self.input_buscar_dados_relatorios_aluno_curso.setMinimumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorios_aluno_curso.setMaximumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
+"")
+
+        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorios_aluno_curso)
+
+        self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_250.addItem(self.horizontalSpacer_13)
 
 
         self.verticalLayout_497.addWidget(self.frame_738)
