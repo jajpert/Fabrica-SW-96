@@ -24494,7 +24494,7 @@ QPushButton:pressed{
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QRadioButton" name="label_pessoa_cdeficiencia_nao_usuario_as">
+                                       <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_usuario_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>
