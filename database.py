@@ -182,7 +182,25 @@ class DataBase():
                     endereco.cidade,pessoa.data_cadastro
                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                    LEFT JOIN clinica ON clinica.id_endereco = endereco.id_endereco;
+                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;
+                    """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+            
+    def relatorio_pessoa_nutri(self, id_relatorio_nutri):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone,
+                    agendamento.profissional, agendamento.clinica, consulta.situacao, consulta.data_consulta, consulta.observacao
+                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula WHERE agendamento.id_colaborador LIKE '{id_relatorio_nutri}';
                     """)
             result = self.cursor.fetchall()
             return result
