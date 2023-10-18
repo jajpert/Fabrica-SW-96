@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -1420,9 +1420,10 @@ class DataBase():
 
     def cadastroIMC(self, imc):
         self.connect()
+        print(imc)
         try:
-            args = (imc[0], imc[1], imc[2], imc[3], imc[4])
-            self.cursor.execute('INSERT INTO nutri_usuario(peso, altura, imc, evolucao, id_marticula) VALUES (%s, %s, %s, %s, %s)', args)
+            args = (imc[0], imc[1], imc[2], imc[3], imc[4], imc[5], imc[6], imc[7])
+            self.cursor.execute('INSERT INTO nutri_usuario(peso, altura, imc, atendimento, data, hora, evolucao, id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s);', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"

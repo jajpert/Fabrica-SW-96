@@ -2127,7 +2127,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif pat_base == "Hipertensão":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(1)
         elif pat_base == "Diabete 1":
-            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(2)
+            self.ui.input_patologia_base_consulta_nutri.setCnutri_imc_usuarioimcurrentIndex(2)
         elif pat_base == "Diabete 2":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(3)
         elif pat_base == "Lúpus":
@@ -2792,11 +2792,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         peso = self.ui.input_peso_consulta_nutri.text()
         altura = self.ui.input_altura_consulta_nutri.text()
         imc = self.ui.input_imc_consulta_nutri.text()
+        if self.ui.radioButton_atendimento_as_nutri.isChecked():
+            situacao = "Atendimento"
+        elif self.ui.radioButton_Retorno_as_nutri.isChecked():
+            situacao = "Retorno"
+        data = self.ui.input_data_pagina_consulta_geral_nutri.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_consulta_as_nutri.text()
         evolucao = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
         id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
 
 
-        tupla_IMC = (peso, altura, imc, evolucao, id_matricula)
+        tupla_IMC = (peso, altura, imc, situacao, data_agend, hora, evolucao, id_matricula)
         result = self.db.cadastroIMC(tupla_IMC)
         print(result)
 
@@ -3400,7 +3407,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.puxar_consulta()
         
     def cadastrar_consulta_nutri(self):
-        # self.cadastroIMC()
+
         if self.ui.radioButton_atendimento_as_nutri.isChecked():
             situacao = "Consulta"
         if self.ui.radioButton_Retorno_as_nutri.isChecked():
@@ -3419,6 +3426,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         result = []
         result = self.db.cadastro_consulta_nutri(tupla_consulta)
+        self.cadastroIMC()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
