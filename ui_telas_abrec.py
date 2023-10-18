@@ -15379,13 +15379,13 @@ class Ui_MainWindow(object):
         self.frame_746.setFrameShadow(QFrame.Raised)
         self.verticalLayout_504 = QVBoxLayout(self.frame_746)
         self.verticalLayout_504.setObjectName(u"verticalLayout_504")
-        self.btn_buscar_relatorio_as_3 = QPushButton(self.frame_746)
-        self.btn_buscar_relatorio_as_3.setObjectName(u"btn_buscar_relatorio_as_3")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorio_as_3.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_relatorio_as_3.setSizePolicy(sizePolicy3)
-        self.btn_buscar_relatorio_as_3.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_relatorio_as_3.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_relatorio_as_3.setStyleSheet(u"QPushButton{\n"
+        self.btn_buscar_relatorios_aluno_curso = QPushButton(self.frame_746)
+        self.btn_buscar_relatorios_aluno_curso.setObjectName(u"btn_buscar_relatorios_aluno_curso")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_relatorios_aluno_curso.setSizePolicy(sizePolicy3)
+        self.btn_buscar_relatorios_aluno_curso.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_relatorios_aluno_curso.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_relatorios_aluno_curso.setStyleSheet(u"QPushButton{\n"
 "        background: rgb(243, 185, 191);\n"
 "        border: 1px  solid rgb(180, 106, 102);\n"
 "        border-width: 2px;\n"
@@ -15418,9 +15418,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_as_3.setIcon(icon14)
+        self.btn_buscar_relatorios_aluno_curso.setIcon(icon14)
 
-        self.verticalLayout_504.addWidget(self.btn_buscar_relatorio_as_3)
+        self.verticalLayout_504.addWidget(self.btn_buscar_relatorios_aluno_curso)
 
 
         self.horizontalLayout_251.addWidget(self.frame_746)
@@ -22571,7 +22571,6 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.label_4.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
@@ -23071,7 +23070,6 @@ class Ui_MainWindow(object):
         self.input_inicio_periodo_relatorio_as_2.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.input_final_periodo_relatorio_as_2.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
-        self.btn_buscar_relatorio_as_3.setText("")
         self.btn_buscar_relatorios_aluno_curso.setText("")
         self.input_buscar_dados_relatorios_aluno_curso.setText("")
         self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
