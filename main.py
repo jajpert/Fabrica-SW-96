@@ -578,7 +578,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.setupUi(self)
         
         ######################### banco #########################
-        self.db = DataBase()        
+        self.db = DataBase() 
+        self.relatorio_beneficio()       
         self.listarAgendamentos()
         self.listarBeneficios()
         self.buscar_clinica_nome_fantasia()
@@ -892,6 +893,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.tabela_agenda_nutri_atendimento)
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario)
         self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri)
+        self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
+        self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
 
 ########################### Validar Login #############################
     def validarLogin(self):
@@ -3369,6 +3372,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
 
+    def gerar_excel_relatorio_beneficio(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_beneficios_as.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_beneficios_as.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_beneficios_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'TIPO BENEFICIO', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
 
     def alterar_usuario_consulta(self,campo):
         campo = []
@@ -3940,6 +3970,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def relatorio_beneficio(self):
+        result = self.db.relatorio_beneficio()
+
+        self.ui.input_TableWidget_relatorio_beneficios_as.clearContents()
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(result))
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column,QTableWidgetItem(str(data)))
+
   
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
@@ -3949,6 +3990,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_dados_beneficio(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_beneficios_as.text())
+        res = self.db.filtrar_relatorio_beneficio(txt)
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_dados_participantes_curso(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorios_aluno_curso.text())

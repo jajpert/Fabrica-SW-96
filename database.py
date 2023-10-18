@@ -191,6 +191,24 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def relatorio_beneficio(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                        select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                        from pessoa
+                        inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                        inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                        inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo;
+                    """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
             
     def filter_data(self,texto_data_inicio,texto_data_final):
         self.connect()
@@ -242,6 +260,26 @@ class DataBase():
                 LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento 
                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
                 OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filtrar_relatorio_beneficio(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                    from pessoa
+                    inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                    inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                    inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo
+                    WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%"
+                    OR beneficios.tipo LIKE "%{texto}%" OR beneficios.descricao LIKE "%{texto}%" OR saida_beneficio.quantidade_retirada LIKE "%{texto}%" OR saida_beneficio.data_retirada LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
