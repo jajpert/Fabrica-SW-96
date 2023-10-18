@@ -871,20 +871,6 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def buscar_consulta_psic(self, cpf, id_colab_psic):
-        self.connect()
-        try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
-                                    FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                                    WHERE pessoa.cpf LIKE '{cpf}' AND agendamento.id_colaborador LIKE '{id_colab_psic}' ;""")
-            result = self.cursor.fetchall()
-            return result
-        except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
 
     def buscar_consulta_fisio(self, cpf, id_colab_fisio):
         self.connect()

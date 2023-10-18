@@ -782,6 +782,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.buscar_dados_consulta_psi) #SELECT USUARIO CONSULTA PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi) #CADASTRO CONSULTA USUARIO PSIC
+        self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.tabela_consulta_psic_tabela) #SELECT USUARIO CONSULTA + COLADB ID
         self.ui.btn_alterar_pagina_consulta_geral_psi.clicked.connect(self.alterar_usuario_consulta_psi) #ALTERAR CONSULTA PSIC
         self.ui.btn_excluir_pagina_consulta_geral_psi.clicked.connect(self.excluir_usuario_consulta_psi) #EXCLUIR USUARIO CONSULTA PSIC
         self.ui.btn_buscar_agendamento_psi.clicked.connect(self.buscarPessoa_psi) #SELECT USUARIO AGENDAMENTO PISC
@@ -3344,6 +3345,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_consulta_psi.setText(str(dados[5]))
         self.ui.input_id_matricula_consulta_psi.hide()
         self.puxar_consulta_psi()
+        self.tabela_consulta_psic_tabela()
 
 
     def buscar_dados_consulta(self):
@@ -3454,8 +3456,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Cadastro Consulta")
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
-        self.limparCamposConsulta_psi()
         self.tabela_consulta_psic_tabela()
+        self.limparCamposConsulta_psi()
 
     def cadastrar_consulta_fisio(self):
         if self.ui.radioButton_atendimento_as_fisio.isChecked():
