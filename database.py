@@ -141,7 +141,7 @@ class DataBase():
         self.connect()
         try:
             args = (saida_beneficio[0],saida_beneficio[1],saida_beneficio[2],saida_beneficio[3],saida_beneficio[4])
-            self.cursor.execute('INSERT INTO saida_beneficio (id_matricula,cpf, id_beneficio, quantidade_retirada, data_retirada) VALUES (%s,%s, %s, %s, %s)', args)
+            self.cursor.execute('INSERT INTO saida_beneficio (id_matricula,cpf, cod_beneficio, quantidade_retirada, data_retirada) VALUES (%s,%s, %s, %s, %s)', args)
             #id_saida_beneficio = self.cursor.lastrowid
 
 
@@ -1567,15 +1567,15 @@ class DataBase():
             print(f"Error in select_retirada_beneficio_cpf: {e}")
             return None
 
-    def select_retirada_beneficio_codigo(self, id_beneficios):
+    def select_retirada_beneficio_codigo(self, codigo):
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT 
-                    id_beneficios,
+                SELECT
+                    codigo,
                     descricao
                 FROM beneficios
-                WHERE id_beneficios LIKE '{id_beneficios}';
+                WHERE codigo LIKE '{codigo}';
             """)
             
             resultado1 = self.cursor.fetchall()
