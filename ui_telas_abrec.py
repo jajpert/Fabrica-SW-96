@@ -23072,6 +23072,7 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.input_final_periodo_relatorio_as_2.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.btn_buscar_relatorio_as_3.setText("")
+        self.btn_buscar_relatorios_aluno_curso.setText("")
         self.input_buscar_dados_relatorios_aluno_curso.setText("")
         self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         ___qtablewidgetitem108 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(0)
