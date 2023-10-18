@@ -15449,14 +15449,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_250.addItem(self.horizontalSpacer_12)
 
-        self.input_buscar_dados_relatorio_as_2 = QLineEdit(self.frame_738)
-        self.input_buscar_dados_relatorio_as_2.setObjectName(u"input_buscar_dados_relatorio_as_2")
-        self.input_buscar_dados_relatorio_as_2.setMinimumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorio_as_2.setMaximumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorio_as_2.setStyleSheet(u"color: #EC848C;\n"
+        self.input_buscar_dados_relatorios_aluno_curso = QLineEdit(self.frame_738)
+        self.input_buscar_dados_relatorios_aluno_curso.setObjectName(u"input_buscar_dados_relatorios_aluno_curso")
+        self.input_buscar_dados_relatorios_aluno_curso.setMinimumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorios_aluno_curso.setMaximumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
 "")
 
-        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorio_as_2)
+        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorios_aluno_curso)
 
         self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -23072,8 +23072,6 @@ class Ui_MainWindow(object):
         self.label_11.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.input_final_periodo_relatorio_as_2.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.btn_buscar_relatorio_as_3.setText("")
-        self.input_buscar_dados_relatorio_as_2.setText("")
-        self.input_buscar_dados_relatorio_as_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         self.input_buscar_dados_relatorios_aluno_curso.setText("")
         self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         ___qtablewidgetitem108 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(0)
