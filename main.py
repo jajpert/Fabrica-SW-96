@@ -3659,7 +3659,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
-
     def confirmarSaida(self):
         msg = DialogConfirmarSaida(self)
         self.popup.show()
