@@ -23074,6 +23074,8 @@ class Ui_MainWindow(object):
         self.btn_buscar_relatorio_as_3.setText("")
         self.input_buscar_dados_relatorio_as_2.setText("")
         self.input_buscar_dados_relatorio_as_2.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
+        self.input_buscar_dados_relatorios_aluno_curso.setText("")
+        self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         ___qtablewidgetitem108 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(0)
         ___qtablewidgetitem108.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem109 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(1)
