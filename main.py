@@ -666,17 +666,42 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui.input_data_pagina_consulta_geral.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_pagina_consulta_geral.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_pagina_consulta_geral_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_pagina_consulta_geral_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_pagina_consulta_geral_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_pagina_consulta_geral_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_pagina_consulta_geral_psi.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_pagina_consulta_geral_psi.setDateTime(QDateTime.currentDateTime())
 
         self.ui.input_data_agendamento_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_agendamento_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_agendamento_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_agendamento_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_agendamento_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_agendamento_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_agendamento_psi.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_data_agendamento_psi.setDateTime(QDateTime.currentDateTime())
 
         self.ui.input_inicio_periodo_relatorio_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_inicio_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_inicio_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_inicio_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_inicio_periodo_relatorio_psi.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_psi.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_psi.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_psi.setDateTime(QDateTime.currentDateTime())
 
         self.ui.input_dateEdit_cadastro_beneficio.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())
+
 
 
         ###############SIGNALS################# 
