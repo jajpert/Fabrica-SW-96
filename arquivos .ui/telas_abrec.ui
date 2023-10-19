@@ -1288,7 +1288,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -11399,7 +11399,7 @@ QPushButton:focus{outline:0}</string>
                    </spacer>
                   </item>
                   <item>
-                   <widget class="QFrame" name="frame_183">
+                   <widget class="QFrame" name="frame_745">
                     <property name="styleSheet">
                      <string notr="true"/>
                     </property>
@@ -11801,7 +11801,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_10">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <widget class="QWidget" name="page_principal_farm">
                   <layout class="QVBoxLayout" name="verticalLayout_490">
@@ -13811,7 +13811,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_11">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_fisio"/>
                  <widget class="QWidget" name="page_relatorio_fisio">
@@ -18755,7 +18755,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>7</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -28163,7 +28163,7 @@ background-color: rgb(249, 217, 221);</string>
                                               <property name="frameShadow">
                                                <enum>QFrame::Raised</enum>
                                               </property>
-                                              <layout class="QVBoxLayout" name="verticalLayout_363">
+                                              <layout class="QHBoxLayout" name="horizontalLayout_256">
                                                <property name="spacing">
                                                 <number>0</number>
                                                </property>
@@ -28180,7 +28180,7 @@ background-color: rgb(249, 217, 221);</string>
                                                 <number>0</number>
                                                </property>
                                                <item>
-                                                <widget class="QLabel" name="label_cpf_cadastro_retirada_beneficio">
+                                                <widget class="QFrame" name="frame_747">
                                                  <property name="minimumSize">
                                                   <size>
                                                    <width>0</width>
@@ -28189,110 +28189,209 @@ background-color: rgb(249, 217, 221);</string>
                                                  </property>
                                                  <property name="maximumSize">
                                                   <size>
-                                                   <width>180</width>
+                                                   <width>170</width>
                                                    <height>16777215</height>
                                                   </size>
                                                  </property>
-                                                 <property name="font">
-                                                  <font>
-                                                   <family>Abel</family>
-                                                   <pointsize>12</pointsize>
-                                                  </font>
+                                                 <property name="frameShape">
+                                                  <enum>QFrame::StyledPanel</enum>
                                                  </property>
-                                                 <property name="text">
-                                                  <string>CPF</string>
+                                                 <property name="frameShadow">
+                                                  <enum>QFrame::Raised</enum>
                                                  </property>
-                                                </widget>
-                                               </item>
-                                               <item>
-                                                <widget class="QLineEdit" name="input_cpf_cadastro_retirada_beneficio">
-                                                 <property name="minimumSize">
-                                                  <size>
-                                                   <width>0</width>
-                                                   <height>30</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="maximumSize">
-                                                  <size>
-                                                   <width>16777215</width>
-                                                   <height>30</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="font">
-                                                  <font>
-                                                   <family>Abel</family>
-                                                   <pointsize>12</pointsize>
-                                                  </font>
-                                                 </property>
-                                                 <property name="styleSheet">
-                                                  <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
-QLineEdit:focus{outline:0; border: 2px solid #A85751}
-</string>
-                                                 </property>
-                                                 <property name="text">
-                                                  <string/>
-                                                 </property>
-                                                 <property name="maxLength">
-                                                  <number>14</number>
-                                                 </property>
-                                                </widget>
-                                               </item>
-                                              </layout>
-                                             </widget>
-                                            </item>
-                                            <item>
-                                             <widget class="QFrame" name="frame_183">
-                                              <property name="frameShape">
-                                               <enum>QFrame::StyledPanel</enum>
-                                              </property>
-                                              <property name="frameShadow">
-                                               <enum>QFrame::Raised</enum>
-                                              </property>
-                                              <layout class="QVBoxLayout" name="verticalLayout_132">
-                                               <property name="spacing">
-                                                <number>0</number>
-                                               </property>
-                                               <property name="leftMargin">
-                                                <number>0</number>
-                                               </property>
-                                               <property name="topMargin">
-                                                <number>0</number>
-                                               </property>
-                                               <property name="rightMargin">
-                                                <number>0</number>
-                                               </property>
-                                               <property name="bottomMargin">
-                                                <number>0</number>
-                                               </property>
-                                               <item>
-                                                <widget class="QPushButton" name="btn_buscar_cpf_cadastro_retirada_beneficio">
-                                                 <property name="sizePolicy">
-                                                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                                                   <horstretch>0</horstretch>
-                                                   <verstretch>0</verstretch>
-                                                  </sizepolicy>
-                                                 </property>
-                                                 <property name="minimumSize">
-                                                  <size>
-                                                   <width>40</width>
-                                                   <height>40</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="maximumSize">
-                                                  <size>
-                                                   <width>40</width>
-                                                   <height>40</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="styleSheet">
-                                                  <string notr="true">QPushButton{
+                                                 <layout class="QHBoxLayout" name="horizontalLayout_131">
+                                                  <property name="spacing">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="leftMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="topMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="rightMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="bottomMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <item>
+                                                   <widget class="QFrame" name="frame_748">
+                                                    <property name="minimumSize">
+                                                     <size>
+                                                      <width>160</width>
+                                                      <height>60</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                     <size>
+                                                      <width>150</width>
+                                                      <height>60</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                     <enum>QFrame::StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                     <enum>QFrame::Raised</enum>
+                                                    </property>
+                                                    <layout class="QVBoxLayout" name="verticalLayout_501">
+                                                     <property name="spacing">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="leftMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="topMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="rightMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="bottomMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <item>
+                                                      <widget class="QLabel" name="label_cpf_cadastro_retirada_beneficio">
+                                                       <property name="minimumSize">
+                                                        <size>
+                                                         <width>50</width>
+                                                         <height>15</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="maximumSize">
+                                                        <size>
+                                                         <width>50</width>
+                                                         <height>15</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="font">
+                                                        <font>
+                                                         <family>Abel</family>
+                                                         <pointsize>12</pointsize>
+                                                        </font>
+                                                       </property>
+                                                       <property name="text">
+                                                        <string>CPF</string>
+                                                       </property>
+                                                      </widget>
+                                                     </item>
+                                                     <item>
+                                                      <widget class="QLineEdit" name="input_cpf_cadastro_retirada_beneficio">
+                                                       <property name="minimumSize">
+                                                        <size>
+                                                         <width>150</width>
+                                                         <height>30</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="maximumSize">
+                                                        <size>
+                                                         <width>200</width>
+                                                         <height>30</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="font">
+                                                        <font>
+                                                         <family>Abel</family>
+                                                         <pointsize>12</pointsize>
+                                                        </font>
+                                                       </property>
+                                                       <property name="styleSheet">
+                                                        <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                                       </property>
+                                                       <property name="inputMask">
+                                                        <string>000.000.000-00</string>
+                                                       </property>
+                                                       <property name="text">
+                                                        <string>..-</string>
+                                                       </property>
+                                                       <property name="alignment">
+                                                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                       </property>
+                                                      </widget>
+                                                     </item>
+                                                    </layout>
+                                                   </widget>
+                                                  </item>
+                                                  <item>
+                                                   <widget class="QFrame" name="frame_749">
+                                                    <property name="minimumSize">
+                                                     <size>
+                                                      <width>22</width>
+                                                      <height>61</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                     <size>
+                                                      <width>31</width>
+                                                      <height>61</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                     <enum>QFrame::StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                     <enum>QFrame::Raised</enum>
+                                                    </property>
+                                                    <layout class="QVBoxLayout" name="verticalLayout_502">
+                                                     <property name="spacing">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="leftMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="topMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="rightMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="bottomMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <item>
+                                                      <spacer name="verticalSpacer_74">
+                                                       <property name="orientation">
+                                                        <enum>Qt::Vertical</enum>
+                                                       </property>
+                                                       <property name="sizeType">
+                                                        <enum>QSizePolicy::Fixed</enum>
+                                                       </property>
+                                                       <property name="sizeHint" stdset="0">
+                                                        <size>
+                                                         <width>20</width>
+                                                         <height>16</height>
+                                                        </size>
+                                                       </property>
+                                                      </spacer>
+                                                     </item>
+                                                     <item>
+                                                      <widget class="QPushButton" name="btn_buscar_cpf_cadastro_retirada_beneficio">
+                                                       <property name="sizePolicy">
+                                                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                         <horstretch>0</horstretch>
+                                                         <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                       </property>
+                                                       <property name="minimumSize">
+                                                        <size>
+                                                         <width>20</width>
+                                                         <height>35</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="maximumSize">
+                                                        <size>
+                                                         <width>25</width>
+                                                         <height>31</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="styleSheet">
+                                                        <string notr="true">QPushButton{
         background: rgb(243, 185, 191);
         border: 1px  solid rgb(180, 106, 102);
         border-width: 2px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 20px;
-		border-top-left-radius: 20px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
         color: rgb(249, 217, 221);   
 }
 
@@ -28300,31 +28399,33 @@ QPushButton:hover{
         background: rgb(255, 194, 201);
         border: 1px  solid rgb(180, 106, 102);
         border-width: 2px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 20px;
-        color: rgb(249, 217, 221); 
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 20px;  
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
 }
 
 QPushButton:pressed{
         background: rgb(180, 106, 102);
         border: 2px  solid rgb(180, 106, 102);
         border-width: 2px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
         color: rgb(249, 217, 221);   
 }</string>
-                                                 </property>
-                                                 <property name="text">
-                                                  <string/>
-                                                 </property>
-                                                 <property name="icon">
-                                                  <iconset>
-                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
-                                                 </property>
+                                                       </property>
+                                                       <property name="text">
+                                                        <string/>
+                                                       </property>
+                                                       <property name="icon">
+                                                        <iconset>
+                                                         <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                       </property>
+                                                      </widget>
+                                                     </item>
+                                                    </layout>
+                                                   </widget>
+                                                  </item>
+                                                 </layout>
                                                 </widget>
                                                </item>
                                               </layout>
@@ -29079,7 +29180,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                               <property name="frameShadow">
                                                <enum>QFrame::Raised</enum>
                                               </property>
-                                              <layout class="QVBoxLayout" name="verticalLayout_357">
+                                              <layout class="QHBoxLayout" name="horizontalLayout_258">
                                                <property name="spacing">
                                                 <number>0</number>
                                                </property>
@@ -29096,7 +29197,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                 <number>0</number>
                                                </property>
                                                <item>
-                                                <widget class="QLabel" name="label_codigo_beneficio_cadastro_retirada_beneficio">
+                                                <widget class="QFrame" name="frame_750">
                                                  <property name="minimumSize">
                                                   <size>
                                                    <width>0</width>
@@ -29105,52 +29206,243 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                  </property>
                                                  <property name="maximumSize">
                                                   <size>
-                                                   <width>180</width>
+                                                   <width>170</width>
                                                    <height>16777215</height>
                                                   </size>
                                                  </property>
-                                                 <property name="font">
-                                                  <font>
-                                                   <family>Abel</family>
-                                                   <pointsize>12</pointsize>
-                                                  </font>
+                                                 <property name="frameShape">
+                                                  <enum>QFrame::StyledPanel</enum>
                                                  </property>
-                                                 <property name="text">
-                                                  <string>Código benefício</string>
+                                                 <property name="frameShadow">
+                                                  <enum>QFrame::Raised</enum>
                                                  </property>
-                                                </widget>
-                                               </item>
-                                               <item>
-                                                <widget class="QLineEdit" name="input_codigo_beneficio_cadastro_retirada_beneficio">
-                                                 <property name="minimumSize">
-                                                  <size>
-                                                   <width>0</width>
-                                                   <height>30</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="maximumSize">
-                                                  <size>
-                                                   <width>16777215</width>
-                                                   <height>30</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="font">
-                                                  <font>
-                                                   <family>Abel</family>
-                                                   <pointsize>12</pointsize>
-                                                  </font>
-                                                 </property>
-                                                 <property name="styleSheet">
-                                                  <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
-QLineEdit:focus{outline:0; border: 2px solid #A85751}
-</string>
-                                                 </property>
-                                                 <property name="text">
-                                                  <string/>
-                                                 </property>
-                                                 <property name="maxLength">
-                                                  <number>14</number>
-                                                 </property>
+                                                 <layout class="QHBoxLayout" name="horizontalLayout_257">
+                                                  <property name="spacing">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="leftMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="topMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="rightMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <property name="bottomMargin">
+                                                   <number>0</number>
+                                                  </property>
+                                                  <item>
+                                                   <widget class="QFrame" name="frame_751">
+                                                    <property name="minimumSize">
+                                                     <size>
+                                                      <width>160</width>
+                                                      <height>60</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                     <size>
+                                                      <width>150</width>
+                                                      <height>60</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                     <enum>QFrame::StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                     <enum>QFrame::Raised</enum>
+                                                    </property>
+                                                    <layout class="QVBoxLayout" name="verticalLayout_357">
+                                                     <property name="spacing">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="leftMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="topMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="rightMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="bottomMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <item>
+                                                      <widget class="QLabel" name="label_codigo_beneficio_cadastro_retirada_beneficio">
+                                                       <property name="minimumSize">
+                                                        <size>
+                                                         <width>80</width>
+                                                         <height>15</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="maximumSize">
+                                                        <size>
+                                                         <width>50</width>
+                                                         <height>15</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="font">
+                                                        <font>
+                                                         <family>Abel</family>
+                                                         <pointsize>12</pointsize>
+                                                        </font>
+                                                       </property>
+                                                       <property name="text">
+                                                        <string>Benefíco</string>
+                                                       </property>
+                                                      </widget>
+                                                     </item>
+                                                     <item>
+                                                      <widget class="QLineEdit" name="input_codigo_beneficio_cadastro_retirada_beneficio">
+                                                       <property name="minimumSize">
+                                                        <size>
+                                                         <width>150</width>
+                                                         <height>30</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="maximumSize">
+                                                        <size>
+                                                         <width>200</width>
+                                                         <height>30</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="font">
+                                                        <font>
+                                                         <family>Abel</family>
+                                                         <pointsize>12</pointsize>
+                                                        </font>
+                                                       </property>
+                                                       <property name="styleSheet">
+                                                        <string notr="true">background-color: rgb(255, 255, 255);</string>
+                                                       </property>
+                                                       <property name="inputMask">
+                                                        <string/>
+                                                       </property>
+                                                       <property name="text">
+                                                        <string/>
+                                                       </property>
+                                                       <property name="alignment">
+                                                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                                                       </property>
+                                                      </widget>
+                                                     </item>
+                                                    </layout>
+                                                   </widget>
+                                                  </item>
+                                                  <item>
+                                                   <widget class="QFrame" name="frame_752">
+                                                    <property name="minimumSize">
+                                                     <size>
+                                                      <width>22</width>
+                                                      <height>61</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="maximumSize">
+                                                     <size>
+                                                      <width>31</width>
+                                                      <height>61</height>
+                                                     </size>
+                                                    </property>
+                                                    <property name="frameShape">
+                                                     <enum>QFrame::StyledPanel</enum>
+                                                    </property>
+                                                    <property name="frameShadow">
+                                                     <enum>QFrame::Raised</enum>
+                                                    </property>
+                                                    <layout class="QVBoxLayout" name="verticalLayout_505">
+                                                     <property name="spacing">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="leftMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="topMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="rightMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <property name="bottomMargin">
+                                                      <number>0</number>
+                                                     </property>
+                                                     <item>
+                                                      <spacer name="verticalSpacer_75">
+                                                       <property name="orientation">
+                                                        <enum>Qt::Vertical</enum>
+                                                       </property>
+                                                       <property name="sizeType">
+                                                        <enum>QSizePolicy::Fixed</enum>
+                                                       </property>
+                                                       <property name="sizeHint" stdset="0">
+                                                        <size>
+                                                         <width>20</width>
+                                                         <height>16</height>
+                                                        </size>
+                                                       </property>
+                                                      </spacer>
+                                                     </item>
+                                                     <item>
+                                                      <widget class="QPushButton" name="btn_buscar_codigo_beneficio_cadastro_retirada_beneficio">
+                                                       <property name="sizePolicy">
+                                                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                                         <horstretch>0</horstretch>
+                                                         <verstretch>0</verstretch>
+                                                        </sizepolicy>
+                                                       </property>
+                                                       <property name="minimumSize">
+                                                        <size>
+                                                         <width>20</width>
+                                                         <height>35</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="maximumSize">
+                                                        <size>
+                                                         <width>0</width>
+                                                         <height>31</height>
+                                                        </size>
+                                                       </property>
+                                                       <property name="styleSheet">
+                                                        <string notr="true">QPushButton{
+        background: rgb(243, 185, 191);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:hover{
+        background: rgb(255, 194, 201);
+        border: 1px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}
+
+QPushButton:pressed{
+        background: rgb(180, 106, 102);
+        border: 2px  solid rgb(180, 106, 102);
+        border-width: 2px;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+        color: rgb(249, 217, 221);   
+}</string>
+                                                       </property>
+                                                       <property name="text">
+                                                        <string/>
+                                                       </property>
+                                                       <property name="icon">
+                                                        <iconset>
+                                                         <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
+                                                       </property>
+                                                      </widget>
+                                                     </item>
+                                                    </layout>
+                                                   </widget>
+                                                  </item>
+                                                 </layout>
                                                 </widget>
                                                </item>
                                               </layout>
@@ -29180,69 +29472,6 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                <property name="bottomMargin">
                                                 <number>0</number>
                                                </property>
-                                               <item>
-                                                <widget class="QPushButton" name="btn_buscar_codigo_beneficio_cadastro_retirada_beneficio">
-                                                 <property name="sizePolicy">
-                                                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                                                   <horstretch>0</horstretch>
-                                                   <verstretch>0</verstretch>
-                                                  </sizepolicy>
-                                                 </property>
-                                                 <property name="minimumSize">
-                                                  <size>
-                                                   <width>40</width>
-                                                   <height>40</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="maximumSize">
-                                                  <size>
-                                                   <width>40</width>
-                                                   <height>40</height>
-                                                  </size>
-                                                 </property>
-                                                 <property name="styleSheet">
-                                                  <string notr="true">QPushButton{
-        background: rgb(243, 185, 191);
-        border: 1px  solid rgb(180, 106, 102);
-        border-width: 2px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 20px;
-		border-top-left-radius: 20px;
-        color: rgb(249, 217, 221);   
-}
-
-QPushButton:hover{
-        background: rgb(255, 194, 201);
-        border: 1px  solid rgb(180, 106, 102);
-        border-width: 2px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 20px;
-        color: rgb(249, 217, 221); 
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 20px;  
-}
-
-QPushButton:pressed{
-        background: rgb(180, 106, 102);
-        border: 2px  solid rgb(180, 106, 102);
-        border-width: 2px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 20px;
-        color: rgb(249, 217, 221);   
-}</string>
-                                                 </property>
-                                                 <property name="text">
-                                                  <string/>
-                                                 </property>
-                                                 <property name="icon">
-                                                  <iconset>
-                                                   <normaloff>../icons/lupa.png</normaloff>../icons/lupa.png</iconset>
-                                                 </property>
-                                                </widget>
-                                               </item>
                                               </layout>
                                              </widget>
                                             </item>
@@ -46434,7 +46663,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -46747,7 +46976,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -54091,7 +54320,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -54937,7 +55166,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
