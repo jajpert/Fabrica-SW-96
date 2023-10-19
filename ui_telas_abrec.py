@@ -16357,7 +16357,7 @@ class Ui_MainWindow(object):
 "}")
         icon33 = QIcon()
         icon33.addFile(u".././icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_agendamento_as.setIcon(icon33)
+        self.btn_buscar_agendamento_as.setIcon(icon7)
 
         self.verticalLayout_117.addWidget(self.btn_buscar_agendamento_as)
 
