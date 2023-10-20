@@ -18755,7 +18755,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>13</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -39404,7 +39404,7 @@ QPushButton:focus{outline:0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_relatorios_aluno_curso">
+                     <widget class="QWidget" name="page_relatorio_aluno_curso">
                       <layout class="QVBoxLayout" name="verticalLayout_503">
                        <property name="spacing">
                         <number>0</number>
@@ -39446,7 +39446,7 @@ QPushButton:focus{outline:0}</string>
                            <number>0</number>
                           </property>
                           <item>
-                           <widget class="QLabel" name="label_titulo_cadastro_beneficio_2">
+                           <widget class="QLabel" name="label_titulo_relatorio_aluno_curso">
                             <property name="minimumSize">
                              <size>
                               <width>0</width>
@@ -39681,7 +39681,7 @@ QPushButton:focus{outline:0}</string>
                                              <number>0</number>
                                             </property>
                                             <item>
-                                             <widget class="QLabel" name="label_inicio_periodo_relatorio_as_2">
+                                             <widget class="QLabel" name="label_inicio_periodo_relatorio_aluno_curso">
                                               <property name="minimumSize">
                                                <size>
                                                 <width>60</width>
@@ -39706,7 +39706,7 @@ QPushButton:focus{outline:0}</string>
                                              </widget>
                                             </item>
                                             <item>
-                                             <widget class="QDateEdit" name="input_inicio_periodo_relatorio_as_2">
+                                             <widget class="QDateEdit" name="input_inicio_periodo_relatorio_aluno_curso">
                                               <property name="sizePolicy">
                                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                                 <horstretch>0</horstretch>
@@ -39814,7 +39814,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                              </spacer>
                                             </item>
                                             <item>
-                                             <widget class="QLabel" name="label_11">
+                                             <widget class="QLabel" name="label_A_relatorio_aluno_curso">
                                               <property name="minimumSize">
                                                <size>
                                                 <width>20</width>
@@ -39894,7 +39894,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                              </spacer>
                                             </item>
                                             <item>
-                                             <widget class="QDateEdit" name="input_final_periodo_relatorio_as_2">
+                                             <widget class="QDateEdit" name="input_final_periodo_relatorio_aluno_curso">
                                               <property name="sizePolicy">
                                                <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                                 <horstretch>0</horstretch>
@@ -39992,7 +39992,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            </property>
                                            <layout class="QVBoxLayout" name="verticalLayout_504">
                                             <item>
-                                             <widget class="QPushButton" name="btn_buscar_relatorio_as_3">
+                                             <widget class="QPushButton" name="btn_buscar_relatorio_aluno_curso">
                                               <property name="sizePolicy">
                                                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                                 <horstretch>0</horstretch>
@@ -40112,7 +40112,7 @@ QPushButton:pressed{
                                        </spacer>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_buscar_dados_relatorio_as_2">
+                                       <widget class="QLineEdit" name="input_buscar_dados_relatorio_aluno_curso">
                                         <property name="minimumSize">
                                          <size>
                                           <width>700</width>
@@ -46434,7 +46434,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -46747,7 +46747,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -54091,7 +54091,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -54937,7 +54937,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
