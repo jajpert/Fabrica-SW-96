@@ -9613,11 +9613,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_58.addWidget(self.input_pessoa_cdeficiencia_sim_usuario_as)
 
-        self.label_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_130)
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"label_pessoa_cdeficiencia_nao_usuario_as")
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setFont(font6)
+        self.input_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_130)
+        self.input_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"input_pessoa_cdeficiencia_nao_usuario_as")
+        self.input_pessoa_cdeficiencia_nao_usuario_as.setFont(font6)
 
-        self.horizontalLayout_58.addWidget(self.label_pessoa_cdeficiencia_nao_usuario_as)
+        self.horizontalLayout_58.addWidget(self.input_pessoa_cdeficiencia_nao_usuario_as)
 
 
         self.verticalLayout_88.addWidget(self.frame_130)
@@ -22693,7 +22693,7 @@ class Ui_MainWindow(object):
 
         self.label_pessoa_cdeficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Pessoa c/ defici\u00eancia", None))
         self.input_pessoa_cdeficiencia_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
+        self.input_pessoa_cdeficiencia_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Visual", None))

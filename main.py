@@ -746,6 +746,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
+        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
+        self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
@@ -759,6 +763,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
         self.ui.btn_voltar_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
         self.ui.btn_voltar_pagina_consulta_geral_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
+        self.ui.btn_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_relatorio_fisio))
+        self.ui.btn_voltar_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
         self.ui.btn_salvar_pagina_consulta_geral_fisio.clicked.connect(self.cadastrar_consulta_fisio) #CADASTRO USUARIO CONSULTA FISIO
         self.ui.btn_agenda_fisio.clicked.connect(self.tabela_agendamento_fisio) #TABELA AGENDAMENTO USUARIO FISIO 
         self.ui.btn_salvar_agenda_fisio.clicked.connect(self.cadastroAgendamento_fisio) #CADASTRO AGENDAMENTO USUARIO FISIO
@@ -774,6 +780,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
         self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
+        self.ui.btn_relatorios_nutri.clicked.connect(self.relatorio_pessoa_nutri)
         self.ui.btn_agenda_nutri.clicked.connect(self.tabela_agenda_nutri)
         self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri) #SELECT USUARIO SOZINHO CONSULTA NUTRI
         self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri) #SELECT USUARIO SOZINHO AGENDAMENTO NUTRI
@@ -2140,7 +2149,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif pat_base == "Hipertensão":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(1)
         elif pat_base == "Diabete 1":
-            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(2)
+            self.ui.input_patologia_base_consulta_nutri.setCnutri_imc_usuarioimcurrentIndex(2)
         elif pat_base == "Diabete 2":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(3)
         elif pat_base == "Lúpus":
@@ -2331,9 +2340,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
             pessoa_deficiencia = 'SIM'
-
+               
+        
         else:
             pessoa_deficiencia = 'NÃO'
+            
         
         if self.ui.input_situacao_ativo_usuario_as.isChecked():
             status = 'Ativo'
@@ -2829,11 +2840,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         peso = self.ui.input_peso_consulta_nutri.text()
         altura = self.ui.input_altura_consulta_nutri.text()
         imc = self.ui.input_imc_consulta_nutri.text()
+        if self.ui.radioButton_atendimento_as_nutri.isChecked():
+            situacao = "Atendimento"
+        elif self.ui.radioButton_Retorno_as_nutri.isChecked():
+            situacao = "Retorno"
+        data = self.ui.input_data_pagina_consulta_geral_nutri.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_consulta_as_nutri.text()
         evolucao = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
         id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
 
 
-        tupla_IMC = (peso, altura, imc, evolucao, id_matricula)
+        tupla_IMC = (peso, altura, imc, situacao, data_agend, hora, evolucao, id_matricula)
         result = self.db.cadastroIMC(tupla_IMC)
         print(result)
 
@@ -2936,8 +2954,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_escolaridade_usuario_comboBox_as.setCurrentIndex(int(0))
         self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setCheckable(False)
         self.ui.input_pessoa_cdeficiencia_sim_usuario_as.setCheckable(True)
-        self.ui.label_pessoa_cdeficiencia_nao_usuario_as.setCheckable(False)  
-        self.ui.label_pessoa_cdeficiencia_nao_usuario_as.setCheckable(True)        
+        self.ui.input_pessoa_cdeficiencia_nao_usuario_as.setCheckable(False)  
+        self.ui.input_pessoa_cdeficiencia_nao_usuario_as.setCheckable(True)        
         self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
         self.ui.input_renda_familiar_usuario_as.setCurrentIndex(int(0))
         self.ui.input_meio_transporte_usuario_as.setCurrentIndex(int(0))
@@ -3441,7 +3459,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.puxar_consulta()
         
     def cadastrar_consulta_nutri(self):
-        # self.cadastroIMC()
+
         if self.ui.radioButton_atendimento_as_nutri.isChecked():
             situacao = "Consulta"
         if self.ui.radioButton_Retorno_as_nutri.isChecked():
@@ -3460,6 +3478,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         result = []
         result = self.db.cadastro_consulta_nutri(tupla_consulta)
+        self.cadastroIMC()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -3920,7 +3939,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def clean(self):
         self.ui.input_nome_usuario_as.setText("")
 
-
     def confirmarSaida(self):
         msg = DialogConfirmarSaida(self)
         self.popup.show()
@@ -4103,7 +4121,44 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             # self.msg(result[0],result[1])
             self.limparCamposCadastroRetiradaBeneficios()
     
-    
+######################## Pessoa com Deficiencia ###############################
+    def pessoa_com_deficiencia (self):
+
+        if self.ui.input_pessoa_cdeficiencia_nao_usuario_as.isChecked():
+            
+            self.ui.frame_81.hide()
+            self.ui.frame_81.setEnabled(False)
+            self.ui.input_tipo_deficiencia_usuario_as.hide()
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_tipo_deficiencia_usuario_as.clear()        
+
+        else:
+            
+            self.ui.frame_81.setEnabled(True)
+            self.ui.frame_81.show()
+            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_tipo_deficiencia_usuario_as.show()
+
+    def pessoa_com_deficiencia_alterar (self):
+
+        if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.isChecked():
+            
+            self.ui.frame_343.hide()
+            self.ui.frame_343.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()        
+
+        else:
+            
+            self.ui.frame_343.setEnabled(True)
+            self.ui.frame_343.show()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
+            
+            
 
 ######################## Deficiência base Outra################################
 
@@ -4206,6 +4261,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    def relatorio_pessoa_nutri(self): #ALIMENTA A TABELA A DE RELATORIO
+        
+        result = self.db.relatorio_pessoa_nutri(self.id_colab_tratado_nutri)
+
+        self.ui.tableWidget_relatorio_nutri.clearContents()
+        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
   
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
