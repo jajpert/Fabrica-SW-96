@@ -15184,13 +15184,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_1231.addWidget(self.frame_1692)
 
         self.stackedWidget_2.addWidget(self.page_cadastrar_participante)
-        self.page_relatorios_aluno_curso = QWidget()
-        self.page_relatorios_aluno_curso.setObjectName(u"page_relatorios_aluno_curso")
-        self.verticalLayout_503 = QVBoxLayout(self.page_relatorios_aluno_curso)
+        self.page_relatorio_aluno_curso = QWidget()
+        self.page_relatorio_aluno_curso.setObjectName(u"page_relatorio_aluno_curso")
+        self.verticalLayout_503 = QVBoxLayout(self.page_relatorio_aluno_curso)
         self.verticalLayout_503.setSpacing(0)
         self.verticalLayout_503.setObjectName(u"verticalLayout_503")
         self.verticalLayout_503.setContentsMargins(0, 0, 0, 0)
-        self.frame_736 = QFrame(self.page_relatorios_aluno_curso)
+        self.frame_736 = QFrame(self.page_relatorio_aluno_curso)
         self.frame_736.setObjectName(u"frame_736")
         self.frame_736.setFrameShape(QFrame.StyledPanel)
         self.frame_736.setFrameShadow(QFrame.Raised)
@@ -15198,15 +15198,15 @@ class Ui_MainWindow(object):
         self.verticalLayout_492.setSpacing(0)
         self.verticalLayout_492.setObjectName(u"verticalLayout_492")
         self.verticalLayout_492.setContentsMargins(0, 0, 0, 0)
-        self.label_titulo_relatorios_aluno_curso = QLabel(self.frame_736)
-        self.label_titulo_relatorios_aluno_curso.setObjectName(u"label_titulo_relatorios_aluno_curso")
-        self.label_titulo_relatorios_aluno_curso.setMinimumSize(QSize(0, 0))
-        self.label_titulo_relatorios_aluno_curso.setMaximumSize(QSize(1842, 61))
-        self.label_titulo_relatorios_aluno_curso.setFont(font1)
-        self.label_titulo_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;background-color: rgb(243, 185, 191);")
-        self.label_titulo_relatorios_aluno_curso.setAlignment(Qt.AlignCenter)
+        self.label_titulo_relatorio_aluno_curso = QLabel(self.frame_736)
+        self.label_titulo_relatorio_aluno_curso.setObjectName(u"label_titulo_relatorio_aluno_curso")
+        self.label_titulo_relatorio_aluno_curso.setMinimumSize(QSize(0, 0))
+        self.label_titulo_relatorio_aluno_curso.setMaximumSize(QSize(1842, 61))
+        self.label_titulo_relatorio_aluno_curso.setFont(font1)
+        self.label_titulo_relatorio_aluno_curso.setStyleSheet(u"color: #EC848C;background-color: rgb(243, 185, 191);")
+        self.label_titulo_relatorio_aluno_curso.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_492.addWidget(self.label_titulo_relatorios_aluno_curso)
+        self.verticalLayout_492.addWidget(self.label_titulo_relatorio_aluno_curso)
 
         self.frame_15 = QFrame(self.frame_736)
         self.frame_15.setObjectName(u"frame_15")
@@ -15279,37 +15279,37 @@ class Ui_MainWindow(object):
         self.verticalLayout_498.setSpacing(0)
         self.verticalLayout_498.setObjectName(u"verticalLayout_498")
         self.verticalLayout_498.setContentsMargins(0, 0, 0, 0)
-        self.label_inicio_periodo_relatorios_aluno_curso = QLabel(self.frame_740)
-        self.label_inicio_periodo_relatorios_aluno_curso.setObjectName(u"label_inicio_periodo_relatorios_aluno_curso")
-        self.label_inicio_periodo_relatorios_aluno_curso.setMinimumSize(QSize(60, 20))
-        self.label_inicio_periodo_relatorios_aluno_curso.setMaximumSize(QSize(60, 20))
-        self.label_inicio_periodo_relatorios_aluno_curso.setFont(font12)
+        self.label_inicio_periodo_relatorio_aluno_curso = QLabel(self.frame_740)
+        self.label_inicio_periodo_relatorio_aluno_curso.setObjectName(u"label_inicio_periodo_relatorio_aluno_curso")
+        self.label_inicio_periodo_relatorio_aluno_curso.setMinimumSize(QSize(60, 20))
+        self.label_inicio_periodo_relatorio_aluno_curso.setMaximumSize(QSize(60, 20))
+        self.label_inicio_periodo_relatorio_aluno_curso.setFont(font12)
 
-        self.verticalLayout_498.addWidget(self.label_inicio_periodo_relatorios_aluno_curso)
+        self.verticalLayout_498.addWidget(self.label_inicio_periodo_relatorio_aluno_curso)
 
-        self.input_inicio_periodo_relatorios_aluno_curso = QDateEdit(self.frame_740)
-        self.input_inicio_periodo_relatorios_aluno_curso.setObjectName(u"input_inicio_periodo_relatorios_aluno_curso")
-        sizePolicy1.setHeightForWidth(self.input_inicio_periodo_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
-        self.input_inicio_periodo_relatorios_aluno_curso.setSizePolicy(sizePolicy1)
-        self.input_inicio_periodo_relatorios_aluno_curso.setMinimumSize(QSize(0, 30))
-        self.input_inicio_periodo_relatorios_aluno_curso.setMaximumSize(QSize(120, 30))
-        self.input_inicio_periodo_relatorios_aluno_curso.setFont(font6)
-        self.input_inicio_periodo_relatorios_aluno_curso.setFocusPolicy(Qt.WheelFocus)
-        self.input_inicio_periodo_relatorios_aluno_curso.setContextMenuPolicy(Qt.DefaultContextMenu)
-        self.input_inicio_periodo_relatorios_aluno_curso.setLayoutDirection(Qt.LeftToRight)
-        self.input_inicio_periodo_relatorios_aluno_curso.setAutoFillBackground(False)
-        self.input_inicio_periodo_relatorios_aluno_curso.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+        self.input_inicio_periodo_relatorio_aluno_curso = QDateEdit(self.frame_740)
+        self.input_inicio_periodo_relatorio_aluno_curso.setObjectName(u"input_inicio_periodo_relatorio_aluno_curso")
+        sizePolicy1.setHeightForWidth(self.input_inicio_periodo_relatorio_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.input_inicio_periodo_relatorio_aluno_curso.setSizePolicy(sizePolicy1)
+        self.input_inicio_periodo_relatorio_aluno_curso.setMinimumSize(QSize(0, 30))
+        self.input_inicio_periodo_relatorio_aluno_curso.setMaximumSize(QSize(120, 30))
+        self.input_inicio_periodo_relatorio_aluno_curso.setFont(font6)
+        self.input_inicio_periodo_relatorio_aluno_curso.setFocusPolicy(Qt.WheelFocus)
+        self.input_inicio_periodo_relatorio_aluno_curso.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_inicio_periodo_relatorio_aluno_curso.setLayoutDirection(Qt.LeftToRight)
+        self.input_inicio_periodo_relatorio_aluno_curso.setAutoFillBackground(False)
+        self.input_inicio_periodo_relatorio_aluno_curso.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QDateEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_inicio_periodo_relatorios_aluno_curso.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
-        self.input_inicio_periodo_relatorios_aluno_curso.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
-        self.input_inicio_periodo_relatorios_aluno_curso.setAlignment(Qt.AlignCenter)
-        self.input_inicio_periodo_relatorios_aluno_curso.setButtonSymbols(QAbstractSpinBox.NoButtons)
-        self.input_inicio_periodo_relatorios_aluno_curso.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_inicio_periodo_relatorios_aluno_curso.setCurrentSection(QDateTimeEdit.DaySection)
-        self.input_inicio_periodo_relatorios_aluno_curso.setCalendarPopup(True)
-        self.input_inicio_periodo_relatorios_aluno_curso.setCurrentSectionIndex(0)
+        self.input_inicio_periodo_relatorio_aluno_curso.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
+        self.input_inicio_periodo_relatorio_aluno_curso.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_inicio_periodo_relatorio_aluno_curso.setAlignment(Qt.AlignCenter)
+        self.input_inicio_periodo_relatorio_aluno_curso.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_inicio_periodo_relatorio_aluno_curso.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_inicio_periodo_relatorio_aluno_curso.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_inicio_periodo_relatorio_aluno_curso.setCalendarPopup(True)
+        self.input_inicio_periodo_relatorio_aluno_curso.setCurrentSectionIndex(0)
 
-        self.verticalLayout_498.addWidget(self.input_inicio_periodo_relatorios_aluno_curso)
+        self.verticalLayout_498.addWidget(self.input_inicio_periodo_relatorio_aluno_curso)
 
 
         self.horizontalLayout_251.addWidget(self.frame_740)
@@ -15326,13 +15326,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_499.addItem(self.verticalSpacer_72)
 
-        self.label_A_relatorios_aluno_curso = QLabel(self.frame_741)
-        self.label_A_relatorios_aluno_curso.setObjectName(u"label_A_relatorios_aluno_curso")
-        self.label_A_relatorios_aluno_curso.setMinimumSize(QSize(20, 20))
-        self.label_A_relatorios_aluno_curso.setMaximumSize(QSize(40, 20))
-        self.label_A_relatorios_aluno_curso.setFont(font12)
+        self.label_A_relatorio_aluno_curso = QLabel(self.frame_741)
+        self.label_A_relatorio_aluno_curso.setObjectName(u"label_A_relatorio_aluno_curso")
+        self.label_A_relatorio_aluno_curso.setMinimumSize(QSize(20, 20))
+        self.label_A_relatorio_aluno_curso.setMaximumSize(QSize(40, 20))
+        self.label_A_relatorio_aluno_curso.setFont(font12)
 
-        self.verticalLayout_499.addWidget(self.label_A_relatorios_aluno_curso)
+        self.verticalLayout_499.addWidget(self.label_A_relatorio_aluno_curso)
 
 
         self.horizontalLayout_251.addWidget(self.frame_741)
@@ -15351,28 +15351,28 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_500.addItem(self.verticalSpacer_73)
 
-        self.input_final_periodo_relatorios_aluno_curso = QDateEdit(self.frame_742)
-        self.input_final_periodo_relatorios_aluno_curso.setObjectName(u"input_final_periodo_relatorios_aluno_curso")
-        sizePolicy1.setHeightForWidth(self.input_final_periodo_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
-        self.input_final_periodo_relatorios_aluno_curso.setSizePolicy(sizePolicy1)
-        self.input_final_periodo_relatorios_aluno_curso.setMinimumSize(QSize(0, 30))
-        self.input_final_periodo_relatorios_aluno_curso.setMaximumSize(QSize(120, 30))
-        self.input_final_periodo_relatorios_aluno_curso.setFont(font6)
-        self.input_final_periodo_relatorios_aluno_curso.setFocusPolicy(Qt.WheelFocus)
-        self.input_final_periodo_relatorios_aluno_curso.setContextMenuPolicy(Qt.DefaultContextMenu)
-        self.input_final_periodo_relatorios_aluno_curso.setLayoutDirection(Qt.LeftToRight)
-        self.input_final_periodo_relatorios_aluno_curso.setAutoFillBackground(False)
-        self.input_final_periodo_relatorios_aluno_curso.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+        self.input_final_periodo_relatorio_aluno_curso = QDateEdit(self.frame_742)
+        self.input_final_periodo_relatorio_aluno_curso.setObjectName(u"input_final_periodo_relatorio_aluno_curso")
+        sizePolicy1.setHeightForWidth(self.input_final_periodo_relatorio_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.input_final_periodo_relatorio_aluno_curso.setSizePolicy(sizePolicy1)
+        self.input_final_periodo_relatorio_aluno_curso.setMinimumSize(QSize(0, 30))
+        self.input_final_periodo_relatorio_aluno_curso.setMaximumSize(QSize(120, 30))
+        self.input_final_periodo_relatorio_aluno_curso.setFont(font6)
+        self.input_final_periodo_relatorio_aluno_curso.setFocusPolicy(Qt.WheelFocus)
+        self.input_final_periodo_relatorio_aluno_curso.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_final_periodo_relatorio_aluno_curso.setLayoutDirection(Qt.LeftToRight)
+        self.input_final_periodo_relatorio_aluno_curso.setAutoFillBackground(False)
+        self.input_final_periodo_relatorio_aluno_curso.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QDateEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_final_periodo_relatorios_aluno_curso.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
-        self.input_final_periodo_relatorios_aluno_curso.setAlignment(Qt.AlignCenter)
-        self.input_final_periodo_relatorios_aluno_curso.setButtonSymbols(QAbstractSpinBox.NoButtons)
-        self.input_final_periodo_relatorios_aluno_curso.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_final_periodo_relatorios_aluno_curso.setCurrentSection(QDateTimeEdit.DaySection)
-        self.input_final_periodo_relatorios_aluno_curso.setCalendarPopup(True)
-        self.input_final_periodo_relatorios_aluno_curso.setCurrentSectionIndex(0)
+        self.input_final_periodo_relatorio_aluno_curso.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_final_periodo_relatorio_aluno_curso.setAlignment(Qt.AlignCenter)
+        self.input_final_periodo_relatorio_aluno_curso.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_final_periodo_relatorio_aluno_curso.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_final_periodo_relatorio_aluno_curso.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_final_periodo_relatorio_aluno_curso.setCalendarPopup(True)
+        self.input_final_periodo_relatorio_aluno_curso.setCurrentSectionIndex(0)
 
-        self.verticalLayout_500.addWidget(self.input_final_periodo_relatorios_aluno_curso)
+        self.verticalLayout_500.addWidget(self.input_final_periodo_relatorio_aluno_curso)
 
 
         self.horizontalLayout_251.addWidget(self.frame_742)
@@ -15386,13 +15386,13 @@ class Ui_MainWindow(object):
         self.frame_746.setFrameShadow(QFrame.Raised)
         self.verticalLayout_504 = QVBoxLayout(self.frame_746)
         self.verticalLayout_504.setObjectName(u"verticalLayout_504")
-        self.btn_buscar_relatorios_aluno_curso = QPushButton(self.frame_746)
-        self.btn_buscar_relatorios_aluno_curso.setObjectName(u"btn_buscar_relatorios_aluno_curso")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_relatorios_aluno_curso.setSizePolicy(sizePolicy3)
-        self.btn_buscar_relatorios_aluno_curso.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_relatorios_aluno_curso.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_relatorios_aluno_curso.setStyleSheet(u"QPushButton{\n"
+        self.btn_buscar_relatorio_aluno_curso = QPushButton(self.frame_746)
+        self.btn_buscar_relatorio_aluno_curso.setObjectName(u"btn_buscar_relatorio_aluno_curso")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorio_aluno_curso.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_relatorio_aluno_curso.setSizePolicy(sizePolicy3)
+        self.btn_buscar_relatorio_aluno_curso.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_relatorio_aluno_curso.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_relatorio_aluno_curso.setStyleSheet(u"QPushButton{\n"
 "        background: rgb(243, 185, 191);\n"
 "        border: 1px  solid rgb(180, 106, 102);\n"
 "        border-width: 2px;\n"
@@ -15425,9 +15425,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorios_aluno_curso.setIcon(icon14)
+        self.btn_buscar_relatorio_aluno_curso.setIcon(icon14)
 
-        self.verticalLayout_504.addWidget(self.btn_buscar_relatorios_aluno_curso)
+        self.verticalLayout_504.addWidget(self.btn_buscar_relatorio_aluno_curso)
 
 
         self.horizontalLayout_251.addWidget(self.frame_746)
@@ -15456,14 +15456,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_250.addItem(self.horizontalSpacer_12)
 
-        self.input_buscar_dados_relatorios_aluno_curso = QLineEdit(self.frame_738)
-        self.input_buscar_dados_relatorios_aluno_curso.setObjectName(u"input_buscar_dados_relatorios_aluno_curso")
-        self.input_buscar_dados_relatorios_aluno_curso.setMinimumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorios_aluno_curso.setMaximumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
+        self.input_buscar_dados_relatorio_aluno_curso = QLineEdit(self.frame_738)
+        self.input_buscar_dados_relatorio_aluno_curso.setObjectName(u"input_buscar_dados_relatorio_aluno_curso")
+        self.input_buscar_dados_relatorio_aluno_curso.setMinimumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorio_aluno_curso.setMaximumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorio_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
 "")
 
-        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorios_aluno_curso)
+        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorio_aluno_curso)
 
         self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -15658,7 +15658,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_503.addWidget(self.frame_736)
 
-        self.stackedWidget_2.addWidget(self.page_relatorios_aluno_curso)
+        self.stackedWidget_2.addWidget(self.page_relatorio_aluno_curso)
 
         self.page_relatorios_as = QWidget()
         self.page_relatorios_as.setObjectName(u"page_relatorios_as")
@@ -23082,14 +23082,14 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_participante_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
         self.btn_excel_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"EXCEL", None))
-        self.label_titulo_relatorios_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Aluno", None))
-        self.label_inicio_periodo_relatorios_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.input_inicio_periodo_relatorios_aluno_curso.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
-        self.label_A_relatorios_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"A", None))
-        self.input_final_periodo_relatorios_aluno_curso.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
-        self.btn_buscar_relatorios_aluno_curso.setText("")
-        self.input_buscar_dados_relatorios_aluno_curso.setText("")
-        self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
+        self.label_titulo_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Aluno", None))
+        self.label_inicio_periodo_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
+        self.input_inicio_periodo_relatorio_aluno_curso.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
+        self.label_A_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"A", None))
+        self.input_final_periodo_relatorio_aluno_curso.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
+        self.btn_buscar_relatorio_aluno_curso.setText("")
+        self.input_buscar_dados_relatorio_aluno_curso.setText("")
+        self.input_buscar_dados_relatorio_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         ___qtablewidgetitem108 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(0)
         ___qtablewidgetitem108.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem109 = self.input_TableWidget_relatorio_aluno_curso.horizontalHeaderItem(1)
