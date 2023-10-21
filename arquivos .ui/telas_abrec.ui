@@ -18755,7 +18755,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>11</number>
+                      <number>17</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -47143,7 +47143,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>3</number>
+                                <number>2</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -54233,37 +54233,7 @@ QPushButton:focus{outline:0}</string>
                                               </widget>
                                              </item>
                                              <item>
-                                              <widget class="QPushButton" name="btn_alterar_proximo_as">
-                                               <property name="minimumSize">
-                                                <size>
-                                                 <width>140</width>
-                                                 <height>40</height>
-                                                </size>
-                                               </property>
-                                               <property name="font">
-                                                <font>
-                                                 <family>Abel</family>
-                                                 <pointsize>18</pointsize>
-                                                </font>
-                                               </property>
-                                               <property name="cursor">
-                                                <cursorShape>PointingHandCursor</cursorShape>
-                                               </property>
-                                               <property name="layoutDirection">
-                                                <enum>Qt::RightToLeft</enum>
-                                               </property>
-                                               <property name="styleSheet">
-                                                <string notr="true">QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}
-QPushButton:hover{background-color: #23B2EE}
-QPushButton:focus{outline:0}</string>
-                                               </property>
-                                               <property name="text">
-                                                <string>PRÓXIMO</string>
-                                               </property>
-                                              </widget>
-                                             </item>
-                                             <item>
-                                              <widget class="QPushButton" name="btn_alterar_finalizar_as">
+                                              <widget class="QPushButton" name="btn_salvar_alterar_usuario_as">
                                                <property name="minimumSize">
                                                 <size>
                                                  <width>140</width>
@@ -54285,7 +54255,7 @@ QPushButton:hover{background-color: #23B2EE}
 QPushButton:focus{outline:0}</string>
                                                </property>
                                                <property name="text">
-                                                <string>FINALIZAR</string>
+                                                <string>SALVAR</string>
                                                </property>
                                               </widget>
                                              </item>

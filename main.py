@@ -896,7 +896,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
         self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
-        self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
+        self.ui.btn_salvar_alterar_usuario_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
