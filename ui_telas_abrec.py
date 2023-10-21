@@ -13793,6 +13793,16 @@ class Ui_MainWindow(object):
         icon29 = QIcon()
         icon29.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
         self.input_foto_colaborador_as.setIcon(icon29)
+        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_258)
+        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
+        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(120, 40))
+        self.btn_tirar_foto_colaborador_as.setFont(font9)
+        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_12.addWidget(self.btn_tirar_foto_colaborador_as)
         self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
 
         self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
@@ -23061,7 +23071,6 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
-        self.btn_alterar_foto_colab_as_2.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
