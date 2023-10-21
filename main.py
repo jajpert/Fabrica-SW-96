@@ -861,6 +861,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ############SIGNALS POPUP Cursos e oficinas AS############
         # self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
 
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri)
+        self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri)
+        self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.tabela_agenda_nutri_atendimento)
+        self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario)
+        self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri)
+        self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
+        self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
+        self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
@@ -3871,7 +3880,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 print("O arquivo de imagem não existe:", caminho)
         else:
             print("Caminho inválido:", caminho)
-
+        
 
     def tirarImportarFotoColaborador(self):
         nome_colab = self.ui.input_nome_colaborador_as.text()
@@ -3963,7 +3972,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.hide()
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.clear()
+    
+    def relatorio_beneficio(self):
+        result = self.db.relatorio_beneficio()
 
+        self.ui.input_TableWidget_relatorio_beneficios_as.clearContents()
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(result))
     
 
     def cadastro_clinica(self):
