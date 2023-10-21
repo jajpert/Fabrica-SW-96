@@ -23008,6 +23008,7 @@ class Ui_MainWindow(object):
         self.label_filtro_agendamento_fisio.setText(QCoreApplication.translate("MainWindow", u"Filtro", None))
         ___qtablewidgetitem69 = self.input_TableWidget_agendamento_fisio.horizontalHeaderItem(0)
         ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        self.btn_tirar_foto_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tirar Foto", None))
         ___qtablewidgetitem70 = self.input_TableWidget_agendamento_fisio.horizontalHeaderItem(1)
         ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Data", None));
         ___qtablewidgetitem71 = self.input_TableWidget_agendamento_fisio.horizontalHeaderItem(2)
