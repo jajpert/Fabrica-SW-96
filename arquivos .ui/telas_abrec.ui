@@ -1288,7 +1288,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>4</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -6995,7 +6995,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_7">
                  <property name="currentIndex">
-                  <number>0</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_psi"/>
                  <widget class="QWidget" name="page_agenda_psi">
@@ -13811,7 +13811,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_11">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_fisio"/>
                  <widget class="QWidget" name="page_relatorio_fisio">
@@ -18755,7 +18755,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>14</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -21510,7 +21510,11 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                                </property>
                                <property name="text">
-                                <string>RELATÓRIO PARTICIPANTES</string>
+                                <string>RELATÓRIO PARTICIPANTES   </string>
+                               </property>
+                               <property name="icon">
+                                <iconset>
+                                 <normaloff>../../../../Downloads/documento.png</normaloff>../../../../Downloads/documento.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -21552,7 +21556,11 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                                </property>
                                <property name="text">
-                                <string>RELATÓRIO PESSOAS</string>
+                                <string>RELATÓRIO PESSOAS    </string>
+                               </property>
+                               <property name="icon">
+                                <iconset>
+                                 <normaloff>../../../../Downloads/documento.png</normaloff>../../../../Downloads/documento.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -21594,7 +21602,11 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                                </property>
                                <property name="text">
-                                <string>RELATÓRIO CURSOS E PARTICIPANTES</string>
+                                <string>RELATÓRIO CURSOS E PARTICIPANTES   </string>
+                               </property>
+                               <property name="icon">
+                                <iconset>
+                                 <normaloff>../../../../Downloads/documento.png</normaloff>../../../../Downloads/documento.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -21636,7 +21648,11 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                                </property>
                                <property name="text">
-                                <string>RELATÓRIO BENEFÍCIOS</string>
+                                <string>RELATÓRIO BENEFÍCIOS    </string>
+                               </property>
+                               <property name="icon">
+                                <iconset>
+                                 <normaloff>../../../../Downloads/documento.png</normaloff>../../../../Downloads/documento.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -24494,7 +24510,7 @@ QPushButton:pressed{
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QRadioButton" name="label_pessoa_cdeficiencia_nao_usuario_as">
+                                       <widget class="QRadioButton" name="input_pessoa_cdeficiencia_nao_usuario_as">
                                         <property name="font">
                                          <font>
                                           <family>Abel</family>

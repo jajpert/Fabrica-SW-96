@@ -1336,6 +1336,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_383.setSpacing(0)
         self.verticalLayout_383.setObjectName(u"verticalLayout_383")
         self.verticalLayout_383.setContentsMargins(0, 0, 0, 0)
+        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_573)
+        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
+        self.input_id_matricula_nutri_consulta.setEnabled(False)
+        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(15, 15))
+        self.input_id_matricula_nutri_consulta.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_383.addWidget(self.input_id_matricula_nutri_consulta)
         self.frame_574 = QFrame(self.frame_573)
         self.frame_574.setObjectName(u"frame_574")
         self.frame_574.setFrameShape(QFrame.StyledPanel)
@@ -3580,11 +3588,11 @@ class Ui_MainWindow(object):
         self.frame_596.setObjectName(u"frame_596")
         self.frame_596.setFrameShape(QFrame.StyledPanel)
         self.frame_596.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_consulta_psi = QLineEdit(self.frame_596)
-        self.input_id_usuario_consulta_psi.setObjectName(u"input_id_usuario_consulta_psi")
-        self.input_id_usuario_consulta_psi.setEnabled(False)
-        self.input_id_usuario_consulta_psi.setGeometry(QRect(0, 0, 489, 32))
-        self.input_id_usuario_consulta_psi.setStyleSheet(u"border-color: transparent;\n"
+        self.input_id_matricula_consulta_psi = QLineEdit(self.frame_596)
+        self.input_id_matricula_consulta_psi.setObjectName(u"input_id_matricula_consulta_psi")
+        self.input_id_matricula_consulta_psi.setEnabled(False)
+        self.input_id_matricula_consulta_psi.setGeometry(QRect(0, 0, 489, 32))
+        self.input_id_matricula_consulta_psi.setStyleSheet(u"border-color: transparent;\n"
 "background-color: transparent;")
 
         self.verticalLayout_394.addWidget(self.frame_596)
@@ -6252,6 +6260,16 @@ class Ui_MainWindow(object):
         self.btn_buscar_agendamento_fisio.setIcon(icon7)
 
         self.verticalLayout_126.addWidget(self.btn_buscar_agendamento_fisio)
+        self.input_id_matricula_agendamento_fisio = QLineEdit(self.frame_529)
+        self.input_id_matricula_agendamento_fisio.setObjectName(u"input_id_matricula_agendamento_fisio")
+        self.input_id_matricula_agendamento_fisio.setEnabled(False)
+        self.input_id_matricula_agendamento_fisio.setGeometry(QRect(140, 20, 1, 30))
+        self.input_id_matricula_agendamento_fisio.setMinimumSize(QSize(0, 30))
+        self.input_id_matricula_agendamento_fisio.setMaximumSize(QSize(16777215, 16777215))
+        self.input_id_matricula_agendamento_fisio.setFont(font)
+        self.input_id_matricula_agendamento_fisio.setStyleSheet(u"background-color: transparent;\n"
+"border-color: transparent;")
+        self.input_id_matricula_agendamento_fisio.setMaxLength(11)
 
 
         self.horizontalLayout_170.addWidget(self.frame_217)
@@ -6805,11 +6823,11 @@ class Ui_MainWindow(object):
         self.frame_547.setObjectName(u"frame_547")
         self.frame_547.setFrameShape(QFrame.StyledPanel)
         self.frame_547.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_consulta_as_3 = QLineEdit(self.frame_547)
-        self.input_id_usuario_consulta_as_3.setObjectName(u"input_id_usuario_consulta_as_3")
-        self.input_id_usuario_consulta_as_3.setEnabled(False)
-        self.input_id_usuario_consulta_as_3.setGeometry(QRect(0, 0, 489, 32))
-        self.input_id_usuario_consulta_as_3.setStyleSheet(u"border-color: transparent;\n"
+        self.input_id_matricula_consulta_fisio = QLineEdit(self.frame_547)
+        self.input_id_matricula_consulta_fisio.setObjectName(u"input_id_matricula_consulta_fisio")
+        self.input_id_matricula_consulta_fisio.setEnabled(False)
+        self.input_id_matricula_consulta_fisio.setGeometry(QRect(0, 0, 489, 32))
+        self.input_id_matricula_consulta_fisio.setStyleSheet(u"border-color: transparent;\n"
 "background-color: transparent;")
 
         self.verticalLayout_370.addWidget(self.frame_547)
@@ -9602,11 +9620,11 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_58.addWidget(self.input_pessoa_cdeficiencia_sim_usuario_as)
 
-        self.label_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_130)
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"label_pessoa_cdeficiencia_nao_usuario_as")
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setFont(font6)
+        self.input_pessoa_cdeficiencia_nao_usuario_as = QRadioButton(self.frame_130)
+        self.input_pessoa_cdeficiencia_nao_usuario_as.setObjectName(u"input_pessoa_cdeficiencia_nao_usuario_as")
+        self.input_pessoa_cdeficiencia_nao_usuario_as.setFont(font6)
 
-        self.horizontalLayout_58.addWidget(self.label_pessoa_cdeficiencia_nao_usuario_as)
+        self.horizontalLayout_58.addWidget(self.input_pessoa_cdeficiencia_nao_usuario_as)
 
 
         self.verticalLayout_88.addWidget(self.frame_130)
@@ -23148,7 +23166,7 @@ class Ui_MainWindow(object):
 
         self.label_pessoa_cdeficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Pessoa c/ defici\u00eancia", None))
         self.input_pessoa_cdeficiencia_sim_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Sim", None))
-        self.label_pessoa_cdeficiencia_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
+        self.input_pessoa_cdeficiencia_nao_usuario_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_tipo_deficiencia_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Tipo de defici\u00eancia", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
         self.input_tipo_deficiencia_usuario_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Visual", None))
