@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecWaLROr.ui'
+## Form generated from reading UI file 'telas_abrechhYcKV.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -1401,9 +1401,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        icon10 = QIcon()
-        icon10.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_cpf_pagina_consulta_geral_2.setIcon(icon10)
+        self.btn_buscar_cpf_pagina_consulta_geral_2.setIcon(icon7)
 
         self.horizontalLayout_190.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_2)
 
@@ -1828,9 +1826,9 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon11 = QIcon()
-        icon11.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_salvar_pagina_consulta_geral_nutri.setIcon(icon11)
+        icon10 = QIcon()
+        icon10.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_salvar_pagina_consulta_geral_nutri.setIcon(icon10)
         self.btn_salvar_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_193.addWidget(self.btn_salvar_pagina_consulta_geral_nutri)
@@ -1992,9 +1990,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon12 = QIcon()
-        icon12.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_pagina_consulta_geral_nutri.setIcon(icon12)
+        self.btn_alterar_pagina_consulta_geral_nutri.setIcon(icon8)
         self.btn_alterar_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_197.addWidget(self.btn_alterar_pagina_consulta_geral_nutri)
@@ -2007,9 +2003,9 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon13 = QIcon()
-        icon13.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_excluir_pagina_consulta_geral_nutri.setIcon(icon13)
+        icon11 = QIcon()
+        icon11.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excluir_pagina_consulta_geral_nutri.setIcon(icon11)
         self.btn_excluir_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_197.addWidget(self.btn_excluir_pagina_consulta_geral_nutri)
@@ -2361,9 +2357,9 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        icon14 = QIcon()
-        icon14.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_relatorio_nutri.setIcon(icon14)
+        icon12 = QIcon()
+        icon12.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_buscar_relatorio_nutri.setIcon(icon12)
 
         self.verticalLayout_461.addWidget(self.btn_buscar_relatorio_nutri)
 
@@ -2511,7 +2507,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_nutri.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_nutri.setIcon(icon12)
 
         self.verticalLayout_464.addWidget(self.btn_gerar_excel_relatorio_nutri)
 
@@ -2525,7 +2521,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_nutri.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_nutri.setIcon(icon14)
+        self.btn_gerar_pdf_relatorio_nutri.setIcon(icon12)
 
         self.verticalLayout_464.addWidget(self.btn_gerar_pdf_relatorio_nutri)
 
@@ -2608,9 +2604,9 @@ class Ui_MainWindow(object):
         self.btn_plano_alimentar_cadastrar_nutri.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon15 = QIcon()
-        icon15.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon15)
+        icon13 = QIcon()
+        icon13.addFile(u"./icons/cadastro.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_plano_alimentar_cadastrar_nutri.setIcon(icon13)
         self.btn_plano_alimentar_cadastrar_nutri.setIconSize(QSize(80, 80))
 
         self.verticalLayout_36.addWidget(self.btn_plano_alimentar_cadastrar_nutri)
@@ -3666,7 +3662,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_consulta_geral_psi.setIcon(icon10)
+        self.btn_buscar_cpf_pagina_consulta_geral_psi.setIcon(icon7)
 
         self.horizontalLayout_200.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_psi)
 
@@ -3875,7 +3871,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_salvar_pagina_consulta_geral_psi.setIcon(icon11)
+        self.btn_salvar_pagina_consulta_geral_psi.setIcon(icon10)
         self.btn_salvar_pagina_consulta_geral_psi.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_203.addWidget(self.btn_salvar_pagina_consulta_geral_psi)
@@ -4036,7 +4032,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_pagina_consulta_geral_psi.setIcon(icon12)
+        self.btn_alterar_pagina_consulta_geral_psi.setIcon(icon8)
         self.btn_alterar_pagina_consulta_geral_psi.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_207.addWidget(self.btn_alterar_pagina_consulta_geral_psi)
@@ -4049,7 +4045,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excluir_pagina_consulta_geral_psi.setIcon(icon13)
+        self.btn_excluir_pagina_consulta_geral_psi.setIcon(icon11)
         self.btn_excluir_pagina_consulta_geral_psi.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_207.addWidget(self.btn_excluir_pagina_consulta_geral_psi)
@@ -4391,7 +4387,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_as_2.setIcon(icon14)
+        self.btn_buscar_relatorio_as_2.setIcon(icon12)
 
         self.verticalLayout_473.addWidget(self.btn_buscar_relatorio_as_2)
 
@@ -4536,7 +4532,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_psi.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_psi.setIcon(icon12)
 
         self.verticalLayout_476.addWidget(self.btn_gerar_excel_relatorio_psi)
 
@@ -4550,7 +4546,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_psi.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_psi.setIcon(icon14)
+        self.btn_gerar_pdf_relatorio_psi.setIcon(icon12)
 
         self.verticalLayout_476.addWidget(self.btn_gerar_pdf_relatorio_psi)
 
@@ -4683,9 +4679,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon16 = QIcon()
-        icon16.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_farm.setIcon(icon16)
+        icon14 = QIcon()
+        icon14.addFile(u"./icons/remedio.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_farm.setIcon(icon14)
         self.btn_cadastrar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_86.addWidget(self.btn_cadastrar_farm)
@@ -4712,9 +4708,9 @@ class Ui_MainWindow(object):
         self.btn_retirar_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon17 = QIcon()
-        icon17.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_retirar_farm.setIcon(icon17)
+        icon15 = QIcon()
+        icon15.addFile(u"./icons/medicamento.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_retirar_farm.setIcon(icon15)
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_86.addWidget(self.btn_retirar_farm)
@@ -5136,7 +5132,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_farm.setIcon(icon14)
+        self.btn_buscar_relatorio_farm.setIcon(icon12)
 
         self.verticalLayout_485.addWidget(self.btn_buscar_relatorio_farm)
 
@@ -5281,7 +5277,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_farm.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_farm.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_farm.setIcon(icon12)
 
         self.verticalLayout_488.addWidget(self.btn_gerar_excel_relatorio_farm)
 
@@ -5295,7 +5291,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_farm.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_farm.setIcon(icon14)
+        self.btn_gerar_pdf_relatorio_farm.setIcon(icon12)
 
         self.verticalLayout_488.addWidget(self.btn_gerar_pdf_relatorio_farm)
 
@@ -5882,7 +5878,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_fisio.setIcon(icon14)
+        self.btn_buscar_relatorio_fisio.setIcon(icon12)
 
         self.verticalLayout_449.addWidget(self.btn_buscar_relatorio_fisio)
 
@@ -6027,7 +6023,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_fisio.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_fisio.setIcon(icon12)
 
         self.verticalLayout_452.addWidget(self.btn_gerar_excel_relatorio_fisio)
 
@@ -6041,7 +6037,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_fisio.setIcon(icon14)
+        self.btn_gerar_pdf_relatorio_fisio.setIcon(icon12)
 
         self.verticalLayout_452.addWidget(self.btn_gerar_pdf_relatorio_fisio)
 
@@ -6891,7 +6887,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_consulta_geral_fisio.setIcon(icon10)
+        self.btn_buscar_cpf_pagina_consulta_geral_fisio.setIcon(icon7)
 
         self.horizontalLayout_180.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_fisio)
 
@@ -7100,7 +7096,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_salvar_pagina_consulta_geral_fisio.setIcon(icon11)
+        self.btn_salvar_pagina_consulta_geral_fisio.setIcon(icon10)
         self.btn_salvar_pagina_consulta_geral_fisio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_183.addWidget(self.btn_salvar_pagina_consulta_geral_fisio)
@@ -7261,7 +7257,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_pagina_consulta_geral_fisio.setIcon(icon12)
+        self.btn_alterar_pagina_consulta_geral_fisio.setIcon(icon8)
         self.btn_alterar_pagina_consulta_geral_fisio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_187.addWidget(self.btn_alterar_pagina_consulta_geral_fisio)
@@ -7274,7 +7270,7 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral_fisio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excluir_pagina_consulta_geral_fisio.setIcon(icon13)
+        self.btn_excluir_pagina_consulta_geral_fisio.setIcon(icon11)
         self.btn_excluir_pagina_consulta_geral_fisio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_187.addWidget(self.btn_excluir_pagina_consulta_geral_fisio)
@@ -7354,16 +7350,16 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_6.addWidget(self.label_4)
 
-        self.btn_alterar_foto_colab_inicio = QPushButton(self.frame_9)
-        self.btn_alterar_foto_colab_inicio.setObjectName(u"btn_alterar_foto_colab_inicio")
-        self.btn_alterar_foto_colab_inicio.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_inicio.setFont(font7)
-        self.btn_alterar_foto_colab_inicio.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_inicio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_alterar_foto_colab_as_2 = QPushButton(self.frame_9)
+        self.btn_alterar_foto_colab_as_2.setObjectName(u"btn_alterar_foto_colab_as_2")
+        self.btn_alterar_foto_colab_as_2.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_2.setFont(font7)
+        self.btn_alterar_foto_colab_as_2.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_inicio)
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_2)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -7406,7 +7402,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_cadastrar_as.setIcon(icon15)
+        self.btn_cadastrar_as.setIcon(icon13)
         self.btn_cadastrar_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_cadastrar_as)
@@ -7462,9 +7458,9 @@ class Ui_MainWindow(object):
         self.btn_parceiros_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon18 = QIcon()
-        icon18.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_parceiros_as.setIcon(icon18)
+        icon16 = QIcon()
+        icon16.addFile(u"./icons/parceiro.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_parceiros_as.setIcon(icon16)
         self.btn_parceiros_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_parceiros_as)
@@ -8070,7 +8066,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_fornecedor_as.setIcon(icon14)
+        self.btn_cep_buscar_fornecedor_as.setIcon(icon12)
 
         self.verticalLayout_345.addWidget(self.btn_cep_buscar_fornecedor_as)
 
@@ -8401,9 +8397,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_cuidador_usuario_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon19 = QIcon()
-        icon19.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_cuidador_usuario_as.setIcon(icon19)
+        icon17 = QIcon()
+        icon17.addFile(u"./icons/cuidado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_cuidador_usuario_as.setIcon(icon17)
         self.btn_cadastrar_cuidador_usuario_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_cuidador_usuario_as)
@@ -8418,9 +8414,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_colaborador_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon20 = QIcon()
-        icon20.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_colaborador_as.setIcon(icon20)
+        icon18 = QIcon()
+        icon18.addFile(u"./icons/unidos.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_colaborador_as.setIcon(icon18)
         self.btn_cadastrar_colaborador_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_colaborador_as)
@@ -8435,9 +8431,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_cursos_oficinas_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon21 = QIcon()
-        icon21.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_cursos_oficinas_as.setIcon(icon21)
+        icon19 = QIcon()
+        icon19.addFile(u"./icons/certificados.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_cursos_oficinas_as.setIcon(icon19)
         self.btn_cadastrar_cursos_oficinas_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_cursos_oficinas_as)
@@ -8452,9 +8448,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_alterar_dados_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon22 = QIcon()
-        icon22.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_alterar_dados_as.setIcon(icon22)
+        icon20 = QIcon()
+        icon20.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_alterar_dados_as.setIcon(icon20)
         self.btn_cadastrar_alterar_dados_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_23.addWidget(self.btn_cadastrar_alterar_dados_as)
@@ -8497,9 +8493,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_clinica_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon23 = QIcon()
-        icon23.addFile(u"./icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_clinica_as.setIcon(icon23)
+        icon21 = QIcon()
+        icon21.addFile(u"./icons/centro-medico.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_clinica_as.setIcon(icon21)
         self.btn_cadastrar_clinica_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_123.addWidget(self.btn_cadastrar_clinica_as)
@@ -8514,9 +8510,9 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_fornecedores_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        icon24 = QIcon()
-        icon24.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastrar_fornecedores_as.setIcon(icon24)
+        icon22 = QIcon()
+        icon22.addFile(u"./icons/fornecedor.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_fornecedores_as.setIcon(icon22)
         self.btn_cadastrar_fornecedores_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_123.addWidget(self.btn_cadastrar_fornecedores_as)
@@ -8531,7 +8527,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_beneficios_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_cadastrar_beneficios_as.setIcon(icon24)
+        self.btn_cadastrar_beneficios_as.setIcon(icon22)
         self.btn_cadastrar_beneficios_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_123.addWidget(self.btn_cadastrar_beneficios_as)
@@ -9310,7 +9306,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_usuario_as.setIcon(icon14)
+        self.btn_cep_buscar_usuario_as.setIcon(icon12)
 
         self.verticalLayout_286.addWidget(self.btn_cep_buscar_usuario_as)
 
@@ -10593,9 +10589,9 @@ class Ui_MainWindow(object):
         self.btn_salvar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon25 = QIcon()
-        icon25.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_salvar_cadastro_beneficio.setIcon(icon25)
+        icon23 = QIcon()
+        icon23.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_salvar_cadastro_beneficio.setIcon(icon23)
         self.btn_salvar_cadastro_beneficio.setIconSize(QSize(28, 28))
 
         self.verticalLayout_3401.addWidget(self.btn_salvar_cadastro_beneficio)
@@ -10780,9 +10776,9 @@ class Ui_MainWindow(object):
         self.btn_cadastro_retirada_de_beneficios.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon26 = QIcon()
-        icon26.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cadastro_retirada_de_beneficios.setIcon(icon26)
+        icon24 = QIcon()
+        icon24.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastro_retirada_de_beneficios.setIcon(icon24)
         self.btn_cadastro_retirada_de_beneficios.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_1591.addWidget(self.btn_cadastro_retirada_de_beneficios)
@@ -10814,9 +10810,9 @@ class Ui_MainWindow(object):
         self.btn_excel_beneficios_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon27 = QIcon()
-        icon27.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_excel_beneficios_as.setIcon(icon27)
+        icon25 = QIcon()
+        icon25.addFile(u"./icons/imprimir.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excel_beneficios_as.setIcon(icon25)
         self.btn_excel_beneficios_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_18.addWidget(self.btn_excel_beneficios_as)
@@ -10829,7 +10825,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_cadastro_beneficio.setIcon(icon26)
+        self.btn_alterar_cadastro_beneficio.setIcon(icon24)
         self.btn_alterar_cadastro_beneficio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_18.addWidget(self.btn_alterar_cadastro_beneficio)
@@ -10842,9 +10838,9 @@ class Ui_MainWindow(object):
         self.btn_excluir_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon28 = QIcon()
-        icon28.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_excluir_cadastro_beneficio.setIcon(icon28)
+        icon26 = QIcon()
+        icon26.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excluir_cadastro_beneficio.setIcon(icon26)
         self.btn_excluir_cadastro_beneficio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_18.addWidget(self.btn_excluir_cadastro_beneficio)
@@ -10857,9 +10853,9 @@ class Ui_MainWindow(object):
         self.btn_cancelar_cadastro_beneficio.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon29 = QIcon()
-        icon29.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cancelar_cadastro_beneficio.setIcon(icon29)
+        icon27 = QIcon()
+        icon27.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cancelar_cadastro_beneficio.setIcon(icon27)
         self.btn_cancelar_cadastro_beneficio.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_18.addWidget(self.btn_cancelar_cadastro_beneficio)
@@ -11083,7 +11079,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon14)
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon12)
 
         self.verticalLayout_132.addWidget(self.btn_buscar_cpf_cadastro_retirada_beneficio)
 
@@ -11436,7 +11432,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon14)
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon12)
 
         self.verticalLayout_1311.addWidget(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio)
 
@@ -12165,7 +12161,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_cuidador_as.setIcon(icon14)
+        self.btn_cep_buscar_cuidador_as.setIcon(icon12)
 
         self.verticalLayout_284.addWidget(self.btn_cep_buscar_cuidador_as)
 
@@ -12680,7 +12676,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_observacoes_sigilosas_as.setIcon(icon22)
+        self.btn_alterar_observacoes_sigilosas_as.setIcon(icon20)
         self.btn_alterar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_54.addWidget(self.btn_alterar_observacoes_sigilosas_as)
@@ -12693,9 +12689,9 @@ class Ui_MainWindow(object):
         self.btn_salvar_observacoes_sigilosas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon30 = QIcon()
-        icon30.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_salvar_observacoes_sigilosas_as.setIcon(icon30)
+        icon28 = QIcon()
+        icon28.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_salvar_observacoes_sigilosas_as.setIcon(icon28)
         self.btn_salvar_observacoes_sigilosas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_54.addWidget(self.btn_salvar_observacoes_sigilosas_as)
@@ -13494,7 +13490,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_colaborador_as.setIcon(icon14)
+        self.btn_cep_buscar_colaborador_as.setIcon(icon12)
 
         self.verticalLayout_287.addWidget(self.btn_cep_buscar_colaborador_as)
 
@@ -13757,74 +13753,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_80.addWidget(self.frame_387)
 
-        self.frame_258 = QFrame(self.frame_194)
-        self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(240, 240))
-        self.frame_258.setMaximumSize(QSize(240, 240))
-        self.frame_258.setFrameShape(QFrame.StyledPanel)
-        self.frame_258.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_14 = QVBoxLayout(self.frame_258)
-        self.verticalLayout_14.setSpacing(0)
-        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
-        self.frame_259 = QFrame(self.frame_258)
-        self.frame_259.setObjectName(u"frame_259")
-        self.frame_259.setStyleSheet(u"background-color: rgb(243, 185, 191);")
-        self.frame_259.setFrameShape(QFrame.StyledPanel)
-        self.frame_259.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.frame_259)
-        self.verticalLayout_12.setSpacing(0)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_colaborador_as = QLabel(self.frame_259)
-        self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
-        self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
-        self.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
-
-        self.verticalLayout_12.addWidget(self.label_foto_colaborador_as)
-
-        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_259)
-        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
-        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(120, 40))
-        self.btn_tirar_foto_colaborador_as.setFont(font9)
-        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_12.addWidget(self.btn_tirar_foto_colaborador_as)
-
-
-        self.verticalLayout_14.addWidget(self.frame_259)
-
-
-        self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
-
-
-        self.frame_260 = QFrame(self.frame_194)
-        self.frame_260.setObjectName(u"frame_260")
-        self.frame_260.setFrameShape(QFrame.StyledPanel)
-        self.frame_260.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_181 = QVBoxLayout(self.frame_260)
-        self.verticalLayout_181.setSpacing(0)
-        self.verticalLayout_181.setObjectName(u"verticalLayout_181")
-        self.verticalLayout_181.setContentsMargins(0, 0, 0, 0)
-        self.frame_261 = QFrame(self.frame_260)
-        self.frame_261.setObjectName(u"frame_261")
-        self.frame_261.setMinimumSize(QSize(195, 50))
-        self.frame_261.setMaximumSize(QSize(195, 50))
-        self.frame_261.setStyleSheet(u"background-color: #EC848C; border-radius: 10px")
-        self.frame_261.setFrameShape(QFrame.StyledPanel)
-        self.frame_261.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_180 = QVBoxLayout(self.frame_261)
-        self.verticalLayout_180.setSpacing(0)
-        self.verticalLayout_180.setObjectName(u"verticalLayout_180")
-        self.verticalLayout_180.setContentsMargins(15, 0, 0, 0)
-        self.label_situacao_colaborador_as = QLabel(self.frame_261)
-        self.label_situacao_colaborador_as.setObjectName(u"label_situacao_colaborador_as")
-        self.label_situacao_colaborador_as.setMaximumSize(QSize(130, 16777215))
-        self.label_situacao_colaborador_as.setFont(font)
-
 
         self.gridLayout_2.addWidget(self.frame_241, 5, 1, 1, 1)
 
@@ -13844,9 +13772,9 @@ class Ui_MainWindow(object):
         self.input_foto_colaborador_as.setMaximumSize(QSize(125, 153))
         self.input_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.input_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        icon31 = QIcon()
-        icon31.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.input_foto_colaborador_as.setIcon(icon31)
+        icon29 = QIcon()
+        icon29.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.input_foto_colaborador_as.setIcon(icon29)
         self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
 
         self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
@@ -14777,9 +14705,9 @@ class Ui_MainWindow(object):
         self.btn_lista_pessoas_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon32 = QIcon()
-        icon32.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_lista_pessoas_cursos_as.setIcon(icon32)
+        icon30 = QIcon()
+        icon30.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_lista_pessoas_cursos_as.setIcon(icon30)
         self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
 
         self.horizontalLayout_57.addWidget(self.btn_lista_pessoas_cursos_as)
@@ -14935,7 +14863,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_participante_geral.setIcon(icon14)
+        self.btn_buscar_cpf_pagina_participante_geral.setIcon(icon12)
 
         self.horizontalLayout_1562.addWidget(self.btn_buscar_cpf_pagina_participante_geral)
 
@@ -15085,7 +15013,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_salvar_pagina_participante_geral.setIcon(icon30)
+        self.btn_salvar_pagina_participante_geral.setIcon(icon28)
         self.btn_salvar_pagina_participante_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_1592.addWidget(self.btn_salvar_pagina_participante_geral)
@@ -15211,7 +15139,7 @@ class Ui_MainWindow(object):
         self.btn_excel_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excel_pagina_participante_geral.setIcon(icon27)
+        self.btn_excel_pagina_participante_geral.setIcon(icon25)
         self.btn_excel_pagina_participante_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_163.addWidget(self.btn_excel_pagina_participante_geral)
@@ -15482,7 +15410,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_as_3.setIcon(icon14)
+        self.btn_buscar_relatorio_as_3.setIcon(icon12)
 
         self.verticalLayout_504.addWidget(self.btn_buscar_relatorio_as_3)
 
@@ -15650,7 +15578,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_aluno_curso.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_aluno_curso.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_aluno_curso.setIcon(icon12)
 
         self.verticalLayout_496.addWidget(self.btn_gerar_excel_relatorio_aluno_curso)
 
@@ -15963,7 +15891,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_beneficios_as.setIcon(icon14)
+        self.btn_buscar_relatorio_beneficios_as.setIcon(icon12)
 
         self.verticalLayout_509.addWidget(self.btn_buscar_relatorio_beneficios_as)
 
@@ -16060,8 +15988,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_511 = QVBoxLayout(self.frame_762)
         self.verticalLayout_511.setObjectName(u"verticalLayout_511")
         self.input_TableWidget_relatorio_beneficios_as = QTableWidget(self.frame_762)
-        if (self.input_TableWidget_relatorio_beneficios_as.columnCount() < 9):
-            self.input_TableWidget_relatorio_beneficios_as.setColumnCount(9)
+        if (self.input_TableWidget_relatorio_beneficios_as.columnCount() < 10):
+            self.input_TableWidget_relatorio_beneficios_as.setColumnCount(10)
         __qtablewidgetitem136 = QTableWidgetItem()
         self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(0, __qtablewidgetitem136)
         __qtablewidgetitem137 = QTableWidgetItem()
@@ -16080,6 +16008,8 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(7, __qtablewidgetitem143)
         __qtablewidgetitem144 = QTableWidgetItem()
         self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(8, __qtablewidgetitem144)
+        __qtablewidgetitem145 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(9, __qtablewidgetitem145)
         if (self.input_TableWidget_relatorio_beneficios_as.rowCount() < 14):
             self.input_TableWidget_relatorio_beneficios_as.setRowCount(14)
         self.input_TableWidget_relatorio_beneficios_as.setObjectName(u"input_TableWidget_relatorio_beneficios_as")
@@ -16097,7 +16027,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_beneficios_as.setSortingEnabled(True)
         self.input_TableWidget_relatorio_beneficios_as.setWordWrap(True)
         self.input_TableWidget_relatorio_beneficios_as.setRowCount(14)
-        self.input_TableWidget_relatorio_beneficios_as.setColumnCount(9)
+        self.input_TableWidget_relatorio_beneficios_as.setColumnCount(10)
         self.input_TableWidget_relatorio_beneficios_as.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_relatorio_beneficios_as.horizontalHeader().setDefaultSectionSize(170)
         self.input_TableWidget_relatorio_beneficios_as.horizontalHeader().setStretchLastSection(True)
@@ -16129,7 +16059,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_beneficios_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_beneficios_as.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_beneficios_as.setIcon(icon12)
 
         self.verticalLayout_512.addWidget(self.btn_gerar_excel_relatorio_beneficios_as)
 
@@ -16520,7 +16450,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_relatorio_as.setIcon(icon14)
+        self.btn_buscar_relatorio_as.setIcon(icon12)
 
         self.verticalLayout_152.addWidget(self.btn_buscar_relatorio_as)
 
@@ -16598,30 +16528,30 @@ class Ui_MainWindow(object):
         self.tableWidget_relatorio_as = QTableWidget(self.frame_238)
         if (self.tableWidget_relatorio_as.columnCount() < 12):
             self.tableWidget_relatorio_as.setColumnCount(12)
-        __qtablewidgetitem145 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(0, __qtablewidgetitem145)
         __qtablewidgetitem146 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(1, __qtablewidgetitem146)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(0, __qtablewidgetitem146)
         __qtablewidgetitem147 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(2, __qtablewidgetitem147)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(1, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(3, __qtablewidgetitem148)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(2, __qtablewidgetitem148)
         __qtablewidgetitem149 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(4, __qtablewidgetitem149)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(3, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(5, __qtablewidgetitem150)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(4, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(6, __qtablewidgetitem151)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(5, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(7, __qtablewidgetitem152)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(6, __qtablewidgetitem152)
         __qtablewidgetitem153 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(8, __qtablewidgetitem153)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(7, __qtablewidgetitem153)
         __qtablewidgetitem154 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(9, __qtablewidgetitem154)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(8, __qtablewidgetitem154)
         __qtablewidgetitem155 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(10, __qtablewidgetitem155)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(9, __qtablewidgetitem155)
         __qtablewidgetitem156 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(11, __qtablewidgetitem156)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(10, __qtablewidgetitem156)
+        __qtablewidgetitem157 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(11, __qtablewidgetitem157)
         self.tableWidget_relatorio_as.setObjectName(u"tableWidget_relatorio_as")
         self.tableWidget_relatorio_as.setMinimumSize(QSize(0, 0))
         self.tableWidget_relatorio_as.setMaximumSize(QSize(16777215, 16777215))
@@ -16665,7 +16595,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_excel_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_excel_relatorio_as.setIcon(icon14)
+        self.btn_gerar_excel_relatorio_as.setIcon(icon12)
 
         self.verticalLayout_308.addWidget(self.btn_gerar_excel_relatorio_as)
 
@@ -16679,7 +16609,7 @@ class Ui_MainWindow(object):
         self.btn_gerar_pdf_relatorio_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_gerar_pdf_relatorio_as.setIcon(icon14)
+        self.btn_gerar_pdf_relatorio_as.setIcon(icon12)
 
         self.verticalLayout_308.addWidget(self.btn_gerar_pdf_relatorio_as)
 
@@ -16893,9 +16823,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        icon33 = QIcon()
-        icon33.addFile(u".././icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_buscar_agendamento_as.setIcon(icon33)
+        self.btn_buscar_agendamento_as.setIcon(icon7)
 
         self.verticalLayout_117.addWidget(self.btn_buscar_agendamento_as)
 
@@ -17280,26 +17208,26 @@ class Ui_MainWindow(object):
         self.input_TableWidget_agendamento_as = QTableWidget(self.frame_268)
         if (self.input_TableWidget_agendamento_as.columnCount() < 6):
             self.input_TableWidget_agendamento_as.setColumnCount(6)
-        __qtablewidgetitem157 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(0, __qtablewidgetitem157)
         __qtablewidgetitem158 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(1, __qtablewidgetitem158)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(0, __qtablewidgetitem158)
         __qtablewidgetitem159 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(2, __qtablewidgetitem159)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(1, __qtablewidgetitem159)
         __qtablewidgetitem160 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(3, __qtablewidgetitem160)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(2, __qtablewidgetitem160)
         __qtablewidgetitem161 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(4, __qtablewidgetitem161)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(3, __qtablewidgetitem161)
         __qtablewidgetitem162 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(5, __qtablewidgetitem162)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(4, __qtablewidgetitem162)
+        __qtablewidgetitem163 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(5, __qtablewidgetitem163)
         if (self.input_TableWidget_agendamento_as.rowCount() < 14):
             self.input_TableWidget_agendamento_as.setRowCount(14)
-        __qtablewidgetitem163 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setItem(0, 1, __qtablewidgetitem163)
         __qtablewidgetitem164 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setItem(0, 2, __qtablewidgetitem164)
+        self.input_TableWidget_agendamento_as.setItem(0, 1, __qtablewidgetitem164)
         __qtablewidgetitem165 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setItem(1, 1, __qtablewidgetitem165)
+        self.input_TableWidget_agendamento_as.setItem(0, 2, __qtablewidgetitem165)
+        __qtablewidgetitem166 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setItem(1, 1, __qtablewidgetitem166)
         self.input_TableWidget_agendamento_as.setObjectName(u"input_TableWidget_agendamento_as")
         sizePolicy7.setHeightForWidth(self.input_TableWidget_agendamento_as.sizePolicy().hasHeightForWidth())
         self.input_TableWidget_agendamento_as.setSizePolicy(sizePolicy7)
@@ -17365,9 +17293,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon34 = QIcon()
-        icon34.addFile(u".././icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_agenda_as.setIcon(icon34)
+        self.btn_alterar_agenda_as.setIcon(icon8)
         self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_70.addWidget(self.btn_alterar_agenda_as)
@@ -17382,9 +17308,7 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon35 = QIcon()
-        icon35.addFile(u".././icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cancelar_agenda_as.setIcon(icon35)
+        self.btn_cancelar_agenda_as.setIcon(icon9)
         self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
 
         self.horizontalLayout_70.addWidget(self.btn_cancelar_agenda_as)
@@ -17764,7 +17688,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_cep_buscar_clinica_as.setIcon(icon14)
+        self.btn_cep_buscar_clinica_as.setIcon(icon12)
 
         self.verticalLayout_328.addWidget(self.btn_cep_buscar_clinica_as)
 
@@ -18233,7 +18157,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_alterar_as.setIcon(icon14)
+        self.btn_buscar_alterar_as.setIcon(icon12)
 
         self.horizontalLayout_96.addWidget(self.frame_279)
 
@@ -18767,7 +18691,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_alterar_cep_buscar_cuidador_as.setIcon(icon14)
+        self.btn_alterar_cep_buscar_cuidador_as.setIcon(icon12)
 
         self.verticalLayout_292.addWidget(self.btn_alterar_cep_buscar_cuidador_as)
 
@@ -19720,7 +19644,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_alterar_cep_buscar_usuario_as.setIcon(icon14)
+        self.btn_alterar_cep_buscar_usuario_as.setIcon(icon12)
 
         self.verticalLayout_294.addWidget(self.btn_alterar_cep_buscar_usuario_as)
 
@@ -20524,58 +20448,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_721.addWidget(self.frame_500)
 
-        self.frame_746 = QFrame(self.frame_739)
-        self.frame_746.setObjectName(u"frame_746")
-        self.frame_746.setMinimumSize(QSize(50, 50))
-        self.frame_746.setMaximumSize(QSize(50, 50))
-        self.frame_746.setFont(font12)
-        self.frame_746.setFrameShape(QFrame.StyledPanel)
-        self.frame_746.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_504 = QVBoxLayout(self.frame_746)
-        self.verticalLayout_504.setObjectName(u"verticalLayout_504")
-        self.btn_buscar_relatorios_aluno_curso = QPushButton(self.frame_746)
-        self.btn_buscar_relatorios_aluno_curso.setObjectName(u"btn_buscar_relatorios_aluno_curso")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorios_aluno_curso.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_relatorios_aluno_curso.setSizePolicy(sizePolicy3)
-        self.btn_buscar_relatorios_aluno_curso.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_relatorios_aluno_curso.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_relatorios_aluno_curso.setStyleSheet(u"QPushButton{\n"
-"        background: rgb(243, 185, 191);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"		border-top-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221);   \n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"        background: rgb(255, 194, 201);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221); \n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;  \n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"        background: rgb(180, 106, 102);\n"
-"        border: 2px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"        colo"
-                        "r: rgb(249, 217, 221);   \n"
-"}")
-        self.btn_buscar_relatorios_aluno_curso.setIcon(icon14)
-
-        self.verticalLayout_504.addWidget(self.btn_buscar_relatorios_aluno_curso)
-
         self.frame_356 = QFrame(self.frame_354)
         self.frame_356.setObjectName(u"frame_356")
         self.frame_356.setMinimumSize(QSize(0, 0))
@@ -20765,9 +20637,9 @@ class Ui_MainWindow(object):
         self.btn_alterar_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon36 = QIcon()
-        icon36.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_observacoes_sigilo_as.setIcon(icon36)
+        icon31 = QIcon()
+        icon31.addFile(u"./icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_alterar_observacoes_sigilo_as.setIcon(icon31)
         self.btn_alterar_observacoes_sigilo_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_118.addWidget(self.btn_alterar_observacoes_sigilo_as)
@@ -21758,7 +21630,7 @@ class Ui_MainWindow(object):
 "		border-bottom-right-radius: 10px;\n"
 "        color: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_alterar_cep_buscar_colaborador_as.setIcon(icon14)
+        self.btn_alterar_cep_buscar_colaborador_as.setIcon(icon12)
 
         self.verticalLayout_296.addWidget(self.btn_alterar_cep_buscar_colaborador_as)
 
@@ -22258,7 +22130,7 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
-        self.btn_buscar_cpf_pagina_consulta_geral.setIcon(icon14)
+        self.btn_buscar_cpf_pagina_consulta_geral.setIcon(icon12)
 
         self.horizontalLayout_150.addWidget(self.btn_buscar_cpf_pagina_consulta_geral)
 
@@ -22467,7 +22339,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_salvar_pagina_consulta_geral.setIcon(icon30)
+        self.btn_salvar_pagina_consulta_geral.setIcon(icon28)
         self.btn_salvar_pagina_consulta_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_1471.addWidget(self.btn_salvar_pagina_consulta_geral)
@@ -22573,14 +22445,14 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral = QTableWidget(self.frame_461)
         if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 4):
             self.input_TableWidget_pagina_consulta_geral.setColumnCount(4)
-        __qtablewidgetitem166 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem166)
         __qtablewidgetitem167 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem167)
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem167)
         __qtablewidgetitem168 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem168)
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem168)
         __qtablewidgetitem169 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem169)
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem169)
+        __qtablewidgetitem170 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem170)
         if (self.input_TableWidget_pagina_consulta_geral.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
@@ -22630,7 +22502,7 @@ class Ui_MainWindow(object):
         self.btn_excel_consulta_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excel_consulta_as.setIcon(icon27)
+        self.btn_excel_consulta_as.setIcon(icon25)
         self.btn_excel_consulta_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_12.addWidget(self.btn_excel_consulta_as)
@@ -22643,7 +22515,7 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_alterar_pagina_consulta_geral.setIcon(icon22)
+        self.btn_alterar_pagina_consulta_geral.setIcon(icon20)
         self.btn_alterar_pagina_consulta_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_12.addWidget(self.btn_alterar_pagina_consulta_geral)
@@ -22656,9 +22528,9 @@ class Ui_MainWindow(object):
         self.btn_excluir_pagina_consulta_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon37 = QIcon()
-        icon37.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_excluir_pagina_consulta_geral.setIcon(icon37)
+        icon32 = QIcon()
+        icon32.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_excluir_pagina_consulta_geral.setIcon(icon32)
         self.btn_excluir_pagina_consulta_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_12.addWidget(self.btn_excluir_pagina_consulta_geral)
@@ -23169,6 +23041,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.btn_alterar_foto_colab_as_2.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
@@ -23589,7 +23463,6 @@ class Ui_MainWindow(object):
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
         self.input_foto_colaborador_as.setText("")
-        
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
@@ -23701,30 +23574,10 @@ class Ui_MainWindow(object):
         self.input_inicio_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_12.setText(QCoreApplication.translate("MainWindow", u"A", None))
         self.input_final_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
-        self.input_buscar_dados_relatorios_aluno_curso = QLineEdit(self.frame_738)
-        self.input_buscar_dados_relatorios_aluno_curso.setObjectName(u"input_buscar_dados_relatorios_aluno_curso")
-        self.input_buscar_dados_relatorios_aluno_curso.setMinimumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorios_aluno_curso.setMaximumSize(QSize(700, 30))
-        self.input_buscar_dados_relatorios_aluno_curso.setStyleSheet(u"color: #EC848C;\n"
-"")
-
-        self.horizontalLayout_250.addWidget(self.input_buscar_dados_relatorios_aluno_curso)
-
-        self.horizontalSpacer_13 = QSpacerItem(472, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_250.addItem(self.horizontalSpacer_13)
-
-
-        self.verticalLayout_497.addWidget(self.frame_738)
-
-
-        self.horizontalLayout_249.addWidget(self.frame_56)
-        self.btn_buscar_relatorios_aluno_curso.setText("")
-        self.input_buscar_dados_relatorios_aluno_curso.setText("")
-        self.input_buscar_dados_relatorios_aluno_curso.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
         self.btn_buscar_relatorio_beneficios_as.setText("")
+        self.input_buscar_dados_relatorio_beneficios_as.setInputMask("")
         self.input_buscar_dados_relatorio_beneficios_as.setText("")
-        self.input_buscar_dados_relatorio_beneficios_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, curso...", None))
+        self.input_buscar_dados_relatorio_beneficios_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, CNS...", None))
         ___qtablewidgetitem118 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(0)
         ___qtablewidgetitem118.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem119 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(1)
@@ -23736,13 +23589,15 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem122 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(4)
         ___qtablewidgetitem122.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o Trabalho", None));
         ___qtablewidgetitem123 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem123.setText(QCoreApplication.translate("MainWindow", u"Tipo Benef\u00edcio", None));
+        ___qtablewidgetitem123.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio Social", None));
         ___qtablewidgetitem124 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem124.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
+        ___qtablewidgetitem124.setText(QCoreApplication.translate("MainWindow", u"Tipo Benef\u00edcio", None));
         ___qtablewidgetitem125 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(7)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
         ___qtablewidgetitem126 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtablewidgetitem127 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(9)
+        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Data", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_beneficios_as.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -23758,30 +23613,30 @@ class Ui_MainWindow(object):
         self.btn_buscar_relatorio_as.setText("")
         self.input_buscar_dados_relatorio_as.setText("")
         self.input_buscar_dados_relatorio_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome /Sexo/Bairro/Cidade/Cl\u00ednica", None))
-        ___qtablewidgetitem127 = self.tableWidget_relatorio_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
-        ___qtablewidgetitem128 = self.tableWidget_relatorio_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem128.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
-        ___qtablewidgetitem129 = self.tableWidget_relatorio_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
-        ___qtablewidgetitem130 = self.tableWidget_relatorio_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
-        ___qtablewidgetitem131 = self.tableWidget_relatorio_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem131.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
-        ___qtablewidgetitem132 = self.tableWidget_relatorio_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem132.setText(QCoreApplication.translate("MainWindow", u"Beneficio", None));
-        ___qtablewidgetitem133 = self.tableWidget_relatorio_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem133.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
-        ___qtablewidgetitem134 = self.tableWidget_relatorio_as.horizontalHeaderItem(7)
-        ___qtablewidgetitem134.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
-        ___qtablewidgetitem135 = self.tableWidget_relatorio_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem135.setText(QCoreApplication.translate("MainWindow", u"Aposentadoria", None));
-        ___qtablewidgetitem136 = self.tableWidget_relatorio_as.horizontalHeaderItem(9)
-        ___qtablewidgetitem136.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
-        ___qtablewidgetitem137 = self.tableWidget_relatorio_as.horizontalHeaderItem(10)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
-        ___qtablewidgetitem138 = self.tableWidget_relatorio_as.horizontalHeaderItem(11)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
+        ___qtablewidgetitem128 = self.tableWidget_relatorio_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem128.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem129 = self.tableWidget_relatorio_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem130 = self.tableWidget_relatorio_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
+        ___qtablewidgetitem131 = self.tableWidget_relatorio_as.horizontalHeaderItem(3)
+        ___qtablewidgetitem131.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
+        ___qtablewidgetitem132 = self.tableWidget_relatorio_as.horizontalHeaderItem(4)
+        ___qtablewidgetitem132.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem133 = self.tableWidget_relatorio_as.horizontalHeaderItem(5)
+        ___qtablewidgetitem133.setText(QCoreApplication.translate("MainWindow", u"Beneficio", None));
+        ___qtablewidgetitem134 = self.tableWidget_relatorio_as.horizontalHeaderItem(6)
+        ___qtablewidgetitem134.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
+        ___qtablewidgetitem135 = self.tableWidget_relatorio_as.horizontalHeaderItem(7)
+        ___qtablewidgetitem135.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
+        ___qtablewidgetitem136 = self.tableWidget_relatorio_as.horizontalHeaderItem(8)
+        ___qtablewidgetitem136.setText(QCoreApplication.translate("MainWindow", u"Aposentadoria", None));
+        ___qtablewidgetitem137 = self.tableWidget_relatorio_as.horizontalHeaderItem(9)
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
+        ___qtablewidgetitem138 = self.tableWidget_relatorio_as.horizontalHeaderItem(10)
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
+        ___qtablewidgetitem139 = self.tableWidget_relatorio_as.horizontalHeaderItem(11)
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
         self.btn_gerar_excel_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_gerar_pdf_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
         self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
@@ -23805,18 +23660,18 @@ class Ui_MainWindow(object):
         self.label_anotacao_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None))
         self.btn_salvar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
         self.label_filtro_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Filtro", None))
-        ___qtablewidgetitem139 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem140 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-        ___qtablewidgetitem141 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"Hora", None));
-        ___qtablewidgetitem142 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
-        ___qtablewidgetitem143 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"Profissional", None));
-        ___qtablewidgetitem144 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None));
+        ___qtablewidgetitem140 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem141 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem142 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"Hora", None));
+        ___qtablewidgetitem143 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(3)
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem144 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(4)
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"Profissional", None));
+        ___qtablewidgetitem145 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(5)
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None));
 
         __sortingEnabled6 = self.input_TableWidget_agendamento_as.isSortingEnabled()
         self.input_TableWidget_agendamento_as.setSortingEnabled(False)
@@ -24120,14 +23975,14 @@ class Ui_MainWindow(object):
         self.label_historico_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"HIST\u00d3RICO", None))
         self.label_filtro_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"FILTRO", None))
         self.input_filtro_pagina_consulta_geral.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data...", None))
-        ___qtablewidgetitem145 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem146 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-        ___qtablewidgetitem147 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
-        ___qtablewidgetitem148 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
+        ___qtablewidgetitem146 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem147 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem148 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
+        ___qtablewidgetitem149 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_pagina_consulta_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
