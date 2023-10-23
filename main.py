@@ -4019,8 +4019,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def relatorio_beneficio(self):
         result = self.db.relatorio_beneficio()
 
-        #self.ui.input_TableWidget_relatorio_beneficios_as.clearContents()
-        #self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(result))
+        self.ui.input_TableWidget_relatorio_beneficios_as.clearContents()
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(result))
           
         for row, text in enumerate(result):
             for column, data in enumerate(text):
