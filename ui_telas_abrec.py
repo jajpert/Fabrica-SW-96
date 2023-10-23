@@ -8593,6 +8593,9 @@ class Ui_MainWindow(object):
         self.btn_relatorio_participantes.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
+        icon25 = QIcon()
+        icon25.addFile(u"./icons/documento.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_relatorio_participantes.setIcon(icon25)
         self.btn_relatorio_participantes.setIconSize(QSize(80, 80))
 
         self.verticalLayout_491.addWidget(self.btn_relatorio_participantes)
@@ -8607,6 +8610,7 @@ class Ui_MainWindow(object):
         self.btn_relatorio_pessoas.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
+        self.btn_relatorio_pessoas.setIcon(icon25)
         self.btn_relatorio_pessoas.setIconSize(QSize(80, 80))
 
         self.verticalLayout_491.addWidget(self.btn_relatorio_pessoas)
@@ -8621,6 +8625,7 @@ class Ui_MainWindow(object):
         self.btn_relatorio_cursos_participantes.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
+        self.btn_relatorio_cursos_participantes.setIcon(icon25)
         self.btn_relatorio_cursos_participantes.setIconSize(QSize(80, 80))
 
         self.verticalLayout_491.addWidget(self.btn_relatorio_cursos_participantes)
@@ -8635,6 +8640,7 @@ class Ui_MainWindow(object):
         self.btn_relatorio_beneficios.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
+        self.btn_relatorio_beneficios.setIcon(icon25)
         self.btn_relatorio_beneficios.setIconSize(QSize(80, 80))
 
         self.verticalLayout_491.addWidget(self.btn_relatorio_beneficios)
@@ -8644,6 +8650,7 @@ class Ui_MainWindow(object):
 
 
         self.horizontalLayout_931.addWidget(self.frame_1841)
+
 
         self.horizontalSpacer_1131 = QSpacerItem(486, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
