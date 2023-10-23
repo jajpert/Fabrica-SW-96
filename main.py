@@ -3844,26 +3844,39 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 ######################## Pessoa com Deficiencia ###############################
     def pessoa_com_deficiencia (self):
 
-        if self.ui.input_pessoa_cdeficiencia_nao_usuario_as.isChecked():
-            
+        if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
+
+            self.ui.frame_81.setEnabled(True)
+            self.ui.frame_502.show()
+            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_tipo_deficiencia_usuario_as.show()  
+
+            '''self.ui.frame_81.setEnabled(True)
+            self.ui.frame_81.show()
+            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_tipo_deficiencia_usuario_as.show()'''
+
+        else:
+
             self.ui.frame_81.hide()
             self.ui.frame_81.setEnabled(False)
             self.ui.input_tipo_deficiencia_usuario_as.hide()
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.clear()        
+            #self.ui.input_tipo_deficiencia_usuario_as.clear()
 
-        else:
-            
-            self.ui.frame_81.setEnabled(True)
-            self.ui.frame_81.show()
-            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
-            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_tipo_deficiencia_usuario_as.show()
-
+            '''self.ui.frame_81.hide()
+            self.ui.frame_81.setEnabled(False)
+            self.ui.input_tipo_deficiencia_usuario_as.hide()
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_tipo_deficiencia_usuario_as.clear()    
+'''
     def pessoa_com_deficiencia_alterar (self):
 
         if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.isChecked():
             
+
             self.ui.frame_343.hide()
             self.ui.frame_343.setEnabled(False)
             self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
