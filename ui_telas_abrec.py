@@ -23188,40 +23188,39 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_gerar_excel_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_aluno_curso.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_titulo_relatorio_beneficio.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Benef\u00edcios", None))
-        self.label_inicio_periodo_relatorio_beneficioas_.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
-        self.input_inicio_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
-        self.label_12.setText(QCoreApplication.translate("MainWindow", u"A", None))
-        self.input_final_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
-        self.btn_buscar_relatorio_beneficios_as.setText("")
-        self.input_buscar_dados_relatorio_beneficios_as.setInputMask("")
-        self.input_buscar_dados_relatorio_beneficios_as.setText("")
-        self.input_buscar_dados_relatorio_beneficios_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, CNS...", None))
-        ___qtablewidgetitem118 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem118.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
-        ___qtablewidgetitem119 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem119.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
-        ___qtablewidgetitem120 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem120.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
-        ___qtablewidgetitem121 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem121.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
-        ___qtablewidgetitem122 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem122.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o Trabalho", None));
-        ___qtablewidgetitem123 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem123.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio Social", None));
-        ___qtablewidgetitem124 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem124.setText(QCoreApplication.translate("MainWindow", u"Tipo Benef\u00edcio", None));
-        ___qtablewidgetitem125 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(7)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
-        ___qtablewidgetitem126 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
-        ___qtablewidgetitem127 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(9)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-#if QT_CONFIG(tooltip)
-        self.input_TableWidget_relatorio_beneficios_as.setToolTip("")
-#endif // QT_CONFIG(tooltip)
-        self.btn_gerar_excel_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
-        self.btn_voltar_pagina_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        #self.label_titulo_relatorio_beneficio.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Benef\u00edcios", None))
+        #self.label_inicio_periodo_relatorio_beneficioas_.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
+        #self.label_12.setText(QCoreApplication.translate("MainWindow", u"A", None))
+        # self.input_final_periodo_relatorio_beneficio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
+        # self.btn_buscar_relatorio_beneficios_as.setText("")
+        # self.input_buscar_dados_relatorio_beneficios_as.setInputMask("")
+        # self.input_buscar_dados_relatorio_beneficios_as.setText("")
+        # self.input_buscar_dados_relatorio_beneficios_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome, CPF, CNS...", None))
+        #___qtablewidgetitem118 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(0)
+        #___qtablewidgetitem118.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        #___qtablewidgetitem119 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(1)
+        #___qtablewidgetitem119.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+#         ___qtablewidgetitem120 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(2)
+#         ___qtablewidgetitem120.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
+#         ___qtablewidgetitem121 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(3)
+#         ___qtablewidgetitem121.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
+#         ___qtablewidgetitem122 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(4)
+#         ___qtablewidgetitem122.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o Trabalho", None));
+#         ___qtablewidgetitem123 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(5)
+#         ___qtablewidgetitem123.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio Social", None));
+#         ___qtablewidgetitem124 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(6)
+#         ___qtablewidgetitem124.setText(QCoreApplication.translate("MainWindow", u"Tipo Benef\u00edcio", None));
+#         ___qtablewidgetitem125 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(7)
+#         ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
+#         ___qtablewidgetitem126 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(8)
+#         ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+#         ___qtablewidgetitem127 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(9)
+#         ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+# #if QT_CONFIG(tooltip)
+#         self.input_TableWidget_relatorio_beneficios_as.setToolTip("")
+# #endif // QT_CONFIG(tooltip)
+#         self.btn_gerar_excel_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+#         self.btn_voltar_pagina_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
         self.label_inicio_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
