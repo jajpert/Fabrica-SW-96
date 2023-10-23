@@ -249,6 +249,24 @@ class DataBase():
         finally:
             self.close_connection()
             
+    def filter_data_relatorio_psi(self,texto_data_inicio_psi,texto_data_final_psi):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao
+                    from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                    WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_psi}' and '{texto_data_final_psi}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+            
     def filtrar_relatorio(self,texto):
         self.connect()
         try:
@@ -897,6 +915,22 @@ class DataBase():
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND agendamento.id_colaborador LIKE '{id_colab_fisio}' ;""")
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+            
+            
+    def buscar_consulta_psic(self, cpf, id_colab_psi):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+                                    FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    WHERE pessoa.cpf LIKE '{cpf}' AND agendamento.id_colaborador LIKE '{id_colab_psi}' ;""")
             result = self.cursor.fetchall()
             return result
         except Exception as err:

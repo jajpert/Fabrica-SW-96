@@ -797,6 +797,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_psi.clicked.connect(self.buscarPessoa_psi) #SELECT USUARIO AGENDAMENTO PISC
         self.ui.btn_salvar_agenda_psi.clicked.connect(self.cadastroAgendamento_psi) #CADASTRO AGENDAMENTO USUARIO PISC
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
+        self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
         self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_psi))
 
@@ -907,9 +908,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
-        #self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
+        self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
         self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
-        #self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
+        self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
         
         
         
@@ -3366,7 +3367,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_consulta_psi.setText(str(dados[5]))
         self.ui.input_id_matricula_consulta_psi.hide()
         self.puxar_consulta_psi()
-        self.tabela_consulta_psic_tabela()
+        #self.tabela_consulta_psic_tabela()
 
 
     def buscar_dados_consulta(self):
@@ -3607,6 +3608,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             dados = []
 
         columns = ['NOME', 'CPF', 'TELEFONE', 'EMAIL', 'CURSO', 'PERIODO', 'DATA INICIO', 'DATA FIM', 'TIPO', 'DESCRIÇÃO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+        
+    def gerar_excel_relatorio_psi(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_psi.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_psi.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_psi.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLÍNICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -4304,6 +4332,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_aluno_curso.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def filtrar_data_relatorio_psi(self):  
+        texto_data_inicio_psi = self.ui.input_inicio_periodo_relatorio_psi.text()
+        texto_data_final_psi = self.ui.input_final_periodo_relatorio_psi.text()
+        texto_data_inicio_tratada_psi =  "-".join(texto_data_inicio_psi.split("/")[::-1])
+        texto_data_final_tratada_psi =  "-".join(texto_data_final_psi.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_psi(texto_data_inicio_tratada_psi,texto_data_final_tratada_psi)
+
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
                    
     def filter_idade(self):
 
