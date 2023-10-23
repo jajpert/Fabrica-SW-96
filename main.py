@@ -3847,7 +3847,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
 
             self.ui.frame_81.setEnabled(True)
-            self.ui.frame_502.show()
+            self.ui.frame_81.show()
             self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
             self.ui.input_tipo_deficiencia_usuario_as.show()  
@@ -3863,8 +3863,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.frame_81.hide()
             self.ui.frame_81.setEnabled(False)
             self.ui.input_tipo_deficiencia_usuario_as.hide()
-            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
-            #self.ui.input_tipo_deficiencia_usuario_as.clear()
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_tipo_deficiencia_usuario_as.clear()
 
             '''self.ui.frame_81.hide()
             self.ui.frame_81.setEnabled(False)
