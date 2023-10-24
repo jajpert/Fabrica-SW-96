@@ -576,6 +576,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        print("hkashkdjhaskjdhsa")
         
         ######################### banco #########################
         self.db = DataBase()        
