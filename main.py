@@ -1512,7 +1512,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
             original_image = cv2.imread(dados[39])
+            
 
+            
             desired_size = (240, 240)
             resized_image = cv2.resize(original_image, desired_size)
 
@@ -1531,7 +1533,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
             self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
-        
+    
         ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
@@ -3845,51 +3847,36 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def pessoa_com_deficiencia (self):
 
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked():
-
-            self.ui.frame_81.setEnabled(True)
-            self.ui.frame_81.show()
-            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            
+            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_tipo_deficiencia_usuario_as.show()  
-
-            '''self.ui.frame_81.setEnabled(True)
-            self.ui.frame_81.show()
-            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
-            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_tipo_deficiencia_usuario_as.show()'''
-
-        else:
-
-            self.ui.frame_81.hide()
-            self.ui.frame_81.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.hide()
-            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
+            self.ui.input_tipo_deficiencia_usuario_as.show()
+        
+        else:           
+            
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
             self.ui.input_tipo_deficiencia_usuario_as.clear()
 
-            '''self.ui.frame_81.hide()
-            self.ui.frame_81.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.hide()
-            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.clear()    
-'''
+            
+            
+   
     def pessoa_com_deficiencia_alterar (self):
 
-        if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.isChecked():
-            
+        if self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.isChecked():
 
-            self.ui.frame_343.hide()
-            self.ui.frame_343.setEnabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()        
-
-        else:
-            
-            self.ui.frame_343.setEnabled(True)
-            self.ui.frame_343.show()
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")           
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))  
             self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
+        
+        else:
+             
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setDisabled(True)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()
+
+            
             
             
 
