@@ -3850,13 +3850,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             
             self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
             self.ui.input_tipo_deficiencia_usuario_as.show()
         
         else:           
             
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.clear()
+            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
+            if self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0)):
+                self.ui.input_tipo_deficiencia_usuario_as.setCurrentText(None)
+            else:
+                pass
+            #self.ui.input_tipo_deficiencia_usuario_as.clear()
 
             
             
@@ -3865,16 +3869,32 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         if self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.isChecked():
 
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")           
+            '''self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")           
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))  
+             
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.show()'''
+            
+            self.ui.frame_343.setEnabled(True)
+
+            self.ui.frame_343.show()
             self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
+            #self.ui.input_alterar_tipo_deficiencia_usuario_as.show() 
         
         else:
              
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
+            '''self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setDisabled(True)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
+            if self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(0)):
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.clear() '''
+            self.ui.frame_343.hide()
+            self.ui.frame_343.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
+            #self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()
+            #self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()
 
             
             
