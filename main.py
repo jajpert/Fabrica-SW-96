@@ -3850,6 +3850,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             self.ui.frame_81.setEnabled(True)
             self.ui.frame_81.show()
+            self.ui.input_tipo_deficiencia_usuario_as.setDisabled(False)
             self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
             self.ui.input_tipo_deficiencia_usuario_as.show() 
@@ -3869,6 +3870,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.frame_343.setEnabled(True)
             self.ui.frame_343.show()
             #self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setDisabled(False)
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
             self.ui.input_alterar_tipo_deficiencia_usuario_as.show() 
