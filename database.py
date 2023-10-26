@@ -1014,7 +1014,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, pessoa.email, curso_evento.nome_curso_evento, curso_evento.data_inicio, 
+                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, pessoa.email, curso_evento.nome_curso_evento, curso_evento.periodo, curso_evento.data_inicio, 
                                 curso_evento.data_fim, curso_evento.tipo_curso, curso_evento.descricao
                                 from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
