@@ -209,6 +209,24 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def relatorio_beneficio(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                        select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,usuario.beneficio,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                        from pessoa
+                        inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                        inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                        inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo;
+                    """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
             
     def filter_data(self,texto_data_inicio,texto_data_final):
         self.connect()
@@ -248,7 +266,7 @@ class DataBase():
 
         finally:
             self.close_connection()
-            
+    
     def filter_data_relatorio_psi(self,texto_data_inicio_psi,texto_data_final_psi):
         self.connect()
         try:
@@ -258,6 +276,26 @@ class DataBase():
                     INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                     WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_psi}' and '{texto_data_final_psi}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filter_data_relatorio_beneficio(self,texto_data):
+        self.connect()
+        print(texto_data)
+        try:
+            self.cursor.execute(f"""
+                    select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                    from pessoa
+                    inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                    inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                    inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo
+                    WHERE saida_beneficio.data_retirada BETWEEN '{texto_data[0]}' and '{texto_data[1]}';
             """)
             result = self.cursor.fetchall()
             return result
@@ -278,6 +316,26 @@ class DataBase():
                 LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento 
                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
                 OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filtrar_relatorio_beneficio(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,usuario.beneficio,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                    from pessoa
+                    inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                    inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                    inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo
+                    WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%"
+                    OR beneficios.tipo LIKE "%{texto}%" OR beneficios.descricao LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%" OR saida_beneficio.quantidade_retirada LIKE "%{texto}%" OR saida_beneficio.data_retirada LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
@@ -922,22 +980,6 @@ class DataBase():
 
         finally:
             self.close_connection()
-            
-            
-    def buscar_consulta_psic(self, cpf, id_colab_psi):
-        self.connect()
-        try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
-                                    FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                                    WHERE pessoa.cpf LIKE '{cpf}' AND agendamento.id_colaborador LIKE '{id_colab_psi}' ;""")
-            result = self.cursor.fetchall()
-            return result
-        except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
 
     def cadastro_consulta_nutri(self,consulta):
         self.connect()
@@ -992,24 +1034,6 @@ class DataBase():
         finally:
             self.close_connection()
             
-    def buscar_relatorio_psi(self,):
-        self.connect()
-        try:
-            self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao
-                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
-                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                """)
-            result = self.cursor.fetchall()
-            return result
-
-        except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
-            
     def buscar_participantes_curso_pesquisa(self,texto):
         self.connect()
         try:
@@ -1030,12 +1054,11 @@ class DataBase():
         finally:
             self.close_connection()
             
-    def buscar_relatorio_psi_pesquisa(self,texto):
+    def buscar_relatorio_pesquisa_psi(self,texto):
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta,
-                                consulta.situacao, consulta.observacao
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao
                                 from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
