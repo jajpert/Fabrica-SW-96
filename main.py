@@ -3642,7 +3642,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_TableWidget_relatorio_aluno_curso.setItem(row, column,QTableWidgetItem(str(data)))
     
     def puxar_relatorio_psi(self):
-        result = self.db.buscar_relatorio_pesquisa_psi()
+        result = self.db.buscar_relatorio_psi()
         self.ui.input_TableWidget_relatorio_psi.clearContents()
         self.ui.input_TableWidget_relatorio_psi.setRowCount(len(result))   
 
@@ -3688,7 +3688,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLINICA', 'PERIODO', 'DATA', 'TIPO', 'DESCRIÇÃO']
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLINICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -4388,7 +4388,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 
     def filtrar_dados_relatorio_psi(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_psi.text())
-        res = self.db.buscar_relatorio_pesquisa_psi(txt)
+        res = self.db.buscar_relatorio_psi_pesquisa(txt)
         self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
 
         for row, text in enumerate(res):
