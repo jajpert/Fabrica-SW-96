@@ -18755,7 +18755,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>11</number>
+                      <number>12</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -38656,6 +38656,9 @@ background-color: rgb(243, 185, 191);</string>
                                       </item>
                                       <item>
                                        <widget class="QLineEdit" name="input_id_matricula_user_participante_geral">
+                                        <property name="enabled">
+                                         <bool>false</bool>
+                                        </property>
                                         <property name="maximumSize">
                                          <size>
                                           <width>50</width>
