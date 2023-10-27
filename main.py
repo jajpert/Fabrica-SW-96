@@ -2554,14 +2554,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposCadastroCuidador()
 
     def formatar_salario(self):
-        text = self.input_salario_colaborador_as.text()
+        text = self.ui.input_salario_colaborador_as.text()
 
         try:
             salario_formatado = '{:,.2f}'.format(float(text))
         except ValueError:
             salario_formatado = ''
 
-        self.input_salario_colaborador_as.setText(salario_formatado)
+        self.ui.input_salario_colaborador_as.setText(salario_formatado)
     
 
     def alterarAreaSigilosa(self):
