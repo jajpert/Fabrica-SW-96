@@ -576,6 +576,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        print("hkashkdjhaskjdhsa")
         
         ######################### banco #########################
         self.db = DataBase()        
@@ -750,7 +751,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
-        self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_aluno_curso))
+        self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
 
 
@@ -789,6 +790,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+        self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
+        self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.buscar_dados_consulta_psi) #SELECT USUARIO CONSULTA PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi) #CADASTRO CONSULTA USUARIO PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.tabela_consulta_psic_tabela) #SELECT USUARIO CONSULTA + COLADB ID
@@ -797,6 +800,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_psi.clicked.connect(self.buscarPessoa_psi) #SELECT USUARIO AGENDAMENTO PISC
         self.ui.btn_salvar_agenda_psi.clicked.connect(self.cadastroAgendamento_psi) #CADASTRO AGENDAMENTO USUARIO PISC
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
+        self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
+        self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
 
         #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
@@ -880,7 +885,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
-        #self.ui.input_buscar_dados_relatorios_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
+        self.ui.input_buscar_dados_relatorio_psi.textChanged.connect(self.filtrar_dados_relatorio_psi)
+        self.ui.input_buscar_dados_relatorio_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
@@ -904,7 +910,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
-        #self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
+        self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
+        self.ui.btn_buscar_relatorio_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
         
 
         
@@ -3582,6 +3590,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_aluno_curso.setItem(row, column,QTableWidgetItem(str(data)))
+    
+    def puxar_relatorio_psi(self):
+        result = self.db.buscar_relatorio_psi()
+        self.ui.input_TableWidget_relatorio_psi.clearContents()
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column,QTableWidgetItem(str(data)))
 
     def gerar_excel_paricipante_curso(self):
         dados = []
@@ -3595,6 +3612,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             dados = []
 
         columns = ['NOME', 'CPF', 'TELEFONE', 'EMAIL', 'CURSO', 'PERIODO', 'DATA INICIO', 'DATA FIM', 'TIPO', 'DESCRIÇÃO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+        
+    def gerar_excel_relatorio_psi(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_psi.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_psi.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_psi.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLINICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -4239,13 +4283,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_dados_participantes_curso(self):
-        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorios_aluno_curso.text())
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_aluno_curso.text())
         res = self.db.buscar_participantes_curso_pesquisa(txt)
         self.ui.input_TableWidget_relatorio_aluno_curso.setRowCount(len(res))
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_aluno_curso.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def filtrar_dados_relatorio_psi(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_psi.text())
+        res = self.db.buscar_relatorio_psi_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
     
     def filtrar_usuario_area_sigilosa(self):
         result = self.db.filter_usuario_area_sigilosa(self.id_area_sigilosa)
@@ -4271,8 +4324,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_data_participante_curso(self):  
-        texto_data_inicio = self.ui.input_inicio_periodo_relatorios_aluno_curso.text()
-        texto_data_final = self.ui.input_final_periodo_relatorios_aluno_curso.text()
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_aluno_curso.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_aluno_curso.text()
         texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
         texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
         
@@ -4283,6 +4336,34 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_aluno_curso.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def filtrar_data_relatorio_psi(self):  
+        texto_data_inicio_psi = self.ui.input_inicio_periodo_relatorio_psi.text()
+        texto_data_final_psi = self.ui.input_final_periodo_relatorio_psi.text()
+        texto_data_inicio_tratada_psi =  "-".join(texto_data_inicio_psi.split("/")[::-1])
+        texto_data_final_tratada_psi =  "-".join(texto_data_final_psi.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_psi(texto_data_inicio_tratada_psi,texto_data_final_tratada_psi)
+
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
+
+    # def filtrar_data_beneficio(self): 
+    #     texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
+    #     texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_as.text()
+    #     texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+    #     texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        
+    #     res = self.db.filter_data_relatorio_beneficio(texto_data_inicio_tratada,texto_data_final_tratada)
+
+    #     self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+
+    #     for row, text in enumerate(res):
+    #         for column, data in enumerate(text):
+    #             self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
                    
     def filter_idade(self):
 
