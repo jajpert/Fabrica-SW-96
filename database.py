@@ -682,6 +682,24 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def buscar_relatorio_nutri(self,):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf,TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idade, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.cns,usuario.nis,usuario.situacao_trabalho,clinica.nome_fantasia, endereco.bairro, endereco.cidade,usuario.id_usuario,clinica.id_clinica, endereco.id_endereco
+                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+			                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                INNER JOIN endereco on endereco.id_endereco = pessoa.id_endereco;
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
 
     def busca_usuario_agendamento_fisio(self, cpf):
         self.connect()

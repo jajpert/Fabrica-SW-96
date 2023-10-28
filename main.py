@@ -782,7 +782,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri) #CADASTRO DO USUARIO NO AGENDAMENTO NUTRI
         self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri) #CADATRO DO USUARIO NA CONSULTA NUTRI
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
-
+        self.ui.btn_relatorios_nutri.clicked.connect(self.puxar_relatorio_nutri)
 
         ########################### PSICOLOGA ###########################
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
@@ -905,6 +905,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
         self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+
         
 
         
@@ -3582,6 +3583,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_aluno_curso.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def puxar_relatorio_nutri(self):
+        result = self.db.buscar_relatorio_nutri()
+        self.ui.tableWidget_relatorio_nutri.clearContents()
+        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
 
     def gerar_excel_paricipante_curso(self):
         dados = []
