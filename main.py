@@ -576,7 +576,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        print("hkashkdjhaskjdhsa")
         
         ######################### banco #########################
         self.db = DataBase()        
@@ -635,9 +634,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_consulta_geral_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
 
-        self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
-        self.ui.input_rg_cuidador_as.setInputMask("00.000.000-0")
-        self.ui.input_rg_colaborador_as.setInputMask("00.000.000-0")
 
         ########## Colocando os validadores ############
         self.ui.input_nome_usuario_as.setValidator(self.validaString)
