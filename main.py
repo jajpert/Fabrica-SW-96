@@ -886,6 +886,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
+        self.ui.btn_salvar_usuario_as.clicked.connect(self.testefotoinsert)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
@@ -1367,6 +1368,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif estadoCivil == 'Separado':
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
+                
+            elif estadoCivil == "":
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(0)
 
             Escolaridade = str(dados[20])
             if Escolaridade == 'Fundamental':
@@ -1386,6 +1390,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
+            
+            elif Escolaridade == "":
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(0)
+
 
 
             self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
@@ -1407,6 +1415,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+                
+            elif tipoDeDeficiencia == "":
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(0)
+                
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
             mediaRendaFamiliar = str(dados[24])
@@ -1422,6 +1434,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
+                
+            elif mediaRendaFamiliar == "":
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(0)
 
             meioTransporte = str(dados[25])
 
@@ -1435,15 +1450,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
 
             elif meioTransporte == 'Ambulância municipal':
-                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
-
-            elif meioTransporte == 'Moto':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(4)
 
-            elif meioTransporte == 'Ambulância particular':
+            elif meioTransporte == 'Moto':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(5)
-           
 
+            elif meioTransporte == 'Ambulância particular':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+           
+            elif meioTransporte == "":
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+                
             valeTransporte = str(dados[26])
 
             if valeTransporte == 'Passe para os dias de tratamento':
@@ -1455,6 +1472,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
+            elif valeTransporte == "":
+                self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(0)
+            
             situacaoTrabalho = str(dados[27])
 
             if situacaoTrabalho == 'Aposentado por Idade':
@@ -1483,6 +1503,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
+            
+            elif situacaoTrabalho == "":
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[28])
             
@@ -1500,7 +1523,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
-    
+
+            elif beneficio == "":
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(0)
+                
+            
             self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[30]))
             self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[30]))
 
@@ -1516,6 +1543,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
+            elif tipoTratamento == "":
+                self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(0)
+                
             # local_tratamento = str(dados[32])
             # if local_tratamento == dados[32]:
             self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(int(dados[32]))
@@ -1540,6 +1570,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
+                
+            elif patologiaBase == "":
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(0)
+                
 
             self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[34])
 
@@ -1555,27 +1589,40 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
+                
+            elif periodo == "":
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(0)
+                
+                
             self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            original_image = cv2.imread(dados[39])
+            print(dados[39])
+            if dados[39] == None or dados[39] == "vazio":
+                dados[39] = ""
+                print("dados 39 ->",dados[39])
+                
+            else:
+                print(dados[39])
+                original_image = cv2.imread(dados[39])
 
-            desired_size = (240, 240)
-            resized_image = cv2.resize(original_image, desired_size)
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
 
-            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
 
-            h, w, ch = resized_image.shape
-            bytes_per_line = ch * w
-            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
 
-            pixmap = QPixmap.fromImage(qt_image)
+                pixmap = QPixmap.fromImage(qt_image)
 
-            self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
-            self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
-            self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+                self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+                self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+            print("id foto ->", dados[40])
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
             self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
@@ -2296,6 +2343,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
+        self.nome_usuario = nome
         data_nasc = self.ui.input_nascimento_usuario_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_usuario_as.text()
@@ -2982,7 +3030,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
-        self.ui.label_foto_usuario_alterar_as.setPixmap("")
 
         
 
@@ -3665,6 +3712,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
 
+    def testefotoinsert(self):
+        id_usuario = self.ui.input_matricula_usuario_as.text()
+        caminho = "vazio"
+        tupla_teste = (self.nome_usuario, caminho, id_usuario)
+        print(tupla_teste)
+        result = self.db.tirar_foto_usuario(tupla_teste)
+        print("Foto Cadastro Usuario ->",result)
+        
     def gerar_excel_relatorio_beneficio(self):
         dados = []
         all_dados =  []
@@ -3884,6 +3939,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
+
 
 
     def tirarImportarFotoUsuario(self):

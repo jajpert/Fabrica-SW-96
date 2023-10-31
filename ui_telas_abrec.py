@@ -21579,6 +21579,17 @@ class Ui_MainWindow(object):
         self.frame_381.setMaximumSize(QSize(80, 16777215))
         self.frame_381.setFrameShape(QFrame.StyledPanel)
         self.frame_381.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_514 = QVBoxLayout(self.frame_381)
+        self.verticalLayout_514.setObjectName(u"verticalLayout_514")
+        self.input_alterar_id_usuario_as = QLineEdit(self.frame_381)
+        self.input_alterar_id_usuario_as.setObjectName(u"input_alterar_id_usuario_as")
+        self.input_alterar_id_usuario_as.setEnabled(False)
+        self.input_alterar_id_usuario_as.setMaximumSize(QSize(0, 0))
+        self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_514.addWidget(self.input_alterar_id_usuario_as)
+
 
         self.horizontalLayout_129.addWidget(self.frame_381)
 
