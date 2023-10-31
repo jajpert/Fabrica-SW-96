@@ -18755,7 +18755,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>4</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -21479,7 +21479,7 @@ QPushButton:focus{outline: 0}</string>
                               <number>0</number>
                              </property>
                              <item>
-                              <widget class="QPushButton" name="btn_relatorio_participantes">
+                              <widget class="QPushButton" name="btn_relatorio_cuidadores">
                                <property name="minimumSize">
                                 <size>
                                  <width>700</width>
@@ -21510,7 +21510,7 @@ QPushButton:hover{background-color: hsl(6, 94%, 92%)}
 QPushButton:focus{outline: 0}</string>
                                </property>
                                <property name="text">
-                                <string>RELATÓRIO COLABORADORES</string>
+                                <string>RELATÓRIO CUIDADORES</string>
                                </property>
                                <property name="icon">
                                 <iconset>
@@ -21683,7 +21683,7 @@ QPushButton:focus{outline: 0}</string>
                        </item>
                       </layout>
                      </widget>
-                     <widget class="QWidget" name="page_relatorio_participantes">
+                     <widget class="QWidget" name="page_relatorio_cuidadores">
                       <property name="minimumSize">
                        <size>
                         <width>450</width>
@@ -21890,7 +21890,7 @@ QPushButton:focus{outline: 0}</string>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QDateEdit" name="input_inicio_periodo_relatorio_colaboradores_as">
+                                          <widget class="QDateEdit" name="input_inicio_periodo_relatorio_cuidadores_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                              <horstretch>0</horstretch>
@@ -22078,7 +22078,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           </spacer>
                                          </item>
                                          <item>
-                                          <widget class="QDateEdit" name="input_final_periodo_relatorio_colaboradores_as">
+                                          <widget class="QDateEdit" name="input_final_periodo_relatorio_cuidadores_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                                              <horstretch>0</horstretch>
@@ -22316,7 +22316,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                              <number>0</number>
                                             </property>
                                             <item>
-                                             <widget class="QLineEdit" name="input_idade_inicial_relatorio_colaboradores_as">
+                                             <widget class="QLineEdit" name="input_idade_inicial_relatorio_cuidadores_as">
                                               <property name="minimumSize">
                                                <size>
                                                 <width>60</width>
@@ -22360,7 +22360,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                              </widget>
                                             </item>
                                             <item>
-                                             <widget class="QLineEdit" name="input_idade_final_relatorio_colaboradores_as">
+                                             <widget class="QLineEdit" name="input_idade_final_relatorio_cuidadores_as">
                                               <property name="maximumSize">
                                                <size>
                                                 <width>60</width>
@@ -22403,7 +22403,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_510">
                                          <item>
-                                          <widget class="QPushButton" name="btn_buscar_relatorio_colaboradores_as">
+                                          <widget class="QPushButton" name="btn_buscar_relatorio_cuidadores_as">
                                            <property name="sizePolicy">
                                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                              <horstretch>0</horstretch>
@@ -22534,7 +22534,7 @@ QPushButton:pressed{
                                        </spacer>
                                       </item>
                                       <item>
-                                       <widget class="QLineEdit" name="input_buscar_dados_relatorio_colaboradores_as">
+                                       <widget class="QLineEdit" name="input_buscar_dados_relatorio_cuidadores_as">
                                         <property name="minimumSize">
                                          <size>
                                           <width>700</width>
@@ -22627,7 +22627,7 @@ QPushButton:pressed{
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="btn_voltar_relatorios_colaboradores_as">
+                                 <widget class="QPushButton" name="btn_voltar_relatorios_cuidadores_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>100</width>
@@ -22721,7 +22721,7 @@ QPushButton:focus{outline:0}</string>
                                   </property>
                                   <layout class="QHBoxLayout" name="horizontalLayout_260">
                                    <item>
-                                    <widget class="QLabel" name="label_relatorio_colaboradores_as">
+                                    <widget class="QLabel" name="label_relatorio_cuidadores_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>450</width>
@@ -22745,7 +22745,7 @@ QPushButton:focus{outline:0}</string>
 color: rgb(236, 132, 140);</string>
                                      </property>
                                      <property name="text">
-                                      <string>Relátorios Colaboradores</string>
+                                      <string>Relátorios Cuidadores</string>
                                      </property>
                                     </widget>
                                    </item>
@@ -22851,7 +22851,7 @@ color: rgb(236, 132, 140);</string>
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QTableWidget" name="tableWidget_relatorio_colaboradores_as">
+                                    <widget class="QTableWidget" name="tableWidget_relatorio_cuidadores_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
@@ -23008,7 +23008,7 @@ color: rgb(236, 132, 140);</string>
                                        <number>20</number>
                                       </property>
                                       <item>
-                                       <widget class="QPushButton" name="btn_gerar_excel_relatorio_colaboradores_as">
+                                       <widget class="QPushButton" name="btn_gerar_excel_relatorio_cuidadores_as">
                                         <property name="sizePolicy">
                                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                           <horstretch>0</horstretch>
@@ -23048,7 +23048,7 @@ QPushButton:focus{outline:0}</string>
                                        </widget>
                                       </item>
                                       <item>
-                                       <widget class="QPushButton" name="btn_gerar_pdf_relatorio_colaboradores_as">
+                                       <widget class="QPushButton" name="btn_gerar_pdf_relatorio_cuidadores_as">
                                         <property name="sizePolicy">
                                          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                           <horstretch>0</horstretch>
