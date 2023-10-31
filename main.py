@@ -1344,6 +1344,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(1)
             elif sexo == 'Feminino':
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(2)
+            elif sexo == "Selecione":
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(0)
+            
             self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
             self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
             self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
@@ -1369,7 +1372,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif estadoCivil == 'Separado':
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
                 
-            elif estadoCivil == "":
+            elif estadoCivil == "Selecione":
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(0)
 
             Escolaridade = str(dados[20])
@@ -1391,7 +1394,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
             
-            elif Escolaridade == "":
+            elif Escolaridade == "Selecione":
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(0)
 
 
@@ -1416,7 +1419,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
                 
-            elif tipoDeDeficiencia == "":
+            elif tipoDeDeficiencia == "Selecione":
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(0)
                 
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
@@ -1435,7 +1438,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
                 
-            elif mediaRendaFamiliar == "":
+            elif mediaRendaFamiliar == "Selecione":
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(0)
 
             meioTransporte = str(dados[25])
@@ -1458,7 +1461,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif meioTransporte == 'Ambulância particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
            
-            elif meioTransporte == "":
+            elif meioTransporte == "Selecione":
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
                 
             valeTransporte = str(dados[26])
@@ -1472,7 +1475,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
-            elif valeTransporte == "":
+            elif valeTransporte == "Selecione":
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(0)
             
             situacaoTrabalho = str(dados[27])
@@ -1504,7 +1507,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
             
-            elif situacaoTrabalho == "":
+            elif situacaoTrabalho == "Selecione":
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[28])
@@ -1524,7 +1527,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
 
-            elif beneficio == "":
+            elif beneficio == "Selecione":
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(0)
                 
             
@@ -1543,7 +1546,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
-            elif tipoTratamento == "":
+            elif tipoTratamento == "Selecione":
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(0)
                 
             # local_tratamento = str(dados[32])
@@ -1571,7 +1574,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
                 
-            elif patologiaBase == "":
+            elif patologiaBase == "Selecione":
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(0)
                 
 
@@ -1590,7 +1593,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
                 
-            elif periodo == "":
+            elif periodo == "Selecione":
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(0)
                 
                 
@@ -1598,10 +1601,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            print(dados[39])
-            if dados[39] == None or dados[39] == "vazio":
-                dados[39] = ""
-                print("dados 39 ->",dados[39])
+            foto = str(dados[39])
+            print("dados 39",foto)
+            if foto == None or foto == '':
+                original_image = cv2.imread("./icons/adicionar foto.png")
+
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+
+                self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+                self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+
                 
             else:
                 print(dados[39])

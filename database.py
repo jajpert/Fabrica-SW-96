@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -659,9 +659,9 @@ class DataBase():
                 beneficio, tarifa_social, tipo_tratamento, clinica.id_clinica, patologia_base, outras_patologias, data_inicio, periodo,
                 endereco.id_endereco, usuario.id_usuario, foto_usuario.caminho, foto_usuario.idfoto_usuario
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
-                LEFT JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
+                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
                 INNER JOIN foto_usuario ON usuario.id_usuario = foto_usuario.id_usuario
-                RIGHT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
+                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
             result = self.cursor.fetchall()
             return result[0]
         except Exception as err:
