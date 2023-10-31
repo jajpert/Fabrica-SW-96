@@ -754,7 +754,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
-        #self.ui.btn_voltar_relatorios_cuidadores_as.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_voltar_relatorios_cuidadores_as.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
 
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
