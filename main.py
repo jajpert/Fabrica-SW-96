@@ -742,8 +742,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
-        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_tipo_deficiencia_usuario_as.setDisabled(True)
+        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia)        
         self.ui.input_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_alterar_tipo_deficiencia_usuario_as.setDisabled(True)
         self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
@@ -1339,9 +1341,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
 
+            pessoa_deficiencia = bool(dados[21]) 
 
-            self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+            if pessoa_deficiencia == 'SIM':
+                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(True)
+            elif pessoa_deficiencia == 'NÃO':
+                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(True)
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -1359,6 +1364,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
             mediaRendaFamiliar = str(dados[24])
@@ -3844,51 +3850,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.limparCamposCadastroRetiradaBeneficios()
     
 ######################## Pessoa com Deficiencia ###############################
+   
     def pessoa_com_deficiencia (self):
 
         if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked() == True:
 
-            self.ui.frame_81.setEnabled(True)
-            self.ui.frame_81.show()
-            self.ui.input_tipo_deficiencia_usuario_as.setDisabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_tipo_deficiencia_usuario_as.show() 
-        
-        else:           
-            self.ui.frame_81.hide()
-            self.ui.frame_81.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.hide()
+            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0)) 
+
+        else:
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.clear()      
-
-            
+            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(6))    
+             
+                
     def pessoa_com_deficiencia_alterar (self):
-
+        
         if self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.isChecked() == True:
 
-            self.ui.frame_343.setEnabled(True)
-            self.ui.frame_343.show()
-            #self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setDisabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.show() 
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
         
         else:
-            
-            self.ui.frame_343.hide()
-            self.ui.frame_343.setEnabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
+        
             self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()
-            #self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()
-
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(6))
+                      
             
-            
-            
-
-######################## Deficiência base Outra################################
+############################### Deficiência base Outra ####################################
 
     def on_tipo_deficiencia_usuario_changed(self):
 
