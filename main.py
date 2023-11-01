@@ -1330,12 +1330,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
-            situacao_usuario = bool(dados[3])
+            situacao_usuario = str(dados[3])
             print(situacao_usuario)
-            if situacao_trabalho == True:
-                self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            if situacao_usuario == "Ativo":
+                self.ui.input_alterar_situacao_ativo_usuario_as.setChecked(True)
             elif situacao_usuario == "Inativo":
-                self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
+                self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(True)
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
             self.ui.input_alterar_data_emissao_usuario_as.setDate(QDate(dados[6])) #
@@ -1401,9 +1401,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(0)
 
 
-
-            self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+            pessoac_deficiencia = str(dados[21])
+            print(pessoac_deficiencia)
+            if pessoac_deficiencia == "SIM":
+                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(True)
+            elif pessoac_deficiencia == "NÃO":
+                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(True)
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -1533,9 +1536,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif beneficio == "Selecione":
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(0)
                 
-            
-            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[30]))
-            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[30]))
+            tarifa_social = str(dados[30])
+            if tarifa_social == "SIM":
+                self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(True)
+            elif tarifa_social == "NÃO":
+                self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(True)
 
 
             tipoTratamento = str(dados[31])
