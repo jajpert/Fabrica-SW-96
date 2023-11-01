@@ -886,7 +886,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
-        self.ui.btn_salvar_usuario_as.clicked.connect(self.testefotoinsert)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
@@ -1331,8 +1330,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
-            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
-            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            situacao_usuario = bool(dados[3])
+            print(situacao_usuario)
+            if situacao_trabalho == True:
+                self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            elif situacao_usuario == "Inativo":
+                self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
             self.ui.input_alterar_data_emissao_usuario_as.setDate(QDate(dados[6])) #
@@ -1602,7 +1605,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
             foto = str(dados[39])
-            print("dados 39",foto)
             if foto == None or foto == '':
                 original_image = cv2.imread("./icons/adicionar foto.png")
 
@@ -1642,7 +1644,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
                 self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
-            print("id foto ->", dados[40])
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
             self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
@@ -1755,18 +1756,40 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
             self.ui.input_alterar_id_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_colaborador_as.hide()
-            original_image = cv2.imread(dados[27])
-            desired_size = (240, 240)
-            resized_image = cv2.resize(original_image, desired_size)
-            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-            h, w, ch = resized_image.shape
-            bytes_per_line = ch * w
-            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-            pixmap = QPixmap.fromImage(qt_image)
-            self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
-            self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
-            self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+            foto = str(dados[27])
+            if foto == None or foto == '':
+                original_image = cv2.imread("./icons/adicionar foto.png")
+
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+        
+    
+            else:
+                
+                original_image = cv2.imread(dados[27])
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+                pixmap = QPixmap.fromImage(qt_image)
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_alterar_id_foto_usuario_as.setText(str(dados[28]))
             self.ui.input_alterar_id_foto_usuario_as.hide()
 
@@ -2435,6 +2458,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
+        self.InsertUsuarioFotoId()
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         msg = QMessageBox()
@@ -2660,6 +2684,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ###################### pessoa ##############################
         nome = self.ui.input_nome_colaborador_as.text()
+        self.nome_colab = nome
         data_nasc = self.ui.input_data_nascimento_colaborador_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_colaborador_as.text()
@@ -2715,6 +2740,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################### insert ##########################################
         result = []
+        self.InserColabFotoId()
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -3732,12 +3758,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
 
-    def testefotoinsert(self):
+    def InsertUsuarioFotoId(self):
         id_usuario = self.ui.input_matricula_usuario_as.text()
-        caminho = "vazio"
+        caminho = ""
         tupla_teste = (self.nome_usuario, caminho, id_usuario)
         print(tupla_teste)
         result = self.db.tirar_foto_usuario(tupla_teste)
+        print("Foto Cadastro Usuario ->",result)
+        
+    def InserColabFotoId(self):
+        id_colab_matricula = self.ui.input_matricula_colaborador_as.text()
+        caminho = ""
+        tupla_teste = (self.nome_colab, caminho, id_colab_matricula)
+        print(tupla_teste)
+        result = self.db.tirar_foto_colaborador(tupla_teste)
         print("Foto Cadastro Usuario ->",result)
         
     def gerar_excel_relatorio_beneficio(self):
