@@ -887,7 +887,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
         self.ui.btn_gerar_excel_relatorio_nutri.clicked.connect(self.gerar_excel_nutri)
-        self.ui.btn_gerar_pdf_relatorio_nutri.clicked.connect(self.gerar_pdf_nutri)
+        
         
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
         self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
@@ -3613,21 +3613,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def puxar_relatorio_nutri(self):
         result = self.db.buscar_relatorio_nutri()
-        self.ui.tableWidget_relatorio_nutri.clearContents()
-        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+        self.ui.input_TableWidget_relatorio_nutri.clearContents()
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(result))   
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
 
     def puxar_relatorio_nutri(self):
         result = self.db.buscar_relatorio_nutri()
-        self.ui.tableWidget_relatorio_nutri.clearContents()
-        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+        self.ui.input_TableWidget_relatorio_nutri.clearContents()
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(result))   
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
 
     def gerar_excel_paricipante_curso(self):
         dados = []
@@ -4295,12 +4295,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         result = self.db.relatorio_pessoa_nutri(self.id_colab_tratado_nutri)
 
-        self.ui.tableWidget_relatorio_nutri.clearContents()
-        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+        self.ui.input_TableWidget_relatorio_nutri.clearContents()
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(result))   
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
   
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
@@ -4359,11 +4359,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         res = self.db.filter_data(texto_data_inicio_tratada,texto_data_final_tratada)
 
-        self.ui.tableWidget_relatorio_nutri.setRowCount(len(res))
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_data_participante_curso(self):  
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_aluno_curso.text()
@@ -4451,9 +4451,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         dados = []
         all_dados =  []
 
-        for row in range(self.ui.tableWidget_relatorio_nutri.rowCount()):
-            for column in range(self.ui.tableWidget_relatorio_nutri.columnCount()):
-                dados.append(self.ui.tableWidget_relatorio_nutri.item(row, column).text())
+        for row in range(self.ui.input_TableWidget_relatorio_nutri.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_nutri.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_nutri.item(row, column).text())
         
             all_dados.append(dados)
             dados = []
@@ -4515,8 +4515,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def gerar_pdf_nutri(self):
         column_names = []
-        for col in range(self.ui.tableWidget_relatorio_nutri.columnCount()):
-            column_names.append(self.ui.tableWidget_relatorio_nutri.horizontalHeaderItem(col).text())
+        for col in range(self.ui.input_TableWidget_relatorio_nutri.columnCount()):
+            column_names.append(self.ui.input_TableWidget_relatorio_nutri.horizontalHeaderItem(col).text())
         file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "C:/Abrec/", "PDF files (*.pdf)")
         pdf = canvas.Canvas(file)
         pdf.setFont("Times-Roman", 9)
@@ -4525,9 +4525,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         filtered_data = []
         
-        for row in range(self.ui.tableWidget_relatorio_nutri.rowCount()):
-            if not self.ui.tableWidget_relatorio_nutri.isRowHidden(row):
-                row_data = [self.ui.tableWidget_relatorio_nutri.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_nutri.columnCount())]
+        for row in range(self.ui.input_TableWidget_relatorio_nutri.rowCount()):
+            if not self.ui.input_TableWidget_relatorio_nutri.isRowHidden(row):
+                row_data = [self.ui.input_TableWidget_relatorio_nutri.item(row, col).text() for col in range(self.ui.input_TableWidget_relatorio_nutri.columnCount())]
                 filtered_data.append(row_data)
     
         y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha

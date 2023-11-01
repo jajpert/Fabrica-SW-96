@@ -728,7 +728,8 @@ class DataBase():
                                 from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
 			                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                INNER JOIN endereco on endereco.id_endereco = pessoa.id_endereco;
+                                INNER JOIN endereco on endereco.id_endereco = pessoa.id_endereco
+                                INNER JOIN nutri_usuario on nutri_usuario.idnutri_usuario = usuario.id_matricula;
                                 """)
             result = self.cursor.fetchall()
             return result
