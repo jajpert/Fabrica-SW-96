@@ -2120,7 +2120,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif pat_base == "Hipertensão":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(1)
         elif pat_base == "Diabete 1":
-            self.ui.input_patologia_base_consulta_nutri.setCnutri_imc_usuarioimcurrentIndex(2)
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(2)
         elif pat_base == "Diabete 2":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(3)
         elif pat_base == "Lúpus":
@@ -4273,12 +4273,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         result = self.db.relatorio_pessoa_nutri(self.id_colab_tratado_nutri)
 
-        self.ui.tableWidget_relatorio_nutri.clearContents()
-        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+        self.ui.input_TableWidget_relatorio_nutri.clearContents()
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(result))   
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
   
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
