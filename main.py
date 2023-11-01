@@ -1340,17 +1340,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
+            
+            pessoa_deficiencia = (bool(dados[21]))
+            #print(self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as)
+            
+            #print(self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as)
 
-            sim = self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            print(sim)
-            nao = self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
-            print(nao)
-
-            if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as != 1:
-                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(0)
+            if pessoa_deficiencia == 1:
+                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(1)
+                #Testar com string
                 
-            elif self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as != 1:
-                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(0)
+            else:
+                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(0)
                 #self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(0)
 
                 
