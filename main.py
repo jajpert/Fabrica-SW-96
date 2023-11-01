@@ -1341,12 +1341,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
 
-            pessoa_deficiencia = bool(dados[21]) 
+            sim = self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
+            print(sim)
+            nao = self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+            print(nao)
 
-            if pessoa_deficiencia == 'SIM':
-                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(True)
-            elif pessoa_deficiencia == 'NÃO':
-                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(True)
+            if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as != 1:
+                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(0)
+                
+            elif self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as != 1:
+                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(0)
+                #self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(0)
+
+                
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -1364,6 +1371,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+
+            elif tipoDeDeficiencia == 'Não possui':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(6)
 
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
