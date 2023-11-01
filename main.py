@@ -883,6 +883,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
         self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
+        self.ui.btn_buscar_relatorio_nutri.clicked.connect(self.filtrar_data_nutri)
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
@@ -928,6 +929,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
+        self.ui.btn_gerar_excel_relatorio_nutri.clicked.connect(self.gerar_excel_nutri)
+        self.ui.btn_gerar_pdf_relatorio_nutri.clicked.connect(self.gerar_pdf_nutri)
+        
         #self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
         
 
@@ -4378,6 +4382,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+    def filtrar_data_nutri(self): ###DATA NASCIMENTO 
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_nutri.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_nutri.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        
+        res = self.db.filter_data(texto_data_inicio_tratada,texto_data_final_tratada)
+
+        self.ui.tableWidget_relatorio_nutri.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
 
     def filtrar_data_beneficio(self): ###DATA NASCIMENTO 
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
@@ -4463,6 +4480,34 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
+
+    def gerar_excel_nutri(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.tableWidget_relatorio_nutri.rowCount()):
+            for column in range(self.ui.tableWidget_relatorio_nutri.columnCount()):
+                dados.append(self.ui.tableWidget_relatorio_nutri.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'IDADE', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CNS', 'NIS',
+            'APOSENTADORIA','CLINICA','BAIRRO','CIDADE']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
         
     def gerar_pdf(self):
         column_names = []
@@ -4483,6 +4528,44 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
         y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha
         pdf.drawString(285, 820, "Relatório") #cabecalho do relatorio
+        for linha in filtered_data:
+            i=0 #definido para andar na lista de nomes das colunas
+            for col in linha:
+                if y_linha == 38: #se chegar ao final da folha, add uma nova
+                    pdf.showPage() #adicionar nova folha
+                    y_linha = 795 #topo da folha
+                pdf.drawString(6, y_linha, column_names[i]+':') #escrever nome da coluna
+                pdf.drawString(100, y_linha, '' + col) #escrever dado da coluna     
+                y_linha-=20 #decrevementar y, para ir para prox linha
+                i+=1 #incrementar i para pegar nome da prox coluna da tabela
+            pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
+  
+        if file:
+            pdf.save()
+        msg = QMessageBox()
+        msg.setWindowTitle('PDF')
+        msg.setText('PDF gerado com sucesso!')
+        msg.exec()
+
+    def gerar_pdf_nutri(self):
+        column_names = []
+        for col in range(self.ui.tableWidget_relatorio_nutri.columnCount()):
+            column_names.append(self.ui.tableWidget_relatorio_nutri.horizontalHeaderItem(col).text())
+        file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "C:/Abrec/", "PDF files (*.pdf)")
+        pdf = canvas.Canvas(file)
+        pdf.setFont("Times-Roman", 9)
+        pdf.setTitle("Relatório")
+        
+
+        filtered_data = []
+        
+        for row in range(self.ui.tableWidget_relatorio_nutri.rowCount()):
+            if not self.ui.tableWidget_relatorio_nutri.isRowHidden(row):
+                row_data = [self.ui.tableWidget_relatorio_nutri.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_nutri.columnCount())]
+                filtered_data.append(row_data)
+    
+        y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha
+        pdf.drawString(285, 820, "Relatório Paciente Nutricionistas ") #cabecalho do relatorio
         for linha in filtered_data:
             i=0 #definido para andar na lista de nomes das colunas
             for col in linha:
