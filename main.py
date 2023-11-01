@@ -598,14 +598,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
 
-        ###############VALIDADORES E MASKS#############
-        ############ Validadores ##############
+        ############ Validadores ############################################################
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
         self.validaNumeroInt = QRegularExpressionValidator(QRegularExpression("[0-9] \\.-]+"))
         self.validaSalario = QRegularExpressionValidator(QRegularExpression("[0-9]+,?[0-9]{0,2}"))
         self.validaString = QRegularExpressionValidator(QRegularExpression("[a-zA-Z çáàãâéíóôõúÇÁÀÃÂÉÍÓÔÕÚ\\.-]+"))
 
-        ########### Mask CPF e RG ##############
+        ########### Masks ###################################################################
         self.ui.input_cpf_agendamento_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_usuario_as.setInputMask("000.000.000-00")
         self.ui.input_cpf_cuidador_as.setInputMask("000.000.000-00")
@@ -614,11 +613,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_consulta_geral_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
 
-        self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
-        self.ui.input_rg_cuidador_as.setInputMask("00.000.000-0")
-        self.ui.input_rg_colaborador_as.setInputMask("00.000.000-0")
-
-        ########## Colocando os validadores ############
+        ########## Colocando os validadores #################################################
         self.ui.input_nome_usuario_as.setValidator(self.validaString)
         self.ui.input_nome_cuidador_as.setValidator(self.validaString)
         self.ui.input_nome_colaborador_as.setValidator(self.validaString)  
@@ -626,12 +621,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_orgao_expedidor_usuario_as.setValidator(self.validaString) 
         self.ui.input_orgao_expedidor_cuidador_as.setValidator(self.validaString)
         self.ui.input_orgao_expedidor_colaborador_as.setValidator(self.validaString) 
-
-        # self.ui.input_nis_usuario_as.setValidator(self.validaNumeroInt) 
          
            
-        ######### Arrumando a data padrão ###########
-        
+        ######### Arrumando a data padrão ##################################################      
         self.ui.input_nascimento_usuario_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_data_emissao_usuario_as.setDisplayFormat("dd/MM/yyyy")
@@ -705,7 +697,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
-        ###############SIGNALS################# 
+        ##########SIGNALS##################################################################
+
+        ########################### SAIR ########################################
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
         self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
@@ -713,13 +707,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
-        
+        ########################### LOGIN ########################################
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
 
         
-        
+        ########################### ASSISTENTE SOCIAL ###########################
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_atendimento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_cadastrar_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
@@ -771,7 +765,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_fisio.clicked.connect(self.tabela_agendamento_fisio) #TABELA AGENDAMENTO USUARIO FISIO 
         self.ui.btn_salvar_agenda_fisio.clicked.connect(self.cadastroAgendamento_fisio) #CADASTRO AGENDAMENTO USUARIO FISIO
         self.ui.btn_buscar_agendamento_fisio.clicked.connect(self.buscar_usuario_agendamento_fisio) #SELECT USUARIO AGENDAMENTO FISIO
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_usuario_consulta_fisio) #SELECT USUARIO CONSULTA FISIO        self.ui.btn_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_relatorio_fisio))
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_usuario_consulta_fisio) #SELECT USUARIO CONSULTA FISIO
         self.ui.btn_voltar_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
         self.ui.btn_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_relatorio_fisio))
 
@@ -813,7 +807,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
 
-        #################SIGNALS CEP#################
+        ########################### CEP #################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
@@ -825,12 +819,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
-        #################SIGNAL CPF##################
+        ########################### CPF ########################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
 
         
-        #############SIGNALS BOTOES voltar#############
+        ########################### VOLTAR ####################
         #self.self.btn_voltar_popup_as.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
 
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -848,32 +842,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         
 
-        ######SIGNALS POPUP RECUPERAR SENHA AS######
+        ########################### POPUP RECUPERAR SENHA AS ######################
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
         
 
 
-        ######SIGNALS POPUP ALTERAR FOTO E SENHA AS######
+        ########################### POPUP ALTERAR FOTO E SENHA AS #################
         self.ui.btn_alterar_foto_colab_inicio.clicked.connect(self.trocarFotoSenha)
         
         
-        ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
+        ########################### POPUP TIRAR E IMPORTAR FOTO AS ################
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
         self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
-        
 
 
-        ############SIGNALS POPUP Cuidador AS############
-        #self.ui.btn_sair_as.clicked.connect(self.sair)
-        #mudar tbm
-        #self.ui.btn_finalizar_as.clicked.connect(self.concluirCadastroIncompletoUsuario)
-
-
-        ############SIGNALS POPUP Cursos e oficinas AS############
+        ########################### POPUP CURSOS E OFICINAS AS ####################
         # self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
-
         self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri)
         self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri)
         self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri)
@@ -883,7 +869,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
 
-        ############SIGNALS BANCO ##########################
+        ########################### BANCO #########################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
@@ -927,11 +913,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.clicked.connect(self.buscarCodigoRetirada)
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
-        #self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
-        
-
-        
-        
+        #self.ui.btn_buscar_relatorios_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)        
         
 
 ########################### Validar Login #############################
