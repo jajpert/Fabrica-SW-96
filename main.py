@@ -4359,19 +4359,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
-    # def filtrar_data_beneficio(self): 
-    #     texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
-    #     texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_as.text()
-    #     texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
-    #     texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+    def filtrar_data_beneficio(self): 
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_as.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
         
-    #     res = self.db.filter_data_relatorio_beneficio(texto_data_inicio_tratada,texto_data_final_tratada)
+        res = self.db.filter_data_relatorio_beneficio(texto_data_inicio_tratada,texto_data_final_tratada)
 
-    #     self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
 
-    #     for row, text in enumerate(res):
-    #         for column, data in enumerate(text):
-    #             self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
                    
     def filter_idade(self):
 

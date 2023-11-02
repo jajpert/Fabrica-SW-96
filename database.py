@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -267,6 +267,44 @@ class DataBase():
         finally:
             self.close_connection()
 
+    def relatorio_beneficio(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                        select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,usuario.beneficio,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                        from pessoa
+                        inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                        inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                        inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo;
+                    """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filtrar_relatorio_beneficio(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,usuario.beneficio,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                    from pessoa
+                    inner join usuario on pessoa.id_matricula = usuario.id_matricula
+                    inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
+                    inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo
+                    WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%"
+                    OR beneficios.tipo LIKE "%{texto}%" OR beneficios.descricao LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%" OR saida_beneficio.quantidade_retirada LIKE "%{texto}%" OR saida_beneficio.data_retirada LIKE "%{texto}%";
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
     def filter_data_relatorio_beneficio(self,texto_data):
         self.connect()
         print(texto_data)
@@ -399,6 +437,62 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def filter_data_relatorio_fisio(self,texto_data_inicio_fisio,texto_data_final_fisio):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao
+                    from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                    WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_fisio}' and '{texto_data_final_fisio}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_fisio(self,):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao
+                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_fisio_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao
+                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR consulta.data_consulta LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
     def buscarIdColabFisio(self, nome_login):
         self.connect()
         try:
@@ -793,7 +887,7 @@ class DataBase():
 
         finally:
             self.close_connection()
-            
+          
     def busca_psic_agenda_tabela(self, cpf, id_colab_psic):
         self.connect()
         try:
@@ -808,6 +902,8 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+            
             
             
     def busca_clinica_nome_fantasia(self):
