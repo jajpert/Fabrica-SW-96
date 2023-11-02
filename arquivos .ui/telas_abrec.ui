@@ -17900,7 +17900,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>13</number>
+                      <number>14</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -40613,7 +40613,7 @@ QPushButton:pressed{
                                          <number>14</number>
                                         </property>
                                         <property name="columnCount">
-                                         <number>9</number>
+                                         <number>10</number>
                                         </property>
                                         <attribute name="horizontalHeaderCascadingSectionResizes">
                                          <bool>true</bool>
@@ -40667,6 +40667,11 @@ QPushButton:pressed{
                                         <column>
                                          <property name="text">
                                           <string>Situação Trabalho</string>
+                                         </property>
+                                        </column>
+                                        <column>
+                                         <property name="text">
+                                          <string>Benefício Social</string>
                                          </property>
                                         </column>
                                         <column>
