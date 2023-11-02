@@ -20,6 +20,7 @@ import sys
 from PIL import Image
 import numpy as np
 import openpyxl
+from locale import LC_MONETARY
 import imghdr
 import os
 
@@ -996,10 +997,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
-                
-
-        
-        
+                       
 ########################### Validar Login Assistente S #############################        
     def LoginAssistenteS(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
@@ -2530,6 +2528,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def formatar_salario(self):
         text = self.ui.input_salario_colaborador_as.text()
+        # self.ui.input_salario_colaborador_as.setInputMask("R$999.999.999,99")
 
         try:
             salario_formatado = '{:,.2f}'.format(float(text))
