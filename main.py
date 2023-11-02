@@ -725,8 +725,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
+        self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_beneficio_as))
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
-        self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_aluno_curso))
+        self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
 
 
@@ -887,7 +888,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
         self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
-        self.ui.btn_buscar_relatorio_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_buscar_dados_relatorio_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
         
 
         
@@ -959,7 +960,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nutri_2.setText(nome_colaborador)
+                    self.ui.label_ola_nutri.setText(nome_colaborador)
                     self.LoginNutri()       
                     self.buscarIdColabNutri()
                     
