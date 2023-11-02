@@ -578,7 +578,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.setupUi(self)
         
         ######################### banco #########################
-        self.db = DataBase()        
+        self.db = DataBase()
+        self.relatorio_beneficio()        
         self.listarAgendamentos()
         self.listarBeneficios()
         self.buscar_clinica_nome_fantasia()
