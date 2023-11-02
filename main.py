@@ -20,7 +20,7 @@ import sys
 from PIL import Image
 import numpy as np
 import openpyxl
-from locale import LC_MONETARY
+import locale
 import imghdr
 import os
 
@@ -598,6 +598,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.showMaximized()
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
+        locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
 
         ############ Validadores ############################################################
         self.validaEmail = QRegularExpressionValidator(QRegularExpression("([a-z0-9]+[.-_])*[a-z0-9]+@[a-z]+(\\.[a-z]{2,})+"))
@@ -2528,6 +2529,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def formatar_salario(self):
         text = self.ui.input_salario_colaborador_as.text()
+        salario_convertido = locale.currency(text, grouping=True)
+        self.ui.input_salario_colaborador_as.setText(salario_convertido)
+        print(salario_convertido)
         # self.ui.input_salario_colaborador_as.setInputMask("R$999.999.999,99")
 
         try:
