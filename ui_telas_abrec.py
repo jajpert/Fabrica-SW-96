@@ -705,6 +705,17 @@ class Ui_MainWindow(object):
         self.btn_buscar_agendamento_nutri.setIcon(icon7)
 
         self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
+        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_623)
+        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
+        self.input_id_matricula_nutri_consulta.setEnabled(False)
+        self.input_id_matricula_nutri_consulta.setMinimumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setFont(font)
+        self.input_id_matricula_nutri_consulta.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+        self.input_id_matricula_nutri_consulta.setMaxLength(11)
+
+        self.verticalLayout_412.addWidget(self.input_id_matricula_nutri_consulta)
 
 
         self.horizontalLayout_209.addWidget(self.frame_623)
@@ -1337,7 +1348,8 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_consulta_geral_nutri.setFont(font)
 
         self.verticalLayout_384.addWidget(self.label_cpf_pagina_consulta_geral_nutri)
-
+        
+        
 
         self.verticalLayout_383.addWidget(self.frame_574)
 
