@@ -705,17 +705,6 @@ class Ui_MainWindow(object):
         self.btn_buscar_agendamento_nutri.setIcon(icon7)
 
         self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
-        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_623)
-        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
-        self.input_id_matricula_nutri_consulta.setEnabled(False)
-        self.input_id_matricula_nutri_consulta.setMinimumSize(QSize(0, 0))
-        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
-        self.input_id_matricula_nutri_consulta.setFont(font)
-        self.input_id_matricula_nutri_consulta.setStyleSheet(u"color: transparent;\n"
-"background-color: transparent;")
-        self.input_id_matricula_nutri_consulta.setMaxLength(11)
-
-        self.verticalLayout_412.addWidget(self.input_id_matricula_nutri_consulta)
 
 
         self.horizontalLayout_209.addWidget(self.frame_623)
@@ -1348,8 +1337,7 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_consulta_geral_nutri.setFont(font)
 
         self.verticalLayout_384.addWidget(self.label_cpf_pagina_consulta_geral_nutri)
-        
-        
+
 
         self.verticalLayout_383.addWidget(self.frame_574)
 
@@ -15885,8 +15873,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_511 = QVBoxLayout(self.frame_762)
         self.verticalLayout_511.setObjectName(u"verticalLayout_511")
         self.input_TableWidget_relatorio_beneficios_as = QTableWidget(self.frame_762)
-        if (self.input_TableWidget_relatorio_beneficios_as.columnCount() < 9):
-            self.input_TableWidget_relatorio_beneficios_as.setColumnCount(9)
+        if (self.input_TableWidget_relatorio_beneficios_as.columnCount() < 10):
+            self.input_TableWidget_relatorio_beneficios_as.setColumnCount(10)
         __qtablewidgetitem138 = QTableWidgetItem()
         self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(0, __qtablewidgetitem138)
         __qtablewidgetitem139 = QTableWidgetItem()
@@ -15905,6 +15893,8 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(7, __qtablewidgetitem145)
         __qtablewidgetitem146 = QTableWidgetItem()
         self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(8, __qtablewidgetitem146)
+        __qtablewidgetitem147 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_beneficios_as.setHorizontalHeaderItem(9, __qtablewidgetitem147)
         if (self.input_TableWidget_relatorio_beneficios_as.rowCount() < 14):
             self.input_TableWidget_relatorio_beneficios_as.setRowCount(14)
         self.input_TableWidget_relatorio_beneficios_as.setObjectName(u"input_TableWidget_relatorio_beneficios_as")
@@ -15922,7 +15912,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_beneficios_as.setSortingEnabled(True)
         self.input_TableWidget_relatorio_beneficios_as.setWordWrap(True)
         self.input_TableWidget_relatorio_beneficios_as.setRowCount(14)
-        self.input_TableWidget_relatorio_beneficios_as.setColumnCount(9)
+        self.input_TableWidget_relatorio_beneficios_as.setColumnCount(10)
         self.input_TableWidget_relatorio_beneficios_as.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_relatorio_beneficios_as.horizontalHeader().setDefaultSectionSize(170)
         self.input_TableWidget_relatorio_beneficios_as.horizontalHeader().setStretchLastSection(True)
@@ -16423,30 +16413,30 @@ class Ui_MainWindow(object):
         self.tableWidget_relatorio_as = QTableWidget(self.frame_238)
         if (self.tableWidget_relatorio_as.columnCount() < 12):
             self.tableWidget_relatorio_as.setColumnCount(12)
-        __qtablewidgetitem147 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(0, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(1, __qtablewidgetitem148)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(0, __qtablewidgetitem148)
         __qtablewidgetitem149 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(2, __qtablewidgetitem149)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(1, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(3, __qtablewidgetitem150)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(2, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(4, __qtablewidgetitem151)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(3, __qtablewidgetitem151)
         __qtablewidgetitem152 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(5, __qtablewidgetitem152)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(4, __qtablewidgetitem152)
         __qtablewidgetitem153 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(6, __qtablewidgetitem153)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(5, __qtablewidgetitem153)
         __qtablewidgetitem154 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(7, __qtablewidgetitem154)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(6, __qtablewidgetitem154)
         __qtablewidgetitem155 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(8, __qtablewidgetitem155)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(7, __qtablewidgetitem155)
         __qtablewidgetitem156 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(9, __qtablewidgetitem156)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(8, __qtablewidgetitem156)
         __qtablewidgetitem157 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(10, __qtablewidgetitem157)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(9, __qtablewidgetitem157)
         __qtablewidgetitem158 = QTableWidgetItem()
-        self.tableWidget_relatorio_as.setHorizontalHeaderItem(11, __qtablewidgetitem158)
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(10, __qtablewidgetitem158)
+        __qtablewidgetitem159 = QTableWidgetItem()
+        self.tableWidget_relatorio_as.setHorizontalHeaderItem(11, __qtablewidgetitem159)
         self.tableWidget_relatorio_as.setObjectName(u"tableWidget_relatorio_as")
         self.tableWidget_relatorio_as.setMinimumSize(QSize(0, 0))
         self.tableWidget_relatorio_as.setMaximumSize(QSize(16777215, 16777215))
@@ -17105,26 +17095,26 @@ class Ui_MainWindow(object):
         self.input_TableWidget_agendamento_as = QTableWidget(self.frame_268)
         if (self.input_TableWidget_agendamento_as.columnCount() < 6):
             self.input_TableWidget_agendamento_as.setColumnCount(6)
-        __qtablewidgetitem159 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(0, __qtablewidgetitem159)
         __qtablewidgetitem160 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(1, __qtablewidgetitem160)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(0, __qtablewidgetitem160)
         __qtablewidgetitem161 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(2, __qtablewidgetitem161)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(1, __qtablewidgetitem161)
         __qtablewidgetitem162 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(3, __qtablewidgetitem162)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(2, __qtablewidgetitem162)
         __qtablewidgetitem163 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(4, __qtablewidgetitem163)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(3, __qtablewidgetitem163)
         __qtablewidgetitem164 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(5, __qtablewidgetitem164)
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(4, __qtablewidgetitem164)
+        __qtablewidgetitem165 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setHorizontalHeaderItem(5, __qtablewidgetitem165)
         if (self.input_TableWidget_agendamento_as.rowCount() < 14):
             self.input_TableWidget_agendamento_as.setRowCount(14)
-        __qtablewidgetitem165 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setItem(0, 1, __qtablewidgetitem165)
         __qtablewidgetitem166 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setItem(0, 2, __qtablewidgetitem166)
+        self.input_TableWidget_agendamento_as.setItem(0, 1, __qtablewidgetitem166)
         __qtablewidgetitem167 = QTableWidgetItem()
-        self.input_TableWidget_agendamento_as.setItem(1, 1, __qtablewidgetitem167)
+        self.input_TableWidget_agendamento_as.setItem(0, 2, __qtablewidgetitem167)
+        __qtablewidgetitem168 = QTableWidgetItem()
+        self.input_TableWidget_agendamento_as.setItem(1, 1, __qtablewidgetitem168)
         self.input_TableWidget_agendamento_as.setObjectName(u"input_TableWidget_agendamento_as")
         sizePolicy7.setHeightForWidth(self.input_TableWidget_agendamento_as.sizePolicy().hasHeightForWidth())
         self.input_TableWidget_agendamento_as.setSizePolicy(sizePolicy7)
@@ -22346,14 +22336,14 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral = QTableWidget(self.frame_461)
         if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 4):
             self.input_TableWidget_pagina_consulta_geral.setColumnCount(4)
-        __qtablewidgetitem168 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem168)
         __qtablewidgetitem169 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem169)
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem169)
         __qtablewidgetitem170 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem170)
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem170)
         __qtablewidgetitem171 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem171)
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem171)
+        __qtablewidgetitem172 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem172)
         if (self.input_TableWidget_pagina_consulta_geral.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
@@ -23490,13 +23480,15 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem124 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(4)
         ___qtablewidgetitem124.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o Trabalho", None));
         ___qtablewidgetitem125 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"Tipo Benef\u00edcio", None));
+        ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio Social", None));
         ___qtablewidgetitem126 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Tipo Benef\u00edcio", None));
         ___qtablewidgetitem127 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(7)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
         ___qtablewidgetitem128 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem128.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem128.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtablewidgetitem129 = self.input_TableWidget_relatorio_beneficios_as.horizontalHeaderItem(9)
+        ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"Data", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_beneficios_as.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -23512,30 +23504,30 @@ class Ui_MainWindow(object):
         self.btn_buscar_relatorio_as.setText("")
         self.input_buscar_dados_relatorio_as.setText("")
         self.input_buscar_dados_relatorio_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome /Sexo/Bairro/Cidade/Cl\u00ednica", None))
-        ___qtablewidgetitem129 = self.tableWidget_relatorio_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
-        ___qtablewidgetitem130 = self.tableWidget_relatorio_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
-        ___qtablewidgetitem131 = self.tableWidget_relatorio_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem131.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
-        ___qtablewidgetitem132 = self.tableWidget_relatorio_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem132.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
-        ___qtablewidgetitem133 = self.tableWidget_relatorio_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem133.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
-        ___qtablewidgetitem134 = self.tableWidget_relatorio_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem134.setText(QCoreApplication.translate("MainWindow", u"Beneficio", None));
-        ___qtablewidgetitem135 = self.tableWidget_relatorio_as.horizontalHeaderItem(6)
-        ___qtablewidgetitem135.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
-        ___qtablewidgetitem136 = self.tableWidget_relatorio_as.horizontalHeaderItem(7)
-        ___qtablewidgetitem136.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
-        ___qtablewidgetitem137 = self.tableWidget_relatorio_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"Aposentadoria", None));
-        ___qtablewidgetitem138 = self.tableWidget_relatorio_as.horizontalHeaderItem(9)
-        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
-        ___qtablewidgetitem139 = self.tableWidget_relatorio_as.horizontalHeaderItem(10)
-        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
-        ___qtablewidgetitem140 = self.tableWidget_relatorio_as.horizontalHeaderItem(11)
-        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
+        ___qtablewidgetitem130 = self.tableWidget_relatorio_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem131 = self.tableWidget_relatorio_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem131.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem132 = self.tableWidget_relatorio_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem132.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
+        ___qtablewidgetitem133 = self.tableWidget_relatorio_as.horizontalHeaderItem(3)
+        ___qtablewidgetitem133.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
+        ___qtablewidgetitem134 = self.tableWidget_relatorio_as.horizontalHeaderItem(4)
+        ___qtablewidgetitem134.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem135 = self.tableWidget_relatorio_as.horizontalHeaderItem(5)
+        ___qtablewidgetitem135.setText(QCoreApplication.translate("MainWindow", u"Beneficio", None));
+        ___qtablewidgetitem136 = self.tableWidget_relatorio_as.horizontalHeaderItem(6)
+        ___qtablewidgetitem136.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
+        ___qtablewidgetitem137 = self.tableWidget_relatorio_as.horizontalHeaderItem(7)
+        ___qtablewidgetitem137.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
+        ___qtablewidgetitem138 = self.tableWidget_relatorio_as.horizontalHeaderItem(8)
+        ___qtablewidgetitem138.setText(QCoreApplication.translate("MainWindow", u"Aposentadoria", None));
+        ___qtablewidgetitem139 = self.tableWidget_relatorio_as.horizontalHeaderItem(9)
+        ___qtablewidgetitem139.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
+        ___qtablewidgetitem140 = self.tableWidget_relatorio_as.horizontalHeaderItem(10)
+        ___qtablewidgetitem140.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
+        ___qtablewidgetitem141 = self.tableWidget_relatorio_as.horizontalHeaderItem(11)
+        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
         self.btn_gerar_excel_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_gerar_pdf_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
         self.btn_voltar_relatorios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
@@ -23559,18 +23551,18 @@ class Ui_MainWindow(object):
         self.label_anotacao_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None))
         self.btn_salvar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
         self.label_filtro_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Filtro", None))
-        ___qtablewidgetitem141 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem141.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem142 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-        ___qtablewidgetitem143 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"Hora", None));
-        ___qtablewidgetitem144 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
-        ___qtablewidgetitem145 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"Profissional", None));
-        ___qtablewidgetitem146 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(5)
-        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None));
+        ___qtablewidgetitem142 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem142.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem143 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem143.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem144 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem144.setText(QCoreApplication.translate("MainWindow", u"Hora", None));
+        ___qtablewidgetitem145 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(3)
+        ___qtablewidgetitem145.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem146 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(4)
+        ___qtablewidgetitem146.setText(QCoreApplication.translate("MainWindow", u"Profissional", None));
+        ___qtablewidgetitem147 = self.input_TableWidget_agendamento_as.horizontalHeaderItem(5)
+        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None));
 
         __sortingEnabled6 = self.input_TableWidget_agendamento_as.isSortingEnabled()
         self.input_TableWidget_agendamento_as.setSortingEnabled(False)
@@ -23874,14 +23866,14 @@ class Ui_MainWindow(object):
         self.label_historico_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"HIST\u00d3RICO", None))
         self.label_filtro_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"FILTRO", None))
         self.input_filtro_pagina_consulta_geral.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data...", None))
-        ___qtablewidgetitem147 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
-        ___qtablewidgetitem147.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem148 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
-        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-        ___qtablewidgetitem149 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
-        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
-        ___qtablewidgetitem150 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
-        ___qtablewidgetitem150.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
+        ___qtablewidgetitem148 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
+        ___qtablewidgetitem148.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem149 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
+        ___qtablewidgetitem149.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem150 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
+        ___qtablewidgetitem150.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
+        ___qtablewidgetitem151 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
+        ___qtablewidgetitem151.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_pagina_consulta_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
