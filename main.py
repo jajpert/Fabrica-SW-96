@@ -4362,6 +4362,52 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
+    def gerar_excel_relatorio_beneficio(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_beneficios_as.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_beneficios_as.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_beneficios_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'TIPO BENEFICIO', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
+    def relatorio_beneficio(self):
+        result = self.db.relatorio_beneficio()
+
+        self.ui.input_TableWidget_relatorio_beneficios_as.clearContents()
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(result))
+          
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def filtrar_dados_beneficio(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_beneficios_as.text())
+        res = self.db.filtrar_relatorio_beneficio(txt)
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
+
     def filtrar_data_beneficio(self): 
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
         texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_as.text()
