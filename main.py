@@ -1662,8 +1662,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
             self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
-            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
-            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
+            situacao_colab = str(dados[5])
+            if situacao_colab == "Ativo":
+                self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(True)
+            elif situacao_colab == "Inativo":
+                self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(True)
             self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
             self.ui.input_alterar_data_emissao_rg_colaborador_as.setDate(QDate(dados[7]))
             self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
