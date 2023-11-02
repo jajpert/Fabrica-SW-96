@@ -2095,24 +2095,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_fisio_nt = id_colab_fisio[0][0]
         self.id_colab_tratado_fisio = id_colab_fisio_nt
         print(self.id_colab_tratado_fisio)
-        
+
     def filtrar_dados_relatorio_fisio(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
         res = self.db.buscar_relatorio_fisio_pesquisa(txt)
-        self.ui.tableWidget_relatorio_fisio.setRowCount(len(res))
+        self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(res))
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
     
     def puxar_relatorio_fisio(self):
         result = self.db.buscar_relatorio_fisio()
-        self.ui.tableWidget_relatorio_fisio.clearContents()
-        self.ui.tableWidget_relatorio_fisio.setRowCount(len(result))   
+        self.ui.input_TableWidget_relatorio_fisio.clearContents()
+        self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(result))   
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_fisio.setItem(row, column,QTableWidgetItem(str(data)))
 
     def filtrar_data_relatorio_fisio(self):  
         texto_data_inicio_fisio = self.ui.input_inicio_periodo_relatorio_fisio.text()
@@ -2122,11 +2122,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         res = self.db.filter_data_relatorio_fisio(texto_data_inicio_fisio,texto_data_final_fisio)
 
-        self.ui.tableWidget_relatorio_fisio.setRowCount(len(res))
+        self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(res))
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
 
 
 
