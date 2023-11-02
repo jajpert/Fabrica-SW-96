@@ -1290,8 +1290,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
-            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
-            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            situacao_usuario = str(dados[3])
+            print(situacao_usuario)
+            if situacao_usuario == "Ativo":
+                self.ui.input_alterar_situacao_ativo_usuario_as.setChecked(True)
+            elif situacao_usuario == "Inativo":
+                self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(True)
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
             self.ui.input_alterar_data_emissao_usuario_as.setDate(QDate(dados[6])) #
@@ -1303,6 +1307,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(1)
             elif sexo == 'Feminino':
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(2)
+            elif sexo == "Selecione":
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(0)
+            
             self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
             self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
             self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
@@ -1327,6 +1334,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif estadoCivil == 'Separado':
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
+                
+            elif estadoCivil == "Selecione":
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(0)
 
             Escolaridade = str(dados[20])
             if Escolaridade == 'Fundamental':
@@ -1346,10 +1356,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
+            
+            elif Escolaridade == "Selecione":
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(0)
 
 
-            self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+            pessoac_deficiencia = str(dados[21])
+            print(pessoac_deficiencia)
+            if pessoac_deficiencia == "SIM":
+                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(True)
+            elif pessoac_deficiencia == "NÃO":
+                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(True)
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -1367,6 +1384,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+                
+            elif tipoDeDeficiencia == "Selecione":
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(0)
+                
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
             mediaRendaFamiliar = str(dados[24])
@@ -1382,6 +1403,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
+                
+            elif mediaRendaFamiliar == "Selecione":
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(0)
 
             meioTransporte = str(dados[25])
 
@@ -1395,15 +1419,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
 
             elif meioTransporte == 'Ambulância municipal':
-                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
-
-            elif meioTransporte == 'Moto':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(4)
 
-            elif meioTransporte == 'Ambulância particular':
+            elif meioTransporte == 'Moto':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(5)
-           
 
+            elif meioTransporte == 'Ambulância particular':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+           
+            elif meioTransporte == "Selecione":
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+                
             valeTransporte = str(dados[26])
 
             if valeTransporte == 'Passe para os dias de tratamento':
@@ -1415,6 +1441,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
+            elif valeTransporte == "Selecione":
+                self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(0)
+            
             situacaoTrabalho = str(dados[27])
 
             if situacaoTrabalho == 'Aposentado por Idade':
@@ -1443,6 +1472,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
+            
+            elif situacaoTrabalho == "Selecione":
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[28])
             
@@ -1460,9 +1492,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
-    
-            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[30]))
-            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[30]))
+
+            elif beneficio == "Selecione":
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(0)
+                
+            tarifa_social = str(dados[30])
+            if tarifa_social == "SIM":
+                self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(True)
+            elif tarifa_social == "NÃO":
+                self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(True)
 
 
             tipoTratamento = str(dados[31])
@@ -1476,6 +1514,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
+            elif tipoTratamento == "Selecione":
+                self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(0)
+                
             # local_tratamento = str(dados[32])
             # if local_tratamento == dados[32]:
             self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(int(dados[32]))
@@ -1500,6 +1541,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
+                
+            elif patologiaBase == "Selecione":
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(0)
+                
 
             self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[34])
 
@@ -1515,27 +1560,55 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
+                
+            elif periodo == "Selecione":
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(0)
+                
+                
             self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            original_image = cv2.imread(dados[39])
+            foto = str(dados[39])
+            if foto == None or foto == '':
+                original_image = cv2.imread("./icons/adicionar foto.png")
 
-            desired_size = (240, 240)
-            resized_image = cv2.resize(original_image, desired_size)
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
 
-            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
 
-            h, w, ch = resized_image.shape
-            bytes_per_line = ch * w
-            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
 
-            pixmap = QPixmap.fromImage(qt_image)
+                pixmap = QPixmap.fromImage(qt_image)
 
-            self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
-            self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
-            self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+                self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+                self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+
+                
+            else:
+                print(dados[39])
+                original_image = cv2.imread(dados[39])
+
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+
+                self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+                self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
             self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
@@ -1549,8 +1622,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
             self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
-            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
-            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
+            situacao_colab = str(dados[5])
+            if situacao_colab == "Ativo":
+                self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(True)
+            elif situacao_colab == "Inativo":
+                self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(True)
             self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
             self.ui.input_alterar_data_emissao_rg_colaborador_as.setDate(QDate(dados[7]))
             self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
@@ -1648,18 +1724,40 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
             self.ui.input_alterar_id_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_colaborador_as.hide()
-            original_image = cv2.imread(dados[27])
-            desired_size = (240, 240)
-            resized_image = cv2.resize(original_image, desired_size)
-            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-            h, w, ch = resized_image.shape
-            bytes_per_line = ch * w
-            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-            pixmap = QPixmap.fromImage(qt_image)
-            self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
-            self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
-            self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+            foto = str(dados[27])
+            if foto == None or foto == '':
+                original_image = cv2.imread("./icons/adicionar foto.png")
+
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+        
+    
+            else:
+                
+                original_image = cv2.imread(dados[27])
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+                pixmap = QPixmap.fromImage(qt_image)
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_alterar_id_foto_usuario_as.setText(str(dados[28]))
             self.ui.input_alterar_id_foto_usuario_as.hide()
 
@@ -2256,6 +2354,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
+        self.nome_usuario = nome
         data_nasc = self.ui.input_nascimento_usuario_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_usuario_as.text()
@@ -2327,6 +2426,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
+        self.InsertUsuarioFotoId()
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         msg = QMessageBox()
@@ -2552,6 +2652,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ###################### pessoa ##############################
         nome = self.ui.input_nome_colaborador_as.text()
+        self.nome_colab = nome
         data_nasc = self.ui.input_data_nascimento_colaborador_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_colaborador_as.text()
@@ -2607,6 +2708,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################### insert ##########################################
         result = []
+        self.InserColabFotoId()
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -2942,7 +3044,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
-        self.ui.label_foto_usuario_alterar_as.setPixmap("")
 
         
 
@@ -3660,6 +3761,49 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
+        
+    def InsertUsuarioFotoId(self):
+        id_usuario = self.ui.input_matricula_usuario_as.text()
+        caminho = ""
+        tupla_teste = (self.nome_usuario, caminho, id_usuario)
+        print(tupla_teste)
+        result = self.db.tirar_foto_usuario(tupla_teste)
+        print("Foto Cadastro Usuario ->",result)
+        
+    def InserColabFotoId(self):
+        id_colab_matricula = self.ui.input_matricula_colaborador_as.text()
+        caminho = ""
+        tupla_teste = (self.nome_colab, caminho, id_colab_matricula)
+        print(tupla_teste)
+        result = self.db.tirar_foto_colaborador(tupla_teste)
+        print("Foto Cadastro Usuario ->",result)
+        
+    def gerar_excel_relatorio_beneficio(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_psi.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_psi.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_psi.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLINICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
 
 
     def alterar_usuario_consulta(self,campo):
@@ -3853,6 +3997,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
+
 
 
     def tirarImportarFotoUsuario(self):
