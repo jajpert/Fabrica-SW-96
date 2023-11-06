@@ -23,8 +23,8 @@ import openpyxl
 import imghdr
 import os
 from sqlalchemy import *
-
-
+from sqlalchemy.orm import *
+from sqlalchemy.ext.declarative import declarative_base
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -580,6 +580,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ######################### banco #########################
         self.db = DataBase()
+        Base = declarative_base()
         self.relatorio_beneficio()        
         self.listarAgendamentos()
         self.listarBeneficios()
@@ -2281,6 +2282,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_TableWidget_pagina_consulta_geral_fisio.setItem(row, column,QTableWidgetItem(str(data)))
 
 
+
     def cadastroUsuario(self):
         ################ endereço ##################################
         cep = self.ui.input_cep_usuario_as.text()
@@ -2364,6 +2366,28 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             status = 'Inativo'
 
         
+        __tablename__ = "pessoa"
+        # sqlalchemy.create_engine('mysql://user:password@server)
+        engine = create_engine('mysql://root:Bnas123!@#@localhost')
+        engine.execute("abrec")
+
+        cpf = cpf
+
+        if len(cpf) <= 0:
+            Session = sessionmaker(bind=engine)
+            session = Session()
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("CTESTE")
+            msg.setText("TESTES")
+            msg.exec()
+        
+
+
+
+
+
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
