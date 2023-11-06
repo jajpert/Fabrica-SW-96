@@ -2368,39 +2368,32 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         __tablename__ = "pessoa"
         # sqlalchemy.create_engine('mysql://user:password@server)
-        engine = create_engine('mysql://root:Bnas123!@#@localhost')
-        engine.execute("abrec")
+        engine = create_engine('mysql://fabrica:fabrica@2022@192.168.22.9/abrec')
 
-        cpf = cpf
+        print("tste ->", cpf)
 
-        if len(cpf) <= 0:
-            Session = sessionmaker(bind=engine)
-            session = Session()
+        if len(cpf) <= 0 or len(cpf) < 11:
 
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("CTESTE")
             msg.setText("TESTES")
             msg.exec()
-        
+            
+        else:
+            tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
+            tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
-
-
-
-
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
-        tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
-
-        ######################## insert ##################################
-        result = []
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Usuário")
-        msg.setText("Usuário cadastrado com sucesso!")
-        msg.exec()
-        # self.msg(result[0],result[1])
-        self.limparCamposCadastroUsuario()
+            ######################## insert ##################################
+            result = []
+            result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Usuário")
+            msg.setText("Usuário cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
+            self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
