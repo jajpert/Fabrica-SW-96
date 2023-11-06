@@ -705,7 +705,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
-        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
@@ -777,6 +776,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+
+
+
+
+        ########################### AREA SIGILOSA ###########################
+        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa_salvar_usuario)
+        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
+        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
+        self.ui.btn_alterar_observacoes_sigilosas_as.clicked.connect(self.alterar_usuario_area_sigilosa)
 
         #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
@@ -855,9 +864,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
-        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
-        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
-        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
         self.ui.input_buscar_dados_relatorio_psi.textChanged.connect(self.filtrar_dados_relatorio_psi)
@@ -2625,7 +2631,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.input_salario_colaborador_as.setText(salario_formatado)
     
 
-    def alterarAreaSigilosa(self):
+    def alterar_usuario_area_sigilosa(self):
         campo = []
         update_dados = []
         for row in range(self.ui.input_TableWidget_observacoes_sigilosas_as.rowCount()):
@@ -2635,8 +2641,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             campo = []
 
         for emp in update_dados:
-           res = self.db.alterarAreaSigilosa(tuple(emp), self.id_area_sigilosa)
+           res = self.db.alterarAreaSigilosa(tuple(emp))
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Area Sigilosa")
+        msg.setText("Usuario Alterado com sucesso!")
+        msg.exec()
+        self.filtrar_usuario_area_sigilosa()
 
     def cadastroColaborador(self):
 
@@ -2982,7 +2994,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
-    def area_sigilosa(self):
+    def area_sigilosa_salvar_usuario(self):
 
         if self.ui.input_obito_paciente_sim_as.isChecked:
             situacao="Ativo"
@@ -2998,6 +3010,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Area Sigilosa")
         msg.setText("Observção salva com sucesso!")
         msg.exec()
+        self.filtrar_usuario_area_sigilosa()
         self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):

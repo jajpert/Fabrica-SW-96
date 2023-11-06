@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -331,7 +331,7 @@ class DataBase():
     def filter_usuario_area_sigilosa(self,id_area_sigilosa):
         self.connect()
         try: 
-            self.cursor.execute(f"""select  area_sigilosa.data_cadastro, area_sigilosa.observacao_gerais from area_sigilosa
+            self.cursor.execute(f"""select  area_sigilosa.id_area_sigilosa, area_sigilosa.data_cadastro, area_sigilosa.observacao_gerais from area_sigilosa
                                 INNER JOIN pessoa ON pessoa.id_matricula = area_sigilosa.id_matricula and 
                                 pessoa.id_matricula = '{id_area_sigilosa}';""")
             result = self.cursor.fetchall()
@@ -1138,12 +1138,12 @@ class DataBase():
             self.conn.close()
             return ("Conexão encerrada com Sucesso!!!")
         
-    def alterarAreaSigilosa(self, campo, id_matricula):
+    def alterarAreaSigilosa(self, campo):
         self.connect()
         try:
             self.cursor.execute(f""" UPDATE area_sigilosa SET
-                                     observacao_gerais = '{campo[1]}'
-                                     WHERE id_matricula = '{id_matricula}';
+                                     observacao_gerais = '{campo[2]}'
+                                     WHERE id_area_sigilosa = '{campo[0]}';
             """)
             self.conn.commit()
             return "Alteração feita com Sucesso!!!"
