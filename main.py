@@ -243,9 +243,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
 
     def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
-        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_colab}.jpg")
-        # StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_colab}.jpg")
+        StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_colab == "":
@@ -266,8 +264,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
                         break
                         
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
-                        # directory = "C:/Users/vboxuser/Desktop/"
+                        directory = "C:/Users/vboxuser/Desktop/"
                         
                         if not os.path.exists(directory):
                             os.makedirs(directory)
@@ -840,7 +837,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
-        #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
         self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
