@@ -584,6 +584,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.listarBeneficios()
         self.buscar_clinica_nome_fantasia()
         self.buscar_curso_evento()
+        self.puxar_relatorio_cuidador()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
         self.ultimosIds()
@@ -733,7 +734,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
-        self.ui.btn_voltar_relatorios_cuidadores_as.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_voltar_relatorios_cuidadores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
 
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
