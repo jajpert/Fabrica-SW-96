@@ -576,38 +576,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        print("hkashkdjhaskjdhsa")
         
         ######################### banco #########################
-        self.db = DataBase()        
+        self.db = DataBase()
+        self.relatorio_beneficio()        
         self.listarAgendamentos()
         self.listarBeneficios()
         self.buscar_clinica_nome_fantasia()
         self.buscar_curso_evento()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
-        select_usuario = self.db.select_usuario()
-        select_cuidador = self.db.select_cuidador()
-        selected_colaborador = self.db.select_colaborador()
-        ultimo_id_usuario = (select_usuario[0])
-        ultimo_id_cuidador = (select_cuidador[0])
-        ultimo_id_colaborador = (selected_colaborador[0])
-        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
-        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
-        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
-        proximo_id_usuario = 1 + int(ultimo_id_usuario)
-        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
-        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
-        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
-        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
-        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
-
-        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
-        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
-        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
-        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
-        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ultimosIds()
 
 
         self.popup = Overlay(self)
@@ -635,9 +614,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_consulta_geral_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
 
-        self.ui.input_rg_usuario_as.setInputMask("00.000.000-0")
-        self.ui.input_rg_cuidador_as.setInputMask("00.000.000-0")
-        self.ui.input_rg_colaborador_as.setInputMask("00.000.000-0")
 
         ########## Colocando os validadores ############
         self.ui.input_nome_usuario_as.setValidator(self.validaString)
@@ -743,15 +719,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
         self.ui.input_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_changed)
         self.ui.input_alterar_patologia_base_usuario_as.currentIndexChanged.connect(self.on_patologia_base_usuario_alterar)
-        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_tipo_deficiencia_usuario_as.setDisabled(True)
+        self.ui.input_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia)        
         self.ui.input_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia)
+        self.ui.input_alterar_tipo_deficiencia_usuario_as.setDisabled(True)
         self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
+        self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_beneficio_as))
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
-        self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_aluno_curso))
+        self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
         self.ui.btn_voltar_relatorios_cuidadores_as.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
@@ -768,13 +747,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_agenda_fisio.clicked.connect(self.cadastroAgendamento_fisio) #CADASTRO AGENDAMENTO USUARIO FISIO
         self.ui.btn_buscar_agendamento_fisio.clicked.connect(self.buscar_usuario_agendamento_fisio) #SELECT USUARIO AGENDAMENTO FISIO
         self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_usuario_consulta_fisio) #SELECT USUARIO CONSULTA FISIO
+        self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
+        self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
+        self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
 
         ########################### NUTRICIONISTA ###########################
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
         self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
         self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
-        self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_voltar_pagina_relatorio_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
         self.ui.btn_relatorios_nutri.clicked.connect(self.relatorio_pessoa_nutri)
         self.ui.btn_agenda_nutri.clicked.connect(self.tabela_agenda_nutri)
@@ -912,8 +894,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(self.puxar_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_aluno_curso.clicked.connect(self.gerar_excel_paricipante_curso)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
-       #self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
-        #self.ui.btn_buscar_relatorio_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_buscar_relatorio_psi.clicked.connect(self.filtrar_data_relatorio_psi)
+        self.ui.btn_buscar_dados_relatorio_aluno_curso.clicked.connect(self.filtrar_data_participante_curso)
+        self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
+        self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
+        self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         
 
         
@@ -985,7 +970,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
-                    self.ui.label_ola_nutri_2.setText(nome_colaborador)
+                    self.ui.label_ola_nutri.setText(nome_colaborador)
                     self.LoginNutri()       
                     self.buscarIdColabNutri()
                     
@@ -1045,22 +1030,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         inputAlterarColaborador = self.ui.input_alterar_cep_colaborador_as.text()
         inputFornecedor = self.ui.input_cep_fornecedor_as.text()
         sender = self.sender()
-        if 'cuidador' in sender.objectName():
-            cep = inputCuidador
-        elif 'usuario' in sender.objectName():
-            cep = inputUsuario
-        elif 'colaborador' in sender.objectName():
-            cep = inputColaborador
-        elif 'clinica' in sender.objectName():
-            cep = inputClinica
-        elif 'alterarcuidador' in sender.objectName():
-            cep = inputAlterarCuidador
-        elif 'AlterarUsuario' in sender.objectName():
-            cep = inputAlterarUsuario
-        elif 'AlterarColaborador' in sender.objectName():
-            cep = inputAlterarColaborador
-        elif 'fornecedor' in sender.objectName():
-            cep = inputFornecedor
+        if 'alterar' in sender.objectName():
+            if 'cuidador' in sender.objectName():
+                cep = inputAlterarCuidador
+            elif 'usuario' in sender.objectName():
+                cep = inputAlterarUsuario
+            elif 'colaborador' in sender.objectName():
+                cep = inputAlterarColaborador
+        else:
+            if 'cuidador' in sender.objectName():
+                cep = inputCuidador
+            elif 'usuario' in sender.objectName():
+                cep = inputUsuario
+            elif 'colaborador' in sender.objectName():
+                cep = inputColaborador
+            elif 'clinica' in sender.objectName():
+                cep = inputClinica
+            elif 'fornecedor' in sender.objectName():
+                cep = inputFornecedor
         cep_tratado = str('')
         print(cep)
         cep_tratado = str('')
@@ -1079,140 +1066,143 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         link = f'https://viacep.com.br/ws/{cep_tratado}/json/'
         requisicao = requests.get(link)
         dic_requisicao = requisicao.json()
-        if 'cuidador' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
+        if 'alterar' in sender.objectName():
+            if 'cuidador' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_alterar_logradouro_cuidador_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_bairro_cuidador_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_alterar_bairro_cuidador_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_cidade_cuidador_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_alterar_cidade_cuidador_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_estado_cuidador_as.setText(str(estado))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_alterar_estado_cuidador_as.setText(str(estado))
 
-        elif 'usuario' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_logradouro_usuario_as.setText(str(logradouro))
+            elif 'usuario' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_alterar_logradouro_usuario_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_bairro_usuario_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_alterar_bairro_usuario_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_cidade_usuario_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_alterar_cidade_usuario_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_estado_usuario_as.setText(str(estado))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_alterar_estado_usuario_as.setText(str(estado))
 
-        elif 'colaborador' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
+            elif 'colaborador' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_alterar_logradouro_colaborador_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_bairro_colaborador_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_alterar_bairro_colaborador_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_cidade_colaborador_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_alterar_cidade_colaborador_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_estado_colaborador_as.setText(str(estado))
-        
-        elif 'clinica' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_logradouro_clinica_as.setText(str(logradouro))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_alterar_estado_colaborador_as.setText(str(estado))
+        else:
+            if 'cuidador' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_logradouro_cuidador_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_bairro_clinica_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_bairro_cuidador_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_cidade_clinica_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_cidade_cuidador_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_estado_clinica_as.setText(str(estado))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_estado_cuidador_as.setText(str(estado))
 
-        elif 'alterarcuidador' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_alterar_logradouro_cuidador_as.setText(str(logradouro))
+            elif 'usuario' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_logradouro_usuario_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_alterar_bairro_cuidador_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_bairro_usuario_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_alterar_cidade_cuidador_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_cidade_usuario_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_alterar_estado_cuidador_as.setText(str(estado))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_estado_usuario_as.setText(str(estado))
 
-        elif 'alteUsuario' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_alterar_logradouro_usuario_as.setText(str(logradouro))
+            elif 'colaborador' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_logradouro_colaborador_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_alterar_bairro_usuario_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_bairro_colaborador_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_alterar_cidade_usuario_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_cidade_colaborador_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_alterar_estado_usuario_as.setText(str(estado))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_estado_colaborador_as.setText(str(estado))
+            
+            elif 'clinica' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_logradouro_clinica_as.setText(str(logradouro))
 
-        elif 'alterarColaborador' in sender.objectName():
-             ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_alterar_logradouro_colaborador_as.setText(str(logradouro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_bairro_clinica_as.setText(str(bairro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_alterar_bairro_colaborador_as.setText(str(bairro))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_cidade_clinica_as.setText(str(cidade))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_alterar_cidade_colaborador_as.setText(str(cidade))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_estado_clinica_as.setText(str(estado))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_alterar_estado_colaborador_as.setText(str(estado))
-        elif 'fornecedor' in sender.objectName():
-            ##### tratamento da requisição - logradouro #######
-            logradouro = dic_requisicao['logradouro']
-            self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
+            elif 'fornecedor' in sender.objectName():
+                ##### tratamento da requisição - logradouro #######
+                logradouro = dic_requisicao['logradouro']
+                self.ui.input_logradouro_fornecedor_as.setText(str(logradouro))
 
-            ##### tratamento da requisição - bairro #######
-            bairro = dic_requisicao['bairro']
-            self.ui.input_bairro_fornecedor_as.setText(str(bairro))
+                ##### tratamento da requisição - bairro #######
+                bairro = dic_requisicao['bairro']
+                self.ui.input_bairro_fornecedor_as.setText(str(bairro))
 
-            ##### tratamento da requisição - cidade #######
-            cidade = dic_requisicao['localidade']
-            self.ui.input_cidade_fornecedor_as.setText(str(cidade))
+                ##### tratamento da requisição - cidade #######
+                cidade = dic_requisicao['localidade']
+                self.ui.input_cidade_fornecedor_as.setText(str(cidade))
 
-            ##### tratamento da requisição - estado #######        
-            estado = dic_requisicao['uf']
-            self.ui.input_estado_fornecedor_as.setText(str(estado))
+                ##### tratamento da requisição - estado #######        
+                estado = dic_requisicao['uf']
+                self.ui.input_estado_fornecedor_as.setText(str(estado))
+
 
 ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
@@ -1367,10 +1357,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
-
-
+            
             self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))
+            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))                
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -1388,6 +1377,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
+
+            elif tipoDeDeficiencia == 'Não possui':
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(6)
+
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
             mediaRendaFamiliar = str(dados[24])
@@ -1541,7 +1534,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
             original_image = cv2.imread(dados[39])
+            
 
+            
             desired_size = (240, 240)
             resized_image = cv2.resize(original_image, desired_size)
 
@@ -1560,7 +1555,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
             self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
-        
+    
         ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
@@ -2109,6 +2104,38 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.id_colab_tratado_fisio = id_colab_fisio_nt
         print(self.id_colab_tratado_fisio)
 
+    def filtrar_dados_relatorio_fisio(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
+        res = self.db.buscar_relatorio_fisio_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def puxar_relatorio_fisio(self):
+        result = self.db.buscar_relatorio_fisio()
+        self.ui.input_TableWidget_relatorio_fisio.clearContents()
+        self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def filtrar_data_relatorio_fisio(self):  
+        texto_data_inicio_fisio = self.ui.input_inicio_periodo_relatorio_fisio.text()
+        texto_data_final_fisio = self.ui.input_final_periodo_relatorio_fisio.text()
+        texto_data_inicio_fisio =  "-".join(texto_data_inicio_fisio.split("/")[::-1])
+        texto_data_final_fisio =  "-".join(texto_data_final_fisio.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_fisio(texto_data_inicio_fisio,texto_data_final_fisio)
+
+        self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+
 
 
     def buscar_usuario_nutri(self):
@@ -2141,7 +2168,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif pat_base == "Hipertensão":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(1)
         elif pat_base == "Diabete 1":
-            self.ui.input_patologia_base_consulta_nutri.setCnutri_imc_usuarioimcurrentIndex(2)
+            self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(2)
         elif pat_base == "Diabete 2":
             self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(3)
         elif pat_base == "Lúpus":
@@ -2402,6 +2429,30 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(resultado):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_cadastro_beneficio.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def ultimosIds(self):
+        select_usuario = self.db.select_usuario()
+        select_cuidador = self.db.select_cuidador()
+        selected_colaborador = self.db.select_colaborador()
+        ultimo_id_usuario = (select_usuario[0])
+        ultimo_id_cuidador = (select_cuidador[0])
+        ultimo_id_colaborador = (selected_colaborador[0])
+        ultimo_id_usuario = ''.join(map(str, ultimo_id_usuario))
+        ultimo_id_cuidador = ''.join(map(str, ultimo_id_cuidador))
+        ultimo_id_colaborador = ''.join(map(str, ultimo_id_colaborador))
+        proximo_id_usuario = 1 + int(ultimo_id_usuario)
+        proximo_id_cuidador = 1 + int(ultimo_id_cuidador)
+        proximo_id_colaborador = 1 + int(ultimo_id_colaborador)
+        proximo_id_usuario = str(proximo_id_usuario).zfill(4)
+        proximo_id_cuidador = str(proximo_id_cuidador).zfill(4)
+        proximo_id_colaborador = str(proximo_id_colaborador).zfill(4)
+
+        self.ui.input_matricula_usuario_as.setText(f'{proximo_id_usuario}')
+        self.ui.input_matricula_usuario_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_cuidador_as.setText(f'{proximo_id_cuidador}')
+        self.ui.input_matricula_cuidador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
+        self.ui.input_matricula_colaborador_as.setText(f'{proximo_id_colaborador}')
+        self.ui.input_matricula_colaborador_as.setStyleSheet("color: black; qproperty-alignment: AlignCenter;")
                 
                 
     def alterarAgendamentos(self):
@@ -2896,6 +2947,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):
+        self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
         self.ui.input_nascimento_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_situacao_ativo_usuario_as.setCheckable(False)
@@ -2944,6 +2996,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
  
     def limparCamposCadastroCuidador(self):
+        self.ultimosIds()
         self.ui.input_nome_cuidador_as.setText("")
         self.ui.input_data_nascimento_cuidador_as.setDate(QDate(2000, 1, 1))
         self.ui.input_cpf_cuidador_as.setText("")
@@ -2966,6 +3019,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def limparCamposCadastroColaborador(self):
+        self.ultimosIds()
         self.ui.input_nome_colaborador_as.setText("")
         self.ui.input_data_nascimento_colaborador_as.setDate(QDate(2000, 1, 1))
         self.ui.input_cpf_colaborador_as.setText("")
@@ -4123,45 +4177,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.limparCamposCadastroRetiradaBeneficios()
     
 ######################## Pessoa com Deficiencia ###############################
+   
     def pessoa_com_deficiencia (self):
 
-        if self.ui.input_pessoa_cdeficiencia_nao_usuario_as.isChecked():
-            
-            self.ui.frame_81.hide()
-            self.ui.frame_81.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.hide()
-            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_tipo_deficiencia_usuario_as.clear()        
+        if self.ui.input_pessoa_cdeficiencia_sim_usuario_as.isChecked() == True:
 
-        else:
-            
-            self.ui.frame_81.setEnabled(True)
-            self.ui.frame_81.show()
-            self.ui.input_tipo_deficiencia_usuario_as.setStyleSheet("")  
             self.ui.input_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_tipo_deficiencia_usuario_as.show()
-
-    def pessoa_com_deficiencia_alterar (self):
-
-        if self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.isChecked():
-            
-            self.ui.frame_343.hide()
-            self.ui.frame_343.setEnabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.hide()
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.clear()        
+            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(0)) 
 
         else:
-            
-            self.ui.frame_343.setEnabled(True)
-            self.ui.frame_343.show()
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setStyleSheet("")  
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
-            self.ui.input_alterar_tipo_deficiencia_usuario_as.show()
-            
-            
+            self.ui.input_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_tipo_deficiencia_usuario_as.setCurrentIndex(int(6))    
+             
+                
+    def pessoa_com_deficiencia_alterar (self):
+        
+        if self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.isChecked() == True:
 
-######################## Deficiência base Outra################################
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(True)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(0))
+        
+        else:
+        
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setEnabled(False)
+            self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(int(6))
+                      
+            
+############################### Deficiência base Outra ####################################
 
     def on_tipo_deficiencia_usuario_changed(self):
 
@@ -4267,12 +4309,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         result = self.db.relatorio_pessoa_nutri(self.id_colab_tratado_nutri)
 
-        self.ui.tableWidget_relatorio_nutri.clearContents()
-        self.ui.tableWidget_relatorio_nutri.setRowCount(len(result))   
+        self.ui.input_TableWidget_relatorio_nutri.clearContents()
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(result))   
 
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
   
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
@@ -4352,19 +4394,65 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
-    # def filtrar_data_beneficio(self): 
-    #     texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
-    #     texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_as.text()
-    #     texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
-    #     texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+    def gerar_excel_relatorio_beneficio(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_beneficios_as.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_beneficios_as.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_beneficios_as.item(row, column).text())
         
-    #     res = self.db.filter_data_relatorio_beneficio(texto_data_inicio_tratada,texto_data_final_tratada)
+            all_dados.append(dados)
+            dados = []
 
-    #     self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'TIPO BENEFICIO', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
 
-    #     for row, text in enumerate(res):
-    #         for column, data in enumerate(text):
-    #             self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
+    def relatorio_beneficio(self):
+        result = self.db.relatorio_beneficio()
+
+        self.ui.input_TableWidget_relatorio_beneficios_as.clearContents()
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(result))
+          
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def filtrar_dados_beneficio(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_beneficios_as.text())
+        res = self.db.filtrar_relatorio_beneficio(txt)
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_data_beneficio(self): 
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_as.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_as.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_beneficio(texto_data_inicio_tratada,texto_data_final_tratada)
+
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
                    
     def filter_idade(self):
 
