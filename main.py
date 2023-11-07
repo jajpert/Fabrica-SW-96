@@ -762,7 +762,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri) #CADATRO DO USUARIO NA CONSULTA NUTRI
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
-        self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        #self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
 
         ########################### PSICOLOGA ###########################
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
@@ -823,7 +823,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         ########################### POPUP ALTERAR FOTO E SENHA AS #################
-        self.ui.btn_alterar_foto_colab_inicio.clicked.connect(self.trocarFotoSenha)
+        #self.ui.btn_alterar_foto_colab_as(self.trocarFotoSenha)
         
         
         ########################### POPUP TIRAR E IMPORTAR FOTO AS ################
