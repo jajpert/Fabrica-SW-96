@@ -456,10 +456,10 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao, endereco.bairro, endereco.cidade
-                    from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                    from pessoa 
+                    INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                    INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                     WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_fisio}' and '{texto_data_final_fisio}';
             """)
@@ -475,7 +475,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                               SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, pessoa.data_nascimento as idade, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                               SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
                                from pessoa 
                                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
@@ -494,7 +494,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, pessoa.data_nascimento as idade, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
                                 from pessoa 
                                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
