@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
+        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -482,11 +482,11 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao, endereco.bairro, endereco.cidade
-                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
-                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                               SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, pessoa.data_nascimento as idade, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                               from pessoa 
+                               INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                               INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                               INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;
                                 """)
             result = self.cursor.fetchall()
             return result
@@ -501,12 +501,12 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao, consulta.observacao, endereco.bairro, endereco.cidade
-                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, pessoa.data_nascimento as idade, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                from pessoa 
+                                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR consulta.data_consulta LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
+                                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR usuario.nis LIKE "%{texto}%" OR pessoa.data_nascimento LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%";
                                 """)
             result = self.cursor.fetchall()
             return result
