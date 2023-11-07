@@ -228,6 +228,27 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+
+    def relatorio_cuidador(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,cuidador.id_matricula,parente.nome AS parente_nome,cuidador.parentesco
+                    FROM pessoa AS pes
+                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+                    INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
+                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
+                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco;
+
+                """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
             
             
     def filter_data_participante_curso(self,texto_data_inicio,texto_data_final):
@@ -1461,6 +1482,13 @@ class DataBase():
 
         except Exception as err:
             return "ERRO",str(err)
+        
+ 
+
+
+
+    
+
         
     def cadastro_colaborador(self,endereco,pessoa,colaborador):
         self.connect()

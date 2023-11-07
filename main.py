@@ -2122,6 +2122,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column,QTableWidgetItem(str(data)))
 
+    def puxar_relatorio_cuidador(self):
+        result = self.db.relatorio_cuidador()
+        self.ui.tableWidget_relatorio_cuidadores_as.clearContents()
+        self.ui.tableWidget_relatorio_cuidadores_as.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column,QTableWidgetItem(str(data)))
+
     def filtrar_data_relatorio_fisio(self):  
         texto_data_inicio_fisio = self.ui.input_inicio_periodo_relatorio_fisio.text()
         texto_data_final_fisio = self.ui.input_final_periodo_relatorio_fisio.text()
