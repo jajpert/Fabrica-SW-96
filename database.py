@@ -410,6 +410,20 @@ class DataBase():
         finally:
             self.close_connection()
             
+    def buscarIdColabAssis(self, nome_login):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT id_colaborador FROM colaborador INNER JOIN pessoa ON colaborador.id_matricula = pessoa.id_matricula WHERE colaborador.login LIKE '{nome_login}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+            
     def buscarIdColabPsic(self, nome_login):
         self.connect()
         try:
@@ -970,8 +984,8 @@ class DataBase():
     def cadastro_consulta(self,consulta):
         self.connect()
         try:
-            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
-            self.cursor.execute('INSERT INTO consulta(situacao,data,hora,observacao,id_usuario) VALUES (%s,%s,%s,%s,%s)', args)
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
+            self.cursor.execute('INSERT INTO consulta(situacao,data,hora,observacao,id_usuario,id_colaborador) VALUES (%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
@@ -1000,8 +1014,8 @@ class DataBase():
         self.connect()
         print("PSIC CONSULTA DB FISIO",consulta)
         try:
-            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
-            self.cursor.execute('INSERT INTO consulta (situacao, data_consulta, hora, observacao, id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
+            self.cursor.execute('INSERT INTO consulta (situacao, data_consulta, hora, observacao, id_matricula, id_colaborador) VALUES (%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
@@ -1527,8 +1541,8 @@ class DataBase():
         self.connect()
         print(agendamento)
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
-            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -1559,8 +1573,8 @@ class DataBase():
     def cadastro_agendamento_psi(self, agendamento):
         self.connect()
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
-            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento( id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -1571,8 +1585,8 @@ class DataBase():
     def cadastro_agendamento_fisio(self, agendamento):
         self.connect()
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
-            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -1584,8 +1598,8 @@ class DataBase():
         self.connect()
         print("AGENDAMENTO NUTRI BANCO ->", agendamento)
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
-            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"

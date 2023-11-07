@@ -843,6 +843,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
+        self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
         
 
 
@@ -939,6 +940,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.buscarIdColabAssis()
                     self.LoginAssistenteS()         
                 else:
                     print ("Usuário não encontrado")
@@ -2179,6 +2181,23 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
 
     
+    def buscarIdColabAssis(self):
+        login = self.ui.input_usuario_login.text()
+        print("Login Assis ->", login)
+        id_colab_colab = self.db.buscarIdColabAssis(login)
+        id_colab_nt = id_colab_colab[0][0]
+        self.id_colab_tratado = id_colab_nt
+        print("ID ASSISTENTE ->", self.id_colab_tratado)
+
+    
+    def buscarIdColabPsic(self):
+        login = self.ui.input_usuario_login.text()
+        print("Login Pisc ->", login)
+        id_colab_colab = self.db.buscarIdColabPsic(login)
+        id_colab_nt = id_colab_colab[0][0]
+        self.id_colab_tratado_psic = id_colab_nt
+
+    
     def buscarIdColabPsic(self):
         login = self.ui.input_usuario_login.text()
         print("Login Pisc ->", login)
@@ -2824,8 +2843,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
-        id_colaborador = self.id_colab_tratado
-        print("ID COLABORADOR ENTROU -> ",id_colaborador)
         cpf = self.ui.input_cpf_agendamento_as.text()
         nome = self.ui.input_nome_agendamento_as.text()
         telefone = self.ui.input_telefone_agendamento_as.text()
@@ -2845,7 +2862,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_as.text()
         anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
 
-        tupla_agendamento = (id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         print("TUPLA AGENDAMENTO -> ",tupla_agendamento)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         
@@ -2860,7 +2877,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamento_psi(self):
         id_matricula = self.buscarPessoa_psi()
-        id_colaborador = self.id_colab_tratado_psic
         cpf = self.ui.input_cpf_agendamento_psi.text()
         nome = self.ui.input_nome_agendamento_psi.text()
         telefone = self.ui.input_telefone_agendamento_psi.text()
@@ -2880,7 +2896,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_psi.text()
         anotacao = self.ui.input_anotacao_agendamento_psi.toPlainText()
 
-        tupla_agendamento_psi = (id_colaborador,id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
         
         msg = QMessageBox()
@@ -2895,7 +2911,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamento_fisio(self):
         id_matricula = self.ui.input_id_matricula_agendamento_fisio.text()
-        id_colaborador = self.id_colab_tratado_fisio
         cpf = self.ui.input_cpf_agendamento_fisio.text()
         nome = self.ui.input_nome_agendamento_fisio.text()
         telefone = self.ui.input_telefone_agendamento_fisio.text()
@@ -2915,7 +2930,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_fisio.text()
         anotacao = self.ui.input_anotacao_agendamento_fisio.toPlainText()
 
-        tupla_agendamento_fisio = (id_colaborador,id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_fisio = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento_fisio(tupla_agendamento_fisio)
         
         msg = QMessageBox()
@@ -2928,9 +2943,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamentoNutri(self):
         id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
-        print(id_matricula)
-        id_colaborador = self.id_colab_tratado_nutri
-        print(type(id_colaborador))
         cpf = self.ui.input_cpf_agendamento_nutri.text()
         nome = self.ui.input_nome_agendamento_nutri.text()
         telefone = self.ui.input_telefone_agendamento_nutri.text()
@@ -2951,7 +2963,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_nutri.text()
         anotacao = self.ui.input_anotacao_agendamento_nutri.toPlainText()
 
-        tupla_agendamento_nutri = (id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_nutri = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         print("TUPLA NUTRI ->",tupla_agendamento_nutri)
         result = self.db.cadastro_agendamento_nutri(tupla_agendamento_nutri)
         
