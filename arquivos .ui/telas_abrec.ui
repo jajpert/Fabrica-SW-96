@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -1288,7 +1288,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>2</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -1600,6 +1600,10 @@ QPushButton:focus{outline:0}</string>
                                             <family>Abel</family>
                                             <pointsize>12</pointsize>
                                            </font>
+                                          </property>
+                                          <property name="styleSheet">
+                                           <string notr="true">QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -6772,7 +6776,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_7">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_psi"/>
                  <widget class="QWidget" name="page_agenda_psi">
@@ -7072,6 +7076,10 @@ QPushButton:focus{outline:0}</string>
                                             <family>Abel</family>
                                             <pointsize>12</pointsize>
                                            </font>
+                                          </property>
+                                          <property name="styleSheet">
+                                           <string notr="true">QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}
+QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           </property>
                                           <property name="text">
                                            <string/>
@@ -11318,7 +11326,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_10">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>0</number>
                  </property>
                  <widget class="QWidget" name="page_principal_farm">
                   <layout class="QVBoxLayout" name="verticalLayout_490">
@@ -18031,7 +18039,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>10</number>
+                      <number>15</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
