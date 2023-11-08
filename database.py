@@ -234,7 +234,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,cuidador.id_matricula,parente.nome AS parente_nome,cuidador.parentesco
+                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
                     FROM pessoa AS pes
                     INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
@@ -254,7 +254,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,cuidador.id_matricula,parente.nome AS parente_nome,cuidador.parentesco
+                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
                     FROM pessoa AS pes
                     INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
@@ -275,7 +275,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,cuidador.id_matricula,parente.nome AS parente_nome,cuidador.parentesco
+                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
                     FROM pessoa AS pes
                     INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
