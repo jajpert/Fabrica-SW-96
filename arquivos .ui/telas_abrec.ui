@@ -22240,12 +22240,12 @@ color: rgb(236, 132, 140);</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Parentesco</string>
+                                       <string>Nome parentesco</string>
                                       </property>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Usuário</string>
+                                       <string>Parentesco</string>
                                       </property>
                                      </column>
                                     </widget>

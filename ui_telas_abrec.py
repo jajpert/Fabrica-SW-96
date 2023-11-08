@@ -23642,9 +23642,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem86 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(7)
         ___qtablewidgetitem86.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
         ___qtablewidgetitem87 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None));
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"nome parentesco", None));
         ___qtablewidgetitem88 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(9)
-        ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None));
+        ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None));
         self.btn_gerar_excel_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_gerar_pdf_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"CADASTRO DO USU\u00c1RIO", None))
