@@ -7281,16 +7281,21 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.btn_alterar_foto_colab_as_2 = QPushButton(self.frame_9)
-        self.btn_alterar_foto_colab_as_2.setObjectName(u"btn_alterar_foto_colab_as_2")
-        self.btn_alterar_foto_colab_as_2.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_2.setFont(font7)
-        self.btn_alterar_foto_colab_as_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.label_foto_colab = QLabel(self.frame_9)
+        self.label_foto_colab.setObjectName(u"label_foto_colab")
+
+        self.verticalLayout_6.addWidget(self.label_foto_colab)
+
+        self.btn_alterar_foto_colab_as_perfil = QPushButton(self.frame_9)
+        self.btn_alterar_foto_colab_as_perfil.setObjectName(u"btn_alterar_foto_colab_as_perfil")
+        self.btn_alterar_foto_colab_as_perfil.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_perfil.setFont(font7)
+        self.btn_alterar_foto_colab_as_perfil.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_2)
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_perfil)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -13051,48 +13056,50 @@ class Ui_MainWindow(object):
         self.verticalLayout_291.addWidget(self.label_tabela_de_observacoes_obs_sigilosas_as)
 
         self.input_TableWidget_observacoes_sigilosas_as = QTableWidget(self.frame_437)
-        if (self.input_TableWidget_observacoes_sigilosas_as.columnCount() < 2):
-            self.input_TableWidget_observacoes_sigilosas_as.setColumnCount(2)
-        __qtablewidgetitem109 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(0, __qtablewidgetitem109)
-        __qtablewidgetitem110 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(1, __qtablewidgetitem110)
+        if (self.input_TableWidget_observacoes_sigilosas_as.columnCount() < 3):
+            self.input_TableWidget_observacoes_sigilosas_as.setColumnCount(3)
+        __qtablewidgetitem99 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(0, __qtablewidgetitem99)
+        __qtablewidgetitem100 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(1, __qtablewidgetitem100)
+        __qtablewidgetitem101 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(2, __qtablewidgetitem101)
         if (self.input_TableWidget_observacoes_sigilosas_as.rowCount() < 14):
             self.input_TableWidget_observacoes_sigilosas_as.setRowCount(14)
+        __qtablewidgetitem102 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(0, __qtablewidgetitem102)
+        __qtablewidgetitem103 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(1, __qtablewidgetitem103)
+        __qtablewidgetitem104 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(2, __qtablewidgetitem104)
+        __qtablewidgetitem105 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(3, __qtablewidgetitem105)
+        __qtablewidgetitem106 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(4, __qtablewidgetitem106)
+        __qtablewidgetitem107 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(5, __qtablewidgetitem107)
+        __qtablewidgetitem108 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(6, __qtablewidgetitem108)
+        __qtablewidgetitem109 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(7, __qtablewidgetitem109)
+        __qtablewidgetitem110 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(8, __qtablewidgetitem110)
         __qtablewidgetitem111 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(0, __qtablewidgetitem111)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(9, __qtablewidgetitem111)
         __qtablewidgetitem112 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(1, __qtablewidgetitem112)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(10, __qtablewidgetitem112)
         __qtablewidgetitem113 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(2, __qtablewidgetitem113)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(11, __qtablewidgetitem113)
         __qtablewidgetitem114 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(3, __qtablewidgetitem114)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(12, __qtablewidgetitem114)
         __qtablewidgetitem115 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(4, __qtablewidgetitem115)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(13, __qtablewidgetitem115)
         __qtablewidgetitem116 = QTableWidgetItem()
         self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(5, __qtablewidgetitem116)
         __qtablewidgetitem117 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(6, __qtablewidgetitem117)
+        self.input_TableWidget_observacoes_sigilosas_as.setItem(0, 2, __qtablewidgetitem117)
         __qtablewidgetitem118 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(7, __qtablewidgetitem118)
-        __qtablewidgetitem119 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(8, __qtablewidgetitem119)
-        __qtablewidgetitem120 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(9, __qtablewidgetitem120)
-        __qtablewidgetitem121 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(10, __qtablewidgetitem121)
-        __qtablewidgetitem122 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(11, __qtablewidgetitem122)
-        __qtablewidgetitem123 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(12, __qtablewidgetitem123)
-        __qtablewidgetitem124 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(13, __qtablewidgetitem124)
-        __qtablewidgetitem125 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setItem(0, 0, __qtablewidgetitem125)
-        __qtablewidgetitem126 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setItem(0, 1, __qtablewidgetitem126)
-        __qtablewidgetitem127 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setItem(1, 0, __qtablewidgetitem127)
+        self.input_TableWidget_observacoes_sigilosas_as.setItem(1, 1, __qtablewidgetitem118)
         self.input_TableWidget_observacoes_sigilosas_as.setObjectName(u"input_TableWidget_observacoes_sigilosas_as")
         self.input_TableWidget_observacoes_sigilosas_as.setFont(font)
         self.input_TableWidget_observacoes_sigilosas_as.setLayoutDirection(Qt.LeftToRight)
@@ -14241,41 +14248,46 @@ class Ui_MainWindow(object):
 
         self.frame_258 = QFrame(self.frame_194)
         self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(125, 200))
-        self.frame_258.setMaximumSize(QSize(125, 200))
+        self.frame_258.setMinimumSize(QSize(240, 240))
+        self.frame_258.setMaximumSize(QSize(240, 240))
         self.frame_258.setFrameShape(QFrame.StyledPanel)
         self.frame_258.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_179 = QVBoxLayout(self.frame_258)
-        self.verticalLayout_179.setSpacing(0)
-        self.verticalLayout_179.setObjectName(u"verticalLayout_179")
-        self.verticalLayout_179.setContentsMargins(0, 0, 0, 0)
-        self.input_foto_colaborador_as = QPushButton(self.frame_258)
-        self.input_foto_colaborador_as.setObjectName(u"input_foto_colaborador_as")
-        self.input_foto_colaborador_as.setMinimumSize(QSize(125, 153))
-        self.input_foto_colaborador_as.setMaximumSize(QSize(125, 153))
-        self.input_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        icon32 = QIcon()
-        icon32.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.input_foto_colaborador_as.setIcon(icon32)
-        self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
-
-        self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
-
+        self.verticalLayout_14 = QVBoxLayout(self.frame_258)
+        self.verticalLayout_14.setSpacing(0)
+        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
+        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
         self.frame_259 = QFrame(self.frame_258)
         self.frame_259.setObjectName(u"frame_259")
         self.frame_259.setStyleSheet(u"background-color: rgb(243, 185, 191);")
         self.frame_259.setFrameShape(QFrame.StyledPanel)
         self.frame_259.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_178 = QVBoxLayout(self.frame_259)
-        self.verticalLayout_178.setObjectName(u"verticalLayout_178")
-        self.verticalLayout_178.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_259)
+        self.verticalLayout_12.setSpacing(0)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
+        self.label_foto_colaborador_as = QLabel(self.frame_259)
+        self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
+        self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
+        self.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
 
-        self.verticalLayout_179.addWidget(self.frame_259)
+        self.verticalLayout_12.addWidget(self.label_foto_colaborador_as)
+
+        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_259)
+        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
+        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(120, 40))
+        self.btn_tirar_foto_colaborador_as.setFont(font9)
+        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_12.addWidget(self.btn_tirar_foto_colaborador_as)
+
+
+        self.verticalLayout_14.addWidget(self.frame_259)
 
         self.verticalSpacer = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_179.addItem(self.verticalSpacer)
 
 
         self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
@@ -22030,6 +22042,17 @@ class Ui_MainWindow(object):
         self.frame_381.setMaximumSize(QSize(80, 16777215))
         self.frame_381.setFrameShape(QFrame.StyledPanel)
         self.frame_381.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_514 = QVBoxLayout(self.frame_381)
+        self.verticalLayout_514.setObjectName(u"verticalLayout_514")
+        self.input_alterar_id_usuario_as = QLineEdit(self.frame_381)
+        self.input_alterar_id_usuario_as.setObjectName(u"input_alterar_id_usuario_as")
+        self.input_alterar_id_usuario_as.setEnabled(False)
+        self.input_alterar_id_usuario_as.setMaximumSize(QSize(0, 0))
+        self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_514.addWidget(self.input_alterar_id_usuario_as)
+
 
         self.horizontalLayout_129.addWidget(self.frame_381)
 
@@ -23560,7 +23583,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.btn_alterar_foto_colab_as_2.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
+        self.label_foto_colab.setText(QCoreApplication.translate("MainWindow", u"", None))
+        self.btn_alterar_foto_colab_as_perfil.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
@@ -23898,38 +23922,40 @@ class Ui_MainWindow(object):
         self.input_obito_paciente_nao_as.setText(QCoreApplication.translate("MainWindow", u"N\u00e3o", None))
         self.label_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es/informa\u00e7\u00f5es gerais", None))
         self.label_tabela_de_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("MainWindow", u"Tabela de Observa\u00e7\u00f5es", None))
-        ___qtablewidgetitem97 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem97.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-        ___qtablewidgetitem98 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem98.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00e3o", None));
-        ___qtablewidgetitem99 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(0)
-        ___qtablewidgetitem99.setText(QCoreApplication.translate("MainWindow", u"1", None));
-        ___qtablewidgetitem100 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(1)
-        ___qtablewidgetitem100.setText(QCoreApplication.translate("MainWindow", u"2", None));
-        ___qtablewidgetitem101 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(2)
-        ___qtablewidgetitem101.setText(QCoreApplication.translate("MainWindow", u"3", None));
-        ___qtablewidgetitem102 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(3)
-        ___qtablewidgetitem102.setText(QCoreApplication.translate("MainWindow", u"4", None));
-        ___qtablewidgetitem103 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(4)
-        ___qtablewidgetitem103.setText(QCoreApplication.translate("MainWindow", u"5", None));
-        ___qtablewidgetitem104 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(5)
-        ___qtablewidgetitem104.setText(QCoreApplication.translate("MainWindow", u"6", None));
-        ___qtablewidgetitem105 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(6)
-        ___qtablewidgetitem105.setText(QCoreApplication.translate("MainWindow", u"7", None));
-        ___qtablewidgetitem106 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(7)
-        ___qtablewidgetitem106.setText(QCoreApplication.translate("MainWindow", u"8", None));
-        ___qtablewidgetitem107 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(8)
-        ___qtablewidgetitem107.setText(QCoreApplication.translate("MainWindow", u"9", None));
-        ___qtablewidgetitem108 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(9)
-        ___qtablewidgetitem108.setText(QCoreApplication.translate("MainWindow", u"10", None));
-        ___qtablewidgetitem109 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(10)
-        ___qtablewidgetitem109.setText(QCoreApplication.translate("MainWindow", u"11", None));
-        ___qtablewidgetitem110 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(11)
-        ___qtablewidgetitem110.setText(QCoreApplication.translate("MainWindow", u"12", None));
-        ___qtablewidgetitem111 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(12)
-        ___qtablewidgetitem111.setText(QCoreApplication.translate("MainWindow", u"13", None));
-        ___qtablewidgetitem112 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(13)
-        ___qtablewidgetitem112.setText(QCoreApplication.translate("MainWindow", u"14", None));
+        ___qtablewidgetitem87 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem88 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem89 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem89.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00e3o", None));
+        ___qtablewidgetitem90 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(0)
+        ___qtablewidgetitem90.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem91 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(1)
+        ___qtablewidgetitem91.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem92 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(2)
+        ___qtablewidgetitem92.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem93 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(3)
+        ___qtablewidgetitem93.setText(QCoreApplication.translate("MainWindow", u"4", None));
+        ___qtablewidgetitem94 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(4)
+        ___qtablewidgetitem94.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        ___qtablewidgetitem95 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(5)
+        ___qtablewidgetitem95.setText(QCoreApplication.translate("MainWindow", u"6", None));
+        ___qtablewidgetitem96 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(6)
+        ___qtablewidgetitem96.setText(QCoreApplication.translate("MainWindow", u"7", None));
+        ___qtablewidgetitem97 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(7)
+        ___qtablewidgetitem97.setText(QCoreApplication.translate("MainWindow", u"8", None));
+        ___qtablewidgetitem98 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(8)
+        ___qtablewidgetitem98.setText(QCoreApplication.translate("MainWindow", u"9", None));
+        ___qtablewidgetitem99 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(9)
+        ___qtablewidgetitem99.setText(QCoreApplication.translate("MainWindow", u"10", None));
+        ___qtablewidgetitem100 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(10)
+        ___qtablewidgetitem100.setText(QCoreApplication.translate("MainWindow", u"11", None));
+        ___qtablewidgetitem101 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(11)
+        ___qtablewidgetitem101.setText(QCoreApplication.translate("MainWindow", u"12", None));
+        ___qtablewidgetitem102 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(12)
+        ___qtablewidgetitem102.setText(QCoreApplication.translate("MainWindow", u"13", None));
+        ___qtablewidgetitem103 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(13)
+        ___qtablewidgetitem103.setText(QCoreApplication.translate("MainWindow", u"14", None));
 
         __sortingEnabled4 = self.input_TableWidget_observacoes_sigilosas_as.isSortingEnabled()
         self.input_TableWidget_observacoes_sigilosas_as.setSortingEnabled(False)
@@ -24013,7 +24039,8 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
-        self.input_foto_colaborador_as.setText("")
+        self.label_foto_colaborador_as.setText("")
+        self.btn_tirar_foto_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tirar Foto", None))
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
