@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -13348,7 +13348,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_11">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>3</number>
                  </property>
                  <widget class="QWidget" name="page_principal_fisio"/>
                  <widget class="QWidget" name="page_relatorio_fisio">
@@ -18039,7 +18039,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>15</number>
+                      <number>5</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -22148,6 +22148,56 @@ color: rgb(236, 132, 140);</string>
                                        <height>16777215</height>
                                       </size>
                                      </property>
+                                     <property name="alternatingRowColors">
+                                      <bool>true</bool>
+                                     </property>
+                                     <property name="sortingEnabled">
+                                      <bool>true</bool>
+                                     </property>
+                                     <property name="rowCount">
+                                      <number>20</number>
+                                     </property>
+                                     <property name="columnCount">
+                                      <number>10</number>
+                                     </property>
+                                     <attribute name="horizontalHeaderVisible">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderCascadingSectionResizes">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="horizontalHeaderDefaultSectionSize">
+                                      <number>150</number>
+                                     </attribute>
+                                     <attribute name="verticalHeaderVisible">
+                                      <bool>false</bool>
+                                     </attribute>
+                                     <attribute name="verticalHeaderDefaultSectionSize">
+                                      <number>50</number>
+                                     </attribute>
+                                     <attribute name="verticalHeaderHighlightSections">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
                                      <column>
                                       <property name="text">
                                        <string>Nome</string>
@@ -47882,7 +47932,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>2</number>
+                                <number>1</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">

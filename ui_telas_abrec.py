@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecKfqNMt.ui'
+## Form generated from reading UI file 'telas_abrecixwnLI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -650,6 +650,8 @@ class Ui_MainWindow(object):
         self.input_cpf_agendamento_nutri.setMinimumSize(QSize(0, 30))
         self.input_cpf_agendamento_nutri.setMaximumSize(QSize(16777215, 16777215))
         self.input_cpf_agendamento_nutri.setFont(font)
+        self.input_cpf_agendamento_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_cpf_agendamento_nutri.setMaxLength(11)
 
         self.verticalLayout_411.addWidget(self.input_cpf_agendamento_nutri)
@@ -711,7 +713,7 @@ class Ui_MainWindow(object):
                         "r: rgb(249, 217, 221);   \n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"../../../.././icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_agendamento_nutri.setIcon(icon7)
 
         self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
@@ -750,8 +752,8 @@ class Ui_MainWindow(object):
         self.input_nome_agendamento_nutri.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_nome_agendamento_nutri.setLayoutDirection(Qt.LeftToRight)
         self.input_nome_agendamento_nutri.setAutoFillBackground(False)
-        self.input_nome_agendamento_nutri.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
-"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_nome_agendamento_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_nome_agendamento_nutri.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
         self.input_nome_agendamento_nutri.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.input_nome_agendamento_nutri.setProperty("calendarPopup", False)
@@ -785,6 +787,8 @@ class Ui_MainWindow(object):
         self.input_telefone_agendamento_nutri.setObjectName(u"input_telefone_agendamento_nutri")
         self.input_telefone_agendamento_nutri.setMinimumSize(QSize(0, 30))
         self.input_telefone_agendamento_nutri.setMaximumSize(QSize(16777215, 30))
+        self.input_telefone_agendamento_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_telefone_agendamento_nutri.setMaxLength(9)
 
         self.verticalLayout_414.addWidget(self.input_telefone_agendamento_nutri)
@@ -823,6 +827,8 @@ class Ui_MainWindow(object):
         self.input_clinica_agendamento_nutri.setObjectName(u"input_clinica_agendamento_nutri")
         self.input_clinica_agendamento_nutri.setMinimumSize(QSize(0, 30))
         self.input_clinica_agendamento_nutri.setMaximumSize(QSize(16777215, 30))
+        self.input_clinica_agendamento_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_416.addWidget(self.input_clinica_agendamento_nutri)
 
@@ -1049,8 +1055,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.input_anotacao_agendamento_nutri.sizePolicy().hasHeightForWidth())
         self.input_anotacao_agendamento_nutri.setSizePolicy(sizePolicy1)
         self.input_anotacao_agendamento_nutri.setMaximumSize(QSize(16777215, 80))
-        self.input_anotacao_agendamento_nutri.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"border-radius: 0.8em;")
+        self.input_anotacao_agendamento_nutri.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTextEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_420.addWidget(self.input_anotacao_agendamento_nutri)
 
@@ -1140,6 +1146,8 @@ class Ui_MainWindow(object):
         self.input_filtro_agendamento_nutri.setSizePolicy(sizePolicy5)
         self.input_filtro_agendamento_nutri.setMinimumSize(QSize(0, 0))
         self.input_filtro_agendamento_nutri.setFont(font8)
+        self.input_filtro_agendamento_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_422.addWidget(self.input_filtro_agendamento_nutri)
 
@@ -1241,7 +1249,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon8 = QIcon()
-        icon8.addFile(u"../../../.././icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_agenda_nutri.setIcon(icon8)
         self.btn_alterar_agenda_nutri.setIconSize(QSize(24, 24))
 
@@ -1258,7 +1266,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon9 = QIcon()
-        icon9.addFile(u"../../../.././icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_agenda_nutri.setIcon(icon9)
         self.btn_cancelar_agenda_nutri.setIconSize(QSize(24, 24))
 
@@ -1359,6 +1367,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_190.setObjectName(u"horizontalLayout_190")
         self.input_cpf_pagina_consulta_geral_nutri = QLineEdit(self.frame_575)
         self.input_cpf_pagina_consulta_geral_nutri.setObjectName(u"input_cpf_pagina_consulta_geral_nutri")
+        self.input_cpf_pagina_consulta_geral_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_190.addWidget(self.input_cpf_pagina_consulta_geral_nutri)
 
@@ -1427,6 +1437,8 @@ class Ui_MainWindow(object):
 
         self.input_nome_pagina_consulta_geral_nutri = QLineEdit(self.frame_576)
         self.input_nome_pagina_consulta_geral_nutri.setObjectName(u"input_nome_pagina_consulta_geral_nutri")
+        self.input_nome_pagina_consulta_geral_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_385.addWidget(self.input_nome_pagina_consulta_geral_nutri)
 
@@ -1447,6 +1459,8 @@ class Ui_MainWindow(object):
 
         self.input_contato_pagina_consulta_geral_nutri = QLineEdit(self.frame_577)
         self.input_contato_pagina_consulta_geral_nutri.setObjectName(u"input_contato_pagina_consulta_geral_nutri")
+        self.input_contato_pagina_consulta_geral_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_contato_pagina_consulta_geral_nutri.setMaxLength(11)
 
         self.verticalLayout_386.addWidget(self.input_contato_pagina_consulta_geral_nutri)
@@ -1468,6 +1482,8 @@ class Ui_MainWindow(object):
 
         self.input_clinica_pagina_consulta_geral_nutri = QLineEdit(self.frame_578)
         self.input_clinica_pagina_consulta_geral_nutri.setObjectName(u"input_clinica_pagina_consulta_geral_nutri")
+        self.input_clinica_pagina_consulta_geral_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_387.addWidget(self.input_clinica_pagina_consulta_geral_nutri)
 
@@ -1522,7 +1538,8 @@ class Ui_MainWindow(object):
         self.input_tipo_tratamento_consulta_nutri.setMaximumSize(QSize(150, 30))
         self.input_tipo_tratamento_consulta_nutri.setFont(font)
         self.input_tipo_tratamento_consulta_nutri.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_tipo_tratamento_consulta_nutri.setStyleSheet(u"")
+        self.input_tipo_tratamento_consulta_nutri.setStyleSheet(u"QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QComboBox:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_442.addWidget(self.input_tipo_tratamento_consulta_nutri)
 
@@ -1560,6 +1577,8 @@ class Ui_MainWindow(object):
         self.input_patologia_base_consulta_nutri.setMaximumSize(QSize(290, 30))
         self.input_patologia_base_consulta_nutri.setFont(font)
         self.input_patologia_base_consulta_nutri.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_patologia_base_consulta_nutri.setStyleSheet(u"QComboBox{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QComboBox:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_443.addWidget(self.input_patologia_base_consulta_nutri)
 
@@ -1612,6 +1631,8 @@ class Ui_MainWindow(object):
         self.input_peso_consulta_nutri.setMinimumSize(QSize(0, 30))
         self.input_peso_consulta_nutri.setMaximumSize(QSize(150, 30))
         self.input_peso_consulta_nutri.setFont(font)
+        self.input_peso_consulta_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_445.addWidget(self.input_peso_consulta_nutri)
 
@@ -1639,6 +1660,8 @@ class Ui_MainWindow(object):
         self.input_altura_consulta_nutri.setMinimumSize(QSize(0, 30))
         self.input_altura_consulta_nutri.setMaximumSize(QSize(150, 30))
         self.input_altura_consulta_nutri.setFont(font)
+        self.input_altura_consulta_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_446.addWidget(self.input_altura_consulta_nutri)
 
@@ -1666,6 +1689,8 @@ class Ui_MainWindow(object):
         self.input_imc_consulta_nutri.setMinimumSize(QSize(0, 30))
         self.input_imc_consulta_nutri.setMaximumSize(QSize(150, 30))
         self.input_imc_consulta_nutri.setFont(font)
+        self.input_imc_consulta_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_447.addWidget(self.input_imc_consulta_nutri)
 
@@ -1764,6 +1789,8 @@ class Ui_MainWindow(object):
         self.input_hora_consulta_as_nutri = QLineEdit(self.frame_582)
         self.input_hora_consulta_as_nutri.setObjectName(u"input_hora_consulta_as_nutri")
         self.input_hora_consulta_as_nutri.setMaximumSize(QSize(120, 32))
+        self.input_hora_consulta_as_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_15.addWidget(self.input_hora_consulta_as_nutri)
 
@@ -1913,8 +1940,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_195.setObjectName(u"horizontalLayout_195")
         self.lineEdit = QLineEdit(self.frame_589)
         self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"color: #EC848C;\n"
-"")
+        self.lineEdit.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_195.addWidget(self.lineEdit)
 
@@ -2913,6 +2940,8 @@ class Ui_MainWindow(object):
         self.input_cpf_agendamento_psi.setMinimumSize(QSize(0, 30))
         self.input_cpf_agendamento_psi.setMaximumSize(QSize(16777215, 16777215))
         self.input_cpf_agendamento_psi.setFont(font)
+        self.input_cpf_agendamento_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_cpf_agendamento_psi.setMaxLength(11)
 
         self.verticalLayout_426.addWidget(self.input_cpf_agendamento_psi)
@@ -3005,8 +3034,8 @@ class Ui_MainWindow(object):
         self.input_nome_agendamento_psi.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_nome_agendamento_psi.setLayoutDirection(Qt.LeftToRight)
         self.input_nome_agendamento_psi.setAutoFillBackground(False)
-        self.input_nome_agendamento_psi.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
-"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_nome_agendamento_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_nome_agendamento_psi.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
         self.input_nome_agendamento_psi.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.input_nome_agendamento_psi.setProperty("calendarPopup", False)
@@ -3037,6 +3066,8 @@ class Ui_MainWindow(object):
         self.input_telefone_agendamento_psi.setObjectName(u"input_telefone_agendamento_psi")
         self.input_telefone_agendamento_psi.setMinimumSize(QSize(0, 30))
         self.input_telefone_agendamento_psi.setMaximumSize(QSize(16777215, 30))
+        self.input_telefone_agendamento_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_telefone_agendamento_psi.setMaxLength(9)
 
         self.verticalLayout_429.addWidget(self.input_telefone_agendamento_psi)
@@ -3075,6 +3106,8 @@ class Ui_MainWindow(object):
         self.input_clinica_agendamento_psi.setObjectName(u"input_clinica_agendamento_psi")
         self.input_clinica_agendamento_psi.setMinimumSize(QSize(0, 30))
         self.input_clinica_agendamento_psi.setMaximumSize(QSize(16777215, 30))
+        self.input_clinica_agendamento_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_431.addWidget(self.input_clinica_agendamento_psi)
 
@@ -3268,8 +3301,8 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.input_anotacao_agendamento_psi.sizePolicy().hasHeightForWidth())
         self.input_anotacao_agendamento_psi.setSizePolicy(sizePolicy1)
         self.input_anotacao_agendamento_psi.setMaximumSize(QSize(16777215, 80))
-        self.input_anotacao_agendamento_psi.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
-"border-radius: 0.8em;")
+        self.input_anotacao_agendamento_psi.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QTextEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_435.addWidget(self.input_anotacao_agendamento_psi)
 
@@ -3353,6 +3386,8 @@ class Ui_MainWindow(object):
         self.input_filtro_agendamento_psi.setSizePolicy(sizePolicy5)
         self.input_filtro_agendamento_psi.setMinimumSize(QSize(0, 0))
         self.input_filtro_agendamento_psi.setFont(font8)
+        self.input_filtro_agendamento_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_437.addWidget(self.input_filtro_agendamento_psi)
 
@@ -3573,6 +3608,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_200.setObjectName(u"horizontalLayout_200")
         self.input_cpf_pagina_consulta_geral_psi = QLineEdit(self.frame_599)
         self.input_cpf_pagina_consulta_geral_psi.setObjectName(u"input_cpf_pagina_consulta_geral_psi")
+        self.input_cpf_pagina_consulta_geral_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_200.addWidget(self.input_cpf_pagina_consulta_geral_psi)
 
@@ -3639,6 +3676,8 @@ class Ui_MainWindow(object):
 
         self.input_nome_pagina_consulta_geral_psi = QLineEdit(self.frame_600)
         self.input_nome_pagina_consulta_geral_psi.setObjectName(u"input_nome_pagina_consulta_geral_psi")
+        self.input_nome_pagina_consulta_geral_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_397.addWidget(self.input_nome_pagina_consulta_geral_psi)
 
@@ -3659,6 +3698,8 @@ class Ui_MainWindow(object):
 
         self.input_contato_pagina_consulta_geral_psi = QLineEdit(self.frame_601)
         self.input_contato_pagina_consulta_geral_psi.setObjectName(u"input_contato_pagina_consulta_geral_psi")
+        self.input_contato_pagina_consulta_geral_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_contato_pagina_consulta_geral_psi.setMaxLength(11)
 
         self.verticalLayout_398.addWidget(self.input_contato_pagina_consulta_geral_psi)
@@ -3680,6 +3721,8 @@ class Ui_MainWindow(object):
 
         self.input_clinica_pagina_consulta_geral_psi = QLineEdit(self.frame_602)
         self.input_clinica_pagina_consulta_geral_psi.setObjectName(u"input_clinica_pagina_consulta_geral_psi")
+        self.input_clinica_pagina_consulta_geral_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_399.addWidget(self.input_clinica_pagina_consulta_geral_psi)
 
@@ -3760,6 +3803,8 @@ class Ui_MainWindow(object):
         self.input_hora_consulta_as_psi = QLineEdit(self.frame_606)
         self.input_hora_consulta_as_psi.setObjectName(u"input_hora_consulta_as_psi")
         self.input_hora_consulta_as_psi.setMaximumSize(QSize(120, 32))
+        self.input_hora_consulta_as_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_17.addWidget(self.input_hora_consulta_as_psi)
 
@@ -3908,8 +3953,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_205.setObjectName(u"horizontalLayout_205")
         self.input_filtro_pagina_consulta_geral_psi = QLineEdit(self.frame_613)
         self.input_filtro_pagina_consulta_geral_psi.setObjectName(u"input_filtro_pagina_consulta_geral_psi")
-        self.input_filtro_pagina_consulta_geral_psi.setStyleSheet(u"color: #EC848C;\n"
-"")
+        self.input_filtro_pagina_consulta_geral_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_205.addWidget(self.input_filtro_pagina_consulta_geral_psi)
 
@@ -4967,6 +5012,8 @@ class Ui_MainWindow(object):
         self.input_idade_inicial_relatorio_farm.setObjectName(u"input_idade_inicial_relatorio_farm")
         self.input_idade_inicial_relatorio_farm.setMinimumSize(QSize(60, 30))
         self.input_idade_inicial_relatorio_farm.setMaximumSize(QSize(60, 30))
+        self.input_idade_inicial_relatorio_farm.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_38.addWidget(self.input_idade_inicial_relatorio_farm)
 
@@ -4982,6 +5029,8 @@ class Ui_MainWindow(object):
         self.input_idade_final_relatorio_farm = QLineEdit(self.frame_728)
         self.input_idade_final_relatorio_farm.setObjectName(u"input_idade_final_relatorio_farm")
         self.input_idade_final_relatorio_farm.setMaximumSize(QSize(60, 30))
+        self.input_idade_final_relatorio_farm.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_38.addWidget(self.input_idade_final_relatorio_farm)
 
@@ -5071,6 +5120,8 @@ class Ui_MainWindow(object):
         self.input_buscar_dados_relatorio_farm.setObjectName(u"input_buscar_dados_relatorio_farm")
         self.input_buscar_dados_relatorio_farm.setMinimumSize(QSize(700, 30))
         self.input_buscar_dados_relatorio_farm.setMaximumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorio_farm.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_244.addWidget(self.input_buscar_dados_relatorio_farm)
 
@@ -6058,6 +6109,8 @@ class Ui_MainWindow(object):
         self.input_cpf_agendamento_fisio.setMinimumSize(QSize(0, 30))
         self.input_cpf_agendamento_fisio.setMaximumSize(QSize(16777215, 16777215))
         self.input_cpf_agendamento_fisio.setFont(font)
+        self.input_cpf_agendamento_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_cpf_agendamento_fisio.setMaxLength(11)
 
         self.verticalLayout_353.addWidget(self.input_cpf_agendamento_fisio)
@@ -6150,8 +6203,8 @@ class Ui_MainWindow(object):
         self.input_nome_agendamento_fisio.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_nome_agendamento_fisio.setLayoutDirection(Qt.LeftToRight)
         self.input_nome_agendamento_fisio.setAutoFillBackground(False)
-        self.input_nome_agendamento_fisio.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
-"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_nome_agendamento_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_nome_agendamento_fisio.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
         self.input_nome_agendamento_fisio.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.input_nome_agendamento_fisio.setProperty("calendarPopup", False)
@@ -6182,6 +6235,8 @@ class Ui_MainWindow(object):
         self.input_telefone_agendamento_fisio.setObjectName(u"input_telefone_agendamento_fisio")
         self.input_telefone_agendamento_fisio.setMinimumSize(QSize(0, 30))
         self.input_telefone_agendamento_fisio.setMaximumSize(QSize(16777215, 30))
+        self.input_telefone_agendamento_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_telefone_agendamento_fisio.setMaxLength(9)
 
         self.verticalLayout_362.addWidget(self.input_telefone_agendamento_fisio)
@@ -6220,6 +6275,8 @@ class Ui_MainWindow(object):
         self.input_clinica_agendamento_fisio.setObjectName(u"input_clinica_agendamento_fisio")
         self.input_clinica_agendamento_fisio.setMinimumSize(QSize(0, 30))
         self.input_clinica_agendamento_fisio.setMaximumSize(QSize(16777215, 30))
+        self.input_clinica_agendamento_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_365.addWidget(self.input_clinica_agendamento_fisio)
 
@@ -6257,6 +6314,7 @@ class Ui_MainWindow(object):
         self.input_profissional_as_agendamento_fisio = QRadioButton(self.frame_220)
         self.input_profissional_as_agendamento_fisio.setObjectName(u"input_profissional_as_agendamento_fisio")
         self.input_profissional_as_agendamento_fisio.setFont(font6)
+        self.input_profissional_as_agendamento_fisio.setStyleSheet(u"")
 
         self.verticalLayout_366.addWidget(self.input_profissional_as_agendamento_fisio)
 
@@ -6491,6 +6549,8 @@ class Ui_MainWindow(object):
         self.input_filtro_agendamento_fisio.setSizePolicy(sizePolicy5)
         self.input_filtro_agendamento_fisio.setMinimumSize(QSize(0, 0))
         self.input_filtro_agendamento_fisio.setFont(font8)
+        self.input_filtro_agendamento_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_407.addWidget(self.input_filtro_agendamento_fisio)
 
@@ -6711,6 +6771,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_180.setObjectName(u"horizontalLayout_180")
         self.input_cpf_pagina_consulta_geral_fisio = QLineEdit(self.frame_551)
         self.input_cpf_pagina_consulta_geral_fisio.setObjectName(u"input_cpf_pagina_consulta_geral_fisio")
+        self.input_cpf_pagina_consulta_geral_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_180.addWidget(self.input_cpf_pagina_consulta_geral_fisio)
 
@@ -6777,6 +6839,8 @@ class Ui_MainWindow(object):
 
         self.input_nome_pagina_consulta_geral_fisio = QLineEdit(self.frame_552)
         self.input_nome_pagina_consulta_geral_fisio.setObjectName(u"input_nome_pagina_consulta_geral_fisio")
+        self.input_nome_pagina_consulta_geral_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_373.addWidget(self.input_nome_pagina_consulta_geral_fisio)
 
@@ -6797,6 +6861,8 @@ class Ui_MainWindow(object):
 
         self.input_contato_pagina_consulta_geral_fisio = QLineEdit(self.frame_553)
         self.input_contato_pagina_consulta_geral_fisio.setObjectName(u"input_contato_pagina_consulta_geral_fisio")
+        self.input_contato_pagina_consulta_geral_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_contato_pagina_consulta_geral_fisio.setMaxLength(11)
 
         self.verticalLayout_374.addWidget(self.input_contato_pagina_consulta_geral_fisio)
@@ -6818,6 +6884,8 @@ class Ui_MainWindow(object):
 
         self.input_clinica_pagina_consulta_geral_fisio = QLineEdit(self.frame_554)
         self.input_clinica_pagina_consulta_geral_fisio.setObjectName(u"input_clinica_pagina_consulta_geral_fisio")
+        self.input_clinica_pagina_consulta_geral_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_375.addWidget(self.input_clinica_pagina_consulta_geral_fisio)
 
@@ -6898,6 +6966,8 @@ class Ui_MainWindow(object):
         self.input_hora_consulta_as_fisio = QLineEdit(self.frame_558)
         self.input_hora_consulta_as_fisio.setObjectName(u"input_hora_consulta_as_fisio")
         self.input_hora_consulta_as_fisio.setMaximumSize(QSize(120, 32))
+        self.input_hora_consulta_as_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.verticalLayout_12.addWidget(self.input_hora_consulta_as_fisio)
 
@@ -7046,8 +7116,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_185.setObjectName(u"horizontalLayout_185")
         self.input_filtro_pagina_consulta_geral_fisio = QLineEdit(self.frame_565)
         self.input_filtro_pagina_consulta_geral_fisio.setObjectName(u"input_filtro_pagina_consulta_geral_fisio")
-        self.input_filtro_pagina_consulta_geral_fisio.setStyleSheet(u"color: #EC848C;\n"
-"")
+        self.input_filtro_pagina_consulta_geral_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
         self.horizontalLayout_185.addWidget(self.input_filtro_pagina_consulta_geral_fisio)
 
@@ -8948,9 +9018,21 @@ class Ui_MainWindow(object):
         self.tableWidget_relatorio_cuidadores_as.setHorizontalHeaderItem(8, __qtablewidgetitem96)
         __qtablewidgetitem97 = QTableWidgetItem()
         self.tableWidget_relatorio_cuidadores_as.setHorizontalHeaderItem(9, __qtablewidgetitem97)
+        if (self.tableWidget_relatorio_cuidadores_as.rowCount() < 20):
+            self.tableWidget_relatorio_cuidadores_as.setRowCount(20)
         self.tableWidget_relatorio_cuidadores_as.setObjectName(u"tableWidget_relatorio_cuidadores_as")
         self.tableWidget_relatorio_cuidadores_as.setMinimumSize(QSize(0, 0))
         self.tableWidget_relatorio_cuidadores_as.setMaximumSize(QSize(16777215, 16777215))
+        self.tableWidget_relatorio_cuidadores_as.setAlternatingRowColors(True)
+        self.tableWidget_relatorio_cuidadores_as.setSortingEnabled(True)
+        self.tableWidget_relatorio_cuidadores_as.setRowCount(20)
+        self.tableWidget_relatorio_cuidadores_as.setColumnCount(10)
+        self.tableWidget_relatorio_cuidadores_as.horizontalHeader().setVisible(True)
+        self.tableWidget_relatorio_cuidadores_as.horizontalHeader().setCascadingSectionResizes(True)
+        self.tableWidget_relatorio_cuidadores_as.horizontalHeader().setDefaultSectionSize(150)
+        self.tableWidget_relatorio_cuidadores_as.verticalHeader().setVisible(False)
+        self.tableWidget_relatorio_cuidadores_as.verticalHeader().setDefaultSectionSize(50)
+        self.tableWidget_relatorio_cuidadores_as.verticalHeader().setHighlightSections(True)
 
         self.verticalLayout_511.addWidget(self.tableWidget_relatorio_cuidadores_as)
 
