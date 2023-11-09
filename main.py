@@ -2840,7 +2840,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
-        cpf = self.ui.input_cpf_agendamento_as.text()
+        print(type(id_matricula))
+        cpf_tmp = self.ui.input_cpf_agendamento_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         nome = self.ui.input_nome_agendamento_as.text()
         telefone = self.ui.input_telefone_agendamento_as.text()
         clinica = self.ui.input_clinica_agendamento_as.text()
@@ -3746,6 +3748,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def puxar_consulta(self):
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
+        print("consulta adm ->", id_usuario)
         result = self.db.buscar_info_consulta(id_usuario)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   

@@ -1090,10 +1090,10 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
-                                INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
+                                SELECT consulta.id_consulta,consulta.data_consulta,consulta.situacao,consulta.observacao FROM consulta 
+                                INNER JOIN usuario ON usuario.id_matricula = consulta.id_matricula
                                 LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
-                                usuario.id_usuario LIKE '{id_usuario}';
+                                usuario.id_usuario '{id_usuario}';
                                 """)
             result = self.cursor.fetchall()
             return result
@@ -1539,16 +1539,17 @@ class DataBase():
     
     def cadastro_agendamento(self, agendamento):
         self.connect()
-        print(agendamento)
+        print("args ->",agendamento)
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
-            self.cursor.execute('INSERT INTO agendamento(id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1], agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute("INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);", args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            return "ERRO",str(err)
+            erro = str(err)
+            print(erro)
 
     def alterar_agendamento(self, campo):
         self.connect()
