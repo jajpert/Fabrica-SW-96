@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecixwnLI.ui'
+## Form generated from reading UI file 'telas_abrecgYyyAv.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -18,10 +18,10 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QAbstractItemView, QAbstractSpinBox, QApplication, QCheckBox,
     QComboBox, QDateEdit, QDateTimeEdit, QFrame,
     QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QRadioButton,
-    QSizePolicy, QSpacerItem, QSpinBox, QStackedWidget,
-    QTableWidget, QTableWidgetItem, QTextEdit, QTimeEdit,
-    QToolButton, QVBoxLayout, QWidget)
+    QLayout, QLineEdit, QMainWindow, QPushButton,
+    QRadioButton, QSizePolicy, QSpacerItem, QSpinBox,
+    QStackedWidget, QTableWidget, QTableWidgetItem, QTextEdit,
+    QTimeEdit, QToolButton, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -713,7 +713,7 @@ class Ui_MainWindow(object):
                         "r: rgb(249, 217, 221);   \n"
 "}")
         icon7 = QIcon()
-        icon7.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u"../../../.././icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_agendamento_nutri.setIcon(icon7)
 
         self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
@@ -1249,7 +1249,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon8 = QIcon()
-        icon8.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u"../../../.././icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_agenda_nutri.setIcon(icon8)
         self.btn_alterar_agenda_nutri.setIconSize(QSize(24, 24))
 
@@ -1266,7 +1266,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon9 = QIcon()
-        icon9.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u"../../../.././icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_agenda_nutri.setIcon(icon9)
         self.btn_cancelar_agenda_nutri.setIconSize(QSize(24, 24))
 
@@ -7281,21 +7281,16 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.label_foto_colab = QLabel(self.frame_9)
-        self.label_foto_colab.setObjectName(u"label_foto_colab")
-
-        self.verticalLayout_6.addWidget(self.label_foto_colab)
-
-        self.btn_alterar_foto_colab_as_perfil = QPushButton(self.frame_9)
-        self.btn_alterar_foto_colab_as_perfil.setObjectName(u"btn_alterar_foto_colab_as_perfil")
-        self.btn_alterar_foto_colab_as_perfil.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_perfil.setFont(font7)
-        self.btn_alterar_foto_colab_as_perfil.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_alterar_foto_colab_as_2 = QPushButton(self.frame_9)
+        self.btn_alterar_foto_colab_as_2.setObjectName(u"btn_alterar_foto_colab_as_2")
+        self.btn_alterar_foto_colab_as_2.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_2.setFont(font7)
+        self.btn_alterar_foto_colab_as_2.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_perfil)
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_2)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -11479,6 +11474,120 @@ class Ui_MainWindow(object):
         self.horizontalLayout_75.setSpacing(0)
         self.horizontalLayout_75.setObjectName(u"horizontalLayout_75")
         self.horizontalLayout_75.setContentsMargins(0, 0, 0, 0)
+        self.frame_524 = QFrame(self.frame_5041)
+        self.frame_524.setObjectName(u"frame_524")
+        self.frame_524.setFrameShape(QFrame.StyledPanel)
+        self.frame_524.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_440 = QVBoxLayout(self.frame_524)
+        self.verticalLayout_440.setSpacing(0)
+        self.verticalLayout_440.setObjectName(u"verticalLayout_440")
+        self.verticalLayout_440.setContentsMargins(0, 0, 0, 0)
+        self.frame_659 = QFrame(self.frame_524)
+        self.frame_659.setObjectName(u"frame_659")
+        self.frame_659.setMinimumSize(QSize(180, 65))
+        self.frame_659.setMaximumSize(QSize(180, 65))
+        self.frame_659.setFrameShape(QFrame.StyledPanel)
+        self.frame_659.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_222 = QHBoxLayout(self.frame_659)
+        self.horizontalLayout_222.setSpacing(1)
+        self.horizontalLayout_222.setObjectName(u"horizontalLayout_222")
+        self.horizontalLayout_222.setContentsMargins(0, 0, 0, 1)
+        self.frame_662 = QFrame(self.frame_659)
+        self.frame_662.setObjectName(u"frame_662")
+        self.frame_662.setMinimumSize(QSize(135, 55))
+        self.frame_662.setMaximumSize(QSize(135, 55))
+        self.frame_662.setFrameShape(QFrame.StyledPanel)
+        self.frame_662.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_438 = QVBoxLayout(self.frame_662)
+        self.verticalLayout_438.setSpacing(0)
+        self.verticalLayout_438.setObjectName(u"verticalLayout_438")
+        self.verticalLayout_438.setContentsMargins(0, 0, 0, 0)
+        self.label_cpf_cadastro_retirada_beneficio = QLabel(self.frame_662)
+        self.label_cpf_cadastro_retirada_beneficio.setObjectName(u"label_cpf_cadastro_retirada_beneficio")
+        self.label_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(33, 20))
+        self.label_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(50, 20))
+        self.label_cpf_cadastro_retirada_beneficio.setFont(font)
+
+        self.verticalLayout_438.addWidget(self.label_cpf_cadastro_retirada_beneficio)
+
+        self.input_cpf_cadastro_retirada_beneficio = QLineEdit(self.frame_662)
+        self.input_cpf_cadastro_retirada_beneficio.setObjectName(u"input_cpf_cadastro_retirada_beneficio")
+        self.input_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(150, 30))
+        self.input_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(145, 30))
+        self.input_cpf_cadastro_retirada_beneficio.setFont(font)
+        self.input_cpf_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
+"QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
+"")
+        self.input_cpf_cadastro_retirada_beneficio.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_438.addWidget(self.input_cpf_cadastro_retirada_beneficio)
+
+
+        self.horizontalLayout_222.addWidget(self.frame_662)
+
+        self.frame_663 = QFrame(self.frame_659)
+        self.frame_663.setObjectName(u"frame_663")
+        self.frame_663.setMinimumSize(QSize(30, 58))
+        self.frame_663.setMaximumSize(QSize(30, 58))
+        self.frame_663.setFrameShape(QFrame.StyledPanel)
+        self.frame_663.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_439 = QVBoxLayout(self.frame_663)
+        self.verticalLayout_439.setSpacing(0)
+        self.verticalLayout_439.setObjectName(u"verticalLayout_439")
+        self.verticalLayout_439.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_43 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_439.addItem(self.verticalSpacer_43)
+
+        self.btn_buscar_cpf_cadastro_retirada_beneficio = QPushButton(self.frame_663)
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setObjectName(u"btn_buscar_cpf_cadastro_retirada_beneficio")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_cpf_cadastro_retirada_beneficio.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setSizePolicy(sizePolicy3)
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(25, 30))
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(25, 30))
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon14)
+
+        self.verticalLayout_439.addWidget(self.btn_buscar_cpf_cadastro_retirada_beneficio)
+
+
+        self.horizontalLayout_222.addWidget(self.frame_663)
+
+        self.horizontalSpacer_146 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_222.addItem(self.horizontalSpacer_146)
+
+
+        self.verticalLayout_440.addWidget(self.frame_659)
+
+
+        self.horizontalLayout_75.addWidget(self.frame_524)
+
         self.frame_519 = QFrame(self.frame_5041)
         self.frame_519.setObjectName(u"frame_519")
         self.frame_519.setFrameShape(QFrame.StyledPanel)
@@ -11487,39 +11596,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_92.setSpacing(0)
         self.horizontalLayout_92.setObjectName(u"horizontalLayout_92")
         self.horizontalLayout_92.setContentsMargins(0, 0, 0, 0)
-        self.frame_524 = QFrame(self.frame_519)
-        self.frame_524.setObjectName(u"frame_524")
-        self.frame_524.setMinimumSize(QSize(171, 53))
-        self.frame_524.setMaximumSize(QSize(198, 58))
-        self.frame_524.setFrameShape(QFrame.StyledPanel)
-        self.frame_524.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3631 = QVBoxLayout(self.frame_524)
-        self.verticalLayout_3631.setSpacing(0)
-        self.verticalLayout_3631.setObjectName(u"verticalLayout_3631")
-        self.verticalLayout_3631.setContentsMargins(0, 0, 0, 0)
-        self.label_cpf_cadastro_retirada_beneficio = QLabel(self.frame_524)
-        self.label_cpf_cadastro_retirada_beneficio.setObjectName(u"label_cpf_cadastro_retirada_beneficio")
-        self.label_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
-        self.label_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(180, 16777215))
-        self.label_cpf_cadastro_retirada_beneficio.setFont(font)
-
-        self.verticalLayout_3631.addWidget(self.label_cpf_cadastro_retirada_beneficio)
-
-        self.input_cpf_cadastro_retirada_beneficio = QLineEdit(self.frame_524)
-        self.input_cpf_cadastro_retirada_beneficio.setObjectName(u"input_cpf_cadastro_retirada_beneficio")
-        self.input_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
-        self.input_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_cpf_cadastro_retirada_beneficio.setFont(font)
-        self.input_cpf_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
-"QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
-"")
-        self.input_cpf_cadastro_retirada_beneficio.setMaxLength(14)
-
-        self.verticalLayout_3631.addWidget(self.input_cpf_cadastro_retirada_beneficio)
-
-
-        self.horizontalLayout_92.addWidget(self.frame_524)
-
         self.frame_1831 = QFrame(self.frame_519)
         self.frame_1831.setObjectName(u"frame_1831")
         self.frame_1831.setFrameShape(QFrame.StyledPanel)
@@ -11528,49 +11604,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_1321.setSpacing(0)
         self.verticalLayout_1321.setObjectName(u"verticalLayout_1321")
         self.verticalLayout_1321.setContentsMargins(0, 0, 0, 0)
-        self.btn_buscar_cpf_cadastro_retirada_beneficio = QPushButton(self.frame_1831)
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setObjectName(u"btn_buscar_cpf_cadastro_retirada_beneficio")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_cpf_cadastro_retirada_beneficio.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setSizePolicy(sizePolicy3)
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setStyleSheet(u"QPushButton{\n"
-"        background: rgb(243, 185, 191);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"		border-top-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221);   \n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"        background: rgb(255, 194, 201);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221); \n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;  \n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"        background: rgb(180, 106, 102);\n"
-"        border: 2px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"        colo"
-                        "r: rgb(249, 217, 221);   \n"
-"}")
-        self.btn_buscar_cpf_cadastro_retirada_beneficio.setIcon(icon14)
-
-        self.verticalLayout_1321.addWidget(self.btn_buscar_cpf_cadastro_retirada_beneficio)
-
 
         self.horizontalLayout_92.addWidget(self.frame_1831)
 
@@ -11823,7 +11856,7 @@ class Ui_MainWindow(object):
 
         self.frame_516 = QFrame(self.frame_5031)
         self.frame_516.setObjectName(u"frame_516")
-        self.frame_516.setMinimumSize(QSize(0, 0))
+        self.frame_516.setMinimumSize(QSize(30, 0))
         self.frame_516.setMaximumSize(QSize(16777215, 60))
         self.frame_516.setStyleSheet(u"")
         self.frame_516.setFrameShape(QFrame.StyledPanel)
@@ -11846,29 +11879,113 @@ class Ui_MainWindow(object):
         self.frame_514.setMaximumSize(QSize(198, 58))
         self.frame_514.setFrameShape(QFrame.StyledPanel)
         self.frame_514.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_357 = QVBoxLayout(self.frame_514)
+        self.horizontalLayout_19 = QHBoxLayout(self.frame_514)
+        self.horizontalLayout_19.setSpacing(0)
+        self.horizontalLayout_19.setObjectName(u"horizontalLayout_19")
+        self.horizontalLayout_19.setSizeConstraint(QLayout.SetMinimumSize)
+        self.horizontalLayout_19.setContentsMargins(0, 0, 0, 0)
+        self.frame_664 = QFrame(self.frame_514)
+        self.frame_664.setObjectName(u"frame_664")
+        self.frame_664.setMinimumSize(QSize(180, 65))
+        self.frame_664.setMaximumSize(QSize(180, 65))
+        self.frame_664.setFrameShape(QFrame.StyledPanel)
+        self.frame_664.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_223 = QHBoxLayout(self.frame_664)
+        self.horizontalLayout_223.setSpacing(0)
+        self.horizontalLayout_223.setObjectName(u"horizontalLayout_223")
+        self.horizontalLayout_223.setContentsMargins(0, 0, 0, 0)
+        self.frame_665 = QFrame(self.frame_664)
+        self.frame_665.setObjectName(u"frame_665")
+        self.frame_665.setMinimumSize(QSize(135, 55))
+        self.frame_665.setMaximumSize(QSize(111, 55))
+        self.frame_665.setFrameShape(QFrame.StyledPanel)
+        self.frame_665.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_357 = QVBoxLayout(self.frame_665)
         self.verticalLayout_357.setSpacing(0)
         self.verticalLayout_357.setObjectName(u"verticalLayout_357")
-        self.verticalLayout_357.setContentsMargins(0, 0, 0, 0)
-        self.label_codigo_beneficio_cadastro_retirada_beneficio = QLabel(self.frame_514)
+        self.verticalLayout_357.setContentsMargins(0, 0, 0, 17)
+        self.label_codigo_beneficio_cadastro_retirada_beneficio = QLabel(self.frame_665)
         self.label_codigo_beneficio_cadastro_retirada_beneficio.setObjectName(u"label_codigo_beneficio_cadastro_retirada_beneficio")
-        self.label_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
-        self.label_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(180, 16777215))
+        self.label_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(33, 20))
+        self.label_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(111, 20))
         self.label_codigo_beneficio_cadastro_retirada_beneficio.setFont(font)
 
         self.verticalLayout_357.addWidget(self.label_codigo_beneficio_cadastro_retirada_beneficio)
 
-        self.input_codigo_beneficio_cadastro_retirada_beneficio = QLineEdit(self.frame_514)
+        self.input_codigo_beneficio_cadastro_retirada_beneficio = QLineEdit(self.frame_665)
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setObjectName(u"input_codigo_beneficio_cadastro_retirada_beneficio")
-        self.input_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
-        self.input_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
+        self.input_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(145, 30))
+        self.input_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(146, 30))
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setFont(font)
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
-        self.input_codigo_beneficio_cadastro_retirada_beneficio.setMaxLength(14)
+        self.input_codigo_beneficio_cadastro_retirada_beneficio.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_357.addWidget(self.input_codigo_beneficio_cadastro_retirada_beneficio)
+
+
+        self.horizontalLayout_223.addWidget(self.frame_665)
+
+        self.frame_666 = QFrame(self.frame_664)
+        self.frame_666.setObjectName(u"frame_666")
+        self.frame_666.setMinimumSize(QSize(30, 58))
+        self.frame_666.setMaximumSize(QSize(30, 58))
+        self.frame_666.setFrameShape(QFrame.StyledPanel)
+        self.frame_666.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_441 = QVBoxLayout(self.frame_666)
+        self.verticalLayout_441.setSpacing(0)
+        self.verticalLayout_441.setObjectName(u"verticalLayout_441")
+        self.verticalLayout_441.setContentsMargins(0, 0, 0, 4)
+        self.verticalSpacer_53 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Fixed)
+
+        self.verticalLayout_441.addItem(self.verticalSpacer_53)
+
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio = QPushButton(self.frame_666)
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setObjectName(u"btn_buscar_codigo_beneficio_cadastro_retirada_beneficio")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setSizePolicy(sizePolicy3)
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(25, 30))
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(25, 30))
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 10px;\n"
+"		border-bottom-right-radius: 10px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon14)
+
+        self.verticalLayout_441.addWidget(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio)
+
+
+        self.horizontalLayout_223.addWidget(self.frame_666)
+
+        self.horizontalSpacer_147 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_223.addItem(self.horizontalSpacer_147)
+
+
+        self.horizontalLayout_19.addWidget(self.frame_664)
 
 
         self.horizontalLayout_91.addWidget(self.frame_514)
@@ -11881,49 +11998,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_1311.setSpacing(0)
         self.verticalLayout_1311.setObjectName(u"verticalLayout_1311")
         self.verticalLayout_1311.setContentsMargins(0, 0, 0, 0)
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio = QPushButton(self.frame_1821)
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setObjectName(u"btn_buscar_codigo_beneficio_cadastro_retirada_beneficio")
-        sizePolicy3.setHeightForWidth(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.sizePolicy().hasHeightForWidth())
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setSizePolicy(sizePolicy3)
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(40, 40))
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(40, 40))
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setStyleSheet(u"QPushButton{\n"
-"        background: rgb(243, 185, 191);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"		border-top-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221);   \n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"        background: rgb(255, 194, 201);\n"
-"        border: 1px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;\n"
-"        color: rgb(249, 217, 221); \n"
-"		border-bottom-right-radius: 20px;\n"
-"		border-bottom-left-radius: 20px;  \n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"        background: rgb(180, 106, 102);\n"
-"        border: 2px  solid rgb(180, 106, 102);\n"
-"        border-width: 2px;\n"
-"		border-top-right-radius: 20px;\n"
-"		border-bottom-right-radius: 20px;\n"
-"        colo"
-                        "r: rgb(249, 217, 221);   \n"
-"}")
-        self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setIcon(icon14)
-
-        self.verticalLayout_1311.addWidget(self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio)
-
 
         self.horizontalLayout_91.addWidget(self.frame_1821)
 
@@ -12010,6 +12084,7 @@ class Ui_MainWindow(object):
         self.frame_521.setFrameShadow(QFrame.Raised)
         self.verticalLayout_361 = QVBoxLayout(self.frame_521)
         self.verticalLayout_361.setObjectName(u"verticalLayout_361")
+        self.verticalLayout_361.setContentsMargins(0, 0, 0, 0)
 
         self.verticalLayout_127.addWidget(self.frame_521)
 
@@ -14246,46 +14321,41 @@ class Ui_MainWindow(object):
 
         self.frame_258 = QFrame(self.frame_194)
         self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(240, 240))
-        self.frame_258.setMaximumSize(QSize(240, 240))
+        self.frame_258.setMinimumSize(QSize(125, 200))
+        self.frame_258.setMaximumSize(QSize(125, 200))
         self.frame_258.setFrameShape(QFrame.StyledPanel)
         self.frame_258.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_14 = QVBoxLayout(self.frame_258)
-        self.verticalLayout_14.setSpacing(0)
-        self.verticalLayout_14.setObjectName(u"verticalLayout_14")
-        self.verticalLayout_14.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_179 = QVBoxLayout(self.frame_258)
+        self.verticalLayout_179.setSpacing(0)
+        self.verticalLayout_179.setObjectName(u"verticalLayout_179")
+        self.verticalLayout_179.setContentsMargins(0, 0, 0, 0)
+        self.input_foto_colaborador_as = QPushButton(self.frame_258)
+        self.input_foto_colaborador_as.setObjectName(u"input_foto_colaborador_as")
+        self.input_foto_colaborador_as.setMinimumSize(QSize(125, 153))
+        self.input_foto_colaborador_as.setMaximumSize(QSize(125, 153))
+        self.input_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.input_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
+        icon32 = QIcon()
+        icon32.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.input_foto_colaborador_as.setIcon(icon32)
+        self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
+
+        self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
+
         self.frame_259 = QFrame(self.frame_258)
         self.frame_259.setObjectName(u"frame_259")
         self.frame_259.setStyleSheet(u"background-color: rgb(243, 185, 191);")
         self.frame_259.setFrameShape(QFrame.StyledPanel)
         self.frame_259.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.frame_259)
-        self.verticalLayout_12.setSpacing(0)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.verticalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.label_foto_colaborador_as = QLabel(self.frame_259)
-        self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
-        self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
-        self.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
+        self.verticalLayout_178 = QVBoxLayout(self.frame_259)
+        self.verticalLayout_178.setObjectName(u"verticalLayout_178")
+        self.verticalLayout_178.setContentsMargins(0, 0, 0, 0)
 
-        self.verticalLayout_12.addWidget(self.label_foto_colaborador_as)
-
-        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_259)
-        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
-        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(120, 40))
-        self.btn_tirar_foto_colaborador_as.setFont(font9)
-        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_12.addWidget(self.btn_tirar_foto_colaborador_as)
-
-
-        self.verticalLayout_14.addWidget(self.frame_259)
+        self.verticalLayout_179.addWidget(self.frame_259)
 
         self.verticalSpacer = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
+        self.verticalLayout_179.addItem(self.verticalSpacer)
 
 
         self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
@@ -19565,9 +19635,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_301.addWidget(self.label_foto_usuario_alterar_as)
 
-        self.verticalSpacer_53 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Fixed)
+        self.verticalSpacer_54 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
-        self.verticalLayout_301.addItem(self.verticalSpacer_53)
+        self.verticalLayout_301.addItem(self.verticalSpacer_54)
 
         self.btn_alterar_foto_usuario_as = QPushButton(self.frame_1510)
         self.btn_alterar_foto_usuario_as.setObjectName(u"btn_alterar_foto_usuario_as")
@@ -22040,17 +22110,6 @@ class Ui_MainWindow(object):
         self.frame_381.setMaximumSize(QSize(80, 16777215))
         self.frame_381.setFrameShape(QFrame.StyledPanel)
         self.frame_381.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_514 = QVBoxLayout(self.frame_381)
-        self.verticalLayout_514.setObjectName(u"verticalLayout_514")
-        self.input_alterar_id_usuario_as = QLineEdit(self.frame_381)
-        self.input_alterar_id_usuario_as.setObjectName(u"input_alterar_id_usuario_as")
-        self.input_alterar_id_usuario_as.setEnabled(False)
-        self.input_alterar_id_usuario_as.setMaximumSize(QSize(0, 0))
-        self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
-"border-color: transparent;")
-
-        self.verticalLayout_514.addWidget(self.input_alterar_id_usuario_as)
-
 
         self.horizontalLayout_129.addWidget(self.frame_381)
 
@@ -22342,9 +22401,9 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_861.addWidget(self.label_foto_colaborador_alterar_as)
 
-        self.verticalSpacer_43 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+        self.verticalSpacer_410 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_861.addItem(self.verticalSpacer_43)
+        self.verticalLayout_861.addItem(self.verticalSpacer_410)
 
         self.btn_alterar_foto_colab_as = QPushButton(self.frame_414)
         self.btn_alterar_foto_colab_as.setObjectName(u"btn_alterar_foto_colab_as")
@@ -23581,8 +23640,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.label_foto_colab.setText(QCoreApplication.translate("MainWindow", u"", None))
-        self.btn_alterar_foto_colab_as_perfil.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
+        self.btn_alterar_foto_colab_as_2.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
@@ -23664,7 +23722,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem86 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(7)
         ___qtablewidgetitem86.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
         ___qtablewidgetitem87 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"nome parentesco", None));
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"Nome parentesco", None));
         ___qtablewidgetitem88 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(9)
         ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None));
         self.btn_gerar_excel_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
@@ -23862,7 +23920,8 @@ class Ui_MainWindow(object):
         self.btn_cancelar_cadastro_beneficio.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
         self.label_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"CADASTRO RETIRADA DE BENEF\u00cdCIO", None))
         self.label_cpf_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
-        self.input_cpf_cadastro_retirada_beneficio.setText("")
+        self.input_cpf_cadastro_retirada_beneficio.setInputMask(QCoreApplication.translate("MainWindow", u"000.000.000-00", None))
+        self.input_cpf_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u".-", None))
         self.btn_buscar_cpf_cadastro_retirada_beneficio.setText("")
         self.label_nome_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"NOME", None))
         self.label_idade_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"IDADE", None))
@@ -23871,8 +23930,9 @@ class Ui_MainWindow(object):
         self.label_telefone_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
         self.label_cns_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"CNS", None))
         self.label_clinica_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None))
-        self.label_codigo_beneficio_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"C\u00f3digo benef\u00edcio", None))
-        self.input_codigo_beneficio_cadastro_retirada_beneficio.setText("")
+        self.label_codigo_beneficio_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"Codigo beneficio", None))
+        self.input_codigo_beneficio_cadastro_retirada_beneficio.setInputMask(QCoreApplication.translate("MainWindow", u"00000000000", None))
+        self.input_codigo_beneficio_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u".-", None))
         self.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio.setText("")
         self.label_descricao_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None))
         self.label_quantidade_cadastro_retirada_beneficio.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None))
@@ -24035,8 +24095,7 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
-        self.label_foto_colaborador_as.setText("")
-        self.btn_tirar_foto_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tirar Foto", None))
+        self.input_foto_colaborador_as.setText("")
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
