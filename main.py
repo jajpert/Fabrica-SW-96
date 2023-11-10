@@ -880,12 +880,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.listarAgendamentos)
-        self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.buscar_curso_evento)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.buscar_dados_participante)
         self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
@@ -2183,8 +2181,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         print("Login Assis ->", login)
         id_colab_colab = self.db.buscarIdColabAssis(login)
         id_colab_nt = id_colab_colab[0][0]
-        self.id_colab_tratado = id_colab_nt
-        print("ID ASSISTENTE ->", self.id_colab_tratado)
+        self.id_colab_tratado_ass = id_colab_nt
+        print("ID ASSISTENTE ->", self.id_colab_tratado_ass)
 
     
     def buscarIdColabPsic(self):
@@ -3229,7 +3227,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
-        self.ui.input_hora_consulta_as.setText(00,00)
+        self.ui.input_hora_consulta_as.setText("00:00")
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
 
     def limparCamposConsultaNutri(self):
@@ -3565,7 +3563,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
         hora  = str(dados[5]).split(":")
         self.ui.input_hora_consulta_as.setText(str(dados[5]))
-        self.puxar_consulta()
+        # self.puxar_consulta();
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_atendimento_as.isChecked():
@@ -3582,7 +3580,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         id_usuario = self.ui.input_id_usuario_consulta_as.text()
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario, self.id_colab_tratado_ass)
+        print(tupla_consulta)
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)

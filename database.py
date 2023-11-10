@@ -944,6 +944,7 @@ class DataBase():
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
+            print(result)
             return result[0]
         except Exception as err:
             return "ERRO",str(err)
@@ -985,12 +986,13 @@ class DataBase():
         self.connect()
         try:
             args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
-            self.cursor.execute('INSERT INTO consulta(situacao,data,hora,observacao,id_usuario,id_colaborador) VALUES (%s,%s,%s,%s,%s)', args)
+            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula,id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
         except Exception as err:
-            return "ERRO",str(err)
+            erro = str(err)
+            print(erro)
 
         finally:
             self.close_connection()
@@ -999,8 +1001,8 @@ class DataBase():
         self.connect()
         print("PSIC CONSULTA DB PSICO",consulta)
         try:
-            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
-            self.cursor.execute('INSERT INTO consulta (situacao, data, hora, observacao, id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
+            self.cursor.execute('INSERT INTO consulta (situacao, data_consulta, hora, observacao, id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
@@ -1015,7 +1017,7 @@ class DataBase():
         print("PSIC CONSULTA DB FISIO",consulta)
         try:
             args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
-            self.cursor.execute('INSERT INTO consulta (situacao, data_consulta, hora, observacao, id_matricula, id_colaborador) VALUES (%s,%s,%s,%s,%s)', args)
+            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula,id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
@@ -1029,8 +1031,8 @@ class DataBase():
         self.connect()
         print("PSIC CONSULTA DB FISIO",consulta)
         try:
-            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
-            self.cursor.execute('INSERT INTO consulta (situacao, data_consulta, hora, observacao, id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
+            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula,id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
@@ -1075,8 +1077,8 @@ class DataBase():
         self.connect()
         print("Consulta NUTRI ->", consulta)
         try:
-            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
-            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
+            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula,id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 
@@ -1093,7 +1095,7 @@ class DataBase():
                                 SELECT consulta.id_consulta,consulta.data_consulta,consulta.situacao,consulta.observacao FROM consulta 
                                 INNER JOIN usuario ON usuario.id_matricula = consulta.id_matricula
                                 LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
-                                usuario.id_usuario '{id_usuario}';
+                                consulta.id_matricula LIKE '{id_usuario}';
                                 """)
             result = self.cursor.fetchall()
             return result
@@ -1283,7 +1285,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f""" UPDATE consulta SET
-                                     data = '{campo[1]}',
+                                     data_consulta = '{campo[1]}',
                                      observacao = '{campo[3]}'
                                      WHERE id_consulta = '{campo[0]}';
             """)
