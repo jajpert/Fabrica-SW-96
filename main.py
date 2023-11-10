@@ -858,7 +858,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ############SIGNALS BANCO ##########################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
-        self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
+        self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
