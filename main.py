@@ -2392,7 +2392,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         result = self.db.buscar_consulta_fisio(cpf, self.id_colab_tratado_fisio)
-        print("Main -> ",result)
         self.ui.input_TableWidget_pagina_consulta_geral_fisio.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral_fisio.setRowCount(len(result))   
 
@@ -3612,7 +3611,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         id_matricula = int(self.ui.input_id_matricula_nutri_consulta.text())
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_nutri)
 
         result = []
         result = self.db.cadastro_consulta_nutri(tupla_consulta)
@@ -3704,7 +3703,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         result = self.db.buscar_consulta_psic(cpf, self.id_colab_tratado_psic)
-        print("Main -> ",result)
         self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
 
