@@ -2250,6 +2250,57 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
+
+
+
+
+
+    def tabela_agenda_nutri(self): #TABELA TODOS OS AGENDAMENTOS
+        result = self.db.busca_nutri_agendamento_tabela()
+        self.ui.input_TableWidget_agendamento_nutri.clearContents()
+        self.ui.input_TableWidget_agendamento_nutri.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    def tabela_consulta_nutri_tabela(self): #TABELA CONSULTA USUARIO NUTRI
+        cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
+        result = self.db.busca_nutri_agenda_tabela(cpf, self.id_colab_tratado_nutri)
+        self.ui.input_TableWidget_pagina_consulta_geral_nutri.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    def tabela_consulta_psic_tabela(self): #TABELA CONSULTA USUARIO PSIC
+        cpf = self.ui.input_cpf_pagina_consulta_geral_psi.text()
+        result = self.db.busca_psic_agenda_tabela(cpf, self.id_colab_tratado_psic)
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
+
+
+    def tabela_agendamento_fisio(self): #TABELA TODOS OS AGENDAMENTOS FISIO
+        result = self.db.busca_fisio_agendamento_tabela()
+        self.ui.input_TableWidget_agendamento_fisio.clearContents()
+        self.ui.input_TableWidget_agendamento_fisio.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+    
+    def nutri_imc_usuario(self):
+        peso = int(self.ui.input_peso_consulta_nutri.text())
+        altura = float(self.ui.input_altura_consulta_nutri.text())
+        altura2x = altura ** altura
+        imc = peso//altura2x
+        self.ui.input_imc_consulta_nutri.setText(str(imc))
+
     def buscar_usuario_nutri(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
         dados = self.db.busca_usuario_nutri_agendamento(cpf)
@@ -2296,66 +2347,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_nutri_consulta.setText(str(dados[7]))
         self.ui.input_id_matricula_nutri_consulta.hide()
         self.tabela_consulta_nutri_tabela()
-
-
-    def nutri_imc_usuario(self):
-        peso = int(self.ui.input_peso_consulta_nutri.text())
-        altura = float(self.ui.input_altura_consulta_nutri.text())
-        altura2x = altura ** altura
-        imc = peso//altura2x
-        self.ui.input_imc_consulta_nutri.setText(str(imc))
-
+        
     def buscar_usuario_agenda_nutri(self):
         cpf = self.ui.input_cpf_agendamento_nutri.text()
         dados = self.db.busca_usuario_nutri_consulta(cpf)
         print(dados)
-
         self.ui.input_nome_agendamento_nutri.setText(dados[0])
         self.ui.input_telefone_agendamento_nutri.setText(dados[1])
         self.ui.input_clinica_agendamento_nutri.setText(dados[2])
-        self.ui.input_id_matricula_nutri_consulta.setText(str(dados[3]))
-        self.ui.input_id_matricula_nutri_consulta.hide()
-
-
-    def tabela_agenda_nutri(self): #TABELA TODOS OS AGENDAMENTOS
-        result = self.db.busca_nutri_agendamento_tabela()
-        self.ui.input_TableWidget_agendamento_nutri.clearContents()
-        self.ui.input_TableWidget_agendamento_nutri.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_agendamento_nutri.setItem(row, column,QTableWidgetItem(str(data)))
-                
-    def tabela_consulta_nutri_tabela(self): #TABELA CONSULTA USUARIO NUTRI
-        cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
-        result = self.db.busca_nutri_agenda_tabela(cpf, self.id_colab_tratado_nutri)
-        self.ui.input_TableWidget_pagina_consulta_geral_nutri.clearContents()
-        self.ui.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_pagina_consulta_geral_nutri.setItem(row, column,QTableWidgetItem(str(data)))
-                
-    def tabela_consulta_psic_tabela(self): #TABELA CONSULTA USUARIO PSIC
-        cpf = self.ui.input_cpf_pagina_consulta_geral_psi.text()
-        result = self.db.busca_psic_agenda_tabela(cpf, self.id_colab_tratado_psic)
-        self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
-        self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
-
-
-    def tabela_agendamento_fisio(self): #TABELA TODOS OS AGENDAMENTOS FISIO
-        result = self.db.busca_fisio_agendamento_tabela()
-        self.ui.input_TableWidget_agendamento_fisio.clearContents()
-        self.ui.input_TableWidget_agendamento_fisio.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_agendamento_fisio.setItem(row, column,QTableWidgetItem(str(data)))
-    
+        self.ui.input_id_matricula_nutri_agendamento.setText(str(dados[3]))
+        self.ui.input_id_matricula_nutri_agendamento.hide()
 
     def buscar_usuario_agendamento_fisio(self):
         cpf = self.ui.input_cpf_agendamento_fisio.text()
@@ -2939,7 +2940,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAgendamentoFisio()
 
     def cadastroAgendamentoNutri(self):
-        id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
+        id_matricula = self.ui.input_id_matricula_nutri_agendamento.text()
         cpf = self.ui.input_cpf_agendamento_nutri.text()
         nome = self.ui.input_nome_agendamento_nutri.text()
         telefone = self.ui.input_telefone_agendamento_nutri.text()
@@ -3644,7 +3645,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_matricula = int(self.ui.input_id_matricula_consulta_psi.text())
         print(type(id_matricula))
 
-        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_psic)
         print(tupla_consulta_psi)
 
         result = []
@@ -3677,7 +3678,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_matricula = int(self.ui.input_id_matricula_consulta_fisio.text())
         print(type(id_matricula))
 
-        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_fisio)
         print(tupla_consulta_psi)
 
         result = []

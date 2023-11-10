@@ -6,7 +6,9 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+
         # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
 
         if self.conn.is_connected():
@@ -1608,7 +1610,8 @@ class DataBase():
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            return "ERRO",str(err)
+            erro = str(err)
+            print(erro)
 
     def cadastroIMC(self, imc):
         self.connect()
