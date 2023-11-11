@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
 
@@ -1090,16 +1090,18 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def buscar_info_consulta(self,id_usuario):
+    def buscar_info_consulta(self,cpf,id_colab_ass):
         self.connect()
+        
         try:
             self.cursor.execute(f"""
-                                SELECT consulta.id_consulta,consulta.data_consulta,consulta.situacao,consulta.observacao FROM consulta 
-                                INNER JOIN usuario ON usuario.id_matricula = consulta.id_matricula
-                                LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
-                                consulta.id_matricula LIKE '{id_usuario}';
+                                    SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+                                    FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_ass}' ;
                                 """)
             result = self.cursor.fetchall()
+            print(result)
             return result
 
         except Exception as err:

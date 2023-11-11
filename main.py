@@ -766,6 +766,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ########################### PSICOLOGA ###########################
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
+        self.ui.btn_agenda_psi.clicked.connect(self.listarAgendamentos_psi)
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
@@ -3563,7 +3564,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
         hora  = str(dados[5]).split(":")
         self.ui.input_hora_consulta_as.setText(str(dados[5]))
-        # self.puxar_consulta();
+        self.puxar_consulta();
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_atendimento_as.isChecked():
@@ -3745,9 +3746,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def puxar_consulta(self):
-        id_usuario = self.ui.input_id_usuario_consulta_as.text()
-        print("consulta adm ->", id_usuario)
-        result = self.db.buscar_info_consulta(id_usuario)
+        cpf = self.ui.input_cpf_pagina_consulta_geral.text()
+        result = self.db.buscar_info_consulta(cpf, self.id_colab_tratado_ass)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 
