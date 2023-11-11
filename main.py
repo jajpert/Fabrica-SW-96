@@ -930,6 +930,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             perfil.append(resultados[0][0][2])
             matricula_colaborador = resultados[1][0][0]
             self.fotoLoginColab(matricula_colaborador)
+            self.perfil_colab_on_nt = perfil
+            self.perfil_colab_on_tratado = self.perfil_colab_on_nt
+            print("perfil ->",self.perfil_colab_on_tratado)
             # self.cadastroAgendamento(matricula_colaborador)
             if len(login_senha)==0:
                 self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -2934,8 +2937,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_agend = "-".join(data.split("/")[::-1])
         hora = self.ui.input_hora_agendamento_psi.text()
         anotacao = self.ui.input_anotacao_agendamento_psi.toPlainText()
+        perfil_colab = self.perfil_colab_on
 
-        tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, perfil_colab)
         result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
         
         msg = QMessageBox()
@@ -3736,7 +3740,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposConsultaFisio()
 
     def puxar_consulta_psi(self):
-
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
         cpf = ''
         for i in cpf_temp:

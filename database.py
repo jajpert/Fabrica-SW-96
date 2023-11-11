@@ -1650,14 +1650,15 @@ class DataBase():
     def cadastro_agendamento_psi(self, agendamento):
         self.connect()
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
-            self.cursor.execute('INSERT INTO agendamento( id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
+            self.cursor.execute('INSERT INTO agendamento( id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
-            return "ERRO",str(err)
+            erro = str(err)
+            print(erro)
         
     def cadastro_agendamento_fisio(self, agendamento):
         self.connect()
