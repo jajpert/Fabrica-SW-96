@@ -23650,7 +23650,7 @@ class Ui_MainWindow(object):
         self.btn_voltar_relatorios_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.label_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios Cuidadores", None))
         ___qtablewidgetitem79 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem79.setText(QCoreApplication.translate("MainWindow", u"Nome Cuidador", None));
         ___qtablewidgetitem80 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(1)
         ___qtablewidgetitem80.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
         ___qtablewidgetitem81 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(2)
@@ -23666,7 +23666,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem86 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(7)
         ___qtablewidgetitem86.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
         ___qtablewidgetitem87 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(8)
-        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"nome parentesco", None));
+        ___qtablewidgetitem87.setText(QCoreApplication.translate("MainWindow", u"Nome Usuario", None));
         ___qtablewidgetitem88 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(9)
         ___qtablewidgetitem88.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None));
         self.btn_gerar_excel_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
