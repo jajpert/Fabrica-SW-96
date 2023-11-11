@@ -196,11 +196,19 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pessoa.nome, pessoa.cpf, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone,
-                    agendamento.profissional, agendamento.clinica, consulta.situacao, consulta.data_consulta, consulta.observacao
-                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                    INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
-                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula WHERE agendamento.id_colaborador LIKE '{id_relatorio_nutri}';
+                select pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
+                pessoa.telefone,usuario.beneficio,usuario.situacao_trabalho,clinica.nome_fantasia as clinica, endereco.bairro,endereco.cidade, consulta.data_consulta
+                from pessoa 
+                inner join usuario
+                on pessoa.id_matricula = usuario.id_matricula
+                inner join consulta
+                on usuario.id_matricula = consulta.id_matricula
+                inner join nutri_usuario
+                on  usuario.id_matricula = nutri_usuario.id_matricula 
+                inner join clinica
+                on usuario.local_tratamento = clinica.id_clinica
+                inner join endereco
+                on usuario.id_matricula = endereco.id_endereco where consulta.id_colaborador LIKE '{id_relatorio_nutri}';
                     """)
             result = self.cursor.fetchall()
             return result
@@ -329,7 +337,7 @@ class DataBase():
 
         finally:
             self.close_connection()
-
+    
     def relatorio_beneficio(self):
         self.connect()
         try:

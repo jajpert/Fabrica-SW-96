@@ -702,6 +702,19 @@ class Ui_MainWindow(object):
 "        colo"
                         "r: rgb(249, 217, 221);   \n"
 "}")
+        self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
+        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_623)
+        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
+        self.input_id_matricula_nutri_consulta.setEnabled(False)
+        self.input_id_matricula_nutri_consulta.setMinimumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setFont(font)
+        self.input_id_matricula_nutri_consulta.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+        self.input_id_matricula_nutri_consulta.setMaxLength(11)
+
+        self.verticalLayout_412.addWidget(self.input_id_matricula_nutri_consulta)
+        
         icon7 = QIcon()
         icon7.addFile(u"../../../.././icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_agendamento_nutri.setIcon(icon7)
