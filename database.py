@@ -259,7 +259,7 @@ class DataBase():
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
                     INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
-                    WHERE pes.nome LIKE "%{texto}%";
+                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
