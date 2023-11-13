@@ -258,9 +258,8 @@ class DataBase():
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
                     INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
-                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco;
-                    WHERE pes.nome LIKE "%{texto}%" OR cuidador_nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" 
-                    OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%" OR cuidador.id_matricua LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%";
+                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
+                    WHERE pes.nome LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
