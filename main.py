@@ -244,9 +244,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
 
     def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
-        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/capture{self.nome_colab}.jpg")
-        # StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
-        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_colab}.jpg")
+        StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_colab == "":
@@ -267,8 +265,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
                         break
                         
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
-                        # directory = "C:/Users/vboxuser/Desktop/"
+                        directory = "C:/Users/vboxuser/Desktop/"
                         
                         if not os.path.exists(directory):
                             os.makedirs(directory)
@@ -585,6 +582,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.listarBeneficios()
         self.buscar_clinica_nome_fantasia()
         self.buscar_curso_evento()
+        self.puxar_relatorio_cuidador()
         self.id_area_sigilosa = self.relatorio_pessoa()
         ########### selected último id das tabelas do banco ##########
         self.ultimosIds()
@@ -673,7 +671,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_dateEdit_cadastro_beneficio.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())
 
-        ########################### SIGNALS ##################################################################
+        self.ui.input_inicio_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+
 
         ########################### SAIR ########################################
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
@@ -702,7 +704,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
-        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
@@ -728,7 +729,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
-        self.ui.btn_voltar_pagina_relatorio_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
+        self.ui.btn_voltar_relatorios_cuidadores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
 
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
@@ -770,7 +772,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
-        self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+        #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.buscar_dados_consulta_psi) #SELECT USUARIO CONSULTA PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi) #CADASTRO CONSULTA USUARIO PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.tabela_consulta_psic_tabela) #SELECT USUARIO CONSULTA + COLADB ID
@@ -782,7 +784,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
 
-        ########################### CEP ################################
+        #################SIGNALS CEP#################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
@@ -828,9 +830,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ########################### POPUP TIRAR E IMPORTAR FOTO AS ################
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
-        #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
+        self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
+        
 
 
         ########################### POPUP CURSOS E OFICINAS AS ####################
@@ -846,7 +850,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ########################### BANCO #########################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
-        self.ui.btn_finalizar_as.clicked.connect(self.cadastroCuidador)
+        self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.cadastroAgendamento)
@@ -859,13 +863,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
-        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa)
-        self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
-        self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
         self.ui.input_buscar_dados_relatorio_psi.textChanged.connect(self.filtrar_dados_relatorio_psi)
-        self.ui.input_buscar_dados_relatorio_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
+        #self.ui.input_buscar_dados_relatorio_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
@@ -897,6 +898,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         
 
+        
+        
+        
+
 ########################### Validar Login #############################
     def validarLogin(self):
         login = self.ui.input_usuario_login.text()
@@ -926,6 +931,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
+                    self.buscarIdColabAssis()
                     self.LoginAssistenteS()         
                 else:
                     print ("Usuário não encontrado")
@@ -1290,8 +1296,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
             self.ui.input_alterar_nascimento_usuario_as.setDate(QDate(dados[2]))
-            self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(bool(dados[3]))
-            self.ui.input_situacao_ativo_usuario_as.setChecked(bool(dados[3]))
+            situacao_usuario = str(dados[3])
+            print(situacao_usuario)
+            if situacao_usuario == "Ativo":
+                self.ui.input_alterar_situacao_ativo_usuario_as.setChecked(True)
+            elif situacao_usuario == "Inativo":
+                self.ui.input_alterar_situacao_inativo_usuario_as.setChecked(True)
             self.ui.input_alterar_cpf_usuario_as.setText(str(dados[4]))
             self.ui.input_alterar_rg_usuario_as.setText(dados[5]) #
             self.ui.input_alterar_data_emissao_usuario_as.setDate(QDate(dados[6])) #
@@ -1303,6 +1313,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(1)
             elif sexo == 'Feminino':
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(2)
+            elif sexo == "Selecione":
+                self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(0)
+            
             self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
             self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
             self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
@@ -1327,6 +1340,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif estadoCivil == 'Separado':
                 self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(5)
+                
+            elif estadoCivil == "Selecione":
+                self.ui.input_alterar_estado_civil_usuario_as.setCurrentIndex(0)
 
             Escolaridade = str(dados[20])
             if Escolaridade == 'Fundamental':
@@ -1347,8 +1363,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif Escolaridade == 'Superior incompleto':
                 self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(6)
             
-            self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(bool(dados[21]))
-            self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(bool(dados[21]))                
+            elif Escolaridade == "Selecione":
+                self.ui.input_alterar_escolaridade_usuario_comboBox_as.setCurrentIndex(0)
+
+
+            pessoac_deficiencia = str(dados[21])
+            print(pessoac_deficiencia)
+            if pessoac_deficiencia == "SIM":
+                self.ui.input_alterar_pessoa_cdeficiencia_sim_usuario_as.setChecked(True)
+            elif pessoac_deficiencia == "NÃO":
+                self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.setChecked(True)
 
             tipoDeDeficiencia = str(dados[22])
 
@@ -1366,10 +1390,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif tipoDeDeficiencia == 'Outra':
                 self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(5)
-
-            elif tipoDeDeficiencia == 'Não possui':
-                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(6)
-
+                
+            elif tipoDeDeficiencia == "Selecione":
+                self.ui.input_alterar_tipo_deficiencia_usuario_as.setCurrentIndex(0)
+                
             self.ui.input_alterar_outras_deficiencias_usuario_as.setText(dados[23])
 
             mediaRendaFamiliar = str(dados[24])
@@ -1385,6 +1409,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif mediaRendaFamiliar == 'Mais que 3 salários':
                 self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(4)
+                
+            elif mediaRendaFamiliar == "Selecione":
+                self.ui.input_alterar_renda_familiar_usuario_as.setCurrentIndex(0)
 
             meioTransporte = str(dados[25])
 
@@ -1398,15 +1425,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
 
             elif meioTransporte == 'Ambulância municipal':
-                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(3)
-
-            elif meioTransporte == 'Moto':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(4)
 
-            elif meioTransporte == 'Ambulância particular':
+            elif meioTransporte == 'Moto':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(5)
-           
 
+            elif meioTransporte == 'Ambulância particular':
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+           
+            elif meioTransporte == "Selecione":
+                self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
+                
             valeTransporte = str(dados[26])
 
             if valeTransporte == 'Passe para os dias de tratamento':
@@ -1418,6 +1447,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif valeTransporte == 'Passe livre':
                 self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(3)
 
+            elif valeTransporte == "Selecione":
+                self.ui.input_alterar_vale_transporte_usuario_as.setCurrentIndex(0)
+            
             situacaoTrabalho = str(dados[27])
 
             if situacaoTrabalho == 'Aposentado por Idade':
@@ -1446,6 +1478,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif situacaoTrabalho == 'Outros':
                 self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
+            
+            elif situacaoTrabalho == "Selecione":
+                self.ui.input_situacao_trabalho_alterar_usuario_as.setCurrentIndex(9)
 
             self.ui.input_situacao_trabalho_outros_alterar_usuario_as.setText(dados[28])
             
@@ -1463,9 +1498,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif beneficio == 'Auxílio Brasil (Gov. Federal)':
                 self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(4)
-    
-            self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(bool(dados[30]))
-            self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(bool(dados[30]))
+
+            elif beneficio == "Selecione":
+                self.ui.input_alterar_beneficios_usuario_as.setCurrentIndex(0)
+                
+            tarifa_social = str(dados[30])
+            if tarifa_social == "SIM":
+                self.ui.input_alterar_tarifa_social_sim_usuario_as.setChecked(True)
+            elif tarifa_social == "NÃO":
+                self.ui.input_alterar_tarifa_social_nao_usuario_as.setChecked(True)
 
 
             tipoTratamento = str(dados[31])
@@ -1479,6 +1520,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == 'Diálise Peritoneal':
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(3)
 
+            elif tipoTratamento == "Selecione":
+                self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(0)
+                
             # local_tratamento = str(dados[32])
             # if local_tratamento == dados[32]:
             self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(int(dados[32]))
@@ -1503,6 +1547,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif patologiaBase == 'Outros':
                 self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(6)
+                
+            elif patologiaBase == "Selecione":
+                self.ui.input_alterar_patologia_base_usuario_as.setCurrentIndex(0)
+                
 
             self.ui.input_alterar_outras_patologias_usuario_as.setText(dados[34])
 
@@ -1518,29 +1566,55 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif periodo == 'Noturno':
                 self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(3)
+                
+            elif periodo == "Selecione":
+                self.ui.input_alterar_periodo_usuario_as.setCurrentIndex(0)
+                
+                
             self.ui.input_alterar_id_endereco_usuario_as.setText(str(dados[37]))
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            original_image = cv2.imread(dados[39])
-            
+            foto = str(dados[39])
+            if foto == None or foto == '':
+                original_image = cv2.imread("./icons/adicionar foto.png")
 
-            
-            desired_size = (240, 240)
-            resized_image = cv2.resize(original_image, desired_size)
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
 
-            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
 
-            h, w, ch = resized_image.shape
-            bytes_per_line = ch * w
-            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
 
-            pixmap = QPixmap.fromImage(qt_image)
+                pixmap = QPixmap.fromImage(qt_image)
 
-            self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
-            self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
-            self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+                self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+                self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
+
+                
+            else:
+                print(dados[39])
+                original_image = cv2.imread(dados[39])
+
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+
+                self.ui.label_foto_usuario_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_usuario_alterar_as.setScaledContents(True)
+                self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
             self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
@@ -1554,8 +1628,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
             self.ui.input_alterar_cpf_colaborador_as.setText(dados[3]) #
             self.ui.input_alterar_rg_colaborador_as.setText(dados[4]) #
-            self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(bool(dados[5]))
-            self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(bool(dados[5]))
+            situacao_colab = str(dados[5])
+            if situacao_colab == "Ativo":
+                self.ui.input_alterar_situacao_ativo_colaborador_as.setChecked(True)
+            elif situacao_colab == "Inativo":
+                self.ui.input_alterar_situacao_inativo_colaborador_as.setChecked(True)
             self.ui.input_alterar_orgao_expedidor_colaborador_as.setText(str(dados[6]))
             self.ui.input_alterar_data_emissao_rg_colaborador_as.setDate(QDate(dados[7]))
             self.ui.input_alterar_pis_colaborador_as.setText(dados[8])
@@ -1653,18 +1730,40 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_colaborador_as.hide()
             self.ui.input_alterar_id_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_colaborador_as.hide()
-            original_image = cv2.imread(dados[27])
-            desired_size = (240, 240)
-            resized_image = cv2.resize(original_image, desired_size)
-            resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-            h, w, ch = resized_image.shape
-            bytes_per_line = ch * w
-            qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-            pixmap = QPixmap.fromImage(qt_image)
-            self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
-            self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
-            self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
-            self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+            foto = str(dados[27])
+            if foto == None or foto == '':
+                original_image = cv2.imread("./icons/adicionar foto.png")
+
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+        
+    
+            else:
+                
+                original_image = cv2.imread(dados[27])
+                desired_size = (240, 240)
+                resized_image = cv2.resize(original_image, desired_size)
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+                pixmap = QPixmap.fromImage(qt_image)
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_alterar_id_foto_usuario_as.setText(str(dados[28]))
             self.ui.input_alterar_id_foto_usuario_as.hide()
 
@@ -2070,6 +2169,23 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
 
     
+    def buscarIdColabAssis(self):
+        login = self.ui.input_usuario_login.text()
+        print("Login Assis ->", login)
+        id_colab_colab = self.db.buscarIdColabAssis(login)
+        id_colab_nt = id_colab_colab[0][0]
+        self.id_colab_tratado = id_colab_nt
+        print("ID ASSISTENTE ->", self.id_colab_tratado)
+
+    
+    def buscarIdColabPsic(self):
+        login = self.ui.input_usuario_login.text()
+        print("Login Pisc ->", login)
+        id_colab_colab = self.db.buscarIdColabPsic(login)
+        id_colab_nt = id_colab_colab[0][0]
+        self.id_colab_tratado_psic = id_colab_nt
+
+    
     def buscarIdColabPsic(self):
         login = self.ui.input_usuario_login.text()
         print("Login Pisc ->", login)
@@ -2110,6 +2226,43 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def puxar_relatorio_cuidador(self):
+        result = self.db.relatorio_cuidador()
+        self.ui.tableWidget_relatorio_cuidadores_as.clearContents()
+        self.ui.tableWidget_relatorio_cuidadores_as.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+
+
+
+                
+    def filtrar_relatorio_cuidador(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_cuidadores_as.text())
+        res = self.db.filtrar_relatorio_cuidador(txt)
+        print(res)
+        self.ui.tableWidget_relatorio_cuidadores_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_data_relatorio_cuidador(self):  
+        texto_data_inicio_cuidador = self.ui.input_inicio_periodo_relatorio_cuidadores_as.text()
+        texto_data_final_cuidador = self.ui.input_final_periodo_relatorio_cuidadores_as.text()
+        texto_data_inicio_cuidador =  "-".join(texto_data_inicio_cuidador.split("/")[::-1])
+        texto_data_final_cuidador =  "-".join(texto_data_final_cuidador.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_cuidador(texto_data_inicio_cuidador,texto_data_final_cuidador)
+
+        self.ui.tableWidget_relatorio_cuidadores_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column, QTableWidgetItem(str(data)))
 
     def filtrar_data_relatorio_fisio(self):  
         texto_data_inicio_fisio = self.ui.input_inicio_periodo_relatorio_fisio.text()
@@ -2293,6 +2446,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #foto_imagem = self.ui.btn_foto_usuario_as.text()
         nome = self.ui.input_nome_usuario_as.text()
+        self.nome_usuario = nome
         data_nasc = self.ui.input_nascimento_usuario_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_usuario_as.text()
@@ -2364,6 +2518,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
+        self.InsertUsuarioFotoId()
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         msg = QMessageBox()
@@ -2566,7 +2721,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_salario_colaborador_as.setText(salario_formatado)
     
 
-    def alterarAreaSigilosa(self):
+    def alterar_usuario_area_sigilosa(self):
         campo = []
         update_dados = []
         for row in range(self.ui.input_TableWidget_observacoes_sigilosas_as.rowCount()):
@@ -2576,8 +2731,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             campo = []
 
         for emp in update_dados:
-           res = self.db.alterarAreaSigilosa(tuple(emp), self.id_area_sigilosa)
+           res = self.db.alterarAreaSigilosa(tuple(emp))
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Area Sigilosa")
+        msg.setText("Usuario Alterado com sucesso!")
+        msg.exec()
+        self.filtrar_usuario_area_sigilosa()
 
     def cadastroColaborador(self):
 
@@ -2593,6 +2754,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ###################### pessoa ##############################
         nome = self.ui.input_nome_colaborador_as.text()
+        self.nome_colab = nome
         data_nasc = self.ui.input_data_nascimento_colaborador_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
         cpf_temp = self.ui.input_cpf_colaborador_as.text()
@@ -2648,6 +2810,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################### insert ##########################################
         result = []
+        self.InserColabFotoId()
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -2709,8 +2872,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
-        id_colaborador = self.id_colab_tratado
-        print("ID COLABORADOR ENTROU -> ",id_colaborador)
         cpf = self.ui.input_cpf_agendamento_as.text()
         nome = self.ui.input_nome_agendamento_as.text()
         telefone = self.ui.input_telefone_agendamento_as.text()
@@ -2730,7 +2891,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_as.text()
         anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
 
-        tupla_agendamento = (id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         print("TUPLA AGENDAMENTO -> ",tupla_agendamento)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         
@@ -2745,7 +2906,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamento_psi(self):
         id_matricula = self.buscarPessoa_psi()
-        id_colaborador = self.id_colab_tratado_psic
         cpf = self.ui.input_cpf_agendamento_psi.text()
         nome = self.ui.input_nome_agendamento_psi.text()
         telefone = self.ui.input_telefone_agendamento_psi.text()
@@ -2765,7 +2925,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_psi.text()
         anotacao = self.ui.input_anotacao_agendamento_psi.toPlainText()
 
-        tupla_agendamento_psi = (id_colaborador,id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
         
         msg = QMessageBox()
@@ -2780,7 +2940,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamento_fisio(self):
         id_matricula = self.ui.input_id_matricula_agendamento_fisio.text()
-        id_colaborador = self.id_colab_tratado_fisio
         cpf = self.ui.input_cpf_agendamento_fisio.text()
         nome = self.ui.input_nome_agendamento_fisio.text()
         telefone = self.ui.input_telefone_agendamento_fisio.text()
@@ -2800,7 +2959,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_fisio.text()
         anotacao = self.ui.input_anotacao_agendamento_fisio.toPlainText()
 
-        tupla_agendamento_fisio = (id_colaborador,id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_fisio = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         result = self.db.cadastro_agendamento_fisio(tupla_agendamento_fisio)
         
         msg = QMessageBox()
@@ -2813,9 +2972,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamentoNutri(self):
         id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
-        print(id_matricula)
-        id_colaborador = self.id_colab_tratado_nutri
-        print(type(id_colaborador))
         cpf = self.ui.input_cpf_agendamento_nutri.text()
         nome = self.ui.input_nome_agendamento_nutri.text()
         telefone = self.ui.input_telefone_agendamento_nutri.text()
@@ -2836,7 +2992,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_nutri.text()
         anotacao = self.ui.input_anotacao_agendamento_nutri.toPlainText()
 
-        tupla_agendamento_nutri = (id_colaborador, id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento_nutri = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
         print("TUPLA NUTRI ->",tupla_agendamento_nutri)
         result = self.db.cadastro_agendamento_nutri(tupla_agendamento_nutri)
         
@@ -2921,7 +3077,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_psi.setItem(row, column, QTableWidgetItem(str(data)))
 
-    def area_sigilosa(self):
+    def area_sigilosa_salvar_usuario(self):
 
         if self.ui.input_obito_paciente_sim_as.isChecked:
             situacao="Ativo"
@@ -2937,6 +3093,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Area Sigilosa")
         msg.setText("Observção salva com sucesso!")
         msg.exec()
+        self.filtrar_usuario_area_sigilosa()
         self.limparCamposAreaSigilosa()
 
     def limparCamposCadastroUsuario (self):
@@ -2983,7 +3140,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
-        self.ui.label_foto_usuario_alterar_as.setPixmap("")
 
         
 
@@ -3701,6 +3857,49 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
+        
+    def InsertUsuarioFotoId(self):
+        id_usuario = self.ui.input_matricula_usuario_as.text()
+        caminho = ""
+        tupla_teste = (self.nome_usuario, caminho, id_usuario)
+        print(tupla_teste)
+        result = self.db.tirar_foto_usuario(tupla_teste)
+        print("Foto Cadastro Usuario ->",result)
+        
+    def InserColabFotoId(self):
+        id_colab_matricula = self.ui.input_matricula_colaborador_as.text()
+        caminho = ""
+        tupla_teste = (self.nome_colab, caminho, id_colab_matricula)
+        print(tupla_teste)
+        result = self.db.tirar_foto_colaborador(tupla_teste)
+        print("Foto Cadastro Usuario ->",result)
+        
+    def gerar_excel_relatorio_beneficio(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_psi.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_psi.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_psi.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLINICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
 
 
     def alterar_usuario_consulta(self,campo):
@@ -3894,6 +4093,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #conectar com o botão entrar depois
         self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as)
+
 
 
     def tirarImportarFotoUsuario(self):
@@ -4366,6 +4566,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
         
         res = self.db.filter_data_participante_curso(texto_data_inicio_tratada,texto_data_final_tratada)
+        print(res)
 
         self.ui.input_TableWidget_relatorio_aluno_curso.setRowCount(len(res))
 
@@ -4486,6 +4687,42 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
+
+
+
+    def gerar_excel_relatorio_cuidador(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.tableWidget_relatorio_cuidadores_as.rowCount()):
+            for column in range(self.ui.tableWidget_relatorio_cuidadores_as.columnCount()):
+                dados.append(self.ui.tableWidget_relatorio_cuidadores_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'IDADE', 'SEXO', 'TELEFONE', 'ENDEREÇO', 'BAIRRO', 'CIDADE',
+            'PARENTESCO','USUARIO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
+
+
+
+
+
         
     def gerar_pdf(self):
         column_names = []
