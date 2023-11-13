@@ -527,9 +527,10 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                    SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
                     from pessoa 
                     INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN consulta on consulta.id_consulta = usuario.id_usuario
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                     WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_fisio}' and '{texto_data_final_fisio}';
@@ -546,11 +547,12 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                               SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
-                               from pessoa 
-                               INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                               INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                               INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;
+                                SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                from pessoa 
+                                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta on consulta.id_consulta = usuario.id_usuario
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;
                                 """)
             result = self.cursor.fetchall()
             return result
@@ -565,9 +567,10 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, usuario.situacao_trabalho as aposentadoria, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
                                 from pessoa 
                                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta on consulta.id_consulta = usuario.id_usuario
                                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR usuario.nis LIKE "%{texto}%" OR pessoa.data_nascimento LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%";
