@@ -4710,7 +4710,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         for row in range(self.ui.tableWidget_relatorio_cuidadores_as.rowCount()):
             for column in range(self.ui.tableWidget_relatorio_cuidadores_as.columnCount()):
-                dado pend(self.ui.tableWidget_relatorio_cuidadores_as.item(row, column).text())
+                dados.append(self.ui.tableWidget_relatorio_cuidadores_as.item(row, column).text())
         
             all_dados.append(dados)
             dados = []
