@@ -22195,7 +22195,7 @@ color: rgb(236, 132, 140);</string>
                                      <row/>
                                      <column>
                                       <property name="text">
-                                       <string>Nome</string>
+                                       <string>Nome Cuidador</string>
                                       </property>
                                      </column>
                                      <column>
@@ -22235,7 +22235,7 @@ color: rgb(236, 132, 140);</string>
                                      </column>
                                      <column>
                                       <property name="text">
-                                       <string>Nome parentesco</string>
+                                       <string>Nome Usuario</string>
                                       </property>
                                      </column>
                                      <column>

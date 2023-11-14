@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -234,13 +234,12 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
-                    FROM pessoa AS pes
-                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+             SELECT pes.nome AS cuidador_nome,pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    FROM pessoa AS parente
+                    INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
-                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
+                    INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco;
-
                 """)
             result = self.cursor.fetchall()
             return result
@@ -254,14 +253,13 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
-                    FROM pessoa AS pes
-                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+                     SELECT pes.nome AS cuidador_nome,pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    FROM pessoa AS parente
+                    INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
-                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
+                    INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
-                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%"
-                    OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%" OR cuidador.id_matricula LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" ;
+                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%" OR parente.nome LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
@@ -275,12 +273,12 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
-                    FROM pessoa AS pes
-                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+                  SELECT pes.nome AS cuidador_nome,pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    FROM pessoa AS parente
+                    INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
-                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
-                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
+                    INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
+                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco;
                     wHERE pes.data_nascimento BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
             result = self.cursor.fetchall()
