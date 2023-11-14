@@ -681,21 +681,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
-
-
-        ###############SIGNALS################# 
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
+        
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
-        ########################### LOGIN ########################################
+        ########################### LOGIN ##################################################################################################################################################
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
-        self.ui.toolButton.clicked.connect(self.visibilidade)        
+        self.ui.toolButton.clicked.connect(self.visibilidade)   
 
-        ########################### ASSISTENTE SOCIAL ###########################
+
+        ########################### ASSISTENTE SOCIAL ######################################################################################################################################
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_atendimento_as.clicked.connect(self.limparCamposConsultaAssistenteSocial)
         self.ui.btn_atendimento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
@@ -745,8 +739,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
         self.ui.btn_voltar_relatorios_cuidadores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
 
-        ########################### FISIOTERAPEUTA ###########################
+
+        ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
         self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
         self.ui.btn_voltar_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
@@ -761,8 +757,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
         self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
+        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
 
-        ########################### NUTRICIONISTA ###########################
+
+        ########################### NUTRICIONISTA ##########################################################################################################################################
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
         self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
         self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
@@ -779,8 +777,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
         #self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
 
-        ########################### PSICOLOGA ###########################
+
+        ########################### PSICÓLOGA ##############################################################################################################################################
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
@@ -797,8 +797,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
 
-        ################# CEP #################
+
+        ########################### FARMACÊUTICA ###########################################################################################################################################
+        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
+
+
+        ########################## CEP #####################################################################################################################################################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
@@ -810,7 +816,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
-        ########################### CPF ################################
+        ########################### CPF ####################################################################################################################################################
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
 
