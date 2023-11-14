@@ -676,7 +676,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
 
-
         ########################### SAIR ########################################
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
@@ -691,16 +690,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ########################### ASSISTENTE SOCIAL ###########################
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_atendimento_as.clicked.connect(self.limparCamposConsultaAssistenteSocial)
         self.ui.btn_atendimento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_cadastrar_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_voltar_cadastro_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
+        self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_proximo_as.clicked.connect(self.limparCamposCadastroCuidador)
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
+        self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(self.limparCadastroCursos)
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
+        self.ui.btn_cadastrar_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_pessoas.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_as))
         self.ui.btn_cadastro_retirada_de_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_retirada_beneficios_as))
+        self.ui.btn_agenda_as.clicked.connect(self.limparCamposAgenda)
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
@@ -784,7 +789,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
 
-        #################SIGNALS CEP#################
+        ################# CEP #################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
@@ -805,6 +810,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         #self.self.btn_voltar_popup_as.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.login))
 
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_cuidador_as.clicked.connect(self.limparCamposCadastroUsuario)
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -3099,14 +3105,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def limparCamposCadastroUsuario (self):
         self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
-        self.ui.input_nascimento_usuario_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_situacao_ativo_usuario_as.setCheckable(False)
         self.ui.input_situacao_ativo_usuario_as.setCheckable(True)
         self.ui.input_situacao_inativo_usuario_as.setCheckable(False)
         self.ui.input_situacao_inativo_usuario_as.setCheckable(True)
         self.ui.input_cpf_usuario_as.setText("")
         self.ui.input_rg_usuario_as.setText("")
-        self.ui.input_data_emissao_usuario_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_emissao_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_orgao_expedidor_usuario_as.setText("")
         self.ui.input_nis_usuario_as.setText("")
         self.ui.input_cns_usuario_as.setText("")
@@ -3138,7 +3144,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_tipo_tratamento_usuario_as.setCurrentIndex(int(0))
         self.ui.input_Local_Tratamento_Clinica_usuario_as.setCurrentIndex(int(0))
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
-        self.ui.input_data_inicio_usuario_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
 
         
@@ -3147,10 +3153,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def limparCamposCadastroCuidador(self):
         self.ultimosIds()
         self.ui.input_nome_cuidador_as.setText("")
-        self.ui.input_data_nascimento_cuidador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_nascimento_cuidador_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_cpf_cuidador_as.setText("")
         self.ui.input_rg_cuidador_as.setText("")
-        self.ui.input_data_emissao_cuidador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_emissao_cuidador_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_orgao_expedidor_cuidador_as.setText("")
         self.ui.input_sexo_cuidador_as.setCurrentIndex(int(0))
         self.ui.input_usuario_cuidador_as.setCurrentIndex(int(0))
@@ -3170,7 +3176,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def limparCamposCadastroColaborador(self):
         self.ultimosIds()
         self.ui.input_nome_colaborador_as.setText("")
-        self.ui.input_data_nascimento_colaborador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_nascimento_colaborador_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_cpf_colaborador_as.setText("")
         self.ui.input_rg_colaborador_as.setText("")
         self.ui.input_situacao_ativo_colaborador_as.setCheckable(False)
@@ -3178,7 +3184,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_situacao_inativo_colaborador_as.setCheckable(False)
         self.ui.input_situacao_inativo_colaborador_as.setCheckable(True)
         self.ui.input_orgao_expedidor_colaborador_as.setText("")
-        self.ui.input_data_emissao_rg_colaborador_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_emissao_rg_colaborador_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_pis_colaborador_as.setText("")
         self.ui.input_sexo_colaborador_comboBox_as.setCurrentIndex(int(0))
         self.ui.input_telefone_colaborador_as.setText("")
@@ -3191,7 +3197,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_estado_colaborador_as.setText("")
         self.ui.input_estado_civil_colaborador_comboBox_as.setCurrentIndex(int(0))
         self.ui.input_salario_colaborador_as.setText("")
-        self.ui.input_data_admissao_colaborador_as_5.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_admissao_colaborador_as_5.setDateTime(QDateTime.currentDateTime())
         self.ui.input_escolaridade_colaborador_comboBox_as.setCurrentIndex(int(0))
         self.ui.input_cargo_colaborador_comboBox_as.setCurrentIndex(int(0))
         self.ui.input_periodo_colaborador_comboBox_as.setCurrentIndex(int(0))
@@ -3225,14 +3231,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_nome_cursos_as.setText("")
         self.ui.input_tipo_cursos_as.setCurrentIndex(int(0))
         self.ui.input_responsavel_cursos_as.setText("")
-        self.ui.input_data_inicio_cursos_as.setDate(QDate(2000, 1, 1))
-        self.ui.input_data_termino_cursos_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_inicio_cursos_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_data_termino_cursos_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_cursos_as.setCurrentIndex(int(0))
         self.ui.input_vagas_cursos_as.setText("")
-        self.ui.input_ativo_cursos_as.setCheckable(False)
-        self.ui.input_ativo_cursos_as.setCheckable(True)
-        self.ui.input_inativo_cursos_as.setCheckable(False)
-        self.ui.input_inativo_cursos_as.setCheckable(True)
         self.ui.input_descricao_atividade_cursos_as.setHtml("")
         self.ui.input_segunda_cursos_as.setCheckable(False)
         self.ui.input_segunda_cursos_as.setCheckable(True) 
@@ -3249,7 +3251,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
 
-    def limparCamposConsulta(self):
+    def limparCamposConsultaAssistenteSocial(self):
         self.ui.input_cpf_pagina_consulta_geral.setText("")
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
@@ -3258,8 +3260,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as.setCheckable(True)
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
-        self.ui.input_hora_consulta_as.setText(00,00)
+        self.ui.input_data_pagina_consulta_geral.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_hora_consulta_as.setText("")
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
 
     def limparCamposConsultaNutri(self):
@@ -3276,7 +3278,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_pagina_consulta_geral_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as_nutri.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
 
@@ -3294,7 +3296,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
-        self.ui.input_data_agendamento_nutri.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_agendamento_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_nutri.setHtml("")
 
@@ -3307,7 +3309,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_psi.setCheckable(True)
         self.ui.radioButton_Retorno_as_psi.setCheckable(False)
         self.ui.radioButton_Retorno_as_psi.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_pagina_consulta_geral_psi.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as_psi.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
 
@@ -3324,7 +3326,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_as.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_as.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_as.setCheckable(True)
-        self.ui.input_data_agendamento_as.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_agendamento_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_agendamento_as.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_as.setHtml("")
 
@@ -3354,14 +3356,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_lote_cadastro_beneficio.setText("")
         self.ui.input_comboBox_udm_cadastro_benefecio.setCurrentIndex(int(0))
         self.ui.input_descricao_cadastro_beneficio.setText("")
-        self.ui.input_dateEdit_cadastro_beneficio.setDate(QDate(2000, 1, 1))          
+        self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())       
         self.ui.input_spinBox_cadastro_beneficio.setValue(0)
     
     def limparCamposCadastroRetiradaBeneficios(self):
         self.ui.input_cpf_cadastro_retirada_beneficio.setText("")
         self.ui.input_nome_cadastro_retirada_beneficio.setText("")
         self.ui.input_idade_cadastro_retirada_beneficio.setText("")
-        self.ui.input_data_cadastro_retirada_beneficio.setDate(QDate(2020, 1, 1))
+        self.ui.input_data_cadastro_retirada_beneficio.setDateTime(QDateTime.currentDateTime())
         self.ui.input_telefone_cadastro_retirada_beneficio.setText("")
         self.ui.input_cns_cadastro_retirada_beneficio.setText("")
         self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
@@ -3382,7 +3384,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_fisio.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_fisio.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_fisio.setCheckable(True)
-        self.ui.input_data_agendamento_fisio.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_agendamento_fisio.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_agendamento_fisio.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_fisio.setHtml("")
 
@@ -3394,7 +3396,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_fisio.setCheckable(True)
         self.ui.radioButton_Retorno_as_fisio.setCheckable(False)
         self.ui.radioButton_Retorno_as_fisio.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_fisio.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_pagina_consulta_geral_fisio.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as_fisio.setText("")
         self.ui.input_relatorio_pagina_evolucao_geral_fisio.setHtml("")
         
@@ -3410,7 +3412,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_psi.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_psi.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_psi.setCheckable(True)
-        self.ui.input_data_agendamento_psi.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_agendamento_psi.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_agendamento_psi.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_psi.setHtml("")
         
@@ -3623,7 +3625,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Consulta Cadastrada com sucesso!")
         msg.exec()
         
-        self.limparCamposConsulta()
+        self.limparCamposConsultaAssistenteSocial()
         self.puxar_consulta()
         
     def cadastrar_consulta_nutri(self):
