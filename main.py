@@ -674,6 +674,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_dateEdit_cadastro_beneficio.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())
 
+        self.ui.input_inicio_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_fisio.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
