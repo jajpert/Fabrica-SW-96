@@ -698,7 +698,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_proximo_as.clicked.connect(self.limparCamposCadastroCuidador)
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
-        self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(self.limparCadastroCursos)
+        self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(self.limparCamposCursosOficinas)
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
@@ -707,13 +707,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cadastro_retirada_de_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_retirada_beneficios_as))
         self.ui.btn_agenda_as.clicked.connect(self.limparCamposAgenda)
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
+        self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(self.limparCamposAlterarDadosCadastrais)
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         self.ui.btn_cadastrar_fornecedores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_fornecedor_as))
-        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.limparCamposCadastroParticipante)
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
@@ -731,6 +732,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_beneficio_as))
+        self.ui.btn_voltar_pagina_participante_geral.clicked.connect(self.limparCamposCursosOficinas)
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
         self.ui.btn_relatorio_cursos_participantes.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorios_aluno_curso))
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
@@ -2873,7 +2875,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Cadastro Curso")
         msg.setText("Curso cadastrado com sucesso!")
         msg.exec()
-        self.limparCadastroCursos()
+        self.limparCamposCursosOficinas()
         
     
     def cadastroAgendamento(self):
@@ -3102,6 +3104,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.filtrar_usuario_area_sigilosa()
         self.limparCamposAreaSigilosa()
 
+
     def limparCamposCadastroUsuario (self):
         self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
@@ -3148,8 +3151,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
 
         
-
- 
     def limparCamposCadastroCuidador(self):
         self.ultimosIds()
         self.ui.input_nome_cuidador_as.setText("")
@@ -3170,7 +3171,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cidade_cuidador_as.setText("")
         self.ui.input_estado_cuidador_as.setText("")        
         self.ui.input_informacoes_gerais_as.setHtml("")
-
 
 
     def limparCamposCadastroColaborador(self):
@@ -3206,28 +3206,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
 
 
-    def limparCamposAreaSigilosa(self):
-        self.ui.input_obito_paciente_sim_as.setCheckable(False)
-        self.ui.input_obito_paciente_sim_as.setCheckable(True)
-        self.ui.input_obito_paciente_nao_as.setCheckable(False)
-        self.ui.input_obito_paciente_nao_as.setCheckable(True)
-        self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
-
-    def limparCamposCadastroClinica(self):
-       self.ui.input_cnpj_cadastro_clinica_as.setText("")
-       self.ui.input_razao_social_cadastro_clinica_as.setText("")
-       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
-       self.ui.input_telefone_clinica_as.setText("")
-       self.ui.input_email_clinica_as.setText("")       
-       self.ui.input_cep_clinica_as.setText("")
-       self.ui.input_logradouro_clinica_as.setText("")
-       self.ui.input_numero_clinica_as.setText("")
-       self.ui.input_bairro_clinica_as.setText("")
-       self.ui.input_cidade_clinica_as.setText("")
-       self.ui.input_estado_clinica_as.setText("")
-       self.ui.input_informacoes_gerais_clinica_as.setHtml("")
-       
-    def limparCadastroCursos(self):
+    def limparCamposCursosOficinas(self):
         self.ui.input_nome_cursos_as.setText("")
         self.ui.input_tipo_cursos_as.setCurrentIndex(int(0))
         self.ui.input_responsavel_cursos_as.setText("")
@@ -3250,6 +3229,42 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_sabado_cursos_as.setCheckable(True) 
         self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
+
+    
+    def limparCamposCadastroParticipante(self):
+        self.ui.input_cpf_pagina_participante_geral.setText("")
+        self.ui.input_nome_pagina_participante_geral.setText("")
+        self.ui.input_telefone_pagina_participante_geral.setText("")
+        self.ui.input_email_pagina_participante_geral.setText("")
+        self.ui.input_clinica_pagina_participante_geral.setText("")
+        self.ui.comboBox_cursos_participante_geral.setCurrentIndex(int(0))
+    
+
+    def limparCamposAlterarDadosCadastrais(self):
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(int(0))
+        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+
+
+    def limparCamposAreaSigilosa(self):
+        self.ui.input_obito_paciente_sim_as.setCheckable(False)
+        self.ui.input_obito_paciente_sim_as.setCheckable(True)
+        self.ui.input_obito_paciente_nao_as.setCheckable(False)
+        self.ui.input_obito_paciente_nao_as.setCheckable(True)
+        self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
+
+    def limparCamposCadastroClinica(self):
+       self.ui.input_cnpj_cadastro_clinica_as.setText("")
+       self.ui.input_razao_social_cadastro_clinica_as.setText("")
+       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
+       self.ui.input_telefone_clinica_as.setText("")
+       self.ui.input_email_clinica_as.setText("")       
+       self.ui.input_cep_clinica_as.setText("")
+       self.ui.input_logradouro_clinica_as.setText("")
+       self.ui.input_numero_clinica_as.setText("")
+       self.ui.input_bairro_clinica_as.setText("")
+       self.ui.input_cidade_clinica_as.setText("")
+       self.ui.input_estado_clinica_as.setText("")
+       self.ui.input_informacoes_gerais_clinica_as.setHtml("")
 
     def limparCamposConsultaAssistenteSocial(self):
         self.ui.input_cpf_pagina_consulta_geral.setText("")
