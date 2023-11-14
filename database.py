@@ -976,9 +976,9 @@ class DataBase():
     def busca_psic_agenda_tabela(self, cpf, id_colab_psic):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, DATE_FORMAT(consulta.data_consulta, '%d/%m/%Y') AS data, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, consulta.situacao, consulta.observacao 
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula 
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_psic}';""")
             result = self.cursor.fetchall()
             return result
@@ -1653,8 +1653,8 @@ class DataBase():
     def cadastro_agendamento_psi(self, agendamento):
         self.connect()
         try:
-            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
-            self.cursor.execute('INSERT INTO agendamento( id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            args = (agendamento[0],  agendamento[1],agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
+            self.cursor.execute('INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
