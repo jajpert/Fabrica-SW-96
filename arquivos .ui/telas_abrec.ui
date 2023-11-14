@@ -20979,6 +20979,21 @@ QPushButton:focus{outline: 0}</string>
                           <enum>QFrame::Raised</enum>
                          </property>
                          <layout class="QVBoxLayout" name="verticalLayout_132">
+                          <property name="spacing">
+                           <number>0</number>
+                          </property>
+                          <property name="leftMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="rightMargin">
+                           <number>0</number>
+                          </property>
+                          <property name="bottomMargin">
+                           <number>0</number>
+                          </property>
                           <item>
                            <widget class="QFrame" name="frame_754">
                             <property name="frameShape">
@@ -21980,6 +21995,21 @@ QPushButton:focus{outline:0}</string>
                                 <enum>QFrame::Raised</enum>
                                </property>
                                <layout class="QHBoxLayout" name="horizontalLayout_259">
+                                <property name="spacing">
+                                 <number>0</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="topMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
+                                </property>
+                                <property name="bottomMargin">
+                                 <number>0</number>
+                                </property>
                                 <item>
                                  <spacer name="horizontalSpacer_184">
                                   <property name="orientation">

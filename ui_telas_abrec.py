@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abreccfAtLl.ui'
+## Form generated from reading UI file 'telas_abrecwbsKWF.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -8577,7 +8577,9 @@ class Ui_MainWindow(object):
         self.frame_753.setFrameShape(QFrame.StyledPanel)
         self.frame_753.setFrameShadow(QFrame.Raised)
         self.verticalLayout_132 = QVBoxLayout(self.frame_753)
+        self.verticalLayout_132.setSpacing(0)
         self.verticalLayout_132.setObjectName(u"verticalLayout_132")
+        self.verticalLayout_132.setContentsMargins(0, 0, 0, 0)
         self.frame_754 = QFrame(self.frame_753)
         self.frame_754.setObjectName(u"frame_754")
         self.frame_754.setFrameShape(QFrame.StyledPanel)
@@ -8939,7 +8941,9 @@ class Ui_MainWindow(object):
         self.frame_755.setFrameShape(QFrame.StyledPanel)
         self.frame_755.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_259 = QHBoxLayout(self.frame_755)
+        self.horizontalLayout_259.setSpacing(0)
         self.horizontalLayout_259.setObjectName(u"horizontalLayout_259")
+        self.horizontalLayout_259.setContentsMargins(0, 0, 0, 0)
         self.horizontalSpacer_184 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_259.addItem(self.horizontalSpacer_184)
