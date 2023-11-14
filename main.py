@@ -752,6 +752,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
         self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
+        self.ui.btn_buscar_relatorio_nutri.clicked.connect(self.filtrar_data_relatorio_nutri)
 
         ########################### NUTRICIONISTA ###########################
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
@@ -844,10 +845,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
-        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
-        self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
+        #self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
         
 
 
@@ -2296,6 +2297,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
 
+    def filtrar_data_relatorio_nutri(self):  
+        texto_data_inicio_nutri = self.ui.input_inicio_periodo_relatorio_nutri.text()
+        texto_data_final_nutri = self.ui.input_final_periodo_relatorio_nutri.text()
+        texto_data_inicio_nutri =  "-".join(texto_data_inicio_nutri.split("/")[::-1])
+        texto_data_final_nutri =  "-".join(texto_data_final_nutri.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_nutri(texto_data_inicio_nutri,texto_data_final_nutri)
+
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
+
 
 
     def buscar_usuario_nutri(self):
@@ -3290,7 +3305,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_pagina_consulta_geral_nutri.setDate('')
         self.ui.input_hora_consulta_as_nutri.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
 
@@ -3308,7 +3323,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
-        self.ui.input_data_agendamento_nutri.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_agendamento_nutri.setDate(QDate(2023, 1, 1))
         self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_nutri.setHtml("")
 

@@ -196,8 +196,8 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                select pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
-                pessoa.telefone,usuario.beneficio,usuario.situacao_trabalho,clinica.nome_fantasia as clinica, endereco.bairro,endereco.cidade, consulta.data_consulta
+                select consulta.data_consulta,pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
+                pessoa.telefone,usuario.situacao_trabalho,clinica.nome_fantasia as clinica, endereco.bairro,endereco.cidade
                 from pessoa 
                 inner join usuario
                 on pessoa.id_matricula = usuario.id_matricula
@@ -208,7 +208,7 @@ class DataBase():
                 inner join clinica
                 on usuario.local_tratamento = clinica.id_clinica
                 inner join endereco
-                on usuario.id_matricula = endereco.id_endereco where consulta.id_colaborador LIKE '{id_relatorio_nutri}';
+                on usuario.id_matricula = endereco.id_endereco AND consulta.id_colaborador = '{id_relatorio_nutri}';
                     """)
             result = self.cursor.fetchall()
             return result
@@ -534,6 +534,33 @@ class DataBase():
                     INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                     WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_fisio}' and '{texto_data_final_fisio}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filter_data_relatorio_nutri(self,texto_data_inicio_nutri,texto_data_final_nutri):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+            select consulta.data_consulta,pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
+            pessoa.telefone,usuario.situacao_trabalho,clinica.nome_fantasia as clinica, endereco.bairro,endereco.cidade
+            from pessoa 
+            inner join usuario
+            on pessoa.id_matricula = usuario.id_matricula
+            inner join consulta
+            on usuario.id_matricula = consulta.id_matricula
+            inner join nutri_usuario
+            on  usuario.id_matricula = nutri_usuario.id_matricula 
+            inner join clinica
+            on usuario.local_tratamento = clinica.id_clinica
+            inner join endereco
+            on usuario.id_matricula = endereco.id_endereco where consulta.id_colaborador = 4
+            AND consulta.data_consulta BETWEEN  '{texto_data_inicio_nutri}' and '{texto_data_final_nutri}';
             """)
             result = self.cursor.fetchall()
             return result
@@ -1149,7 +1176,7 @@ class DataBase():
         self.connect()
         print("Consulta NUTRI ->", consulta)
         try:
-            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4])
+            args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
             self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
