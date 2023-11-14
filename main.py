@@ -680,6 +680,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
 
 
+        self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
+
+
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
@@ -4730,8 +4736,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'IDADE', 'SEXO', 'TELEFONE', 'ENDEREÇO', 'BAIRRO', 'CIDADE',
-            'PARENTESCO','USUARIO']
+        columns = ['NOME CUIDADOR', 'CPF', 'IDADE', 'SEXO', 'TELEFONE', 'ENDEREÇO', 'BAIRRO', 'CIDADE',
+            'USUARIO','PARENTESCO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
