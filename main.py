@@ -1289,7 +1289,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_parentesco_cuidador_as.setText(dados[8])  
             self.ui.input_alterar_informacoes_gerais_as.setHtml(dados[9])
             self.ui.input_alterar_telefone_cuidador_as.setText(dados[10]) 
-            self.ui.input_alterar_email_cuidador_as.setText(dados[11]) 
+            self.ui.input_alterar_telefone_contato_cuidador_as.setText(dados[11]) 
             self.ui.input_alterar_cep_cuidador_as.setText(dados[12]) 
             self.ui.input_alterar_logradouro_cuidador_as.setText(dados[13]) 
             self.ui.input_alterar_numero_cuidador_as.setText(str(dados[14])) 
@@ -1335,7 +1335,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_alterar_sexo_usuario_as.setCurrentIndex(0)
             
             self.ui.input_alterar_telefone_usuario_as.setText(dados[11]) #
-            self.ui.input_alterar_email_usuario_as.setText(dados[12]) #
+            self.ui.input_alterar_telefone_contato_usuario_as.setText(dados[12]) #
             self.ui.input_alterar_cep_usuario_as.setText(dados[13]) #
             self.ui.input_alterar_logradouro_usuario_as.setText(dados[14]) #
             self.ui.input_alterar_numero_usuario_as.setText(str(dados[15])) #
@@ -1813,8 +1813,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         orgao_exp = self.ui.input_alterar_orgao_expedidor_cuidador_as.text()
         sexo = self.ui.input_alterar_sexo_cuidador_as.currentText()
         telefone = self.ui.input_alterar_telefone_cuidador_as.text()
-        email = self.ui.input_alterar_email_cuidador_as.text()  
-        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email)
+        telefone_contato = self.ui.input_alterar_telefone_contato_cuidador_as.text()  
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,telefone_contato)
         
 
         ################### cuidador ###################################
@@ -1862,7 +1862,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         orgao_exp = self.ui.input_alterar_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_alterar_sexo_usuario_as.currentText()
         telefone = self.ui.input_alterar_telefone_usuario_as.text()
-        email = self.ui.input_alterar_email_usuario_as.text()
+        telefone_contato = self.ui.input_alterar_telefone_contato_usuario_as.text()
         escolaridade = self.ui.input_alterar_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_alterar_estado_civil_usuario_as.currentText()
 
@@ -1929,7 +1929,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             status = 'Inativo'
         id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
 
-        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
+        tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,telefone_contato,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)
 
         ######################## insert ##################################

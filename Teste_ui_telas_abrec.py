@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecKVfhJy.ui'
+## Form generated from reading UI file 'telas_abreclOkbKc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -9585,7 +9585,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.frame_47)
 
-        '''self.frame_60 = QFrame(self.frame_46)
+        self.frame_60 = QFrame(self.frame_46)
         self.frame_60.setObjectName(u"frame_60")
         self.frame_60.setMaximumSize(QSize(16777215, 60))
         font18 = QFont()
@@ -9834,7 +9834,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.addWidget(self.frame_128)
 
 
-        self.verticalLayout_28.addWidget(self.frame_60)'''
+        self.verticalLayout_28.addWidget(self.frame_60)
 
 
         self.horizontalLayout_6.addWidget(self.frame_46)
@@ -12442,7 +12442,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_67.addWidget(self.frame_101)
 
-        '''self.frame_102 = QFrame(self.frame_100)
+        self.frame_102 = QFrame(self.frame_100)
         self.frame_102.setObjectName(u"frame_102")
         self.frame_102.setMinimumSize(QSize(0, 0))
         self.frame_102.setMaximumSize(QSize(16777215, 60))
@@ -12627,7 +12627,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_20.addWidget(self.frame_111)
 
 
-        self.verticalLayout_67.addWidget(self.frame_102)'''
+        self.verticalLayout_67.addWidget(self.frame_102)
 
         self.frame_103 = QFrame(self.frame_100)
         self.frame_103.setObjectName(u"frame_103")
@@ -19000,7 +19000,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_189.addWidget(self.frame_286)
 
-        self.frame_292 = QFrame(self.frame_285)
+        '''self.frame_292 = QFrame(self.frame_285)
         self.frame_292.setObjectName(u"frame_292")
         self.frame_292.setMinimumSize(QSize(0, 0))
         self.frame_292.setMaximumSize(QSize(16777215, 60))
@@ -19129,28 +19129,29 @@ class Ui_MainWindow(object):
         self.frame_297 = QFrame(self.frame_292)
         self.frame_297.setObjectName(u"frame_297")
         self.frame_297.setMinimumSize(QSize(0, 0))
-        self.frame_297.setMaximumSize(QSize(240, 16777215))
+        self.frame_297.setMaximumSize(QSize(155, 16777215))
         self.frame_297.setFrameShape(QFrame.StyledPanel)
         self.frame_297.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_199 = QVBoxLayout(self.frame_297)
-        self.verticalLayout_199.setSpacing(0)
-        self.verticalLayout_199.setObjectName(u"verticalLayout_199")
-        self.verticalLayout_199.setContentsMargins(0, 0, 0, 0)
-        self.label_alterar_email_cuidador_as = QLabel(self.frame_297)
-        self.label_alterar_email_cuidador_as.setObjectName(u"label_alterar_email_cuidador_as")
-        self.label_alterar_email_cuidador_as.setMinimumSize(QSize(0, 0))
-        self.label_alterar_email_cuidador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_email_cuidador_as.setFont(font)
+        self.verticalLayout_97 = QVBoxLayout(self.frame_297)
+        self.verticalLayout_97.setSpacing(0)
+        self.verticalLayout_97.setObjectName(u"verticalLayout_97")
+        self.verticalLayout_97.setContentsMargins(0, 0, 0, 0)
+        self.label_alterar_telefone_contato_cuidador_as = QLabel(self.frame_297)
+        self.label_alterar_telefone_contato_cuidador_as.setObjectName(u"label_alterar_telefone_contato_cuidador_as")
+        self.label_alterar_telefone_contato_cuidador_as.setMinimumSize(QSize(0, 0))
+        self.label_alterar_telefone_contato_cuidador_as.setMaximumSize(QSize(240, 16777215))
+        self.label_alterar_telefone_contato_cuidador_as.setFont(font)
 
-        self.verticalLayout_199.addWidget(self.label_alterar_email_cuidador_as)
+        self.verticalLayout_97.addWidget(self.label_alterar_telefone_contato_cuidador_as)
 
-        self.input_alterar_email_cuidador_as = QLineEdit(self.frame_297)
-        self.input_alterar_email_cuidador_as.setObjectName(u"input_alterar_email_cuidador_as")
-        self.input_alterar_email_cuidador_as.setMinimumSize(QSize(0, 30))
-        self.input_alterar_email_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_email_cuidador_as.setFont(font)
+        self.input_alterar_telefone_contato_cuidador_as = QLineEdit(self.frame_297)
+        self.input_alterar_telefone_contato_cuidador_as.setObjectName(u"input_alterar_telefone_contato_cuidador_as")
+        self.input_alterar_telefone_contato_cuidador_as.setMinimumSize(QSize(0, 30))
+        self.input_alterar_telefone_contato_cuidador_as.setMaximumSize(QSize(16777215, 30))
+        self.input_alterar_telefone_contato_cuidador_as.setFont(font)
+        self.input_alterar_telefone_contato_cuidador_as.setMaxLength(11)
 
-        self.verticalLayout_199.addWidget(self.input_alterar_email_cuidador_as)
+        self.verticalLayout_97.addWidget(self.input_alterar_telefone_contato_cuidador_as)
 
 
         self.horizontalLayout_99.addWidget(self.frame_297)
@@ -19252,7 +19253,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_99.addWidget(self.frame_298)
 
 
-        self.verticalLayout_189.addWidget(self.frame_292)
+        self.verticalLayout_189.addWidget(self.frame_292)'''
 
         self.frame_299 = QFrame(self.frame_285)
         self.frame_299.setObjectName(u"frame_299")
@@ -19994,7 +19995,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_209.addWidget(self.frame_320)
 
-        self.frame_327 = QFrame(self.frame_313)
+        '''self.frame_327 = QFrame(self.frame_313)
         self.frame_327.setObjectName(u"frame_327")
         self.frame_327.setMaximumSize(QSize(16777215, 60))
         self.frame_327.setFont(font18)
@@ -20071,28 +20072,29 @@ class Ui_MainWindow(object):
         self.frame_330 = QFrame(self.frame_327)
         self.frame_330.setObjectName(u"frame_330")
         self.frame_330.setMinimumSize(QSize(0, 0))
-        self.frame_330.setMaximumSize(QSize(240, 16777215))
+        self.frame_330.setMaximumSize(QSize(155, 16777215))
         self.frame_330.setFrameShape(QFrame.StyledPanel)
         self.frame_330.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_223 = QVBoxLayout(self.frame_330)
-        self.verticalLayout_223.setSpacing(0)
-        self.verticalLayout_223.setObjectName(u"verticalLayout_223")
-        self.verticalLayout_223.setContentsMargins(0, 0, 0, 0)
-        self.label_alterar_email_usuario_as = QLabel(self.frame_330)
-        self.label_alterar_email_usuario_as.setObjectName(u"label_alterar_email_usuario_as")
-        self.label_alterar_email_usuario_as.setMinimumSize(QSize(0, 0))
-        self.label_alterar_email_usuario_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_email_usuario_as.setFont(font)
+        self.verticalLayout_199 = QVBoxLayout(self.frame_330)
+        self.verticalLayout_199.setSpacing(0)
+        self.verticalLayout_199.setObjectName(u"verticalLayout_199")
+        self.verticalLayout_199.setContentsMargins(0, 0, 0, 0)
+        self.label_alterar_telefone_contato_usuario_as = QLabel(self.frame_330)
+        self.label_alterar_telefone_contato_usuario_as.setObjectName(u"label_alterar_telefone_contato_usuario_as")
+        self.label_alterar_telefone_contato_usuario_as.setMinimumSize(QSize(0, 0))
+        self.label_alterar_telefone_contato_usuario_as.setMaximumSize(QSize(240, 16777215))
+        self.label_alterar_telefone_contato_usuario_as.setFont(font)
 
-        self.verticalLayout_223.addWidget(self.label_alterar_email_usuario_as)
+        self.verticalLayout_199.addWidget(self.label_alterar_telefone_contato_usuario_as)
 
-        self.input_alterar_email_usuario_as = QLineEdit(self.frame_330)
-        self.input_alterar_email_usuario_as.setObjectName(u"input_alterar_email_usuario_as")
-        self.input_alterar_email_usuario_as.setMinimumSize(QSize(0, 30))
-        self.input_alterar_email_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_email_usuario_as.setFont(font)
+        self.input_alterar_telefone_contato_usuario_as = QLineEdit(self.frame_330)
+        self.input_alterar_telefone_contato_usuario_as.setObjectName(u"input_alterar_telefone_contato_usuario_as")
+        self.input_alterar_telefone_contato_usuario_as.setMinimumSize(QSize(0, 30))
+        self.input_alterar_telefone_contato_usuario_as.setMaximumSize(QSize(16777215, 30))
+        self.input_alterar_telefone_contato_usuario_as.setFont(font)
+        self.input_alterar_telefone_contato_usuario_as.setMaxLength(11)
 
-        self.verticalLayout_223.addWidget(self.input_alterar_email_usuario_as)
+        self.verticalLayout_199.addWidget(self.input_alterar_telefone_contato_usuario_as)
 
 
         self.horizontalLayout_109.addWidget(self.frame_330)
@@ -20238,7 +20240,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_109.addWidget(self.frame_332)
 
 
-        self.verticalLayout_209.addWidget(self.frame_327)
+        self.verticalLayout_209.addWidget(self.frame_327)'''
 
 
         self.horizontalLayout_105.addWidget(self.frame_313)
@@ -23156,8 +23158,8 @@ class Ui_MainWindow(object):
         self.stackedWidget_11.setCurrentIndex(1)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(6)
-        self.stackedWidget_8.setCurrentIndex(1)
+        self.stackedWidget_2.setCurrentIndex(19)
+        self.stackedWidget_8.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -24315,7 +24317,7 @@ class Ui_MainWindow(object):
 
         self.label_alterar_parentesco_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Parentesco", None))
         self.label_alterar_telefone_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
-        self.label_alterar_email_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
+        self.label_alterar_telefone_contato_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Telefone de Contato", None))
         self.label_alterar_cep_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
         self.input_alterar_cep_cuidador_as.setInputMask(QCoreApplication.translate("MainWindow", u"00.000-000", None))
         self.input_alterar_cep_cuidador_as.setText(QCoreApplication.translate("MainWindow", u".-", None))
@@ -24350,7 +24352,7 @@ class Ui_MainWindow(object):
         self.input_alterar_sexo_usuario_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Feminino", None))
 
         self.label_alterar_telefone_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Telefone", None))
-        self.label_alterar_email_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Email", None))
+        self.label_alterar_telefone_contato_usuario_as.setText(QCoreApplication.translate("MainWindow", u"Telefone de Contato", None))
         self.label_alterar_cep_usuario_as.setText(QCoreApplication.translate("MainWindow", u"CEP", None))
         self.input_alterar_cep_usuario_as.setInputMask(QCoreApplication.translate("MainWindow", u"00.000-000", None))
         self.input_alterar_cep_usuario_as.setText(QCoreApplication.translate("MainWindow", u".-", None))
