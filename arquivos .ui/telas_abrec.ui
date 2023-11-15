@@ -21089,7 +21089,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>18</number>
+                      <number>19</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -51307,7 +51307,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                  </property>
                                                  <layout class="QVBoxLayout" name="verticalLayout_573">
                                                   <item>
-                                                   <widget class="QPushButton" name="btn_buscar_relatorio_beneficios_farm_2">
+                                                   <widget class="QPushButton" name="btn_buscar_relatorio_clinicas_cadastradas_as">
                                                     <property name="sizePolicy">
                                                      <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                                                       <horstretch>0</horstretch>
@@ -51450,7 +51450,7 @@ border-style: solid;</string>
                                                <string/>
                                               </property>
                                               <property name="placeholderText">
-                                               <string>Nome, CPF, curso...</string>
+                                               <string>CNPJ,E-mail,Razão Social...</string>
                                               </property>
                                              </widget>
                                             </item>
@@ -51787,7 +51787,7 @@ QPushButton:focus{outline:0}</string>
                                      </property>
                                      <layout class="QHBoxLayout" name="horizontalLayout_310">
                                       <item>
-                                       <widget class="QPushButton" name="btn_voltar_pagina_relatorio_relatorio_clinicas_cadastradas_as">
+                                       <widget class="QPushButton" name="btn_voltar_pagina_relatorio_clinicas_cadastradas_as">
                                         <property name="minimumSize">
                                          <size>
                                           <width>100</width>
