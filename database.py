@@ -1006,7 +1006,7 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_usuario, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora
+            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
@@ -1159,6 +1159,8 @@ class DataBase():
     def buscar_info_consulta(self,cpf,id_colab_ass):
         self.connect()
         
+        print("database ->",cpf)
+        print("database ->",id_colab_ass)
         try:
             self.cursor.execute(f"""
                                     SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
@@ -1171,7 +1173,8 @@ class DataBase():
             return result
 
         except Exception as err:
-            return "ERRO",str(err)
+            erro = str(err)
+            print(erro)
 
         finally:
             self.close_connection()
@@ -1243,24 +1246,6 @@ class DataBase():
                                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR consulta.data_consulta LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
-                                """)
-            result = self.cursor.fetchall()
-            return result
-
-        except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
-    
-    def buscar_info_consulta_psi(self,id_usuario):
-        self.connect()
-        try:
-            self.cursor.execute(f"""
-                                SELECT consulta.id_consulta,consulta.data,consulta.situacao,consulta.observacao FROM consulta 
-                                INNER JOIN usuario ON usuario.id_usuario = consulta.id_usuario
-                                LEFT JOIN pessoa ON pessoa.id_matricula = usuario.id_matricula WHERE
-                                usuario.id_usuario LIKE '{id_usuario}';
                                 """)
             result = self.cursor.fetchall()
             return result

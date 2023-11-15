@@ -3264,7 +3264,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
 
     def limparCamposConsulta(self):
-        self.ui.input_cpf_pagina_consulta_geral.setText("")
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
         self.ui.input_clinica_pagina_consulta_geral.setText("")
@@ -3600,8 +3599,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.buscar_consulta(cpf)
-        self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
-        self.ui.input_id_usuario_consulta_as.hide()
+        self.ui.input_id_matricula_consulta_as.setText(str(dados[0]))
+        self.ui.input_id_matricula_consulta_as.hide()
         self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
@@ -3623,9 +3622,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
-        id_usuario = self.ui.input_id_usuario_consulta_as.text()
+        id_matricula = self.ui.input_id_matricula_consulta_as.text()
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario, self.id_colab_tratado_ass)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_ass)
         print(tupla_consulta)
 
         result = []
@@ -3791,7 +3790,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def puxar_consulta(self):
         cpf_tmp = self.ui.input_cpf_pagina_consulta_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+        print("CPF CONSULTA ASSIS ->", cpf)
         result = self.db.buscar_info_consulta(cpf, self.id_colab_tratado_ass)
+        print(result)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 

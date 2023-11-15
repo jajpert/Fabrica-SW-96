@@ -22615,11 +22615,11 @@ class Ui_MainWindow(object):
         self.frame_4601.setObjectName(u"frame_4601")
         self.frame_4601.setFrameShape(QFrame.StyledPanel)
         self.frame_4601.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_consulta_as = QLineEdit(self.frame_4601)
-        self.input_id_usuario_consulta_as.setObjectName(u"input_id_usuario_consulta_as")
-        self.input_id_usuario_consulta_as.setEnabled(False)
-        self.input_id_usuario_consulta_as.setGeometry(QRect(0, 0, 489, 32))
-        self.input_id_usuario_consulta_as.setStyleSheet(u"border-color: transparent;\n"
+        self.input_id_matricula_consulta_as = QLineEdit(self.frame_4601)
+        self.input_id_matricula_consulta_as.setObjectName(u"input_id_matricula_consulta_as")
+        self.input_id_matricula_consulta_as.setEnabled(False)
+        self.input_id_matricula_consulta_as.setGeometry(QRect(0, 0, 489, 32))
+        self.input_id_matricula_consulta_as.setStyleSheet(u"border-color: transparent;\n"
 "background-color: transparent;")
 
         self.verticalLayout_113.addWidget(self.frame_4601)
