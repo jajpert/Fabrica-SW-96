@@ -2477,7 +2477,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         orgao_exp = self.ui.input_orgao_expedidor_usuario_as.text()
         sexo = self.ui.input_sexo_usuario_as.currentText()
         telefone = self.ui.input_telefone_usuario_as.text()
-        email = self.ui.input_email_usuario_as.text()
+        telefone_contato = self.ui.input_telefone_contato_usuario_as.text()
         escolaridade = self.ui.input_escolaridade_usuario_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_usuario_as.currentText()
 
@@ -2532,7 +2532,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             status = 'Inativo'
 
         
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,email,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,telefone_contato,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
@@ -2698,9 +2698,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         orgao_exp = self.ui.input_orgao_expedidor_cuidador_as.text()
         sexo = self.ui.input_sexo_cuidador_as.currentText()
         telefone = self.ui.input_telefone_cuidador_as.text()
-        email = self.ui.input_email_cuidador_as.text()  
+        telefone_contato = self.ui.input_telefone_contato_cuidador_as.text()  
 
-        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,email)
+        tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,telefone,telefone_contato)
 
         ################### cuidador ###################################
 
@@ -3126,7 +3126,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cns_usuario_as.setText("")
         self.ui.input_sexo_usuario_as.setCurrentIndex(int(0))
         self.ui.input_telefone_usuario_as.setText("")
-        self.ui.input_email_usuario_as.setText("")
+        self.ui.input_telefone_contato_usuario_as.setText("")
         self.ui.input_cep_usuario_as.setText("") #
         self.ui.input_logradouro_usuario_as.setText("") #
         self.ui.input_numero_usuario_as.setText("") #
@@ -3170,7 +3170,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_usuario_cuidador_as.setCurrentIndex(int(0))
         self.ui.input_parentesco_cuidador_as.setText("")
         self.ui.input_telefone_cuidador_as.setText("")
-        self.ui.input_email_cuidador_as.setText("") 
+        self.ui.input_telefone_contato_cuidador_as.setText("") 
         self.ui.input_cep_cuidador_as.setText("")
         self.ui.input_logradouro_cuidador_as.setText("")
         self.ui.input_numero_cuidador_as.setText("")

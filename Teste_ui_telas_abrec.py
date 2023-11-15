@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecLOdXWR.ui'
+## Form generated from reading UI file 'telas_abrecKVfhJy.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -9585,7 +9585,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_28.addWidget(self.frame_47)
 
-        self.frame_60 = QFrame(self.frame_46)
+        '''self.frame_60 = QFrame(self.frame_46)
         self.frame_60.setObjectName(u"frame_60")
         self.frame_60.setMaximumSize(QSize(16777215, 60))
         font18 = QFont()
@@ -9834,7 +9834,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_41.addWidget(self.frame_128)
 
 
-        self.verticalLayout_28.addWidget(self.frame_60)
+        self.verticalLayout_28.addWidget(self.frame_60)'''
 
 
         self.horizontalLayout_6.addWidget(self.frame_46)
@@ -12442,7 +12442,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_67.addWidget(self.frame_101)
 
-        self.frame_102 = QFrame(self.frame_100)
+        '''self.frame_102 = QFrame(self.frame_100)
         self.frame_102.setObjectName(u"frame_102")
         self.frame_102.setMinimumSize(QSize(0, 0))
         self.frame_102.setMaximumSize(QSize(16777215, 60))
@@ -12596,7 +12596,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_20.addWidget(self.frame_110)
 
-        '''self.frame_111 = QFrame(self.frame_102)
+        self.frame_111 = QFrame(self.frame_102)
         self.frame_111.setObjectName(u"frame_111")
         self.frame_111.setMinimumSize(QSize(0, 0))
         self.frame_111.setMaximumSize(QSize(155, 16777215))
@@ -12624,10 +12624,10 @@ class Ui_MainWindow(object):
         self.verticalLayout_75.addWidget(self.input_telefone_contato_cuidador_as)
 
 
-        self.horizontalLayout_20.addWidget(self.frame_111)'''
+        self.horizontalLayout_20.addWidget(self.frame_111)
 
 
-        self.verticalLayout_67.addWidget(self.frame_102)
+        self.verticalLayout_67.addWidget(self.frame_102)'''
 
         self.frame_103 = QFrame(self.frame_100)
         self.frame_103.setObjectName(u"frame_103")
@@ -23156,7 +23156,7 @@ class Ui_MainWindow(object):
         self.stackedWidget_11.setCurrentIndex(1)
         self.tipos_acesso.setCurrentIndex(0)
         self.stack_assistente.setCurrentIndex(0)
-        self.stackedWidget_2.setCurrentIndex(9)
+        self.stackedWidget_2.setCurrentIndex(6)
         self.stackedWidget_8.setCurrentIndex(1)
 
 
