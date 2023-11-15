@@ -196,19 +196,19 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                select consulta.data_consulta,pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
+                Select consulta.data_consulta,pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
                 pessoa.telefone,usuario.situacao_trabalho,clinica.nome_fantasia as clinica, endereco.bairro,endereco.cidade
-                from pessoa 
-                inner join usuario
-                on pessoa.id_matricula = usuario.id_matricula
-                inner join consulta
-                on usuario.id_matricula = consulta.id_matricula
-                inner join nutri_usuario
-                on  usuario.id_matricula = nutri_usuario.id_matricula 
-                inner join clinica
-                on usuario.local_tratamento = clinica.id_clinica
-                inner join endereco
-                on usuario.id_matricula = endereco.id_endereco AND consulta.id_colaborador = '{id_relatorio_nutri}';
+                FROM pessoa 
+                INNER JOIN usuario
+                ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN consulta
+                ON usuario.id_matricula = consulta.id_matricula
+                INNER JOIN nutri_usuario
+                ON  usuario.id_matricula = nutri_usuario.id_matricula 
+                INNER JOIN clinica
+                ON usuario.local_tratamento = clinica.id_clinica
+                INNER JOIN endereco
+                ON pessoa.id_endereco = endereco.id_endereco WHERE consulta.id_colaborador = '{id_relatorio_nutri}';
                     """)
             result = self.cursor.fetchall()
             return result
@@ -541,7 +541,7 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def filter_data_relatorio_nutri(self,texto_data_inicio_nutri,texto_data_final_nutri):
+    def filter_data_relatorio_nutri(self,texto_data_inicio_nutri,texto_data_final_nutri,id_relatorio_nutri):
         self.connect()
         try:
             self.cursor.execute(f"""
@@ -557,7 +557,7 @@ class DataBase():
             inner join clinica
             on usuario.local_tratamento = clinica.id_clinica
             inner join endereco
-            on usuario.id_matricula = endereco.id_endereco where consulta.id_colaborador = 4
+            on pessoa.id_endereco = endereco.id_endereco where consulta.id_colaborador = '{id_relatorio_nutri}'
             AND consulta.data_consulta BETWEEN  '{texto_data_inicio_nutri}' and '{texto_data_final_nutri}';
             """)
             result = self.cursor.fetchall()
@@ -589,6 +589,27 @@ class DataBase():
             self.close_connection()
 
     def buscar_relatorio_fisio_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                from pessoa 
+                                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta on consulta.id_consulta = usuario.id_usuario
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR usuario.nis LIKE "%{texto}%" OR pessoa.data_nascimento LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_nutri_pesquisa(self,texto):
         self.connect()
         try:
             self.cursor.execute(f"""
@@ -1175,7 +1196,7 @@ class DataBase():
         print("Consulta NUTRI ->", consulta)
         try:
             args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
-            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula) VALUES (%s,%s,%s,%s,%s)', args)
+            self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula, id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args)
             self.conn.commit()
             return "Cadastrado com Sucesso!!"
 

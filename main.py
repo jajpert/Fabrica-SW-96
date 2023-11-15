@@ -685,6 +685,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
 
+        self.ui.input_inicio_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
@@ -756,6 +760,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_fisio.clicked.connect(self.buscar_usuario_agendamento_fisio) #SELECT USUARIO AGENDAMENTO FISIO
         self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_usuario_consulta_fisio) #SELECT USUARIO CONSULTA FISIO
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
+        self.ui.input_buscar_dados_relatorio_nutri.textChanged.connect(self.filtrar_dados_relatorio_nutri)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
         self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
         self.ui.btn_buscar_relatorio_nutri.clicked.connect(self.filtrar_data_relatorio_nutri)
@@ -2225,6 +2230,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_nutri_nt = id_colab_nutri[0][0]
         self.id_colab_tratado_nutri = id_colab_nutri_nt
         print(self.id_colab_tratado_nutri)
+        return self.id_colab_tratado_nutri
 
     def buscarIdColabFisio(self):
         login = self.ui.input_usuario_login.text()
@@ -2242,6 +2248,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def filtrar_dados_relatorio_nutri(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_nutri.text())
+        res = self.db.buscar_relatorio_nutri_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
     
     def puxar_relatorio_fisio(self):
         result = self.db.buscar_relatorio_fisio()
@@ -2308,8 +2323,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         texto_data_final_nutri = self.ui.input_final_periodo_relatorio_nutri.text()
         texto_data_inicio_nutri =  "-".join(texto_data_inicio_nutri.split("/")[::-1])
         texto_data_final_nutri =  "-".join(texto_data_final_nutri.split("/")[::-1])
-        
-        res = self.db.filter_data_relatorio_nutri(texto_data_inicio_nutri,texto_data_final_nutri)
+        id_relatorio_nutri = self.buscarIdColabNutri()
+        res = self.db.filter_data_relatorio_nutri(texto_data_inicio_nutri,texto_data_final_nutri,id_relatorio_nutri)
 
         self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
 
@@ -3311,7 +3326,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_nutri.setDate('')
+        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(2023, 1, 1))
         self.ui.input_hora_consulta_as_nutri.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
 
@@ -3676,8 +3691,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_nutri_consulta.text())
-
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        id_colaborador = self.buscarIdColabNutri()
+        print(id_colaborador)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula,id_colaborador)
 
         result = []
         result = self.db.cadastro_consulta_nutri(tupla_consulta)
