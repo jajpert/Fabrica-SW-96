@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrecwbsKWF.ui'
+## Form generated from reading UI file 'telas_abrectvajSO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -8955,7 +8955,9 @@ class Ui_MainWindow(object):
         self.frame_756.setFrameShape(QFrame.StyledPanel)
         self.frame_756.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_260 = QHBoxLayout(self.frame_756)
+        self.horizontalLayout_260.setSpacing(0)
         self.horizontalLayout_260.setObjectName(u"horizontalLayout_260")
+        self.horizontalLayout_260.setContentsMargins(0, 0, 0, 0)
         self.label_relatorio_cuidadores_as = QLabel(self.frame_756)
         self.label_relatorio_cuidadores_as.setObjectName(u"label_relatorio_cuidadores_as")
         self.label_relatorio_cuidadores_as.setMinimumSize(QSize(450, 0))
