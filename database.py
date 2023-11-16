@@ -278,7 +278,7 @@ class DataBase():
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
                     INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
-                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco;
+                    INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
                     wHERE pes.data_nascimento BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
             result = self.cursor.fetchall()
