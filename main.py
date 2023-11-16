@@ -682,6 +682,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
         
+        self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
+
+        
+
+
+        ###############SIGNALS################# 
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
         ########################### LOGIN ##################################################################################################################################################
@@ -719,6 +733,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.limparCamposCadastroParticipante)
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_clinicas_cadastradas))
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
@@ -732,6 +747,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
+        self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.textChanged.connect(self.filtrar_relatorio_clinica_cadastrada)
+        self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(self.puxar_relatorio_clinicas_cadastradas)
+        self.ui.btn_buscar_relatorio_clinicas_cadastradas_as.clicked.connect(self.filtrar_data_relatorio_clinicas_cadastradas)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_beneficio_as))
         self.ui.btn_relatorio_beneficios.clicked.connect(self.limparCamposRelatorioBeneficios)
@@ -743,6 +761,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
         self.ui.btn_relatorio_cuidadores.clicked.connect(self.limparCamposRelatorioCuidadores)
         self.ui.btn_voltar_relatorios_cuidadores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_voltar_pagina_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
 
 
@@ -2246,6 +2265,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
     
+    def filtrar_relatorio_clinica_cadastrada(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.text())
+        res = self.db.buscar_relatorio_clinica_cadastrada_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
+    
     def puxar_relatorio_fisio(self):
         result = self.db.buscar_relatorio_fisio()
         self.ui.input_TableWidget_relatorio_fisio.clearContents()
@@ -2263,7 +2291,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column,QTableWidgetItem(str(data)))
+    
+    def puxar_relatorio_clinicas_cadastradas(self):
+        result = self.db.buscar_relatorio_clinica_cadastrada()
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.clearContents()
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(len(result))   
 
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column,QTableWidgetItem(str(data)))
 
 
 
@@ -2305,7 +2341,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def filtrar_data_relatorio_clinicas_cadastradas(self):  
+        texto_data_inicio_clinica_cadastrada = self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.text()
+        texto_data_final_clinica_cadastrada = self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.text()
+        texto_data_inicio_clinica_cadastrada =  "-".join(texto_data_inicio_clinica_cadastrada.split("/")[::-1])
+        texto_data_final_clinica_cadastrada =  "-".join(texto_data_final_clinica_cadastrada.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_clinica_cadastrada(texto_data_inicio_clinica_cadastrada,texto_data_final_clinica_cadastrada)
 
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
 
 
 

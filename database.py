@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -1886,8 +1886,57 @@ class DataBase():
             return "ERRO",str(err)
 
         finally:
+            self.close_connection() 
+
+    def filter_data_relatorio_clinica_cadastrada(self,texto_data_inicio_clinica_cadastrada,texto_data_final_clinica_cadastrada):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                    INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
+                    WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_clinica_cadastrada}' and '{texto_data_final_clinica_cadastrada}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
             self.close_connection()
 
+    def buscar_relatorio_clinica_cadastrada(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                               SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                               INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco;
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_clinica_cadastrada_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                                INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
+                                WHERE clinica.cnpj LIKE "%{texto}%" OR clinica.email LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR clinica.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+   
 
     def delete(self,id):
         self.connect()
