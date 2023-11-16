@@ -680,6 +680,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
 
 
+        self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_cuidadores_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
+        
+        self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
+
+        
+
+
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
@@ -715,6 +728,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_clinicas_cadastradas))
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
@@ -728,6 +742,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_alterar_pessoa_cdeficiencia_nao_usuario_as.clicked.connect(self.pessoa_com_deficiencia_alterar)
         self.ui.input_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_tipo_deficiencia_usuario_changed)
         self.ui.input_alterar_tipo_deficiencia_usuario_as.currentIndexChanged.connect(self.on_alterar_tipo_deficiencia_usuario_changed)
+        self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.textChanged.connect(self.filtrar_relatorio_clinica_cadastrada)
+        self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(self.puxar_relatorio_clinicas_cadastradas)
+        self.ui.btn_buscar_relatorio_clinicas_cadastradas_as.clicked.connect(self.filtrar_data_relatorio_clinicas_cadastradas)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_beneficio_as))
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
@@ -735,6 +752,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_relatorio_aluno_curso.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
         self.ui.btn_voltar_relatorios_cuidadores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_voltar_pagina_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
 
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
@@ -772,6 +790,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ########################### PSICOLOGA ###########################
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
+        self.ui.btn_agenda_psi.clicked.connect(self.listarAgendamentos_psi)
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
@@ -787,6 +806,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
 
+
+        ########################### FARMACEUTICA ###########################
+        self.ui.btn_cadastrar_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_cadastrar_farm))
+        self.ui.btn_relatorios_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_relatorio_farm))
+        self.ui.btn_retirar_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_retirada_farm))
 
 
 
@@ -831,6 +855,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         
+        self.ui.btn_voltar_cadastro_retirada_beneficio_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
+        self.ui.btn_voltar_cadastro_beneficio_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
+        self.ui.btn_voltar_pagina_relatorio_beneficios_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
+                
 
         ######SIGNALS POPUP RECUPERAR SENHA AS######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
@@ -843,10 +871,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
-        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
-        self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
-        self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
-        self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
+        #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        #self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
+        #self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
+        #self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
         
 
 
@@ -886,12 +914,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_salvar_agenda_as.clicked.connect(self.listarAgendamentos)
-        self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.buscar_curso_evento)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.buscar_dados_participante)
         self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
@@ -2191,8 +2217,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         print("Login Assis ->", login)
         id_colab_colab = self.db.buscarIdColabAssis(login)
         id_colab_nt = id_colab_colab[0][0]
-        self.id_colab_tratado = id_colab_nt
-        print("ID ASSISTENTE ->", self.id_colab_tratado)
+        self.id_colab_tratado_ass = id_colab_nt
+        print("ID ASSISTENTE ->", self.id_colab_tratado_ass)
 
     
     def buscarIdColabPsic(self):
@@ -2201,14 +2227,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_colab = self.db.buscarIdColabPsic(login)
         id_colab_nt = id_colab_colab[0][0]
         self.id_colab_tratado_psic = id_colab_nt
+        print("ID PSIC ->", self.id_colab_tratado_psic)
 
-    
-    def buscarIdColabPsic(self):
-        login = self.ui.input_usuario_login.text()
-        print("Login Pisc ->", login)
-        id_colab_colab = self.db.buscarIdColabPsic(login)
-        id_colab_nt = id_colab_colab[0][0]
-        self.id_colab_tratado_psic = id_colab_nt
 
     def buscarIdColabNutri(self):
         login = self.ui.input_usuario_login.text()
@@ -2216,7 +2236,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_nutri = self.db.buscarIdColabNutri(login)
         id_colab_nutri_nt = id_colab_nutri[0][0]
         self.id_colab_tratado_nutri = id_colab_nutri_nt
-        print(self.id_colab_tratado_nutri)
+        print("ID NUTRI ->",self.id_colab_tratado_nutri)
 
     def buscarIdColabFisio(self):
         login = self.ui.input_usuario_login.text()
@@ -2224,7 +2244,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_fisio= self.db.buscarIdColabFisio(login)
         id_colab_fisio_nt = id_colab_fisio[0][0]
         self.id_colab_tratado_fisio = id_colab_fisio_nt
-        print(self.id_colab_tratado_fisio)
+        print("ID FISIO ->",self.id_colab_tratado_fisio)
 
     def filtrar_dados_relatorio_fisio(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
@@ -2234,6 +2254,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def filtrar_relatorio_clinica_cadastrada(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.text())
+        res = self.db.buscar_relatorio_clinica_cadastrada_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
     
     def puxar_relatorio_fisio(self):
         result = self.db.buscar_relatorio_fisio()
@@ -2252,7 +2281,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column,QTableWidgetItem(str(data)))
+    
+    def puxar_relatorio_clinicas_cadastradas(self):
+        result = self.db.buscar_relatorio_clinica_cadastrada()
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.clearContents()
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(len(result))   
 
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column,QTableWidgetItem(str(data)))
 
 
 
@@ -2294,8 +2331,76 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+    
+    def filtrar_data_relatorio_clinicas_cadastradas(self):  
+        texto_data_inicio_clinica_cadastrada = self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.text()
+        texto_data_final_clinica_cadastrada = self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.text()
+        texto_data_inicio_clinica_cadastrada =  "-".join(texto_data_inicio_clinica_cadastrada.split("/")[::-1])
+        texto_data_final_clinica_cadastrada =  "-".join(texto_data_final_clinica_cadastrada.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_clinica_cadastrada(texto_data_inicio_clinica_cadastrada,texto_data_final_clinica_cadastrada)
+
+        self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
 
 
+
+
+
+
+
+    def tabela_agenda_nutri(self): #TABELA TODOS OS AGENDAMENTOS
+        result = self.db.busca_nutri_agendamento_tabela()
+        self.ui.input_TableWidget_agendamento_nutri.clearContents()
+        self.ui.input_TableWidget_agendamento_nutri.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    def tabela_consulta_nutri_tabela(self): #TABELA CONSULTA USUARIO NUTRI
+        cpf_tmp = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+        result = self.db.busca_nutri_agenda_tabela(cpf, self.id_colab_tratado_nutri)
+        self.ui.input_TableWidget_pagina_consulta_geral_nutri.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+                
+    def tabela_consulta_psic_tabela(self): #TABELA CONSULTA USUARIO PSIC
+        cpf_tmp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+        print("cpf cpnsulta psic ->", cpf)
+        result = self.db.busca_psic_agenda_tabela(cpf, self.id_colab_tratado_psic)
+        print(result)
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
+        self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
+
+
+    def tabela_agendamento_fisio(self): #TABELA TODOS OS AGENDAMENTOS FISIO
+        result = self.db.busca_fisio_agendamento_tabela()
+        self.ui.input_TableWidget_agendamento_fisio.clearContents()
+        self.ui.input_TableWidget_agendamento_fisio.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+    
+    def nutri_imc_usuario(self):
+        peso = int(self.ui.input_peso_consulta_nutri.text())
+        altura = float(self.ui.input_altura_consulta_nutri.text())
+        altura2x = altura ** altura
+        imc = peso//altura2x
+        self.ui.input_imc_consulta_nutri.setText(str(imc))
 
     def buscar_usuario_nutri(self):
         cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
@@ -2343,66 +2448,16 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_nutri_consulta.setText(str(dados[7]))
         self.ui.input_id_matricula_nutri_consulta.hide()
         self.tabela_consulta_nutri_tabela()
-
-
-    def nutri_imc_usuario(self):
-        peso = int(self.ui.input_peso_consulta_nutri.text())
-        altura = float(self.ui.input_altura_consulta_nutri.text())
-        altura2x = altura ** altura
-        imc = peso//altura2x
-        self.ui.input_imc_consulta_nutri.setText(str(imc))
-
+        
     def buscar_usuario_agenda_nutri(self):
         cpf = self.ui.input_cpf_agendamento_nutri.text()
         dados = self.db.busca_usuario_nutri_consulta(cpf)
         print(dados)
-
         self.ui.input_nome_agendamento_nutri.setText(dados[0])
         self.ui.input_telefone_agendamento_nutri.setText(dados[1])
         self.ui.input_clinica_agendamento_nutri.setText(dados[2])
-        self.ui.input_id_matricula_nutri_consulta.setText(str(dados[3]))
-        self.ui.input_id_matricula_nutri_consulta.hide()
-
-
-    def tabela_agenda_nutri(self): #TABELA TODOS OS AGENDAMENTOS
-        result = self.db.busca_nutri_agendamento_tabela()
-        self.ui.input_TableWidget_agendamento_nutri.clearContents()
-        self.ui.input_TableWidget_agendamento_nutri.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_agendamento_nutri.setItem(row, column,QTableWidgetItem(str(data)))
-                
-    def tabela_consulta_nutri_tabela(self): #TABELA CONSULTA USUARIO NUTRI
-        cpf = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
-        result = self.db.busca_nutri_agenda_tabela(cpf, self.id_colab_tratado_nutri)
-        self.ui.input_TableWidget_pagina_consulta_geral_nutri.clearContents()
-        self.ui.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_pagina_consulta_geral_nutri.setItem(row, column,QTableWidgetItem(str(data)))
-                
-    def tabela_consulta_psic_tabela(self): #TABELA CONSULTA USUARIO PSIC
-        cpf = self.ui.input_cpf_pagina_consulta_geral_psi.text()
-        result = self.db.busca_psic_agenda_tabela(cpf, self.id_colab_tratado_psic)
-        self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
-        self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_pagina_consulta_geral_psi.setItem(row, column,QTableWidgetItem(str(data)))
-
-
-    def tabela_agendamento_fisio(self): #TABELA TODOS OS AGENDAMENTOS FISIO
-        result = self.db.busca_fisio_agendamento_tabela()
-        self.ui.input_TableWidget_agendamento_fisio.clearContents()
-        self.ui.input_TableWidget_agendamento_fisio.setRowCount(len(result))   
-
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_agendamento_fisio.setItem(row, column,QTableWidgetItem(str(data)))
-    
+        self.ui.input_id_matricula_nutri_agendamento.setText(str(dados[3]))
+        self.ui.input_id_matricula_nutri_agendamento.hide()
 
     def buscar_usuario_agendamento_fisio(self):
         cpf = self.ui.input_cpf_agendamento_fisio.text()
@@ -2438,7 +2493,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         result = self.db.buscar_consulta_fisio(cpf, self.id_colab_tratado_fisio)
-        print("Main -> ",result)
         self.ui.input_TableWidget_pagina_consulta_geral_fisio.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral_fisio.setRowCount(len(result))   
 
@@ -2885,7 +2939,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def cadastroAgendamento(self):
         id_matricula = self.buscarPessoa()
-        cpf = self.ui.input_cpf_agendamento_as.text()
+        print(type(id_matricula))
+        cpf_tmp = self.ui.input_cpf_agendamento_as.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         nome = self.ui.input_nome_agendamento_as.text()
         telefone = self.ui.input_telefone_agendamento_as.text()
         clinica = self.ui.input_clinica_agendamento_as.text()
@@ -2948,6 +3004,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
     
         # self.msg(result[0],result[1])   
+        self.tabela_consulta_psic_tabela()
         self.limparCamposAgendametoPsic() 
         self.listarAgendamentos_psi()
 
@@ -2984,7 +3041,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAgendamentoFisio()
 
     def cadastroAgendamentoNutri(self):
-        id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
+        id_matricula = self.ui.input_id_matricula_nutri_agendamento.text()
         cpf = self.ui.input_cpf_agendamento_nutri.text()
         nome = self.ui.input_nome_agendamento_nutri.text()
         telefone = self.ui.input_telefone_agendamento_nutri.text()
@@ -3263,7 +3320,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
 
     def limparCamposConsulta(self):
-        self.ui.input_cpf_pagina_consulta_geral.setText("")
         self.ui.input_nome_pagina_consulta_geral.setText("")
         self.ui.input_contato_pagina_consulta_geral.setText("")
         self.ui.input_clinica_pagina_consulta_geral.setText("")
@@ -3272,11 +3328,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_Retorno_as.setCheckable(False)
         self.ui.radioButton_Retorno_as.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(2000, 1, 1))
-        self.ui.input_hora_consulta_as.setText(00,00)
+        self.ui.input_hora_consulta_as.setText("00:00")
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
 
     def limparCamposConsultaNutri(self):
-        self.ui.input_cpf_pagina_consulta_geral_nutri.setText("")
         self.ui.input_nome_pagina_consulta_geral_nutri.setText("")
         self.ui.input_contato_pagina_consulta_geral_nutri.setText("")
         self.ui.input_clinica_pagina_consulta_geral_nutri.setText("")
@@ -3600,15 +3655,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.buscar_consulta(cpf)
-        self.ui.input_id_usuario_consulta_as.setText(str(dados[0]))
-        self.ui.input_id_usuario_consulta_as.hide()
+        self.ui.input_id_matricula_consulta_as.setText(str(dados[0]))
+        self.ui.input_id_matricula_consulta_as.hide()
         self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
         self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
         self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
         self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
         hora  = str(dados[5]).split(":")
         self.ui.input_hora_consulta_as.setText(str(dados[5]))
-        self.puxar_consulta()
+        self.puxar_consulta();
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_atendimento_as.isChecked():
@@ -3623,9 +3678,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
-        id_usuario = self.ui.input_id_usuario_consulta_as.text()
+        id_matricula = self.ui.input_id_matricula_consulta_as.text()
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_usuario)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_ass)
+        print(tupla_consulta)
 
         result = []
         result = self.db.cadastro_consulta(tupla_consulta)
@@ -3655,7 +3711,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         id_matricula = int(self.ui.input_id_matricula_nutri_consulta.text())
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_nutri)
 
         result = []
         result = self.db.cadastro_consulta_nutri(tupla_consulta)
@@ -3688,7 +3744,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_matricula = int(self.ui.input_id_matricula_consulta_psi.text())
         print(type(id_matricula))
 
-        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_psic)
         print(tupla_consulta_psi)
 
         result = []
@@ -3721,7 +3777,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_matricula = int(self.ui.input_id_matricula_consulta_fisio.text())
         print(type(id_matricula))
 
-        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula)
+        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_fisio)
         print(tupla_consulta_psi)
 
         result = []
@@ -3738,7 +3794,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposConsultaFisio()
 
     def puxar_consulta_psi(self):
-
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
         cpf = ''
         for i in cpf_temp:
@@ -3747,7 +3802,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         result = self.db.buscar_consulta_psic(cpf, self.id_colab_tratado_psic)
-        print("Main -> ",result)
         self.ui.input_TableWidget_pagina_consulta_geral_psi.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral_psi.setRowCount(len(result))   
 
@@ -3790,8 +3844,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def puxar_consulta(self):
-        id_usuario = self.ui.input_id_usuario_consulta_as.text()
-        result = self.db.buscar_info_consulta(id_usuario)
+        cpf_tmp = self.ui.input_cpf_pagina_consulta_geral.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+        print("CPF CONSULTA ASSIS ->", cpf)
+        result = self.db.buscar_info_consulta(cpf, self.id_colab_tratado_ass)
+        print(result)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 
@@ -4714,8 +4771,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'IDADE', 'SEXO', 'TELEFONE', 'ENDEREÇO', 'BAIRRO', 'CIDADE',
-            'PARENTESCO','USUARIO']
+        columns = ['NOME CUIDADOR', 'CPF', 'IDADE', 'SEXO', 'TELEFONE', 'ENDEREÇO', 'BAIRRO', 'CIDADE',
+            'USUARIO','PARENTESCO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
