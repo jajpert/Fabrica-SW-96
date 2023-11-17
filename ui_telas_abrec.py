@@ -707,7 +707,14 @@ class Ui_MainWindow(object):
         self.btn_buscar_agendamento_nutri.setIcon(icon7)
 
         self.verticalLayout_412.addWidget(self.btn_buscar_agendamento_nutri)
-
+        self.input_id_matricula_nutri_agendamento = QLineEdit(self.frame_623)
+        self.input_id_matricula_nutri_agendamento.setObjectName(u"input_id_matricula_nutri_agendamento")
+        self.input_id_matricula_nutri_agendamento.setEnabled(False)
+        self.input_id_matricula_nutri_agendamento.setMinimumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_agendamento.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_agendamento.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+        self.verticalLayout_412.addWidget(self.input_id_matricula_nutri_agendamento)
 
         self.horizontalLayout_209.addWidget(self.frame_623)
 
@@ -1345,6 +1352,15 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_consulta_geral_nutri.setFont(font)
 
         self.verticalLayout_384.addWidget(self.label_cpf_pagina_consulta_geral_nutri)
+        
+        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_574)
+        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
+        self.input_id_matricula_nutri_consulta.setEnabled(False)
+        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_nutri_consulta.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+
+        self.verticalLayout_384.addWidget(self.input_id_matricula_nutri_consulta)
 
 
         self.verticalLayout_383.addWidget(self.frame_574)
@@ -3584,7 +3600,13 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_consulta_geral_psi = QLabel(self.frame_598)
         self.label_cpf_pagina_consulta_geral_psi.setObjectName(u"label_cpf_pagina_consulta_geral_psi")
         self.label_cpf_pagina_consulta_geral_psi.setFont(font)
-
+        self.input_id_matricula_consulta_psi = QLineEdit(self.frame_598)
+        self.input_id_matricula_consulta_psi.setObjectName(u"input_id_matricula_consulta_psi")
+        self.input_id_matricula_consulta_psi.setEnabled(False)
+        self.input_id_matricula_consulta_psi.setGeometry(QRect(0, 0, 0, 0))
+        self.input_id_matricula_consulta_psi.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_consulta_psi.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
         self.verticalLayout_396.addWidget(self.label_cpf_pagina_consulta_geral_psi)
 
 
@@ -7463,6 +7485,17 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_126.addItem(self.verticalSpacer_39)
 
+        self.input_id_matricula_agendamento_fisio = QLineEdit(self.frame_217)
+        self.input_id_matricula_agendamento_fisio.setObjectName(u"input_id_matricula_agendamento_fisio")
+        self.input_id_matricula_agendamento_fisio.setEnabled(False)
+        self.input_id_matricula_agendamento_fisio.setMinimumSize(QSize(0, 0))
+        self.input_id_matricula_agendamento_fisio.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_agendamento_fisio.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+
+        self.verticalLayout_126.addWidget(self.input_id_matricula_agendamento_fisio)
+
+
         self.btn_buscar_agendamento_fisio = QPushButton(self.frame_217)
         self.btn_buscar_agendamento_fisio.setObjectName(u"btn_buscar_agendamento_fisio")
         sizePolicy3.setHeightForWidth(self.btn_buscar_agendamento_fisio.sizePolicy().hasHeightForWidth())
@@ -8066,12 +8099,7 @@ class Ui_MainWindow(object):
         self.frame_547.setObjectName(u"frame_547")
         self.frame_547.setFrameShape(QFrame.StyledPanel)
         self.frame_547.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_consulta_as_3 = QLineEdit(self.frame_547)
-        self.input_id_usuario_consulta_as_3.setObjectName(u"input_id_usuario_consulta_as_3")
-        self.input_id_usuario_consulta_as_3.setEnabled(False)
-        self.input_id_usuario_consulta_as_3.setGeometry(QRect(0, 0, 489, 32))
-        self.input_id_usuario_consulta_as_3.setStyleSheet(u"border-color: transparent;\n"
-"background-color: transparent;")
+
 
         self.verticalLayout_370.addWidget(self.frame_547)
 
@@ -8089,7 +8117,16 @@ class Ui_MainWindow(object):
         self.frame_549.setFrameShadow(QFrame.Raised)
         self.verticalLayout_372 = QVBoxLayout(self.frame_549)
         self.verticalLayout_372.setObjectName(u"verticalLayout_372")
+        self.input_id_matricula_consulta_fisio = QLineEdit(self.frame_549)
+        self.input_id_matricula_consulta_fisio.setObjectName(u"input_id_matricula_consulta_fisio")
+        self.input_id_matricula_consulta_fisio.setEnabled(False)
+        self.input_id_matricula_consulta_fisio.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_consulta_fisio.setStyleSheet(u"background-color: transparent;\n"
+"color: transparent;")
+
+        self.verticalLayout_372.addWidget(self.input_id_matricula_consulta_fisio)
         self.label_cpf_pagina_consulta_geral_fisio = QLabel(self.frame_549)
+        self.label_cpf_pagina_consulta_geral_fisio
         self.label_cpf_pagina_consulta_geral_fisio.setObjectName(u"label_cpf_pagina_consulta_geral_fisio")
         self.label_cpf_pagina_consulta_geral_fisio.setFont(font)
 
@@ -24452,6 +24489,14 @@ class Ui_MainWindow(object):
         self.frame_4621.setFrameShadow(QFrame.Raised)
         self.verticalLayout_319 = QVBoxLayout(self.frame_4621)
         self.verticalLayout_319.setObjectName(u"verticalLayout_319")
+        self.input_id_matricula_consulta_as = QLineEdit(self.frame_4621)
+        self.input_id_matricula_consulta_as.setObjectName(u"input_id_matricula_consulta_as")
+        self.input_id_matricula_consulta_as.setMaximumSize(QSize(0, 0))
+        self.input_id_matricula_consulta_as.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+
+        self.verticalLayout_319.addWidget(self.input_id_matricula_consulta_as)
+
         self.label_cpf_pagina_consulta_geral = QLabel(self.frame_4621)
         self.label_cpf_pagina_consulta_geral.setObjectName(u"label_cpf_pagina_consulta_geral")
         self.label_cpf_pagina_consulta_geral.setFont(font)

@@ -770,6 +770,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
         self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
+        self.ui.btn_alterar_pagina_consulta_geral_fisio.clicked.connect(self.alterar_usuario_consulta_fisio)
+        self.ui.btn_excluir_pagina_consulta_geral_fisio.clicked.connect(self.excluir_usuario_consulta_fisio)
 
         ########################### NUTRICIONISTA ###########################
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
@@ -786,7 +788,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri) #CADASTRO DO USUARIO NO AGENDAMENTO NUTRI
         self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri) #CADATRO DO USUARIO NA CONSULTA NUTRI
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
-
+        self.ui.btn_alterar_pagina_consulta_geral_nutri.clicked.connect(self.alterar_usuario_consulta_nutri)
+        self.ui.btn_excluir_pagina_consulta_geral_nutri.clicked.connect(self.excluir_usuario_consulta_nutri)
 
         ########################### PSICOLOGA ###########################
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
@@ -3836,6 +3839,74 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.db.deletar_consulta_relatorio_psi(id_consulta)
 
         self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excluir Consulta")
+        msg.setText("Consulta Excluida com sucesso!")
+        msg.exec()
+
+
+    def alterar_usuario_consulta_nutri(self,campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral_nutri.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral_nutri.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral_nutri.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+        for emp in update_dados:
+           res = self.db.alterar_usuario_consulta_nutri(tuple(emp))
+
+        self.tabela_consulta_nutri_tabela()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Consulta Alterada com sucesso!")
+        msg.exec()
+
+
+    def excluir_usuario_consulta_nutri(self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_nutri.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_consulta_relatorio_nutri(id_consulta)
+
+        self.tabela_consulta_nutri_tabela()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excluir Consulta")
+        msg.setText("Consulta Excluida com sucesso!")
+        msg.exec()
+
+
+    def alterar_usuario_consulta_fisio(self,campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral_fisio.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral_fisio.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral_fisio.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+        for emp in update_dados:
+           res = self.db.alterar_usuario_consulta_fisio(tuple(emp))
+
+        self.buscar_usuario_consulta_fisio()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Consulta Alterada com sucesso!")
+        msg.exec()
+
+
+    def excluir_usuario_consulta_fisio(self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_fisio.selectionModel().currentIndex().siblingAtColumn(0).data()
+        self.db.deletar_consulta_relatorio_fisio(id_consulta)
+
+        self.buscar_usuario_consulta_fisio()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)

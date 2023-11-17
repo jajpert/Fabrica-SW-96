@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -1287,22 +1287,6 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def alterar_usuario_consulta_psi(self, campo):
-        self.connect()
-        try:
-            self.cursor.execute(f""" UPDATE consulta SET
-                                     data = '{campo[1]}',
-                                     observacao = '{campo[3]}'
-                                     WHERE id_consulta = '{campo[0]}';
-            """)
-            self.conn.commit()
-            return "Alteração feita com Sucesso!!!"
-
-        except Exception as err:
-            return "ERRO",str(err)
-        finally:
-            self.conn.close()
-            return ("Conexão encerrada com Sucesso!!!")
         
     def alterarAreaSigilosa(self, campo):
         self.connect()
@@ -1319,8 +1303,85 @@ class DataBase():
         finally:
             self.conn.close()
             return ("Conexão encerrada com Sucesso!!!")
+        
+    def alterar_usuario_consulta_psi(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE consulta SET
+                                     data_consulta = '{campo[1]}',
+                                     observacao = '{campo[3]}'
+                                     WHERE id_consulta = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
     
     def deletar_consulta_relatorio_psi(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        
+    def alterar_usuario_consulta_nutri(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE consulta SET
+                                    data_consulta = '{campo[1]}',
+                                    observacao = '{campo[4]}'
+                                    WHERE id_consulta = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            erro = str(err)
+            print (erro)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
+    
+    def deletar_consulta_relatorio_nutri(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        
+    def alterar_usuario_consulta_fisio(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE consulta SET
+                                    data_consulta = '{campo[1]}',
+                                    observacao = '{campo[3]}'
+                                    WHERE id_consulta = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            erro = str(err)
+            print (erro)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
+    
+    def deletar_consulta_relatorio_fisio(self,id_consulta):
         self.connect()
         try:
             self.cursor.execute(
