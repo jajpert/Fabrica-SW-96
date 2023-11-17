@@ -770,6 +770,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
         self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
+        self.ui.btn_buscar_relatorio_beneficios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltro)
 
         ########################### NUTRICIONISTA ###########################
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
@@ -2674,6 +2675,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def listarBeneficiosFarmaceuticaRelatorioFiltro(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_beneficios_farm.text())
         resultado = self.db.busca_beneficios_relatorio_farmaceutica_filtro(txt)
+        self.ui.input_TableWidget_relatorio_beneficios_farm.setRowCount(len(resultado))
+
+        for row, text in enumerate(resultado):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_farm.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def listarBeneficiosFarmaceuticaRelatorioFiltro(self):
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_farm.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_farm.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        resultado = self.db.busca_beneficios_relatorio_farmaceutica_filtro_data(texto_data_inicio_tratada,texto_data_final_tratada)
+        print("data beneficio filtro ->", resultado)
         self.ui.input_TableWidget_relatorio_beneficios_farm.setRowCount(len(resultado))
 
         for row, text in enumerate(resultado):

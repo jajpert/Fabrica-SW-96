@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
@@ -933,7 +933,7 @@ class DataBase():
     def busca_nutri_agendamento_tabela(self):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;""")
+            self.cursor.execute(f"""SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento WHERE profissional LIKE "Nutricionista";""")
             result = self.cursor.fetchall()
             return result
         except Exception as err:
@@ -1810,7 +1810,26 @@ class DataBase():
                 beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
-                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio;
+                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio AND beneficios.tipo = "medicação";
+            """)
+
+            result = self.cursor.fetchall()
+
+            return result
+        except Exception as err:
+            print(err)
+        finally:
+            self.close_connection()
+            
+    def busca_beneficios_relatorio_farmaceutica_filtro_data(self, data_inicial, data_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, 
+                beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
+                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio WHERE saida_beneficio.data_retirada BETWEEN '{data_inicial}' AND '{data_final}'  ;
             """)
 
             result = self.cursor.fetchall()
@@ -1825,7 +1844,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, beneficios.tipo
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, 
                 beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
