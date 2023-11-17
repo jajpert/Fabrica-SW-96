@@ -48115,7 +48115,7 @@ QPushButton:pressed{
                              <item>
                               <widget class="QStackedWidget" name="stackedWidget_8">
                                <property name="currentIndex">
-                                <number>1</number>
+                                <number>2</number>
                                </property>
                                <widget class="QWidget" name="page_2">
                                 <layout class="QVBoxLayout" name="verticalLayout_272">
@@ -54980,9 +54980,20 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <layout class="QVBoxLayout" name="verticalLayout_258">
+                                                     <layout class="QVBoxLayout" name="verticalLayout_223">
                                                       <item>
                                                        <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                        <property name="enabled">
+                                                         <bool>false</bool>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_alterar_id_usuario_as">
                                                         <property name="enabled">
                                                          <bool>false</bool>
                                                         </property>

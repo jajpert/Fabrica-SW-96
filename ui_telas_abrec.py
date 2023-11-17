@@ -21072,7 +21072,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_721.addWidget(self.frame_357)
 
-        self.frame_358 = QFrame(self.frame_354)
+        '''self.frame_358 = QFrame(self.frame_354)
         self.frame_358.setObjectName(u"frame_358")
         self.frame_358.setMaximumSize(QSize(600, 16777215))
         self.frame_358.setFrameShape(QFrame.StyledPanel)
@@ -21102,6 +21102,48 @@ class Ui_MainWindow(object):
 "border-color: transparent;")
 
         self.verticalLayout_258.addWidget(self.input_id_foto_alterar_usuario_as)
+
+
+        self.horizontalLayout_721.addWidget(self.frame_358)'''
+
+        self.frame_358 = QFrame(self.frame_354)
+        self.frame_358.setObjectName(u"frame_358")
+        self.frame_358.setMaximumSize(QSize(600, 16777215))
+        self.frame_358.setFrameShape(QFrame.StyledPanel)
+        self.frame_358.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_223 = QVBoxLayout(self.frame_358)
+        self.verticalLayout_223.setObjectName(u"verticalLayout_223")
+        self.input_alterar_id_matricula_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_matricula_usuario_as.setObjectName(u"input_alterar_id_matricula_usuario_as")
+        self.input_alterar_id_matricula_usuario_as.setEnabled(False)
+        self.input_alterar_id_matricula_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_223.addWidget(self.input_alterar_id_matricula_usuario_as)
+
+        self.input_alterar_id_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_usuario_as.setObjectName(u"input_alterar_id_usuario_as")
+        self.input_alterar_id_usuario_as.setEnabled(False)
+        self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_223.addWidget(self.input_alterar_id_usuario_as)
+
+        self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
+        self.input_alterar_id_endereco_usuario_as.setEnabled(False)
+        self.input_alterar_id_endereco_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_223.addWidget(self.input_alterar_id_endereco_usuario_as)
+
+        self.input_id_foto_alterar_usuario_as = QLineEdit(self.frame_358)
+        self.input_id_foto_alterar_usuario_as.setObjectName(u"input_id_foto_alterar_usuario_as")
+        self.input_id_foto_alterar_usuario_as.setEnabled(False)
+        self.input_id_foto_alterar_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_223.addWidget(self.input_id_foto_alterar_usuario_as)
 
 
         self.horizontalLayout_721.addWidget(self.frame_358)

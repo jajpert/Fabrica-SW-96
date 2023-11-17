@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abreclOkbKc.ui'
+## Form generated from reading UI file 'telas_abrecVOiihC.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -19000,7 +19000,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_189.addWidget(self.frame_286)
 
-        '''self.frame_292 = QFrame(self.frame_285)
+        self.frame_292 = QFrame(self.frame_285)
         self.frame_292.setObjectName(u"frame_292")
         self.frame_292.setMinimumSize(QSize(0, 0))
         self.frame_292.setMaximumSize(QSize(16777215, 60))
@@ -19253,7 +19253,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_99.addWidget(self.frame_298)
 
 
-        self.verticalLayout_189.addWidget(self.frame_292)'''
+        self.verticalLayout_189.addWidget(self.frame_292)
 
         self.frame_299 = QFrame(self.frame_285)
         self.frame_299.setObjectName(u"frame_299")
@@ -19995,7 +19995,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_209.addWidget(self.frame_320)
 
-        '''self.frame_327 = QFrame(self.frame_313)
+        self.frame_327 = QFrame(self.frame_313)
         self.frame_327.setObjectName(u"frame_327")
         self.frame_327.setMaximumSize(QSize(16777215, 60))
         self.frame_327.setFont(font18)
@@ -20240,7 +20240,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_109.addWidget(self.frame_332)
 
 
-        self.verticalLayout_209.addWidget(self.frame_327)'''
+        self.verticalLayout_209.addWidget(self.frame_327)
 
 
         self.horizontalLayout_105.addWidget(self.frame_313)
@@ -21078,20 +21078,28 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_721.addWidget(self.frame_357)
 
-        self.frame_358 = QFrame(self.frame_354)
+        '''self.frame_358 = QFrame(self.frame_354)
         self.frame_358.setObjectName(u"frame_358")
         self.frame_358.setMaximumSize(QSize(600, 16777215))
         self.frame_358.setFrameShape(QFrame.StyledPanel)
         self.frame_358.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_258 = QVBoxLayout(self.frame_358)
-        self.verticalLayout_258.setObjectName(u"verticalLayout_258")
+        self.verticalLayout_223 = QVBoxLayout(self.frame_358)
+        self.verticalLayout_223.setObjectName(u"verticalLayout_223")
         self.input_alterar_id_matricula_usuario_as = QLineEdit(self.frame_358)
         self.input_alterar_id_matricula_usuario_as.setObjectName(u"input_alterar_id_matricula_usuario_as")
         self.input_alterar_id_matricula_usuario_as.setEnabled(False)
         self.input_alterar_id_matricula_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.verticalLayout_258.addWidget(self.input_alterar_id_matricula_usuario_as)
+        self.verticalLayout_223.addWidget(self.input_alterar_id_matricula_usuario_as)
+
+        self.input_alterar_id_usuario_as = QLineEdit(self.frame_358)
+        self.input_alterar_id_usuario_as.setObjectName(u"input_alterar_id_usuario_as")
+        self.input_alterar_id_usuario_as.setEnabled(False)
+        self.input_alterar_id_usuario_as.setStyleSheet(u"background-color:transparent;\n"
+"border-color: transparent;")
+
+        self.verticalLayout_223.addWidget(self.input_alterar_id_usuario_as)
 
         self.input_alterar_id_endereco_usuario_as = QLineEdit(self.frame_358)
         self.input_alterar_id_endereco_usuario_as.setObjectName(u"input_alterar_id_endereco_usuario_as")
@@ -21099,7 +21107,7 @@ class Ui_MainWindow(object):
         self.input_alterar_id_endereco_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.verticalLayout_258.addWidget(self.input_alterar_id_endereco_usuario_as)
+        self.verticalLayout_223.addWidget(self.input_alterar_id_endereco_usuario_as)
 
         self.input_id_foto_alterar_usuario_as = QLineEdit(self.frame_358)
         self.input_id_foto_alterar_usuario_as.setObjectName(u"input_id_foto_alterar_usuario_as")
@@ -21107,10 +21115,10 @@ class Ui_MainWindow(object):
         self.input_id_foto_alterar_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
-        self.verticalLayout_258.addWidget(self.input_id_foto_alterar_usuario_as)
+        self.verticalLayout_223.addWidget(self.input_id_foto_alterar_usuario_as)
 
 
-        self.horizontalLayout_721.addWidget(self.frame_358)
+        self.horizontalLayout_721.addWidget(self.frame_358)'''
 
 
         self.verticalLayout_208.addWidget(self.frame_354)
