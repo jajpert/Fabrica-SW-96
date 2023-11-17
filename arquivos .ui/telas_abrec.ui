@@ -21089,7 +21089,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>5</number>
+                      <number>18</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -49933,9 +49933,37 @@ QPushButton:pressed{
                                        <height>16777215</height>
                                       </size>
                                      </property>
+                                     <property name="alternatingRowColors">
+                                      <bool>true</bool>
+                                     </property>
+                                     <property name="rowCount">
+                                      <number>10</number>
+                                     </property>
                                      <attribute name="horizontalHeaderDefaultSectionSize">
                                       <number>180</number>
                                      </attribute>
+                                     <attribute name="horizontalHeaderHighlightSections">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <attribute name="verticalHeaderVisible">
+                                      <bool>false</bool>
+                                     </attribute>
+                                     <attribute name="verticalHeaderMinimumSectionSize">
+                                      <number>50</number>
+                                     </attribute>
+                                     <attribute name="verticalHeaderHighlightSections">
+                                      <bool>true</bool>
+                                     </attribute>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
+                                     <row/>
                                      <column>
                                       <property name="text">
                                        <string>CPF</string>
