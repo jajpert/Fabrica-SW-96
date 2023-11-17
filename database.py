@@ -613,7 +613,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone,clinica.razao_social as clinica, endereco.bairro, endereco.cidade
                                 from pessoa 
                                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN consulta on consulta.id_consulta = usuario.id_usuario
