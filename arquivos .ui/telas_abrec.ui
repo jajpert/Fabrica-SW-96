@@ -21089,7 +21089,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>19</number>
+                      <number>17</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -48809,7 +48809,7 @@ QTableEdit:focus{outline:0; border: 2px solid #A85751}</string>
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_70">
+                            <layout class="QHBoxLayout" name="horizontalLayout_38">
                              <item>
                               <widget class="QPushButton" name="btn_voltar_agenda_as">
                                <property name="minimumSize">
@@ -48840,6 +48840,49 @@ QPushButton:focus{outline:0}</string>
                                </property>
                                <property name="text">
                                 <string>VOLTAR</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QPushButton" name="btn_relatorio_agendamento_as">
+                               <property name="minimumSize">
+                                <size>
+                                 <width>130</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="maximumSize">
+                                <size>
+                                 <width>120</width>
+                                 <height>40</height>
+                                </size>
+                               </property>
+                               <property name="font">
+                                <font>
+                                 <family>Abel</family>
+                                 <pointsize>18</pointsize>
+                                </font>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}
+QPushButton:hover{background-color: #F89198}
+QPushButton:focus{outline:0}</string>
+                               </property>
+                               <property name="text">
+                                <string>Relatórios</string>
+                               </property>
+                               <property name="icon">
+                                <iconset>
+                                 <normaloff>../icons/documento.png</normaloff>../icons/documento.png</iconset>
+                               </property>
+                               <property name="iconSize">
+                                <size>
+                                 <width>20</width>
+                                 <height>20</height>
+                                </size>
                                </property>
                               </widget>
                              </item>
