@@ -1894,7 +1894,7 @@ class DataBase():
             self.cursor.execute(f"""
                     SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
                     INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
-                    WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_clinica_cadastrada}' and '{texto_data_final_clinica_cadastrada}';
+                    WHERE clinica.data_cadastro BETWEEN '{texto_data_inicio_clinica_cadastrada}' and '{texto_data_final_clinica_cadastrada}';
             """)
             result = self.cursor.fetchall()
             return result
