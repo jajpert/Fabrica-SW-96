@@ -860,7 +860,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_beneficio_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
         self.ui.btn_voltar_pagina_relatorio_beneficios_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
                 
-
+        self.ui.btn_relatorio_agenda_as.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.page_relatorio_agenda))
+                
         ######SIGNALS POPUP RECUPERAR SENHA AS######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
         
