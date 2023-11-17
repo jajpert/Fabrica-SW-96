@@ -709,7 +709,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
         
         self.ui.toolButton.clicked.connect(self.visibilidade)        
-
         
         
         self.ui.btn_cadastrar_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
