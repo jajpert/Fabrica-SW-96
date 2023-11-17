@@ -1350,14 +1350,6 @@ class Ui_MainWindow(object):
         self.label_cpf_pagina_consulta_geral_nutri.setFont(font)
 
         self.verticalLayout_384.addWidget(self.label_cpf_pagina_consulta_geral_nutri)
-        self.input_id_matricula_nutri_consulta = QLineEdit(self.frame_574)
-        self.input_id_matricula_nutri_consulta.setObjectName(u"input_id_matricula_nutri_consulta")
-        self.input_id_matricula_nutri_consulta.setEnabled(False)
-        self.input_id_matricula_nutri_consulta.setMaximumSize(QSize(0, 0))
-        self.input_id_matricula_nutri_consulta.setStyleSheet(u"border-color: transparent;\n"
-"background-color: transparent;")
-
-        self.verticalLayout_384.addWidget(self.input_id_matricula_nutri_consulta)
 
 
         self.verticalLayout_383.addWidget(self.frame_574)
@@ -1415,7 +1407,7 @@ class Ui_MainWindow(object):
                         "r: rgb(249, 217, 221);   \n"
 "}")
         icon10 = QIcon()
-        icon10.addFile(u"./icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u"../../../icons/lupa.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_buscar_cpf_pagina_consulta_geral_2.setIcon(icon10)
 
         self.horizontalLayout_190.addWidget(self.btn_buscar_cpf_pagina_consulta_geral_2)
@@ -1859,7 +1851,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon11 = QIcon()
-        icon11.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u"../../../icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_salvar_pagina_consulta_geral_nutri.setIcon(icon11)
         self.btn_salvar_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
@@ -1963,8 +1955,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_196.setObjectName(u"horizontalLayout_196")
         self.horizontalLayout_196.setContentsMargins(0, 0, 0, 0)
         self.input_TableWidget_pagina_consulta_geral_nutri = QTableWidget(self.frame_590)
-        if (self.input_TableWidget_pagina_consulta_geral_nutri.columnCount() < 5):
-            self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(5)
+        if (self.input_TableWidget_pagina_consulta_geral_nutri.columnCount() < 7):
+            self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(7)
         __qtablewidgetitem9 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(0, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
@@ -1975,6 +1967,10 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(3, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(4, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(5, __qtablewidgetitem14)
+        __qtablewidgetitem15 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(6, __qtablewidgetitem15)
         if (self.input_TableWidget_pagina_consulta_geral_nutri.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral_nutri.setObjectName(u"input_TableWidget_pagina_consulta_geral_nutri")
@@ -1992,7 +1988,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral_nutri.setSortingEnabled(True)
         self.input_TableWidget_pagina_consulta_geral_nutri.setWordWrap(True)
         self.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(14)
-        self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(5)
+        self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(7)
         self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeader().setDefaultSectionSize(130)
         self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeader().setStretchLastSection(True)
@@ -2023,7 +2019,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon12 = QIcon()
-        icon12.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon12.addFile(u"../../../icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_pagina_consulta_geral_nutri.setIcon(icon12)
         self.btn_alterar_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
@@ -2038,7 +2034,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon13 = QIcon()
-        icon13.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u"../../../icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excluir_pagina_consulta_geral_nutri.setIcon(icon13)
         self.btn_excluir_pagina_consulta_geral_nutri.setIconSize(QSize(28, 28))
 
@@ -24652,9 +24648,13 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem8 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(2)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
         ___qtablewidgetitem9 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(3)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"IMC", None));
         ___qtablewidgetitem10 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(4)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Peso", None));
+        ___qtablewidgetitem11 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(5)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
+        ___qtablewidgetitem12 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(6)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_pagina_consulta_geral_nutri.setToolTip("")
 #endif // QT_CONFIG(tooltip)
