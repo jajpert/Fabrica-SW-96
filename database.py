@@ -1406,6 +1406,8 @@ class DataBase():
         id_endereco_usuario = str(endereco[0])
         id_matricula_usuario = str(usuario[16])
         id_matricula_pessoa = str(pessoa[0])
+        
+        
         print("Pessoa: ", pessoa)
         print("id pessoa: ", id_matricula_pessoa)
         print("usuario: ", usuario)
@@ -1434,7 +1436,9 @@ class DataBase():
 
             return "OK","Usuario atualizado com sucesso!!"
         except Exception as err:
-            return "ERRO",str(err)
+            erro = str(err)
+            print(erro)
+            #return "ERRO",str(err)
 
         finally:
             self.close_connection()
