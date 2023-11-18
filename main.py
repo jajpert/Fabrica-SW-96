@@ -690,6 +690,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
 
+        self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
+
         
 
 
@@ -729,6 +734,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
         self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_clinicas_cadastradas))
+        self.ui.btn_relatorio_fornecedores_cadastrados.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_fornecedores_cadastrados))
+        self.ui.btn_voltar_pagina_relatorio_fornecedores_cadastrados.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_fornecedor_as))
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
         self.ui.input_situacao_trabalho_usuario_as.currentIndexChanged.connect(self.on_tipo_usuario_changed)
         self.ui.input_situacao_trabalho_alterar_usuario_as.currentIndexChanged.connect(self.on_tipo_alterar_usuario_changed)
@@ -745,6 +752,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.textChanged.connect(self.filtrar_relatorio_clinica_cadastrada)
         self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(self.puxar_relatorio_clinicas_cadastradas)
         self.ui.btn_buscar_relatorio_clinicas_cadastradas_as.clicked.connect(self.filtrar_data_relatorio_clinicas_cadastradas)
+        self.ui.btn_buscar_relatorio_fornecedores_cadastrados.clicked.connect(self.filtrar_data_relatorio_fornecedor_cadastrado)
+        self.ui.input_buscar_dados_relatorio_relatorio_fornecedor_cadastrado.textChanged.connect(self.filtrar_relatorio_fornecedor_cadastrado)
+        self.ui.btn_relatorio_fornecedores_cadastrados.clicked.connect(self.puxar_relatorio_fornecedor_cadastrado)
+        self.ui.btn_buscar_relatorio_fornecedores_cadastrados.clicked.connect(self.filtrar_data_relatorio_fornecedor_cadastrado)
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_relatorio_beneficios.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_beneficio_as))
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
@@ -937,6 +948,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_cuidadores_as.clicked.connect(self.gerar_excel_relatorio_cuidador)
         self.ui.input_buscar_dados_relatorio_cuidadores_as.textChanged.connect(self.filtrar_relatorio_cuidador)
         self.ui.btn_buscar_relatorio_cuidadores_as.clicked.connect(self.filtrar_data_relatorio_cuidador)
+        #self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
+        #self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
         
       
         
@@ -2265,6 +2278,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
     
+    def filtrar_relatorio_fornecedor_cadastrado(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_relatorio_fornecedor_cadastrado.text())
+        res = self.db.buscar_relatorio_fornecedor_cadastrado(txt)
+        self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setItem(row, column, QTableWidgetItem(str(data)))
+    
     def puxar_relatorio_fisio(self):
         result = self.db.buscar_relatorio_fisio()
         self.ui.input_TableWidget_relatorio_fisio.clearContents()
@@ -2291,6 +2313,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def puxar_relatorio_fornecedor_cadastrado(self):
+        result = self.db.buscar_relatorio_fornecedor_cadastrado()
+        self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.clearContents()
+        self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setItem(row, column,QTableWidgetItem(str(data)))
 
 
 
@@ -2346,6 +2377,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_data_relatorio_fornecedor_cadastrado(self):  
+        texto_data_inicio_fornecedor_cadastrado = self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.text()
+        texto_data_final_fornecedor_cadastrado = self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.text()
+        texto_data_inicio_fornecedor_cadastrado =  "-".join(texto_data_inicio_fornecedor_cadastrado.split("/")[::-1])
+        texto_data_final_fornecedor_cadastrado =  "-".join(texto_data_final_fornecedor_cadastrado.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_fornecedor_cadastrado(texto_data_inicio_fornecedor_cadastrado,texto_data_final_fornecedor_cadastrado)
+
+        self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setItem(row, column, QTableWidgetItem(str(data)))
 
 
 
@@ -4789,7 +4834,59 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
 
+    def gerar_excel_relatorio_clinicas_cadastradas(self):
+        dados = []
+        all_dados =  []
 
+        for row in range(self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['CNPJ', 'E-MAIL', 'RAZÃO SOCIAL', 'TELEFONE', 'ENDEREÇO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
+    def gerar_excel_relatorio_fornecedor_cadastrado(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['CNPJ', 'E-MAIL', 'RAZÃO SOCIAL', 'TELEFONE', 'ENDEREÇO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
 
 
 
