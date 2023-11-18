@@ -1937,6 +1937,55 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def filter_data_relatorio_fornecedor_cadastrado(self,texto_data_inicio_fornecedor_cadastrado,texto_data_final_fornecedor_cadastrado):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
+                    INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco
+                    WHERE clinica.data_cadastro BETWEEN '{texto_data_inicio_fornecedor_cadastrado}' and '{texto_data_final_fornecedor_cadastrado}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_fornecedor_cadastrado(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
+                                INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco;
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_fornecedor_cadastrado_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
+                                INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco
+                                WHERE fornecedor.cnpj LIKE "%{texto}%" OR fornecedor.email LIKE "%{texto}%" OR fornecedor.razao_social LIKE "%{texto}%" OR fornecedor.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
    
 
     def delete(self,id):
