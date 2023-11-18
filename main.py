@@ -843,7 +843,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
-        self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        #self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_pagina_consulta_geral.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -4763,20 +4763,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
     def filtrar_relatorio_agendamento(self):
-            txt = re.sub('[\W_]+','',self.input_buscar_dados_relatorio_agendamento_as.text())
+            txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
             res = self.db.buscar_relatorio_agendamento(txt)
-            self.ui.input_tableWidget_relatorio_agendamento_as.setRowCount(len(res))
+            self.ui.input_TableWidget_relatorio_agendamento_as.setRowCount(len(res))
 
             for row, text in enumerate(res):
                 for column, data in enumerate(text):
-                    self.ui.input_tableWidget_relatorio_agendamento_setItem(row, column, QTableWidgetItem(str(data)))
-
-
-
-
-
-
-
+                    self.ui.input_TableWidget_relatorio_agendamento_setItem(row, column, QTableWidgetItem(str(data)))
 
 
 
