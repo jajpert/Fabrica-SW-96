@@ -1751,7 +1751,7 @@ class DataBase():
                 cnpj = '{tupla_de_dados[1]}',
                 nome = '{tupla_de_dados[2]}',
                 fone = '{tupla_de_dados[3]}',
-                fone_contato = '{tupla_de_dados[4]}',
+                email = '{tupla_de_dados[4]}',
                 endereco = '{tupla_de_dados[5]}',
                 cidade = '{tupla_de_dados[6]}'
                 WHERE id={tupla_de_dados[0]}
