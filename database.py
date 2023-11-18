@@ -253,7 +253,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                     SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
                     FROM pessoa AS parente
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
@@ -544,6 +544,9 @@ class DataBase():
                                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;
                                 """)
+            
+
+            
             result = self.cursor.fetchall()
             return result
 
@@ -1251,6 +1254,51 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+
+
+
+    def buscar_relatorio_agendamento(self,):
+            self.connect()
+            try:
+                self.cursor.execute(f"""SELECT id_agendamento,pessoa nome,pessoa.cpf, pessoa.telefone,clinica,profissional,agendamento.hora,anotacao, perfil
+		from agendamento
+		INNER JOIN pessoa ON pessoa.id_matricula= usuario.id_matricula
+		INNER JOIN clinica ON clinica.id_clinica=id_cadastro	
+		INNER JOIN colaborador ON consulta.id_colaborador= id_colaborador;""")
+                result = self.cursor.fetchall()
+                return result
+
+            except Exception as err:
+                return "ERRO",str(err)
+
+            finally:
+                self.close_connection()
+
+
+
+
+
+
+    def buscar_relatorio_agendamento(self,texto):
+            self.connect()
+            try:
+                self.cursor.execute(f"""
+                                    SELECT id_agendamento,pessoa nome,pessoa.cpf, pessoa.telefone,clinica,profissional,agendamento.hora,anotacao, perfil
+                                    from agendamento
+                                    INNER JOIN pessoa ON pessoa.id_matricula= usuario.id_matricula
+                                    INNER JOIN clinica ON clinica.id_clinica=id_cadastro	
+                                    INNER JOIN colaborador ON consulta.id_colaborador= id_colaborador
+                                    WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR clinica LIKE "%{texto}%" OR profissional LIKE "%{texto}%" OR agendamento.hora LIKE "%{texto}%" OR anotacao LIKE "%{texto}% OR perfil LIKE "%{texto}%;
+                                    """)
+                result = self.cursor.fetchall()
+                return result
+
+            except Exception as err:
+                return "ERRO",str(err)
+
+
+
     
 
     def buscar_info_participante(self,cpf):
