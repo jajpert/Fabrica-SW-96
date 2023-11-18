@@ -2280,7 +2280,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def filtrar_relatorio_fornecedor_cadastrado(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_relatorio_fornecedor_cadastrado.text())
-        res = self.db.buscar_relatorio_fornecedor_cadastrado(txt)
+        res = self.db.buscar_relatorio_fornecedor_cadastrado_pesquisa(txt)
         self.ui.input_TableWidget_relatorio_relatorio_fornecedores_cadastrados.setRowCount(len(res))
 
         for row, text in enumerate(res):

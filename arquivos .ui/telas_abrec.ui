@@ -24271,7 +24271,7 @@ border-style: solid;</string>
                                                <number>14</number>
                                               </property>
                                               <property name="columnCount">
-                                               <number>5</number>
+                                               <number>8</number>
                                               </property>
                                               <attribute name="horizontalHeaderCascadingSectionResizes">
                                                <bool>true</bool>
@@ -24309,22 +24309,37 @@ border-style: solid;</string>
                                               </column>
                                               <column>
                                                <property name="text">
-                                                <string>E-mail</string>
-                                               </property>
-                                              </column>
-                                              <column>
-                                               <property name="text">
                                                 <string>Razão Social</string>
                                                </property>
                                               </column>
                                               <column>
                                                <property name="text">
-                                                <string>Telefone</string>
+                                                <string>Telefone Celular</string>
+                                               </property>
+                                              </column>
+                                              <column>
+                                               <property name="text">
+                                                <string>Telefone Fixo</string>
+                                               </property>
+                                              </column>
+                                              <column>
+                                               <property name="text">
+                                                <string>E-mail</string>
                                                </property>
                                               </column>
                                               <column>
                                                <property name="text">
                                                 <string>Endereço</string>
+                                               </property>
+                                              </column>
+                                              <column>
+                                               <property name="text">
+                                                <string>Cidade</string>
+                                               </property>
+                                              </column>
+                                              <column>
+                                               <property name="text">
+                                                <string>Estado</string>
                                                </property>
                                               </column>
                                              </widget>
@@ -54097,7 +54112,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -54410,7 +54425,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -61754,7 +61769,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -62600,7 +62615,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>

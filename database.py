@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
+        #self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -1976,7 +1976,7 @@ class DataBase():
             self.cursor.execute(f"""
                                 SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
                                 INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco
-                                WHERE fornecedor.cnpj LIKE "%{texto}%" OR fornecedor.email LIKE "%{texto}%" OR fornecedor.razao_social LIKE "%{texto}%" OR fornecedor.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
+                                WHERE fornecedor.cnpj LIKE "%{texto}%" OR fornecedor.email LIKE "%{texto}%" OR fornecedor.razao_social LIKE "%{texto}%" OR fornecedor.telefone_celular LIKE "%{texto}%" OR fornecedor.telefone_fixo LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%" OR endereco.estado LIKE "%{texto}%";
                                 """)
             result = self.cursor.fetchall()
             return result
