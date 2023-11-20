@@ -22,7 +22,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento;
+                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento WHERE profissional LIKE "Assistente Social" AND flag LIKE "NAO";
             """)
             result = self.cursor.fetchall()
             return result
@@ -1006,7 +1006,7 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora
+            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora, agendamento.flag
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
@@ -1163,7 +1163,7 @@ class DataBase():
         print("database ->",id_colab_ass)
         try:
             self.cursor.execute(f"""
-                                    SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+                                    SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao, agendamento.flag
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_ass}' ;
@@ -1605,8 +1605,8 @@ class DataBase():
         self.connect()
         print("args ->",agendamento)
         try:
-            args = (agendamento[0],  agendamento[1], agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8])
-            self.cursor.execute("INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);", args)
+            args = (agendamento[0],  agendamento[1], agendamento[2], agendamento[3], agendamento[4], agendamento[5], agendamento[6], agendamento[7], agendamento[8], agendamento[9])
+            self.cursor.execute("INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao, flag) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);", args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"

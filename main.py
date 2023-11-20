@@ -2919,8 +2919,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_agend = "-".join(data.split("/")[::-1])
         hora = self.ui.input_hora_agendamento_as.text()
         anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
+        flag = "NAO"
 
-        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao)
+        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
         print("TUPLA AGENDAMENTO -> ",tupla_agendamento)
         result = self.db.cadastro_agendamento(tupla_agendamento)
         
@@ -3625,15 +3626,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.buscar_consulta(cpf)
-        self.ui.input_id_matricula_consulta_as.setText(str(dados[0]))
-        self.ui.input_id_matricula_consulta_as.hide()
-        self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
-        self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
-        self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
-        self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-        hora  = str(dados[5]).split(":")
-        self.ui.input_hora_consulta_as.setText(str(dados[5]))
-        self.puxar_consulta();
+        print(dados)
+        if dados[6] == "SIM":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Usuario Agendamento")
+            msg.setText("Usuario não possui agendamento!!")
+            msg.exec()
+            
+        elif dados[6] == "NAO":
+            self.ui.input_id_matricula_consulta_as.setText(str(dados[0]))
+            self.ui.input_id_matricula_consulta_as.hide()
+            self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
+            self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
+            self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
+            self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
+            hora  = str(dados[5]).split(":")
+            self.ui.input_hora_consulta_as.setText(str(dados[5]))
+            self.puxar_consulta();
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_atendimento_as.isChecked():
@@ -3649,6 +3659,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
         id_matricula = self.ui.input_id_matricula_consulta_as.text()
+        
+        
 
         tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_ass)
         print(tupla_consulta)
