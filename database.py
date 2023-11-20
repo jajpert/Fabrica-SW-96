@@ -7,9 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
-
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='senhadev')	
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -236,13 +234,12 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
-                    FROM pessoa AS pes
-                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+             SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF( YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    FROM pessoa AS parente
+                    INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
-                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
+                    INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco;
-
                 """)
             result = self.cursor.fetchall()
             return result
@@ -256,14 +253,13 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
-                    FROM pessoa AS pes
-                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+                     SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    FROM pessoa AS parente
+                    INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
-                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
+                    INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
-                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%"
-                    OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%" OR cuidador.id_matricula LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" ;
+                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%" OR parente.nome LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
@@ -277,11 +273,11 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS usuario_nome, pes.cpf,pes.data_nascimento,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS parente_nome,cuidador.parentesco
-                    FROM pessoa AS pes
-                    INNER JOIN usuario ON pes.id_matricula = usuario.id_matricula
+                  SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    FROM pessoa AS parente
+                    INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
-                    INNER JOIN pessoa AS parente ON cuidador.id_matricula = parente.id_matricula
+                    INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
                     wHERE pes.data_nascimento BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
@@ -961,9 +957,10 @@ class DataBase():
     def busca_nutri_consulta_tabela(self, cpf, id_colab_nutri):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, DATE_FORMAT(consulta.data_consulta, '%d/%m/%Y') AS data, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, consulta.situacao, consulta.observacao 
+            self.cursor.execute(f"""SELECT consulta.id_consulta, DATE_FORMAT(consulta.data_consulta, '%d/%m/%Y') AS data, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, nutri_usuario.imc, nutri_usuario.peso, consulta.situacao, consulta.observacao 
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula 
+                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    INNER JOIN nutri_usuario ON nutri_usuario.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_nutri}';""")
             result = self.cursor.fetchall()
             return result
@@ -1890,8 +1887,106 @@ class DataBase():
             return "ERRO",str(err)
 
         finally:
+            self.close_connection() 
+
+    def filter_data_relatorio_clinica_cadastrada(self,texto_data_inicio_clinica_cadastrada,texto_data_final_clinica_cadastrada):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                    INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
+                    WHERE clinica.data_cadastro BETWEEN '{texto_data_inicio_clinica_cadastrada}' and '{texto_data_final_clinica_cadastrada}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
             self.close_connection()
 
+    def buscar_relatorio_clinica_cadastrada(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                               SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                               INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco;
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_clinica_cadastrada_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                                INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
+                                WHERE clinica.cnpj LIKE "%{texto}%" OR clinica.email LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR clinica.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filter_data_relatorio_fornecedor_cadastrado(self,texto_data_inicio_fornecedor_cadastrado,texto_data_final_fornecedor_cadastrado):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
+                    INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco
+                    WHERE clinica.data_cadastro BETWEEN '{texto_data_inicio_fornecedor_cadastrado}' and '{texto_data_final_fornecedor_cadastrado}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_fornecedor_cadastrado(self):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
+                                INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco;
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_relatorio_fornecedor_cadastrado_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT fornecedor.cnpj, fornecedor.razao_social, fornecedor.telefone_celular, fornecedor.telefone_fixo, fornecedor.email, endereco.logradouro, endereco.cidade, endereco.estado from fornecedor
+                                INNER JOIN endereco on endereco.id_endereco = fornecedor.id_endereco
+                                WHERE fornecedor.cnpj LIKE "%{texto}%" OR fornecedor.email LIKE "%{texto}%" OR fornecedor.razao_social LIKE "%{texto}%" OR fornecedor.telefone_celular LIKE "%{texto}%" OR fornecedor.telefone_fixo LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%" OR endereco.estado LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+   
 
     def delete(self,id):
         self.connect()
