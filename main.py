@@ -567,7 +567,7 @@ class DialogConfirmarSaida(QDialog):
         TelaPrincipal.confirmouSaida(self, resposta)
     
 
-#############################################################################
+############################################################################################################################################################################################
 class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def __init__(self):
         super().__init__()
@@ -966,13 +966,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_relatorio_cuidadores_as.clicked.connect(self.filtrar_data_relatorio_cuidador)
         #self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         #self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
-        
-      
-        
-        
+              
         
 
-########################### Validar Login #############################
+    ########################### Validar Login #############################
     def validarLogin(self):
         login = self.ui.input_usuario_login.text()
         senha = self.ui.input_senha_login.text()
@@ -1061,29 +1058,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
                        
-########################### Validar Login Assistente S #############################        
+    ########################### Validar Login Assistente S #############################        
     def LoginAssistenteS(self):
         self.ui.inicio.setCurrentWidget(self.ui.area_principal)
         self.ui.tipos_acesso.setCurrentWidget(self.ui.assistente_social)
 
-########################### Validar Login Farm #############################        
+    ########################### Validar Login Farm #############################        
     def LoginFarm(self):
         self.ui.inicio.setCurrentWidget(self.ui.page_farmaceutica)
 
-########################### Validar Login Fisioterapeuta #############################        
+    ########################### Validar Login Fisioterapeuta #############################        
     def LoginFisio(self):
         self.ui.inicio.setCurrentWidget(self.ui.page_fisioterapeuta)
 
 
-########################### Validar Login Nutri #############################        
+    ########################### Validar Login Nutri #############################        
     def LoginNutri(self):
         self.ui.inicio.setCurrentWidget(self.ui.page_nutricionista)
 
-########################### Validar Login Psico #############################        
+    ########################### Validar Login Psico #############################        
     def LoginPsico(self):
         self.ui.inicio.setCurrentWidget(self.ui.page_psicologa)
 
-########################### Validar CEP ###############################
+    ########################### Validar CEP ###############################
     def validarCep(self):
         cep = ""
         inputCuidador = self.ui.input_cep_cuidador_as.text()
@@ -1124,7 +1121,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         cep_tratado = int(cep_tratado)
         self.puxarCep(cep_tratado, sender)
 
-############################## puxar cep e 'setar' nos inputs ########################
+    ############################## puxar cep e 'setar' nos inputs ########################
     def puxarCep(self, cep_tratado, sender):
         cep_tratado = cep_tratado
         sender = self.sender()
@@ -1269,7 +1266,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_estado_fornecedor_as.setText(str(estado))
 
 
-########################### FUNÇÕES BANCO ###########################
+    ########################### FUNÇÕES BANCO ###########################
     def buscarPessoa(self):
         cpf_temp = self.ui.input_cpf_agendamento_as.text()
         cpf = ''
