@@ -15577,7 +15577,7 @@ border-style: solid;</string>
                                      <number>14</number>
                                     </property>
                                     <property name="columnCount">
-                                     <number>9</number>
+                                     <number>10</number>
                                     </property>
                                     <attribute name="horizontalHeaderCascadingSectionResizes">
                                      <bool>true</bool>
@@ -15636,6 +15636,11 @@ border-style: solid;</string>
                                     <column>
                                      <property name="text">
                                       <string>Benefício Social</string>
+                                     </property>
+                                    </column>
+                                    <column>
+                                     <property name="text">
+                                      <string>Tipo Beneficio</string>
                                      </property>
                                     </column>
                                     <column>
@@ -21084,7 +21089,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>19</number>
+                      <number>15</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">

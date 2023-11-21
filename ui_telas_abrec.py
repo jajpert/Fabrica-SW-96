@@ -6499,8 +6499,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_563 = QVBoxLayout(self.frame_852)
         self.verticalLayout_563.setObjectName(u"verticalLayout_563")
         self.input_TableWidget_relatorio_beneficios_farm = QTableWidget(self.frame_852)
-        if (self.input_TableWidget_relatorio_beneficios_farm.columnCount() < 9):
-            self.input_TableWidget_relatorio_beneficios_farm.setColumnCount(9)
+        if (self.input_TableWidget_relatorio_beneficios_farm.columnCount() < 10):
+            self.input_TableWidget_relatorio_beneficios_farm.setColumnCount(10)
         __qtablewidgetitem62 = QTableWidgetItem()
         self.input_TableWidget_relatorio_beneficios_farm.setHorizontalHeaderItem(0, __qtablewidgetitem62)
         __qtablewidgetitem63 = QTableWidgetItem()
@@ -6519,6 +6519,8 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_beneficios_farm.setHorizontalHeaderItem(7, __qtablewidgetitem69)
         __qtablewidgetitem70 = QTableWidgetItem()
         self.input_TableWidget_relatorio_beneficios_farm.setHorizontalHeaderItem(8, __qtablewidgetitem70)
+        __qtablewidgetitem71 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_beneficios_farm.setHorizontalHeaderItem(9, __qtablewidgetitem71)
         if (self.input_TableWidget_relatorio_beneficios_farm.rowCount() < 14):
             self.input_TableWidget_relatorio_beneficios_farm.setRowCount(14)
         self.input_TableWidget_relatorio_beneficios_farm.setObjectName(u"input_TableWidget_relatorio_beneficios_farm")
@@ -6536,7 +6538,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_beneficios_farm.setSortingEnabled(True)
         self.input_TableWidget_relatorio_beneficios_farm.setWordWrap(True)
         self.input_TableWidget_relatorio_beneficios_farm.setRowCount(14)
-        self.input_TableWidget_relatorio_beneficios_farm.setColumnCount(9)
+        self.input_TableWidget_relatorio_beneficios_farm.setColumnCount(10)
         self.input_TableWidget_relatorio_beneficios_farm.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_relatorio_beneficios_farm.horizontalHeader().setDefaultSectionSize(170)
         self.input_TableWidget_relatorio_beneficios_farm.horizontalHeader().setStretchLastSection(True)
@@ -25363,11 +25365,13 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem58 = self.input_TableWidget_relatorio_beneficios_farm.horizontalHeaderItem(5)
         ___qtablewidgetitem58.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio Social", None));
         ___qtablewidgetitem59 = self.input_TableWidget_relatorio_beneficios_farm.horizontalHeaderItem(6)
-        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
+        ___qtablewidgetitem59.setText(QCoreApplication.translate("MainWindow", u"Tipo Beneficio", None));
         ___qtablewidgetitem60 = self.input_TableWidget_relatorio_beneficios_farm.horizontalHeaderItem(7)
-        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtablewidgetitem60.setText(QCoreApplication.translate("MainWindow", u"Descri\u00e7\u00e3o", None));
         ___qtablewidgetitem61 = self.input_TableWidget_relatorio_beneficios_farm.horizontalHeaderItem(8)
-        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem61.setText(QCoreApplication.translate("MainWindow", u"Quantidade", None));
+        ___qtablewidgetitem62 = self.input_TableWidget_relatorio_beneficios_farm.horizontalHeaderItem(9)
+        ___qtablewidgetitem62.setText(QCoreApplication.translate("MainWindow", u"Data", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_beneficios_farm.setToolTip("")
 #endif // QT_CONFIG(tooltip)
