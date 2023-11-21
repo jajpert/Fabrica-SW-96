@@ -1263,10 +1263,10 @@ class DataBase():
             self.connect()
             try:
                 self.cursor.execute(f"""SELECT id_agendamento,pessoa.nome,pessoa.cpf,pessoa.telefone,clinica,profissional,agendamento.hora,anotacao,perfil
-                                        from agendamento
-                                        INNER JOIN pessoa ON pessoa.id_matricula= usuario.id_matricula
-                                        INNER JOIN clinica ON clinica.id_clinica=id_cadastro	
-                                        INNER JOIN colaborador ON consulta.id_colaborador= id_colaborador;""")
+                                                from agendamento
+                                                INNER JOIN pessoa ON pessoa.id_matricula= usuario.id_matricula
+                                                INNER JOIN clinica ON clinica.id_clinica=id_cadastro	
+                                                INNER JOIN colaborador ON consulta.id_colaborador= id_colaborador;""")
                 result = self.cursor.fetchall()
                 return result
 
