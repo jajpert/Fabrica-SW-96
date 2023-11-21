@@ -1288,7 +1288,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -1707,6 +1707,44 @@ QPushButton:pressed{
                                           <property name="icon">
                                            <iconset>
                                             <normaloff>../../../../../icons/lupa.png</normaloff>../../../../../icons/lupa.png</iconset>
+                                          </property>
+                                         </widget>
+                                        </item>
+                                        <item>
+                                         <widget class="QLineEdit" name="input_id_matricula_nutri_agendamento">
+                                          <property name="enabled">
+                                           <bool>false</bool>
+                                          </property>
+                                          <property name="minimumSize">
+                                           <size>
+                                            <width>0</width>
+                                            <height>0</height>
+                                           </size>
+                                          </property>
+                                          <property name="maximumSize">
+                                           <size>
+                                            <width>0</width>
+                                            <height>0</height>
+                                           </size>
+                                          </property>
+                                          <property name="font">
+                                           <font>
+                                            <family>Abel</family>
+                                            <pointsize>12</pointsize>
+                                           </font>
+                                          </property>
+                                          <property name="styleSheet">
+                                           <string notr="true">background-color: transparent;
+color: transparent;</string>
+                                          </property>
+                                          <property name="text">
+                                           <string/>
+                                          </property>
+                                          <property name="maxLength">
+                                           <number>11</number>
+                                          </property>
+                                          <property name="placeholderText">
+                                           <string/>
                                           </property>
                                          </widget>
                                         </item>
@@ -3265,21 +3303,48 @@ background-color: rgb(243, 185, 191);</string>
                                     <property name="frameShadow">
                                      <enum>QFrame::Raised</enum>
                                     </property>
-                                    <layout class="QVBoxLayout" name="verticalLayout_384">
-                                     <item>
-                                      <widget class="QLabel" name="label_cpf_pagina_consulta_geral_nutri">
-                                       <property name="font">
-                                        <font>
-                                         <family>Abel</family>
-                                         <pointsize>12</pointsize>
-                                        </font>
-                                       </property>
-                                       <property name="text">
-                                        <string>CPF</string>
-                                       </property>
-                                      </widget>
-                                     </item>
-                                    </layout>
+                                    <widget class="QLabel" name="label_cpf_pagina_consulta_geral_nutri">
+                                     <property name="geometry">
+                                      <rect>
+                                       <x>10</x>
+                                       <y>10</y>
+                                       <width>24</width>
+                                       <height>21</height>
+                                      </rect>
+                                     </property>
+                                     <property name="font">
+                                      <font>
+                                       <family>Abel</family>
+                                       <pointsize>12</pointsize>
+                                      </font>
+                                     </property>
+                                     <property name="text">
+                                      <string>CPF</string>
+                                     </property>
+                                    </widget>
+                                    <widget class="QLineEdit" name="input_id_matricula_nutri_consulta">
+                                     <property name="enabled">
+                                      <bool>false</bool>
+                                     </property>
+                                     <property name="geometry">
+                                      <rect>
+                                       <x>380</x>
+                                       <y>20</y>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </rect>
+                                     </property>
+                                     <property name="maximumSize">
+                                      <size>
+                                       <width>0</width>
+                                       <height>0</height>
+                                      </size>
+                                     </property>
+                                     <property name="styleSheet">
+                                      <string notr="true">background-color: transparent;
+color: transparent;</string>
+                                     </property>
+                                    </widget>
                                    </widget>
                                   </item>
                                   <item>
@@ -6776,7 +6841,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_7">
                  <property name="currentIndex">
-                  <number>1</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="page_principal_psi"/>
                  <widget class="QWidget" name="page_agenda_psi">
@@ -8656,23 +8721,6 @@ background-color: rgb(243, 185, 191);</string>
                                  <property name="frameShadow">
                                   <enum>QFrame::Raised</enum>
                                  </property>
-                                 <widget class="QLineEdit" name="input_id_usuario_consulta_psi">
-                                  <property name="enabled">
-                                   <bool>false</bool>
-                                  </property>
-                                  <property name="geometry">
-                                   <rect>
-                                    <x>0</x>
-                                    <y>0</y>
-                                    <width>489</width>
-                                    <height>32</height>
-                                   </rect>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">border-color: transparent;
-background-color: transparent;</string>
-                                  </property>
-                                 </widget>
                                 </widget>
                                </item>
                                <item>
@@ -8707,7 +8755,7 @@ background-color: transparent;</string>
                                     <property name="frameShadow">
                                      <enum>QFrame::Raised</enum>
                                     </property>
-                                    <layout class="QVBoxLayout" name="verticalLayout_396">
+                                    <layout class="QVBoxLayout" name="verticalLayout_384">
                                      <item>
                                       <widget class="QLabel" name="label_cpf_pagina_consulta_geral_psi">
                                        <property name="font">
@@ -8718,6 +8766,23 @@ background-color: transparent;</string>
                                        </property>
                                        <property name="text">
                                         <string>CPF</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item>
+                                      <widget class="QLineEdit" name="input_id_matricula_consulta_psi">
+                                       <property name="enabled">
+                                        <bool>false</bool>
+                                       </property>
+                                       <property name="maximumSize">
+                                        <size>
+                                         <width>0</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true">border-color: transparent;
+background-color: transparent;</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -17962,6 +18027,41 @@ QPushButton:pressed{
                                           </property>
                                          </widget>
                                         </item>
+                                        <item>
+                                         <widget class="QLineEdit" name="input_id_matricula_agendamento_fisio">
+                                          <property name="minimumSize">
+                                           <size>
+                                            <width>0</width>
+                                            <height>0</height>
+                                           </size>
+                                          </property>
+                                          <property name="maximumSize">
+                                           <size>
+                                            <width>0</width>
+                                            <height>0</height>
+                                           </size>
+                                          </property>
+                                          <property name="font">
+                                           <font>
+                                            <family>Abel</family>
+                                            <pointsize>12</pointsize>
+                                           </font>
+                                          </property>
+                                          <property name="styleSheet">
+                                           <string notr="true">color: transparent;
+background-color: transparent;</string>
+                                          </property>
+                                          <property name="text">
+                                           <string/>
+                                          </property>
+                                          <property name="maxLength">
+                                           <number>11</number>
+                                          </property>
+                                          <property name="placeholderText">
+                                           <string/>
+                                          </property>
+                                         </widget>
+                                        </item>
                                        </layout>
                                       </widget>
                                      </item>
@@ -19425,23 +19525,6 @@ background-color: rgb(243, 185, 191);</string>
                                  <property name="frameShadow">
                                   <enum>QFrame::Raised</enum>
                                  </property>
-                                 <widget class="QLineEdit" name="input_id_usuario_consulta_as_3">
-                                  <property name="enabled">
-                                   <bool>false</bool>
-                                  </property>
-                                  <property name="geometry">
-                                   <rect>
-                                    <x>0</x>
-                                    <y>0</y>
-                                    <width>489</width>
-                                    <height>32</height>
-                                   </rect>
-                                  </property>
-                                  <property name="styleSheet">
-                                   <string notr="true">border-color: transparent;
-background-color: transparent;</string>
-                                  </property>
-                                 </widget>
                                 </widget>
                                </item>
                                <item>
@@ -19487,6 +19570,23 @@ background-color: transparent;</string>
                                        </property>
                                        <property name="text">
                                         <string>CPF</string>
+                                       </property>
+                                      </widget>
+                                     </item>
+                                     <item>
+                                      <widget class="QLineEdit" name="input_id_matricula_consulta_fisio">
+                                       <property name="enabled">
+                                        <bool>false</bool>
+                                       </property>
+                                       <property name="maximumSize">
+                                        <size>
+                                         <width>0</width>
+                                         <height>0</height>
+                                        </size>
+                                       </property>
+                                       <property name="styleSheet">
+                                        <string notr="true">border-color: transparent;
+background-color: transparent;</string>
                                        </property>
                                       </widget>
                                      </item>
@@ -21089,7 +21189,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>22</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -64733,6 +64833,20 @@ background-color: transparent;</string>
                                          <enum>QFrame::Raised</enum>
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_319">
+                                         <item>
+                                          <widget class="QLineEdit" name="input_id_matricula_consulta_as">
+                                           <property name="maximumSize">
+                                            <size>
+                                             <width>0</width>
+                                             <height>0</height>
+                                            </size>
+                                           </property>
+                                           <property name="styleSheet">
+                                            <string notr="true">color: transparent;
+background-color: transparent;</string>
+                                           </property>
+                                          </widget>
+                                         </item>
                                          <item>
                                           <widget class="QLabel" name="label_cpf_pagina_consulta_geral">
                                            <property name="font">

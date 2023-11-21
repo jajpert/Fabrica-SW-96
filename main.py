@@ -2458,7 +2458,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Usuario Agendamento")
             msg.setText("Usuario nao possui agendamento!!")
             msg.exec()
-            print(dados[6])
+            return
+        
+                    
         elif dados[8] == "NAO":
             self.ui.input_nome_pagina_consulta_geral_nutri.setText(dados[0])
             self.ui.input_contato_pagina_consulta_geral_nutri.setText(dados[1])
