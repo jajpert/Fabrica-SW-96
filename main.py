@@ -804,7 +804,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_agenda_psi.clicked.connect(self.cadastroAgendamento_psi) #CADASTRO AGENDAMENTO USUARIO PISC
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
-        #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+        self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
 
 
         ########################### FARMACEUTICA ###########################
@@ -843,7 +843,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
-        #self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
+        self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_pagina_consulta_geral.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
         self.ui.btn_alterar_voltar_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
@@ -859,7 +859,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_beneficio_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
         self.ui.btn_voltar_pagina_relatorio_beneficios_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
                 
-        self.ui.btn_relatorio_agenda_as.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.page_relatorio_agenda))
+        self.ui.btn_relatorio_agenda_as.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
                 
         ######SIGNALS POPUP RECUPERAR SENHA AS######
         self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)

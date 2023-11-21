@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'telas_abrectvajSO.ui'
+## Form generated from reading UI file 'telas_abrecwSekYS.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -1960,8 +1960,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_196.setObjectName(u"horizontalLayout_196")
         self.horizontalLayout_196.setContentsMargins(0, 0, 0, 0)
         self.input_TableWidget_pagina_consulta_geral_nutri = QTableWidget(self.frame_590)
-        if (self.input_TableWidget_pagina_consulta_geral_nutri.columnCount() < 7):
-            self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(7)
+        if (self.input_TableWidget_pagina_consulta_geral_nutri.columnCount() < 5):
+            self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(5)
         __qtablewidgetitem9 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(0, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
@@ -1972,10 +1972,6 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(3, __qtablewidgetitem12)
         __qtablewidgetitem13 = QTableWidgetItem()
         self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(4, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(5, __qtablewidgetitem14)
-        __qtablewidgetitem15 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral_nutri.setHorizontalHeaderItem(6, __qtablewidgetitem15)
         if (self.input_TableWidget_pagina_consulta_geral_nutri.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral_nutri.setObjectName(u"input_TableWidget_pagina_consulta_geral_nutri")
@@ -1993,7 +1989,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral_nutri.setSortingEnabled(True)
         self.input_TableWidget_pagina_consulta_geral_nutri.setWordWrap(True)
         self.input_TableWidget_pagina_consulta_geral_nutri.setRowCount(14)
-        self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(7)
+        self.input_TableWidget_pagina_consulta_geral_nutri.setColumnCount(5)
         self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeader().setDefaultSectionSize(130)
         self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeader().setStretchLastSection(True)
@@ -8809,15 +8805,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_34.addWidget(self.btn_sair_as)
 
-        self.frame_191 = QFrame(self.frame_11)
-        self.frame_191.setObjectName(u"frame_191")
-        self.frame_191.setMinimumSize(QSize(0, 30))
-        self.frame_191.setMaximumSize(QSize(16777215, 30))
-        self.frame_191.setFrameShape(QFrame.StyledPanel)
-        self.frame_191.setFrameShadow(QFrame.Raised)
-
-        self.verticalLayout_34.addWidget(self.frame_191)
-
 
         self.horizontalLayout_10.addWidget(self.frame_11)
 
@@ -9856,7 +9843,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon30 = QIcon()
-        icon30.addFile(u"./icons/documento.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon30.addFile(u"../../../../Downloads/documento.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_relatorio_cuidadores.setIcon(icon30)
         self.btn_relatorio_cuidadores.setIconSize(QSize(80, 80))
 
@@ -19163,8 +19150,8 @@ class Ui_MainWindow(object):
         self.frame_448.setObjectName(u"frame_448")
         self.frame_448.setFrameShape(QFrame.StyledPanel)
         self.frame_448.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_70 = QHBoxLayout(self.frame_448)
-        self.horizontalLayout_70.setObjectName(u"horizontalLayout_70")
+        self.horizontalLayout_38 = QHBoxLayout(self.frame_448)
+        self.horizontalLayout_38.setObjectName(u"horizontalLayout_38")
         self.btn_voltar_agenda_as = QPushButton(self.frame_448)
         self.btn_voltar_agenda_as.setObjectName(u"btn_voltar_agenda_as")
         self.btn_voltar_agenda_as.setMinimumSize(QSize(120, 40))
@@ -19175,11 +19162,27 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.horizontalLayout_70.addWidget(self.btn_voltar_agenda_as)
+        self.horizontalLayout_38.addWidget(self.btn_voltar_agenda_as)
+
+        self.btn_relatorio_agenda_as = QPushButton(self.frame_448)
+        self.btn_relatorio_agenda_as.setObjectName(u"btn_relatorio_agenda_as")
+        self.btn_relatorio_agenda_as.setMinimumSize(QSize(130, 40))
+        self.btn_relatorio_agenda_as.setMaximumSize(QSize(120, 40))
+        self.btn_relatorio_agenda_as.setFont(font7)
+        self.btn_relatorio_agenda_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_relatorio_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        icon35 = QIcon()
+        icon35.addFile(u"./icons/documento.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_relatorio_agenda_as.setIcon(icon35)
+        self.btn_relatorio_agenda_as.setIconSize(QSize(20, 20))
+
+        self.horizontalLayout_38.addWidget(self.btn_relatorio_agenda_as)
 
         self.horizontalSpacer_58 = QSpacerItem(1267, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.horizontalLayout_70.addItem(self.horizontalSpacer_58)
+        self.horizontalLayout_38.addItem(self.horizontalSpacer_58)
 
         self.btn_alterar_agenda_as = QPushButton(self.frame_448)
         self.btn_alterar_agenda_as.setObjectName(u"btn_alterar_agenda_as")
@@ -19191,12 +19194,12 @@ class Ui_MainWindow(object):
         self.btn_alterar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon35 = QIcon()
-        icon35.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_agenda_as.setIcon(icon35)
+        icon36 = QIcon()
+        icon36.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_alterar_agenda_as.setIcon(icon36)
         self.btn_alterar_agenda_as.setIconSize(QSize(24, 24))
 
-        self.horizontalLayout_70.addWidget(self.btn_alterar_agenda_as)
+        self.horizontalLayout_38.addWidget(self.btn_alterar_agenda_as)
 
         self.btn_cancelar_agenda_as = QPushButton(self.frame_448)
         self.btn_cancelar_agenda_as.setObjectName(u"btn_cancelar_agenda_as")
@@ -19208,16 +19211,16 @@ class Ui_MainWindow(object):
         self.btn_cancelar_agenda_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon36 = QIcon()
-        icon36.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_cancelar_agenda_as.setIcon(icon36)
+        icon37 = QIcon()
+        icon37.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cancelar_agenda_as.setIcon(icon37)
         self.btn_cancelar_agenda_as.setIconSize(QSize(24, 24))
 
-        self.horizontalLayout_70.addWidget(self.btn_cancelar_agenda_as)
+        self.horizontalLayout_38.addWidget(self.btn_cancelar_agenda_as)
 
         self.horizontalSpacer_92 = QSpacerItem(165, 20, QSizePolicy.Preferred, QSizePolicy.Minimum)
 
-        self.horizontalLayout_70.addItem(self.horizontalSpacer_92)
+        self.horizontalLayout_38.addItem(self.horizontalSpacer_92)
 
 
         self.verticalLayout_119.addWidget(self.frame_448)
@@ -19226,6 +19229,481 @@ class Ui_MainWindow(object):
         self.verticalLayout_156.addWidget(self.frame_247)
 
         self.stackedWidget_2.addWidget(self.page_agenda_as)
+        self.page_relatorio_agendamento_as = QWidget()
+        self.page_relatorio_agendamento_as.setObjectName(u"page_relatorio_agendamento_as")
+        self.horizontalLayout_311 = QHBoxLayout(self.page_relatorio_agendamento_as)
+        self.horizontalLayout_311.setObjectName(u"horizontalLayout_311")
+        self.frame_144 = QFrame(self.page_relatorio_agendamento_as)
+        self.frame_144.setObjectName(u"frame_144")
+        self.frame_144.setFrameShape(QFrame.StyledPanel)
+        self.frame_144.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_70 = QHBoxLayout(self.frame_144)
+        self.horizontalLayout_70.setObjectName(u"horizontalLayout_70")
+        self.frame_717 = QFrame(self.frame_144)
+        self.frame_717.setObjectName(u"frame_717")
+        self.frame_717.setFrameShape(QFrame.StyledPanel)
+        self.frame_717.setFrameShadow(QFrame.Raised)
+        self.gridLayout_7 = QGridLayout(self.frame_717)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.frame_720 = QFrame(self.frame_717)
+        self.frame_720.setObjectName(u"frame_720")
+        self.frame_720.setMinimumSize(QSize(0, 0))
+        self.frame_720.setMaximumSize(QSize(1600, 150))
+        self.frame_720.setFrameShape(QFrame.StyledPanel)
+        self.frame_720.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_242 = QHBoxLayout(self.frame_720)
+        self.horizontalLayout_242.setSpacing(0)
+        self.horizontalLayout_242.setObjectName(u"horizontalLayout_242")
+        self.horizontalLayout_242.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_175 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_242.addItem(self.horizontalSpacer_175)
+
+        self.frame_721 = QFrame(self.frame_720)
+        self.frame_721.setObjectName(u"frame_721")
+        self.frame_721.setMinimumSize(QSize(800, 130))
+        self.frame_721.setMaximumSize(QSize(1580, 130))
+        self.frame_721.setFrameShape(QFrame.StyledPanel)
+        self.frame_721.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_481 = QVBoxLayout(self.frame_721)
+        self.verticalLayout_481.setObjectName(u"verticalLayout_481")
+        self.frame_722 = QFrame(self.frame_721)
+        self.frame_722.setObjectName(u"frame_722")
+        self.frame_722.setMinimumSize(QSize(870, 60))
+        self.frame_722.setMaximumSize(QSize(870, 60))
+        self.frame_722.setFrameShape(QFrame.StyledPanel)
+        self.frame_722.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_243 = QHBoxLayout(self.frame_722)
+        self.horizontalLayout_243.setSpacing(0)
+        self.horizontalLayout_243.setObjectName(u"horizontalLayout_243")
+        self.horizontalLayout_243.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_176 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_243.addItem(self.horizontalSpacer_176)
+
+        self.frame_723 = QFrame(self.frame_722)
+        self.frame_723.setObjectName(u"frame_723")
+        self.frame_723.setMinimumSize(QSize(125, 60))
+        self.frame_723.setMaximumSize(QSize(120, 60))
+        self.frame_723.setFrameShape(QFrame.StyledPanel)
+        self.frame_723.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_482 = QVBoxLayout(self.frame_723)
+        self.verticalLayout_482.setSpacing(0)
+        self.verticalLayout_482.setObjectName(u"verticalLayout_482")
+        self.verticalLayout_482.setContentsMargins(0, 0, 0, 0)
+        self.label_inicio_periodo_relatorio_as_2 = QLabel(self.frame_723)
+        self.label_inicio_periodo_relatorio_as_2.setObjectName(u"label_inicio_periodo_relatorio_as_2")
+        self.label_inicio_periodo_relatorio_as_2.setMinimumSize(QSize(60, 20))
+        self.label_inicio_periodo_relatorio_as_2.setMaximumSize(QSize(60, 20))
+        self.label_inicio_periodo_relatorio_as_2.setFont(font11)
+
+        self.verticalLayout_482.addWidget(self.label_inicio_periodo_relatorio_as_2)
+
+        self.input_inicio_periodo_relatorio_gendamento_as = QDateEdit(self.frame_723)
+        self.input_inicio_periodo_relatorio_gendamento_as.setObjectName(u"input_inicio_periodo_relatorio_gendamento_as")
+        sizePolicy1.setHeightForWidth(self.input_inicio_periodo_relatorio_gendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_inicio_periodo_relatorio_gendamento_as.setSizePolicy(sizePolicy1)
+        self.input_inicio_periodo_relatorio_gendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_inicio_periodo_relatorio_gendamento_as.setMaximumSize(QSize(120, 30))
+        self.input_inicio_periodo_relatorio_gendamento_as.setFont(font6)
+        self.input_inicio_periodo_relatorio_gendamento_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_inicio_periodo_relatorio_gendamento_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_inicio_periodo_relatorio_gendamento_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_inicio_periodo_relatorio_gendamento_as.setAutoFillBackground(False)
+        self.input_inicio_periodo_relatorio_gendamento_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_inicio_periodo_relatorio_gendamento_as.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
+        self.input_inicio_periodo_relatorio_gendamento_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_inicio_periodo_relatorio_gendamento_as.setAlignment(Qt.AlignCenter)
+        self.input_inicio_periodo_relatorio_gendamento_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_inicio_periodo_relatorio_gendamento_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_inicio_periodo_relatorio_gendamento_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_inicio_periodo_relatorio_gendamento_as.setCalendarPopup(True)
+        self.input_inicio_periodo_relatorio_gendamento_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_482.addWidget(self.input_inicio_periodo_relatorio_gendamento_as)
+
+
+        self.horizontalLayout_243.addWidget(self.frame_723)
+
+        self.frame_724 = QFrame(self.frame_722)
+        self.frame_724.setObjectName(u"frame_724")
+        self.frame_724.setMinimumSize(QSize(0, 60))
+        self.frame_724.setMaximumSize(QSize(120, 60))
+        self.frame_724.setFrameShape(QFrame.StyledPanel)
+        self.frame_724.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_483 = QVBoxLayout(self.frame_724)
+        self.verticalLayout_483.setObjectName(u"verticalLayout_483")
+        self.verticalSpacer_61 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_483.addItem(self.verticalSpacer_61)
+
+        self.label_a_relatorio_agendamento = QLabel(self.frame_724)
+        self.label_a_relatorio_agendamento.setObjectName(u"label_a_relatorio_agendamento")
+        self.label_a_relatorio_agendamento.setMinimumSize(QSize(20, 20))
+        self.label_a_relatorio_agendamento.setMaximumSize(QSize(40, 20))
+        self.label_a_relatorio_agendamento.setFont(font11)
+
+        self.verticalLayout_483.addWidget(self.label_a_relatorio_agendamento)
+
+
+        self.horizontalLayout_243.addWidget(self.frame_724)
+
+        self.frame_725 = QFrame(self.frame_722)
+        self.frame_725.setObjectName(u"frame_725")
+        self.frame_725.setMinimumSize(QSize(125, 30))
+        self.frame_725.setMaximumSize(QSize(120, 60))
+        self.frame_725.setFrameShape(QFrame.StyledPanel)
+        self.frame_725.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_484 = QVBoxLayout(self.frame_725)
+        self.verticalLayout_484.setSpacing(0)
+        self.verticalLayout_484.setObjectName(u"verticalLayout_484")
+        self.verticalLayout_484.setContentsMargins(0, 0, 0, 0)
+        self.verticalSpacer_64 = QSpacerItem(20, 20, QSizePolicy.Minimum, QSizePolicy.Maximum)
+
+        self.verticalLayout_484.addItem(self.verticalSpacer_64)
+
+        self.input_final_periodo_relatorio_agendamento_as = QDateEdit(self.frame_725)
+        self.input_final_periodo_relatorio_agendamento_as.setObjectName(u"input_final_periodo_relatorio_agendamento_as")
+        sizePolicy1.setHeightForWidth(self.input_final_periodo_relatorio_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.input_final_periodo_relatorio_agendamento_as.setSizePolicy(sizePolicy1)
+        self.input_final_periodo_relatorio_agendamento_as.setMinimumSize(QSize(0, 30))
+        self.input_final_periodo_relatorio_agendamento_as.setMaximumSize(QSize(120, 30))
+        self.input_final_periodo_relatorio_agendamento_as.setFont(font6)
+        self.input_final_periodo_relatorio_agendamento_as.setFocusPolicy(Qt.WheelFocus)
+        self.input_final_periodo_relatorio_agendamento_as.setContextMenuPolicy(Qt.DefaultContextMenu)
+        self.input_final_periodo_relatorio_agendamento_as.setLayoutDirection(Qt.LeftToRight)
+        self.input_final_periodo_relatorio_agendamento_as.setAutoFillBackground(False)
+        self.input_final_periodo_relatorio_agendamento_as.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+"QDateEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_final_periodo_relatorio_agendamento_as.setInputMethodHints(Qt.ImhDate|Qt.ImhPreferNumbers)
+        self.input_final_periodo_relatorio_agendamento_as.setAlignment(Qt.AlignCenter)
+        self.input_final_periodo_relatorio_agendamento_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
+        self.input_final_periodo_relatorio_agendamento_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.input_final_periodo_relatorio_agendamento_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_final_periodo_relatorio_agendamento_as.setCalendarPopup(True)
+        self.input_final_periodo_relatorio_agendamento_as.setCurrentSectionIndex(0)
+
+        self.verticalLayout_484.addWidget(self.input_final_periodo_relatorio_agendamento_as)
+
+
+        self.horizontalLayout_243.addWidget(self.frame_725)
+
+        self.frame_726 = QFrame(self.frame_722)
+        self.frame_726.setObjectName(u"frame_726")
+        self.frame_726.setMinimumSize(QSize(130, 55))
+        self.frame_726.setMaximumSize(QSize(130, 55))
+        self.frame_726.setFrameShape(QFrame.StyledPanel)
+        self.frame_726.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_485 = QVBoxLayout(self.frame_726)
+        self.verticalLayout_485.setSpacing(0)
+        self.verticalLayout_485.setObjectName(u"verticalLayout_485")
+        self.verticalLayout_485.setContentsMargins(0, 0, 0, 0)
+
+        self.horizontalLayout_243.addWidget(self.frame_726)
+
+        self.frame_729 = QFrame(self.frame_722)
+        self.frame_729.setObjectName(u"frame_729")
+        self.frame_729.setMinimumSize(QSize(50, 50))
+        self.frame_729.setMaximumSize(QSize(50, 50))
+        self.frame_729.setFont(font11)
+        self.frame_729.setFrameShape(QFrame.StyledPanel)
+        self.frame_729.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_487 = QVBoxLayout(self.frame_729)
+        self.verticalLayout_487.setObjectName(u"verticalLayout_487")
+        self.btn_buscar_relatorio_agendamento_as = QPushButton(self.frame_729)
+        self.btn_buscar_relatorio_agendamento_as.setObjectName(u"btn_buscar_relatorio_agendamento_as")
+        sizePolicy3.setHeightForWidth(self.btn_buscar_relatorio_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.btn_buscar_relatorio_agendamento_as.setSizePolicy(sizePolicy3)
+        self.btn_buscar_relatorio_agendamento_as.setMinimumSize(QSize(40, 40))
+        self.btn_buscar_relatorio_agendamento_as.setMaximumSize(QSize(40, 40))
+        self.btn_buscar_relatorio_agendamento_as.setStyleSheet(u"QPushButton{\n"
+"        background: rgb(243, 185, 191);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"		border-top-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221);   \n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"        background: rgb(255, 194, 201);\n"
+"        border: 1px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;\n"
+"        color: rgb(249, 217, 221); \n"
+"		border-bottom-right-radius: 20px;\n"
+"		border-bottom-left-radius: 20px;  \n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"        background: rgb(180, 106, 102);\n"
+"        border: 2px  solid rgb(180, 106, 102);\n"
+"        border-width: 2px;\n"
+"		border-top-right-radius: 20px;\n"
+"		border-bottom-right-radius: 20px;\n"
+"        colo"
+                        "r: rgb(249, 217, 221);   \n"
+"}")
+        self.btn_buscar_relatorio_agendamento_as.setIcon(icon14)
+
+        self.verticalLayout_487.addWidget(self.btn_buscar_relatorio_agendamento_as)
+
+
+        self.horizontalLayout_243.addWidget(self.frame_729)
+
+        self.horizontalSpacer_177 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_243.addItem(self.horizontalSpacer_177)
+
+
+        self.verticalLayout_481.addWidget(self.frame_722)
+
+        self.frame_730 = QFrame(self.frame_721)
+        self.frame_730.setObjectName(u"frame_730")
+        self.frame_730.setMinimumSize(QSize(0, 60))
+        self.frame_730.setMaximumSize(QSize(870, 60))
+        self.frame_730.setFrameShape(QFrame.StyledPanel)
+        self.frame_730.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_244 = QHBoxLayout(self.frame_730)
+        self.horizontalLayout_244.setSpacing(0)
+        self.horizontalLayout_244.setObjectName(u"horizontalLayout_244")
+        self.horizontalLayout_244.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_178 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_244.addItem(self.horizontalSpacer_178)
+
+        self.input_buscar_dados_relatorio_agendamento_as = QLineEdit(self.frame_730)
+        self.input_buscar_dados_relatorio_agendamento_as.setObjectName(u"input_buscar_dados_relatorio_agendamento_as")
+        self.input_buscar_dados_relatorio_agendamento_as.setMinimumSize(QSize(700, 30))
+        self.input_buscar_dados_relatorio_agendamento_as.setMaximumSize(QSize(700, 30))
+
+        self.horizontalLayout_244.addWidget(self.input_buscar_dados_relatorio_agendamento_as)
+
+        self.horizontalSpacer_179 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_244.addItem(self.horizontalSpacer_179)
+
+
+        self.verticalLayout_481.addWidget(self.frame_730)
+
+
+        self.horizontalLayout_242.addWidget(self.frame_721)
+
+        self.horizontalSpacer_180 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_242.addItem(self.horizontalSpacer_180)
+
+
+        self.gridLayout_7.addWidget(self.frame_720, 1, 0, 1, 1)
+
+        self.frame_731 = QFrame(self.frame_717)
+        self.frame_731.setObjectName(u"frame_731")
+        self.frame_731.setMinimumSize(QSize(0, 0))
+        self.frame_731.setMaximumSize(QSize(16777215, 16777215))
+        self.frame_731.setFrameShape(QFrame.StyledPanel)
+        self.frame_731.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_245 = QHBoxLayout(self.frame_731)
+        self.horizontalLayout_245.setSpacing(0)
+        self.horizontalLayout_245.setObjectName(u"horizontalLayout_245")
+        self.horizontalLayout_245.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer_181 = QSpacerItem(40, 20, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.horizontalLayout_245.addItem(self.horizontalSpacer_181)
+
+        self.frame_732 = QFrame(self.frame_731)
+        self.frame_732.setObjectName(u"frame_732")
+        self.frame_732.setMinimumSize(QSize(0, 0))
+        self.frame_732.setFrameShape(QFrame.StyledPanel)
+        self.frame_732.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_488 = QVBoxLayout(self.frame_732)
+        self.verticalLayout_488.setSpacing(0)
+        self.verticalLayout_488.setObjectName(u"verticalLayout_488")
+        self.verticalLayout_488.setContentsMargins(0, 0, 0, 0)
+        self.tableWidget_relatorio_agendamento_as = QTableWidget(self.frame_732)
+        if (self.tableWidget_relatorio_agendamento_as.columnCount() < 8):
+            self.tableWidget_relatorio_agendamento_as.setColumnCount(8)
+        __qtablewidgetitem185 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(0, __qtablewidgetitem185)
+        __qtablewidgetitem186 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(1, __qtablewidgetitem186)
+        __qtablewidgetitem187 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(2, __qtablewidgetitem187)
+        __qtablewidgetitem188 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(3, __qtablewidgetitem188)
+        __qtablewidgetitem189 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(4, __qtablewidgetitem189)
+        __qtablewidgetitem190 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(5, __qtablewidgetitem190)
+        __qtablewidgetitem191 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(6, __qtablewidgetitem191)
+        __qtablewidgetitem192 = QTableWidgetItem()
+        self.tableWidget_relatorio_agendamento_as.setHorizontalHeaderItem(7, __qtablewidgetitem192)
+        if (self.tableWidget_relatorio_agendamento_as.rowCount() < 10):
+            self.tableWidget_relatorio_agendamento_as.setRowCount(10)
+        self.tableWidget_relatorio_agendamento_as.setObjectName(u"tableWidget_relatorio_agendamento_as")
+        self.tableWidget_relatorio_agendamento_as.setMinimumSize(QSize(0, 0))
+        self.tableWidget_relatorio_agendamento_as.setMaximumSize(QSize(16777215, 16777215))
+        self.tableWidget_relatorio_agendamento_as.setAlternatingRowColors(True)
+        self.tableWidget_relatorio_agendamento_as.setRowCount(10)
+        self.tableWidget_relatorio_agendamento_as.horizontalHeader().setDefaultSectionSize(180)
+        self.tableWidget_relatorio_agendamento_as.horizontalHeader().setHighlightSections(True)
+        self.tableWidget_relatorio_agendamento_as.verticalHeader().setVisible(False)
+        self.tableWidget_relatorio_agendamento_as.verticalHeader().setMinimumSectionSize(50)
+        self.tableWidget_relatorio_agendamento_as.verticalHeader().setHighlightSections(True)
+
+        self.verticalLayout_488.addWidget(self.tableWidget_relatorio_agendamento_as)
+
+        self.verticalSpacer_65 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.verticalLayout_488.addItem(self.verticalSpacer_65)
+
+
+        self.horizontalLayout_245.addWidget(self.frame_732)
+
+        self.frame_733 = QFrame(self.frame_731)
+        self.frame_733.setObjectName(u"frame_733")
+        self.frame_733.setMinimumSize(QSize(150, 540))
+        self.frame_733.setMaximumSize(QSize(150, 540))
+        self.frame_733.setFrameShape(QFrame.StyledPanel)
+        self.frame_733.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_489 = QVBoxLayout(self.frame_733)
+        self.verticalLayout_489.setSpacing(0)
+        self.verticalLayout_489.setObjectName(u"verticalLayout_489")
+        self.verticalLayout_489.setContentsMargins(0, 0, 0, 0)
+        self.frame_734 = QFrame(self.frame_733)
+        self.frame_734.setObjectName(u"frame_734")
+        self.frame_734.setMinimumSize(QSize(0, 0))
+        self.frame_734.setMaximumSize(QSize(130, 280))
+        self.frame_734.setFrameShape(QFrame.StyledPanel)
+        self.frame_734.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_577 = QVBoxLayout(self.frame_734)
+        self.verticalLayout_577.setSpacing(15)
+        self.verticalLayout_577.setObjectName(u"verticalLayout_577")
+        self.verticalLayout_577.setContentsMargins(0, 0, 20, 20)
+        self.btn_gerar_excel_relatorio_agendamento_as = QPushButton(self.frame_734)
+        self.btn_gerar_excel_relatorio_agendamento_as.setObjectName(u"btn_gerar_excel_relatorio_agendamento_as")
+        sizePolicy3.setHeightForWidth(self.btn_gerar_excel_relatorio_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.btn_gerar_excel_relatorio_agendamento_as.setSizePolicy(sizePolicy3)
+        self.btn_gerar_excel_relatorio_agendamento_as.setMinimumSize(QSize(125, 40))
+        self.btn_gerar_excel_relatorio_agendamento_as.setMaximumSize(QSize(40, 40))
+        self.btn_gerar_excel_relatorio_agendamento_as.setFont(font12)
+        self.btn_gerar_excel_relatorio_agendamento_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_gerar_excel_relatorio_agendamento_as.setIcon(icon14)
+
+        self.verticalLayout_577.addWidget(self.btn_gerar_excel_relatorio_agendamento_as)
+
+        self.btn_gerar_pdf_relatorio_agendamento_as = QPushButton(self.frame_734)
+        self.btn_gerar_pdf_relatorio_agendamento_as.setObjectName(u"btn_gerar_pdf_relatorio_agendamento_as")
+        sizePolicy3.setHeightForWidth(self.btn_gerar_pdf_relatorio_agendamento_as.sizePolicy().hasHeightForWidth())
+        self.btn_gerar_pdf_relatorio_agendamento_as.setSizePolicy(sizePolicy3)
+        self.btn_gerar_pdf_relatorio_agendamento_as.setMinimumSize(QSize(125, 40))
+        self.btn_gerar_pdf_relatorio_agendamento_as.setMaximumSize(QSize(40, 40))
+        self.btn_gerar_pdf_relatorio_agendamento_as.setFont(font12)
+        self.btn_gerar_pdf_relatorio_agendamento_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        self.btn_gerar_pdf_relatorio_agendamento_as.setIcon(icon14)
+
+        self.verticalLayout_577.addWidget(self.btn_gerar_pdf_relatorio_agendamento_as)
+
+        self.verticalSpacer_67 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_577.addItem(self.verticalSpacer_67)
+
+
+        self.verticalLayout_489.addWidget(self.frame_734)
+
+        self.verticalSpacer_68 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Minimum)
+
+        self.verticalLayout_489.addItem(self.verticalSpacer_68)
+
+
+        self.horizontalLayout_245.addWidget(self.frame_733)
+
+
+        self.gridLayout_7.addWidget(self.frame_731, 2, 0, 1, 1)
+
+        self.frame_735 = QFrame(self.frame_717)
+        self.frame_735.setObjectName(u"frame_735")
+        self.frame_735.setMinimumSize(QSize(120, 50))
+        self.frame_735.setMaximumSize(QSize(120, 50))
+        self.frame_735.setFrameShape(QFrame.StyledPanel)
+        self.frame_735.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_578 = QVBoxLayout(self.frame_735)
+        self.verticalLayout_578.setSpacing(0)
+        self.verticalLayout_578.setObjectName(u"verticalLayout_578")
+        self.verticalLayout_578.setContentsMargins(0, 0, 0, 0)
+        self.btn_voltar_relatorios_agendamento_as = QPushButton(self.frame_735)
+        self.btn_voltar_relatorios_agendamento_as.setObjectName(u"btn_voltar_relatorios_agendamento_as")
+        self.btn_voltar_relatorios_agendamento_as.setMinimumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_agendamento_as.setMaximumSize(QSize(100, 40))
+        self.btn_voltar_relatorios_agendamento_as.setFont(font7)
+        self.btn_voltar_relatorios_agendamento_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_voltar_relatorios_agendamento_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_578.addWidget(self.btn_voltar_relatorios_agendamento_as)
+
+
+        self.gridLayout_7.addWidget(self.frame_735, 3, 0, 1, 1)
+
+        self.frame_718 = QFrame(self.frame_717)
+        self.frame_718.setObjectName(u"frame_718")
+        self.frame_718.setMinimumSize(QSize(0, 80))
+        self.frame_718.setMaximumSize(QSize(1600, 80))
+        self.frame_718.setStyleSheet(u"background-color: rgb(243, 185, 191);")
+        self.frame_718.setFrameShape(QFrame.StyledPanel)
+        self.frame_718.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_240 = QHBoxLayout(self.frame_718)
+        self.horizontalLayout_240.setObjectName(u"horizontalLayout_240")
+        self.horizontalSpacer_173 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_240.addItem(self.horizontalSpacer_173)
+
+        self.frame_719 = QFrame(self.frame_718)
+        self.frame_719.setObjectName(u"frame_719")
+        self.frame_719.setMinimumSize(QSize(500, 61))
+        self.frame_719.setMaximumSize(QSize(300, 16777215))
+        self.frame_719.setFrameShape(QFrame.StyledPanel)
+        self.frame_719.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_241 = QHBoxLayout(self.frame_719)
+        self.horizontalLayout_241.setObjectName(u"horizontalLayout_241")
+        self.label_relatorio_agendamento_as = QLabel(self.frame_719)
+        self.label_relatorio_agendamento_as.setObjectName(u"label_relatorio_agendamento_as")
+        self.label_relatorio_agendamento_as.setMinimumSize(QSize(600, 50))
+        self.label_relatorio_agendamento_as.setMaximumSize(QSize(300, 16777215))
+        self.label_relatorio_agendamento_as.setFont(font17)
+        self.label_relatorio_agendamento_as.setStyleSheet(u"background-color: rgb(243, 185, 191);\n"
+"color: rgb(236, 132, 140);")
+
+        self.horizontalLayout_241.addWidget(self.label_relatorio_agendamento_as)
+
+
+        self.horizontalLayout_240.addWidget(self.frame_719)
+
+        self.horizontalSpacer_174 = QSpacerItem(20, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_240.addItem(self.horizontalSpacer_174)
+
+
+        self.gridLayout_7.addWidget(self.frame_718, 0, 0, 1, 1)
+
+
+        self.horizontalLayout_70.addWidget(self.frame_717)
+
+
+        self.horizontalLayout_311.addWidget(self.frame_144)
+
+        self.stackedWidget_2.addWidget(self.page_relatorio_agendamento_as)
         self.page_cadastro_clinica_as = QWidget()
         self.page_cadastro_clinica_as.setObjectName(u"page_cadastro_clinica_as")
         self.horizontalLayout_140 = QHBoxLayout(self.page_cadastro_clinica_as)
@@ -19866,9 +20344,7 @@ class Ui_MainWindow(object):
         self.btn_relatorio_clinicas_cadastradas_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em;}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        icon37 = QIcon()
-        icon37.addFile(u"./icons/documento.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_relatorio_clinicas_cadastradas_as.setIcon(icon37)
+        self.btn_relatorio_clinicas_cadastradas_as.setIcon(icon35)
         self.btn_relatorio_clinicas_cadastradas_as.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_149.addWidget(self.btn_relatorio_clinicas_cadastradas_as)
@@ -20261,16 +20737,16 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as = QTableWidget(self.frame_872)
         if (self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.columnCount() < 5):
             self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setColumnCount(5)
-        __qtablewidgetitem185 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(0, __qtablewidgetitem185)
-        __qtablewidgetitem186 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(1, __qtablewidgetitem186)
-        __qtablewidgetitem187 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(2, __qtablewidgetitem187)
-        __qtablewidgetitem188 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(3, __qtablewidgetitem188)
-        __qtablewidgetitem189 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(4, __qtablewidgetitem189)
+        __qtablewidgetitem193 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(0, __qtablewidgetitem193)
+        __qtablewidgetitem194 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(1, __qtablewidgetitem194)
+        __qtablewidgetitem195 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(2, __qtablewidgetitem195)
+        __qtablewidgetitem196 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(3, __qtablewidgetitem196)
+        __qtablewidgetitem197 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(4, __qtablewidgetitem197)
         if (self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.rowCount() < 14):
             self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(14)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setObjectName(u"input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as")
@@ -24848,14 +25324,14 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_consulta_geral = QTableWidget(self.frame_461)
         if (self.input_TableWidget_pagina_consulta_geral.columnCount() < 4):
             self.input_TableWidget_pagina_consulta_geral.setColumnCount(4)
-        __qtablewidgetitem190 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem190)
-        __qtablewidgetitem191 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem191)
-        __qtablewidgetitem192 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem192)
-        __qtablewidgetitem193 = QTableWidgetItem()
-        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem193)
+        __qtablewidgetitem198 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(0, __qtablewidgetitem198)
+        __qtablewidgetitem199 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(1, __qtablewidgetitem199)
+        __qtablewidgetitem200 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(2, __qtablewidgetitem200)
+        __qtablewidgetitem201 = QTableWidgetItem()
+        self.input_TableWidget_pagina_consulta_geral.setHorizontalHeaderItem(3, __qtablewidgetitem201)
         if (self.input_TableWidget_pagina_consulta_geral.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
@@ -25127,13 +25603,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem8 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(2)
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
         ___qtablewidgetitem9 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(3)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"IMC", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
         ___qtablewidgetitem10 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(4)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Peso", None));
-        ___qtablewidgetitem11 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(5)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
-        ___qtablewidgetitem12 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(6)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_pagina_consulta_geral_nutri.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -25581,7 +26053,7 @@ class Ui_MainWindow(object):
         self.input_buscar_dados_relatorio_cuidadores_as.setText("")
         self.input_buscar_dados_relatorio_cuidadores_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome /Sexo/Bairro/Cidade/Cl\u00ednica", None))
         self.btn_voltar_relatorios_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios Cuidadores", None))
+        self.label_relatorio_cuidadores_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios Cuidadores", None))
         ___qtablewidgetitem84 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(0)
         ___qtablewidgetitem84.setText(QCoreApplication.translate("MainWindow", u"Nome Cuidador", None));
         ___qtablewidgetitem85 = self.tableWidget_relatorio_cuidadores_as.horizontalHeaderItem(1)
@@ -26187,8 +26659,36 @@ class Ui_MainWindow(object):
         self.input_TableWidget_agendamento_as.setToolTip("")
 #endif // QT_CONFIG(tooltip)
         self.btn_voltar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.btn_relatorio_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio", None))
         self.btn_alterar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_cancelar_agenda_as.setText(QCoreApplication.translate("MainWindow", u"Cancelar", None))
+        self.label_inicio_periodo_relatorio_as_2.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
+        self.input_inicio_periodo_relatorio_gendamento_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
+        self.label_a_relatorio_agendamento.setText(QCoreApplication.translate("MainWindow", u"A", None))
+        self.input_final_periodo_relatorio_agendamento_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
+        self.btn_buscar_relatorio_agendamento_as.setText("")
+        self.input_buscar_dados_relatorio_agendamento_as.setText("")
+        self.input_buscar_dados_relatorio_agendamento_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Nome /Sexo/Bairro/Cidade/Cl\u00ednica", None))
+        ___qtablewidgetitem161 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem161.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem162 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem162.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem163 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem163.setText(QCoreApplication.translate("MainWindow", u"Clinica", None));
+        ___qtablewidgetitem164 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(3)
+        ___qtablewidgetitem164.setText(QCoreApplication.translate("MainWindow", u"Profissional", None));
+        ___qtablewidgetitem165 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(4)
+        ___qtablewidgetitem165.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem166 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(5)
+        ___qtablewidgetitem166.setText(QCoreApplication.translate("MainWindow", u"Hora", None));
+        ___qtablewidgetitem167 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(6)
+        ___qtablewidgetitem167.setText(QCoreApplication.translate("MainWindow", u"Anota\u00e7\u00e3o", None));
+        ___qtablewidgetitem168 = self.tableWidget_relatorio_agendamento_as.horizontalHeaderItem(7)
+        ___qtablewidgetitem168.setText(QCoreApplication.translate("MainWindow", u"Perfil", None));
+        self.btn_gerar_excel_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
+        self.btn_gerar_pdf_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Gerar PDF", None))
+        self.btn_voltar_relatorios_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
+        self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios de Agendamento", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"CADASTRO CL\u00cdNICA", None))
         self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None))
         self.input_cnpj_cadastro_clinica_as.setText("")
@@ -26219,16 +26719,16 @@ class Ui_MainWindow(object):
         self.btn_buscar_relatorio_clinicas_cadastradas_as.setText("")
         self.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.setText("")
         self.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.setPlaceholderText(QCoreApplication.translate("MainWindow", u"CNPJ,E-mail,Raz\u00e3o Social...", None))
-        ___qtablewidgetitem161 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem161.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None));
-        ___qtablewidgetitem162 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem162.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
-        ___qtablewidgetitem163 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem163.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o Social", None));
-        ___qtablewidgetitem164 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem164.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
-        ___qtablewidgetitem165 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem165.setText(QCoreApplication.translate("MainWindow", u"Endere\u00e7o", None));
+        ___qtablewidgetitem169 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(0)
+        ___qtablewidgetitem169.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None));
+        ___qtablewidgetitem170 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(1)
+        ___qtablewidgetitem170.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
+        ___qtablewidgetitem171 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem171.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o Social", None));
+        ___qtablewidgetitem172 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(3)
+        ___qtablewidgetitem172.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem173 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(4)
+        ___qtablewidgetitem173.setText(QCoreApplication.translate("MainWindow", u"Endere\u00e7o", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -26505,14 +27005,14 @@ class Ui_MainWindow(object):
         self.label_historico_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"HIST\u00d3RICO", None))
         self.label_filtro_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"FILTRO", None))
         self.input_filtro_pagina_consulta_geral.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data...", None))
-        ___qtablewidgetitem166 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
-        ___qtablewidgetitem166.setText(QCoreApplication.translate("MainWindow", u"Id", None));
-        ___qtablewidgetitem167 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
-        ___qtablewidgetitem167.setText(QCoreApplication.translate("MainWindow", u"Data", None));
-        ___qtablewidgetitem168 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
-        ___qtablewidgetitem168.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
-        ___qtablewidgetitem169 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
-        ___qtablewidgetitem169.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
+        ___qtablewidgetitem174 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(0)
+        ___qtablewidgetitem174.setText(QCoreApplication.translate("MainWindow", u"Id", None));
+        ___qtablewidgetitem175 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(1)
+        ___qtablewidgetitem175.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem176 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(2)
+        ___qtablewidgetitem176.setText(QCoreApplication.translate("MainWindow", u"Atendimento/Retorno", None));
+        ___qtablewidgetitem177 = self.input_TableWidget_pagina_consulta_geral.horizontalHeaderItem(3)
+        ___qtablewidgetitem177.setText(QCoreApplication.translate("MainWindow", u"Evolu\u00e7\u00e3o", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_pagina_consulta_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -26520,4 +27020,3 @@ class Ui_MainWindow(object):
         self.btn_alterar_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
     # retranslateUi
-
