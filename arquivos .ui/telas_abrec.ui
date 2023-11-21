@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>3</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -20485,7 +20485,7 @@ QComboBox:down-arrow{image: url(icons/expand.svg); }</string>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_6">
                    <item>
-                    <widget class="QPushButton" name="btn_alterar_foto_colab_as_2">
+                    <widget class="QPushButton" name="btn_alterar_foto_colab_as_perfil">
                      <property name="minimumSize">
                       <size>
                        <width>140</width>
@@ -21089,7 +21089,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>15</number>
+                      <number>13</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -39955,7 +39955,7 @@ QPushButton:pressed{
                                  <number>0</number>
                                 </property>
                                 <item>
-                                 <widget class="QPushButton" name="input_foto_colaborador_as">
+                                 <widget class="QPushButton" name="btn_tirar_foto_colaborador_as">
                                   <property name="minimumSize">
                                    <size>
                                     <width>125</width>
@@ -42666,6 +42666,9 @@ background-color: rgb(243, 185, 191);</string>
                                       </item>
                                       <item>
                                        <widget class="QLineEdit" name="input_id_matricula_user_participante_geral">
+                                        <property name="enabled">
+                                         <bool>false</bool>
+                                        </property>
                                         <property name="maximumSize">
                                          <size>
                                           <width>50</width>

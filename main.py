@@ -70,8 +70,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
     def Tirar_foto_Usuario(self):
         
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/Pictures/Foto_{self.nome_usuario}.jpg")
-        # StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_usuario}.jpg")
+        # StoreFilePath =(f"C:/Users/vboxuser/Pictures/Foto_{self.nome_usuario}.jpg")
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_usuario}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_usuario == "":
@@ -92,8 +92,8 @@ class DialogTirarImportarFotoUsuario(QDialog):
                         break
                     
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        # directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
-                        directory = "C:/Users/vboxuser/Pictures/"
+                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
+                        # directory = "C:/Users/vboxuser/Pictures/"
                         
                         if not os.path.exists(directory):
                             os.makedirs(directory)
@@ -243,7 +243,8 @@ class DialogTirarImportarFotoColaborador(QDialog):
 
     def Tirar_foto_Colaborador(self):   
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
+        StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_colab}.jpg")
+        # StoreFilePath =(f"C:/Users/vboxuser/Desktop/capture{self.nome_colab}.jpg")
         self.db = DataBase()  
         try:
             if self.nome_colab == "":
@@ -264,7 +265,8 @@ class DialogTirarImportarFotoColaborador(QDialog):
                         break
                         
                     if cv2.waitKey(1) & 0xFF == ord('q'):
-                        directory = "C:/Users/vboxuser/Desktop/"
+                        # directory = "C:/Users/vboxuser/Desktop/"
+                        directory = "C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test"
                         
                         if not os.path.exists(directory):
                             os.makedirs(directory)
@@ -754,6 +756,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_cuidadores.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_cuidadores))
         self.ui.btn_voltar_relatorios_cuidadores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_voltar_pagina_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
+        self.ui.btn_voltar_pagina_relatorio_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
 
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
@@ -885,10 +888,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         ############SIGNALS POPUP TIRAR E IMPORTAR FOTO AS############
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
-        #self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
-        #self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
-        #self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
-        #self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
+        self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
+        self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
+        self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
+        self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
         
 
 
@@ -2602,7 +2605,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
 
         ######################## insert ##################################
-        self.InsertUsuarioFotoId()
         result = []
         result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
         msg = QMessageBox()
@@ -2611,7 +2613,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Usuário cadastrado com sucesso!")
         msg.exec()
         # self.msg(result[0],result[1])
-        self.limparCamposCadastroUsuario()
+        # self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
@@ -2927,7 +2929,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         #################### insert ##########################################
         result = []
-        self.InserColabFotoId()
         result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -3999,22 +4000,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
-        
-    def InsertUsuarioFotoId(self):
-        id_usuario = self.ui.input_matricula_usuario_as.text()
-        caminho = ""
-        tupla_teste = (self.nome_usuario, caminho, id_usuario)
-        print(tupla_teste)
-        result = self.db.tirar_foto_usuario(tupla_teste)
-        print("Foto Cadastro Usuario ->",result)
-        
-    def InserColabFotoId(self):
-        id_colab_matricula = self.ui.input_matricula_colaborador_as.text()
-        caminho = ""
-        tupla_teste = (self.nome_colab, caminho, id_colab_matricula)
-        print(tupla_teste)
-        result = self.db.tirar_foto_colaborador(tupla_teste)
-        print("Foto Cadastro Usuario ->",result)
         
     def gerar_excel_relatorio_beneficio(self):
         dados = []

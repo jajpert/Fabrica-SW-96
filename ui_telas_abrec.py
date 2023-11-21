@@ -8616,16 +8616,16 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.btn_alterar_foto_colab_as_2 = QPushButton(self.frame_9)
-        self.btn_alterar_foto_colab_as_2.setObjectName(u"btn_alterar_foto_colab_as_2")
-        self.btn_alterar_foto_colab_as_2.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_2.setFont(font7)
-        self.btn_alterar_foto_colab_as_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_2.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+        self.btn_alterar_foto_colab_as_perfil = QPushButton(self.frame_9)
+        self.btn_alterar_foto_colab_as_perfil.setObjectName(u"btn_alterar_foto_colab_as_perfil")
+        self.btn_alterar_foto_colab_as_perfil.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_perfil.setFont(font7)
+        self.btn_alterar_foto_colab_as_perfil.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_2)
+        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_perfil)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -15661,18 +15661,18 @@ class Ui_MainWindow(object):
         self.verticalLayout_179.setSpacing(0)
         self.verticalLayout_179.setObjectName(u"verticalLayout_179")
         self.verticalLayout_179.setContentsMargins(0, 0, 0, 0)
-        self.input_foto_colaborador_as = QPushButton(self.frame_258)
-        self.input_foto_colaborador_as.setObjectName(u"input_foto_colaborador_as")
-        self.input_foto_colaborador_as.setMinimumSize(QSize(125, 153))
-        self.input_foto_colaborador_as.setMaximumSize(QSize(125, 153))
-        self.input_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.input_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
+        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_258)
+        self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
+        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(125, 153))
+        self.btn_tirar_foto_colaborador_as.setMaximumSize(QSize(125, 153))
+        self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
         icon32 = QIcon()
         icon32.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.input_foto_colaborador_as.setIcon(icon32)
-        self.input_foto_colaborador_as.setIconSize(QSize(120, 120))
+        self.btn_tirar_foto_colaborador_as.setIcon(icon32)
+        self.btn_tirar_foto_colaborador_as.setIconSize(QSize(120, 120))
 
-        self.verticalLayout_179.addWidget(self.input_foto_colaborador_as)
+        self.verticalLayout_179.addWidget(self.btn_tirar_foto_colaborador_as)
 
         self.frame_259 = QFrame(self.frame_258)
         self.frame_259.setObjectName(u"frame_259")
@@ -16676,6 +16676,7 @@ class Ui_MainWindow(object):
         self.input_id_matricula_user_participante_geral.setMaximumSize(QSize(50, 32))
         self.input_id_matricula_user_participante_geral.setStyleSheet(u"background-color: transparent;\n"
 "border-color: transparent;")
+        self.input_id_matricula_user_participante_geral.setEnabled(False)
 
         self.verticalLayout_9.addWidget(self.input_id_matricula_user_participante_geral)
 
@@ -25491,7 +25492,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.btn_alterar_foto_colab_as_2.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
+        self.btn_alterar_foto_colab_as_perfil.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("MainWindow", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
@@ -25946,7 +25947,7 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rio", None))
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"Confirmar Senha", None))
-        self.input_foto_colaborador_as.setText("")
+        self.btn_tirar_foto_colaborador_as.setText("")
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
