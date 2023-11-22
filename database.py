@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
@@ -1799,8 +1799,63 @@ class DataBase():
             """)
 
             result = self.cursor.fetchall()
-            print("Retrieved data from database:", result)
 
+            return result
+        except Exception as err:
+            print(err)
+        finally:
+            self.close_connection()
+
+    def busca_beneficios_relatorio_farmaceutica(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, 
+                beneficios.tipo, beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
+                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio AND beneficios.tipo = "medicação";
+            """)
+
+            result = self.cursor.fetchall()
+
+            return result
+        except Exception as err:
+            print(err)
+        finally:
+            self.close_connection()
+            
+    def busca_beneficios_relatorio_farmaceutica_filtro_data(self, data_inicial, data_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, 
+                beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
+                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio WHERE saida_beneficio.data_retirada BETWEEN '{data_inicial}' AND '{data_final}'  ;
+            """)
+
+            result = self.cursor.fetchall()
+
+            return result
+        except Exception as err:
+            print(err)
+        finally:
+            self.close_connection()
+
+    def busca_beneficios_relatorio_farmaceutica_filtro(self, txt):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, beneficios.tipo,
+                beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
+                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio WHERE pessoa.cpf LIKE "%{txt}%" OR pessoa.sexo LIKE "%{txt}%" OR usuario.situacao_trabalho LIKE "%{txt}%" OR beneficios.descricao LIKE "%{txt}%" AND beneficios.tipo = "medicação";
+            """)
+
+            result = self.cursor.fetchall()
             return result
         except Exception as err:
             print(err)
