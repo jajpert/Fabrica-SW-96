@@ -1406,14 +1406,13 @@ class DataBase():
         id_endereco_usuario = str(endereco[0])
         id_matricula_usuario = str(usuario[16])
         id_matricula_pessoa = str(pessoa[0])
-        
-        
-        print("Pessoa: ", pessoa)
-        print("id pessoa: ", id_matricula_pessoa)
-        print("usuario: ", usuario)
-        print("id usuario: ", id_matricula_usuario)
+        print("TUPLA PES: ", pessoa)
+        print("TUPLA USER: ", usuario)
+
         self.connect()
-        try:
+        try:              
+
+
             self.cursor.execute(f"""UPDATE endereco  SET cep = '{endereco[1]}', logradouro = '{endereco[2]}',
                                 numero = '{endereco[3]}', bairro = '{endereco[4]}', cidade = '{endereco[5]}',
                                 estado = '{endereco[6]}' WHERE id_endereco = '{id_endereco_usuario}';""")
@@ -1422,16 +1421,16 @@ class DataBase():
             
 
             self.cursor.execute(f"""UPDATE pessoa SET nome = '{pessoa[1]}', data_nascimento = '{pessoa[2]}', cpf = '{pessoa[3]}',rg = '{pessoa[4]}', data_emissao = '{pessoa[5]}',
-                                orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', status = '{pessoa[8]}', telefone = '{pessoa[9]}', 
-                                telefone_contato = '{pessoa[10]}', escolaridade = '{pessoa[11]}', estado_civil = '{pessoa[12]}',
-                                pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}', outras_deficiencias = '{pessoa[15]}' WHERE id_matricula = '{id_matricula_pessoa}';  """)
+                                 orgao_exp = '{pessoa[6]}', sexo = '{pessoa[7]}', status = '{pessoa[8]}', telefone = '{pessoa[9]}', 
+                                 telefone_contato = '{pessoa[10]}', escolaridade = '{pessoa[11]}', estado_civil = '{pessoa[12]}',
+                                 pessoa_deficiencia = '{pessoa[13]}', tipo_deficiencia = '{pessoa[14]}', outras_deficiencias = '{pessoa[15]}' WHERE id_matricula = '{id_matricula_usuario}';  """)
             self.conn.commit()
-
+            
 
             self.cursor.execute(f"""UPDATE usuario SET nis = '{usuario[0]}', cns = '{usuario[1]}', observacao = '{usuario[2]}', situacao_trabalho = '{usuario[3]}', situacao_trabalho_outros = '{usuario[4]}',
                                 tipo_transporte = '{usuario[5]}', tipo_tratamento = '{usuario[6]}', beneficio = '{usuario[7]}', local_tratamento = '{usuario[8]}',
-                                periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}', outras_patologias = '{usuario[12]}', tarifa_social = '{usuario[13]}', media_renda_familiar = '{usuario[14]}',
-                                vale_transporte = '{usuario[15]}'  WHERE id_matricula = '{id_matricula_usuario}';  """)
+                                 periodo = '{usuario[9]}', data_inicio = '{usuario[10]}', patologia_base = '{usuario[11]}', outras_patologias = '{usuario[12]}', tarifa_social = '{usuario[13]}', media_renda_familiar = '{usuario[14]}',
+                                 vale_transporte = '{usuario[15]}'  WHERE id_matricula = '{id_matricula_pessoa}';  """)
             self.conn.commit()
 
             return "OK","Usuario atualizado com sucesso!!"

@@ -1850,7 +1850,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_endereco = (id_endereco_usuario,cep,rua,numero,bairro,cidade,estado)
 
         ################# pessoa ###################################
-        id_matricula = self.ui.input_alterar_id_matricula_usuario_as.text()
+        id_matricula = self.ui.input_alterar_id_usuario_as.text()
+        id_matricula_usuario = self.ui.input_alterar_matricula_usuario_as.text()
+
         nome = self.ui.input_alterar_nome_usuario_as.text()
         data_nasc = self.ui.input_alterar_nascimento_usuario_as.text()
         data_nascimento = "-".join(data_nasc.split("/")[::-1])
@@ -1904,8 +1906,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         if tipo_deficiencia != "Outra":
             outras_deficiencias = self.ui.input_alterar_outras_deficiencias_usuario_as.setText("")
         else:
-            pass
-        
+            pass     
 
 
 
@@ -1927,7 +1928,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             status = 'Ativo'
         else:
             status = 'Inativo'
-        id_matricula_usuario = self.ui.input_alterar_id_matricula_usuario_as.text()
+        
 
         tupla_pessoa = (id_matricula,nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,telefone_contato,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte,id_matricula_usuario)

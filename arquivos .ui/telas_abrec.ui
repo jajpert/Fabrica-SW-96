@@ -55274,7 +55274,7 @@ QPushButton:hover{background-color: #23B2EE}
 QPushButton:focus{outline:0}</string>
                                                </property>
                                                <property name="text">
-                                                <string>FINALIZAR</string>
+                                                <string>SALVAR</string>
                                                </property>
                                               </widget>
                                              </item>
