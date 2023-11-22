@@ -28508,6 +28508,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                            <property name="maxLength">
                                             <number>11</number>
                                            </property>
+                                           <property name="clearButtonEnabled">
+                                            <bool>false</bool>
+                                           </property>
                                           </widget>
                                          </item>
                                         </layout>
@@ -28523,7 +28526,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         </property>
                                         <property name="maximumSize">
                                          <size>
-                                          <width>240</width>
+                                          <width>155</width>
                                           <height>16777215</height>
                                          </size>
                                         </property>
@@ -28535,7 +28538,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_47">
                                          <property name="spacing">
-                                          <number>0</number>
+                                          <number>5</number>
                                          </property>
                                          <property name="leftMargin">
                                           <number>0</number>
@@ -28550,7 +28553,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                           <number>0</number>
                                          </property>
                                          <item>
-                                          <widget class="QLabel" name="label_email_usuario_as">
+                                          <widget class="QLabel" name="label_telefone_contato_usuario_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -28570,12 +28573,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             </font>
                                            </property>
                                            <property name="text">
-                                            <string>Email</string>
+                                            <string>Telefone de Contato</string>
                                            </property>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_email_usuario_as">
+                                          <widget class="QLineEdit" name="input_telefone_contato_usuario_as">
                                            <property name="minimumSize">
                                             <size>
                                              <width>0</width>
@@ -28593,6 +28596,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                              <family>Abel</family>
                                              <pointsize>12</pointsize>
                                             </font>
+                                           </property>
+                                           <property name="maxLength">
+                                            <number>11</number>
+                                           </property>
+                                           <property name="clearButtonEnabled">
+                                            <bool>false</bool>
                                            </property>
                                           </widget>
                                          </item>
@@ -35963,7 +35972,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                <property name="frameShadow">
                                 <enum>QFrame::Raised</enum>
                                </property>
-                               <layout class="QHBoxLayout" name="horizontalLayout_50">
+                               <layout class="QHBoxLayout" name="horizontalLayout_20">
                                 <property name="spacing">
                                  <number>5</number>
                                 </property>
@@ -36400,7 +36409,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <property name="maximumSize">
                                    <size>
-                                    <width>240</width>
+                                    <width>155</width>
                                     <height>16777215</height>
                                    </size>
                                   </property>
@@ -36412,7 +36421,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                   </property>
                                   <layout class="QVBoxLayout" name="verticalLayout_75">
                                    <property name="spacing">
-                                    <number>0</number>
+                                    <number>5</number>
                                    </property>
                                    <property name="leftMargin">
                                     <number>0</number>
@@ -36427,7 +36436,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <number>0</number>
                                    </property>
                                    <item>
-                                    <widget class="QLabel" name="label_email_cuidador_as">
+                                    <widget class="QLabel" name="label_telefone_contato_cuidador_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
@@ -36447,12 +36456,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </font>
                                      </property>
                                      <property name="text">
-                                      <string>Email</string>
+                                      <string>Telefone de Contato</string>
                                      </property>
                                     </widget>
                                    </item>
                                    <item>
-                                    <widget class="QLineEdit" name="input_email_cuidador_as">
+                                    <widget class="QLineEdit" name="input_telefone_contato_cuidador_as">
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
@@ -36470,6 +36479,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        <family>Abel</family>
                                        <pointsize>12</pointsize>
                                       </font>
+                                     </property>
+                                     <property name="maxLength">
+                                      <number>11</number>
                                      </property>
                                     </widget>
                                    </item>
@@ -54922,7 +54934,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                   </property>
                                                   <property name="maximumSize">
                                                    <size>
-                                                    <width>240</width>
+                                                    <width>155</width>
                                                     <height>16777215</height>
                                                    </size>
                                                   </property>
@@ -54932,7 +54944,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                   <property name="frameShadow">
                                                    <enum>QFrame::Raised</enum>
                                                   </property>
-                                                  <layout class="QVBoxLayout" name="verticalLayout_199">
+                                                  <layout class="QVBoxLayout" name="verticalLayout_97">
                                                    <property name="spacing">
                                                     <number>0</number>
                                                    </property>
@@ -54949,7 +54961,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                     <number>0</number>
                                                    </property>
                                                    <item>
-                                                    <widget class="QLabel" name="label_alterar_email_cuidador_as">
+                                                    <widget class="QLabel" name="label_alterar_telefone_contato_cuidador_as">
                                                      <property name="minimumSize">
                                                       <size>
                                                        <width>0</width>
@@ -54969,12 +54981,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       </font>
                                                      </property>
                                                      <property name="text">
-                                                      <string>Email</string>
+                                                      <string>Telefone de Contato</string>
                                                      </property>
                                                     </widget>
                                                    </item>
                                                    <item>
-                                                    <widget class="QLineEdit" name="input_alterar_email_cuidador_as">
+                                                    <widget class="QLineEdit" name="input_alterar_telefone_contato_cuidador_as">
                                                      <property name="minimumSize">
                                                       <size>
                                                        <width>0</width>
@@ -54992,6 +55004,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                        <family>Abel</family>
                                                        <pointsize>12</pointsize>
                                                       </font>
+                                                     </property>
+                                                     <property name="maxLength">
+                                                      <number>11</number>
                                                      </property>
                                                     </widget>
                                                    </item>
@@ -57576,7 +57591,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                            </property>
                                                            <property name="maximumSize">
                                                             <size>
-                                                             <width>240</width>
+                                                             <width>155</width>
                                                              <height>16777215</height>
                                                             </size>
                                                            </property>
@@ -57586,7 +57601,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                            <property name="frameShadow">
                                                             <enum>QFrame::Raised</enum>
                                                            </property>
-                                                           <layout class="QVBoxLayout" name="verticalLayout_223">
+                                                           <layout class="QVBoxLayout" name="verticalLayout_199">
                                                             <property name="spacing">
                                                              <number>0</number>
                                                             </property>
@@ -57603,7 +57618,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                              <number>0</number>
                                                             </property>
                                                             <item>
-                                                             <widget class="QLabel" name="label_alterar_email_usuario_as">
+                                                             <widget class="QLabel" name="label_alterar_telefone_contato_usuario_as">
                                                               <property name="minimumSize">
                                                                <size>
                                                                 <width>0</width>
@@ -57623,12 +57638,12 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                </font>
                                                               </property>
                                                               <property name="text">
-                                                               <string>Email</string>
+                                                               <string>Telefone de Contato</string>
                                                               </property>
                                                              </widget>
                                                             </item>
                                                             <item>
-                                                             <widget class="QLineEdit" name="input_alterar_email_usuario_as">
+                                                             <widget class="QLineEdit" name="input_alterar_telefone_contato_usuario_as">
                                                               <property name="minimumSize">
                                                                <size>
                                                                 <width>0</width>
@@ -57646,6 +57661,9 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                                 <family>Abel</family>
                                                                 <pointsize>12</pointsize>
                                                                </font>
+                                                              </property>
+                                                              <property name="maxLength">
+                                                               <number>11</number>
                                                               </property>
                                                              </widget>
                                                             </item>
@@ -60607,9 +60625,20 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                      <property name="frameShadow">
                                                       <enum>QFrame::Raised</enum>
                                                      </property>
-                                                     <layout class="QVBoxLayout" name="verticalLayout_258">
+                                                     <layout class="QVBoxLayout" name="verticalLayout_223">
                                                       <item>
                                                        <widget class="QLineEdit" name="input_alterar_id_matricula_usuario_as">
+                                                        <property name="enabled">
+                                                         <bool>false</bool>
+                                                        </property>
+                                                        <property name="styleSheet">
+                                                         <string notr="true">background-color:transparent;
+border-color: transparent;</string>
+                                                        </property>
+                                                       </widget>
+                                                      </item>
+                                                      <item>
+                                                       <widget class="QLineEdit" name="input_alterar_id_usuario_as">
                                                         <property name="enabled">
                                                          <bool>false</bool>
                                                         </property>
@@ -60890,7 +60919,7 @@ QPushButton:hover{background-color: #23B2EE}
 QPushButton:focus{outline:0}</string>
                                                </property>
                                                <property name="text">
-                                                <string>FINALIZAR</string>
+                                                <string>SALVAR</string>
                                                </property>
                                               </widget>
                                              </item>
