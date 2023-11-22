@@ -1848,11 +1848,11 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, 
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, usuario.situacao_trabalho, usuario.beneficio, beneficios.tipo,
                 beneficios.descricao, saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN saida_beneficio ON saida_beneficio.id_matricula = pessoa.id_matricula
-                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio WHERE pessoa.cpf LIKE "%{txt}%" OR pessoa.sexo LIKE "%{txt}%" OR usuario.situacao_trabalho LIKE "%{txt}%" OR beneficios.descricao LIKE "%{txt}%";
+                INNER JOIN beneficios ON beneficios.codigo = saida_beneficio.cod_beneficio WHERE pessoa.cpf LIKE "%{txt}%" OR pessoa.sexo LIKE "%{txt}%" OR usuario.situacao_trabalho LIKE "%{txt}%" OR beneficios.descricao LIKE "%{txt}%" AND beneficios.tipo = "medicação";
             """)
 
             result = self.cursor.fetchall()

@@ -839,6 +839,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_finalizar_cadastro_retirada_beneficio_farm.clicked.connect(self.cadastro_retirada_beneficios_farmaceutica)
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio_farm.clicked.connect(self.buscarRetiradaFarmaceutica)
         self.ui.input_buscar_dados_relatorio_beneficios_farm.textChanged.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltro)
+        self.ui.btn_buscar_relatorio_beneficios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltroData)
 
 
         ########################### AREA SIGILOSA ###########################
@@ -2747,7 +2748,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_beneficios_farm.setItem(row, column, QTableWidgetItem(str(data)))
                 
-    def listarBeneficiosFarmaceuticaRelatorioFiltro(self):
+    def listarBeneficiosFarmaceuticaRelatorioFiltroData(self):
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_beneficio_farm.text()
         texto_data_final = self.ui.input_final_periodo_relatorio_beneficio_farm.text()
         texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
