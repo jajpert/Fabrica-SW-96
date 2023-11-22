@@ -25,6 +25,7 @@ import imghdr
 import os
 
 
+########## CLASSE OVERLAY ##################################################################################################################################################################
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -40,7 +41,7 @@ class Overlay(QWidget):
         painter.end()
 
 
-################POPUP RECUPERAR SENHA################
+########## CLASSE POPUP RECUPERAR SENHA ####################################################################################################################################################
 class DialogRecuperarSenha(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -48,7 +49,7 @@ class DialogRecuperarSenha(QDialog):
         self.ui = Ui_Restaurar_Senha()
         self.ui.setupUi(self)
         
-##################POP UP LOGIN INVALIDO###################
+########## CLASSE POP UP LOGIN INVALIDO ####################################################################################################################################################
 class DialogLoginInvalido(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -56,7 +57,7 @@ class DialogLoginInvalido(QDialog):
         self.ui = Ui_Login_Ivalido()
         self.ui.setupUi(self)
 
-################POPUP TIRAR/IMPORTAR FOTO################
+########## CLASSE POPUP TIRAR/IMPORTAR FOTO ################################################################################################################################################
 class DialogTirarImportarFotoUsuario(QDialog):
     def __init__(self, parent, nome_usuario, id_usuario) -> None:
         super().__init__(parent)
@@ -225,12 +226,10 @@ class DialogTirarImportarFotoUsuario(QDialog):
                 msg.setIcon(QMessageBox.Information)
                 msg.setWindowTitle("Imagem Salva")
                 msg.setText("Imagem Salva com Sucesso!!!")
-                msg.exec()
-            
-            
+                msg.exec()         
 
 
-
+########## CLASSE IMPORTAR FOTO COLABORADOR ################################################################################################################################################
 class DialogTirarImportarFotoColaborador(QDialog):
     def __init__(self, parent, nome_colab, id_colaborador) -> None:
         super().__init__(parent)
@@ -406,8 +405,7 @@ class DialogTirarImportarFotoColaborador(QDialog):
 
     
 
-################Class POPUP USUARIO################
-
+########## CLASSE POPUP USUARIO ############################################################################################################################################################
 class DialogConfirmarCadastro(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -415,8 +413,7 @@ class DialogConfirmarCadastro(QDialog):
         self.ui = Ui_Cadastro_Conclusao()
         self.ui.setupUi(self)
 
-############################################################
-
+########## CLASSE CADASTRO INCOMPLETO ######################################################################################################################################################
 class DialogCadastroIncompletoUsuario(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -436,8 +433,7 @@ class DialogCadastroIncompletoUsuario(QDialog):
         event.accept()
 
 
-##############Class POPUP Cursos e oficinas##############
-
+########## CLASSE POPUP CURSOS E OFICINAS ##################################################################################################################################################
 class DialogCadastroIncompletoCursos(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -458,7 +454,7 @@ class DialogCadastroIncompletoCursos(QDialog):
 
 
 
-##############Class Alterar Foto e Senha##############
+########## CLASSE ALTERAR FOTO E SENHA #####################################################################################################################################################
 class DialogAlterarSenhaFoto(QDialog):
     def __init__(self, parent, id_colab, nome_colab_perfil) -> None:
         super().__init__(parent)
@@ -554,7 +550,7 @@ class DialogAlterarSenhaFoto(QDialog):
             
             
 
-##############Class Alterar Foto e Senha##############
+########## CLASSE CONFIRMAR SAIDA ##########################################################################################################################################################
 class DialogConfirmarSaida(QDialog):
     def __init__(self, parent) -> None:
         super().__init__(parent)
@@ -569,7 +565,7 @@ class DialogConfirmarSaida(QDialog):
         TelaPrincipal.confirmouSaida(self, resposta)
     
 
-############################################################################################################################################################################################
+########## CLASSE PRINCIPAL ################################################################################################################################################################
 class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def __init__(self):
         super().__init__()
@@ -798,6 +794,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_observacoes_sigilosas_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))
         self.ui.btn_voltar_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
 
