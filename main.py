@@ -46,7 +46,27 @@ class DialogRecuperarSenha(QDialog):
         self.setAttribute(Qt.WA_DeleteOnClose)
         self.ui = Ui_Restaurar_Senha()
         self.ui.setupUi(self)
-        
+
+        self.db = DataBase()
+
+        self.ui.input_confirmar_senha_popup_senha
+        self.ui.btn_verificar_popup_senha.clicked.connect(self.RecuperarSenha)
+
+    def RecuperarSenha(self):
+        cpf = self.ui.input_cpf_popup_senha.text()
+        dados = self.db.recuperarSenha(cpf)
+        print(dados)
+        if dados == []:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Você não tem acesso")
+            msg.setText("Você não é Admistrador (a) do sistema\nPeça ao admistrador para alterar sua senha!")
+        else:     
+            pergunta1 = self.ui.input_pergunta1_popup_senha.text()
+            pergunta2 = self.ui.input_pergunta2_popup_senha.text()
+            senha_nova = self.ui.input_nova_senha_popup_senha.text()
+            senha_nova_confirmar = self.ui.input_confirmar_senha_popup_senha.text()
+
 ##################POP UP LOGIN INVALIDO###################
 class DialogLoginInvalido(QDialog):
     def __init__(self, parent) -> None:

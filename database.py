@@ -6,7 +6,9 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         if self.conn.is_connected():
@@ -2009,7 +2011,22 @@ class DataBase():
             self.close_connection()
 
 
+    def recuperarSenha(self, cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT recuperar_senha.perfil_colab
+                                FROM pessoa INNER JOIN colaborador ON pessoa.id_matricula = colaborador.id_matricula
+                                INNER JOIN recuperar_senha ON recuperar_senha.id_colab = colaborador.id_colaborador WHERE pessoa.cpf LIKE '{cpf}';
+                                """)
+            result = self.cursor.fetchall()
+            return result
 
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
 
 
     def close_connection(self):
