@@ -3566,8 +3566,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_hora_consulta_as_psi.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
 
-    def limparCamposAgenda(self):
-
     def limparCamposAgendaAssistenteSocial(self):
         self.ui.input_cpf_agendamento_as.setText("")
         self.ui.input_nome_agendamento_as.setText("")
