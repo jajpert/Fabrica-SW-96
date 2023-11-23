@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
@@ -615,12 +615,19 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT consulta.data_consulta, pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idades, pessoa.sexo, pessoa.telefone,clinica.razao_social as clinica, endereco.bairro, endereco.cidade
+                                select consulta.data_consulta,pessoa.nome, pessoa.cpf, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, pessoa.data_nascimento,NOW()) as idade,pessoa.sexo,nutri_usuario.peso,nutri_usuario.imc,
+                                pessoa.telefone,usuario.situacao_trabalho,clinica.nome_fantasia as clinica, endereco.bairro,endereco.cidade
                                 from pessoa 
-                                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                INNER JOIN consulta on consulta.id_consulta = usuario.id_usuario
-                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
-                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                inner join usuario
+                                on pessoa.id_matricula = usuario.id_matricula
+                                inner join consulta
+                                on usuario.id_matricula = consulta.id_matricula
+                                inner join nutri_usuario
+                                on  usuario.id_matricula = nutri_usuario.id_matricula 
+                                inner join clinica
+                                on usuario.local_tratamento = clinica.id_clinica
+                                inner join endereco
+                                on pessoa.id_endereco = endereco.id_endereco
                                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR usuario.nis LIKE "%{texto}%" OR pessoa.data_nascimento LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%" OR usuario.situacao_trabalho LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%";
                                 """)
             result = self.cursor.fetchall()
