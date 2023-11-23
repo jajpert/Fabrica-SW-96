@@ -3074,11 +3074,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         nome_curso=self.ui.input_nome_cursos_as.text()
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
 
-        if self.ui.input_ativo_cursos_as.isChecked():
-            situacao=1
-        if self.ui.input_inativo_cursos_as.isChecked():
-            situacao=0
-
         responsavel=self.ui.input_responsavel_cursos_as.text()
         data_ini_curso=self.ui.input_data_inicio_cursos_as.text()
              
