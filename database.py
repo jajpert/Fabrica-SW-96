@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
@@ -2047,30 +2047,32 @@ class DataBase():
         finally:
             self.close_connection()
   
-    def buscar_relatorio_atendimento_pesquisa(self,texto):
+    def buscar_relatorio_atendimento_pesquisa(self, texto):
         self.connect()
         try:
-            self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao
-                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
-                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.cns LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR pessoa.email LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR consulta.data_consulta LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
-                                """)
+            busca = """
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email clinica.nome_fantasia, consulta.data_consulta, consulta.situacao
+                FROM pessoa
+                INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                WHERE pessoa.nome LIKE %s OR pessoa.cpf LIKE %s OR usuario.cns LIKE %s OR pessoa.sexo LIKE %s OR pessoa.telefone LIKE %s OR pessoa.email LIKE %s OR clinica.razao_social LIKE %s OR consulta.data_consulta LIKE %s OR consulta.situacao LIKE %s;
+            """
+            parametro = tuple(f"%{texto}%" for _ in range(9)) 
+            self.cursor.execute(busca, parametro)
             result = self.cursor.fetchall()
             return result
-
         except Exception as err:
-            return "ERRO",str(err)
-
+            return "ERRO", str(err)
         finally:
             self.close_connection()
+
     
     def buscar_relatorio_atendimento(self,):
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.telefone_contato, clinica.razao_social, consulta.data_consulta, consulta.situacao
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
                                 from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
@@ -2088,7 +2090,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.telefone_contato, clinica.razao_social, consulta.data_consulta, consulta.situacao,
+                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
                     from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento

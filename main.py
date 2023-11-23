@@ -774,6 +774,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_cadstrados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_atendimento_as))
         self.ui.btn_voltar_pagina_relatorio_atendimentos.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_voltar_pagina_relatorio_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
+        self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
 
         ########################### FISIOTERAPEUTA ###########################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
@@ -974,8 +975,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_cadstrados_as.clicked.connect(self.puxar_relatorio_atendimento)
         self.ui.input_buscar_dados_relatorio_atendimentos.textChanged.connect(self.filtrar_dados_relatorio_atendimento)
         self.ui.btn_buscar_relatorio_atendimentos.clicked.connect(self.filtrar_data_relatorio_atendimento)
-        #self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
-        #self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
+        self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.clicked.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
+        self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.clicked.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
         
       
         
@@ -5078,6 +5079,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def filtrar_dados_relatorio_atendimento(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_atendimentos.text())
         res = self.db.buscar_relatorio_atendimento_pesquisa(txt)
+        print (res)
         self.ui.input_TableWidget_relatorio_atendimentos.setRowCount(len(res))
 
         for row, text in enumerate(res):
@@ -5092,11 +5094,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         res = self.db.filter_data_relatorio_atendimento(texto_data_inicio_atendimento,texto_data_final_atendimento)
 
-        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+        self.ui.input_TableWidget_relatorio_atendimentos.setRowCount(len(res))
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_atendimentos.setItem(row, column, QTableWidgetItem(str(data)))
 
     def gerar_excel(self):
         dados = []
@@ -5167,7 +5169,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['CNPJ', 'E-MAIL', 'RAZÃO SOCIAL', 'TELEFONE', 'ENDEREÇO']
+        columns = ['CNPJ', 'EMAIL', 'RAZAO_SOCIAL', 'TELEFONE', 'ENDEREÇO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -5194,7 +5196,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['CNPJ', 'E-MAIL', 'RAZÃO SOCIAL', 'TELEFONE', 'ENDEREÇO']
+        columns = ['CNPJ', 'RAZAO_SOCIAL','TELEFONE','TELEFONE_CONTATO', 'EMAIL', 'ENDERECO', 'CIDADE','ESTADO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -5211,6 +5213,32 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
 
 
+    def gerar_excel_relatorio_atendimento(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_atendimentos.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_atendimentos.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_atendimentos.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'RAZAO_SOCIAL', 'DATA_CONSULTA', 'SITUACAO']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
 
 
         
