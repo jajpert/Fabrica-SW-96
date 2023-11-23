@@ -966,7 +966,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_cuidadores_as.textChanged.connect(self.filtrar_relatorio_cuidador)
         self.ui.btn_buscar_relatorio_cuidadores_as.clicked.connect(self.filtrar_data_relatorio_cuidador)
         self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
-        
+        self.ui.input_buscar_dados_relatorio_agendamento_as.textChanged.connect(self.filtrar_relatorio_agendamento)
 
         #self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         #self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
