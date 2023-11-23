@@ -797,6 +797,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
 
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
