@@ -5062,6 +5062,38 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
 
+    def puxar_relatorio_atendimento(self):
+        result = self.db.buscar_relatorio_atendimento()
+        self.ui.input_TableWidget_relatorio_psi.clearContents()
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def filtrar_data_relatorio_atendimento(self):  
+        texto_data_inicio_psi = self.ui.input_inicio_periodo_relatorio_psi.text()
+        texto_data_final_psi = self.ui.input_final_periodo_relatorio_psi.text()
+        texto_data_inicio_tratada_psi =  "-".join(texto_data_inicio_psi.split("/")[::-1])
+        texto_data_final_tratada_psi =  "-".join(texto_data_final_psi.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_atendimento(texto_data_inicio_tratada_psi,texto_data_final_tratada_psi)
+
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_dados_relatorio_atendimento(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_psi.text())
+        res = self.db.buscar_relatorio_atendimento_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
+
     def gerar_excel(self):
         dados = []
         all_dados =  []

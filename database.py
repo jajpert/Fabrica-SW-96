@@ -2046,6 +2046,61 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def buscar_relatorio_atendimento_pesquisa(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao
+                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR clinica.nome_fantasia LIKE "%{texto}%" OR consulta.data_consulta LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+    
+    def buscar_relatorio_atendimento(self,):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao
+                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filter_data_relatorio_atendimento(self,texto_data_inicio_atendimento,texto_data_final_atendimento):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia, consulta.data_consulta, consulta.situacao,
+                    from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
+                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                    WHERE consulta.data_consulta BETWEEN '{texto_data_inicio_atendimento}' and '{texto_data_final_atendimento}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
    
 
     def delete(self,id):
