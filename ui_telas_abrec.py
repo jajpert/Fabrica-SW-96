@@ -15671,6 +15671,7 @@ class Ui_MainWindow(object):
         self.input_salario_colaborador_as.setObjectName(u"input_salario_colaborador_as")
         self.input_salario_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_salario_colaborador_as.setMaximumSize(QSize(123, 30))
+        self.input_salario_colaborador_as.setLayoutDirection(Qt.LeftToRight)
         self.input_salario_colaborador_as.setFont(font)
 
         self.verticalLayout_171.addWidget(self.input_salario_colaborador_as)
