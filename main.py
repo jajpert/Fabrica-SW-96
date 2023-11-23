@@ -1081,6 +1081,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
+                    
+            elif perfil[0] == 'sec':
+                if login == login_senha[0] and senha == login_senha[1]:            
+                    print ("Login realizado com sucesso")
+                    nome_colab = self.db.select_nome_usuario(matricula_colaborador)
+                    nome_colaborador = nome_colab[0][0]
+                    self.ui.label_ola_nome_sec.setText(nome_colaborador)
+                    self.LoginSec() 
+                    # self.buscarIdColabPsic()
+                         
+                else:
+                    print ("Usuário não encontrado")
+                    self.ui.inicio.setCurrentWidget(self.ui.login)
+                    self.loginInvalido() 
                        
     ########################### Validar Login Assistente S #############################        
     def LoginAssistenteS(self):
@@ -1103,6 +1117,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     ########################### Validar Login Psico #############################        
     def LoginPsico(self):
         self.ui.inicio.setCurrentWidget(self.ui.page_psicologa)
+    ########################### Validar Login Psico #############################        
+    def LoginSec(self):
+        self.ui.inicio.setCurrentWidget(self.ui.page_secretaria)
 
     ########################### Validar CEP ###############################
     def validarCep(self):
