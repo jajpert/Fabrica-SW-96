@@ -965,6 +965,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_cuidadores_as.clicked.connect(self.gerar_excel_relatorio_cuidador)
         self.ui.input_buscar_dados_relatorio_cuidadores_as.textChanged.connect(self.filtrar_relatorio_cuidador)
         self.ui.btn_buscar_relatorio_cuidadores_as.clicked.connect(self.filtrar_data_relatorio_cuidador)
+        self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
+        
+
         #self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         #self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
         
@@ -5086,14 +5089,26 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
+    def buscar_relatorio_agendamento(self):
+        result = self.db.buscar_relatorio_agendamento()
+        print(result)
+        self.ui.tableWidget_relatorio_agendamento_as.clearContents()
+        self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(result))
+          
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+
+
     def filtrar_relatorio_agendamento(self):
             txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
-            res = self.db.buscar_relatorio_agendamento(txt)
-            self.ui.input_TableWidget_relatorio_agendamento_as.setRowCount(len(res))
+            res = self.db.filtrar_relatorio_agendamento(txt)
+            self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
 
             for row, text in enumerate(res):
                 for column, data in enumerate(text):
-                    self.ui.input_TableWidget_relatorio_agendamento_setItem(row, column, QTableWidgetItem(str(data)))
+                    self.ui.tableWidget_relatorio_agendamento_as(row, column, QTableWidgetItem(str(data)))
 
 
 
