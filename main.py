@@ -971,6 +971,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_cuidadores_as.clicked.connect(self.gerar_excel_relatorio_cuidador)
         self.ui.input_buscar_dados_relatorio_cuidadores_as.textChanged.connect(self.filtrar_relatorio_cuidador)
         self.ui.btn_buscar_relatorio_cuidadores_as.clicked.connect(self.filtrar_data_relatorio_cuidador)
+        self.ui.btn_relatorios_cadstrados_as.clicked.connect(self.puxar_relatorio_atendimento)
+        self.ui.input_buscar_dados_relatorio_atendimentos.textChanged.connect(self.filtrar_dados_relatorio_atendimento)
+        self.ui.btn_buscar_relatorio_atendimentos.clicked.connect(self.filtrar_data_relatorio_atendimento)
         #self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         #self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
         
@@ -5064,35 +5067,36 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def puxar_relatorio_atendimento(self):
         result = self.db.buscar_relatorio_atendimento()
-        self.ui.input_TableWidget_relatorio_psi.clearContents()
-        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(result))   
-
+        self.ui.input_TableWidget_relatorio_atendimentos.clearContents()
+        self.ui.input_TableWidget_relatorio_atendimentos.setRowCount(len(result))
+        
         for row, text in enumerate(result):
             for column, data in enumerate(text):
-                self.ui.input_TableWidget_relatorio_psi.setItem(row, column,QTableWidgetItem(str(data)))
-
-    def filtrar_data_relatorio_atendimento(self):  
-        texto_data_inicio_psi = self.ui.input_inicio_periodo_relatorio_psi.text()
-        texto_data_final_psi = self.ui.input_final_periodo_relatorio_psi.text()
-        texto_data_inicio_tratada_psi =  "-".join(texto_data_inicio_psi.split("/")[::-1])
-        texto_data_final_tratada_psi =  "-".join(texto_data_final_psi.split("/")[::-1])
-        
-        res = self.db.filter_data_relatorio_atendimento(texto_data_inicio_tratada_psi,texto_data_final_tratada_psi)
-
-        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
-
-        for row, text in enumerate(res):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_atendimentos.setItem(row, column,QTableWidgetItem(str(data)))
+                
 
     def filtrar_dados_relatorio_atendimento(self):
-        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_psi.text())
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_atendimentos.text())
         res = self.db.buscar_relatorio_atendimento_pesquisa(txt)
-        self.ui.input_TableWidget_relatorio_psi.setRowCount(len(res))
+        self.ui.input_TableWidget_relatorio_atendimentos.setRowCount(len(res))
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.input_TableWidget_relatorio_psi.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.input_TableWidget_relatorio_atendimentos.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_data_relatorio_atendimento(self): 
+        texto_data_inicio_atendimento = self.ui.input_inicio_periodo_relatorio_atendimentos.text()
+        texto_data_final_atendimento = self.ui.input_final_periodo_relatorio_atendimentos.text()
+        texto_data_inicio_atendimento =  "-".join(texto_data_inicio_atendimento.split("/")[::-1])
+        texto_data_final_atendimento =  "-".join(texto_data_final_atendimento.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_atendimento(texto_data_inicio_atendimento,texto_data_final_atendimento)
+
+        self.ui.input_TableWidget_relatorio_beneficios_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_beneficios_as.setItem(row, column, QTableWidgetItem(str(data)))
 
     def gerar_excel(self):
         dados = []
