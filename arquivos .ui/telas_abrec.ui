@@ -14298,7 +14298,7 @@ QPushButton:focus{outline:0}</string>
                                   <bool>true</bool>
                                  </property>
                                  <attribute name="horizontalHeaderVisible">
-                                  <bool>true</bool>
+                                  <bool>false</bool>
                                  </attribute>
                                  <attribute name="horizontalHeaderCascadingSectionResizes">
                                   <bool>true</bool>
@@ -21189,7 +21189,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>13</number>
+                      <number>1</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -22237,6 +22237,9 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                               <property name="text">
                                                <string/>
                                               </property>
+                                              <property name="maxLength">
+                                               <number>14</number>
+                                              </property>
                                              </widget>
                                             </item>
                                            </layout>
@@ -22369,6 +22372,9 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}
                                                <string notr="true">QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}
 QLineEdit:focus{outline:0; border: 2px solid #A85751}
 </string>
+                                              </property>
+                                              <property name="maxLength">
+                                               <number>11</number>
                                               </property>
                                              </widget>
                                             </item>
@@ -26613,7 +26619,7 @@ color: rgb(236, 132, 140);</string>
                                       <number>10</number>
                                      </property>
                                      <attribute name="horizontalHeaderVisible">
-                                      <bool>true</bool>
+                                      <bool>false</bool>
                                      </attribute>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>
@@ -32595,7 +32601,7 @@ QPushButton:focus{outline:0}</string>
                                       <bool>true</bool>
                                      </property>
                                      <attribute name="horizontalHeaderVisible">
-                                      <bool>true</bool>
+                                      <bool>false</bool>
                                      </attribute>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>

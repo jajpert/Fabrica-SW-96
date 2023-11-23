@@ -24,8 +24,21 @@ import imghdr
 import os
 
 
-#######
-from Validacao_Campos.validar_campos import validarCamposUsuarioCadastro
+############################# VALIDAÇÕES ASSISTENTE SOCIAL ######################################################
+from Validacao_Campos.Assistente_Social.validar_campos_usuario import validarCamposUsuarioCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_cuidador import validarCamposCuidadorCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_colaborador import validarCamposColaboradorCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_agendamento import validarCamposAgendamentoCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_clinica import validarCamposClinicaCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_fornecedores import validarCamposFornecedoresCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validarCamposBeneficiosCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
+
+
+
+
+
+
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -2693,12 +2706,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
         
         
-        if not validarCamposUsuarioCadastro(cpf):
+        if not validarCamposUsuarioCadastro(cpf,rg,nis,cns,telefone,sexo,cep,numero):
             
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("ERRO")
-            msg.setText("ERRO")
+            msg.setText("Erro ao tentar cadastrar Usuario!")
             msg.exec()
         else:
         ######################## insert ##################################
@@ -2917,15 +2930,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         usuario_id = int(usuario_nome_id[0])
 
         ################## insert #######################################
-        result = []
-        result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Cuidador")
-        msg.setText("Cuidador cadastrado com sucesso!")
-        msg.exec()
-        # self.msg(result[0],result[1])
-        self.limparCamposCadastroCuidador()
+        if not validarCamposCuidadorCadastro(cpf,rg,telefone,cep,numero):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("ERRO")
+            msg.setText("Erro ao tentar cadastrar Cuidador!")
+            msg.exec()
+        else:
+            result = []
+            result = self.db.cadastro_cuidador(tupla_endereco,tupla_pessoa,tupla_cuidador, usuario_id)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Cuidador")
+            msg.setText("Cuidador cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
+            self.limparCamposCadastroCuidador()
 
     def formatar_salario(self):
         text = self.input_salario_colaborador_as.text()
@@ -3026,15 +3046,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_colaborador = (pis_colab, data_admissao, salario, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
-        result = []
-        result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Colaborador")
-        msg.setText("Colaborador cadastrado com sucesso!")
-        msg.exec()
-        # self.msg(result[0],result[1])        
-        self.limparCamposCadastroColaborador()
+        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro")
+            msg.setText("Erro ao cadastrar Colaborador!")
+            msg.exec()
+        else:
+            result = []
+            result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Colaborador")
+            msg.setText("Colaborador cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])        
+            self.limparCamposCadastroColaborador()
 
 
 
@@ -3077,13 +3104,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
 
-        result=self.db.cadastro_curso(tupla_curso)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Curso")
-        msg.setText("Curso cadastrado com sucesso!")
-        msg.exec()
-        self.limparCadastroCursos()
+        if not validarCamposCursoCadastro(tipo_curso, responsavel, horario_inicial, horario_final, periodo, vagas):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro Curso")
+            msg.setText("Erro cadastro Curso!")
+            msg.exec()
+
+        else:
+            result=self.db.cadastro_curso(tupla_curso)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Curso")
+            msg.setText("Curso cadastrado com sucesso!")
+            msg.exec()
+            self.limparCadastroCursos()
         
     
     def cadastroAgendamento(self):
@@ -3109,19 +3144,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         hora = self.ui.input_hora_agendamento_as.text()
         anotacao = self.ui.input_anotacao_agendamento_as.toPlainText()
         flag = "NAO"
+        if not validarCamposAgendamentoCadastro(profissional):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro ao cadastrar Agendamento!")
+            msg.exec()
+        else:
 
-        tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
-        print("TUPLA AGENDAMENTO -> ",tupla_agendamento)
-        result = self.db.cadastro_agendamento(tupla_agendamento)
-        
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Agendamento")
-        msg.setText("Agendamento Cadastrado com sucesso!")
-        msg.exec()
-        # self.msg(result[0],result[1])   
-        self.limparCamposAgenda() 
-        self.listarAgendamentos()
+            tupla_agendamento = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
+            print("TUPLA AGENDAMENTO -> ",tupla_agendamento)
+            result = self.db.cadastro_agendamento(tupla_agendamento)
+
+                
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Agendamento")
+            msg.setText("Agendamento Cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])   
+            self.limparCamposAgenda() 
+            self.listarAgendamentos()
 
     def cadastroAgendamento_psi(self):
         id_matricula = self.buscarPessoa_psi()
@@ -3271,15 +3314,26 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         tupla_fornecedor = (razao_social,nome_fantasia,cnpj,celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,informacao_geral)
                             #razao_social,nome_fantasia,cnpj,telefone_celular,telefone_fixo,email,contato,inscricao_municipal,inscricao_estadual,observacao,id_endereco
-        result = []
-        result = self.db.cadastro_fornecedor(tupla_endereco,tupla_fornecedor)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Fornecedor")
-        msg.setText("Fornecedor cadastrado com sucesso!")
-        msg.exec()
-        # self.msg(result[0],result[1])
-        self.limparCamposCadastroFornecedor()
+
+
+        if not validarCamposFornecedoresCadastro(cnpj, celular, email, inscricao_estadual, inscricao_municipal, cep, numero):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro cadastro fornecedor")
+            msg.exec()
+
+        else:
+
+            result = []
+            result = self.db.cadastro_fornecedor(tupla_endereco,tupla_fornecedor)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Fornecedor")
+            msg.setText("Fornecedor cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
+            self.limparCamposCadastroFornecedor()
 
 
     def filtrar_agenda(self):
@@ -4539,42 +4593,61 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             obs = self.ui.input_informacoes_gerais_clinica_as.toPlainText()
 
             tupla_clinica = (cnpj,razao_social,nome_fantasia,telefone,email,obs)
-            
-            result = []
-            result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Cadastro Clinica")
-            msg.setText("Clinica cadastrada com sucesso!")
-            msg.exec()
-            # self.msg(result[0],result[1])
-            self.limparCamposCadastroClinica()
+
+            if not validarCamposClinicaCadastro(cnpj,telefone,email,cep,numero):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro Cadastro")
+                msg.setText("Erro cadastro clinica")
+                msg.exec()
+
+            else:
+                result = []
+                result=self.db.cadastro_clinica(tupla_endereco,tupla_clinica)
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Cadastro Clinica")
+                msg.setText("Clinica cadastrada com sucesso!")
+                msg.exec()
+                # self.msg(result[0],result[1])
+                self.limparCamposCadastroClinica()
 
 ###########################################################################
     def cadastro_beneficios(self):
             
         ########################## dados ######################################       
-            dados = self.db.busca_beneficios()
-            tipo = self.ui.input_tipo_cadastro_beneficio.currentText()   
-            if tipo == 'Medicação':
-                self.ui.input_tipo_cadastro_beneficio.currentText()         
+        dados = self.db.busca_beneficios()
+        tipo = self.ui.input_tipo_cadastro_beneficio.currentText()   
+        if tipo == 'Medicação':
+            self.ui.input_tipo_cadastro_beneficio.currentText()         
 
-            codigo = self.ui.input_codigo_cadastro_beneficio.text()
-            lote = self.ui.input_lote_cadastro_beneficio.text()
-            dados = self.db.busca_beneficios()
-            unidade_medida = self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
+        codigo = self.ui.input_codigo_cadastro_beneficio.text()
+        print(codigo)
+        lote = self.ui.input_lote_cadastro_beneficio.text()
+        dados = self.db.busca_beneficios()
+        unidade_medida = self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
+        
+        if unidade_medida == 'Quilo':
+            self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
             
-            if unidade_medida == 'Quilo':
-                self.ui.input_comboBox_udm_cadastro_benefecio.currentText()
-              
-            descricao = self.ui.input_descricao_cadastro_beneficio.text()
-            vali=self.ui.input_dateEdit_cadastro_beneficio.text()
-             
-            validade = "-".join(vali.split("/")[::-1])          
-            quantidade = self.ui.input_spinBox_cadastro_beneficio.value()
+        descricao = self.ui.input_descricao_cadastro_beneficio.text()
+        vali=self.ui.input_dateEdit_cadastro_beneficio.text()
+            
+        validade = "-".join(vali.split("/")[::-1])          
+        print(validade)
+        quantidade = self.ui.input_spinBox_cadastro_beneficio.value()
+        print(quantidade)
+        tupla_beneficios = (tipo,codigo,lote,unidade_medida,descricao,validade,quantidade)
+        
 
-            tupla_beneficios = (tipo,codigo,lote,unidade_medida,descricao,validade,quantidade)
-            
+        if not validarCamposBeneficiosCadastro(tipo, codigo, unidade_medida, quantidade):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro ao cadastrar Beneficio!")
+            msg.exec()
+        
+        else:
             result = []
             result=self.db.cadastro_beneficios(tupla_beneficios)
             msg = QMessageBox()

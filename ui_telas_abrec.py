@@ -9240,6 +9240,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_estadual_fornecedor_as.setMinimumSize(QSize(0, 30))
         self.input_inscricao_estadual_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_estadual_fornecedor_as.setFont(font)
+        self.input_inscricao_estadual_fornecedor_as.setMaxLength(14)
         self.input_inscricao_estadual_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -9286,6 +9287,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_municipal_fornecedor_as.setMinimumSize(QSize(0, 30))
         self.input_inscricao_municipal_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_municipal_fornecedor_as.setFont(font)
+        self.input_inscricao_municipal_fornecedor_as.setMaxLength(11)
         self.input_inscricao_municipal_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
