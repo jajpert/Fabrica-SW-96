@@ -24,6 +24,9 @@ import imghdr
 import os
 
 
+#######
+from Validacao_Campos.validar_campos import validarCamposUsuarioCadastro
+
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -2688,17 +2691,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         tupla_pessoa = (nome,data_nascimento,cpf,rg,data_emissao,orgao_exp,sexo,status,telefone,telefone_contato,escolaridade,estado_civil,pessoa_deficiencia,tipo_deficiencia,outras_deficiencias)
         tupla_usuario = (nis,cns,observacao_,situacao_trabalho,situacao_trabalho_outros,tipo_transporte,tipo_tratamento,beneficio,local_tratamento_id_clinica,periodo,data_inicio,patologia_base,outras_patologias,tarifa_social,media_renda_familiar,vale_transporte)
-
+        
+        
+        if not validarCamposUsuarioCadastro(cpf):
+            
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("ERRO")
+            msg.setText("ERRO")
+            msg.exec()
+        else:
         ######################## insert ##################################
-        result = []
-        result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Usuário")
-        msg.setText("Usuário cadastrado com sucesso!")
-        msg.exec()
-        # self.msg(result[0],result[1])
-        # self.limparCamposCadastroUsuario()
+
+            result = []
+            result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Usuário")
+            msg.setText("Usuário cadastrado com sucesso!")
+            msg.exec()
+            # self.msg(result[0],result[1])
+            # self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
