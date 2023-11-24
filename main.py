@@ -34,12 +34,23 @@ from Validacao_Campos.Assistente_Social.validar_campos_clinica import validarCam
 from Validacao_Campos.Assistente_Social.validar_campos_fornecedores import validarCamposFornecedoresCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validarCamposBeneficiosCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
+##################################################################################################################
 
+############################# VALIDAÇÕES NUTRICIONISTA###########################################################
+from Validacao_Campos.Nutricionista.validar_campos_agendamento_nutri import validarCamposAgendamentoNutriCadastro
+from Validacao_Campos.Nutricionista.validar_campos_consulta_nutri import validarCamposConsultaNutriCadastro
+from Validacao_Campos.Nutricionista.valdiar_campos_consulta_nutri import validarCamposConsultaNutriImcCadastro
+##################################################################################################################
 
+############################## VALIDAÇÕES FISIOTERAPEUTA #########################################################
+from Validacao_Campos.Fisioterapeuta.validar_campos_agendamento_fisio import validarCamposAgendamentoFisioCadastro
+from Validacao_Campos.Fisioterapeuta.validar_campos_cosulta_fisio import validarCamposConsultaFisioCadastro
+##################################################################################################################
 
-
-
-
+############################## VALIDAÇÕES FARMACEUTICA ###########################################################
+from Validacao_Campos.Farmaceutica.validar_campos_beneficios_farm import validarCamposBeneficiosFarmaceuticaCadastro
+from Validacao_Campos.Farmaceutica.validar_campos_retirada_beneficio_farm import validarCamposRetiradaBeneficiosFarmaceuticaCadastro
+##################################################################################################################
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -964,11 +975,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ########################### POPUP CURSOS E OFICINAS AS ####################
         # self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri)
-        self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri)
-        self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri)
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario)
-        self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri)
         self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
         self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
@@ -3113,11 +3120,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         nome_curso=self.ui.input_nome_cursos_as.text()
         tipo_curso=self.ui.input_tipo_cursos_as.currentText()
 
-        if self.ui.input_ativo_cursos_as.isChecked():
-            situacao=1
-        if self.ui.input_inativo_cursos_as.isChecked():
-            situacao=0
-
         responsavel=self.ui.input_responsavel_cursos_as.text()
         data_ini_curso=self.ui.input_data_inicio_cursos_as.text()
              
@@ -3144,7 +3146,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         sexta = 1 if self.ui.input_sexta_cursos_as.isChecked() else 0
         sabado = 1 if self.ui.input_sabado_cursos_as.isChecked() else 0
 
-        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
+        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado,descricao)
 
         if not validarCamposCursoCadastro(tipo_curso, responsavel, horario_inicial, horario_final, periodo, vagas):
             msg = QMessageBox()
@@ -3267,15 +3269,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         flag = "NAO"
 
         tupla_agendamento_fisio = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao,flag)
-        result = self.db.cadastro_agendamento_fisio(tupla_agendamento_fisio)
-        
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Agendamento")
-        msg.setText("Agendamento Cadastrado com sucesso!")
-        msg.exec()
-        self.tabela_agendamento_fisio()
-        self.limparCamposAgendamentoFisio()
+        if not validarCamposAgendamentoFisioCadastro(profissional):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro!")
+            msg.exec()
+
+        else:
+
+            result = self.db.cadastro_agendamento_fisio(tupla_agendamento_fisio)
+            
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Agendamento")
+            msg.setText("Agendamento Cadastrado com sucesso!")
+            msg.exec()
+            self.tabela_agendamento_fisio()
+            self.limparCamposAgendamentoFisio()
 
     def cadastroAgendamentoNutri(self):
         id_matricula = self.ui.input_id_matricula_nutri_agendamento.text()
@@ -3301,33 +3312,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         flag = "NAO"
 
         tupla_agendamento_nutri = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
-        print("TUPLA NUTRI ->",tupla_agendamento_nutri)
-        result = self.db.cadastro_agendamento_nutri(tupla_agendamento_nutri)
-        
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Agendamento")
-        msg.setText("Agendamento Cadastrado com sucesso!")
-        msg.exec()
-        self.tabela_agenda_nutri()
-        self.limparCamposAgendaNutri()
+
+        if not validarCamposAgendamentoNutriCadastro(profissional):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro ao agendar!")
+            msg.exec()
+        else:
+            result = self.db.cadastro_agendamento_nutri(tupla_agendamento_nutri)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Agendamento")
+            msg.setText("Agendamento Cadastrado com sucesso!")
+            msg.exec()
+            self.tabela_agenda_nutri()
+            self.limparCamposAgendaNutri()
 
     def cadastroIMC(self):
         peso = self.ui.input_peso_consulta_nutri.text()
         altura = self.ui.input_altura_consulta_nutri.text()
         imc = self.ui.input_imc_consulta_nutri.text()
-        if self.ui.radioButton_atendimento_as_nutri.isChecked():
-            situacao = "Atendimento"
-        elif self.ui.radioButton_Retorno_as_nutri.isChecked():
-            situacao = "Retorno"
-        data = self.ui.input_data_pagina_consulta_geral_nutri.text()
-        data_agend = "-".join(data.split("/")[::-1])
-        hora = self.ui.input_hora_consulta_as_nutri.text()
-        evolucao = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
         id_matricula = self.ui.input_id_matricula_nutri_consulta.text()
-
-
-        tupla_IMC = (peso, altura, imc, situacao, data_agend, hora, evolucao, id_matricula)
+        tupla_IMC = (peso, altura, imc, id_matricula)
         result = self.db.cadastroIMC(tupla_IMC)
         print(result)
 
@@ -3708,6 +3715,28 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_descricao_cadastro_retirada_beneficio.setText("")       
         self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(0)
 
+    def limparCadastroCursos(self):
+        self.ui.input_nome_cursos_as.setText("")
+        self.ui.input_tipo_cursos_as.setCurrentIndex(0)
+        self.ui.input_responsavel_cursos_as.setText("")
+        self.ui.input_data_inicio_cursos_as.setDate(QDate(2020, 1, 1))
+        self.ui.input_data_termino_cursos_as.setDate(QDate(2020, 1, 1))
+        self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
+        self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
+        self.ui.input_periodo_cursos_as.setCurrentIndex(0)
+        self.ui.input_vagas_cursos_as.setText("")
+        self.ui.input_segunda_cursos_as.setCheckable(False)
+        self.ui.input_segunda_cursos_as.setCheckable(True)
+        self.ui.input_terca_cursos_as.setCheckable(False)
+        self.ui.input_terca_cursos_as.setCheckable(True)
+        self.ui.input_quarta_cursos_as.setCheckable(False)
+        self.ui.input_quarta_cursos_as.setCheckable(True)
+        self.ui.input_quinta_cursos_as.setCheckable(False)
+        self.ui.input_quinta_cursos_as.setCheckable(True)
+        self.ui.input_sexta_cursos_as.setCheckable(False)
+        self.ui.input_sexta_cursos_as.setCheckable(True)
+        self.ui.input_sabado_cursos_as.setCheckable(False)
+        self.ui.input_sabado_cursos_as.setCheckable(True)
 
     def limparCamposAreaSigilosa(self):
         self.ui.input_obito_paciente_sim_as.setCheckable(False)
@@ -3896,6 +3925,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_matricula = self.ui.input_id_matricula_user_participante_geral.text()
         
         tupla_participante = (nome_curso_id_tratado,id_matricula)
+
         result = []
         result = self.db.cadastrar_participante(tupla_participante)
         msg = QMessageBox()
@@ -3909,12 +3939,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         dados = self.db.buscar_participante(cpf)
+        print(dados)
         self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
         self.ui.input_id_matricula_user_participante_geral.hide()
         self.ui.input_nome_pagina_participante_geral.setText(dados[1])
         self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
         self.ui.input_email_pagina_participante_geral.setText(dados[3])
         self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
+        
 
     def puxar_cadastro_participante(self):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
@@ -4051,26 +4083,45 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data = self.ui.input_data_pagina_consulta_geral_nutri.text()
         data_consulta = "-".join(data.split("/")[::-1])
 
-        hora_bruta = self.ui.input_hora_consulta_as_nutri.text()
+        hora = self.ui.input_hora_consulta_as_nutri.text()
 
         relatorio = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_nutri_consulta.text())
+        peso = self.ui.input_peso_consulta_nutri.text()
+        altura = self.ui.input_altura_consulta_nutri.text()
+        imc = self.ui.input_imc_consulta_nutri.text()
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_nutri)
-
-        result = []
-        result = self.db.cadastro_consulta_nutri(tupla_consulta)
-        self.cadastroIMC()
-
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Consulta")
-        msg.setText("Consulta Cadastrada com sucesso!")
-        msg.exec()
+        tupla_consulta = (situacao,data_consulta,hora,relatorio,id_matricula, self.id_colab_tratado_nutri)
+        if not validarCamposConsultaNutriCadastro(situacao, data, hora):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro!")
+            msg.exec()
+            return
         
-        self.tabela_consulta_nutri_tabela()
-        self.limparCamposConsultaNutri()
+        elif not validarCamposConsultaNutriImcCadastro(peso, altura, imc):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro IMC")
+            msg.setText("Erro IMC!")
+            msg.exec()
+            return
+
+        else:
+            result = []
+            result = self.db.cadastro_consulta_nutri(tupla_consulta)
+            self.cadastroIMC()
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Consulta")
+            msg.setText("Consulta Cadastrada com sucesso!")
+            msg.exec()
+            
+            self.tabela_consulta_nutri_tabela()
+            self.limparCamposConsultaNutri()
 
     def cadastrar_consulta_psi(self):
         if self.ui.radioButton_atendimento_as_psi.isChecked():
@@ -4117,28 +4168,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data = self.ui.input_data_pagina_consulta_geral_fisio.text()
         data_consulta = "-".join(data.split("/")[::-1])
 
-        hora_bruta = self.ui.input_hora_consulta_as_fisio.text()
+        hora = self.ui.input_hora_consulta_as_fisio.text()
 
         relatorio = self.ui.input_relatorio_pagina_evolucao_geral_fisio.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_consulta_fisio.text())
         print(type(id_matricula))
 
-        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_fisio)
+        tupla_consulta_psi = (situacao,data_consulta,hora,relatorio,id_matricula, self.id_colab_tratado_fisio)
         print(tupla_consulta_psi)
+        if not validarCamposConsultaFisioCadastro(situacao, data, hora):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro")
+            msg.exec()  
 
-        result = []
-        result = self.db.cadastro_consulta_fisio(tupla_consulta_psi)
-        
+        else:
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Consulta")
-        msg.setText("Consulta Cadastrada com sucesso!")
-        msg.exec()
-
-        self.puxar_consulta_fisio()
-        self.limparCamposConsultaFisio()
+            result = []
+            result = self.db.cadastro_consulta_fisio(tupla_consulta_psi)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Consulta")
+            msg.setText("Consulta Cadastrada com sucesso!")
+            msg.exec()
+            self.puxar_consulta_fisio()
+            self.limparCamposConsultaFisio()
 
     def puxar_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
@@ -4781,17 +4837,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             quantidade = self.ui.input_spinBox_cadastro_beneficio_farm.value()
 
             tupla_beneficios = (tipo,codigo,lote,unidade_medida,descricao,validade,quantidade)
-            
-            result = []
-            result=self.db.cadastro_beneficios(tupla_beneficios)
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Cadastro Beneficios")
-            msg.setText("Beneficio cadastrado com sucesso!")
-            msg.exec()
-            # self.msg(result[0],result[1])
-            self.limparCamposCadastroBeneficiosFarmaceutica()
-            self.listarBeneficiosFarmaceutica()
+            if not validarCamposBeneficiosFarmaceuticaCadastro(tipo, codigo, unidade_medida, quantidade):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro Cadastro")
+                msg.setText("Erro Cadastro!")
+                msg.exec()
+
+            else:
+                result = []
+                result=self.db.cadastro_beneficios(tupla_beneficios)
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Cadastro Beneficios")
+                msg.setText("Beneficio cadastrado com sucesso!")
+                msg.exec()
+                # self.msg(result[0],result[1])
+                self.limparCamposCadastroBeneficiosFarmaceutica()
+                self.listarBeneficiosFarmaceutica()
     
     def buscarRetirada(self):
         cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
@@ -4928,17 +4991,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio_farm.value()
 
             tupla_retirada_beneficios = (id_matricula,cpf,codigo_retirada,quantidade_retirada,data_consulta)
-            
-            result = []
-            result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
-            print (result)
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Cadastro Retirada de Beneficios")
-            msg.setText("Cadastro de retirada efetuado com sucesso!")
-            msg.exec()
-            # self.msg(result[0],result[1])
-            self.limparCamposCadastroRetiradaBeneficiosFarmaceutica()
+            if not validarCamposRetiradaBeneficiosFarmaceuticaCadastro(cpf, quantidade_retirada, data_retirada, codigo_retirada):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro Cadastro")
+                msg.setText("Erro Cadastro!")
+                msg.exec()
+
+            else:
+
+                result = []
+                result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
+                print (result)
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Cadastro Retirada de Beneficios")
+                msg.setText("Cadastro de retirada efetuado com sucesso!")
+                msg.exec()
+                # self.msg(result[0],result[1])
+                self.limparCamposCadastroRetiradaBeneficiosFarmaceutica()
     
 ######################## Pessoa com Deficiencia ###############################
    

@@ -5,7 +5,7 @@ def validarCamposCursoCadastro(tipo, responsavel, horario_inicial, horario_final
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro TIPO")
-        msg.setText("Favor selecionar um tipo para o beneficio!!!")
+        msg.setText("Favor selecionar um tipo para o curso!!!")
         msg.exec()
         return False
     

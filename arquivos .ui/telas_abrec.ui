@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>6</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -11391,7 +11391,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_10">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_farm">
                   <layout class="QVBoxLayout" name="verticalLayout_490"/>
@@ -12297,7 +12297,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                     <property name="frameShadow">
                                      <enum>QFrame::Raised</enum>
                                     </property>
-                                    <widget class="QLineEdit" name="input_id_usuario_retirada_beneficio_2_farm">
+                                    <widget class="QLineEdit" name="input_id_usuario_retirada_beneficio_farm">
                                      <property name="enabled">
                                       <bool>false</bool>
                                      </property>
@@ -12305,20 +12305,20 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       <rect>
                                        <x>0</x>
                                        <y>0</y>
-                                       <width>339</width>
-                                       <height>30</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </rect>
                                      </property>
                                      <property name="minimumSize">
                                       <size>
                                        <width>0</width>
-                                       <height>30</height>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="maximumSize">
                                       <size>
-                                       <width>16777215</width>
-                                       <height>30</height>
+                                       <width>0</width>
+                                       <height>0</height>
                                       </size>
                                      </property>
                                      <property name="font">
@@ -12328,8 +12328,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                       </font>
                                      </property>
                                      <property name="styleSheet">
-                                      <string notr="true">
-border-color: transparent ;
+                                      <string notr="true">border-color: transparent;
 background-color: transparent;
 
 </string>
@@ -21189,11 +21188,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-<<<<<<< HEAD
-                      <number>1</number>
-=======
                       <number>23</number>
->>>>>>> main
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
