@@ -3100,7 +3100,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         sexta = 1 if self.ui.input_sexta_cursos_as.isChecked() else 0
         sabado = 1 if self.ui.input_sabado_cursos_as.isChecked() else 0
 
-        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado, situacao,descricao)
+        tupla_curso = (nome_curso, tipo_curso, data_inicio, data_termino, periodo,responsavel, horario_inicial, horario_final, vagas,  segunda, terca, quarta, quinta, sexta, sabado,descricao)
 
         result=self.db.cadastro_curso(tupla_curso)
         msg = QMessageBox()
