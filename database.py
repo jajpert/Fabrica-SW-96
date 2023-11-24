@@ -236,7 +236,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-             SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF( YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+             SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF( YEAR,pes.data_nascimento,NOW()) as idades,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
                     FROM pessoa AS parente
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
@@ -253,15 +253,17 @@ class DataBase():
 
     def filtrar_relatorio_cuidador(self,texto):
         self.connect()
+
+        
         try:
             self.cursor.execute(f"""
-                    SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()) as idades,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
                     FROM pessoa AS parente
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
                     INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
-                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%" OR parente.nome LIKE "%{texto}%";
+                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%" OR parente.nome LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
@@ -1266,7 +1268,7 @@ class DataBase():
             try:
                 self.cursor.execute(f"""
 
-                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.razao_social, agendamento.profissional, agendamento.data ,agendamento.hora , agendamento.anotacao, agendamento.profissional
+                SELECT pessoa.cpf,  pessoa.telefone,clinica.razao_social, agendamento.profissional,agendamento.data, agendamento.hora ,agendamento.anotacao, agendamento.anotacao, agendamento.profissional
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;""")
@@ -1287,17 +1289,60 @@ class DataBase():
             try:
                 self.cursor.execute(f"""
                                     
-                                    SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.razao_social, agendamento.profissional, agendamento.data ,agendamento.hora , agendamento.anotacao, agendamento.profissional
+                                    SELECT pessoa.cpf,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data, agendamento.hora ,agendamento.anotacao
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                    WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" ORagendamento.profissional LIKE "%{texto}%" ORagendamento.data LIKE "%{texto}%" OR agendamento.hora  LIKE "%{texto}% OR agendamento.anotacaoLIKE "%{texto}% OR agendamento.profissional %{texto}%;
+                                    WHERE pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR agendamento.profissional LIKE "%{texto}%" OR agendamento.data LIKE "%{texto}%" OR agendamento.hora  LIKE "%{texto}% OR agendamento.anotacao LIKE "%{texto}%;
                                     """)
                 result = self.cursor.fetchall()
                 return result
 
             except Exception as err:
                 return "ERRO",str(err)
+            
+
+
+
+    # def filter_data_relatorio_agendamento(self,texto_data):
+    #     self.connect()
+    #     print(texto_data)
+    #     try:
+    #         self.cursor.execute(f"""
+    #                   SELECT pessoa.cpf,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data, agendamento.hora ,agendamento.anotacao
+    #                                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+    #                                 INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+    #                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+    #                                 WHERE clinica.razao_social BETWEEN '{texto_data[0]}' and '{texto_data[1]}';
+    #         """)
+    #         result = self.cursor.fetchall()
+    #         return result
+    #     except Exception as err:
+    #         return "ERRO",str(err)
+
+    #     finally:
+    #         self.close_connection()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
