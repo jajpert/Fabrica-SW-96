@@ -695,6 +695,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
 
+        
+
+        self.ui.input_inicio_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+
+        ###############SIGNALS################# 
+        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
+        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
         self.ui.input_data_cadastro_retirada_beneficio.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_cadastro_retirada_beneficio.setDateTime(QDateTime.currentDateTime())
         self.ui.input_inicio_periodo_relatorio_atendimentos.setDisplayFormat("dd/MM/yyyy")
@@ -830,8 +843,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_fisio.clicked.connect(self.buscar_usuario_agendamento_fisio) #SELECT USUARIO AGENDAMENTO FISIO
         self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_usuario_consulta_fisio) #SELECT USUARIO CONSULTA FISIO
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
+        self.ui.input_buscar_dados_relatorio_nutri.textChanged.connect(self.filtrar_dados_relatorio_nutri)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
         self.ui.btn_buscar_relatorio_fisio.clicked.connect(self.filtrar_data_relatorio_fisio)
+        self.ui.btn_buscar_relatorio_nutri.clicked.connect(self.filtrar_data_relatorio_nutri)
         self.ui.btn_buscar_relatorio_beneficios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltro)
         self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
 
@@ -2326,7 +2341,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_nutri = self.db.buscarIdColabNutri(login)
         id_colab_nutri_nt = id_colab_nutri[0][0]
         self.id_colab_tratado_nutri = id_colab_nutri_nt
-        print("ID NUTRI ->",self.id_colab_tratado_nutri)
+        print(self.id_colab_tratado_nutri)
+        return self.id_colab_tratado_nutri
 
     def buscarIdColabFisio(self):
         login = self.ui.input_usuario_login.text()
@@ -2344,6 +2360,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def filtrar_dados_relatorio_nutri(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_nutri.text())
+        res = self.db.buscar_relatorio_nutri_pesquisa(txt)
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
     
     def filtrar_relatorio_clinica_cadastrada(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.text())
@@ -2454,6 +2479,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setItem(row, column, QTableWidgetItem(str(data)))
 
+    def filtrar_data_relatorio_nutri(self):  
+        texto_data_inicio_nutri = self.ui.input_inicio_periodo_relatorio_nutri.text()
+        texto_data_final_nutri = self.ui.input_final_periodo_relatorio_nutri.text()
+        texto_data_inicio_nutri =  "-".join(texto_data_inicio_nutri.split("/")[::-1])
+        texto_data_final_nutri =  "-".join(texto_data_final_nutri.split("/")[::-1])
+        id_relatorio_nutri = self.buscarIdColabNutri()
+        res = self.db.filter_data_relatorio_nutri(texto_data_inicio_nutri,texto_data_final_nutri,id_relatorio_nutri)
+
+        self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_nutri.setItem(row, column, QTableWidgetItem(str(data)))
     def filtrar_data_relatorio_fornecedor_cadastrado(self):  
         texto_data_inicio_fornecedor_cadastrado = self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.text()
         texto_data_final_fornecedor_cadastrado = self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.text()
@@ -3498,6 +3536,53 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_hora_consulta_as.setText("")
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
 
+    def limparCamposConsultaNutri(self):
+        self.ui.input_nome_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_contato_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_nutri.setText("")
+        self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(0)
+        self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(0)
+        self.ui.input_peso_consulta_nutri.setText("")
+        self.ui.input_altura_consulta_nutri.setText("")
+        self.ui.input_imc_consulta_nutri.setText("")
+        self.ui.radioButton_atendimento_as_nutri.setCheckable(False)
+        self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
+        self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
+        self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(2023, 1, 1))
+        self.ui.input_hora_consulta_as_nutri.setText("")
+        self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
+
+    def limparCamposAgendaNutri(self):
+        self.ui.input_cpf_agendamento_nutri.setText("")
+        self.ui.input_nome_agendamento_nutri.setText("")
+        self.ui.input_telefone_agendamento_nutri.setText("")
+        self.ui.input_clinica_agendamento_nutri.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
+        self.ui.input_profissional_as_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_nutri.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_nutri.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
+        self.ui.input_data_agendamento_nutri.setDate(QDate(2023, 1, 1))
+        self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
+        self.ui.input_anotacao_agendamento_nutri.setHtml("")
+
+    def limparCamposConsulta_psi(self):
+        self.ui.input_cpf_agendamento_psi.setText("")
+        self.ui.input_nome_pagina_consulta_geral_psi.setText("")
+        self.ui.input_contato_pagina_consulta_geral_psi.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
+        self.ui.radioButton_atendimento_as_psi.setCheckable(False)
+        self.ui.radioButton_atendimento_as_psi.setCheckable(True)
+        self.ui.radioButton_Retorno_as_psi.setCheckable(False)
+        self.ui.radioButton_Retorno_as_psi.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(2000, 1, 1))
+        self.ui.input_hora_consulta_as_psi.setText("")
+        self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
 
     def limparCamposAgendaAssistenteSocial(self):
         self.ui.input_cpf_agendamento_as.setText("")
@@ -3985,8 +4070,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = self.ui.input_evolucao_pagina_consulta_geral_nutri.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_nutri_consulta.text())
-
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_nutri)
+        id_colaborador = self.buscarIdColabNutri()
+        print(id_colaborador)
+        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula,id_colaborador)
 
         result = []
         result = self.db.cadastro_consulta_nutri(tupla_consulta)

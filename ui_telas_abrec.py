@@ -21278,7 +21278,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_nascimento_cuidador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_nascimento_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_nascimento_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_nascimento_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_nascimento_cuidador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_nascimento_cuidador_as.setCalendarPopup(True)
         self.input_alterar_data_nascimento_cuidador_as.setCurrentSectionIndex(0)
 
@@ -21382,7 +21382,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_emissao_cuidador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_emissao_cuidador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_emissao_cuidador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_emissao_cuidador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_emissao_cuidador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_emissao_cuidador_as.setCalendarPopup(True)
         self.input_alterar_data_emissao_cuidador_as.setCurrentSectionIndex(0)
 
@@ -23955,7 +23955,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_emissao_rg_colaborador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_emissao_rg_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_emissao_rg_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_emissao_rg_colaborador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_emissao_rg_colaborador_as.setCalendarPopup(True)
         self.input_alterar_data_emissao_rg_colaborador_as.setCurrentSectionIndex(0)
 
@@ -24247,7 +24247,7 @@ class Ui_MainWindow(object):
         self.input_alterar_data_nascimento_colaborador_as.setAlignment(Qt.AlignCenter)
         self.input_alterar_data_nascimento_colaborador_as.setButtonSymbols(QAbstractSpinBox.NoButtons)
         self.input_alterar_data_nascimento_colaborador_as.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
-        self.input_alterar_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.DaySection)
+        self.input_alterar_data_nascimento_colaborador_as.setCurrentSection(QDateTimeEdit.MonthSection)
         self.input_alterar_data_nascimento_colaborador_as.setCalendarPopup(True)
         self.input_alterar_data_nascimento_colaborador_as.setCurrentSectionIndex(0)
 
@@ -27589,25 +27589,25 @@ class Ui_MainWindow(object):
         self.btn_buscar_relatorio_nutri.setText("")
         self.input_buscar_dados_relatorio_nutri.setText("")
         ___qtablewidgetitem11 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(0)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Data Consulta", None));
         ___qtablewidgetitem12 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(1)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem13 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(2)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
         ___qtablewidgetitem14 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(3)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
         ___qtablewidgetitem15 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(4)
-        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
+        ___qtablewidgetitem15.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
         ___qtablewidgetitem16 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(5)
-        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
+        ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
         ___qtablewidgetitem17 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(6)
-        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Peso", None));
+        ___qtablewidgetitem17.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
         ___qtablewidgetitem18 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(7)
-        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"IMC", None));
+        ___qtablewidgetitem18.setText(QCoreApplication.translate("MainWindow", u"Peso", None));
         ___qtablewidgetitem19 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(8)
-        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem19.setText(QCoreApplication.translate("MainWindow", u"IMC", None));
         ___qtablewidgetitem20 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(9)
-        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio", None));
+        ___qtablewidgetitem20.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
         ___qtablewidgetitem21 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(10)
         ___qtablewidgetitem21.setText(QCoreApplication.translate("MainWindow", u"Aposentadoria", None));
         ___qtablewidgetitem22 = self.input_TableWidget_relatorio_nutri.horizontalHeaderItem(11)
