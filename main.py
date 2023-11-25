@@ -5269,7 +5269,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def filtrar_dados_relatorio_atendimento(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_atendimentos.text())
         res = self.db.buscar_relatorio_atendimento_pesquisa(txt)
-        print (res)
         self.ui.input_TableWidget_relatorio_atendimentos.setRowCount(len(res))
 
         for row, text in enumerate(res):
