@@ -991,7 +991,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_finalizar_clinica_as.clicked.connect(self.cadastro_clinica)       
         self.ui.input_buscar_dados_relatorio_as.textChanged.connect(self.filtrar_dados)
         self.ui.input_buscar_dados_relatorio_psi.textChanged.connect(self.filtrar_dados_relatorio_psi)
-        #self.ui.input_buscar_dados_relatorio_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
+        self.ui.input_buscar_dados_relatorio_aluno_curso.textChanged.connect(self.filtrar_dados_participantes_curso)
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
