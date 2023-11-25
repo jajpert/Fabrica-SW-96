@@ -52,6 +52,12 @@ from Validacao_Campos.Farmaceutica.validar_campos_beneficios_farm import validar
 from Validacao_Campos.Farmaceutica.validar_campos_retirada_beneficio_farm import validarCamposRetiradaBeneficiosFarmaceuticaCadastro
 ##################################################################################################################
 
+############################## VALIDAÇÕES PSICOLOGA ##############################################################
+from Validacao_Campos.Psicologa.validar_campo_agendamento_psic import validarCamposAgendamentoPsicCadastro
+from Validacao_Campos.Psicologa.validar_campo_consulta_pisc import validarCamposConsultaPsicCadastro
+##################################################################################################################
+
+
 class Overlay(QWidget):
     def __init__(self, parent):
         QWidget.__init__(self, parent)
@@ -589,7 +595,6 @@ class DialogConfirmarSaida(QDialog):
     def clicouSair(self):
         resposta = 1
         TelaPrincipal.confirmouSaida(self, resposta)
-    
 
 ########## CLASSE PRINCIPAL ################################################################################################################################################################
 class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
@@ -598,7 +603,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-        
         ########## BUSCANDO DADOS BANCO ####################################################################################################################################################
         self.db = DataBase()
         self.relatorio_beneficio()        
@@ -608,7 +612,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.buscar_curso_evento()
         self.puxar_relatorio_cuidador()
         self.id_area_sigilosa = self.relatorio_pessoa()
-
+        
         
         ########### SELECT ÚLTIMO ID DO BANCO ##############################################################################################################################################
         self.ultimosIds()
@@ -730,13 +734,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         
 
-
+        
         ###############SIGNALS################# 
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
 
@@ -842,7 +841,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
 
-
         ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
         self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
@@ -878,6 +876,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri) #CADATRO DO USUARIO NA CONSULTA NUTRI
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
+        self.ui.btn_alterar_pagina_consulta_geral_nutri.clicked.connect(self.alterar_consulta_nutri)
+        self.ui.btn_excluir_pagina_consulta_geral_nutri.clicked.connect(self.excluir_usuario_consulta_nutri)
         #self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
 
@@ -921,7 +921,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio_farm.clicked.connect(self.buscarRetiradaFarmaceutica)
         self.ui.input_buscar_dados_relatorio_beneficios_farm.textChanged.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltro)
         self.ui.btn_buscar_relatorio_beneficios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltroData)
-        
+        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
+
         
         ########################### SECRETARIA ###########################
         self.ui.btn_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_agenda_sec))
@@ -3233,18 +3234,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         flag = "NAO"
 
         tupla_agendamento_psi = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
-        result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
+        if not validarCamposAgendamentoPsicCadastro(profissional):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro!")
+            msg.exec()
+            
+        else:
+            
+            result = self.db.cadastro_agendamento_psi(tupla_agendamento_psi)
+            
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Agendamento")
+            msg.setText("Agendamento Cadastrado com sucesso!")
+            msg.exec()
         
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Agendamento")
-        msg.setText("Agendamento Cadastrado com sucesso!")
-        msg.exec()
-    
-        # self.msg(result[0],result[1])   
-        self.tabela_consulta_psic_tabela()
-        self.limparCamposAgendametoPsic() 
-        self.listarAgendamentos_psi()
+            # self.msg(result[0],result[1])   
+            self.tabela_consulta_psic_tabela()
+            self.limparCamposAgendametoPsic() 
+            self.listarAgendamentos_psi()
 
     def cadastroAgendamento_fisio(self):
         id_matricula = self.ui.input_id_matricula_agendamento_fisio.text()
@@ -4134,28 +4144,35 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data = self.ui.input_data_pagina_consulta_geral_psi.text()
         data_consulta = "-".join(data.split("/")[::-1])
 
-        hora_bruta = self.ui.input_hora_consulta_as_psi.text()
+        hora = self.ui.input_hora_consulta_as_psi.text()
 
         relatorio = self.ui.input_evolucao_pagina_consulta_geral_psi.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_consulta_psi.text())
         print(type(id_matricula))
 
-        tupla_consulta_psi = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_psic)
-        print(tupla_consulta_psi)
+        tupla_consulta_psi = (situacao,data_consulta,hora,relatorio,id_matricula, self.id_colab_tratado_psic)
+        if not validarCamposConsultaPsicCadastro(situacao, data, hora):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro!")
+            msg.exec()
 
-        result = []
-        result = self.db.cadastro_consulta_psi(tupla_consulta_psi)
- 
+        else:
+            
+            result = []
+            result = self.db.cadastro_consulta_psi(tupla_consulta_psi)
+    
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Consulta")
-        msg.setText("Consulta Cadastrada com sucesso!")
-        msg.exec()
-        self.listarAgendamentos_psi()
-        self.tabela_consulta_psic_tabela()
-        self.limparCamposConsulta_psi()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Consulta")
+            msg.setText("Consulta Cadastrada com sucesso!")
+            msg.exec()
+            self.listarAgendamentos_psi()
+            self.tabela_consulta_psic_tabela()
+            self.limparCamposConsulta_psi()
 
     def cadastrar_consulta_fisio(self):
         if self.ui.radioButton_atendimento_as_fisio.isChecked():
@@ -4238,6 +4255,51 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.db.deletar_consulta_relatorio_psi(id_consulta)
 
         self.puxar_consulta_psi()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excluir Consulta")
+        msg.setText("Consulta Excluida com sucesso!")
+        msg.exec()
+        
+    def alterar_consulta_nutri(self, campo):
+        campo = []
+        update_dados = []
+
+        for row in range(self.ui.input_TableWidget_pagina_consulta_geral_nutri.rowCount()):
+            for column in range(self.ui.input_TableWidget_pagina_consulta_geral_nutri.columnCount()):
+                campo.append(self.ui.input_TableWidget_pagina_consulta_geral_nutri.item(row, column).text())
+            update_dados.append(campo)
+            campo = []
+        for emp in update_dados:
+            self.db.alterar_consulta_nutri(tuple(emp))
+            self.tabela_consulta_nutri_tabela()
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Consulta Alterada com sucesso!")
+        msg.exec()
+        
+    def excluir_usuario_consulta_nutri (self):
+        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_nutri.selectionModel().currentIndex().siblingAtColumn(0).data()
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Alterar Consulta")
+        msg.setText("Deseja alterar a consulta?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
+        
+        if resposta == QMessageBox.Yes:
+            self.db.deletar_consulta_relatorio_nutri(id_consulta)
+            self.tabela_consulta_nutri_tabela()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Alteração não concluida")
+            msg.setText("Alteração não feita!!!")
+            msg.exec()
+        self.tabela_consulta_nutri_tabela()
 
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
