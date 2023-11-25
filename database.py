@@ -2114,7 +2114,7 @@ class DataBase():
         self.connect()
         try:
             busca = """
-                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email clinica.nome_fantasia, consulta.data_consulta, consulta.situacao
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
                 FROM pessoa
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
