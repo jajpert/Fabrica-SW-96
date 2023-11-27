@@ -745,10 +745,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_inicio_periodo_relatorio_atendimentos.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_atendimentos.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_atendimentos.setDateTime(QDateTime.currentDateTime())
-
-        
-
-        
+        ##########RELATORIO AGENDAMENTO##########################################
+        self.ui.input_inicio_periodo_relatorio_gendamento_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_agendamento_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_gendamento_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_agendamento_as.setDateTime(QDateTime.currentDateTime())
         ###############SIGNALS################# 
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
@@ -851,6 +852,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
+        self.ui.btn_relatorio_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
 
@@ -5554,11 +5556,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def filtrar_relatorio_agendamento(self):
             txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
             res = self.db.buscar_relatorio_agendamento(txt)
-            self.ui.input_TableWidget_relatorio_agendamento_as.setRowCount(len(res))
+            self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
 
             for row, text in enumerate(res):
                 for column, data in enumerate(text):
-                    self.ui.input_TableWidget_relatorio_agendamento_setItem(row, column, QTableWidgetItem(str(data)))
+                    self.ui.tableWidget_relatorio_agendamento_as(row, column, QTableWidgetItem(str(data)))
 
 
 
