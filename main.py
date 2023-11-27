@@ -5568,8 +5568,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
+          def filtrar_relatorio_agendamento(self):
+            txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
+            res = self.db.filtrar_relatorio_agendamento(txt)
+            self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
 
-
+            for row, text in enumerate(res):
+                for column, data in enumerate(text):
+                    self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
 
 
 
