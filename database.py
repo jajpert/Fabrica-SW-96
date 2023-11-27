@@ -1322,11 +1322,11 @@ class DataBase():
 
     def buscar_relatorio_agendamento(self,):
             self.connect()
-            try:
-                self.cursor.execute(f"""SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.razao_social, agendamento.profissional, agendamento.data ,agendamento.hora , agendamento.anotacao, agendamento.profissional
-                                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;""")
+            try:  
+                ("""SELECT pessoa.cpf,  pessoa.telefone,clinica.razao_social, agendamento.profissional,agendamento.data, agendamento.hora ,agendamento.anotacao, agendamento.anotacao, agendamento.profissional
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;""")
                 result = self.cursor.fetchall()
                 return result
 
