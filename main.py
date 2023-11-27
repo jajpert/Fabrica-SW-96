@@ -855,7 +855,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
-        self.ui.btn_relatorio_agenda_as.clicked.connect(self.filtrar_relatorio_agendamento)
+        self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
 
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
@@ -5555,16 +5555,28 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
-    def filtrar_relatorio_agendamento(self):
-            txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
-            res = self.db.buscar_relatorio_agendamento(txt)
-            self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
 
-            for row, text in enumerate(res):
-                for column, data in enumerate(text):
-                    self.ui.tableWidget_relatorio_agendamento_as(row, column, QTableWidgetItem(str(data)))
+    def buscar_relatorio_agendamento(self):
+        result = self.db.buscar_relatorio_agendamento()
+        print(result)
+        self.ui.tableWidget_relatorio_agendamento_as.clearContents()
+        self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(result))
+          
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column,QTableWidgetItem(str(data)))
 
 
+
+
+
+
+
+
+
+
+
+                
 
 
 
