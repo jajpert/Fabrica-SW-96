@@ -1320,7 +1320,7 @@ class DataBase():
 
 
 
-    def buscar_relatorio_agendamento(self,):
+    def buscar_relatorio_agendamento(self,texto):
             self.connect()
             try:  
                 self.cursor.execute(f"""
@@ -1340,7 +1340,7 @@ class DataBase():
 
 
 
-    def buscar_relatorio_agendamento(self,texto):
+    def buscar_relatorio_agendamente(self,texto):
             self.connect()
             try:
                 self.cursor.execute(f"""
