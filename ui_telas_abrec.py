@@ -5113,15 +5113,14 @@ class Ui_MainWindow(object):
         self.frame_781.setObjectName(u"frame_781")
         self.frame_781.setFrameShape(QFrame.StyledPanel)
         self.frame_781.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_retirada_beneficio_2_farm = QLineEdit(self.frame_781)
-        self.input_id_usuario_retirada_beneficio_2_farm.setObjectName(u"input_id_usuario_retirada_beneficio_2_farm")
-        self.input_id_usuario_retirada_beneficio_2_farm.setEnabled(False)
-        self.input_id_usuario_retirada_beneficio_2_farm.setGeometry(QRect(0, 0, 339, 30))
-        self.input_id_usuario_retirada_beneficio_2_farm.setMinimumSize(QSize(0, 30))
-        self.input_id_usuario_retirada_beneficio_2_farm.setMaximumSize(QSize(16777215, 30))
-        self.input_id_usuario_retirada_beneficio_2_farm.setFont(font)
-        self.input_id_usuario_retirada_beneficio_2_farm.setStyleSheet(u"\n"
-"border-color: transparent ;\n"
+        self.input_id_usuario_retirada_beneficio_farm = QLineEdit(self.frame_781)
+        self.input_id_usuario_retirada_beneficio_farm.setObjectName(u"input_id_usuario_retirada_beneficio_farm")
+        self.input_id_usuario_retirada_beneficio_farm.setEnabled(False)
+        self.input_id_usuario_retirada_beneficio_farm.setGeometry(QRect(0, 0, 0, 0))
+        self.input_id_usuario_retirada_beneficio_farm.setMinimumSize(QSize(0, 0))
+        self.input_id_usuario_retirada_beneficio_farm.setMaximumSize(QSize(0, 0))
+        self.input_id_usuario_retirada_beneficio_farm.setFont(font)
+        self.input_id_usuario_retirada_beneficio_farm.setStyleSheet(u"border-color: transparent;\n"
 "background-color: transparent;\n"
 "\n"
 "")
@@ -9220,6 +9219,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_estadual_fornecedor_as.setMinimumSize(QSize(0, 30))
         self.input_inscricao_estadual_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_estadual_fornecedor_as.setFont(font)
+        self.input_inscricao_estadual_fornecedor_as.setMaxLength(14)
         self.input_inscricao_estadual_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -9266,6 +9266,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_municipal_fornecedor_as.setMinimumSize(QSize(0, 30))
         self.input_inscricao_municipal_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_municipal_fornecedor_as.setFont(font)
+        self.input_inscricao_municipal_fornecedor_as.setMaxLength(11)
         self.input_inscricao_municipal_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
