@@ -855,7 +855,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
-        self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
+        self.ui.btn_relatorio_agenda_as.clicked.connect(self.filtrar_relatorio_agendamento)
 
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
@@ -1053,7 +1053,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_relatorio_atendimentos.clicked.connect(self.filtrar_data_relatorio_atendimento)
         self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.clicked.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.clicked.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
-        
+        self.ui.btn_gerar_excel_relatorio_agendamento_as.clicked.connect(self.gerar_excel_relatorio_agendamento)
       
         
         
@@ -5595,17 +5595,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
-
-
-
-
-
-
-
-
-
-
-
 
 
 
