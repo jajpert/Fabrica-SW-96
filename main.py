@@ -917,6 +917,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
         self.ui.btn_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_relatorio_sec))
         self.ui.btn_voltar_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
+        self.ui.btn_relatorios_sec.clicked.connect(self.relatorio_agendamento_secretaria)
+        self.ui.input_buscar_dados_relatorio_sec.textChanged.connect(self.filtrar_dados_sec)
+        self.ui.btn_buscar_relatorio_sec.clicked.connect(self.filtrar_data_sec)
+        self.ui.btn_gerar_excel_relatorio_sec.clicked.connect(self.gerar_excel_relatorio_sec)
+        self.ui.radioButton_as_sec.clicked.connect(self.filtrar_dados_sec_profissionalAssistenteSocial)
+        self.ui.radioButton_psi_sec.clicked.connect(self.filtrar_dados_sec_profissional_Psicologa)
+        self.ui.radioButton_fisio_sec.clicked.connect(self.filtrar_dados_sec_profissional_Fisioterapeuta)
+        self.ui.radioButton_nutri_sec.clicked.connect(self.filtrar_dados_sec_profissional_Nutricionista)
 
 
         ########################### AREA SIGILOSA ###########################
@@ -5075,7 +5083,64 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def relatorio_agendamento_secretaria(self): #ALIMENTA A TABELA A DE RELATORIO
+        
+        result = self.db.relatorio_agendamento_sec()
+
+        self.ui.input_TableWidget_relatorio_sec.clearContents()
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column,QTableWidgetItem(str(data)))
   
+    def filtrar_dados_sec_profissionalAssistenteSocial(self, profissional):
+        profissional = "Assistente Social"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_dados_sec_profissional_Nutricionista(self, profissional):
+        profissional = "Nutricionista"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+    def filtrar_dados_sec_profissional_Fisioterapeuta(self, profissional):
+        profissional = "Fisioterapeuta"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+    def filtrar_dados_sec_profissional_Psicologa(self, profissional):
+        profissional = "Psicóloga"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_dados_sec(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_sec.text())
+        res = self.db.filtrar_relatorio_sec(txt)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+        
+        if txt == "":
+            self.relatorio_agendamento_secretaria()
+        else:
+            for row, text in enumerate(res):
+                for column, data in enumerate(text):
+                    self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
         res = self.db.filtrar_relatorio(txt)
@@ -5125,6 +5190,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_data_sec(self):
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_sec.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_sec.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        
+        res = self.db.filter_data_sec(texto_data_inicio_tratada,texto_data_final_tratada)
+
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_data_participante_curso(self):  
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_aluno_curso.text()
@@ -5167,6 +5246,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             dados = []
 
         columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'BENEFICIO SOCIAL', 'TIPO BENEFICIO', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+    def gerar_excel_relatorio_sec(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_sec.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_sec.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_sec.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['DATA CONSULTA','NOME', 'CNS', 'NIS', 'IDADE', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CLINICA', 'BAIRRO','CIDADE']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
