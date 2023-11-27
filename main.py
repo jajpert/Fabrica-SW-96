@@ -34,6 +34,7 @@ from Validacao_Campos.Assistente_Social.validar_campos_clinica import validarCam
 from Validacao_Campos.Assistente_Social.validar_campos_fornecedores import validarCamposFornecedoresCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validarCamposBeneficiosCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_retirada_beneficio import validarCamposRetiradaBeneficiosCadastro
 ##################################################################################################################
 
 ############################# VALIDAÇÕES NUTRICIONISTA###########################################################
@@ -738,10 +739,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
-        self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
         self.ui.input_data_cadastro_retirada_beneficio.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_data_cadastro_retirada_beneficio.setDateTime(QDateTime.currentDateTime())
         self.ui.input_inicio_periodo_relatorio_atendimentos.setDisplayFormat("dd/MM/yyyy")
@@ -854,7 +851,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
-        self.ui.btn_sair_as.clicked.connect(self.sairSistema)
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
 
@@ -5123,17 +5119,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             quantidade_retirada = self.ui.input_spinBox_cadastro_retirada_beneficio.value()
 
             tupla_retirada_beneficios = (id_matricula,cpf,codigo_retirada,quantidade_retirada,data_consulta)
-            
-            result = []
-            result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
-            print (result)
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Cadastro Retirada de Beneficios")
-            msg.setText("Cadastro de retirada efetuado com sucesso!")
-            msg.exec()
-            # self.msg(result[0],result[1])
-            self.limparCamposCadastroRetiradaBeneficios()
+            if not validarCamposRetiradaBeneficiosCadastro(cpf, data_retirada, codigo_retirada, quantidade_retirada):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro Cadastro")
+                msg.setText("Erro Cadastro!")
+                msg.exec()
+
+            else:
+                result = []
+                result=self.db.cadastro_retirada_beneficios(tupla_retirada_beneficios)
+                print (result)
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Cadastro Retirada de Beneficios")
+                msg.setText("Cadastro de retirada efetuado com sucesso!")
+                msg.exec()
+                # self.msg(result[0],result[1])
+                self.limparCamposCadastroRetiradaBeneficios()
 
     def cadastro_retirada_beneficios_farmaceutica(self):
             id_matricula = self.ui.input_id_usuario_retirada_beneficio_farm.text()
