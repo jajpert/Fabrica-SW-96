@@ -57,6 +57,10 @@ from Validacao_Campos.Psicologa.validar_campo_agendamento_psic import validarCam
 from Validacao_Campos.Psicologa.validar_campo_consulta_pisc import validarCamposConsultaPsicCadastro
 ##################################################################################################################
 
+############################## VALIDAÇÕES SECRETARIA #############################################################
+from Validacao_Campos.Secretaria.validar_campos_agendamento_sec import validarCamposAgendamentoSecCadastro
+##################################################################################################################
+
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -4919,7 +4923,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.listarBeneficiosFarmaceutica()
     
     def buscarRetirada(self):
-        cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+        cpf_tmp = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         result = self.db.select_retirada_beneficio_cpf(cpf)
         
         print (result)
@@ -5024,7 +5029,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastro_retirada_beneficios(self):
             id_matricula = self.ui.input_id_usuario_retirada_beneficio.text()
-            cpf = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+            cpf_tmp = self.ui.input_cpf_cadastro_retirada_beneficio.text()
+            cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+            print(cpf)
             data_retirada = self.ui.input_data_cadastro_retirada_beneficio.text()
             data_consulta = "-".join(data_retirada.split("/")[::-1]) 
             codigo_retirada = self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.text()
