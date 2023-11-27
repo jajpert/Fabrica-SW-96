@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
@@ -1029,7 +1029,6 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT consulta.id_consulta, DATE_FORMAT(consulta.data_consulta, '%d/%m/%Y') AS data, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, consulta.situacao, consulta.observacao 
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     INNER JOIN nutri_usuario ON nutri_usuario.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_nutri}';""")
             result = self.cursor.fetchall()
@@ -1045,7 +1044,6 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_psic}';""")
             result = self.cursor.fetchall()
             return result
@@ -1105,7 +1103,7 @@ class DataBase():
     def buscar_participante(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia 
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.email, clinica.nome_fantasia 
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
@@ -1183,7 +1181,6 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_fisio}';""")
             result = self.cursor.fetchall()
             return result
@@ -1232,7 +1229,6 @@ class DataBase():
             self.cursor.execute(f"""
                                     SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao, agendamento.flag
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_ass}' ;
                                 """)
             result = self.cursor.fetchall()
@@ -1462,6 +1458,23 @@ class DataBase():
             self.conn.close()
             return ("Conexão encerrada com Sucesso!!!")
         
+    def alterar_consulta_nutri(self, campo):
+        self.connect()
+        try:
+            self.cursor.execute(f""" UPDATE consulta SET
+                                     data = '{campo[1]}',
+                                     observacao = '{campo[3]}'
+                                     WHERE id_consulta = '{campo[0]}';
+            """)
+            self.conn.commit()
+            return "Alteração feita com Sucesso!!!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        finally:
+            self.conn.close()
+            return ("Conexão encerrada com Sucesso!!!")
+        
     def alterarAreaSigilosa(self, campo):
         self.connect()
         try:
@@ -1479,6 +1492,18 @@ class DataBase():
             return ("Conexão encerrada com Sucesso!!!")
     
     def deletar_consulta_relatorio_psi(self,id_consulta):
+        self.connect()
+        try:
+            self.cursor.execute(
+                f"""DELETE FROM consulta WHERE id_consulta = '{id_consulta}' """
+            )
+            self.conn.commit()
+            return "OK","Cadastro excluído com sucesso!"
+
+        except Exception as err:
+            return "ERRO",str(err)
+        
+    def deletar_consulta_relatorio_nutri(self,id_consulta):
         self.connect()
         try:
             self.cursor.execute(
@@ -1746,9 +1771,9 @@ class DataBase():
         self.connect()
         try: 
             
-            args2 = (tupla_curso[0],tupla_curso[1],tupla_curso[2],tupla_curso[3],tupla_curso[4],tupla_curso[5],tupla_curso[6],tupla_curso[7],tupla_curso[8],tupla_curso[9],tupla_curso[10],tupla_curso[11],tupla_curso[12],tupla_curso[13],tupla_curso[14],tupla_curso[15],tupla_curso[16])
+            args2 = (tupla_curso[0],tupla_curso[1],tupla_curso[2],tupla_curso[3],tupla_curso[4],tupla_curso[5],tupla_curso[6],tupla_curso[7],tupla_curso[8],tupla_curso[9],tupla_curso[10],tupla_curso[11],tupla_curso[12],tupla_curso[13],tupla_curso[14],tupla_curso[15])
             
-            self.cursor.execute('INSERT INTO curso_evento (nome_curso_evento, tipo_curso, data_inicio, data_fim, periodo, responsavel, horario_inicial, horario_final, vagas, segunda_feira, terca_feira, quarta_feira, quinta_feira, sexta_feira, sabado, situacao,descricao) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)', args2)
+            self.cursor.execute('INSERT INTO curso_evento (nome_curso_evento, tipo_curso, data_inicio, data_fim, periodo, responsavel, horario_inicial, horario_final, vagas, segunda_feira, terca_feira, quarta_feira, quinta_feira, sexta_feira, sabado,descricao) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)', args2)
 
             
                                                                                                                                                  
@@ -1835,8 +1860,8 @@ class DataBase():
         self.connect()
         print(imc)
         try:
-            args = (imc[0], imc[1], imc[2], imc[3], imc[4], imc[5], imc[6], imc[7])
-            self.cursor.execute('INSERT INTO nutri_usuario(peso, altura, imc, atendimento, data, hora, evolucao, id_matricula) VALUES (%s,%s,%s,%s,%s,%s,%s,%s);', args)
+            args = (imc[0], imc[1], imc[2], imc[3])
+            self.cursor.execute('INSERT INTO nutri_usuario(peso, altura, imc, id_matricula) VALUES (%s,%s,%s,%s);', args)
     
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
@@ -2206,7 +2231,7 @@ class DataBase():
         self.connect()
         try:
             busca = """
-                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email clinica.nome_fantasia, consulta.data_consulta, consulta.situacao
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
                 FROM pessoa
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
@@ -2278,7 +2303,22 @@ class DataBase():
             self.close_connection()
 
 
+    def recuperarSenha(self, cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT recuperar_senha.perfil_colab
+                                FROM pessoa INNER JOIN colaborador ON pessoa.id_matricula = colaborador.id_matricula
+                                INNER JOIN recuperar_senha ON recuperar_senha.id_colab = colaborador.id_colaborador WHERE pessoa.cpf LIKE '{cpf}';
+                                """)
+            result = self.cursor.fetchall()
+            return result
 
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
 
 
     def close_connection(self):
