@@ -5566,6 +5566,56 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
+    def gerar_excel_relatorio_agendamento(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.tableWidget_relatorio_agendamento_as.rowCount()):
+            for column in range(self.ui.tableWidget_relatorio_agendamento_as.columnCount()):
+                dados.append(self.ui.tableWidget_relatorio_agendamento_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['CPF', 'TELEFONE', 'CLINICA', 'PROFISSIONAL', 'DATA', 'HORA', 'ANOTACAO', 'PERFIL'
+        ]
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     def gerar_excel_relatorio_cuidador(self):
         dados = []
         all_dados =  []
