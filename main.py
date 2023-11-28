@@ -856,6 +856,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
         self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
+        self.ui.btn_buscar_relatorio_agendamento_as.clicked.connect(self.filter_relatorio_agendamento)
 
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
@@ -5584,6 +5585,28 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
+
+
+                    
+    def filter_relatorio_agendamento(self):  
+        texto_data_inicio_relatorio_agend = self.ui.input_inicio_periodo_relatorio_gendamento_as.text()
+        texto_data_final_relatorio_agend = self.ui.input_final_periodo_relatorio_agendamento_as.text()
+        texto_data_inicio_relatorio_agend =  "-".join(texto_data_inicio_relatorio_agend.split("/")[::-1])
+        texto_data_final_relatorio_agend =  "-".join(texto_data_final_relatorio_agend.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_agendamento(texto_data_inicio_relatorio_agend,texto_data_final_relatorio_agend)
+
+        self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+
+
+
+
+
                 
 
 
@@ -5599,7 +5622,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['CPF', 'TELEFONE', 'CLINICA', 'PROFISSIONAL', 'DATA', 'HORA', 'ANOTACAO', 'PERFIL'
+        columns = ['NOME', 'CPF', 'SEXO', 'TELEFONE', 'CLINICA', 'PROFISSIONAL', 'DATA', 'HORA', "TIPO"
         ]
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
