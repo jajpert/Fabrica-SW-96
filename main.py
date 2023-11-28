@@ -749,10 +749,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_inicio_periodo_relatorio_atendimentos.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_atendimentos.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_atendimentos.setDateTime(QDateTime.currentDateTime())
-
-        
-
-        
+        ##########RELATORIO AGENDAMENTO##########################################
+        self.ui.input_inicio_periodo_relatorio_gendamento_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_agendamento_as.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_gendamento_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_agendamento_as.setDateTime(QDateTime.currentDateTime())
         ###############SIGNALS################# 
 
         # self.ui.btn_entrar_login.clicked.connect(lambda: self.ui.inicio.setCurrentWidget(self.ui.area_principal))
@@ -855,8 +856,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
+        self.ui.btn_relatorio_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
+        self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
+        self.ui.btn_buscar_relatorio_agendamento_as.clicked.connect(self.filter_relatorio_agendamento)
+        self.ui.btn_voltar_relatorios_agendamento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
@@ -1065,7 +1070,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_relatorio_atendimentos.clicked.connect(self.filtrar_data_relatorio_atendimento)
         self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.clicked.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.clicked.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
-        
+        self.ui.btn_gerar_excel_relatorio_agendamento_as.clicked.connect(self.gerar_excel_relatorio_agendamento)
+        self.ui.input_buscar_dados_relatorio_agendamento_as.textChanged.connect(self.filtrar_relatorio_agendamento)
+
       
         
         
@@ -5739,6 +5746,98 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
+
+
+
+
+    def buscar_relatorio_agendamento(self):
+        result = self.db.buscar_relatorio_agendamento()
+        print(result)
+        self.ui.tableWidget_relatorio_agendamento_as.clearContents()
+        self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(result))
+          
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column,QTableWidgetItem(str(data)))
+
+
+
+    def filtrar_relatorio_agendamento(self):
+            txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
+            res = self.db.filtrar_relatorio_agendamento(txt)
+            self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
+
+            for row, text in enumerate(res):
+                for column, data in enumerate(text):
+                    self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+
+
+
+
+
+
+
+                    
+    def filter_relatorio_agendamento(self):  
+        texto_data_inicio_relatorio_agend = self.ui.input_inicio_periodo_relatorio_gendamento_as.text()
+        texto_data_final_relatorio_agend = self.ui.input_final_periodo_relatorio_agendamento_as.text()
+        texto_data_inicio_relatorio_agend =  "-".join(texto_data_inicio_relatorio_agend.split("/")[::-1])
+        texto_data_final_relatorio_agend =  "-".join(texto_data_final_relatorio_agend.split("/")[::-1])
+        
+        res = self.db.filter_data_relatorio_agendamento(texto_data_inicio_relatorio_agend,texto_data_final_relatorio_agend)
+
+        self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+
+
+
+
+
+                
+
+
+
+    def gerar_excel_relatorio_agendamento(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.tableWidget_relatorio_agendamento_as.rowCount()):
+            for column in range(self.ui.tableWidget_relatorio_agendamento_as.columnCount()):
+                dados.append(self.ui.tableWidget_relatorio_agendamento_as.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['NOME', 'CPF', 'SEXO', 'TELEFONE', 'CLINICA', 'PROFISSIONAL', 'DATA', 'HORA', "TIPO"
+        ]
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Excel")
+        msg.setText("Relatório Excel gerado com sucesso!")
+        msg.exec()
+
+
+
+
+
+
+
+
+
 
 
 
