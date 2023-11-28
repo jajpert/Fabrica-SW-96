@@ -7,9 +7,8 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        	
 
-        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         if self.conn.is_connected():
             self.cursor = self.conn.cursor()
@@ -43,6 +42,20 @@ class DataBase():
         except Exception as err:
             return "ERRO",str(err)
 
+        finally:
+            self.close_connection()
+            
+    def select_agendamentos_sec(self):
+        self.connect()
+        try: 
+            self.cursor.execute("""
+                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento WHERE flag LIKE "NAO";                
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return 'ERRO',str(err)
+        
         finally:
             self.close_connection()
 
@@ -193,6 +206,60 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+    def relatorio_agendamento_sec(self):
+        self.connect()
+        try:
+            self.cursor.execute("""
+                                SELECT agendamento.data, pessoa.nome, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades,
+                                pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social, endereco.bairro, endereco.cidade
+                                FROM agendamento INNER JOIN pessoa ON agendamento.id_matricula = pessoa.id_matricula
+                                INNER JOIN usuario ON usuario.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco WHERE agendamento.flag LIKE "NAO";
+                    """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+    
+    def filtrar_relatorio_sec(self,texto):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT agendamento.data, pessoa.nome, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades,
+                                pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social, endereco.bairro, endereco.cidade
+                                FROM agendamento INNER JOIN pessoa ON agendamento.id_matricula = pessoa.id_matricula
+                                INNER JOIN usuario ON usuario.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco 
+                                WHERE pessoa.nome LIKE "%{texto}%" OR usuario.cns LIKE "%{texto}%" OR usuario.nis LIKE "%{texto}%"
+                                OR clinica.razao_social LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%"
+                                OR pessoa.sexo LIKE "%{texto}%" OR usuario.beneficio LIKE "%{texto}%";
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+        
+    def filtrar_relatorio_sec_profissional(self,profissional):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT agendamento.data, pessoa.nome, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades,
+                                pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social, endereco.bairro, endereco.cidade
+                                FROM agendamento INNER JOIN pessoa ON agendamento.id_matricula = pessoa.id_matricula
+                                INNER JOIN usuario ON usuario.id_matricula = pessoa.id_matricula
+                                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco WHERE agendamento.profissional LIKE '{profissional}' AND agendamento.flag LIKE "NAO";
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
             
     def relatorio_pessoa_nutri(self, id_relatorio_nutri):
         self.connect()
@@ -234,6 +301,26 @@ class DataBase():
             result = self.cursor.fetchall()
             return result
         except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def filter_data_sec(self,texto_data_inicio,texto_data_final):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                    SELECT agendamento.data, pessoa.nome, usuario.cns, usuario.nis, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades,
+                    pessoa.sexo, pessoa.telefone, usuario.beneficio, clinica.razao_social, endereco.bairro, endereco.cidade
+                    FROM agendamento INNER JOIN pessoa ON agendamento.id_matricula = pessoa.id_matricula
+                    INNER JOIN usuario ON usuario.id_matricula = pessoa.id_matricula
+                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                    INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco WHERE agendamento.data BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            print(err)
             return "ERRO",str(err)
 
         finally:
@@ -1859,6 +1946,20 @@ class DataBase():
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
 
+        except Exception as err:
+            erro = str(err)
+            print(erro)
+            
+    def cadastro_agendamento_sec(self, agendamento):
+        self.connect()
+        print("Agendamento SEC = ",agendamento)
+        try: 
+            args = (agendamento[0],agendamento[1],agendamento[2],agendamento[3],agendamento[4],agendamento[5],agendamento[6],agendamento[7],agendamento[8],agendamento[9])
+            self.cursor.execute('INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao, flag) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            
+            self.conn.commit()
+            return "OK", "Cadastro Realizado com sucesso ="
+        
         except Exception as err:
             erro = str(err)
             print(erro)

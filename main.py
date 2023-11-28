@@ -729,13 +729,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
-
         
-
         self.ui.input_inicio_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_inicio_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_inicio_periodo_relatorio_sec.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_sec.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
@@ -920,6 +924,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
+        
 
         #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
@@ -949,6 +954,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
         self.ui.btn_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_relatorio_sec))
         self.ui.btn_voltar_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
+        self.ui.btn_relatorios_sec.clicked.connect(self.relatorio_agendamento_secretaria)
+        self.ui.input_buscar_dados_relatorio_sec.textChanged.connect(self.filtrar_dados_sec)
+        self.ui.btn_buscar_relatorio_sec.clicked.connect(self.filtrar_data_sec)
+        self.ui.btn_gerar_excel_relatorio_sec.clicked.connect(self.gerar_excel_relatorio_sec)
+        self.ui.radioButton_as_sec.clicked.connect(self.filtrar_dados_sec_profissionalAssistenteSocial)
+        self.ui.radioButton_psi_sec.clicked.connect(self.filtrar_dados_sec_profissional_Psicologa)
+        self.ui.radioButton_fisio_sec.clicked.connect(self.filtrar_dados_sec_profissional_Fisioterapeuta)
+        self.ui.radioButton_nutri_sec.clicked.connect(self.filtrar_dados_sec_profissional_Nutricionista)
+        self.ui.btn_agenda_sec.clicked.connect(self.listarAgendamentos_sec)
+        self.ui.btn_buscar_agendamento_sec.clicked.connect(self.buscarPessoa_sec)#SELECT USUARIO AGENDAMENTO SEC
+        self.ui.btn_salvar_agenda_sec.clicked.connect(self.cadastroAgendamento_sec) #CADASTRO AGENDAMENTO USUARIO SEC
 
 
         ########################### AREA SIGILOSA ###########################
@@ -1421,6 +1437,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_telefone_agendamento_psi.setText(telefone)
         self.ui.input_clinica_agendamento_psi.setText(clinica)
         self.listarAgendamentos_psi()
+        return id_matricula
+    
+    def buscarPessoa_sec(self):
+        cpf_temp = self.ui.input_cpf_agendamento_sec.text()
+        cpf= ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf+= i 
+        result = self.db.select_pessoa_cpf(cpf)
+        id_matricula = result[0]
+        nome = result[1]
+        telefone = result[2]
+        tamanho = int(len(result))
+        if tamanho > 3:
+            clinica  = result[3]
+        else:
+            clinica = 'não possui'
+        self.ui.input_nome_agendamento_sec.setText(nome)
+        self.ui.input_telefone_agendamento_sec.setText(telefone)
+        self.ui.input_clinica_agendamento_sec.setText(clinica)
+        self.listarAgendamentos_sec()
         return id_matricula
         
 
@@ -2584,6 +2623,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+
     
     def nutri_imc_usuario(self):
         peso = int(self.ui.input_peso_consulta_nutri.text())
@@ -2854,6 +2894,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_psi.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def listarAgendamentos_sec(self):
+        res = self.db.select_agendamentos_sec()
+        
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_sec.setItem(row, column, QTableWidgetItem(str(data)))
+        
 
     def listarBeneficios(self):
         resultado = self.db.busca_beneficios()
@@ -3383,7 +3431,48 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
             self.tabela_agenda_nutri()
             self.limparCamposAgendaNutri()
-
+            
+    def cadastroAgendamento_sec(self):
+        id_matricula = self.buscarPessoa_sec()
+        cpf = self.ui.input_cpf_agendamento_sec.text()
+        nome = self.ui.input_nome_agendamento_sec.text()
+        telefone = self.ui.input_telefone_agendamento_sec.text()
+        clinica = self.ui.input_clinica_agendamento_sec.text()
+        
+        profissional = ''
+        if self.ui.input_profissional_as_agendamento_sec.isChecked():
+            profissional = 'Assistente Social'
+        elif self.ui.input_profissional_psi_agendamento_sec.isChecked():
+            profissional = 'Psicóloga'
+        elif self.ui.input_profissional_nutri_agendamento_sec.isChecked():
+            profissional = 'Nutricionista'
+        elif self.ui.input_profissional_fisio_agendamento_sec.isChecked():
+            profissional = 'Fisioterapeuta'
+            
+        data = self.ui.input_data_agendamento_sec.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_agendamento_sec.text()
+        anotacao = self.ui.input_anotacao_agendamento_sec.toPlainText()
+        flag = "NAO"
+        
+        tupla_agendamento_sec = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
+        print('TUPLA SEC =',tupla_agendamento_sec)
+        if not validarCamposAgendamentoSecCadastro(profissional):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro!")
+            msg.exec()
+        else:
+            result = self.db.cadastro_agendamento_sec(tupla_agendamento_sec)
+            self.listarAgendamentos_sec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Agendamento")
+            msg.setText("Agendamento Cadastrado com sucesso!")
+            msg.exec()
+            self.limparCamposAgendamentosSec()
+        
     def cadastroIMC(self):
         peso = self.ui.input_peso_consulta_nutri.text()
         altura = self.ui.input_altura_consulta_nutri.text()
@@ -3929,7 +4018,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_nome_agendamento_psi.setText("")
         self.ui.input_telefone_agendamento_psi.setText("")
         self.ui.input_clinica_agendamento_psi.setText("")
-        self.ui.input_profissional_as_agendamento_psi.setCheckable(False)
         self.ui.input_profissional_as_agendamento_psi.setCheckable(True)
         self.ui.input_profissional_psi_agendamento_psi.setCheckable(False)
         self.ui.input_profissional_psi_agendamento_psi.setCheckable(True)
@@ -3941,11 +4029,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_hora_agendamento_psi.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_psi.setHtml("")
         
-        
-        
-        
-        
-        
+    def limparCamposAgendamentosSec(self):
+       self.ui.input_cpf_agendamento_sec.setText('')
+       self.ui.input_nome_agendamento_sec.setText('')
+       self.ui.input_telefone_agendamento_sec.setText('')
+       self.ui.input_clinica_agendamento_sec.setText('')
+       self.ui.input_profissional_as_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_as_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_psi_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_psi_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_nutri_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_nutri_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_fisio_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_fisio_agendamento_sec.setCheckable(True)
+       self.ui.input_data_agendamento_sec.setDateTime(QDateTime.currentDateTime())
+       self.ui.input_hora_agendamento_sec.setTime(QTime(00,00))
+       self.ui.input_anotacao_agendamento_sec.setHtml("")
         
         
     def buscar_clinica_nome_fantasia(self):
@@ -5314,7 +5413,64 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_relatorio_nutri.setItem(row, column,QTableWidgetItem(str(data)))
+
+    def relatorio_agendamento_secretaria(self): #ALIMENTA A TABELA A DE RELATORIO
+        
+        result = self.db.relatorio_agendamento_sec()
+
+        self.ui.input_TableWidget_relatorio_sec.clearContents()
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(result))   
+
+        for row, text in enumerate(result):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column,QTableWidgetItem(str(data)))
   
+    def filtrar_dados_sec_profissionalAssistenteSocial(self, profissional):
+        profissional = "Assistente Social"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_dados_sec_profissional_Nutricionista(self, profissional):
+        profissional = "Nutricionista"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+    def filtrar_dados_sec_profissional_Fisioterapeuta(self, profissional):
+        profissional = "Fisioterapeuta"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+    def filtrar_dados_sec_profissional_Psicologa(self, profissional):
+        profissional = "Psicóloga"
+        res = self.db.filtrar_relatorio_sec_profissional(profissional)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_dados_sec(self):
+        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_sec.text())
+        res = self.db.filtrar_relatorio_sec(txt)
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+        
+        if txt == "":
+            self.relatorio_agendamento_secretaria()
+        else:
+            for row, text in enumerate(res):
+                for column, data in enumerate(text):
+                    self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
+
     def filtrar_dados(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_as.text())
         res = self.db.filtrar_relatorio(txt)
@@ -5364,6 +5520,20 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.tableWidget_relatorio_as.setItem(row, column, QTableWidgetItem(str(data)))
+
+    def filtrar_data_sec(self):
+        texto_data_inicio = self.ui.input_inicio_periodo_relatorio_sec.text()
+        texto_data_final = self.ui.input_final_periodo_relatorio_sec.text()
+        texto_data_inicio_tratada =  "-".join(texto_data_inicio.split("/")[::-1])
+        texto_data_final_tratada =  "-".join(texto_data_final.split("/")[::-1])
+        
+        res = self.db.filter_data_sec(texto_data_inicio_tratada,texto_data_final_tratada)
+
+        self.ui.input_TableWidget_relatorio_sec.setRowCount(len(res))
+
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_relatorio_sec.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_data_participante_curso(self):  
         texto_data_inicio = self.ui.input_inicio_periodo_relatorio_aluno_curso.text()
@@ -5406,6 +5576,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             dados = []
 
         columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'BENEFICIO SOCIAL', 'TIPO BENEFICIO', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
+        
+        relatorio = pd.DataFrame(all_dados, columns= columns)
+
+        
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if file:
+            with open(file, "w") as f:
+                relatorio.to_excel(file, sheet_name='relatorio', index=False)
+
+    def gerar_excel_relatorio_sec(self):
+        dados = []
+        all_dados =  []
+
+        for row in range(self.ui.input_TableWidget_relatorio_sec.rowCount()):
+            for column in range(self.ui.input_TableWidget_relatorio_sec.columnCount()):
+                dados.append(self.ui.input_TableWidget_relatorio_sec.item(row, column).text())
+        
+            all_dados.append(dados)
+            dados = []
+
+        columns = ['DATA CONSULTA','NOME', 'CNS', 'NIS', 'IDADE', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CLINICA', 'BAIRRO','CIDADE']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
