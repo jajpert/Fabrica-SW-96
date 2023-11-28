@@ -42,11 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-<<<<<<< HEAD
-       <number>5</number>
-=======
        <number>3</number>
->>>>>>> feature/sw-192
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
