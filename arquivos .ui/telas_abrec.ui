@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>5</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -10565,13 +10565,13 @@ QPushButton:pressed{
                                   <number>14</number>
                                  </property>
                                  <property name="columnCount">
-                                  <number>10</number>
+                                  <number>9</number>
                                  </property>
                                  <attribute name="horizontalHeaderCascadingSectionResizes">
                                   <bool>true</bool>
                                  </attribute>
                                  <attribute name="horizontalHeaderDefaultSectionSize">
-                                  <number>130</number>
+                                  <number>160</number>
                                  </attribute>
                                  <attribute name="horizontalHeaderStretchLastSection">
                                   <bool>true</bool>
@@ -10623,7 +10623,7 @@ QPushButton:pressed{
                                  </column>
                                  <column>
                                   <property name="text">
-                                   <string>Email</string>
+                                   <string>Telefone Contato</string>
                                   </property>
                                  </column>
                                  <column>
@@ -10639,11 +10639,6 @@ QPushButton:pressed{
                                  <column>
                                   <property name="text">
                                    <string>Tipo</string>
-                                  </property>
-                                 </column>
-                                 <column>
-                                  <property name="text">
-                                   <string>Descrição</string>
                                   </property>
                                  </column>
                                 </widget>
@@ -21188,7 +21183,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>1</number>
+                      <number>23</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -54242,7 +54237,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -54555,7 +54550,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -61916,7 +61911,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -62762,7 +62757,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::MonthSection</enum>
+                                                      <enum>QDateTimeEdit::DaySection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -65724,7 +65719,7 @@ QPushButton:hover{background-color: #F89198}
 QPushButton:focus{outline:0}</string>
                                      </property>
                                      <property name="text">
-                                      <string>RELATÓRIOS CADASTRADOS</string>
+                                      <string>Usuários Atendidos</string>
                                      </property>
                                      <property name="icon">
                                       <iconset>
@@ -65937,7 +65932,7 @@ QPushButton:focus{outline:0}</string>
                                 <string notr="true">color: #EC848C;background-color: rgb(243, 185, 191);</string>
                                </property>
                                <property name="text">
-                                <string>Relatórios Atendimento</string>
+                                <string>Usuários Atendidos</string>
                                </property>
                                <property name="alignment">
                                 <set>Qt::AlignCenter</set>
