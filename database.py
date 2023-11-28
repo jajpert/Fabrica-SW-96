@@ -1438,7 +1438,7 @@ class DataBase():
                                         INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                         INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
                                         INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                    WHERE pessoa.nome LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR agendamento.profissional LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR agendamento.data LIKE "%{texto}%";
+                                        WHERE pessoa.nome LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR agendamento.profissional LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR agendamento.data LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
                                     """)
                 result = self.cursor.fetchall()
                 return result
