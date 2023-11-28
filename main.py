@@ -916,8 +916,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
         
-        self.ui.btn_buscar_agendamento_sec.clicked.connect(self.buscarPessoa_sec)#SELECT USUARIO AGENDAMENTO SEC
-        self.ui.btn_salvar_agenda_sec.clicked.connect(self.cadastroAgendamento_sec) #CADASTRO AGENDAMENTO USUARIO SEC
 
         #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
@@ -956,6 +954,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_fisio_sec.clicked.connect(self.filtrar_dados_sec_profissional_Fisioterapeuta)
         self.ui.radioButton_nutri_sec.clicked.connect(self.filtrar_dados_sec_profissional_Nutricionista)
         self.ui.btn_agenda_sec.clicked.connect(self.listarAgendamentos_sec)
+        self.ui.btn_buscar_agendamento_sec.clicked.connect(self.buscarPessoa_sec)#SELECT USUARIO AGENDAMENTO SEC
+        self.ui.btn_salvar_agenda_sec.clicked.connect(self.cadastroAgendamento_sec) #CADASTRO AGENDAMENTO USUARIO SEC
 
 
         ########################### AREA SIGILOSA ###########################
@@ -3420,7 +3420,41 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
             self.tabela_agenda_nutri()
             self.limparCamposAgendaNutri()
-
+            
+    def cadastroAgendamento_sec(self):
+        id_matricula = self.buscarPessoa_sec()
+        cpf = self.ui.input_cpf_agendamento_sec.text()
+        nome = self.ui.input_nome_agendamento_sec.text()
+        telefone = self.ui.input_telefone_agendamento_sec.text()
+        clinica = self.ui.input_clinica_agendamento_sec.text()
+        
+        profissional = ''
+        if self.ui.input_profissional_as_agendamento_sec.isChecked():
+            profissional = 'Assitente Social'
+        elif self.ui.input_profissional_psi_agendamento_sec.isChecked():
+            profissional = 'Psicologa'
+        elif self.ui.input_profissional_nutri_agendamento_sec.isChecked():
+            profissional = 'Nutricionista'
+        elif self.ui.input_profissional_fisio_agendamento_sec.isChecked():
+            profissional = 'Fisioterapeuta'
+            
+        data = self.ui.input_data_agendamento_sec.text()
+        data_agend = "-".join(data.split("/")[::-1])
+        hora = self.ui.input_hora_agendamento_sec.text()
+        anotacao = self.ui.input_anotacao_agendamento_sec.toPlainText()
+        flag = "NÂO"
+        
+        tupla_agendamento_sec = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
+        print('TUPLA SEC =',tupla_agendamento_sec)
+        result = self.db.cadastro_agendamento_sec(tupla_agendamento_sec)
+        self.listarAgendamentos_sec()
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Cadastro Agendamento")
+        msg.setText("Agendamento Cadastrado com sucesso!")
+        msg.exec()
+        self.limparCamposAgendamentosSec()
+        
     def cadastroIMC(self):
         peso = self.ui.input_peso_consulta_nutri.text()
         altura = self.ui.input_altura_consulta_nutri.text()
