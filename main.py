@@ -3430,9 +3430,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         profissional = ''
         if self.ui.input_profissional_as_agendamento_sec.isChecked():
-            profissional = 'Assitente Social'
+            profissional = 'Assistente Social'
         elif self.ui.input_profissional_psi_agendamento_sec.isChecked():
-            profissional = 'Psicologa'
+            profissional = 'Psicóloga'
         elif self.ui.input_profissional_nutri_agendamento_sec.isChecked():
             profissional = 'Nutricionista'
         elif self.ui.input_profissional_fisio_agendamento_sec.isChecked():
@@ -3442,7 +3442,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         data_agend = "-".join(data.split("/")[::-1])
         hora = self.ui.input_hora_agendamento_sec.text()
         anotacao = self.ui.input_anotacao_agendamento_sec.toPlainText()
-        flag = "NÂO"
+        flag = "NAO"
         
         tupla_agendamento_sec = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
         print('TUPLA SEC =',tupla_agendamento_sec)
@@ -4016,14 +4016,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
        self.ui.input_nome_agendamento_sec.setText('')
        self.ui.input_telefone_agendamento_sec.setText('')
        self.ui.input_clinica_agendamento_sec.setText('')
-       self.ui.input_profissional_as_agendamento_sec.setCheckable(True)
        self.ui.input_profissional_as_agendamento_sec.setCheckable(False)
-       self.ui.input_profissional_psi_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_as_agendamento_sec.setCheckable(True)
        self.ui.input_profissional_psi_agendamento_sec.setCheckable(False)
-       self.ui.input_profissional_nutri_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_psi_agendamento_sec.setCheckable(True)
        self.ui.input_profissional_nutri_agendamento_sec.setCheckable(False)
-       self.ui.input_profissional_fisio_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_nutri_agendamento_sec.setCheckable(True)
        self.ui.input_profissional_fisio_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_fisio_agendamento_sec.setCheckable(True)
        self.ui.input_data_agendamento_sec.setDateTime(QDateTime.currentDateTime())
        self.ui.input_hora_agendamento_sec.setTime(QTime(00,00))
        self.ui.input_anotacao_agendamento_sec.setHtml("")

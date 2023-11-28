@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        	
 
 
         if self.conn.is_connected():
@@ -216,7 +216,7 @@ class DataBase():
                                 FROM agendamento INNER JOIN pessoa ON agendamento.id_matricula = pessoa.id_matricula
                                 INNER JOIN usuario ON usuario.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco;
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco WHERE agendamento.flag LIKE "NAO";
                     """)
             result = self.cursor.fetchall()
             return result
@@ -254,7 +254,7 @@ class DataBase():
                                 FROM agendamento INNER JOIN pessoa ON agendamento.id_matricula = pessoa.id_matricula
                                 INNER JOIN usuario ON usuario.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco WHERE agendamento.profissional LIKE '{profissional}';
+                                INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco WHERE agendamento.profissional LIKE '{profissional}' AND agendamento.flag LIKE "NAO";
             """)
             result = self.cursor.fetchall()
             return result
