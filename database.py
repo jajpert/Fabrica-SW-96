@@ -1115,7 +1115,7 @@ class DataBase():
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
-
+#criar um novo método para buscar participante cuidador 
             self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato 
                                     FROM pessoa INNER JOIN cuidador ON pessoa.id_matricula = cuidador.id_matricula WHERE pessoa.cpf LIKE '%{cpf}%';""")
                                     

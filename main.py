@@ -3923,9 +3923,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         dados = self.db.buscar_participante(cpf)
-        print(dados)
+        
         
         if cpf == self.ui.input_cpf_usuario_as:
+            self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
+            self.ui.input_id_matricula_user_participante_geral.hide()
+            self.ui.input_nome_pagina_participante_geral.setText(dados[1])
+            self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
+            self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
             self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
         else:
             self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
@@ -3933,9 +3938,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_nome_pagina_participante_geral.setText(dados[1])
             self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
             self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
-
-
-
+             
+        print(dados)    
+        
     def puxar_cadastro_participante(self):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
