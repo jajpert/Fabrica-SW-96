@@ -1261,7 +1261,7 @@ class DataBase():
     def buscar_consulta_fisio(self, cpf, id_colab_fisio):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_fisio}';""")
             result = self.cursor.fetchall()
@@ -1275,7 +1275,7 @@ class DataBase():
     def buscar_consulta_psic(self, cpf, id_colab_psi):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_psi}' ;""")
