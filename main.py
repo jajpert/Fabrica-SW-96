@@ -3446,14 +3446,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         tupla_agendamento_sec = (id_matricula, cpf, nome, telefone, clinica, profissional, data_agend, hora, anotacao, flag)
         print('TUPLA SEC =',tupla_agendamento_sec)
-        result = self.db.cadastro_agendamento_sec(tupla_agendamento_sec)
-        self.listarAgendamentos_sec()
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Agendamento")
-        msg.setText("Agendamento Cadastrado com sucesso!")
-        msg.exec()
-        self.limparCamposAgendamentosSec()
+        if not validarCamposAgendamentoSecCadastro(profissional):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro!")
+            msg.exec()
+        else:
+            result = self.db.cadastro_agendamento_sec(tupla_agendamento_sec)
+            self.listarAgendamentos_sec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Agendamento")
+            msg.setText("Agendamento Cadastrado com sucesso!")
+            msg.exec()
+            self.limparCamposAgendamentosSec()
         
     def cadastroIMC(self):
         peso = self.ui.input_peso_consulta_nutri.text()
