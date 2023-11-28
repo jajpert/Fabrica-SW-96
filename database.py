@@ -44,6 +44,20 @@ class DataBase():
 
         finally:
             self.close_connection()
+            
+    def select_agendamentos_sec(self):
+        self.connect()
+        try: 
+            self.cursor.execute("""
+                SELECT id_agendamento, DATE_FORMAT(data, '%d/%m/%Y') AS data, TIME_FORMAT(hora, "%H:%i") AS hora, nome, profissional, anotacao FROM agendamento WHERE flag LIKE "NAO";                
+            """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return 'ERRO',str(err)
+        
+        finally:
+            self.close_connection()
 
 
     def select_pessoa(self):
@@ -1833,6 +1847,20 @@ class DataBase():
             self.conn.commit()
             return "OK","Cadastro realizado com sucesso!!"
 
+        except Exception as err:
+            erro = str(err)
+            print(erro)
+            
+    def cadastro_agendamento_sec(self, agendamento):
+        self.connect()
+        print("Agendamento SEC = ",agendamento)
+        try: 
+            args = (agendamento[0],agendamento[1],agendamento[2],agendamento[3],agendamento[4],agendamento[5],agendamento[6],agendamento[7],agendamento[8],agendamento[9])
+            self.cursor.execute('INSERT INTO agendamento(id_matricula, cpf, nome, telefone, clinica, profissional, data, hora, anotacao, flag) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)', args)
+            
+            self.conn.commit()
+            return "OK", "Cadastro Realizado com sucesso ="
+        
         except Exception as err:
             erro = str(err)
             print(erro)

@@ -915,6 +915,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
+        
+        self.ui.btn_buscar_agendamento_sec.clicked.connect(self.buscarPessoa_sec)#SELECT USUARIO AGENDAMENTO SEC
+        self.ui.btn_salvar_agenda_sec.clicked.connect(self.cadastroAgendamento_sec) #CADASTRO AGENDAMENTO USUARIO SEC
 
         #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
@@ -952,6 +955,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_psi_sec.clicked.connect(self.filtrar_dados_sec_profissional_Psicologa)
         self.ui.radioButton_fisio_sec.clicked.connect(self.filtrar_dados_sec_profissional_Fisioterapeuta)
         self.ui.radioButton_nutri_sec.clicked.connect(self.filtrar_dados_sec_profissional_Nutricionista)
+        self.ui.btn_agenda_sec.clicked.connect(self.listarAgendamentos_sec)
 
 
         ########################### AREA SIGILOSA ###########################
@@ -1422,6 +1426,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_telefone_agendamento_psi.setText(telefone)
         self.ui.input_clinica_agendamento_psi.setText(clinica)
         self.listarAgendamentos_psi()
+        return id_matricula
+    
+    def buscarPessoa_sec(self):
+        cpf_temp = self.ui.input_cpf_agendamento_sec.text()
+        cpf= ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf+= i 
+        result = self.db.select_pessoa_cpf(cpf)
+        id_matricula = result[0]
+        nome = result[1]
+        telefone = result[2]
+        tamanho = int(len(result))
+        if tamanho > 3:
+            clinica  = result[3]
+        else:
+            clinica = 'não possui'
+        self.ui.input_nome_agendamento_sec.setText(nome)
+        self.ui.input_telefone_agendamento_sec.setText(telefone)
+        self.ui.input_clinica_agendamento_sec.setText(clinica)
+        self.listarAgendamentos_sec()
         return id_matricula
         
 
@@ -2585,6 +2612,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(result):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_fisio.setItem(row, column,QTableWidgetItem(str(data)))
+
     
     def nutri_imc_usuario(self):
         peso = int(self.ui.input_peso_consulta_nutri.text())
@@ -2855,6 +2883,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row, text in enumerate(res):
             for column, data in enumerate(text):
                 self.ui.input_TableWidget_agendamento_psi.setItem(row, column, QTableWidgetItem(str(data)))
+                
+    def listarAgendamentos_sec(self):
+        res = self.db.select_agendamentos_sec()
+        
+        for row, text in enumerate(res):
+            for column, data in enumerate(text):
+                self.ui.input_TableWidget_agendamento_sec.setItem(row, column, QTableWidgetItem(str(data)))
+        
 
     def listarBeneficios(self):
         resultado = self.db.busca_beneficios()
@@ -3930,7 +3966,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_nome_agendamento_psi.setText("")
         self.ui.input_telefone_agendamento_psi.setText("")
         self.ui.input_clinica_agendamento_psi.setText("")
-        self.ui.input_profissional_as_agendamento_psi.setCheckable(False)
         self.ui.input_profissional_as_agendamento_psi.setCheckable(True)
         self.ui.input_profissional_psi_agendamento_psi.setCheckable(False)
         self.ui.input_profissional_psi_agendamento_psi.setCheckable(True)
@@ -3942,11 +3977,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_hora_agendamento_psi.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_psi.setHtml("")
         
-        
-        
-        
-        
-        
+    def limparCamposAgendamentosSec(self):
+       self.ui.input_cpf_agendamento_sec.setText('')
+       self.ui.input_nome_agendamento_sec.setText('')
+       self.ui.input_telefone_agendamento_sec.setText('')
+       self.ui.input_clinica_agendamento_sec.setText('')
+       self.ui.input_profissional_as_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_as_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_psi_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_psi_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_nutri_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_nutri_agendamento_sec.setCheckable(False)
+       self.ui.input_profissional_fisio_agendamento_sec.setCheckable(True)
+       self.ui.input_profissional_fisio_agendamento_sec.setCheckable(False)
+       self.ui.input_data_agendamento_sec.setDateTime(QDateTime.currentDateTime())
+       self.ui.input_hora_agendamento_sec.setTime(QTime(00,00))
+       self.ui.input_anotacao_agendamento_sec.setHtml("")
         
         
     def buscar_clinica_nome_fantasia(self):
