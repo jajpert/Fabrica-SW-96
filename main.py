@@ -3513,7 +3513,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_participante_geral.setText("")
         self.ui.input_nome_pagina_participante_geral.setText("")
         self.ui.input_telefone_pagina_participante_geral.setText("")
-        self.ui.input_email_pagina_participante_geral.setText("")
+        self.ui.input_telefone_contato_pagina_participante_geral.setText("")
         self.ui.input_clinica_pagina_participante_geral.setText("")
         self.ui.comboBox_cursos_participante_geral.setCurrentIndex(int(0))
     
@@ -3923,12 +3923,18 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
         dados = self.db.buscar_participante(cpf)
-        self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
-        self.ui.input_id_matricula_user_participante_geral.hide()
-        self.ui.input_nome_pagina_participante_geral.setText(dados[1])
-        self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
-        self.ui.input_email_pagina_participante_geral.setText(dados[3])
-        self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
+        print(dados)
+        
+        if cpf == self.ui.input_cpf_usuario_as:
+            self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
+        else:
+            self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
+            self.ui.input_id_matricula_user_participante_geral.hide()
+            self.ui.input_nome_pagina_participante_geral.setText(dados[1])
+            self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
+            self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
+
+
 
     def puxar_cadastro_participante(self):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
@@ -4247,7 +4253,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'TELEFONE', 'EMAIL', 'CURSO', 'PERIODO', 'DATA INICIO', 'DATA FIM', 'TIPO', 'DESCRIÇÃO']
+        columns = ['NOME', 'CPF', 'TELEFONE', 'TELEFONE DE CONTATO', 'CURSO', 'PERIODO', 'DATA INICIO', 'DATA FIM', 'TIPO', 'DESCRIÇÃO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 

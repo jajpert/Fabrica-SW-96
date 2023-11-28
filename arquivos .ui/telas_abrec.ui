@@ -21189,7 +21189,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>15</number>
+                      <number>14</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -44269,7 +44269,11 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_telefone_pagina_participante_geral"/>
+                                          <widget class="QLineEdit" name="input_telefone_pagina_participante_geral">
+                                           <property name="maxLength">
+                                            <number>11</number>
+                                           </property>
+                                          </widget>
                                          </item>
                                         </layout>
                                        </widget>
@@ -44290,7 +44294,7 @@ QPushButton:pressed{
                                         </property>
                                         <layout class="QVBoxLayout" name="verticalLayout_340">
                                          <item>
-                                          <widget class="QLabel" name="label_email_pagina_participante_geral">
+                                          <widget class="QLabel" name="label_telefone_contato_pagina_participante_geral">
                                            <property name="font">
                                             <font>
                                              <family>Abel</family>
@@ -44298,12 +44302,16 @@ QPushButton:pressed{
                                             </font>
                                            </property>
                                            <property name="text">
-                                            <string>EMAIL</string>
+                                            <string>TELEFONE DE CONTATO</string>
                                            </property>
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_email_pagina_participante_geral"/>
+                                          <widget class="QLineEdit" name="input_telefone_contato_pagina_participante_geral">
+                                           <property name="maxLength">
+                                            <number>11</number>
+                                           </property>
+                                          </widget>
                                          </item>
                                         </layout>
                                        </widget>
@@ -45749,7 +45757,7 @@ QPushButton:pressed{
                                       <number>14</number>
                                      </property>
                                      <property name="columnCount">
-                                      <number>9</number>
+                                      <number>10</number>
                                      </property>
                                      <attribute name="horizontalHeaderCascadingSectionResizes">
                                       <bool>true</bool>
@@ -45793,6 +45801,11 @@ QPushButton:pressed{
                                      <column>
                                       <property name="text">
                                        <string>Telefone</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Telefone de Contato</string>
                                       </property>
                                      </column>
                                      <column>
