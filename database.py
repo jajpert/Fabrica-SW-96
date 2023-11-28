@@ -1324,10 +1324,11 @@ class DataBase():
             try:
                 self.cursor.execute(f"""
 
-                SELECT pessoa.cpf,  pessoa.telefone,clinica.razao_social, agendamento.profissional,agendamento.data, agendamento.hora ,agendamento.anotacao, agendamento.anotacao, agendamento.profissional
+                SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;""")
+                INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento""")
                 result = self.cursor.fetchall()
                 return result
 
@@ -1341,16 +1342,17 @@ class DataBase():
 
 
 
-    def buscar_relatorio_agendamente(self,texto):
+    def filtrar_relatorio_agendamento(self,texto):
             self.connect()
             try:
                 self.cursor.execute(f"""
                                    
-                                    SELECT pessoa.cpf,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data, agendamento.hora ,agendamento.anotacao
-                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                                    INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                    WHERE pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR agendamento.profissional LIKE "%{texto}%" OR agendamento.data LIKE "%{texto}%" OR agendamento.hora  LIKE "%{texto}% OR agendamento.anotacao LIKE "%{texto}%;
+                                     SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
+                                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                    WHERE pessoa.nome LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR agendamento.profissional LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%";
                                     """)
                 result = self.cursor.fetchall()
                 return result

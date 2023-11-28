@@ -1054,6 +1054,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_clinicas_cadastradas_as.clicked.connect(self.gerar_excel_relatorio_clinicas_cadastradas)
         self.ui.btn_gerar_excel_relatorio_fornecedores_cadastrados.clicked.connect(self.gerar_excel_relatorio_fornecedor_cadastrado)
         self.ui.btn_gerar_excel_relatorio_agendamento_as.clicked.connect(self.gerar_excel_relatorio_agendamento)
+        self.ui.input_buscar_dados_relatorio_agendamento_as.textChanged.connect(self.filtrar_relatorio_agendamento)
+
       
         
         
@@ -5568,7 +5570,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
-          def filtrar_relatorio_agendamento(self):
+    def filtrar_relatorio_agendamento(self):
             txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_agendamento_as.text())
             res = self.db.filtrar_relatorio_agendamento(txt)
             self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(res))
