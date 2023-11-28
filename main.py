@@ -729,13 +729,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
-
         
-
         self.ui.input_inicio_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_inicio_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_nutri.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_inicio_periodo_relatorio_sec.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_inicio_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_sec.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_final_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+
 
         ###############SIGNALS################# 
         self.ui.btn_sair_as.clicked.connect(self.sairSistema)
