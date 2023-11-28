@@ -649,6 +649,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_consulta_geral.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_consulta_geral_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_consulta_geral_fisio.setInputMask("000.000.000-00")
+        self.ui.input_cpf_agendamento_fisio.setInputMask("000.000.000-00")
 
 
         ########## COLOCANDO OS VALIDADORES ################################################################################################################################################
@@ -859,11 +861,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
+        self.ui.btn_atendimento_fisio.clicked.connect(self.limparCamposAtendimentoFisioterapeuta)
         self.ui.btn_atendimento_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_consulta_fisio))
+        self.ui.btn_agenda_fisio.clicked.connect(self.limparCamposAgendaFisioterapeuta)
         self.ui.btn_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_agenda_fisio))
+        self.ui.btn_voltar_agenda_fisio.clicked.connect(self.limparCamposAgendaFisioterapeuta)
         self.ui.btn_voltar_agenda_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
+        self.ui.btn_voltar_pagina_consulta_geral_fisio.clicked.connect(self.limparCamposAtendimentoFisioterapeuta)
         self.ui.btn_voltar_pagina_consulta_geral_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
+        self.ui.btn_relatorios_fisio.clicked.connect(self.limparCamposRelatorioFisioterapeuta)
         self.ui.btn_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_relatorio_fisio))
+        self.ui.btn_voltar_relatorios_fisio.clicked.connect(self.limparCamposRelatorioFisioterapeuta)
         self.ui.btn_voltar_relatorios_fisio.clicked.connect(lambda: self.ui.stackedWidget_11.setCurrentWidget(self.ui.page_principal_fisio))
         self.ui.btn_salvar_pagina_consulta_geral_fisio.clicked.connect(self.cadastrar_consulta_fisio) #CADASTRO USUARIO CONSULTA FISIO
         self.ui.btn_agenda_fisio.clicked.connect(self.tabela_agendamento_fisio) #TABELA AGENDAMENTO USUARIO FISIO 
@@ -3712,6 +3720,43 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_pagina_consulta_geral.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as.setText("")
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
+    
+    def limparCamposAtendimentoFisioterapeuta(self):
+        self.ui.input_cpf_pagina_consulta_geral_fisio.setText("")
+        self.ui.input_nome_pagina_consulta_geral_fisio.setText("")
+        self.ui.input_contato_pagina_consulta_geral_fisio.setText("")
+        self.ui.input_clinica_pagina_consulta_geral_fisio.setText("")
+        self.ui.radioButton_atendimento_as_fisio.setCheckable(False)
+        self.ui.radioButton_atendimento_as_fisio.setCheckable(True)
+        self.ui.radioButton_Retorno_as_fisio.setCheckable(False)
+        self.ui.radioButton_Retorno_as_fisio.setCheckable(True)
+        self.ui.input_data_pagina_consulta_geral_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_hora_consulta_as_fisio.setText("")
+        self.ui.input_relatorio_pagina_evolucao_geral_fisio.setText("")
+        self.ui.input_filtro_pagina_consulta_geral_fisio.setText("")
+    
+    def limparCamposAgendaFisioterapeuta(self):
+        self.ui.input_cpf_agendamento_fisio.setText("")
+        self.ui.input_nome_agendamento_fisio.setText("")
+        self.ui.input_telefone_agendamento_fisio.setText("")
+        self.ui.input_clinica_agendamento_fisio.setText("")
+        self.ui.input_profissional_as_agendamento_fisio.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_fisio.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_fisio.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_fisio.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_fisio.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_fisio.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_fisio.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_fisio.setCheckable(True)
+        self.ui.input_data_agendamento_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_hora_agendamento_fisio.setTime(QTime(00,00))
+        self.ui.input_filtro_agendamento_fisio.setText("")
+        self.ui.input_anotacao_agendamento_fisio.setHtml("")
+    
+    def limparCamposRelatorioFisioterapeuta(self):
+        self.ui.input_inicio_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_fisio.setText("")
 
     def limparCamposConsultaNutri(self):
         self.ui.input_nome_pagina_consulta_geral_nutri.setText("")
@@ -3977,35 +4022,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_pagina_consulta_geral_psi.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as_psi.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
-
-
-    def limparCamposAgendamentoFisio(self):
-        self.ui.input_nome_agendamento_fisio.setText("")
-        self.ui.input_telefone_agendamento_fisio.setText("")
-        self.ui.input_clinica_agendamento_fisio.setText("")
-        self.ui.input_profissional_as_agendamento_fisio.setCheckable(False)
-        self.ui.input_profissional_as_agendamento_fisio.setCheckable(True)
-        self.ui.input_profissional_psi_agendamento_fisio.setCheckable(False)
-        self.ui.input_profissional_psi_agendamento_fisio.setCheckable(True)
-        self.ui.input_profissional_nutri_agendamento_fisio.setCheckable(False)
-        self.ui.input_profissional_nutri_agendamento_fisio.setCheckable(True)
-        self.ui.input_profissional_fisio_agendamento_fisio.setCheckable(False)
-        self.ui.input_profissional_fisio_agendamento_fisio.setCheckable(True)
-        self.ui.input_data_agendamento_fisio.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_agendamento_fisio.setTime(QTime(00,00))
-        self.ui.input_anotacao_agendamento_fisio.setHtml("")
-
-    def limparCamposConsultaFisio(self):
-        self.ui.input_nome_pagina_consulta_geral_fisio.setText("")
-        self.ui.input_contato_pagina_consulta_geral_fisio.setText("")
-        self.ui.input_clinica_pagina_consulta_geral_fisio.setText("")
-        self.ui.radioButton_atendimento_as_fisio.setCheckable(False)
-        self.ui.radioButton_atendimento_as_fisio.setCheckable(True)
-        self.ui.radioButton_Retorno_as_fisio.setCheckable(False)
-        self.ui.radioButton_Retorno_as_fisio.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_fisio.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_consulta_as_fisio.setText("")
-        self.ui.input_relatorio_pagina_evolucao_geral_fisio.setHtml("")
         
     def limparCamposAgendametoPsic(self):
         self.ui.input_nome_agendamento_psi.setText("")
