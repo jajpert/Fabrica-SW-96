@@ -4763,7 +4763,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_111 = QHBoxLayout(self.frame_186)
         self.horizontalLayout_111.setSpacing(0)
         self.horizontalLayout_111.setObjectName(u"horizontalLayout_111")
-        self.horizontalLayout_111.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_111.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_10 = QStackedWidget(self.frame_186)
         self.stackedWidget_10.setObjectName(u"stackedWidget_10")
         self.page_principal_farm = QWidget()
@@ -5113,15 +5113,14 @@ class Ui_MainWindow(object):
         self.frame_781.setObjectName(u"frame_781")
         self.frame_781.setFrameShape(QFrame.StyledPanel)
         self.frame_781.setFrameShadow(QFrame.Raised)
-        self.input_id_usuario_retirada_beneficio_2_farm = QLineEdit(self.frame_781)
-        self.input_id_usuario_retirada_beneficio_2_farm.setObjectName(u"input_id_usuario_retirada_beneficio_2_farm")
-        self.input_id_usuario_retirada_beneficio_2_farm.setEnabled(False)
-        self.input_id_usuario_retirada_beneficio_2_farm.setGeometry(QRect(0, 0, 339, 30))
-        self.input_id_usuario_retirada_beneficio_2_farm.setMinimumSize(QSize(0, 30))
-        self.input_id_usuario_retirada_beneficio_2_farm.setMaximumSize(QSize(16777215, 30))
-        self.input_id_usuario_retirada_beneficio_2_farm.setFont(font)
-        self.input_id_usuario_retirada_beneficio_2_farm.setStyleSheet(u"\n"
-"border-color: transparent ;\n"
+        self.input_id_usuario_retirada_beneficio_farm = QLineEdit(self.frame_781)
+        self.input_id_usuario_retirada_beneficio_farm.setObjectName(u"input_id_usuario_retirada_beneficio_farm")
+        self.input_id_usuario_retirada_beneficio_farm.setEnabled(False)
+        self.input_id_usuario_retirada_beneficio_farm.setGeometry(QRect(0, 0, 0, 0))
+        self.input_id_usuario_retirada_beneficio_farm.setMinimumSize(QSize(0, 0))
+        self.input_id_usuario_retirada_beneficio_farm.setMaximumSize(QSize(0, 0))
+        self.input_id_usuario_retirada_beneficio_farm.setFont(font)
+        self.input_id_usuario_retirada_beneficio_farm.setStyleSheet(u"border-color: transparent;\n"
 "background-color: transparent;\n"
 "\n"
 "")
@@ -5883,7 +5882,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon18 = QIcon()
-        icon18.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon18.addFile(u"./icons/salvar-arquivo.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_salvar_cadastro_beneficio_farm.setIcon(icon18)
         self.btn_salvar_cadastro_beneficio_farm.setIconSize(QSize(28, 28))
 
@@ -6105,7 +6104,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon20 = QIcon()
-        icon20.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon20.addFile(u"./icons/troca.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_alterar_cadastro_beneficio_farm.setIcon(icon20)
         self.btn_alterar_cadastro_beneficio_farm.setIconSize(QSize(28, 28))
 
@@ -6120,7 +6119,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon21 = QIcon()
-        icon21.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon21.addFile(u"./icons/lixeira-de-reciclagem.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_excluir_cadastro_beneficio_farm.setIcon(icon21)
         self.btn_excluir_cadastro_beneficio_farm.setIconSize(QSize(28, 28))
 
@@ -6135,7 +6134,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
         icon22 = QIcon()
-        icon22.addFile(u"../OneDrive - Servi\u00e7o Nacional de Aprendizagem Comercial/Fabrica-SW-96 2023/Fabrica-SW-96/icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon22.addFile(u"./icons/cancelar.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_cancelar_cadastro_beneficio_farm.setIcon(icon22)
         self.btn_cancelar_cadastro_beneficio_farm.setIconSize(QSize(28, 28))
 
@@ -6866,7 +6865,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_165 = QHBoxLayout(self.frame_189)
         self.horizontalLayout_165.setSpacing(0)
         self.horizontalLayout_165.setObjectName(u"horizontalLayout_165")
-        self.horizontalLayout_165.setContentsMargins(0, 8, 8, 0)
+        self.horizontalLayout_165.setContentsMargins(0, 0, 0, 0)
         self.stackedWidget_11 = QStackedWidget(self.frame_189)
         self.stackedWidget_11.setObjectName(u"stackedWidget_11")
         self.page_principal_fisio = QWidget()
@@ -9125,7 +9124,7 @@ class Ui_MainWindow(object):
         self.input_telefone_fixo_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
-        self.input_telefone_fixo_fornecedor_as.setMaxLength(8)
+        self.input_telefone_fixo_fornecedor_as.setMaxLength(11)
 
         self.verticalLayout_343.addWidget(self.input_telefone_fixo_fornecedor_as)
 
@@ -9220,6 +9219,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_estadual_fornecedor_as.setMinimumSize(QSize(0, 30))
         self.input_inscricao_estadual_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_estadual_fornecedor_as.setFont(font)
+        self.input_inscricao_estadual_fornecedor_as.setMaxLength(14)
         self.input_inscricao_estadual_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -9266,6 +9266,7 @@ class Ui_MainWindow(object):
         self.input_inscricao_municipal_fornecedor_as.setMinimumSize(QSize(0, 30))
         self.input_inscricao_municipal_fornecedor_as.setMaximumSize(QSize(16777215, 30))
         self.input_inscricao_municipal_fornecedor_as.setFont(font)
+        self.input_inscricao_municipal_fornecedor_as.setMaxLength(11)
         self.input_inscricao_municipal_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -10393,7 +10394,7 @@ class Ui_MainWindow(object):
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
         icon31 = QIcon()
-        icon31.addFile(u"../../../../Downloads/documento.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon31.addFile(u"./icons/documento.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_relatorio_cuidadores.setIcon(icon31)
         self.btn_relatorio_cuidadores.setIconSize(QSize(80, 80))
 
