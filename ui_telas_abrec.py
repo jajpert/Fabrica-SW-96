@@ -1384,6 +1384,7 @@ class Ui_MainWindow(object):
         self.input_cpf_pagina_consulta_geral_nutri.setObjectName(u"input_cpf_pagina_consulta_geral_nutri")
         self.input_cpf_pagina_consulta_geral_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_cpf_pagina_consulta_geral_nutri.setMaxLength(11)
 
         self.horizontalLayout_190.addWidget(self.input_cpf_pagina_consulta_geral_nutri)
 
@@ -8147,6 +8148,7 @@ class Ui_MainWindow(object):
         self.input_cpf_pagina_consulta_geral_fisio.setObjectName(u"input_cpf_pagina_consulta_geral_fisio")
         self.input_cpf_pagina_consulta_geral_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
+        self.input_cpf_pagina_consulta_geral_fisio.setMaxLength(11)
 
         self.horizontalLayout_180.addWidget(self.input_cpf_pagina_consulta_geral_fisio)
 

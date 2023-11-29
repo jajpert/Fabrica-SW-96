@@ -931,6 +931,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
+        self.ui.btn_cancelar_agenda_psi.clicked.connect(self.limparCamposAgendametoPsic)
         
 
         #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
@@ -4428,7 +4429,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Consulta")
             msg.setText("Consulta Cadastrada com sucesso!")
             msg.exec()
-            self.listarAgendamentos_psi()
             self.tabela_consulta_psic_tabela()
             self.limparCamposConsulta_psi()
 

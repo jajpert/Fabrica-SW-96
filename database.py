@@ -1232,7 +1232,6 @@ class DataBase():
 
     def cadastro_consulta_fisio(self,consulta):
         self.connect()
-        print("PSIC CONSULTA DB FISIO",consulta)
         try:
             args = (consulta[0],consulta[1],consulta[2],consulta[3],consulta[4],consulta[5])
             self.cursor.execute('INSERT INTO consulta(situacao,data_consulta,hora,observacao,id_matricula,id_colaborador) VALUES (%s,%s,%s,%s,%s,%s)', args)
@@ -1278,9 +1277,8 @@ class DataBase():
     def buscar_consulta_psic(self, cpf, id_colab_psi):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_psi}' ;""")
             result = self.cursor.fetchall()
             return result
