@@ -331,7 +331,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute("""
-             SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF( YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+             SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF( YEAR,pes.data_nascimento,NOW())as idades,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
                     FROM pessoa AS parente
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
@@ -350,13 +350,13 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                     SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()),pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
+                    SELECT pes.nome AS cuidador_nome,pes.cpf,TIMESTAMPDIFF(YEAR,pes.data_nascimento,NOW()) as idades,pes.sexo,pes.telefone,endereco.logradouro,endereco.bairro,endereco.cidade,parente.nome AS usuario_nome,cuidador.parentesco
                     FROM pessoa AS parente
                     INNER JOIN usuario ON parente.id_matricula = usuario.id_cuidador
                     INNER JOIN cuidador ON cuidador.id_cuidador = usuario.id_cuidador
                     INNER JOIN pessoa AS pes ON cuidador.id_matricula = pes.id_matricula
                     INNER JOIN endereco ON pes.id_endereco = endereco.id_endereco
-                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%" OR parente.nome LIKE "%{texto}%";
+                    WHERE pes.nome LIKE "%{texto}%" OR pes.cpf LIKE "%{texto}%" OR pes.sexo LIKE "%{texto}%" OR pes.data_nascimento LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%" OR endereco.bairro LIKE "%{texto}%" OR pes.telefone LIKE "%{texto}%" OR cuidador.parentesco LIKE "%{texto}%" OR parente.nome LIKE "%{texto}%" OR endereco.cidade LIKE "%{texto}%";
             """)
             result = self.cursor.fetchall()
             return result
@@ -668,6 +668,9 @@ class DataBase():
                                 INNER JOIN endereco ON endereco.id_endereco = pessoa.id_endereco
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento;
                                 """)
+            
+
+            
             result = self.cursor.fetchall()
             return result
 
@@ -1261,7 +1264,7 @@ class DataBase():
     def buscar_consulta_fisio(self, cpf, id_colab_fisio):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_fisio}';""")
             result = self.cursor.fetchall()
@@ -1275,7 +1278,7 @@ class DataBase():
     def buscar_consulta_psic(self, cpf, id_colab_psi):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao, consulta.observacao
+            self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, consulta.situacao
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
                                     INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_psi}' ;""")
@@ -1397,6 +1400,102 @@ class DataBase():
 
         finally:
             self.close_connection()
+
+
+
+    def buscar_relatorio_agendamento(self,):
+            self.connect()
+            try:
+                self.cursor.execute(f"""
+
+                SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
+                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento""")
+                result = self.cursor.fetchall()
+                return result
+
+            except Exception as err:
+                return "ERRO",str(err)
+
+            finally:
+                self.close_connection()
+
+
+
+
+
+    def filtrar_relatorio_agendamento(self,texto):
+            self.connect()
+            try:
+                self.cursor.execute(f"""
+                                        SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
+                                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                        WHERE pessoa.nome LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR agendamento.profissional LIKE "%{texto}%" OR pessoa.sexo LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR pessoa.telefone LIKE "%{texto}%" OR agendamento.data LIKE "%{texto}%" OR consulta.situacao LIKE "%{texto}%";
+                                    """)
+                result = self.cursor.fetchall()
+                return result
+
+            except Exception as err:
+                return "ERRO",str(err)
+            
+
+
+
+
+
+
+
+
+    def filter_data_relatorio_agendamento(self,inicio_data_relatorio_agendamento,final_data_relatorio_agendamento):
+        self.connect()
+        print(inicio_data_relatorio_agendamento,final_data_relatorio_agendamento)
+        try:
+            self.cursor.execute(f"""
+                      SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
+                                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                                    WHERE pessoa.nomel BETWEEN '{inicio_data_relatorio_agendamento[0]}' and '{final_data_relatorio_agendamento[1]}';
+                    """)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
     def buscar_info_participante(self,cpf):
