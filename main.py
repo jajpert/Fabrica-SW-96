@@ -918,10 +918,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         ########################### PSICÓLOGA ##############################################################################################################################################
+        self.ui.btn_atendimento_psi.clicked.connect(self.limparCamposAtendimentoPsicologa)
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
         self.ui.btn_agenda_psi.clicked.connect(self.listarAgendamentos_psi)
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+        self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(self.limparCamposAtendimentoPsicologa)
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
         #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
@@ -3813,8 +3815,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_buscar_dados_relatorio_nutri.setText("")
 
-    def limparCamposConsulta_psi(self):
-        self.ui.input_cpf_agendamento_psi.setText("")
+    def limparCamposAtendimentoPsicologa(self):
+        self.ui.input_cpf_pagina_consulta_geral_psi.setText("")
         self.ui.input_nome_pagina_consulta_geral_psi.setText("")
         self.ui.input_contato_pagina_consulta_geral_psi.setText("")
         self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
@@ -3822,9 +3824,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_psi.setCheckable(True)
         self.ui.radioButton_Retorno_as_psi.setCheckable(False)
         self.ui.radioButton_Retorno_as_psi.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(2000, 1, 1))
+        self.ui.input_data_pagina_consulta_geral_psi.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as_psi.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
+        self.ui.input_filtro_pagina_consulta_geral_psi.setText("")
 
     def limparCamposAgendaAssistenteSocial(self):
         self.ui.input_cpf_agendamento_as.setText("")
@@ -3993,19 +3996,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_obito_paciente_nao_as.setCheckable(False)
         self.ui.input_obito_paciente_nao_as.setCheckable(True)
         self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
-
-    def limparCamposConsulta_psi(self):
-        self.ui.input_cpf_agendamento_psi.setText("")
-        self.ui.input_nome_pagina_consulta_geral_psi.setText("")
-        self.ui.input_contato_pagina_consulta_geral_psi.setText("")
-        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
-        self.ui.radioButton_atendimento_as_psi.setCheckable(False)
-        self.ui.radioButton_atendimento_as_psi.setCheckable(True)
-        self.ui.radioButton_Retorno_as_psi.setCheckable(False)
-        self.ui.radioButton_Retorno_as_psi.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_psi.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_consulta_as_psi.setText("")
-        self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
         
     def limparCamposAgendametoPsic(self):
         self.ui.input_nome_agendamento_psi.setText("")
@@ -4356,7 +4346,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
             self.listarAgendamentos_psi()
             self.tabela_consulta_psic_tabela()
-            self.limparCamposConsulta_psi()
+            self.limparCamposAtendimentoPsicologa()
 
     def cadastrar_consulta_fisio(self):
         if self.ui.radioButton_atendimento_as_fisio.isChecked():
