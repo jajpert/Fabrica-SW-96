@@ -3577,7 +3577,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.filtrar_usuario_area_sigilosa()
         self.limparCamposAreaSigilosa()
 
-
+    ##### LIMPAR CAMPOS ####################################################################################################################################################################
     def limparCamposCadastroUsuario (self):
         self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
@@ -3622,8 +3622,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
-
-        
+      
     def limparCamposCadastroCuidador(self):
         self.ultimosIds()
         self.ui.input_nome_cuidador_as.setText("")
@@ -3644,7 +3643,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cidade_cuidador_as.setText("")
         self.ui.input_estado_cuidador_as.setText("")        
         self.ui.input_informacoes_gerais_as.setHtml("")
-
 
     def limparCamposCadastroColaborador(self):
         self.ultimosIds()
@@ -3678,7 +3676,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_senha_colaborador_as_2.setText("")
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
 
-
     def limparCamposCursosOficinas(self):
         self.ui.input_nome_cursos_as.setText("")
         self.ui.input_tipo_cursos_as.setCurrentIndex(int(0))
@@ -3702,8 +3699,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_sabado_cursos_as.setCheckable(True) 
         self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
         self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
-
-    
+ 
     def limparCamposCadastroParticipante(self):
         self.ui.input_cpf_pagina_participante_geral.setText("")
         self.ui.input_nome_pagina_participante_geral.setText("")
@@ -3712,12 +3708,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_clinica_pagina_participante_geral.setText("")
         self.ui.comboBox_cursos_participante_geral.setCurrentIndex(int(0))
     
-
     def limparCamposAlterarDadosCadastrais(self):
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(int(0))
         self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
     
-
     def limparCamposAtendimentoAssistenteSocial(self):
         self.ui.input_cpf_pagina_consulta_geral.setText("")
         self.ui.input_nome_pagina_consulta_geral.setText("")
@@ -3731,6 +3725,114 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_hora_consulta_as.setText("")
         self.ui.input_evolucao_pagina_consulta_geral.setHtml("")
     
+    def limparCamposAgendaAssistenteSocial(self):
+        self.ui.input_cpf_agendamento_as.setText("")
+        self.ui.input_nome_agendamento_as.setText("")
+        self.ui.input_telefone_agendamento_as.setText("")
+        self.ui.input_clinica_agendamento_as.setText("")
+        self.ui.input_profissional_as_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_as.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_as.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_as.setCheckable(True)
+        self.ui.input_data_agendamento_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_hora_agendamento_as.setTime(QTime(00,00))
+        self.ui.input_anotacao_agendamento_as.setHtml("")
+    
+    def limparCamposRelatorioCuidadores(self):
+        self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_idade_inicial_relatorio_cuidadores_as.setText("")
+        self.ui.input_idade_final_relatorio_cuidadores_as.setText("")
+        self.ui.input_buscar_dados_relatorio_cuidadores_as.setText("")
+
+    def limparCamposRelatorioPessoas(self):
+        self.ui.input_inicio_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_idade_inicial_relatorio_as.setText("")
+        self.ui.input_idade_final_relatorio_as.setText("")
+        self.ui.input_buscar_dados_relatorio_as.setText("")
+    
+    def limparCamposRelatorioCursosParticipantes(self):
+        self.ui.input_inicio_periodo_relatorio_aluno_curso.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_aluno_curso.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_aluno_curso.setText("")
+    
+    def limparCamposRelatorioBeneficios(self):
+        self.ui.input_inicio_periodo_relatorio_beneficio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_beneficio_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_beneficios_as.setText("")
+   
+    def limparCamposCadastroClinica(self):
+       self.ui.input_cnpj_cadastro_clinica_as.setText("")
+       self.ui.input_razao_social_cadastro_clinica_as.setText("")
+       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
+       self.ui.input_telefone_clinica_as.setText("")
+       self.ui.input_email_clinica_as.setText("")       
+       self.ui.input_cep_clinica_as.setText("")
+       self.ui.input_logradouro_clinica_as.setText("")
+       self.ui.input_numero_clinica_as.setText("")
+       self.ui.input_bairro_clinica_as.setText("")
+       self.ui.input_cidade_clinica_as.setText("")
+       self.ui.input_estado_clinica_as.setText("")
+       self.ui.input_informacoes_gerais_clinica_as.setHtml("")
+  
+    def limparCamposClinicasCadastradas(self):
+        self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.setText("")
+
+    def limparCamposCadastroFornecedor(self):
+        self.ui.input_cep_fornecedor_as.setText("")
+        self.ui.input_logradouro_fornecedor_as.setText("")
+        self.ui.input_numero_fornecedor_as.setText("")
+        self.ui.input_bairro_fornecedor_as.setText("")
+        self.ui.input_cidade_fornecedor_as.setText("")
+        self.ui.input_estado_fornecedor_as.setText("")
+             
+        self.ui.input_cnpj_cadastro_fornecedor_as.setText("")
+        self.ui.input_razao_social_cadastro_fornecedor_as.setText("")
+        self.ui.input_nome_fantasia_cadastro_fornecedor_as.setText("")
+        self.ui.input_telefone_celular_fornecedor_as.setText("")
+        self.ui.input_telefone_fixo_fornecedor_as.setText("")
+        self.ui.input_email_fornecedor_as.setText("")
+        self.ui.input_contato_fornecedor_as.setText("")
+        self.ui.input_inscricao_estadual_fornecedor_as.setText("")
+        self.ui.input_inscricao_municipal_fornecedor_as.setText("")
+        self.ui.input_informacoes_gerais_fornecedor_as.setHtml("")
+    
+    def limparCamposFornecedoresCadastrados(self):
+        self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_relatorio_fornecedor_cadastrado.setText("")
+    
+    def limparCamposCadastroBeneficios(self):
+        self.ui.input_tipo_cadastro_beneficio.setCurrentIndex(int(0))
+        self.ui.input_codigo_cadastro_beneficio.setText("")
+        self.ui.input_lote_cadastro_beneficio.setText("")
+        self.ui.input_comboBox_udm_cadastro_benefecio.setCurrentIndex(int(0))
+        self.ui.input_descricao_cadastro_beneficio.setText("")
+        self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())       
+        self.ui.input_spinBox_cadastro_beneficio.setValue(0)
+    
+    def limparCamposCadastroRetiradaBeneficios(self):
+        self.ui.input_cpf_cadastro_retirada_beneficio.setText("")
+        self.ui.input_nome_cadastro_retirada_beneficio.setText("")
+        self.ui.input_idade_cadastro_retirada_beneficio.setText("")
+        self.ui.input_data_cadastro_retirada_beneficio.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_telefone_cadastro_retirada_beneficio.setText("")
+        self.ui.input_cns_cadastro_retirada_beneficio.setText("")
+        self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
+        
+        self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText("")
+        self.ui.input_descricao_cadastro_retirada_beneficio.setText("")       
+        self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(0)
+    
+
+
     def limparCamposAtendimentoFisioterapeuta(self):
         self.ui.input_cpf_pagina_consulta_geral_fisio.setText("")
         self.ui.input_nome_pagina_consulta_geral_fisio.setText("")
@@ -3829,109 +3931,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
         self.ui.input_filtro_pagina_consulta_geral_psi.setText("")
 
-    def limparCamposAgendaAssistenteSocial(self):
-        self.ui.input_cpf_agendamento_as.setText("")
-        self.ui.input_nome_agendamento_as.setText("")
-        self.ui.input_telefone_agendamento_as.setText("")
-        self.ui.input_clinica_agendamento_as.setText("")
-        self.ui.input_profissional_as_agendamento_as.setCheckable(False)
-        self.ui.input_profissional_as_agendamento_as.setCheckable(True)
-        self.ui.input_profissional_psi_agendamento_as.setCheckable(False)
-        self.ui.input_profissional_psi_agendamento_as.setCheckable(True)
-        self.ui.input_profissional_nutri_agendamento_as.setCheckable(False)
-        self.ui.input_profissional_nutri_agendamento_as.setCheckable(True)
-        self.ui.input_profissional_fisio_agendamento_as.setCheckable(False)
-        self.ui.input_profissional_fisio_agendamento_as.setCheckable(True)
-        self.ui.input_data_agendamento_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_agendamento_as.setTime(QTime(00,00))
-        self.ui.input_anotacao_agendamento_as.setHtml("")
-
-
-    def limparCamposRelatorioCuidadores(self):
-        self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_idade_inicial_relatorio_cuidadores_as.setText("")
-        self.ui.input_idade_final_relatorio_cuidadores_as.setText("")
-        self.ui.input_buscar_dados_relatorio_cuidadores_as.setText("")
-
-    
-    def limparCamposRelatorioPessoas(self):
-        self.ui.input_inicio_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_final_periodo_relatorio_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_idade_inicial_relatorio_as.setText("")
-        self.ui.input_idade_final_relatorio_as.setText("")
-        self.ui.input_buscar_dados_relatorio_as.setText("")
-    
-
-    def limparCamposRelatorioCursosParticipantes(self):
-        self.ui.input_inicio_periodo_relatorio_aluno_curso.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_final_periodo_relatorio_aluno_curso.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_buscar_dados_relatorio_aluno_curso.setText("")
-    
-
-    def limparCamposRelatorioBeneficios(self):
-        self.ui.input_inicio_periodo_relatorio_beneficio_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_final_periodo_relatorio_beneficio_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_buscar_dados_relatorio_beneficios_as.setText("")
-
-    
-    def limparCamposCadastroClinica(self):
-       self.ui.input_cnpj_cadastro_clinica_as.setText("")
-       self.ui.input_razao_social_cadastro_clinica_as.setText("")
-       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
-       self.ui.input_telefone_clinica_as.setText("")
-       self.ui.input_email_clinica_as.setText("")       
-       self.ui.input_cep_clinica_as.setText("")
-       self.ui.input_logradouro_clinica_as.setText("")
-       self.ui.input_numero_clinica_as.setText("")
-       self.ui.input_bairro_clinica_as.setText("")
-       self.ui.input_cidade_clinica_as.setText("")
-       self.ui.input_estado_clinica_as.setText("")
-       self.ui.input_informacoes_gerais_clinica_as.setHtml("")
-
-    
-    def limparCamposClinicasCadastradas(self):
-        self.ui.input_inicio_periodo_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_final_periodo_relatorio_relatorio_clinicas_cadastradas_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_buscar_dados_relatorio_relatorio_clinicas_cadastradas_as.setText("")
-
-
-    def limparCamposCadastroFornecedor(self):
-         
-        self.ui.input_cep_fornecedor_as.setText("")
-        self.ui.input_logradouro_fornecedor_as.setText("")
-        self.ui.input_numero_fornecedor_as.setText("")
-        self.ui.input_bairro_fornecedor_as.setText("")
-        self.ui.input_cidade_fornecedor_as.setText("")
-        self.ui.input_estado_fornecedor_as.setText("")
-             
-        self.ui.input_cnpj_cadastro_fornecedor_as.setText("")
-        self.ui.input_razao_social_cadastro_fornecedor_as.setText("")
-        self.ui.input_nome_fantasia_cadastro_fornecedor_as.setText("")
-        self.ui.input_telefone_celular_fornecedor_as.setText("")
-        self.ui.input_telefone_fixo_fornecedor_as.setText("")
-        self.ui.input_email_fornecedor_as.setText("")
-        self.ui.input_contato_fornecedor_as.setText("")
-        self.ui.input_inscricao_estadual_fornecedor_as.setText("")
-        self.ui.input_inscricao_municipal_fornecedor_as.setText("")
-        self.ui.input_informacoes_gerais_fornecedor_as.setHtml("")
-    
-
-    def limparCamposFornecedoresCadastrados(self):
-        self.ui.input_inicio_periodo_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_final_periodo_relatorio_relatorio_fornecedores_cadastrados.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_buscar_dados_relatorio_relatorio_fornecedor_cadastrado.setText("")
-    
-
-    def limparCamposCadastroBeneficios(self):
-        self.ui.input_tipo_cadastro_beneficio.setCurrentIndex(int(0))
-        self.ui.input_codigo_cadastro_beneficio.setText("")
-        self.ui.input_lote_cadastro_beneficio.setText("")
-        self.ui.input_comboBox_udm_cadastro_benefecio.setCurrentIndex(int(0))
-        self.ui.input_descricao_cadastro_beneficio.setText("")
-        self.ui.input_dateEdit_cadastro_beneficio.setDateTime(QDateTime.currentDateTime())       
-        self.ui.input_spinBox_cadastro_beneficio.setValue(0)
-
     def limparCamposCadastroBeneficiosFarmaceutica(self):
         self.ui.input_tipo_cadastro_beneficio_farm.setCurrentIndex(int(0))
         self.ui.input_codigo_cadastro_beneficio_2_farm.setText("")
@@ -3953,42 +3952,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_codigo_beneficio_cadastro_retirada_beneficio_farm.setText("")
         self.ui.input_descricao_cadastro_retirada_beneficio_farm.setText("")       
         self.ui.input_spinBox_cadastro_retirada_beneficio_farm.setValue(0)
-
-    def limparCamposCadastroRetiradaBeneficios(self):
-        self.ui.input_cpf_cadastro_retirada_beneficio.setText("")
-        self.ui.input_nome_cadastro_retirada_beneficio.setText("")
-        self.ui.input_idade_cadastro_retirada_beneficio.setText("")
-        self.ui.input_data_cadastro_retirada_beneficio.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_telefone_cadastro_retirada_beneficio.setText("")
-        self.ui.input_cns_cadastro_retirada_beneficio.setText("")
-        self.ui.input_clinica_cadastro_retirada_beneficio.setText("")
-        
-        self.ui.input_codigo_beneficio_cadastro_retirada_beneficio.setText("")
-        self.ui.input_descricao_cadastro_retirada_beneficio.setText("")       
-        self.ui.input_spinBox_cadastro_retirada_beneficio.setValue(0)
-
-    def limparCadastroCursos(self):
-        self.ui.input_nome_cursos_as.setText("")
-        self.ui.input_tipo_cursos_as.setCurrentIndex(0)
-        self.ui.input_responsavel_cursos_as.setText("")
-        self.ui.input_data_inicio_cursos_as.setDate(QDate(2020, 1, 1))
-        self.ui.input_data_termino_cursos_as.setDate(QDate(2020, 1, 1))
-        self.ui.input_horario_inicio_cursos_as.setTime(QTime(00,00))
-        self.ui.input_horario_termino_cursos_as.setTime(QTime(00,00))
-        self.ui.input_periodo_cursos_as.setCurrentIndex(0)
-        self.ui.input_vagas_cursos_as.setText("")
-        self.ui.input_segunda_cursos_as.setCheckable(False)
-        self.ui.input_segunda_cursos_as.setCheckable(True)
-        self.ui.input_terca_cursos_as.setCheckable(False)
-        self.ui.input_terca_cursos_as.setCheckable(True)
-        self.ui.input_quarta_cursos_as.setCheckable(False)
-        self.ui.input_quarta_cursos_as.setCheckable(True)
-        self.ui.input_quinta_cursos_as.setCheckable(False)
-        self.ui.input_quinta_cursos_as.setCheckable(True)
-        self.ui.input_sexta_cursos_as.setCheckable(False)
-        self.ui.input_sexta_cursos_as.setCheckable(True)
-        self.ui.input_sabado_cursos_as.setCheckable(False)
-        self.ui.input_sabado_cursos_as.setCheckable(True)
 
     def limparCamposAreaSigilosa(self):
         self.ui.input_obito_paciente_sim_as.setCheckable(False)
