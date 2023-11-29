@@ -962,7 +962,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
 
         
-        ########################### SECRETARIA ###########################
+        ########################### SECRETÁRIA #############################################################################################################################################
         self.ui.btn_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_agenda_sec))
         self.ui.btn_voltar_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
         self.ui.btn_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_relatorio_sec))
@@ -980,7 +980,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_agenda_sec.clicked.connect(self.cadastroAgendamento_sec) #CADASTRO AGENDAMENTO USUARIO SEC
 
 
-        ########################### AREA SIGILOSA ###########################
+        ########################### AREA SIGILOSA ##########################################################################################################################################
         self.ui.btn_alterar_observacoes_sigilo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_observacoes_sigilosas_as))
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.area_sigilosa_salvar_usuario)
         self.ui.btn_salvar_observacoes_sigilosas_as.clicked.connect(self.filtrar_usuario_area_sigilosa)
