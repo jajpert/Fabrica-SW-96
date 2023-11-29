@@ -653,6 +653,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_agendamento_fisio.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_consulta_geral_nutri.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_nutri.setInputMask("000.000.000-00")
+        self.ui.input_cpf_agendamento_psi.setInputMask("000.000.000-00")
 
 
         ########## COLOCANDO OS VALIDADORES ################################################################################################################################################
@@ -743,6 +744,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_inicio_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_sec.setDisplayFormat("dd/MM/yyyy")
         self.ui.input_final_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+
+        self.ui.input_dateEdit_cadastro_beneficio_farm.setDisplayFormat("dd/MM/yyyy")
+        self.ui.input_dateEdit_cadastro_beneficio_farm.setDateTime(QDateTime.currentDateTime())
 
 
         ###############SIGNALS################# 
@@ -920,13 +924,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ########################### PSICÓLOGA ##############################################################################################################################################
         self.ui.btn_atendimento_psi.clicked.connect(self.limparCamposAtendimentoPsicologa)
         self.ui.btn_atendimento_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_consulta_psi))
+        self.ui.btn_agenda_psi.clicked.connect(self.limparCamposAgendaPsicologa)
         self.ui.btn_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_agenda_psi))
         self.ui.btn_agenda_psi.clicked.connect(self.listarAgendamentos_psi)
+        self.ui.btn_voltar_agenda_psi.clicked.connect(self.limparCamposAgendaPsicologa)
         self.ui.btn_voltar_agenda_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(self.limparCamposAtendimentoPsicologa)
         self.ui.btn_voltar_pagina_consulta_geral_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_relatorios_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_relatorio_psi))
-        #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_buscar_cpf_pagina_consulta_geral_psi.clicked.connect(self.buscar_dados_consulta_psi) #SELECT USUARIO CONSULTA PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi) #CADASTRO CONSULTA USUARIO PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.tabela_consulta_psic_tabela) #SELECT USUARIO CONSULTA + COLADB ID
@@ -935,17 +940,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_psi.clicked.connect(self.buscarPessoa_psi) #SELECT USUARIO AGENDAMENTO PISC
         self.ui.btn_salvar_agenda_psi.clicked.connect(self.cadastroAgendamento_psi) #CADASTRO AGENDAMENTO USUARIO PISC
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
+        self.ui.btn_relatorios_psi.clicked.connect(self.limparCamposRelatorioPsicologa)
         self.ui.btn_relatorios_psi.clicked.connect(self.puxar_relatorio_psi)
         self.ui.btn_gerar_excel_relatorio_psi.clicked.connect(self.gerar_excel_relatorio_psi)
-        
-
-        #self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
+        self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(self.limparCamposRelatorioPsicologa)
+        self.ui.btn_voltar_pagina_relatorio_psi.clicked.connect(lambda: self.ui.stackedWidget_7.setCurrentWidget(self.ui.page_principal_psi))
         self.ui.btn_sair_psi.clicked.connect(self.sairSistema)
         
 
         ########################### FARMACÊUTICA ###########################################################################################################################################
+        self.ui.btn_cadastrar_farm.clicked.connect(self.limparCamposCadastroBeneficiosFarmaceutica)
         self.ui.btn_cadastrar_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_cadastrar_farm))
+        self.ui.btn_relatorios_farm.clicked.connect(self.limparCamposRelatorioFarmaceutica)
         self.ui.btn_relatorios_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_relatorio_farm))
+        self.ui.btn_voltar_cadastro_beneficio_farm.clicked.connect(self.limparCamposCadastroBeneficiosFarmaceutica)
+        self.ui.btn_voltar_cadastro_beneficio_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
+        self.ui.btn_retirar_farm.clicked.connect(self.limparCamposCadastroRetiradaBeneficiosFarmaceutica)
         self.ui.btn_retirar_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_retirada_farm))
         self.ui.btn_salvar_cadastro_beneficio_farm.clicked.connect(self.cadastro_beneficios_farmaceutica)
         self.ui.btn_cadastrar_farm.clicked.connect(self.listarBeneficiosFarmaceutica)
@@ -955,9 +965,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cancelar_cadastro_beneficio_farm.clicked.connect(self.limparCamposCadastroBeneficiosFarmaceutica)
         self.ui.btn_relatorios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorio)
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio_farm.clicked.connect(self.buscarCodigoRetiradaFarmaceutica)
+        self.ui.btn_voltar_cadastro_retirada_beneficio_farm.clicked.connect(self.limparCamposCadastroRetiradaBeneficiosFarmaceutica)
+        self.ui.btn_voltar_cadastro_retirada_beneficio_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
         self.ui.btn_finalizar_cadastro_retirada_beneficio_farm.clicked.connect(self.cadastro_retirada_beneficios_farmaceutica)
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio_farm.clicked.connect(self.buscarRetiradaFarmaceutica)
         self.ui.input_buscar_dados_relatorio_beneficios_farm.textChanged.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltro)
+        self.ui.btn_voltar_pagina_relatorio_beneficios_farm.clicked.connect(self.limparCamposRelatorioFarmaceutica)
+        self.ui.btn_voltar_pagina_relatorio_beneficios_farm.clicked.connect(lambda: self.ui.stackedWidget_10.setCurrentWidget(self.ui.page_principal_farm))
         self.ui.btn_buscar_relatorio_beneficios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltroData)
         self.ui.btn_sair_farm.clicked.connect(self.sairSistema)
 
@@ -3357,7 +3371,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
             # self.msg(result[0],result[1])   
             self.tabela_consulta_psic_tabela()
-            self.limparCamposAgendametoPsic() 
+            self.limparCamposAgendaPsicologa() 
             self.listarAgendamentos_psi()
 
     def cadastroAgendamento_fisio(self):
@@ -3931,20 +3945,48 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_evolucao_pagina_consulta_geral_psi.setHtml("")
         self.ui.input_filtro_pagina_consulta_geral_psi.setText("")
 
+    def limparCamposAgendaPsicologa(self):
+        self.ui.input_cpf_agendamento_psi.setText("")
+        self.ui.input_nome_agendamento_psi.setText("")
+        self.ui.input_telefone_agendamento_psi.setText("")
+        self.ui.input_clinica_agendamento_psi.setText("")
+        self.ui.input_profissional_as_agendamento_psi.setCheckable(False)
+        self.ui.input_profissional_as_agendamento_psi.setCheckable(True)
+        self.ui.input_profissional_psi_agendamento_psi.setCheckable(False)
+        self.ui.input_profissional_psi_agendamento_psi.setCheckable(True)
+        self.ui.input_profissional_nutri_agendamento_psi.setCheckable(False)
+        self.ui.input_profissional_nutri_agendamento_psi.setCheckable(True)
+        self.ui.input_profissional_fisio_agendamento_psi.setCheckable(False)
+        self.ui.input_profissional_fisio_agendamento_psi.setCheckable(True)
+        self.ui.input_data_agendamento_psi.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_hora_agendamento_psi.setTime(QTime(00,00))
+        self.ui.input_anotacao_agendamento_psi.setHtml("")
+        self.ui.input_filtro_agendamento_psi.setText("")
+
+    def limparCamposRelatorioPsicologa(self):
+        self.ui.input_inicio_periodo_relatorio_psi.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_psi.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_psi.setText("")
+
     def limparCamposCadastroBeneficiosFarmaceutica(self):
         self.ui.input_tipo_cadastro_beneficio_farm.setCurrentIndex(int(0))
         self.ui.input_codigo_cadastro_beneficio_2_farm.setText("")
         self.ui.input_lote_cadastro_beneficio_2.setText("")
         self.ui.input_comboBox_udm_cadastro_benefecio_farm.setCurrentIndex(int(0))
         self.ui.input_descricao_cadastro_beneficio_farm.setText("")
-        self.ui.input_dateEdit_cadastro_beneficio_farm.setDate(QDate(2000, 1, 1))          
+        self.ui.input_dateEdit_cadastro_beneficio_farm.setDateTime(QDateTime.currentDateTime())         
         self.ui.input_spinBox_cadastro_beneficio_farm.setValue(0)
+    
+    def limparCamposRelatorioFarmaceutica(self):
+        self.ui.input_inicio_periodo_relatorio_beneficio_farm.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_beneficio_farm.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_beneficios_farm.setText("")
     
     def limparCamposCadastroRetiradaBeneficiosFarmaceutica(self):
         self.ui.input_cpf_cadastro_retirada_beneficio_farm.setText("")
         self.ui.input_nome_cadastro_retirada_beneficio_2.setText("")
         self.ui.input_idade_cadastro_retirada_beneficio_farm.setText("")
-        self.ui.input_data_cadastro_retirada_beneficio_2_farm.setDate(QDate(2020, 1, 1))
+        self.ui.input_data_cadastro_retirada_beneficio_2_farm.setDateTime(QDateTime.currentDateTime())
         self.ui.input_telefone_cadastro_retirada_beneficio_farm.setText("")
         self.ui.input_cns_cadastro_retirada_beneficio_farm.setText("")
         self.ui.input_clinica_cadastro_retirada_beneficio_farm.setText("")
@@ -3959,21 +4001,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_obito_paciente_nao_as.setCheckable(False)
         self.ui.input_obito_paciente_nao_as.setCheckable(True)
         self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
-        
-    def limparCamposAgendametoPsic(self):
-        self.ui.input_nome_agendamento_psi.setText("")
-        self.ui.input_telefone_agendamento_psi.setText("")
-        self.ui.input_clinica_agendamento_psi.setText("")
-        self.ui.input_profissional_as_agendamento_psi.setCheckable(True)
-        self.ui.input_profissional_psi_agendamento_psi.setCheckable(False)
-        self.ui.input_profissional_psi_agendamento_psi.setCheckable(True)
-        self.ui.input_profissional_nutri_agendamento_psi.setCheckable(False)
-        self.ui.input_profissional_nutri_agendamento_psi.setCheckable(True)
-        self.ui.input_profissional_fisio_agendamento_psi.setCheckable(False)
-        self.ui.input_profissional_fisio_agendamento_psi.setCheckable(True)
-        self.ui.input_data_agendamento_psi.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_agendamento_psi.setTime(QTime(00,00))
-        self.ui.input_anotacao_agendamento_psi.setHtml("")
         
     def limparCamposAgendamentosSec(self):
        self.ui.input_cpf_agendamento_sec.setText('')
@@ -3991,8 +4018,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
        self.ui.input_data_agendamento_sec.setDateTime(QDateTime.currentDateTime())
        self.ui.input_hora_agendamento_sec.setTime(QTime(00,00))
        self.ui.input_anotacao_agendamento_sec.setHtml("")
-        
-        
+
+
+    ######################################################################################################################################################################################## 
     def buscar_clinica_nome_fantasia(self):
         lista_clinica = self.db.select_clinica_ids()
         nomes = []
