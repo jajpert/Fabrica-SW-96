@@ -651,6 +651,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_participante_geral.setInputMask("000.000.000-00")
         self.ui.input_cpf_pagina_consulta_geral_fisio.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_fisio.setInputMask("000.000.000-00")
+        self.ui.input_cpf_pagina_consulta_geral_nutri.setInputMask("000.000.000-00")
+        self.ui.input_cpf_agendamento_nutri.setInputMask("000.000.000-00")
 
 
         ########## COLOCANDO OS VALIDADORES ################################################################################################################################################
@@ -888,11 +890,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         ########################### NUTRICIONISTA ##########################################################################################################################################
+        self.ui.btn_atendimento_nutri.clicked.connect(self.limparCamposAtendimentoNutricionista)
         self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
+        self.ui.btn_agenda_nutri.clicked.connect(self.limparCamposAgendaNutricionista)
         self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
+        self.ui.btn_voltar_agenda_nutri.clicked.connect(self.limparCamposAgendaNutricionista)
         self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(self.limparCamposAtendimentoNutricionista)
         self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_voltar_pagina_relatorio_nutri.clicked.connect(self.limparCamposRelatorioNutricionista)
         self.ui.btn_voltar_pagina_relatorio_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
+        self.ui.btn_relatorios_nutri.clicked.connect(self.limparCamposRelatorioNutricionista)
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
         self.ui.btn_relatorios_nutri.clicked.connect(self.relatorio_pessoa_nutri)
         self.ui.btn_agenda_nutri.clicked.connect(self.tabela_agenda_nutri)
@@ -3431,7 +3439,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Agendamento Cadastrado com sucesso!")
             msg.exec()
             self.tabela_agenda_nutri()
-            self.limparCamposAgendaNutri()
+            self.limparCamposAgendaNutricionista()
             
     def cadastroAgendamento_sec(self):
         id_matricula = self.buscarPessoa_sec()
@@ -3758,7 +3766,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_final_periodo_relatorio_fisio.setDateTime(QDateTime.currentDateTime())
         self.ui.input_buscar_dados_relatorio_fisio.setText("")
 
-    def limparCamposConsultaNutri(self):
+    def limparCamposAtendimentoNutricionista(self):
+        self.ui.input_cpf_pagina_consulta_geral_nutri.setText("")
         self.ui.input_nome_pagina_consulta_geral_nutri.setText("")
         self.ui.input_contato_pagina_consulta_geral_nutri.setText("")
         self.ui.input_clinica_pagina_consulta_geral_nutri.setText("")
@@ -3771,11 +3780,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
         self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(2023, 1, 1))
+        self.ui.input_data_pagina_consulta_geral_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_consulta_as_nutri.setText("")
         self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
+        self.ui.input_filtro_pagina_consulta_geral_nutri.setText("")
 
-    def limparCamposAgendaNutri(self):
+    def limparCamposAgendaNutricionista(self):
         self.ui.input_cpf_agendamento_nutri.setText("")
         self.ui.input_nome_agendamento_nutri.setText("")
         self.ui.input_telefone_agendamento_nutri.setText("")
@@ -3789,9 +3799,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
-        self.ui.input_data_agendamento_nutri.setDate(QDate(2023, 1, 1))
+        self.ui.radioButton_atendimento_as_nutri_consulta.setCheckable(False)
+        self.ui.radioButton_atendimento_as_nutri_consulta.setCheckable(True)
+        self.ui.radioButton_Retorno_as_nutri_consulta.setCheckable(False)
+        self.ui.radioButton_Retorno_as_nutri_consulta.setCheckable(True)
+        self.ui.input_data_agendamento_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_nutri.setHtml("")
+        self.ui.input_filtro_agendamento_nutri.setText("")
+    
+    def limparCamposRelatorioNutricionista(self):
+        self.ui.input_inicio_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_nutri.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_buscar_dados_relatorio_nutri.setText("")
 
     def limparCamposConsulta_psi(self):
         self.ui.input_cpf_agendamento_psi.setText("")
@@ -3973,42 +3993,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_obito_paciente_nao_as.setCheckable(False)
         self.ui.input_obito_paciente_nao_as.setCheckable(True)
         self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
-
-
-    def limparCamposConsultaNutri(self):
-        self.ui.input_nome_pagina_consulta_geral_nutri.setText("")
-        self.ui.input_contato_pagina_consulta_geral_nutri.setText("")
-        self.ui.input_clinica_pagina_consulta_geral_nutri.setText("")
-        self.ui.input_tipo_tratamento_consulta_nutri.setCurrentIndex(0)
-        self.ui.input_patologia_base_consulta_nutri.setCurrentIndex(0)
-        self.ui.input_peso_consulta_nutri.setText("")
-        self.ui.input_altura_consulta_nutri.setText("")
-        self.ui.input_imc_consulta_nutri.setText("")
-        self.ui.radioButton_atendimento_as_nutri.setCheckable(False)
-        self.ui.radioButton_atendimento_as_nutri.setCheckable(True)
-        self.ui.radioButton_Retorno_as_nutri.setCheckable(False)
-        self.ui.radioButton_Retorno_as_nutri.setCheckable(True)
-        self.ui.input_data_pagina_consulta_geral_nutri.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_consulta_as_nutri.setText("")
-        self.ui.input_evolucao_pagina_consulta_geral_nutri.setHtml("")
-
-    def limparCamposAgendaNutri(self):
-        self.ui.input_cpf_agendamento_nutri.setText("")
-        self.ui.input_nome_agendamento_nutri.setText("")
-        self.ui.input_telefone_agendamento_nutri.setText("")
-        self.ui.input_clinica_agendamento_nutri.setText("")
-        self.ui.input_clinica_pagina_consulta_geral_psi.setText("")
-        self.ui.input_profissional_as_agendamento_nutri.setCheckable(False)
-        self.ui.input_profissional_as_agendamento_nutri.setCheckable(True)
-        self.ui.input_profissional_psi_agendamento_nutri.setCheckable(False)
-        self.ui.input_profissional_psi_agendamento_nutri.setCheckable(True)
-        self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(False)
-        self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
-        self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
-        self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
-        self.ui.input_data_agendamento_nutri.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
-        self.ui.input_anotacao_agendamento_nutri.setHtml("")
 
     def limparCamposConsulta_psi(self):
         self.ui.input_cpf_agendamento_psi.setText("")
@@ -4331,7 +4315,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.exec()
             
             self.tabela_consulta_nutri_tabela()
-            self.limparCamposConsultaNutri()
+            self.limparCamposAtendimentoNutricionista()
 
     def cadastrar_consulta_psi(self):
         if self.ui.radioButton_atendimento_as_psi.isChecked():

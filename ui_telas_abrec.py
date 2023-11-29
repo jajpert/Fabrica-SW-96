@@ -1943,12 +1943,12 @@ class Ui_MainWindow(object):
         self.frame_589.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_195 = QHBoxLayout(self.frame_589)
         self.horizontalLayout_195.setObjectName(u"horizontalLayout_195")
-        self.lineEdit = QLineEdit(self.frame_589)
-        self.lineEdit.setObjectName(u"lineEdit")
-        self.lineEdit.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
+        self.input_filtro_pagina_consulta_geral_nutri = QLineEdit(self.frame_589)
+        self.input_filtro_pagina_consulta_geral_nutri.setObjectName(u"lineEdit")
+        self.input_filtro_pagina_consulta_geral_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
 
-        self.horizontalLayout_195.addWidget(self.lineEdit)
+        self.horizontalLayout_195.addWidget(self.input_filtro_pagina_consulta_geral_nutri)
 
 
         self.verticalLayout_392.addWidget(self.frame_589)
@@ -27566,7 +27566,7 @@ class Ui_MainWindow(object):
         self.btn_salvar_pagina_consulta_geral_nutri.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
         self.label_historico_pagina_consulta_geral_nutri.setText(QCoreApplication.translate("MainWindow", u"HIST\u00d3RICO", None))
         self.label_filtro_pagina_consulta_geral_nutri.setText(QCoreApplication.translate("MainWindow", u"FILTRO", None))
-        self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data...", None))
+        self.input_filtro_pagina_consulta_geral_nutri.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Pesquisar data...", None))
         ___qtablewidgetitem6 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(0)
         ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem7 = self.input_TableWidget_pagina_consulta_geral_nutri.horizontalHeaderItem(1)
