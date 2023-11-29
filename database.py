@@ -1111,15 +1111,29 @@ class DataBase():
     def buscar_participante(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia 
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato,clinica.razao_social 
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
-            result = self.cursor.fetchall()
-#criar um novo método para buscar participante cuidador 
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato 
-                                    FROM pessoa INNER JOIN cuidador ON pessoa.id_matricula = cuidador.id_matricula WHERE pessoa.cpf LIKE '%{cpf}%';""")
+                                    LEFT JOIN clinica ON clinica.id_matricula = usuario.id_matricula 
+                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
                                     
             result = self.cursor.fetchall()
+
+            return result[0]
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+
+    def buscar_participante_cuidador(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato,
+                                    FROM pessoa INNER JOIN cuidador ON pessoa.id_matricula = cuidador.id_matricula 
+                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
+            result = self.cursor.fetchall()  
+            
 
             return result[0]
         except Exception as err:
@@ -1354,11 +1368,29 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.nome_fantasia, curso_evento.nome_curso_evento
+                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.razao_social, curso_evento.nome_curso_evento
                                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 RIGHT JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
                                 INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
                                 LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';
+                                """)
+            result = self.cursor.fetchall()
+            return result
+
+        except Exception as err:
+            return "ERRO",str(err)
+
+        finally:
+            self.close_connection()
+
+    def buscar_info_participante_cuidador(self,cpf):
+        self.connect()
+        try:
+            self.cursor.execute(f"""
+                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone,pessoa.telefone_contato, curso_evento.nome_curso_evento
+                                FROM pessoa INNER JOIN cuidador ON pessoa.id_matricula = cuidador.id_matricula
+                                RIGHT JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento WHERE pessoa.cpf LIKE '%{cpf}%';
                                 """)
             result = self.cursor.fetchall()
             return result

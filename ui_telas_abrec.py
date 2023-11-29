@@ -17711,9 +17711,10 @@ class Ui_MainWindow(object):
         self.horizontalLayout_162.setSpacing(0)
         self.horizontalLayout_162.setObjectName(u"horizontalLayout_162")
         self.horizontalLayout_162.setContentsMargins(0, 0, 0, 0)
+        ################################################################################################3333
         self.input_TableWidget_pagina_participante_geral = QTableWidget(self.frame_4872)
-        if (self.input_TableWidget_pagina_participante_geral.columnCount() < 5):
-            self.input_TableWidget_pagina_participante_geral.setColumnCount(5)
+        if (self.input_TableWidget_pagina_participante_geral.columnCount() < 6):
+            self.input_TableWidget_pagina_participante_geral.setColumnCount(6)
         __qtablewidgetitem144 = QTableWidgetItem()
         self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(0, __qtablewidgetitem144)
         __qtablewidgetitem145 = QTableWidgetItem()
@@ -17724,14 +17725,16 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(3, __qtablewidgetitem147)
         __qtablewidgetitem148 = QTableWidgetItem()
         self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(4, __qtablewidgetitem148)
+        __qtablewidgetitem149 = QTableWidgetItem()
+        self.input_TableWidget_pagina_participante_geral.setHorizontalHeaderItem(5, __qtablewidgetitem149)
         if (self.input_TableWidget_pagina_participante_geral.rowCount() < 14):
             self.input_TableWidget_pagina_participante_geral.setRowCount(14)
-        __qtablewidgetitem149 = QTableWidgetItem()
-        self.input_TableWidget_pagina_participante_geral.setItem(0, 0, __qtablewidgetitem149)
         __qtablewidgetitem150 = QTableWidgetItem()
-        self.input_TableWidget_pagina_participante_geral.setItem(0, 4, __qtablewidgetitem150)
+        self.input_TableWidget_pagina_participante_geral.setItem(0, 1, __qtablewidgetitem150)
         __qtablewidgetitem151 = QTableWidgetItem()
-        self.input_TableWidget_pagina_participante_geral.setItem(1, 0, __qtablewidgetitem151)
+        self.input_TableWidget_pagina_participante_geral.setItem(0, 5, __qtablewidgetitem151)
+        __qtablewidgetitem152 = QTableWidgetItem()
+        self.input_TableWidget_pagina_participante_geral.setItem(1, 1, __qtablewidgetitem152)
         self.input_TableWidget_pagina_participante_geral.setObjectName(u"input_TableWidget_pagina_participante_geral")
         self.input_TableWidget_pagina_participante_geral.setMinimumSize(QSize(700, 0))
         self.input_TableWidget_pagina_participante_geral.setFont(font)
@@ -28706,15 +28709,17 @@ class Ui_MainWindow(object):
         self.btn_voltar_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_salvar_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"Salvar", None))
         ___qtablewidgetitem126 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(0)
-        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
         ___qtablewidgetitem127 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(1)
-        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
+        ___qtablewidgetitem127.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem128 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(2)
         ___qtablewidgetitem128.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
         ___qtablewidgetitem129 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(3)
-        ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"Clinica", None));
+        ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"Telefone de Contato", None));
         ___qtablewidgetitem130 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(4)
-        ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"Curso", None));
+        ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"Clinica", None));
+        ___qtablewidgetitem131 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(5)
+        ___qtablewidgetitem131.setText(QCoreApplication.translate("MainWindow", u"Curso", None));
 
         __sortingEnabled6 = self.input_TableWidget_pagina_participante_geral.isSortingEnabled()
         self.input_TableWidget_pagina_participante_geral.setSortingEnabled(False)

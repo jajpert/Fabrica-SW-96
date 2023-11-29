@@ -44726,17 +44726,22 @@ QPushButton:focus{outline:0}</string>
                                      <row/>
                                      <column>
                                       <property name="text">
-                                       <string>Nome</string>
-                                      </property>
-                                     </column>
-                                     <column>
-                                      <property name="text">
                                        <string>CPF</string>
                                       </property>
                                      </column>
                                      <column>
                                       <property name="text">
+                                       <string>Nome</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
                                        <string>Telefone</string>
+                                      </property>
+                                     </column>
+                                     <column>
+                                      <property name="text">
+                                       <string>Telefone de Contato</string>
                                       </property>
                                      </column>
                                      <column>
@@ -44749,17 +44754,17 @@ QPushButton:focus{outline:0}</string>
                                        <string>Curso</string>
                                       </property>
                                      </column>
-                                     <item row="0" column="0">
+                                     <item row="0" column="1">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="0" column="4">
+                                     <item row="0" column="5">
                                       <property name="text">
                                        <string/>
                                       </property>
                                      </item>
-                                     <item row="1" column="0">
+                                     <item row="1" column="1">
                                       <property name="text">
                                        <string/>
                                       </property>

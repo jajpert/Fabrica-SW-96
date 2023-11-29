@@ -3922,10 +3922,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def buscar_dados_participante(self):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
-        dados = self.db.buscar_participante(cpf)
-        
         
         if cpf == self.ui.input_cpf_usuario_as:
+            dados = self.db.buscar_participante(cpf)
             self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
             self.ui.input_id_matricula_user_participante_geral.hide()
             self.ui.input_nome_pagina_participante_geral.setText(dados[1])
@@ -3933,24 +3932,36 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
             self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
         else:
-            self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
+            dados = self.db.buscar_participante_cuidador(cpf)
+            '''self.ui.input_id_matricula_user_participante_geral.setText(str(dados[0]))
             self.ui.input_id_matricula_user_participante_geral.hide()
             self.ui.input_nome_pagina_participante_geral.setText(dados[1])
             self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
             self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
-             
-        print(dados)    
+            self.ui.input_clinica_pagina_participante_geral.setText(dados[4]) ''' 
+
+        print(dados)
         
     def puxar_cadastro_participante(self):
         cpf_tmp = self.ui.input_cpf_pagina_participante_geral.text()
-        cpf = re.sub(r'[^\w\s]','',cpf_tmp)
-        result = self.db.buscar_info_participante(cpf)
-        self.ui.input_TableWidget_pagina_participante_geral.clearContents()
-        self.ui.input_TableWidget_pagina_participante_geral.setRowCount(len(result))   
+        if cpf_tmp == self.ui.input_cpf_usuario_as:
+            cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+            result = self.db.buscar_info_participante(cpf)
+            self.ui.input_TableWidget_pagina_participante_geral.clearContents()
+            self.ui.input_TableWidget_pagina_participante_geral.setRowCount(len(result))   
 
-        for row, text in enumerate(result):
-            for column, data in enumerate(text):
-                self.ui.input_TableWidget_pagina_participante_geral.setItem(row, column,QTableWidgetItem(str(data)))
+            for row, text in enumerate(result):
+                for column, data in enumerate(text):
+                    self.ui.input_TableWidget_pagina_participante_geral.setItem(row, column,QTableWidgetItem(str(data)))
+        else:
+            cpf = re.sub(r'[^\w\s]','',cpf_tmp)
+            result = self.db.buscar_info_participante_cuidador(cpf)
+            self.ui.input_TableWidget_pagina_participante_geral.clearContents()
+            self.ui.input_TableWidget_pagina_participante_geral.setRowCount(len(result))   
+
+            for row, text in enumerate(result):
+                for column, data in enumerate(text):
+                    self.ui.input_TableWidget_pagina_participante_geral.setItem(row, column,QTableWidgetItem(str(data)))
 
     def gerar_excel_participante(self):
         dados = []
