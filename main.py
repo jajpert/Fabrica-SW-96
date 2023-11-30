@@ -78,14 +78,6 @@ class Overlay(QWidget):
         painter.end()
 
 
-########## CLASSE POPUP RECUPERAR SENHA ####################################################################################################################################################
-class DialogRecuperarSenha(QDialog):
-    def __init__(self, parent) -> None:
-        super().__init__(parent)
-        self.setAttribute(Qt.WA_DeleteOnClose)
-        self.ui = Ui_Restaurar_Senha()
-        self.ui.setupUi(self)
-        
 ########## CLASSE POP UP LOGIN INVALIDO ####################################################################################################################################################
 class DialogLoginInvalido(QDialog):
     def __init__(self, parent) -> None:
@@ -1002,8 +994,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
        
 
-        ########################### POPUP RECUPERAR SENHA AS ######################
-        self.ui.btn_esqueci_senha_login.clicked.connect(self.recuperarSenha)
+        
         
 
 
@@ -4876,11 +4867,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
             self.ui.toolButton.setIcon(QIcon("./icons/olho.png"))
 
-    def recuperarSenha(self):
-        msg = DialogRecuperarSenha(self)
-        self.popup.show()
-        msg.exec()
-        self.popup.hide()
+    
 
     def loginInvalido(self):       
         msg = DialogLoginInvalido(self)
