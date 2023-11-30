@@ -1103,8 +1103,7 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.id_matricula 
-                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
                                     
             result = self.cursor.fetchall()
 
@@ -1329,7 +1328,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, clinica.razao_social, curso_evento.nome_curso_evento
+                                SELECT pessoa.cpf, pessoa.nome,pessoa.telefone,pessoa.telefone_contato, clinica.razao_social, curso_evento.nome_curso_evento
                                 FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 RIGHT JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
                                 INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento

@@ -28716,9 +28716,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem128.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
         ___qtablewidgetitem129 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(3)
         ___qtablewidgetitem129.setText(QCoreApplication.translate("MainWindow", u"Telefone de Contato", None));
-        ___qtablewidgetitem130 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(3)
+        ___qtablewidgetitem130 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(4)
         ___qtablewidgetitem130.setText(QCoreApplication.translate("MainWindow", u"Clinica", None));
-        ___qtablewidgetitem131 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(4)
+        ___qtablewidgetitem131 = self.input_TableWidget_pagina_participante_geral.horizontalHeaderItem(5)
         ___qtablewidgetitem131.setText(QCoreApplication.translate("MainWindow", u"Curso", None));
 
         __sortingEnabled6 = self.input_TableWidget_pagina_participante_geral.isSortingEnabled()
