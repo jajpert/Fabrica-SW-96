@@ -654,6 +654,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_consulta_geral_nutri.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_nutri.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_psi.setInputMask("000.000.000-00")
+        self.ui.input_cpf_agendamento_sec.setInputMask("000.000.000-00")
 
 
         ########## COLOCANDO OS VALIDADORES ################################################################################################################################################
@@ -977,9 +978,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         
         ########################### SECRETÁRIA #############################################################################################################################################
+        self.ui.btn_agenda_sec.clicked.connect(self.limparCamposAgendaSecretaria)
         self.ui.btn_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_agenda_sec))
+        self.ui.btn_voltar_agenda_sec.clicked.connect(self.limparCamposAgendaSecretaria)
         self.ui.btn_voltar_agenda_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
+        self.ui.btn_relatorios_sec.clicked.connect(self.limparCamposRelatorioSecretaria)
         self.ui.btn_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_relatorio_sec))
+        self.ui.btn_voltar_relatorios_sec.clicked.connect(self.limparCamposRelatorioSecretaria)
         self.ui.btn_voltar_relatorios_sec.clicked.connect(lambda: self.ui.stackedWidget_13.setCurrentWidget(self.ui.page_principal_sec))
         self.ui.btn_relatorios_sec.clicked.connect(self.relatorio_agendamento_secretaria)
         self.ui.input_buscar_dados_relatorio_sec.textChanged.connect(self.filtrar_dados_sec)
@@ -3496,7 +3501,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Agendamento")
             msg.setText("Agendamento Cadastrado com sucesso!")
             msg.exec()
-            self.limparCamposAgendamentosSec()
+            self.limparCamposAgendaSecretaria()
         
     def cadastroIMC(self):
         peso = self.ui.input_peso_consulta_nutri.text()
@@ -4002,11 +4007,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_obito_paciente_nao_as.setCheckable(True)
         self.ui.input_observacoes_obs_sigilosas_as.setHtml("")
         
-    def limparCamposAgendamentosSec(self):
-       self.ui.input_cpf_agendamento_sec.setText('')
-       self.ui.input_nome_agendamento_sec.setText('')
-       self.ui.input_telefone_agendamento_sec.setText('')
-       self.ui.input_clinica_agendamento_sec.setText('')
+    def limparCamposAgendaSecretaria(self):
+       self.ui.input_cpf_agendamento_sec.setText("")
+       self.ui.input_nome_agendamento_sec.setText("")
+       self.ui.input_telefone_agendamento_sec.setText("")
+       self.ui.input_clinica_agendamento_sec.setText("")
        self.ui.input_profissional_as_agendamento_sec.setCheckable(False)
        self.ui.input_profissional_as_agendamento_sec.setCheckable(True)
        self.ui.input_profissional_psi_agendamento_sec.setCheckable(False)
@@ -4018,6 +4023,21 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
        self.ui.input_data_agendamento_sec.setDateTime(QDateTime.currentDateTime())
        self.ui.input_hora_agendamento_sec.setTime(QTime(00,00))
        self.ui.input_anotacao_agendamento_sec.setHtml("")
+       self.ui.input_filtro_agendamento_sec.setText("")
+    
+    def limparCamposRelatorioSecretaria(self):
+        self.ui.input_inicio_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+        self.ui.input_final_periodo_relatorio_sec.setDateTime(QDateTime.currentDateTime())
+        self.ui.radioButton_as_sec.setCheckable(False)
+        self.ui.radioButton_as_sec.setCheckable(True)
+        self.ui.radioButton_psi_sec.setCheckable(False)
+        self.ui.radioButton_psi_sec.setCheckable(True)
+        self.ui.radioButton_fisio_sec.setCheckable(False)
+        self.ui.radioButton_fisio_sec.setCheckable(True)
+        self.ui.radioButton_nutri_sec.setCheckable(False)
+        self.ui.radioButton_nutri_sec.setCheckable(True)
+        self.ui.input_buscar_dados_relatorio_sec.setText("")
+
 
 
     ######################################################################################################################################################################################## 
