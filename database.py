@@ -1101,9 +1101,9 @@ class DataBase():
     def buscar_participante(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.cpf, pessoa.nome, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia
+            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN clinica ON clinica.id_matricula = usuario.id_matricula 
+                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.id_matricula 
                                     WHERE pessoa.cpf LIKE '%{cpf}%';""")
                                     
             result = self.cursor.fetchall()

@@ -3928,8 +3928,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_user_participante_geral.hide()
         self.ui.input_nome_pagina_participante_geral.setText(dados[1])
         self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
-        #self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
-        self.ui.input_clinica_pagina_participante_geral.setText(dados[3])
+        self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
+        self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
         
         
     def puxar_cadastro_participante(self):
