@@ -1002,7 +1002,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_sec.clicked.connect(self.buscarPessoa_sec)#SELECT USUARIO AGENDAMENTO SEC
         self.ui.btn_salvar_agenda_sec.clicked.connect(self.cadastroAgendamento_sec) #CADASTRO AGENDAMENTO USUARIO SEC
         self.ui.btn_alterar_agenda_sec.clicked.connect(self.alterarAgendamentos_sec)
-        self.ui.btn_cancelar_agenda_sec.clicked.connect(self.limparCamposAgendamentosSec)
+        self.ui.btn_cancelar_agenda_sec.clicked.connect(self.limparCamposAgendaSecretaria)
 
 
         ########################### AREA SIGILOSA ##########################################################################################################################################
