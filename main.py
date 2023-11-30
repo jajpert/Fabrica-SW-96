@@ -858,11 +858,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_relatorio_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
-        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
         self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
         self.ui.btn_buscar_relatorio_agendamento_as.clicked.connect(self.filter_relatorio_agendamento)
         self.ui.btn_voltar_relatorios_agendamento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
+        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
+        self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
+        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(self.limparCamposAtendimentoFisioterapeuta)
@@ -1013,7 +1015,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_observacoes_sigilosas_as.clicked.connect(self.alterar_usuario_area_sigilosa)
 
 
-        ########################## CEP #####################################################################################################################################################
+        ########################### CEP #####################################################################################################################################################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
@@ -1021,24 +1023,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_alterar_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_alterar_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-        self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)       
 
 
-
-        ########################### CPF ####################################################################################################################################################
-        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-        self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
-       
-
-        
-        
-
-
-        ########################### POPUP ALTERAR FOTO E SENHA AS #################
+        ########################### POPUP ALTERAR FOTO E SENHA AS ###########################################################################################################################
         #self.ui.btn_alterar_foto_colab_as(self.trocarFotoSenha)
         
         
-        ########################### POPUP TIRAR E IMPORTAR FOTO AS ################
+        ########################### POPUP TIRAR E IMPORTAR FOTO AS ##########################################################################################################################
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
         self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
@@ -1046,15 +1038,15 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
         
 
-
-        ########################### POPUP CURSOS E OFICINAS AS ####################
+        ########################### POPUP CURSOS E OFICINAS AS ##############################################################################################################################
         # self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario)
         self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
         self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
 
-        ########################### BANCO #########################################
+
+        ########################### BANCO ###################################################################################################################################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
@@ -3832,8 +3824,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def limparCamposRelatorioCuidadores(self):
         self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_idade_inicial_relatorio_cuidadores_as.setText("")
-        self.ui.input_idade_final_relatorio_cuidadores_as.setText("")
         self.ui.input_buscar_dados_relatorio_cuidadores_as.setText("")
 
     def limparCamposRelatorioPessoas(self):
