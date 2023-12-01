@@ -17,7 +17,7 @@ def validarCamposUsuarioCadastro(cpf,rg,nis,cns,telefone,sexo,cep,numero):
         msg.exec()
         return False
 
-    elif nis == "" or len(nis) < 15:
+    elif nis == "" or len(nis) < 11:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro NIS")
