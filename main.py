@@ -5559,7 +5559,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
     def trocarFotoSenhaFarm(self):
         #Recebe o nome da label do colab logado no sistema
-        self.nome_colab_perfil_farm = self.ui.label_foto_colab_inicio_farm.text()
+        self.nome_colab_perfil_farm = self.ui.label_ola_nome_farm_3.text()
 
         #Passo como parametros as variaveis com as informções do colab
         msg = DialogAlterarSenhaFotoFarm(self, self.id_colab_tratado_farm, self.nome_colab_perfil_farm)
