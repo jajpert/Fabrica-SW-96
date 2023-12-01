@@ -314,18 +314,25 @@ class Ui_MainWindow(object):
         self.frame_28.setFrameShape(QFrame.StyledPanel)
         self.frame_28.setFrameShadow(QFrame.Raised)
         self.verticalLayout_19 = QVBoxLayout(self.frame_28)
-        self.verticalLayout_19.setSpacing(16)
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
-        self.verticalLayout_19.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_nutri = QPushButton(self.frame_28)
-        self.btn_alterar_foto_senha_nutri.setObjectName(u"btn_alterar_foto_senha_nutri")
-        self.btn_alterar_foto_senha_nutri.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        icon1 = QIcon()
-        icon1.addFile(u"./icons/Ellipse 1.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_alterar_foto_senha_nutri.setIcon(icon1)
-        self.btn_alterar_foto_senha_nutri.setIconSize(QSize(140, 180))
+        self.label_foto_colab_inicio_nutri = QLabel(self.frame_28)
+        self.label_foto_colab_inicio_nutri.setObjectName(u"label_foto_colab_inicio_nutri")
 
-        self.verticalLayout_19.addWidget(self.btn_alterar_foto_senha_nutri)
+        self.verticalLayout_19.addWidget(self.label_foto_colab_inicio_nutri)
+
+        self.btn_alterar_foto_colab_as_perfil_nutri = QPushButton(self.frame_28)
+        self.btn_alterar_foto_colab_as_perfil_nutri.setObjectName(u"btn_alterar_foto_colab_as_perfil_nutri")
+        self.btn_alterar_foto_colab_as_perfil_nutri.setMinimumSize(QSize(140, 40))
+        font20 = QFont()
+        font20.setFamilies([u"Abel"])
+        font20.setPointSize(18)
+        self.btn_alterar_foto_colab_as_perfil_nutri.setFont(font20)
+        self.btn_alterar_foto_colab_as_perfil_nutri.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil_nutri.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_19.addWidget(self.btn_alterar_foto_colab_as_perfil_nutri)
 
         self.label_ola_nutri = QLabel(self.frame_28)
         self.label_ola_nutri.setObjectName(u"label_ola_nutri")
@@ -2640,16 +2647,22 @@ class Ui_MainWindow(object):
         self.frame_33.setFrameShape(QFrame.StyledPanel)
         self.frame_33.setFrameShadow(QFrame.Raised)
         self.verticalLayout_24 = QVBoxLayout(self.frame_33)
-        self.verticalLayout_24.setSpacing(16)
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
-        self.verticalLayout_24.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_psi = QPushButton(self.frame_33)
-        self.btn_alterar_foto_senha_psi.setObjectName(u"btn_alterar_foto_senha_psi")
-        self.btn_alterar_foto_senha_psi.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        self.btn_alterar_foto_senha_psi.setIcon(icon1)
-        self.btn_alterar_foto_senha_psi.setIconSize(QSize(140, 180))
+        self.label_foto_colab_inicio_psic = QLabel(self.frame_33)
+        self.label_foto_colab_inicio_psic.setObjectName(u"label_foto_colab_inicio_psic")
 
-        self.verticalLayout_24.addWidget(self.btn_alterar_foto_senha_psi)
+        self.verticalLayout_24.addWidget(self.label_foto_colab_inicio_psic)
+
+        self.btn_alterar_foto_colab_as_perfil_psic = QPushButton(self.frame_33)
+        self.btn_alterar_foto_colab_as_perfil_psic.setObjectName(u"btn_alterar_foto_colab_as_perfil_psic")
+        self.btn_alterar_foto_colab_as_perfil_psic.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_perfil_psic.setFont(font20)
+        self.btn_alterar_foto_colab_as_perfil_psic.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil_psic.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_24.addWidget(self.btn_alterar_foto_colab_as_perfil_psic)
 
         self.label_ola_nome_psi = QLabel(self.frame_33)
         self.label_ola_nome_psi.setObjectName(u"label_ola_nome_psi")
@@ -4564,18 +4577,24 @@ class Ui_MainWindow(object):
         self.frame_181.setStyleSheet(u"QFrame{background-color: #E33B4E}")
         self.frame_181.setFrameShape(QFrame.StyledPanel)
         self.frame_181.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_131 = QVBoxLayout(self.frame_181)
-        self.verticalLayout_131.setSpacing(16)
-        self.verticalLayout_131.setObjectName(u"verticalLayout_131")
-        self.verticalLayout_131.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_farm = QPushButton(self.frame_181)
-        self.btn_alterar_foto_senha_farm.setObjectName(u"btn_alterar_foto_senha_farm")
-        self.btn_alterar_foto_senha_farm.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_senha_farm.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        self.btn_alterar_foto_senha_farm.setIcon(icon1)
-        self.btn_alterar_foto_senha_farm.setIconSize(QSize(140, 180))
+        self.verticalLayout_609 = QVBoxLayout(self.frame_181)
+        self.verticalLayout_609.setObjectName(u"verticalLayout_609")
+        self.label_foto_colab_inicio_farm = QLabel(self.frame_181)
+        self.label_foto_colab_inicio_farm.setObjectName(u"label_foto_colab_inicio_farm")
 
-        self.verticalLayout_131.addWidget(self.btn_alterar_foto_senha_farm)
+        self.verticalLayout_609.addWidget(self.label_foto_colab_inicio_farm)
+
+        self.btn_alterar_foto_colab_as_perfil_farm = QPushButton(self.frame_181)
+        self.btn_alterar_foto_colab_as_perfil_farm.setObjectName(u"btn_alterar_foto_colab_as_perfil_farm")
+        self.btn_alterar_foto_colab_as_perfil_farm.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_perfil_farm.setFont(font6)
+        self.btn_alterar_foto_colab_as_perfil_farm.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil_farm.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_609.addWidget(self.btn_alterar_foto_colab_as_perfil_farm)
+
 
         self.label_ola_nome_farm_3 = QLabel(self.frame_181)
         self.label_ola_nome_farm_3.setObjectName(u"label_ola_nome_farm_3")
@@ -4583,7 +4602,6 @@ class Ui_MainWindow(object):
         self.label_ola_nome_farm_3.setStyleSheet(u"color: #fff; margin-bottom: 1em;")
         self.label_ola_nome_farm_3.setAlignment(Qt.AlignCenter)
 
-        self.verticalLayout_131.addWidget(self.label_ola_nome_farm_3)
 
         self.frame_182 = QFrame(self.frame_181)
         self.frame_182.setObjectName(u"frame_182")
@@ -4673,11 +4691,9 @@ class Ui_MainWindow(object):
         self.horizontalLayout_98.addItem(self.horizontalSpacer_113)
 
 
-        self.verticalLayout_131.addWidget(self.frame_182)
 
         self.verticalSpacer_40 = QSpacerItem(20, 200, QSizePolicy.Minimum, QSizePolicy.Expanding)
 
-        self.verticalLayout_131.addItem(self.verticalSpacer_40)
 
         self.frame_184 = QFrame(self.frame_181)
         self.frame_184.setObjectName(u"frame_184")
@@ -4733,7 +4749,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_100.addItem(self.horizontalSpacer_115)
 
 
-        self.verticalLayout_131.addWidget(self.frame_184)
 
 
         self.horizontalLayout_93.addWidget(self.frame_181)
@@ -6672,17 +6687,22 @@ class Ui_MainWindow(object):
         self.frame_20.setFrameShape(QFrame.StyledPanel)
         self.frame_20.setFrameShadow(QFrame.Raised)
         self.verticalLayout_13 = QVBoxLayout(self.frame_20)
-        self.verticalLayout_13.setSpacing(16)
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_fisio = QPushButton(self.frame_20)
-        self.btn_alterar_foto_senha_fisio.setObjectName(u"btn_alterar_foto_senha_fisio")
-        self.btn_alterar_foto_senha_fisio.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_senha_fisio.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        self.btn_alterar_foto_senha_fisio.setIcon(icon1)
-        self.btn_alterar_foto_senha_fisio.setIconSize(QSize(140, 180))
+        self.label_foto_colab_inicio_fisio = QLabel(self.frame_20)
+        self.label_foto_colab_inicio_fisio.setObjectName(u"label_foto_colab_inicio_fisio")
 
-        self.verticalLayout_13.addWidget(self.btn_alterar_foto_senha_fisio)
+        self.verticalLayout_13.addWidget(self.label_foto_colab_inicio_fisio)
+
+        self.btn_alterar_foto_colab_as_perfil_fisio = QPushButton(self.frame_20)
+        self.btn_alterar_foto_colab_as_perfil_fisio.setObjectName(u"btn_alterar_foto_colab_as_perfil_fisio")
+        self.btn_alterar_foto_colab_as_perfil_fisio.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_perfil_fisio.setFont(font6)
+        self.btn_alterar_foto_colab_as_perfil_fisio.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil_fisio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_13.addWidget(self.btn_alterar_foto_colab_as_perfil_fisio)
 
         self.label_ola_nome_fisio = QLabel(self.frame_20)
         self.label_ola_nome_fisio.setObjectName(u"label_ola_nome_fisio")
@@ -7197,8 +7217,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_552 = QVBoxLayout(self.frame_817)
         self.verticalLayout_552.setObjectName(u"verticalLayout_552")
         self.input_TableWidget_relatorio_fisio = QTableWidget(self.frame_817)
-        if (self.input_TableWidget_relatorio_fisio.columnCount() < 11):
-            self.input_TableWidget_relatorio_fisio.setColumnCount(11)
+        if (self.input_TableWidget_relatorio_fisio.columnCount() < 12):
+            self.input_TableWidget_relatorio_fisio.setColumnCount(12)
         __qtablewidgetitem71 = QTableWidgetItem()
         self.input_TableWidget_relatorio_fisio.setHorizontalHeaderItem(0, __qtablewidgetitem71)
         __qtablewidgetitem72 = QTableWidgetItem()
@@ -7221,6 +7241,8 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_fisio.setHorizontalHeaderItem(9, __qtablewidgetitem80)
         __qtablewidgetitem81 = QTableWidgetItem()
         self.input_TableWidget_relatorio_fisio.setHorizontalHeaderItem(10, __qtablewidgetitem81)
+        __qtablewidgetitem82 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_fisio.setHorizontalHeaderItem(11, __qtablewidgetitem82)
         if (self.input_TableWidget_relatorio_fisio.rowCount() < 14):
             self.input_TableWidget_relatorio_fisio.setRowCount(14)
         self.input_TableWidget_relatorio_fisio.setObjectName(u"input_TableWidget_relatorio_fisio")
@@ -7238,7 +7260,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_fisio.setSortingEnabled(True)
         self.input_TableWidget_relatorio_fisio.setWordWrap(True)
         self.input_TableWidget_relatorio_fisio.setRowCount(14)
-        self.input_TableWidget_relatorio_fisio.setColumnCount(11)
+        self.input_TableWidget_relatorio_fisio.setColumnCount(12)
         self.input_TableWidget_relatorio_fisio.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_relatorio_fisio.horizontalHeader().setDefaultSectionSize(130)
         self.input_TableWidget_relatorio_fisio.horizontalHeader().setStretchLastSection(True)
@@ -8630,6 +8652,10 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShadow(QFrame.Raised)
         self.verticalLayout_6 = QVBoxLayout(self.frame_9)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.label_foto_colab_inicio = QLabel(self.frame_9)
+        self.label_foto_colab_inicio.setObjectName(u"label_foto_colab_inicio")
+
+        self.verticalLayout_6.addWidget(self.label_foto_colab_inicio)
         self.btn_alterar_foto_colab_as_perfil = QPushButton(self.frame_9)
         self.btn_alterar_foto_colab_as_perfil.setObjectName(u"btn_alterar_foto_colab_as_perfil")
         self.btn_alterar_foto_colab_as_perfil.setMinimumSize(QSize(140, 40))
@@ -26706,15 +26732,21 @@ class Ui_MainWindow(object):
         self.verticalLayout_258 = QVBoxLayout(self.frame_1451)
         self.verticalLayout_258.setSpacing(16)
         self.verticalLayout_258.setObjectName(u"verticalLayout_258")
-        self.verticalLayout_258.setContentsMargins(0, 0, 0, 0)
-        self.btn_alterar_foto_senha_sec = QPushButton(self.frame_1451)
-        self.btn_alterar_foto_senha_sec.setObjectName(u"btn_alterar_foto_senha_sec")
-        self.btn_alterar_foto_senha_sec.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_senha_sec.setStyleSheet(u"QPushButton{background-color: #E33B4E; border: none}")
-        self.btn_alterar_foto_senha_sec.setIcon(icon1)
-        self.btn_alterar_foto_senha_sec.setIconSize(QSize(140, 180))
+        self.label_foto_colab_inicio_sec = QLabel(self.frame_1451)
+        self.label_foto_colab_inicio_sec.setObjectName(u"label_foto_colab_inicio_sec")
 
-        self.verticalLayout_258.addWidget(self.btn_alterar_foto_senha_sec)
+        self.verticalLayout_258.addWidget(self.label_foto_colab_inicio_sec)
+
+        self.btn_alterar_foto_colab_as_perfil_sec = QPushButton(self.frame_1451)
+        self.btn_alterar_foto_colab_as_perfil_sec.setObjectName(u"btn_alterar_foto_colab_as_perfil_sec")
+        self.btn_alterar_foto_colab_as_perfil_sec.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_foto_colab_as_perfil_sec.setFont(font20)
+        self.btn_alterar_foto_colab_as_perfil_sec.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_foto_colab_as_perfil_sec.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.verticalLayout_258.addWidget(self.btn_alterar_foto_colab_as_perfil_sec)
 
         self.label_ola_nome_sec = QLabel(self.frame_1451)
         self.label_ola_nome_sec.setObjectName(u"label_ola_nome_sec")
@@ -28136,7 +28168,8 @@ class Ui_MainWindow(object):
         self.toolButton.setText("")
         self.btn_entrar_login.setText(QCoreApplication.translate("MainWindow", u"ENTRAR", None))
         self.label_Abrec_Logo_Paint.setText("")
-        self.btn_alterar_foto_senha_nutri.setText("")
+        self.label_foto_colab_inicio_nutri.setText("")
+        self.btn_alterar_foto_colab_as_perfil_nutri.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.label_ola_nutri.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_atendimento_nutri.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.btn_agenda_nutri.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
@@ -28287,7 +28320,8 @@ class Ui_MainWindow(object):
         self.btn_voltar_pagina_relatorio_nutri.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_plano_alimentar_cadastrar_nutri.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR                 ", None))
         self.btn_plano_alimentar_buscar_nutri.setText(QCoreApplication.translate("MainWindow", u"BUSCAR                    ", None))
-        self.btn_alterar_foto_senha_psi.setText("")
+        self.label_foto_colab_inicio_psic.setText("")
+        self.btn_alterar_foto_colab_as_perfil_psic.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.label_ola_nome_psi.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_atendimento_psi.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.btn_agenda_psi.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
@@ -28398,7 +28432,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_gerar_excel_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.btn_alterar_foto_senha_farm.setText("")
+        self.label_foto_colab_inicio_farm.setText("")
+        self.btn_alterar_foto_colab_as_perfil_farm.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.label_ola_nome_farm_3.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR", None))
         self.btn_relatorios_farm.setText(QCoreApplication.translate("MainWindow", u" RELAT\u00d3RIOS", None))
@@ -28507,7 +28542,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_gerar_excel_relatorio_beneficios_farm.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_beneficios_farm.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.btn_alterar_foto_senha_fisio.setText("")
+        self.label_foto_colab_inicio_fisio.setText("")
+        self.btn_alterar_foto_colab_as_perfil_fisio.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.label_ola_nome_fisio.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_atendimento_fisio.setText(QCoreApplication.translate("MainWindow", u"ATENDIMENTO", None))
         self.btn_agenda_fisio.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
@@ -28526,23 +28562,25 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem63 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(1)
         ___qtablewidgetitem63.setText(QCoreApplication.translate("MainWindow", u"Nome", None));
         ___qtablewidgetitem64 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(2)
-        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
+        ___qtablewidgetitem64.setText(QCoreApplication.translate("MainWindow", u"CPF", None));
         ___qtablewidgetitem65 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(3)
-        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
+        ___qtablewidgetitem65.setText(QCoreApplication.translate("MainWindow", u"CNS", None));
         ___qtablewidgetitem66 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(4)
-        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
+        ___qtablewidgetitem66.setText(QCoreApplication.translate("MainWindow", u"NIS", None));
         ___qtablewidgetitem67 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(5)
-        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
+        ___qtablewidgetitem67.setText(QCoreApplication.translate("MainWindow", u"Idade", None));
         ___qtablewidgetitem68 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(6)
-        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem68.setText(QCoreApplication.translate("MainWindow", u"Sexo", None));
         ___qtablewidgetitem69 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(7)
-        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio", None));
+        ___qtablewidgetitem69.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
         ___qtablewidgetitem70 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(8)
-        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
+        ___qtablewidgetitem70.setText(QCoreApplication.translate("MainWindow", u"Benef\u00edcio", None));
         ___qtablewidgetitem71 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(9)
-        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
+        ___qtablewidgetitem71.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
         ___qtablewidgetitem72 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(10)
-        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
+        ___qtablewidgetitem72.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
+        ___qtablewidgetitem73 = self.input_TableWidget_relatorio_fisio.horizontalHeaderItem(11)
+        ___qtablewidgetitem73.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_fisio.setToolTip("")
 #endif // QT_CONFIG(tooltip)
@@ -29726,7 +29764,8 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_gerar_excel_relatorio_atendimentos.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_atendimentos.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.btn_alterar_foto_senha_sec.setText("")
+        self.label_foto_colab_inicio_sec.setText("")
+        self.btn_alterar_foto_colab_as_perfil_sec.setText(QCoreApplication.translate("MainWindow", u"Alterar Foto", None))
         self.label_ola_nome_sec.setText(QCoreApplication.translate("MainWindow", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_agenda_sec.setText(QCoreApplication.translate("MainWindow", u"      AGENDA", None))
         self.btn_relatorios_sec.setText(QCoreApplication.translate("MainWindow", u"  RELAT\u00d3RIO", None))
