@@ -3364,8 +3364,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Usuário")
             msg.setText("Usuário cadastrado com sucesso!")
             msg.exec()
-            # self.msg(result[0],result[1])
-            # self.limparCamposCadastroUsuario()
+            #self.msg(result[0],result[1])
+            self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
@@ -4153,7 +4153,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAreaSigilosa()
 
     ##### LIMPAR CAMPOS ####################################################################################################################################################################
-    def limparCamposCadastroUsuario (self):
+    def limparCamposCadastroUsuario(self):
         self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
         self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
