@@ -23,6 +23,10 @@ import openpyxl
 import locale
 import imghdr
 import os
+from smbprotocol.connection import Connection
+from smbprotocol.session import Session
+from smbprotocol.tree import TreeConnect
+from smbprotocol.open import CreateDisposition, CreateOptions, FileAttributes
 
 
 ############################# VALIDAÇÕES ASSISTENTE SOCIAL ######################################################
@@ -6068,11 +6072,39 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText('PDF gerado com sucesso!')
         msg.exec()
     
-    
-    # def execute(self):
-    #     for(int i=0; i<10; i++):
             
-            
+    def pastaCompartilhada(self):
+        server =  "192.168.9.22"
+        username = "fabrica.aluno4"
+        password = "fabricasw96@sysrenal"
+        local_photo_path = "/caminho/na/pasta/compartilhada/"
+        shared_folder = "nome_compartilhamento"
+
+
+        connection = Connection(server=server)
+        session = Session(connection)
+        connection.connect(session, username, password)
+
+        # Conectar à árvore (tree) do compartilhamento
+        tree = TreeConnect(connection, service_name=shared_folder)
+
+        # Especificar o caminho do arquivo na pasta compartilhada
+        remote_file_path = "/caminho/na/pasta/compartilhada/"
+
+        # Abrir o arquivo para escrita
+        with tree.create(
+            remote_file_path,
+            disposition=CreateDisposition.FILE_OPEN_IF,
+            options=CreateOptions.FILE_NON_DIRECTORY_FILE,
+            attributes=FileAttributes.FILE_ATTRIBUTE_NORMAL,
+        ) as file:
+            # Ler o conteúdo do arquivo local e escrever no arquivo remoto
+            with open(local_photo_path, "rb") as local_file:
+                file.write(local_file.read())
+
+        # Desconectar
+        tree.disconnect()
+        session.disconnect()
     
 if __name__ == "__main__":
     
