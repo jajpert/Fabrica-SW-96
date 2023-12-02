@@ -4197,6 +4197,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
+
+        original_image = cv2.imread("./icons/adicionar-amigo.png")
+
+        desired_size = (120, 120)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+
+        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
+        self.ui.label_foto_usuario_as.setScaledContents(True)
+        self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
+        self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
+
+
       
     def limparCamposCadastroCuidador(self):
         self.ultimosIds()
