@@ -3237,7 +3237,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_contato_pagina_consulta_geral_fisio.setText(dados[1])
             self.ui.input_clinica_pagina_consulta_geral_fisio.setText(dados[2])
             self.ui.input_data_pagina_consulta_geral_fisio.setDate(QDate(dados[3]))
-            self.ui.input_hora_consulta_as_fisio.setText(str(dados[4]))
+            self.ui.input_hora_consulta_as_fisio.setTime(QTime(dados[4]))
             self.ui.input_id_matricula_consulta_fisio.setText(str(dados[5]))
             self.ui.input_id_matricula_consulta_fisio.hide()
             self.puxar_consulta_fisio()
@@ -4415,7 +4415,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_Retorno_as_fisio.setCheckable(False)
         self.ui.radioButton_Retorno_as_fisio.setCheckable(True)
         self.ui.input_data_pagina_consulta_geral_fisio.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_hora_consulta_as_fisio.setText("")
+        self.ui.input_hora_consulta_as_fisio.setTime(QTime(00,00))
         self.ui.input_relatorio_pagina_evolucao_geral_fisio.setText("")
         self.ui.input_filtro_pagina_consulta_geral_fisio.setText("")
     
