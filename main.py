@@ -3977,7 +3977,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Agendamento Cadastrado com sucesso!")
             msg.exec()
             self.tabela_agendamento_fisio()
-            self.limparCamposAgendamentoFisio()
+            self.limparCamposAgendaFisioterapeuta()
 
     def cadastroAgendamentoNutri(self):
         id_matricula = self.ui.input_id_matricula_nutri_agendamento.text()
@@ -4964,7 +4964,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Consulta Cadastrada com sucesso!")
             msg.exec()
             self.puxar_consulta_fisio()
-            self.limparCamposConsultaFisio()
+            self.limparCamposAtendimentoFisioterapeuta()
 
     def puxar_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
