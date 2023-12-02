@@ -1078,6 +1078,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.setupUi(self)
         ########## BUSCANDO DADOS BANCO ####################################################################################################################################################
         self.db = DataBase()
+        self.pastaCompartilhada()
         self.relatorio_beneficio()        
         self.listarAgendamentos()
         self.listarBeneficios()
@@ -4728,7 +4729,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -5143,7 +5144,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -5170,7 +5171,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -5197,7 +5198,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6358,7 +6359,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6379,7 +6380,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6512,7 +6513,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6595,7 +6596,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6634,7 +6635,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6661,7 +6662,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6688,7 +6689,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6716,7 +6717,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
         if file:
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
@@ -6733,7 +6734,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         column_names = []
         for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
             column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
-        file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "C:/Abrec/", "PDF files (*.pdf)")
+        file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "", "PDF files (*.pdf)")
         pdf = canvas.Canvas(file)
         pdf.setFont("Times-Roman", 9)
         pdf.setTitle("Relatório")
@@ -6769,15 +6770,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
             
     def pastaCompartilhada(self):
-        server =  "192.168.9.22"
-        username = "fabrica.aluno4"
-        password = "fabricasw96@sysrenal"
-        local_photo_path = "/caminho/na/pasta/compartilhada/"
-        shared_folder = "nome_compartilhamento"
+        
+        username = "fabrica"
+        password = "123"
+        local_photo_path = "/home/sharing/"
+        shared_folder = "sharing"
 
 
-        connection = Connection(server=server)
+        connection = Connection("10.0.9.129", server_name=str("10.0.9.129"))
+        print(connection)
         session = Session(connection)
+        print(session)
         connection.connect(session, username, password)
 
         # Conectar à árvore (tree) do compartilhamento
