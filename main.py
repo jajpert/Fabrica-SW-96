@@ -3369,8 +3369,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Usuário")
             msg.setText("Usuário cadastrado com sucesso!")
             msg.exec()
-            # self.msg(result[0],result[1])
-            # self.limparCamposCadastroUsuario()
+            #self.msg(result[0],result[1])
+            self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
@@ -3982,7 +3982,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Agendamento Cadastrado com sucesso!")
             msg.exec()
             self.tabela_agendamento_fisio()
-            self.limparCamposAgendamentoFisio()
+            self.limparCamposAgendaFisioterapeuta()
 
     def cadastroAgendamentoNutri(self):
         id_matricula = self.ui.input_id_matricula_nutri_agendamento.text()
@@ -4158,7 +4158,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAreaSigilosa()
 
     ##### LIMPAR CAMPOS ####################################################################################################################################################################
-    def limparCamposCadastroUsuario (self):
+    def limparCamposCadastroUsuario(self):
         self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
         self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
@@ -4202,6 +4202,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
+
+        original_image = cv2.imread("./icons/adicionar-amigo.png")
+
+        desired_size = (120, 120)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+
+        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
+        self.ui.label_foto_usuario_as.setScaledContents(True)
+        self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
+        self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
+
+
       
     def limparCamposCadastroCuidador(self):
         self.ultimosIds()
@@ -4953,7 +4969,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Consulta Cadastrada com sucesso!")
             msg.exec()
             self.puxar_consulta_fisio()
-            self.limparCamposConsultaFisio()
+            self.limparCamposAtendimentoFisioterapeuta()
 
     def puxar_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
