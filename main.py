@@ -484,7 +484,7 @@ class DialogCadastroIncompletoCursos(QDialog):
 
 
 ########## CLASSE ALTERAR FOTO E SENHA #####################################################################################################################################################
-class DialogAlterarSenhaFoto(QDialog):
+class DialogAlterarSenhaFotoAssis(QDialog):
     def __init__(self, parent, id_colab, nome_colab_perfil) -> None:
         super().__init__(parent)
         self.setAttribute(Qt.WA_DeleteOnClose)
@@ -561,7 +561,479 @@ class DialogAlterarSenhaFoto(QDialog):
                         return
             else:
                 #Trata o ID do Select feito no banco
+                print(self.id_colaborador)
                 id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                print(id_foto)
+                id_foto_nt = id_foto[0][0]
+                id_foto_tratada = id_foto_nt
+
+                #Altera no Banco o caminho da imagem
+                tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
+                print(tupla_foto)
+                result = self.db.alterar_foto_colaborador(tupla_foto)
+                
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+class DialogAlterarSenhaFotoFarm(QDialog):
+    def __init__(self, parent, id_colab_tratado_farm, nome_colab_perfil) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Alterar_Senha_Foto()
+        self.ui.setupUi(self)  
+        self.ui.toolButton_alterar_foto_popup_perfil_as.clicked.connect(self.AlterarFotoColaborador)
+        self.id_colaborador = id_colab_tratado_farm
+        print("Id Dilago DENTRO FARM ->",self.id_colaborador)
+        self.nome_colab_login = nome_colab_perfil
+        print("Nome Login DENTRO FARM ->", self.nome_colab_login)
+               
+        
+    def AlterarFotoColaborador(self):
+        self.db = DataBase()  
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
+        if self.nome_colab_login == "":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Insira um Nome")
+            msg.setText("Insira um nome para salvar a imagem")
+            msg.exec()
+            return
+
+        else:
+            file_dialog = QFileDialog()
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            
+            #Verifica se o caminho escolhido pelo usuario é valido
+            caminho_importado = file_path
+            formato_importado = imghdr.what(caminho_importado)
+
+            if formato_importado not in format:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro ao importar")
+                msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                resposta = msg.exec()
+
+
+                if resposta == QMessageBox.Yes:
+                    file_dialog = QFileDialog()
+                    file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                    caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
+
+                    if formato_importado not in format:
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
+
+                    if formato_importado in format:
+                        
+                        tupla_foto = (self.nome_colab_login, caminho_importado, self.id_colaborador)
+                        result = self.db.tirar_foto_colaborador(tupla_foto)
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!!")
+                        msg.exec()
+                        
+                    
+                    if resposta == QMessageBox.No:
+                        return
+            else:
+                #Trata o ID do Select feito no banco
+                print(self.id_colaborador)
+                id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                print(id_foto)
+                id_foto_nt = id_foto[0][0]
+                id_foto_tratada = id_foto_nt
+
+                #Altera no Banco o caminho da imagem
+                tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
+                print(tupla_foto)
+                result = self.db.alterar_foto_colaborador(tupla_foto)
+                
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+class DialogAlterarSenhaFotoFisio(QDialog):
+    def __init__(self, parent, id_colab_tratado_fisio, nome_colab_perfil_fisio) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Alterar_Senha_Foto()
+        self.ui.setupUi(self)  
+        self.ui.toolButton_alterar_foto_popup_perfil_as.clicked.connect(self.AlterarFotoColaborador)
+        self.id_colaborador = id_colab_tratado_fisio
+        print("Id Dilago DENTRO FISIO ->",self.id_colaborador)
+        self.nome_colab_login = nome_colab_perfil_fisio
+        print("Nome Login DENTRO FISIO ->", self.nome_colab_login)
+               
+        
+    def AlterarFotoColaborador(self):
+        self.db = DataBase()  
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
+        if self.nome_colab_login == "":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Insira um Nome")
+            msg.setText("Insira um nome para salvar a imagem")
+            msg.exec()
+            return
+
+        else:
+            file_dialog = QFileDialog()
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            
+            #Verifica se o caminho escolhido pelo usuario é valido
+            caminho_importado = file_path
+            formato_importado = imghdr.what(caminho_importado)
+
+            if formato_importado not in format:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro ao importar")
+                msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                resposta = msg.exec()
+
+
+                if resposta == QMessageBox.Yes:
+                    file_dialog = QFileDialog()
+                    file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                    caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
+
+                    if formato_importado not in format:
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
+
+                    if formato_importado in format:
+                        
+                        tupla_foto = (self.nome_colab_login, caminho_importado, self.id_colaborador)
+                        result = self.db.tirar_foto_colaborador(tupla_foto)
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!!")
+                        msg.exec()
+                        
+                    
+                    if resposta == QMessageBox.No:
+                        return
+            else:
+                #Trata o ID do Select feito no banco
+                print(self.id_colaborador)
+                id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                print(id_foto)
+                id_foto_nt = id_foto[0][0]
+                id_foto_tratada = id_foto_nt
+
+                #Altera no Banco o caminho da imagem
+                tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
+                print(tupla_foto)
+                result = self.db.alterar_foto_colaborador(tupla_foto)
+                
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+class DialogAlterarSenhaFotoNutri(QDialog):
+    def __init__(self, parent, id_colab_tratado_nutri, nome_colab_perfil_nutri) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Alterar_Senha_Foto()
+        self.ui.setupUi(self)  
+        self.ui.toolButton_alterar_foto_popup_perfil_as.clicked.connect(self.AlterarFotoColaborador)
+        self.id_colaborador = id_colab_tratado_nutri
+        print("Id Dilago DENTRO FISIO ->",self.id_colaborador)
+        self.nome_colab_login = nome_colab_perfil_nutri
+        print("Nome Login DENTRO FISIO ->", self.nome_colab_login)
+               
+        
+    def AlterarFotoColaborador(self):
+        self.db = DataBase()  
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
+        if self.nome_colab_login == "":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Insira um Nome")
+            msg.setText("Insira um nome para salvar a imagem")
+            msg.exec()
+            return
+
+        else:
+            file_dialog = QFileDialog()
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            
+            #Verifica se o caminho escolhido pelo usuario é valido
+            caminho_importado = file_path
+            formato_importado = imghdr.what(caminho_importado)
+
+            if formato_importado not in format:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro ao importar")
+                msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                resposta = msg.exec()
+
+
+                if resposta == QMessageBox.Yes:
+                    file_dialog = QFileDialog()
+                    file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                    caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
+
+                    if formato_importado not in format:
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
+
+                    if formato_importado in format:
+                        
+                        tupla_foto = (self.nome_colab_login, caminho_importado, self.id_colaborador)
+                        result = self.db.tirar_foto_colaborador(tupla_foto)
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!!")
+                        msg.exec()
+                        
+                    
+                    if resposta == QMessageBox.No:
+                        return
+            else:
+                #Trata o ID do Select feito no banco
+                print(self.id_colaborador)
+                id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                print(id_foto)
+                id_foto_nt = id_foto[0][0]
+                id_foto_tratada = id_foto_nt
+
+                #Altera no Banco o caminho da imagem
+                tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
+                print(tupla_foto)
+                result = self.db.alterar_foto_colaborador(tupla_foto)
+                
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+class DialogAlterarSenhaFotoPsic(QDialog):
+    def __init__(self, parent, id_colab_tratado_psic, nome_colab_perfil_sec) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Alterar_Senha_Foto()
+        self.ui.setupUi(self)  
+        self.ui.toolButton_alterar_foto_popup_perfil_as.clicked.connect(self.AlterarFotoColaborador)
+        self.id_colaborador = id_colab_tratado_psic
+        print("Id Dilago DENTRO FISIO ->",self.id_colaborador)
+        self.nome_colab_login = nome_colab_perfil_sec
+        print("Nome Login DENTRO FISIO ->", self.nome_colab_login)
+               
+        
+    def AlterarFotoColaborador(self):
+        self.db = DataBase()  
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
+        if self.nome_colab_login == "":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Insira um Nome")
+            msg.setText("Insira um nome para salvar a imagem")
+            msg.exec()
+            return
+
+        else:
+            file_dialog = QFileDialog()
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            
+            #Verifica se o caminho escolhido pelo usuario é valido
+            caminho_importado = file_path
+            formato_importado = imghdr.what(caminho_importado)
+
+            if formato_importado not in format:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro ao importar")
+                msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                resposta = msg.exec()
+
+
+                if resposta == QMessageBox.Yes:
+                    file_dialog = QFileDialog()
+                    file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                    caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
+
+                    if formato_importado not in format:
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
+
+                    if formato_importado in format:
+                        
+                        tupla_foto = (self.nome_colab_login, caminho_importado, self.id_colaborador)
+                        result = self.db.tirar_foto_colaborador(tupla_foto)
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!!")
+                        msg.exec()
+                        
+                    
+                    if resposta == QMessageBox.No:
+                        return
+            else:
+                #Trata o ID do Select feito no banco
+                print(self.id_colaborador)
+                id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                print(id_foto)
+                id_foto_nt = id_foto[0][0]
+                id_foto_tratada = id_foto_nt
+
+                #Altera no Banco o caminho da imagem
+                tupla_foto = (id_foto_tratada, self.nome_colab_login, caminho_importado)
+                print(tupla_foto)
+                result = self.db.alterar_foto_colaborador(tupla_foto)
+                
+
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Imagem Salva")
+                msg.setText("Imagem Salva com Sucesso!!!")
+                msg.exec()  
+class DialogAlterarSenhaFotoSec(QDialog):
+    def __init__(self, parent, id_colab_tratado_sec, nome_colab_perfil_sec) -> None:
+        super().__init__(parent)
+        self.setAttribute(Qt.WA_DeleteOnClose)
+        self.ui = Ui_Alterar_Senha_Foto()
+        self.ui.setupUi(self)  
+        self.ui.toolButton_alterar_foto_popup_perfil_as.clicked.connect(self.AlterarFotoColaborador)
+        self.id_colaborador = id_colab_tratado_sec
+        print("Id Dilago DENTRO FISIO ->",self.id_colaborador)
+        self.nome_colab_login = nome_colab_perfil_sec
+        print("Nome Login DENTRO FISIO ->", self.nome_colab_login)
+               
+        
+    def AlterarFotoColaborador(self):
+        self.db = DataBase()  
+        
+        options = QFileDialog.Options()
+        options |= QFileDialog.ReadOnly
+
+        format =  ["png", "jpg", "jpeg", "gif", "bmp", "ico"]
+        
+        if self.nome_colab_login == "":
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Insira um Nome")
+            msg.setText("Insira um nome para salvar a imagem")
+            msg.exec()
+            return
+
+        else:
+            file_dialog = QFileDialog()
+            file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+            
+            #Verifica se o caminho escolhido pelo usuario é valido
+            caminho_importado = file_path
+            formato_importado = imghdr.what(caminho_importado)
+
+            if formato_importado not in format:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Erro ao importar")
+                msg.setText("Erro ao improtar a Imagem\nDeseja importar novamente?")
+                msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+                resposta = msg.exec()
+
+
+                if resposta == QMessageBox.Yes:
+                    file_dialog = QFileDialog()
+                    file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
+                    caminho_importado = file_path
+                    formato_importado = imghdr.what(caminho_importado)
+                    print(formato_importado)
+
+                    if formato_importado not in format:
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Erro ao importar")
+                        msg.setText("Erro ao improtar a Imagem\nTente Novamente")
+                        msg.exec() 
+                        return
+
+                    if formato_importado in format:
+                        
+                        tupla_foto = (self.nome_colab_login, caminho_importado, self.id_colaborador)
+                        result = self.db.tirar_foto_colaborador(tupla_foto)
+                        
+                        msg = QMessageBox()
+                        msg.setIcon(QMessageBox.Information)
+                        msg.setWindowTitle("Imagem Salva")
+                        msg.setText("Imagem Salva com Sucesso!!!")
+                        msg.exec()
+                        
+                    
+                    if resposta == QMessageBox.No:
+                        return
+            else:
+                #Trata o ID do Select feito no banco
+                print(self.id_colaborador)
+                id_foto = self.db.buscarIdFotoColab(self.id_colaborador)
+                print(id_foto)
                 id_foto_nt = id_foto[0][0]
                 id_foto_tratada = id_foto_nt
 
@@ -858,11 +1330,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(self.limparCamposCadastroBeneficios)
         self.ui.btn_voltar_cadastro_retirada_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_beneficios_as))
         self.ui.btn_relatorio_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_agendamento_as))
-        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
         self.ui.btn_gerar_excel_relatorio_atendimentos.clicked.connect(self.gerar_excel_relatorio_atendimento)
         self.ui.btn_relatorio_agenda_as.clicked.connect(self.buscar_relatorio_agendamento)
         self.ui.btn_buscar_relatorio_agendamento_as.clicked.connect(self.filter_relatorio_agendamento)
         self.ui.btn_voltar_relatorios_agendamento_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
+        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
+        self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
+        self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(self.limparCamposAtendimentoFisioterapeuta)
@@ -1013,7 +1487,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_observacoes_sigilosas_as.clicked.connect(self.alterar_usuario_area_sigilosa)
 
 
-        ########################## CEP #####################################################################################################################################################
+        ########################### CEP #####################################################################################################################################################
         self.ui.btn_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
@@ -1021,40 +1495,35 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_alterar_cep_buscar_cuidador_as.clicked.connect(self.validarCep)
         self.ui.btn_alterar_cep_buscar_usuario_as.clicked.connect(self.validarCep)
         self.ui.btn_alterar_cep_buscar_colaborador_as.clicked.connect(self.validarCep)
-        self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)
+        self.ui.btn_cep_buscar_fornecedor_as.clicked.connect(self.validarCep)       
 
 
-
-        ########################### CPF ####################################################################################################################################################
-        self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
-        self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
-       
-
-        
-        
-
-
-        ########################### POPUP ALTERAR FOTO E SENHA AS #################
+        ########################### POPUP ALTERAR FOTO E SENHA AS ###########################################################################################################################
         #self.ui.btn_alterar_foto_colab_as(self.trocarFotoSenha)
         
         
-        ########################### POPUP TIRAR E IMPORTAR FOTO AS ################
+        ########################### POPUP TIRAR E IMPORTAR FOTO AS ##########################################################################################################################
         self.ui.btn_tirar_foto_usuario_as.clicked.connect(self.tirarImportarFotoUsuario)
         self.ui.btn_tirar_foto_colaborador_as.clicked.connect(self.tirarImportarFotoColaborador)
         self.ui.btn_alterar_foto_colab_as.clicked.connect(self.AlterarFotoColaborador)
         self.ui.btn_alterar_foto_usuario_as.clicked.connect(self.AlterarFotoUsuario)
         self.ui.btn_alterar_foto_colab_as_perfil.clicked.connect(self.trocarFotoSenha)
+        self.ui.btn_alterar_foto_colab_as_perfil_farm.clicked.connect(self.trocarFotoSenhaFarm)
+        self.ui.btn_alterar_foto_colab_as_perfil_fisio.clicked.connect(self.trocarFotoSenhaFisio)
+        self.ui.btn_alterar_foto_colab_as_perfil_nutri.clicked.connect(self.trocarFotoSenhaNutri)
+        self.ui.btn_alterar_foto_colab_as_perfil_psic.clicked.connect(self.trocarFotoSenhaPsic)
+        self.ui.btn_alterar_foto_colab_as_perfil_sec.clicked.connect(self.trocarFotoSenhaSec)
         
 
-
-        ########################### POPUP CURSOS E OFICINAS AS ####################
+        ########################### POPUP CURSOS E OFICINAS AS ##############################################################################################################################
         # self.ui.btn_concluir_cursos_as.clicked.connect(self.cadastroIncompletoCursos)
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario)
         self.ui.btn_gerar_excel_relatorio_beneficios_as.clicked.connect(self.gerar_excel_relatorio_beneficio)
         self.ui.input_buscar_dados_relatorio_beneficios_as.textChanged.connect(self.filtrar_dados_beneficio)
         self.ui.btn_buscar_relatorio_beneficios_as.clicked.connect(self.filtrar_data_beneficio)
 
-        ########################### BANCO #########################################
+
+        ########################### BANCO ###################################################################################################################################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
@@ -1158,6 +1627,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nome_farm_3.setText(nome_colaborador)
                     self.LoginFarm()        
+                    self.buscarIdColabFarm()
                 else:
                     print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -1211,6 +1681,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nome_sec.setText(nome_colaborador)
                     self.LoginSec() 
+                    self.buscarIdColabSec()
                     # self.buscarIdColabPsic()
                          
                 else:
@@ -2452,6 +2923,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         id_colab_fisio_nt = id_colab_fisio[0][0]
         self.id_colab_tratado_fisio = id_colab_fisio_nt
         print("ID FISIO ->",self.id_colab_tratado_fisio)
+        
+    def buscarIdColabFarm(self):
+        login = self.ui.input_usuario_login.text()
+        print("Login Fisio ->", login)
+        id_colab_farm= self.db.buscarIdColabFisio(login)
+        id_colab_farm_nt = id_colab_farm[0][0]
+        self.id_colab_tratado_farm = id_colab_farm_nt
+        print("ID FISIO ->",self.id_colab_tratado_farm)
+        
+    def buscarIdColabSec(self):
+        login = self.ui.input_usuario_login.text()
+        print("Login Fisio ->", login)
+        id_colab_sec= self.db.buscarIdColabFisio(login)
+        id_colab_sec_nt = id_colab_sec[0][0]
+        self.id_colab_tratado_sec = id_colab_sec_nt
+        print("ID FISIO ->",self.id_colab_tratado_sec)
 
     def filtrar_dados_relatorio_fisio(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
@@ -2877,8 +3364,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Usuário")
             msg.setText("Usuário cadastrado com sucesso!")
             msg.exec()
-            # self.msg(result[0],result[1])
-            # self.limparCamposCadastroUsuario()
+            #self.msg(result[0],result[1])
+            self.limparCamposCadastroUsuario()
     
     def listarUsuarios(self):
         lista_usuarios = self.db.select_usuario_ids()
@@ -3490,7 +3977,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Agendamento Cadastrado com sucesso!")
             msg.exec()
             self.tabela_agendamento_fisio()
-            self.limparCamposAgendamentoFisio()
+            self.limparCamposAgendaFisioterapeuta()
 
     def cadastroAgendamentoNutri(self):
         id_matricula = self.ui.input_id_matricula_nutri_agendamento.text()
@@ -3666,7 +4153,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.limparCamposAreaSigilosa()
 
     ##### LIMPAR CAMPOS ####################################################################################################################################################################
-    def limparCamposCadastroUsuario (self):
+    def limparCamposCadastroUsuario(self):
         self.ultimosIds()
         self.ui.input_nome_usuario_as.setText("") #
         self.ui.input_nascimento_usuario_as.setDateTime(QDateTime.currentDateTime())
@@ -3710,6 +4197,22 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_patologia_base_usuario_as.setCurrentIndex(int(0))
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
+
+        original_image = cv2.imread("./icons/adicionar-amigo.png")
+
+        desired_size = (120, 120)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+
+        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
+        self.ui.label_foto_usuario_as.setScaledContents(True)
+        self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
+        self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
+
+
       
     def limparCamposCadastroCuidador(self):
         self.ultimosIds()
@@ -3832,8 +4335,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def limparCamposRelatorioCuidadores(self):
         self.ui.input_inicio_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_final_periodo_relatorio_cuidadores_as.setDateTime(QDateTime.currentDateTime())
-        self.ui.input_idade_inicial_relatorio_cuidadores_as.setText("")
-        self.ui.input_idade_final_relatorio_cuidadores_as.setText("")
         self.ui.input_buscar_dados_relatorio_cuidadores_as.setText("")
 
     def limparCamposRelatorioPessoas(self):
@@ -4463,7 +4964,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Consulta Cadastrada com sucesso!")
             msg.exec()
             self.puxar_consulta_fisio()
-            self.limparCamposConsultaFisio()
+            self.limparCamposAtendimentoFisioterapeuta()
 
     def puxar_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
@@ -4908,24 +5409,224 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 print("O arquivo de imagem não existe:", caminho)
         else:
             print("Caminho inválido:", caminho)
+            
+    def fotoLoginColabFarm(self, id_colab):
+        print(id_colab)
+        caminho = self.db.buscar_foto_colaborador(id_colab)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colab_inicio_farm.setPixmap(pixmap)
+
+                    self.ui.label_foto_colab_inicio_farm.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colab_inicio_farm.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
+            
+    def fotoLoginColabFisio(self, id_colab):
+        caminho = self.db.buscar_foto_colaborador(id_colab)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colab_inicio_fisio.setPixmap(pixmap)
+
+                    self.ui.label_foto_colab_inicio_fisio.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colab_inicio_fisio.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
+            
+    def fotoLoginColabNutri(self, id_colab):
+        caminho = self.db.buscar_foto_colaborador(id_colab)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colab_inicio_nutri.setPixmap(pixmap)
+
+                    self.ui.label_foto_colab_inicio_nutri.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colab_inicio_nutri.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
+            
+    def fotoLoginColabPsic(self, id_colab):
+        print("foto psic ->",id_colab)
+        caminho = self.db.buscar_foto_colaborador(id_colab)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colab_inicio_psic.setPixmap(pixmap)
+
+                    self.ui.label_foto_colab_inicio_psic.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colab_inicio_psic.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
+            
+    def fotoLoginColabSec(self, id_colab):
+        caminho = self.db.buscar_foto_colaborador(id_colab)
+        caminho_tratado = "".join(caminho)
+        if caminho_tratado is not None and isinstance(caminho_tratado, str):
+            if os.path.isfile(caminho_tratado):
+                original_image = cv2.imread(caminho_tratado)
+                if original_image is not None:
+                    desired_size = (240, 240)
+                    resized_image = cv2.resize(original_image, desired_size)
+
+                    resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                    h, w, ch = resized_image.shape
+                    bytes_per_line = ch * w
+                    qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                    pixmap = QPixmap.fromImage(qt_image)
+
+                    self.ui.label_foto_colab_inicio_sec.setPixmap(pixmap)
+
+                    self.ui.label_foto_colab_inicio_sec.setFixedSize(QSize(w, h))
+
+                    self.ui.label_foto_colab_inicio_sec.setAlignment(Qt.AlignCenter)
+                else:
+                    print("Erro ao ler a imagem.")
+            else:
+                print("O arquivo de imagem não existe:", caminho)
+        else:
+            print("Caminho inválido:", caminho)
 
     def trocarFotoSenha(self):
         #Recebe o nome da label do colab logado no sistema
         self.nome_colab_perfil = self.ui.lineEdit_recebe_nome_as.text()
 
-        #Recebe o Id do select do banco
-        self.id_colab = self.db.select_nome_colab_login(self.nome_colab_perfil)
-
-        #Trata o Id recebido 
-        id_colab_nt = self.id_colab[0][0]
-        id_colab_tratado = id_colab_nt
-
         #Passo como parametros as variaveis com as informções do colab
-        msg = DialogAlterarSenhaFoto(self, id_colab_tratado, self.nome_colab_perfil)
+        msg = DialogAlterarSenhaFotoAssis(self, self.id_colab_tratado_ass, self.nome_colab_perfil)
         self.popup.show()
         msg.exec()
         self.popup.hide()
-        self.fotoLoginColab(id_colab_tratado)
+        self.fotoLoginColab(self.id_colab_tratado_ass)
+        
+    def trocarFotoSenhaFarm(self):
+        #Recebe o nome da label do colab logado no sistema
+        self.nome_colab_perfil_farm = self.ui.label_ola_nome_farm_3.text()
+
+        #Passo como parametros as variaveis com as informções do colab
+        msg = DialogAlterarSenhaFotoFarm(self, self.id_colab_tratado_farm, self.nome_colab_perfil_farm)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        self.fotoLoginColabFarm(self.id_colab_tratado_farm)
+        
+    def trocarFotoSenhaFisio(self):
+        #Recebe o nome da label do colab logado no sistema
+        self.nome_colab_perfil_fisio = self.ui.label_ola_nome_fisio.text()
+        
+        #Passo como parametros as variaveis com as informções do colab
+        msg = DialogAlterarSenhaFotoFisio(self, self.id_colab_tratado_fisio, self.nome_colab_perfil_fisio)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        self.fotoLoginColabFisio(self.id_colab_tratado_fisio)
+        
+    def trocarFotoSenhaNutri(self):
+        #Recebe o nome da label do colab logado no sistema
+        self.nome_colab_perfil_nutri = self.ui.label_ola_nutri.text()
+
+        #Passo como parametros as variaveis com as informções do colab
+        msg = DialogAlterarSenhaFotoNutri(self, self.id_colab_tratado_nutri, self.nome_colab_perfil_nutri)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        self.fotoLoginColabNutri(self.id_colab_tratado_nutri)
+        
+    def trocarFotoSenhaPsic(self):
+        #Recebe o nome da label do colab logado no sistema
+        self.nome_colab_perfil_psic = self.ui.label_ola_nome_psi.text()
+
+        #Passo como parametros as variaveis com as informções do colab
+        msg = DialogAlterarSenhaFotoPsic(self, self.id_colab_tratado_psic, self.nome_colab_perfil_psic)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        self.fotoLoginColabPsic(self.id_colab_tratado_psic)
+        
+    def trocarFotoSenhaSec(self):
+        #Recebe o nome da label do colab logado no sistema
+        self.nome_colab_perfil_sec = self.ui.label_ola_nome_sec.text()
+
+        #Passo como parametros as variaveis com as informções do colab
+        msg = DialogAlterarSenhaFotoSec(self, self.id_colab_tratado_sec, self.nome_colab_perfil_sec)
+        self.popup.show()
+        msg.exec()
+        self.popup.hide()
+        self.fotoLoginColabSec(self.id_colab_tratado_sec)
         
 
 
