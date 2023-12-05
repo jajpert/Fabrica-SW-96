@@ -12321,7 +12321,7 @@ class Ui_MainWindow(object):
         self.label_tipo_tratamento_usuario_as.setObjectName(u"label_tipo_tratamento_usuario_as")
         self.label_tipo_tratamento_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_tipo_tratamento_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_tipo_tratamento_usuario_as.setFont(font)
+        self.label_tipo_tratamento_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_59.addWidget(self.label_tipo_tratamento_usuario_as)
 
@@ -12335,7 +12335,7 @@ class Ui_MainWindow(object):
         self.input_tipo_tratamento_usuario_as.setObjectName(u"input_tipo_tratamento_usuario_as")
         self.input_tipo_tratamento_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_tipo_tratamento_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_tipo_tratamento_usuario_as.setFont(font)
+        self.input_tipo_tratamento_usuario_as.setFont(fonte_abel_size_11)
         self.input_tipo_tratamento_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.input_tipo_tratamento_usuario_as.setStyleSheet(u"")
 
@@ -12375,7 +12375,7 @@ class Ui_MainWindow(object):
         self.label_local_tratamento_usuario_as.setObjectName(u"label_local_tratamento_usuario_as")
         self.label_local_tratamento_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_local_tratamento_usuario_as.setMaximumSize(QSize(330, 16777215))
-        self.label_local_tratamento_usuario_as.setFont(font)
+        self.label_local_tratamento_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_60.addWidget(self.label_local_tratamento_usuario_as)
 
@@ -12384,7 +12384,7 @@ class Ui_MainWindow(object):
         self.input_Local_Tratamento_Clinica_usuario_as.setObjectName(u"input_Local_Tratamento_Clinica_usuario_as")
         self.input_Local_Tratamento_Clinica_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_Local_Tratamento_Clinica_usuario_as.setMaximumSize(QSize(330, 30))
-        self.input_Local_Tratamento_Clinica_usuario_as.setFont(font)
+        self.input_Local_Tratamento_Clinica_usuario_as.setFont(fonte_abel_size_11)
         self.input_Local_Tratamento_Clinica_usuario_as.setToolTipDuration(-1)
 
         self.verticalLayout_60.addWidget(self.input_Local_Tratamento_Clinica_usuario_as)
@@ -12406,7 +12406,7 @@ class Ui_MainWindow(object):
         self.label_patologia_base_usuario_as.setObjectName(u"label_patologia_base_usuario_as")
         self.label_patologia_base_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_patologia_base_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_patologia_base_usuario_as.setFont(font)
+        self.label_patologia_base_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_61.addWidget(self.label_patologia_base_usuario_as)
 
@@ -12421,7 +12421,7 @@ class Ui_MainWindow(object):
         self.input_patologia_base_usuario_as.setObjectName(u"input_patologia_base_usuario_as")
         self.input_patologia_base_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_patologia_base_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_patologia_base_usuario_as.setFont(font)
+        self.input_patologia_base_usuario_as.setFont(fonte_abel_size_11)
         self.input_patologia_base_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_61.addWidget(self.input_patologia_base_usuario_as)
@@ -12449,7 +12449,7 @@ class Ui_MainWindow(object):
         self.input_outras_patologias_usuario_as.setEnabled(False)
         self.input_outras_patologias_usuario_as.setMinimumSize(QSize(0, 0))
         self.input_outras_patologias_usuario_as.setMaximumSize(QSize(170, 30))
-        self.input_outras_patologias_usuario_as.setFont(font)
+        self.input_outras_patologias_usuario_as.setFont(fonte_abel_size_11)
         self.input_outras_patologias_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
@@ -12473,7 +12473,7 @@ class Ui_MainWindow(object):
         self.label_data_inicio_usuario_as.setObjectName(u"label_data_inicio_usuario_as")
         self.label_data_inicio_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_data_inicio_usuario_as.setMaximumSize(QSize(160, 16777215))
-        self.label_data_inicio_usuario_as.setFont(font)
+        self.label_data_inicio_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_62.addWidget(self.label_data_inicio_usuario_as, 0, Qt.AlignHCenter)
 
@@ -12517,7 +12517,7 @@ class Ui_MainWindow(object):
         self.label_periodo_usuario_as.setObjectName(u"label_periodo_usuario_as")
         self.label_periodo_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_periodo_usuario_as.setMaximumSize(QSize(250, 16777215))
-        self.label_periodo_usuario_as.setFont(font)
+        self.label_periodo_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_89.addWidget(self.label_periodo_usuario_as)
 
@@ -12529,7 +12529,7 @@ class Ui_MainWindow(object):
         self.input_periodo_usuario_as.setObjectName(u"input_periodo_usuario_as")
         self.input_periodo_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_periodo_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_periodo_usuario_as.setFont(font)
+        self.input_periodo_usuario_as.setFont(fonte_abel_size_11)
         self.input_periodo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_89.addWidget(self.input_periodo_usuario_as)
@@ -12704,7 +12704,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3301.setObjectName(u"verticalLayout_3301")
         self.label_tipo_cadastro_beneficio = QLabel(self.frame_4701)
         self.label_tipo_cadastro_beneficio.setObjectName(u"label_tipo_cadastro_beneficio")
-        self.label_tipo_cadastro_beneficio.setFont(font)
+        self.label_tipo_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3301.addWidget(self.label_tipo_cadastro_beneficio)
 
@@ -12714,7 +12714,7 @@ class Ui_MainWindow(object):
         self.input_tipo_cadastro_beneficio.addItem("")
         self.input_tipo_cadastro_beneficio.setObjectName(u"input_tipo_cadastro_beneficio")
         self.input_tipo_cadastro_beneficio.setMinimumSize(QSize(0, 32))
-        self.input_tipo_cadastro_beneficio.setFont(font)
+        self.input_tipo_cadastro_beneficio.setFont(fonte_abel_size_11)
         self.input_tipo_cadastro_beneficio.setStyleSheet(u"border-radius: 15px;")
 
         self.verticalLayout_3301.addWidget(self.input_tipo_cadastro_beneficio)
@@ -12730,13 +12730,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_3311.setObjectName(u"verticalLayout_3311")
         self.label_codigo_cadastro_beneficio = QLabel(self.frame_4711)
         self.label_codigo_cadastro_beneficio.setObjectName(u"label_codigo_cadastro_beneficio")
-        self.label_codigo_cadastro_beneficio.setFont(font)
+        self.label_codigo_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3311.addWidget(self.label_codigo_cadastro_beneficio)
 
         self.input_codigo_cadastro_beneficio = QLineEdit(self.frame_4711)
         self.input_codigo_cadastro_beneficio.setObjectName(u"input_codigo_cadastro_beneficio")
-        self.input_codigo_cadastro_beneficio.setFont(font)
+        self.input_codigo_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3311.addWidget(self.input_codigo_cadastro_beneficio)
 
@@ -12751,13 +12751,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_3321.setObjectName(u"verticalLayout_3321")
         self.label_lote_cadastro_beneficio = QLabel(self.frame_4721)
         self.label_lote_cadastro_beneficio.setObjectName(u"label_lote_cadastro_beneficio")
-        self.label_lote_cadastro_beneficio.setFont(font)
+        self.label_lote_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3321.addWidget(self.label_lote_cadastro_beneficio)
 
         self.input_lote_cadastro_beneficio = QLineEdit(self.frame_4721)
         self.input_lote_cadastro_beneficio.setObjectName(u"input_lote_cadastro_beneficio")
-        self.input_lote_cadastro_beneficio.setFont(font)
+        self.input_lote_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3321.addWidget(self.input_lote_cadastro_beneficio)
 
@@ -12772,7 +12772,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3331.setObjectName(u"verticalLayout_3331")
         self.label_udm_cadastro_beneficio = QLabel(self.frame_4731)
         self.label_udm_cadastro_beneficio.setObjectName(u"label_udm_cadastro_beneficio")
-        self.label_udm_cadastro_beneficio.setFont(font)
+        self.label_udm_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3331.addWidget(self.label_udm_cadastro_beneficio)
 
@@ -12784,7 +12784,7 @@ class Ui_MainWindow(object):
         self.input_comboBox_udm_cadastro_benefecio.addItem("")
         self.input_comboBox_udm_cadastro_benefecio.setObjectName(u"input_comboBox_udm_cadastro_benefecio")
         self.input_comboBox_udm_cadastro_benefecio.setMinimumSize(QSize(0, 32))
-        self.input_comboBox_udm_cadastro_benefecio.setFont(font)
+        self.input_comboBox_udm_cadastro_benefecio.setFont(fonte_abel_size_11)
         self.input_comboBox_udm_cadastro_benefecio.setStyleSheet(u"border-color: rgb(168, 87, 81);\n"
 "border-radius: 15px;\n"
 "border-width:1px;\n"
@@ -12848,13 +12848,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_3351.setContentsMargins(9, 9, 9, 9)
         self.label_descricao_cadastro_beneficio = QLabel(self.frame_4781)
         self.label_descricao_cadastro_beneficio.setObjectName(u"label_descricao_cadastro_beneficio")
-        self.label_descricao_cadastro_beneficio.setFont(font)
+        self.label_descricao_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3351.addWidget(self.label_descricao_cadastro_beneficio)
 
         self.input_descricao_cadastro_beneficio = QLineEdit(self.frame_4781)
         self.input_descricao_cadastro_beneficio.setObjectName(u"input_descricao_cadastro_beneficio")
-        self.input_descricao_cadastro_beneficio.setFont(font)
+        self.input_descricao_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3351.addWidget(self.input_descricao_cadastro_beneficio)
 
@@ -12869,14 +12869,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_3381.setObjectName(u"verticalLayout_3381")
         self.label_validade_cadastro_beneficio = QLabel(self.frame_4791)
         self.label_validade_cadastro_beneficio.setObjectName(u"label_validade_cadastro_beneficio")
-        self.label_validade_cadastro_beneficio.setFont(font)
+        self.label_validade_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3381.addWidget(self.label_validade_cadastro_beneficio)
 
         self.input_dateEdit_cadastro_beneficio = QDateEdit(self.frame_4791)
         self.input_dateEdit_cadastro_beneficio.setObjectName(u"input_dateEdit_cadastro_beneficio")
         self.input_dateEdit_cadastro_beneficio.setMinimumSize(QSize(0, 32))
-        self.input_dateEdit_cadastro_beneficio.setFont(font)
+        self.input_dateEdit_cadastro_beneficio.setFont(fonte_abel_size_11)
         self.input_dateEdit_cadastro_beneficio.setStyleSheet(u"QDateEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QDateEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_dateEdit_cadastro_beneficio.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -12901,14 +12901,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_3391.setObjectName(u"verticalLayout_3391")
         self.label_quantidade_cadastro_beneficio = QLabel(self.frame_4801)
         self.label_quantidade_cadastro_beneficio.setObjectName(u"label_quantidade_cadastro_beneficio")
-        self.label_quantidade_cadastro_beneficio.setFont(font)
+        self.label_quantidade_cadastro_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3391.addWidget(self.label_quantidade_cadastro_beneficio)
 
         self.input_spinBox_cadastro_beneficio = QSpinBox(self.frame_4801)
         self.input_spinBox_cadastro_beneficio.setObjectName(u"input_spinBox_cadastro_beneficio")
         self.input_spinBox_cadastro_beneficio.setMinimumSize(QSize(0, 32))
-        self.input_spinBox_cadastro_beneficio.setFont(font)
+        self.input_spinBox_cadastro_beneficio.setFont(fonte_abel_size_11)
         self.input_spinBox_cadastro_beneficio.setStyleSheet(u"border-color: rgb(168, 87, 81);\n"
 "border-radius: 15px;\n"
 "border-width:1px;\n"
@@ -13031,7 +13031,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem124 = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio.setItem(1, 2, __qtablewidgetitem124)
         self.input_TableWidget_cadastro_beneficio.setObjectName(u"input_TableWidget_cadastro_beneficio")
-        self.input_TableWidget_cadastro_beneficio.setFont(font)
+        self.input_TableWidget_cadastro_beneficio.setFont(fonte_abel_size_11)
         self.input_TableWidget_cadastro_beneficio.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_cadastro_beneficio.setAutoFillBackground(False)
         self.input_TableWidget_cadastro_beneficio.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -13365,7 +13365,7 @@ class Ui_MainWindow(object):
         self.label_cpf_cadastro_retirada_beneficio.setObjectName(u"label_cpf_cadastro_retirada_beneficio")
         self.label_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(33, 20))
         self.label_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(50, 20))
-        self.label_cpf_cadastro_retirada_beneficio.setFont(font)
+        self.label_cpf_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_438.addWidget(self.label_cpf_cadastro_retirada_beneficio)
 
@@ -13373,7 +13373,7 @@ class Ui_MainWindow(object):
         self.input_cpf_cadastro_retirada_beneficio.setObjectName(u"input_cpf_cadastro_retirada_beneficio")
         self.input_cpf_cadastro_retirada_beneficio.setMinimumSize(QSize(150, 30))
         self.input_cpf_cadastro_retirada_beneficio.setMaximumSize(QSize(145, 30))
-        self.input_cpf_cadastro_retirada_beneficio.setFont(font)
+        self.input_cpf_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_cpf_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13480,7 +13480,7 @@ class Ui_MainWindow(object):
         self.label_nome_cadastro_retirada_beneficio.setObjectName(u"label_nome_cadastro_retirada_beneficio")
         self.label_nome_cadastro_retirada_beneficio.setMinimumSize(QSize(339, 26))
         self.label_nome_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 16777215))
-        self.label_nome_cadastro_retirada_beneficio.setFont(font)
+        self.label_nome_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_359.addWidget(self.label_nome_cadastro_retirada_beneficio)
 
@@ -13488,7 +13488,7 @@ class Ui_MainWindow(object):
         self.input_nome_cadastro_retirada_beneficio.setObjectName(u"input_nome_cadastro_retirada_beneficio")
         self.input_nome_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_nome_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_cadastro_retirada_beneficio.setFont(font)
+        self.input_nome_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_nome_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13515,7 +13515,7 @@ class Ui_MainWindow(object):
         self.label_idade_cadastro_retirada_beneficio.setObjectName(u"label_idade_cadastro_retirada_beneficio")
         self.label_idade_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
         self.label_idade_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 16777215))
-        self.label_idade_cadastro_retirada_beneficio.setFont(font)
+        self.label_idade_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_355.addWidget(self.label_idade_cadastro_retirada_beneficio)
 
@@ -13523,7 +13523,7 @@ class Ui_MainWindow(object):
         self.input_idade_cadastro_retirada_beneficio.setObjectName(u"input_idade_cadastro_retirada_beneficio")
         self.input_idade_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_idade_cadastro_retirada_beneficio.setMaximumSize(QSize(79, 30))
-        self.input_idade_cadastro_retirada_beneficio.setFont(font)
+        self.input_idade_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_idade_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13549,7 +13549,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_354.setContentsMargins(0, 0, 0, 0)
         self.label_data_cadastro_retirada_beneficio = QLabel(self.frame_511)
         self.label_data_cadastro_retirada_beneficio.setObjectName(u"label_data_cadastro_retirada_beneficio")
-        self.label_data_cadastro_retirada_beneficio.setFont(font)
+        self.label_data_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_354.addWidget(self.label_data_cadastro_retirada_beneficio)
 
@@ -13584,7 +13584,7 @@ class Ui_MainWindow(object):
         self.input_id_usuario_retirada_beneficio.setGeometry(QRect(0, 0, 339, 30))
         self.input_id_usuario_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_id_usuario_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_id_usuario_retirada_beneficio.setFont(font)
+        self.input_id_usuario_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_id_usuario_retirada_beneficio.setStyleSheet(u"\n"
 "border-color: transparent ;\n"
 "background-color: transparent;\n"
@@ -13618,7 +13618,7 @@ class Ui_MainWindow(object):
         self.label_telefone_cadastro_retirada_beneficio.setObjectName(u"label_telefone_cadastro_retirada_beneficio")
         self.label_telefone_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
         self.label_telefone_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 16777215))
-        self.label_telefone_cadastro_retirada_beneficio.setFont(font)
+        self.label_telefone_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3511.addWidget(self.label_telefone_cadastro_retirada_beneficio)
 
@@ -13626,7 +13626,7 @@ class Ui_MainWindow(object):
         self.input_telefone_cadastro_retirada_beneficio.setObjectName(u"input_telefone_cadastro_retirada_beneficio")
         self.input_telefone_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_telefone_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_telefone_cadastro_retirada_beneficio.setFont(font)
+        self.input_telefone_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_telefone_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13650,7 +13650,7 @@ class Ui_MainWindow(object):
         self.label_cns_cadastro_retirada_beneficio.setObjectName(u"label_cns_cadastro_retirada_beneficio")
         self.label_cns_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
         self.label_cns_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 16777215))
-        self.label_cns_cadastro_retirada_beneficio.setFont(font)
+        self.label_cns_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_352.addWidget(self.label_cns_cadastro_retirada_beneficio)
 
@@ -13658,7 +13658,7 @@ class Ui_MainWindow(object):
         self.input_cns_cadastro_retirada_beneficio.setObjectName(u"input_cns_cadastro_retirada_beneficio")
         self.input_cns_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_cns_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_cns_cadastro_retirada_beneficio.setFont(font)
+        self.input_cns_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_cns_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13682,7 +13682,7 @@ class Ui_MainWindow(object):
         self.label_clinica_cadastro_retirada_beneficio.setObjectName(u"label_clinica_cadastro_retirada_beneficio")
         self.label_clinica_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
         self.label_clinica_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 16777215))
-        self.label_clinica_cadastro_retirada_beneficio.setFont(font)
+        self.label_clinica_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_356.addWidget(self.label_clinica_cadastro_retirada_beneficio)
 
@@ -13690,7 +13690,7 @@ class Ui_MainWindow(object):
         self.input_clinica_cadastro_retirada_beneficio.setObjectName(u"input_clinica_cadastro_retirada_beneficio")
         self.input_clinica_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_clinica_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_clinica_cadastro_retirada_beneficio.setFont(font)
+        self.input_clinica_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_clinica_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13760,7 +13760,7 @@ class Ui_MainWindow(object):
         self.label_codigo_beneficio_cadastro_retirada_beneficio.setObjectName(u"label_codigo_beneficio_cadastro_retirada_beneficio")
         self.label_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(33, 20))
         self.label_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(111, 20))
-        self.label_codigo_beneficio_cadastro_retirada_beneficio.setFont(font)
+        self.label_codigo_beneficio_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_357.addWidget(self.label_codigo_beneficio_cadastro_retirada_beneficio)
 
@@ -13768,7 +13768,7 @@ class Ui_MainWindow(object):
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setObjectName(u"input_codigo_beneficio_cadastro_retirada_beneficio")
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setMinimumSize(QSize(145, 30))
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setMaximumSize(QSize(146, 30))
-        self.input_codigo_beneficio_cadastro_retirada_beneficio.setFont(font)
+        self.input_codigo_beneficio_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_codigo_beneficio_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13875,7 +13875,7 @@ class Ui_MainWindow(object):
         self.label_descricao_cadastro_retirada_beneficio.setObjectName(u"label_descricao_cadastro_retirada_beneficio")
         self.label_descricao_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 0))
         self.label_descricao_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 16777215))
-        self.label_descricao_cadastro_retirada_beneficio.setFont(font)
+        self.label_descricao_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_358.addWidget(self.label_descricao_cadastro_retirada_beneficio)
 
@@ -13883,7 +13883,7 @@ class Ui_MainWindow(object):
         self.input_descricao_cadastro_retirada_beneficio.setObjectName(u"input_descricao_cadastro_retirada_beneficio")
         self.input_descricao_cadastro_retirada_beneficio.setMinimumSize(QSize(0, 30))
         self.input_descricao_cadastro_retirada_beneficio.setMaximumSize(QSize(16777215, 30))
-        self.input_descricao_cadastro_retirada_beneficio.setFont(font)
+        self.input_descricao_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
         self.input_descricao_cadastro_retirada_beneficio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -13903,7 +13903,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_130.setContentsMargins(0, 0, 0, 0)
         self.label_quantidade_cadastro_retirada_beneficio = QLabel(self.frame_517)
         self.label_quantidade_cadastro_retirada_beneficio.setObjectName(u"label_quantidade_cadastro_retirada_beneficio")
-        self.label_quantidade_cadastro_retirada_beneficio.setFont(font)
+        self.label_quantidade_cadastro_retirada_beneficio.setFont(fonte_abel_size_11)
 
         self.verticalLayout_130.addWidget(self.label_quantidade_cadastro_retirada_beneficio)
 
@@ -14091,7 +14091,7 @@ class Ui_MainWindow(object):
         self.label_matricula_cuidador_as.setObjectName(u"label_matricula_cuidador_as")
         self.label_matricula_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_matricula_cuidador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_matricula_cuidador_as.setFont(font)
+        self.label_matricula_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_90.addWidget(self.label_matricula_cuidador_as)
 
@@ -14100,7 +14100,7 @@ class Ui_MainWindow(object):
         self.input_matricula_cuidador_as.setEnabled(False)
         self.input_matricula_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_cuidador_as.setMaximumSize(QSize(110, 30))
-        self.input_matricula_cuidador_as.setFont(font)
+        self.input_matricula_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_90.addWidget(self.input_matricula_cuidador_as)
 
@@ -14121,7 +14121,7 @@ class Ui_MainWindow(object):
         self.label_nome_cuidador_as.setObjectName(u"label_nome_cuidador_as")
         self.label_nome_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_nome_cuidador_as.setMaximumSize(QSize(460, 16777215))
-        self.label_nome_cuidador_as.setFont(font)
+        self.label_nome_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_69.addWidget(self.label_nome_cuidador_as)
 
@@ -14129,7 +14129,7 @@ class Ui_MainWindow(object):
         self.input_nome_cuidador_as.setObjectName(u"input_nome_cuidador_as")
         self.input_nome_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_cuidador_as.setMaximumSize(QSize(360, 30))
-        self.input_nome_cuidador_as.setFont(font)
+        self.input_nome_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_69.addWidget(self.input_nome_cuidador_as)
 
@@ -14154,7 +14154,7 @@ class Ui_MainWindow(object):
         self.label_data_nascimento_cuidador_as.setSizePolicy(sizePolicy9)
         self.label_data_nascimento_cuidador_as.setMinimumSize(QSize(140, 0))
         self.label_data_nascimento_cuidador_as.setMaximumSize(QSize(170, 16777215))
-        self.label_data_nascimento_cuidador_as.setFont(font)
+        self.label_data_nascimento_cuidador_as.setFont(fonte_abel_size_11)
         self.label_data_nascimento_cuidador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_146.addWidget(self.label_data_nascimento_cuidador_as)
@@ -14200,7 +14200,7 @@ class Ui_MainWindow(object):
         self.label_cpf_cuidador_as.setObjectName(u"label_cpf_cuidador_as")
         self.label_cpf_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_cpf_cuidador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_cpf_cuidador_as.setFont(font)
+        self.label_cpf_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_70.addWidget(self.label_cpf_cuidador_as)
 
@@ -14208,7 +14208,7 @@ class Ui_MainWindow(object):
         self.input_cpf_cuidador_as.setObjectName(u"input_cpf_cuidador_as")
         self.input_cpf_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_cpf_cuidador_as.setFont(font)
+        self.input_cpf_cuidador_as.setFont(fonte_abel_size_11)
         self.input_cpf_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_70.addWidget(self.input_cpf_cuidador_as)
@@ -14230,7 +14230,7 @@ class Ui_MainWindow(object):
         self.label_rg_cuidador_as.setObjectName(u"label_rg_cuidador_as")
         self.label_rg_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_rg_cuidador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_rg_cuidador_as.setFont(font)
+        self.label_rg_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_71.addWidget(self.label_rg_cuidador_as)
 
@@ -14238,7 +14238,7 @@ class Ui_MainWindow(object):
         self.input_rg_cuidador_as.setObjectName(u"input_rg_cuidador_as")
         self.input_rg_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_rg_cuidador_as.setFont(font)
+        self.input_rg_cuidador_as.setFont(fonte_abel_size_11)
         self.input_rg_cuidador_as.setMaxLength(7)
 
         self.verticalLayout_71.addWidget(self.input_rg_cuidador_as)
@@ -14260,7 +14260,7 @@ class Ui_MainWindow(object):
         self.label_data_emissao_cuidador_as.setObjectName(u"label_data_emissao_cuidador_as")
         self.label_data_emissao_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_data_emissao_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_data_emissao_cuidador_as.setFont(font)
+        self.label_data_emissao_cuidador_as.setFont(fonte_abel_size_11)
         self.label_data_emissao_cuidador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_72.addWidget(self.label_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
@@ -14319,14 +14319,14 @@ class Ui_MainWindow(object):
         self.label_orgao_expedidor_cuidador_as.setObjectName(u"label_orgao_expedidor_cuidador_as")
         self.label_orgao_expedidor_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_orgao_expedidor_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_orgao_expedidor_cuidador_as.setFont(font)
+        self.label_orgao_expedidor_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_73.addWidget(self.label_orgao_expedidor_cuidador_as)
 
         self.input_orgao_expedidor_cuidador_as = QLineEdit(self.frame_109)
         self.input_orgao_expedidor_cuidador_as.setObjectName(u"input_orgao_expedidor_cuidador_as")
         self.input_orgao_expedidor_cuidador_as.setMaximumSize(QSize(120, 30))
-        self.input_orgao_expedidor_cuidador_as.setFont(font)
+        self.input_orgao_expedidor_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_73.addWidget(self.input_orgao_expedidor_cuidador_as)
 
@@ -14345,7 +14345,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_91.setContentsMargins(0, 0, 0, 0)
         self.label_sexo_cuidador_as = QLabel(self.frame_95)
         self.label_sexo_cuidador_as.setObjectName(u"label_sexo_cuidador_as")
-        self.label_sexo_cuidador_as.setFont(font)
+        self.label_sexo_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_91.addWidget(self.label_sexo_cuidador_as)
 
@@ -14356,7 +14356,7 @@ class Ui_MainWindow(object):
         self.input_sexo_cuidador_as.setObjectName(u"input_sexo_cuidador_as")
         self.input_sexo_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_sexo_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_sexo_cuidador_as.setFont(font)
+        self.input_sexo_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_91.addWidget(self.input_sexo_cuidador_as)
 
@@ -14375,7 +14375,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_160.setContentsMargins(0, 0, 0, 0)
         self.label_usuario_cuidador_as = QLabel(self.frame_237)
         self.label_usuario_cuidador_as.setObjectName(u"label_usuario_cuidador_as")
-        self.label_usuario_cuidador_as.setFont(font)
+        self.label_usuario_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_160.addWidget(self.label_usuario_cuidador_as)
 
@@ -14384,7 +14384,7 @@ class Ui_MainWindow(object):
         self.input_usuario_cuidador_as.setObjectName(u"input_usuario_cuidador_as")
         self.input_usuario_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_usuario_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_usuario_cuidador_as.setFont(font)
+        self.input_usuario_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_160.addWidget(self.input_usuario_cuidador_as)
 
@@ -14403,7 +14403,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_92.setContentsMargins(0, 0, 0, 0)
         self.label_parentesco_cuidador_as = QLabel(self.frame_96)
         self.label_parentesco_cuidador_as.setObjectName(u"label_parentesco_cuidador_as")
-        self.label_parentesco_cuidador_as.setFont(font)
+        self.label_parentesco_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_92.addWidget(self.label_parentesco_cuidador_as)
 
@@ -14411,7 +14411,7 @@ class Ui_MainWindow(object):
         self.input_parentesco_cuidador_as.setObjectName(u"input_parentesco_cuidador_as")
         self.input_parentesco_cuidador_as.setMinimumSize(QSize(0, 0))
         self.input_parentesco_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_parentesco_cuidador_as.setFont(font)
+        self.input_parentesco_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_92.addWidget(self.input_parentesco_cuidador_as)
 
@@ -14432,7 +14432,7 @@ class Ui_MainWindow(object):
         self.label_telefone_cuidador_as.setObjectName(u"label_telefone_cuidador_as")
         self.label_telefone_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_telefone_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_telefone_cuidador_as.setFont(font)
+        self.label_telefone_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_74.addWidget(self.label_telefone_cuidador_as)
 
@@ -14440,7 +14440,7 @@ class Ui_MainWindow(object):
         self.input_telefone_cuidador_as.setObjectName(u"input_telefone_cuidador_as")
         self.input_telefone_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_telefone_cuidador_as.setFont(font)
+        self.input_telefone_cuidador_as.setFont(fonte_abel_size_11)
         self.input_telefone_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_74.addWidget(self.input_telefone_cuidador_as)
@@ -14462,7 +14462,7 @@ class Ui_MainWindow(object):
         self.label_telefone_contato_cuidador_as.setObjectName(u"label_telefone_contato_cuidador_as")
         self.label_telefone_contato_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_telefone_contato_cuidador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_telefone_contato_cuidador_as.setFont(font)
+        self.label_telefone_contato_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_75.addWidget(self.label_telefone_contato_cuidador_as)
 
@@ -14470,7 +14470,7 @@ class Ui_MainWindow(object):
         self.input_telefone_contato_cuidador_as.setObjectName(u"input_telefone_contato_cuidador_as")
         self.input_telefone_contato_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_contato_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_telefone_contato_cuidador_as.setFont(font)
+        self.input_telefone_contato_cuidador_as.setFont(fonte_abel_size_11)
         self.input_telefone_contato_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_75.addWidget(self.input_telefone_contato_cuidador_as)
@@ -14515,7 +14515,7 @@ class Ui_MainWindow(object):
         self.label_cep_cuidador_as.setObjectName(u"label_cep_cuidador_as")
         self.label_cep_cuidador_as.setMinimumSize(QSize(50, 15))
         self.label_cep_cuidador_as.setMaximumSize(QSize(50, 15))
-        self.label_cep_cuidador_as.setFont(font)
+        self.label_cep_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_76.addWidget(self.label_cep_cuidador_as)
 
@@ -14523,7 +14523,7 @@ class Ui_MainWindow(object):
         self.input_cep_cuidador_as.setObjectName(u"input_cep_cuidador_as")
         self.input_cep_cuidador_as.setMinimumSize(QSize(120, 30))
         self.input_cep_cuidador_as.setMaximumSize(QSize(120, 16777215))
-        self.input_cep_cuidador_as.setFont(font)
+        self.input_cep_cuidador_as.setFont(fonte_abel_size_11)
         self.input_cep_cuidador_as.setStyleSheet(u"")
         self.input_cep_cuidador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -14602,7 +14602,7 @@ class Ui_MainWindow(object):
         self.label_logradouro_cuidador_as.setObjectName(u"label_logradouro_cuidador_as")
         self.label_logradouro_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_logradouro_cuidador_as.setMaximumSize(QSize(360, 16777215))
-        self.label_logradouro_cuidador_as.setFont(font)
+        self.label_logradouro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_77.addWidget(self.label_logradouro_cuidador_as)
 
@@ -14610,7 +14610,7 @@ class Ui_MainWindow(object):
         self.input_logradouro_cuidador_as.setObjectName(u"input_logradouro_cuidador_as")
         self.input_logradouro_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_logradouro_cuidador_as.setFont(font)
+        self.input_logradouro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_77.addWidget(self.input_logradouro_cuidador_as)
 
@@ -14631,7 +14631,7 @@ class Ui_MainWindow(object):
         self.label_numero_cuidador_as.setObjectName(u"label_numero_cuidador_as")
         self.label_numero_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_numero_cuidador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_numero_cuidador_as.setFont(font)
+        self.label_numero_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_93.addWidget(self.label_numero_cuidador_as)
 
@@ -14641,7 +14641,7 @@ class Ui_MainWindow(object):
         self.input_numero_cuidador_as.setSizePolicy(sizePolicy5)
         self.input_numero_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_numero_cuidador_as.setFont(font)
+        self.input_numero_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_93.addWidget(self.input_numero_cuidador_as)
 
@@ -14662,7 +14662,7 @@ class Ui_MainWindow(object):
         self.label_bairro_cuidador_as.setObjectName(u"label_bairro_cuidador_as")
         self.label_bairro_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_bairro_cuidador_as.setMaximumSize(QSize(230, 16777215))
-        self.label_bairro_cuidador_as.setFont(font)
+        self.label_bairro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_94.addWidget(self.label_bairro_cuidador_as)
 
@@ -14670,7 +14670,7 @@ class Ui_MainWindow(object):
         self.input_bairro_cuidador_as.setObjectName(u"input_bairro_cuidador_as")
         self.input_bairro_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_bairro_cuidador_as.setFont(font)
+        self.input_bairro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_94.addWidget(self.input_bairro_cuidador_as)
 
@@ -14691,7 +14691,7 @@ class Ui_MainWindow(object):
         self.label_cidade_cuidador_as.setObjectName(u"label_cidade_cuidador_as")
         self.label_cidade_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_cidade_cuidador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_cidade_cuidador_as.setFont(font)
+        self.label_cidade_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_78.addWidget(self.label_cidade_cuidador_as)
 
@@ -14699,7 +14699,7 @@ class Ui_MainWindow(object):
         self.input_cidade_cuidador_as.setObjectName(u"input_cidade_cuidador_as")
         self.input_cidade_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cidade_cuidador_as.setFont(font)
+        self.input_cidade_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_78.addWidget(self.input_cidade_cuidador_as)
 
@@ -14720,7 +14720,7 @@ class Ui_MainWindow(object):
         self.label_estado_cuidador_as.setObjectName(u"label_estado_cuidador_as")
         self.label_estado_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_estado_cuidador_as.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_cuidador_as.setFont(font)
+        self.label_estado_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_79.addWidget(self.label_estado_cuidador_as)
 
@@ -14728,7 +14728,7 @@ class Ui_MainWindow(object):
         self.input_estado_cuidador_as.setObjectName(u"input_estado_cuidador_as")
         self.input_estado_cuidador_as.setMinimumSize(QSize(70, 30))
         self.input_estado_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_estado_cuidador_as.setFont(font)
+        self.input_estado_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_79.addWidget(self.input_estado_cuidador_as)
 
@@ -14752,14 +14752,14 @@ class Ui_MainWindow(object):
         self.label_observacoes_gerais_cuidador_as = QLabel(self.frame_104)
         self.label_observacoes_gerais_cuidador_as.setObjectName(u"label_observacoes_gerais_cuidador_as")
         self.label_observacoes_gerais_cuidador_as.setMaximumSize(QSize(300, 50))
-        self.label_observacoes_gerais_cuidador_as.setFont(font)
+        self.label_observacoes_gerais_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_68.addWidget(self.label_observacoes_gerais_cuidador_as)
 
         self.input_informacoes_gerais_as = QTextEdit(self.frame_104)
         self.input_informacoes_gerais_as.setObjectName(u"input_informacoes_gerais_as")
         self.input_informacoes_gerais_as.setMaximumSize(QSize(1185, 235))
-        self.input_informacoes_gerais_as.setFont(font)
+        self.input_informacoes_gerais_as.setFont(fonte_abel_size_11)
         self.input_informacoes_gerais_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -14904,7 +14904,7 @@ class Ui_MainWindow(object):
         self.label_obito_paciente_as = QLabel(self.frame_423)
         self.label_obito_paciente_as.setObjectName(u"label_obito_paciente_as")
         self.label_obito_paciente_as.setMaximumSize(QSize(130, 16777215))
-        self.label_obito_paciente_as.setFont(font)
+        self.label_obito_paciente_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_290.addWidget(self.label_obito_paciente_as)
 
@@ -14950,7 +14950,7 @@ class Ui_MainWindow(object):
         self.label_observacoes_obs_sigilosas_as = QLabel(self.frame_123)
         self.label_observacoes_obs_sigilosas_as.setObjectName(u"label_observacoes_obs_sigilosas_as")
         self.label_observacoes_obs_sigilosas_as.setMaximumSize(QSize(300, 50))
-        self.label_observacoes_obs_sigilosas_as.setFont(font)
+        self.label_observacoes_obs_sigilosas_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_82.addWidget(self.label_observacoes_obs_sigilosas_as)
 
@@ -14958,7 +14958,7 @@ class Ui_MainWindow(object):
         self.input_observacoes_obs_sigilosas_as.setObjectName(u"input_observacoes_obs_sigilosas_as")
         self.input_observacoes_obs_sigilosas_as.setMinimumSize(QSize(0, 250))
         self.input_observacoes_obs_sigilosas_as.setMaximumSize(QSize(1185, 400))
-        self.input_observacoes_obs_sigilosas_as.setFont(font)
+        self.input_observacoes_obs_sigilosas_as.setFont(fonte_abel_size_11)
         self.input_observacoes_obs_sigilosas_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -14980,7 +14980,7 @@ class Ui_MainWindow(object):
         self.label_tabela_de_observacoes_obs_sigilosas_as = QLabel(self.frame_437)
         self.label_tabela_de_observacoes_obs_sigilosas_as.setObjectName(u"label_tabela_de_observacoes_obs_sigilosas_as")
         self.label_tabela_de_observacoes_obs_sigilosas_as.setMaximumSize(QSize(300, 50))
-        self.label_tabela_de_observacoes_obs_sigilosas_as.setFont(font)
+        self.label_tabela_de_observacoes_obs_sigilosas_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_291.addWidget(self.label_tabela_de_observacoes_obs_sigilosas_as)
 
@@ -15028,7 +15028,7 @@ class Ui_MainWindow(object):
         __qtablewidgetitem143 = QTableWidgetItem()
         self.input_TableWidget_observacoes_sigilosas_as.setItem(1, 0, __qtablewidgetitem143)
         self.input_TableWidget_observacoes_sigilosas_as.setObjectName(u"input_TableWidget_observacoes_sigilosas_as")
-        self.input_TableWidget_observacoes_sigilosas_as.setFont(font)
+        self.input_TableWidget_observacoes_sigilosas_as.setFont(fonte_abel_size_11)
         self.input_TableWidget_observacoes_sigilosas_as.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_observacoes_sigilosas_as.setAutoFillBackground(False)
         self.input_TableWidget_observacoes_sigilosas_as.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -15210,7 +15210,7 @@ class Ui_MainWindow(object):
         self.label_matricula_colaborador_as.setObjectName(u"label_matricula_colaborador_as")
         self.label_matricula_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_matricula_colaborador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_matricula_colaborador_as.setFont(font)
+        self.label_matricula_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_136.addWidget(self.label_matricula_colaborador_as)
 
@@ -15221,7 +15221,7 @@ class Ui_MainWindow(object):
         self.input_matricula_colaborador_as.setSizePolicy(sizePolicy5)
         self.input_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_matricula_colaborador_as.setMaximumSize(QSize(110, 30))
-        self.input_matricula_colaborador_as.setFont(font)
+        self.input_matricula_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_136.addWidget(self.input_matricula_colaborador_as)
 
@@ -15242,7 +15242,7 @@ class Ui_MainWindow(object):
         self.label_nome_colaborador_as.setObjectName(u"label_nome_colaborador_as")
         self.label_nome_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_nome_colaborador_as.setMaximumSize(QSize(460, 16777215))
-        self.label_nome_colaborador_as.setFont(font)
+        self.label_nome_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_137.addWidget(self.label_nome_colaborador_as)
 
@@ -15250,7 +15250,7 @@ class Ui_MainWindow(object):
         self.input_nome_colaborador_as.setObjectName(u"input_nome_colaborador_as")
         self.input_nome_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_nome_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_colaborador_as.setFont(font)
+        self.input_nome_colaborador_as.setFont(fonte_abel_size_11)
         self.input_nome_colaborador_as.setStyleSheet(u"placeholderText{color: #ff0000}")
 
         self.verticalLayout_137.addWidget(self.input_nome_colaborador_as)
