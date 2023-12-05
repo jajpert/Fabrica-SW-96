@@ -3739,7 +3739,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         email = self.ui.input_email_colaborador_as.text()      
         escolaridade = self.ui.input_escolaridade_colaborador_comboBox_as.currentText()
         estado_civil = self.ui.input_estado_civil_colaborador_comboBox_as.currentText()
-        if self.ui.input_situacao_ativo_usuario_as.isChecked():
+
+        if self.ui.input_situacao_ativo_colaborador_as.isChecked():
             status = 'Ativo'
         else:
             status = 'Inativo'
