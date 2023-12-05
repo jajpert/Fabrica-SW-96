@@ -15434,6 +15434,7 @@ class Ui_MainWindow(object):
         self.input_pis_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_pis_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_pis_colaborador_as.setFont(font)
+        self.input_pis_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_142.addWidget(self.input_pis_colaborador_as)
 
@@ -15721,6 +15722,7 @@ class Ui_MainWindow(object):
         self.input_cargo_colaborador_comboBox_as.setFont(font)
 
         self.verticalLayout_165.addWidget(self.input_cargo_colaborador_comboBox_as)
+
 
 
         self.horizontalLayout_88.addWidget(self.frame_235)
@@ -16141,34 +16143,21 @@ class Ui_MainWindow(object):
 
         self.frame_258 = QFrame(self.frame_194)
         self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(175, 200))
-        self.frame_258.setMaximumSize(QSize(195, 200))
+        self.frame_258.setMinimumSize(QSize(200, 332))
+        self.frame_258.setMaximumSize(QSize(200, 200))
         self.frame_258.setFrameShape(QFrame.StyledPanel)
         self.frame_258.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_334 = QHBoxLayout(self.frame_258)
-        self.horizontalLayout_334.setSpacing(0)
-        self.horizontalLayout_334.setObjectName(u"horizontalLayout_334")
-        self.horizontalLayout_334.setContentsMargins(0, 0, 0, 0)
-        self.frame_259 = QFrame(self.frame_258)
-        self.frame_259.setObjectName(u"frame_259")
-        self.frame_259.setMinimumSize(QSize(195, 200))
-        self.frame_259.setMaximumSize(QSize(195, 200))
-        self.frame_259.setFrameShape(QFrame.StyledPanel)
-        self.frame_259.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_178 = QVBoxLayout(self.frame_259)
+        self.verticalLayout_178 = QVBoxLayout(self.frame_258)
         self.verticalLayout_178.setObjectName(u"verticalLayout_178")
-        self.label_foto_colaborador_as = QLabel(self.frame_259)
+        self.label_foto_colaborador_as = QLabel(self.frame_258)
         self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
+        self.label_foto_colaborador_as.setMinimumSize(QSize(180, 240))
         self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
         self.label_foto_colaborador_as.setPixmap(QPixmap(u"../icons/adicionar foto.png"))
 
         self.verticalLayout_178.addWidget(self.label_foto_colaborador_as)
 
-        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_178.addItem(self.verticalSpacer)
-
-        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_259)
+        self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_258)
         self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
         self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(140, 40))
         self.btn_tirar_foto_colaborador_as.setFont(font20)
@@ -16179,8 +16168,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_178.addWidget(self.btn_tirar_foto_colaborador_as)
 
-
-        self.horizontalLayout_334.addWidget(self.frame_259)
+        self.verticalLayout_178.addWidget(self.btn_tirar_foto_colaborador_as)
 
 
         self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
@@ -28850,7 +28838,7 @@ class Ui_MainWindow(object):
 
         self.label_cargo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"*Cargo", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Recepcionista", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Secret\u00e1ria", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Assistente Social", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Farmac\u00eautico (a)", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Psic\u00f3logo (a)", None))
