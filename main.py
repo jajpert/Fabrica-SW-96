@@ -5177,7 +5177,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'TELEFONE CONTATO', 'CLINICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'TELEFONE CONTATO', 'CLINICA', 'DATA', 'TIPO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 

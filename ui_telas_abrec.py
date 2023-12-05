@@ -4420,8 +4420,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_522 = QVBoxLayout(self.frame_705)
         self.verticalLayout_522.setObjectName(u"verticalLayout_522")
         self.input_TableWidget_relatorio_psi = QTableWidget(self.frame_705)
-        if (self.input_TableWidget_relatorio_psi.columnCount() < 10):
-            self.input_TableWidget_relatorio_psi.setColumnCount(10)
+        if (self.input_TableWidget_relatorio_psi.columnCount() < 9):
+            self.input_TableWidget_relatorio_psi.setColumnCount(9)
         __qtablewidgetitem41 = QTableWidgetItem()
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(0, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
@@ -4440,8 +4440,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(7, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(8, __qtablewidgetitem49)
-        __qtablewidgetitem49 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(9, __qtablewidgetitem49)
+        
         if (self.input_TableWidget_relatorio_psi.rowCount() < 14):
             self.input_TableWidget_relatorio_psi.setRowCount(14)
         self.input_TableWidget_relatorio_psi.setObjectName(u"input_TableWidget_relatorio_psi")
