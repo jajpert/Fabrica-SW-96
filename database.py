@@ -890,7 +890,7 @@ class DataBase():
         self.connect()
         try:
             id_foto = str(foto[0])
-            print(id_foto)
+            print("alterar colab ->",id_foto)
             self.cursor.execute(f"""UPDATE foto_usuario SET nome = '{foto[1]}', caminho = '{foto[2]}' WHERE idfoto_usuario = {id_foto}""")
             self.conn.commit()
             return "Entrou banco"

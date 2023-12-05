@@ -1078,7 +1078,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.setupUi(self)
         ########## BUSCANDO DADOS BANCO ####################################################################################################################################################
         self.db = DataBase()
-        self.pastaCompartilhada()
+        # self.pastaCompartilhada()
         self.relatorio_beneficio()        
         self.listarAgendamentos()
         self.listarBeneficios()
@@ -2302,6 +2302,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
             foto = str(dados[39])
+            print("usuario foto ->", foto)
             if foto == None or foto == '':
                 original_image = cv2.imread("./icons/adicionar-amigo.png")
 
@@ -2455,8 +2456,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_colaborador_as.setText(str(dados[26]))
             self.ui.input_alterar_id_colaborador_as.hide()
             foto = str(dados[27])
+            print("foto ->",foto)
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar foto.png")
+                original_image = cv2.imread("./icons/adicionar_foto.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -2468,26 +2470,27 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
 
                 pixmap = QPixmap.fromImage(qt_image)
-                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+                # setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
+                self.ui.label_foto_colaborador_alterar_as.setPixmap(QPixmap(pixmap))
                 self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
                 self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
         
     
-            else:
+            # elif foto != "":
                 
-                original_image = cv2.imread(dados[27])
-                desired_size = (240, 240)
-                resized_image = cv2.resize(original_image, desired_size)
-                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
-                h, w, ch = resized_image.shape
-                bytes_per_line = ch * w
-                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
-                pixmap = QPixmap.fromImage(qt_image)
-                self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
-                self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
-                self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
-                self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
+            #     original_image = cv2.imread(dados[27])
+            #     desired_size = (240, 240)
+            #     resized_image = cv2.resize(original_image, desired_size)
+            #     resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+            #     h, w, ch = resized_image.shape
+            #     bytes_per_line = ch * w
+            #     qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+            #     pixmap = QPixmap.fromImage(qt_image)
+            #     self.ui.label_foto_colaborador_alterar_as.setPixmap(pixmap)
+            #     self.ui.label_foto_colaborador_alterar_as.setScaledContents(True)
+            #     self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
+            #     self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_alterar_id_foto_usuario_as.setText(str(dados[28]))
             self.ui.input_alterar_id_foto_usuario_as.hide()
 
