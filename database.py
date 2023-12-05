@@ -862,12 +862,14 @@ class DataBase():
 
     def tirar_foto_usuario(self, foto):
         self.connect()
+        print("Foto usuario ->", foto)
         try:
             args = (foto[0], foto[1], foto[2])
             self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_usuario) VALUES (%s, %s, %s)""", args)
             self.conn.commit()
             return "Entrou banco"
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
         
         finally:

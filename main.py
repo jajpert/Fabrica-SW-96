@@ -1525,6 +1525,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ########################### BANCO ###################################################################################################################################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
+        # self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroFotoVazia)
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
@@ -3357,6 +3358,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         else:
         ######################## insert ##################################
 
+            self.cadastroFotoVazia()
             result = []
             result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
             msg = QMessageBox()
@@ -6780,8 +6782,25 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
     
     
-    # def execute(self):
-    #     for(int i=0; i<10; i++):
+    def cadastroFotoVazia(self):
+        if self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png")) == True:
+            nome = self.ui.input_nome_usuario_as.text()
+            id_usuario = self.ui.input_matricula_usuario_as.text()
+            caminho = "./icons/adicionar-amigo.png"
+            tupla_foto = (nome, caminho, id_usuario)
+            print(tupla_foto)
+            
+            res = self.db.tirar_foto_usuario(tupla_foto)
+            
+        elif self.ui.label_foto_usuario_as != "":
+            nome = self.ui.input_nome_usuario_as.text()
+            id_usuario = self.ui.input_matricula_usuario_as.text()
+            caminho = "./icons/adicionar-amigo.png"
+            tupla_foto = (nome, caminho, id_usuario)
+            print(tupla_foto)
+            res = self.db.tirar_foto_usuario(tupla_foto)
+
+            
             
             
     
