@@ -4440,6 +4440,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(7, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(8, __qtablewidgetitem49)
+        
         if (self.input_TableWidget_relatorio_psi.rowCount() < 14):
             self.input_TableWidget_relatorio_psi.setRowCount(14)
         self.input_TableWidget_relatorio_psi.setObjectName(u"input_TableWidget_relatorio_psi")
@@ -18525,7 +18526,7 @@ class Ui_MainWindow(object):
         self.label_relatorio_as = QLabel(self.frame_225)
         self.label_relatorio_as.setObjectName(u"label_relatorio_as")
         self.label_relatorio_as.setMinimumSize(QSize(300, 0))
-        self.label_relatorio_as.setMaximumSize(QSize(300, 16777215))
+        self.label_relatorio_as.setMaximumSize(QSize(16777215, 16777215))
         self.label_relatorio_as.setFont(font15)
         self.label_relatorio_as.setStyleSheet(u"background-color: rgb(243, 185, 191);\n"
 "color: rgb(236, 132, 140);")
@@ -28122,7 +28123,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.label_titulo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Psic\u00f3loga", None))
+        self.label_titulo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio de Atendimentos", None))
         self.label_inicio_periodo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_psi.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_A_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"A", None))
@@ -28463,7 +28464,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_fornecedores_as.setText(QCoreApplication.translate("MainWindow", u"FORNECEDORES  ", None))
         self.btn_cadastrar_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"BENEF\u00cdCIOS", None))
         self.btn_relatorio_cuidadores.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO CUIDADORES", None))
-        self.btn_relatorio_pessoas.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO PESSOAS    ", None))
+        self.btn_relatorio_pessoas.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO USUÁRIOS    ", None))
         self.btn_relatorio_cursos_participantes.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO CURSOS E PARTICIPANTES   ", None))
         self.btn_relatorio_beneficios.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO BENEF\u00cdCIOS    ", None))
         self.label_inicio_periodo_relatorio_colaboradores_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
@@ -29014,7 +29015,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_gerar_excel_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
+        self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rios Cadastrados", None))
         self.label_inicio_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"A", None))
@@ -29122,7 +29123,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem177.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
         self.btn_gerar_excel_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_relatorios_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios de Agendamento", None))
+        self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio de Atendimentos", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"CADASTRO CL\u00cdNICA", None))
         self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"*CNPJ", None))
         self.input_cnpj_cadastro_clinica_as.setText("")
