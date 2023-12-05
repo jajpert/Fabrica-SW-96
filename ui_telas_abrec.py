@@ -15272,7 +15272,7 @@ class Ui_MainWindow(object):
         self.label_data_nascimento_colaborador_as.setObjectName(u"label_data_nascimento_colaborador_as")
         self.label_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_data_nascimento_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_data_nascimento_colaborador_as.setFont(font)
+        self.label_data_nascimento_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_140.addWidget(self.label_data_nascimento_colaborador_as)
 
@@ -15317,7 +15317,7 @@ class Ui_MainWindow(object):
         self.label_cpf_colaborador_as.setObjectName(u"label_cpf_colaborador_as")
         self.label_cpf_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_cpf_colaborador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_cpf_colaborador_as.setFont(font)
+        self.label_cpf_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_138.addWidget(self.label_cpf_colaborador_as)
 
@@ -15325,7 +15325,7 @@ class Ui_MainWindow(object):
         self.input_cpf_colaborador_as.setObjectName(u"input_cpf_colaborador_as")
         self.input_cpf_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_cpf_colaborador_as.setFont(font)
+        self.input_cpf_colaborador_as.setFont(fonte_abel_size_11)
         self.input_cpf_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_138.addWidget(self.input_cpf_colaborador_as)
@@ -15347,7 +15347,7 @@ class Ui_MainWindow(object):
         self.label_rg_colaborador_as.setObjectName(u"label_rg_colaborador_as")
         self.label_rg_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_rg_colaborador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_rg_colaborador_as.setFont(font)
+        self.label_rg_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_139.addWidget(self.label_rg_colaborador_as)
 
@@ -15355,7 +15355,7 @@ class Ui_MainWindow(object):
         self.input_rg_colaborador_as.setObjectName(u"input_rg_colaborador_as")
         self.input_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_rg_colaborador_as.setFont(font)
+        self.input_rg_colaborador_as.setFont(fonte_abel_size_11)
         self.input_rg_colaborador_as.setMaxLength(7)
 
         self.verticalLayout_139.addWidget(self.input_rg_colaborador_as)
@@ -15391,7 +15391,7 @@ class Ui_MainWindow(object):
         self.label_orgao_expedidor_colaborador_as.setObjectName(u"label_orgao_expedidor_colaborador_as")
         self.label_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_orgao_expedidor_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_orgao_expedidor_colaborador_as.setFont(font)
+        self.label_orgao_expedidor_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_141.addWidget(self.label_orgao_expedidor_colaborador_as)
 
@@ -15399,7 +15399,7 @@ class Ui_MainWindow(object):
         self.input_orgao_expedidor_colaborador_as.setObjectName(u"input_orgao_expedidor_colaborador_as")
         self.input_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 0))
         self.input_orgao_expedidor_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_orgao_expedidor_colaborador_as.setFont(font)
+        self.input_orgao_expedidor_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_141.addWidget(self.input_orgao_expedidor_colaborador_as)
 
@@ -15418,7 +15418,7 @@ class Ui_MainWindow(object):
         self.label_data_emissao_rg_colaborador_as = QLabel(self.frame_207)
         self.label_data_emissao_rg_colaborador_as.setObjectName(u"label_data_emissao_rg_colaborador_as")
         self.label_data_emissao_rg_colaborador_as.setMaximumSize(QSize(170, 16777215))
-        self.label_data_emissao_rg_colaborador_as.setFont(font)
+        self.label_data_emissao_rg_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_111.addWidget(self.label_data_emissao_rg_colaborador_as)
 
@@ -15460,7 +15460,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_142.setContentsMargins(0, 0, 0, 0)
         self.label_pis_colaborador_as = QLabel(self.frame_203)
         self.label_pis_colaborador_as.setObjectName(u"label_pis_colaborador_as")
-        self.label_pis_colaborador_as.setFont(font)
+        self.label_pis_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_142.addWidget(self.label_pis_colaborador_as)
 
@@ -15468,7 +15468,7 @@ class Ui_MainWindow(object):
         self.input_pis_colaborador_as.setObjectName(u"input_pis_colaborador_as")
         self.input_pis_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_pis_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_pis_colaborador_as.setFont(font)
+        self.input_pis_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_142.addWidget(self.input_pis_colaborador_as)
 
@@ -15487,7 +15487,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_143.setContentsMargins(0, 0, 0, 0)
         self.label_sexo_colaborador_as = QLabel(self.frame_204)
         self.label_sexo_colaborador_as.setObjectName(u"label_sexo_colaborador_as")
-        self.label_sexo_colaborador_as.setFont(font)
+        self.label_sexo_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_143.addWidget(self.label_sexo_colaborador_as)
 
@@ -15498,7 +15498,7 @@ class Ui_MainWindow(object):
         self.input_sexo_colaborador_comboBox_as.setObjectName(u"input_sexo_colaborador_comboBox_as")
         self.input_sexo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_sexo_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_sexo_colaborador_comboBox_as.setFont(font)
+        self.input_sexo_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_143.addWidget(self.input_sexo_colaborador_comboBox_as)
 
@@ -15519,7 +15519,7 @@ class Ui_MainWindow(object):
         self.label_telefone_colaborador_as.setObjectName(u"label_telefone_colaborador_as")
         self.label_telefone_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_telefone_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_telefone_colaborador_as.setFont(font)
+        self.label_telefone_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_144.addWidget(self.label_telefone_colaborador_as)
 
@@ -15527,7 +15527,7 @@ class Ui_MainWindow(object):
         self.input_telefone_colaborador_as.setObjectName(u"input_telefone_colaborador_as")
         self.input_telefone_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_telefone_colaborador_as.setFont(font)
+        self.input_telefone_colaborador_as.setFont(fonte_abel_size_11)
         self.input_telefone_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_144.addWidget(self.input_telefone_colaborador_as)
@@ -15549,7 +15549,7 @@ class Ui_MainWindow(object):
         self.label_email_colaborador_as.setObjectName(u"label_email_colaborador_as")
         self.label_email_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_email_colaborador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_email_colaborador_as.setFont(font)
+        self.label_email_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_145.addWidget(self.label_email_colaborador_as)
 
@@ -15557,7 +15557,7 @@ class Ui_MainWindow(object):
         self.input_email_colaborador_as.setObjectName(u"input_email_colaborador_as")
         self.input_email_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_email_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_email_colaborador_as.setFont(font)
+        self.input_email_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_145.addWidget(self.input_email_colaborador_as)
 
@@ -15592,7 +15592,7 @@ class Ui_MainWindow(object):
         self.label_estado_civil_colaborador_as.setObjectName(u"label_estado_civil_colaborador_as")
         self.label_estado_civil_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_estado_civil_colaborador_as.setMaximumSize(QSize(90, 26))
-        self.label_estado_civil_colaborador_as.setFont(font)
+        self.label_estado_civil_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_135.addWidget(self.label_estado_civil_colaborador_as)
 
@@ -15605,7 +15605,7 @@ class Ui_MainWindow(object):
         self.input_estado_civil_colaborador_comboBox_as.setObjectName(u"input_estado_civil_colaborador_comboBox_as")
         self.input_estado_civil_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_estado_civil_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
-        self.input_estado_civil_colaborador_comboBox_as.setFont(font)
+        self.input_estado_civil_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_135.addWidget(self.input_estado_civil_colaborador_comboBox_as)
 
@@ -15626,7 +15626,7 @@ class Ui_MainWindow(object):
         self.label_salario_colaborador_as.setObjectName(u"label_salario_colaborador_as")
         self.label_salario_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_salario_colaborador_as.setMaximumSize(QSize(100, 16777215))
-        self.label_salario_colaborador_as.setFont(font)
+        self.label_salario_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_171.addWidget(self.label_salario_colaborador_as)
 
@@ -15634,7 +15634,7 @@ class Ui_MainWindow(object):
         self.input_salario_colaborador_as.setObjectName(u"input_salario_colaborador_as")
         self.input_salario_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_salario_colaborador_as.setMaximumSize(QSize(123, 30))
-        self.input_salario_colaborador_as.setFont(font)
+        self.input_salario_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_171.addWidget(self.input_salario_colaborador_as)
 
@@ -15655,7 +15655,7 @@ class Ui_MainWindow(object):
         self.label_Data_de_admissao_colaborador_as.setObjectName(u"label_Data_de_admissao_colaborador_as")
         self.label_Data_de_admissao_colaborador_as.setMinimumSize(QSize(114, 0))
         self.label_Data_de_admissao_colaborador_as.setMaximumSize(QSize(118, 16777215))
-        self.label_Data_de_admissao_colaborador_as.setFont(font)
+        self.label_Data_de_admissao_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_163.addWidget(self.label_Data_de_admissao_colaborador_as)
 
@@ -15699,7 +15699,7 @@ class Ui_MainWindow(object):
         self.label_escolaridade_colaborador_as.setObjectName(u"label_escolaridade_colaborador_as")
         self.label_escolaridade_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_escolaridade_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_escolaridade_colaborador_as.setFont(font)
+        self.label_escolaridade_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_162.addWidget(self.label_escolaridade_colaborador_as)
 
@@ -15714,7 +15714,7 @@ class Ui_MainWindow(object):
         self.input_escolaridade_colaborador_comboBox_as.setObjectName(u"input_escolaridade_colaborador_comboBox_as")
         self.input_escolaridade_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_escolaridade_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_escolaridade_colaborador_comboBox_as.setFont(font)
+        self.input_escolaridade_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_162.addWidget(self.input_escolaridade_colaborador_comboBox_as)
 
@@ -15735,7 +15735,7 @@ class Ui_MainWindow(object):
         self.label_cargo_colaborador_as.setObjectName(u"label_cargo_colaborador_as")
         self.label_cargo_colaborador_as.setMinimumSize(QSize(130, 0))
         self.label_cargo_colaborador_as.setMaximumSize(QSize(130, 16777215))
-        self.label_cargo_colaborador_as.setFont(font)
+        self.label_cargo_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_165.addWidget(self.label_cargo_colaborador_as)
 
@@ -15753,7 +15753,7 @@ class Ui_MainWindow(object):
         self.input_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy1)
         self.input_cargo_colaborador_comboBox_as.setMinimumSize(QSize(138, 30))
         self.input_cargo_colaborador_comboBox_as.setMaximumSize(QSize(138, 30))
-        self.input_cargo_colaborador_comboBox_as.setFont(font)
+        self.input_cargo_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_165.addWidget(self.input_cargo_colaborador_comboBox_as)
 
@@ -15774,7 +15774,7 @@ class Ui_MainWindow(object):
         self.label_periodo_colaborador_as.setObjectName(u"label_periodo_colaborador_as")
         self.label_periodo_colaborador_as.setMinimumSize(QSize(130, 0))
         self.label_periodo_colaborador_as.setMaximumSize(QSize(130, 16777215))
-        self.label_periodo_colaborador_as.setFont(font)
+        self.label_periodo_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_164.addWidget(self.label_periodo_colaborador_as)
 
@@ -15787,7 +15787,7 @@ class Ui_MainWindow(object):
         self.input_periodo_colaborador_comboBox_as.setObjectName(u"input_periodo_colaborador_comboBox_as")
         self.input_periodo_colaborador_comboBox_as.setMinimumSize(QSize(130, 30))
         self.input_periodo_colaborador_comboBox_as.setMaximumSize(QSize(150, 30))
-        self.input_periodo_colaborador_comboBox_as.setFont(font)
+        self.input_periodo_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_164.addWidget(self.input_periodo_colaborador_comboBox_as)
 
@@ -15845,7 +15845,7 @@ class Ui_MainWindow(object):
         self.label_cep_colaborador_as.setObjectName(u"label_cep_colaborador_as")
         self.label_cep_colaborador_as.setMinimumSize(QSize(50, 15))
         self.label_cep_colaborador_as.setMaximumSize(QSize(50, 24))
-        self.label_cep_colaborador_as.setFont(font)
+        self.label_cep_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_147.addWidget(self.label_cep_colaborador_as)
 
@@ -15853,7 +15853,7 @@ class Ui_MainWindow(object):
         self.input_cep_colaborador_as.setObjectName(u"input_cep_colaborador_as")
         self.input_cep_colaborador_as.setMinimumSize(QSize(145, 30))
         self.input_cep_colaborador_as.setMaximumSize(QSize(146, 30))
-        self.input_cep_colaborador_as.setFont(font)
+        self.input_cep_colaborador_as.setFont(fonte_abel_size_11)
         self.input_cep_colaborador_as.setStyleSheet(u"")
         self.input_cep_colaborador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -15935,7 +15935,7 @@ class Ui_MainWindow(object):
         self.label_logradouro_colaborador_as.setObjectName(u"label_logradouro_colaborador_as")
         self.label_logradouro_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_logradouro_colaborador_as.setMaximumSize(QSize(280, 16777215))
-        self.label_logradouro_colaborador_as.setFont(font)
+        self.label_logradouro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_174.addWidget(self.label_logradouro_colaborador_as)
 
@@ -15943,7 +15943,7 @@ class Ui_MainWindow(object):
         self.input_logradouro_colaborador_as.setObjectName(u"input_logradouro_colaborador_as")
         self.input_logradouro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_logradouro_colaborador_as.setFont(font)
+        self.input_logradouro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_174.addWidget(self.input_logradouro_colaborador_as)
 
@@ -15964,7 +15964,7 @@ class Ui_MainWindow(object):
         self.label_numero_colaborador_as.setObjectName(u"label_numero_colaborador_as")
         self.label_numero_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_numero_colaborador_as.setMaximumSize(QSize(60, 16777215))
-        self.label_numero_colaborador_as.setFont(font)
+        self.label_numero_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_173.addWidget(self.label_numero_colaborador_as)
 
@@ -15972,7 +15972,7 @@ class Ui_MainWindow(object):
         self.input_numero_colaborador_as.setObjectName(u"input_numero_colaborador_as")
         self.input_numero_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_numero_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_numero_colaborador_as.setFont(font)
+        self.input_numero_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_173.addWidget(self.input_numero_colaborador_as)
 
@@ -15993,7 +15993,7 @@ class Ui_MainWindow(object):
         self.label_bairro_colaborador_as.setObjectName(u"label_bairro_colaborador_as")
         self.label_bairro_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_bairro_colaborador_as.setMaximumSize(QSize(230, 16777215))
-        self.label_bairro_colaborador_as.setFont(font)
+        self.label_bairro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_149.addWidget(self.label_bairro_colaborador_as)
 
@@ -16001,7 +16001,7 @@ class Ui_MainWindow(object):
         self.input_bairro_colaborador_as.setObjectName(u"input_bairro_colaborador_as")
         self.input_bairro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_bairro_colaborador_as.setFont(font)
+        self.input_bairro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_149.addWidget(self.input_bairro_colaborador_as)
 
@@ -16022,7 +16022,7 @@ class Ui_MainWindow(object):
         self.label_cidade_colaborador_as.setObjectName(u"label_cidade_colaborador_as")
         self.label_cidade_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_cidade_colaborador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_cidade_colaborador_as.setFont(font)
+        self.label_cidade_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_2.addWidget(self.label_cidade_colaborador_as)
 
@@ -16030,7 +16030,7 @@ class Ui_MainWindow(object):
         self.input_cidade_colaborador_as.setObjectName(u"input_cidade_colaborador_as")
         self.input_cidade_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cidade_colaborador_as.setFont(font)
+        self.input_cidade_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_2.addWidget(self.input_cidade_colaborador_as)
 
@@ -16051,7 +16051,7 @@ class Ui_MainWindow(object):
         self.label_estado_colaborador_as.setObjectName(u"label_estado_colaborador_as")
         self.label_estado_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_estado_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_colaborador_as.setFont(font)
+        self.label_estado_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_148.addWidget(self.label_estado_colaborador_as)
 
@@ -16059,7 +16059,7 @@ class Ui_MainWindow(object):
         self.input_estado_colaborador_as.setObjectName(u"input_estado_colaborador_as")
         self.input_estado_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_estado_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_estado_colaborador_as.setFont(font)
+        self.input_estado_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_148.addWidget(self.input_estado_colaborador_as)
 
@@ -16098,7 +16098,7 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setObjectName(u"label_usuario_colaborador_as_2")
         self.label_usuario_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_usuario_colaborador_as_2.setMaximumSize(QSize(280, 16777215))
-        self.label_usuario_colaborador_as_2.setFont(font)
+        self.label_usuario_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_187.addWidget(self.label_usuario_colaborador_as_2)
 
@@ -16106,7 +16106,7 @@ class Ui_MainWindow(object):
         self.input_usuario_colaborador_as_2.setObjectName(u"input_usuario_colaborador_as_2")
         self.input_usuario_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_usuario_colaborador_as_2.setMaximumSize(QSize(280, 30))
-        self.input_usuario_colaborador_as_2.setFont(font)
+        self.input_usuario_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_187.addWidget(self.input_usuario_colaborador_as_2)
 
@@ -16127,7 +16127,7 @@ class Ui_MainWindow(object):
         self.label_senha_colaborador_as_2.setObjectName(u"label_senha_colaborador_as_2")
         self.label_senha_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_senha_colaborador_as_2.setMaximumSize(QSize(230, 16777215))
-        self.label_senha_colaborador_as_2.setFont(font)
+        self.label_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_262.addWidget(self.label_senha_colaborador_as_2)
 
@@ -16135,7 +16135,7 @@ class Ui_MainWindow(object):
         self.input_senha_colaborador_as_2.setObjectName(u"input_senha_colaborador_as_2")
         self.input_senha_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_senha_colaborador_as_2.setMaximumSize(QSize(229, 30))
-        self.input_senha_colaborador_as_2.setFont(font)
+        self.input_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_262.addWidget(self.input_senha_colaborador_as_2)
 
@@ -16156,7 +16156,7 @@ class Ui_MainWindow(object):
         self.label_confirmar_senha_colaborador_as_2.setObjectName(u"label_confirmar_senha_colaborador_as_2")
         self.label_confirmar_senha_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_confirmar_senha_colaborador_as_2.setMaximumSize(QSize(230, 16777215))
-        self.label_confirmar_senha_colaborador_as_2.setFont(font)
+        self.label_confirmar_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_266.addWidget(self.label_confirmar_senha_colaborador_as_2)
 
@@ -16164,7 +16164,7 @@ class Ui_MainWindow(object):
         self.input_confirmar_senha_colaborador_as_2.setObjectName(u"input_confirmar_senha_colaborador_as_2")
         self.input_confirmar_senha_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_confirmar_senha_colaborador_as_2.setMaximumSize(QSize(229, 30))
-        self.input_confirmar_senha_colaborador_as_2.setFont(font)
+        self.input_confirmar_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_266.addWidget(self.input_confirmar_senha_colaborador_as_2)
 
@@ -16237,7 +16237,7 @@ class Ui_MainWindow(object):
         self.label_situacao_colaborador_as = QLabel(self.frame_261)
         self.label_situacao_colaborador_as.setObjectName(u"label_situacao_colaborador_as")
         self.label_situacao_colaborador_as.setMaximumSize(QSize(130, 16777215))
-        self.label_situacao_colaborador_as.setFont(font)
+        self.label_situacao_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_180.addWidget(self.label_situacao_colaborador_as)
 
@@ -16448,7 +16448,7 @@ class Ui_MainWindow(object):
         self.label_nome_cursos_as.setObjectName(u"label_nome_cursos_as")
         self.label_nome_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_nome_cursos_as.setMaximumSize(QSize(460, 16777215))
-        self.label_nome_cursos_as.setFont(font)
+        self.label_nome_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_95.addWidget(self.label_nome_cursos_as)
 
@@ -16456,7 +16456,7 @@ class Ui_MainWindow(object):
         self.input_nome_cursos_as.setObjectName(u"input_nome_cursos_as")
         self.input_nome_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_nome_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_cursos_as.setFont(font)
+        self.input_nome_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_95.addWidget(self.input_nome_cursos_as)
 
@@ -16477,7 +16477,7 @@ class Ui_MainWindow(object):
         self.label_tipo_cursos_as.setObjectName(u"label_tipo_cursos_as")
         self.label_tipo_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_tipo_cursos_as.setMaximumSize(QSize(185, 16777215))
-        self.label_tipo_cursos_as.setFont(font)
+        self.label_tipo_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_96.addWidget(self.label_tipo_cursos_as)
 
@@ -16488,7 +16488,7 @@ class Ui_MainWindow(object):
         self.input_tipo_cursos_as.setObjectName(u"input_tipo_cursos_as")
         self.input_tipo_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_tipo_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_tipo_cursos_as.setFont(font)
+        self.input_tipo_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_96.addWidget(self.input_tipo_cursos_as)
 
@@ -16535,7 +16535,7 @@ class Ui_MainWindow(object):
         self.label_responsavel_cursos_as.setObjectName(u"label_responsavel_cursos_as")
         self.label_responsavel_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_responsavel_cursos_as.setMaximumSize(QSize(360, 16777215))
-        self.label_responsavel_cursos_as.setFont(font)
+        self.label_responsavel_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_98.addWidget(self.label_responsavel_cursos_as)
 
@@ -16543,7 +16543,7 @@ class Ui_MainWindow(object):
         self.input_responsavel_cursos_as.setObjectName(u"input_responsavel_cursos_as")
         self.input_responsavel_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_responsavel_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_responsavel_cursos_as.setFont(font)
+        self.input_responsavel_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_98.addWidget(self.input_responsavel_cursos_as)
 
@@ -16564,7 +16564,7 @@ class Ui_MainWindow(object):
         self.label_data_inicio_cursos_as.setObjectName(u"label_data_inicio_cursos_as")
         self.label_data_inicio_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_data_inicio_cursos_as.setMaximumSize(QSize(160, 16777215))
-        self.label_data_inicio_cursos_as.setFont(font)
+        self.label_data_inicio_cursos_as.setFont(fonte_abel_size_11)
         self.label_data_inicio_cursos_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_99.addWidget(self.label_data_inicio_cursos_as, 0, Qt.AlignHCenter)
@@ -16610,7 +16610,7 @@ class Ui_MainWindow(object):
         self.label_data_termino_cursos_as.setObjectName(u"label_data_termino_cursos_as")
         self.label_data_termino_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_data_termino_cursos_as.setMaximumSize(QSize(160, 16777215))
-        self.label_data_termino_cursos_as.setFont(font)
+        self.label_data_termino_cursos_as.setFont(fonte_abel_size_11)
         self.label_data_termino_cursos_as.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_100.addWidget(self.label_data_termino_cursos_as, 0, Qt.AlignHCenter)
@@ -16660,7 +16660,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_1011.setContentsMargins(0, 0, 0, 0)
         self.label_dias_aulas_cursos_as = QLabel(self.frame_149)
         self.label_dias_aulas_cursos_as.setObjectName(u"label_dias_aulas_cursos_as")
-        self.label_dias_aulas_cursos_as.setFont(font)
+        self.label_dias_aulas_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1011.addWidget(self.label_dias_aulas_cursos_as)
 
@@ -16855,7 +16855,7 @@ class Ui_MainWindow(object):
         self.label_horario_inicio_cursos_as = QLabel(self.frame_154)
         self.label_horario_inicio_cursos_as.setObjectName(u"label_horario_inicio_cursos_as")
         self.label_horario_inicio_cursos_as.setMaximumSize(QSize(95, 16777215))
-        self.label_horario_inicio_cursos_as.setFont(font)
+        self.label_horario_inicio_cursos_as.setFont(fonte_abel_size_11)
         self.label_horario_inicio_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_105.addWidget(self.label_horario_inicio_cursos_as)
@@ -16864,7 +16864,7 @@ class Ui_MainWindow(object):
         self.input_horario_inicio_cursos_as.setObjectName(u"input_horario_inicio_cursos_as")
         self.input_horario_inicio_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_horario_inicio_cursos_as.setMaximumSize(QSize(120, 30))
-        self.input_horario_inicio_cursos_as.setFont(font)
+        self.input_horario_inicio_cursos_as.setFont(fonte_abel_size_11)
         self.input_horario_inicio_cursos_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_horario_inicio_cursos_as.setInputMethodHints(Qt.ImhPreferNumbers|Qt.ImhTime)
@@ -16886,7 +16886,7 @@ class Ui_MainWindow(object):
         self.label_horario_termino_cursos_as = QLabel(self.widget)
         self.label_horario_termino_cursos_as.setObjectName(u"label_horario_termino_cursos_as")
         self.label_horario_termino_cursos_as.setMaximumSize(QSize(120, 16777215))
-        self.label_horario_termino_cursos_as.setFont(font)
+        self.label_horario_termino_cursos_as.setFont(fonte_abel_size_11)
         self.label_horario_termino_cursos_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_106.addWidget(self.label_horario_termino_cursos_as)
@@ -16895,7 +16895,7 @@ class Ui_MainWindow(object):
         self.input_horario_termino_cursos_as.setObjectName(u"input_horario_termino_cursos_as")
         self.input_horario_termino_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_horario_termino_cursos_as.setMaximumSize(QSize(120, 30))
-        self.input_horario_termino_cursos_as.setFont(font)
+        self.input_horario_termino_cursos_as.setFont(fonte_abel_size_11)
         self.input_horario_termino_cursos_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_horario_termino_cursos_as.setInputMethodHints(Qt.ImhPreferNumbers|Qt.ImhTime)
@@ -16921,7 +16921,7 @@ class Ui_MainWindow(object):
         self.label_periodo_cursos_as.setObjectName(u"label_periodo_cursos_as")
         self.label_periodo_cursos_as.setMinimumSize(QSize(0, 0))
         self.label_periodo_cursos_as.setMaximumSize(QSize(250, 16777215))
-        self.label_periodo_cursos_as.setFont(font)
+        self.label_periodo_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_107.addWidget(self.label_periodo_cursos_as)
 
@@ -16933,7 +16933,7 @@ class Ui_MainWindow(object):
         self.input_periodo_cursos_as.setObjectName(u"input_periodo_cursos_as")
         self.input_periodo_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_periodo_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_periodo_cursos_as.setFont(font)
+        self.input_periodo_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_107.addWidget(self.input_periodo_cursos_as)
 
@@ -16952,7 +16952,7 @@ class Ui_MainWindow(object):
         self.label_vagas_cursos_as = QLabel(self.frame_156)
         self.label_vagas_cursos_as.setObjectName(u"label_vagas_cursos_as")
         self.label_vagas_cursos_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_vagas_cursos_as.setFont(font)
+        self.label_vagas_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_108.addWidget(self.label_vagas_cursos_as)
 
@@ -16960,7 +16960,7 @@ class Ui_MainWindow(object):
         self.input_vagas_cursos_as.setObjectName(u"input_vagas_cursos_as")
         self.input_vagas_cursos_as.setMinimumSize(QSize(0, 30))
         self.input_vagas_cursos_as.setMaximumSize(QSize(16777215, 30))
-        self.input_vagas_cursos_as.setFont(font)
+        self.input_vagas_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_108.addWidget(self.input_vagas_cursos_as)
 
@@ -17043,14 +17043,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_115.setContentsMargins(0, 0, 0, 0)
         self.label_descricao_cursos_as = QLabel(self.frame_140)
         self.label_descricao_cursos_as.setObjectName(u"label_descricao_cursos_as")
-        self.label_descricao_cursos_as.setFont(font)
+        self.label_descricao_cursos_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_115.addWidget(self.label_descricao_cursos_as)
 
         self.input_descricao_atividade_cursos_as = QTextEdit(self.frame_140)
         self.input_descricao_atividade_cursos_as.setObjectName(u"input_descricao_atividade_cursos_as")
         self.input_descricao_atividade_cursos_as.setMaximumSize(QSize(1400, 16777215))
-        self.input_descricao_atividade_cursos_as.setFont(font)
+        self.input_descricao_atividade_cursos_as.setFont(fonte_abel_size_11)
         self.input_descricao_atividade_cursos_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -17212,7 +17212,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_1562.setObjectName(u"horizontalLayout_1562")
         self.label_cpf_pagina_participante_geral = QLabel(self.frame_4722)
         self.label_cpf_pagina_participante_geral.setObjectName(u"label_cpf_pagina_participante_geral")
-        self.label_cpf_pagina_participante_geral.setFont(font)
+        self.label_cpf_pagina_participante_geral.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_1562.addWidget(self.label_cpf_pagina_participante_geral)
 
@@ -17277,7 +17277,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3352.setObjectName(u"verticalLayout_3352")
         self.label_nome_pagina_participante_geral = QLabel(self.frame_4762)
         self.label_nome_pagina_participante_geral.setObjectName(u"label_nome_pagina_participante_geral")
-        self.label_nome_pagina_participante_geral.setFont(font)
+        self.label_nome_pagina_participante_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3352.addWidget(self.label_nome_pagina_participante_geral)
 
@@ -17298,7 +17298,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3362.setObjectName(u"verticalLayout_3362")
         self.label_telefone_pagina_participante_geral = QLabel(self.frame_4772)
         self.label_telefone_pagina_participante_geral.setObjectName(u"label_telefone_pagina_participante_geral")
-        self.label_telefone_pagina_participante_geral.setFont(font)
+        self.label_telefone_pagina_participante_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3362.addWidget(self.label_telefone_pagina_participante_geral)
 
@@ -17320,7 +17320,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3402.setObjectName(u"verticalLayout_3402")
         self.label_telefone_contato_pagina_participante_geral = QLabel(self.frame_4782)
         self.label_telefone_contato_pagina_participante_geral.setObjectName(u"label_telefone_contato_pagina_participante_geral")
-        self.label_telefone_contato_pagina_participante_geral.setFont(font)
+        self.label_telefone_contato_pagina_participante_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3402.addWidget(self.label_telefone_contato_pagina_participante_geral)
 
@@ -17342,7 +17342,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3412.setObjectName(u"verticalLayout_3412")
         self.label_clinica_pagina_participante_geral = QLabel(self.frame_4792)
         self.label_clinica_pagina_participante_geral.setObjectName(u"label_clinica_pagina_participante_geral")
-        self.label_clinica_pagina_participante_geral.setFont(font)
+        self.label_clinica_pagina_participante_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3412.addWidget(self.label_clinica_pagina_participante_geral)
 
@@ -17363,7 +17363,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3322.setObjectName(u"verticalLayout_3322")
         self.label_curso_pagina_participante_geral = QLabel(self.frame_4742)
         self.label_curso_pagina_participante_geral.setObjectName(u"label_curso_pagina_participante_geral")
-        self.label_curso_pagina_participante_geral.setFont(font)
+        self.label_curso_pagina_participante_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3322.addWidget(self.label_curso_pagina_participante_geral)
 
@@ -17499,7 +17499,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_pagina_participante_geral.setItem(1, 1, __qtablewidgetitem152)
         self.input_TableWidget_pagina_participante_geral.setObjectName(u"input_TableWidget_pagina_participante_geral")
         self.input_TableWidget_pagina_participante_geral.setMinimumSize(QSize(700, 0))
-        self.input_TableWidget_pagina_participante_geral.setFont(font)
+        self.input_TableWidget_pagina_participante_geral.setFont(fonte_abel_size_11)
         self.input_TableWidget_pagina_participante_geral.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_pagina_participante_geral.setAutoFillBackground(False)
         self.input_TableWidget_pagina_participante_geral.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -17934,7 +17934,7 @@ class Ui_MainWindow(object):
         if (self.input_TableWidget_relatorio_aluno_curso.rowCount() < 14):
             self.input_TableWidget_relatorio_aluno_curso.setRowCount(14)
         self.input_TableWidget_relatorio_aluno_curso.setObjectName(u"input_TableWidget_relatorio_aluno_curso")
-        self.input_TableWidget_relatorio_aluno_curso.setFont(font)
+        self.input_TableWidget_relatorio_aluno_curso.setFont(fonte_abel_size_11)
         self.input_TableWidget_relatorio_aluno_curso.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_relatorio_aluno_curso.setAutoFillBackground(False)
         self.input_TableWidget_relatorio_aluno_curso.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -18415,7 +18415,7 @@ class Ui_MainWindow(object):
         if (self.input_TableWidget_relatorio_beneficios_as.rowCount() < 14):
             self.input_TableWidget_relatorio_beneficios_as.setRowCount(14)
         self.input_TableWidget_relatorio_beneficios_as.setObjectName(u"input_TableWidget_relatorio_beneficios_as")
-        self.input_TableWidget_relatorio_beneficios_as.setFont(font)
+        self.input_TableWidget_relatorio_beneficios_as.setFont(fonte_abel_size_11)
         self.input_TableWidget_relatorio_beneficios_as.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_relatorio_beneficios_as.setAutoFillBackground(False)
         self.input_TableWidget_relatorio_beneficios_as.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -19162,7 +19162,7 @@ class Ui_MainWindow(object):
         self.label_cpf_agendamento_as.setObjectName(u"label_cpf_agendamento_as")
         sizePolicy2.setHeightForWidth(self.label_cpf_agendamento_as.sizePolicy().hasHeightForWidth())
         self.label_cpf_agendamento_as.setSizePolicy(sizePolicy2)
-        self.label_cpf_agendamento_as.setFont(font)
+        self.label_cpf_agendamento_as.setFont(fonte_abel_size_11)
         self.label_cpf_agendamento_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_182.addWidget(self.label_cpf_agendamento_as)
@@ -19171,7 +19171,7 @@ class Ui_MainWindow(object):
         self.input_cpf_agendamento_as.setObjectName(u"input_cpf_agendamento_as")
         self.input_cpf_agendamento_as.setMinimumSize(QSize(0, 30))
         self.input_cpf_agendamento_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_cpf_agendamento_as.setFont(font)
+        self.input_cpf_agendamento_as.setFont(fonte_abel_size_11)
         self.input_cpf_agendamento_as.setMaxLength(11)
 
         self.verticalLayout_182.addWidget(self.input_cpf_agendamento_as)
@@ -19253,7 +19253,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_267.setContentsMargins(0, 10, 0, 10)
         self.label_nome_agendamento_as = QLabel(self.frame_392)
         self.label_nome_agendamento_as.setObjectName(u"label_nome_agendamento_as")
-        self.label_nome_agendamento_as.setFont(font)
+        self.label_nome_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_267.addWidget(self.label_nome_agendamento_as)
 
@@ -19261,7 +19261,7 @@ class Ui_MainWindow(object):
         self.input_nome_agendamento_as.setObjectName(u"input_nome_agendamento_as")
         self.input_nome_agendamento_as.setMinimumSize(QSize(0, 30))
         self.input_nome_agendamento_as.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_agendamento_as.setFont(font)
+        self.input_nome_agendamento_as.setFont(fonte_abel_size_11)
         self.input_nome_agendamento_as.setFocusPolicy(Qt.WheelFocus)
         self.input_nome_agendamento_as.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_nome_agendamento_as.setLayoutDirection(Qt.LeftToRight)
@@ -19290,7 +19290,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_307.setContentsMargins(0, 0, 0, 10)
         self.label_telefone_agendamento_as = QLabel(self.frame_440)
         self.label_telefone_agendamento_as.setObjectName(u"label_telefone_agendamento_as")
-        self.label_telefone_agendamento_as.setFont(font)
+        self.label_telefone_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_307.addWidget(self.label_telefone_agendamento_as)
 
@@ -19328,7 +19328,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_312.setContentsMargins(0, 0, 0, 5)
         self.label_clinica_agendamento_as = QLabel(self.frame_166)
         self.label_clinica_agendamento_as.setObjectName(u"label_clinica_agendamento_as")
-        self.label_clinica_agendamento_as.setFont(font)
+        self.label_clinica_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_312.addWidget(self.label_clinica_agendamento_as)
 
@@ -19346,7 +19346,7 @@ class Ui_MainWindow(object):
         self.label_profissional_agendamento_as.setObjectName(u"label_profissional_agendamento_as")
         sizePolicy3.setHeightForWidth(self.label_profissional_agendamento_as.sizePolicy().hasHeightForWidth())
         self.label_profissional_agendamento_as.setSizePolicy(sizePolicy3)
-        self.label_profissional_agendamento_as.setFont(font)
+        self.label_profissional_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_311.addWidget(self.label_profissional_agendamento_as)
 
@@ -19425,7 +19425,7 @@ class Ui_MainWindow(object):
         self.label_data_agendamento_as = QLabel(self.frame_446)
         self.label_data_agendamento_as.setObjectName(u"label_data_agendamento_as")
         self.label_data_agendamento_as.setMaximumSize(QSize(140, 16777215))
-        self.label_data_agendamento_as.setFont(font)
+        self.label_data_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_313.addWidget(self.label_data_agendamento_as)
 
@@ -19473,7 +19473,7 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.label_hora_agendamento_as.sizePolicy().hasHeightForWidth())
         self.label_hora_agendamento_as.setSizePolicy(sizePolicy3)
         self.label_hora_agendamento_as.setMaximumSize(QSize(140, 16777215))
-        self.label_hora_agendamento_as.setFont(font)
+        self.label_hora_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_314.addWidget(self.label_hora_agendamento_as)
 
@@ -19481,7 +19481,7 @@ class Ui_MainWindow(object):
         self.input_hora_agendamento_as.setObjectName(u"input_hora_agendamento_as")
         self.input_hora_agendamento_as.setMinimumSize(QSize(120, 30))
         self.input_hora_agendamento_as.setMaximumSize(QSize(120, 30))
-        self.input_hora_agendamento_as.setFont(font)
+        self.input_hora_agendamento_as.setFont(fonte_abel_size_11)
         self.input_hora_agendamento_as.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_hora_agendamento_as.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -19513,7 +19513,7 @@ class Ui_MainWindow(object):
         self.label_anotacao_agendamento_as.setObjectName(u"label_anotacao_agendamento_as")
         sizePolicy3.setHeightForWidth(self.label_anotacao_agendamento_as.sizePolicy().hasHeightForWidth())
         self.label_anotacao_agendamento_as.setSizePolicy(sizePolicy3)
-        self.label_anotacao_agendamento_as.setFont(font)
+        self.label_anotacao_agendamento_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_315.addWidget(self.label_anotacao_agendamento_as)
 
@@ -19640,7 +19640,7 @@ class Ui_MainWindow(object):
         sizePolicy7.setHeightForWidth(self.input_TableWidget_agendamento_as.sizePolicy().hasHeightForWidth())
         self.input_TableWidget_agendamento_as.setSizePolicy(sizePolicy7)
         self.input_TableWidget_agendamento_as.setMinimumSize(QSize(900, 0))
-        self.input_TableWidget_agendamento_as.setFont(font)
+        self.input_TableWidget_agendamento_as.setFont(fonte_abel_size_11)
         self.input_TableWidget_agendamento_as.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_agendamento_as.setAutoFillBackground(False)
         self.input_TableWidget_agendamento_as.setStyleSheet(u"QTableEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
@@ -20321,7 +20321,7 @@ class Ui_MainWindow(object):
         self.label_cnpj_cadastro_clinica_as.setObjectName(u"label_cnpj_cadastro_clinica_as")
         self.label_cnpj_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_cnpj_cadastro_clinica_as.setMaximumSize(QSize(180, 16777215))
-        self.label_cnpj_cadastro_clinica_as.setFont(font)
+        self.label_cnpj_cadastro_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_172.addWidget(self.label_cnpj_cadastro_clinica_as)
 
@@ -20329,7 +20329,7 @@ class Ui_MainWindow(object):
         self.input_cnpj_cadastro_clinica_as.setObjectName(u"input_cnpj_cadastro_clinica_as")
         self.input_cnpj_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_cnpj_cadastro_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cnpj_cadastro_clinica_as.setFont(font)
+        self.input_cnpj_cadastro_clinica_as.setFont(fonte_abel_size_11)
         self.input_cnpj_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20354,7 +20354,7 @@ class Ui_MainWindow(object):
         self.label_razao_social_cadastro_clinica_as.setObjectName(u"label_razao_social_cadastro_clinica_as")
         self.label_razao_social_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_razao_social_cadastro_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_razao_social_cadastro_clinica_as.setFont(font)
+        self.label_razao_social_cadastro_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_169.addWidget(self.label_razao_social_cadastro_clinica_as)
 
@@ -20362,7 +20362,7 @@ class Ui_MainWindow(object):
         self.input_razao_social_cadastro_clinica_as.setObjectName(u"input_razao_social_cadastro_clinica_as")
         self.input_razao_social_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_razao_social_cadastro_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_razao_social_cadastro_clinica_as.setFont(font)
+        self.input_razao_social_cadastro_clinica_as.setFont(fonte_abel_size_11)
         self.input_razao_social_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20386,7 +20386,7 @@ class Ui_MainWindow(object):
         self.label_nome_fantasia_cadastro_clinica_as.setObjectName(u"label_nome_fantasia_cadastro_clinica_as")
         self.label_nome_fantasia_cadastro_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_nome_fantasia_cadastro_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_nome_fantasia_cadastro_clinica_as.setFont(font)
+        self.label_nome_fantasia_cadastro_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_170.addWidget(self.label_nome_fantasia_cadastro_clinica_as)
 
@@ -20394,7 +20394,7 @@ class Ui_MainWindow(object):
         self.input_nome_fantasia_cadastro_clinica_as.setObjectName(u"input_nome_fantasia_cadastro_clinica_as")
         self.input_nome_fantasia_cadastro_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_nome_fantasia_cadastro_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_fantasia_cadastro_clinica_as.setFont(font)
+        self.input_nome_fantasia_cadastro_clinica_as.setFont(fonte_abel_size_11)
         self.input_nome_fantasia_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20437,7 +20437,7 @@ class Ui_MainWindow(object):
         self.label_telefone_clinica_as.setObjectName(u"label_telefone_clinica_as")
         self.label_telefone_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_telefone_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_telefone_clinica_as.setFont(font)
+        self.label_telefone_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_317.addWidget(self.label_telefone_clinica_as)
 
@@ -20445,7 +20445,7 @@ class Ui_MainWindow(object):
         self.input_telefone_clinica_as.setObjectName(u"input_telefone_clinica_as")
         self.input_telefone_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_telefone_clinica_as.setFont(font)
+        self.input_telefone_clinica_as.setFont(fonte_abel_size_11)
         self.input_telefone_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20470,7 +20470,7 @@ class Ui_MainWindow(object):
         self.label_email_clinica_as.setObjectName(u"label_email_clinica_as")
         self.label_email_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_email_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_email_clinica_as.setFont(font)
+        self.label_email_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_318.addWidget(self.label_email_clinica_as)
 
@@ -20478,7 +20478,7 @@ class Ui_MainWindow(object):
         self.input_email_clinica_as.setObjectName(u"input_email_clinica_as")
         self.input_email_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_email_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_email_clinica_as.setFont(font)
+        self.input_email_clinica_as.setFont(fonte_abel_size_11)
         self.input_email_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20521,7 +20521,7 @@ class Ui_MainWindow(object):
         self.label_cep_clinica_as.setObjectName(u"label_cep_clinica_as")
         self.label_cep_clinica_as.setMinimumSize(QSize(50, 15))
         self.label_cep_clinica_as.setMaximumSize(QSize(50, 24))
-        self.label_cep_clinica_as.setFont(font)
+        self.label_cep_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_176.addWidget(self.label_cep_clinica_as)
 
@@ -20529,7 +20529,7 @@ class Ui_MainWindow(object):
         self.input_cep_clinica_as.setObjectName(u"input_cep_clinica_as")
         self.input_cep_clinica_as.setMinimumSize(QSize(145, 30))
         self.input_cep_clinica_as.setMaximumSize(QSize(146, 30))
-        self.input_cep_clinica_as.setFont(font)
+        self.input_cep_clinica_as.setFont(fonte_abel_size_11)
         self.input_cep_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20615,7 +20615,7 @@ class Ui_MainWindow(object):
         self.label_logradouro_clinica_as.setObjectName(u"label_logradouro_clinica_as")
         self.label_logradouro_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_logradouro_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_logradouro_clinica_as.setFont(font)
+        self.label_logradouro_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_177.addWidget(self.label_logradouro_clinica_as)
 
@@ -20623,7 +20623,7 @@ class Ui_MainWindow(object):
         self.input_logradouro_clinica_as.setObjectName(u"input_logradouro_clinica_as")
         self.input_logradouro_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_logradouro_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_logradouro_clinica_as.setFont(font)
+        self.input_logradouro_clinica_as.setFont(fonte_abel_size_11)
         self.input_logradouro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20665,7 +20665,7 @@ class Ui_MainWindow(object):
         self.label_numero_clinica_as.setObjectName(u"label_numero_clinica_as")
         self.label_numero_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_numero_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_numero_clinica_as.setFont(font)
+        self.label_numero_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_322.addWidget(self.label_numero_clinica_as)
 
@@ -20675,7 +20675,7 @@ class Ui_MainWindow(object):
         self.input_numero_clinica_as.setSizePolicy(sizePolicy5)
         self.input_numero_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_numero_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_numero_clinica_as.setFont(font)
+        self.input_numero_clinica_as.setFont(fonte_abel_size_11)
         self.input_numero_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20699,7 +20699,7 @@ class Ui_MainWindow(object):
         self.label_bairro_clinica_as.setObjectName(u"label_bairro_clinica_as")
         self.label_bairro_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_bairro_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_bairro_clinica_as.setFont(font)
+        self.label_bairro_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_323.addWidget(self.label_bairro_clinica_as)
 
@@ -20707,7 +20707,7 @@ class Ui_MainWindow(object):
         self.input_bairro_clinica_as.setObjectName(u"input_bairro_clinica_as")
         self.input_bairro_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_bairro_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_bairro_clinica_as.setFont(font)
+        self.input_bairro_clinica_as.setFont(fonte_abel_size_11)
         self.input_bairro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20731,7 +20731,7 @@ class Ui_MainWindow(object):
         self.label_cidade_clinica_as.setObjectName(u"label_cidade_clinica_as")
         self.label_cidade_clinica_as.setMinimumSize(QSize(0, 0))
         self.label_cidade_clinica_as.setMaximumSize(QSize(16777215, 16777215))
-        self.label_cidade_clinica_as.setFont(font)
+        self.label_cidade_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_324.addWidget(self.label_cidade_clinica_as)
 
@@ -20739,7 +20739,7 @@ class Ui_MainWindow(object):
         self.input_cidade_clinica_as.setObjectName(u"input_cidade_clinica_as")
         self.input_cidade_clinica_as.setMinimumSize(QSize(0, 30))
         self.input_cidade_clinica_as.setMaximumSize(QSize(16777215, 30))
-        self.input_cidade_clinica_as.setFont(font)
+        self.input_cidade_clinica_as.setFont(fonte_abel_size_11)
         self.input_cidade_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20763,7 +20763,7 @@ class Ui_MainWindow(object):
         self.label_estado_clinica__as.setObjectName(u"label_estado_clinica__as")
         self.label_estado_clinica__as.setMinimumSize(QSize(0, 0))
         self.label_estado_clinica__as.setMaximumSize(QSize(80, 16777215))
-        self.label_estado_clinica__as.setFont(font)
+        self.label_estado_clinica__as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_325.addWidget(self.label_estado_clinica__as)
 
@@ -20771,7 +20771,7 @@ class Ui_MainWindow(object):
         self.input_estado_clinica_as.setObjectName(u"input_estado_clinica_as")
         self.input_estado_clinica_as.setMinimumSize(QSize(70, 30))
         self.input_estado_clinica_as.setMaximumSize(QSize(80, 30))
-        self.input_estado_clinica_as.setFont(font)
+        self.input_estado_clinica_as.setFont(fonte_abel_size_11)
         self.input_estado_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -20800,14 +20800,14 @@ class Ui_MainWindow(object):
         self.label_informacoes_gerais_clinica_as = QLabel(self.frame_467)
         self.label_informacoes_gerais_clinica_as.setObjectName(u"label_informacoes_gerais_clinica_as")
         self.label_informacoes_gerais_clinica_as.setMaximumSize(QSize(16777215, 50))
-        self.label_informacoes_gerais_clinica_as.setFont(font)
+        self.label_informacoes_gerais_clinica_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_183.addWidget(self.label_informacoes_gerais_clinica_as)
 
         self.input_informacoes_gerais_clinica_as = QTextEdit(self.frame_467)
         self.input_informacoes_gerais_clinica_as.setObjectName(u"input_informacoes_gerais_clinica_as")
         self.input_informacoes_gerais_clinica_as.setMaximumSize(QSize(16777215, 235))
-        self.input_informacoes_gerais_clinica_as.setFont(font)
+        self.input_informacoes_gerais_clinica_as.setFont(fonte_abel_size_11)
         self.input_informacoes_gerais_clinica_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -21269,7 +21269,7 @@ class Ui_MainWindow(object):
         if (self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.rowCount() < 14):
             self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(14)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setObjectName(u"input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as")
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setFont(font)
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setFont(fonte_abel_size_11)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setAutoFillBackground(False)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -21446,7 +21446,7 @@ class Ui_MainWindow(object):
         self.frame_276.setObjectName(u"frame_276")
         self.frame_276.setMinimumSize(QSize(272, 70))
         self.frame_276.setMaximumSize(QSize(272, 70))
-        self.frame_276.setFont(font)
+        self.frame_276.setFont(fonte_abel_size_11)
         self.frame_276.setFrameShape(QFrame.StyledPanel)
         self.frame_276.setFrameShadow(QFrame.Raised)
         self.verticalLayout_186 = QVBoxLayout(self.frame_276)
@@ -21652,7 +21652,7 @@ class Ui_MainWindow(object):
         self.label_alterar_matricula_cuidador_as.setObjectName(u"label_alterar_matricula_cuidador_as")
         self.label_alterar_matricula_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_matricula_cuidador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_matricula_cuidador_as.setFont(font)
+        self.label_alterar_matricula_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_190.addWidget(self.label_alterar_matricula_cuidador_as)
 
@@ -21661,7 +21661,7 @@ class Ui_MainWindow(object):
         self.input_alterar_matricula_cuidador_as.setEnabled(False)
         self.input_alterar_matricula_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_matricula_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_matricula_cuidador_as.setFont(font)
+        self.input_alterar_matricula_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_190.addWidget(self.input_alterar_matricula_cuidador_as)
 
@@ -21682,7 +21682,7 @@ class Ui_MainWindow(object):
         self.label_alterar_nome_cuidador_as.setObjectName(u"label_alterar_nome_cuidador_as")
         self.label_alterar_nome_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_nome_cuidador_as.setMaximumSize(QSize(460, 16777215))
-        self.label_alterar_nome_cuidador_as.setFont(font)
+        self.label_alterar_nome_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_191.addWidget(self.label_alterar_nome_cuidador_as)
 
@@ -21690,7 +21690,7 @@ class Ui_MainWindow(object):
         self.input_alterar_nome_cuidador_as.setObjectName(u"input_alterar_nome_cuidador_as")
         self.input_alterar_nome_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_nome_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_nome_cuidador_as.setFont(font)
+        self.input_alterar_nome_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_191.addWidget(self.input_alterar_nome_cuidador_as)
 
@@ -21711,7 +21711,7 @@ class Ui_MainWindow(object):
         self.label_alterar_data_nascimento_cuidador_as.setObjectName(u"label_alterar_data_nascimento_cuidador_as")
         self.label_alterar_data_nascimento_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_data_nascimento_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_data_nascimento_cuidador_as.setFont(font)
+        self.label_alterar_data_nascimento_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_3481.addWidget(self.label_alterar_data_nascimento_cuidador_as, 0, Qt.AlignHCenter)
 
@@ -21755,7 +21755,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cpf_cuidador_as.setObjectName(u"label_alterar_cpf_cuidador_as")
         self.label_alterar_cpf_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cpf_cuidador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_alterar_cpf_cuidador_as.setFont(font)
+        self.label_alterar_cpf_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_192.addWidget(self.label_alterar_cpf_cuidador_as)
 
@@ -21763,7 +21763,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cpf_cuidador_as.setObjectName(u"input_alterar_cpf_cuidador_as")
         self.input_alterar_cpf_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cpf_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_cpf_cuidador_as.setFont(font)
+        self.input_alterar_cpf_cuidador_as.setFont(fonte_abel_size_11)
         self.input_alterar_cpf_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_192.addWidget(self.input_alterar_cpf_cuidador_as)
@@ -21785,7 +21785,7 @@ class Ui_MainWindow(object):
         self.label_alterar_rg_cuidador_as.setObjectName(u"label_alterar_rg_cuidador_as")
         self.label_alterar_rg_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_rg_cuidador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_rg_cuidador_as.setFont(font)
+        self.label_alterar_rg_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_193.addWidget(self.label_alterar_rg_cuidador_as)
 
@@ -21793,7 +21793,7 @@ class Ui_MainWindow(object):
         self.input_alterar_rg_cuidador_as.setObjectName(u"input_alterar_rg_cuidador_as")
         self.input_alterar_rg_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_rg_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_rg_cuidador_as.setFont(font)
+        self.input_alterar_rg_cuidador_as.setFont(fonte_abel_size_11)
         self.input_alterar_rg_cuidador_as.setMaxLength(7)
 
         self.verticalLayout_193.addWidget(self.input_alterar_rg_cuidador_as)
@@ -21815,7 +21815,7 @@ class Ui_MainWindow(object):
         self.label_alterar_data_emissao_cuidador_as.setObjectName(u"label_alterar_data_emissao_cuidador_as")
         self.label_alterar_data_emissao_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_data_emissao_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_data_emissao_cuidador_as.setFont(font)
+        self.label_alterar_data_emissao_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_194.addWidget(self.label_alterar_data_emissao_cuidador_as, 0, Qt.AlignHCenter)
 
@@ -21873,14 +21873,14 @@ class Ui_MainWindow(object):
         self.label_alterar_orgao_expedidor_cuidador_as.setObjectName(u"label_alterar_orgao_expedidor_cuidador_as")
         self.label_alterar_orgao_expedidor_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_orgao_expedidor_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_orgao_expedidor_cuidador_as.setFont(font)
+        self.label_alterar_orgao_expedidor_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_195.addWidget(self.label_alterar_orgao_expedidor_cuidador_as)
 
         self.input_alterar_orgao_expedidor_cuidador_as = QLineEdit(self.frame_293)
         self.input_alterar_orgao_expedidor_cuidador_as.setObjectName(u"input_alterar_orgao_expedidor_cuidador_as")
         self.input_alterar_orgao_expedidor_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_orgao_expedidor_cuidador_as.setFont(font)
+        self.input_alterar_orgao_expedidor_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_195.addWidget(self.input_alterar_orgao_expedidor_cuidador_as)
 
@@ -21899,7 +21899,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_196.setContentsMargins(0, 0, 0, 0)
         self.label_alterar_sexo_cuidador_as = QLabel(self.frame_294)
         self.label_alterar_sexo_cuidador_as.setObjectName(u"label_alterar_sexo_cuidador_as")
-        self.label_alterar_sexo_cuidador_as.setFont(font)
+        self.label_alterar_sexo_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_196.addWidget(self.label_alterar_sexo_cuidador_as)
 
@@ -21910,7 +21910,7 @@ class Ui_MainWindow(object):
         self.input_alterar_sexo_cuidador_as.setObjectName(u"input_alterar_sexo_cuidador_as")
         self.input_alterar_sexo_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_sexo_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_sexo_cuidador_as.setFont(font)
+        self.input_alterar_sexo_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_196.addWidget(self.input_alterar_sexo_cuidador_as)
 
@@ -21929,7 +21929,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_197.setContentsMargins(0, 0, 0, 0)
         self.label_alterar_parentesco_cuidador_as = QLabel(self.frame_295)
         self.label_alterar_parentesco_cuidador_as.setObjectName(u"label_alterar_parentesco_cuidador_as")
-        self.label_alterar_parentesco_cuidador_as.setFont(font)
+        self.label_alterar_parentesco_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_197.addWidget(self.label_alterar_parentesco_cuidador_as)
 
@@ -21937,7 +21937,7 @@ class Ui_MainWindow(object):
         self.input_alterar_parentesco_cuidador_as.setObjectName(u"input_alterar_parentesco_cuidador_as")
         self.input_alterar_parentesco_cuidador_as.setMinimumSize(QSize(0, 0))
         self.input_alterar_parentesco_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_parentesco_cuidador_as.setFont(font)
+        self.input_alterar_parentesco_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_197.addWidget(self.input_alterar_parentesco_cuidador_as)
 
@@ -21958,7 +21958,7 @@ class Ui_MainWindow(object):
         self.label_alterar_telefone_cuidador_as.setObjectName(u"label_alterar_telefone_cuidador_as")
         self.label_alterar_telefone_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_telefone_cuidador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_telefone_cuidador_as.setFont(font)
+        self.label_alterar_telefone_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_198.addWidget(self.label_alterar_telefone_cuidador_as)
 
@@ -21966,7 +21966,7 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_cuidador_as.setObjectName(u"input_alterar_telefone_cuidador_as")
         self.input_alterar_telefone_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_telefone_cuidador_as.setFont(font)
+        self.input_alterar_telefone_cuidador_as.setFont(fonte_abel_size_11)
         self.input_alterar_telefone_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_198.addWidget(self.input_alterar_telefone_cuidador_as)
@@ -21988,7 +21988,7 @@ class Ui_MainWindow(object):
         self.label_alterar_telefone_contato_cuidador_as.setObjectName(u"label_alterar_telefone_contato_cuidador_as")
         self.label_alterar_telefone_contato_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_telefone_contato_cuidador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_telefone_contato_cuidador_as.setFont(font)
+        self.label_alterar_telefone_contato_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_971.addWidget(self.label_alterar_telefone_contato_cuidador_as)
 
@@ -21996,7 +21996,7 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_contato_cuidador_as.setObjectName(u"input_alterar_telefone_contato_cuidador_as")
         self.input_alterar_telefone_contato_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_contato_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_telefone_contato_cuidador_as.setFont(font)
+        self.input_alterar_telefone_contato_cuidador_as.setFont(fonte_abel_size_11)
         self.input_alterar_telefone_contato_cuidador_as.setMaxLength(11)
 
         self.verticalLayout_971.addWidget(self.input_alterar_telefone_contato_cuidador_as)
@@ -22027,7 +22027,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cep_cuidador_as.setObjectName(u"label_alterar_cep_cuidador_as")
         self.label_alterar_cep_cuidador_as.setMinimumSize(QSize(50, 15))
         self.label_alterar_cep_cuidador_as.setMaximumSize(QSize(50, 15))
-        self.label_alterar_cep_cuidador_as.setFont(font)
+        self.label_alterar_cep_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_200.addWidget(self.label_alterar_cep_cuidador_as)
 
@@ -22035,7 +22035,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cep_cuidador_as.setObjectName(u"input_alterar_cep_cuidador_as")
         self.input_alterar_cep_cuidador_as.setMinimumSize(QSize(158, 30))
         self.input_alterar_cep_cuidador_as.setMaximumSize(QSize(145, 16777215))
-        self.input_alterar_cep_cuidador_as.setFont(font)
+        self.input_alterar_cep_cuidador_as.setFont(fonte_abel_size_11)
         self.input_alterar_cep_cuidador_as.setStyleSheet(u"")
         self.input_alterar_cep_cuidador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -22128,7 +22128,7 @@ class Ui_MainWindow(object):
         self.label_alterar_logradouro_cuidador_as.setObjectName(u"label_alterar_logradouro_cuidador_as")
         self.label_alterar_logradouro_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_logradouro_cuidador_as.setMaximumSize(QSize(360, 16777215))
-        self.label_alterar_logradouro_cuidador_as.setFont(font)
+        self.label_alterar_logradouro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_201.addWidget(self.label_alterar_logradouro_cuidador_as)
 
@@ -22136,7 +22136,7 @@ class Ui_MainWindow(object):
         self.input_alterar_logradouro_cuidador_as.setObjectName(u"input_alterar_logradouro_cuidador_as")
         self.input_alterar_logradouro_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_logradouro_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_logradouro_cuidador_as.setFont(font)
+        self.input_alterar_logradouro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_201.addWidget(self.input_alterar_logradouro_cuidador_as)
 
@@ -22157,7 +22157,7 @@ class Ui_MainWindow(object):
         self.label_alterar_numero_cuidador_as.setObjectName(u"label_alterar_numero_cuidador_as")
         self.label_alterar_numero_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_numero_cuidador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_numero_cuidador_as.setFont(font)
+        self.label_alterar_numero_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_202.addWidget(self.label_alterar_numero_cuidador_as)
 
@@ -22167,7 +22167,7 @@ class Ui_MainWindow(object):
         self.input_alterar_numero_cuidador_as.setSizePolicy(sizePolicy5)
         self.input_alterar_numero_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_numero_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_numero_cuidador_as.setFont(font)
+        self.input_alterar_numero_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_202.addWidget(self.input_alterar_numero_cuidador_as)
 
@@ -22188,7 +22188,7 @@ class Ui_MainWindow(object):
         self.label_alterar_bairro_cuidador_as.setObjectName(u"label_alterar_bairro_cuidador_as")
         self.label_alterar_bairro_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_bairro_cuidador_as.setMaximumSize(QSize(230, 16777215))
-        self.label_alterar_bairro_cuidador_as.setFont(font)
+        self.label_alterar_bairro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_203.addWidget(self.label_alterar_bairro_cuidador_as)
 
@@ -22196,7 +22196,7 @@ class Ui_MainWindow(object):
         self.input_alterar_bairro_cuidador_as.setObjectName(u"input_alterar_bairro_cuidador_as")
         self.input_alterar_bairro_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_bairro_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_bairro_cuidador_as.setFont(font)
+        self.input_alterar_bairro_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_203.addWidget(self.input_alterar_bairro_cuidador_as)
 
@@ -22217,7 +22217,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cidade_cuidador_as.setObjectName(u"label_alterar_cidade_cuidador_as")
         self.label_alterar_cidade_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cidade_cuidador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_cidade_cuidador_as.setFont(font)
+        self.label_alterar_cidade_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_204.addWidget(self.label_alterar_cidade_cuidador_as)
 
@@ -22225,7 +22225,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cidade_cuidador_as.setObjectName(u"input_alterar_cidade_cuidador_as")
         self.input_alterar_cidade_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cidade_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_cidade_cuidador_as.setFont(font)
+        self.input_alterar_cidade_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_204.addWidget(self.input_alterar_cidade_cuidador_as)
 
@@ -22246,7 +22246,7 @@ class Ui_MainWindow(object):
         self.label_alterar_estado_cuidador_as.setObjectName(u"label_alterar_estado_cuidador_as")
         self.label_alterar_estado_cuidador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_estado_cuidador_as.setMaximumSize(QSize(80, 16777215))
-        self.label_alterar_estado_cuidador_as.setFont(font)
+        self.label_alterar_estado_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_205.addWidget(self.label_alterar_estado_cuidador_as)
 
@@ -22254,7 +22254,7 @@ class Ui_MainWindow(object):
         self.input_alterar_estado_cuidador_as.setObjectName(u"input_alterar_estado_cuidador_as")
         self.input_alterar_estado_cuidador_as.setMinimumSize(QSize(70, 30))
         self.input_alterar_estado_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_estado_cuidador_as.setFont(font)
+        self.input_alterar_estado_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_205.addWidget(self.input_alterar_estado_cuidador_as)
 
@@ -22273,7 +22273,7 @@ class Ui_MainWindow(object):
         self.input_alterar_id_matricula_cuidador_as.setObjectName(u"input_alterar_id_matricula_cuidador_as")
         self.input_alterar_id_matricula_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_id_matricula_cuidador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_id_matricula_cuidador_as.setFont(font)
+        self.input_alterar_id_matricula_cuidador_as.setFont(fonte_abel_size_11)
         self.input_alterar_id_matricula_cuidador_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
@@ -22296,14 +22296,14 @@ class Ui_MainWindow(object):
         self.label_alterar_observacoes_gerais_cuidador_as = QLabel(self.frame_305)
         self.label_alterar_observacoes_gerais_cuidador_as.setObjectName(u"label_alterar_observacoes_gerais_cuidador_as")
         self.label_alterar_observacoes_gerais_cuidador_as.setMaximumSize(QSize(300, 50))
-        self.label_alterar_observacoes_gerais_cuidador_as.setFont(font)
+        self.label_alterar_observacoes_gerais_cuidador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_206.addWidget(self.label_alterar_observacoes_gerais_cuidador_as)
 
         self.input_alterar_informacoes_gerais_as = QTextEdit(self.frame_305)
         self.input_alterar_informacoes_gerais_as.setObjectName(u"input_alterar_informacoes_gerais_as")
         self.input_alterar_informacoes_gerais_as.setMaximumSize(QSize(1185, 235))
-        self.input_alterar_informacoes_gerais_as.setFont(font)
+        self.input_alterar_informacoes_gerais_as.setFont(fonte_abel_size_11)
         self.input_alterar_informacoes_gerais_as.setStyleSheet(u"QTextEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QTextEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
@@ -22494,7 +22494,7 @@ class Ui_MainWindow(object):
         self.label_alterar_matricula_usuario_as.setObjectName(u"label_alterar_matricula_usuario_as")
         self.label_alterar_matricula_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_matricula_usuario_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_matricula_usuario_as.setFont(font)
+        self.label_alterar_matricula_usuario_as.setFont(fonte_abel_size_11)
         self.label_alterar_matricula_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_210.addWidget(self.label_alterar_matricula_usuario_as)
@@ -22504,7 +22504,7 @@ class Ui_MainWindow(object):
         self.input_alterar_matricula_usuario_as.setEnabled(False)
         self.input_alterar_matricula_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_matricula_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_matricula_usuario_as.setFont(font)
+        self.input_alterar_matricula_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_210.addWidget(self.input_alterar_matricula_usuario_as)
 
@@ -22525,7 +22525,7 @@ class Ui_MainWindow(object):
         self.label_alterar_nome_usuario_as.setObjectName(u"label_alterar_nome_usuario_as")
         self.label_alterar_nome_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_nome_usuario_as.setMaximumSize(QSize(460, 16777215))
-        self.label_alterar_nome_usuario_as.setFont(font)
+        self.label_alterar_nome_usuario_as.setFont(fonte_abel_size_11)
         self.label_alterar_nome_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_211.addWidget(self.label_alterar_nome_usuario_as)
@@ -22534,7 +22534,7 @@ class Ui_MainWindow(object):
         self.input_alterar_nome_usuario_as.setObjectName(u"input_alterar_nome_usuario_as")
         self.input_alterar_nome_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_nome_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_nome_usuario_as.setFont(font)
+        self.input_alterar_nome_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_211.addWidget(self.input_alterar_nome_usuario_as)
 
@@ -22555,7 +22555,7 @@ class Ui_MainWindow(object):
         self.label_alterar_nascimento_usuario_as.setObjectName(u"label_alterar_nascimento_usuario_as")
         self.label_alterar_nascimento_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_nascimento_usuario_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_nascimento_usuario_as.setFont(font)
+        self.label_alterar_nascimento_usuario_as.setFont(fonte_abel_size_11)
         self.label_alterar_nascimento_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_212.addWidget(self.label_alterar_nascimento_usuario_as)
@@ -22601,7 +22601,7 @@ class Ui_MainWindow(object):
         self.label_alterar_situacao_usuario_as = QLabel(self.frame_318)
         self.label_alterar_situacao_usuario_as.setObjectName(u"label_alterar_situacao_usuario_as")
         self.label_alterar_situacao_usuario_as.setMaximumSize(QSize(130, 16777215))
-        self.label_alterar_situacao_usuario_as.setFont(font)
+        self.label_alterar_situacao_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_213.addWidget(self.label_alterar_situacao_usuario_as)
 
@@ -22662,7 +22662,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cpf_usuario_as.setObjectName(u"label_alterar_cpf_usuario_as")
         self.label_alterar_cpf_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cpf_usuario_as.setMaximumSize(QSize(180, 16777215))
-        self.label_alterar_cpf_usuario_as.setFont(font)
+        self.label_alterar_cpf_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_214.addWidget(self.label_alterar_cpf_usuario_as)
 
@@ -22670,7 +22670,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cpf_usuario_as.setObjectName(u"input_alterar_cpf_usuario_as")
         self.input_alterar_cpf_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cpf_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_cpf_usuario_as.setFont(font)
+        self.input_alterar_cpf_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_cpf_usuario_as.setMaxLength(11)
 
         self.verticalLayout_214.addWidget(self.input_alterar_cpf_usuario_as)
@@ -22692,7 +22692,7 @@ class Ui_MainWindow(object):
         self.label_alterar_rg_usuario_as.setObjectName(u"label_alterar_rg_usuario_as")
         self.label_alterar_rg_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_rg_usuario_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_rg_usuario_as.setFont(font)
+        self.label_alterar_rg_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_215.addWidget(self.label_alterar_rg_usuario_as)
 
@@ -22700,7 +22700,7 @@ class Ui_MainWindow(object):
         self.input_alterar_rg_usuario_as.setObjectName(u"input_alterar_rg_usuario_as")
         self.input_alterar_rg_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_rg_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_rg_usuario_as.setFont(font)
+        self.input_alterar_rg_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_rg_usuario_as.setMaxLength(7)
 
         self.verticalLayout_215.addWidget(self.input_alterar_rg_usuario_as)
@@ -22722,7 +22722,7 @@ class Ui_MainWindow(object):
         self.label_alterar_data_emissao_usuario_as.setObjectName(u"label_alterar_data_emissao_usuario_as")
         self.label_alterar_data_emissao_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_data_emissao_usuario_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_data_emissao_usuario_as.setFont(font)
+        self.label_alterar_data_emissao_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_216.addWidget(self.label_alterar_data_emissao_usuario_as)
 
@@ -22766,7 +22766,7 @@ class Ui_MainWindow(object):
         self.label_alterar_orgao_expedidor_usuario_as.setObjectName(u"label_alterar_orgao_expedidor_usuario_as")
         self.label_alterar_orgao_expedidor_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_orgao_expedidor_usuario_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_orgao_expedidor_usuario_as.setFont(font)
+        self.label_alterar_orgao_expedidor_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_217.addWidget(self.label_alterar_orgao_expedidor_usuario_as)
 
@@ -22774,7 +22774,7 @@ class Ui_MainWindow(object):
         self.input_alterar_orgao_expedidor_usuario_as.setObjectName(u"input_alterar_orgao_expedidor_usuario_as")
         self.input_alterar_orgao_expedidor_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_orgao_expedidor_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_orgao_expedidor_usuario_as.setFont(font)
+        self.input_alterar_orgao_expedidor_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_217.addWidget(self.input_alterar_orgao_expedidor_usuario_as)
 
@@ -22795,7 +22795,7 @@ class Ui_MainWindow(object):
         self.label_alterar_nis_usuario_as.setObjectName(u"label_alterar_nis_usuario_as")
         self.label_alterar_nis_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_nis_usuario_as.setMaximumSize(QSize(170, 16777215))
-        self.label_alterar_nis_usuario_as.setFont(font)
+        self.label_alterar_nis_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_219.addWidget(self.label_alterar_nis_usuario_as)
 
@@ -22803,7 +22803,7 @@ class Ui_MainWindow(object):
         self.input_alterar_nis_usuario_as.setObjectName(u"input_alterar_nis_usuario_as")
         self.input_alterar_nis_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_nis_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_nis_usuario_as.setFont(font)
+        self.input_alterar_nis_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_219.addWidget(self.input_alterar_nis_usuario_as)
 
@@ -22824,7 +22824,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cns_usuario_as.setObjectName(u"label_alterar_cns_usuario_as")
         self.label_alterar_cns_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cns_usuario_as.setMaximumSize(QSize(180, 16777215))
-        self.label_alterar_cns_usuario_as.setFont(font)
+        self.label_alterar_cns_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_220.addWidget(self.label_alterar_cns_usuario_as)
 
@@ -22832,7 +22832,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cns_usuario_as.setObjectName(u"input_alterar_cns_usuario_as")
         self.input_alterar_cns_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cns_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_cns_usuario_as.setFont(font)
+        self.input_alterar_cns_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_cns_usuario_as.setInputMethodHints(Qt.ImhNone)
 
         self.verticalLayout_220.addWidget(self.input_alterar_cns_usuario_as)
@@ -22868,7 +22868,7 @@ class Ui_MainWindow(object):
         self.label_alterar_sexo_usuario_as.setObjectName(u"label_alterar_sexo_usuario_as")
         self.label_alterar_sexo_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_sexo_usuario_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_sexo_usuario_as.setFont(font)
+        self.label_alterar_sexo_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_221.addWidget(self.label_alterar_sexo_usuario_as)
 
@@ -22879,7 +22879,7 @@ class Ui_MainWindow(object):
         self.input_alterar_sexo_usuario_as.setObjectName(u"input_alterar_sexo_usuario_as")
         self.input_alterar_sexo_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_sexo_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_sexo_usuario_as.setFont(font)
+        self.input_alterar_sexo_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_221.addWidget(self.input_alterar_sexo_usuario_as)
 
@@ -22901,7 +22901,7 @@ class Ui_MainWindow(object):
         self.label_alterar_telefone_usuario_as.setObjectName(u"label_alterar_telefone_usuario_as")
         self.label_alterar_telefone_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_telefone_usuario_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_telefone_usuario_as.setFont(font)
+        self.label_alterar_telefone_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_222.addWidget(self.label_alterar_telefone_usuario_as)
 
@@ -22909,7 +22909,7 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_usuario_as.setObjectName(u"input_alterar_telefone_usuario_as")
         self.input_alterar_telefone_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_telefone_usuario_as.setFont(font)
+        self.input_alterar_telefone_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_telefone_usuario_as.setMaxLength(11)
 
         self.verticalLayout_222.addWidget(self.input_alterar_telefone_usuario_as)
@@ -22931,7 +22931,7 @@ class Ui_MainWindow(object):
         self.label_alterar_telefone_contato_usuario_as.setObjectName(u"label_alterar_telefone_contato_usuario_as")
         self.label_alterar_telefone_contato_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_telefone_contato_usuario_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_telefone_contato_usuario_as.setFont(font)
+        self.label_alterar_telefone_contato_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_199.addWidget(self.label_alterar_telefone_contato_usuario_as)
 
@@ -22939,7 +22939,7 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_contato_usuario_as.setObjectName(u"input_alterar_telefone_contato_usuario_as")
         self.input_alterar_telefone_contato_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_contato_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_telefone_contato_usuario_as.setFont(font)
+        self.input_alterar_telefone_contato_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_telefone_contato_usuario_as.setMaxLength(11)
 
         self.verticalLayout_199.addWidget(self.input_alterar_telefone_contato_usuario_as)
@@ -22981,7 +22981,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cep_usuario_as.setObjectName(u"label_alterar_cep_usuario_as")
         self.label_alterar_cep_usuario_as.setMinimumSize(QSize(50, 14))
         self.label_alterar_cep_usuario_as.setMaximumSize(QSize(50, 14))
-        self.label_alterar_cep_usuario_as.setFont(font)
+        self.label_alterar_cep_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_293.addWidget(self.label_alterar_cep_usuario_as)
 
@@ -22989,7 +22989,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cep_usuario_as.setObjectName(u"input_alterar_cep_usuario_as")
         self.input_alterar_cep_usuario_as.setMinimumSize(QSize(154, 30))
         self.input_alterar_cep_usuario_as.setMaximumSize(QSize(145, 16777215))
-        self.input_alterar_cep_usuario_as.setFont(font)
+        self.input_alterar_cep_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_cep_usuario_as.setStyleSheet(u"")
         self.input_alterar_cep_usuario_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -23071,7 +23071,7 @@ class Ui_MainWindow(object):
         self.label_alterar_logradouro_usuario_as.setObjectName(u"label_alterar_logradouro_usuario_as")
         self.label_alterar_logradouro_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_logradouro_usuario_as.setMaximumSize(QSize(360, 16777215))
-        self.label_alterar_logradouro_usuario_as.setFont(font)
+        self.label_alterar_logradouro_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_225.addWidget(self.label_alterar_logradouro_usuario_as)
 
@@ -23079,7 +23079,7 @@ class Ui_MainWindow(object):
         self.input_alterar_logradouro_usuario_as.setObjectName(u"input_alterar_logradouro_usuario_as")
         self.input_alterar_logradouro_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_logradouro_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_logradouro_usuario_as.setFont(font)
+        self.input_alterar_logradouro_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_logradouro_usuario_as.setStyleSheet(u"")
 
         self.verticalLayout_225.addWidget(self.input_alterar_logradouro_usuario_as)
@@ -23120,7 +23120,7 @@ class Ui_MainWindow(object):
         self.label_alterar_numero_usuario_as.setObjectName(u"label_alterar_numero_usuario_as")
         self.label_alterar_numero_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_numero_usuario_as.setMaximumSize(QSize(170, 16777215))
-        self.label_alterar_numero_usuario_as.setFont(font)
+        self.label_alterar_numero_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_226.addWidget(self.label_alterar_numero_usuario_as)
 
@@ -23128,7 +23128,7 @@ class Ui_MainWindow(object):
         self.input_alterar_numero_usuario_as.setObjectName(u"input_alterar_numero_usuario_as")
         self.input_alterar_numero_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_numero_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_numero_usuario_as.setFont(font)
+        self.input_alterar_numero_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_226.addWidget(self.input_alterar_numero_usuario_as)
 
@@ -23149,7 +23149,7 @@ class Ui_MainWindow(object):
         self.label_alterar_bairro_usuario_as.setObjectName(u"label_alterar_bairro_usuario_as")
         self.label_alterar_bairro_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_bairro_usuario_as.setMaximumSize(QSize(230, 16777215))
-        self.label_alterar_bairro_usuario_as.setFont(font)
+        self.label_alterar_bairro_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_227.addWidget(self.label_alterar_bairro_usuario_as)
 
@@ -23157,7 +23157,7 @@ class Ui_MainWindow(object):
         self.input_alterar_bairro_usuario_as.setObjectName(u"input_alterar_bairro_usuario_as")
         self.input_alterar_bairro_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_bairro_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_bairro_usuario_as.setFont(font)
+        self.input_alterar_bairro_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_227.addWidget(self.input_alterar_bairro_usuario_as)
 
@@ -23178,7 +23178,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cidade_usuario_as.setObjectName(u"label_alterar_cidade_usuario_as")
         self.label_alterar_cidade_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cidade_usuario_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_cidade_usuario_as.setFont(font)
+        self.label_alterar_cidade_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_228.addWidget(self.label_alterar_cidade_usuario_as)
 
@@ -23186,7 +23186,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cidade_usuario_as.setObjectName(u"input_alterar_cidade_usuario_as")
         self.input_alterar_cidade_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cidade_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_cidade_usuario_as.setFont(font)
+        self.input_alterar_cidade_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_228.addWidget(self.input_alterar_cidade_usuario_as)
 
@@ -23207,7 +23207,7 @@ class Ui_MainWindow(object):
         self.label_alterar_estado_usuario_as.setObjectName(u"label_alterar_estado_usuario_as")
         self.label_alterar_estado_usuario_as.setMinimumSize(QSize(80, 0))
         self.label_alterar_estado_usuario_as.setMaximumSize(QSize(80, 16777215))
-        self.label_alterar_estado_usuario_as.setFont(font)
+        self.label_alterar_estado_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_229.addWidget(self.label_alterar_estado_usuario_as)
 
@@ -23235,7 +23235,7 @@ class Ui_MainWindow(object):
         self.label_alterar_estado_civil_usuario_as.setObjectName(u"label_alterar_estado_civil_usuario_as")
         self.label_alterar_estado_civil_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_estado_civil_usuario_as.setMaximumSize(QSize(210, 16777215))
-        self.label_alterar_estado_civil_usuario_as.setFont(font)
+        self.label_alterar_estado_civil_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_230.addWidget(self.label_alterar_estado_civil_usuario_as)
 
@@ -23248,7 +23248,7 @@ class Ui_MainWindow(object):
         self.input_alterar_estado_civil_usuario_as.setObjectName(u"input_alterar_estado_civil_usuario_as")
         self.input_alterar_estado_civil_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_estado_civil_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_estado_civil_usuario_as.setFont(font)
+        self.input_alterar_estado_civil_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_230.addWidget(self.input_alterar_estado_civil_usuario_as)
 
@@ -23269,7 +23269,7 @@ class Ui_MainWindow(object):
         self.label_alterar_escolaridade_usuario_as.setObjectName(u"label_alterar_escolaridade_usuario_as")
         self.label_alterar_escolaridade_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_escolaridade_usuario_as.setMaximumSize(QSize(290, 16777215))
-        self.label_alterar_escolaridade_usuario_as.setFont(font)
+        self.label_alterar_escolaridade_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_231.addWidget(self.label_alterar_escolaridade_usuario_as)
 
@@ -23285,7 +23285,7 @@ class Ui_MainWindow(object):
         self.input_alterar_escolaridade_usuario_comboBox_as.setObjectName(u"input_alterar_escolaridade_usuario_comboBox_as")
         self.input_alterar_escolaridade_usuario_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_escolaridade_usuario_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_escolaridade_usuario_comboBox_as.setFont(font)
+        self.input_alterar_escolaridade_usuario_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_231.addWidget(self.input_alterar_escolaridade_usuario_comboBox_as)
 
@@ -23319,7 +23319,7 @@ class Ui_MainWindow(object):
         self.label_alterar_pessoa_cdeficiencia_usuario_as.setObjectName(u"label_alterar_pessoa_cdeficiencia_usuario_as")
         self.label_alterar_pessoa_cdeficiencia_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_pessoa_cdeficiencia_usuario_as.setMaximumSize(QSize(205, 16777215))
-        self.label_alterar_pessoa_cdeficiencia_usuario_as.setFont(font)
+        self.label_alterar_pessoa_cdeficiencia_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_232.addWidget(self.label_alterar_pessoa_cdeficiencia_usuario_as)
 
@@ -23327,7 +23327,7 @@ class Ui_MainWindow(object):
         self.frame_342.setObjectName(u"frame_342")
         self.frame_342.setMinimumSize(QSize(195, 0))
         self.frame_342.setMaximumSize(QSize(195, 16777215))
-        self.frame_342.setFont(font)
+        self.frame_342.setFont(fonte_abel_size_11)
         self.frame_342.setFrameShape(QFrame.StyledPanel)
         self.frame_342.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_112 = QHBoxLayout(self.frame_342)
@@ -23366,7 +23366,7 @@ class Ui_MainWindow(object):
         self.label_alterar_tipo_deficiencia_usuario_as.setObjectName(u"label_alterar_tipo_deficiencia_usuario_as")
         self.label_alterar_tipo_deficiencia_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_tipo_deficiencia_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_alterar_tipo_deficiencia_usuario_as.setFont(font)
+        self.label_alterar_tipo_deficiencia_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_233.addWidget(self.label_alterar_tipo_deficiencia_usuario_as)
 
@@ -23381,7 +23381,7 @@ class Ui_MainWindow(object):
         self.input_alterar_tipo_deficiencia_usuario_as.setObjectName(u"input_alterar_tipo_deficiencia_usuario_as")
         self.input_alterar_tipo_deficiencia_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_tipo_deficiencia_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_tipo_deficiencia_usuario_as.setFont(font)
+        self.input_alterar_tipo_deficiencia_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_233.addWidget(self.input_alterar_tipo_deficiencia_usuario_as)
 
@@ -23408,7 +23408,7 @@ class Ui_MainWindow(object):
         self.input_alterar_outras_deficiencias_usuario_as.setEnabled(False)
         self.input_alterar_outras_deficiencias_usuario_as.setMinimumSize(QSize(0, 0))
         self.input_alterar_outras_deficiencias_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_outras_deficiencias_usuario_as.setFont(font)
+        self.input_alterar_outras_deficiencias_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_outras_deficiencias_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
@@ -23432,7 +23432,7 @@ class Ui_MainWindow(object):
         self.label_alterar_renda_familiar_usuario_as.setObjectName(u"label_alterar_renda_familiar_usuario_as")
         self.label_alterar_renda_familiar_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_renda_familiar_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_alterar_renda_familiar_usuario_as.setFont(font)
+        self.label_alterar_renda_familiar_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_234.addWidget(self.label_alterar_renda_familiar_usuario_as)
 
@@ -23446,7 +23446,7 @@ class Ui_MainWindow(object):
         self.input_alterar_renda_familiar_usuario_as.setObjectName(u"input_alterar_renda_familiar_usuario_as")
         self.input_alterar_renda_familiar_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_renda_familiar_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_renda_familiar_usuario_as.setFont(font)
+        self.input_alterar_renda_familiar_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_renda_familiar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.input_alterar_renda_familiar_usuario_as.setStyleSheet(u"")
 
@@ -23469,7 +23469,7 @@ class Ui_MainWindow(object):
         self.label_alterar_meio_transporte_usuario_as.setObjectName(u"label_alterar_meio_transporte_usuario_as")
         self.label_alterar_meio_transporte_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_meio_transporte_usuario_as.setMaximumSize(QSize(200, 16777215))
-        self.label_alterar_meio_transporte_usuario_as.setFont(font)
+        self.label_alterar_meio_transporte_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_235.addWidget(self.label_alterar_meio_transporte_usuario_as)
 
@@ -23485,7 +23485,7 @@ class Ui_MainWindow(object):
         self.input_alterar_meio_transporte_usuario_as.setObjectName(u"input_alterar_meio_transporte_usuario_as")
         self.input_alterar_meio_transporte_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_meio_transporte_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_meio_transporte_usuario_as.setFont(font)
+        self.input_alterar_meio_transporte_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_meio_transporte_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_235.addWidget(self.input_alterar_meio_transporte_usuario_as)
@@ -23505,7 +23505,7 @@ class Ui_MainWindow(object):
         self.label_alterar_vale_transporte_usuario_as = QLabel(self.frame_346)
         self.label_alterar_vale_transporte_usuario_as.setObjectName(u"label_alterar_vale_transporte_usuario_as")
         self.label_alterar_vale_transporte_usuario_as.setMaximumSize(QSize(310, 16777215))
-        self.label_alterar_vale_transporte_usuario_as.setFont(font)
+        self.label_alterar_vale_transporte_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_236.addWidget(self.label_alterar_vale_transporte_usuario_as)
 
@@ -23518,7 +23518,7 @@ class Ui_MainWindow(object):
         self.input_alterar_vale_transporte_usuario_as.setObjectName(u"input_alterar_vale_transporte_usuario_as")
         self.input_alterar_vale_transporte_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_vale_transporte_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_vale_transporte_usuario_as.setFont(font)
+        self.input_alterar_vale_transporte_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_vale_transporte_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_236.addWidget(self.input_alterar_vale_transporte_usuario_as)
@@ -23553,7 +23553,7 @@ class Ui_MainWindow(object):
         self.label_situacao_trabalho_alterar_usuario_as.setObjectName(u"label_situacao_trabalho_alterar_usuario_as")
         self.label_situacao_trabalho_alterar_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_situacao_trabalho_alterar_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_situacao_trabalho_alterar_usuario_as.setFont(font)
+        self.label_situacao_trabalho_alterar_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_237.addWidget(self.label_situacao_trabalho_alterar_usuario_as)
 
@@ -23571,7 +23571,7 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_alterar_usuario_as.setObjectName(u"input_situacao_trabalho_alterar_usuario_as")
         self.input_situacao_trabalho_alterar_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_situacao_trabalho_alterar_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_situacao_trabalho_alterar_usuario_as.setFont(font)
+        self.input_situacao_trabalho_alterar_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_237.addWidget(self.input_situacao_trabalho_alterar_usuario_as)
 
@@ -23603,7 +23603,7 @@ class Ui_MainWindow(object):
         self.input_situacao_trabalho_outros_alterar_usuario_as.setEnabled(False)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMinimumSize(QSize(0, 0))
         self.input_situacao_trabalho_outros_alterar_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_situacao_trabalho_outros_alterar_usuario_as.setFont(font)
+        self.input_situacao_trabalho_outros_alterar_usuario_as.setFont(fonte_abel_size_11)
         self.input_situacao_trabalho_outros_alterar_usuario_as.setStyleSheet(u"\n"
 "    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
@@ -23629,7 +23629,7 @@ class Ui_MainWindow(object):
         self.label_alterar_beneficios_usuario_as.setObjectName(u"label_alterar_beneficios_usuario_as")
         self.label_alterar_beneficios_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_beneficios_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_alterar_beneficios_usuario_as.setFont(font)
+        self.label_alterar_beneficios_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_238.addWidget(self.label_alterar_beneficios_usuario_as)
 
@@ -23643,7 +23643,7 @@ class Ui_MainWindow(object):
         self.input_alterar_beneficios_usuario_as.setObjectName(u"input_alterar_beneficios_usuario_as")
         self.input_alterar_beneficios_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_beneficios_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_beneficios_usuario_as.setFont(font)
+        self.input_alterar_beneficios_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_beneficios_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.input_alterar_beneficios_usuario_as.setStyleSheet(u"")
 
@@ -23665,7 +23665,7 @@ class Ui_MainWindow(object):
         self.label_alterar_tarifa_social_usuario_as = QLabel(self.frame_350)
         self.label_alterar_tarifa_social_usuario_as.setObjectName(u"label_alterar_tarifa_social_usuario_as")
         self.label_alterar_tarifa_social_usuario_as.setMaximumSize(QSize(190, 16777215))
-        self.label_alterar_tarifa_social_usuario_as.setFont(font)
+        self.label_alterar_tarifa_social_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_239.addWidget(self.label_alterar_tarifa_social_usuario_as)
 
@@ -23711,7 +23711,7 @@ class Ui_MainWindow(object):
         self.label_alterar_tipo_tratamento_usuario_as.setObjectName(u"label_alterar_tipo_tratamento_usuario_as")
         self.label_alterar_tipo_tratamento_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_tipo_tratamento_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_alterar_tipo_tratamento_usuario_as.setFont(font)
+        self.label_alterar_tipo_tratamento_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_240.addWidget(self.label_alterar_tipo_tratamento_usuario_as)
 
@@ -23725,7 +23725,7 @@ class Ui_MainWindow(object):
         self.input_alterar_tipo_tratamento_usuario_as.setObjectName(u"input_alterar_tipo_tratamento_usuario_as")
         self.input_alterar_tipo_tratamento_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_tipo_tratamento_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_tipo_tratamento_usuario_as.setFont(font)
+        self.input_alterar_tipo_tratamento_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_tipo_tratamento_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.input_alterar_tipo_tratamento_usuario_as.setStyleSheet(u"")
 
@@ -23765,7 +23765,7 @@ class Ui_MainWindow(object):
         self.label_alterar_local_tratamento_usuario_as.setObjectName(u"label_alterar_local_tratamento_usuario_as")
         self.label_alterar_local_tratamento_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_local_tratamento_usuario_as.setMaximumSize(QSize(330, 16777215))
-        self.label_alterar_local_tratamento_usuario_as.setFont(font)
+        self.label_alterar_local_tratamento_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_125.addWidget(self.label_alterar_local_tratamento_usuario_as)
 
@@ -23774,7 +23774,7 @@ class Ui_MainWindow(object):
         self.input_local_tratamento_alterar_usuario_as.setObjectName(u"input_local_tratamento_alterar_usuario_as")
         self.input_local_tratamento_alterar_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_local_tratamento_alterar_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_local_tratamento_alterar_usuario_as.setFont(font)
+        self.input_local_tratamento_alterar_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_125.addWidget(self.input_local_tratamento_alterar_usuario_as)
 
@@ -23795,7 +23795,7 @@ class Ui_MainWindow(object):
         self.label_alterar_patologia_base_usuario_as.setObjectName(u"label_alterar_patologia_base_usuario_as")
         self.label_alterar_patologia_base_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_patologia_base_usuario_as.setMaximumSize(QSize(260, 16777215))
-        self.label_alterar_patologia_base_usuario_as.setFont(font)
+        self.label_alterar_patologia_base_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_242.addWidget(self.label_alterar_patologia_base_usuario_as)
 
@@ -23810,7 +23810,7 @@ class Ui_MainWindow(object):
         self.input_alterar_patologia_base_usuario_as.setObjectName(u"input_alterar_patologia_base_usuario_as")
         self.input_alterar_patologia_base_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_patologia_base_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_patologia_base_usuario_as.setFont(font)
+        self.input_alterar_patologia_base_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_patologia_base_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_242.addWidget(self.input_alterar_patologia_base_usuario_as)
@@ -23838,7 +23838,7 @@ class Ui_MainWindow(object):
         self.input_alterar_outras_patologias_usuario_as.setEnabled(False)
         self.input_alterar_outras_patologias_usuario_as.setMinimumSize(QSize(0, 0))
         self.input_alterar_outras_patologias_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_outras_patologias_usuario_as.setFont(font)
+        self.input_alterar_outras_patologias_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_outras_patologias_usuario_as.setStyleSheet(u"    border: none;\n"
 "    background-color: rgba(0, 0, 0, 0);\n"
 "")
@@ -23862,7 +23862,7 @@ class Ui_MainWindow(object):
         self.label_alterar_data_inicio_usuario_as.setObjectName(u"label_alterar_data_inicio_usuario_as")
         self.label_alterar_data_inicio_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_data_inicio_usuario_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_data_inicio_usuario_as.setFont(font)
+        self.label_alterar_data_inicio_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_243.addWidget(self.label_alterar_data_inicio_usuario_as, 0, Qt.AlignHCenter)
 
@@ -23906,7 +23906,7 @@ class Ui_MainWindow(object):
         self.label_alterar_periodo_usuario_as.setObjectName(u"label_alterar_periodo_usuario_as")
         self.label_alterar_periodo_usuario_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_periodo_usuario_as.setMaximumSize(QSize(250, 16777215))
-        self.label_alterar_periodo_usuario_as.setFont(font)
+        self.label_alterar_periodo_usuario_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_244.addWidget(self.label_alterar_periodo_usuario_as)
 
@@ -23918,7 +23918,7 @@ class Ui_MainWindow(object):
         self.input_alterar_periodo_usuario_as.setObjectName(u"input_alterar_periodo_usuario_as")
         self.input_alterar_periodo_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_periodo_usuario_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_periodo_usuario_as.setFont(font)
+        self.input_alterar_periodo_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_periodo_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
 
         self.verticalLayout_244.addWidget(self.input_alterar_periodo_usuario_as)
@@ -24157,7 +24157,7 @@ class Ui_MainWindow(object):
         self.label_alterar_estado_civil_colaborador_as.setObjectName(u"label_alterar_estado_civil_colaborador_as")
         self.label_alterar_estado_civil_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_estado_civil_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_estado_civil_colaborador_as.setFont(font)
+        self.label_alterar_estado_civil_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_259.addWidget(self.label_alterar_estado_civil_colaborador_as)
 
@@ -24170,7 +24170,7 @@ class Ui_MainWindow(object):
         self.input_alterar_estado_civil_colaborador_comboBox_as.setObjectName(u"input_alterar_estado_civil_colaborador_comboBox_as")
         self.input_alterar_estado_civil_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_estado_civil_colaborador_comboBox_as.setMaximumSize(QSize(145, 30))
-        self.input_alterar_estado_civil_colaborador_comboBox_as.setFont(font)
+        self.input_alterar_estado_civil_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_259.addWidget(self.input_alterar_estado_civil_colaborador_comboBox_as)
 
@@ -24191,7 +24191,7 @@ class Ui_MainWindow(object):
         self.label_alterar_salario_colaborador_as_2.setObjectName(u"label_alterar_salario_colaborador_as_2")
         self.label_alterar_salario_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_alterar_salario_colaborador_as_2.setMaximumSize(QSize(100, 16777215))
-        self.label_alterar_salario_colaborador_as_2.setFont(font)
+        self.label_alterar_salario_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_260.addWidget(self.label_alterar_salario_colaborador_as_2)
 
@@ -24199,7 +24199,7 @@ class Ui_MainWindow(object):
         self.input_alterar_salario_colaborador_as_2.setObjectName(u"input_alterar_salario_colaborador_as_2")
         self.input_alterar_salario_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_alterar_salario_colaborador_as_2.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_salario_colaborador_as_2.setFont(font)
+        self.input_alterar_salario_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_260.addWidget(self.input_alterar_salario_colaborador_as_2)
 
@@ -24220,7 +24220,7 @@ class Ui_MainWindow(object):
         self.label_alterar_escolaridade_colaborador_as.setObjectName(u"label_alterar_escolaridade_colaborador_as")
         self.label_alterar_escolaridade_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_escolaridade_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_escolaridade_colaborador_as.setFont(font)
+        self.label_alterar_escolaridade_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_263.addWidget(self.label_alterar_escolaridade_colaborador_as)
 
@@ -24235,7 +24235,7 @@ class Ui_MainWindow(object):
         self.input_alterar_escolaridade_colaborador_comboBox_as.setObjectName(u"input_alterar_escolaridade_colaborador_comboBox_as")
         self.input_alterar_escolaridade_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_escolaridade_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_escolaridade_colaborador_comboBox_as.setFont(font)
+        self.input_alterar_escolaridade_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_263.addWidget(self.input_alterar_escolaridade_colaborador_comboBox_as)
 
@@ -24256,7 +24256,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cargo_colaborador_as.setObjectName(u"label_alterar_cargo_colaborador_as")
         self.label_alterar_cargo_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cargo_colaborador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_cargo_colaborador_as.setFont(font)
+        self.label_alterar_cargo_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_264.addWidget(self.label_alterar_cargo_colaborador_as)
 
@@ -24274,7 +24274,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cargo_colaborador_comboBox_as.setSizePolicy(sizePolicy1)
         self.input_alterar_cargo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cargo_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_cargo_colaborador_comboBox_as.setFont(font)
+        self.input_alterar_cargo_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_264.addWidget(self.input_alterar_cargo_colaborador_comboBox_as)
 
@@ -24293,7 +24293,7 @@ class Ui_MainWindow(object):
         self.label_alterar_periodo_colaborador_as = QLabel(self.frame_390)
         self.label_alterar_periodo_colaborador_as.setObjectName(u"label_alterar_periodo_colaborador_as")
         self.label_alterar_periodo_colaborador_as.setMaximumSize(QSize(170, 16777215))
-        self.label_alterar_periodo_colaborador_as.setFont(font)
+        self.label_alterar_periodo_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_265.addWidget(self.label_alterar_periodo_colaborador_as)
 
@@ -24306,7 +24306,7 @@ class Ui_MainWindow(object):
         self.input_alterar_periodo_colaborador_comboBox_as.setObjectName(u"input_alterar_periodo_colaborador_comboBox_as")
         self.input_alterar_periodo_colaborador_comboBox_as.setMinimumSize(QSize(70, 30))
         self.input_alterar_periodo_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_periodo_colaborador_comboBox_as.setFont(font)
+        self.input_alterar_periodo_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_265.addWidget(self.input_alterar_periodo_colaborador_comboBox_as)
 
@@ -24324,7 +24324,7 @@ class Ui_MainWindow(object):
         self.input_alterar_id_foto_usuario_as.setObjectName(u"input_alterar_id_foto_usuario_as")
         self.input_alterar_id_foto_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_id_foto_usuario_as.setMaximumSize(QSize(229, 30))
-        self.input_alterar_id_foto_usuario_as.setFont(font)
+        self.input_alterar_id_foto_usuario_as.setFont(fonte_abel_size_11)
         self.input_alterar_id_foto_usuario_as.setStyleSheet(u"background-color:transparent;\n"
 "border-color: transparent;")
 
@@ -24361,7 +24361,7 @@ class Ui_MainWindow(object):
         self.label_alterar_orgao_expedidor_colaborador_as.setObjectName(u"label_alterar_orgao_expedidor_colaborador_as")
         self.label_alterar_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_orgao_expedidor_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_orgao_expedidor_colaborador_as.setFont(font)
+        self.label_alterar_orgao_expedidor_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_268.addWidget(self.label_alterar_orgao_expedidor_colaborador_as)
 
@@ -24369,7 +24369,7 @@ class Ui_MainWindow(object):
         self.input_alterar_orgao_expedidor_colaborador_as.setObjectName(u"input_alterar_orgao_expedidor_colaborador_as")
         self.input_alterar_orgao_expedidor_colaborador_as.setMinimumSize(QSize(0, 0))
         self.input_alterar_orgao_expedidor_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_orgao_expedidor_colaborador_as.setFont(font)
+        self.input_alterar_orgao_expedidor_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_268.addWidget(self.input_alterar_orgao_expedidor_colaborador_as)
 
@@ -24388,7 +24388,7 @@ class Ui_MainWindow(object):
         self.label_alterar_data_emissao_rg_colaborador_as = QLabel(self.frame_395)
         self.label_alterar_data_emissao_rg_colaborador_as.setObjectName(u"label_alterar_data_emissao_rg_colaborador_as")
         self.label_alterar_data_emissao_rg_colaborador_as.setMaximumSize(QSize(170, 16777215))
-        self.label_alterar_data_emissao_rg_colaborador_as.setFont(font)
+        self.label_alterar_data_emissao_rg_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1271.addWidget(self.label_alterar_data_emissao_rg_colaborador_as)
 
@@ -24430,7 +24430,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_270.setContentsMargins(0, 0, 0, 0)
         self.label_alterar_pis_colaborador_as = QLabel(self.frame_396)
         self.label_alterar_pis_colaborador_as.setObjectName(u"label_alterar_pis_colaborador_as")
-        self.label_alterar_pis_colaborador_as.setFont(font)
+        self.label_alterar_pis_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_270.addWidget(self.label_alterar_pis_colaborador_as)
 
@@ -24438,7 +24438,7 @@ class Ui_MainWindow(object):
         self.input_alterar_pis_colaborador_as.setObjectName(u"input_alterar_pis_colaborador_as")
         self.input_alterar_pis_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_pis_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_pis_colaborador_as.setFont(font)
+        self.input_alterar_pis_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_270.addWidget(self.input_alterar_pis_colaborador_as)
 
@@ -24457,7 +24457,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_271.setContentsMargins(0, 0, 0, 0)
         self.label_alterar_sexo_colaborador_as = QLabel(self.frame_397)
         self.label_alterar_sexo_colaborador_as.setObjectName(u"label_alterar_sexo_colaborador_as")
-        self.label_alterar_sexo_colaborador_as.setFont(font)
+        self.label_alterar_sexo_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_271.addWidget(self.label_alterar_sexo_colaborador_as)
 
@@ -24468,7 +24468,7 @@ class Ui_MainWindow(object):
         self.input_alterar_sexo_colaborador_comboBox_as.setObjectName(u"input_alterar_sexo_colaborador_comboBox_as")
         self.input_alterar_sexo_colaborador_comboBox_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_sexo_colaborador_comboBox_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_sexo_colaborador_comboBox_as.setFont(font)
+        self.input_alterar_sexo_colaborador_comboBox_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_271.addWidget(self.input_alterar_sexo_colaborador_comboBox_as)
 
@@ -24489,7 +24489,7 @@ class Ui_MainWindow(object):
         self.label_alterar_telefone_colaborador_as.setObjectName(u"label_alterar_telefone_colaborador_as")
         self.label_alterar_telefone_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_telefone_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_telefone_colaborador_as.setFont(font)
+        self.label_alterar_telefone_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_273.addWidget(self.label_alterar_telefone_colaborador_as)
 
@@ -24497,7 +24497,7 @@ class Ui_MainWindow(object):
         self.input_alterar_telefone_colaborador_as.setObjectName(u"input_alterar_telefone_colaborador_as")
         self.input_alterar_telefone_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_telefone_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_telefone_colaborador_as.setFont(font)
+        self.input_alterar_telefone_colaborador_as.setFont(fonte_abel_size_11)
         self.input_alterar_telefone_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_273.addWidget(self.input_alterar_telefone_colaborador_as)
@@ -24519,7 +24519,7 @@ class Ui_MainWindow(object):
         self.label_alterar_email_colaborador_as.setObjectName(u"label_alterar_email_colaborador_as")
         self.label_alterar_email_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_email_colaborador_as.setMaximumSize(QSize(240, 16777215))
-        self.label_alterar_email_colaborador_as.setFont(font)
+        self.label_alterar_email_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_275.addWidget(self.label_alterar_email_colaborador_as)
 
@@ -24527,7 +24527,7 @@ class Ui_MainWindow(object):
         self.input_alterar_email_colaborador_as.setObjectName(u"input_alterar_email_colaborador_as")
         self.input_alterar_email_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_email_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_email_colaborador_as.setFont(font)
+        self.input_alterar_email_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_275.addWidget(self.input_alterar_email_colaborador_as)
 
@@ -24559,7 +24559,7 @@ class Ui_MainWindow(object):
         self.label_alterar_situacao_colaborador_as = QLabel(self.frame_435)
         self.label_alterar_situacao_colaborador_as.setObjectName(u"label_alterar_situacao_colaborador_as")
         self.label_alterar_situacao_colaborador_as.setMaximumSize(QSize(130, 16777215))
-        self.label_alterar_situacao_colaborador_as.setFont(font)
+        self.label_alterar_situacao_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_304.addWidget(self.label_alterar_situacao_colaborador_as)
 
@@ -24621,7 +24621,7 @@ class Ui_MainWindow(object):
         self.label_alterar_matricula_colaborador_as.setObjectName(u"label_alterar_matricula_colaborador_as")
         self.label_alterar_matricula_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_matricula_colaborador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_matricula_colaborador_as.setFont(font)
+        self.label_alterar_matricula_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_276.addWidget(self.label_alterar_matricula_colaborador_as)
 
@@ -24630,7 +24630,7 @@ class Ui_MainWindow(object):
         self.input_alterar_matricula_colaborador_as.setEnabled(False)
         self.input_alterar_matricula_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_matricula_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_matricula_colaborador_as.setFont(font)
+        self.input_alterar_matricula_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_276.addWidget(self.input_alterar_matricula_colaborador_as)
 
@@ -24651,7 +24651,7 @@ class Ui_MainWindow(object):
         self.label_alterar_nome_colaborador_as.setObjectName(u"label_alterar_nome_colaborador_as")
         self.label_alterar_nome_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_nome_colaborador_as.setMaximumSize(QSize(460, 16777215))
-        self.label_alterar_nome_colaborador_as.setFont(font)
+        self.label_alterar_nome_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_277.addWidget(self.label_alterar_nome_colaborador_as)
 
@@ -24659,7 +24659,7 @@ class Ui_MainWindow(object):
         self.input_alterar_nome_colaborador_as.setObjectName(u"input_alterar_nome_colaborador_as")
         self.input_alterar_nome_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_nome_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_nome_colaborador_as.setFont(font)
+        self.input_alterar_nome_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_277.addWidget(self.input_alterar_nome_colaborador_as)
 
@@ -24680,7 +24680,7 @@ class Ui_MainWindow(object):
         self.label_alterar_data_nascimento_colaborador_as.setObjectName(u"label_alterar_data_nascimento_colaborador_as")
         self.label_alterar_data_nascimento_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_data_nascimento_colaborador_as.setMaximumSize(QSize(155, 16777215))
-        self.label_alterar_data_nascimento_colaborador_as.setFont(font)
+        self.label_alterar_data_nascimento_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_278.addWidget(self.label_alterar_data_nascimento_colaborador_as)
 
@@ -24724,7 +24724,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cpf_colaborador_as.setObjectName(u"label_alterar_cpf_colaborador_as")
         self.label_alterar_cpf_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cpf_colaborador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_alterar_cpf_colaborador_as.setFont(font)
+        self.label_alterar_cpf_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_279.addWidget(self.label_alterar_cpf_colaborador_as)
 
@@ -24732,7 +24732,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cpf_colaborador_as.setObjectName(u"input_alterar_cpf_colaborador_as")
         self.input_alterar_cpf_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cpf_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_cpf_colaborador_as.setFont(font)
+        self.input_alterar_cpf_colaborador_as.setFont(fonte_abel_size_11)
         self.input_alterar_cpf_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_279.addWidget(self.input_alterar_cpf_colaborador_as)
@@ -24754,7 +24754,7 @@ class Ui_MainWindow(object):
         self.label_alterar_rg_colaborador_as.setObjectName(u"label_alterar_rg_colaborador_as")
         self.label_alterar_rg_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_rg_colaborador_as.setMaximumSize(QSize(160, 16777215))
-        self.label_alterar_rg_colaborador_as.setFont(font)
+        self.label_alterar_rg_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_280.addWidget(self.label_alterar_rg_colaborador_as)
 
@@ -24762,7 +24762,7 @@ class Ui_MainWindow(object):
         self.input_alterar_rg_colaborador_as.setObjectName(u"input_alterar_rg_colaborador_as")
         self.input_alterar_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_rg_colaborador_as.setFont(font)
+        self.input_alterar_rg_colaborador_as.setFont(fonte_abel_size_11)
         self.input_alterar_rg_colaborador_as.setMaxLength(7)
 
         self.verticalLayout_280.addWidget(self.input_alterar_rg_colaborador_as)
@@ -24806,7 +24806,7 @@ class Ui_MainWindow(object):
         self.label_alterar_usuario_colaborador_as_2.setObjectName(u"label_alterar_usuario_colaborador_as_2")
         self.label_alterar_usuario_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_alterar_usuario_colaborador_as_2.setMaximumSize(QSize(280, 16777215))
-        self.label_alterar_usuario_colaborador_as_2.setFont(font)
+        self.label_alterar_usuario_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_256.addWidget(self.label_alterar_usuario_colaborador_as_2)
 
@@ -24814,7 +24814,7 @@ class Ui_MainWindow(object):
         self.input_alterar_usuario_colaborador_as_2.setObjectName(u"input_alterar_usuario_colaborador_as_2")
         self.input_alterar_usuario_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_alterar_usuario_colaborador_as_2.setMaximumSize(QSize(280, 30))
-        self.input_alterar_usuario_colaborador_as_2.setFont(font)
+        self.input_alterar_usuario_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_256.addWidget(self.input_alterar_usuario_colaborador_as_2)
 
@@ -24835,7 +24835,7 @@ class Ui_MainWindow(object):
         self.label_alterar_senha_colaborador_as_2.setObjectName(u"label_alterar_senha_colaborador_as_2")
         self.label_alterar_senha_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_alterar_senha_colaborador_as_2.setMaximumSize(QSize(230, 16777215))
-        self.label_alterar_senha_colaborador_as_2.setFont(font)
+        self.label_alterar_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_255.addWidget(self.label_alterar_senha_colaborador_as_2)
 
@@ -24843,7 +24843,7 @@ class Ui_MainWindow(object):
         self.input_alterar_senha_colaborador_as_2.setObjectName(u"input_alterar_senha_colaborador_as_2")
         self.input_alterar_senha_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_alterar_senha_colaborador_as_2.setMaximumSize(QSize(229, 30))
-        self.input_alterar_senha_colaborador_as_2.setFont(font)
+        self.input_alterar_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_255.addWidget(self.input_alterar_senha_colaborador_as_2)
 
@@ -24864,7 +24864,7 @@ class Ui_MainWindow(object):
         self.label_alterar_confirmar_senha_colaborador_as_2.setObjectName(u"label_alterar_confirmar_senha_colaborador_as_2")
         self.label_alterar_confirmar_senha_colaborador_as_2.setMinimumSize(QSize(0, 0))
         self.label_alterar_confirmar_senha_colaborador_as_2.setMaximumSize(QSize(230, 16777215))
-        self.label_alterar_confirmar_senha_colaborador_as_2.setFont(font)
+        self.label_alterar_confirmar_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_261.addWidget(self.label_alterar_confirmar_senha_colaborador_as_2)
 
@@ -24872,7 +24872,7 @@ class Ui_MainWindow(object):
         self.input_alterar_confirmar_senha_colaborador_as_2.setObjectName(u"input_alterar_confirmar_senha_colaborador_as_2")
         self.input_alterar_confirmar_senha_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_alterar_confirmar_senha_colaborador_as_2.setMaximumSize(QSize(229, 30))
-        self.input_alterar_confirmar_senha_colaborador_as_2.setFont(font)
+        self.input_alterar_confirmar_senha_colaborador_as_2.setFont(fonte_abel_size_11)
 
         self.verticalLayout_261.addWidget(self.input_alterar_confirmar_senha_colaborador_as_2)
 
@@ -24975,7 +24975,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cep_colaborador_as.setObjectName(u"label_alterar_cep_colaborador_as")
         self.label_alterar_cep_colaborador_as.setMinimumSize(QSize(50, 15))
         self.label_alterar_cep_colaborador_as.setMaximumSize(QSize(50, 24))
-        self.label_alterar_cep_colaborador_as.setFont(font)
+        self.label_alterar_cep_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_281.addWidget(self.label_alterar_cep_colaborador_as)
 
@@ -24983,7 +24983,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cep_colaborador_as.setObjectName(u"input_alterar_cep_colaborador_as")
         self.input_alterar_cep_colaborador_as.setMinimumSize(QSize(145, 30))
         self.input_alterar_cep_colaborador_as.setMaximumSize(QSize(146, 30))
-        self.input_alterar_cep_colaborador_as.setFont(font)
+        self.input_alterar_cep_colaborador_as.setFont(fonte_abel_size_11)
         self.input_alterar_cep_colaborador_as.setStyleSheet(u"")
         self.input_alterar_cep_colaborador_as.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
@@ -25065,7 +25065,7 @@ class Ui_MainWindow(object):
         self.label_alterar_logradouro_colaborador_as.setObjectName(u"label_alterar_logradouro_colaborador_as")
         self.label_alterar_logradouro_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_logradouro_colaborador_as.setMaximumSize(QSize(280, 16777215))
-        self.label_alterar_logradouro_colaborador_as.setFont(font)
+        self.label_alterar_logradouro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_282.addWidget(self.label_alterar_logradouro_colaborador_as)
 
@@ -25073,7 +25073,7 @@ class Ui_MainWindow(object):
         self.input_alterar_logradouro_colaborador_as.setObjectName(u"input_alterar_logradouro_colaborador_as")
         self.input_alterar_logradouro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_logradouro_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_logradouro_colaborador_as.setFont(font)
+        self.input_alterar_logradouro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_282.addWidget(self.input_alterar_logradouro_colaborador_as)
 
@@ -25094,7 +25094,7 @@ class Ui_MainWindow(object):
         self.label_alterar_numero_colaborador_as.setObjectName(u"label_alterar_numero_colaborador_as")
         self.label_alterar_numero_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_numero_colaborador_as.setMaximumSize(QSize(60, 16777215))
-        self.label_alterar_numero_colaborador_as.setFont(font)
+        self.label_alterar_numero_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_297.addWidget(self.label_alterar_numero_colaborador_as)
 
@@ -25102,7 +25102,7 @@ class Ui_MainWindow(object):
         self.input_alterar_numero_colaborador_as.setObjectName(u"input_alterar_numero_colaborador_as")
         self.input_alterar_numero_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_numero_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_numero_colaborador_as.setFont(font)
+        self.input_alterar_numero_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_297.addWidget(self.input_alterar_numero_colaborador_as)
 
@@ -25123,7 +25123,7 @@ class Ui_MainWindow(object):
         self.label_alterar_bairro_colaborador_as.setObjectName(u"label_alterar_bairro_colaborador_as")
         self.label_alterar_bairro_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_bairro_colaborador_as.setMaximumSize(QSize(230, 16777215))
-        self.label_alterar_bairro_colaborador_as.setFont(font)
+        self.label_alterar_bairro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_298.addWidget(self.label_alterar_bairro_colaborador_as)
 
@@ -25131,7 +25131,7 @@ class Ui_MainWindow(object):
         self.input_alterar_bairro_colaborador_as.setObjectName(u"input_alterar_bairro_colaborador_as")
         self.input_alterar_bairro_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_bairro_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_bairro_colaborador_as.setFont(font)
+        self.input_alterar_bairro_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_298.addWidget(self.input_alterar_bairro_colaborador_as)
 
@@ -25152,7 +25152,7 @@ class Ui_MainWindow(object):
         self.label_alterar_cidade_colaborador_as.setObjectName(u"label_alterar_cidade_colaborador_as")
         self.label_alterar_cidade_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_cidade_colaborador_as.setMaximumSize(QSize(180, 16777215))
-        self.label_alterar_cidade_colaborador_as.setFont(font)
+        self.label_alterar_cidade_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_299.addWidget(self.label_alterar_cidade_colaborador_as)
 
@@ -25160,7 +25160,7 @@ class Ui_MainWindow(object):
         self.input_alterar_cidade_colaborador_as.setObjectName(u"input_alterar_cidade_colaborador_as")
         self.input_alterar_cidade_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_cidade_colaborador_as.setMaximumSize(QSize(16777215, 30))
-        self.input_alterar_cidade_colaborador_as.setFont(font)
+        self.input_alterar_cidade_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_299.addWidget(self.input_alterar_cidade_colaborador_as)
 
@@ -25181,7 +25181,7 @@ class Ui_MainWindow(object):
         self.label_alterar_estado_colaborador_as.setObjectName(u"label_alterar_estado_colaborador_as")
         self.label_alterar_estado_colaborador_as.setMinimumSize(QSize(0, 0))
         self.label_alterar_estado_colaborador_as.setMaximumSize(QSize(80, 16777215))
-        self.label_alterar_estado_colaborador_as.setFont(font)
+        self.label_alterar_estado_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_300.addWidget(self.label_alterar_estado_colaborador_as)
 
@@ -25189,7 +25189,7 @@ class Ui_MainWindow(object):
         self.input_alterar_estado_colaborador_as.setObjectName(u"input_alterar_estado_colaborador_as")
         self.input_alterar_estado_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_estado_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
-        self.input_alterar_estado_colaborador_as.setFont(font)
+        self.input_alterar_estado_colaborador_as.setFont(fonte_abel_size_11)
 
         self.verticalLayout_300.addWidget(self.input_alterar_estado_colaborador_as)
 
@@ -25489,7 +25489,7 @@ class Ui_MainWindow(object):
 
         self.label_cpf_pagina_consulta_geral = QLabel(self.frame_4621)
         self.label_cpf_pagina_consulta_geral.setObjectName(u"label_cpf_pagina_consulta_geral")
-        self.label_cpf_pagina_consulta_geral.setFont(font)
+        self.label_cpf_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_319.addWidget(self.label_cpf_pagina_consulta_geral)
 
@@ -25564,7 +25564,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_1701.setObjectName(u"verticalLayout_1701")
         self.label_nome_pagina_consulta_geral = QLabel(self.frame_4491)
         self.label_nome_pagina_consulta_geral.setObjectName(u"label_nome_pagina_consulta_geral")
-        self.label_nome_pagina_consulta_geral.setFont(font)
+        self.label_nome_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1701.addWidget(self.label_nome_pagina_consulta_geral)
 
@@ -25584,7 +25584,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_1721.setObjectName(u"verticalLayout_1721")
         self.label_contato_pagina_consulta_geral = QLabel(self.frame_2571)
         self.label_contato_pagina_consulta_geral.setObjectName(u"label_contato_pagina_consulta_geral")
-        self.label_contato_pagina_consulta_geral.setFont(font)
+        self.label_contato_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1721.addWidget(self.label_contato_pagina_consulta_geral)
 
@@ -25605,7 +25605,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_1171.setObjectName(u"verticalLayout_1171")
         self.label_clinica_pagina_consulta_geral = QLabel(self.frame_2531)
         self.label_clinica_pagina_consulta_geral.setObjectName(u"label_clinica_pagina_consulta_geral")
-        self.label_clinica_pagina_consulta_geral.setFont(font)
+        self.label_clinica_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1171.addWidget(self.label_clinica_pagina_consulta_geral)
 
@@ -25625,7 +25625,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_741.setObjectName(u"horizontalLayout_741")
         self.radioButton_atendimento_as = QRadioButton(self.frame_2561)
         self.radioButton_atendimento_as.setObjectName(u"radioButton_atendimento_as")
-        self.radioButton_atendimento_as.setFont(font)
+        self.radioButton_atendimento_as.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_741.addWidget(self.radioButton_atendimento_as)
 
@@ -25633,7 +25633,7 @@ class Ui_MainWindow(object):
         self.radioButton_Retorno_as.setObjectName(u"radioButton_Retorno_as")
         sizePolicy6.setHeightForWidth(self.radioButton_Retorno_as.sizePolicy().hasHeightForWidth())
         self.radioButton_Retorno_as.setSizePolicy(sizePolicy6)
-        self.radioButton_Retorno_as.setFont(font)
+        self.radioButton_Retorno_as.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_741.addWidget(self.radioButton_Retorno_as)
 
@@ -25656,7 +25656,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_1761.setObjectName(u"verticalLayout_1761")
         self.label_data_pagina_consulta_geral = QLabel(self.frame_4521)
         self.label_data_pagina_consulta_geral.setObjectName(u"label_data_pagina_consulta_geral")
-        self.label_data_pagina_consulta_geral.setFont(font)
+        self.label_data_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1761.addWidget(self.label_data_pagina_consulta_geral)
 
@@ -25684,7 +25684,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.label_hora_pagina_consulta_geral = QLabel(self.frame_4531)
         self.label_hora_pagina_consulta_geral.setObjectName(u"label_hora_pagina_consulta_geral")
-        self.label_hora_pagina_consulta_geral.setFont(font)
+        self.label_hora_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_8.addWidget(self.label_hora_pagina_consulta_geral)
 
@@ -25712,7 +25712,7 @@ class Ui_MainWindow(object):
 
         self.label_evolucao_pagina_consulta_geral = QLabel(self.frame_254)
         self.label_evolucao_pagina_consulta_geral.setObjectName(u"label_evolucao_pagina_consulta_geral")
-        self.label_evolucao_pagina_consulta_geral.setFont(font)
+        self.label_evolucao_pagina_consulta_geral.setFont(fonte_abel_size_11)
 
         self.verticalLayout_1831.addWidget(self.label_evolucao_pagina_consulta_geral)
 
@@ -25872,7 +25872,7 @@ class Ui_MainWindow(object):
         if (self.input_TableWidget_pagina_consulta_geral.rowCount() < 14):
             self.input_TableWidget_pagina_consulta_geral.setRowCount(14)
         self.input_TableWidget_pagina_consulta_geral.setObjectName(u"input_TableWidget_pagina_consulta_geral")
-        self.input_TableWidget_pagina_consulta_geral.setFont(font)
+        self.input_TableWidget_pagina_consulta_geral.setFont(fonte_abel_size_11)
         self.input_TableWidget_pagina_consulta_geral.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_pagina_consulta_geral.setAutoFillBackground(False)
         self.input_TableWidget_pagina_consulta_geral.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -26349,7 +26349,7 @@ class Ui_MainWindow(object):
         if (self.input_TableWidget_relatorio_atendimentos.rowCount() < 14):
             self.input_TableWidget_relatorio_atendimentos.setRowCount(14)
         self.input_TableWidget_relatorio_atendimentos.setObjectName(u"input_TableWidget_relatorio_atendimentos")
-        self.input_TableWidget_relatorio_atendimentos.setFont(font)
+        self.input_TableWidget_relatorio_atendimentos.setFont(fonte_abel_size_11)
         self.input_TableWidget_relatorio_atendimentos.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_relatorio_atendimentos.setAutoFillBackground(False)
         self.input_TableWidget_relatorio_atendimentos.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -26955,25 +26955,25 @@ class Ui_MainWindow(object):
 
         self.radioButton_as_sec = QRadioButton(self.frame_907)
         self.radioButton_as_sec.setObjectName(u"radioButton_as_sec")
-        self.radioButton_as_sec.setFont(font)
+        self.radioButton_as_sec.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_3241.addWidget(self.radioButton_as_sec)
 
         self.radioButton_psi_sec = QRadioButton(self.frame_907)
         self.radioButton_psi_sec.setObjectName(u"radioButton_psi_sec")
-        self.radioButton_psi_sec.setFont(font)
+        self.radioButton_psi_sec.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_3241.addWidget(self.radioButton_psi_sec)
 
         self.radioButton_fisio_sec = QRadioButton(self.frame_907)
         self.radioButton_fisio_sec.setObjectName(u"radioButton_fisio_sec")
-        self.radioButton_fisio_sec.setFont(font)
+        self.radioButton_fisio_sec.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_3241.addWidget(self.radioButton_fisio_sec)
 
         self.radioButton_nutri_sec = QRadioButton(self.frame_907)
         self.radioButton_nutri_sec.setObjectName(u"radioButton_nutri_sec")
-        self.radioButton_nutri_sec.setFont(font)
+        self.radioButton_nutri_sec.setFont(fonte_abel_size_11)
 
         self.horizontalLayout_3241.addWidget(self.radioButton_nutri_sec)
 
@@ -27077,7 +27077,7 @@ class Ui_MainWindow(object):
         if (self.input_TableWidget_relatorio_sec.rowCount() < 14):
             self.input_TableWidget_relatorio_sec.setRowCount(14)
         self.input_TableWidget_relatorio_sec.setObjectName(u"input_TableWidget_relatorio_sec")
-        self.input_TableWidget_relatorio_sec.setFont(font)
+        self.input_TableWidget_relatorio_sec.setFont(fonte_abel_size_11)
         self.input_TableWidget_relatorio_sec.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_relatorio_sec.setAutoFillBackground(False)
         self.input_TableWidget_relatorio_sec.setInputMethodHints(Qt.ImhDate|Qt.ImhSensitiveData|Qt.ImhTime)
@@ -27295,7 +27295,7 @@ class Ui_MainWindow(object):
         self.label_cpf_agendamento_sec.setObjectName(u"label_cpf_agendamento_sec")
         sizePolicy2.setHeightForWidth(self.label_cpf_agendamento_sec.sizePolicy().hasHeightForWidth())
         self.label_cpf_agendamento_sec.setSizePolicy(sizePolicy2)
-        self.label_cpf_agendamento_sec.setFont(font)
+        self.label_cpf_agendamento_sec.setFont(fonte_abel_size_11)
         self.label_cpf_agendamento_sec.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
         self.verticalLayout_4891.addWidget(self.label_cpf_agendamento_sec)
@@ -27304,7 +27304,7 @@ class Ui_MainWindow(object):
         self.input_cpf_agendamento_sec.setObjectName(u"input_cpf_agendamento_sec")
         self.input_cpf_agendamento_sec.setMinimumSize(QSize(0, 30))
         self.input_cpf_agendamento_sec.setMaximumSize(QSize(16777215, 16777215))
-        self.input_cpf_agendamento_sec.setFont(font)
+        self.input_cpf_agendamento_sec.setFont(fonte_abel_size_11)
         self.input_cpf_agendamento_sec.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_cpf_agendamento_sec.setMaxLength(11)
@@ -27372,7 +27372,7 @@ class Ui_MainWindow(object):
         self.input_id_matricula_agendamento_sec.setObjectName(u"input_id_matricula_agendamento_sec")
         self.input_id_matricula_agendamento_sec.setMinimumSize(QSize(0, 0))
         self.input_id_matricula_agendamento_sec.setMaximumSize(QSize(0, 0))
-        self.input_id_matricula_agendamento_sec.setFont(font)
+        self.input_id_matricula_agendamento_sec.setFont(fonte_abel_size_11)
         self.input_id_matricula_agendamento_sec.setStyleSheet(u"color: transparent;\n"
 "background-color: transparent;")
         self.input_id_matricula_agendamento_sec.setMaxLength(11)
@@ -27397,7 +27397,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_599.setContentsMargins(0, 10, 0, 10)
         self.label_nome_agendamento_sec = QLabel(self.frame_7331)
         self.label_nome_agendamento_sec.setObjectName(u"label_nome_agendamento_sec")
-        self.label_nome_agendamento_sec.setFont(font)
+        self.label_nome_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_599.addWidget(self.label_nome_agendamento_sec)
 
@@ -27405,7 +27405,7 @@ class Ui_MainWindow(object):
         self.input_nome_agendamento_sec.setObjectName(u"input_nome_agendamento_sec")
         self.input_nome_agendamento_sec.setMinimumSize(QSize(0, 30))
         self.input_nome_agendamento_sec.setMaximumSize(QSize(16777215, 30))
-        self.input_nome_agendamento_sec.setFont(font)
+        self.input_nome_agendamento_sec.setFont(fonte_abel_size_11)
         self.input_nome_agendamento_sec.setFocusPolicy(Qt.WheelFocus)
         self.input_nome_agendamento_sec.setContextMenuPolicy(Qt.DefaultContextMenu)
         self.input_nome_agendamento_sec.setLayoutDirection(Qt.LeftToRight)
@@ -27434,7 +27434,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_600.setContentsMargins(0, 0, 0, 10)
         self.label_telefone_agendamento_sec = QLabel(self.frame_7341)
         self.label_telefone_agendamento_sec.setObjectName(u"label_telefone_agendamento_sec")
-        self.label_telefone_agendamento_sec.setFont(font)
+        self.label_telefone_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_600.addWidget(self.label_telefone_agendamento_sec)
 
@@ -27474,7 +27474,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_602.setContentsMargins(0, 0, 0, 5)
         self.label_clinica_agendamento_sec = QLabel(self.frame_915)
         self.label_clinica_agendamento_sec.setObjectName(u"label_clinica_agendamento_sec")
-        self.label_clinica_agendamento_sec.setFont(font)
+        self.label_clinica_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_602.addWidget(self.label_clinica_agendamento_sec)
 
@@ -27494,7 +27494,7 @@ class Ui_MainWindow(object):
         self.label_profissional_agendamento_sec.setObjectName(u"label_profissional_agendamento_sec")
         sizePolicy3.setHeightForWidth(self.label_profissional_agendamento_sec.sizePolicy().hasHeightForWidth())
         self.label_profissional_agendamento_sec.setSizePolicy(sizePolicy3)
-        self.label_profissional_agendamento_sec.setFont(font)
+        self.label_profissional_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_601.addWidget(self.label_profissional_agendamento_sec)
 
@@ -27574,7 +27574,7 @@ class Ui_MainWindow(object):
         self.label_data_agendamento_sec = QLabel(self.frame_919)
         self.label_data_agendamento_sec.setObjectName(u"label_data_agendamento_sec")
         self.label_data_agendamento_sec.setMaximumSize(QSize(140, 16777215))
-        self.label_data_agendamento_sec.setFont(font)
+        self.label_data_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_604.addWidget(self.label_data_agendamento_sec)
 
@@ -27622,7 +27622,7 @@ class Ui_MainWindow(object):
         sizePolicy3.setHeightForWidth(self.label_hora_agendamento_sec.sizePolicy().hasHeightForWidth())
         self.label_hora_agendamento_sec.setSizePolicy(sizePolicy3)
         self.label_hora_agendamento_sec.setMaximumSize(QSize(140, 16777215))
-        self.label_hora_agendamento_sec.setFont(font)
+        self.label_hora_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_605.addWidget(self.label_hora_agendamento_sec)
 
@@ -27630,7 +27630,7 @@ class Ui_MainWindow(object):
         self.input_hora_agendamento_sec.setObjectName(u"input_hora_agendamento_sec")
         self.input_hora_agendamento_sec.setMinimumSize(QSize(120, 30))
         self.input_hora_agendamento_sec.setMaximumSize(QSize(120, 30))
-        self.input_hora_agendamento_sec.setFont(font)
+        self.input_hora_agendamento_sec.setFont(fonte_abel_size_11)
         self.input_hora_agendamento_sec.setStyleSheet(u"QTimeEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QTimeEdit:focus{outline:0; border: 2px solid #A85751}")
         self.input_hora_agendamento_sec.setLocale(QLocale(QLocale.Portuguese, QLocale.Brazil))
@@ -27662,7 +27662,7 @@ class Ui_MainWindow(object):
         self.label_anotacao_agendamento_sec.setObjectName(u"label_anotacao_agendamento_sec")
         sizePolicy3.setHeightForWidth(self.label_anotacao_agendamento_sec.sizePolicy().hasHeightForWidth())
         self.label_anotacao_agendamento_sec.setSizePolicy(sizePolicy3)
-        self.label_anotacao_agendamento_sec.setFont(font)
+        self.label_anotacao_agendamento_sec.setFont(fonte_abel_size_11)
 
         self.verticalLayout_606.addWidget(self.label_anotacao_agendamento_sec)
 
@@ -27791,7 +27791,7 @@ class Ui_MainWindow(object):
         sizePolicy7.setHeightForWidth(self.input_TableWidget_agendamento_sec.sizePolicy().hasHeightForWidth())
         self.input_TableWidget_agendamento_sec.setSizePolicy(sizePolicy7)
         self.input_TableWidget_agendamento_sec.setMinimumSize(QSize(900, 0))
-        self.input_TableWidget_agendamento_sec.setFont(font)
+        self.input_TableWidget_agendamento_sec.setFont(fonte_abel_size_11)
         self.input_TableWidget_agendamento_sec.setLayoutDirection(Qt.LeftToRight)
         self.input_TableWidget_agendamento_sec.setAutoFillBackground(False)
         self.input_TableWidget_agendamento_sec.setStyleSheet(u"QTableEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
