@@ -4420,8 +4420,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_522 = QVBoxLayout(self.frame_705)
         self.verticalLayout_522.setObjectName(u"verticalLayout_522")
         self.input_TableWidget_relatorio_psi = QTableWidget(self.frame_705)
-        if (self.input_TableWidget_relatorio_psi.columnCount() < 9):
-            self.input_TableWidget_relatorio_psi.setColumnCount(9)
+        if (self.input_TableWidget_relatorio_psi.columnCount() < 10):
+            self.input_TableWidget_relatorio_psi.setColumnCount(10)
         __qtablewidgetitem41 = QTableWidgetItem()
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(0, __qtablewidgetitem41)
         __qtablewidgetitem42 = QTableWidgetItem()
@@ -4440,6 +4440,8 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(7, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(8, __qtablewidgetitem49)
+        __qtablewidgetitem49 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(9, __qtablewidgetitem49)
         if (self.input_TableWidget_relatorio_psi.rowCount() < 14):
             self.input_TableWidget_relatorio_psi.setRowCount(14)
         self.input_TableWidget_relatorio_psi.setObjectName(u"input_TableWidget_relatorio_psi")
@@ -28129,7 +28131,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.label_titulo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Psic\u00f3loga", None))
+        self.label_titulo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio de Atendimentos", None))
         self.label_inicio_periodo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_psi.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_A_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"A", None))
