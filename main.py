@@ -2343,7 +2343,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
-            print(dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
