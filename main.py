@@ -1264,6 +1264,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(self.limparCamposAlterarDadosCadastrais)
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
         self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
+        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))        
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(self.limparCamposCadastroClinica)
@@ -2014,7 +2015,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
-            dados = self.db.busca_usuario(cpf) 
+            dados = self.db.busca_usuario(cpf)
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
@@ -2296,7 +2297,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            foto = str(dados[39])
+            """foto = str(dados[39])
             if foto == None or foto == '':
                 original_image = cv2.imread("./icons/adicionar-amigo.png")
 
@@ -2336,7 +2337,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
-            self.ui.input_id_foto_alterar_usuario_as.hide()
+            self.ui.input_id_foto_alterar_usuario_as.hide()"""
             return self.ui.page_alterar_usuario
     
         ##################################################################################

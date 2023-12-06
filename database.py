@@ -968,10 +968,9 @@ class DataBase():
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia, outras_deficiencias,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho, situacao_trabalho_outros,
                 beneficio, tarifa_social, tipo_tratamento, clinica.id_clinica, patologia_base, outras_patologias, data_inicio, periodo,
-                endereco.id_endereco, usuario.id_usuario, foto_usuario.caminho, foto_usuario.idfoto_usuario
+                endereco.id_endereco, usuario.id_usuario
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
-                INNER JOIN foto_usuario ON usuario.id_usuario = foto_usuario.id_usuario
                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
             result = self.cursor.fetchall()
             return result[0]
