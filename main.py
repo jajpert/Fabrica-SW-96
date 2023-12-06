@@ -1263,8 +1263,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_agenda_as))
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(self.limparCamposAlterarDadosCadastrais)
         self.ui.btn_cadastrar_alterar_dados_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_alterar_dados_as))
-        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))        
-        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_alterar_usuario))        
+        self.ui.btn_buscar_alterar_as.clicked.connect(lambda: self.ui.stackedWidget_8.setCurrentWidget(self.buscar_Usuario()))              
         self.ui.btn_parceiros_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_voltar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_clinica_as.clicked.connect(self.limparCamposCadastroClinica)
@@ -2245,8 +2244,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif tipoTratamento == "Selecione":
                 self.ui.input_alterar_tipo_tratamento_usuario_as.setCurrentIndex(0)
                 
-            # local_tratamento = str(dados[32])
-            # if local_tratamento == dados[32]:
+            
             self.ui.input_local_tratamento_alterar_usuario_as.setCurrentIndex(int(dados[32]))
 
 
