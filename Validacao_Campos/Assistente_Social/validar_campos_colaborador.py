@@ -1,7 +1,7 @@
 from qtcore import *
 from ui_telas_abrec import *
 
-def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero):
+def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis):
     if cpf == "" or len(cpf) < 11:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -15,6 +15,14 @@ def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero):
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro RG")
         msg.setText("Favor inserir um RG válido!!!")
+        msg.exec()
+        return False
+    
+    elif pis == "" or len(pis) < 11:
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Erro PIS")
+        msg.setText("Favor inserir um PIS válido!!!")
         msg.exec()
         return False
     
