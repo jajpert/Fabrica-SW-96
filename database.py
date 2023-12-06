@@ -994,6 +994,8 @@ class DataBase():
                                     INNER JOIN colaborador ON colaborador.id_matricula = pessoa.id_matricula
                                     INNER JOIN foto_usuario ON colaborador.id_colaborador
                                     WHERE cpf LIKE '%{cpf}%';""")
+            
+
             result = self.cursor.fetchall()
             return result[0]
         except Exception as err:

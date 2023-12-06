@@ -2297,7 +2297,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            """foto = str(dados[39])
+            foto = str(dados[39])
             if foto == None or foto == '':
                 original_image = cv2.imread("./icons/adicionar-amigo.png")
 
@@ -2337,12 +2337,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
-            self.ui.input_id_foto_alterar_usuario_as.hide()"""
+            self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
     
         ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
+            print(dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
