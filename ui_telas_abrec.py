@@ -23972,7 +23972,7 @@ class Ui_MainWindow(object):
         self.frame_309.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_119 = QHBoxLayout(self.frame_309)
         self.horizontalLayout_119.setObjectName(u"horizontalLayout_119")
-        self.frame_361 = QFrame(self.frame_309)
+        '''self.frame_361 = QFrame(self.frame_309)
         self.frame_361.setObjectName(u"frame_361")
         self.frame_361.setFrameShape(QFrame.StyledPanel)
         self.frame_361.setFrameShadow(QFrame.Raised)
@@ -24022,6 +24022,59 @@ class Ui_MainWindow(object):
 "QPushButton:focus{outline:0}")
 
         self.horizontalLayout_118.addWidget(self.btn_alterar_proximo_as)
+
+        self.btn_alterar_finalizar_as = QPushButton(self.frame_361)
+        self.btn_alterar_finalizar_as.setObjectName(u"btn_alterar_finalizar_as")
+        self.btn_alterar_finalizar_as.setMinimumSize(QSize(140, 40))
+        self.btn_alterar_finalizar_as.setFont(font6)
+        self.btn_alterar_finalizar_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_finalizar_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_118.addWidget(self.btn_alterar_finalizar_as)
+
+
+        self.horizontalLayout_119.addWidget(self.frame_361)'''
+
+        self.frame_361 = QFrame(self.frame_309)
+        self.frame_361.setObjectName(u"frame_361")
+        self.frame_361.setFrameShape(QFrame.StyledPanel)
+        self.frame_361.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_118 = QHBoxLayout(self.frame_361)
+        self.horizontalLayout_118.setSpacing(20)
+        self.horizontalLayout_118.setObjectName(u"horizontalLayout_118")
+        self.horizontalLayout_118.setContentsMargins(20, 0, 0, 0)
+        self.btn_alterar_voltar_usuario_as = QPushButton(self.frame_361)
+        self.btn_alterar_voltar_usuario_as.setObjectName(u"btn_alterar_voltar_usuario_as")
+        self.btn_alterar_voltar_usuario_as.setMinimumSize(QSize(100, 40))
+        self.btn_alterar_voltar_usuario_as.setMaximumSize(QSize(100, 40))
+        self.btn_alterar_voltar_usuario_as.setFont(font6)
+        self.btn_alterar_voltar_usuario_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_voltar_usuario_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
+
+        self.horizontalLayout_118.addWidget(self.btn_alterar_voltar_usuario_as)
+
+        self.horizontalSpacer_66 = QSpacerItem(1687, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.horizontalLayout_118.addItem(self.horizontalSpacer_66)
+
+        self.btn_alterar_observacoes_sigilo_as = QPushButton(self.frame_361)
+        self.btn_alterar_observacoes_sigilo_as.setObjectName(u"btn_alterar_observacoes_sigilo_as")
+        self.btn_alterar_observacoes_sigilo_as.setMinimumSize(QSize(0, 40))
+        self.btn_alterar_observacoes_sigilo_as.setFont(font6)
+        self.btn_alterar_observacoes_sigilo_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_alterar_observacoes_sigilo_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        icon37 = QIcon()
+        icon37.addFile(u"../icons/cadeado.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_alterar_observacoes_sigilo_as.setIcon(icon37)
+        self.btn_alterar_observacoes_sigilo_as.setIconSize(QSize(28, 28))
+
+        self.horizontalLayout_118.addWidget(self.btn_alterar_observacoes_sigilo_as)
 
         self.btn_alterar_finalizar_as = QPushButton(self.frame_361)
         self.btn_alterar_finalizar_as.setObjectName(u"btn_alterar_finalizar_as")
@@ -29352,7 +29405,6 @@ class Ui_MainWindow(object):
 
         self.btn_alterar_voltar_usuario_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
         self.btn_alterar_observacoes_sigilo_as.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00f5es em sigilo", None))
-        self.btn_alterar_proximo_as.setText(QCoreApplication.translate("MainWindow", u"PR\u00d3XIMO", None))
         self.btn_alterar_finalizar_as.setText(QCoreApplication.translate("MainWindow", u"SALVAR", None))
         self.label_alterar_estado_civil_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Estado civil", None))
         self.input_alterar_estado_civil_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
