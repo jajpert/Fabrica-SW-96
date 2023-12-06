@@ -1119,7 +1119,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_agendamento_nutri.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_sec.setInputMask("000.000.000-00")
-
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setInputMask("000.000.000-00")
 
         ########## COLOCANDO OS VALIDADORES ################################################################################################################################################
         self.ui.input_nome_usuario_as.setValidator(self.validaString)
@@ -1973,9 +1973,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def buscar_Usuario(self):
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
-        cpf = self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.text()
+        cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
         if valorSelecionado == 0:
-            self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+            self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
             return self.ui.page_2
         ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
@@ -2531,7 +2531,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ################## insert #######################################
         result = self.db.atualizar_cuidador(tupla_cuidador,tupla_pessoa,tupla_endereco)
-        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
@@ -2642,7 +2642,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Usuario Atualizado com sucesso!")
         msg.exec()
 
-        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
     
@@ -2708,7 +2708,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Colaborador Atualizado com sucesso!")
         msg.exec()
         
-        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
@@ -4314,7 +4314,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def limparCamposAlterarDadosCadastrais(self):
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(int(0))
-        self.ui.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
     
     def limparCamposAtendimentoAssistenteSocial(self):
         self.ui.input_nome_pagina_consulta_geral.setText("")
