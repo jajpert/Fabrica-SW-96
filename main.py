@@ -2410,7 +2410,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             cargo = str(dados[20])
 
-            if cargo == 'Recepcionista':
+            if cargo == 'Secretária':
                 self.ui.input_alterar_cargo_colaborador_comboBox_as.setCurrentIndex(1)
 
             elif cargo == 'Assistente Social':
@@ -3764,8 +3764,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
-        if cargo in ["Recepcionista"]:
-            perfil = 'rep'
+        if cargo in ["Secretária"]:
+            perfil = 'sec'
         elif cargo in ["Assistente Social"]:
             perfil = 'adm'
         elif cargo in ["Farmacêutico (a)"]:
@@ -3781,7 +3781,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_colaborador = (pis_colab, data_admissao, salario, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
-        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero):
+        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis_colab):
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Erro")
@@ -4209,7 +4209,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar foto.png"))
+        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
         self.ui.label_foto_usuario_as.setScaledContents(True)
         self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
@@ -4268,6 +4268,19 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_usuario_colaborador_as_2.setText("")
         self.ui.input_senha_colaborador_as_2.setText("")
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
+        original_image = cv2.imread("./icons/adicionar-amigo.png")
+
+        desired_size = (120, 120)
+        resized_image = cv2.resize(original_image, desired_size)
+
+        resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+        h, w, ch = resized_image.shape
+
+        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_amigo.png"))
+        self.ui.label_foto_colaborador_as.setScaledContents(True)
+        self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
+        self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
 
     def limparCamposCursosOficinas(self):
         self.ui.input_nome_cursos_as.setText("")
@@ -5179,7 +5192,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'CLINICA', 'DATA', 'TIPO', 'DESCRIÇÃO']
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'TELEFONE CONTATO', 'CLINICA', 'DATA', 'TIPO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 

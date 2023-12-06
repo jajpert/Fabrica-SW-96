@@ -4440,6 +4440,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(7, __qtablewidgetitem48)
         __qtablewidgetitem49 = QTableWidgetItem()
         self.input_TableWidget_relatorio_psi.setHorizontalHeaderItem(8, __qtablewidgetitem49)
+        
         if (self.input_TableWidget_relatorio_psi.rowCount() < 14):
             self.input_TableWidget_relatorio_psi.setRowCount(14)
         self.input_TableWidget_relatorio_psi.setObjectName(u"input_TableWidget_relatorio_psi")
@@ -15434,6 +15435,7 @@ class Ui_MainWindow(object):
         self.input_pis_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_pis_colaborador_as.setMaximumSize(QSize(16777215, 30))
         self.input_pis_colaborador_as.setFont(font)
+        self.input_pis_colaborador_as.setMaxLength(11)
 
         self.verticalLayout_142.addWidget(self.input_pis_colaborador_as)
 
@@ -15721,6 +15723,7 @@ class Ui_MainWindow(object):
         self.input_cargo_colaborador_comboBox_as.setFont(font)
 
         self.verticalLayout_165.addWidget(self.input_cargo_colaborador_comboBox_as)
+
 
 
         self.horizontalLayout_88.addWidget(self.frame_235)
@@ -16141,41 +16144,32 @@ class Ui_MainWindow(object):
 
         self.frame_258 = QFrame(self.frame_194)
         self.frame_258.setObjectName(u"frame_258")
-        self.frame_258.setMinimumSize(QSize(125, 200))
-        self.frame_258.setMaximumSize(QSize(125, 200))
+        self.frame_258.setMinimumSize(QSize(200, 332))
+        self.frame_258.setMaximumSize(QSize(200, 200))
         self.frame_258.setFrameShape(QFrame.StyledPanel)
         self.frame_258.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_179 = QVBoxLayout(self.frame_258)
-        self.verticalLayout_179.setSpacing(0)
-        self.verticalLayout_179.setObjectName(u"verticalLayout_179")
-        self.verticalLayout_179.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_178 = QVBoxLayout(self.frame_258)
+        self.verticalLayout_178.setObjectName(u"verticalLayout_178")
+        self.label_foto_colaborador_as = QLabel(self.frame_258)
+        self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
+        self.label_foto_colaborador_as.setMinimumSize(QSize(180, 240))
+        self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
+        self.label_foto_colaborador_as.setPixmap(QPixmap(u"../icons/adicionar foto.png"))
+
+        self.verticalLayout_178.addWidget(self.label_foto_colaborador_as)
+
         self.btn_tirar_foto_colaborador_as = QPushButton(self.frame_258)
         self.btn_tirar_foto_colaborador_as.setObjectName(u"btn_tirar_foto_colaborador_as")
-        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(125, 153))
-        self.btn_tirar_foto_colaborador_as.setMaximumSize(QSize(125, 153))
+        self.btn_tirar_foto_colaborador_as.setMinimumSize(QSize(140, 40))
+        self.btn_tirar_foto_colaborador_as.setFont(font20)
         self.btn_tirar_foto_colaborador_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"background-color: #F3B9BF; border: none")
-        icon33 = QIcon()
-        icon33.addFile(u"./icons/adicionar foto.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_tirar_foto_colaborador_as.setIcon(icon33)
-        self.btn_tirar_foto_colaborador_as.setIconSize(QSize(120, 120))
+        self.btn_tirar_foto_colaborador_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
+"QPushButton:hover{background-color: #23B2EE}\n"
+"QPushButton:focus{outline:0}")
 
-        self.verticalLayout_179.addWidget(self.btn_tirar_foto_colaborador_as)
+        self.verticalLayout_178.addWidget(self.btn_tirar_foto_colaborador_as)
 
-        self.frame_259 = QFrame(self.frame_258)
-        self.frame_259.setObjectName(u"frame_259")
-        self.frame_259.setStyleSheet(u"background-color: rgb(243, 185, 191);")
-        self.frame_259.setFrameShape(QFrame.StyledPanel)
-        self.frame_259.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_178 = QVBoxLayout(self.frame_259)
-        self.verticalLayout_178.setObjectName(u"verticalLayout_178")
-        self.verticalLayout_178.setContentsMargins(0, 0, 0, 0)
-
-        self.verticalLayout_179.addWidget(self.frame_259)
-
-        self.verticalSpacer = QSpacerItem(20, 19, QSizePolicy.Minimum, QSizePolicy.Expanding)
-
-        self.verticalLayout_179.addItem(self.verticalSpacer)
+        self.verticalLayout_178.addWidget(self.btn_tirar_foto_colaborador_as)
 
 
         self.gridLayout_2.addWidget(self.frame_258, 0, 0, 3, 1, Qt.AlignRight|Qt.AlignTop)
@@ -18532,7 +18526,7 @@ class Ui_MainWindow(object):
         self.label_relatorio_as = QLabel(self.frame_225)
         self.label_relatorio_as.setObjectName(u"label_relatorio_as")
         self.label_relatorio_as.setMinimumSize(QSize(300, 0))
-        self.label_relatorio_as.setMaximumSize(QSize(300, 16777215))
+        self.label_relatorio_as.setMaximumSize(QSize(16777215, 16777215))
         self.label_relatorio_as.setFont(font15)
         self.label_relatorio_as.setStyleSheet(u"background-color: rgb(243, 185, 191);\n"
 "color: rgb(236, 132, 140);")
@@ -28129,7 +28123,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"Alterar", None))
         self.btn_excluir_pagina_consulta_geral_psi.setText(QCoreApplication.translate("MainWindow", u"Excluir", None))
-        self.label_titulo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio Psic\u00f3loga", None))
+        self.label_titulo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio de Atendimentos", None))
         self.label_inicio_periodo_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_psi.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_A_relatorio_psi.setText(QCoreApplication.translate("MainWindow", u"A", None))
@@ -28470,7 +28464,7 @@ class Ui_MainWindow(object):
         self.btn_cadastrar_fornecedores_as.setText(QCoreApplication.translate("MainWindow", u"FORNECEDORES  ", None))
         self.btn_cadastrar_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"BENEF\u00cdCIOS", None))
         self.btn_relatorio_cuidadores.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO CUIDADORES", None))
-        self.btn_relatorio_pessoas.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO PESSOAS    ", None))
+        self.btn_relatorio_pessoas.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO USUÁRIOS    ", None))
         self.btn_relatorio_cursos_participantes.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO CURSOS E PARTICIPANTES   ", None))
         self.btn_relatorio_beneficios.setText(QCoreApplication.translate("MainWindow", u"RELAT\u00d3RIO BENEF\u00cdCIOS    ", None))
         self.label_inicio_periodo_relatorio_colaboradores_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
@@ -28845,7 +28839,7 @@ class Ui_MainWindow(object):
 
         self.label_cargo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"*Cargo", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Recepcionista", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Secret\u00e1ria", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Assistente Social", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Farmac\u00eautico (a)", None))
         self.input_cargo_colaborador_comboBox_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Psic\u00f3logo (a)", None))
@@ -28873,7 +28867,8 @@ class Ui_MainWindow(object):
         self.label_usuario_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"*Usu\u00e1rio", None))
         self.label_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"*Senha", None))
         self.label_confirmar_senha_colaborador_as_2.setText(QCoreApplication.translate("MainWindow", u"*Confirmar Senha", None))
-        self.btn_tirar_foto_colaborador_as.setText("")
+        self.label_foto_colaborador_as.setText("")
+        self.btn_tirar_foto_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Tirar Foto", None))
         self.label_situacao_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"*Situa\u00e7\u00e3o", None))
         self.input_situacao_ativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Ativo", None))
         self.input_situacao_inativo_colaborador_as.setText(QCoreApplication.translate("MainWindow", u"Inativo", None))
@@ -29020,7 +29015,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_gerar_excel_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Rel\u00e1torios", None))
+        self.label_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Usu\u00e1rios Cadastrados", None))
         self.label_inicio_periodo_relatorio_as.setText(QCoreApplication.translate("MainWindow", u"Per\u00edodo", None))
         self.input_inicio_periodo_relatorio_as.setDisplayFormat(QCoreApplication.translate("MainWindow", u"dd/MM/yyyy", None))
         self.label_6.setText(QCoreApplication.translate("MainWindow", u"A", None))
@@ -29128,7 +29123,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem177.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
         self.btn_gerar_excel_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Gerar Excel", None))
         self.btn_voltar_relatorios_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios de Agendamento", None))
+        self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rio de Atendimentos", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"CADASTRO CL\u00cdNICA", None))
         self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"*CNPJ", None))
         self.input_cnpj_cadastro_clinica_as.setText("")
