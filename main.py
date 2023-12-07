@@ -1337,6 +1337,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
+        self.ui.btn_alterar_voltar_usuario_as.clicked.connect(self.limparCampoVoltarCuidador)
+        self.ui.btn_alterar_voltar_cadastro_colaborador_as.clicked.connect(self.limparCampoVoltarColaborador)
+        self.ui.btn_alterar_voltar_cuidador_as.clicked.connect(self.limparCampoVoltarColaborador)
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(self.limparCamposAtendimentoFisioterapeuta)
@@ -4631,6 +4634,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_nutri_sec.setCheckable(False)
         self.ui.radioButton_nutri_sec.setCheckable(True)
         self.ui.input_buscar_dados_relatorio_sec.setText("")
+
+
+    def limparCampoVoltarUsuario(self):
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+    
+    def limparCampoVoltarCuidador(self):
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+    
+    def limparCampoVoltarColaborador(self):
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+        
+
+
+
+
+
+
 
 
 
