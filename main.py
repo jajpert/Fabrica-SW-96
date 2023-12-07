@@ -35,6 +35,7 @@ from Validacao_Campos.Assistente_Social.validar_campos_fornecedores import valid
 from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validarCamposBeneficiosCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_retirada_beneficio import validarCamposRetiradaBeneficiosCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_alterar_colaborador import validarCamposAlterarColaboradorCadastro
 ##################################################################################################################
 
 ############################# VALIDAÇÕES NUTRICIONISTA###########################################################
@@ -2707,22 +2708,30 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         login = self.ui.input_alterar_usuario_colaborador_as_2.text()
         senha = self.ui.input_alterar_senha_colaborador_as_2.text()
+        conf_senha = self.ui.input_alterar_confirmar_senha_colaborador_as_2.text()
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
         tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha)
 
         #################### insert ##########################################
-        result = []
-        result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Atualizar Colaborador")
-        msg.setText("Colaborador Atualizado com sucesso!")
-        msg.exec()
-        
-        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
-        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
-        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
-        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+        if not validarCamposAlterarColaboradorCadastro(senha, conf_senha):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("ERRO")
+            msg.setText("Erro ao tentar alterar Colaborador!")
+            msg.exec()
+        else:
+            result = []
+            result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Atualizar Colaborador")
+            msg.setText("Colaborador Atualizado com sucesso!")
+            msg.exec()
+            
+            self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+            self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+            self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+            return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
     def AlterarFotoColaborador(self):
         nome_colab = self.ui.input_alterar_nome_colaborador_as.text()
@@ -3774,7 +3783,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         #################### login e senha ####################################
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
-        #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
+        confirmar_senha = self.ui.input_confirmar_senha_colaborador_as_2.text()
         if cargo in ["Secretária"]:
             perfil = 'sec'
         elif cargo in ["Assistente Social"]:
@@ -3792,7 +3801,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_colaborador = (pis_colab, data_admissao, salario, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
-        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis_colab):
+        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis_colab, senha, confirmar_senha):
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Erro")
