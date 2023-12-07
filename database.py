@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         	
 
@@ -864,12 +864,14 @@ class DataBase():
 
     def tirar_foto_usuario(self, foto):
         self.connect()
+        print("Foto usuario ->", foto)
         try:
             args = (foto[0], foto[1], foto[2])
             self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_usuario) VALUES (%s, %s, %s)""", args)
             self.conn.commit()
             return "Entrou banco"
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
         
         finally:

@@ -1525,6 +1525,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ########################### BANCO ###################################################################################################################################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
+        # self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroFotoVazia)
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
@@ -2300,7 +2301,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_usuario_as.hide()
             '''foto = str(dados[39])
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar-amigo.png")
+                original_image = cv2.imread("./icons/adicionar_foto.png")-amigo.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -2453,7 +2454,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_colaborador_as.hide()
             foto = str(dados[27])
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar foto.png")
+                original_image = cv2.imread("./icons/adicionar_foto.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -3362,6 +3363,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         else:
         ######################## insert ##################################
 
+            self.cadastroFotoVaziaUsuario()
             result = []
             result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
             msg = QMessageBox()
@@ -3792,6 +3794,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setText("Erro ao cadastrar Colaborador!")
             msg.exec()
         else:
+            self.cadastroFotoVaziaColaborador()
             result = []
             result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
             msg = QMessageBox()
@@ -4204,7 +4207,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
 
-        original_image = cv2.imread("./icons/adicionar-amigo.png")
+        original_image = cv2.imread("./icons/adicionar_foto.png")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4272,7 +4275,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_usuario_colaborador_as_2.setText("")
         self.ui.input_senha_colaborador_as_2.setText("")
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
-        original_image = cv2.imread("./icons/adicionar-amigo.png")
+        original_image = cv2.imread("./icons/adicionar_foto.png")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4281,7 +4284,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_amigo.png"))
+        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
         self.ui.label_foto_colaborador_as.setScaledContents(True)
         self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
@@ -6800,8 +6803,37 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
     
     
-    # def execute(self):
-    #     for(int i=0; i<10; i++):
+    def cadastroFotoVaziaUsuario(self):
+        expected_icon = QIcon("./icons/adicionar_foto.png")
+        current_icon = self.ui.label_foto_usuario_as.pixmap()
+        if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
+            nome = self.ui.input_nome_usuario_as.text()
+            caminho = ""
+            id_usuario = self.ui.input_matricula_usuario_as.text()
+            res = []
+            tupla_foto_vazia = (nome, caminho, id_usuario)
+            print(tupla_foto_vazia)
+            result = self.db.tirar_foto_usuario(tupla_foto_vazia)
+            
+        else:
+            return
+        
+    def cadastroFotoVaziaColaborador(self):
+        expected_icon = QIcon("./icons/adicionar_foto.png")
+        current_icon = self.ui.label_foto_colaborador_as.pixmap()
+        if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
+            nome = self.ui.input_nome_colaborador_as.text()
+            caminho = ""
+            id_usuario = self.ui.input_matricula_colaborador_as.text()
+            res = []
+            tupla_foto_vazia = (nome, caminho, id_usuario)
+            print(tupla_foto_vazia)
+            result = self.db.tirar_foto_colaborador(tupla_foto_vazia)
+            
+        else:
+            return
+
+            
             
             
     
