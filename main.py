@@ -2019,6 +2019,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
             dados = self.db.busca_usuario(cpf)
+            print(dados)
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
@@ -2299,9 +2300,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            '''foto = str(dados[39])
+            foto = str(dados[39])
+            print(foto)
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar_foto.png")-amigo.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -2339,7 +2341,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
-            self.ui.input_id_foto_alterar_usuario_as.hide()'''
+            self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
 
     ##################################################################################
@@ -2454,7 +2456,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_colaborador_as.hide()
             foto = str(dados[27])
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar_foto.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
