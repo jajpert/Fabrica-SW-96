@@ -1119,7 +1119,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_agendamento_nutri.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_psi.setInputMask("000.000.000-00")
         self.ui.input_cpf_agendamento_sec.setInputMask("000.000.000-00")
-        self.ui.input_alterar_buscar_cpf_cnpj_as.setInputMask("000.000.000-00")
+        
 
         ########## COLOCANDO OS VALIDADORES ################################################################################################################################################
         self.ui.input_nome_usuario_as.setValidator(self.validaString)
@@ -1972,12 +1972,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
 
     def buscar_Usuario(self):
+        
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
         if valorSelecionado == 0:
             self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
             return self.ui.page_2
-        ############################CUIDADOR FUNCIONANDO#################################
+    ############################CUIDADOR FUNCIONANDO#################################
         elif valorSelecionado == 1: 
             dados = self.db.busca_cuidador(cpf)
             self.ui.input_alterar_matricula_cuidador_as.setText(str(dados[0]))
@@ -2008,9 +2009,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_matricula_cuidador_as.hide()
             
             return self.ui.page_alterar_cuidador
-        ##################################################################################
+    ##################################################################################
 
-        #######################USUARIO####################################################
+    #######################USUARIO####################################################
 
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
@@ -2153,7 +2154,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             elif meioTransporte == 'Ambulância particular':
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
-           
+        
             elif meioTransporte == "Selecione":
                 self.ui.input_alterar_meio_transporte_usuario_as.setCurrentIndex(6)
                 
@@ -2295,7 +2296,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            foto = str(dados[39])
+            '''foto = str(dados[39])
             if foto == None or foto == '':
                 original_image = cv2.imread("./icons/adicionar-amigo.png")
 
@@ -2335,10 +2336,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
-            self.ui.input_id_foto_alterar_usuario_as.hide()
+            self.ui.input_id_foto_alterar_usuario_as.hide()'''
             return self.ui.page_alterar_usuario
-    
-        ##################################################################################
+
+    ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
@@ -2467,7 +2468,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_colaborador_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_colaborador_alterar_as.setAlignment(Qt.AlignCenter)
         
-    
+
             else:
                 
                 original_image = cv2.imread(dados[27])
@@ -2486,7 +2487,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_foto_usuario_as.hide()
 
             return self.ui.page_alterar_colaborador_as
-        
+                
 
     def atualizar_cuidador(self):
         ######################## endereço ################################
