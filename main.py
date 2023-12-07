@@ -1975,7 +1975,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         valorSelecionado = self.ui.comboBox_tipos_alterar_cadastros_as.currentIndex()
         cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
+        cpf = self.ui.input_alterar_buscar_cpf_cnpj_as.text()
         if valorSelecionado == 0:
+            self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
             self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
             return self.ui.page_2
     ############################CUIDADOR FUNCIONANDO#################################
@@ -2533,6 +2535,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ################## insert #######################################
         result = self.db.atualizar_cuidador(tupla_cuidador,tupla_pessoa,tupla_endereco)
         self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
@@ -2644,6 +2647,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
 
         self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
     
@@ -2709,6 +2713,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Colaborador Atualizado com sucesso!")
         msg.exec()
         
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
         return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
@@ -4315,6 +4320,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def limparCamposAlterarDadosCadastrais(self):
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(int(0))
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
     
     def limparCamposAtendimentoAssistenteSocial(self):
