@@ -396,9 +396,9 @@ class DataBase():
             self.cursor.execute(f"""
                     SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, pessoa.telefone_contato, curso_evento.nome_curso_evento, curso_evento.periodo, curso_evento.data_inicio, 
                     curso_evento.data_fim, curso_evento.tipo_curso, curso_evento.descricao
-                    from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                    from pessoa 
                     INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
-                    LEFT JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
+                    INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
                     wHERE curso_evento.data_inicio BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
             result = self.cursor.fetchall()
@@ -1379,9 +1379,9 @@ class DataBase():
             self.cursor.execute(f"""
                                 SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, pessoa.telefone_contato, curso_evento.nome_curso_evento, curso_evento.periodo, curso_evento.data_inicio, 
                                 curso_evento.data_fim, curso_evento.tipo_curso, curso_evento.descricao
-                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                from pessoa 
                                 INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
-                                LEFT JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
                                 WHERE pessoa.nome LIKE "%{texto}%" OR pessoa.cpf LIKE "%{texto}%" OR curso_evento.nome_curso_evento LIKE "%{texto}%" OR curso_evento.periodo LIKE "%{texto}%";
                                 """)
             result = self.cursor.fetchall()
