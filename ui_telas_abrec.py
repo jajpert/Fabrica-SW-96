@@ -24845,6 +24845,7 @@ class Ui_MainWindow(object):
         self.input_alterar_senha_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_alterar_senha_colaborador_as_2.setMaximumSize(QSize(229, 30))
         self.input_alterar_senha_colaborador_as_2.setFont(font)
+        self.input_alterar_senha_colaborador_as_2.setEchoMode(QLineEdit.Password)
 
         self.verticalLayout_255.addWidget(self.input_alterar_senha_colaborador_as_2)
 
@@ -24874,6 +24875,7 @@ class Ui_MainWindow(object):
         self.input_alterar_confirmar_senha_colaborador_as_2.setMinimumSize(QSize(0, 30))
         self.input_alterar_confirmar_senha_colaborador_as_2.setMaximumSize(QSize(229, 30))
         self.input_alterar_confirmar_senha_colaborador_as_2.setFont(font)
+        self.input_alterar_confirmar_senha_colaborador_as_2.setEchoMode(QLineEdit.Password)
 
         self.verticalLayout_261.addWidget(self.input_alterar_confirmar_senha_colaborador_as_2)
 
@@ -25001,7 +25003,7 @@ class Ui_MainWindow(object):
         self.frame_432.setFrameShadow(QFrame.Raised)
         self.verticalLayout_296 = QVBoxLayout(self.frame_432)
         self.verticalLayout_296.setSpacing(0)
-        self.verticalLayout_296.setObjectName(u"verticalLayout_296")
+        self.verticalLayout_296.setObjectName(u"verticalLayout_296")            
         self.verticalLayout_296.setContentsMargins(0, 0, 0, 0)
         self.verticalSpacer_21 = QSpacerItem(20, 28, QSizePolicy.Minimum, QSizePolicy.Fixed)
 
