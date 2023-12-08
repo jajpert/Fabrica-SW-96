@@ -21455,14 +21455,14 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_274.addWidget(self.label_alterar_cpf_cnpj_as)
 
-        self.lineEdit_alterar_buscar_cpf_cnpj_as = QLineEdit(self.frame_278)
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setObjectName(u"lineEdit_alterar_buscar_cpf_cnpj_as")
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setMinimumSize(QSize(225, 30))
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setMaximumSize(QSize(225, 30))
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setFont(font18)
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setMaxLength(11)
+        self.input_alterar_buscar_cpf_cnpj_as = QLineEdit(self.frame_278)
+        self.input_alterar_buscar_cpf_cnpj_as.setObjectName(u"input_alterar_buscar_cpf_cnpj_as")
+        self.input_alterar_buscar_cpf_cnpj_as.setMinimumSize(QSize(225, 30))
+        self.input_alterar_buscar_cpf_cnpj_as.setMaximumSize(QSize(225, 30))
+        self.input_alterar_buscar_cpf_cnpj_as.setFont(font18)
+        self.input_alterar_buscar_cpf_cnpj_as.setMaxLength(11)
 
-        self.verticalLayout_274.addWidget(self.lineEdit_alterar_buscar_cpf_cnpj_as)
+        self.verticalLayout_274.addWidget(self.input_alterar_buscar_cpf_cnpj_as)
 
 
         self.horizontalLayout_96.addWidget(self.frame_278)
@@ -29170,7 +29170,7 @@ class Ui_MainWindow(object):
         self.comboBox_tipos_alterar_cadastros_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Colaborador", None))
 
         self.label_alterar_cpf_cnpj_as.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
-        self.lineEdit_alterar_buscar_cpf_cnpj_as.setText("")
+        self.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.btn_buscar_alterar_as.setText("")
         self.label_alterar_matricula_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Matricula", None))
         self.label_alterar_nome_cuidador_as.setText(QCoreApplication.translate("MainWindow", u"Nome cuidador", None))
