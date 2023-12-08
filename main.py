@@ -1549,7 +1549,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_gerar_excel_relatorio_as.clicked.connect(self.gerar_excel)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
-        self.ui.btn_gerar_pdf_relatorio_as.clicked.connect(self.gerar_pdf)
+        
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
@@ -6792,43 +6792,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         
-    def gerar_pdf(self):
-        column_names = []
-        for col in range(self.ui.tableWidget_relatorio_as.columnCount()):
-            column_names.append(self.ui.tableWidget_relatorio_as.horizontalHeaderItem(col).text())
-        file, _ = QFileDialog.getSaveFileName(self, "Selecionar pasta de saida", "C:/Abrec/", "PDF files (*.pdf)")
-        pdf = canvas.Canvas(file)
-        pdf.setFont("Times-Roman", 9)
-        pdf.setTitle("Relatório")
-        
-
-        filtered_data = []
-        
-        for row in range(self.ui.tableWidget_relatorio_as.rowCount()):
-            if not self.ui.tableWidget_relatorio_as.isRowHidden(row):
-                row_data = [self.ui.tableWidget_relatorio_as.item(row, col).text() for col in range(self.ui.tableWidget_relatorio_as.columnCount())]
-                filtered_data.append(row_data)
     
-        y_linha = 798 #y = 798 é o topo da folha segundo o plano cartesiano, então se x=0 e y=0 é o final da folha
-        pdf.drawString(285, 820, "Relatório") #cabecalho do relatorio
-        for linha in filtered_data:
-            i=0 #definido para andar na lista de nomes das colunas
-            for col in linha:
-                if y_linha == 38: #se chegar ao final da folha, add uma nova
-                    pdf.showPage() #adicionar nova folha
-                    y_linha = 795 #topo da folha
-                pdf.drawString(6, y_linha, column_names[i]+':') #escrever nome da coluna
-                pdf.drawString(100, y_linha, '' + col) #escrever dado da coluna     
-                y_linha-=20 #decrevementar y, para ir para prox linha
-                i+=1 #incrementar i para pegar nome da prox coluna da tabela
-            pdf.line(0, y_linha+15, 1000, y_linha+15) #desenhar linha para separar os dados
-  
-        if file:
-            pdf.save()
-        msg = QMessageBox()
-        msg.setWindowTitle('PDF')
-        msg.setText('PDF gerado com sucesso!')
-        msg.exec()
     
     
     def cadastroFotoVaziaUsuario(self):
