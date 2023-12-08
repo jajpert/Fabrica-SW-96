@@ -1195,9 +1195,11 @@ class DataBase():
     def buscar_participante(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT pessoa.id_matricula, pessoa.nome, pessoa.telefone, pessoa.telefone_contato, clinica.nome_fantasia
-                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';""")
+            self.cursor.execute(f"""SELECT pessoa.id_matricula,pessoa.nome, pessoa.telefone, endereco.bairro,endereco.cidade
+                                    FROM pessoa 
+                                    INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco
+                                    AND pessoa.cpf LIKE '%{cpf}%';
+                                 """)
                                     
             result = self.cursor.fetchall()
 
@@ -1338,9 +1340,9 @@ class DataBase():
             self.cursor.execute(f"""
                                 SELECT pessoa.nome, pessoa.cpf, pessoa.telefone, pessoa.telefone_contato, curso_evento.nome_curso_evento, curso_evento.periodo, curso_evento.data_inicio, 
                                 curso_evento.data_fim, curso_evento.tipo_curso, curso_evento.descricao
-                                from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                                from pessoa
                                 INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
-                                LEFT JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento;
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento;
                                 """)
             result = self.cursor.fetchall()
         
@@ -1511,11 +1513,11 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.cpf, pessoa.nome,pessoa.telefone,pessoa.telefone_contato, clinica.razao_social, curso_evento.nome_curso_evento
-                                FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                RIGHT JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
-                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento
-                                LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE pessoa.cpf LIKE '%{cpf}%';
+                                SELECT pessoa.cpf, pessoa.nome, pessoa.telefone, endereco.bairro,endereco.cidade, curso_evento.nome_curso_evento
+                                FROM pessoa
+                                INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco
+                                INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento and pessoa.cpf LIKE '%{cpf}%';
                                 """)
             result = self.cursor.fetchall()
             return result
