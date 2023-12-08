@@ -1,7 +1,7 @@
 from qtcore import *
 from ui_telas_abrec import *
 
-def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis):
+def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis, senha, conf_senha):
     if cpf == "" or len(cpf) < 11:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -47,6 +47,14 @@ def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis):
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro CEP")
         msg.setText("Favor inserir um CEP válido!!!")
+        msg.exec()
+        return False
+    
+    elif senha != conf_senha:
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Erro SENHA")
+        msg.setText("Senhas não são iguais!!!")
         msg.exec()
         return False
     

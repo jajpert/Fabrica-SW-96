@@ -7,7 +7,7 @@ class DataBase():
     def connect(self):
         
         self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         	
 
@@ -864,12 +864,14 @@ class DataBase():
 
     def tirar_foto_usuario(self, foto):
         self.connect()
+        print("Foto usuario ->", foto)
         try:
             args = (foto[0], foto[1], foto[2])
             self.cursor.execute("""INSERT INTO foto_usuario (nome, caminho, id_usuario) VALUES (%s, %s, %s)""", args)
             self.conn.commit()
             return "Entrou banco"
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
         
         finally:
@@ -970,9 +972,10 @@ class DataBase():
                 estado_civil, escolaridade, pessoa_deficiencia, tipo_deficiencia, outras_deficiencias,
                 media_renda_familiar, tipo_transporte, vale_transporte, situacao_trabalho, situacao_trabalho_outros,
                 beneficio, tarifa_social, tipo_tratamento, clinica.id_clinica, patologia_base, outras_patologias, data_inicio, periodo,
-                endereco.id_endereco, usuario.id_usuario
+                endereco.id_endereco, usuario.id_usuario, foto_usuario.caminho, foto_usuario.idfoto_usuario
                 FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco 
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula 
+                INNER JOIN foto_usuario ON foto_usuario.id_usuario = usuario.id_usuario
                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento WHERE cpf LIKE '%{cpf}%'; """)
             result = self.cursor.fetchall()
             return result[0]
@@ -992,7 +995,7 @@ class DataBase():
                                     foto_usuario.caminho, foto_usuario.idfoto_usuario
                                     FROM pessoa INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco  
                                     INNER JOIN colaborador ON colaborador.id_matricula = pessoa.id_matricula
-                                    INNER JOIN foto_usuario ON colaborador.id_colaborador
+                                    INNER JOIN foto_usuario ON foto_usuario.id_colaborador = colaborador.id_colaborador 
                                     WHERE cpf LIKE '%{cpf}%';""")
             
 

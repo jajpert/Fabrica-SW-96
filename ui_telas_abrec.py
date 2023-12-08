@@ -16143,7 +16143,7 @@ class Ui_MainWindow(object):
         self.label_foto_colaborador_as.setObjectName(u"label_foto_colaborador_as")
         self.label_foto_colaborador_as.setMinimumSize(QSize(180, 240))
         self.label_foto_colaborador_as.setTextFormat(Qt.PlainText)
-        self.label_foto_colaborador_as.setPixmap(QPixmap(u"../icons/adicionar foto.png"))
+        self.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
 
         self.verticalLayout_178.addWidget(self.label_foto_colaborador_as)
 

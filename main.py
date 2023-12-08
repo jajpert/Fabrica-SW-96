@@ -35,6 +35,7 @@ from Validacao_Campos.Assistente_Social.validar_campos_fornecedores import valid
 from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validarCamposBeneficiosCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_retirada_beneficio import validarCamposRetiradaBeneficiosCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_alterar_colaborador import validarCamposAlterarColaboradorCadastro
 ##################################################################################################################
 
 ############################# VALIDAÇÕES NUTRICIONISTA###########################################################
@@ -1337,6 +1338,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_agendamento_as.clicked.connect(self.buscarPessoa)
         self.ui.btn_buscar_cpf_cadastro_retirada_beneficio.clicked.connect(self.buscarRetirada)
         self.ui.btn_sair_sec.clicked.connect(self.sairSistema)
+        self.ui.btn_alterar_voltar_usuario_as.clicked.connect(self.limparCampoVoltarCuidador)
+        self.ui.btn_alterar_voltar_cadastro_colaborador_as.clicked.connect(self.limparCampoVoltarColaborador)
+        self.ui.btn_alterar_voltar_cuidador_as.clicked.connect(self.limparCampoVoltarColaborador)
 
         ########################### FISIOTERAPEUTA #########################################################################################################################################
         self.ui.btn_atendimento_fisio.clicked.connect(self.limparCamposAtendimentoFisioterapeuta)
@@ -1525,6 +1529,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         ########################### BANCO ###################################################################################################################################################
         self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroUsuario)
+        # self.ui.btn_salvar_usuario_as.clicked.connect(self.cadastroFotoVazia)
         self.ui.btn_salvar_as.clicked.connect(self.cadastroCuidador)
         self.ui.btn_concluir_cadastro_colaborador_as.clicked.connect(self.cadastroColaborador)
         self.ui.btn_finalizar_fornecedor_as.clicked.connect(self.cadastroFornecedor)
@@ -2018,6 +2023,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
             dados = self.db.busca_usuario(cpf)
+            print(dados)
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
@@ -2298,9 +2304,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_endereco_usuario_as.hide()
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
-            '''foto = str(dados[39])
+            foto = str(dados[39])
+            print(foto)
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar-amigo.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -2338,7 +2345,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.label_foto_usuario_alterar_as.setFixedSize(QSize(w, h))
                 self.ui.label_foto_usuario_alterar_as.setAlignment(Qt.AlignCenter)
             self.ui.input_id_foto_alterar_usuario_as.setText(str(dados[40]))
-            self.ui.input_id_foto_alterar_usuario_as.hide()'''
+            self.ui.input_id_foto_alterar_usuario_as.hide()
             return self.ui.page_alterar_usuario
 
     ##################################################################################
@@ -2453,7 +2460,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_colaborador_as.hide()
             foto = str(dados[27])
             if foto == None or foto == '':
-                original_image = cv2.imread("./icons/adicionar foto.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.png")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -2701,22 +2708,30 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         login = self.ui.input_alterar_usuario_colaborador_as_2.text()
         senha = self.ui.input_alterar_senha_colaborador_as_2.text()
+        conf_senha = self.ui.input_alterar_confirmar_senha_colaborador_as_2.text()
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
         tupla_colaborador = (pis_colab,data_admissao,salario,cargo,periodo,login,senha)
 
         #################### insert ##########################################
-        result = []
-        result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Atualizar Colaborador")
-        msg.setText("Colaborador Atualizado com sucesso!")
-        msg.exec()
-        
-        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
-        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
-        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
-        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+        if not validarCamposAlterarColaboradorCadastro(senha, conf_senha):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("ERRO")
+            msg.setText("Erro ao tentar alterar Colaborador!")
+            msg.exec()
+        else:
+            result = []
+            result = self.db.atualizar_colaborador(tupla_colaborador,tupla_pessoa,tupla_endereco)
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Atualizar Colaborador")
+            msg.setText("Colaborador Atualizado com sucesso!")
+            msg.exec()
+            
+            self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+            self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+            self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+            return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
 
     def AlterarFotoColaborador(self):
         nome_colab = self.ui.input_alterar_nome_colaborador_as.text()
@@ -3362,6 +3377,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         else:
         ######################## insert ##################################
 
+            self.cadastroFotoVaziaUsuario()
             result = []
             result = self.db.cadastro_usuario(tupla_endereco,tupla_pessoa,tupla_usuario)
             msg = QMessageBox()
@@ -3767,7 +3783,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         #################### login e senha ####################################
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
-        #confirmar_senha = self.ui.input_confirmar_senha_colaborador_as.text()
+        confirmar_senha = self.ui.input_confirmar_senha_colaborador_as_2.text()
         if cargo in ["Secretária"]:
             perfil = 'sec'
         elif cargo in ["Assistente Social"]:
@@ -3785,13 +3801,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         tupla_colaborador = (pis_colab, data_admissao, salario, cargo, periodo, login, senha, perfil)
 
         #################### insert ##########################################
-        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis_colab):
+        if not validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis_colab, senha, confirmar_senha):
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Erro")
             msg.setText("Erro ao cadastrar Colaborador!")
             msg.exec()
         else:
+            self.cadastroFotoVaziaColaborador()
             result = []
             result = self.db.cadastro_colaborador(tupla_endereco,tupla_pessoa,tupla_colaborador)
             msg = QMessageBox()
@@ -4204,7 +4221,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
 
-        original_image = cv2.imread("./icons/adicionar-amigo.png")
+        original_image = cv2.imread("./icons/adicionar_foto.png")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4272,7 +4289,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_usuario_colaborador_as_2.setText("")
         self.ui.input_senha_colaborador_as_2.setText("")
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
-        original_image = cv2.imread("./icons/adicionar-amigo.png")
+        original_image = cv2.imread("./icons/adicionar_foto.png")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4281,7 +4298,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_amigo.png"))
+        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
         self.ui.label_foto_colaborador_as.setScaledContents(True)
         self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
@@ -4626,6 +4643,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_nutri_sec.setCheckable(False)
         self.ui.radioButton_nutri_sec.setCheckable(True)
         self.ui.input_buscar_dados_relatorio_sec.setText("")
+
+
+    def limparCampoVoltarUsuario(self):
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+    
+    def limparCampoVoltarCuidador(self):
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+    
+    def limparCampoVoltarColaborador(self):
+        self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
+        self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
+        return self.ui.stackedWidget_8.setCurrentWidget(self.ui.page_2)
+        
+
+
+
+
+
+
 
 
 
@@ -6800,8 +6840,37 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
     
     
-    # def execute(self):
-    #     for(int i=0; i<10; i++):
+    def cadastroFotoVaziaUsuario(self):
+        expected_icon = QIcon("./icons/adicionar_foto.png")
+        current_icon = self.ui.label_foto_usuario_as.pixmap()
+        if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
+            nome = self.ui.input_nome_usuario_as.text()
+            caminho = ""
+            id_usuario = self.ui.input_matricula_usuario_as.text()
+            res = []
+            tupla_foto_vazia = (nome, caminho, id_usuario)
+            print(tupla_foto_vazia)
+            result = self.db.tirar_foto_usuario(tupla_foto_vazia)
+            
+        else:
+            return
+        
+    def cadastroFotoVaziaColaborador(self):
+        expected_icon = QIcon("./icons/adicionar_foto.png")
+        current_icon = self.ui.label_foto_colaborador_as.pixmap()
+        if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
+            nome = self.ui.input_nome_colaborador_as.text()
+            caminho = ""
+            id_usuario = self.ui.input_matricula_colaborador_as.text()
+            res = []
+            tupla_foto_vazia = (nome, caminho, id_usuario)
+            print(tupla_foto_vazia)
+            result = self.db.tirar_foto_colaborador(tupla_foto_vazia)
+            
+        else:
+            return
+
+            
             
             
     
