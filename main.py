@@ -5863,7 +5863,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
             tupla_clinica = (cnpj,razao_social,nome_fantasia,telefone,email,obs)
 
-            if not validarCamposClinicaCadastro(cnpj,telefone,email,cep,numero):
+            if not validarCamposClinicaCadastro(cnpj,razao_social,telefone,email,cep,numero):
                 msg = QMessageBox()
                 msg.setIcon(QMessageBox.Information)
                 msg.setWindowTitle("Erro Cadastro")

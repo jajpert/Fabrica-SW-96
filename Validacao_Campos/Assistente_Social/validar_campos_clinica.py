@@ -1,6 +1,6 @@
 from qtcore import *
 
-def validarCamposClinicaCadastro(cnpj,telefone,email,cep, numero):
+def validarCamposClinicaCadastro(cnpj,razao_social,telefone,email,cep, numero):
     if cnpj == "" or len(cnpj) < 14:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
@@ -8,6 +8,15 @@ def validarCamposClinicaCadastro(cnpj,telefone,email,cep, numero):
         msg.setText("Digite um CNPJ válido!!!")
         msg.exec()
         return False
+    
+    elif razao_social == "" or len(razao_social) <= 5:
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Erro Razão Social")
+        msg.setText("Digite uma Razão social válida!!!")
+        msg.exec()
+        return False
+    
     
     elif telefone == "" or len(telefone) < 11:
         msg = QMessageBox()
