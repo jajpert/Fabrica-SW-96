@@ -102,7 +102,7 @@ class DialogTirarImportarFotoUsuario(QDialog):
     def Tirar_foto_Usuario(self):
         
         vid = cv2.VideoCapture(0)
-        StoreFilePath =(f"C:/Users/vboxuser/Pictures/Foto_{self.nome_usuario}.jpg")
+        StoreFilePath = (f"C:/Users/vboxuser/Pictures/Foto_{self.nome_usuario}.jpg")
         # StoreFilePath =(f"C:/Users/User/Desktop/Codigos/Python/Abrec_Camera/test/capture{self.nome_usuario}.jpg")
         self.db = DataBase()  
         try:
@@ -5467,7 +5467,23 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 else:
                     print("Erro ao ler a imagem.")
             else:
-                print("O arquivo de imagem não existe:", caminho)
+                original_imagine_empty = cv2.imread(u"./icons/User_1.png")
+                desired_size = (200, 200)
+                resized_image = cv2.resize(original_imagine_empty, desired_size)
+
+                resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
+
+                h, w, ch = resized_image.shape
+                bytes_per_line = ch * w
+                qt_image = QImage(resized_image.data, w, h, bytes_per_line, QImage.Format_RGB888)
+
+                pixmap = QPixmap.fromImage(qt_image)
+
+                self.ui.label_foto_colab_inicio.setPixmap(pixmap)
+
+                self.ui.label_foto_colab_inicio.setFixedSize(QSize(w, h))
+
+                self.ui.label_foto_colab_inicio.setAlignment(Qt.AlignCenter)
         else:
             print("Caminho inválido:", caminho)
             
