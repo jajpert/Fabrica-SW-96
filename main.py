@@ -1367,7 +1367,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_relatorio_nutri.clicked.connect(self.filtrar_data_relatorio_nutri)
         self.ui.btn_buscar_relatorio_beneficios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorioFiltro)
         self.ui.btn_alterar_pagina_consulta_geral_fisio.clicked.connect(self.alterar_consulta_fisio)
-        self.ui.btn_excluir_pagina_consulta_geral_fisio.clicked.connect(self.excluir_usuario_consulta_fisio)
         self.ui.btn_sair_fisio.clicked.connect(self.sairSistema)
         self.ui.btn_alterar_agenda_fisio.clicked.connect(self.alterarAgendamentos_fisio)
         self.ui.btn_cancelar_agenda_fisio.clicked.connect(self.limparCamposAgendaFisioterapeuta)
@@ -1397,7 +1396,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
         self.ui.btn_alterar_pagina_consulta_geral_nutri.clicked.connect(self.alterar_consulta_nutri)
-        self.ui.btn_excluir_pagina_consulta_geral_nutri.clicked.connect(self.excluir_usuario_consulta_nutri)
         #self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
         self.ui.btn_alterar_agenda_nutri.clicked.connect(self.alterarAgendamentos_nutri)
         self.ui.btn_cancelar_agenda_nutri.clicked.connect(self.limparCamposAgendaNutricionista)
@@ -1419,7 +1417,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.cadastrar_consulta_psi) #CADASTRO CONSULTA USUARIO PSIC
         self.ui.btn_salvar_pagina_consulta_geral_psi.clicked.connect(self.tabela_consulta_psic_tabela) #SELECT USUARIO CONSULTA + COLADB ID
         self.ui.btn_alterar_pagina_consulta_geral_psi.clicked.connect(self.alterar_usuario_consulta_psi) #ALTERAR CONSULTA PSIC
-        self.ui.btn_excluir_pagina_consulta_geral_psi.clicked.connect(self.excluir_usuario_consulta_psi) #EXCLUIR USUARIO CONSULTA PSIC
         self.ui.btn_buscar_agendamento_psi.clicked.connect(self.buscarPessoa_psi) #SELECT USUARIO AGENDAMENTO PISC
         self.ui.btn_salvar_agenda_psi.clicked.connect(self.cadastroAgendamento_psi) #CADASTRO AGENDAMENTO USUARIO PISC
         self.ui.btn_alterar_agenda_psi.clicked.connect(self.alterarAgendamentos_psi) #ALTERAR AGENDAMENTO USUARIO PISC
@@ -1444,7 +1441,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cadastrar_farm.clicked.connect(self.listarBeneficiosFarmaceutica)
         self.ui.btn_gerar_excel_relatorio_beneficios_farm.clicked.connect(self.gerar_excel_relatorio_beneficio_farm)
         self.ui.btn_alterar_cadastro_beneficio_farm.clicked.connect(self.alterar_cadastro_beneficios_farmaceutica)
-        self.ui.btn_excluir_cadastro_beneficio_farm.clicked.connect(self.excluir_cadastro_beneficios_farmaceutica)
         self.ui.btn_cancelar_cadastro_beneficio_farm.clicked.connect(self.limparCamposCadastroBeneficiosFarmaceutica)
         self.ui.btn_relatorios_farm.clicked.connect(self.listarBeneficiosFarmaceuticaRelatorio)
         self.ui.btn_buscar_codigo_beneficio_cadastro_retirada_beneficio_farm.clicked.connect(self.buscarCodigoRetiradaFarmaceutica)
@@ -1537,8 +1533,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_salvar_cadastro_beneficio.clicked.connect(self.cadastro_beneficios)
         self.ui.btn_finalizar_cadastro_retirada_beneficio.clicked.connect(self.cadastro_retirada_beneficios)
         self.ui.btn_alterar_cadastro_beneficio.clicked.connect(self.alterar_cadastro_beneficios)
-        self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.excluir_cadastro_beneficios)
-        self.ui.btn_excluir_cadastro_beneficio.clicked.connect(self.listarBeneficios)
         self.ui.btn_alterar_salvar_as.clicked.connect(self.atualizar_cuidador)
         self.ui.btn_alterar_finalizar_as.clicked.connect(self.atualizar_usuario)
         self.ui.btn_alterar_concluir_cadastro_colaborador_as.clicked.connect(self.atualizar_colaborador)
@@ -1553,7 +1547,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
-        self.ui.btn_excluir_pagina_consulta_geral.clicked.connect(self.excluir_usuario_consulta)
+        
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
         self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.buscar_curso_evento)
@@ -4810,6 +4804,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setWindowTitle("Excel")
         msg.setText("Relatório Excel gerado com sucesso!")
         msg.exec()
+        
 
     def buscar_dados_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
@@ -5064,17 +5059,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
 
 
-    def excluir_usuario_consulta_psi (self):
-        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_psi.selectionModel().currentIndex().siblingAtColumn(0).data()
-        self.db.deletar_consulta_relatorio_psi(id_consulta)
-
-        self.puxar_consulta_psi()
-
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excluir Consulta")
-        msg.setText("Consulta Excluida com sucesso!")
-        msg.exec()
         
     def alterar_consulta_nutri(self, campo):
         campo = []
@@ -5096,31 +5080,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Consulta Alterada com sucesso!")
         msg.exec()
         
-    def excluir_usuario_consulta_nutri (self):
-        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_nutri.selectionModel().currentIndex().siblingAtColumn(0).data()
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Alterar Consulta")
-        msg.setText("Deseja alterar a consulta?")
-        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        resposta = msg.exec()
-        
-        if resposta == QMessageBox.Yes:
-            self.db.deletar_consulta_relatorio_nutri(id_consulta)
-            self.tabela_consulta_nutri_tabela()
-        else:
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Alteração não concluida")
-            msg.setText("Alteração não feita!!!")
-            msg.exec()
-        self.tabela_consulta_nutri_tabela()
-
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excluir Consulta")
-        msg.setText("Consulta Excluida com sucesso!")
-        msg.exec()
+    
 
 
     def alterar_consulta_fisio(self, campo):
@@ -5143,31 +5103,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
         self.buscar_usuario_consulta_fisio()
         
-    def excluir_usuario_consulta_fisio(self):
-        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral_fisio.selectionModel().currentIndex().siblingAtColumn(0).data()
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Alterar Consulta")
-        msg.setText("Deseja alterar a consulta?")
-        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
-        resposta = msg.exec()
-        
-        if resposta == QMessageBox.Yes:
-            self.db.deletar_consulta_relatorio_fisio(id_consulta)
-            self.buscar_usuario_consulta_fisio()
-        else:
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Alteração não concluida")
-            msg.setText("Alteração não feita!!!")
-            msg.exec()
-        self.tabela_consulta_nutri_tabela()
-
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excluir Consulta")
-        msg.setText("Consulta Excluida com sucesso!")
-        msg.exec()
+    
 
 
     def puxar_consulta(self):
@@ -5302,17 +5238,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.exec()
     
 
-    def excluir_usuario_consulta (self):
-        id_consulta = self.ui.input_TableWidget_pagina_consulta_geral.selectionModel().currentIndex().siblingAtColumn(0).data()
-        self.db.deletar_consulta_relatorio(id_consulta)
 
-        self.puxar_consulta()
-
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excluir Consulta")
-        msg.setText("Consulta Excluida com sucesso!")
-        msg.exec()
     
     def alterar_cadastro_beneficios(self, dados):
         try:
@@ -5344,15 +5270,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             return "ERRO", str(err)
         
 
-    def excluir_cadastro_beneficios (self):
-        id_beneficios = self.ui.input_TableWidget_cadastro_beneficio.selectionModel().currentIndex().siblingAtColumn(0).data()
-        self.db.deletar_cadastro_beneficios(id_beneficios)
-        self.listarBeneficios()
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Beneficio Excluir")
-        msg.setText("Beneficio excluido com sucesso!")
-        msg.exec()
 
 
     def alterar_cadastro_beneficios_farmaceutica(self, dados):
@@ -5383,17 +5300,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             return "OK", "Benefício(s) atualizado(s) com sucesso!!"
         except Exception as err:
             return "ERRO", str(err)
-        
-
-    def excluir_cadastro_beneficios_farmaceutica(self):
-        id_beneficios = self.ui.input_TableWidget_cadastro_beneficio_farm.selectionModel().currentIndex().siblingAtColumn(0).data()
-        self.db.deletar_cadastro_beneficios(id_beneficios)
-        self.listarBeneficiosFarmaceutica()
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Beneficio Excluir")
-        msg.setText("Beneficio excluido com sucesso!")
-        msg.exec()
         
         
 #####Alterar SITUACAO de Trabalho Outros #########
