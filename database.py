@@ -2342,7 +2342,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                    SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado from clinica
                     INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
                     WHERE clinica.data_cadastro BETWEEN '{texto_data_inicio_clinica_cadastrada}' and '{texto_data_final_clinica_cadastrada}';
             """)
@@ -2374,7 +2374,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                                SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado from clinica
                                 INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
                                 WHERE clinica.cnpj LIKE "%{texto}%" OR clinica.email LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR clinica.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
                                 """)
