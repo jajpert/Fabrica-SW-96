@@ -1254,7 +1254,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_proximo_as.clicked.connect(self.limparCamposCadastroCuidador)
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(self.limparCamposCursosOficinas)
-        self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
+        
+        self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_cadastrar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
+        #self.ui.btn_cadastrar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_cursos_e_oficinas_as))
+
+        self.ui.btn_cadastrar_cursos_as.clicked.connect(self.limparCamposCadastroParticipante)
+
+
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(self.limparCamposCadastroColaborador)
         self.ui.btn_cadastrar_colaborador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_colaborador_as))
         self.ui.btn_relatorios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
@@ -1272,9 +1279,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cadastrar_clinica_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_clinica_as))
         self.ui.btn_cadastrar_fornecedores_as.clicked.connect(self.limparCamposCadastroFornecedor)
         self.ui.btn_cadastrar_fornecedores_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_fornecedor_as))
-        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.limparCamposCadastroParticipante)
+        self.ui.btn_cadastrar_cursos_as.clicked.connect(self.limparCamposCadastroParticipante)
         self.ui.btn_voltar_fornecedor_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
-        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))     
+        self.ui.btn_cadastrar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))     
         self.ui.btn_voltar_pagina_relatorio_fornecedores_cadastrados.clicked.connect(self.limparCamposCadastroFornecedor)
         self.ui.btn_voltar_pagina_relatorio_fornecedores_cadastrados.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_fornecedor_as))
         self.ui.btn_alterar_pagina_consulta_geral.clicked.connect(self.alterar_usuario_consulta)
@@ -1318,6 +1325,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_relatorio_atendimentos.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_consulta))
         self.ui.btn_voltar_pagina_relatorio_beneficios_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_relatorio))
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+        self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
+
+        self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+
+        self.ui.btn_cadastrar_cursos_as.clicked.connect(self.buscar_curso_evento)
+
         self.ui.btn_voltar_cuidador_as.clicked.connect(self.limparCamposCadastroUsuario)
         self.ui.btn_voltar_cuidador_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
         self.ui.btn_voltar_agenda_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_principal_as))
@@ -1551,7 +1564,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         self.ui.input_filtro_agendamento_as.textChanged.connect(self.filtrar_agenda)
         self.ui.btn_proximo_as.clicked.connect(self.listarUsuarios)
-        self.ui.btn_lista_pessoas_cursos_as.clicked.connect(self.buscar_curso_evento)
+        self.ui.btn_cadastrar_cursos_as.clicked.connect(self.buscar_curso_evento)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.buscar_dados_participante)
         self.ui.btn_salvar_pagina_participante_geral.clicked.connect(self.cadastrar_participante)
         self.ui.btn_buscar_cpf_pagina_participante_geral.clicked.connect(self.puxar_cadastro_participante)
