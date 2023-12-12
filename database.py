@@ -1467,16 +1467,17 @@ class DataBase():
         print(inicio_data_relatorio_agendamento,final_data_relatorio_agendamento)
         try:
             self.cursor.execute(f"""
-                      SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
-                                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
-                                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                    WHERE pessoa.nomel BETWEEN '{inicio_data_relatorio_agendamento[0]}' and '{final_data_relatorio_agendamento[1]}';
+                        SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, clinica.razao_social, agendamento.profissional, agendamento.data, agendamento.hora, consulta.situacao
+                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                        WHERE agendamento.data BETWEEN '{inicio_data_relatorio_agendamento}' and '{final_data_relatorio_agendamento}';
                     """)
             result = self.cursor.fetchall()
             return result
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
 
         finally:

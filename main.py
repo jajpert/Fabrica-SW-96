@@ -6600,7 +6600,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def buscar_relatorio_agendamento(self):
         result = self.db.buscar_relatorio_agendamento()
-        print(result)
         self.ui.tableWidget_relatorio_agendamento_as.clearContents()
         self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(result))
           
@@ -6618,14 +6617,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for row, text in enumerate(res):
                 for column, data in enumerate(text):
                     self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
-
-
-
-
-
-
-
-
                     
     def filter_relatorio_agendamento(self):  
         texto_data_inicio_relatorio_agend = self.ui.input_inicio_periodo_relatorio_gendamento_as.text()
@@ -6639,7 +6630,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
 
 
 
@@ -6728,7 +6719,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['CNPJ', 'EMAIL', 'RAZAO_SOCIAL', 'TELEFONE', 'ENDEREÇO']
+        columns = ['CNPJ', 'RAZAO_SOCIAL', 'TELEFONE', 'EMAIL', 'ENDEREÇO', 'BAIRRO', 'CIDADE', 'ESTADO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
