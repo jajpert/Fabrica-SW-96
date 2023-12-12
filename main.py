@@ -1250,6 +1250,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_cadastro_beneficio.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_parceiros))
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.limparCamposCadastroUsuario)
         self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_usuario_as))
+        self.ui.btn_cadastrar_cuidador_usuario_as.clicked.connect(self.buscar_clinica_nome_fantasia)
         self.ui.btn_proximo_as.clicked.connect(self.limparCamposCadastroCuidador)
         self.ui.btn_proximo_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastro_cuidador_as))   
         self.ui.btn_cadastrar_cursos_oficinas_as.clicked.connect(self.limparCamposCursosOficinas)
@@ -6624,7 +6625,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def buscar_relatorio_agendamento(self):
         result = self.db.buscar_relatorio_agendamento()
-        print(result)
         self.ui.tableWidget_relatorio_agendamento_as.clearContents()
         self.ui.tableWidget_relatorio_agendamento_as.setRowCount(len(result))
           
@@ -6642,14 +6642,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             for row, text in enumerate(res):
                 for column, data in enumerate(text):
                     self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
-
-
-
-
-
-
-
-
                     
     def filter_relatorio_agendamento(self):  
         texto_data_inicio_relatorio_agend = self.ui.input_inicio_periodo_relatorio_gendamento_as.text()
@@ -6663,7 +6655,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         for row, text in enumerate(res):
             for column, data in enumerate(text):
-                self.ui.tableWidget_relatorio_cuidadores_as.setItem(row, column, QTableWidgetItem(str(data)))
+                self.ui.tableWidget_relatorio_agendamento_as.setItem(row, column, QTableWidgetItem(str(data)))
 
 
 
@@ -6784,7 +6776,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['CNPJ', 'EMAIL', 'RAZAO_SOCIAL', 'TELEFONE', 'ENDEREÇO']
+        columns = ['CNPJ', 'RAZAO_SOCIAL', 'TELEFONE', 'EMAIL', 'ENDEREÇO', 'BAIRRO', 'CIDADE', 'ESTADO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -6871,7 +6863,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'EMAIL', 'RAZAO_SOCIAL', 'DATA_CONSULTA', 'SITUACAO']
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'TELEFONE', 'RAZAO_SOCIAL', 'DATA_CONSULTA', 'SITUACAO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 

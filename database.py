@@ -1467,16 +1467,17 @@ class DataBase():
         print(inicio_data_relatorio_agendamento,final_data_relatorio_agendamento)
         try:
             self.cursor.execute(f"""
-                      SELECT pessoa.nome,pessoa.cpf,pessoa.sexo,pessoa.telefone,clinica.razao_social,agendamento.profissional,agendamento.data,agendamento.hora,consulta.situacao
-                                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
-                                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
-                                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                    WHERE pessoa.nomel BETWEEN '{inicio_data_relatorio_agendamento[0]}' and '{final_data_relatorio_agendamento[1]}';
+                        SELECT pessoa.nome, pessoa.cpf, pessoa.sexo, pessoa.telefone, clinica.razao_social, agendamento.profissional, agendamento.data, agendamento.hora, consulta.situacao
+                        FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
+                        INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                        INNER JOIN consulta ON agendamento.id_matricula = consulta.id_matricula
+                        INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
+                        WHERE agendamento.data BETWEEN '{inicio_data_relatorio_agendamento}' and '{final_data_relatorio_agendamento}';
                     """)
             result = self.cursor.fetchall()
             return result
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
 
         finally:
@@ -2342,7 +2343,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                    SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado from clinica
                     INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
                     WHERE clinica.data_cadastro BETWEEN '{texto_data_inicio_clinica_cadastrada}' and '{texto_data_final_clinica_cadastrada}';
             """)
@@ -2358,7 +2359,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                               SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                               SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado from clinica
                                INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco;
                                 """)
             result = self.cursor.fetchall()
@@ -2374,7 +2375,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT clinica.cnpj, clinica.email, clinica.razao_social, clinica.telefone, endereco.logradouro from clinica
+                                SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.bairro, endereco.cidade, endereco.estado from clinica
                                 INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
                                 WHERE clinica.cnpj LIKE "%{texto}%" OR clinica.email LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR clinica.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
                                 """)
@@ -2439,19 +2440,19 @@ class DataBase():
     def buscar_relatorio_atendimento_pesquisa(self, texto):
         self.connect()
         try:
-            busca = """
-                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
-                FROM pessoa
+            busca = f"""
+                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, clinica.razao_social, consulta.data_consulta, consulta.situacao FROM pessoa
                 INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                WHERE pessoa.nome LIKE %s OR pessoa.cpf LIKE %s OR usuario.cns LIKE %s OR pessoa.sexo LIKE %s OR pessoa.telefone LIKE %s OR pessoa.email LIKE %s OR clinica.razao_social LIKE %s OR consulta.data_consulta LIKE %s OR consulta.situacao LIKE %s;
+                WHERE pessoa.nome LIKE '%{texto}%' OR pessoa.cpf LIKE '%{texto}%' OR pessoa.sexo LIKE '%{texto}%' OR clinica.razao_social LIKE '%{texto}%' OR consulta.situacao LIKE '%{texto}%';
             """
-            parametro = tuple(f"%{texto}%" for _ in range(9)) 
-            self.cursor.execute(busca, parametro)
+            print(texto)
+            self.cursor.execute(busca)
             result = self.cursor.fetchall()
             return result
         except Exception as err:
+            print(err)
             return "ERRO", str(err)
         finally:
             self.close_connection()
@@ -2461,7 +2462,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
+                                SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, clinica.razao_social, consulta.data_consulta, consulta.situacao
                                 from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                 INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                                 INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
@@ -2479,7 +2480,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, pessoa.email, clinica.razao_social, consulta.data_consulta, consulta.situacao
+                    SELECT pessoa.nome, pessoa.cpf, usuario.cns, pessoa.sexo, pessoa.telefone, clinica.razao_social, consulta.data_consulta, consulta.situacao
                     from pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                     INNER JOIN consulta ON consulta.id_matricula = pessoa.id_matricula
                     INNER JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
