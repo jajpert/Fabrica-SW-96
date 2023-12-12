@@ -26281,8 +26281,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_596 = QVBoxLayout(self.frame_7241)
         self.verticalLayout_596.setObjectName(u"verticalLayout_596")
         self.input_TableWidget_relatorio_atendimentos = QTableWidget(self.frame_7241)
-        if (self.input_TableWidget_relatorio_atendimentos.columnCount() < 9):
-            self.input_TableWidget_relatorio_atendimentos.setColumnCount(9)
+        if (self.input_TableWidget_relatorio_atendimentos.columnCount() < 8):
+            self.input_TableWidget_relatorio_atendimentos.setColumnCount(8)
         __qtablewidgetitem212 = QTableWidgetItem()
         self.input_TableWidget_relatorio_atendimentos.setHorizontalHeaderItem(0, __qtablewidgetitem212)
         __qtablewidgetitem213 = QTableWidgetItem()
@@ -26299,8 +26299,6 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_atendimentos.setHorizontalHeaderItem(6, __qtablewidgetitem218)
         __qtablewidgetitem219 = QTableWidgetItem()
         self.input_TableWidget_relatorio_atendimentos.setHorizontalHeaderItem(7, __qtablewidgetitem219)
-        __qtablewidgetitem220 = QTableWidgetItem()
-        self.input_TableWidget_relatorio_atendimentos.setHorizontalHeaderItem(8, __qtablewidgetitem220)
         if (self.input_TableWidget_relatorio_atendimentos.rowCount() < 14):
             self.input_TableWidget_relatorio_atendimentos.setRowCount(14)
         self.input_TableWidget_relatorio_atendimentos.setObjectName(u"input_TableWidget_relatorio_atendimentos")
@@ -26318,7 +26316,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_atendimentos.setSortingEnabled(True)
         self.input_TableWidget_relatorio_atendimentos.setWordWrap(True)
         self.input_TableWidget_relatorio_atendimentos.setRowCount(14)
-        self.input_TableWidget_relatorio_atendimentos.setColumnCount(9)
+        self.input_TableWidget_relatorio_atendimentos.setColumnCount(8)
         self.input_TableWidget_relatorio_atendimentos.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_relatorio_atendimentos.horizontalHeader().setDefaultSectionSize(170)
         self.input_TableWidget_relatorio_atendimentos.horizontalHeader().setStretchLastSection(True)
@@ -29478,13 +29476,11 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem192 = self.input_TableWidget_relatorio_atendimentos.horizontalHeaderItem(4)
         ___qtablewidgetitem192.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
         ___qtablewidgetitem193 = self.input_TableWidget_relatorio_atendimentos.horizontalHeaderItem(5)
-        ___qtablewidgetitem193.setText(QCoreApplication.translate("MainWindow", u"Email", None));
+        ___qtablewidgetitem193.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
         ___qtablewidgetitem194 = self.input_TableWidget_relatorio_atendimentos.horizontalHeaderItem(6)
-        ___qtablewidgetitem194.setText(QCoreApplication.translate("MainWindow", u"Cl\u00ednica", None));
+        ___qtablewidgetitem194.setText(QCoreApplication.translate("MainWindow", u"Data ", None));
         ___qtablewidgetitem195 = self.input_TableWidget_relatorio_atendimentos.horizontalHeaderItem(7)
-        ___qtablewidgetitem195.setText(QCoreApplication.translate("MainWindow", u"Data ", None));
-        ___qtablewidgetitem196 = self.input_TableWidget_relatorio_atendimentos.horizontalHeaderItem(8)
-        ___qtablewidgetitem196.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
+        ___qtablewidgetitem195.setText(QCoreApplication.translate("MainWindow", u"Tipo", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_atendimentos.setToolTip("")
 #endif // QT_CONFIG(tooltip)
