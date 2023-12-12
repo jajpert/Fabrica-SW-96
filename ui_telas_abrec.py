@@ -16987,61 +16987,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_84.addWidget(self.frame_122)
 
-        '''self.frame_124 = QFrame(self.page_cadastrar_cursos_e_oficinas_as)
-        self.frame_124.setObjectName(u"frame_124")
-        self.frame_124.setFrameShape(QFrame.StyledPanel)
-        self.frame_124.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_57 = QHBoxLayout(self.frame_124)
-        self.horizontalLayout_57.setSpacing(20)
-        self.horizontalLayout_57.setObjectName(u"horizontalLayout_57")
-        self.horizontalLayout_57.setContentsMargins(20, 0, 0, 0)
-        self.btn_voltar_cursos_as = QPushButton(self.frame_124)
-        self.btn_voltar_cursos_as.setObjectName(u"btn_voltar_cursos_as")
-        self.btn_voltar_cursos_as.setMinimumSize(QSize(100, 40))
-        self.btn_voltar_cursos_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cursos_as.setFont(font4)
-        self.btn_voltar_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_voltar_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.horizontalLayout_57.addWidget(self.btn_voltar_cursos_as)
-
-        self.btn_lista_pessoas_cursos_as = QPushButton(self.frame_124)
-        self.btn_lista_pessoas_cursos_as.setObjectName(u"btn_lista_pessoas_cursos_as")
-        self.btn_lista_pessoas_cursos_as.setMinimumSize(QSize(0, 40))
-        self.btn_lista_pessoas_cursos_as.setMaximumSize(QSize(16777215, 40))
-        self.btn_lista_pessoas_cursos_as.setFont(font4)
-        self.btn_lista_pessoas_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_lista_pessoas_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
-"QPushButton:hover{background-color: #F89198}\n"
-"QPushButton:focus{outline:0}")
-        icon30 = QIcon()
-        icon30.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_lista_pessoas_cursos_as.setIcon(icon30)
-        self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
-
-        self.horizontalLayout_57.addWidget(self.btn_lista_pessoas_cursos_as)
-
-        self.horizontalSpacer_48 = QSpacerItem(1441, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_57.addItem(self.horizontalSpacer_48)
-
-        self.btn_concluir_cursos_as = QPushButton(self.frame_124)
-        self.btn_concluir_cursos_as.setObjectName(u"btn_concluir_cursos_as")
-        self.btn_concluir_cursos_as.setMinimumSize(QSize(140, 40))
-        self.btn_concluir_cursos_as.setMaximumSize(QSize(140, 40))
-        self.btn_concluir_cursos_as.setFont(font4)
-        self.btn_concluir_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_concluir_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.horizontalLayout_57.addWidget(self.btn_concluir_cursos_as)
-
-
-        self.verticalLayout_84.addWidget(self.frame_124)'''
-
         self.frame_124 = QFrame(self.page_cadastrar_cursos_e_oficinas_as)
         self.frame_124.setObjectName(u"frame_124")
         self.frame_124.setFrameShape(QFrame.StyledPanel)
@@ -17475,32 +17420,6 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout_3372.addWidget(self.frame_4872)
-
-        '''self.frame_4882 = QFrame(self.frame_173)
-        self.frame_4882.setObjectName(u"frame_4882")
-        self.frame_4882.setFrameShape(QFrame.StyledPanel)
-        self.frame_4882.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_163 = QHBoxLayout(self.frame_4882)
-        self.horizontalLayout_163.setObjectName(u"horizontalLayout_163")
-        self.horizontalSpacer_94 = QSpacerItem(531, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.horizontalLayout_163.addItem(self.horizontalSpacer_94)
-
-        self.btn_excel_pagina_participante_geral = QPushButton(self.frame_4882)
-        self.btn_excel_pagina_participante_geral.setObjectName(u"btn_excel_pagina_participante_geral")
-        self.btn_excel_pagina_participante_geral.setMinimumSize(QSize(0, 40))
-        self.btn_excel_pagina_participante_geral.setFont(font4)
-        self.btn_excel_pagina_participante_geral.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excel_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
-"QPushButton:hover{background-color: #F89198}\n"
-"QPushButton:focus{outline:0}")
-        self.btn_excel_pagina_participante_geral.setIcon(icon17)
-        self.btn_excel_pagina_participante_geral.setIconSize(QSize(28, 28))
-
-        self.horizontalLayout_163.addWidget(self.btn_excel_pagina_participante_geral)
-
-
-        self.verticalLayout_3372.addWidget(self.frame_4882)'''
 
         self.frame_4882 = QFrame(self.frame_173)
         self.frame_4882.setObjectName(u"frame_4882")
