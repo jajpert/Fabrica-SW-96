@@ -21213,8 +21213,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_575 = QVBoxLayout(self.frame_872)
         self.verticalLayout_575.setObjectName(u"verticalLayout_575")
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as = QTableWidget(self.frame_872)
-        if (self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.columnCount() < 5):
-            self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setColumnCount(5)
+        if (self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.columnCount() < 8):
+            self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setColumnCount(8)
         __qtablewidgetitem203 = QTableWidgetItem()
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(0, __qtablewidgetitem203)
         __qtablewidgetitem204 = QTableWidgetItem()
@@ -21225,6 +21225,12 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(3, __qtablewidgetitem206)
         __qtablewidgetitem207 = QTableWidgetItem()
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(4, __qtablewidgetitem207)
+        __qtablewidgetitem208 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(5, __qtablewidgetitem208)
+        __qtablewidgetitem209 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(6, __qtablewidgetitem209)
+        __qtablewidgetitem210 = QTableWidgetItem()
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setHorizontalHeaderItem(7, __qtablewidgetitem210)
         if (self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.rowCount() < 14):
             self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(14)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setObjectName(u"input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as")
@@ -21242,7 +21248,7 @@ class Ui_MainWindow(object):
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setSortingEnabled(True)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setWordWrap(True)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setRowCount(14)
-        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setColumnCount(5)
+        self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setColumnCount(8)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeader().setCascadingSectionResizes(True)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeader().setDefaultSectionSize(300)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeader().setStretchLastSection(True)
@@ -29150,13 +29156,19 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem179 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(0)
         ___qtablewidgetitem179.setText(QCoreApplication.translate("MainWindow", u"CNPJ", None));
         ___qtablewidgetitem180 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem180.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
+        ___qtablewidgetitem180.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o Social", None));
         ___qtablewidgetitem181 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(2)
-        ___qtablewidgetitem181.setText(QCoreApplication.translate("MainWindow", u"Raz\u00e3o Social", None));
+        ___qtablewidgetitem181.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
         ___qtablewidgetitem182 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(3)
-        ___qtablewidgetitem182.setText(QCoreApplication.translate("MainWindow", u"Telefone", None));
+        ___qtablewidgetitem182.setText(QCoreApplication.translate("MainWindow", u"E-mail", None));
         ___qtablewidgetitem183 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(4)
-        ___qtablewidgetitem183.setText(QCoreApplication.translate("MainWindow", u"Endere\u00e7o", None));
+        ___qtablewidgetitem183.setText(QCoreApplication.translate("MainWindow", u"Logradouro", None));
+        ___qtablewidgetitem184 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(5)
+        ___qtablewidgetitem184.setText(QCoreApplication.translate("MainWindow", u"Bairro", None));
+        ___qtablewidgetitem185 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(6)
+        ___qtablewidgetitem185.setText(QCoreApplication.translate("MainWindow", u"Cidade", None));
+        ___qtablewidgetitem186 = self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.horizontalHeaderItem(7)
+        ___qtablewidgetitem186.setText(QCoreApplication.translate("MainWindow", u"Estado", None));
 #if QT_CONFIG(tooltip)
         self.input_TableWidget_relatorio_relatorio_clinicas_cadastradas_as.setToolTip("")
 #endif // QT_CONFIG(tooltip)
