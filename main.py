@@ -4794,17 +4794,38 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        
+
+        
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
+        
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
         
+            
 
     def buscar_dados_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
@@ -5146,21 +5167,37 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'TELEFONE', 'TELEFONE DE CONTATO', 'CURSO', 'PERIODO', 'DATA INICIO', 'DATA FIM', 'TIPO', 'DESCRIÇÃO']
+        columns = ['NOME', 'CPF', 'TELEFONE', 'CURSO', 'PERIODO', 'DATA INICIO', 'DATA FIM', 'TIPO']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
-
+       
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
         
     def gerar_excel_relatorio_psi(self):
         dados = []
@@ -5177,17 +5214,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
         
     def gerar_excel_cadastro_relatorio_beneficio(self):
         dados = []
@@ -5205,16 +5258,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
+        
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
 
     def alterar_usuario_consulta(self,campo):
@@ -6355,18 +6425,34 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         columns = ['DATA CONSULTA','NOME', 'CNS', 'NIS', 'IDADE', 'SEXO', 'TELEFONE', 'BENEFICIO', 'CLINICA', 'BAIRRO','CIDADE']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
-
+       
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
     def gerar_excel_relatorio_beneficio_farm(self):
         dados = []
@@ -6382,18 +6468,34 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'BENEFICIO SOCIAL', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
-
+       
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
     def relatorio_beneficio(self):
         result = self.db.relatorio_beneficio()
@@ -6489,17 +6591,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
 
 
@@ -6572,17 +6690,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
 
 
@@ -6611,17 +6745,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
     def gerar_excel_relatorio_clinicas_cadastradas(self):
         dados = []
@@ -6638,17 +6788,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
     def gerar_excel_relatorio_fornecedor_cadastrado(self):
         dados = []
@@ -6665,17 +6831,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
 
     def gerar_excel_relatorio_atendimento(self):
@@ -6693,17 +6875,33 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
+        msg = QMessageBox()
+        msg.setIcon(QMessageBox.Information)
+        msg.setWindowTitle("Gerar Excel")
+        msg.setText("Deseja gerar um excel?")
+        msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        resposta = msg.exec()
         
-        file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
+        if resposta == QMessageBox.Yes:
+
+            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
         if file:
+        
+
             with open(file, "w") as f:
                 relatorio.to_excel(file, sheet_name='relatorio', index=False)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Excel")
-        msg.setText("Relatório Excel gerado com sucesso!")
-        msg.exec()
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel")
+            msg.setText("Relatório Excel gerado com sucesso!")
+            msg.exec()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Excel não realizado")
+            msg.setText("Excel cancelado!!!")
+            msg.exec()
 
 
         
