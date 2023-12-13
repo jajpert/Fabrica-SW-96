@@ -16999,29 +16999,13 @@ class Ui_MainWindow(object):
         self.btn_voltar_cursos_as.setObjectName(u"btn_voltar_cursos_as")
         self.btn_voltar_cursos_as.setMinimumSize(QSize(100, 40))
         self.btn_voltar_cursos_as.setMaximumSize(QSize(100, 40))
-        self.btn_voltar_cursos_as.setFont(font4)
+        self.btn_voltar_cursos_as.setFont(font8)
         self.btn_voltar_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_voltar_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
 "QPushButton:focus{outline:0}")
 
         self.horizontalLayout_57.addWidget(self.btn_voltar_cursos_as)
-
-        self.btn_lista_pessoas_cursos_as = QPushButton(self.frame_124)
-        self.btn_lista_pessoas_cursos_as.setObjectName(u"btn_lista_pessoas_cursos_as")
-        self.btn_lista_pessoas_cursos_as.setMinimumSize(QSize(0, 40))
-        self.btn_lista_pessoas_cursos_as.setMaximumSize(QSize(16777215, 40))
-        self.btn_lista_pessoas_cursos_as.setFont(font4)
-        self.btn_lista_pessoas_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_lista_pessoas_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
-"QPushButton:hover{background-color: #F89198}\n"
-"QPushButton:focus{outline:0}")
-        icon30 = QIcon()
-        icon30.addFile(u"./icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_lista_pessoas_cursos_as.setIcon(icon30)
-        self.btn_lista_pessoas_cursos_as.setIconSize(QSize(25, 25))
-
-        self.horizontalLayout_57.addWidget(self.btn_lista_pessoas_cursos_as)
 
         self.horizontalSpacer_48 = QSpacerItem(1441, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
@@ -17031,7 +17015,7 @@ class Ui_MainWindow(object):
         self.btn_concluir_cursos_as.setObjectName(u"btn_concluir_cursos_as")
         self.btn_concluir_cursos_as.setMinimumSize(QSize(140, 40))
         self.btn_concluir_cursos_as.setMaximumSize(QSize(140, 40))
-        self.btn_concluir_cursos_as.setFont(font4)
+        self.btn_concluir_cursos_as.setFont(font8)
         self.btn_concluir_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_concluir_cursos_as.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
 "QPushButton:hover{background-color: #23B2EE}\n"
@@ -17447,15 +17431,31 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_163.addItem(self.horizontalSpacer_94)
 
+        self.btn_cadastrar_cursos_as = QPushButton(self.frame_4882)
+        self.btn_cadastrar_cursos_as.setObjectName(u"btn_cadastrar_cursos_as")
+        self.btn_cadastrar_cursos_as.setMinimumSize(QSize(0, 40))
+        self.btn_cadastrar_cursos_as.setMaximumSize(QSize(16777215, 40))
+        self.btn_cadastrar_cursos_as.setFont(font8)
+        self.btn_cadastrar_cursos_as.setCursor(QCursor(Qt.PointingHandCursor))
+        self.btn_cadastrar_cursos_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
+"QPushButton:hover{background-color: #F89198}\n"
+"QPushButton:focus{outline:0}")
+        icon34 = QIcon()
+        icon34.addFile(u"../icons/adicionar-amigo.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_cadastrar_cursos_as.setIcon(icon34)
+        self.btn_cadastrar_cursos_as.setIconSize(QSize(25, 25))
+
+        self.horizontalLayout_163.addWidget(self.btn_cadastrar_cursos_as)
+
         self.btn_excel_pagina_participante_geral = QPushButton(self.frame_4882)
         self.btn_excel_pagina_participante_geral.setObjectName(u"btn_excel_pagina_participante_geral")
         self.btn_excel_pagina_participante_geral.setMinimumSize(QSize(0, 40))
-        self.btn_excel_pagina_participante_geral.setFont(font4)
+        self.btn_excel_pagina_participante_geral.setFont(font8)
         self.btn_excel_pagina_participante_geral.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_excel_pagina_participante_geral.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
 "QPushButton:hover{background-color: #F89198}\n"
 "QPushButton:focus{outline:0}")
-        self.btn_excel_pagina_participante_geral.setIcon(icon17)
+        self.btn_excel_pagina_participante_geral.setIcon(icon19)
         self.btn_excel_pagina_participante_geral.setIconSize(QSize(28, 28))
 
         self.horizontalLayout_163.addWidget(self.btn_excel_pagina_participante_geral)
@@ -28829,7 +28829,7 @@ class Ui_MainWindow(object):
 "</style></head><body style=\" font-family:'Abel'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.btn_voltar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"VOLTAR", None))
-        self.btn_lista_pessoas_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Lista pessoas cadastradas", None))
+        self.btn_cadastrar_cursos_as.setText(QCoreApplication.translate("MainWindow", u"Cadastrar Cursos e Oficinas", None))
         self.btn_concluir_cursos_as.setText(QCoreApplication.translate("MainWindow", u"CONCLUIR", None))
         self.label_titulo_cadastrar_participante_curso_as.setText(QCoreApplication.translate("MainWindow", u"CADASTRAR PARTICIPANTE", None))
         self.label_cpf_pagina_participante_geral.setText(QCoreApplication.translate("MainWindow", u"CPF", None))
