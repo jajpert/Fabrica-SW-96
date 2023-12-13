@@ -25,7 +25,7 @@ def validarCamposFornecedoresCadastro(cnpj, celular, email, inscricao_estadual, 
         msg.exec()
         return False
     
-    elif inscricao_estadual == "" or len(inscricao_estadual) < 14:
+    elif inscricao_estadual == "":
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro Inscrição Estatual")
@@ -33,7 +33,7 @@ def validarCamposFornecedoresCadastro(cnpj, celular, email, inscricao_estadual, 
         msg.exec()
         return False
     
-    elif inscricao_municipal == "" or len(inscricao_municipal) < 11:
+    elif inscricao_municipal == "":
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro Inscrição Municipal")
