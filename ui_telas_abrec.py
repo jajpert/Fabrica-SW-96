@@ -8930,7 +8930,7 @@ class Ui_MainWindow(object):
         self.input_cnpj_cadastro_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
-        self.input_cnpj_cadastro_fornecedor_as.setMaxLength(20)
+        self.input_cnpj_cadastro_fornecedor_as.setMaxLength(14)
 
         self.verticalLayout_330.addWidget(self.input_cnpj_cadastro_fornecedor_as)
 
@@ -20240,7 +20240,7 @@ class Ui_MainWindow(object):
         self.input_cnpj_cadastro_clinica_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
-        self.input_cnpj_cadastro_clinica_as.setMaxLength(20)
+        self.input_cnpj_cadastro_clinica_as.setMaxLength(14)
 
         self.verticalLayout_172.addWidget(self.input_cnpj_cadastro_clinica_as)
 
@@ -28310,7 +28310,7 @@ class Ui_MainWindow(object):
         self.btn_sair_as.setText(QCoreApplication.translate("MainWindow", u"SAIR  ", None))
         self.label_38.setText(QCoreApplication.translate("MainWindow", u"CADASTRO FORNECEDOR", None))
         self.label_cnpj_cadastro_fornecedor_as.setText(QCoreApplication.translate("MainWindow", u"*CNPJ", None))
-        self.input_cnpj_cadastro_fornecedor_as.setInputMask(QCoreApplication.translate("MainWindow", u"00. 000. 000/0000-00", None))
+        self.input_cnpj_cadastro_fornecedor_as.setInputMask(QCoreApplication.translate("MainWindow", u"00000000000000", None))
         self.label_razao_social_cadastro_fornecedor_as.setText(QCoreApplication.translate("MainWindow", u"*Raz\u00e3o Social", None))
         self.input_razao_social_cadastro_fornecedor_as.setText("")
         self.label_nome_fantasia_cadastro_fornecedor_as.setText(QCoreApplication.translate("MainWindow", u"*Nome Fantasia", None))
@@ -29036,8 +29036,8 @@ class Ui_MainWindow(object):
         self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios de Agendamento", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"CADASTRO CL\u00cdNICA", None))
         self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"*CNPJ", None))
-        self.input_cnpj_cadastro_clinica_as.setInputMask(QCoreApplication.translate("MainWindow", u"00. 000. 000/0000-00", None))
-        self.input_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u". . /-", None))
+        self.input_cnpj_cadastro_clinica_as.setInputMask(QCoreApplication.translate("MainWindow", u"00000000000000", None))
+        self.input_cnpj_cadastro_clinica_as.setText("")
         self.label_razao_social_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"*Raz\u00e3o Social", None))
         self.input_razao_social_cadastro_clinica_as.setText("")
         self.input_razao_social_cadastro_clinica_as.setPlaceholderText("")
