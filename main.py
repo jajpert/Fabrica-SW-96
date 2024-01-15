@@ -2309,9 +2309,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             foto = str(dados[39])
             print(foto)
             if foto == None or foto == '':
-                original_image = cv2.imread(u"./icons/adicionar_foto.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.jpg")
 
-                desired_size = (240, 240)
+                desired_size = (180, 180)
                 resized_image = cv2.resize(original_image, desired_size)
 
                 resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
@@ -2353,6 +2353,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
+            print("Colab ->", dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
@@ -2462,7 +2463,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_colaborador_as.hide()
             foto = str(dados[27])
             if foto == None or foto == '':
-                original_image = cv2.imread(u"./icons/adicionar_foto.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.jpg")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -4223,7 +4224,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
 
-        original_image = cv2.imread("./icons/adicionar_foto.png")
+        original_image = cv2.imread("./icons/adicionar_foto.jpg")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4232,7 +4233,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
+        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar_foto.jpg"))
         self.ui.label_foto_usuario_as.setScaledContents(True)
         self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
@@ -4291,7 +4292,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_usuario_colaborador_as_2.setText("")
         self.ui.input_senha_colaborador_as_2.setText("")
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
-        original_image = cv2.imread("./icons/adicionar_foto.png")
+        original_image = cv2.imread("./icons/adicionar_foto.jpg")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4300,7 +4301,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
+        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.jpg"))
         self.ui.label_foto_colaborador_as.setScaledContents(True)
         self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
@@ -5257,11 +5258,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         for row in range(self.ui.input_TableWidget_cadastro_beneficio.rowCount()):
             for column in range(self.ui.input_TableWidget_cadastro_beneficio.columnCount()):
                 dados.append(self.ui.input_TableWidget_cadastro_beneficio.item(row, column).text())
-        
+                print("dados excel -> ",all_dados)
+
             all_dados.append(dados)
             dados = []
 
-        columns = ['TIPO', 'CODIGO', 'LOTE', 'UNIDADE_MEDIDA', 'DESCRICAO', 'VALIDADE', 'QUANTIDADE']
+        columns = ['ID_BENEFICIO', 'TIPO', 'CODIGO', 'LOTE', 'UNIDADE_MEDIDA', 'DESCRICAO', 'VALIDADE', 'QUANTIDADE']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
 
@@ -6908,7 +6910,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     
     def cadastroFotoVaziaUsuario(self):
-        expected_icon = QIcon("./icons/adicionar_foto.png")
+        expected_icon = QIcon("./icons/adicionar_foto.jpg")
         current_icon = self.ui.label_foto_usuario_as.pixmap()
         if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
             nome = self.ui.input_nome_usuario_as.text()
@@ -6923,7 +6925,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             return
         
     def cadastroFotoVaziaColaborador(self):
-        expected_icon = QIcon("./icons/adicionar_foto.png")
+        expected_icon = QIcon("./icons/adicionar_foto.jpg")
         current_icon = self.ui.label_foto_colaborador_as.pixmap()
         if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
             nome = self.ui.input_nome_colaborador_as.text()
