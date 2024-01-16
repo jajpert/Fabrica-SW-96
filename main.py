@@ -5257,11 +5257,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         for row in range(self.ui.input_TableWidget_cadastro_beneficio.rowCount()):
             for column in range(self.ui.input_TableWidget_cadastro_beneficio.columnCount()):
-                dados.append(self.ui.input_TableWidget_cadastro_beneficio.item(row, column).text())
-                print("dados excel -> ",all_dados)
+                item = self.ui.input_TableWidget_cadastro_beneficio.item(row, column)
+                if item is not None:
+                    dados.append(item.text())
 
             all_dados.append(dados)
             dados = []
+
 
         columns = ['ID_BENEFICIO', 'TIPO', 'CODIGO', 'LOTE', 'UNIDADE_MEDIDA', 'DESCRICAO', 'VALIDADE', 'QUANTIDADE']
         
