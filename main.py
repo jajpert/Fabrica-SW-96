@@ -5264,39 +5264,38 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             all_dados.append(dados)
             dados = []
 
-
+        
         columns = ['ID_BENEFICIO', 'TIPO', 'CODIGO', 'LOTE', 'UNIDADE_MEDIDA', 'DESCRICAO', 'VALIDADE', 'QUANTIDADE']
-        
-        relatorio = pd.DataFrame(all_dados, columns= columns)
 
         
+        relatorio = pd.DataFrame(all_dados, columns=columns)
+
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Gerar Excel")
         msg.setText("Deseja gerar um excel?")
         msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         resposta = msg.exec()
-        
+
         if resposta == QMessageBox.Yes:
+            file, _ = QFileDialog.getSaveFileName(self, "Relatorio", "C:/Abrec", "Text files (*.xlsx)")
+            if file:
+                with open(file, "w") as f:
+                    # Write only the specified columns to the Excel sheet
+                    relatorio[columns].to_excel(file, sheet_name='relatorio', index=False)
 
-            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
-        if file:
-        
-
-            with open(file, "w") as f:
-                relatorio.to_excel(file, sheet_name='relatorio', index=False)
-
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Excel")
-            msg.setText("Relatório Excel gerado com sucesso!")
-            msg.exec()
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Excel")
+                msg.setText("Relatório Excel gerado com sucesso!")
+                msg.exec()
         else:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Excel não realizado")
             msg.setText("Excel cancelado!!!")
             msg.exec()
+
 
 
     def alterar_usuario_consulta(self,campo):
