@@ -3794,7 +3794,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif cargo in ["Farmacêutico (a)"]:
             perfil = 'farm'
         elif cargo in ["Psicólogo (a)"]:
-            perfil = 'pisc'
+            perfil = 'psic'
         elif cargo in ["Fisioterapeuta"]:
             perfil = 'fisio'
         elif cargo in ["Nutricionista"]:
