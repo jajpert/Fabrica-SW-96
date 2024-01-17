@@ -1071,7 +1071,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def __init__(self):
         super().__init__()
 
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_SYSRENAL()
         self.ui.setupUi(self)
         ########## BUSCANDO DADOS BANCO ####################################################################################################################################################
         self.db = DataBase()
@@ -3411,7 +3411,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_usuario_cuidador_as.addItem("")
             c += 1
         while count < len(convertendo_nome):
-            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
+            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("SYSRENAL", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
             itens += 1
             count += 1
             
@@ -4693,7 +4693,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("") 
             c += 1
         while count < len(convertendo_nome_clinica):
-            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("SYSRENAL",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
             itens += 1
             count += 1
 
@@ -4717,7 +4717,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
             c += 1
         while count < len(convertendo_nome_clinica_alterar):
-            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica_alterar[count]}", None))
+            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("SYSRENAL",f"{id_clinicas[count]}-{convertendo_nome_clinica_alterar[count]}", None))
             itens += 1
             count += 1
 
@@ -4741,7 +4741,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.comboBox_cursos_participante_geral.addItem("")
             c += 1
         while count < len(convertendo_nome_curso):
-            self.ui.comboBox_cursos_participante_geral.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_curso_eventos[count]}-{convertendo_nome_curso[count]}", None))
+            self.ui.comboBox_cursos_participante_geral.setItemText(itens, QCoreApplication.translate("SYSRENAL",f"{id_curso_eventos[count]}-{convertendo_nome_curso[count]}", None))
             itens += 1
             count += 1
 
