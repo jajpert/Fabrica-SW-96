@@ -1071,7 +1071,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def __init__(self):
         super().__init__()
 
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_SYSRENAL()
         self.ui.setupUi(self)
         ########## BUSCANDO DADOS BANCO ####################################################################################################################################################
         self.db = DataBase()
@@ -2353,6 +2353,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
+            print("Colab ->", dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
@@ -2462,7 +2463,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_colaborador_as.hide()
             foto = str(dados[27])
             if foto == None or foto == '':
-                original_image = cv2.imread(u"./icons/adicionar_foto.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.jpg")
 
                 desired_size = (240, 240)
                 resized_image = cv2.resize(original_image, desired_size)
@@ -3422,7 +3423,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_usuario_cuidador_as.addItem("")
             c += 1
         while count < len(convertendo_nome):
-            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("MainWindow", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
+            self.ui.input_usuario_cuidador_as.setItemText(itens, QCoreApplication.translate("SYSRENAL", f"{id_usuarios[count]}-{convertendo_nome[count]}", None))
             itens += 1
             count += 1
             
@@ -3805,7 +3806,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif cargo in ["Farmacêutico (a)"]:
             perfil = 'farm'
         elif cargo in ["Psicólogo (a)"]:
-            perfil = 'pisc'
+            perfil = 'psic'
         elif cargo in ["Fisioterapeuta"]:
             perfil = 'fisio'
         elif cargo in ["Nutricionista"]:
@@ -4241,7 +4242,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_data_inicio_usuario_as.setDateTime(QDateTime.currentDateTime())
         self.ui.input_periodo_usuario_as.setCurrentIndex(int(0))
 
-        original_image = cv2.imread("./icons/adicionar_foto.png")
+        original_image = cv2.imread("./icons/adicionar_foto.jpg")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4250,7 +4251,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
+        self.ui.label_foto_usuario_as.setPixmap(QPixmap(u"./icons/adicionar_foto.jpg"))
         self.ui.label_foto_usuario_as.setScaledContents(True)
         self.ui.label_foto_usuario_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_usuario_as.setAlignment(Qt.AlignCenter)
@@ -4309,7 +4310,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_usuario_colaborador_as_2.setText("")
         self.ui.input_senha_colaborador_as_2.setText("")
         self.ui.input_confirmar_senha_colaborador_as_2.setText("")
-        original_image = cv2.imread("./icons/adicionar_foto.png")
+        original_image = cv2.imread("./icons/adicionar_foto.jpg")
 
         desired_size = (120, 120)
         resized_image = cv2.resize(original_image, desired_size)
@@ -4318,7 +4319,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         h, w, ch = resized_image.shape
 
-        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.png"))
+        self.ui.label_foto_colaborador_as.setPixmap(QPixmap(u"./icons/adicionar_foto.jpg"))
         self.ui.label_foto_colaborador_as.setScaledContents(True)
         self.ui.label_foto_colaborador_as.setFixedSize(QSize(w, h))
         self.ui.label_foto_colaborador_as.setAlignment(Qt.AlignCenter)
@@ -4710,7 +4711,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_Local_Tratamento_Clinica_usuario_as.addItem("") 
             c += 1
         while count < len(convertendo_nome_clinica):
-            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
+            self.ui.input_Local_Tratamento_Clinica_usuario_as.setItemText(itens, QCoreApplication.translate("SYSRENAL",f"{id_clinicas[count]}-{convertendo_nome_clinica[count]}", None))
             itens += 1
             count += 1
 
@@ -4734,7 +4735,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_local_tratamento_alterar_usuario_as.addItem("")
             c += 1
         while count < len(convertendo_nome_clinica_alterar):
-            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_clinicas[count]}-{convertendo_nome_clinica_alterar[count]}", None))
+            self.ui.input_local_tratamento_alterar_usuario_as.setItemText(itens, QCoreApplication.translate("SYSRENAL",f"{id_clinicas[count]}-{convertendo_nome_clinica_alterar[count]}", None))
             itens += 1
             count += 1
 
@@ -4758,7 +4759,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.comboBox_cursos_participante_geral.addItem("")
             c += 1
         while count < len(convertendo_nome_curso):
-            self.ui.comboBox_cursos_participante_geral.setItemText(itens, QCoreApplication.translate("MainWindow",f"{id_curso_eventos[count]}-{convertendo_nome_curso[count]}", None))
+            self.ui.comboBox_cursos_participante_geral.setItemText(itens, QCoreApplication.translate("SYSRENAL",f"{id_curso_eventos[count]}-{convertendo_nome_curso[count]}", None))
             itens += 1
             count += 1
 
@@ -5276,43 +5277,45 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         for row in range(self.ui.input_TableWidget_cadastro_beneficio.rowCount()):
             for column in range(self.ui.input_TableWidget_cadastro_beneficio.columnCount()):
-                dados.append(self.ui.input_TableWidget_cadastro_beneficio.item(row, column).text())
-        
+                item = self.ui.input_TableWidget_cadastro_beneficio.item(row, column)
+                if item is not None:
+                    dados.append(item.text())
+
             all_dados.append(dados)
             dados = []
 
-        columns = ['TIPO', 'CODIGO', 'LOTE', 'UNIDADE_MEDIDA', 'DESCRICAO', 'VALIDADE', 'QUANTIDADE']
         
-        relatorio = pd.DataFrame(all_dados, columns= columns)
+        columns = ['ID_BENEFICIO', 'TIPO', 'CODIGO', 'LOTE', 'UNIDADE_MEDIDA', 'DESCRICAO', 'VALIDADE', 'QUANTIDADE']
 
         
+        relatorio = pd.DataFrame(all_dados, columns=columns)
+
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Gerar Excel")
         msg.setText("Deseja gerar um excel?")
         msg.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
         resposta = msg.exec()
-        
+
         if resposta == QMessageBox.Yes:
+            file, _ = QFileDialog.getSaveFileName(self, "Relatorio", "C:/Abrec", "Text files (*.xlsx)")
+            if file:
+                with open(file, "w") as f:
+                    # Write only the specified columns to the Excel sheet
+                    relatorio[columns].to_excel(file, sheet_name='relatorio', index=False)
 
-            file, _ = QFileDialog.getSaveFileName(self,"Relatorio", "C:/Abrec", "Text files (*.xlsx)") 
-        if file:
-        
-
-            with open(file, "w") as f:
-                relatorio.to_excel(file, sheet_name='relatorio', index=False)
-
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Excel")
-            msg.setText("Relatório Excel gerado com sucesso!")
-            msg.exec()
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Excel")
+                msg.setText("Relatório Excel gerado com sucesso!")
+                msg.exec()
         else:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Excel não realizado")
             msg.setText("Excel cancelado!!!")
             msg.exec()
+
 
 
     def alterar_usuario_consulta(self,campo):
@@ -6928,7 +6931,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     
     def cadastroFotoVaziaUsuario(self):
-        expected_icon = QIcon("./icons/adicionar_foto.png")
+        expected_icon = QIcon("./icons/adicionar_foto.jpg")
         current_icon = self.ui.label_foto_usuario_as.pixmap()
         if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
             nome = self.ui.input_nome_usuario_as.text()
@@ -6943,7 +6946,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             return
         
     def cadastroFotoVaziaColaborador(self):
-        expected_icon = QIcon("./icons/adicionar_foto.png")
+        expected_icon = QIcon("./icons/adicionar_foto.jpg")
         current_icon = self.ui.label_foto_colaborador_as.pixmap()
         if current_icon and current_icon.toImage() == expected_icon.pixmap(84,105).toImage():
             nome = self.ui.input_nome_colaborador_as.text()

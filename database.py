@@ -1879,6 +1879,7 @@ class DataBase():
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
         
     def cadastro_fornecedor(self,endereco,fornecedor):
