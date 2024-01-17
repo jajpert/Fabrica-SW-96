@@ -29036,7 +29036,7 @@ class Ui_MainWindow(object):
         self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("MainWindow", u"Relat\u00f3rios de Agendamento", None))
         self.label_37.setText(QCoreApplication.translate("MainWindow", u"CADASTRO CL\u00cdNICA", None))
         self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"*CNPJ", None))
-        self.input_cnpj_cadastro_clinica_as.setInputMask(QCoreApplication.translate("MainWindow", u"00000000000000", None))
+        self.input_cnpj_cadastro_clinica_as.setInputMask(QCoreApplication.translate("MainWindow", u"", None))
         self.input_cnpj_cadastro_clinica_as.setText("")
         self.label_razao_social_cadastro_clinica_as.setText(QCoreApplication.translate("MainWindow", u"*Raz\u00e3o Social", None))
         self.input_razao_social_cadastro_clinica_as.setText("")

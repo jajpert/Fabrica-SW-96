@@ -18,7 +18,7 @@ def validarCamposClinicaCadastro(cnpj,razao_social,telefone,email,cep, numero):
         return False
     
     
-    elif telefone == "" or len(telefone) < 11:
+    elif telefone == "" or len(telefone) < 10:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro TELEFONE")
