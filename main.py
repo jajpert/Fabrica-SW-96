@@ -2309,9 +2309,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             foto = str(dados[39])
             print(foto)
             if foto == None or foto == '':
-                original_image = cv2.imread(u"./icons/adicionar_foto.png")
+                original_image = cv2.imread(u"./icons/adicionar_foto.jpg")
 
-                desired_size = (240, 240)
+                desired_size = (180, 180)
                 resized_image = cv2.resize(original_image, desired_size)
 
                 resized_image = cv2.cvtColor(resized_image, cv2.COLOR_BGR2RGB)
@@ -3227,7 +3227,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.tabela_consulta_nutri_tabela()
         
     def buscar_usuario_agenda_nutri(self):
-        cpf = self.ui.input_cpf_agendamento_nutri.text()
+        cpf_temp = self.ui.input_cpf_agendamento_nutri.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         dados = self.db.busca_usuario_nutri_agendamento(cpf)
         self.ui.input_nome_agendamento_nutri.setText(dados[0])
         self.ui.input_telefone_agendamento_nutri.setText(dados[1])
@@ -3236,7 +3242,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_nutri_agendamento.hide()
 
     def buscar_usuario_agendamento_fisio(self):
-        cpf = self.ui.input_cpf_agendamento_fisio.text()
+        cpf_temp = self.ui.input_cpf_agendamento_fisio.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         dados = self.db.busca_usuario_agendamento_fisio(cpf)
         self.ui.input_nome_agendamento_fisio.setText(dados[0])
         self.ui.input_telefone_agendamento_fisio.setText(dados[1])
@@ -3919,7 +3931,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     def cadastroAgendamento_psi(self):
         id_matricula = self.buscarPessoa_psi()
-        cpf = self.ui.input_cpf_agendamento_psi.text()
+        cpf_temp = self.ui.input_cpf_agendamento_psi.text()
+        cpf = ''
+        for i in cpf_temp:
+            if i == '.' or i == '-':
+                pass
+            else:
+                cpf += i
         nome = self.ui.input_nome_agendamento_psi.text()
         telefone = self.ui.input_telefone_agendamento_psi.text()
         clinica = self.ui.input_clinica_agendamento_psi.text()
@@ -4396,7 +4414,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def limparCamposCadastroClinica(self):
        self.ui.input_cnpj_cadastro_clinica_as.setText("")
        self.ui.input_razao_social_cadastro_clinica_as.setText("")
-       self.ui.input_nome_fantasia_cadastro_clinica_as.setText("")
+       self.ui.input_contato_cadastro_clinica_as.setText("")
        self.ui.input_telefone_clinica_as.setText("")
        self.ui.input_email_clinica_as.setText("")       
        self.ui.input_cep_clinica_as.setText("")
@@ -4843,7 +4861,9 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 pass
             else:
                 cpf += i
+        print("psic consulta", cpf)
         dados = self.db.buscar_consulta_usuario_psi(cpf)
+        print(dados)
         if dados[6] == "SIM":
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
@@ -5840,7 +5860,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         ########################## dados ######################################       
             cnpj = self.ui.input_cnpj_cadastro_clinica_as.text()
             razao_social = self.ui.input_razao_social_cadastro_clinica_as.text()
-            nome_fantasia = self.ui.input_nome_fantasia_cadastro_clinica_as.text()
+            nome_fantasia = self.ui.input_contato_cadastro_clinica_as.text()
             telefone = self.ui.input_telefone_clinica_as.text()
             email = self.ui.input_email_clinica_as.text()
             obs = self.ui.input_informacoes_gerais_clinica_as.toPlainText()

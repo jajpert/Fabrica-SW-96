@@ -9,7 +9,7 @@ def validarCamposUsuarioCadastro(cpf,rg,nis,cns,telefone,sexo,cep,numero):
         msg.setText("Favor inserir um CPF valido!!!")
         msg.exec()
         return False
-    elif rg == "":
+    elif rg == "" or len(rg) < 7:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro RG")
