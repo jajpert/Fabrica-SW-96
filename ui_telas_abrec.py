@@ -317,23 +317,14 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_19.setObjectName(u"verticalLayout_19")
         self.label_foto_colab_inicio_nutri = QLabel(self.frame_28)
         self.label_foto_colab_inicio_nutri.setObjectName(u"label_foto_colab_inicio_nutri")
+        self.label_foto_colab_inicio_nutri.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
+        self.label_foto_colab_inicio_nutri.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_19.addWidget(self.label_foto_colab_inicio_nutri)
-
-        self.btn_alterar_foto_colab_as_perfil_nutri = QPushButton(self.frame_28)
-        self.btn_alterar_foto_colab_as_perfil_nutri.setObjectName(u"btn_alterar_foto_colab_as_perfil_nutri")
-        self.btn_alterar_foto_colab_as_perfil_nutri.setMinimumSize(QSize(140, 40))
+        
         font4 = QFont()
         font4.setFamilies([u"Abel"])
         font4.setPointSize(18)
-        self.btn_alterar_foto_colab_as_perfil_nutri.setFont(font4)
-        self.btn_alterar_foto_colab_as_perfil_nutri.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil_nutri.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_19.addWidget(self.btn_alterar_foto_colab_as_perfil_nutri)
-
         self.label_ola_nutri = QLabel(self.frame_28)
         self.label_ola_nutri.setObjectName(u"label_ola_nutri")
         self.label_ola_nutri.setFont(font2)
@@ -411,23 +402,6 @@ class Ui_SYSRENAL(object):
         self.btn_relatorios_nutri.setIconSize(QSize(30, 30))
 
         self.verticalLayout_37.addWidget(self.btn_relatorios_nutri)
-
-        self.btn_backup_nutri = QPushButton(self.frame_190)
-        self.btn_backup_nutri.setObjectName(u"btn_backup_nutri")
-        self.btn_backup_nutri.setMinimumSize(QSize(140, 45))
-        self.btn_backup_nutri.setMaximumSize(QSize(140, 45))
-        self.btn_backup_nutri.setFont(font5)
-        self.btn_backup_nutri.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_backup_nutri.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        icon4 = QIcon()
-        icon4.addFile(u"./icons/backup.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_backup_nutri.setIcon(icon4)
-        self.btn_backup_nutri.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_37.addWidget(self.btn_backup_nutri)
-
 
         self.horizontalLayout_166.addWidget(self.frame_190)
 
@@ -2632,19 +2606,11 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_24.setObjectName(u"verticalLayout_24")
         self.label_foto_colab_inicio_psic = QLabel(self.frame_33)
         self.label_foto_colab_inicio_psic.setObjectName(u"label_foto_colab_inicio_psic")
+        self.label_foto_colab_inicio_psic.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
+        self.label_foto_colab_inicio_psic.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_24.addWidget(self.label_foto_colab_inicio_psic)
 
-        self.btn_alterar_foto_colab_as_perfil_psic = QPushButton(self.frame_33)
-        self.btn_alterar_foto_colab_as_perfil_psic.setObjectName(u"btn_alterar_foto_colab_as_perfil_psic")
-        self.btn_alterar_foto_colab_as_perfil_psic.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_perfil_psic.setFont(font4)
-        self.btn_alterar_foto_colab_as_perfil_psic.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil_psic.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_24.addWidget(self.btn_alterar_foto_colab_as_perfil_psic)
 
         self.label_ola_nome_psi = QLabel(self.frame_33)
         self.label_ola_nome_psi.setObjectName(u"label_ola_nome_psi")
@@ -2719,21 +2685,6 @@ class Ui_SYSRENAL(object):
         self.btn_relatorios_psi.setIconSize(QSize(30, 30))
 
         self.verticalLayout_39.addWidget(self.btn_relatorios_psi)
-
-        self.btn_backup_psi = QPushButton(self.frame_59)
-        self.btn_backup_psi.setObjectName(u"btn_backup_psi")
-        self.btn_backup_psi.setMinimumSize(QSize(140, 45))
-        self.btn_backup_psi.setMaximumSize(QSize(140, 45))
-        self.btn_backup_psi.setFont(font5)
-        self.btn_backup_psi.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_backup_psi.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        self.btn_backup_psi.setIcon(icon4)
-        self.btn_backup_psi.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_39.addWidget(self.btn_backup_psi)
-
 
         self.horizontalLayout_39.addWidget(self.frame_59)
 
@@ -4550,19 +4501,10 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_609.setObjectName(u"verticalLayout_609")
         self.label_foto_colab_inicio_farm = QLabel(self.frame_925)
         self.label_foto_colab_inicio_farm.setObjectName(u"label_foto_colab_inicio_farm")
+        self.label_foto_colab_inicio_farm.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
+        self.label_foto_colab_inicio_farm.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_609.addWidget(self.label_foto_colab_inicio_farm)
-
-        self.btn_alterar_foto_colab_as_perfil_farm = QPushButton(self.frame_925)
-        self.btn_alterar_foto_colab_as_perfil_farm.setObjectName(u"btn_alterar_foto_colab_as_perfil_farm")
-        self.btn_alterar_foto_colab_as_perfil_farm.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_perfil_farm.setFont(font4)
-        self.btn_alterar_foto_colab_as_perfil_farm.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil_farm.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_609.addWidget(self.btn_alterar_foto_colab_as_perfil_farm)
 
         self.label_ola_nome_farm_3 = QLabel(self.frame_925)
         self.label_ola_nome_farm_3.setObjectName(u"label_ola_nome_farm_3")
@@ -4637,21 +4579,6 @@ class Ui_SYSRENAL(object):
         self.btn_retirar_farm.setIconSize(QSize(30, 30))
 
         self.verticalLayout_86.addWidget(self.btn_retirar_farm)
-
-        self.btn_backup_farm = QPushButton(self.frame_183)
-        self.btn_backup_farm.setObjectName(u"btn_backup_farm")
-        self.btn_backup_farm.setMinimumSize(QSize(140, 45))
-        self.btn_backup_farm.setMaximumSize(QSize(140, 45))
-        self.btn_backup_farm.setFont(font5)
-        self.btn_backup_farm.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_backup_farm.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        self.btn_backup_farm.setIcon(icon4)
-        self.btn_backup_farm.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_86.addWidget(self.btn_backup_farm)
-
 
         self.horizontalLayout_98.addWidget(self.frame_183)
 
@@ -6647,19 +6574,10 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_13.setObjectName(u"verticalLayout_13")
         self.label_foto_colab_inicio_fisio = QLabel(self.frame_20)
         self.label_foto_colab_inicio_fisio.setObjectName(u"label_foto_colab_inicio_fisio")
+        self.label_foto_colab_inicio_fisio.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
+        self.label_foto_colab_inicio_fisio.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_13.addWidget(self.label_foto_colab_inicio_fisio)
-
-        self.btn_alterar_foto_colab_as_perfil_fisio = QPushButton(self.frame_20)
-        self.btn_alterar_foto_colab_as_perfil_fisio.setObjectName(u"btn_alterar_foto_colab_as_perfil_fisio")
-        self.btn_alterar_foto_colab_as_perfil_fisio.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_perfil_fisio.setFont(font4)
-        self.btn_alterar_foto_colab_as_perfil_fisio.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil_fisio.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_13.addWidget(self.btn_alterar_foto_colab_as_perfil_fisio)
 
         self.label_ola_nome_fisio = QLabel(self.frame_20)
         self.label_ola_nome_fisio.setObjectName(u"label_ola_nome_fisio")
@@ -6730,21 +6648,6 @@ class Ui_SYSRENAL(object):
         self.btn_relatorios_fisio.setIconSize(QSize(30, 30))
 
         self.verticalLayout_35.addWidget(self.btn_relatorios_fisio)
-
-        self.btn_backup_fisio = QPushButton(self.frame_187)
-        self.btn_backup_fisio.setObjectName(u"btn_backup_fisio")
-        self.btn_backup_fisio.setMinimumSize(QSize(140, 45))
-        self.btn_backup_fisio.setMaximumSize(QSize(140, 45))
-        self.btn_backup_fisio.setFont(font5)
-        self.btn_backup_fisio.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_backup_fisio.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        self.btn_backup_fisio.setIcon(icon4)
-        self.btn_backup_fisio.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_35.addWidget(self.btn_backup_fisio)
-
 
         self.horizontalLayout_115.addWidget(self.frame_187)
 
@@ -8599,19 +8502,10 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.label_foto_colab_inicio = QLabel(self.frame_9)
         self.label_foto_colab_inicio.setObjectName(u"label_foto_colab_inicio")
+        self.label_foto_colab_inicio.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
+        self.label_foto_colab_inicio.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_6.addWidget(self.label_foto_colab_inicio)
-
-        self.btn_alterar_foto_colab_as_perfil = QPushButton(self.frame_9)
-        self.btn_alterar_foto_colab_as_perfil.setObjectName(u"btn_alterar_foto_colab_as_perfil")
-        self.btn_alterar_foto_colab_as_perfil.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_perfil.setFont(font4)
-        self.btn_alterar_foto_colab_as_perfil.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_6.addWidget(self.btn_alterar_foto_colab_as_perfil)
 
         self.lineEdit_recebe_nome_as = QLabel(self.frame_9)
         self.lineEdit_recebe_nome_as.setObjectName(u"lineEdit_recebe_nome_as")
@@ -8716,21 +8610,6 @@ class Ui_SYSRENAL(object):
         self.btn_parceiros_as.setIconSize(QSize(30, 30))
 
         self.verticalLayout_7.addWidget(self.btn_parceiros_as)
-
-        self.btn_backup_as = QPushButton(self.frame_14)
-        self.btn_backup_as.setObjectName(u"btn_backup_as")
-        self.btn_backup_as.setMinimumSize(QSize(140, 45))
-        self.btn_backup_as.setMaximumSize(QSize(140, 45))
-        self.btn_backup_as.setFont(font5)
-        self.btn_backup_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_backup_as.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        self.btn_backup_as.setIcon(icon4)
-        self.btn_backup_as.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_7.addWidget(self.btn_backup_as)
-
 
         self.horizontalLayout_35.addWidget(self.frame_14)
 
@@ -10298,7 +10177,7 @@ class Ui_SYSRENAL(object):
         self.btn_cadastrar_beneficios_as.setStyleSheet(u"QPushButton{color: #EC848C; background-color: #FEE4E1; border-radius: 20px ;border: none; padding: 1.5em}\n"
 "QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
 "QPushButton:focus{outline: 0}")
-        self.btn_cadastrar_beneficios_as.setIcon(icon27)
+        self.btn_cadastrar_beneficios_as.setIcon(icon22)
         self.btn_cadastrar_beneficios_as.setIconSize(QSize(80, 80))
 
         self.verticalLayout_123.addWidget(self.btn_cadastrar_beneficios_as)
@@ -15664,7 +15543,6 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_165.addWidget(self.label_cargo_colaborador_as)
 
         self.input_cargo_colaborador_comboBox_as = QComboBox(self.frame_235)
-        self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
         self.input_cargo_colaborador_comboBox_as.addItem("")
@@ -25826,18 +25704,6 @@ class Ui_SYSRENAL(object):
 
         self.horizontalLayout_12.addWidget(self.btn_relatorios_cadstrados_as)
 
-        self.btn_excel_consulta_as = QPushButton(self.frame_4561)
-        self.btn_excel_consulta_as.setObjectName(u"btn_excel_consulta_as")
-        self.btn_excel_consulta_as.setMinimumSize(QSize(0, 40))
-        self.btn_excel_consulta_as.setFont(font4)
-        self.btn_excel_consulta_as.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_excel_consulta_as.setStyleSheet(u"QPushButton{color: #000; background-color: #EC848C; border-radius: 20px; padding-right: 0.5em; padding-left: 0.5em}\n"
-"QPushButton:hover{background-color: #F89198}\n"
-"QPushButton:focus{outline:0}")
-        self.btn_excel_consulta_as.setIcon(icon17)
-        self.btn_excel_consulta_as.setIconSize(QSize(28, 28))
-
-        self.horizontalLayout_12.addWidget(self.btn_excel_consulta_as)
 
         self.btn_alterar_pagina_consulta_geral = QPushButton(self.frame_4561)
         self.btn_alterar_pagina_consulta_geral.setObjectName(u"btn_alterar_pagina_consulta_geral")
@@ -26382,19 +26248,10 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_258.setObjectName(u"verticalLayout_258")
         self.label_foto_colab_inicio_sec = QLabel(self.frame_926)
         self.label_foto_colab_inicio_sec.setObjectName(u"label_foto_colab_inicio_sec")
+        self.label_foto_colab_inicio_sec.setPixmap(QPixmap(u"./icons/Ellipse 1.png"))
+        self.label_foto_colab_inicio_sec.setAlignment(Qt.AlignCenter)
 
         self.verticalLayout_258.addWidget(self.label_foto_colab_inicio_sec)
-
-        self.btn_alterar_foto_colab_as_perfil_sec = QPushButton(self.frame_926)
-        self.btn_alterar_foto_colab_as_perfil_sec.setObjectName(u"btn_alterar_foto_colab_as_perfil_sec")
-        self.btn_alterar_foto_colab_as_perfil_sec.setMinimumSize(QSize(140, 40))
-        self.btn_alterar_foto_colab_as_perfil_sec.setFont(font4)
-        self.btn_alterar_foto_colab_as_perfil_sec.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_alterar_foto_colab_as_perfil_sec.setStyleSheet(u"QPushButton{color: #fff; background-color: #00A8E8; border-radius: 20px;}\n"
-"QPushButton:hover{background-color: #23B2EE}\n"
-"QPushButton:focus{outline:0}")
-
-        self.verticalLayout_258.addWidget(self.btn_alterar_foto_colab_as_perfil_sec)
 
         self.label_ola_nome_sec = QLabel(self.frame_926)
         self.label_ola_nome_sec.setObjectName(u"label_ola_nome_sec")
@@ -26452,21 +26309,6 @@ class Ui_SYSRENAL(object):
         self.btn_relatorios_sec.setIconSize(QSize(30, 30))
 
         self.verticalLayout_3961.addWidget(self.btn_relatorios_sec)
-
-        self.btn_backup_sec = QPushButton(self.frame_7182)
-        self.btn_backup_sec.setObjectName(u"btn_backup_sec")
-        self.btn_backup_sec.setMinimumSize(QSize(140, 45))
-        self.btn_backup_sec.setMaximumSize(QSize(140, 45))
-        self.btn_backup_sec.setFont(font5)
-        self.btn_backup_sec.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_backup_sec.setStyleSheet(u"QPushButton{background-color: #F9D9DD; color: #EC848C; border-radius: 15px}\n"
-"QPushButton:hover{background-color: hsl(6, 94%, 92%)}\n"
-"QPushButton:focus{outline: 0}")
-        self.btn_backup_sec.setIcon(icon4)
-        self.btn_backup_sec.setIconSize(QSize(30, 30))
-
-        self.verticalLayout_3961.addWidget(self.btn_backup_sec)
-
 
         self.horizontalLayout_2401.addWidget(self.frame_7182)
 
@@ -27817,12 +27659,10 @@ class Ui_SYSRENAL(object):
         self.btn_entrar_login.setText(QCoreApplication.translate("SYSRENAL", u"ENTRAR", None))
         self.label_Abrec_Logo_Paint.setText("")
         self.label_foto_colab_inicio_nutri.setText("")
-        self.btn_alterar_foto_colab_as_perfil_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Alterar Foto", None))
         self.label_ola_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_atendimento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"ATENDIMENTO", None))
         self.btn_agenda_nutri.setText(QCoreApplication.translate("SYSRENAL", u"      AGENDA", None))
         self.btn_relatorios_nutri.setText(QCoreApplication.translate("SYSRENAL", u"  RELAT\u00d3RIOS", None))
-        self.btn_backup_nutri.setText(QCoreApplication.translate("SYSRENAL", u"    BACKUP", None))
         self.btn_sair_nutri.setText(QCoreApplication.translate("SYSRENAL", u"SAIR  ", None))
         self.label_agenda_nutri.setText(QCoreApplication.translate("SYSRENAL", u"AGENDA", None))
         self.label_cpf_agendamento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"CPF", None))
@@ -27968,12 +27808,10 @@ class Ui_SYSRENAL(object):
         self.btn_plano_alimentar_cadastrar_nutri.setText(QCoreApplication.translate("SYSRENAL", u"CADASTRAR                 ", None))
         self.btn_plano_alimentar_buscar_nutri.setText(QCoreApplication.translate("SYSRENAL", u"BUSCAR                    ", None))
         self.label_foto_colab_inicio_psic.setText("")
-        self.btn_alterar_foto_colab_as_perfil_psic.setText(QCoreApplication.translate("SYSRENAL", u"Alterar Foto", None))
         self.label_ola_nome_psi.setText(QCoreApplication.translate("SYSRENAL", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_atendimento_psi.setText(QCoreApplication.translate("SYSRENAL", u"ATENDIMENTO", None))
         self.btn_agenda_psi.setText(QCoreApplication.translate("SYSRENAL", u"      AGENDA", None))
         self.btn_relatorios_psi.setText(QCoreApplication.translate("SYSRENAL", u"  RELAT\u00d3RIOS", None))
-        self.btn_backup_psi.setText(QCoreApplication.translate("SYSRENAL", u"    BACKUP", None))
         self.btn_sair_psi.setText(QCoreApplication.translate("SYSRENAL", u"SAIR  ", None))
         self.label_agenda_as_3.setText(QCoreApplication.translate("SYSRENAL", u"AGENDA", None))
         self.label_cpf_agendamento_psi.setText(QCoreApplication.translate("SYSRENAL", u"CPF", None))
@@ -28079,12 +27917,10 @@ class Ui_SYSRENAL(object):
         self.btn_gerar_excel_relatorio_psi.setText(QCoreApplication.translate("SYSRENAL", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_psi.setText(QCoreApplication.translate("SYSRENAL", u"VOLTAR", None))
         self.label_foto_colab_inicio_farm.setText("")
-        self.btn_alterar_foto_colab_as_perfil_farm.setText(QCoreApplication.translate("SYSRENAL", u"Alterar Foto", None))
         self.label_ola_nome_farm_3.setText(QCoreApplication.translate("SYSRENAL", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_farm.setText(QCoreApplication.translate("SYSRENAL", u"CADASTRAR", None))
         self.btn_relatorios_farm.setText(QCoreApplication.translate("SYSRENAL", u" RELAT\u00d3RIOS", None))
         self.btn_retirar_farm.setText(QCoreApplication.translate("SYSRENAL", u"   RETIRAR", None))
-        self.btn_backup_farm.setText(QCoreApplication.translate("SYSRENAL", u"    BACKUP", None))
         self.btn_sair_farm.setText(QCoreApplication.translate("SYSRENAL", u"SAIR  ", None))
         self.label_cadastro_retirada_beneficio_farm.setText(QCoreApplication.translate("SYSRENAL", u"CADASTRO RETIRADA DE BENEF\u00cdCIO", None))
         self.label_cpf_cadastro_retirada_beneficio_farm.setText(QCoreApplication.translate("SYSRENAL", u"*CPF", None))
@@ -28188,12 +28024,10 @@ class Ui_SYSRENAL(object):
         self.btn_gerar_excel_relatorio_beneficios_farm.setText(QCoreApplication.translate("SYSRENAL", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_beneficios_farm.setText(QCoreApplication.translate("SYSRENAL", u"VOLTAR", None))
         self.label_foto_colab_inicio_fisio.setText("")
-        self.btn_alterar_foto_colab_as_perfil_fisio.setText(QCoreApplication.translate("SYSRENAL", u"Alterar Foto", None))
         self.label_ola_nome_fisio.setText(QCoreApplication.translate("SYSRENAL", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_atendimento_fisio.setText(QCoreApplication.translate("SYSRENAL", u"ATENDIMENTO", None))
         self.btn_agenda_fisio.setText(QCoreApplication.translate("SYSRENAL", u"      AGENDA", None))
         self.btn_relatorios_fisio.setText(QCoreApplication.translate("SYSRENAL", u"  RELAT\u00d3RIOS", None))
-        self.btn_backup_fisio.setText(QCoreApplication.translate("SYSRENAL", u"    BACKUP", None))
         self.btn_sair_fisio.setText(QCoreApplication.translate("SYSRENAL", u"SAIR  ", None))
         self.label_titulo_relatorio_fisio.setText(QCoreApplication.translate("SYSRENAL", u"Relat\u00f3rio Fisioterapeuta", None))
         self.label_inicio_periodo_relatorio_fisio_.setText(QCoreApplication.translate("SYSRENAL", u"Per\u00edodo", None))
@@ -28306,14 +28140,12 @@ class Ui_SYSRENAL(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_alterar_pagina_consulta_geral_fisio.setText(QCoreApplication.translate("SYSRENAL", u"Alterar", None))
         self.label_foto_colab_inicio.setText("")
-        self.btn_alterar_foto_colab_as_perfil.setText(QCoreApplication.translate("SYSRENAL", u"Alterar Foto", None))
         self.lineEdit_recebe_nome_as.setText(QCoreApplication.translate("SYSRENAL", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_cadastrar_as.setText(QCoreApplication.translate("SYSRENAL", u"  CADASTRAR", None))
         self.btn_atendimento_as.setText(QCoreApplication.translate("SYSRENAL", u"ATENDIMENTO", None))
         self.btn_agenda_as.setText(QCoreApplication.translate("SYSRENAL", u"      AGENDA", None))
         self.btn_relatorios_as.setText(QCoreApplication.translate("SYSRENAL", u" RELAT\u00d3RIOS", None))
         self.btn_parceiros_as.setText(QCoreApplication.translate("SYSRENAL", u"PARCEIROS", None))
-        self.btn_backup_as.setText(QCoreApplication.translate("SYSRENAL", u"    BACKUP", None))
         self.btn_sair_as.setText(QCoreApplication.translate("SYSRENAL", u"SAIR  ", None))
         self.label_38.setText(QCoreApplication.translate("SYSRENAL", u"CADASTRO FORNECEDOR", None))
         self.label_cnpj_cadastro_fornecedor_as.setText(QCoreApplication.translate("SYSRENAL", u"*CNPJ", None))
@@ -28385,7 +28217,7 @@ class Ui_SYSRENAL(object):
         self.btn_cadastrar_alterar_dados_as.setText(QCoreApplication.translate("SYSRENAL", u"ALTERAR DADOS CADASTRADOS        ", None))
         self.btn_cadastrar_clinica_as.setText(QCoreApplication.translate("SYSRENAL", u"CL\u00cdNICA    ", None))
         self.btn_cadastrar_fornecedores_as.setText(QCoreApplication.translate("SYSRENAL", u"FORNECEDORES  ", None))
-        self.btn_cadastrar_beneficios_as.setText(QCoreApplication.translate("SYSRENAL", u"BENEF\u00cdCIOS", None))
+        self.btn_cadastrar_beneficios_as.setText(QCoreApplication.translate("MainWindow", u"BENEF\u00cdCIOS   ", None))
         self.btn_relatorio_cuidadores.setText(QCoreApplication.translate("SYSRENAL", u"RELAT\u00d3RIO CUIDADORES", None))
         self.btn_relatorio_pessoas.setText(QCoreApplication.translate("SYSRENAL", u"RELAT\u00d3RIO USU\u00c1RIOS       ", None))
         self.btn_relatorio_cursos_participantes.setText(QCoreApplication.translate("SYSRENAL", u"RELAT\u00d3RIO CURSOS E PARTICIPANTES   ", None))
@@ -28760,14 +28592,13 @@ class Ui_SYSRENAL(object):
         self.input_escolaridade_colaborador_comboBox_as.setItemText(6, QCoreApplication.translate("SYSRENAL", u"Superior incompleto", None))
 
         self.label_cargo_colaborador_as.setText(QCoreApplication.translate("SYSRENAL", u"*Cargo", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("SYSRENAL", u"Selecione", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("SYSRENAL", u"Recepcionista", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("SYSRENAL", u"Assistente Social", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("SYSRENAL", u"Farmac\u00eautico (a)", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(4, QCoreApplication.translate("SYSRENAL", u"Psic\u00f3logo (a)", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(5, QCoreApplication.translate("SYSRENAL", u"Fisioterapeuta", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(6, QCoreApplication.translate("SYSRENAL", u"Nutricionista", None))
-        self.input_cargo_colaborador_comboBox_as.setItemText(7, "")
+        self.input_cargo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("MainWindow", u"Selecione", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(1, QCoreApplication.translate("MainWindow", u"Secret\u00e1ria", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(2, QCoreApplication.translate("MainWindow", u"Assistente Social", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(3, QCoreApplication.translate("MainWindow", u"Farmac\u00eautico (a)", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(4, QCoreApplication.translate("MainWindow", u"Psic\u00f3logo (a)", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(5, QCoreApplication.translate("MainWindow", u"Fisioterapeuta", None))
+        self.input_cargo_colaborador_comboBox_as.setItemText(6, QCoreApplication.translate("MainWindow", u"Nutricionista", None))
 
         self.label_periodo_colaborador_as.setText(QCoreApplication.translate("SYSRENAL", u"*Per\u00edodo", None))
         self.input_periodo_colaborador_comboBox_as.setItemText(0, QCoreApplication.translate("SYSRENAL", u"Selecione", None))
@@ -29043,13 +28874,13 @@ class Ui_SYSRENAL(object):
         self.label_relatorio_agendamento_as.setText(QCoreApplication.translate("SYSRENAL", u"Relat\u00f3rios de Agendamento", None))
         self.label_37.setText(QCoreApplication.translate("SYSRENAL", u"CADASTRO CL\u00cdNICA", None))
         self.label_cnpj_cadastro_clinica_as.setText(QCoreApplication.translate("SYSRENAL", u"*CNPJ", None))
-        self.input_cnpj_cadastro_clinica_as.setInputMask(QCoreApplication.translate("SYSRENAL", u"00000000000000", None))
+        self.input_cnpj_cadastro_clinica_as.setInputMask(QCoreApplication.translate("SYSRENAL", u"", None))
         self.input_cnpj_cadastro_clinica_as.setText("")
         self.label_razao_social_cadastro_clinica_as.setText(QCoreApplication.translate("SYSRENAL", u"*Raz\u00e3o Social", None))
         self.input_razao_social_cadastro_clinica_as.setText("")
         self.input_razao_social_cadastro_clinica_as.setPlaceholderText("")
         self.label_nome_fantasia_cadastro_clinica_as.setText(QCoreApplication.translate("SYSRENAL", u"Nome Fantasia", None))
-        self.input_nome_fantasia_cadastro_clinica_as.setPlaceholderText("")
+        self.input_contato_cadastro_clinica_as.setPlaceholderText("")
         self.label_telefone_clinica_as.setText(QCoreApplication.translate("SYSRENAL", u"*Telefone", None))
         self.input_telefone_clinica_as.setPlaceholderText("")
         self.label_email_clinica_as.setText(QCoreApplication.translate("SYSRENAL", u"*Email", None))
@@ -29378,7 +29209,6 @@ class Ui_SYSRENAL(object):
         self.input_TableWidget_pagina_consulta_geral.setToolTip("")
 #endif // QT_CONFIG(tooltip)
         self.btn_relatorios_cadstrados_as.setText(QCoreApplication.translate("SYSRENAL", u"Usu\u00e1rios Atendidos", None))
-        self.btn_excel_consulta_as.setText(QCoreApplication.translate("SYSRENAL", u"EXCEL", None))
         self.btn_alterar_pagina_consulta_geral.setText(QCoreApplication.translate("SYSRENAL", u"Alterar", None))
         self.label_titulo_relatorio_atendimentos.setText(QCoreApplication.translate("SYSRENAL", u"Usu\u00e1rios Atendidos", None))
         self.label_inicio_periodo_relatorio_psi_2.setText(QCoreApplication.translate("SYSRENAL", u"Per\u00edodo", None))
@@ -29410,11 +29240,9 @@ class Ui_SYSRENAL(object):
         self.btn_gerar_excel_relatorio_atendimentos.setText(QCoreApplication.translate("SYSRENAL", u"Gerar Excel", None))
         self.btn_voltar_pagina_relatorio_atendimentos.setText(QCoreApplication.translate("SYSRENAL", u"VOLTAR", None))
         self.label_foto_colab_inicio_sec.setText("")
-        self.btn_alterar_foto_colab_as_perfil_sec.setText(QCoreApplication.translate("SYSRENAL", u"Alterar Foto", None))
         self.label_ola_nome_sec.setText(QCoreApplication.translate("SYSRENAL", u"Ol\u00e1, _ _ _ _ _ _", None))
         self.btn_agenda_sec.setText(QCoreApplication.translate("SYSRENAL", u"      AGENDA", None))
         self.btn_relatorios_sec.setText(QCoreApplication.translate("SYSRENAL", u"  RELAT\u00d3RIO", None))
-        self.btn_backup_sec.setText(QCoreApplication.translate("SYSRENAL", u"    BACKUP", None))
         self.btn_sair_sec.setText(QCoreApplication.translate("SYSRENAL", u"SAIR  ", None))
         self.label_titulo_relatorio_fisio_2.setText(QCoreApplication.translate("SYSRENAL", u"RELAT\u00d3RIO", None))
         self.label_inicio_periodo_relatorio_sec.setText(QCoreApplication.translate("SYSRENAL", u"Per\u00edodo", None))
