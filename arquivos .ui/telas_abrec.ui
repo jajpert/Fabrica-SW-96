@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>5</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -1195,7 +1195,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -2056,77 +2056,6 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                              </property>
                                              <property name="text">
                                               <string>Fisioterapeuta</string>
-                                             </property>
-                                            </widget>
-                                           </item>
-                                          </layout>
-                                         </widget>
-                                        </item>
-                                       </layout>
-                                      </widget>
-                                     </item>
-                                     <item>
-                                      <widget class="QFrame" name="frame_433">
-                                       <property name="frameShape">
-                                        <enum>QFrame::StyledPanel</enum>
-                                       </property>
-                                       <property name="frameShadow">
-                                        <enum>QFrame::Raised</enum>
-                                       </property>
-                                       <layout class="QVBoxLayout" name="verticalLayout_18">
-                                        <item>
-                                         <widget class="QFrame" name="frame_743">
-                                          <property name="frameShape">
-                                           <enum>QFrame::StyledPanel</enum>
-                                          </property>
-                                          <property name="frameShadow">
-                                           <enum>QFrame::Raised</enum>
-                                          </property>
-                                          <layout class="QHBoxLayout" name="horizontalLayout_255">
-                                           <property name="spacing">
-                                            <number>0</number>
-                                           </property>
-                                           <property name="leftMargin">
-                                            <number>0</number>
-                                           </property>
-                                           <property name="topMargin">
-                                            <number>0</number>
-                                           </property>
-                                           <property name="rightMargin">
-                                            <number>0</number>
-                                           </property>
-                                           <property name="bottomMargin">
-                                            <number>0</number>
-                                           </property>
-                                           <item>
-                                            <widget class="QRadioButton" name="radioButton_atendimento_as_nutri_consulta">
-                                             <property name="font">
-                                              <font>
-                                               <family>Abel</family>
-                                               <pointsize>12</pointsize>
-                                              </font>
-                                             </property>
-                                             <property name="text">
-                                              <string>ATENDIMENTO</string>
-                                             </property>
-                                            </widget>
-                                           </item>
-                                           <item>
-                                            <widget class="QRadioButton" name="radioButton_Retorno_as_nutri_consulta">
-                                             <property name="sizePolicy">
-                                              <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-                                               <horstretch>0</horstretch>
-                                               <verstretch>0</verstretch>
-                                              </sizepolicy>
-                                             </property>
-                                             <property name="font">
-                                              <font>
-                                               <family>Abel</family>
-                                               <pointsize>12</pointsize>
-                                              </font>
-                                             </property>
-                                             <property name="text">
-                                              <string>RETORNO</string>
                                              </property>
                                             </widget>
                                            </item>
@@ -20726,7 +20655,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>4</number>
+                      <number>11</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -37351,6 +37280,11 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                   </row>
                                   <column>
                                    <property name="text">
+                                    <string>Id</string>
+                                   </property>
+                                  </column>
+                                  <column>
+                                   <property name="text">
                                     <string>Data</string>
                                    </property>
                                   </column>
@@ -37359,17 +37293,17 @@ QTextEdit:focus{outline:0; border: 2px solid #A85751}
                                     <string>Observação</string>
                                    </property>
                                   </column>
-                                  <item row="0" column="0">
-                                   <property name="text">
-                                    <string/>
-                                   </property>
-                                  </item>
                                   <item row="0" column="1">
                                    <property name="text">
                                     <string/>
                                    </property>
                                   </item>
-                                  <item row="1" column="0">
+                                  <item row="0" column="2">
+                                   <property name="text">
+                                    <string/>
+                                   </property>
+                                  </item>
+                                  <item row="1" column="1">
                                    <property name="text">
                                     <string/>
                                    </property>
@@ -43615,7 +43549,7 @@ QPushButton:pressed{
                                           </widget>
                                          </item>
                                          <item>
-                                          <widget class="QLineEdit" name="input_telefone_contato_pagina_participante_geral">
+                                          <widget class="QLineEdit" name="input_bairro_pagina_participante_geral">
                                            <property name="maxLength">
                                             <number>11</number>
                                            </property>

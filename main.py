@@ -36,6 +36,7 @@ from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validar
 from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_retirada_beneficio import validarCamposRetiradaBeneficiosCadastro
 from Validacao_Campos.Assistente_Social.validar_campos_alterar_colaborador import validarCamposAlterarColaboradorCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_consulta import validarCamposConsultaCadastro
 ##################################################################################################################
 
 ############################# VALIDAÇÕES NUTRICIONISTA###########################################################
@@ -3795,7 +3796,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_cpf_pagina_participante_geral.setText("")
         self.ui.input_nome_pagina_participante_geral.setText("")
         self.ui.input_telefone_pagina_participante_geral.setText("")
-        self.ui.input_telefone_contato_pagina_participante_geral.setText("")
+        self.ui.input_bairro_pagina_participante_geral.setText("")
         self.ui.input_clinica_pagina_participante_geral.setText("")
         self.ui.comboBox_cursos_participante_geral.setCurrentIndex(int(0))
     
@@ -3992,10 +3993,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_profissional_nutri_agendamento_nutri.setCheckable(True)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(False)
         self.ui.input_profissional_fisio_agendamento_nutri.setCheckable(True)
-        self.ui.radioButton_atendimento_as_nutri_consulta.setCheckable(False)
-        self.ui.radioButton_atendimento_as_nutri_consulta.setCheckable(True)
-        self.ui.radioButton_Retorno_as_nutri_consulta.setCheckable(False)
-        self.ui.radioButton_Retorno_as_nutri_consulta.setCheckable(True)
         self.ui.input_data_agendamento_nutri.setDateTime(QDateTime.currentDateTime())
         self.ui.input_hora_agendamento_nutri.setTime(QTime(00,00))
         self.ui.input_anotacao_agendamento_nutri.setHtml("")
@@ -4109,6 +4106,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_buscar_dados_relatorio_sec.setText("")
 
 
+
     def limparCampoVoltarUsuario(self):
         self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
@@ -4207,12 +4205,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             count += 1
 
     def cadastrar_participante(self):
+        vaga = 1
         nome_curso = self.ui.comboBox_cursos_participante_geral.currentText()
         nome_curso_id = nome_curso.split("-")
         nome_curso_id_tratado = int(nome_curso_id[0])
         id_matricula = self.ui.input_id_matricula_user_participante_geral.text()
         
-        tupla_participante = (nome_curso_id_tratado,id_matricula)
+        tupla_participante = (vaga, nome_curso_id_tratado, id_matricula)
+        print(tupla_participante)
 
         result = []
         result = self.db.cadastrar_participante(tupla_participante)
@@ -4222,6 +4222,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         msg.setText("Participante cadastrado com sucesso!")
         msg.exec()
         self.puxar_cadastro_participante()
+        self.limparCamposCadastroParticipante()
 
     
     def buscar_dados_participante(self):
@@ -4232,7 +4233,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.input_id_matricula_user_participante_geral.hide()
         self.ui.input_nome_pagina_participante_geral.setText(dados[1])
         self.ui.input_telefone_pagina_participante_geral.setText(dados[2])
-        self.ui.input_telefone_contato_pagina_participante_geral.setText(dados[3])
+        self.ui.input_bairro_pagina_participante_geral.setText(dados[3])
         self.ui.input_clinica_pagina_participante_geral.setText(dados[4])
         
         
@@ -4355,6 +4356,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.puxar_consulta();
 
     def cadastrar_consulta(self):
+        situacao = ""
         if self.ui.radioButton_atendimento_as.isChecked():
             situacao = "Consulta"
         if self.ui.radioButton_Retorno_as.isChecked():
@@ -4369,21 +4371,29 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         id_matricula = self.ui.input_id_matricula_consulta_as.text()
         
-        
+        if not validarCamposConsultaCadastro(situacao):
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Erro Cadastro")
+            msg.setText("Erro Cadastro")
+            msg.exec()
+            return
 
-        tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_ass)
+        else:
 
-        result = []
-        result = self.db.cadastro_consulta(tupla_consulta)
+            tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_ass)
 
-        msg = QMessageBox()
-        msg.setIcon(QMessageBox.Information)
-        msg.setWindowTitle("Cadastro Consulta")
-        msg.setText("Consulta Cadastrada com sucesso!")
-        msg.exec()
-        
-        self.limparCamposAtendimentoAssistenteSocial()
-        self.puxar_consulta()
+            result = []
+            result = self.db.cadastro_consulta(tupla_consulta)
+
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Cadastro Consulta")
+            msg.setText("Consulta Cadastrada com sucesso!")
+            msg.exec()
+            
+            self.limparCamposAtendimentoAssistenteSocial()
+            self.puxar_consulta()
         
     def cadastrar_consulta_nutri(self):
 
@@ -5770,12 +5780,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
         for row in range(self.ui.input_TableWidget_relatorio_beneficios_farm.rowCount()):
             for column in range(self.ui.input_TableWidget_relatorio_beneficios_farm.columnCount()):
-                dados.append(self.ui.input_TableWidget_relatorio_beneficios_farm.item(row, column).text())
+                item = self.ui.input_TableWidget_relatorio_beneficios_farm.item(row, column)
+                if item is not None:
+                    dados.append(item.text())
         
             all_dados.append(dados)
             dados = []
 
-        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'BENEFICIO SOCIAL', 'DESCRIÇÃO', 'QUANTIDADE','DATA']
+        columns = ['NOME', 'CPF', 'CNS', 'SEXO', 'SITUAÇÃO DE TRABALHO', 'BENEFICIO SOCIAL', 'TIPO BENEFICIO', 'DESCRIÇÃO', 'QUANTIDADE', 'DATA']
         
         relatorio = pd.DataFrame(all_dados, columns= columns)
        

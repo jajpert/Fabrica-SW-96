@@ -864,42 +864,9 @@ class Ui_SYSRENAL(object):
 
         self.verticalLayout_415.addWidget(self.frame_628)
 
-        self.frame_433 = QFrame(self.frame_626)
-        self.frame_433.setObjectName(u"frame_433")
-        self.frame_433.setFrameShape(QFrame.StyledPanel)
-        self.frame_433.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_18 = QVBoxLayout(self.frame_433)
-        self.verticalLayout_18.setObjectName(u"verticalLayout_18")
-        self.frame_743 = QFrame(self.frame_433)
-        self.frame_743.setObjectName(u"frame_743")
-        self.frame_743.setFrameShape(QFrame.StyledPanel)
-        self.frame_743.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_255 = QHBoxLayout(self.frame_743)
-        self.horizontalLayout_255.setSpacing(0)
-        self.horizontalLayout_255.setObjectName(u"horizontalLayout_255")
-        self.horizontalLayout_255.setContentsMargins(0, 0, 0, 0)
-        self.radioButton_atendimento_as_nutri_consulta = QRadioButton(self.frame_743)
-        self.radioButton_atendimento_as_nutri_consulta.setObjectName(u"radioButton_atendimento_as_nutri_consulta")
-        self.radioButton_atendimento_as_nutri_consulta.setFont(font)
-
-        self.horizontalLayout_255.addWidget(self.radioButton_atendimento_as_nutri_consulta)
-
-        self.radioButton_Retorno_as_nutri_consulta = QRadioButton(self.frame_743)
-        self.radioButton_Retorno_as_nutri_consulta.setObjectName(u"radioButton_Retorno_as_nutri_consulta")
         sizePolicy6 = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Fixed)
         sizePolicy6.setHorizontalStretch(0)
         sizePolicy6.setVerticalStretch(0)
-        sizePolicy6.setHeightForWidth(self.radioButton_Retorno_as_nutri_consulta.sizePolicy().hasHeightForWidth())
-        self.radioButton_Retorno_as_nutri_consulta.setSizePolicy(sizePolicy6)
-        self.radioButton_Retorno_as_nutri_consulta.setFont(font)
-
-        self.horizontalLayout_255.addWidget(self.radioButton_Retorno_as_nutri_consulta)
-
-
-        self.verticalLayout_18.addWidget(self.frame_743)
-
-
-        self.verticalLayout_415.addWidget(self.frame_433)
 
 
         self.verticalLayout_410.addWidget(self.frame_626)
@@ -14787,48 +14754,50 @@ class Ui_SYSRENAL(object):
         self.verticalLayout_291.addWidget(self.label_tabela_de_observacoes_obs_sigilosas_as)
 
         self.input_TableWidget_observacoes_sigilosas_as = QTableWidget(self.frame_437)
-        if (self.input_TableWidget_observacoes_sigilosas_as.columnCount() < 2):
-            self.input_TableWidget_observacoes_sigilosas_as.setColumnCount(2)
+        if (self.input_TableWidget_observacoes_sigilosas_as.columnCount() < 3):
+            self.input_TableWidget_observacoes_sigilosas_as.setColumnCount(3)
         __qtablewidgetitem125 = QTableWidgetItem()
         self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(0, __qtablewidgetitem125)
         __qtablewidgetitem126 = QTableWidgetItem()
         self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(1, __qtablewidgetitem126)
+        __qtablewidgetitem127 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setHorizontalHeaderItem(2, __qtablewidgetitem127)
         if (self.input_TableWidget_observacoes_sigilosas_as.rowCount() < 14):
             self.input_TableWidget_observacoes_sigilosas_as.setRowCount(14)
-        __qtablewidgetitem127 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(0, __qtablewidgetitem127)
         __qtablewidgetitem128 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(1, __qtablewidgetitem128)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(0, __qtablewidgetitem128)
         __qtablewidgetitem129 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(2, __qtablewidgetitem129)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(1, __qtablewidgetitem129)
         __qtablewidgetitem130 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(3, __qtablewidgetitem130)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(2, __qtablewidgetitem130)
         __qtablewidgetitem131 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(4, __qtablewidgetitem131)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(3, __qtablewidgetitem131)
         __qtablewidgetitem132 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(5, __qtablewidgetitem132)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(4, __qtablewidgetitem132)
         __qtablewidgetitem133 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(6, __qtablewidgetitem133)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(5, __qtablewidgetitem133)
         __qtablewidgetitem134 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(7, __qtablewidgetitem134)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(6, __qtablewidgetitem134)
         __qtablewidgetitem135 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(8, __qtablewidgetitem135)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(7, __qtablewidgetitem135)
         __qtablewidgetitem136 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(9, __qtablewidgetitem136)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(8, __qtablewidgetitem136)
         __qtablewidgetitem137 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(10, __qtablewidgetitem137)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(9, __qtablewidgetitem137)
         __qtablewidgetitem138 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(11, __qtablewidgetitem138)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(10, __qtablewidgetitem138)
         __qtablewidgetitem139 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(12, __qtablewidgetitem139)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(11, __qtablewidgetitem139)
         __qtablewidgetitem140 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(13, __qtablewidgetitem140)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(12, __qtablewidgetitem140)
         __qtablewidgetitem141 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setItem(0, 0, __qtablewidgetitem141)
+        self.input_TableWidget_observacoes_sigilosas_as.setVerticalHeaderItem(13, __qtablewidgetitem141)
         __qtablewidgetitem142 = QTableWidgetItem()
         self.input_TableWidget_observacoes_sigilosas_as.setItem(0, 1, __qtablewidgetitem142)
         __qtablewidgetitem143 = QTableWidgetItem()
-        self.input_TableWidget_observacoes_sigilosas_as.setItem(1, 0, __qtablewidgetitem143)
+        self.input_TableWidget_observacoes_sigilosas_as.setItem(0, 2, __qtablewidgetitem143)
+        __qtablewidgetitem144 = QTableWidgetItem()
+        self.input_TableWidget_observacoes_sigilosas_as.setItem(1, 1, __qtablewidgetitem144)
         self.input_TableWidget_observacoes_sigilosas_as.setObjectName(u"input_TableWidget_observacoes_sigilosas_as")
         self.input_TableWidget_observacoes_sigilosas_as.setFont(font)
         self.input_TableWidget_observacoes_sigilosas_as.setLayoutDirection(Qt.LeftToRight)
@@ -17100,11 +17069,11 @@ class Ui_SYSRENAL(object):
 
         self.verticalLayout_3402.addWidget(self.label_bairro_pagina_participante_geral)
 
-        self.input_telefone_contato_pagina_participante_geral = QLineEdit(self.frame_4782)
-        self.input_telefone_contato_pagina_participante_geral.setObjectName(u"input_telefone_contato_pagina_participante_geral")
-        self.input_telefone_contato_pagina_participante_geral.setMaxLength(11)
+        self.input_bairro_pagina_participante_geral = QLineEdit(self.frame_4782)
+        self.input_bairro_pagina_participante_geral.setObjectName(u"input_bairro_pagina_participante_geral")
+        self.input_bairro_pagina_participante_geral.setMaxLength(11)
 
-        self.verticalLayout_3402.addWidget(self.input_telefone_contato_pagina_participante_geral)
+        self.verticalLayout_3402.addWidget(self.input_bairro_pagina_participante_geral)
 
 
         self.verticalLayout_9.addWidget(self.frame_4782)
@@ -27679,8 +27648,6 @@ class Ui_SYSRENAL(object):
         self.input_profissional_psi_agendamento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Psic\u00f3loga", None))
         self.input_profissional_nutri_agendamento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Nutricionista", None))
         self.input_profissional_fisio_agendamento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Fisioterapeuta", None))
-        self.radioButton_atendimento_as_nutri_consulta.setText(QCoreApplication.translate("SYSRENAL", u"ATENDIMENTO", None))
-        self.radioButton_Retorno_as_nutri_consulta.setText(QCoreApplication.translate("SYSRENAL", u"RETORNO", None))
         self.label_data_agendamento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Data", None))
         self.input_data_agendamento_nutri.setDisplayFormat(QCoreApplication.translate("SYSRENAL", u"dd/MM/yyyy", None))
         self.label_hora_agendamento_nutri.setText(QCoreApplication.translate("SYSRENAL", u"Hora", None))
@@ -28506,37 +28473,39 @@ class Ui_SYSRENAL(object):
         self.label_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("SYSRENAL", u"Observa\u00e7\u00f5es/informa\u00e7\u00f5es gerais", None))
         self.label_tabela_de_observacoes_obs_sigilosas_as.setText(QCoreApplication.translate("SYSRENAL", u"Tabela de Observa\u00e7\u00f5es", None))
         ___qtablewidgetitem110 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(0)
-        ___qtablewidgetitem110.setText(QCoreApplication.translate("SYSRENAL", u"Data", None));
+        ___qtablewidgetitem110.setText(QCoreApplication.translate("MainWindow", u"Id", None));
         ___qtablewidgetitem111 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(1)
-        ___qtablewidgetitem111.setText(QCoreApplication.translate("SYSRENAL", u"Observa\u00e7\u00e3o", None));
-        ___qtablewidgetitem112 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(0)
-        ___qtablewidgetitem112.setText(QCoreApplication.translate("SYSRENAL", u"1", None));
-        ___qtablewidgetitem113 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(1)
-        ___qtablewidgetitem113.setText(QCoreApplication.translate("SYSRENAL", u"2", None));
-        ___qtablewidgetitem114 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(2)
-        ___qtablewidgetitem114.setText(QCoreApplication.translate("SYSRENAL", u"3", None));
-        ___qtablewidgetitem115 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(3)
-        ___qtablewidgetitem115.setText(QCoreApplication.translate("SYSRENAL", u"4", None));
-        ___qtablewidgetitem116 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(4)
-        ___qtablewidgetitem116.setText(QCoreApplication.translate("SYSRENAL", u"5", None));
-        ___qtablewidgetitem117 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(5)
-        ___qtablewidgetitem117.setText(QCoreApplication.translate("SYSRENAL", u"6", None));
-        ___qtablewidgetitem118 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(6)
-        ___qtablewidgetitem118.setText(QCoreApplication.translate("SYSRENAL", u"7", None));
-        ___qtablewidgetitem119 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(7)
-        ___qtablewidgetitem119.setText(QCoreApplication.translate("SYSRENAL", u"8", None));
-        ___qtablewidgetitem120 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(8)
-        ___qtablewidgetitem120.setText(QCoreApplication.translate("SYSRENAL", u"9", None));
-        ___qtablewidgetitem121 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(9)
-        ___qtablewidgetitem121.setText(QCoreApplication.translate("SYSRENAL", u"10", None));
-        ___qtablewidgetitem122 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(10)
-        ___qtablewidgetitem122.setText(QCoreApplication.translate("SYSRENAL", u"11", None));
-        ___qtablewidgetitem123 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(11)
-        ___qtablewidgetitem123.setText(QCoreApplication.translate("SYSRENAL", u"12", None));
-        ___qtablewidgetitem124 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(12)
-        ___qtablewidgetitem124.setText(QCoreApplication.translate("SYSRENAL", u"13", None));
-        ___qtablewidgetitem125 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(13)
-        ___qtablewidgetitem125.setText(QCoreApplication.translate("SYSRENAL", u"14", None));
+        ___qtablewidgetitem111.setText(QCoreApplication.translate("MainWindow", u"Data", None));
+        ___qtablewidgetitem112 = self.input_TableWidget_observacoes_sigilosas_as.horizontalHeaderItem(2)
+        ___qtablewidgetitem112.setText(QCoreApplication.translate("MainWindow", u"Observa\u00e7\u00e3o", None));
+        ___qtablewidgetitem113 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(0)
+        ___qtablewidgetitem113.setText(QCoreApplication.translate("MainWindow", u"1", None));
+        ___qtablewidgetitem114 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(1)
+        ___qtablewidgetitem114.setText(QCoreApplication.translate("MainWindow", u"2", None));
+        ___qtablewidgetitem115 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(2)
+        ___qtablewidgetitem115.setText(QCoreApplication.translate("MainWindow", u"3", None));
+        ___qtablewidgetitem116 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(3)
+        ___qtablewidgetitem116.setText(QCoreApplication.translate("MainWindow", u"4", None));
+        ___qtablewidgetitem117 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(4)
+        ___qtablewidgetitem117.setText(QCoreApplication.translate("MainWindow", u"5", None));
+        ___qtablewidgetitem118 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(5)
+        ___qtablewidgetitem118.setText(QCoreApplication.translate("MainWindow", u"6", None));
+        ___qtablewidgetitem119 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(6)
+        ___qtablewidgetitem119.setText(QCoreApplication.translate("MainWindow", u"7", None));
+        ___qtablewidgetitem120 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(7)
+        ___qtablewidgetitem120.setText(QCoreApplication.translate("MainWindow", u"8", None));
+        ___qtablewidgetitem121 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(8)
+        ___qtablewidgetitem121.setText(QCoreApplication.translate("MainWindow", u"9", None));
+        ___qtablewidgetitem122 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(9)
+        ___qtablewidgetitem122.setText(QCoreApplication.translate("MainWindow", u"10", None));
+        ___qtablewidgetitem123 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(10)
+        ___qtablewidgetitem123.setText(QCoreApplication.translate("MainWindow", u"11", None));
+        ___qtablewidgetitem124 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(11)
+        ___qtablewidgetitem124.setText(QCoreApplication.translate("MainWindow", u"12", None));
+        ___qtablewidgetitem125 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(12)
+        ___qtablewidgetitem125.setText(QCoreApplication.translate("MainWindow", u"13", None));
+        ___qtablewidgetitem126 = self.input_TableWidget_observacoes_sigilosas_as.verticalHeaderItem(13)
+        ___qtablewidgetitem126.setText(QCoreApplication.translate("MainWindow", u"14", None));
 
         __sortingEnabled5 = self.input_TableWidget_observacoes_sigilosas_as.isSortingEnabled()
         self.input_TableWidget_observacoes_sigilosas_as.setSortingEnabled(False)

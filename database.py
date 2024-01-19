@@ -6,7 +6,9 @@ class DataBase():
 
     def connect(self):
         
-        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
         	
@@ -1486,7 +1488,7 @@ class DataBase():
 
 
 
-
+    
 
 
 
@@ -1534,13 +1536,14 @@ class DataBase():
     def cadastrar_participante(self,participante):
         self.connect()
         try:
-            args = (participante[0], participante[1])
-            self.cursor.execute("INSERT INTO participantes (id_evento,id_matricula) VALUES (%s,%s)", args)
+            args = (participante[0], participante[1], participante[2])
+            self.cursor.execute("INSERT INTO participantes (vaga, id_evento, id_matricula) VALUES (%s,%s,%s)", args)
             self.conn.commit()
 
             return "Cadastro feito com Sucesso!!"
 
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
 
         finally:
