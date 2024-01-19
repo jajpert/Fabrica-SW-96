@@ -1853,6 +1853,7 @@ class DataBase():
             return "OK","Cadastro realizado com sucesso!!"
 
         except Exception as err:
+            print(err)
             return "ERRO",str(err)
         
  
@@ -1905,7 +1906,7 @@ class DataBase():
             return "OK","Cadastro Fornecedor realizado com sucesso!! "
 
         except Exception as err:
-            #print(err)
+            print(err)
             return "ERRO",str(err)
 
     def cadastro_curso(self,tupla_curso):
@@ -2380,7 +2381,7 @@ class DataBase():
         self.connect()
         try:
             self.cursor.execute(f"""
-                                SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.estado, endereco.cidade, clinica.nome_fantasia
+                                SELECT clinica.cnpj, clinica.razao_social, clinica.telefone, clinica.email, endereco.logradouro, endereco.estado, endereco.cidade, clinica.nome_fantasia FROM clinica
                                 INNER JOIN endereco on endereco.id_endereco = clinica.id_endereco
                                 WHERE clinica.cnpj LIKE "%{texto}%" OR clinica.email LIKE "%{texto}%" OR clinica.razao_social LIKE "%{texto}%" OR clinica.telefone LIKE "%{texto}%" OR endereco.logradouro LIKE "%{texto}%";
                                 """)

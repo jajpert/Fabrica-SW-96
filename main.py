@@ -727,7 +727,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(self.puxar_relatorio_clinicas_cadastradas)
         self.ui.btn_relatorio_clinicas_cadastradas_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_relatorio_clinicas_cadastradas))
         self.ui.btn_buscar_relatorio_clinicas_cadastradas_as.clicked.connect(self.filtrar_data_relatorio_clinicas_cadastradas)
-        self.ui.btn_buscar_relatorio_fornecedores_cadastrados.clicked.connect(self.filtrar_data_relatorio_fornecedor_cadastrado)
         self.ui.input_buscar_dados_relatorio_relatorio_fornecedor_cadastrado.textChanged.connect(self.filtrar_relatorio_fornecedor_cadastrado)
         self.ui.btn_relatorio_fornecedores_cadastrados.clicked.connect(self.limparCamposFornecedoresCadastrados)
         self.ui.btn_relatorio_fornecedores_cadastrados.clicked.connect(self.puxar_relatorio_fornecedor_cadastrado)
@@ -3322,7 +3321,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Curso")
             msg.setText("Curso cadastrado com sucesso!")
             msg.exec()
-            self.limparCadastroCursos()
+            self.limparCamposCursosOficinas()
         
     
     def cadastroAgendamento(self):
@@ -4105,8 +4104,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.radioButton_nutri_sec.setCheckable(True)
         self.ui.input_buscar_dados_relatorio_sec.setText("")
 
-
-
     def limparCampoVoltarUsuario(self):
         self.ui.input_alterar_buscar_cpf_cnpj_as.setText("")
         self.ui.comboBox_tipos_alterar_cadastros_as.setCurrentIndex(0)
@@ -4323,8 +4320,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_hora_consulta_as_psi.setText(str(dados[4]))
             self.ui.input_id_matricula_consulta_psi.setText(str(dados[5]))
             self.ui.input_id_matricula_consulta_psi.hide()
-            self.puxar_consulta_psi()
             self.tabela_consulta_psic_tabela()
+            self.puxar_consulta_psi()
 
 
     def buscar_dados_consulta(self):
@@ -4470,11 +4467,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Erro Cadastro")
             msg.setText("Erro Cadastro!")
             msg.exec()
+            return
 
         else:
             
             result = []
             result = self.db.cadastro_consulta_psi(tupla_consulta_psi)
+            self.tabela_consulta_psic_tabela()
     
 
             msg = QMessageBox()
@@ -4482,7 +4481,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Cadastro Consulta")
             msg.setText("Consulta Cadastrada com sucesso!")
             msg.exec()
-            self.tabela_consulta_psic_tabela()
             self.limparCamposAtendimentoPsicologa()
 
     def cadastrar_consulta_fisio(self):

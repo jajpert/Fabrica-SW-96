@@ -8923,7 +8923,7 @@ class Ui_SYSRENAL(object):
         self.input_telefone_fixo_fornecedor_as.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 15px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751;}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}\n"
 "")
-        self.input_telefone_fixo_fornecedor_as.setMaxLength(11)
+        self.input_telefone_fixo_fornecedor_as.setMaxLength(10)
 
         self.verticalLayout_343.addWidget(self.input_telefone_fixo_fornecedor_as)
 
