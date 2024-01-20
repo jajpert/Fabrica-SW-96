@@ -6,8 +6,8 @@ class DataBase():
 
     def connect(self):
         
-        # self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
-        self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
+        self.conn = mysql.connector.connect(host='192.168.22.9',database='abrec',user='fabrica',password='fabrica@2022')
+        # self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='Bnas123!@#')	
 
         #self.conn = mysql.connector.connect(host='localhost',database='abrec',user='root',password='')	
 
@@ -1123,7 +1123,6 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT consulta.id_consulta, consulta.data_consulta, TIMESTAMPDIFF(YEAR, data_nascimento,NOW()) as idades, consulta.situacao, consulta.observacao 
                                     FROM consulta INNER JOIN pessoa ON consulta.id_matricula = pessoa.id_matricula
-                                    INNER JOIN nutri_usuario ON nutri_usuario.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '{cpf}' AND consulta.id_colaborador LIKE '{id_colab_nutri}';""")
             result = self.cursor.fetchall()
             return result
@@ -1165,14 +1164,12 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, clinica.nome_fantasia, data, hora, agendamento.flag
+            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, agendamento.clinica, agendamento.data, agendamento.hora, agendamento.flag
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN clinica ON clinica.id_clinica = usuario.local_tratamento
-                                    INNER JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
+                                    LEFT JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
-            print(result)
-            return result[0]
+            return result
         except Exception as err:
             return "ERRO",str(err)
 
@@ -1184,10 +1181,10 @@ class DataBase():
         try:
             self.cursor.execute(f"""SELECT pessoa.nome, pessoa.telefone, agendamento.clinica, agendamento.data, agendamento.hora, usuario.id_matricula, agendamento.flag
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    LEFT JOIN agendamento ON agendamento.id_matricula = usuario.id_matricula
+                                    INNER JOIN agendamento ON agendamento.id_matricula = usuario.id_matricula
                                     WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
-            return result[0]
+            return result
         except Exception as err:
             print(err)
             return "ERRO",str(err)
@@ -1536,8 +1533,8 @@ class DataBase():
     def cadastrar_participante(self,participante):
         self.connect()
         try:
-            args = (participante[0], participante[1], participante[2])
-            self.cursor.execute("INSERT INTO participantes (vaga, id_evento, id_matricula) VALUES (%s,%s,%s)", args)
+            args = (participante[0], participante[1])
+            self.cursor.execute("INSERT INTO participantes (id_evento, id_matricula) VALUES (%s,%s,%s)", args)
             self.conn.commit()
 
             return "Cadastro feito com Sucesso!!"

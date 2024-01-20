@@ -121,7 +121,6 @@ class DialogTirarImportarFotoUsuario(QDialog):
                     cv2.imshow("Janela", frame)
                     
                     if not ret:
-                        print('failed to grab frame')
                         break
                     
                     if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -178,7 +177,6 @@ class DialogTirarImportarFotoUsuario(QDialog):
                         msg.setText("Imagem Salva com Sucesso!!")
                         msg.exec()
                         
-                        print("Imagem salva em:", StoreFilePath)
                         cv2.destroyAllWindows()
                         break
                     
@@ -226,7 +224,6 @@ class DialogTirarImportarFotoUsuario(QDialog):
                     file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
                     caminho_importado = file_path
                     formato_importado = imghdr.what(caminho_importado)
-                    print(formato_importado)
                     
                     if formato_importado not in format:
                         msg = QMessageBox()
@@ -292,7 +289,6 @@ class DialogTirarImportarFotoColaborador(QDialog):
                     cv2.imshow("Janela", frame)
                     
                     if not ret:
-                        print('failed to grab frame')
                         break
                         
                     if cv2.waitKey(1) & 0xFF == ord('q'):
@@ -350,7 +346,6 @@ class DialogTirarImportarFotoColaborador(QDialog):
                         msg.setText("Imagem Salva com Sucesso!!")
                         msg.exec()
                         
-                        print("Imagem salva em:", StoreFilePath)
                         cv2.destroyAllWindows()
                         break
                     
@@ -399,7 +394,6 @@ class DialogTirarImportarFotoColaborador(QDialog):
                     file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
                     caminho_importado = file_path
                     formato_importado = imghdr.what(caminho_importado)
-                    print(formato_importado)
 
                     if formato_importado not in format:
                         msg = QMessageBox()
@@ -1023,7 +1017,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login_senha = []
         perfil = []
         resultados = self.db.validarLogin(login,senha)
-        print(resultados)
 
         if resultados[0] == [] or resultados[1] == []:
             self.ui.inicio.setCurrentWidget(self.ui.login)
@@ -1040,46 +1033,39 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.loginInvalido() 
             elif perfil[0] == 'adm':
                 if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.lineEdit_recebe_nome_as.setText(nome_colaborador)
                     self.buscarIdColabAssis()
                     self.LoginAssistenteS()         
                 else:
-                    print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
             
             elif perfil[0] == 'farm':
                 if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nome_farm_3.setText(nome_colaborador)
                     self.LoginFarm()        
                     self.buscarIdColabFarm()
                 else:
-                    print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
                 
             elif perfil[0] == 'fisio':
                 if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nome_fisio.setText(nome_colaborador)
                     self.LoginFisio()       
                     self.buscarIdColabFisio()
                 else:
-                    print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido()    
 
             elif perfil[0] == 'nutri':
                 if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nutri.setText(nome_colaborador)
@@ -1087,13 +1073,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.buscarIdColabNutri()
                     
                 else:
-                    print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
 
             elif perfil[0] == 'psic':
                 if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nome_psi.setText(nome_colaborador)
@@ -1101,13 +1085,11 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     self.buscarIdColabPsic()
                          
                 else:
-                    print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
                     
             elif perfil[0] == 'sec':
                 if login == login_senha[0] and senha == login_senha[1]:            
-                    print ("Login realizado com sucesso")
                     nome_colab = self.db.select_nome_usuario(matricula_colaborador)
                     nome_colaborador = nome_colab[0][0]
                     self.ui.label_ola_nome_sec.setText(nome_colaborador)
@@ -1116,7 +1098,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     # self.buscarIdColabPsic()
                          
                 else:
-                    print ("Usuário não encontrado")
                     self.ui.inicio.setCurrentWidget(self.ui.login)
                     self.loginInvalido() 
                        
@@ -1176,7 +1157,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             elif 'fornecedor' in sender.objectName():
                 cep = inputFornecedor
         cep_tratado = str('')
-        print(cep)
         cep_tratado = str('')
         for i in cep:
             if(i == "." or i == '-' or i == ' '):
@@ -1449,7 +1429,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif valorSelecionado == 2:
             self.buscar_clinica_nome_fantasia_alterar_usuario()
             dados = self.db.busca_usuario(cpf)
-            print(dados)
             self.ui.input_alterar_matricula_usuario_as.setText(str(dados[0])) #
             self.id_area_sigilosa = str(dados[0])#
             self.ui.input_alterar_nome_usuario_as.setText(dados[1]) #
@@ -1731,7 +1710,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_alterar_id_usuario_as.setText(str(dados[38]))
             self.ui.input_alterar_id_usuario_as.hide()
             foto = str(dados[39])
-            print(foto)
             if foto == None or foto == '':
                 original_image = cv2.imread(u"./icons/adicionar_foto.jpg")
 
@@ -1777,7 +1755,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     ##################################################################################
         if valorSelecionado == 3:
             dados = self.db.busca_colaborador(cpf)
-            print("Colab ->", dados)
             self.ui.input_alterar_matricula_colaborador_as.setText(str(dados[0]))#
             self.ui.input_alterar_nome_colaborador_as.setText(dados[1])
             self.ui.input_alterar_data_nascimento_colaborador_as.setDate(QDate(dados[2]))
@@ -2196,7 +2173,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
                     caminho_importado = file_path
                     formato_importado = imghdr.what(caminho_importado)
-                    print(formato_importado)
                     
                     if formato_importado not in format:
                         msg = QMessageBox()
@@ -2284,7 +2260,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                     file_path, _ = file_dialog.getOpenFileName(None, "Selecionar Imagem", "", "Imagens (*.png *.jpg *.jpeg *.gif *.bmp *.ico);;Todos os arquivos (*)", options=options)
                     caminho_importado = file_path
                     formato_importado = imghdr.what(caminho_importado)
-                    print(formato_importado)
                     
                     if formato_importado not in format:
                         msg = QMessageBox()
@@ -2338,54 +2313,42 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
     def buscarIdColabAssis(self):
         login = self.ui.input_usuario_login.text()
-        print("Login Assis ->", login)
         id_colab_colab = self.db.buscarIdColabAssis(login)
         id_colab_nt = id_colab_colab[0][0]
         self.id_colab_tratado_ass = id_colab_nt
-        print("ID ASSISTENTE ->", self.id_colab_tratado_ass)
 
     
     def buscarIdColabPsic(self):
         login = self.ui.input_usuario_login.text()
-        print("Login Pisc ->", login)
         id_colab_colab = self.db.buscarIdColabPsic(login)
         id_colab_nt = id_colab_colab[0][0]
         self.id_colab_tratado_psic = id_colab_nt
-        print("ID PSIC ->", self.id_colab_tratado_psic)
 
 
     def buscarIdColabNutri(self):
         login = self.ui.input_usuario_login.text()
-        print("Login Nutri ->", login)
         id_colab_nutri = self.db.buscarIdColabNutri(login)
         id_colab_nutri_nt = id_colab_nutri[0][0]
         self.id_colab_tratado_nutri = id_colab_nutri_nt
-        print(self.id_colab_tratado_nutri)
         return self.id_colab_tratado_nutri
 
     def buscarIdColabFisio(self):
         login = self.ui.input_usuario_login.text()
-        print("Login Fisio ->", login)
         id_colab_fisio= self.db.buscarIdColabFisio(login)
         id_colab_fisio_nt = id_colab_fisio[0][0]
         self.id_colab_tratado_fisio = id_colab_fisio_nt
-        print("ID FISIO ->",self.id_colab_tratado_fisio)
         
     def buscarIdColabFarm(self):
         login = self.ui.input_usuario_login.text()
-        print("Login Fisio ->", login)
         id_colab_farm= self.db.buscarIdColabFisio(login)
         id_colab_farm_nt = id_colab_farm[0][0]
         self.id_colab_tratado_farm = id_colab_farm_nt
-        print("ID FISIO ->",self.id_colab_tratado_farm)
         
     def buscarIdColabSec(self):
         login = self.ui.input_usuario_login.text()
-        print("Login Fisio ->", login)
         id_colab_sec= self.db.buscarIdColabFisio(login)
         id_colab_sec_nt = id_colab_sec[0][0]
         self.id_colab_tratado_sec = id_colab_sec_nt
-        print("ID FISIO ->",self.id_colab_tratado_sec)
 
     def filtrar_dados_relatorio_fisio(self):
         txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
@@ -2604,7 +2567,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.busca_usuario_nutri_consulta(cpf)
-        print(dados)
         if dados[8] == "SIM":
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
@@ -2969,7 +2931,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             
             for emp in dados:
                 resultado = self.db.alterar_agendamento(emp)   
-                print(resultado)
 
             self.listarAgendamentos()
 
@@ -3236,13 +3197,13 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         confirmar_senha = self.ui.input_confirmar_senha_colaborador_as_2.text()
-        if cargo in ["Secretária"]:
+        if cargo in ["Secretaria"]:
             perfil = 'sec'
         elif cargo in ["Assistente Social"]:
             perfil = 'adm'
-        elif cargo in ["Farmacêutico (a)"]:
+        elif cargo in ["Farmaceutico"]:
             perfil = 'farm'
-        elif cargo in ["Psicólogo (a)"]:
+        elif cargo in ["Psicologo"]:
             perfil = 'psic'
         elif cargo in ["Fisioterapeuta"]:
             perfil = 'fisio'
@@ -4202,14 +4163,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             count += 1
 
     def cadastrar_participante(self):
-        vaga = 1
         nome_curso = self.ui.comboBox_cursos_participante_geral.currentText()
         nome_curso_id = nome_curso.split("-")
         nome_curso_id_tratado = int(nome_curso_id[0])
         id_matricula = self.ui.input_id_matricula_user_participante_geral.text()
         
-        tupla_participante = (vaga, nome_curso_id_tratado, id_matricula)
-        print(tupla_participante)
+        tupla_participante = (nome_curso_id_tratado, id_matricula)
 
         result = []
         result = self.db.cadastrar_participante(tupla_participante)
@@ -4303,16 +4262,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 pass
             else:
                 cpf += i
-        print("psic consulta", cpf)
         dados = self.db.buscar_consulta_usuario_psi(cpf)
-        print(dados)
-        if dados[6] == "SIM":
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Usuario Agendamento")
-            msg.setText("Usuario nao possui agendamento!")
-            msg.exec()
-        elif dados[6] == "NAO":
+        if dados[6] == "NAO":
             self.ui.input_nome_pagina_consulta_geral_psi.setText(dados[0])
             self.ui.input_contato_pagina_consulta_geral_psi.setText(dados[1])
             self.ui.input_clinica_pagina_consulta_geral_psi.setText(dados[2])
@@ -4322,6 +4273,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             self.ui.input_id_matricula_consulta_psi.hide()
             self.tabela_consulta_psic_tabela()
             self.puxar_consulta_psi()
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Usuario Agendamento")
+            msg.setText("Usuario nao possui agendamento!")
+            msg.exec()
 
 
     def buscar_dados_consulta(self):
@@ -4333,15 +4290,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.buscar_consulta(cpf)
-        if dados[6] == "SIM":
-            msg = QMessageBox()
-            msg.setIcon(QMessageBox.Information)
-            msg.setWindowTitle("Usuario Agendamento")
-            msg.setText("Usuario não possui agendamento!!")
-            msg.exec()
-            return
-            
-        elif dados[6] == "NAO":
+        print(dados)        
+        for row, text in enumerate(dados):
+            for column, data in enumerate(text):
+                print(str(data))
+        
+        if dados[6] == "NAO":
             self.ui.input_id_matricula_consulta_as.setText(str(dados[0]))
             self.ui.input_id_matricula_consulta_as.hide()
             self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
@@ -4351,6 +4305,14 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             hora  = str(dados[5]).split(":")
             self.ui.input_hora_consulta_as.setText(str(dados[5]))
             self.puxar_consulta();
+            
+        else:
+            msg = QMessageBox()
+            msg.setIcon(QMessageBox.Information)
+            msg.setWindowTitle("Usuario Agendamento")
+            msg.setText("Usuario não possui agendamento!!")
+            msg.exec()
+            return
 
     def cadastrar_consulta(self):
         situacao = ""
@@ -4458,7 +4420,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = self.ui.input_evolucao_pagina_consulta_geral_psi.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_consulta_psi.text())
-        print(type(id_matricula))
 
         tupla_consulta_psi = (situacao,data_consulta,hora,relatorio,id_matricula, self.id_colab_tratado_psic)
         if not validarCamposConsultaPsicCadastro(situacao, data, hora):
@@ -4499,10 +4460,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = self.ui.input_relatorio_pagina_evolucao_geral_fisio.toPlainText()
 
         id_matricula = int(self.ui.input_id_matricula_consulta_fisio.text())
-        print(type(id_matricula))
 
         tupla_consulta_psi = (situacao,data_consulta,hora,relatorio,id_matricula, self.id_colab_tratado_fisio)
-        print(tupla_consulta_psi)
         if not validarCamposConsultaFisioCadastro(situacao, data, hora):
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
@@ -4548,7 +4507,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             update_dados.append(campo)
             campo = []
         for emp in update_dados:
-           print(emp)
            res = self.db.alterar_usuario_consulta_psi(tuple(emp))
 
         self.puxar_consulta_psi()
@@ -4571,7 +4529,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             update_dados.append(campo)
             campo = []
         for emp in update_dados:
-            print(emp)
             res = self.db.alterar_consulta_nutri(tuple(emp))
             self.tabela_consulta_nutri_tabela()
 
@@ -4594,7 +4551,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             update_dados.append(campo)
             campo = []
         for emp in update_dados:
-            print(emp)
             res = self.db.alterar_consulta_fisio(tuple(emp))
 
         msg = QMessageBox()
@@ -6228,7 +6184,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             id_usuario = self.ui.input_matricula_usuario_as.text()
             res = []
             tupla_foto_vazia = (nome, caminho, id_usuario)
-            print(tupla_foto_vazia)
             result = self.db.tirar_foto_usuario(tupla_foto_vazia)
             
         else:
@@ -6243,7 +6198,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             id_usuario = self.ui.input_matricula_colaborador_as.text()
             res = []
             tupla_foto_vazia = (nome, caminho, id_usuario)
-            print(tupla_foto_vazia)
             result = self.db.tirar_foto_colaborador(tupla_foto_vazia)
             
         else:
