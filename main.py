@@ -797,7 +797,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_agenda_fisio.clicked.connect(self.tabela_agendamento_fisio) #TABELA AGENDAMENTO USUARIO FISIO 
         self.ui.btn_salvar_agenda_fisio.clicked.connect(self.cadastroAgendamento_fisio) #CADASTRO AGENDAMENTO USUARIO FISIO
         self.ui.btn_buscar_agendamento_fisio.clicked.connect(self.buscar_usuario_agendamento_fisio) #SELECT USUARIO AGENDAMENTO FISIO
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_usuario_consulta_fisio) #SELECT USUARIO CONSULTA FISIO
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_fisio.clicked.connect(self.buscar_dados_consulta_fisio) #SELECT USUARIO CONSULTA FISIO
         self.ui.input_buscar_dados_relatorio_fisio.textChanged.connect(self.filtrar_dados_relatorio_fisio)
         self.ui.input_buscar_dados_relatorio_nutri.textChanged.connect(self.filtrar_dados_relatorio_nutri)
         self.ui.btn_relatorios_fisio.clicked.connect(self.puxar_relatorio_fisio)
@@ -827,7 +827,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
         self.ui.btn_relatorios_nutri.clicked.connect(self.relatorio_pessoa_nutri)
         self.ui.btn_agenda_nutri.clicked.connect(self.tabela_agenda_nutri)
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_usuario_nutri) #SELECT USUARIO SOZINHO CONSULTA NUTRI
+        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_dados_consulta_nutri) #SELECT USUARIO SOZINHO CONSULTA NUTRI
         self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri) #SELECT USUARIO SOZINHO AGENDAMENTO NUTRI
         self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.tabela_consulta_nutri_tabela) #SELECT USUARIO + COLABORADOR NUTRI
         self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri) #CADASTRO DO USUARIO NO AGENDAMENTO NUTRI
@@ -977,7 +977,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filtrar_data)
         self.ui.btn_buscar_relatorio_as.clicked.connect(self.filter_idade)
         
-        self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta)
+        self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.buscar_dados_consulta_as)
         self.ui.btn_salvar_pagina_consulta_geral.clicked.connect(self.cadastrar_consulta)
         self.ui.btn_buscar_cpf_pagina_consulta_geral.clicked.connect(self.puxar_consulta)
         
@@ -4294,9 +4294,114 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             msg.setWindowTitle("Excel não realizado")
             msg.setText("Excel cancelado!!!")
             msg.exec()
+
+
+    def buscar_dados_consulta_nutri(self):
+            cpf_temp = self.ui.input_cpf_pagina_consulta_geral_nutri.text()
+            cpf = ''
+            for i in cpf_temp:
+                if i == '.' or i == '-':
+                    pass
+                else:
+                    cpf += i
+            dados = self.db.buscar_consulta(cpf)
+            flags = []
+            x = 0
+            for i in dados:
+                if dados[x][7] == 'SIM':
+                    x+=1
+                    pass
+                else:
+                    flags.append((tuple(dados[x])))
+                    x+=1
+            print(flags)
+            if not flags:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Usuario Agendamento")
+                msg.setText("Usuario não possui agendamento!!")
+                msg.exec()
+                return
+            x = 0
+            while x <= int(len(flags)):
+                print(x)
+                print(i)
+                if x >= len(flags):
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setWindowTitle("Usuario Agendamento")
+                    msg.setText("Usuario não possui agendamento!!")
+                    msg.exec()
+                    return
+                elif flags[x][6] == "Nutricionista":
+                    if flags[x][7] == "NAO":
+                        self.ui.input_id_matricula_nutri_consulta.setText(str(flags[x][0]))
+                        self.ui.input_id_matricula_nutri_consulta.hide()
+                        self.ui.input_nome_pagina_consulta_geral_nutri.setText(flags[x][1])
+                        self.ui.input_contato_pagina_consulta_geral_nutri.setText(flags[x][2])
+                        self.ui.input_clinica_pagina_consulta_geral_nutri.setText(flags[x][3])
+                        self.ui.input_data_pagina_consulta_geral_nutri.setDate(QDate(flags[x][4]))
+                        hora  = str(flags[x][5]).split(":")
+                        self.ui.input_hora_consulta_as_nutri.setText(str(flags[x][5]))
+                        self.puxar_consulta();
+                        break;
+                else:
+                        x+=1
+
+
+    def buscar_dados_consulta_fisio(self):
+            cpf_temp = self.ui.input_cpf_pagina_consulta_geral_fisio.text()
+            cpf = ''
+            for i in cpf_temp:
+                if i == '.' or i == '-':
+                    pass
+                else:
+                    cpf += i
+            dados = self.db.buscar_consulta(cpf)
+            flags = []
+            x = 0
+            for i in dados:
+                if dados[x][7] == 'SIM':
+                    x+=1
+                    pass
+                else:
+                    flags.append((tuple(dados[x])))
+                    x+=1
+            print(flags)
+            if not flags:
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Usuario Agendamento")
+                msg.setText("Usuario não possui agendamento!!")
+                msg.exec()
+                return
+            x = 0
+            while x <= int(len(flags)):
+                print(x)
+                print(i)
+                if x >= len(flags):
+                    msg = QMessageBox()
+                    msg.setIcon(QMessageBox.Information)
+                    msg.setWindowTitle("Usuario Agendamento")
+                    msg.setText("Usuario não possui agendamento!!")
+                    msg.exec()
+                    return
+                elif flags[x][6] == "Fisioterapeuta":
+                    if flags[x][7] == "NAO":
+                        self.ui.input_id_matricula_consulta_fisio.setText(str(flags[x][0]))
+                        self.ui.input_id_matricula_consulta_fisio.hide()
+                        self.ui.input_nome_pagina_consulta_geral_fisio.setText(flags[x][1])
+                        self.ui.input_contato_pagina_consulta_geral_fisio.setText(flags[x][2])
+                        self.ui.input_clinica_pagina_consulta_geral_fisio.setText(flags[x][3])
+                        self.ui.input_data_pagina_consulta_geral_fisio.setDate(QDate(flags[x][4]))
+                        hora  = str(flags[x][5]).split(":")
+                        self.ui.input_hora_consulta_as_fisio.setText(str(flags[x][5]))
+                        self.puxar_consulta();
+                        break;
+                else:
+                        x+=1
         
             
-
     def buscar_dados_consulta_psi(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral_psi.text()
         cpf = ''
@@ -4305,28 +4410,52 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 pass
             else:
                 cpf += i
-        print("psic consulta", cpf)
-        dados = self.db.buscar_consulta_usuario_psi(cpf)
-        print(dados)
-        if dados[6] == "SIM":
+        dados = self.db.buscar_consulta(cpf)
+        flags = []
+        x = 0
+        for i in dados:
+            if dados[x][7] == 'SIM':
+                x+=1
+                pass
+            else:
+                flags.append((tuple(dados[x])))
+                x+=1
+        print(flags)
+        if not flags:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Usuario Agendamento")
-            msg.setText("Usuario nao possui agendamento!")
+            msg.setText("Usuario não possui agendamento!!")
             msg.exec()
-        elif dados[6] == "NAO":
-            self.ui.input_nome_pagina_consulta_geral_psi.setText(dados[0])
-            self.ui.input_contato_pagina_consulta_geral_psi.setText(dados[1])
-            self.ui.input_clinica_pagina_consulta_geral_psi.setText(dados[2])
-            self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(dados[3]))
-            self.ui.input_hora_consulta_as_psi.setText(str(dados[4]))
-            self.ui.input_id_matricula_consulta_psi.setText(str(dados[5]))
-            self.ui.input_id_matricula_consulta_psi.hide()
-            self.puxar_consulta_psi()
-            self.tabela_consulta_psic_tabela()
+            return
+        x = 0
+        while x <= int(len(flags)):
+            print(x)
+            print(i)
+            if x >= len(flags):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Usuario Agendamento")
+                msg.setText("Usuario não possui agendamento!!")
+                msg.exec()
+                return
+            elif flags[x][6] == "Psicóloga":
+                if flags[x][7] == "NAO":
+                    self.ui.input_id_matricula_consulta_psi.setText(str(flags[x][0]))
+                    self.ui.input_id_matricula_consulta_psi.hide()
+                    self.ui.input_nome_pagina_consulta_geral_psi.setText(flags[x][1])
+                    self.ui.input_contato_pagina_consulta_geral_psi.setText(flags[x][2])
+                    self.ui.input_clinica_pagina_consulta_geral_psi.setText(flags[x][3])
+                    self.ui.input_data_pagina_consulta_geral_psi.setDate(QDate(flags[x][4]))
+                    hora  = str(flags[x][5]).split(":")
+                    self.ui.input_hora_consulta_as_psi.setText(str(flags[x][5]))
+                    self.puxar_consulta();
+                    break;
+            else:
+                    x+=1
 
 
-    def buscar_dados_consulta(self):
+    def buscar_dados_consulta_as(self):
         cpf_temp = self.ui.input_cpf_pagina_consulta_geral.text()
         cpf = ''
         for i in cpf_temp:
@@ -4335,24 +4464,48 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.buscar_consulta(cpf)
-        if dados[6] == "SIM":
+        flags = []
+        x = 0
+        for i in dados:
+            if dados[x][7] == 'SIM':
+                x+=1
+                pass
+            else:
+                flags.append((tuple(dados[x])))
+                x+=1
+        print(flags)
+        if not flags:
             msg = QMessageBox()
             msg.setIcon(QMessageBox.Information)
             msg.setWindowTitle("Usuario Agendamento")
             msg.setText("Usuario não possui agendamento!!")
             msg.exec()
             return
-            
-        elif dados[6] == "NAO":
-            self.ui.input_id_matricula_consulta_as.setText(str(dados[0]))
-            self.ui.input_id_matricula_consulta_as.hide()
-            self.ui.input_nome_pagina_consulta_geral.setText(dados[1])
-            self.ui.input_contato_pagina_consulta_geral.setText(dados[2])
-            self.ui.input_clinica_pagina_consulta_geral.setText(dados[3])
-            self.ui.input_data_pagina_consulta_geral.setDate(QDate(dados[4]))
-            hora  = str(dados[5]).split(":")
-            self.ui.input_hora_consulta_as.setText(str(dados[5]))
-            self.puxar_consulta();
+        x = 0
+        while x <= int(len(flags)):
+            print(x)
+            print(i)
+            if x >= len(flags):
+                msg = QMessageBox()
+                msg.setIcon(QMessageBox.Information)
+                msg.setWindowTitle("Usuario Agendamento")
+                msg.setText("Usuario não possui agendamento!!")
+                msg.exec()
+                return
+            elif flags[x][6] == "Assistente Social":               
+                if flags[x][7] == "NAO":
+                    self.ui.input_id_matricula_consulta_as.setText(str(flags[x][0]))
+                    self.ui.input_id_matricula_consulta_as.hide()
+                    self.ui.input_nome_pagina_consulta_geral.setText(flags[x][1])
+                    self.ui.input_contato_pagina_consulta_geral.setText(flags[x][2])
+                    self.ui.input_clinica_pagina_consulta_geral.setText(flags[x][3])
+                    self.ui.input_data_pagina_consulta_geral.setDate(QDate(flags[x][4]))
+                    hora  = str(flags[x][5]).split(":")
+                    self.ui.input_hora_consulta_as.setText(str(flags[x][5]))
+                    self.puxar_consulta();
+                    break;
+            else:
+                    x+=1
 
     def cadastrar_consulta(self):
         if self.ui.radioButton_atendimento_as.isChecked():
@@ -4368,7 +4521,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         relatorio = self.ui.input_evolucao_pagina_consulta_geral.toPlainText()
 
         id_matricula = self.ui.input_id_matricula_consulta_as.text()
-        
         
 
         tupla_consulta = (situacao,data_consulta,hora_bruta,relatorio,id_matricula, self.id_colab_tratado_ass)
