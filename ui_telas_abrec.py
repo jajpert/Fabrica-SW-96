@@ -1280,6 +1280,17 @@ class Ui_SYSRENAL(object):
         self.frame_574.setObjectName(u"frame_574")
         self.frame_574.setFrameShape(QFrame.StyledPanel)
         self.frame_574.setFrameShadow(QFrame.Raised)
+
+        self.verticalLayout_372 = QVBoxLayout(self.frame_574)
+        self.verticalLayout_372.setObjectName(u"verticalLayout_372")
+        self.input_id_agendamento_nutri_consulta_geral = QLineEdit(self.frame_574)
+        self.input_id_agendamento_nutri_consulta_geral.setObjectName(u"input_id_agendamento_nutri_consulta_geral")
+        self.input_id_agendamento_nutri_consulta_geral.setEnabled(False)
+        self.input_id_agendamento_nutri_consulta_geral.setMaximumSize(QSize(0, 0))
+        self.input_id_agendamento_nutri_consulta_geral.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
+
+        self.verticalLayout_372.addWidget(self.input_id_agendamento_nutri_consulta_geral)
         self.label_cpf_pagina_consulta_geral_nutri = QLabel(self.frame_574)
         self.label_cpf_pagina_consulta_geral_nutri.setObjectName(u"label_cpf_pagina_consulta_geral_nutri")
         self.label_cpf_pagina_consulta_geral_nutri.setGeometry(QRect(10, 10, 24, 21))
@@ -3499,6 +3510,13 @@ class Ui_SYSRENAL(object):
         self.input_id_matricula_consulta_psi.setEnabled(False)
         self.input_id_matricula_consulta_psi.setMaximumSize(QSize(0, 0))
         self.input_id_matricula_consulta_psi.setStyleSheet(u"border-color: transparent;\n"
+"background-color: transparent;")
+
+        self.input_id_agendamento_psic_consulta_geral = QLineEdit(self.frame_598)
+        self.input_id_agendamento_psic_consulta_geral.setObjectName(u"input_id_agendamento_psic_consulta_geral")
+        self.input_id_agendamento_psic_consulta_geral.setEnabled(False)
+        self.input_id_agendamento_psic_consulta_geral.setMaximumSize(QSize(0, 0))
+        self.input_id_agendamento_psic_consulta_geral.setStyleSheet(u"color: transparent;\n"
 "background-color: transparent;")
 
         self.verticalLayout_384.addWidget(self.input_id_matricula_consulta_psi)
@@ -7954,6 +7972,13 @@ class Ui_SYSRENAL(object):
         self.input_id_matricula_consulta_fisio.setEnabled(False)
         self.input_id_matricula_consulta_fisio.setMaximumSize(QSize(0, 0))
         self.input_id_matricula_consulta_fisio.setStyleSheet(u"border-color: transparent;\n"
+"background-color: transparent;")
+        self.input_id_agendamento_fisio_consulta_geral = QLineEdit(self.frame_549)
+        self.input_id_agendamento_fisio_consulta_geral.setObjectName(u"input_id_agendamento_fisio_consulta_geral")
+        self.input_id_agendamento_fisio_consulta_geral.setEnabled(False)
+        self.input_id_agendamento_fisio_consulta_geral.setGeometry(QRect(0, 0, 0, 0))
+        self.input_id_agendamento_fisio_consulta_geral.setMaximumSize(QSize(0, 0))
+        self.input_id_agendamento_fisio_consulta_geral.setStyleSheet(u"color: transparent;\n"
 "background-color: transparent;")
 
         self.verticalLayout_372.addWidget(self.input_id_matricula_consulta_fisio)
@@ -25240,8 +25265,14 @@ class Ui_SYSRENAL(object):
         self.label_cpf_pagina_consulta_geral = QLabel(self.frame_4621)
         self.label_cpf_pagina_consulta_geral.setObjectName(u"label_cpf_pagina_consulta_geral")
         self.label_cpf_pagina_consulta_geral.setFont(font)
+        self.input_id_agendamento_consulta_geral = QLineEdit(self.frame_4621)
+        self.input_id_agendamento_consulta_geral.setObjectName(u"input_id_agendamento_consulta_geral")
+        self.input_id_agendamento_consulta_geral.setEnabled(False)
+        self.input_id_agendamento_consulta_geral.setGeometry(QRect(430, 10, 0, 0))
+        self.input_id_agendamento_consulta_geral.setMaximumSize(QSize(0, 0))
+        self.input_id_agendamento_consulta_geral.setStyleSheet(u"color: transparent;\n"
+"background-color: transparent;")
 
-        self.verticalLayout_319.addWidget(self.label_cpf_pagina_consulta_geral)
 
 
         self.verticalLayout_1691.addWidget(self.frame_4621)
