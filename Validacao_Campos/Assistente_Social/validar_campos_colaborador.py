@@ -10,7 +10,7 @@ def validarCamposColaboradorCadastro(cpf,rg,telefone,cep,numero,pis, senha, conf
         msg.exec()
         return False
     
-    elif rg == "" or len(rg) < 7:
+    elif rg == "" or len(rg) < 9:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro RG")
