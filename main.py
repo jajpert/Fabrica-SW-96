@@ -3197,18 +3197,24 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         login = self.ui.input_usuario_colaborador_as_2.text()
         senha = self.ui.input_senha_colaborador_as_2.text()
         confirmar_senha = self.ui.input_confirmar_senha_colaborador_as_2.text()
-        if cargo in ["Secretaria"]:
+        if cargo in ["Secretária"]:
             perfil = 'sec'
+            cargo = 'sec'
         elif cargo in ["Assistente Social"]:
             perfil = 'adm'
-        elif cargo in ["Farmaceutico"]:
+            cargo = 'adm'
+        elif cargo in ["Farmacêutico (a)"]:
             perfil = 'farm'
-        elif cargo in ["Psicologo"]:
+            cargo = 'farm'
+        elif cargo in ["Psicólogo (a)"]:
             perfil = 'psic'
+            cargo = 'psic'
         elif cargo in ["Fisioterapeuta"]:
             perfil = 'fisio'
+            cargo = 'fisio'
         elif cargo in ["Nutricionista"]:
             perfil = 'nutri'
+            cargo = 'nutri'
 
         ##ALTERAÇÃO PARA CADASTRAR COLABORADOR
         tupla_colaborador = (pis_colab, data_admissao, salario, cargo, periodo, login, senha, perfil)
@@ -3301,7 +3307,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         elif self.ui.input_profissional_nutri_agendamento_as.isChecked():
             profissional = 'Nutricionista'
         if self.ui.input_profissional_psi_agendamento_as.isChecked():
-            profissional = 'Psicóloga'
+            profissional = 'psic'
         data = self.ui.input_data_agendamento_as.text()
         data_agend = "-".join(data.split("/")[::-1])
         hora = self.ui.input_hora_agendamento_as.text()
@@ -4368,6 +4374,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
             else:
                 cpf += i
         dados = self.db.buscar_consulta(cpf)
+        print(dados)
         flags = []
         x = 0
         for i in dados:
@@ -4716,7 +4723,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     def puxar_consulta(self):
         cpf_tmp = self.ui.input_cpf_pagina_consulta_geral.text()
         cpf = re.sub(r'[^\w\s]','',cpf_tmp)
-        result = self.db.buscar_info_consulta(cpf, self.id_colab_tratado_ass)
+        result = self.db.buscar_info_consulta(cpf, self.id_colab_tratado_psic)
         self.ui.input_TableWidget_pagina_consulta_geral.clearContents()
         self.ui.input_TableWidget_pagina_consulta_geral.setRowCount(len(result))   
 

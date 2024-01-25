@@ -1164,29 +1164,13 @@ class DataBase():
     def buscar_consulta(self,cpf):
         self.connect()
         try:
-            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, agendamento.clinica, agendamento.data, agendamento.hora, agendamento.flag
+            self.cursor.execute(f"""SELECT usuario.id_matricula, pessoa.nome, pessoa.telefone, agendamento.clinica, data, hora, agendamento.profissional, agendamento.flag
                                     FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
                                     LEFT JOIN agendamento ON agendamento.id_matricula = pessoa.id_matricula
                                     WHERE pessoa.cpf LIKE '%{cpf}%';""")
             result = self.cursor.fetchall()
             return result
         except Exception as err:
-            return "ERRO",str(err)
-
-        finally:
-            self.close_connection()
-
-    def buscar_consulta_usuario_psi(self,cpf):
-        self.connect()
-        try:
-            self.cursor.execute(f"""SELECT pessoa.nome, pessoa.telefone, agendamento.clinica, agendamento.data, agendamento.hora, usuario.id_matricula, agendamento.flag
-                                    FROM pessoa INNER JOIN usuario ON pessoa.id_matricula = usuario.id_matricula
-                                    INNER JOIN agendamento ON agendamento.id_matricula = usuario.id_matricula
-                                    WHERE pessoa.cpf LIKE '%{cpf}%';""")
-            result = self.cursor.fetchall()
-            return result
-        except Exception as err:
-            print(err)
             return "ERRO",str(err)
 
         finally:
