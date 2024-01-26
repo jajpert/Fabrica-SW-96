@@ -1514,7 +1514,7 @@ class DataBase():
                                 FROM pessoa
                                 INNER JOIN endereco ON pessoa.id_endereco = endereco.id_endereco
                                 INNER JOIN participantes ON participantes.id_matricula = pessoa.id_matricula
-                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento and pessoa.cpf LIKE '%{cpf}%';
+                                INNER JOIN curso_evento ON curso_evento.id_curso_evento = participantes.id_evento WHERE pessoa.cpf LIKE '%{cpf}%';
                                 """)
             result = self.cursor.fetchall()
             return result
@@ -1530,7 +1530,7 @@ class DataBase():
         self.connect()
         try:
             args = (participante[0], participante[1])
-            self.cursor.execute("INSERT INTO participantes (id_evento, id_matricula) VALUES (%s,%s,%s)", args)
+            self.cursor.execute("INSERT INTO participantes (id_evento, id_matricula) VALUES (%s,%s)", args)
             self.conn.commit()
 
             return "Cadastro feito com Sucesso!!"

@@ -10,7 +10,7 @@ def validarCamposCuidadorCadastro(cpf,rg,telefone,cep,numero):
         msg.exec()
         return False
     
-    elif rg == "" or len(rg) < 7:
+    elif rg == "" or len(rg) < 6:
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
         msg.setWindowTitle("Erro RG")

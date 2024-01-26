@@ -11078,7 +11078,7 @@ class Ui_SYSRENAL(object):
         self.input_rg_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_rg_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_rg_usuario_as.setFont(font)
-        self.input_rg_usuario_as.setMaxLength(20)
+        self.input_rg_usuario_as.setMaxLength(9)
 
         self.verticalLayout_40.addWidget(self.input_rg_usuario_as)
 
@@ -14033,7 +14033,7 @@ class Ui_SYSRENAL(object):
         self.input_rg_cuidador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_cuidador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_rg_cuidador_as.setFont(font)
-        self.input_rg_cuidador_as.setMaxLength(20)
+        self.input_rg_cuidador_as.setMaxLength(9)
 
         self.verticalLayout_71.addWidget(self.input_rg_cuidador_as)
 
@@ -15152,7 +15152,7 @@ class Ui_SYSRENAL(object):
         self.input_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_rg_colaborador_as.setFont(font)
-        self.input_rg_colaborador_as.setMaxLength(20)
+        self.input_rg_colaborador_as.setMaxLength(9)
 
         self.verticalLayout_139.addWidget(self.input_rg_colaborador_as)
 
@@ -22487,7 +22487,7 @@ class Ui_SYSRENAL(object):
         self.input_alterar_rg_usuario_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_rg_usuario_as.setMaximumSize(QSize(16777215, 30))
         self.input_alterar_rg_usuario_as.setFont(font)
-        self.input_alterar_rg_usuario_as.setMaxLength(20)
+        self.input_alterar_rg_usuario_as.setMaxLength(9)
 
         self.verticalLayout_215.addWidget(self.input_alterar_rg_usuario_as)
 
@@ -24538,7 +24538,7 @@ class Ui_SYSRENAL(object):
         self.input_alterar_rg_colaborador_as.setMinimumSize(QSize(0, 30))
         self.input_alterar_rg_colaborador_as.setMaximumSize(QSize(16777215, 16777215))
         self.input_alterar_rg_colaborador_as.setFont(font)
-        self.input_alterar_rg_colaborador_as.setMaxLength(20)
+        self.input_alterar_rg_colaborador_as.setMaxLength(9)
 
         self.verticalLayout_280.addWidget(self.input_alterar_rg_colaborador_as)
 
