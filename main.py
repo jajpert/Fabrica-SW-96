@@ -2549,7 +2549,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
     
     def nutri_imc_usuario(self):
-        peso = int(self.ui.input_peso_consulta_nutri.text())
+        peso = float(self.ui.input_peso_consulta_nutri.text())
         altura = float(self.ui.input_altura_consulta_nutri.text())
         altura2x = altura ** altura
         imc = peso//altura2x
