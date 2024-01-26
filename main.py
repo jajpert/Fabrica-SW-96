@@ -746,6 +746,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_voltar_pagina_participante_geral.clicked.connect(lambda:self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_botoes_cadastrar_as))
 
         self.ui.btn_voltar_cursos_as.clicked.connect(lambda: self.ui.stackedWidget_2.setCurrentWidget(self.ui.page_cadastrar_participante))
+        self.ui.btn_voltar_cursos_as.clicked.connect(self.buscar_curso_evento)
 
         self.ui.btn_cadastrar_cursos_as.clicked.connect(self.buscar_curso_evento)
 

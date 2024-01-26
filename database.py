@@ -465,9 +465,9 @@ class DataBase():
         finally:
             self.close_connection()
 
-    def filter_data_relatorio_beneficio(self,texto_data):
+    def filter_data_relatorio_beneficio(self,texto_data_inicio,texto_data_final):
         self.connect()
-        print(texto_data)
+
         try:
             self.cursor.execute(f"""
                     select pessoa.nome,pessoa.cpf, usuario.cns,pessoa.sexo, usuario.situacao_trabalho,beneficios.tipo, beneficios.descricao,saida_beneficio.quantidade_retirada, saida_beneficio.data_retirada
@@ -475,7 +475,7 @@ class DataBase():
                     inner join usuario on pessoa.id_matricula = usuario.id_matricula
                     inner join saida_beneficio on saida_beneficio.id_matricula = usuario.id_matricula
                     inner join beneficios on saida_beneficio.cod_beneficio = beneficios.codigo
-                    WHERE saida_beneficio.data_retirada BETWEEN '{texto_data[0]}' and '{texto_data[1]}';
+                    WHERE saida_beneficio.data_retirada BETWEEN '{texto_data_inicio}' and '{texto_data_final}';
             """)
             result = self.cursor.fetchall()
             return result
