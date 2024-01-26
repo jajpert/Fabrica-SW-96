@@ -757,7 +757,7 @@ class Ui_SYSRENAL(object):
         self.input_telefone_agendamento_nutri.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_agendamento_nutri.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_telefone_agendamento_nutri.setMaxLength(9)
+        self.input_telefone_agendamento_nutri.setMaxLength(11)
 
         self.verticalLayout_414.addWidget(self.input_telefone_agendamento_nutri)
 
@@ -2982,7 +2982,7 @@ class Ui_SYSRENAL(object):
         self.input_telefone_agendamento_psi.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_agendamento_psi.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_telefone_agendamento_psi.setMaxLength(9)
+        self.input_telefone_agendamento_psi.setMaxLength(11)
 
         self.verticalLayout_429.addWidget(self.input_telefone_agendamento_psi)
 
@@ -7450,7 +7450,7 @@ class Ui_SYSRENAL(object):
         self.input_telefone_agendamento_fisio.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_agendamento_fisio.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_telefone_agendamento_fisio.setMaxLength(9)
+        self.input_telefone_agendamento_fisio.setMaxLength(11)
 
         self.verticalLayout_362.addWidget(self.input_telefone_agendamento_fisio)
 
@@ -19077,7 +19077,7 @@ class Ui_SYSRENAL(object):
         self.input_telefone_agendamento_as.setObjectName(u"input_telefone_agendamento_as")
         self.input_telefone_agendamento_as.setMinimumSize(QSize(0, 30))
         self.input_telefone_agendamento_as.setMaximumSize(QSize(16777215, 30))
-        self.input_telefone_agendamento_as.setMaxLength(9)
+        self.input_telefone_agendamento_as.setMaxLength(11)
 
         self.verticalLayout_307.addWidget(self.input_telefone_agendamento_as)
 
@@ -27166,7 +27166,7 @@ class Ui_SYSRENAL(object):
         self.input_telefone_agendamento_sec.setMaximumSize(QSize(16777215, 30))
         self.input_telefone_agendamento_sec.setStyleSheet(u"QLineEdit{background-color: #fff; border-radius: 10px; padding-left: 0.5em; padding-right: 0.5em; border: 1px solid #A85751; height: 30px}\n"
 "QLineEdit:focus{outline:0; border: 2px solid #A85751}")
-        self.input_telefone_agendamento_sec.setMaxLength(9)
+        self.input_telefone_agendamento_sec.setMaxLength(11)
 
         self.verticalLayout_600.addWidget(self.input_telefone_agendamento_sec)
 

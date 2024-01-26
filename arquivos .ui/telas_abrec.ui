@@ -42,7 +42,7 @@
     <item>
      <widget class="QStackedWidget" name="inicio">
       <property name="currentIndex">
-       <number>1</number>
+       <number>6</number>
       </property>
       <widget class="QWidget" name="login">
        <property name="styleSheet">
@@ -1195,7 +1195,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_12">
                  <property name="currentIndex">
-                  <number>2</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_nutri"/>
                  <widget class="QWidget" name="page_agenda_nutri">
@@ -1819,7 +1819,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
 QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        </property>
                                        <property name="maxLength">
-                                        <number>9</number>
+                                        <number>11</number>
                                        </property>
                                       </widget>
                                      </item>
@@ -6582,7 +6582,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_7">
                  <property name="currentIndex">
-                  <number>2</number>
+                  <number>1</number>
                  </property>
                  <widget class="QWidget" name="page_principal_psi"/>
                  <widget class="QWidget" name="page_agenda_psi">
@@ -7156,7 +7156,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
 QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        </property>
                                        <property name="maxLength">
-                                        <number>9</number>
+                                        <number>11</number>
                                        </property>
                                       </widget>
                                      </item>
@@ -16053,7 +16053,7 @@ QPushButton:focus{outline:0}</string>
                <item>
                 <widget class="QStackedWidget" name="stackedWidget_11">
                  <property name="currentIndex">
-                  <number>3</number>
+                  <number>2</number>
                  </property>
                  <widget class="QWidget" name="page_principal_fisio"/>
                  <widget class="QWidget" name="page_relatorio_fisio">
@@ -17816,7 +17816,7 @@ QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
 QLineEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                        </property>
                                        <property name="maxLength">
-                                        <number>9</number>
+                                        <number>11</number>
                                        </property>
                                       </widget>
                                      </item>
@@ -20696,7 +20696,7 @@ QPushButton:focus{outline:0}</string>
                       </sizepolicy>
                      </property>
                      <property name="currentIndex">
-                      <number>23</number>
+                      <number>18</number>
                      </property>
                      <widget class="QWidget" name="page_principal_as"/>
                      <widget class="QWidget" name="page_fornecedor_as">
@@ -48492,7 +48492,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                             </size>
                                            </property>
                                            <property name="maxLength">
-                                            <number>9</number>
+                                            <number>11</number>
                                            </property>
                                           </widget>
                                          </item>
@@ -54894,7 +54894,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -55207,7 +55207,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -62538,7 +62538,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -63387,7 +63387,7 @@ QDateEdit:focus{outline:0; border: 2px solid #A85751}</string>
                                                       <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
                                                      </property>
                                                      <property name="currentSection">
-                                                      <enum>QDateTimeEdit::DaySection</enum>
+                                                      <enum>QDateTimeEdit::MonthSection</enum>
                                                      </property>
                                                      <property name="calendarPopup">
                                                       <bool>true</bool>
@@ -68008,7 +68008,7 @@ QPushButton:focus{outline:0}</string>
            <item>
             <widget class="QStackedWidget" name="stackedWidget_13">
              <property name="currentIndex">
-              <number>1</number>
+              <number>2</number>
              </property>
              <widget class="QWidget" name="page_principal_sec"/>
              <widget class="QWidget" name="page_relatorio_sec">
