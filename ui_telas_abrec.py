@@ -5846,8 +5846,8 @@ class Ui_SYSRENAL(object):
         self.input_TableWidget_cadastro_beneficio_farm.setHorizontalHeaderItem(6, __qtablewidgetitem56)
         __qtablewidgetitem57 = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio_farm.setHorizontalHeaderItem(7, __qtablewidgetitem57)
-        if (self.input_TableWidget_cadastro_beneficio_farm.rowCount() < 14):
-            self.input_TableWidget_cadastro_beneficio_farm.setRowCount(14)
+        if (self.input_TableWidget_cadastro_beneficio_farm.rowCount() < 200):
+            self.input_TableWidget_cadastro_beneficio_farm.setRowCount(200)
         __qtablewidgetitem58 = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio_farm.setItem(0, 2, __qtablewidgetitem58)
         __qtablewidgetitem59 = QTableWidgetItem()
@@ -12822,8 +12822,8 @@ class Ui_SYSRENAL(object):
         self.input_TableWidget_cadastro_beneficio.setHorizontalHeaderItem(6, __qtablewidgetitem120)
         __qtablewidgetitem121 = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio.setHorizontalHeaderItem(7, __qtablewidgetitem121)
-        if (self.input_TableWidget_cadastro_beneficio.rowCount() < 14):
-            self.input_TableWidget_cadastro_beneficio.setRowCount(14)
+        if (self.input_TableWidget_cadastro_beneficio.rowCount() < 200):
+            self.input_TableWidget_cadastro_beneficio.setRowCount(200)
         __qtablewidgetitem122 = QTableWidgetItem()
         self.input_TableWidget_cadastro_beneficio.setItem(0, 2, __qtablewidgetitem122)
         __qtablewidgetitem123 = QTableWidgetItem()
