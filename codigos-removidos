@@ -1,0 +1,40 @@
+############################# VALIDAÇÕES NUTRICIONISTA###########################################################
+from Validacao_Campos.Nutricionista.validar_campos_agendamento_nutri import validarCamposAgendamentoNutriCadastro
+from Validacao_Campos.Nutricionista.validar_campos_consulta_nutri import validarCamposConsultaNutriCadastro
+from Validacao_Campos.Nutricionista.valdiar_campos_consulta_nutri import validarCamposConsultaNutriImcCadastro
+##################################################################################################################
+
+############################## VALIDAÇÕES FISIOTERAPEUTA #########################################################
+from Validacao_Campos.Fisioterapeuta.validar_campos_agendamento_fisio import validarCamposAgendamentoFisioCadastro
+from Validacao_Campos.Fisioterapeuta.validar_campos_cosulta_fisio import validarCamposConsultaFisioCadastro
+##################################################################################################################
+
+############################## VALIDAÇÕES FARMACEUTICA ###########################################################
+from Validacao_Campos.Farmaceutica.validar_campos_beneficios_farm import validarCamposBeneficiosFarmaceuticaCadastro
+from Validacao_Campos.Farmaceutica.validar_campos_retirada_beneficio_farm import validarCamposRetiradaBeneficiosFarmaceuticaCadastro
+##################################################################################################################
+
+############################## VALIDAÇÕES PSICOLOGA ##############################################################
+from Validacao_Campos.Psicologa.validar_campo_agendamento_psic import validarCamposAgendamentoPsicCadastro
+from Validacao_Campos.Psicologa.validar_campo_consulta_pisc import validarCamposConsultaPsicCadastro
+##################################################################################################################
+
+############################## VALIDAÇÕES SECRETARIA #############################################################
+from Validacao_Campos.Secretaria.validar_campos_agendamento_sec import validarCamposAgendamentoSecCadastro
+##################################################################################################################
+
+
+
+############################# VALIDAÇÕES ASSISTENTE SOCIAL ######################################################
+from Validacao_Campos.Assistente_Social.validar_campos_usuario import validarCamposUsuarioCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_cuidador import validarCamposCuidadorCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_colaborador import validarCamposColaboradorCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_agendamento import validarCamposAgendamentoCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_clinica import validarCamposClinicaCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_fornecedores import validarCamposFornecedoresCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_beneficios import validarCamposBeneficiosCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_cursos import validarCamposCursoCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_retirada_beneficio import validarCamposRetiradaBeneficiosCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_alterar_colaborador import validarCamposAlterarColaboradorCadastro
+from Validacao_Campos.Assistente_Social.validar_campos_consulta import validarCamposConsultaCadastro
+##################################################################################################################

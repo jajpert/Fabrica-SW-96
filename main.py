@@ -1,25 +1,13 @@
-import sys
 import re
 import requests
-from os import getcwd
-from ctypes import windll
-from qtcore import *
+from Services.Limpar_Campos.Nutricionista.LimparCamposAtendimentoNutricionista import LimparCamposAtendimentoNutricionista
 from ui_telas_abrec import *
 from ui_dialog import *
 from database import *
 import cv2
 import pandas as pd
-from reportlab.lib.pagesizes import letter
-from reportlab.lib import colors
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.lib.pagesizes import landscape, A4
-from openpyxl.styles import Font
-import pandas as pd
-from reportlab.pdfgen import canvas
 import sys
 from PIL import Image
-import numpy as np
-import openpyxl
 import locale
 import imghdr
 import os
@@ -64,7 +52,7 @@ from Validacao_Campos.Psicologa.validar_campo_consulta_pisc import validarCampos
 from Validacao_Campos.Secretaria.validar_campos_agendamento_sec import validarCamposAgendamentoSecCadastro
 ##################################################################################################################
 
-from Services.Limpar_Campos import LimparCampos
+from Entities.Nutricionista.nutriteste import nutriteste
 
 class Overlay(QWidget):
     def __init__(self, parent):
@@ -497,17 +485,17 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.setupUi(self)
         ########## BUSCANDO DADOS BANCO ####################################################################################################################################################
         self.db = DataBase()
-        self.relatorio_beneficio()        
-        self.listarAgendamentos()
-        self.listarBeneficios()
-        self.buscar_clinica_nome_fantasia()
-        self.buscar_curso_evento()
-        self.puxar_relatorio_cuidador()
-        self.id_area_sigilosa = self.relatorio_pessoa()
+        #self.relatorio_beneficio()
+        #self.listarAgendamentos()
+        #self.listarBeneficios()
+        #self.buscar_clinica_nome_fantasia()
+        #self.buscar_curso_evento()
+        #self.puxar_relatorio_cuidador()
+        #self.id_area_sigilosa = self.relatorio_pessoa()
         
         
         ########### SELECT ÚLTIMO ID DO BANCO ##############################################################################################################################################
-        self.ultimosIds()
+        #self.ultimosIds()
 
 
         self.popup = Overlay(self)
@@ -518,7 +506,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.showMaximized()
 
         self.ui.input_senha_login.setEchoMode(QLineEdit.Password)
-        locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
+        #locale.setlocale(locale.LC_MONETARY, 'pt_BR.UTF-8')
 
 
         ########## VALIDADORES #############################################################################################################################################################
@@ -656,7 +644,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
         ########################### LOGIN ##################################################################################################################################################
-        self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
+        self.ui.btn_entrar_login.clicked.connect(self.LoginNutri)
+        #self.ui.btn_entrar_login.clicked.connect(self.LoginAssistenteS)
+        #self.ui.btn_entrar_login.clicked.connect(self.LoginAssistenteS)
+        #self.ui.btn_entrar_login.clicked.connect(self.validarLogin)
 
 
         ########################### VISIBILIDADE ###########################################################################################################################################
@@ -803,36 +794,8 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.ui.btn_cancelar_agenda_fisio.clicked.connect(self.limparCamposAgendaFisioterapeuta)
         
 
-
-        ########################### NUTRICIONISTA ##########################################################################################################################################
-        self.ui.btn_atendimento_nutri.clicked.connect(LimparCampos.Nutricionista.campos_atendimento.execute)
-        self.ui.btn_atendimento_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_consulta_nutri))
-        self.ui.btn_agenda_nutri.clicked.connect(self.limparCamposAgendaNutricionista)
-        self.ui.btn_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_agenda_nutri))
-        self.ui.btn_voltar_agenda_nutri.clicked.connect(self.limparCamposAgendaNutricionista)
-        self.ui.btn_voltar_agenda_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
-        self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(self.limparCamposAtendimentoNutricionista)
-        self.ui.btn_voltar_pagina_consulta_geral_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
-        self.ui.btn_voltar_pagina_relatorio_nutri.clicked.connect(self.limparCamposRelatorioNutricionista)
-        self.ui.btn_voltar_pagina_relatorio_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
-        self.ui.btn_relatorios_nutri.clicked.connect(self.limparCamposRelatorioNutricionista)
-        self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
-        self.ui.btn_relatorios_nutri.clicked.connect(self.relatorio_pessoa_nutri)
-        self.ui.btn_agenda_nutri.clicked.connect(self.tabela_agenda_nutri)
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.buscar_dados_consulta_nutri) #SELECT USUARIO SOZINHO CONSULTA NUTRI
-        self.ui.btn_buscar_agendamento_nutri.clicked.connect(self.buscar_usuario_agenda_nutri) #SELECT USUARIO SOZINHO AGENDAMENTO NUTRI
-        self.ui.btn_buscar_cpf_pagina_consulta_geral_2.clicked.connect(self.tabela_consulta_nutri_tabela) #SELECT USUARIO + COLABORADOR NUTRI
-        self.ui.btn_salvar_agenda_nutri.clicked.connect(self.cadastroAgendamentoNutri) #CADASTRO DO USUARIO NO AGENDAMENTO NUTRI
-        self.ui.btn_salvar_pagina_consulta_geral_nutri.clicked.connect(self.cadastrar_consulta_nutri) #CADATRO DO USUARIO NA CONSULTA NUTRI
-        self.ui.input_altura_consulta_nutri.textChanged.connect(self.nutri_imc_usuario) #IMC USUARIO CONSULTA NUTRI
-        self.ui.btn_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_relatorio_nutri))
-        self.ui.btn_alterar_pagina_consulta_geral_nutri.clicked.connect(self.alterar_consulta_nutri)
-        self.ui.btn_gerar_excel_relatorio_nutri.clicked.connect(self.gerar_excel_relatorio_nutri)
-        #self.ui.btn_voltar_relatorios_nutri.clicked.connect(lambda: self.ui.stackedWidget_12.setCurrentWidget(self.ui.page_principal_nutri))
-        self.ui.btn_alterar_agenda_nutri.clicked.connect(self.alterarAgendamentos_nutri)
-        self.ui.btn_cancelar_agenda_nutri.clicked.connect(self.limparCamposAgendaNutricionista)
-        self.ui.btn_sair_nutri.clicked.connect(self.sairSistema)
-
+        nutri = nutriteste(self.ui)
+        nutri.teste01()
 
         ########################### PSICÓLOGA ##############################################################################################################################################
         self.ui.btn_atendimento_psi.clicked.connect(self.limparCamposAtendimentoPsicologa)
@@ -2323,12 +2286,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.id_colab_tratado_psic = id_colab_nt
 
 
-    def buscarIdColabNutri(self):
-        login = self.ui.input_usuario_login.text()
-        id_colab_nutri = self.db.buscarIdColabNutri(login)
-        id_colab_nutri_nt = id_colab_nutri[0][0]
-        self.id_colab_tratado_nutri = id_colab_nutri_nt
-        return self.id_colab_tratado_nutri
+
 
     def buscarIdColabFisio(self):
         login = self.ui.input_usuario_login.text()
@@ -2349,7 +2307,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
         self.id_colab_tratado_sec = id_colab_sec_nt
 
     def filtrar_dados_relatorio_fisio(self):
-        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
+        txt = re.sub('r[\W_]+','',self.ui.input_buscar_dados_relatorio_fisio.text())
         res = self.db.buscar_relatorio_fisio_pesquisa(txt)
         self.ui.input_TableWidget_relatorio_fisio.setRowCount(len(res))
 
@@ -2358,7 +2316,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 self.ui.input_TableWidget_relatorio_fisio.setItem(row, column, QTableWidgetItem(str(data)))
                 
     def filtrar_dados_relatorio_nutri(self):
-        txt = re.sub('[\W_]+','',self.ui.input_buscar_dados_relatorio_nutri.text())
+        txt = re.sub('r[\W_]+','',self.ui.input_buscar_dados_relatorio_nutri.text())
         res = self.db.buscar_relatorio_nutri_pesquisa(txt)
         self.ui.input_TableWidget_relatorio_nutri.setRowCount(len(res))
 
@@ -4347,8 +4305,6 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                 return
             x = 0
             while x <= int(len(flags)):
-                print(x)
-                print(i)
                 if x >= len(flags):
                     msg = QMessageBox()
                     msg.setIcon(QMessageBox.Information)
@@ -4368,7 +4324,7 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
                         hora  = str(flags[x][6]).split(":")
                         self.ui.input_hora_consulta_as_fisio.setText(str(flags[x][6]))
                         print(flags[x][0])
-                        self.puxar_consulta_fisio();
+                        self.puxar_consulta_fisio()
                         break;
                 else:
                         x+=1
@@ -6112,7 +6068,10 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
 
 
 
-
+    def teste(self):
+        LimparCamposNutri = LimparCamposAtendimentoNutricionista(self.ui)
+        LimparCamposNutri.execute()
+        #self.ui.btn_atendimento_nutri.clicked.connect(LimparCamposNutri.execute())
 
 
                 
@@ -6387,12 +6346,12 @@ class TelaPrincipal(QMainWindow, Ui_Confirmar_Saida):
     
 if __name__ == "__main__":
     
-    myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
-    windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid) 
+    #myappid = u'mycompany.myproduct.subproduct.version' # arbitrary string
+    #windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
     
     app = QApplication(sys.argv)
 
-    app.setWindowIcon(QIcon('icons\Abrec logo paint-02 (2).png'))
+    app.setWindowIcon(QIcon('icons/Abreclogopaint-02(2).png'))
     w = TelaPrincipal()
     
     w.show()
